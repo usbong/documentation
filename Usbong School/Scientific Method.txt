@@ -1,0 +1,27 @@
+@author: Michael Syson
+@date: 20180602, Philippines
+
+I grew up having to memorize the steps in the Scientific Method. To be honest, I didn't really understand it until perhaps many years later after I've graduated from high school and college.
+
+If I were to write the steps now, this is how I would write it. 
+
+--
+
+Scientific Method
+1) Observe Nature.
+2) Identify patterns.
+3) Create an intelligent guess, i.e. hypothesis, that would "capture"/explain the pattern.
+4) Verify if your guess can reproduce/replicate the pattern.
+--> The goal is to be able to make predictions, thereby making the guess useful.
+
+Notes:
+1) The more general/generic/reusable the pattern the better, in that it can be applied in various fields.
+2) If you can successfully reproduce/replicate the pattern with your guess, it becomes a theory.
+3) If a substantial number of people can successfully reproduce/replicate the pattern with your guess, it becomes a law.
+
+Example:
+1) Observe Nature.
+2) Identify patterns.
+3) Create an algorithm/program/instructions/equation to "capture"/explain the pattern.
+4) Verify if your algorithm/program/instructions/equation can reproduce/replicate the pattern.
+--> The goal is to be able to make predictions, thereby making the algorithm/program/instructions/equation useful.
