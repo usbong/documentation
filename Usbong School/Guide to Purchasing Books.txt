@@ -1,0 +1,23 @@
+@author: Michael Syson
+@date: 20180604, Philippines
+
+I realized that a person can go to a secondhand shop like Booksale, but wouldn't have any clear idea which book to buy.
+
+I've noted down here what I do before I make a purchase, which is kind of like discerning fake news.
+
+Guide to Purchasing Books
+
+Verify the following:
++source
+--> e.g. author, publisher
+
++recommending person/entity
+--> a) an author, whose book has made an impact in my life, would have a list of recommended readings
+--> b) a publisher who has published many books that have made an impact in my life
+--> c) a teacher/friend/family member who has made an impact in my life
+
++content, i.e. read it yourself
+--> e.g. read the Title/Table of Contents, skim through the book
+
++price
+--> e.g. in my case, I usually buy books whose price/cost per item would typically be at most about 150pesos
