@@ -1,4 +1,9 @@
-# How to Remove SSL (Secure Sockets Layer)
+# Table of Contents
+<h3>I. How to Remove SSL (Secure Sockets Layer)</h3>
+<h3>II. How to Reinstall SSL (Secure Sockets Layer)</h3>
+<br>
+
+# I. How to Remove SSL (Secure Sockets Layer)
 
 1) execute: <b>sudo a2dismod ssl</b>
 
@@ -19,7 +24,7 @@
 --> comment out: <b>RewriteCond %{HTTPS} !=on</b><br>
 --> comment out: <b>RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]</b><br>
 
-# How to Reinstall SSL (Secure Sockets Layer)
+# II. How to Reinstall SSL (Secure Sockets Layer)
 
 1) update: <b>/etc/apache2/apache2.conf</b><br>
 --> uncomment: <b>SSLEngine on</b><br>
