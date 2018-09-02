@@ -1,7 +1,6 @@
-# Table of Contents
-<h3>Steps to use WinSCP to connect to your Linux server instance</h3>
+# Steps to use WinSCP to connect to your Linux server instance
 
-1) Run <b>WinSCP.exe</b>
+1) Run <b>WinSCP.exe</b>.
 
 2) Under "Session", for the "File Protocol:" field, choose "SCP" in the dropdown menu.
 
