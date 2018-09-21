@@ -19,7 +19,7 @@ http://localhost/phpmyadmin<br>
 7) Enter "usbong_store" as the Database name.
 8) Click "Create".
 9) Click "Import" on the top tab.
-10) Click "Browser...".
+10) Click "Browse...".
 11) Select the Usbong Store .sql DB (newest version) file from your File Directory system.
 12) Click the "Go" button at the bottom of the Import page.
 13) Copy the "usbong_store" folder you downloaded from the Usbong Store GitHub repository.
