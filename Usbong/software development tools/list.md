@@ -1,9 +1,11 @@
-
-
-
 # List of Software Development Tools
 This is a list of the tools that I use to develop Usbong software.<br><br>
 This list would be important, especially when I, for example, would need to use a new or another PC/machine to develop our software.
+
+### Note:
+Please make the time to read the License Agreements, Terms of Service, Privacy Policy, etc.<br>
+I've learned quite a number of things by reading them.<br>
+<b>Refer to:</b> Usbong School's [Guide to Contracts](https://github.com/usbong/documentation/blob/master/Usbong%20School/Guide%20to%20Contracts.md)
 
 1) https://www.sourcetreeapp.com/<br>
 --> last accessed: 20180820<br>
@@ -31,3 +33,10 @@ This list would be important, especially when I, for example, would need to use 
 5) https://winscp.net/eng/download.php<br>
 --> last accessed: 20180823<br>
 --> This is a tool that I use to conveniently transfer files to our servers from a Windows machine to a Linux-based one.
+
+6) https://www.chiark.greenend.org.uk/~sgtatham/putty/<br>
+--> last accessed: 20180926<br>
+--> I use this tool to connect from a Windows machine to a Linux-based server via SSH (Secure Shell).<br>
+--> I can also configure PuTTY to use my private key to authenticate my SSH connection.<br>
+--> As soon as I am able to successfully connect to the server, I can then execute commands on the Terminal.<br>
+--> <b>Further reading:</b> [Connecting to Your Linux Instance from Windows Using PuTTY](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html)
