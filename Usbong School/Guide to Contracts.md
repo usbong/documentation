@@ -10,7 +10,7 @@ YOU AND USBONG SHALL FIRST CONSULT WITH EACH OTHER TO ATTEMPT TO RESOLVE SUCH DI
 https://stackoverflow.com/legal/terms-of-service; last accessed: 20180924<br>
 <br>
 ## 2) Write
-You can learn a great deal by writing your own Terms of Service, albeit you may need an authorized person to endorse it.<br><br>
+You can learn a great deal by writing your own Terms of Service, etc albeit you may need an authorized person to endorse it.<br><br>
 I've learned that writing such contracts helped me understand to a certain extent the power relation between two parties.<br>
 <br>
 For example, who requires the approval from whom?<br>
