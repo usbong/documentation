@@ -40,3 +40,23 @@ I've learned quite a number of things by reading them.<br>
 --> I can also configure PuTTY to use my private key to authenticate my SSH connection.<br>
 --> As soon as I am able to successfully connect to the server, I can then execute commands on the Terminal.<br>
 --> <b>Further reading:</b> [Connecting to Your Linux Instance from Windows Using PuTTY](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html)
+
+7) https://www.gimp.org/downloads/<br>
+--> last accessed: 20181001<br>
+--> I use this tool to do certain things such as:<br>
+--> a) determining the hexadecimal value of a color (for use at the code-level)<br>
+--> b) drawing and coloring my own illustrations using a WACOM tablet and stylus<br>
+--> c) drawing and coloring existing illustrations that I trace and modify using a WACOM tablet and stylus<br>
+--> For b) and c), though, I find the Apple iPad, Pencil, and Adobe Sketch to be a quicker alternative tool set.<br>
+--> d) doing image manipulation using its filters feature, e.g. cubism, sharpen<br>
+--> e) reducing the dimensions of an image by scaling and/or changing the canvas size<br>
+--> f) reducing the file size of the output image file<br>
+--> For f) here are two examples:<br>
+--> i) I can export an image as .jpg or .jpeg with lower quality to make the file size smaller.<br>
+--> ii) I can also export an image as .png and reduce the actual number of colors I use from the color palette.<br>
+--> i) and ii) have helped my team and I about 15 years ago when we were developing apps on Nokia devices where only 63KB was acceptable for upload to the portal/network.<br>
+--> Having said this, I do, however, still use Paint on a Windows machine when what I quickly need to do is less complex, e.g. cropping a screenshot.<br>
+--> Moreover, I've learned to use Microsoft Powerpoint to more quickly make images using the various shapes, etc in its tool set.
+
+
+
