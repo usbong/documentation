@@ -58,5 +58,18 @@ I've learned quite a number of things by reading them.<br>
 --> Having said this, I do, however, still use Paint on a Windows machine when what I quickly need to do is less complex, e.g. cropping a screenshot.<br>
 --> Moreover, I've learned to use Microsoft Powerpoint to more quickly make images using the various shapes, etc in its tool set.
 
-
+8) https://stackoverflow.com/<br>
+--> last accessed: 20181005<br>
+--> I understand that we Filipinos tend to prefer to only view information provided by the service.<br>
+--> This is instead of actively participating by:<br>
+--> 1) voting on which solution/technique/way of doing worked in a given problem<br>
+--> 2) offering a solution/technique/way of doing via the service<br>
+--> 3) asking questions via the service<br>
+--> However, I've learned that even by simply voting on a solution, we are already contributing towards promulgating best practices to resolve certain issues in the global community.<br>
+--> Moreover, since the problem is a technical/logical issue, the solution would likely also be technical/logical.<br>
+--> This means that the solution can be replicated fairly quickly as long as the problem and the steps to resolve it are clearly defined.<br>
+--> Having said this, the way I typically use Stack Overflow is to enter into the search engine, e.g. Google, Bing, the keywords of the technical issue and "stackoverflow".<br>
+--> Afterwards, I click on the link of the solution which appears to me would most likely resolve the technical issue.<br>
+--> If I am able to find a link to a problem, but not a solution that worked in my case, I would tend to write the solution as contribution via the service.<br>
+--> In terms of asking questions, I often find such questions have already been asked by other people. 
 
