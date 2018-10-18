@@ -23,7 +23,10 @@ These include among others:</br>
 a) writing feedback to determine how we can more properly organize ourselves in terms of communication</br>
 b) evaluating the company to determine how we can achieve CMMI (Capability Maturity Model Integration) Level 5</br>
 c) conducting Quality Assurance (QA) of our products/services</br>
-d) developing new and add-on software using existing tools</br>
+d) developing new and add-on software using existing tools</br></br>
+
+Given that we're a software company, the intern/trainee/apprentice ought to be able to understand software development.</br>
+Having said this, besides the technical aspect, we've learned that the person should also understand business.
 
 ### 2) There's specialist theoretical instruction.</br>
 We have the interns/trainees/apprentices do online courses and read offline materials.</br>
@@ -31,8 +34,6 @@ We have the interns/trainees/apprentices do online courses and read offline mate
 Examples of these include among others:</br>
 a) Java programming language</br>
 b) Android Software Development</br></br>
-Given that we're a software company, the intern/trainee/apprentice ought to be able to understand software development.</br>
-Having said this, besides the technical aspect, we've learned that the person should also understand business.
 
 #### b) Offline materials
 Examples of these include among others:</br>
