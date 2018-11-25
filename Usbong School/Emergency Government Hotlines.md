@@ -11,6 +11,7 @@
 9) Anti-Carnapping: 63 + 2 (country code + Manila area code) 725.1133 loc.4359
 10) Disaster Calamity: 911.5061
 11) Fire Volunteer: 522.2222
+12) National Telecommunications Commission (NTC): 924.4075
 
 Reference:
 1) Merriam & Webster Bookstore Calendar/Bookmark 2018
