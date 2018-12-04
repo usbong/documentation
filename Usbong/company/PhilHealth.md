@@ -20,5 +20,17 @@ https://www.philhealth.gov.ph/downloads/LearnersMaterial_PhilHealth.pdf
 ## Certified Service Providers (Health Information Technology Providers (HITP))
 https://www.philhealth.gov.ph/partners/csp/
 
+## PhilHealth e-Claims Implementation Guide
+https://www.philhealth.gov.ph/downloads/eclaims/PhilHealth_Electronic_Claims_Implementation_Guide_v3.1_20130122.pdf
+
 ## Premium Contribution Table
 https://www.philhealth.gov.ph/partners/employers/PremiumContributionTable.pdf
+
+## Downloads
+https://www.philhealth.gov.ph/downloads/
+</br></br>
+1) Forms
+2) Accreditation Documents
+3) Z Benefit Documents
+4) Primary Care Benefit Documents
+5) IEC Materials
