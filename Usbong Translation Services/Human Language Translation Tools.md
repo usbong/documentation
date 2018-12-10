@@ -28,7 +28,7 @@ In this context, "translation" pertains to written language, while "interpretati
 
 ## III. Spanish language/español
 1) http://spanishdict.com/</br>
---> This is a tool that provides verb conjugation tables, sample sentences, among others.
+--> This is a tool that provides verb conjugation tables, sample sentences, among others.</br>
 --> It also indicates whether a phrase or an expression is particularly used in Latin America/Hispanic countries or in Spain.
 
 ## IV. Chinese Mandarin
