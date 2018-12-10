@@ -2,7 +2,7 @@
 
 The following are tools that you can use to assist you in doing translation work as a service provider.</br>
 </br>
-You should, however, be cautious not to rely on delegating the translation of entire sentences to these tools.</br>
+You should, however, be careful when you begin to rely on delegating the translation of entire sentences to these tools.</br>
 </br>
 Use example sentences to help you understand how to properly use the words.
 
@@ -29,6 +29,7 @@ In this context, "translation" pertains to written language, while "interpretati
 ## III. Spanish language/español
 1) http://spanishdict.com/</br>
 --> This is a tool that provides verb conjugation tables, sample sentences, among others.
+--> It also indicates whether a phrase or an expression is particularly used in Latin America/Hispanic countries or in Spain.
 
 ## IV. Chinese Mandarin
 1) https://www.pleco.com/</br>
@@ -36,6 +37,13 @@ In this context, "translation" pertains to written language, while "interpretati
 --> You can set it to display both traditional and simplified hanzi or Chinese characters.</br>
 --> You can also set it to display both pinyin and zhuyin/bopomofo.</br>
 --> The app can also pronounce words for you.
+
+2) https://www.yellowbridge.com/chinese/dictionary.php</br>
+--> If you are unable to use Pleco on your mobile device, this tool may be your next best alternative.</br>
+--> You can use it to understand not only the meaning of a whole word/character, but also its individual components.</br>
+--> This concept can be applied in various, seemingly unrelated contexts such as business, medicine, systems integration, community development, among others.</br>
+--> For example, in business, a value of a corporation may be higher, even if the selling price of its pieces is lower, e.g. valued at 50pesos for the price of 20pesos.</br>
+--> In the medical field, we learn that a human person is alive, not simply because we get the sum of his/her individual organs, tissues, cells, etc.
 
 # Further References
 1) [Dictionaries from Usbong](https://github.com/usbong/Dictionaries)</br>
