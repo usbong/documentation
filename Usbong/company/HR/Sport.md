@@ -11,7 +11,7 @@
 <b>Locker Fee:</b> 10pesos (you must bring your own lock and key)</br>
 <b>Note:</b> The facility is closed for cleaning every Monday.</br>
 For the rest of the week, it is open from 8:00 to 11:30, and 13:00 to 16:30.</br>
-There is also a 20% Senior Discount.
+There is also a 20% PWD (Persons with Disabilities) and Senior Discount.
 
 ### Notes:
 1) Telephone Number (Landline): 682.95.73</br>
