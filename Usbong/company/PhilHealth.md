@@ -3,6 +3,18 @@ THE PHILIPPINE HEALTH INSURANCE CORPORATION
 ## Official Website
 https://www.philhealth.gov.ph/
 
+## Contact Information
+### Head Office Address
+Citystate Centre, 709 Shaw Blvd.,</br>
+1603 Pasig City, Philippines</br>
+
+### Email Address
+actioncenter@philhealth.gov.ph
+
+## Notes:
+"PhilHealth’s direction is towards conducting all business transactions electronically. Soon there will be no more paper-based transactions."</br>
+<b>Reference:</b> https://www.philhealth.gov.ph/partners/csp/faqs.html; last accessed: 20190113
+
 ## My PhilHealth Portal
 https://www.philhealth.gov.ph/services/
 </br></br>
