@@ -46,3 +46,29 @@ https://www.philhealth.gov.ph/downloads/
 3) Z Benefit Documents
 4) Primary Care Benefit Documents
 5) IEC Materials
+
+## Employer Registration
+### Step 1
+To register companies/employers to PhilHealth, you'll need to accomplish the following forms:</br>
+#### 1) [ER-1 or Employer Data Record (in duplicate)](https://www.philhealth.gov.ph/downloads/employer/er1.pdf)</br>
+--> You'll <b>receive</b> the PhilHealth Employer Number (PEN).
+#### 2) [ER-2 or Report of Employees-Members (in duplicate)](https://www.philhealth.gov.ph/downloads/employer/er2.pdf)</br>
+--> You'll <b>need</b> the PhilHealth Employer Number (PEN).
+
+### Step 2
+You'll need to submit the following documents in the [PhilHealth Local Health Insurance Office (LHIO)](https://www.philhealth.gov.ph/about_us/map/regional.htm).</br>
+Note that the LHIO should be located within the jurisdiction of the company's address.</br>
+#### 1) [ER-1 or Employer Data Record (in duplicate)](https://www.philhealth.gov.ph/downloads/employer/er1.pdf)</br>
+#### 2) [ER-2 or Report of Employees-Members (in duplicate)](https://www.philhealth.gov.ph/downloads/employer/er2.pdf)</br>
+#### 3) Additional Document</br>
+<b>Nature of Entity : Additional Documents Required</b></br></br>
+a) Single proprietorships : Department of Trade and Industry (DTI) Registration</br></br>
+b) Partnerships and corporations : Securities and Exchange Commission (SEC) Registration</br></br>
+c) Foundations and non-profit organizations : Securities and Exchange Commission (SEC) Registration</br></br>
+d) Cooperatives : Cooperative Development Authority (CDA) Registration</br></br>
+e) Backyard industries/ventures and micro-business enterprises : Barangay Certification and/or Mayor's Permit</br>
+
+### Step 3
+[Electronic Premium Remittance System (EPRS)](https://www.philhealth.gov.ph/services/)</br>
+You'll need your company's assigned PhilHealth Employer Number (PEN).</br>
+This is to be able to remit your company's contribution online.
