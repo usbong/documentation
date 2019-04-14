@@ -16,7 +16,7 @@ Note that you must use Internet Explorer Version 11 for optimal viewing and func
 3) Bring a pen.</br></br>
 4) You can pay your contributions at Bayad Centers as well as Supermarkets, e.g. Robinsons Supermarket.</br></br>
 5) There is no additional service fee, unlike the 8pesos service fee for PhilHealth contributions at Bayad Centers or 10pesos at SaveMore Markets.</br></br>
-6) I've observed that there is less people paying contributions at Robinsons Supermarket.</br></br>
+6) I've observed that there is less people paying contributions at Robinsons Supermarket (Sumulong Highway, Corner Gil Fernando Ave., Marikina City).</br></br>
 7) If the age of the member is 55 years old or older, and his/her Monthly Salary Credit (MSC), i.e. a person's monthly salary, is more than 10K pesos, the allowed increase is only one salary bracket.</br>
 --> Refer to the [SSS Guidebook](https://www.sss.gov.ph/sss/DownloadContent?fileName=2017%20SSS%20Guidebook.pdf), particularly the SSS Contribution Schedule (Effective January 2014) on page 39.
 
@@ -24,7 +24,10 @@ Note that you must use Internet Explorer Version 11 for optimal viewing and func
 https://www.sss.gov.ph/sss/DownloadContent?fileName=2017%20SSS%20Guidebook.pdf; last accessed: 20181221</br></br>
 <b>Note:</b> SSS Contribution Schedule (Effective January 2014) is on page 39.
 
-## III. Online SSS Member Portal (BETA version)
+## III. NEW SSS Contribution Schedule (Effective April 2019)
+https://www.sss.gov.ph/sss/DownloadContent?fileName=2019_Contribution_Schedule.pdf; last accessed: 20190415<br /><br />
+
+## IV. Online SSS Member Portal (BETA version)
 https://portal.sss.gov.ph/member/login.xhtml; last accessed: 20181221
 
 ### Available Services
