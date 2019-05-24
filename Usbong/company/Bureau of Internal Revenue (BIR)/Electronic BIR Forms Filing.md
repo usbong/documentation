@@ -19,6 +19,32 @@ https://www.bir.gov.ph/index.php/eservices/ebirforms.html; last accessed: 201809
 --> The maximum is three (3) transactions per client.</br>
 --> Transactions without TIN and zero payment are not accepted.</br>
 
+## Filing Dates:
+1) <b>WITHHOLDING TAX-COMPENSATION</b></br>
+a) 1601C 10th day of the following month</br>
+--> MONTHLY REMITTANCE RETURN</br>
+b) 1604CF Annual Information Return: 31-JAN</br>
+
+2) <b>PERCENTAGE TAX: BIR FORM 2551Q</b></br>
+1st Quarter (Jan\~March): 20-APR</br>
+2nd Quarter (April\~June): 20-JUL</br>
+3rd Quarter (July\~Sept): 20-OCT</br>
+4th Quarter (Oct\~Dec): 20-JAN</br>
+
+3) <b>INCOME TAX</b></br>
+a) <b>CORP: BIR FORM 1702</b></br>
+1st Quarter (Jan\~March): 30-MAY</br>
+2nd Quarter (April\~June): 29-AUG</br>
+3rd Quarter (July\~Sept): 29-NOV</br>
+Annual (Oct\~Dec): 15-APR</br></br>
+b) <b>SINGLE PROPRIETOR: BIR FORM 1701</b></br>
+1st Quarter 15-APR</br>
+2nd Quarter 15-AUG</br>
+3rd Quarter 15-NOV</br>
+Annual 15-APR (Following Year)</br>
+
+4) <b>RENEWAL OF ANNUAL REGISTRATION FEE ON OR BEFORE 31-JAN: BIR FORM 1605</b>
+
 ## Select Acronyms:
 1) BIR = "Bureau of Internal Revenue"
 2) ATA = "Accredited Tax Agents"
