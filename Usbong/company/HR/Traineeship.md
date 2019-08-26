@@ -2,14 +2,18 @@
 Usbong is now accepting interns/trainees/apprentices who'd want to join our team on our mission to uplift human lives.
 
 ## Company Information
-Founded in 2011, the Usbong Social Systems, Inc. (Usbong) is a SEC-registered software company in the Philippines.</br>
+Founded in 2011, the Usbong Social Systems, Inc. (Usbong) is a SEC-registered computer services company in the Philippines.</br>
 </br>
 Our mission is to defeat poverty by uplifting human lives.</br>
 Our vision is a community where there is everlasting peace.</br>
 </br>
 More concretely, Usbong offers a wide range of software products and solutions that serve clients from industry, academe, and government.</br>
 </br>
-Usbong’s services include software development and automation to systematically count, file, and calculate data using computers and mobile computing devices.
+Usbong’s services include software development and automation to systematically count, file, and calculate data using computers and mobile computing devices.</br>
+</br>
+As a technology assistance service provider, our metric for success in strengthening our clients is primarily based on our software/computer/machine’s quality, i.e. 1) speed, and 2) being correct.</br>
+</br>
+In addition, while headquartered in Marikina City, Philippines, the company maintains a network of people based within Asia-Pacific, Europe, and North America.
 
 ## Official Company Website
 http://www.usbong.ph
@@ -25,7 +29,7 @@ b) evaluating the company to determine how we can achieve CMMI (Capability Matur
 c) conducting Quality Assurance (QA) of our products/services</br>
 d) developing new and add-on software using existing tools</br></br>
 
-Given that we're a software company, the intern/trainee/apprentice ought to be able to understand software development.</br>
+Given that we're a computer services company, the intern/trainee/apprentice ought to be able to understand computer software development.</br>
 Having said this, besides the technical aspect, we've learned that the person should also understand business.
 
 ### 2) There's specialist theoretical instruction.</br>
