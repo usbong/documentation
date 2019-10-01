@@ -18,7 +18,11 @@ If you opt not to take it, we can immediately classify your Chinese Mandarin lev
 #### [HSK Details](http://english.hanban.org/node_8002.htm#no1)
 --> Note: The exam is written in Simplified Chinese Mandarin Characters that are used in Mainland China.
 
-### II. Tuition Fees
+### II. Tuition Fees:
+Tuition Fee: PHP3500/30hrs
+
+#### Promo: Invite a friend or family member to join and you get a PHP500 discount.
+
 At present, students come to the Usbong School once a week.<br/>
 For non-School days, homework is assigned daily.<br/>
 <br/>
@@ -31,3 +35,11 @@ Tuition Fee is paid before the start of each class cycle.
 1) [Coursera: HSK Level 1 (Online Course)](https://www.coursera.org/learn/hsk-1)
 2) [Pleco App (Dictionary)](https://www.pleco.com/)
 3) [Usbong Services](http://www.usbong.ph/services)
+
+### IV. Contact Us:
+For inquiries, please contact the Usbong School in Marikina City.<br/>
+<br/>
+<b>Email:</b> learn (at) usbong (dot) ph<br/>
+<b>Contact Number:</b> +63929.952.7263<br/>
+<b>Address:</b> 2 E. Manalo (formerly, E. Rodriguez) Ave., Sto. Niño, Marikina City, 1820, Philippines<br/>
+<b>Further Details:</b> http://www.usbong.ph/contact
