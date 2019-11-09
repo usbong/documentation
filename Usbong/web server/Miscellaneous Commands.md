@@ -1,5 +1,5 @@
 # Miscellaneous Commands
-## I. Linux-based Server
+## I. Linux-based Computer Server
 1) Change the owner of "all files in the directory" to usbong.</br></br>
 <b>sudo chown usbong *</b></br></br>
 --> Instead of *, you can specify the name of the file, e.g. style.php.</br></br>
@@ -15,8 +15,8 @@
 --> Instead of *, you can specify the name of the file, e.g. style.php.</br></br>
 <b>chmod g+w style.php</b>
 
-## II. Windows-based Server
-### 1) Make the Windows-based Server sleep using Command Prompt.</br></br>
+## II. Windows-based Computer Server
+### 1) Make the Windows-based Computer Server sleep using Command Prompt.</br></br>
 <b>rundll32.exe powrprof.dll,SetSuspendState Sleep</b></br></br>
 --> You can save the aforementioned command as "sleep.bat" on Notepad.</br>
 --> Make sure to include the quotation marks so that it saves as a ".bat" or batch file, instead of ".bat.txt".</br>
@@ -34,12 +34,14 @@
 8) In the "New Action" Window, click "Browser" and choose the "sleep.bat" file for the "Program/script:" field.</br>
 9) In the "New Action" Window, click the "OK" button.</br>
 10) In the "Create Task" Window, click the "OK" button.</br>
-Done!</br>
 </br>
-### 2) Make the Windows-based Server wake up using Command Prompt.</br></br>
+Done!</br>
+
+### 2) Make the Windows-based Computer Server wake up using Command Prompt.</br></br>
 <b>exit</b></br></br>
 --> You can save the aforementioned command as "wake.bat" on Notepad.</br>
 --> Make sure to include the quotation marks so that it saves as a ".bat" or batch file, instead of ".bat.txt".</br>
+
 #### You can use Window's "Task Scheduler" to automate this task.
 --> You may want to do this if your server is in a local network and the office/clinic that uses it is closed in the evening.</br>
 --> This should save the company from unnecessary electricity consumption.</br>
@@ -58,6 +60,7 @@ Done!</br>
 12) In the "General" Window, click to add a check in the checkbox for "Do not store password. The task will only have access to local computer resources."</br>
 13) In the "General" Window, click to add a check in the checkbox for "Run with highest privileges."</br>
 14) In the "Create Task" Window, click the "OK" button.</br>
+</br>
 Done!
 
 
