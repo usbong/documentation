@@ -1,5 +1,5 @@
 # Traineeship
-Usbong is now accepting interns/trainees/apprentices who'd want to join our team on our mission to uplift human lives.
+Usbong is now accepting interns/trainees/apprentices to join our team on our mission to uplift human lives.
 
 ## Company Information
 Founded in 2011, the Usbong Social Systems, Inc. (Usbong) is a SEC-registered computer services company in the Philippines.</br>
