@@ -2,7 +2,18 @@
 
 ## 1) [Human Language Translation Tools](https://github.com/usbong/documentation/blob/master/Usbong%20Translation%20Services/Human%20Language%20Translation%20Tools.md)
 
-## 2) Enrollment Procedure
+## 2) Human Language Class Policy
+### Example: Filipino Only Policy
+Learning a language does not happen only in class. It is very important to use the target language in real life. That is why we strongly encourage you to speak Filipino in every situation. As a Filipino course policy, you are required to talk to all Filipino instructors in Filipino except for emergency situations. Your effort to use Filipino could be evaluated as part of your class performance in Reading & Writing classes as well as Spoken Filipino class.
+
+### Note:
+Updated to "Filipino" from "Japanese"
+
+### Reference:
+Kansai Gaidai University: Asian Studies Program<br/>
+Course Descriptions: Spring 2005
+
+## 3) Enrollment Procedure
 ### I. Diagnostic Exam:
 Example: [HSK (Hanyu Shuiping Kaoshi) Oral: Beginner Level](http://www.chinesetest.cn/userfiles/file/dagang/HSK-koushi.pdf)<br/>
 --> Please go to: Page 9<br/>
