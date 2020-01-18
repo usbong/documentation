@@ -35,9 +35,9 @@ Q4: October 20th<br/>
 
 2) The fee that you pay during the 1st Quarter is higher despite choosing to pay quarterly, i.e. divide by 4.<br/>
 --> This is because you can only pay quartery the following:<br/>
---> a)<b>Business permit renewal fee</b><br/>
+--> a) <b>Business permit renewal fee</b><br/>
 --> Based on the total income for the previous year multiplied, for example, by 2.07044444444444%.<br/>
---> b)<b>Garbage fee (PHP600)</b><br/>
+--> b) <b>Garbage fee (PHP600)</b><br/>
 
 3) Additional fees that you already need to pay in the 1st Quarter include:<br/>
 a) <b>Barangay Clearance Fee:</b> PHP500<br/>
