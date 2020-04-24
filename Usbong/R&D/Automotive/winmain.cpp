@@ -14,15 +14,21 @@
  *
  * @author: Michael Syson
  * @date created: 2006
- * @date updated: 20200423
+ * @date updated: 20200424
  *
- * Reference:
+ * References:
  * 1) https://www.libsdl.org/download-2.0.php;
  * last accessed: 20200423
+ *
+ * 2) https://docs.microsoft.com/en-us/windows/win32/inputdev/user-input3
+ * last accessed: 20200424
+ *
+ * 3) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL Game Programming". USA: Premier Press.
  *
  * Note:
  * 1) We can use this software tool to extract the compressed (zipped) folder.
  *   https://www.7-zip.org/download.html; last accessed: 20200423
+ *
  */
 
 /**************************
@@ -32,6 +38,10 @@
 
 #include <windows.h>
 #include <gl/gl.h>
+
+//added by Mike, 20200424
+//#include <stdio.h>
+#define WIN32_LEAN_AND_MEAN
 
 //added by Mike, Dec. 15, 2006
 //#include "OpenGLCanvas.h"
@@ -128,7 +138,6 @@ int WINAPI WinMain (HINSTANCE hInstance,
 /*
             glClearColor (0.0f, 0.0f, 0.0f, 0.0f);
             glClear (GL_COLOR_BUFFER_BIT);
-
             glPushMatrix ();
             glRotatef (theta, 0.0f, 0.0f, 1.0f);
             glBegin (GL_TRIANGLES);
@@ -187,12 +196,18 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT message,
     		return 0;
     
         case WM_KEYDOWN:
+        	
+			//added by Mike, 20200424
+//			MessageBox(NULL, "PRESSED: " + (TCHAR)wParam, "Message Box", NULL);
+
             switch (wParam)
             {
                    case VK_ESCAPE:
                         PostQuitMessage(0);
                         return 0;
            	       case VK_LEFT:
+						//added by Mike, 20200424
+						MessageBox(NULL, "PRESSED LEFT KEY!", "Message Box", NULL);
 //				        myOpenGLCanvas->keyDown(KEY_LEFT);
                         return 0;
            	       case VK_RIGHT:
