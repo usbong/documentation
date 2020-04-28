@@ -40,7 +40,7 @@
 #include <gl/gl.h>
 
 //added by Mike, 20200424
-//#include <stdio.h>
+#include <stdio.h>
 #define WIN32_LEAN_AND_MEAN
 
 //added by Mike, Dec. 15, 2006
@@ -98,13 +98,29 @@ int WINAPI WinMain (HINSTANCE hInstance,
     wc.lpszClassName = "UsbongRobot";
     RegisterClass (&wc);
 
-    /* create main window */
+    
+	/* create main window */
     hWnd = CreateWindow (
       "UsbongRobot", "UsbongRobot", 
       WS_CAPTION | WS_POPUPWINDOW | WS_VISIBLE,
 //      0, 0, 512, 512, //256
       0, 0, 1024, 1024, //256
       NULL, NULL, hInstance, NULL);
+
+
+	//added by Mike, 20200424
+	//register input device, e.g. gamepad
+	RAWINPUTDEVICE Rid[1];
+	        
+	Rid[0].usUsagePage = 0x01; 
+	Rid[0].usUsage = 0x05; 
+	Rid[0].dwFlags = 0;                 // adds game pad
+	Rid[0].hwndTarget = 0; //hWnd;
+
+	if (RegisterRawInputDevices(Rid, 1, sizeof(Rid[0])) == FALSE) {
+	    //registration failed. Call GetLastError for the cause of the error.		
+		MessageBox(NULL, "Registration Failed.", "Message Box", NULL);
+	}
 
     /* enable OpenGL for the window */
     EnableOpenGL (hWnd, &hDC, &hRC);
@@ -194,9 +210,141 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT message,
     
 //    		//myOpenGLCanvas->setupProjection(width, height);
     		return 0;
-    
-        case WM_KEYDOWN:
-        	
+
+		//added by Mike, 20200424; edited by Mike, 20200428
+		case WM_INPUT:
+	 		{
+		        PRAWINPUT pRawInput;
+		        UINT      bufferSize;
+		        HANDLE    hHeap;
+		
+				UINT iResult;
+
+		        GetRawInputData((HRAWINPUT)lParam, RID_INPUT, NULL, 
+				&bufferSize, sizeof(RAWINPUTHEADER));
+		
+		        hHeap     = GetProcessHeap();
+		        pRawInput = (PRAWINPUT)HeapAlloc(hHeap, 0, bufferSize);
+		        if(!pRawInput) {
+		            return 0;
+				}
+
+		        iResult = GetRawInputData((HRAWINPUT)lParam, RID_INPUT, 
+				pRawInput, &bufferSize, sizeof(RAWINPUTHEADER));
+/*				
+				char sBufferSize[5];
+				MessageBox(NULL, itoa(bufferSize,sBufferSize,10),"Message Box", NULL);
+*/
+
+//				MessageBox(NULL, (char*)pRawInput,"Message Box", NULL);
+		
+/*		
+		        GetRawInputData((HRAWINPUT)lParam, RID_HEADER, NULL, 
+				&bufferSize, sizeof(RAWINPUTHEADER));
+		
+		        hHeap     = GetProcessHeap();
+		        pRawInput = (PRAWINPUT)HeapAlloc(hHeap, 0, bufferSize);
+		        if(!pRawInput) {
+		            return 0;
+				}
+		
+		        iResult = GetRawInputData((HRAWINPUT)lParam, RID_HEADER, 
+				pRawInput, &bufferSize, sizeof(RAWINPUTHEADER));
+*/
+
+
+/*				if (iResult==0) { //success
+				}
+*/				
+/*
+				char snum[5];
+				MessageBox(NULL, itoa(iResult, snum, 10), "Message Box", NULL);
+*/
+				//https://docs.microsoft.com/en-gb/windows/win32/api/winuser/nf-winuser-getrawinputdata;
+				//last accessed: 20200426
+				
+				//if iResult == 0, pData is null and function is successful
+				if (iResult==-1) { //error
+				  return -1;
+				}
+				//else, return value is number of bytes copied to pData
+
+				
+		 //       ParseRawInput(pRawInput);
+
+
+			INT rawDataSize = pRawInput->data.hid.dwCount*pRawInput->data.hid.dwSizeHid;
+/*
+//            BYTE * returnval = new BYTE[rawDataSize];
+            	char * returnval = new char[rawDataSize];
+				returnval = pRawInput->data.hid.bRawData;
+*/
+
+//			char snum[5];
+//			MessageBox(NULL, itoa(rawDataSize, snum, 10),"Message Box", NULL);
+
+//			char snum[5];
+//			MessageBox(NULL, itoa(pRawInput->data.hid.dwCount, snum, 10),"Message Box", NULL);
+
+
+/* //output: random number
+			char snum[5];
+			MessageBox(NULL, ltoa(lParam, snum, 10),"Message Box", NULL);
+*/
+
+/* //output: 0
+			char snum[5];
+			MessageBox(NULL, itoa(wParam, snum, 10), "Message Box", NULL);
+*/
+
+/*
+			char snum[5];
+//			MessageBox(NULL, pRawInput->data.hid.bRawData,"Message Box", NULL);
+			memcpy(snum, pRawInput->data.hid.bRawData, 5);
+			MessageBox(NULL, snum, "Message Box", NULL);
+*/
+				
+
+	//      char* ss = (char*) s; // put breakpoint here or watch the variable
+	      char* ss = (char*) pRawInput->data.hid.bRawData; // put breakpoint here or watch the variable
+/*	
+			//note: output: 0
+				char snum[5];
+				MessageBox(NULL, itoa(strlen(ss),snum,10),"Message Box", NULL);
+*/	
+
+		  //Note:
+		  //in gamepad, i.e. SideWinder Game Pad USB (Microsoft - Malaysia) 
+		  // if size 2, single dot, double dot, Z, and A use equal values
+		  //if we increase the size, the equal values vary
+		  //TO-DO: -verify: to receive as output unique values
+		  char sOutput[2];
+	
+		  //Reference:
+		  //https://stackoverflow.com/questions/7592930/how-to-view-content-of-variable-of-type-lpvoid;
+		  //last accessed: 20200428
+		  //answer by: user350954 on 20110929T0558; edited on 20110929T0625
+	
+		  int iCount = 0;
+	//      for(char* r = ss; *r != '\0'; r += (strlen(r)+1)) { // iterate the string
+	      for(char* r = ss; iCount < 2; r += (strlen(r)+1)) { // iterate the string
+	
+	//			MessageBox(NULL, r,"Message Box", NULL);
+	
+				strcat(sOutput, r);
+	
+	//          printf("%s \n", r);
+				iCount++;
+	       }   
+			
+
+			MessageBox(NULL, sOutput,"Message Box", NULL);
+
+		    HeapFree(hHeap, 0, pRawInput);
+
+				return 0;		
+		    }		    
+	    case WM_KEYDOWN:        	
 			//added by Mike, 20200424
 //			MessageBox(NULL, "PRESSED: " + (TCHAR)wParam, "Message Box", NULL);
 
@@ -207,7 +355,7 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT message,
                         return 0;
            	       case VK_LEFT:
 						//added by Mike, 20200424
-						MessageBox(NULL, "PRESSED LEFT KEY!", "Message Box", NULL);
+//						MessageBox(NULL, "PRESSED LEFT KEY!", "Message Box", NULL);
 //				        myOpenGLCanvas->keyDown(KEY_LEFT);
                         return 0;
            	       case VK_RIGHT:
@@ -237,7 +385,7 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT message,
 //				        myOpenGLCanvas->keyUp(KEY_DOWN);
                         return 0;                        
             }
-        default:
+        default:        	
             return DefWindowProc (hWnd, message, wParam, lParam);
     }
 }
