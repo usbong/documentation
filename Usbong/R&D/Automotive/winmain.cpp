@@ -215,6 +215,8 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT message,
 		case WM_INPUT:
 	 		{
 		        PRAWINPUT pRawInput;
+		        PRAWINPUT pRawHeaderInput;
+
 		        UINT      bufferSize;
 		        HANDLE    hHeap;
 		
@@ -238,19 +240,19 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT message,
 
 //				MessageBox(NULL, (char*)pRawInput,"Message Box", NULL);
 		
-/*		
+
 		        GetRawInputData((HRAWINPUT)lParam, RID_HEADER, NULL, 
 				&bufferSize, sizeof(RAWINPUTHEADER));
 		
 		        hHeap     = GetProcessHeap();
-		        pRawInput = (PRAWINPUT)HeapAlloc(hHeap, 0, bufferSize);
+		        pRawHeaderInput = (PRAWINPUT)HeapAlloc(hHeap, 0, bufferSize);
 		        if(!pRawInput) {
 		            return 0;
 				}
 		
 		        iResult = GetRawInputData((HRAWINPUT)lParam, RID_HEADER, 
-				pRawInput, &bufferSize, sizeof(RAWINPUTHEADER));
-*/
+				pRawHeaderInput, &bufferSize, sizeof(RAWINPUTHEADER));
+
 
 
 /*				if (iResult==0) { //success
@@ -307,6 +309,9 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT message,
 
 	//      char* ss = (char*) s; // put breakpoint here or watch the variable
 	      char* ss = (char*) pRawInput->data.hid.bRawData; // put breakpoint here or watch the variable
+
+	      char* ssHeader = (char*) pRawHeaderInput->data.hid.bRawData; // put breakpoint here or watch the variable
+
 /*	
 			//note: output: 0
 				char snum[5];
@@ -315,9 +320,13 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT message,
 
 		  //Note:
 		  //in gamepad, i.e. SideWinder Game Pad USB (Microsoft - Malaysia) 
-		  // if size 2, single dot, double dot, Z, and A use equal values
-		  //if we increase the size, the equal values vary
-		  //TO-DO: -verify: to receive as output unique values
+		  // if size 2, single dot, double dot, Z, and A buttons use equal values
+		  //if we increase the size, the buttons with equal values vary
+
+		  //+verified: to receive as output unique values
+		  //by using in addition the raw input's header value, we can eliminate the buttons with equal values
+		  //This is except for double dot and A buttons whose output value remains equal
+
 		  char sOutput[2];
 	
 		  //Reference:
@@ -340,7 +349,26 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT message,
 
 			MessageBox(NULL, sOutput,"Message Box", NULL);
 
+		//--------------------------
+		
+		  char sHeaderOutput[10];
+
+		  iCount = 0;
+	//      for(char* r = ss; *r != '\0'; r += (strlen(r)+1)) { // iterate the string
+	      for(char* r = ss; iCount < 10; r += (strlen(r)+1)) { // iterate the string
+	
+	//			MessageBox(NULL, r,"Message Box", NULL);
+	
+				strcat(sHeaderOutput, r);
+	
+	//          printf("%s \n", r);
+				iCount++;
+	       }   
+
+			MessageBox(NULL, sHeaderOutput,"Message Box", NULL);
+
 		    HeapFree(hHeap, 0, pRawInput);
+		    HeapFree(hHeap, 0, pRawHeaderInput);
 
 				return 0;		
 		    }		    
