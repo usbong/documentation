@@ -30,7 +30,7 @@
 --> Halimbawa, kung maibenta niya ang Computer Automation Service ng Usbong, kikita siya bilang Computer Services Salesperson.<br/>
 --> Sa pagkakataong ito, aangat ang nibel niya bilang Computer Services Salesperson mula trainee.<br/>
 --> Paalala na mula sa karanasan, aabot ng hindi bababa sa 6 na buwan bago makabenta sa panibagong customer.<br/>
---> Gayunpaman, mapabibilis ito kung may kaibigan na ang mangagawa sa loob ng bebentahang lugar.<br/>
+--> Gayunpaman, mapabibilis ito kung may kaibigan na ang manggagawa sa loob ng bebentahang lugar.<br/>
 --> Dagadag pa, kapag may nabuo na tayong ugnayan sa customer, mapabibilis ito sa isang buwan na lamang, sa halip na 6 o higit na buwan.<br/>
 
 ## 5) Paano ako makibabahagi sa tagumpay ng kompanya?
