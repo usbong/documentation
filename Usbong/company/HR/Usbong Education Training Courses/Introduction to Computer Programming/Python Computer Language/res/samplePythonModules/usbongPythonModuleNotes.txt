@@ -4,6 +4,7 @@ PYTHON: MODULES
 @author: SYSON, MICHAEL
 @date created: 20200619
 @last updated: 20200619
+@open source: Apache License Version 2.0
 
 I. Version:
 1) Python3 (version: 3.8.2)
@@ -34,8 +35,9 @@ Kumusta!
 Output: 
 Kumusta po!
 
-2.1) Note:
-2.1.1) We can set a shorter name of the already defined set of instructions in the file to be quickly reusable. 
+2.1) Reminders:
+2.1.1) We execute the command in the Python Window, not in the Terminal Window.
+2.1.2) We can set a shorter name of the already defined set of instructions in the file to be quickly reusable. 
 --> Example: 
 >>> g = halimbawaDefinedSet.greet
 >>> g()
