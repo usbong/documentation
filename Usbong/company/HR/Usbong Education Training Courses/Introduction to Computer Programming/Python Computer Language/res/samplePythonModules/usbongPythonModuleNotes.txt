@@ -8,8 +8,9 @@ PYTHON: MODULES
 
 I. Version:
 1) Python3 (version: 3.8.2)
+--> https://www.python.org/; last accessed: 20200619
 2) LUBUNTU Operating System (version: 20.04 LTS)
---> https://lubuntu.me/
+--> https://lubuntu.me/; last accessed: 20200619
 
 II. Commands:
 1) Execute Python module, "halimbawa.py", as list of instructions, in Terminal.
@@ -44,3 +45,6 @@ Kumusta po!
 
 Output:
 Kumusta po!
+
+III. Reference:
+1) https://docs.python.org/3/download.html; last accessed: 20200619
