@@ -7,7 +7,6 @@ https://developers.hp.com/hp-linux-imaging-and-printing; last accessed: 20200620
 <b>Answer:</b> 
 1) Go to: Tools, Options, Print<br/>
 2) Unset: in Defaults, "PDF as standard print job format"<br/>
-<br/>
 Done!<br/>
 <br/>
 <b>Reference:</b> https://ask.libreoffice.org/en/question/68113/print-a-blank-page-when-printing-a-word-doc-from-libreoffice/;<br/>
