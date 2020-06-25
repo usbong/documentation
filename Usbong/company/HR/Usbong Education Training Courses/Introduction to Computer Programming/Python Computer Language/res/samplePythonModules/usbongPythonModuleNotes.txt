@@ -3,7 +3,7 @@ PYTHON: MODULES
 @website: www.usbong.ph
 @author: SYSON, MICHAEL
 @date created: 20200619
-@last updated: 20200619
+@last updated: 20200625
 @open source: Apache License Version 2.0
 
 I. Version:
@@ -50,5 +50,17 @@ Kumusta po!
 >>> from importlib import reload
 >>> reload(halimbawaDefinedSet)
 
-III. Reference:
+III. Problem & Answer
+1) Problem: The following Python command does not execute successfully.
+
+>>> import turtle
+
+Answer: Write and enter in the Terminal Window the following command to download the "tkinter" module.
+
+sudo apt install python3-tk
+
+Done!You should now be able to execute the command successfully.
+
+IV. References:
 1) https://docs.python.org/3/download.html; last accessed: 20200619
+2) https://stackoverflow.com/questions/39905346/how-to-install-turtle-with-python3-on-linux; last accessed: 20200625
