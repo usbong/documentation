@@ -44,6 +44,10 @@ where: "..." are identification numbers/letters<br/>
 <br/>
 where: ".pnm" is the image file format
 
+### References:
+1) https://bugs.launchpad.net/simple-scan/+bug/1539933; last accessed: 20200623<br/>
+2) https://ubuntuforums.org/archive/index.php/t-2130330.html; last accessed: 20200623
+
 ### Problem & Answer
 <b>Problem:</b> Scan command outputs "Segmentation fault (core dumped)" on LUBUNTU (ver: 20.04)<br/>
 <b>Answer:</b><br/>
@@ -55,11 +59,7 @@ where: ".pnm" is the image file format
 1.2) If you receive the following output, you should now be able to use the Scan command successfully.<br/>
 <br/>
 <b>device 'smfp:usb;...' is a Samsung SCX-4x21 Series on USB Scanner</b><br/>
+<b>device 'xerox_mfp:libusb:...' is a Samsung ORION multi-function peripheral</b><br/>
 <br/>
 Done!<br/>
 <br/>
-
-### References:
-1) https://bugs.launchpad.net/simple-scan/+bug/1539933; last accessed: 20200623<br/>
-2) https://ubuntuforums.org/archive/index.php/t-2130330.html; last accessed: 20200623
-
