@@ -2,7 +2,7 @@
 # Initial Setup Notes: Action Steps
 
 ## 1) Update Sources List using the "gedit" Text Editor Tool
-Filename and location: /etc/apt/[sources.list](https://github.com/usbong/documentation/blob/master/Usbong/hardware%20software%20integration/Operating%20System%20(OS)/res/Ubuntu%20Linux%20Breezy%20Badger%205.10/sources.list)
+<b>Filename and location:</b> /etc/apt/[sources.list](https://github.com/usbong/documentation/blob/master/Usbong/hardware%20software%20integration/Operating%20System%20(OS)/res/Ubuntu%20Linux%20Breezy%20Badger%205.10/sources.list)
 ## 2) Write and execute the following commands in the Terminal Window
 <b>sudo apt-get update</b><br/>
 <b>sudo apt-get upgrade</b><br/>
@@ -10,7 +10,26 @@ Filename and location: /etc/apt/[sources.list](https://github.com/usbong/documen
 <b>sudo apt-get install free-java-sdk</b><br/>
 ## 3) Copy and paste the "Usbong Training" folder onto the Desktop
 
-TO-DO: -add: XAMPP installation
+## 4) Install XAMPP
+### 4.1) Download XAMPP version 1.6 for Linux
+<b>Filename:</b> xampp-linux-1.6.tar.gz<br/>
+<b>Location:</b> https://sourceforge.net/projects/xampp/files/XAMPP%20Linux/1.6/;<br/>
+last accessed: 20200715
+### 4.2) Extract zipped folder of the XAMPP version 1.6 for Linux
+4.2.1) Right click using the computer mouse the downloaded zipped folder<br/>
+4.2.2) Choose "Extract Here"<br/>
+<b>Output:</b>
+"lampp" folder
+### 4.3) Write and execute the following commands in the Terminal Window
+<b>sudo cp -r lampp /opt/</b><br/>
+<b>cd /opt</b><br/>
+<b>sudo chmod -R 777 lampp</b><br/>
+### 4.4) Start XAMPP: Write and execute the following commands in the Terminal Window
+<b>cd /opt/lampp</b><br/>
+<b>sudo ./lampp start</b><br/>
+### 4.5) Set XAMPP Security: Write and execute the following commands in the Terminal Window
+<b>cd /opt/lampp</b><br/>
+<b>sudo ./lampp security</b><br/>
 
 # Additional Notes: Unix Commands
 ## 1) Copy a directory and all its sub-folders
