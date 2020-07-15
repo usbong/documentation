@@ -24,6 +24,10 @@ last accessed: 20200715
 <b>sudo cp -r lampp /opt/</b><br/>
 <b>cd /opt</b><br/>
 <b>sudo chmod -R 777 lampp</b><br/>
+
+#### Reminder:
+Your current directory in the Terminal Window should be where you extracted the zipped folder.
+
 ### 4.4) Start XAMPP: Write and execute the following commands in the Terminal Window
 <b>cd /opt/lampp</b><br/>
 <b>sudo ./lampp start</b><br/>
@@ -33,6 +37,34 @@ last accessed: 20200715
 ### 4.6) Verify XAMPP commands: Write and execute the following commands in the Terminal Window
 <b>cd /opt/lampp</b><br/>
 <b>sudo ./lampp --help</b><br/>
+
+## 5) Install CodeIgniter Framework for use with PHP Computer Language
+### 5.1) Download CodeIgniter version 2.2.6
+<b>Filename:</b> CodeIgniter-2.2.6.zip<br/>
+<b>Location:</b> https://codeigniter.com/download;<br/>
+last accessed: 20200715
+### 5.2) Extract zipped folder of the CodeIgniter version 2.2.6
+5.2.1) Right click using the computer mouse the downloaded zipped folder<br/>
+5.2.2) Choose "Extract Here"<br/>
+<b>Output:</b>
+"CodeIgniter-2.2.6" folder
+### 5.3) Rename extracted output folder from "CodeIgniter-2.2.6" to "usbong"
+5.3.1) Right click using the computer mouse the downloaded zipped folder<br/>
+5.3.2) Choose "Rename..."<br/>
+<b>Output:</b>
+"usbong" folder
+### 5.4) Write and execute the following commands in the Terminal Window
+<b>sudo cp -r usbong /opt/lampp/htdocs/</b><br/>
+<b>cd /opt/lampp/htdocs/</b><br/>
+
+#### Reminder:
+Your current directory in the Terminal Window should be where you extracted the zipped folder.
+
+### 5.5) Verify "Welcome to CodeIgniter!" web page using the following Computer Web Address in the Web Browser
+<b>Web Address:</b> http://localhost/usbong<br/>
+
+#### Reminder:
+Remember to execute "Start XAMPP" in Action Step 4.4.
 
 # Additional Notes: Unix Commands
 ## 1) Copy a directory and all its sub-folders
