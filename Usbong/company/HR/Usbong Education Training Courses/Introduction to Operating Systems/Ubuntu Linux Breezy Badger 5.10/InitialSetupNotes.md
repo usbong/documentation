@@ -30,6 +30,9 @@ last accessed: 20200715
 ### 4.5) Set XAMPP Security: Write and execute the following commands in the Terminal Window
 <b>cd /opt/lampp</b><br/>
 <b>sudo ./lampp security</b><br/>
+### 4.6) Verify XAMPP commands: Write and execute the following commands in the Terminal Window
+<b>cd /opt/lampp</b><br/>
+<b>sudo ./lampp --help</b><br/>
 
 # Additional Notes: Unix Commands
 ## 1) Copy a directory and all its sub-folders
