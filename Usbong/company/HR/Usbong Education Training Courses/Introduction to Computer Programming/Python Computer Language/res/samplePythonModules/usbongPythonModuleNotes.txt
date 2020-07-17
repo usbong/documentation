@@ -64,3 +64,11 @@ Done!You should now be able to execute the command successfully.
 IV. References:
 1) https://docs.python.org/3/download.html; last accessed: 20200619
 2) https://stackoverflow.com/questions/39905346/how-to-install-turtle-with-python3-on-linux; last accessed: 20200625
+
+IV. Additional Notes: UNIX Commands
+1) Change directory
+  cd <directory>
+2) Change directory to the parent directory
+  cd ..
+3) List the files inside the current directory
+  ls
