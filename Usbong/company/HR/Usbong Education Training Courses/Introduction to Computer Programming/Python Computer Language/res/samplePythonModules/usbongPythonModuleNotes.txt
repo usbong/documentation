@@ -14,7 +14,7 @@ I. Version:
 
 II. Commands:
 1) Execute Python module, "halimbawa.py", as list of instructions, in Terminal.
-$python3 halimbawa.py
+python3 halimbawa.py
 
 Output:
 Kumusta po!
