@@ -55,7 +55,7 @@ III. Problem & Answer
 
 >>> import turtle
 
-Answer: Write and enter in the Terminal Window the following command to download the "tkinter" module.
+1) Answer: Write and enter in the Terminal Window the following command to download the "tkinter" module.
 
 sudo apt install python3-tk
 
