@@ -12,7 +12,7 @@ For use with the following select Operating Systems:
 4) <b>cd usbong/training</b>
 
 ### Reminders:
-1) In examples 3 and 4, we do not add "/" before the directory due to the "usbong" folder, already exists in the current directory.<br/>
+1) In examples 3 and 4, we do not add "/" before the directory due to the "usbong" folder already exists in the current directory.<br/>
 2) In examples 1 and 2, we add a "/" before the directory to identify the location regardless of the current directory.<br/>
 
 ## 2) Change directory to the parent directory
