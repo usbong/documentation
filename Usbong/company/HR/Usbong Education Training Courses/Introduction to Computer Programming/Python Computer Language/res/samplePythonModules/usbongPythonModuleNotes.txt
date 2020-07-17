@@ -3,7 +3,7 @@ PYTHON: MODULES
 @website: www.usbong.ph
 @author: SYSON, MICHAEL
 @date created: 20200619
-@last updated: 20200625
+@last updated: 20200717
 @open source: Apache License Version 2.0
 
 I. Version:
