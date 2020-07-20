@@ -27,7 +27,7 @@ network={<br/>
 
 ### 4) vi /etc/network/interfaces
 --> Note: You may use another text-editor tool, e.g. "gedit", if available, instead of "vi".<br/>
---> Add the following rows:<br/>
+--> Add the following rows:<br/><br/>
 <b>
 auto mlan0<br/>
 iface mlan0 inet dhcp<br/>
@@ -36,7 +36,7 @@ iface mlan0 inet dhcp<br/>
 </b>
 
 ### 5) ifup mlan0
---> You should receive output messages similar to the following towards the end.<br/>
+--> You should receive output messages similar to the following towards the end.<br/><br/>
 <b>
   DHCPOFFER from 192.168.11.1<br/>
   DHCPREQUEST on mlan0 to 255.255.255.255 port 67<br/>
