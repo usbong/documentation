@@ -13,9 +13,10 @@ Execute the following commands in the Terminal Window:
 --> We use the "grep" command for the computer to only show as output rows with the keyword: "ESSID"
 ### 3) wpa_passphrase <ssid> [passphrase]
 --> where: <ssid> = the wireless router's SSID<br/>
---> where: [passphrase] = the passphrase to connect to the wireless router<br/>
+--> where: [passphrase] = the passphrase to connect to the wireless router
+  
 #### Output:
-<br/>
+
 <b>
 network={<br/>
   ssid="my_router_ssid"<br/>
@@ -23,6 +24,7 @@ network={<br/>
   psk=a022d0c8f88de93e4b53e5ee1c5d98cd4171a15bd44cde7499faa294ad795211<br/>
 }
 </b>
+
 ### 4) vi /etc/network/interfaces
 --> Note: You may use another text-editor tool, e.g. "gedit", if available, instead of "vi".<br/>
 --> Add the following rows:<br/>
@@ -32,9 +34,9 @@ iface mlan0 inet dhcp<br/>
   wpa-ssid "my_router_ssid"<br/>
   wpa-psk a022d0c8f88de93e4b53e5ee1c5d98cd4171a15bd44cde7499faa294ad795211<br/>
 </b>
+
 ### 5) ifup mlan0
 --> You should receive output messages similar to the following towards the end.<br/>
-<br/>  
 <b>
   DHCPOFFER from 192.168.11.1<br/>
   DHCPREQUEST on mlan0 to 255.255.255.255 port 67<br/>
