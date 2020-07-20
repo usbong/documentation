@@ -11,7 +11,7 @@ Execute the following commands in the Terminal Window:
 ### 2) iwlist mlan0 scan | grep ESSID
 --> Here we use "mlan0" for the wireless adapter name.<br/>
 --> We use the "grep" command for the computer to only show as output rows with the keyword: "ESSID"
-### 3) wpa_passphrase <ssid> [passphrase]
+### 3) wpa_passphrase \<ssid> [passphrase]
 --> where: <ssid> = the wireless router's SSID<br/>
 --> where: [passphrase] = the passphrase to connect to the wireless router
   
