@@ -58,3 +58,17 @@ $cfg['Servers'][$i]['auth_type']     = 'config';<br/>
 
 ### Reference:
 1) phpMyAdmin 3.3.7 Documentation 
+
+## IV. Miscellaneous Commands
+### 1) [MySQL Commands](http://g2pc1.bu.edu/~qzpeng/manual/MySQL%20Commands.htm)
+--> last accessed: 20200721
+### 2) VI (Visual) Text-editor Commands
+#### 2.1) Enter "i" = "insert" characters via Text entry mode
+#### 2.2) Enter "Esc" key to exit Text entry mode
+#### 2.3) Enter "dd" keys to delete the entire row where the cursor is at
+#### 2.4) Enter "x" key to delete the character where the cursor is at
+#### 2.5) Enter ":wq" keys to write, save the file, and quit VI text-editor
+#### 2.6) Enter ":q" keys to quit VI text-editor, without writing and saving the file
+#### Reference:
+--> https://askubuntu.com/questions/296385/backspace-in-insert-mode-in-vi-doesnt-erase-the-character<br/>
+--> answer by: Argusvision, 20130516T1931
