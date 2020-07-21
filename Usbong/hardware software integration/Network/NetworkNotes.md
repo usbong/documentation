@@ -2,7 +2,7 @@
 ## Debian/Ubuntu Linux Operating System (OS)
 [Network Configuration](https://wiki.debian.org/NetworkConfiguration#Setting_up_an_Ethernet_Interface)
 
-## How to connect to Local Area Network (LAN) via wireless adapter
+## I. How to connect to Local Area Network (LAN) via wireless adapter
 Execute the following commands in the Terminal Window:
 ### 1) ifconfig
 --> Identify that your computer has a wireless adapter.<br/>
@@ -50,3 +50,14 @@ iface mlan0 inet dhcp<br/>
 1) https://superuser.com/questions/1068469/cannot-connect-to-network-on-debian?newreg=604705afede645c6b81f30418f7b77e2;
 last accessed: 20200720<br/>
 answer by: dpat, 20160424T1141
+
+## II. How to quickly transfer files to a Debian/Ubuntu Linux Computer from a Windows Computer
+Download and use the software tool, WinSCP.<br/>
+https://winscp.net/eng/download.php;<br/>
+last accessed: 20200721
+### Notes:
+1) With Linux Debian 2.6 Operating Systems (OS), set the following in the Advanced Site Settings in WinSCP:<br/>
+1.1) Go to "Environment" -> "SCP/Shell"<br/>
+1.2) Choose as value for the "Shell:" field: "/bin/bash".
+
+
