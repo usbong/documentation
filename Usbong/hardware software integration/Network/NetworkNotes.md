@@ -51,7 +51,36 @@ iface mlan0 inet dhcp<br/>
 last accessed: 20200720<br/>
 answer by: dpat, 20160424T1141
 
-## II. How to quickly transfer files to a Debian/Ubuntu Linux Computer from a Windows Computer
+## II. How to connect to Local Area Network (LAN) via wireless adapter automatically during Computer boot-up
+## 1) Execute Actions Steps in "I. How to connect to Local Area Network (LAN) via wireless adapter"
+## 2) Execute in the Terminal Window: vi /etc/network/interfaces
+--> Note: You may use another text-editor tool, e.g. "gedit", if available, instead of "vi".<br/>
+--> Add the following row:<br/><br/>
+<b>
+allow-hotplug eth0 mlan0
+</b>
+
+### Note:
+where: eth0 = for the wired ethernet adapter<br/>
+where: mlan0 = for the wireless ethernet adapter
+
+### Output:
+<b>
+allow-hotplug eth0 mlan0<br/>
+auto mlan0<br/>
+iface mlan0 inet dhcp<br/>
+  wpa-ssid "my_router_ssid"<br/>
+  wpa-psk a022d0c8f88de93e4b53e5ee1c5d98cd4171a15bd44cde7499faa294ad795211<br/>
+</b>
+
+## 3) Execute in the Terminal Window: reboot
+
+## Reference:
+1) https://askubuntu.com/questions/22663/how-to-bring-up-network-on-boot-up-when-networkmanager-is-uninstalled;
+last accessed: 20200722<br/>
+answer by: user8290, 20110122T1636
+
+## III. How to quickly transfer files to a Debian/Ubuntu Linux Computer from a Windows Computer
 Download and use the software tool, WinSCP.<br/>
 https://winscp.net/eng/download.php;<br/>
 last accessed: 20200721
