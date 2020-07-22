@@ -47,7 +47,7 @@ iface mlan0 inet dhcp<br/>
 --> where: 192.168.11.65 = internet protocol (ip) address of the computer<br/>
 
 ## Reference
-1) https://superuser.com/questions/1068469/cannot-connect-to-network-on-debian?newreg=604705afede645c6b81f30418f7b77e2;
+1) https://superuser.com/questions/1068469/cannot-connect-to-network-on-debian?newreg=604705afede645c6b81f30418f7b77e2;<br/>
 last accessed: 20200720<br/>
 answer by: dpat, 20160424T1141
 
@@ -76,10 +76,10 @@ iface mlan0 inet dhcp<br/>
 ## 3) Execute in the Terminal Window: reboot
 
 ## Reference:
-1) https://askubuntu.com/questions/22663/how-to-bring-up-network-on-boot-up-when-networkmanager-is-uninstalled;
+1) https://askubuntu.com/questions/22663/how-to-bring-up-network-on-boot-up-when-networkmanager-is-uninstalled;<br/>
 last accessed: 20200722<br/>
 answer by: user8290, 20110122T1636
-2) https://unix.stackexchange.com/questions/390307/startup-debian-9-error-failed-to-start-raise-network-interfaces;
+2) https://unix.stackexchange.com/questions/390307/startup-debian-9-error-failed-to-start-raise-network-interfaces;<br/>
 last accessed: 2020722<br/>
 answer by: GAD3R, 20170904T1909
 
