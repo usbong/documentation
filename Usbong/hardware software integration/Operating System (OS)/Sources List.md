@@ -8,5 +8,13 @@ last accessed: 20200712
 1.2) http://old-releases.ubuntu.com/ubuntu/<br/>
 last accessed: 20200712
 
-<b>Reference:</b> https://ubuntuforums.org/archive/index.php/t-1962033.html;
+<b>Reference:</b><br/>
+https://ubuntuforums.org/archive/index.php/t-1962033.html;
 last accessed: 20200712
+
+## 2. Debian Linux
+Filename and location: <b>/etc/apt/sources.list</b><br/>
+<br/>
+<b>Recommended Reading:</b><br/>
+https://wiki.debian.org/SourcesList;
+last accessed: 20200722
