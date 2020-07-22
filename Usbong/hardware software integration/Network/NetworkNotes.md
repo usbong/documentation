@@ -79,6 +79,9 @@ iface mlan0 inet dhcp<br/>
 1) https://askubuntu.com/questions/22663/how-to-bring-up-network-on-boot-up-when-networkmanager-is-uninstalled;
 last accessed: 20200722<br/>
 answer by: user8290, 20110122T1636
+2) https://unix.stackexchange.com/questions/390307/startup-debian-9-error-failed-to-start-raise-network-interfaces;
+last accessed: 2020722<br/>
+answer by: GAD3R, 20170904T1909
 
 ## III. How to quickly transfer files to a Debian/Ubuntu Linux Computer from a Windows Computer
 Download and use the software tool, WinSCP.<br/>
