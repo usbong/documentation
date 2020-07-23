@@ -92,4 +92,38 @@ last accessed: 20200721
 1.1) Go to "Environment" -> "SCP/Shell"<br/>
 1.2) Choose as value for the "Shell:" field: "/bin/bash".
 
+## IV. How to connect to a computer in the network to automatically set a computer's date and time during boot-up
+Execute the following commands in the Terminal Window
+### 1) apt-get install ntp
+where: ntp = Network Time Protocol
+### 2) vi /etc/init.d/usbongAutoSyncTime
+--> Note: You may use another text-editor tool, e.g. "gedit", if available, instead of "vi".<br/>
+--> Add the following rows:<br/><br/>
+<b>
+#!/bin/sh<br/>
+ntpd -q
+</b>
 
+### Notes:
+#### 1) To make the computer show the date and time, use this command in the Terminal Window:
+<b>date</b>
+
+#### 2) To manually set the date and time, use the following commands in the Terminal Window:
+<b>
+date --set 2020-07-23<br/>
+date --set 12:50:00<br/>
+</b>
+
+#### 3) To automatically set the date and time, use the following commands in the Terminal Window:
+<b>
+  ntpd -q
+</b>
+
+### Reminder:
+Install <b>ntp</b> first to be able to use the <b>ntpd -q</b> command.
+
+### References:
+1) http://ftp.oregonstate.edu/.2/lfs-website/blfs/view/svn/basicnet/ntp.html;<br/>
+last accessed: 20200723
+2) https://stackoverflow.com/questions/12973777/how-to-run-a-shell-script-at-startup;<br/>
+last accessed: 20200723
