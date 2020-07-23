@@ -15,6 +15,9 @@ last accessed: 20200712
 ## 2. Debian Linux
 Filename and location: <b>/etc/apt/sources.list</b><br/>
 <br/>
+2.1) http://archive.debian.org/debian/<br/>
+last accessed: 20200723
+
 <b>Recommended Reading:</b><br/>
 https://wiki.debian.org/SourcesList;
 last accessed: 20200722
