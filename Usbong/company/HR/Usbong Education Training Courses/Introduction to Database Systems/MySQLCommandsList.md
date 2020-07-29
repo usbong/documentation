@@ -1,10 +1,15 @@
 # Database Technologies: MySQL Commands List
+<b>Note:</b> You can execute the MySQL commands in both Linux and Windows machines.
+
 # 1) Use the following commands in the Terminal Window
 ## 1.1) Access MySQL
 mysql -u\<username> -p
 
 ## 1.2) Import into an existing database a SQL file with list of commands
 mysql -u\<username> -p <database_name> < <file.sql>
+
+## 1.3) Export an existing database into a SQL file with list of commands
+mysqldump -u\<username> -p <database_name> > <outputFile.sql>
 
 # 2) Use the following commands in the MySQL Window
 ## 2.1) Show existing databases
