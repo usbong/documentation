@@ -31,3 +31,24 @@ Current directory: <b>/home</b>
 ### Reminders:
 1) We write "L" and "S" as small letters, i.e. "l" and "s"<br/>
 2) We can add "-l" in the command to be "ls -l" for the computer to list the files with the details
+
+## 4) Extract a zipped file
+<b>tar -xvzf halimbawa.tar.gz</b><br/>
+<br/>
+<b>where:</b><br/>
+<b>x</b> = extract<br/>
+<b>v</b> = writes as output a list of files processed by the computer<br/>
+<b>z</b> = use gzip tool due to file compressed as ".gz" zipped file using gzip<br/>
+<b>f</b> = use the following filename, i.e. "halimbawa.tar.gz" 
+
+### Notes:
+1) tar = tar archiving utility<br/>
+--> stores and extracts files from a tape or disk archive
+
+### References:
+1) http://linuxcommand.org/lc3_man_pages/tar1.html<br/>
+last accessed: 20200805
+2) https://askubuntu.com/questions/25347/what-command-do-i-need-to-unzip-extract-a-tar-gz-file
+last accessed: 20200805<br/>
+answer by: djeikyb, 20110208T2257<br/>
+edited by: damadam, 20191129T1033
