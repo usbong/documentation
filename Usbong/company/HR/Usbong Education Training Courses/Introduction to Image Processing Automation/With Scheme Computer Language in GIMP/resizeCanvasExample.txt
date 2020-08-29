@@ -1,0 +1,24 @@
+; Scheme Computer Language in GIMP (GNU Image Manipulation Program)
+; company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
+; author: SYSON, MICHAEL B.
+; date created: 20200829
+; last updated: 20200829
+;
+; Recommended Reading: https://www.gimp.org/tutorials/Basic_Scheme/
+
+; Resize a canvas
+; input) 100% : 2481x3507px
+; output) 50% : 2481x1754px
+
+; TO-DO: -add: use immediately percentage as input, e.g. 50%
+
+; Internal GIMP Procedure: (gimp-image-resize image new-width new-height offx offy )
+
+(gimp-image-resize (car(gimp-image-list)) 2481 1754 0 0)
+
+; Notes: 
+; 1) command: (gimp-image-list)
+; output: (1 #(1))
+;
+; 2) command: (car(gimp-image-list))
+; output: 1
