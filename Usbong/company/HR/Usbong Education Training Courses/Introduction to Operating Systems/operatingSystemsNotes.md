@@ -5,7 +5,7 @@
 https://www.freebsd.org/doc/en_US.ISO8859-1/articles/explaining-bsd/index.html; last accessed: 20200816
 
 ### 1.2) Additional Notes: FreeBSD Installation Using Linux Machine
-#### 1.2.1) Show list of all connected block devices, e.g. Universal Service Bus (USB) Memory Storage
+#### 1.2.1) Show list of all connected block devices, e.g. Universal Serial Bus (USB) Memory Storage
 <b>lsblk</b><br/>
 #### Reference:
 https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/bsdinstall-pre.html;<br/>
@@ -13,6 +13,8 @@ last accessed: 20200830
 <br/>
 #### 1.2.2) Write Image in USB Memory Storage
 <b>sudo dd if=FreeBSD-12.1-STABLE-amd64-20200806-r363918-memstick.img of=/dev/sdb bs=1M conv=sync</b><br/>
+##### where: /dev/sdb = target USB device
+
 #### Reference:
 https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/bsdinstall-pre.html;<br/>
 last accessed: 20200830
