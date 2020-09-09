@@ -12,12 +12,20 @@ https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/bsdinstall-pre.html;<
 last accessed: 20200830
 <br/>
 #### 1.2.2) Write Image in USB Memory Storage
-<b>sudo dd if=FreeBSD-12.1-STABLE-amd64-20200806-r363918-memstick.img of=/dev/sdb bs=1M conv=sync</b><br/>
+<b>sudo dd if=FreeBSD-12.1-RELEASE-amd64-20200806-r363918-memstick.img of=/dev/sdb bs=1M conv=sync</b><br/>
 ##### where: /dev/sdb = target USB device
 
-#### Reference:
-https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/bsdinstall-pre.html;<br/>
-last accessed: 20200830
+#### 1.2.2.1) Notes:
+RELEASE : MOST STABLE<br/>
+STABLE : STABLE<br/>
+CURRENT : LEAST STABLE
+
+#### 1.2.2.2) References:
+1.2.2.2.1) https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/bsdinstall-pre.html;<br/>
+last accessed: 20200830<br/>
+<br/>
+1.2.2.2.2) https://forums.freebsd.org/threads/current-vs-stable-vs-release.3716/;<br/>
+last accessed: 20200909
 
 #### 1.2.3) If you experience problems installing image file using USB Memory Storage version 3.*, e.g. 3.1, verify using USB version 2.0
 --> <b>Example Problems:</b> stuck in loading boot device, does not reach installation program, shows usb device error<br/> 
