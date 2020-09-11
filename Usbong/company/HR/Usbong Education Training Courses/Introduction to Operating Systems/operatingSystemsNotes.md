@@ -20,10 +20,13 @@ Verified with [LUBUNTU 20.04](lubuntu.me) and [Virtual Box 6.1](https://www.virt
 2) ISO = International Organization for Standardization<br/>
 
 ## 3) Known Problems
-3.1) If you also experience problems installing image file using USB Memory Storage version 3.*, e.g. 3.1, verify using USB version 2.0
+3.1) If you also experience problems installing image file using USB Memory Storage version 3.*, e.g. 3.1, verify using USB version 2.0<br/>
+<br/>
 --> <b>Example Problems:</b> stuck in loading boot device, does not reach installation program, shows usb device error<br/> 
+<br/>
 --> Verified this solution solved the aforementioned installation problem with NetBSD.<br/>
 --> However, the operating system remained uninstalled due to problem re-formatting harddisk.<br/>
+<br/>
 --> <b>Note:</b> Installation problem occured with BSD variations, e.g. FreeBSD, FuryBSD, FreeNAS, NetBSD, OpenBSD.
 
 ### Additional Notes:<br/>
