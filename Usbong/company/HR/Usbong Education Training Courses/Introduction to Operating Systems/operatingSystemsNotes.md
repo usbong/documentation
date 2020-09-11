@@ -29,9 +29,28 @@ last accessed: 20200909
 
 #### 1.2.3) If you experience problems installing image file using USB Memory Storage version 3.*, e.g. 3.1, verify using USB version 2.0
 --> <b>Example Problems:</b> stuck in loading boot device, does not reach installation program, shows usb device error<br/> 
---> Verified this solution solved the installation problem with NetBSD.<br/>
+--> Verified this solution solved the aforementioned installation problem with NetBSD.<br/>
+--> However, the operating system remained uninstalled due to problem re-formatting harddisk.<br/>
 --> <b>Note:</b> Installation problem occured with BSD variations, e.g. FreeBSD, FuryBSD, FreeNAS, NetBSD, OpenBSD.
 
 #### Reference:
 https://news.ycombinator.com/item?id=17582465;<br/>
 last accessed: 20200909
+
+### 1.2.4) The following actions quickly caused the Operating System to be installed and usable.
+Verified with [LUBUNTU 20.04](lubuntu.me) and [Virtual Box 6.1](https://www.virtualbox.org/).<br/>
+--> Download and install Virtual Box.<br/>
+#### 1.2.4.1) Verified with FreeBSD 12.1
+--> Download and extract <b>FreeBSD-12.1-RELEASE-amd64.vmdk.xz</b><br/>
+https://download.freebsd.org/ftp/releases/VM-IMAGES/12.1-RELEASE/amd64/Latest/; last accessed: 20200911<br/>
+--> Choose the Virtual Machine Disk (VMDK) Image file.
+
+#### 1.2.4.2) Verified with OpenBSD (install67.iso)
+--> Download .iso file.<br/>
+https://www.openbsd.org/faq/faq4.html#Download; last accessed: 20200911<br/>
+--> Choose to boot the .iso file.
+
+##### Additional Notes:
+1) Checksum Commands available in the <b>Downloading BSD</b> section:<br/>
+https://www.openbsd.org/faq/faq4.html#Download; last accessed: 20200911<br/>
+2) ISO = International Organization for Standardization
