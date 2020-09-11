@@ -16,8 +16,7 @@ Verified with [LUBUNTU 20.04](lubuntu.me) and [Virtual Box 6.1](https://www.virt
 --> Choose to boot the .iso file.
 
 ## Additional Notes:
-1) Checksum Commands available in the <b>Downloading BSD</b> section:<br/>
-https://www.openbsd.org/faq/faq4.html#Download; last accessed: 20200911<br/>
+1) Checksum Commands available in the [Downloading BSD](https://www.openbsd.org/faq/faq4.html#Download) section:<br/>
 2) ISO = International Organization for Standardization<br/>
 
 ## 3) Known Problems
@@ -27,21 +26,15 @@ https://www.openbsd.org/faq/faq4.html#Download; last accessed: 20200911<br/>
 --> However, the operating system remained uninstalled due to problem re-formatting harddisk.<br/>
 --> <b>Note:</b> Installation problem occured with BSD variations, e.g. FreeBSD, FuryBSD, FreeNAS, NetBSD, OpenBSD.
 
-### Reference:
-https://news.ycombinator.com/item?id=17582465;<br/>
-last accessed: 20200909
-
 ### Additional Notes:<br/>
 Command 1) Show list of all connected block devices, e.g. Universal Serial Bus (USB) Memory Storage<br/>
 <br/>
 <b>lsblk</b><br/>
 
-### Reference:
-https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/bsdinstall-pre.html;<br/>
-last accessed: 20200830<br/>
-
 Command 2) Write Image in USB Memory Storage<br/>
+<br/>
 <b>sudo dd if=FreeBSD-12.1-RELEASE-amd64-20200806-r363918-memstick.img of=/dev/sdb bs=1M conv=sync</b><br/>
+<br/>
 where: /dev/sdb = target USB device
 
 #### Notes:
@@ -50,8 +43,14 @@ STABLE : STABLE<br/>
 CURRENT : LEAST STABLE
 
 ### References:
-[1] https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/bsdinstall-pre.html;<br/>
+[1] https://news.ycombinator.com/item?id=17582465;<br/>
+last accessed: 20200909<br/>
+<br/>
+[2] https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/bsdinstall-pre.html;<br/>
 last accessed: 20200830<br/>
 <br/>
-[2] https://forums.freebsd.org/threads/current-vs-stable-vs-release.3716/;<br/>
+[3] https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/bsdinstall-pre.html;<br/>
+last accessed: 20200830<br/>
+<br/>
+[4] https://forums.freebsd.org/threads/current-vs-stable-vs-release.3716/;<br/>
 last accessed: 20200909
