@@ -25,8 +25,11 @@ Kumusta!
 <b>gcc -lglut -lGLU halimbawaMain.c -o halimbawaMain</b>
 
 ## Recommended Reading:
-https://en.wikibooks.org/wiki/OpenGL_Programming/Basics/Structure<br/>
+2.1) https://en.wikibooks.org/wiki/OpenGL_Programming/Basics/Structure<br/>
 --> <b>last accessed:</b> 20200712<br/>
+<br/>
+2.2) https://dos.gamebub.com/cpp.php<br/>
+--> <b>last accessed:</b> 20200921<br/>
 
 <b>Reference:</b> https://askubuntu.com/questions/96087/how-to-install-opengl-glut-libraries<br/>
 --> <b>last accessed:</b> 20200712<br/>
