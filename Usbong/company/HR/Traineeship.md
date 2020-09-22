@@ -7,11 +7,13 @@ Founded in 2011, the Usbong Social Systems, Inc. (Usbong) is a SEC-registered co
 Our mission is to defeat poverty by uplifting human lives.</br>
 Our vision is a community where there is everlasting peace.</br>
 </br>
-More concretely, Usbong offers a wide range of software products and solutions that serve clients from industry, academe, and government.</br>
+More concretely, Usbong is a social business that offers solutions that serve clients from industry, academe, and government.</br>
 </br>
-Usbong’s services include software development and automation to systematically count, file, and calculate data using computers and mobile computing devices.</br>
+We learned that we can solve the poverty problem via maparaang pagbibilang.</br>
 </br>
-As a technology assistance service provider, our metric for success in strengthening our clients is primarily based on our software/computer/machine’s quality, i.e. 1) speed, and 2) being correct.</br>
+Therefore, Usbong’s products and services include among others: development of add-on software automation tools and training of client unit members to systematically count, file, and calculate data using computers and mobile computing devices.</br>
+</br>
+In addition, as a technology assistance service provider, our metric for success in strengthening our clients is primarily based on our software/computer/machine’s quality, i.e. 1) speed, and 2) being correct.</br>
 </br>
 In addition, while headquartered in Marikina City, Philippines, the company maintains a network of people based within Asia-Pacific, Europe, and North America.
 
