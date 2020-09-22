@@ -11,7 +11,12 @@ More concretely, Usbong is a social business that offers solutions that serve cl
 </br>
 We learned that we can solve the poverty problem via maparaang pagbibilang.</br>
 </br>
-Therefore, Usbong’s products and services include among others: development of add-on software automation tools and training of client unit members to systematically count, file, and calculate data using computers and mobile computing devices.</br>
+Therefore, Usbong’s products and services include among others:</br> 
+</br>
+1) development of add-on software automation tools</br>
+2) training of client unit members</br>
+</br>
+The purpose is to systematically count, file, and calculate data using computers and mobile computing devices.</br>
 </br>
 In addition, as a technology assistance service provider, our metric for success in strengthening our clients is primarily based on our software/computer/machine’s quality, i.e. 1) speed, and 2) being correct.</br>
 </br>
