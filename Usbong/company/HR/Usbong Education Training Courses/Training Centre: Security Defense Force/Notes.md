@@ -14,7 +14,7 @@
 <b>Mungkahing Aksyon:</b><br/>
 --> Puksain ang mga budol-budol/manloloko/carnapper/cybercriminal/communist terrorist group na gumagamit ng wireless broadcasting technology upang gumawa ng mga panlolokong ingay at pisikal na pananakit.<br/>
 --> <b>Halimbawa ng Panloloko:</b><br/>
---> May nakikita o naririnig kang mga bumubulong-bulong ukol sa mga yumaong kilala o mga anghel/demonyo na sinusundo ka na.<br/>
+--> May nakikita o naririnig kang mga bumubulung-bulong ukol sa mga yumaong kilala o mga anghel/demonyo na sinusundo ka na.<br/>
 --> <b>Paalala:</b><br/>
 --> Hindi ito tulad ng radyo o television na maisasara mo kung nais mo.<br/>
 <br/>
