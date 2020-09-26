@@ -24,13 +24,21 @@ Kumusta!
 ## 2) Steps (with OpenGL (Open Graphics Library) Utility Toolkit Library)
 <b>gcc -lglut -lGLU halimbawaMain.c -o halimbawaMain</b>
 
-## Recommended Reading:
+## Recommended Reading & Video:
 2.1) https://en.wikibooks.org/wiki/OpenGL_Programming/Basics/Structure<br/>
 --> <b>last accessed:</b> 20200712<br/>
 <br/>
 2.2) https://dos.gamebub.com/cpp.php<br/>
 --> <b>last accessed:</b> 20200921<br/>
-
+<br/>
+2.3) https://all-things-andy-gavin.com/2020/02/27/war-stories-crash-bandicoot/;<br/>
+--> <b>last accessed:</b> 20200926<br/>
+--> Additional Notes: Character Animation Technique; Crash Bandicoot and Tomb Raider<br/>
+<br/>
+2.4) https://arstechnica.com/video/watch/war-stories-how-one-gameplay-decision-changed-diablo-forever;<br/>
+--> <b>last accessed:</b> 20200926<br/>
+--> Additional Note: DirectX and OpenGL<br/>
+<br/>
 <b>Reference:</b> https://askubuntu.com/questions/96087/how-to-install-opengl-glut-libraries<br/>
 --> <b>last accessed:</b> 20200712<br/>
 --> <b>answered by:</b> steabert on 20120117T1656<br/>
