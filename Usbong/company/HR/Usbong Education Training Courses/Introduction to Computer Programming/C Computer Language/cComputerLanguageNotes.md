@@ -33,11 +33,11 @@ Kumusta!
 <br/>
 2.3) https://all-things-andy-gavin.com/2020/02/27/war-stories-crash-bandicoot/;<br/>
 --> <b>last accessed:</b> 20200926<br/>
---> Additional Notes: Character Animation Technique; Crash Bandicoot and Tomb Raider<br/>
+--> <b>Additional Notes:</b> Character Animation Technique; Crash Bandicoot and Tomb Raider<br/>
 <br/>
 2.4) https://arstechnica.com/video/watch/war-stories-how-one-gameplay-decision-changed-diablo-forever;<br/>
 --> <b>last accessed:</b> 20200926<br/>
---> Additional Note: DirectX and OpenGL<br/>
+--> <b>Additional Note:</b> DirectX and OpenGL<br/>
 <br/>
 <b>Reference:</b> https://askubuntu.com/questions/96087/how-to-install-opengl-glut-libraries<br/>
 --> <b>last accessed:</b> 20200712<br/>
