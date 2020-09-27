@@ -14,7 +14,7 @@
  *
  * @author: Michael Syson
  * @date created: 20200926
- * @date updated: 20200926
+ * @date updated: 20200927
  *
  * References:
  * 1) Dev-C++ 5.11 auto-generated OpenGL example project
@@ -33,6 +33,10 @@
  * 6) https://dos.gamebub.com/cpp.php
  * last accessed: 20200921
  *
+ * 7) https://chortle.ccsu.edu/Bloodshed/howToGL.html
+ * last accessed: 20200927
+ * --> instructions to add GLUT library in Dev-C++ Editor 5.11
+ * 
  * Notes:
  * 1) We can use this software tool to extract the compressed (zipped) folder.
  *   https://www.7-zip.org/download.html; last accessed: 20200423
@@ -48,8 +52,9 @@
  **************************/
 
 #include <windows.h>
-#include <gl/gl.h>
-
+#include <GL/gl.h>
+#include <GL/glut.h> //added by Mike, 20200927
+#include <GL/glu.h> //added by Mike, 20200926
 
 /**************************
  * Function Declarations
@@ -102,11 +107,15 @@ int WINAPI WinMain (HINSTANCE hInstance,
       0, 0, 256, 256,
       NULL, NULL, hInstance, NULL);
 */
+	//added by Mike, 20200926
+    int myWindowWidth=640;
+    int myWindowHeight=640;
+
 
     hWnd = CreateWindow (
       "GLSample", "Usbong OpenGL Halimbawa", 
       WS_CAPTION | WS_POPUPWINDOW | WS_VISIBLE,
-      0, 0, 512, 512,
+      0, 0, myWindowWidth, myWindowHeight,
       NULL, NULL, hInstance, NULL);
 
     /* enable OpenGL for the window */
@@ -136,6 +145,31 @@ int WINAPI WinMain (HINSTANCE hInstance,
             glClearColor (0.0f, 0.0f, 0.0f, 0.0f);
             glClear (GL_COLOR_BUFFER_BIT);
 
+
+			//added by Mike, 20200926
+		    /* setup OpenGL initial state */
+		    glEnable(GL_CULL_FACE);   /* cull back faces */
+		    glEnable(GL_DEPTH_TEST);  /* enable Z-buffer */
+		    //glEnable(GL_LIGHTING);    /* enable lighting */
+		    glEnable(GL_NORMALIZE);   /* renormalize all vertex normals */
+		
+		    /* enable Gouraud shading
+		     * (this is default--code appears here only for emphasis) */
+		    glShadeModel(GL_SMOOTH);
+
+            glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);    
+//    		glViewport(0-myWindowWidth/2, 0-myWindowHeight/2, myWindowWidth, myWindowHeight);		// reset the viewport to new dimensions
+
+			//TO-DO: -update: this
+			//Reference: https://www.ntu.edu.sg/home/ehchua/programming/opengl/CG_Introduction.html;
+			//last accessed: 20200927
+			// Set to 2D orthographic projection with the specified clipping area
+			glMatrixMode(GL_PROJECTION);      // Select the Projection matrix for operation
+			glLoadIdentity();                 // Reset Projection matrix
+			gluOrtho2D(-1.0, 1.0, -1.0, 1.0); // Set clipping area's left, right, bottom, top
+
+    		glViewport(0, 0, myWindowWidth, myWindowHeight);		// reset the viewport to new dimensions
+
 			//removed by Mike, 20200926
 /*
             glPushMatrix ();			
@@ -158,8 +192,19 @@ int WINAPI WinMain (HINSTANCE hInstance,
               glColor3f (0.0f, 1.0f, 0.0f);
               //TO-DO: -add: grid
               //note: one (1) line, two (2) vertices
+			  //X,Y coordinate position from center as reference point
+			  /*
+			  glVertex2f(0.5f, 0.5f);
+			  glVertex2f(-0.5f, -0.5f); 
+			  */
+			  //TO-DO: -update: this
+			  //X,Y coordinate position from top-left as reference point
+//			  glVertex2f(0.0f, 0.9f);
+//			  glVertex2f(0.9f, 0.9f); 
+
+			  glVertex2f(0.0f, 0.5f);
 			  glVertex2f(0.5f, 0.5f); 
-			  glVertex2f(-0.5f, 0.5f); 
+
 			glEnd();            
             glPopMatrix ();
             SwapBuffers (hDC);
