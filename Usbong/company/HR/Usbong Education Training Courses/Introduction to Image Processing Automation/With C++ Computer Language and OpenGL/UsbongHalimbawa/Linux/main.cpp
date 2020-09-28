@@ -88,9 +88,13 @@ void EnableOpenGL (HWND hWnd, HDC *hDC, HGLRC *hRC);
 void DisableOpenGL (HWND hWnd, HDC hDC, HGLRC hRC);
 */
 
+//note: "static" in C/C++ = "final" in java
+static int myWindowWidth=640; //320
+static int myWindowHeight=640; //320
+
 //Reference: https://www3.ntu.edu.sg/home/ehchua/programming/opengl/HowTo_OpenGL_C.html;
 //last accessed: 20200928
-void display() {
+void displayExample() {
    glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Set background color to black and opaque
    glClear(GL_COLOR_BUFFER_BIT);         // Clear the color buffer
  
@@ -106,10 +110,79 @@ void display() {
    glFlush();  // Render now
 }
 
+//added by Mike, 20200928
+void display() {
+   glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Set background color to black and opaque
+   glClear(GL_COLOR_BUFFER_BIT);         // Clear the color buffer
+ 
+   //TO-DO: -verify: set TOP-LEFT origin/anchor/reference point
+
+	 //draw grid 
+ 	 //TO-DO: -update: iRowCountMax
+ 	 int iRowCountMax=10;
+ 	 //TO-DO: -update: iColumnCountMax
+ 	 int iColumnCountMax=10;
+
+/* 	 
+ 	 //Quadrant 1
+ 	 for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
+   		// Draw a Green Line centered at origin
+   		glBegin(GL_LINES);
+      		glColor3f(0.0f, 1.0f, 0.0f); // Green
+      		glVertex2f(0.0f, 0.1f*iRowCount);    // x, y
+      		glVertex2f(1.0f, 0.1f*iRowCount);
+   		glEnd();   		   	  
+	 	}
+*/
+   //rows   
+ 	 //Quadrant 1 and 2
+ 	 for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
+   		// Draw a Green Line centered at origin
+   		glBegin(GL_LINES);
+      		glColor3f(0.0f, 1.0f, 0.0f); // Green
+      		glVertex2f(-1.0f, 0.1f*iRowCount);    // x, y
+      		glVertex2f(myWindowWidth, 0.1f*iRowCount);
+   		glEnd();   		   	  
+	 }
+
+ 	 //Quadrant 3 and 4
+ 	 for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
+   		// Draw a Green Line centered at origin
+   		glBegin(GL_LINES);
+      		glColor3f(0.0f, 1.0f, 0.0f); // Green
+      		glVertex2f(-1.0f, -0.1f*iRowCount);    // x, y
+      		glVertex2f(myWindowWidth, -0.1f*iRowCount);
+   		glEnd();   		   	  
+	 }
+  
+   //columns
+   //Quadrant 2 and 3
+ 	 for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {
+   		// Draw a Green Line centered at origin
+   		glBegin(GL_LINES);
+      		glColor3f(0.0f, 1.0f, 0.0f); // Green
+      		glVertex2f(-0.1f*iColumnCount, -1.0f);    // x, y
+      		glVertex2f(0.0f, myWindowHeight);
+   		glEnd();   		   	  
+	 	}
+
+   //Quadrant 1 and 4
+ 	 for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {
+   		// Draw a Green Line centered at origin
+   		glBegin(GL_LINES);
+      		glColor3f(0.0f, 1.0f, 0.0f); // Green
+      		glVertex2f(0.1f*iColumnCount, 1.0f);    // x, y
+      		glVertex2f(0.1f*iColumnCount, -myWindowHeight);
+   		glEnd();   		   	  
+	 	}
+
+   glFlush();  // Render now
+}
+
 int main(int argc, char** argv) {
    glutInit(&argc, argv);                 // Initialize GLUT
    glutCreateWindow("OpenGL Setup Test"); // Create a window with the given title
-   glutInitWindowSize(320, 320);   // Set the window's initial width & height
+   glutInitWindowSize(myWindowWidth, myWindowHeight);   // Set the window's initial width & height
    glutInitWindowPosition(50, 50); // Position the window's initial top-left corner
    glutDisplayFunc(display); // Register display callback handler for window re-paint
    glutMainLoop();           // Enter the infinitely event-processing loop
