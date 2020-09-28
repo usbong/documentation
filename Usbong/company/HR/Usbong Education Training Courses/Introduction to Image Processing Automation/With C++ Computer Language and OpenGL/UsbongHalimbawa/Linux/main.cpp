@@ -96,7 +96,7 @@ void DisableOpenGL (HWND hWnd, HDC hDC, HGLRC hRC);
 
 //note: "static" in C/C++ = "final" in java
 static int myWindowWidth=640; //320
-static int myWindowHeight=640; //320
+static int myWindowHeight640; //320
 
 //Reference: https://www3.ntu.edu.sg/home/ehchua/programming/opengl/HowTo_OpenGL_C.html;
 //last accessed: 20200928
@@ -121,13 +121,14 @@ void display() {
    glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Set background color to black and opaque
    glClear(GL_COLOR_BUFFER_BIT);         // Clear the color buffer
  
-   //set TOP-LEFT origin/anchor/reference point; quadrant 4
+   //set TOP-LEFT origin/anchor/reference point; quadrant 4, y-axis inverted; x and y positive
 	 glMatrixMode(GL_PROJECTION);
 	 glLoadIdentity();
+	 //TOP-Left origin
 	 glOrtho(0.0f, //left
         	1.0f, //right
         	1.0f, //bottom
-        	0, //top
+        	0.0f, //top
         	0.0f, //zNear; minimum
         	1.0f //zFar; maxinum
       	);
@@ -138,7 +139,7 @@ void display() {
  	 //TO-DO: -update: iColumnCountMax
  	 int iColumnCountMax=10;
 
-   // Draw a Green Line top-left origin; Quadrant 4
+   // Draw a Green Line top-left origin; Quadrant 4, y-axis inverted; x and y positive
    //rows   
  	 for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
    		// Draw a Green Line top-left origin
