@@ -46,6 +46,12 @@
  * 10) https://www3.ntu.edu.sg/home/ehchua/programming/opengl/HowTo_OpenGL_C.html
  * --> last accessed: 20200928
  * 
+ * 11) https://stackoverflow.com/questions/2571402/how-to-use-glortho-in-opengl/36046924#36046924;
+ * --> last accessed: 20200928
+ * --> answers by: Mikepote, 20100408T1912
+ * --> answers by: Santilli, Ciro, 20160316T2106
+ *
+ * 
  * Notes:
  * 1) We can use this software tool to extract the compressed (zipped) folder.
  *   https://www.7-zip.org/download.html; last accessed: 20200423
@@ -115,67 +121,46 @@ void display() {
    glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Set background color to black and opaque
    glClear(GL_COLOR_BUFFER_BIT);         // Clear the color buffer
  
-   //TO-DO: -verify: set TOP-LEFT origin/anchor/reference point
-
+   //set TOP-LEFT origin/anchor/reference point; quadrant 4
+	 glMatrixMode(GL_PROJECTION);
+	 glLoadIdentity();
+	 glOrtho(0.0f, //left
+        	1.0f, //right
+        	1.0f, //bottom
+        	0, //top
+        	0.0f, //zNear; minimum
+        	1.0f //zFar; maxinum
+      	);
+	
 	 //draw grid 
  	 //TO-DO: -update: iRowCountMax
  	 int iRowCountMax=10;
  	 //TO-DO: -update: iColumnCountMax
  	 int iColumnCountMax=10;
 
-/* 	 
- 	 //Quadrant 1
+   // Draw a Green Line top-left origin; Quadrant 4
+   //rows   
  	 for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
-   		// Draw a Green Line centered at origin
+   		// Draw a Green Line top-left origin
    		glBegin(GL_LINES);
       		glColor3f(0.0f, 1.0f, 0.0f); // Green
       		glVertex2f(0.0f, 0.1f*iRowCount);    // x, y
+      		//TO-DO: -add: auto-compute myWindowWidth
       		glVertex2f(1.0f, 0.1f*iRowCount);
    		glEnd();   		   	  
-	 	}
-*/
-   //rows   
- 	 //Quadrant 1 and 2
- 	 for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
-   		// Draw a Green Line centered at origin
-   		glBegin(GL_LINES);
-      		glColor3f(0.0f, 1.0f, 0.0f); // Green
-      		glVertex2f(-1.0f, 0.1f*iRowCount);    // x, y
-      		glVertex2f(myWindowWidth, 0.1f*iRowCount);
-   		glEnd();   		   	  
 	 }
 
- 	 //Quadrant 3 and 4
- 	 for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
-   		// Draw a Green Line centered at origin
-   		glBegin(GL_LINES);
-      		glColor3f(0.0f, 1.0f, 0.0f); // Green
-      		glVertex2f(-1.0f, -0.1f*iRowCount);    // x, y
-      		glVertex2f(myWindowWidth, -0.1f*iRowCount);
-   		glEnd();   		   	  
-	 }
-  
    //columns
-   //Quadrant 2 and 3
  	 for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {
-   		// Draw a Green Line centered at origin
+   		// Draw a Green Line top-left origin
    		glBegin(GL_LINES);
       		glColor3f(0.0f, 1.0f, 0.0f); // Green
-      		glVertex2f(-0.1f*iColumnCount, -1.0f);    // x, y
-      		glVertex2f(0.0f, myWindowHeight);
+      		glVertex2f(0.1f*iColumnCount, 0.0f);    // x, y
+      		//TO-DO: -add: auto-compute myWindowHeight
+      		glVertex2f(0.1f*iColumnCount, 1.0f);
    		glEnd();   		   	  
-	 	}
-
-   //Quadrant 1 and 4
- 	 for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {
-   		// Draw a Green Line centered at origin
-   		glBegin(GL_LINES);
-      		glColor3f(0.0f, 1.0f, 0.0f); // Green
-      		glVertex2f(0.1f*iColumnCount, 1.0f);    // x, y
-      		glVertex2f(0.1f*iColumnCount, -myWindowHeight);
-   		glEnd();   		   	  
-	 	}
-
+	 }
+   
    glFlush();  // Render now
 }
 
