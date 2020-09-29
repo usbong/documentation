@@ -14,7 +14,7 @@
  *
  * @author: Michael Syson
  * @date created: 20200926
- * @date updated: 20200927
+ * @date updated: 20200928
  *
  * References:
  * 1) Dev-C++ 5.11 auto-generated OpenGL example project
@@ -36,6 +36,21 @@
  * 7) https://chortle.ccsu.edu/Bloodshed/howToGL.html
  * last accessed: 20200927
  * --> instructions to add GLUT library in Dev-C++ Editor 5.11
+ *
+ * 8) https://stackoverflow.com/questions/5289284/compiling-and-runnin-opengl-glut-program-in-ubuntu-10-10
+ * --> last accessed: 20200928
+ *
+ * 9) https://askubuntu.com/questions/96087/how-to-install-opengl-glut-libraries
+ * --> last accessed: 20200928
+ *
+ * 10) https://www3.ntu.edu.sg/home/ehchua/programming/opengl/HowTo_OpenGL_C.html
+ * --> last accessed: 20200928
+ * 
+ * 11) https://stackoverflow.com/questions/2571402/how-to-use-glortho-in-opengl/36046924#36046924;
+ * --> last accessed: 20200928
+ * --> answers by: Mikepote, 20100408T1912
+ * --> answers by: Santilli, Ciro, 20160316T2106
+ *
  * 
  * Notes:
  * 1) We can use this software tool to extract the compressed (zipped) folder.
@@ -43,8 +58,19 @@
  *
  * 2) OpenGL (Open Graphics Library) Utility Toolkit Library
  *
+ * 3) Linux Machine
+ * 3.1) Compile Command
+ *   g++ main.cpp -o mainOutput -lGL -lGLU -lglut
+ *
+ * 3.2) Execute Command
+ *   ./mainOutput
+ *
+ * 3.3) Install OpenGL Libraries
+ *   sudo apt-get install mesa-utils
+ *
+ * 3.4) Install GLUT Library
+ *   sudo apt-get install freeglut3-dev
  */
-
 
 /**************************
  * Includes
@@ -56,6 +82,11 @@
 #include <GL/glut.h> //added by Mike, 20200927
 #include <GL/glu.h> //added by Mike, 20200926
 
+//added by Mike, 20200928
+//note: "static" in C/C++ = "final" in java
+static int myWindowWidth=640; //320
+static int myWindowHeight=640; //320
+
 /**************************
  * Function Declarations
  *
@@ -65,6 +96,59 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT message,
 WPARAM wParam, LPARAM lParam);
 void EnableOpenGL (HWND hWnd, HDC *hDC, HGLRC *hRC);
 void DisableOpenGL (HWND hWnd, HDC hDC, HGLRC hRC);
+
+
+//added by Mike, 20200928; edited by Mike, 20200928
+//void display() { //Linux Machine
+void display(HDC hDC) { //Windows Machine
+   glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Set background color to black and opaque
+   glClear(GL_COLOR_BUFFER_BIT);         // Clear the color buffer
+
+   //set TOP-LEFT origin/anchor/reference point; quadrant 4, y-axis inverted; x and y positive
+	 glMatrixMode(GL_PROJECTION);
+	 glLoadIdentity();
+	 //TOP-Left origin
+	 glOrtho(0.0f, //left
+        	1.0f, //right
+        	1.0f, //bottom
+        	0.0f, //top
+        	0.0f, //zNear; minimum
+        	1.0f //zFar; maxinum
+      	);
+
+	 //draw grid 
+ 	 //TO-DO: -update: iRowCountMax
+ 	 int iRowCountMax=10;
+ 	 //TO-DO: -update: iColumnCountMax
+ 	 int iColumnCountMax=10;
+
+   // Draw a Green Line top-left origin; Quadrant 4, y-axis inverted; x and y positive
+   //rows   
+ 	 for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
+   		// Draw a Green Line top-left origin
+   		glBegin(GL_LINES);
+      		glColor3f(0.0f, 1.0f, 0.0f); // Green
+      		glVertex2f(0.0f, 0.1f*iRowCount);    // x, y
+      		//TO-DO: -add: auto-compute myWindowWidth
+      		glVertex2f(1.0f, 0.1f*iRowCount);
+   		glEnd();   		   	  
+	 }
+
+   //columns
+ 	 for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {
+   		// Draw a Green Line top-left origin
+   		glBegin(GL_LINES);
+      		glColor3f(0.0f, 1.0f, 0.0f); // Green
+      		glVertex2f(0.1f*iColumnCount, 0.0f);    // x, y
+      		//TO-DO: -add: auto-compute myWindowHeight
+      		glVertex2f(0.1f*iColumnCount, 1.0f);
+   		glEnd();   		   	  
+	 }
+  	
+	  //edited by Mike, 20200928 
+//   glFlush();  // Render now //Linux Machine
+     SwapBuffers (hDC); //Windows Machine
+}
 
 
 /**************************
@@ -107,11 +191,6 @@ int WINAPI WinMain (HINSTANCE hInstance,
       0, 0, 256, 256,
       NULL, NULL, hInstance, NULL);
 */
-	//added by Mike, 20200926
-    int myWindowWidth=640;
-    int myWindowHeight=640;
-
-
     hWnd = CreateWindow (
       "GLSample", "Usbong OpenGL Halimbawa", 
       WS_CAPTION | WS_POPUPWINDOW | WS_VISIBLE,
@@ -140,78 +219,10 @@ int WINAPI WinMain (HINSTANCE hInstance,
         }
         else
         {
-            /* OpenGL animation code goes here */
-
-            glClearColor (0.0f, 0.0f, 0.0f, 0.0f);
-            glClear (GL_COLOR_BUFFER_BIT);
-
-
-			//added by Mike, 20200926
-		    /* setup OpenGL initial state */
-		    glEnable(GL_CULL_FACE);   /* cull back faces */
-		    glEnable(GL_DEPTH_TEST);  /* enable Z-buffer */
-		    //glEnable(GL_LIGHTING);    /* enable lighting */
-		    glEnable(GL_NORMALIZE);   /* renormalize all vertex normals */
-		
-		    /* enable Gouraud shading
-		     * (this is default--code appears here only for emphasis) */
-		    glShadeModel(GL_SMOOTH);
-
-            glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);    
-//    		glViewport(0-myWindowWidth/2, 0-myWindowHeight/2, myWindowWidth, myWindowHeight);		// reset the viewport to new dimensions
-
-			//TO-DO: -update: this
-			//Reference: https://www.ntu.edu.sg/home/ehchua/programming/opengl/CG_Introduction.html;
-			//last accessed: 20200927
-			// Set to 2D orthographic projection with the specified clipping area
-			glMatrixMode(GL_PROJECTION);      // Select the Projection matrix for operation
-			glLoadIdentity();                 // Reset Projection matrix
-			gluOrtho2D(-1.0, 1.0, -1.0, 1.0); // Set clipping area's left, right, bottom, top
-
-    		glViewport(0, 0, myWindowWidth, myWindowHeight);		// reset the viewport to new dimensions
-
-			//removed by Mike, 20200926
-/*
-            glPushMatrix ();			
-            glRotatef (theta, 0.0f, 0.0f, 1.0f);
-            glBegin (GL_TRIANGLES);
-            glColor3f (1.0f, 0.0f, 0.0f);   glVertex2f (0.0f, 1.0f);
-            glColor3f (0.0f, 1.0f, 0.0f);   glVertex2f (0.87f, -0.5f);
-            glColor3f (0.0f, 0.0f, 1.0f);   glVertex2f (-0.87f, -0.5f);
-            glEnd ();
-            glPopMatrix ();
-
-            SwapBuffers (hDC);
-
-            theta += 1.0f;
-            Sleep (1);
-*/            
-			/* Draws two horizontal lines */
-            glPushMatrix ();			
-			glBegin(GL_LINES);
-              glColor3f (0.0f, 1.0f, 0.0f);
-              //TO-DO: -add: grid
-              //note: one (1) line, two (2) vertices
-			  //X,Y coordinate position from center as reference point
-			  /*
-			  glVertex2f(0.5f, 0.5f);
-			  glVertex2f(-0.5f, -0.5f); 
-			  */
-			  //TO-DO: -update: this
-			  //X,Y coordinate position from top-left as reference point
-//			  glVertex2f(0.0f, 0.9f);
-//			  glVertex2f(0.9f, 0.9f); 
-
-			  glVertex2f(0.0f, 0.5f);
-			  glVertex2f(0.5f, 0.5f); 
-
-			glEnd();            
-            glPopMatrix ();
-            SwapBuffers (hDC);
-            
-            //TO-DO: -add: read input file with vertices
-            //refer: https://all-things-andy-gavin.com/2020/02/27/war-stories-crash-bandicoot/
-            //last accessed: 20200926
+        	//added by Mike, 20200928
+        	//note: glutDisplayFunc(...) requires zlib1.dll
+//   			glutDisplayFunc(display); // Register display callback handler for window re-paint
+			display(hDC);
         }
     }
 
