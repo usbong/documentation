@@ -3,7 +3,7 @@
 # Usbong Halimbawa: Image Processing Automation
 # C++ Computer Language and OpenGL
 #
-# Compile and Link Multiple Source File
+# Compile and Link Multiple Source Files
 #
 # @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
 # @author: SYSON, MICHAEL B.
