@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20200930
+ * @date updated: 20201001
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -238,6 +238,21 @@ void RobotShip::setup()
     glEnable(GL_BLEND);
 }
 
+//added by Mike, 20201001
+//TO-DO: -add: this in ModelPool.cpp
+void RobotShip::drawModelRobotShip() {
+	//Reference: https://www3.ntu.edu.sg/home/ehchua/programming/opengl/HowTo_OpenGL_C.html;
+	//last accessed: 20200928 
+   //note: 0.5f = half of the window width or height
+   // Draw a Red 1x1 Square centered at origin
+   glBegin(GL_QUADS);              // Each set of 4 vertices form a quad
+      glColor3f(1.0f, 0.0f, 0.0f); // Red
+      glVertex2f(-0.5f, -0.5f);    // x, y
+      glVertex2f( 0.5f, -0.5f);
+      glVertex2f( 0.5f,  0.5f);
+      glVertex2f(-0.5f,  0.5f);
+   glEnd(); 
+}
 
 RobotShip::RobotShip(): MyDynamicObject(0,0,300)
 { 
@@ -299,10 +314,21 @@ float* RobotShip::getXYZPos()
       
       return myXYZ;
 }
+
+//TO-DO: -update: this
 void RobotShip::drawRobotShip()
 {
-    glPushMatrix();  
-    glTranslatef(myXPos, myYPos, myZPos);    
+
+	//removed by Mike, 20201001
+//    glPushMatrix();  
+	
+	//removed by Mike, 20201001
+	//-update: this
+//    glTranslatef(myXPos, myYPos, myZPos);    
+
+	//added by Mike, 20201001
+	//TO-DO: -update: this
+	currentState=MOVING_STATE;
 
     switch (currentState)
     {
@@ -340,6 +366,12 @@ void RobotShip::drawRobotShip()
                 }
                 else invincibleCounter++;
             case MOVING_STATE:
+            	
+                   //added by Mike, 20201001
+                   drawModelRobotShip(); //TO-DO: -add: ModelPool.cpp
+           	   	
+				//removed by Mike, 20201001
+/*           	                  	
                glColor3f(1.0f, 1.0f, 1.0f); //white
            	   glPushMatrix();	
                    if (rotationAngle>360)
@@ -353,20 +385,21 @@ void RobotShip::drawRobotShip()
                    glRotatef(rotationAngle, 0.0f, 0.0f, 1.0f);
                    //since the model ship is too big, do this...
                    glScalef(0.1f, 0.1f, 0.1f);
-                   
-                   //TO-DO: -update: this
+
                    //removed by Mike, 20201001
-/*                   
                    if ((invincibleCounter%2)==0) //makes the ship blink when in INITIALIZING_STATE
                      drawModelValkyrie();
-*/                     
-           	   glPopMatrix();	// pop back to original coordinate system
+
+           	   	glPopMatrix();	// pop back to original coordinate system
+*/                   
                break;
             case IN_TITLE_STATE:
                break;
 
     }    
-    glPopMatrix();	// pop back to original coordinate system
+
+	//removed by Mike, 20201001
+//    glPopMatrix();	// pop back to original coordinate system
 }
 
 void RobotShip::update(float dt)

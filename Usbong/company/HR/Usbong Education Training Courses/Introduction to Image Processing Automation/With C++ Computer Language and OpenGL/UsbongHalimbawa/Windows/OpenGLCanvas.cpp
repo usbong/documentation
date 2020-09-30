@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20200930
+ * @date updated: 20201001
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -39,6 +39,10 @@
 //#include <math.h>
 
 #include "OpenGLCanvas.h"
+
+//added by Mike, 20201001
+#include "RobotShip.h"
+
 //removed by Mike, 20200929
 //TO-DO: -add: these 
 /*
@@ -104,12 +108,10 @@ bool OpenGLCanvas::init()
     //added by Mike, 20200930
 		currentState = GAME_SCREEN; //TO-DO: -update: this
 	
-	//removed by Mike, 20200929
-	//TO-DO: -add: these
-/*	
+	//added by Mike, 20201001
 	myRobotShip = new RobotShip;
     myRobotShip->setOpenGLCanvas(this);
-*/
+
 	return true;
 }
 
@@ -528,12 +530,11 @@ void OpenGLCanvas::render()
                   0.0, 1.0, 0.0); // up-direction
 */
 
-		//removed by Mike, 20200929
-/*		//TO-DO: -add: these    
+		//added by Mike, 20201001
     	glPushMatrix();		
             myRobotShip->drawRobotShip();
     	glPopMatrix();		
-*/    	
+    	
      }
 }
 
