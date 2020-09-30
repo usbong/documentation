@@ -129,7 +129,10 @@ class OpenGLCanvas
        	             gameBackground;
     	bool loadBackground();
     	bool setupProjection();
-    	void drawPlane();
+    	//removed by Mike, 20200930
+    	//void drawPlane();
+    	void drawGrid();
+    	
     	void gameReset();
     	void resetDynamicObjects();
     	

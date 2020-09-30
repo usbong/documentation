@@ -83,6 +83,9 @@
 #include <GL/glut.h> //added by Mike, 20200927
 #include <GL/glu.h> //added by Mike, 20200926
 
+//added by Mike, 20200930
+#include "OpenGLCanvas.h"
+
 /**************************
  * Function Declarations
  *
@@ -116,7 +119,7 @@ void displayExample() {
    glFlush();  // Render now
 }
 
-//added by Mike, 20200928
+//added by Mike, 20200928; edited by Mike, 20200930
 void display() {
    glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Set background color to black and opaque
    glClear(GL_COLOR_BUFFER_BIT);         // Clear the color buffer
@@ -165,12 +168,28 @@ void display() {
    glFlush();  // Render now
 }
 
+//added by Mike, 20200930
+void displayOpenGLCanvas() {
+	 //added by Mike, 20200930
+	 OpenGLCanvas *myOpenGLCanvas;   	
+	 myOpenGLCanvas = new OpenGLCanvas;
+	 myOpenGLCanvas->init();
+	 myOpenGLCanvas->render();
+	 //myOpenGLCanvas->update(); //TO-DO: -add: this
+}
+
 int main(int argc, char** argv) {
    glutInit(&argc, argv);                 // Initialize GLUT
-   glutCreateWindow("OpenGL Setup Test"); // Create a window with the given title
+   //edited by Mike, 20200930
+   glutCreateWindow("Usbong OpenGL Halimbawa"); // Create a window with the given title
    glutInitWindowSize(myWindowWidth, myWindowHeight);   // Set the window's initial width & height
    glutInitWindowPosition(50, 50); // Position the window's initial top-left corner
-   glutDisplayFunc(display); // Register display callback handler for window re-paint
+	 
+	 //edited by Mike, 20200930
+   //glutDisplayFunc(display); // Register display callback handler for window re-paint	
+	 glutDisplayFunc(displayOpenGLCanvas); // Register display callback handler for window re-paint
+	 //displayOpenGLCanvas(); //output of this = glutDisplayFunc(displayOpenGLCanvas);
+	 	
    glutMainLoop();           // Enter the infinitely event-processing loop
    return 0;
 }

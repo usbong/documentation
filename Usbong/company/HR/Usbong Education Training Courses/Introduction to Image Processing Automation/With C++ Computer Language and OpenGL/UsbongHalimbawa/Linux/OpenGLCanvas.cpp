@@ -100,6 +100,9 @@ bool OpenGLCanvas::init()
     myWindowHeight=640;
 
     keyPressCounter=0;
+    
+    //added by Mike, 20200930
+		currentState = GAME_SCREEN; //TO-DO: -update: this
 	
 	//removed by Mike, 20200929
 	//TO-DO: -add: these
@@ -149,6 +152,54 @@ GLboolean OpenGLCanvas::test_pow2(GLushort i)
 */
 
 /* //removed by Mike, 20200929
+//added by Mike, 20200928"RobotShip.h"
+void display() {
+   glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Set background color to black and opaque
+   glClear(GL_COLOR_BUFFER_BIT);         // Clear the color buffer
+ 
+   //set TOP-LEFT origin/anchor/reference point; quadrant 4, y-axis inverted; x and y positive
+	 glMatrixMode(GL_PROJECTION);
+	 glLoadIdentity();
+	 //TOP-Left origin
+	 glOrtho(0.0f, //left
+        	1.0f, //right
+        	1.0f, //bottom
+        	0.0f, //top
+        	0.0f, //zNear; minimum
+        	1.0f //zFar; maxinum
+      	);
+	
+	 //draw grid 
+ 	 //TO-DO: -update: iRowCountMax
+ 	 int iRowCountMax=10;
+ 	 //TO-DO: -update: iColumnCountMax
+ 	 int iColumnCountMax=10;
+
+   // Draw a Green Line top-left origin; Quadrant 4, y-axis inverted; x and y positive
+   //rows   
+ 	 for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
+   		// Draw a Green Line top-left origin
+   		glBegin(GL_LINES);
+      		glColor3f(0.0f, 1.0f, 0.0f); // Green
+      		glVertex2f(0.0f, 0.1f*iRowCount);    // x, y
+      		//TO-DO: -add: auto-compute myWindowWidth
+      		glVertex2f(1.0f, 0.1f*iRowCount);
+   		glEnd();   		   	  
+	 }
+
+   //columns
+ 	 for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {
+   		// Draw a Green Line top-left origin
+   		glBegin(GL_LINES);
+      		glColor3f(0.0f, 1.0f, 0.0f); // Green
+      		glVertex2f(0.1f*iColumnCount, 0.0f);    // x, y
+      		//TO-DO: -add: auto-compute myWindowHeight
+      		glVertex2f(0.1f*iColumnCount"RobotShip.h", 1.0f);
+   		glEnd();   		   	  
+	 }
+   
+   glFlush();  // Render now
+}
 //Reference: "Beginning OpenGL Game Programming", Chapter 7
 //Astle and Kevin Hawkins
 //edited by Mike, 2007
@@ -156,6 +207,54 @@ void OpenGLCanvas::load_tga(char *filename)
 {
     TARGA_HEADER targa;
     FILE *file;
+//added by Mike, 20200928
+void display() {
+   glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Set background color to black and opaque
+   glClear(GL_COLOR_BUFFER_BIT);         // Clear the color buffer
+ 
+   //set TOP-LEFT origin/anchor/reference point; quadrant 4, y-axis inverted; x and y positive
+	 glMatrixMode(GL_PROJECTION);
+	 glLoadIdentity();
+	 //TOP-Left origin
+	 glOrtho(0.0f, //left
+        	1.0f, //right
+        	1.0f, //bottom
+        	0.0f, //top
+        	0.0f, //zNear; minimum
+        	1.0f //zFar; maxinum
+      	);
+	
+	 //draw grid 
+ 	 //TO-DO: -update: iRowCountMax
+ 	 int iRowCountMax=10;
+ 	 //TO-DO: -update: iColumnCountMax
+ 	 int iColumnCountMax=10;
+
+   // Draw a Green Line top-left origin; Quadrant 4, y-axis inverted; x and y positive
+   //rows   
+ 	 for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
+   		// Draw a Green Line top-left origin
+   		glBegin(GL_LINES);
+      		glColor3f(0.0f, 1.0f, 0.0f); // Green
+      		glVertex2f(0.0f, 0.1f*iRowCount);    // x, y
+      		//TO-DO: -add: auto-compute myWindowWidth
+      		glVertex2f(1.0f, 0.1f*iRowCount);
+   		glEnd();   		   	  
+	 }
+
+   //columns
+ 	 for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {
+   		// Draw a Green Line top-left origin
+   		glBegin(GL_LINES);
+      		glColor3f(0.0f, 1.0f, 0.0f); // Green
+      		glVertex2f(0.1f*iColumnCount, 0.0f);    // x, y
+      		//TO-DO: -add: auto-compute myWindowHeight
+      		glVertex2f(0.1f*iColumnCount, 1.0f);
+   		glEnd();   		   	  
+	 }
+   
+   glFlush();  // Render now
+}
     GLubyte *data;
     GLuint i;
 
@@ -166,7 +265,103 @@ void OpenGLCanvas::load_tga(char *filename)
     // test validity of targa file
     if (fread(&targa, 1, sizeof(targa), file) != sizeof(targa) ||
         targa.id_field_length != 0 || targa.color_map_type != 0 ||
-        targa.image_type_code != 2 || ! test_pow2(targa.width) ||
+        targa.image_type_code !=
+//added by Mike, 20200928
+void display() {
+   glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Set background color to black and opaque
+   glClear(GL_COLOR_BUFFER_BIT);         // Clear the color buffer
+ 
+   //set TOP-LEFT origin/anchor/reference point; quadrant 4, y-axis inverted; x and y positive
+	 glMatrixMode(GL_PROJECTION);
+	 glLoadIdentity();
+	 //TOP-Left origin
+	 glOrtho(0.0f, //left
+        	1.0f, //right
+        	1.0f, //bottom
+        	0.0f, //top
+        	0.0f, //zNear; minimum
+        	1.0f //zFar; maxinum
+      	);
+	
+//added by Mike, 20200928
+void display() {
+   glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Set background color to black and opaque
+   glClear(GL_COLOR_BUFFER_BIT);         // Clear the color buffer
+ 
+   //set TOP-LEFT origin/anchor/reference point; quadrant 4, y-axis inverted; x and y positive
+	 glMatrixMode(GL_PROJECTION);
+	 glLoadIdentity();
+	 //TOP-Left origin
+	 glOrtho(0.0f, //left
+        	1.0f, //right
+        	1.0f, //bottom
+        	0.0f, //top
+        	0.0f, //zNear; minimum
+        	1.0f //zFar; maxinum
+      	);
+	
+	 //draw grid 
+ 	 //TO-DO: -update: iRowCountMax
+ 	 int iRowCountMax=10;
+ 	 //TO-DO: -update: iColumnCountMax
+ 	 int iColumnCountMax=10;
+
+   // Draw a Green Line top-left origin; Quadrant 4, y-axis inverted; x and y positive
+   //rows   
+ 	 for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
+   		// Draw a Green Line top-left origin
+   		glBegin(GL_LINES);
+      		glColor3f(0.0f, 1.0f, 0.0f); // Green
+      		glVertex2f(0.0f, 0.1f*iRowCount);    // x, y
+      		//TO-DO: -add: auto-compute myWindowWidth
+      		glVertex2f(1.0f, 0.1f*iRowCount);
+   		glEnd();   		   	  
+	 }
+
+   //columns
+ 	 for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {
+   		// Draw a Green Line top-left origin
+   		glBegin(GL_LINES);
+      		glColor3f(0.0f, 1.0f, 0.0f); // Green
+      		glVertex2f(0.1f*iColumnCount, 0.0f);    // x, y
+      		//TO-DO: -add: auto-compute myWindowHeight
+      		glVertex2f(0.1f*iColumnCount, 1.0f);
+   		glEnd();   		   	  
+	 }
+   
+   glFlush();  // Render now
+}
+	 //draw grid 
+ 	 //TO-DO: -update: iRowCountMax
+ 	 int iRowCountMax=10;
+ 	 //TO-DO: -update: iColumnCountMax
+ 	 int iColumnCountMax=10;
+
+   // Draw a Green Line top-left origin; Quadrant 4, y-axis inverted; x and y positive
+   //rows   
+ 	 for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
+   		// Draw a Green Line top-left origin
+   		glBegin(GL_LINES);
+      		glColor3f(0.0f, 1.0f, 0.0f); // Green
+      		glVertex2f(0.0f, 0.1f*iRowCount);    // x, y
+      		//TO-DO: -add: auto-compute myWindowWidth
+      		glVertex2f(1.0f, 0.1f*iRowCount);
+   		glEnd();   		   	  
+	 }
+
+   //columns
+ 	 for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {
+   		// Draw a Green Line top-left origin
+   		glBegin(GL_LINES);
+      		glColor3f(0.0f, 1.0f, 0.0f); // Green
+      		glVertex2f(0.1f*iColumnCount, 0.0f);    // x, y
+      		//TO-DO: -add: auto-compute myWindowHeight
+      		glVertex2f(0.1f*iColumnCount, 1.0f);
+   		glEnd();   		   	  
+	 }
+   
+   glFlush();  // Render now
+} 2 || ! test_pow2(targa.width) ||
         ! test_pow2(targa.height) || targa.image_pixel_size != 32 ||
         targa.image_descriptor != 8)
     {
@@ -296,6 +491,9 @@ void OpenGLCanvas::render()
     else if (currentState==HIGHSCORE_SCREEN) {
     }
     else if (currentState==GAME_SCREEN) {
+    	//added by Mike, 20200930
+    	drawGrid();
+    
 		//TO-DO: -update: this
 /*
         currTextureBackground=gameBackground;
@@ -337,6 +535,56 @@ void OpenGLCanvas::render()
     	glPopMatrix();		
 */    	
      }
+}
+
+
+//added by Mike, 20200930
+void OpenGLCanvas::drawGrid() {
+   glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Set background color to black and opaque
+   glClear(GL_COLOR_BUFFER_BIT);         // Clear the color buffer
+ 
+   //set TOP-LEFT origin/anchor/reference point; quadrant 4, y-axis inverted; x and y positive
+	 glMatrixMode(GL_PROJECTION);
+	 glLoadIdentity();
+	 //TOP-Left origin
+	 glOrtho(0.0f, //left
+        	1.0f, //right
+        	1.0f, //bottom
+        	0.0f, //top
+        	0.0f, //zNear; minimum
+        	1.0f //zFar; maxinum
+      	);
+	
+	 //draw grid 
+ 	 //TO-DO: -update: iRowCountMax
+ 	 int iRowCountMax=10;
+ 	 //TO-DO: -update: iColumnCountMax
+ 	 int iColumnCountMax=10;
+
+   // Draw a Green Line top-left origin; Quadrant 4, y-axis inverted; x and y positive
+   //rows   
+ 	 for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
+   		// Draw a Green Line top-left origin
+   		glBegin(GL_LINES);
+      		glColor3f(0.0f, 1.0f, 0.0f); // Green
+      		glVertex2f(0.0f, 0.1f*iRowCount);    // x, y
+      		//TO-DO: -add: auto-compute myWindowWidth
+      		glVertex2f(1.0f, 0.1f*iRowCount);
+   		glEnd();   		   	  
+	 }
+
+   //columns
+ 	 for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {
+   		// Draw a Green Line top-left origin
+   		glBegin(GL_LINES);
+      		glColor3f(0.0f, 1.0f, 0.0f); // Green
+      		glVertex2f(0.1f*iColumnCount, 0.0f);    // x, y
+      		//TO-DO: -add: auto-compute myWindowHeight
+      		glVertex2f(0.1f*iColumnCount, 1.0f);
+   		glEnd();   		   	  
+	 }
+   
+   glFlush();  // Render now
 }
 
 void OpenGLCanvas::update()
