@@ -14,7 +14,7 @@
  *
  * @author: Michael Syson
  * @date created: 20200926
- * @date updated: 20200928
+ * @date updated: 20200930
  *
  * References:
  * 1) Dev-C++ 5.11 auto-generated OpenGL example project
@@ -70,6 +70,11 @@
  *
  * 3.4) Install GLUT Library
  *   sudo apt-get install freeglut3-dev
+ *
+ * 3.5) Verify if already added: Project Options->Parameters->Linker:
+	"C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32/libopengl32.a"
+	"C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32/libglu32.a"
+	"C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32/libglut32.a"
  */
 
 /**************************
@@ -81,6 +86,9 @@
 #include <GL/gl.h>
 #include <GL/glut.h> //added by Mike, 20200927
 #include <GL/glu.h> //added by Mike, 20200926
+
+//added by Mike, 20200930
+#include "OpenGLCanvas.h"
 
 //added by Mike, 20200928
 //note: "static" in C/C++ = "final" in java
@@ -150,6 +158,20 @@ void display(HDC hDC) { //Windows Machine
      SwapBuffers (hDC); //Windows Machine
 }
 
+//added by Mike, 20200930
+//TO-DO: -add: auto-generate set of instructions for Windows Machine using set from Linux Machine
+//TO-DO: -add: auto-generate set of instructions for Linux Machine using set from Windows Machine
+//void displayOpenGLCanvas() {
+void displayOpenGLCanvas(HDC hDC) {
+	 //added by Mike, 20200930
+	 OpenGLCanvas *myOpenGLCanvas;   	
+	 myOpenGLCanvas = new OpenGLCanvas;
+	 myOpenGLCanvas->init();
+	 myOpenGLCanvas->render();
+	 //myOpenGLCanvas->update(); //TO-DO: -add: this
+
+     SwapBuffers (hDC); //Windows Machine
+}
 
 /**************************
  * WinMain
@@ -222,7 +244,10 @@ int WINAPI WinMain (HINSTANCE hInstance,
         	//added by Mike, 20200928
         	//note: glutDisplayFunc(...) requires zlib1.dll
 //   			glutDisplayFunc(display); // Register display callback handler for window re-paint
-			display(hDC);
+
+			//edited by Mike, 20200930
+			//display(hDC);
+			displayOpenGLCanvas(hDC); //output of this = glutDisplayFunc(displayOpenGLCanvas);
         }
     }
 
