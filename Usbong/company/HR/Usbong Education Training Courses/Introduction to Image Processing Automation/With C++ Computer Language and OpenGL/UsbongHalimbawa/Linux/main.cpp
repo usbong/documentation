@@ -14,7 +14,7 @@
  *
  * @author: Michael Syson
  * @date created: 20200926
- * @date updated: 20200928
+ * @date updated: 20200930
  *
  * References:
  * 1) Dev-C++ 5.11 auto-generated OpenGL example project
@@ -96,7 +96,7 @@ void DisableOpenGL (HWND hWnd, HDC hDC, HGLRC hRC);
 
 //note: "static" in C/C++ = "final" in java
 static int myWindowWidth=640; //320
-static int myWindowHeight640; //320
+static int myWindowHeight=640; //320
 
 //Reference: https://www3.ntu.edu.sg/home/ehchua/programming/opengl/HowTo_OpenGL_C.html;
 //last accessed: 20200928
