@@ -71,10 +71,11 @@
  * 3.4) Install GLUT Library
  *   sudo apt-get install freeglut3-dev
  *
- * 3.5) Verify if already added: Project Options->Parameters->Linker:
-	"C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32/libopengl32.a"
-	"C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32/libglu32.a"
-	"C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32/libglut32.a"
+ * 4) Windows Machine: Dev-C++ Editor
+ * 4.1) Verify if already added: Project Options->Parameters->Linker:
+ *	"C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32/libopengl32.a"
+ *	"C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32/libglu32.a"
+ *	"C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32/libglut32.a"
  */
 
 /**************************
