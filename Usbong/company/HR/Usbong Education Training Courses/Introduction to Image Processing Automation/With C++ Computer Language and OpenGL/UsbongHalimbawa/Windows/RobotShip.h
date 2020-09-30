@@ -41,8 +41,11 @@ class RobotShip: public MyDynamicObject
 {
 private:	
 	int currentState;
+/*	//removed by Mike, 20201001
 	Sound *sound;
 	SoundClip *zing;
+*/
+	
 /*
     float myXPos;
     float myYPos;

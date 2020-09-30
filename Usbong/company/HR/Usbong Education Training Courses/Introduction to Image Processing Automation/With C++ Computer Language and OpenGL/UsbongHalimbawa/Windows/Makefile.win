@@ -4,8 +4,8 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = main.o OpenGLCanvas.o
-LINKOBJ  = main.o OpenGLCanvas.o
+OBJ      = main.o OpenGLCanvas.o MyDynamicObject.o RobotShip.o
+LINKOBJ  = main.o OpenGLCanvas.o MyDynamicObject.o RobotShip.o
 LIBS     = -L"C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -L"C:/Usbong/SDL2-2.0.12/lib/x86" -static-libgcc -mwindows "C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32/libopengl32.a" "C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32/libglu32.a" "C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32/libglut32.a" -m32
 INCS     = -I"C:/Program Files/Dev-Cpp/MinGW64/include" -I"C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Usbong/SDL2-2.0.12/include"
 CXXINCS  = -I"C:/Program Files/Dev-Cpp/MinGW64/include" -I"C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++" -I"C:/Usbong/SDL2-2.0.12/include"
@@ -29,3 +29,9 @@ main.o: main.cpp
 
 OpenGLCanvas.o: OpenGLCanvas.cpp
 	$(CPP) -c OpenGLCanvas.cpp -o OpenGLCanvas.o $(CXXFLAGS)
+
+MyDynamicObject.o: MyDynamicObject.cpp
+	$(CPP) -c MyDynamicObject.cpp -o MyDynamicObject.o $(CXXFLAGS)
+
+RobotShip.o: RobotShip.cpp
+	$(CPP) -c RobotShip.cpp -o RobotShip.o $(CXXFLAGS)
