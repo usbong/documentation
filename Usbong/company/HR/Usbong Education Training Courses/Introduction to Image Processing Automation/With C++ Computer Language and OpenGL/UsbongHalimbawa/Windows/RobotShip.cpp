@@ -248,10 +248,17 @@ void RobotShip::drawModelRobotShip() {
    //TO-DO: -update: this due to output is 1 x 2 box, width x height
    glBegin(GL_QUADS);              // Each set of 4 vertices form a quad
       glColor3f(1.0f, 0.0f, 0.0f); // Red
-      glVertex2f(-0.1f, -0.1f);    // x, y
+/*    //edited by Mike, 20201001  
+	  glVertex2f(-0.1f, -0.1f);    // x, y
       glVertex2f( 0.1f, -0.1f);
       glVertex2f( 0.1f,  0.1f);
       glVertex2f(-0.1f,  0.1f);
+*/      
+	  //1x1 box
+	  glVertex2f(0.0f, 0.0f);    // x, y
+      glVertex2f( 0.0f, -0.1f);
+      glVertex2f( 0.1f,  -0.1f);
+      glVertex2f(0.1f,  0.0f);
    glEnd(); 
 }
 
@@ -259,7 +266,10 @@ void RobotShip::drawModelRobotShip() {
 //RobotShip::RobotShip(): MyDynamicObject(0,0,300)
 RobotShip::RobotShip(): MyDynamicObject(0,0,0)
 { 
-    currentState=IN_TITLE_STATE;//MOVING_STATE;
+    //edited by Mike, 20201001
+	//currentState=IN_TITLE_STATE;//MOVING_STATE;
+	currentState=MOVING_STATE;
+
 //    myXPos=0.0;
 //    myYPos=0.0;
     //myYPos=300.0;
@@ -278,6 +288,11 @@ RobotShip::RobotShip(): MyDynamicObject(0,0,0)
 */    
     myWidth=0.1f;
     myHeight=0.1f;
+
+	//added by Mike, 20201001
+	//note: initial position, top-left
+    myXPos=0.0f;
+    myYPos=0+myHeight;//0.1f;
 
 //    myWidthX=0.5;
 
@@ -335,7 +350,7 @@ void RobotShip::drawRobotShip()
 
 	//added by Mike, 20201001
 	//TO-DO: -update: this
-	currentState=MOVING_STATE;
+	//currentState=MOVING_STATE;
 
     switch (currentState)
     {
@@ -483,7 +498,8 @@ void RobotShip::update(float dt)
 /*           	//TO-DO: -update: this	
 				if (myXPos+myWidth/2 <= -1.0f) myXPos = 1.0f-myWidth/2; //if left side
            		else if (myXPos+myWidth/2 >= 1.0f) myXPos = -1.0f+myWidth/2; //if right side
-*/           		
+*/           	
+	
            		if (myYPos+myHeight/2 >= 1.0f) myYPos = 0.0f+myHeight/2; //if bottom side
            		else if (myYPos+myHeight/2 <= 0.0f) myYPos = 1.0f-myHeight/2; //if top side
 
