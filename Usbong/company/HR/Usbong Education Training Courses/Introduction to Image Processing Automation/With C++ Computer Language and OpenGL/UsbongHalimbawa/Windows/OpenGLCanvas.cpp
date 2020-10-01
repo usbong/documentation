@@ -106,7 +106,7 @@ bool OpenGLCanvas::init()
     keyPressCounter=0;
     
     //added by Mike, 20200930
-		currentState = GAME_SCREEN; //TO-DO: -update: this
+	currentState = GAME_SCREEN; //TO-DO: -update: this
 	
 	//added by Mike, 20201001
 	myRobotShip = new RobotShip;
@@ -591,42 +591,37 @@ void OpenGLCanvas::drawGrid() {
 void OpenGLCanvas::update()
 {           
     if (currentState==GAME_SCREEN) {
-		//removed by Mike, 20200929
-		//TO-DO: -add: this
-/*    	myRobotShip->update(1); //dt
-*/
+    	//added by Mike, 20201001
+    	myRobotShip->update(1); //dt
+
        	//process input
     	if(myKeysDown[KEY_UP] == TRUE)
     	{
-			//removed by Mike, 20200929
-			//TO-DO: -add: this
-/*            myRobotShip->move(KEY_UP);
-*/
+    		//added by Mike, 20201001
+          	myRobotShip->move(KEY_UP);
+
 			//removed by Mike, 20200929
 //			sound->play_sound_clip(thrust);
     	}
     	else if(myKeysDown[KEY_DOWN] == TRUE)
     	{
-			//removed by Mike, 20200929
-			//TO-DO: -add: this
-/*            myRobotShip->move(KEY_DOWN);
-*/
+    		//added by Mike, 20201001
+            myRobotShip->move(KEY_DOWN);
+
     	}
     	else if(myKeysDown[KEY_RIGHT] == TRUE)
     	{
-			//removed by Mike, 20200929
-			//TO-DO: -add: this
-/*            myRobotShip->move(KEY_RIGHT);
-*/
+    		//added by Mike, 20201001
+            myRobotShip->move(KEY_RIGHT);
+
 			//removed by Mike, 20200929
 //			sound->play_sound_clip(thrust);
     	}
     	else if(myKeysDown[KEY_LEFT] == TRUE)
     	{
-			//removed by Mike, 20200929
-			//TO-DO: -add: this
-/*            myRobotShip->move(KEY_LEFT);
-*/
+    		//added by Mike, 20201001
+            myRobotShip->move(KEY_LEFT);
+
 			//removed by Mike, 20200929
 //			sound->play_sound_clip(thrust);
     	}

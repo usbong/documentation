@@ -245,16 +245,19 @@ void RobotShip::drawModelRobotShip() {
 	//last accessed: 20200928 
    //note: 0.5f = half of the window width or height
    // Draw a Red 1x1 Square centered at origin
+   //TO-DO: -update: this due to output is 1 x 2 box, width x height
    glBegin(GL_QUADS);              // Each set of 4 vertices form a quad
       glColor3f(1.0f, 0.0f, 0.0f); // Red
-      glVertex2f(-0.5f, -0.5f);    // x, y
-      glVertex2f( 0.5f, -0.5f);
-      glVertex2f( 0.5f,  0.5f);
-      glVertex2f(-0.5f,  0.5f);
+      glVertex2f(-0.1f, -0.1f);    // x, y
+      glVertex2f( 0.1f, -0.1f);
+      glVertex2f( 0.1f,  0.1f);
+      glVertex2f(-0.1f,  0.1f);
    glEnd(); 
 }
 
-RobotShip::RobotShip(): MyDynamicObject(0,0,300)
+//edited by Mike, 20201001
+//RobotShip::RobotShip(): MyDynamicObject(0,0,300)
+RobotShip::RobotShip(): MyDynamicObject(0,0,0)
 { 
     currentState=IN_TITLE_STATE;//MOVING_STATE;
 //    myXPos=0.0;
@@ -269,8 +272,12 @@ RobotShip::RobotShip(): MyDynamicObject(0,0,300)
     invincibleCounter=0;
     currentDeathFrame=0;
 
-    myWidth=2.0f;//1.5;
+	//edited by Mike, 20201001
+/*  myWidth=2.0f;//1.5;
     myHeight=2.0f;//1.5;
+*/    
+    myWidth=0.1f;
+    myHeight=0.1f;
 
 //    myWidthX=0.5;
 
@@ -322,9 +329,9 @@ void RobotShip::drawRobotShip()
 	//removed by Mike, 20201001
 //    glPushMatrix();  
 	
-	//removed by Mike, 20201001
+	//added by Mike, 20201001
 	//-update: this
-//    glTranslatef(myXPos, myYPos, myZPos);    
+    glTranslatef(myXPos, myYPos, myZPos);    
 
 	//added by Mike, 20201001
 	//TO-DO: -update: this
@@ -408,6 +415,9 @@ void RobotShip::update(float dt)
     {
            case INITIALIZING_STATE:
            case MOVING_STATE:      
+           		//added by Mike, 20201001
+           		rotationAngle=0; //TO-DO: -update: this
+           		
 //                if (isMovingForward)
 //                { 
                     /* rotationAngle in degrees, convert to radians */
@@ -421,7 +431,17 @@ void RobotShip::update(float dt)
                    char str[700];                                       
                    sprintf(str,"xAccel: %f",xAccel);
                    MessageBox(NULL, str, "Welcome!", MB_OK);
-*/                   
+*/
+
+					//added by Mike, 20201001                   
+					//TO-DO: -update: max acceleration
+                    if (yAccel>0.01f) {
+						thrust=0.01f;                    
+					}
+                    if (xAccel>0.01f) {
+						thrust=0.01f;                    
+					}
+
                     xVel=xAccel;
                     yVel=yAccel;
                     
@@ -439,10 +459,33 @@ void RobotShip::update(float dt)
                     else thrust=0;
 
            		//wrap the world 
+           		//edited by Mike, 20201001
+/*           		
            		if (myXPos <= -25.0f) myXPos = 25.0f;
            		else if (myXPos > 25.0f) myXPos = -25.0f; 
            		if (myYPos <= -17.0f) myYPos = 19.0f;
            		else if (myYPos > 19.0f) myYPos = -17.0f;
+*/
+/*
+           		if (myXPos <= -1.0f) myXPos = 1.0f;
+           		else if (myXPos > 1.0f) myXPos = -1.0f; 
+           		if (myYPos <= -1.0f) myYPos = 1.0f;
+           		else if (myYPos > 1.0f) myYPos = -1.0f;
+*/
+				//note: add ship width and height
+/*
+           		if (myXPos+myWidth/2 <= -1.0f) myXPos = 1.0f-myWidth/2; //if left side
+           		else if (myXPos+myWidth/2 >= 1.0f) myXPos = -1.0f+myWidth/2; //if right side
+           		if (myYPos+myHeight/2 <= -1.0f) myYPos = 1.0f+myHeight/2; //if bottom side
+           		else if (myYPos+myHeight/2 >= 1.0f) myYPos = -1.0f+myHeight/2; //if top side
+*/
+				//top-left anchor/origin/reference point
+/*           	//TO-DO: -update: this	
+				if (myXPos+myWidth/2 <= -1.0f) myXPos = 1.0f-myWidth/2; //if left side
+           		else if (myXPos+myWidth/2 >= 1.0f) myXPos = -1.0f+myWidth/2; //if right side
+*/           		
+           		if (myYPos+myHeight/2 >= 1.0f) myYPos = 0.0f+myHeight/2; //if bottom side
+           		else if (myYPos+myHeight/2 <= 0.0f) myYPos = 1.0f-myHeight/2; //if top side
 
 
 /*

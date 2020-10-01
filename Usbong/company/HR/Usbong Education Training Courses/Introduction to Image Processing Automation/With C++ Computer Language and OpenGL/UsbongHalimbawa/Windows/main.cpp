@@ -14,7 +14,7 @@
  *
  * @author: Michael Syson
  * @date created: 20200926
- * @date updated: 20200930
+ * @date updated: 20201001
  *
  * References:
  * 1) Dev-C++ 5.11 auto-generated OpenGL example project
@@ -96,6 +96,23 @@
 static int myWindowWidth=640; //320
 static int myWindowHeight=640; //320
 
+//added by Mike, 20201001
+OpenGLCanvas *myOpenGLCanvas = NULL;
+
+//added by Mike, 20201001
+enum Keys
+{
+	KEY_UP = 0,
+	KEY_DOWN,
+	KEY_RIGHT,
+	KEY_LEFT,
+	KEY_SPACE,
+	KEY_ENTER
+};
+
+//added by Mike, 20201001
+bool pause;
+
 /**************************
  * Function Declarations
  *
@@ -163,6 +180,8 @@ void display(HDC hDC) { //Windows Machine
 //TO-DO: -add: auto-generate set of instructions for Windows Machine using set from Linux Machine
 //TO-DO: -add: auto-generate set of instructions for Linux Machine using set from Windows Machine
 //void displayOpenGLCanvas() {
+//removed by Mike, 20201001
+/*
 void displayOpenGLCanvas(HDC hDC) {
 	 //added by Mike, 20200930
 	 OpenGLCanvas *myOpenGLCanvas;   	
@@ -173,7 +192,7 @@ void displayOpenGLCanvas(HDC hDC) {
 
      SwapBuffers (hDC); //Windows Machine
 }
-
+*/
 /**************************
  * WinMain
  *
@@ -223,6 +242,17 @@ int WINAPI WinMain (HINSTANCE hInstance,
     /* enable OpenGL for the window */
     EnableOpenGL (hWnd, &hDC, &hRC);
 
+    //added by Mike, 20201001
+    myOpenGLCanvas = new OpenGLCanvas;
+    myOpenGLCanvas->init();
+
+	//added by Mike, 20201001
+    //init stuff for delay
+    int skip=0, currSysTime=0,
+        timeElapsed,
+        idealFrameTime=60;//33;
+    pause=0;
+
     /* program main loop */
     while (!bQuit)
     {
@@ -248,7 +278,39 @@ int WINAPI WinMain (HINSTANCE hInstance,
 
 			//edited by Mike, 20200930
 			//display(hDC);
-			displayOpenGLCanvas(hDC); //output of this = glutDisplayFunc(displayOpenGLCanvas);
+			//removed by Mike, 20201001
+//			displayOpenGLCanvas(hDC); //output of this = glutDisplayFunc(displayOpenGLCanvas);
+
+			//edited by Mike, 20201001
+/*
+            // OpenGL animation code goes here
+            myOpenGLCanvas->update();
+
+            //do rendering here 
+            myOpenGLCanvas->render();
+            SwapBuffers (hDC);
+*/            
+
+            if (!pause) {
+                currSysTime=GetTickCount();
+    
+                /* OpenGL animation code goes here */
+                myOpenGLCanvas->update();
+    
+                if (skip > 0)
+                   skip = skip-1;
+                else {
+                     //do rendering here 
+                     myOpenGLCanvas->render();
+                     SwapBuffers (hDC);
+                     
+                     timeElapsed=GetTickCount()-currSysTime;
+                     if (timeElapsed>idealFrameTime)
+                       skip = (timeElapsed/idealFrameTime) - 1;
+                     else 
+                       Sleep(idealFrameTime - timeElapsed);
+                }
+            }
         }
     }
 
@@ -285,12 +347,63 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT message,
     case WM_KEYDOWN:
         switch (wParam)
         {
-        case VK_ESCAPE:
-            PostQuitMessage(0);
-            return 0;
+	        case VK_ESCAPE:
+	            PostQuitMessage(0);
+	            return 0;
+	        //added by Mike, 20201001
+   	       case VK_LEFT:
+		        myOpenGLCanvas->keyDown(KEY_LEFT);
+                return 0;
+   	       case VK_RIGHT:
+		        myOpenGLCanvas->keyDown(KEY_RIGHT);
+                return 0;
+   	       case VK_UP:
+		        myOpenGLCanvas->keyDown(KEY_UP);
+                return 0;
+   	       case VK_DOWN:
+		        myOpenGLCanvas->keyDown(KEY_DOWN);
+                return 0;     
+   	       case VK_SPACE:
+                myOpenGLCanvas->keyDown(KEY_SPACE);
+                return 0;
+			//removed by Mike, 20201001 
+/*			               
+   	       case 13: //ENTER
+                myOpenGLCanvas->keyDown(KEY_ENTER);
+                return 0;     
+   	       case 80: //P
+   	            if (myOpenGLCanvas->currentState!=TITLE_SCREEN) {
+			        if (pause==0) //false
+			          pause=1; //make it true
+                    else pause=0;
+                }
+                return 0;     	        
+*/                
         }
         return 0;
-
+		//added by Mike, 20201001
+       	case WM_KEYUP:
+            switch (wParam)
+            {
+           	       case VK_LEFT:
+				        myOpenGLCanvas->keyUp(KEY_LEFT);
+                        return 0;
+           	       case VK_RIGHT:
+				        myOpenGLCanvas->keyUp(KEY_RIGHT);
+                        return 0;
+           	       case VK_UP:
+				        myOpenGLCanvas->keyUp(KEY_UP);
+                        return 0;
+           	       case VK_DOWN:
+				        myOpenGLCanvas->keyUp(KEY_DOWN);
+                        return 0;                        
+           	       case VK_SPACE:
+				        myOpenGLCanvas->keyUp(KEY_SPACE);
+                        return 0;     
+           	       case 13: //ENTER
+                        myOpenGLCanvas->keyUp(KEY_ENTER);
+                        return 0;
+            }
     default:
         return DefWindowProc (hWnd, message, wParam, lParam);
     }
