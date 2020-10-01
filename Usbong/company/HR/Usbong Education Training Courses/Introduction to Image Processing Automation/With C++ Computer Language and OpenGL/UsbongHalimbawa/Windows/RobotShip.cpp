@@ -279,6 +279,10 @@ RobotShip::RobotShip(): MyDynamicObject(0,0,0)
     stepY=0.01;
     stepZ=0.01;
 */    
+	//added by Mike, 20201001
+    stepX=0.03;
+    stepY=0.03;
+
     invincibleCounter=0;
     currentDeathFrame=0;
 
@@ -289,7 +293,7 @@ RobotShip::RobotShip(): MyDynamicObject(0,0,0)
     myWidth=0.1f;
     myHeight=0.1f;
 
-	//added by Mike, 20201001
+	//added by Mike, 20201001; edited again by Mike, 20201001
 	//note: initial position, top-left
     myXPos=0.0f;
     myYPos=0+myHeight;//0.1f;
@@ -302,8 +306,9 @@ RobotShip::RobotShip(): MyDynamicObject(0,0,0)
     thrustMax=0.8f;
     xVel;
     yVel;
-    maxXVel=1.0f;
-    maxYVel=1.0f;
+    //edited by Mike, 20201001
+    maxXVel=0.04f;//1.0f;
+    maxYVel=0.04f;//1.0f;
 
     //boundary = 8.0f;
 
@@ -316,7 +321,8 @@ RobotShip::RobotShip(): MyDynamicObject(0,0,0)
 	
 	//loadTexture(myBodyTexture, "bodyTexture.tga", &myBodyTextureObject);
 	//loadTexture(myHeadTexture, "headTexture.tga", &myHeadTextureObject);
-	setup();
+	//removed by Mike, 20201001
+//	setup();
 	
     setCollidable(true);
 }
@@ -343,7 +349,20 @@ void RobotShip::drawRobotShip()
 
 	//removed by Mike, 20201001
 //    glPushMatrix();  
-	
+/*
+	//added by Mike, 20201001
+    //set TOP-LEFT origin/anchor/reference point; quadrant 4, y-axis inverted; x and y positive
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	//TOP-LEFT origin
+	glOrtho(0.0f, //left
+        	1.0f, //right
+        	1.0f, //bottom
+        	0.0f, //top
+        	0.0f, //zNear; minimum
+        	1.0f //zFar; maxinum
+      	);
+*/	
 	//added by Mike, 20201001
 	//-update: this
     glTranslatef(myXPos, myYPos, myZPos);    
@@ -438,9 +457,12 @@ void RobotShip::update(float dt)
                     /* rotationAngle in degrees, convert to radians */
                     //im not yet sure why, but i have to deduct 90 to rotationAngle
                     rotationAngleRad = (rotationAngle) * 3.141593f / 180.0f;
-                    
+
+/*                  //removed by Mike, 20201001
                     yAccel = (cos(rotationAngleRad)*thrust);
                     xAccel = -(sin(rotationAngleRad)*thrust);
+*/
+
 /*
                    rotationAngle+=1;
                    char str[700];                                       
@@ -448,6 +470,7 @@ void RobotShip::update(float dt)
                    MessageBox(NULL, str, "Welcome!", MB_OK);
 */
 
+/*
 					//added by Mike, 20201001                   
 					//TO-DO: -update: max acceleration
                     if (yAccel>0.01f) {
@@ -456,21 +479,25 @@ void RobotShip::update(float dt)
                     if (xAccel>0.01f) {
 						thrust=0.01f;                    
 					}
+*/
 
+/*					//removed by Mike, 20201001
                     xVel=xAccel;
                     yVel=yAccel;
+*/                    
                     
-/*                    
                     if (xVel > maxXVel) xVel = maxXVel;
                     else if (xVel < -maxXVel) xVel = -maxXVel;
                     if (yVel > maxYVel) yVel = maxYVel;
                     else if (yVel < -maxYVel) yVel = -maxYVel;
-*/                                        
+                                        
+
                     myXPos+=xVel;
                     myYPos+=yVel;
-                    
+                   
+				    //note: deaccelerate 
                     if (thrust>0)
-                      thrust-=0.01f;
+                      thrust-=0.02f; //0.01f
                     else thrust=0;
 
            		//wrap the world 
@@ -499,10 +526,21 @@ void RobotShip::update(float dt)
 				if (myXPos+myWidth/2 <= -1.0f) myXPos = 1.0f-myWidth/2; //if left side
            		else if (myXPos+myWidth/2 >= 1.0f) myXPos = -1.0f+myWidth/2; //if right side
 */           	
-	
+
+/*				//edited by Mike, 20201001	
            		if (myYPos+myHeight/2 >= 1.0f) myYPos = 0.0f+myHeight/2; //if bottom side
            		else if (myYPos+myHeight/2 <= 0.0f) myYPos = 1.0f-myHeight/2; //if top side
+*/
+/*
+				//add velocity
+           		if (myYPos+yVel >= 1.0f) myYPos = 0.0f+myHeight/3; //if bottom side
+           		else if (myYPos+yVel <= 0.0f) myYPos = 1.0f-myHeight/3; //if top side
+*/
+           		if (myXPos <= 0.0f) myXPos = 1.0f-myWidth/8; //if left side
+           		else if (myXPos >= 1.0f) myXPos = 0.0f+myWidth/8; //if right side
 
+           		if (myYPos >= 1.0f) myYPos = 0.0f+myHeight/8; //if bottom side
+           		else if (myYPos <= 0.0f) myYPos = 1.0f-myHeight/8; //if top side
 
 /*
           char str[700];                                       
@@ -534,11 +572,29 @@ void RobotShip::move(int key)
           //myZPos-=1.0f;
           if (thrust<thrustMax)
             thrust+=0.1f;
+            
+          //added by Mike, 20201001            
+	      myYPos+=-stepY;
           break;      
      case KEY_DOWN:
+     	  //added by Mike, 20201001
+          if (thrust<thrustMax)
+            thrust+=-0.1f;
+
+          //added by Mike, 20201001            
+	      myYPos+=stepY;
           break;      
      case KEY_LEFT:
-          rotationAngle+=rotationStep;
+     		//removed by Mike, 20201001
+//          rotationAngle+=rotationStep;
+
+     	  //added by Mike, 20201001
+          if (thrust<thrustMax)
+            thrust+=-0.1f;
+
+          //added by Mike, 20201001            
+	      myXPos+=-stepX;
+
 /*          
           char str[700];                                       
           sprintf(str,"rotationAngle: %f",rotationAngle);
@@ -546,7 +602,15 @@ void RobotShip::move(int key)
 */
           break;      
      case KEY_RIGHT:
-          rotationAngle-=rotationStep;
+     	//removed by Mike, 20201001
+//          rotationAngle-=rotationStep;
+
+     	  //added by Mike, 20201001
+          if (thrust<thrustMax)
+            thrust+=0.1f;
+
+          //added by Mike, 20201001            
+	      myXPos+=stepX;
           return;
    }
 }

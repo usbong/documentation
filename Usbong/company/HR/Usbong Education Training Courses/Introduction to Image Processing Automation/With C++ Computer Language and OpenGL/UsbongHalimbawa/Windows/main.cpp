@@ -382,28 +382,28 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT message,
         }
         return 0;
 		//added by Mike, 20201001
-       	case WM_KEYUP:
-            switch (wParam)
-            {
-           	       case VK_LEFT:
-				        myOpenGLCanvas->keyUp(KEY_LEFT);
-                        return 0;
-           	       case VK_RIGHT:
-				        myOpenGLCanvas->keyUp(KEY_RIGHT);
-                        return 0;
-           	       case VK_UP:
-				        myOpenGLCanvas->keyUp(KEY_UP);
-                        return 0;
-           	       case VK_DOWN:
-				        myOpenGLCanvas->keyUp(KEY_DOWN);
-                        return 0;                        
-           	       case VK_SPACE:
-				        myOpenGLCanvas->keyUp(KEY_SPACE);
-                        return 0;     
-           	       case 13: //ENTER
-                        myOpenGLCanvas->keyUp(KEY_ENTER);
-                        return 0;
-            }
+    case WM_KEYUP:
+        switch (wParam)
+        {
+       	       case VK_LEFT:
+			        myOpenGLCanvas->keyUp(KEY_LEFT);
+                    return 0;
+       	       case VK_RIGHT:
+			        myOpenGLCanvas->keyUp(KEY_RIGHT);
+                    return 0;
+       	       case VK_UP:
+			        myOpenGLCanvas->keyUp(KEY_UP);
+                    return 0;
+       	       case VK_DOWN:
+			        myOpenGLCanvas->keyUp(KEY_DOWN);
+                    return 0;                        
+       	       case VK_SPACE:
+			        myOpenGLCanvas->keyUp(KEY_SPACE);
+                    return 0;     
+       	       case 13: //ENTER
+                    myOpenGLCanvas->keyUp(KEY_ENTER);
+                    return 0;
+        }
     default:
         return DefWindowProc (hWnd, message, wParam, lParam);
     }

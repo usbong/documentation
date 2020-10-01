@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200929
- * @date updated: 20200930
+ * @date updated: 20201001
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -161,7 +161,7 @@ class OpenGLCanvas
 
    		void keyDown(int keyCode);
 	    void keyUp(int keyCode);
-    	    
+		
     	//void Prepare(float dt);
     	void render();
     	void update();

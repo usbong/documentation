@@ -547,7 +547,7 @@ void OpenGLCanvas::drawGrid() {
    //set TOP-LEFT origin/anchor/reference point; quadrant 4, y-axis inverted; x and y positive
 	 glMatrixMode(GL_PROJECTION);
 	 glLoadIdentity();
-	 //TOP-Left origin
+	 //TOP-LEFT origin
 	 glOrtho(0.0f, //left
         	1.0f, //right
         	1.0f, //bottom
