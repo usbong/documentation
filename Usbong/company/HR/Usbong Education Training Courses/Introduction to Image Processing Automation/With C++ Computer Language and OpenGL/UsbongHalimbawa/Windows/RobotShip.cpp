@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20201001
+ * @date updated: 20201002
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -241,6 +241,10 @@ void RobotShip::setup()
 //added by Mike, 20201001
 //TO-DO: -add: this in ModelPool.cpp
 void RobotShip::drawModelRobotShip() {
+	//added by Mike, 20201002
+	//to make anchor/origin/reference point start at top-left
+    glTranslatef(0.0f, 0.1f, 0.0f);   
+	
 	//Reference: https://www3.ntu.edu.sg/home/ehchua/programming/opengl/HowTo_OpenGL_C.html;
 	//last accessed: 20200928 
    //note: 0.5f = half of the window width or height
@@ -259,7 +263,7 @@ void RobotShip::drawModelRobotShip() {
       glVertex2f( 0.0f, -0.1f);
       glVertex2f( 0.1f,  -0.1f);
       glVertex2f(0.1f,  0.0f);
-   glEnd(); 
+   glEnd();    
 }
 
 //edited by Mike, 20201001
@@ -295,8 +299,12 @@ RobotShip::RobotShip(): MyDynamicObject(0,0,0)
 
 	//added by Mike, 20201001; edited again by Mike, 20201001
 	//note: initial position, top-left
-    myXPos=0.0f;
+/*    myXPos=0.0f;
     myYPos=0+myHeight;//0.1f;
+*/
+	//note: position: 3,3; width, height; count starts at 0
+    myXPos=0.0f+myWidth*3;
+    myYPos=0.0f+myHeight*3;
 
 //    myWidthX=0.5;
 

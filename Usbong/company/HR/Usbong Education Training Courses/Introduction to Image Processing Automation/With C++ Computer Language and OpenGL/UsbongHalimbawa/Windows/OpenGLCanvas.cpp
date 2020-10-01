@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20201001
+ * @date updated: 20201002
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -553,9 +553,20 @@ void OpenGLCanvas::drawGrid() {
         	1.0f, //bottom
         	0.0f, //top
         	0.0f, //zNear; minimum
-        	1.0f //zFar; maxinum
+        	1.0f //zFar; maximum
       	);
-	
+
+	//added by Mike, 20201002
+	//note: set these to be isometric view
+    glRotatef(40, 0.0f, 0.0f, 0.2f);
+    glTranslatef(0.45f, -0.15f, 0.0f);
+    glScalef(0.5f, 0.5f, 0.5f);
+
+/*
+	//use these to verify grid
+    glTranslatef(0.1f, 0.1f, 0.0f);
+    glScalef(0.5f, 0.5f, 0.5f);
+*/	
 	 //draw grid 
  	 //TO-DO: -update: iRowCountMax
  	 int iRowCountMax=10;
@@ -564,7 +575,8 @@ void OpenGLCanvas::drawGrid() {
 
    // Draw a Green Line top-left origin; Quadrant 4, y-axis inverted; x and y positive
    //rows   
- 	 for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
+   	//edited by Mike, 20201002
+ 	 for (int iRowCount=0; iRowCount<=iRowCountMax; iRowCount++) {
    		// Draw a Green Line top-left origin
    		glBegin(GL_LINES);
       		glColor3f(0.0f, 1.0f, 0.0f); // Green
@@ -575,7 +587,8 @@ void OpenGLCanvas::drawGrid() {
 	 }
 
    //columns
- 	 for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {
+   	//edited by Mike, 20201002
+ 	 for (int iColumnCount=0; iColumnCount<=iColumnCountMax; iColumnCount++) {
    		// Draw a Green Line top-left origin
    		glBegin(GL_LINES);
       		glColor3f(0.0f, 1.0f, 0.0f); // Green
