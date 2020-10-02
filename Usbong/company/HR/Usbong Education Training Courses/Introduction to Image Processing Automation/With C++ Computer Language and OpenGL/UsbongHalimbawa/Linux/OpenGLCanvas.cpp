@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20200930
+ * @date updated: 20201002
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -29,7 +29,8 @@
 //#include <SDL.h>
 //edited by Mike, 20200929
 
-//#include <windows.h> //removed by Mike, 20200930, due to Linux Machine
+//removed by Mike, 20201002
+//#include <windows.h> //Windows Machine
 
 #include <GL/gl.h>
 #include <GL/glut.h>
@@ -39,6 +40,10 @@
 //#include <math.h>
 
 #include "OpenGLCanvas.h"
+
+//added by Mike, 20201001
+#include "RobotShip.h"
+
 //removed by Mike, 20200929
 //TO-DO: -add: these 
 /*
@@ -96,20 +101,18 @@ OpenGLCanvas::~OpenGLCanvas()
 bool OpenGLCanvas::init()
 {	
 	//TO-DO: -receive: values from main.cpp
-    myWindowWidth=640;
-    myWindowHeight=640;
+  myWindowWidth=640;
+  myWindowHeight=640;
 
-    keyPressCounter=0;
+  keyPressCounter=0;
     
     //added by Mike, 20200930
-		currentState = GAME_SCREEN; //TO-DO: -update: this
+	currentState = GAME_SCREEN; //TO-DO: -update: this
 	
-	//removed by Mike, 20200929
-	//TO-DO: -add: these
-/*	
+	//added by Mike, 20201001
 	myRobotShip = new RobotShip;
-    myRobotShip->setOpenGLCanvas(this);
-*/
+  myRobotShip->setOpenGLCanvas(this);
+
 	return true;
 }
 
@@ -467,6 +470,10 @@ void OpenGLCanvas::drawPlane()
 void OpenGLCanvas::keyDown(int keyCode)
 {
 	myKeysDown[keyCode] = TRUE;	
+	 
+	 char str[700];                                       
+          sprintf(str,"keyCode: %d",keyCode);
+	
 }
 void OpenGLCanvas::keyUp(int keyCode)
 {
@@ -528,12 +535,14 @@ void OpenGLCanvas::render()
                   0.0, 1.0, 0.0); // up-direction
 */
 
-		//removed by Mike, 20200929
-/*		//TO-DO: -add: these    
+		//added by Mike, 20201001
     	glPushMatrix();		
             myRobotShip->drawRobotShip();
     	glPopMatrix();		
-*/    	
+
+   
+                   char str[700];                                       
+                   sprintf(str,"dito: %f",0.0f);//    std::cout << "keydown " << key << "\n";    	
      }
 }
 
@@ -546,15 +555,26 @@ void OpenGLCanvas::drawGrid() {
    //set TOP-LEFT origin/anchor/reference point; quadrant 4, y-axis inverted; x and y positive
 	 glMatrixMode(GL_PROJECTION);
 	 glLoadIdentity();
-	 //TOP-Left origin
+	 //TOP-LEFT origin
 	 glOrtho(0.0f, //left
         	1.0f, //right
         	1.0f, //bottom
         	0.0f, //top
         	0.0f, //zNear; minimum
-        	1.0f //zFar; maxinum
+        	1.0f //zFar; maximum
       	);
-	
+
+	//added by Mike, 20201002
+	//note: set these to be isometric view
+    glRotatef(40, 0.0f, 0.0f, 0.2f);
+    glTranslatef(0.45f, -0.15f, 0.0f);
+    glScalef(0.5f, 0.5f, 0.5f);
+
+/*
+	//use these to verify grid
+    glTranslatef(0.1f, 0.1f, 0.0f);
+    glScalef(0.5f, 0.5f, 0.5f);
+*/	
 	 //draw grid 
  	 //TO-DO: -update: iRowCountMax
  	 int iRowCountMax=10;
@@ -563,7 +583,8 @@ void OpenGLCanvas::drawGrid() {
 
    // Draw a Green Line top-left origin; Quadrant 4, y-axis inverted; x and y positive
    //rows   
- 	 for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
+   	//edited by Mike, 20201002
+ 	 for (int iRowCount=0; iRowCount<=iRowCountMax; iRowCount++) {
    		// Draw a Green Line top-left origin
    		glBegin(GL_LINES);
       		glColor3f(0.0f, 1.0f, 0.0f); // Green
@@ -574,7 +595,8 @@ void OpenGLCanvas::drawGrid() {
 	 }
 
    //columns
- 	 for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {
+   	//edited by Mike, 20201002
+ 	 for (int iColumnCount=0; iColumnCount<=iColumnCountMax; iColumnCount++) {
    		// Draw a Green Line top-left origin
    		glBegin(GL_LINES);
       		glColor3f(0.0f, 1.0f, 0.0f); // Green
@@ -590,42 +612,37 @@ void OpenGLCanvas::drawGrid() {
 void OpenGLCanvas::update()
 {           
     if (currentState==GAME_SCREEN) {
-		//removed by Mike, 20200929
-		//TO-DO: -add: this
-/*    	myRobotShip->update(1); //dt
-*/
+    	//added by Mike, 20201001
+    	myRobotShip->update(1); //dt
+
        	//process input
     	if(myKeysDown[KEY_UP] == TRUE)
     	{
-			//removed by Mike, 20200929
-			//TO-DO: -add: this
-/*            myRobotShip->move(KEY_UP);
-*/
+    		//added by Mike, 20201001
+        myRobotShip->move(KEY_UP);
+
 			//removed by Mike, 20200929
 //			sound->play_sound_clip(thrust);
     	}
     	else if(myKeysDown[KEY_DOWN] == TRUE)
     	{
-			//removed by Mike, 20200929
-			//TO-DO: -add: this
-/*            myRobotShip->move(KEY_DOWN);
-*/
+    		//added by Mike, 20201001
+        myRobotShip->move(KEY_DOWN);
+
     	}
     	else if(myKeysDown[KEY_RIGHT] == TRUE)
     	{
-			//removed by Mike, 20200929
-			//TO-DO: -add: this
-/*            myRobotShip->move(KEY_RIGHT);
-*/
+    		//added by Mike, 20201001
+        myRobotShip->move(KEY_RIGHT);
+
 			//removed by Mike, 20200929
 //			sound->play_sound_clip(thrust);
     	}
     	else if(myKeysDown[KEY_LEFT] == TRUE)
     	{
-			//removed by Mike, 20200929
-			//TO-DO: -add: this
-/*            myRobotShip->move(KEY_LEFT);
-*/
+    		//added by Mike, 20201001
+        myRobotShip->move(KEY_LEFT);
+
 			//removed by Mike, 20200929
 //			sound->play_sound_clip(thrust);
     	}
@@ -735,3 +752,4 @@ void OpenGLCanvas::changeState(int s)
 {
   currentState=s;                  
 }
+

@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200929
- * @date updated: 20200930
+ * @date updated: 20201002
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -29,7 +29,8 @@
 #ifndef OPENGLCANVAS_H
 #define OPENGLCANVAS_H
 
-//#include <windows.h> //removed by Mike, 20200930, due to Linux Machine
+//removed by Mike, 20201002
+//#include <windows.h> //Windows Machine
 
 //#include "CTargaImage.h"
 
@@ -161,7 +162,7 @@ class OpenGLCanvas
 
    		void keyDown(int keyCode);
 	    void keyUp(int keyCode);
-    	    
+		
     	//void Prepare(float dt);
     	void render();
     	void update();
@@ -172,3 +173,4 @@ class OpenGLCanvas
 };
 
 #endif
+

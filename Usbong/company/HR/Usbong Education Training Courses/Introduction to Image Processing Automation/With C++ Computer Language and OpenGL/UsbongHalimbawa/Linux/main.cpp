@@ -14,7 +14,7 @@
  *
  * @author: Michael Syson
  * @date created: 20200926
- * @date updated: 20200930
+ * @date updated: 20201002
  *
  * References:
  * 1) Dev-C++ 5.11 auto-generated OpenGL example project
@@ -86,6 +86,9 @@
 //added by Mike, 20200930
 #include "OpenGLCanvas.h"
 
+//added by Mike, 20201002
+#include <iostream>
+
 /**************************
  * Function Declarations
  *
@@ -97,9 +100,32 @@ void EnableOpenGL (HWND hWnd, HDC *hDC, HGLRC *hRC);
 void DisableOpenGL (HWND hWnd, HDC hDC, HGLRC hRC);
 */
 
+//added by Mike, 20201002
+#define VK_UP 101
+#define VK_DOWN 103
+#define VK_LEFT 100
+#define VK_RIGHT 102
+
 //note: "static" in C/C++ = "final" in java
 static int myWindowWidth=640; //320
 static int myWindowHeight=640; //320
+
+//added by Mike, 20201001
+OpenGLCanvas *myOpenGLCanvas = NULL;
+
+//added by Mike, 20201001
+enum Keys
+{
+	KEY_UP = 0,
+	KEY_DOWN,
+	KEY_RIGHT,
+	KEY_LEFT,
+	KEY_SPACE,
+	KEY_ENTER
+};
+
+//added by Mike, 20201001
+bool pause;
 
 //Reference: https://www3.ntu.edu.sg/home/ehchua/programming/opengl/HowTo_OpenGL_C.html;
 //last accessed: 20200928
@@ -170,12 +196,198 @@ void display() {
 
 //added by Mike, 20200930
 void displayOpenGLCanvas() {
-	 //added by Mike, 20200930
-	 OpenGLCanvas *myOpenGLCanvas;   	
-	 myOpenGLCanvas = new OpenGLCanvas;
-	 myOpenGLCanvas->init();
-	 myOpenGLCanvas->render();
-	 //myOpenGLCanvas->update(); //TO-DO: -add: this
+	 //removed by Mike, 20200930	 
+	 //Linux Machine
+/*    myOpenGLCanvas = new OpenGLCanvas;
+    myOpenGLCanvas->init();
+*/
+
+	//added by Mike, 20201001
+    //init stuff for delay
+    int skip=0, currSysTime=0,
+        timeElapsed,
+        idealFrameTime=60;//33;
+    pause=false;//0;
+	 
+		if (!pause) {
+					//removed by Mike, 20201002					
+          //currSysTime=GetTickCount(); //Linux Machine
+
+          /* OpenGL animation code goes here */
+          myOpenGLCanvas->update();
+/*				//removed by Mike, 20201002, Linux Machine
+          if (skip > 0)
+              skip = skip-1;
+          else {
+*/          
+                //do rendering here 
+                myOpenGLCanvas->render();
+                //removed by Mike, 20201002
+                //SwapBuffers (hDC); //Windows Machine
+   							glFlush();  // Render now //Linux Machine
+
+/*							//removed by Mike, 20201002, Linux Machine                
+                timeElapsed=GetTickCount()-currSysTime;
+                if (timeElapsed>idealFrameTime)
+                  skip = (timeElapsed/idealFrameTime) - 1;
+                else 
+                  Sleep(idealFrameTime - timeElapsed);
+          }
+*/                  
+		  //added by Mike, 20201002
+//			glutPostRedisplay();
+			
+			//reference: https://stackoverflow.com/questions/35563360/looping-in-opengl-with-gluttimerfunc;
+			//answer by: spookyPuppy, 20160223T0445
+			//edited by: datenwolf, 20160223T0631			
+			//note: void glutTimerFunc(unsigned int numMilliseconds, functionCallback, value);
+			//glutTimerFunc(1000 / SCREEN_FPS, Loop, 0);
+//			glutTimerFunc(1000, NULL, 0);
+
+		}	 
+}
+
+//added by Mike, 20200930
+void update(int i) {
+	 //removed by Mike, 20200930	 
+	 //Linux Machine
+/*    myOpenGLCanvas = new OpenGLCanvas;
+    myOpenGLCanvas->init();
+*/
+
+	//added by Mike, 20201001
+    //init stuff for delay
+    int skip=0, currSysTime=0,
+        timeElapsed,
+        idealFrameTime=60;//33;
+    pause=false;//0;
+	 
+		if (!pause) {
+					//removed by Mike, 20201002					
+          //currSysTime=GetTickCount(); //Linux Machine
+
+          /* OpenGL animation code goes here */
+          myOpenGLCanvas->update();
+/*				//removed by Mike, 20201002, Linux Machine
+          if (skip > 0)
+              skip = skip-1;
+          else {
+*/          
+
+/*							//removed by Mike, 20201002, Linux Machine                
+                timeElapsed=GetTickCount()-currSysTime;
+                if (timeElapsed>idealFrameTime)
+                  skip = (timeElapsed/idealFrameTime) - 1;
+                else 
+                  Sleep(idealFrameTime - timeElapsed);
+          }
+*/                  
+		  //added by Mike, 20201002
+			glutPostRedisplay();
+			
+			//reference: https://stackoverflow.com/questions/35563360/looping-in-opengl-with-gluttimerfunc;
+			//answer by: spookyPuppy, 20160223T0445
+			//edited by: datenwolf, 20160223T0631			
+			//note: void glutTimerFunc(unsigned int numMilliseconds, functionCallback, value);
+			//glutTimerFunc(1000 / SCREEN_FPS, Loop, 0);
+			glutTimerFunc(50, update, 0);
+			
+			//TO-DO: -add: image buffer to reduce flickering due to repainting canvas
+		}	 
+}
+
+
+
+//note: special functions, e.g. character keys
+//added by Mike, 20201002
+void keyDown (unsigned char key, int x, int y)
+{
+//    std::cout << "keydown " << key << "\n";
+}
+//added by Mike, 20201002
+void keyUp (unsigned char key, int x, int y)
+{
+//    std::cout << "keyup " << key << "\n";
+}
+
+//note: special functions, e.g. shift, control, arrow keys
+//UP: 101
+//DOWN: 103
+//LEFT: 100
+//RIGHT: 102    
+//added by Mike, 20201002
+void specialKeyDown (int specialKey, int x, int y)
+{
+//    std::cout << "keydown " << specialKey << "\n";  
+  
+    switch (specialKey)
+    {
+/*				//TO-DO: -add: this        
+	        case VK_ESCAPE:
+	            PostQuitMessage(0);
+	            return 0;
+*/	            
+	        //added by Mike, 20201001
+   	       case VK_LEFT:
+		        		myOpenGLCanvas->keyDown(KEY_LEFT);
+                return;
+   	       case VK_RIGHT:
+		        		myOpenGLCanvas->keyDown(KEY_RIGHT);
+                return;
+   	       case VK_UP:
+		        		myOpenGLCanvas->keyDown(KEY_UP);
+                return;
+   	       case VK_DOWN:
+		        		myOpenGLCanvas->keyDown(KEY_DOWN);
+                return; 
+/*				 //removed by Mike, 20201002                    
+   	       case VK_SPACE:
+                myOpenGLCanvas->keyDown(KEY_SPACE);
+                return;
+*/                
+			//removed by Mike, 20201001 
+/*			               
+   	       case 13: //ENTER
+                myOpenGLCanvas->keyDown(KEY_ENTER);
+                return;     
+   	       case 80: //P
+   	            if (myOpenGLCanvas->currentState!=TITLE_SCREEN) {
+			        if (pause==0) //false
+			          pause=1; //make it true
+                    else pause=0;
+                }
+                return;     	        
+*/                
+        }
+        return;
+
+}
+//added by Mike, 20201002
+void specialKeyUp (int specialKey, int x, int y)
+{
+//    std::cout << "keyup " << specialKey << "\n";
+    
+		switch (specialKey)
+    {
+   	       case VK_LEFT:
+		        		myOpenGLCanvas->keyUp(KEY_LEFT);
+                return;
+   	       case VK_RIGHT:
+		        		myOpenGLCanvas->keyUp(KEY_RIGHT);
+                return;
+   	       case VK_UP:
+		        		myOpenGLCanvas->keyUp(KEY_UP);
+                return;
+   	       case VK_DOWN:
+		        		myOpenGLCanvas->keyUp(KEY_DOWN);
+                return;
+/*         //removed by Mike, 20201002
+   	       case VK_SPACE:
+                myOpenGLCanvas->keyUp(KEY_SPACE);
+                return;
+*/                
+        }
+        return;    
 }
 
 int main(int argc, char** argv) {
@@ -185,14 +397,34 @@ int main(int argc, char** argv) {
    glutInitWindowSize(myWindowWidth, myWindowHeight);   // Set the window's initial width & height
    glutInitWindowPosition(50, 50); // Position the window's initial top-left corner
 	 
-	 //edited by Mike, 20200930
-   //glutDisplayFunc(display); // Register display callback handler for window re-paint	
-	 glutDisplayFunc(displayOpenGLCanvas); // Register display callback handler for window re-paint
-	 //displayOpenGLCanvas(); //output of this = glutDisplayFunc(displayOpenGLCanvas);
-	 	
-   glutMainLoop();           // Enter the infinitely event-processing loop
+	  //added by Mike, 20201002
+	  //Linux Machine
+	  //note: to receive key presses
+    myOpenGLCanvas = new OpenGLCanvas;
+    myOpenGLCanvas->init();
+
+	 	//edited by Mike, 20200930
+   	//glutDisplayFunc(display); // Register display callback handler for window re-paint	
+
+   	//edited by Mike, 20201002
+//	 	glutDisplayFunc(displayOpenGLCanvas); // Register display callback handler for window re-paint
+	 	glutDisplayFunc(displayOpenGLCanvas); // Register display callback handler for window re-paint
+	 	//displayOpenGLCanvas(); //output of this = glutDisplayFunc(displayOpenGLCanvas);
+	 		
+	 	update(0);
+	 		
+	 	//added by Mike, 20201002
+	 	glutKeyboardFunc(keyDown);
+   	glutKeyboardUpFunc(keyUp);
+	 	glutSpecialFunc(specialKeyDown);
+	 	glutSpecialUpFunc(specialKeyUp);
+    		
+   	glutMainLoop();           // Enter the infinitely event-processing loop
+   	
+
    return 0;
 }
+
 
 /**************************
  * WinMain
@@ -225,7 +457,8 @@ int WINAPI WinMain (HINSTANCE hInstance,
     wc.lpszClassName = "GLSample";
     RegisterClass (&wc);
 
-    // create main window
+    // create main window    glutKeyboardFunc(keyDown);
+    glutKeyboardUpFunc(keyUp);
 	//added by Mike, 20200926
     int myWindowWidth=640;
     int myWindowHeight=640;
@@ -306,7 +539,8 @@ int WINAPI WinMain (HINSTANCE hInstance,
 
 			glEnd();            
             glPopMatrix ();
-            SwapBuffers (hDC);
+            SwapBuffers (hDC);    glutKeyboardFunc(keyDown);
+    glutKeyboardUpFunc(keyUp);
             
             //TO-DO: -add: read input file with vertices
             //refer: https://all-things-andy-gavin.com/2020/02/27/war-stories-crash-bandicoot/
