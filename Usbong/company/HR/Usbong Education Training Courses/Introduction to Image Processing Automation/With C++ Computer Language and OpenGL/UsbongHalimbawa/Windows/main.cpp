@@ -14,7 +14,7 @@
  *
  * @author: Michael Syson
  * @date created: 20200926
- * @date updated: 20201001
+ * @date updated: 20201013
  *
  * References:
  * 1) Dev-C++ 5.11 auto-generated OpenGL example project
@@ -107,7 +107,9 @@ enum Keys
 	KEY_RIGHT,
 	KEY_LEFT,
 	KEY_SPACE,
-	KEY_ENTER
+	//edited by Mike, 20201013
+	KEY_ENTER,
+	KEY_A
 };
 
 //added by Mike, 20201001
@@ -366,6 +368,13 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT message,
    	       case VK_SPACE:
                 myOpenGLCanvas->keyDown(KEY_SPACE);
                 return 0;
+           //added by Mike, 20201013
+           //reference: 
+           //https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
+           //last accessed: 20201013
+   	       case 0x41: //A key
+		        myOpenGLCanvas->keyDown(KEY_A);
+                return 0;     
 			//removed by Mike, 20201001 
 /*			               
    	       case 13: //ENTER
@@ -399,6 +408,13 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT message,
                     return 0;                        
        	       case VK_SPACE:
 			        myOpenGLCanvas->keyUp(KEY_SPACE);
+                    return 0;     
+	           //added by Mike, 20201013
+	           //reference: 
+	           //https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
+	           //last accessed: 20201013
+	   	       case 0x41: //A key
+			        myOpenGLCanvas->keyUp(KEY_A);
                     return 0;     
        	       case 13: //ENTER
                     myOpenGLCanvas->keyUp(KEY_ENTER);

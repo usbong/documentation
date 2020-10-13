@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20201012
+ * @date updated: 20201013
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -76,7 +76,10 @@ enum Keys
 	KEY_RIGHT,
 	KEY_LEFT,
 	KEY_SPACE,
-	KEY_ENTER
+	//edited by Mike, 20201013
+	KEY_ENTER,
+	KEY_A
+
 };
 
 /*	//removed by Mike, 20200929
@@ -715,7 +718,13 @@ void OpenGLCanvas::update()
 			//removed by Mike, 20200929
 //			sound->play_sound_clip(thrust);
     	}
-    	else if(myKeysDown[KEY_SPACE] == TRUE)
+    	//edited by Mike, 20201013
+    	//else if(myKeysDown[KEY_SPACE] == TRUE)
+        //Reference: 
+        //https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
+        //last accessed: 20201013    	
+        //TO-DO: -update: this
+    	else if(myKeysDown[KEY_A] == TRUE)
     	{
 			//edited by Mike, 20201013
 			static int i = 0;
