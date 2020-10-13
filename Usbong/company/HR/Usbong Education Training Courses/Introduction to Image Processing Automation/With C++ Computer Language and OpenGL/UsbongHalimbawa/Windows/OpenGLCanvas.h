@@ -51,7 +51,11 @@
 #define FONT_TEXTURE 2
 
 #define MAX_ENEMY 2
-#define MAX_BEAMS 5
+
+//edited by Mike, 20201013
+//#define MAX_BEAMS 5
+#define MAX_BEAMS 32
+
 #define MAX_ASTEROID 28 //groups of 3, therefore 4 groups, plus inner groupings
 #define MAX_LIFE 3
 #define REQUIRED_POINTS_FOR_BONUS 30000 //5000

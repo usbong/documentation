@@ -109,7 +109,16 @@ enum Keys
 	KEY_SPACE,
 	//edited by Mike, 20201013
 	KEY_ENTER,
-	KEY_A
+	//TO-DO: -verify: gamepad
+	KEY_A,
+	KEY_D,
+	KEY_W,
+	KEY_S,
+
+	KEY_J,
+	KEY_L,
+	KEY_I,
+	KEY_K
 };
 
 //added by Mike, 20201001
@@ -375,6 +384,29 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT message,
    	       case 0x41: //A key
 		        myOpenGLCanvas->keyDown(KEY_A);
                 return 0;     
+   	       case 0x44: //D key
+		        myOpenGLCanvas->keyDown(KEY_D);
+                return 0;     
+   	       case 0x57: //W key
+		        myOpenGLCanvas->keyDown(KEY_W);
+                return 0;     
+   	       case 0x53: //S key
+		        myOpenGLCanvas->keyDown(KEY_S);
+                return 0;     
+
+   	       case 0x4A: //J key
+		        myOpenGLCanvas->keyDown(KEY_J);
+                return 0;     
+   	       case 0x4C: //L key
+		        myOpenGLCanvas->keyDown(KEY_L);
+                return 0;     
+   	       case 0x49: //I key
+		        myOpenGLCanvas->keyDown(KEY_I);
+                return 0;     
+   	       case 0x4B: //K key
+		        myOpenGLCanvas->keyDown(KEY_K);
+                return 0;     
+
 			//removed by Mike, 20201001 
 /*			               
    	       case 13: //ENTER
@@ -415,7 +447,30 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT message,
 	           //last accessed: 20201013
 	   	       case 0x41: //A key
 			        myOpenGLCanvas->keyUp(KEY_A);
-                    return 0;     
+                    return 0;
+	   	       case 0x44: //D key
+			        myOpenGLCanvas->keyUp(KEY_D);
+	                return 0;     
+	   	       case 0x57: //W key
+			        myOpenGLCanvas->keyUp(KEY_W);
+	                return 0;     
+	   	       case 0x53: //S key
+			        myOpenGLCanvas->keyUp(KEY_S);
+	                return 0;     
+	
+	   	       case 0x4A: //J key
+			        myOpenGLCanvas->keyUp(KEY_J);
+	                return 0;     
+	   	       case 0x4C: //L key
+			        myOpenGLCanvas->keyUp(KEY_L);
+	                return 0;     
+	   	       case 0x49: //I key
+			        myOpenGLCanvas->keyUp(KEY_I);
+	                return 0;     
+	   	       case 0x4B: //K key
+			        myOpenGLCanvas->keyUp(KEY_K);
+	                return 0;     
+
        	       case 13: //ENTER
                     myOpenGLCanvas->keyUp(KEY_ENTER);
                     return 0;

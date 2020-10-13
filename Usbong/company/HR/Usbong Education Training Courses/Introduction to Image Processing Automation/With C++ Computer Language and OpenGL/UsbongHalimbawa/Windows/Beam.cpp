@@ -178,7 +178,7 @@ Beam::~Beam()
 }
 
 void Beam::move(float rot, float* xyz)
-{
+{	
      //fprintf(stdout, "%f", rot);
      //fprintf(stderr, "testing");
      rotationAngle = rot;

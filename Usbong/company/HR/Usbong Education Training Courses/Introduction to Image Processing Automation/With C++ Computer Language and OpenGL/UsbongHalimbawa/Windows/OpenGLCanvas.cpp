@@ -78,8 +78,16 @@ enum Keys
 	KEY_SPACE,
 	//edited by Mike, 20201013
 	KEY_ENTER,
-	KEY_A
+	//TO-DO: -verify: gamepad
+	KEY_A,
+	KEY_D,
+	KEY_W,
+	KEY_S,
 
+	KEY_J,
+	KEY_L,
+	KEY_I,
+	KEY_K
 };
 
 /*	//removed by Mike, 20200929
@@ -688,7 +696,11 @@ void OpenGLCanvas::update()
 		}
 
        	//process input
-    	if(myKeysDown[KEY_UP] == TRUE)
+       	//TO-DO: -update: this
+       	//TO-DO: -verify: gamepad
+       	//edited by Mike, 20201013
+    	//if(myKeysDown[KEY_UP] == TRUE)
+    	if(myKeysDown[KEY_W] == TRUE)
     	{
     		//added by Mike, 20201001
           	myRobotShip->move(KEY_UP);
@@ -696,13 +708,17 @@ void OpenGLCanvas::update()
 			//removed by Mike, 20200929
 //			sound->play_sound_clip(thrust);
     	}
-    	else if(myKeysDown[KEY_DOWN] == TRUE)
+       	//edited by Mike, 20201013
+    	//else if(myKeysDown[KEY_DOWN] == TRUE)
+    	else if(myKeysDown[KEY_S] == TRUE)
     	{
     		//added by Mike, 20201001
             myRobotShip->move(KEY_DOWN);
 
     	}
-    	else if(myKeysDown[KEY_RIGHT] == TRUE)
+       	//edited by Mike, 20201013
+    	//else if(myKeysDown[KEY_RIGHT] == TRUE)
+    	else if(myKeysDown[KEY_D] == TRUE)
     	{
     		//added by Mike, 20201001
             myRobotShip->move(KEY_RIGHT);
@@ -710,7 +726,9 @@ void OpenGLCanvas::update()
 			//removed by Mike, 20200929
 //			sound->play_sound_clip(thrust);
     	}
-    	else if(myKeysDown[KEY_LEFT] == TRUE)
+       	//edited by Mike, 20201013
+    	//else if(myKeysDown[KEY_LEFT] == TRUE)
+    	else if(myKeysDown[KEY_A] == TRUE)
     	{
     		//added by Mike, 20201001
             myRobotShip->move(KEY_LEFT);
@@ -724,7 +742,7 @@ void OpenGLCanvas::update()
         //https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
         //last accessed: 20201013    	
         //TO-DO: -update: this
-    	else if(myKeysDown[KEY_A] == TRUE)
+    	else if(myKeysDown[KEY_J] == TRUE)
     	{
 			//edited by Mike, 20201013
 			static int i = 0;
@@ -733,12 +751,80 @@ void OpenGLCanvas::update()
 			
             for(i=0; i<MAX_BEAMS; i++) {
               if (!myBeam[i]->isActive()) {
-                myBeam[i]->move(myRobotShip->getRotationAngle(), myRobotShip->getXYZPos());
+				  //edited by Mike, 20201013
+//                myBeam[i]->move(myRobotShip->getRotationAngle(), myRobotShip->getXYZPos());
+				
+				//LEFT
+				rotationAngle=90;
+                myBeam[i]->move(rotationAngle, myRobotShip->getXYZPos());
+
 //		        sound->play_sound_clip(beam);
                 return;
               }
-            }
+            }			
+    	}
+    	else if(myKeysDown[KEY_L] == TRUE)
+    	{
+			//edited by Mike, 20201013
+			static int i = 0;
+
+//            myRobotShip->move(KEY_LEFT);
 			
+            for(i=0; i<MAX_BEAMS; i++) {
+              if (!myBeam[i]->isActive()) {
+				  //edited by Mike, 20201013
+//                myBeam[i]->move(myRobotShip->getRotationAngle(), myRobotShip->getXYZPos());
+				
+				//RIGHT
+				rotationAngle=-90;
+                myBeam[i]->move(rotationAngle, myRobotShip->getXYZPos());
+
+//		        sound->play_sound_clip(beam);
+                return;
+              }
+            }			
+    	}
+    	else if(myKeysDown[KEY_I] == TRUE)
+    	{
+			//edited by Mike, 20201013
+			static int i = 0;
+
+//            myRobotShip->move(KEY_LEFT);
+			
+            for(i=0; i<MAX_BEAMS; i++) {
+              if (!myBeam[i]->isActive()) {
+				  //edited by Mike, 20201013
+//                myBeam[i]->move(myRobotShip->getRotationAngle(), myRobotShip->getXYZPos());
+				
+				//UP
+				rotationAngle=180;
+                myBeam[i]->move(rotationAngle, myRobotShip->getXYZPos());
+
+//		        sound->play_sound_clip(beam);
+                return;
+              }
+            }			
+    	}
+    	else if(myKeysDown[KEY_K] == TRUE)
+    	{
+			//edited by Mike, 20201013
+			static int i = 0;
+
+//            myRobotShip->move(KEY_LEFT);
+			
+            for(i=0; i<MAX_BEAMS; i++) {
+              if (!myBeam[i]->isActive()) {
+				  //edited by Mike, 20201013
+//                myBeam[i]->move(myRobotShip->getRotationAngle(), myRobotShip->getXYZPos());
+				
+				//DOWN
+				rotationAngle=0;
+                myBeam[i]->move(rotationAngle, myRobotShip->getXYZPos());
+
+//		        sound->play_sound_clip(beam);
+                return;
+              }
+            }			
     	}
      }
      else if (currentState==TITLE_SCREEN)
