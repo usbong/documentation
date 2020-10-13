@@ -58,6 +58,9 @@
 #include "Asteroid.h"
 */
 
+//added by Mike, 20201013
+#include "Beam.h"
+
 //#include "Sound.h"
 
 //#include "DynamicObject.h"
@@ -114,6 +117,11 @@ bool OpenGLCanvas::init()
 	//added by Mike, 20201001
 	myRobotShip = new RobotShip;
     myRobotShip->setOpenGLCanvas(this);
+	
+	//added by Mike, 20201013
+	for (i=0; i<MAX_BEAMS; i++) {
+      myBeam[i] = new Beam;
+	}
 	
     //added by Mike, 20201011
     setupFont(FONT_TEXTURE);
@@ -571,8 +579,16 @@ void OpenGLCanvas::render()
 
 		//added by Mike, 20201001
     	glPushMatrix();		
+    		//added by Mike, 202013
+            for(i=0; i<MAX_BEAMS; i++) {
+              if (myBeam[i]->isActive()) {
+                myBeam[i]->draw();
+			  }
+            }
+
             myRobotShip->drawRobotShip();
     	glPopMatrix();		
+
      }
 }
 
@@ -597,8 +613,8 @@ void OpenGLCanvas::drawGrid() {
       	);
 
 
-/*	//removed by Mike, 20201012
-	//added by Mike, 20201002
+	//edited by Mike, 20201012	
+/*	//added by Mike, 20201002
 	//note: set these to be isometric view
     glRotatef(40, 0.0f, 0.0f, 0.2f);
     glTranslatef(0.45f, -0.15f, 0.0f);
@@ -650,6 +666,23 @@ void OpenGLCanvas::update()
     if (currentState==GAME_SCREEN) {
     	//added by Mike, 20201001
     	myRobotShip->update(1); //dt
+		
+		//added by Mike, 20201013
+/*    	int a;
+*/
+        for(i=0; i<MAX_BEAMS; i++) {
+          if ( (myRobotShip->getState()!=ROBOTSHIP_INITIALIZING_STATE) &&
+               (myBeam[i]->isActive()) ){
+            myBeam[i]->update(1);
+
+            //check collisions
+            //myBeam[i]->collideWith(myEnemy);
+/*
+            for(a=0; a<MAX_ASTEROID; a++)
+              myBeam[i]->collideWith(myAsteroid[a]);
+*/              
+          }
+		}
 
        	//process input
     	if(myKeysDown[KEY_UP] == TRUE)
@@ -684,17 +717,19 @@ void OpenGLCanvas::update()
     	}
     	else if(myKeysDown[KEY_SPACE] == TRUE)
     	{
-/*			//removed by Mike, 20200929
+			//edited by Mike, 20201013
 			static int i = 0;
 
+//            myRobotShip->move(KEY_LEFT);
+			
             for(i=0; i<MAX_BEAMS; i++) {
               if (!myBeam[i]->isActive()) {
                 myBeam[i]->move(myRobotShip->getRotationAngle(), myRobotShip->getXYZPos());
-		        sound->play_sound_clip(beam);
+//		        sound->play_sound_clip(beam);
                 return;
               }
             }
-*/			
+			
     	}
      }
      else if (currentState==TITLE_SCREEN)

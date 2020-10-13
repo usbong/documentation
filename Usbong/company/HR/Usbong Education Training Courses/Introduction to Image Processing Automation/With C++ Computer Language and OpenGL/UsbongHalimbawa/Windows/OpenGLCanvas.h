@@ -69,9 +69,9 @@
 #define ROBOTSHIP_INITIALIZING_STATE 0
 
 class RobotShip;
-class Enemy;
+//class Enemy; //removed by Mike, 20201013
 class Beam;
-class Asteroid;
+//class Asteroid; //removed by Mike, 20201013
 
 class OpenGLCanvas
 {
@@ -80,9 +80,13 @@ class OpenGLCanvas
     	          *myRobotShipPlayer2;
 
         //Enemy *myEnemy[MAX_ENEMY];
-        Enemy *myEnemy;
+        //removed by Mike, 20201013
+//        Enemy *myEnemy;
+
         Beam *myBeam[MAX_BEAMS];
-        Asteroid *myAsteroid[MAX_ASTEROID];
+
+        //removed by Mike, 20201013
+//        Asteroid *myAsteroid[MAX_ASTEROID];
 //        Asteroid *myAsteroid;
 
        	char *infile;//= "Patches1.txt";		
