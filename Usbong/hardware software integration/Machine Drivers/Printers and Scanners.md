@@ -27,7 +27,7 @@ https://support.hp.com/us-en/drivers/selfservice/samsung-scx-4521-laser-multifun
 <b>Notes:</b><br/>
 1) There are 10 sections. You press the "Enter" key to scroll down.<br/>
 2) Press "y" to agree and to install.<br/>
-### 2) Verify Command
+### 2.2) Verify Command
 Verify that the Linux machine identifies and classifies device to exist<br/>
 <br/>
 <b>scanimage -L</b>
@@ -39,10 +39,13 @@ Verify that the Linux machine identifies and classifies device to exist<br/>
 <br/>
 where: "..." are identification numbers/letters<br/>
 
-### 3) Scan Command<br/>
+### 2.3) Scan Command<br/>
 <b>scanimage > outputImage.pnm</b><br/>
 <br/>
-where: ".pnm" is the image file format
+where: ".pnm" is the image file format<br/>
+<br/>
+<b>Note:</b> You can also use .jpeg as output, instead of .pnm<br/>
+Example: <b>scanimage --format=jpeg > outputImage.jpeg</b>
 
 ### References:
 1) https://bugs.launchpad.net/simple-scan/+bug/1539933; last accessed: 20200623<br/>
@@ -63,3 +66,11 @@ where: ".pnm" is the image file format
 <br/>
 Done!<br/>
 <br/>
+
+## 3) Brother DCP-165C Linux Drivers (Printer and Scanner)
+https://support.brother.com/g/b/downloadhowto.aspx?c=ph&lang=en&prod=dcp165c_all&os=128&dlid=dlf006893_000&flang=4&type3=625; last accessed: 20201014
+
+### 3.1) Scan Command<br/>
+<b>scanimage --format=jpeg > outputImage.jpeg</b><br/>
+<br/>
+where: ".jpeg" is the image file format
