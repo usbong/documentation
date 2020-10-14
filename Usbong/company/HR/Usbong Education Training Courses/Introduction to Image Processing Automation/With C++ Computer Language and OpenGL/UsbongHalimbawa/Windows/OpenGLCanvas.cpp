@@ -511,7 +511,9 @@ void OpenGLCanvas::render()
 {     
 	//added by Mike, 20201012
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);    
-    glViewport(0, 0, myWindowWidth, myWindowHeight);		// reset the viewport to new 
+    //removed by Mike, 20201015
+//    glViewport(0, 0, myWindowWidth, myWindowHeight);		// reset the viewport to new 
+
 
     //set TOP-LEFT origin/anchor/reference point; quadrant 4, y-axis inverted; x and y positive
 	glMatrixMode(GL_PROJECTION);
@@ -631,14 +633,18 @@ void OpenGLCanvas::drawGrid() {
         	1.0f //zFar; maximum
       	);
 
-
+/*
 	//edited by Mike, 20201012	
-/*	//added by Mike, 20201002
+	//added by Mike, 20201002
 	//note: set these to be isometric view
     glRotatef(40, 0.0f, 0.0f, 0.2f);
     glTranslatef(0.45f, -0.15f, 0.0f);
     glScalef(0.5f, 0.5f, 0.5f);
 */
+	//added by Mike, 20201015
+	//TO-DO: -increase: size of grid
+	//non-isometric view
+    //glScalef(0.5f, 0.5f, 0.5f);
 
 
 /*
@@ -755,13 +761,19 @@ void OpenGLCanvas::update()
 			//removed by Mike, 20200929
 //			sound->play_sound_clip(thrust);
     	}
+    	
+    	
+    	//TO-DO: -update: to execute diagonal beams
+		//TO-DO: -reverify: rotation angle
+    	
     	//edited by Mike, 20201013
     	//else if(myKeysDown[KEY_SPACE] == TRUE)
         //Reference: 
         //https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
         //last accessed: 20201013    	
-        //TO-DO: -update: this
-    	else if(myKeysDown[KEY_J] == TRUE)
+        //edited by Mike, 20201015
+//    	else if(myKeysDown[KEY_J] == TRUE)
+    	if(myKeysDown[KEY_J] == TRUE)
     	{
 			//edited by Mike, 20201013
 			static int i = 0;
@@ -782,7 +794,9 @@ void OpenGLCanvas::update()
               }
             }			
     	}
-    	else if(myKeysDown[KEY_L] == TRUE)
+    	//edited by Mike, 20201015
+//    	else if(myKeysDown[KEY_L] == TRUE)
+    	if(myKeysDown[KEY_L] == TRUE)
     	{
 			//edited by Mike, 20201013
 			static int i = 0;
@@ -803,7 +817,9 @@ void OpenGLCanvas::update()
               }
             }			
     	}
-    	else if(myKeysDown[KEY_I] == TRUE)
+		//edited by Mike, 20201015
+//    	else if(myKeysDown[KEY_I] == TRUE)
+    	if(myKeysDown[KEY_I] == TRUE)
     	{
 			//edited by Mike, 20201013
 			static int i = 0;
@@ -824,7 +840,9 @@ void OpenGLCanvas::update()
               }
             }			
     	}
-    	else if(myKeysDown[KEY_K] == TRUE)
+		//edited by Mike, 20201015
+//    	else if(myKeysDown[KEY_K] == TRUE)
+    	if(myKeysDown[KEY_K] == TRUE)
     	{
 			//edited by Mike, 20201013
 			static int i = 0;

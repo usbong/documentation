@@ -228,13 +228,18 @@ void Beam::draw()
 //added by Mike, 20201013
 void Beam::drawBeam()
 {
-	//added by Mike, 20201002
+	//added by Mike, 20201002; edited by Mike, 202010015
 	//to make anchor/origin/reference point start at top-left
-    glTranslatef(0.0f, 0.1f, 0.0f);   
+//    glTranslatef(0.0f, 0.1f, 0.0f);   
+
+	//reference point at center
+    glTranslatef(0.1f/2, 0.1f/2, 0.0f);   
 	
 	//Reference: https://www3.ntu.edu.sg/home/ehchua/programming/opengl/HowTo_OpenGL_C.html;
 	//last accessed: 20200928 
    //note: 0.5f = half of the window width or height
+
+   //TO-DO: -reverify: vertices due to 0.01 not centered at origin
    // Draw a Red 1x1 Square centered at origin
    //TO-DO: -update: this due to output is 1 x 2 box, width x height
    glBegin(GL_QUADS);              // Each set of 4 vertices form a quad
