@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20201013
+ * @date updated: 20201014
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -67,8 +67,13 @@
 
 //#include "glfont.h"
 
-int i;
+//removed by Mike, 20201014
+//int i;
 
+//TO-DO: -reverify: KEY_D!=OK; KEY_RIGHT=OK
+//TO-DO: -reverify: KEY_W!=OK; KEY_UP=OK
+
+//added by Mike, 20201001
 enum Keys
 {
 	KEY_UP = 0,
@@ -89,6 +94,7 @@ enum Keys
 	KEY_I,
 	KEY_K
 };
+
 
 /*	//removed by Mike, 20200929
 typedef struct
@@ -129,8 +135,9 @@ bool OpenGLCanvas::init()
 	myRobotShip = new RobotShip;
     myRobotShip->setOpenGLCanvas(this);
 	
-	//added by Mike, 20201013
-	for (i=0; i<MAX_BEAMS; i++) {
+	//added by Mike, 20201013; edited by Mike, 20201014
+//	for (i=0; i<MAX_BEAMS; i++) {
+	for (int i=0; i<MAX_BEAMS; i++) {
       myBeam[i] = new Beam;
 	}
 	
@@ -590,8 +597,9 @@ void OpenGLCanvas::render()
 
 		//added by Mike, 20201001
     	glPushMatrix();		
-    		//added by Mike, 202013
-            for(i=0; i<MAX_BEAMS; i++) {
+    		//added by Mike, 202013; edited by Mike, 20201014
+//            for(i=0; i<MAX_BEAMS; i++) {
+            for(int i=0; i<MAX_BEAMS; i++) {
               if (myBeam[i]->isActive()) {
                 myBeam[i]->draw();
 			  }
@@ -681,7 +689,9 @@ void OpenGLCanvas::update()
 		//added by Mike, 20201013
 /*    	int a;
 */
-        for(i=0; i<MAX_BEAMS; i++) {
+		//edited by Mike, 20201014
+//        for(i=0; i<MAX_BEAMS; i++) {
+        for(int i=0; i<MAX_BEAMS; i++) {
           if ( (myRobotShip->getState()!=ROBOTSHIP_INITIALIZING_STATE) &&
                (myBeam[i]->isActive()) ){
             myBeam[i]->update(1);
@@ -699,18 +709,21 @@ void OpenGLCanvas::update()
        	//TO-DO: -update: this
        	//TO-DO: -verify: gamepad
        	//edited by Mike, 20201013
-    	//if(myKeysDown[KEY_UP] == TRUE)
-    	if(myKeysDown[KEY_W] == TRUE)
+    	if(myKeysDown[KEY_UP] == TRUE)
+//    	if(myKeysDown[KEY_W] == TRUE)
     	{
     		//added by Mike, 20201001
-          	myRobotShip->move(KEY_UP);
+          	//myRobotShip->move(KEY_UP);
+          	myRobotShip->move(KEY_W);
 
 			//removed by Mike, 20200929
 //			sound->play_sound_clip(thrust);
     	}
        	//edited by Mike, 20201013
     	//else if(myKeysDown[KEY_DOWN] == TRUE)
-    	else if(myKeysDown[KEY_S] == TRUE)
+    	//edited by Mike, 20201014
+    	if(myKeysDown[KEY_S] == TRUE)
+//    	else if(myKeysDown[KEY_S] == TRUE)
     	{
     		//added by Mike, 20201001
             myRobotShip->move(KEY_DOWN);
@@ -718,7 +731,10 @@ void OpenGLCanvas::update()
     	}
        	//edited by Mike, 20201013
     	//else if(myKeysDown[KEY_RIGHT] == TRUE)
-    	else if(myKeysDown[KEY_D] == TRUE)
+    	//edited by Mike, 20201014
+    	//else if(myKeysDown[KEY_D] == TRUE)
+//    	if(myKeysDown[KEY_D] == TRUE)
+    	if(myKeysDown[KEY_RIGHT] == TRUE)
     	{
     		//added by Mike, 20201001
             myRobotShip->move(KEY_RIGHT);
@@ -728,10 +744,13 @@ void OpenGLCanvas::update()
     	}
        	//edited by Mike, 20201013
     	//else if(myKeysDown[KEY_LEFT] == TRUE)
-    	else if(myKeysDown[KEY_A] == TRUE)
+    	//edited by Mike, 20201014
+    	//else if(myKeysDown[KEY_A] == TRUE)
+    	if(myKeysDown[KEY_A] == TRUE)
     	{
     		//added by Mike, 20201001
             myRobotShip->move(KEY_LEFT);
+
 
 			//removed by Mike, 20200929
 //			sound->play_sound_clip(thrust);

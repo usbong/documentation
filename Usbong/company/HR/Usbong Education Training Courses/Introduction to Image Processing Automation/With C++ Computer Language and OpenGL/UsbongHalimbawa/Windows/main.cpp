@@ -84,6 +84,8 @@
  **************************/
 
 #include <windows.h>
+//#include <winuser.h>
+
 #include <GL/gl.h>
 #include <GL/glut.h> //added by Mike, 20200927
 #include <GL/glu.h> //added by Mike, 20200926
@@ -354,7 +356,21 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT message,
 
     case WM_DESTROY:
         return 0;
-
+/*
+	//added by Mike, 20201014
+    case WM_CHAR:
+        switch (wParam)
+        {
+           //added by Mike, 20201013
+           //reference: 
+           //https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
+           //last accessed: 20201013
+   	       case 0x41: //A key
+		        myOpenGLCanvas->keyDown(KEY_A);
+                return 0;
+		}
+		return 0;
+*/
     case WM_KEYDOWN:
         switch (wParam)
         {
@@ -370,7 +386,7 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT message,
                 return 0;
    	       case VK_UP:
 		        myOpenGLCanvas->keyDown(KEY_UP);
-                return 0;
+                return 0;                
    	       case VK_DOWN:
 		        myOpenGLCanvas->keyDown(KEY_DOWN);
                 return 0;     
@@ -385,15 +401,19 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT message,
 		        myOpenGLCanvas->keyDown(KEY_A);
                 return 0;     
    	       case 0x44: //D key
-		        myOpenGLCanvas->keyDown(KEY_D);
-                return 0;     
+//		        myOpenGLCanvas->keyDown(KEY_D);
+		        myOpenGLCanvas->keyDown(KEY_RIGHT);
+                return 0;
    	       case 0x57: //W key
-		        myOpenGLCanvas->keyDown(KEY_W);
-                return 0;     
+//   	       case 0x41: //W key
+//			case VK_UP:
+		        myOpenGLCanvas->keyDown(KEY_UP);//KEY_W);
+//		        myOpenGLCanvas->keyDown(KEY_W);
+                return 0;
    	       case 0x53: //S key
 		        myOpenGLCanvas->keyDown(KEY_S);
+//		        myOpenGLCanvas->keyDown(KEY_DOWN);
                 return 0;     
-
    	       case 0x4A: //J key
 		        myOpenGLCanvas->keyDown(KEY_J);
                 return 0;     
@@ -449,15 +469,17 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT message,
 			        myOpenGLCanvas->keyUp(KEY_A);
                     return 0;
 	   	       case 0x44: //D key
-			        myOpenGLCanvas->keyUp(KEY_D);
+//			        myOpenGLCanvas->keyUp(KEY_D);
+			        myOpenGLCanvas->keyUp(KEY_RIGHT);
 	                return 0;     
 	   	       case 0x57: //W key
-			        myOpenGLCanvas->keyUp(KEY_W);
+//			        myOpenGLCanvas->keyUp(KEY_W);
+			        myOpenGLCanvas->keyUp(KEY_UP);
 	                return 0;     
 	   	       case 0x53: //S key
 			        myOpenGLCanvas->keyUp(KEY_S);
-	                return 0;     
-	
+//			        myOpenGLCanvas->keyUp(KEY_DOWN);
+	                return 0;     	
 	   	       case 0x4A: //J key
 			        myOpenGLCanvas->keyUp(KEY_J);
 	                return 0;     
@@ -475,6 +497,7 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT message,
                     myOpenGLCanvas->keyUp(KEY_ENTER);
                     return 0;
         }
+        return 0;
     default:
         return DefWindowProc (hWnd, message, wParam, lParam);
     }

@@ -268,6 +268,7 @@ void Beam::update(float dt)
            case ACTIVE_STATE:      
                     //thrust+=0.01f;
 
+
                     //rotationAngle in degrees, convert to radians 
                     //im not yet sure why, but i have to deduct 90 to rotationAngle
                     rotationAngleRad = (rotationAngle) * 3.141593f / 180.0f;
@@ -275,9 +276,13 @@ void Beam::update(float dt)
                     yAccel = (cos(rotationAngleRad)*thrust);
                     xAccel = -(sin(rotationAngleRad)*thrust);
 
-                    xVel=xAccel;
+					//edited by Mike, 20201014
+/*                    xVel=xAccel;
                     yVel=yAccel;
-                        
+*/
+                    xVel=xAccel*2;
+                    yVel=yAccel*2;
+
                     myXPos+=xVel;
                     myYPos+=yVel;
 

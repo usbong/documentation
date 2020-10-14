@@ -41,13 +41,27 @@
 
 //#include "ModelPool.h"
 
+//edited by Mike, 20201014
+//added by Mike, 20201001
 enum Keys
 {
 	KEY_UP = 0,
 	KEY_DOWN,
 	KEY_RIGHT,
-	KEY_LEFT
+	KEY_LEFT,
+	KEY_SPACE,
+	//edited by Mike, 20201013
+	KEY_ENTER,
+	//TO-DO: -verify: gamepad
+	KEY_A,
+	KEY_D,
+	KEY_W,
+	KEY_S,
 
+	KEY_J,
+	KEY_L,
+	KEY_I,
+	KEY_K
 };
 
 //object: Cube.005_0
@@ -408,12 +422,14 @@ void RobotShip::drawRobotShip()
                 currentDeathFrame=(currentDeathFrame+1)%4;
                 break;
 */
+/* //removed by Mike, 20201014
            case INITIALIZING_STATE:
                 if (invincibleCounter==10) {
                   changeState(MOVING_STATE);
                   setCollidable(true);
                 }
                 else invincibleCounter++;
+*/
             case MOVING_STATE:
             	
                    //added by Mike, 20201001
@@ -462,9 +478,10 @@ void RobotShip::update(float dt)
            		
 //                if (isMovingForward)
 //                { 
+  					//removed by Mike, 20201014
                     /* rotationAngle in degrees, convert to radians */
                     //im not yet sure why, but i have to deduct 90 to rotationAngle
-                    rotationAngleRad = (rotationAngle) * 3.141593f / 180.0f;
+//                    rotationAngleRad = (rotationAngle) * 3.141593f / 180.0f;
 
 /*                  //removed by Mike, 20201001
                     yAccel = (cos(rotationAngleRad)*thrust);
@@ -494,11 +511,11 @@ void RobotShip::update(float dt)
                     yVel=yAccel;
 */                    
                     
+/*					//removed by Mike, 20201014                    
                     if (xVel > maxXVel) xVel = maxXVel;
                     else if (xVel < -maxXVel) xVel = -maxXVel;
                     if (yVel > maxYVel) yVel = maxYVel;
                     else if (yVel < -maxYVel) yVel = -maxYVel;
-                                        
 
                     myXPos+=xVel;
                     myYPos+=yVel;
@@ -507,6 +524,7 @@ void RobotShip::update(float dt)
                     if (thrust>0)
                       thrust-=0.02f; //0.01f
                     else thrust=0;
+*/                                        
 
            		//wrap the world 
            		//edited by Mike, 20201001
@@ -544,6 +562,8 @@ void RobotShip::update(float dt)
            		if (myYPos+yVel >= 1.0f) myYPos = 0.0f+myHeight/3; //if bottom side
            		else if (myYPos+yVel <= 0.0f) myYPos = 1.0f-myHeight/3; //if top side
 */
+
+
            		if (myXPos <= 0.0f) myXPos = 1.0f-myWidth/8; //if left side
            		else if (myXPos >= 1.0f) myXPos = 0.0f+myWidth/8; //if right side
 
@@ -576,30 +596,31 @@ void RobotShip::move(int key)
    switch (key)
    {
      case KEY_UP:
+     case KEY_W:
           //isMovingForward=1;
           //myZPos-=1.0f;
-          if (thrust<thrustMax)
+/*          if (thrust<thrustMax)
             thrust+=0.1f;
-            
+*/      
           //added by Mike, 20201001            
 	      myYPos+=-stepY;
           break;      
      case KEY_DOWN:
-     	  //added by Mike, 20201001
+/*     	  //added by Mike, 20201001
           if (thrust<thrustMax)
             thrust+=-0.1f;
-
+*/
           //added by Mike, 20201001            
 	      myYPos+=stepY;
           break;      
      case KEY_LEFT:
      		//removed by Mike, 20201001
 //          rotationAngle+=rotationStep;
-
+/*		//removed by Mike, 20201014
      	  //added by Mike, 20201001
           if (thrust<thrustMax)
             thrust+=-0.1f;
-
+*/
           //added by Mike, 20201001            
 	      myXPos+=-stepX;
 
@@ -613,13 +634,15 @@ void RobotShip::move(int key)
      	//removed by Mike, 20201001
 //          rotationAngle-=rotationStep;
 
+/*		//removed by Mike, 20201014
      	  //added by Mike, 20201001
           if (thrust<thrustMax)
             thrust+=0.1f;
-
+*/
           //added by Mike, 20201001            
 	      myXPos+=stepX;
-          return;
+//          return;
+		  break;
    }
 }
 void RobotShip::hitBy(MyDynamicObject* mdo)
