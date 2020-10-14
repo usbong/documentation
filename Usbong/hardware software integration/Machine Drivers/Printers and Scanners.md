@@ -45,7 +45,8 @@ where: "..." are identification numbers/letters<br/>
 where: ".pnm" is the image file format<br/>
 <br/>
 <b>Note:</b> You can also use .jpeg as output, instead of .pnm<br/>
-Example: <b>scanimage --format=jpeg > outputImage.jpeg</b>
+<b>Example:</b><br/>
+<b>scanimage --format=jpeg > outputImage.jpeg</b>
 
 ### References:
 1) https://bugs.launchpad.net/simple-scan/+bug/1539933; last accessed: 20200623<br/>
