@@ -637,13 +637,16 @@ void OpenGLCanvas::drawGrid() {
       	);
 
 /*
-	//edited by Mike, 20201012	
+	//edited by Mike, 20201016
 	//added by Mike, 20201002
 	//note: set these to be isometric view
     glRotatef(40, 0.0f, 0.0f, 0.2f);
-    glTranslatef(0.45f, -0.15f, 0.0f);
-    glScalef(0.5f, 0.5f, 0.5f);
+//    glTranslatef(0.45f, -0.15f, 0.0f); //10x10 grid
+    glTranslatef(0.45f, -0.20f, 0.0f); //20x20 grid
+//    glScalef(0.5f, 0.5f, 0.5f); //10x10 grid
+    glScalef(0.3f, 0.3f, 0.3f); //20x20 grid
 */
+
 	//added by Mike, 20201015
 	//TO-DO: -increase: size of grid
 	//non-isometric view
