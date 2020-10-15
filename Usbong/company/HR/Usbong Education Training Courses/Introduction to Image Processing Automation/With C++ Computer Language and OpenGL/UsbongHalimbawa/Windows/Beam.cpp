@@ -285,8 +285,14 @@ void Beam::update(float dt)
 /*                    xVel=xAccel;
                     yVel=yAccel;
 */
+/*					//edited by Mike, 20201015
+					//10x10 grid
                     xVel=xAccel*2;
                     yVel=yAccel*2;
+*/
+					//20x20 grid
+                    xVel=xAccel*4;
+                    yVel=yAccel*4;
 
                     myXPos+=xVel;
                     myYPos+=yVel;
@@ -303,12 +309,22 @@ void Beam::update(float dt)
                		if ((myXPos <= -25.0f) || (myXPos > 25.0f)) changeState(HIDDEN_STATE); 
                		if ((myYPos <= -21.0f) || (myYPos > 21.0f)) changeState(HIDDEN_STATE);
 */
+
+/*					//edited by Mike, 20201015
 	           		if (myXPos <= 0.0f) changeState(HIDDEN_STATE); //if left side
 	           		else if (myXPos >= 1.0f) changeState(HIDDEN_STATE); //if right side
 	
 	           		if (myYPos >= 1.0f) changeState(HIDDEN_STATE); //if bottom side
 	           		else if (myYPos <= 0.0f) changeState(HIDDEN_STATE); //if top side
-               		
+*/               		
+					//TO-DO: -add: 0.1f*iColumnCountMax
+	           		if (myXPos <= 0.0f) changeState(HIDDEN_STATE); //if left side
+	           		else if (myXPos >= 0.1f*20) changeState(HIDDEN_STATE); //if right side
+	
+					//TO-DO: -add: 0.1f*iRowCountMax
+	           		if (myYPos >= 0.1f*20) changeState(HIDDEN_STATE); //if bottom side
+	           		else if (myYPos <= 0.0f) changeState(HIDDEN_STATE); //if top side
+
                 break;
             default: //STANDING STATE
               break;//do nothing    

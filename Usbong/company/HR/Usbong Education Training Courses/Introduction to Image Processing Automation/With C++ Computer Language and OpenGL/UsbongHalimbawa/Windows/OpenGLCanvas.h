@@ -69,7 +69,6 @@
 #define GAMEOVER_SCREEN 3
 #define HIGHSCORE_SCREEN 4
 
-
 #define ROBOTSHIP_INITIALIZING_STATE 0
 
 class RobotShip;
@@ -100,11 +99,22 @@ class OpenGLCanvas
         char buffer[MAX];
 
     	float rotationAngle;
-    
+
+/*    	//removed by Mike, 20201015
     	int myWindowWidth;
     	int myWindowHeight;
-    	
-   		int myKeysDown[4];	
+*/
+
+/*
+    	//added by Mike, 20201015
+    	int iRowCountMax;
+ 	 	int iColumnCountMax;
+*/    	  		
+		//edited by Mike, 20201015 	
+		//TO-DO: -reverify: this; malloc?
+//   		int myKeysDown[14];	
+   		int myKeysDown[4];
+		   	
    		float rotationSpeed;
     
         int myRepaintCounter;
@@ -162,6 +172,10 @@ class OpenGLCanvas
         Sound *sound;
         SoundClip *beam, *valkyrie, *explosion, *zing, *thrust, *rotate, *bonus, *title;
 */        
+		//added by Mike, 20201015
+    	int myWindowWidth;
+    	int myWindowHeight;
+
         int currentState;
 
     	bool init();

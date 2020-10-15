@@ -125,7 +125,10 @@ bool OpenGLCanvas::init()
 	//TO-DO: -receive: values from main.cpp
     myWindowWidth=640;
     myWindowHeight=640;
-
+/*
+ 	iRowCountMax=10;
+ 	iColumnCountMax=10;
+*/
     keyPressCounter=0;
     
     //added by Mike, 20200930
@@ -644,7 +647,7 @@ void OpenGLCanvas::drawGrid() {
 	//added by Mike, 20201015
 	//TO-DO: -increase: size of grid
 	//non-isometric view
-    //glScalef(0.5f, 0.5f, 0.5f);
+    glScalef(0.5f, 0.5f, 0.5f);
 
 
 /*
@@ -652,11 +655,14 @@ void OpenGLCanvas::drawGrid() {
     glTranslatef(0.1f, 0.1f, 0.0f);
     glScalef(0.5f, 0.5f, 0.5f);
 */	
-	 //draw grid 
+	 //draw grid
+	 //edited by Mike, 20201015 	 
  	 //TO-DO: -update: iRowCountMax
- 	 int iRowCountMax=10;
+// 	 int iRowCountMax=10;
+ 	 int iRowCountMax=20;
  	 //TO-DO: -update: iColumnCountMax
- 	 int iColumnCountMax=10;
+// 	 int iColumnCountMax=10;
+ 	 int iColumnCountMax=20;
 
    // Draw a Green Line top-left origin; Quadrant 4, y-axis inverted; x and y positive
    //rows   
@@ -666,20 +672,22 @@ void OpenGLCanvas::drawGrid() {
    		glBegin(GL_LINES);
       		glColor3f(0.0f, 1.0f, 0.0f); // Green
       		glVertex2f(0.0f, 0.1f*iRowCount);    // x, y
-      		//TO-DO: -add: auto-compute myWindowWidth
-      		glVertex2f(1.0f, 0.1f*iRowCount);
+      		//edited by Mike, 20201015
+//      		glVertex2f(1.0f, 0.1f*iRowCount);
+      		glVertex2f(0.1f*iRowCountMax, 0.1f*iRowCount);
    		glEnd();   		   	  
 	 }
 
    //columns
-   	//edited by Mike, 20201002
+   	//edited by Mike, 20201015   	
  	 for (int iColumnCount=0; iColumnCount<=iColumnCountMax; iColumnCount++) {
    		// Draw a Green Line top-left origin
    		glBegin(GL_LINES);
       		glColor3f(0.0f, 1.0f, 0.0f); // Green
       		glVertex2f(0.1f*iColumnCount, 0.0f);    // x, y
-      		//TO-DO: -add: auto-compute myWindowHeight
-      		glVertex2f(0.1f*iColumnCount, 1.0f);
+      		//edited by Mike, 20201015
+//      		glVertex2f(0.1f*iColumnCount, 1.0f);
+      		glVertex2f(0.1f*iColumnCount, 0.1f*iColumnCountMax);
    		glEnd();   		   	  
 	 }
    
