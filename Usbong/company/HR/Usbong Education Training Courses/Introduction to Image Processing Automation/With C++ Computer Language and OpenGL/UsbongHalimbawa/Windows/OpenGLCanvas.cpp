@@ -60,6 +60,8 @@
 
 //added by Mike, 20201013
 #include "Beam.h"
+//added by Mike, 20201016
+#include "Asteroid.h"
 
 //#include "Sound.h"
 
@@ -143,7 +145,55 @@ bool OpenGLCanvas::init()
 	for (int i=0; i<MAX_BEAMS; i++) {
       myBeam[i] = new Beam;
 	}
-	
+
+	//added by Mike, 20201016
+	//-------------------------------------------
+	numOfAsteroidsLeft=MAX_ASTEROID;
+
+    //init asteroids and set their positions to the four corners 
+/*    myAsteroid[0] = new Asteroid(PARENT_STATUS,0.0f,1.0f);//,10,10); //TOP RIGHT
+    myAsteroid[1] = new Asteroid(PARENT_STATUS,0.0f,0.0f);//,-10,10); //TOP LEFT
+    myAsteroid[2] = new Asteroid(PARENT_STATUS,1.0f,0.0f);//,-10,-10); //BOTTOM LEFT
+    myAsteroid[3] = new Asteroid(PARENT_STATUS,1.0f,1.0f);//,10,-10); //BOTTOM RIGHT
+*/
+    myAsteroid[0] = new Asteroid(PARENT_STATUS,0.1f,0.1f);//,10,10); //TOP RIGHT
+    myAsteroid[1] = new Asteroid(PARENT_STATUS,0.1f,0.1f);//,-10,10); //TOP LEFT
+    myAsteroid[2] = new Asteroid(PARENT_STATUS,0.1f,0.1f);//,-10,-10); //BOTTOM LEFT
+    myAsteroid[3] = new Asteroid(PARENT_STATUS,0.1f,0.1f);//,10,-10); //BOTTOM RIGHT
+
+/*	//removed by Mike, 20201016
+    for (int i=4; i<12; i++)   
+    {
+        myAsteroid[i] = new Asteroid(CHILD_STATUS,0,0);
+    }
+    //group them into 3's
+    myAsteroid[0]->attachChild(myAsteroid[4],myAsteroid[5]);
+    myAsteroid[1]->attachChild(myAsteroid[6],myAsteroid[7]);
+    myAsteroid[2]->attachChild(myAsteroid[8],myAsteroid[9]);
+    myAsteroid[3]->attachChild(myAsteroid[10],myAsteroid[11]);
+
+    for (int i=12; i<MAX_ASTEROID; i++)   
+    {
+        myAsteroid[i] = new Asteroid(GRANDCHILD_STATUS,0,0);
+    }
+    myAsteroid[4]->attachChild(myAsteroid[12],myAsteroid[13]);
+    myAsteroid[5]->attachChild(myAsteroid[14],myAsteroid[15]);
+    myAsteroid[6]->attachChild(myAsteroid[16],myAsteroid[17]);
+    myAsteroid[7]->attachChild(myAsteroid[18],myAsteroid[19]);
+    myAsteroid[8]->attachChild(myAsteroid[20],myAsteroid[21]);
+    myAsteroid[9]->attachChild(myAsteroid[22],myAsteroid[23]);
+    myAsteroid[10]->attachChild(myAsteroid[24],myAsteroid[25]);
+    myAsteroid[11]->attachChild(myAsteroid[26],myAsteroid[27]);
+*/
+    
+    for (int i=0; i<MAX_ASTEROID; i++)   
+    {
+//      myAsteroid[i] = new Asteroid;
+	//removed by Mike, 20201016
+//        myAsteroid[i]->setOpenGLCanvas(this);
+    }
+	//-------------------------------------------
+
     //added by Mike, 20201011
     setupFont(FONT_TEXTURE);
 
@@ -609,8 +659,20 @@ void OpenGLCanvas::render()
                 myBeam[i]->draw();
 			  }
             }
+        glPopMatrix();       
+		
+		//edited by Mike, 20201016
+    	glPushMatrix();		        
+            myRobotShip->drawRobotShip();			
+        glPopMatrix();       
 
-            myRobotShip->drawRobotShip();
+		//edited by Mike, 20201016
+    	glPushMatrix();		                
+			//added by Mike, 20201016
+            for(int i=0; i<MAX_ASTEROID; i++) {
+              //if (myBeam[i]->isActive())
+                myAsteroid[i]->draw();
+            }
     	glPopMatrix();		
 
      }
@@ -636,7 +698,7 @@ void OpenGLCanvas::drawGrid() {
         	1.0f //zFar; maximum
       	);
 
-/*
+
 	//edited by Mike, 20201016
 	//added by Mike, 20201002
 	//note: set these to be isometric view
@@ -645,13 +707,13 @@ void OpenGLCanvas::drawGrid() {
     glTranslatef(0.45f, -0.20f, 0.0f); //20x20 grid
 //    glScalef(0.5f, 0.5f, 0.5f); //10x10 grid
     glScalef(0.3f, 0.3f, 0.3f); //20x20 grid
-*/
 
+/*
 	//added by Mike, 20201015
 	//TO-DO: -increase: size of grid
 	//non-isometric view
     glScalef(0.5f, 0.5f, 0.5f);
-
+*/
 
 /*
 	//use these to verify grid
@@ -700,6 +762,13 @@ void OpenGLCanvas::drawGrid() {
 void OpenGLCanvas::update()
 {           
     if (currentState==GAME_SCREEN) {
+/*		//removed by Mike, 20201016
+    	//added by Mike, 20201016
+        if(numOfAsteroidsLeft<=0) {
+            resetDynamicObjects();
+        }
+*/
+    	
     	//added by Mike, 20201001
     	myRobotShip->update(1); //dt
 		
@@ -715,12 +784,21 @@ void OpenGLCanvas::update()
 
             //check collisions
             //myBeam[i]->collideWith(myEnemy);
-/*
-            for(a=0; a<MAX_ASTEROID; a++)
+			
+			//added by Mike, 20201016
+            for(int a=0; a<MAX_ASTEROID; a++) {
               myBeam[i]->collideWith(myAsteroid[a]);
-*/              
+			}              
           }
 		}
+
+		//added by Mike, 20201016
+        for(int i=0; i<MAX_ASTEROID; i++) {
+          //if (myBeam[i]->isActive())
+            myAsteroid[i]->update(1);
+            //removed by Mike, 20201016
+//            myAsteroid[i]->collideWith(myRobotShip);        
+        }
 
        	//process input
        	//TO-DO: -update: this

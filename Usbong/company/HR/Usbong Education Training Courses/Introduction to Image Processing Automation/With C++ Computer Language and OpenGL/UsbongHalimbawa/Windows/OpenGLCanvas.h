@@ -56,7 +56,10 @@
 //#define MAX_BEAMS 5
 #define MAX_BEAMS 32
 
-#define MAX_ASTEROID 28 //groups of 3, therefore 4 groups, plus inner groupings
+//edited by Mike, 20201016
+//#define MAX_ASTEROID 28 //groups of 3, therefore 4 groups, plus inner groupings
+#define MAX_ASTEROID 4
+
 #define MAX_LIFE 3
 #define REQUIRED_POINTS_FOR_BONUS 30000 //5000
 
@@ -74,7 +77,7 @@
 class RobotShip;
 //class Enemy; //removed by Mike, 20201013
 class Beam;
-//class Asteroid; //removed by Mike, 20201013
+class Asteroid; //removed by Mike, 20201016
 
 class OpenGLCanvas
 {
@@ -88,8 +91,8 @@ class OpenGLCanvas
 
         Beam *myBeam[MAX_BEAMS];
 
-        //removed by Mike, 20201013
-//        Asteroid *myAsteroid[MAX_ASTEROID];
+        //added by Mike, 20201014
+        Asteroid *myAsteroid[MAX_ASTEROID];
 //        Asteroid *myAsteroid;
 
        	char *infile;//= "Patches1.txt";		

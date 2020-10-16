@@ -240,7 +240,7 @@ void setupFont(int myFontTextureObject)
     /* create OpenGL texture out of targa file */
     load_tga("textures/font.tga");
     
-/* set texture parameters */
+	/* set texture parameters */
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
