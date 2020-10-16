@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20201002
+ * @date updated: 20201014
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -43,6 +43,9 @@
 
 //added by Mike, 20201001
 #include "RobotShip.h"
+
+//added by Mike, 20201014
+#include "Font.h"
 
 //removed by Mike, 20200929
 //TO-DO: -add: these 
@@ -112,6 +115,9 @@ bool OpenGLCanvas::init()
 	//added by Mike, 20201001
 	myRobotShip = new RobotShip;
   myRobotShip->setOpenGLCanvas(this);
+
+  //added by Mike, 20201014
+  setupFont(FONT_TEXTURE);
 
 	return true;
 }
@@ -470,10 +476,10 @@ void OpenGLCanvas::drawPlane()
 void OpenGLCanvas::keyDown(int keyCode)
 {
 	myKeysDown[keyCode] = TRUE;	
-	 
+/*	 
 	 char str[700];                                       
           sprintf(str,"keyCode: %d",keyCode);
-	
+*/	
 }
 void OpenGLCanvas::keyUp(int keyCode)
 {
@@ -482,13 +488,34 @@ void OpenGLCanvas::keyUp(int keyCode)
 
 void OpenGLCanvas::render()
 {     
+
+	//added by Mike, 20201012
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);    
+    //removed by Mike, 20201014
+    //causes output error in Linux Machine
+//    glViewport(0, 0, myWindowWidth, myWindowHeight);		// reset the viewport to new 
+
+//note: set of instructions does not show difference in output
+//----------------------------------------
+    //set TOP-LEFT origin/anchor/reference point; quadrant 4, y-axis inverted; x and y positive
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	//TOP-LEFT origin
+	glOrtho(0.0f, //left
+        	1.0f, //right
+        	1.0f, //bottom
+        	0.0f, //top
+        	0.0f, //zNear; minimum
+        	1.0f //zFar; maximum
+      	);
+//----------------------------------------
+
     //font 
     /* select and enable texture FONT_TEXTURE */
-	//removed by Mike, 20200929
-	//TO-DO: -update: this
-/*    glBindTexture(GL_TEXTURE_2D, FONT_TEXTURE);
+		//edited by Mike, 20201012
+    glBindTexture(GL_TEXTURE_2D, FONT_TEXTURE);
     glEnable(GL_TEXTURE_2D);
-*/	
+
     if (currentState==TITLE_SCREEN) {                                    
     }
     else if (currentState==CONTROLS_SCREEN) {
@@ -498,6 +525,15 @@ void OpenGLCanvas::render()
     else if (currentState==HIGHSCORE_SCREEN) {
     }
     else if (currentState==GAME_SCREEN) {
+			sprintf(tempText,"USBONG");
+			//TO-DO: -update: this to not add 0.1 in y-axis
+//	    draw_string(0, 0, tempText);    	
+	    draw_string(0, 0.1, tempText);    	
+
+	    glDisable(GL_TEXTURE_2D);
+	    glBindTexture(GL_TEXTURE_2D, 0);
+    
+    
     	//added by Mike, 20200930
     	drawGrid();
     
@@ -540,18 +576,21 @@ void OpenGLCanvas::render()
             myRobotShip->drawRobotShip();
     	glPopMatrix();		
 
-   
+/*   
                    char str[700];                                       
                    sprintf(str,"dito: %f",0.0f);//    std::cout << "keydown " << key << "\n";    	
+*/                   
      }
 }
 
 
 //added by Mike, 20200930
 void OpenGLCanvas::drawGrid() {
+/*	//removed by Mike, 20201014
    glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Set background color to black and opaque
    glClear(GL_COLOR_BUFFER_BIT);         // Clear the color buffer
- 
+*/ 
+
    //set TOP-LEFT origin/anchor/reference point; quadrant 4, y-axis inverted; x and y positive
 	 glMatrixMode(GL_PROJECTION);
 	 glLoadIdentity();
@@ -563,12 +602,13 @@ void OpenGLCanvas::drawGrid() {
         	0.0f, //zNear; minimum
         	1.0f //zFar; maximum
       	);
-
+      	
 	//added by Mike, 20201002
 	//note: set these to be isometric view
     glRotatef(40, 0.0f, 0.0f, 0.2f);
     glTranslatef(0.45f, -0.15f, 0.0f);
     glScalef(0.5f, 0.5f, 0.5f);
+
 
 /*
 	//use these to verify grid

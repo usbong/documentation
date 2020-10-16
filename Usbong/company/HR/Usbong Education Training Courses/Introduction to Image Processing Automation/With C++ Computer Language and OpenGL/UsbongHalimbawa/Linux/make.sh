@@ -8,7 +8,7 @@
 # @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
 # @author: SYSON, MICHAEL B.
 # @date created: 20200930
-# @last updated: 20201002
+# @last updated: 20201014
 #
 # Reference:
 # 1) https://www3.ntu.edu.sg/home/ehchua/programming/cpp/gcc_make.html;
@@ -18,6 +18,7 @@ g++ -c main.cpp
 g++ -c OpenGLCanvas.cpp
 g++ -c MyDynamicObject.cpp
 g++ -c RobotShip.cpp
+g++ -c Font.cpp
 
 #g++ -o mainOutput main.o OpenGLCanvas.o -lGL -lGLU -lglut
-g++ -o mainOutput main.o OpenGLCanvas.o MyDynamicObject.o RobotShip.o -lGL -lGLU -lglut
+g++ -o mainOutput main.o OpenGLCanvas.o MyDynamicObject.o RobotShip.o Font.o -lGL -lGLU -lglut
