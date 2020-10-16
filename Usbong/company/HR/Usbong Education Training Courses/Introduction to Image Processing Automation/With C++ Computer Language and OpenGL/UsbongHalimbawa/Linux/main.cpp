@@ -14,7 +14,7 @@
  *
  * @author: Michael Syson
  * @date created: 20200926
- * @date updated: 20201002
+ * @date updated: 20201016
  *
  * References:
  * 1) Dev-C++ 5.11 auto-generated OpenGL example project
@@ -105,6 +105,31 @@ void DisableOpenGL (HWND hWnd, HDC hDC, HGLRC hRC);
 #define VK_DOWN 103
 #define VK_LEFT 100
 #define VK_RIGHT 102
+
+//TO-DO: add: these
+//added by Mike, 20201016
+/*
+enum Keys
+{
+	KEY_UP = 0,
+	KEY_DOWN,
+	KEY_RIGHT,
+	KEY_LEFT,
+	KEY_SPACE,
+	//edited by Mike, 20201013
+	KEY_ENTER,
+	//TO-DO: -verify: gamepad
+	KEY_A,
+	KEY_D,
+	KEY_W,
+	KEY_S,
+
+	KEY_J,
+	KEY_L,
+	KEY_I,
+	KEY_K
+};
+*/
 
 //note: "static" in C/C++ = "final" in java
 static int myWindowWidth=640; //320

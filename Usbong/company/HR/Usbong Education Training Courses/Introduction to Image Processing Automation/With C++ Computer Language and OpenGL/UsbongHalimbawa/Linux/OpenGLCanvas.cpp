@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20201014
+ * @date updated: 20201016
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -59,6 +59,9 @@
 #include "Asteroid.h"
 */
 
+//added by Mike, 20201013
+#include "Beam.h"
+
 //#include "Sound.h"
 
 //#include "DynamicObject.h"
@@ -67,6 +70,8 @@
 
 int i;
 
+//edited by Mike, 20201016
+//added by Mike, 20201001
 enum Keys
 {
 	KEY_UP = 0,
@@ -74,7 +79,18 @@ enum Keys
 	KEY_RIGHT,
 	KEY_LEFT,
 	KEY_SPACE,
-	KEY_ENTER
+	//edited by Mike, 20201013
+	KEY_ENTER,
+	//TO-DO: -verify: gamepad
+	KEY_A,
+	KEY_D,
+	KEY_W,
+	KEY_S,
+
+	KEY_J,
+	KEY_L,
+	KEY_I,
+	KEY_K
 };
 
 /*	//removed by Mike, 20200929
@@ -115,6 +131,12 @@ bool OpenGLCanvas::init()
 	//added by Mike, 20201001
 	myRobotShip = new RobotShip;
   myRobotShip->setOpenGLCanvas(this);
+
+	//added by Mike, 20201013; edited by Mike, 20201014
+//	for (i=0; i<MAX_BEAMS; i++) {
+	for (int i=0; i<MAX_BEAMS; i++) {
+      myBeam[i] = new Beam;
+	}
 
   //added by Mike, 20201014
   setupFont(FONT_TEXTURE);
@@ -572,7 +594,15 @@ void OpenGLCanvas::render()
 */
 
 		//added by Mike, 20201001
-    	glPushMatrix();		
+    	glPushMatrix();		    	
+    		//added by Mike, 202013; edited by Mike, 20201014
+//            for(i=0; i<MAX_BEAMS; i++) {
+            for(int i=0; i<MAX_BEAMS; i++) {
+              if (myBeam[i]->isActive()) {
+                myBeam[i]->draw();
+			  			}
+            }
+    	
             myRobotShip->drawRobotShip();
     	glPopMatrix();		
 
@@ -602,13 +632,21 @@ void OpenGLCanvas::drawGrid() {
         	0.0f, //zNear; minimum
         	1.0f //zFar; maximum
       	);
-      	
+/*
+	//edited by Mike, 20201016
 	//added by Mike, 20201002
 	//note: set these to be isometric view
     glRotatef(40, 0.0f, 0.0f, 0.2f);
-    glTranslatef(0.45f, -0.15f, 0.0f);
-    glScalef(0.5f, 0.5f, 0.5f);
+//    glTranslatef(0.45f, -0.15f, 0.0f); //10x10 grid
+    glTranslatef(0.45f, -0.20f, 0.0f); //20x20 grid
+//    glScalef(0.5f, 0.5f, 0.5f); //10x10 grid
+    glScalef(0.3f, 0.3f, 0.3f); //20x20 grid
+*/
 
+	//added by Mike, 20201015
+	//TO-DO: -increase: size of grid
+	//non-isometric view
+    glScalef(0.5f, 0.5f, 0.5f);
 
 /*
 	//use these to verify grid
@@ -616,10 +654,12 @@ void OpenGLCanvas::drawGrid() {
     glScalef(0.5f, 0.5f, 0.5f);
 */	
 	 //draw grid 
- 	 //TO-DO: -update: iRowCountMax
- 	 int iRowCountMax=10;
+	 //edited by Mike, 20201016
+// 	 int iRowCountMax=10;
+ 	 int iRowCountMax=20;
  	 //TO-DO: -update: iColumnCountMax
- 	 int iColumnCountMax=10;
+// 	 int iColumnCountMax=10;
+ 	 int iColumnCountMax=20;
 
    // Draw a Green Line top-left origin; Quadrant 4, y-axis inverted; x and y positive
    //rows   
@@ -630,7 +670,9 @@ void OpenGLCanvas::drawGrid() {
       		glColor3f(0.0f, 1.0f, 0.0f); // Green
       		glVertex2f(0.0f, 0.1f*iRowCount);    // x, y
       		//TO-DO: -add: auto-compute myWindowWidth
-      		glVertex2f(1.0f, 0.1f*iRowCount);
+      		//edited by Mike, 20201016
+//      		glVertex2f(1.0f, 0.1f*iRowCount);
+      		glVertex2f(0.1f*iRowCountMax, 0.1f*iRowCount);
    		glEnd();   		   	  
 	 }
 
@@ -641,8 +683,9 @@ void OpenGLCanvas::drawGrid() {
    		glBegin(GL_LINES);
       		glColor3f(0.0f, 1.0f, 0.0f); // Green
       		glVertex2f(0.1f*iColumnCount, 0.0f);    // x, y
-      		//TO-DO: -add: auto-compute myWindowHeight
-      		glVertex2f(0.1f*iColumnCount, 1.0f);
+      		//edited by Mike, 20201015
+//      		glVertex2f(0.1f*iColumnCount, 1.0f);
+      		glVertex2f(0.1f*iColumnCount, 0.1f*iColumnCountMax);      		
    		glEnd();   		   	  
 	 }
    
@@ -654,6 +697,22 @@ void OpenGLCanvas::update()
     if (currentState==GAME_SCREEN) {
     	//added by Mike, 20201001
     	myRobotShip->update(1); //dt
+
+		//edited by Mike, 20201014
+//        for(i=0; i<MAX_BEAMS; i++) {
+        for(int i=0; i<MAX_BEAMS; i++) {
+          if ( (myRobotShip->getState()!=ROBOTSHIP_INITIALIZING_STATE) &&
+               (myBeam[i]->isActive()) ){
+            myBeam[i]->update(1);
+
+            //check collisions
+            //myBeam[i]->collideWith(myEnemy);
+/*
+            for(a=0; a<MAX_ASTEROID; a++)
+              myBeam[i]->collideWith(myAsteroid[a]);
+*/              
+          }
+       }
 
        	//process input
     	if(myKeysDown[KEY_UP] == TRUE)

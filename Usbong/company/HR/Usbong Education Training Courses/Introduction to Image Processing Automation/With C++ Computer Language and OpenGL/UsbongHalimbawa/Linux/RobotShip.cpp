@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20201002
+ * @date updated: 20201016
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -553,11 +553,23 @@ void RobotShip::update(float dt)
            		if (myYPos+yVel >= 1.0f) myYPos = 0.0f+myHeight/3; //if bottom side
            		else if (myYPos+yVel <= 0.0f) myYPos = 1.0f-myHeight/3; //if top side
 */
+				//edited by Mike, 20201016
+/*
            		if (myXPos <= 0.0f) myXPos = 1.0f-myWidth/8; //if left side
            		else if (myXPos >= 1.0f) myXPos = 0.0f+myWidth/8; //if right side
 
            		if (myYPos >= 1.0f) myYPos = 0.0f+myHeight/8; //if bottom side
            		else if (myYPos <= 0.0f) myYPos = 1.0f-myHeight/8; //if top side
+*/
+				//TO-DO: -add: 0.1f*iColumnCountMax
+           		if (myXPos <= 0.0f) myXPos = 0.1f*20-myWidth/8; //if left side
+           		else if (myXPos >= 0.1f*20) myXPos = 0.0f+myWidth/8; //if right side
+
+				//TO-DO: -add: 0.1f*iRowCountMax
+           		if (myYPos >= 0.1f*20) myYPos = 0.0f+myHeight/8; //if bottom side
+           		else if (myYPos <= 0.0f) myYPos = 0.1f*20-myHeight/8; //if top side
+
+
 
 /*
           char str[700];                                       

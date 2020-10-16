@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200929
- * @date updated: 20201002
+ * @date updated: 20201016
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -70,9 +70,10 @@
 #define ROBOTSHIP_INITIALIZING_STATE 0
 
 class RobotShip;
-class Enemy;
+//class Enemy; //removed by Mike, 20201016
 class Beam;
-class Asteroid;
+//TO-DO: -add: this
+//class Asteroid; //removed by Mike, 20201016
 
 class OpenGLCanvas
 {
@@ -81,9 +82,15 @@ class OpenGLCanvas
     	          *myRobotShipPlayer2;
 
         //Enemy *myEnemy[MAX_ENEMY];
-        Enemy *myEnemy;
+        //removed by Mike, 20201016
+/*        Enemy *myEnemy;
+*/        
         Beam *myBeam[MAX_BEAMS];
-        Asteroid *myAsteroid[MAX_ASTEROID];
+  			
+  			//removed by Mike, 20201016
+  			//TO-DO: -add: this      
+/*        Asteroid *myAsteroid[MAX_ASTEROID];
+*/
 //        Asteroid *myAsteroid;
 
        	char *infile;//= "Patches1.txt";		
@@ -96,8 +103,12 @@ class OpenGLCanvas
     
     	int myWindowWidth;
     	int myWindowHeight;
-    	
+
+		//edited by Mike, 20201015 	
+		//TO-DO: -reverify: this; malloc?
+//   		int myKeysDown[14];	    	
    		int myKeysDown[4];	
+
    		float rotationSpeed;
     
         int myRepaintCounter;
