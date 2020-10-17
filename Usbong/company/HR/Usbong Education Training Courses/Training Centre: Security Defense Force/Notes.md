@@ -25,7 +25,12 @@
 --> Alalahanin na maaaring dumaloy ang kuryente sa hangin, i.e. wireless.<br/>
 <br/>
 2) Wala nang kailangang gawing negotiation kasama ang mga may identification at classification na miyembro ng "budol-budol/manloloko/carnapper/cybercriminal/communist terrorist group".<br/>
---> No need for negotiation.
+--> No need for negotiation.<br/>
+--> Mula sa Tamad ang Masama.<br/>
+--> <b>Mga Paalala:</b><br/>
+--> <b>"Communist"/Komunista:</b> Tao na naniniwala na dahil sagana na tayo, hindi na natin kailangang maghanap-buhay.<br/>
+--> <b>"Terrorist"/Terorista:</b> Tao na gumagawa ng panloloko at pisikal na pananakit sa isa at higit pang mga tao.<br/>
+--> <b>"Communist Terrorist":</b> Tao na naniwala na sagana na siya, kaya lang naubusan gawa ng pagwawaldas; naging Terorista upang mabilis na makakuha ng pera.<br/>
 
 ## Sanggunian
 1) [Marikina City Ordinance Enacting the Noise Control Regulations (ORDINANCE No. 100 Series of 2010)](http://marikinacitycouncilc.ipage.com/www/mccouncil_ordinances/elibrary/pdf2010/ord10100.pdf)<br/>
