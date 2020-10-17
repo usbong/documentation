@@ -27,6 +27,7 @@
 2) Wala nang kailangang gawing negotiation kasama ang mga may identification at classification na miyembro ng "budol-budol/manloloko/carnapper/cybercriminal/communist terrorist group".<br/>
 --> No need for negotiation.<br/>
 --> Mula sa Tamad ang Masama.<br/>
+<br/>
 --> <b>Mga Paalala:</b><br/>
 --> <b>"Communist"/Komunista:</b> Tao na naniniwala na dahil sagana na tayo, hindi na natin kailangang maghanap-buhay.<br/>
 --> <b>"Terrorist"/Terorista:</b> Tao na gumagawa ng panloloko at pisikal na pananakit sa isa at higit pang mga tao.<br/>
