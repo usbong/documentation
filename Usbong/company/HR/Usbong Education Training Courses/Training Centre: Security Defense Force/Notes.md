@@ -11,8 +11,8 @@
 
 3) Mas maiging paniwalaan na kapag patay ka na, talagang patay ka na, i.e. hindi ka pupunta sa isang lugar na kung saan ika'y magiging mas maligaya.<br/>
 <br/>
-<b>Mungkahing Aksyon:</b><br/>
---> Puksain ang mga budol-budol/manloloko/carnapper/cybercriminal/communist terrorist group na gumagamit ng wireless broadcasting technology upang gumawa ng mga panlolokong ingay at pisikal na pananakit.<br/>
+<b>Mungkahing mga Aksyon:</b><br/>
+1) Puksain ang mga budol-budol/manloloko/carnapper/cybercriminal/communist terrorist group na gumagamit ng wireless broadcasting technology upang gumawa ng mga panlolokong ingay at pisikal na pananakit.<br/>
 --> <b>Halimbawa ng Panloloko:</b><br/>
 --> May nakikita kang mga larawan/imahe o may naririnig kang mga bulung-bulong ukol sa mga yumaong kilala o mga anghel/demonyo na sinusundo ka na.<br/>
 --> <b>Paalala:</b><br/>
@@ -22,7 +22,10 @@
 --> Gamit ang baterya ng sasakyan, pasadahan mo ng kuryente ang isda sa ilog. Makikita mo na mahihilo ito at madaling kunin gawa ng hindi na ito mabilis na makalangoy upang makaiwas.<br/>
 --> Kapag direkta mo namang tinusok at pinasadahan ng kuryente mula sa baterya ng sasakyan ang palaka, makikita mong manginginig ito.<br/>
 --> <b>Paalala:</b><br/>
---> Alalahanin na maaaring dumaloy ang kuryente sa hangin, i.e. wireless.
+--> Alalahanin na maaaring dumaloy ang kuryente sa hangin, i.e. wireless.<br/>
+<br/>
+2) Wala nang kailangang gawing negotiation kasama ang mga may identification at classification na miyembro ng "budol-budol/manloloko/carnapper/cybercriminal/communist terrorist group".<br/>
+--> No need for negotiation.
 
 ## Sanggunian
 1) [Marikina City Ordinance Enacting the Noise Control Regulations (ORDINANCE No. 100 Series of 2010)](http://marikinacitycouncilc.ipage.com/www/mccouncil_ordinances/elibrary/pdf2010/ord10100.pdf)<br/>
