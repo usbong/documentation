@@ -58,7 +58,9 @@
 
 //edited by Mike, 20201016
 //#define MAX_ASTEROID 28 //groups of 3, therefore 4 groups, plus inner groupings
-#define MAX_ASTEROID 4
+//edited by Mike, 20201017
+//#define MAX_ASTEROID 4
+#define MAX_ASTEROID 16
 
 #define MAX_LIFE 3
 #define REQUIRED_POINTS_FOR_BONUS 30000 //5000

@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201016
- * @date updated: 20201016
+ * @date updated: 20201017
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -117,7 +117,6 @@ void Asteroid::load_tga(char *filename)
 void Asteroid::setup()
 {
     GLuint i, j;
-
 	
     glEnable(GL_DEPTH_TEST);
 
@@ -195,6 +194,12 @@ Asteroid::Asteroid(int status, float xPos, float yPos): MyDynamicObject(xPos,yPo
         
         xVel;
         yVel;
+				
+		//added by Mike, 20201016
+    	explosionParticle = new float*[MAX_EXPLOSION_PARTICLES];
+		for(int i=0; i<MAX_EXPLOSION_PARTICLES; i++) {
+		    explosionParticle [i] = new float[3];
+		}		
     
         //child1=new Asteroid(CHILD_STATUS,0,0);
         //child2=new Asteroid(CHILD_STATUS,0,0);
@@ -203,14 +208,15 @@ Asteroid::Asteroid(int status, float xPos, float yPos): MyDynamicObject(xPos,yPo
         //addSphere(0.0f, 0.0f, 0.0f, 2.0f);
         setCollidable(true);
     }    
+/* //removed by Mike, 20201016    
     //TO-DO: -update: this
     else if (status==CHILD_STATUS) { 
         currentState=DEATH_STATE;
         currentStatus=status;
-/*		//edited by Mike, 20201016
-        myWidth=2.0;
-        myHeight=2.0;
-*/        
+		//edited by Mike, 20201016
+////        myWidth=2.0;
+////        myHeight=2.0;
+        
         myWidth=0.05;
         myHeight=0.05;
 
@@ -231,10 +237,10 @@ Asteroid::Asteroid(int status, float xPos, float yPos): MyDynamicObject(xPos,yPo
         currentState=DEATH_STATE;
         currentStatus=status;
 
-/*		//edited by Mike, 20201016
-        myWidth=1.0;
-        myHeight=1.0;
-*/        
+		//edited by Mike, 20201016
+////        myWidth=1.0;
+////        myHeight=1.0;
+      
         myWidth=0.025;
         myHeight=0.025;
 
@@ -250,7 +256,7 @@ Asteroid::Asteroid(int status, float xPos, float yPos): MyDynamicObject(xPos,yPo
         yVel;
         setCollidable(false);         
     }
-    
+*/    
 	//removed by Mike, 20201016
 //	setup();
 }
@@ -295,15 +301,59 @@ void Asteroid::drawAsteroid() {
    glEnd();    
 }
 
+void Asteroid::drawExplosion() {
+	//added by Mike, 20201002; edited by Mike, 202010015
+	//to make anchor/origin/reference point start at top-left
+	//edited by Mike, 20201016
+//   glTranslatef(0.0f, 0.1f, 0.0f);   
+	//edited by Mike, 20201017
+/*   glTranslatef(0.0f, myHeight/4, 0.0f);   
+*/
+   glTranslatef(0.0f, myHeight/8, 0.0f);   
+	
+   //TO-DO: update: this
+//   for(int i=0; i<MAX_EXPLOSION_PARTICLES; i++) {
+	   //added by Mike, 20201016
+//       glTranslatef(myXPos+explosionParticle[i][X_POS_INDEX], myYPos+explosionParticle[i][Y_POS_INDEX], 0); //myZPos);    
+
+//       glTranslatef(explosionParticle[i][X_POS_INDEX], explosionParticle[i][Y_POS_INDEX], 0); //myZPos);
+
+	   //TO-DO: -update: this due to output is 1 x 2 box, width x height
+	   glBegin(GL_QUADS);              // Each set of 4 vertices form a quad
+			//edited by Mike, 20201017
+	      //glColor3f(1.0f, 0.0f, 0.0f); // red
+	      glColor3f(0.0f, 1.0f, 1.0f); // blue and green
+		  
+		  //edited by Mike, 20201017
+/*	
+		  //1x1 square
+		  glVertex2f(0.0f, 0.0f);    // x, y
+	      glVertex2f( 0.0f, -myHeight/4);
+	      glVertex2f(myWidth/4,  -myHeight/4);
+	      glVertex2f(myWidth/4,  0.0f);
+*/
+		  //1x1 square
+		  glVertex2f(0.0f, 0.0f);    // x, y
+	      glVertex2f( 0.0f, -myHeight/8);
+	      glVertex2f(myWidth/8,  -myHeight/8);
+	      glVertex2f(myWidth/8,  0.0f);
+	   glEnd();   	
+//   }   
+}
+
 void Asteroid::draw()
 {
     glPushMatrix();  
-    glTranslatef(myXPos, myYPos, myZPos);    
+    //removed by Mike, 20201016
+//    glTranslatef(myXPos, myYPos, myZPos);    
 
     switch (currentState)
     {
             case INITIALIZING_STATE:
             case MOVING_STATE:
+               //added by Mike, 20201016
+			   glTranslatef(myXPos, myYPos, myZPos);    
+
             	//removd by Mike, 20201016
 //               glColor3f(1.0f, 1.0f, 1.0f); //white
                glColor3f(0.0f, 0.0f, 1.0f); //blue
@@ -337,6 +387,14 @@ void Asteroid::draw()
                    
            	   glPopMatrix();	// pop back to original coordinate system
                break;
+        	case DEATH_STATE:
+     			for(int i=0; i<MAX_EXPLOSION_PARTICLES; i++) {
+	           	   glPushMatrix();	
+       					glTranslatef(explosionParticle[i][X_POS_INDEX], explosionParticle[i][Y_POS_INDEX], 0); //myZPos);
+						drawExplosion();
+	           	   glPopMatrix();	// pop back to original coordinate system
+	           }
+        	   break;
     }    
     glPopMatrix();	// pop back to original coordinate system
     
@@ -412,6 +470,89 @@ void Asteroid::update(float dt)
            		
                //}
                 break;
+           case DEATH_STATE:
+/*			//added by Mike, 20201016
+                if (invincibleCounter==10) {
+                  changeState(MOVING_STATE);
+                  setCollidable(true);
+                }
+                else invincibleCounter++;
+*/              
+				//edited by Mike, 20201016
+                if (iDeathAnimationCounter==20) {//40) { //10
+                  reset(myStartXPos,myStartYPos);
+					//edited by Mike, 20201016
+  //                changeState(MOVING_STATE);
+                  setCollidable(true);
+                }
+                else {
+                	for(int i=0; i<MAX_EXPLOSION_PARTICLES; i++) {
+	                    /* rotationAngle in degrees, convert to radians */
+	                    //im not yet sure why, but i have to deduct 90 to rotationAngle
+						//edited by Mike, 20201016
+//	                    rotationAngleRad = (rotationAngle) * 3.141593f / 180.0f;
+	                    rotationAngleRad = (explosionParticle[i][ROTATION_ANGLE_INDEX]) * 3.141593f / 180.0f;
+	                    
+	                    yAccel = (cos(rotationAngleRad)*thrust);
+	                    xAccel = -(sin(rotationAngleRad)*thrust);
+	/*
+	                   rotationAngle+=1;
+	                   char str[700];                                       
+	                   sprintf(str,"xAccel: %f",xAccel);
+	                   MessageBox(NULL, str, "Welcome!", MB_OK);
+	*/                   
+	
+/*						//edited by Mike, 20201016
+	                    xVel=xAccel;
+	                    yVel=yAccel;
+*/
+	                    xVel=xAccel;
+	                    yVel=yAccel;
+
+/*						//edited by Mike, 20201016
+	                    myXPos+=xVel;
+	                    myYPos+=yVel;
+*/	
+						//TO-DO: -update: this
+						explosionParticle[i][X_POS_INDEX]+=xVel;
+						explosionParticle[i][Y_POS_INDEX]+=yVel;
+
+
+/*
+						//TO-DO: -add: 0.1f*iColumnCountMax
+		           		if (explosionParticle[i][X_POS_INDEX] <= 0.0f) changeState(HIDDEN_STATE); //if left side
+		           		else if (explosionParticle[i][X_POS_INDEX] >= 0.1f*20) changeState(HIDDEN_STATE); //if right side
+		
+						//TO-DO: -add: 0.1f*iRowCountMax
+		           		if (explosionParticle[i][Y_POS_INDEX] >= 0.1f*20) changeState(HIDDEN_STATE); //if bottom side
+		           		else if (explosionParticle[i][Y_POS_INDEX] <= 0.0f) changeState(HIDDEN_STATE); //if top side
+*/
+/*						//edited by Mike, 20201016
+						//TO-DO: -add: 0.1f*iColumnCountMax
+		           		if (myXPos <= 0.0f) myXPos = 0.1f*20-myWidth/8; //if left side
+		           		else if (myXPos >= 0.1f*20) myXPos = 0.0f+myWidth/8; //if right side
+		
+						//TO-DO: -add: 0.1f*iRowCountMax
+		           		if (myYPos >= 0.1f*20) myYPos = 0.0f+myHeight/8; //if bottom side
+		           		else if (myYPos <= 0.0f) myYPos = 0.1f*20-myHeight/8; //if top side
+*/
+						//removed by Mike, 20201017
+						//TO-DO: -update: this
+		           		if (explosionParticle[i][X_POS_INDEX] <= 0.0f) explosionParticle[i][X_POS_INDEX] = 0.1f*20-myWidth/8; //if left side
+		           		else if (explosionParticle[i][X_POS_INDEX] >= 0.1f*20) explosionParticle[i][X_POS_INDEX] = 0.0f+myWidth/8; //if right side
+		
+						//TO-DO: -add: 0.1f*iRowCountMax
+		           		if (explosionParticle[i][Y_POS_INDEX] >= 0.1f*20) explosionParticle[i][Y_POS_INDEX] = 0.0f+myHeight/8; //if bottom side
+		           		else if (explosionParticle[i][Y_POS_INDEX] <= 0.0f) explosionParticle[i][Y_POS_INDEX] = 0.1f*20-myHeight/8; //if top side
+					}
+	
+                	iDeathAnimationCounter++;
+				}
+			  break;
+/*          //removed by Mike, 20201016  
+			case HIDDEN_STATE:
+			  break;
+*/			  
             default: //STANDING STATE
               break;//do nothing    
     }
@@ -447,8 +588,16 @@ void Asteroid::reset(float xPos, float yPos,float ra)
     
     changeState(INITIALIZING_STATE);
     setCollidable(false);
-    invincibleCounter=0;
+	
+	//edited by Mike, 20201016
+    //invincibleCounter=0;
+    iDeathAnimationCounter=0;
 
+	//TO-DO: -set: 4 to a defined constant container
+/*	for(int i=0; i<4; i++) {
+		explosionParticle[4][3]
+	}	
+*/	
 }
 void Asteroid::reset(float xPos, float yPos)
 {
@@ -458,10 +607,23 @@ void Asteroid::reset(float xPos, float yPos)
     myYPos=yPos;  
     //myXPos=(float)(rand()%640); //640 is the max width of the screen
     //myYPos=(float)(rand()%640); //640 is the max height of the screen
+
+	//TO-DO: -remove: this?
+	//added by Mike, 20201016
+	for(int i=0; i<MAX_EXPLOSION_PARTICLES; i++) {
+		explosionParticle[i][X_POS_INDEX]=myXPos;
+		explosionParticle[i][Y_POS_INDEX]=myYPos;	
+
+		explosionParticle[i][ROTATION_ANGLE_INDEX]=rotationAngle;
+	}
     
     changeState(INITIALIZING_STATE);
     setCollidable(false);
-    invincibleCounter=0;
+
+	//edited by Mike, 20201016
+    //invincibleCounter=0;
+    iDeathAnimationCounter=0;
+
 }
 
 /*
@@ -495,6 +657,16 @@ void Asteroid::hitBy(MyDynamicObject* mdo)
 */
     setCollidable(false);
     myOpenGLCanvas->addScore(myScoreValue);      
+	
+	//added by Mike, 20201016
+	for(int i=0; i<MAX_EXPLOSION_PARTICLES; i++) {
+		explosionParticle[i][X_POS_INDEX]=myXPos;
+		explosionParticle[i][Y_POS_INDEX]=myYPos;	
+
+		explosionParticle[i][ROTATION_ANGLE_INDEX]=rotationAngle;
+		rotationAngle+=30;
+	}
+
     changeState(DEATH_STATE);
 
 /*	//edited by Mike, 20201016
@@ -502,7 +674,10 @@ void Asteroid::hitBy(MyDynamicObject* mdo)
     if ((currentStatus==PARENT_STATUS) || (currentStatus==CHILD_STATUS))
       initChildren();    
 */      
+
+/*	//removed by Mike, 20201016
 	reset(myStartXPos,myStartYPos);
+*/
 }
 
 void Asteroid::initChildren()
@@ -522,4 +697,14 @@ void Asteroid::setOpenGLCanvas(OpenGLCanvas* c)
 {
      myOpenGLCanvas = c;
 }
+
+//added by Mike, 20201016
+void Asteroid::destroy()
+{
+	for(int i = 0; i < MAX_EXPLOSION_PARTICLES; ++i) {
+	    delete [] explosionParticle[i];
+	}
+	delete [] explosionParticle;
+}
+
 

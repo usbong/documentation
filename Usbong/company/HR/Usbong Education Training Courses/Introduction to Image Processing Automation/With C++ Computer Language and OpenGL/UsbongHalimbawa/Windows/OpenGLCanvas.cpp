@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20201014
+ * @date updated: 20201017
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -156,10 +156,28 @@ bool OpenGLCanvas::init()
     myAsteroid[2] = new Asteroid(PARENT_STATUS,1.0f,0.0f);//,-10,-10); //BOTTOM LEFT
     myAsteroid[3] = new Asteroid(PARENT_STATUS,1.0f,1.0f);//,10,-10); //BOTTOM RIGHT
 */
+
+/*	//edited by Mike, 20201017
     myAsteroid[0] = new Asteroid(PARENT_STATUS,0.1f,0.1f);//,10,10); //TOP RIGHT
     myAsteroid[1] = new Asteroid(PARENT_STATUS,0.1f,0.1f);//,-10,10); //TOP LEFT
     myAsteroid[2] = new Asteroid(PARENT_STATUS,0.1f,0.1f);//,-10,-10); //BOTTOM LEFT
     myAsteroid[3] = new Asteroid(PARENT_STATUS,0.1f,0.1f);//,10,-10); //BOTTOM RIGHT
+*/
+	for (int i=0; i<4; i++) {
+    	myAsteroid[i] = new Asteroid(PARENT_STATUS,0.1f,0.1f);//,10,10); //TOP RIGHT		
+	}
+
+	for (int i=0; i<4; i++) {
+    	myAsteroid[i+4] = new Asteroid(PARENT_STATUS,0.1f,0.1f);//,10,10); //TOP RIGHT		
+	}
+
+	for (int i=0; i<4; i++) {
+    	myAsteroid[i+8] = new Asteroid(PARENT_STATUS,0.1f,0.1f);//,10,10); //TOP RIGHT		
+	}
+
+	for (int i=0; i<4; i++) {
+    	myAsteroid[i+12] = new Asteroid(PARENT_STATUS,0.1f,0.1f);//,10,10); //TOP RIGHT		
+	}
 
 /*	//removed by Mike, 20201016
     for (int i=4; i<12; i++)   
@@ -223,6 +241,13 @@ bool OpenGLCanvas::shutdown()
 	
 	//releaseFont(myFontListBase);
 */		
+
+	//added by Mike, 20201016
+	for (int i=0; i<MAX_ASTEROID; i++)   
+    {
+        myAsteroid[i]->destroy();
+    }
+	
 	return true;
 }
 

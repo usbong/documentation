@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20200930
+ * @date updated: 20201017
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -79,6 +79,9 @@ public:
     void collideWith(MyDynamicObject* mdo);
         
     bool isIntersectingRect(MyDynamicObject* mdo1, MyDynamicObject* mdo2);
+    
+    //added by Mike, 20201016
+    virtual void destroy();
 };
 
 #endif

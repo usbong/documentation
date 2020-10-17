@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20201001
+ * @date updated: 20201017
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -164,6 +164,9 @@ public:
 	
 	void setOpenGLCanvas(OpenGLCanvas* c);
     virtual void hitBy(MyDynamicObject* mdo);
+
+	//added by Mike, 20201016
+    virtual void destroy();
     
     void reset();
     int getState();

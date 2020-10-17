@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201013
- * @date updated: 20201013
+ * @date updated: 20201017
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -339,5 +339,16 @@ void Beam::changeState(int s)
 void Beam::hitBy(MyDynamicObject* mdo)
 {
      changeState(HIDDEN_STATE);
+}
+
+//added by Mike, 20201016
+void Beam::destroy()
+{
+/*	
+	for(int i = 0; i < MAX_EXPLOSION_PARTICLES; ++i) {
+	    delete [] explosionParticle[i];
+	}
+	delete [] explosionParticle;
+*/
 }
 

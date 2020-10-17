@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201013
- * @date updated: 20201013
+ * @date updated: 20201017
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -134,4 +134,7 @@ public:
     }
     
     virtual void hitBy(MyDynamicObject* mdo);
+
+	//added by Mike, 20201016
+    virtual void destroy();
 };

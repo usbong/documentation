@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201016
- * @date updated: 20201016
+ * @date updated: 20201017
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -31,10 +31,16 @@
 #define INITIALIZING_STATE 3
 #define MOVING_STATE 0
 #define DEATH_STATE 1
+#define HIDDEN_STATE 2 //added by Mike, 20201016
 
 #define PARENT_STATUS 0
 #define CHILD_STATUS 1
 #define GRANDCHILD_STATUS 2
+
+#define MAX_EXPLOSION_PARTICLES 16
+#define X_POS_INDEX 0
+#define Y_POS_INDEX 1
+#define ROTATION_ANGLE_INDEX 2
 
 //class OpenGLCanvas;
 
@@ -51,7 +57,11 @@ private:
 */
 	Asteroid* child1;
     Asteroid* child2;
-
+    
+    //edited by Mike, 20201016
+//    float explosionParticle[MAX_EXPLOSION_PARTICLES][3]; //4: particles; 3: x, y, rotation angle
+    float** explosionParticle;
+    
     float stepX;
     float stepY;
     float stepZ;
@@ -95,6 +105,10 @@ private:
 
     unsigned int myTextureObject;
     int invincibleCounter;
+
+	//added by Mike, 20201016
+	int iDeathAnimationCounter;
+
     //draw texture
     //bool loadTexture(CTargaImage *myTexture, const char *filename, unsigned int *myTextureObject);
     void setup();
@@ -108,6 +122,7 @@ private:
 
 	//added by Mike, 20201016
 	void drawAsteroid();
+	void drawExplosion();
 
 public:
 //	Asteroid();
@@ -162,4 +177,8 @@ public:
 	
     virtual void hitBy(MyDynamicObject* mdo);
     void attachChild(Asteroid* child1, Asteroid* child2);
+	
+	//added by Mike, 20201016
+    virtual void destroy();
+
 };

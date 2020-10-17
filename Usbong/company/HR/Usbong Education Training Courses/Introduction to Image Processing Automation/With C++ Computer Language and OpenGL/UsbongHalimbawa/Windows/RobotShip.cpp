@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20201002
+ * @date updated: 20201017
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -689,4 +689,13 @@ int RobotShip::getState()
     return currentState;
 }
 
-
+//added by Mike, 20201016
+void RobotShip::destroy()
+{
+/*	
+	for(int i = 0; i < MAX_EXPLOSION_PARTICLES; ++i) {
+	    delete [] explosionParticle[i];
+	}
+	delete [] explosionParticle;
+*/
+}
