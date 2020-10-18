@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20201017
+ * @date updated: 20201018
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -723,7 +723,7 @@ void OpenGLCanvas::drawGrid() {
         	1.0f //zFar; maximum
       	);
 
-
+/*
 	//edited by Mike, 20201016
 	//added by Mike, 20201002
 	//note: set these to be isometric view
@@ -732,13 +732,16 @@ void OpenGLCanvas::drawGrid() {
     glTranslatef(0.45f, -0.20f, 0.0f); //20x20 grid
 //    glScalef(0.5f, 0.5f, 0.5f); //10x10 grid
     glScalef(0.3f, 0.3f, 0.3f); //20x20 grid
-
-/*
-	//added by Mike, 20201015
-	//TO-DO: -increase: size of grid
-	//non-isometric view
-    glScalef(0.5f, 0.5f, 0.5f);
 */
+
+	//edited by Mike, 20201018
+	//+increased: size of grid from 10x10 to 20x20
+	//non-isometric view
+	//edited by Mike, 20201018
+//    glScalef(0.5f, 0.5f, 0.5f);
+    glTranslatef(0.2f, 0.2f, 0.0f); //20x20 grid
+    glScalef(0.3f, 0.3f, 0.3f);
+
 
 /*
 	//use these to verify grid
