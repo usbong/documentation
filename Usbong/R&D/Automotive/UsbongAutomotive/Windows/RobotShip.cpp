@@ -287,9 +287,10 @@ void RobotShip::drawModelRobotShip() {
 	glScalef(0.75, 0.75, 0.75);
 */
 
-	glRotatef(-10.0, 1.0, 0.0, 0.0);
+	//removed by Mike, 20201020
+/*	glRotatef(-10.0, 1.0, 0.0, 0.0);
 	glRotatef(35.0f, 0.0, 1.0, 0.0);
-
+*/
     glColor3f(1.0f, 0.0f, 0.0f); // Red
 
 	drawCube();
@@ -401,8 +402,10 @@ void RobotShip::drawRobotShip()
       	);
 */	
 	//added by Mike, 20201001
-	//-update: this
-    glTranslatef(myXPos, myYPos, myZPos);    
+	//edited by Mike, 20201020
+	//TO-DO: -update: this
+//    glTranslatef(myXPos, myYPos, myZPos);
+    glTranslatef(myXPos, myZPos, myYPos);    
 
 	//added by Mike, 20201001
 	//TO-DO: -update: this

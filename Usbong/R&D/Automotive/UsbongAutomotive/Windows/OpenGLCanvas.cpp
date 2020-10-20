@@ -628,6 +628,44 @@ void OpenGLCanvas::render()
 	    glDisable(GL_TEXTURE_2D);
 	    glBindTexture(GL_TEXTURE_2D, 0);
 
+	//added by Mike, 20201020
+	//note: we add these to enable complete drawing of 3D shape with z-axis
+	//--------------------------------------------------------
+    glEnable(GL_CULL_FACE);
+    glEnable(GL_DEPTH_TEST);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	glMatrixMode(GL_PROJECTION);			// set projection matrix current matrix
+	glLoadIdentity();						// reset projection matrix
+
+	//TO-DO: -reverify: these
+	// calculate aspect ratio of window
+	//gluPerspective(52.0f,(GLfloat)width/(GLfloat)height,1.0f,1000.0f);	
+    gluPerspective(90.0, // field-of-view angle
+                   4.0 / 3.0, // aspect ratio
+                   1.0, // near plane
+                   100); // far plane
+
+	//TO-DO: -reverify: these
+	glMatrixMode(GL_MODELVIEW);				// set modelview matrix
+	glLoadIdentity();						// reset modelview matrix
+/*
+    gluLookAt(0.0, 1.0, 3.0, // eye position 0.0, 0.0, 3.0
+              0.0, 0.0, 0.0, // look-at point
+              0.0, 1.0, 0.0); // up-direction
+*/
+
+    gluLookAt(0.0, 1.0, 3.0, // eye position 0.0, 0.0, 3.0
+              1.0, 0.0, 0.0, // look-at point
+              0.0, 1.0, 0.0); // up-direction
+
+/*    gluLookAt(0.0, 1.0, 3.0, // eye position 0.0, 0.0, 3.0
+              0.0, 1.0, 0.0, // look-at point
+              0.0, 1.0, 0.0); // up-direction
+*/
+	//--------------------------------------------------------
+
+
 /*
     	glMatrixMode(GL_PROJECTION);			// set projection matrix current matrix
     	glLoadIdentity();						// reset projection matrix
@@ -638,7 +676,7 @@ void OpenGLCanvas::render()
 		
     	//added by Mike, 20200930
     	//removed by Mike, 20201020
-//    	drawGrid();
+    	drawGridWithZAxis();
 			    
     		//added by Mike, 20201011
 
@@ -704,6 +742,53 @@ void OpenGLCanvas::render()
      }
 }
 
+//added by Mike, 20201020
+void OpenGLCanvas::drawGridWithZAxis() {
+/*	//removed by Mike, 20201020
+     //set TOP-LEFT origin/anchor/reference point; quadrant 4, y-axis inverted; x and y positive
+	 glMatrixMode(GL_PROJECTION);
+	 glLoadIdentity();
+*/
+	 //TO-DO: -add: Z plane grid
+	
+	 //draw grid
+	 //edited by Mike, 20201015 	 
+ 	 //TO-DO: -update: iRowCountMax
+// 	 int iRowCountMax=10;
+ 	 int iRowCountMax=20;
+ 	 //TO-DO: -update: iColumnCountMax
+// 	 int iColumnCountMax=10;
+ 	 int iColumnCountMax=20;
+
+   // Draw a Green Line top-left origin; Quadrant 4, y-axis inverted; x and y positive
+   //rows   
+   	//edited by Mike, 20201002
+ 	 for (int iRowCount=0; iRowCount<=iRowCountMax; iRowCount++) {
+   		// Draw a Green Line top-left origin
+   		glBegin(GL_LINES);
+      		glColor3f(0.0f, 1.0f, 0.0f); // Green
+      		glVertex2f(0.0f, 0.1f*iRowCount);    // x, y
+      		//edited by Mike, 20201015
+//      		glVertex2f(1.0f, 0.1f*iRowCount);
+      		glVertex2f(0.1f*iRowCountMax, 0.1f*iRowCount);
+   		glEnd();   		   	  
+	 }
+
+   //columns
+   	//edited by Mike, 20201015   	
+ 	 for (int iColumnCount=0; iColumnCount<=iColumnCountMax; iColumnCount++) {
+   		// Draw a Green Line top-left origin
+   		glBegin(GL_LINES);
+      		glColor3f(0.0f, 1.0f, 0.0f); // Green
+      		glVertex2f(0.1f*iColumnCount, 0.0f);    // x, y
+      		//edited by Mike, 20201015
+//      		glVertex2f(0.1f*iColumnCount, 1.0f);
+      		glVertex2f(0.1f*iColumnCount, 0.1f*iColumnCountMax);
+   		glEnd();   		   	  
+	 }
+   
+   glFlush();  // Render now
+}
 
 //added by Mike, 20200930
 void OpenGLCanvas::drawGrid() {

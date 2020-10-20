@@ -155,7 +155,10 @@ class OpenGLCanvas
     	//removed by Mike, 20200930
     	//void drawPlane();
     	void drawGrid();
-    	
+		
+		//added by Mike, 20201020
+    	void drawGridWithZAxis();
+
     	void gameReset();
     	void resetDynamicObjects();
     	
