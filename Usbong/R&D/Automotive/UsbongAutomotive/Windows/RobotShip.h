@@ -29,6 +29,9 @@
 #include "OpenGLCanvas.h"
 #include "MyDynamicObject.h"
 
+//added by Mike, 20201019
+#include "PolygonUtils.h"
+
 //#define STANDING_STATE 0
 //#define WALKING_STATE 1
 

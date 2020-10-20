@@ -255,6 +255,7 @@ void RobotShip::setup()
 //added by Mike, 20201001
 //TO-DO: -add: this in ModelPool.cpp
 void RobotShip::drawModelRobotShip() {
+/*	//edited by Mike, 20201019
 	//added by Mike, 20201002
 	//to make anchor/origin/reference point start at top-left
     glTranslatef(0.0f, 0.1f, 0.0f);   
@@ -266,18 +267,32 @@ void RobotShip::drawModelRobotShip() {
    //TO-DO: -update: this due to output is 1 x 2 box, width x height
    glBegin(GL_QUADS);              // Each set of 4 vertices form a quad
       glColor3f(1.0f, 0.0f, 0.0f); // Red
-/*    //edited by Mike, 20201001  
-	  glVertex2f(-0.1f, -0.1f);    // x, y
-      glVertex2f( 0.1f, -0.1f);
-      glVertex2f( 0.1f,  0.1f);
-      glVertex2f(-0.1f,  0.1f);
-*/      
+//    //edited by Mike, 20201001  
+//	  glVertex2f(-0.1f, -0.1f);    // x, y
+//      glVertex2f( 0.1f, -0.1f);
+//      glVertex2f( 0.1f,  0.1f);
+//      glVertex2f(-0.1f,  0.1f);
+      
 	  //1x1 box
 	  glVertex2f(0.0f, 0.0f);    // x, y
       glVertex2f( 0.0f, -0.1f);
       glVertex2f( 0.1f,  -0.1f);
       glVertex2f(0.1f,  0.0f);
    glEnd();    
+*/   
+
+/*
+	glRotatef(15.0, 1.0, 0.0, 0.0);
+	glRotatef(30.0f, 0.0, 1.0, 0.0);
+	glScalef(0.75, 0.75, 0.75);
+*/
+
+	glRotatef(-10.0, 1.0, 0.0, 0.0);
+	glRotatef(35.0f, 0.0, 1.0, 0.0);
+
+    glColor3f(1.0f, 0.0f, 0.0f); // Red
+
+	drawCube();
 }
 
 //edited by Mike, 20201001

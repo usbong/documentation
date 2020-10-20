@@ -635,9 +635,10 @@ void OpenGLCanvas::render()
     	// load the identity matrix (clear to default position and orientation)
     	glLoadIdentity();  
 */
-
+		
     	//added by Mike, 20200930
-    	drawGrid();
+    	//removed by Mike, 20201020
+//    	drawGrid();
 			    
     		//added by Mike, 20201011
 
@@ -714,6 +715,7 @@ void OpenGLCanvas::drawGrid() {
      //set TOP-LEFT origin/anchor/reference point; quadrant 4, y-axis inverted; x and y positive
 	 glMatrixMode(GL_PROJECTION);
 	 glLoadIdentity();
+
 	 //TOP-LEFT origin
 	 glOrtho(0.0f, //left
         	1.0f, //right
@@ -723,10 +725,10 @@ void OpenGLCanvas::drawGrid() {
         	1.0f //zFar; maximum
       	);
 
-/*
 	//edited by Mike, 20201016
 	//added by Mike, 20201002
-	//note: set these to be isometric view
+
+/*	//note: set these to be isometric view
     glRotatef(40, 0.0f, 0.0f, 0.2f);
 //    glTranslatef(0.45f, -0.15f, 0.0f); //10x10 grid
     glTranslatef(0.45f, -0.20f, 0.0f); //20x20 grid
@@ -744,13 +746,64 @@ void OpenGLCanvas::drawGrid() {
     glScalef(0.3f, 0.3f, 0.3f);
 */
 
+/*
 	//added by Mike, 20201018
 	//TO-DO: -update: this
 	//first-person view
-//    glRotatef(90.0f, 1.0f, 0.0f, 0.1f); //roll clock-wise
-    glRotatef(90.0f, 1.0f, 0.0f, 0.0f);
-    glTranslatef(0.2f, -0.5f, -0.5f); //20x20 grid
-    glScalef(0.3f, 0.3f, 0.3f);
+    glRotatef(90.0f, 1.0f, 0.0f, 0.1f); //roll clock-wise
+	//added by Mike, 20201019
+	//note decrease, i.e. increase negatively, z value, to move forward
+    glTranslatef(0.0f, -1.0f, -0.8f); //20x20 grid
+*/
+
+/*
+	//note: set these to be isometric view
+//    glRotatef(30, 0.0f, 0.0f, 0.2f);
+//    glRotatef(30, 0.0f, 0.0f, 1.0f);
+    glRotatef(60, 1.0f, 0.0f, 0.0f);
+
+//    glTranslatef(0.45f, -0.15f, 0.0f); //10x10 grid
+    glTranslatef(0.45f, -0.20f, 0.0f); //20x20 grid
+//    glScalef(0.5f, 0.5f, 0.5f); //10x10 grid
+    glScalef(0.3f, 0.3f, 0.3f); //20x20 grid
+*/
+
+//    glRotatef(60.0f, 1.0f, 0.0f, 0.0f);
+//    glRotatef(10.0f, 0.0f, 1.0f, 0.0f);
+//	glRotatef(15.0, 1.0, 0.0, 0.0);
+
+//	glRotatef(60.0f, 0.0, 0.0, 1.0);
+//	glRotatef(30.0f, 1.0, 0.0, 0.0);
+  	glRotatef(60.0f, 1.0, 0.0, 0.0);
+
+    glTranslatef(0.2f, 0.0f, 0.0f); //20x20 grid
+      
+//    glTranslatef(0.2f, 0.2f, 0.0f); //20x20 grid
+//    glScalef(0.3f, 0.3f, 0.3f);
+
+
+//    glTranslatef(0.0f, 0.0f, 1.0f); //20x20 grid
+
+	//edited by Mike, 20201019
+//    glRotatef(90.0f, 1.0f, 0.0f, 0.0f);
+//    glTranslatef(0.2f, -0.5f, -0.5f); //20x20 grid
+//    glScalef(0.3f, 0.3f, 0.3f);
+
+
+/*
+//    glRotatef(90.0f, 1.0f, 0.0f, 0.0f);
+//    glRotatef(80.0f, 1.0f, 0.0f, 0.0f);
+//    glRotatef(100.0f, 1.0f, 0.0f, 0.0f);
+    glRotatef(45.0f, 1.0f, 0.0f, 0.0f);
+
+//    glTranslatef(0.2f, -0.5f, -0.5f); //20x20 grid
+//    glTranslatef(0.0f, -0.5f, -0.9f); //20x20 grid
+//    glTranslatef(0.0f, -0.7f, -0.9f); //20x20 grid
+//    glTranslatef(0.0f, -1.0f, -0.5f); //20x20 grid
+    glTranslatef(0.0f, -1.0f, -0.8f); //20x20 grid
+*/
+
+//    glScalef(0.3f, 0.3f, 0.3f);
 
 
 /*
