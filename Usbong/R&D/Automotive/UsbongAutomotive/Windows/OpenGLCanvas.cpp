@@ -654,16 +654,37 @@ void OpenGLCanvas::render()
               0.0, 0.0, 0.0, // look-at point
               0.0, 1.0, 0.0); // up-direction
 */
-
+/*
     gluLookAt(0.0, 1.0, 3.0, // eye position 0.0, 0.0, 3.0
               1.0, 0.0, 0.0, // look-at point
               0.0, 1.0, 0.0); // up-direction
+*/
+/*	UFO Catcher View; Z as up
+    gluLookAt(0.0, 1.0, 3.0, // eye position 0.0, 0.0, 3.0
+              0.0, 0.0, 1.0, // look-at point
+              0.0, 0.0, 1.0); // up-direction
+*/
+/*	UFO Catcher View; Y as up
+	//reverify: roboship cube
+    gluLookAt(0.0, -1.0, 3.0, // eye position 0.0, 0.0, 3.0
+              0.0, 0.0, 1.0, // look-at point
+              0.0, 1.0, 0.0); // up-direction
+*/
 
-/*    gluLookAt(0.0, 1.0, 3.0, // eye position 0.0, 0.0, 3.0
-              0.0, 1.0, 0.0, // look-at point
+    gluLookAt(0.0, 1.0, 3.0, // eye position 0.0, 0.0, 3.0
+              0.0, 0.0, 1.0, // look-at point
+              0.0, 1.0, 0.0); // up-direction
+/*
+    gluLookAt(0.0, 0.5, 3.0, // eye position 0.0, 0.0, 3.0
+              0.0, 0.0, 1.0, // look-at point
               0.0, 1.0, 0.0); // up-direction
 */
 	//--------------------------------------------------------
+
+	//note: reference point/origin at center; not top-left
+    glTranslatef(-1.0f, -1.0f, 0.0f);
+    
+    //TO-DO: -increase size of square in grid
 
 
 /*
