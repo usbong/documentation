@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20201018
+ * @date updated: 20201022
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -682,7 +682,11 @@ void OpenGLCanvas::render()
 	//--------------------------------------------------------
 
 	//note: reference point/origin at center; not top-left
-    glTranslatef(-1.0f, -1.0f, 0.0f);
+	//edited by Mike, 2021022
+//    glTranslatef(-1.0f, -1.0f, 0.0f);
+//    glTranslatef(-3.0f, -1.0f, 0.0f);
+//    glTranslatef(-3.2f, 0.0f, 0.0f);
+    glTranslatef(-3.2f, 0.0f, -3.2f);
     
     //TO-DO: -increase size of square in grid
 
@@ -763,13 +767,15 @@ void OpenGLCanvas::render()
      }
 }
 
+//edited by Mike, 20201022
+/* //previous drawGridWithZAxis()
 //added by Mike, 20201020
 void OpenGLCanvas::drawGridWithZAxis() {
-/*	//removed by Mike, 20201020
-     //set TOP-LEFT origin/anchor/reference point; quadrant 4, y-axis inverted; x and y positive
-	 glMatrixMode(GL_PROJECTION);
-	 glLoadIdentity();
-*/
+//	//removed by Mike, 20201020
+//     //set TOP-LEFT origin/anchor/reference point; quadrant 4, y-axis inverted; x and y positive
+//	 glMatrixMode(GL_PROJECTION);
+//	 glLoadIdentity();
+
 	 //TO-DO: -add: Z plane grid
 	
 	 //draw grid
@@ -788,10 +794,12 @@ void OpenGLCanvas::drawGridWithZAxis() {
    		// Draw a Green Line top-left origin
    		glBegin(GL_LINES);
       		glColor3f(0.0f, 1.0f, 0.0f); // Green
+			//edited by Mike, 20201022
       		glVertex2f(0.0f, 0.1f*iRowCount);    // x, y
       		//edited by Mike, 20201015
 //      		glVertex2f(1.0f, 0.1f*iRowCount);
       		glVertex2f(0.1f*iRowCountMax, 0.1f*iRowCount);
+      		
    		glEnd();   		   	  
 	 }
 
@@ -805,6 +813,83 @@ void OpenGLCanvas::drawGridWithZAxis() {
       		//edited by Mike, 20201015
 //      		glVertex2f(0.1f*iColumnCount, 1.0f);
       		glVertex2f(0.1f*iColumnCount, 0.1f*iColumnCountMax);
+   		glEnd();   		   	  
+	 }
+   
+   glFlush();  // Render now
+}
+*/
+//added by Mike, 20201020
+void OpenGLCanvas::drawGridWithZAxis() {
+/*	//removed by Mike, 20201020
+     //set TOP-LEFT origin/anchor/reference point; quadrant 4, y-axis inverted; x and y positive
+	 glMatrixMode(GL_PROJECTION);
+	 glLoadIdentity();
+*/
+	 //TO-DO: -add: Z plane grid
+	
+	 //draw grid
+	 //edited by Mike, 20201015 	 
+ 	 //TO-DO: -update: iRowCountMax
+ 	 //edited by Mike, 20201022
+ 	 int iRowCountMax=10;
+// 	 int iRowCountMax=20;
+
+ 	 //TO-DO: -update: iColumnCountMax
+ 	 //edited by Mike, 20201022
+ 	 int iColumnCountMax=10;
+// 	 int iColumnCountMax=20;
+
+	//added by Mike, 20201022
+	//example: 640/10 = 64; 64/100 = .64
+	//half the window
+	//example: 640/2 = 320; 320/10 = 32; 32/100 = .32
+/*
+	float fColumnSquareWidth = myWindowWidth/2/iRowCountMax/100.0;
+	float fRowSquareHeight = myWindowHeight/2/iColumnCountMax/100.0;
+*/
+	float fSquareWidth = myWindowWidth/2/iColumnCountMax/100.0;
+	float fSquareHeight = myWindowHeight/2/iRowCountMax/100.0;
+
+   // Draw a Green Line top-left origin; Quadrant 4, y-axis inverted; x and y positive
+   //rows   
+   	//edited by Mike, 20201002
+ 	 for (int iRowCount=0; iRowCount<=iRowCountMax; iRowCount++) {
+   		// Draw a Green Line top-left origin
+   		glBegin(GL_LINES);
+      		glColor3f(0.0f, 1.0f, 0.0f); // Green
+/*			//edited by Mike, 20201022
+      		glVertex2f(0.0f, 0.1f*iRowCount);    // x, y
+      		//edited by Mike, 20201015
+//      		glVertex2f(1.0f, 0.1f*iRowCount);
+      		glVertex2f(0.1f*iRowCountMax, 0.1f*iRowCount);
+*/
+      		glVertex2f(0.0f, fSquareHeight*iRowCount);    // x, y
+      		glVertex2f(fSquareWidth*2*iRowCountMax, fSquareHeight*iRowCount);
+//      		glVertex2f(myWindowWidth, fRowSquareHeight*iRowCount);
+
+/*
+      		glVertex2f(0.0f, 0.15f*iRowCount);    // x, y
+      		glVertex2f(0.15f*iRowCountMax, 0.15f*iRowCount);
+*/
+      		
+   		glEnd();   		   	  
+	 }
+
+   //columns
+   	//edited by Mike, 20201015   	
+ 	 for (int iColumnCount=0; iColumnCount<=iColumnCountMax; iColumnCount++) {
+   		// Draw a Green Line top-left origin
+   		glBegin(GL_LINES);
+      		glColor3f(0.0f, 1.0f, 0.0f); // Green
+/*			//edited by Mike, 20201022
+      		glVertex2f(0.1f*iColumnCount, 0.0f);    // x, y
+      		//edited by Mike, 20201015
+//      		glVertex2f(0.1f*iColumnCount, 1.0f);
+      		glVertex2f(0.1f*iColumnCount, 0.1f*iColumnCountMax);
+*/
+      		glVertex2f(fSquareWidth*2*iColumnCount, 0.0f);    // x, y
+      		glVertex2f(fSquareWidth*2*iColumnCount, fSquareHeight*iColumnCountMax);      		
    		glEnd();   		   	  
 	 }
    
