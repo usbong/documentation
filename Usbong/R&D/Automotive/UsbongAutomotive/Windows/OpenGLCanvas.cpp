@@ -641,9 +641,15 @@ void OpenGLCanvas::render()
 	//TO-DO: -reverify: these
 	// calculate aspect ratio of window
 	//gluPerspective(52.0f,(GLfloat)width/(GLfloat)height,1.0f,1000.0f);	
+/*    //edited by Mike, 20201022
     gluPerspective(90.0, // field-of-view angle
                    4.0 / 3.0, // aspect ratio
                    1.0, // near plane
+                   100); // far plane
+*/
+    gluPerspective(90.0, // field-of-view angle
+                   4.0 / 4.0, // aspect ratio
+                   0.1, // near plane
                    100); // far plane
 
 	//TO-DO: -reverify: these
@@ -848,8 +854,14 @@ void OpenGLCanvas::drawGridWithZAxis() {
 	float fColumnSquareWidth = myWindowWidth/2/iRowCountMax/100.0;
 	float fRowSquareHeight = myWindowHeight/2/iColumnCountMax/100.0;
 */
+	//edited by Mike, 20201022
+/*	//half window width and height
 	float fSquareWidth = myWindowWidth/2/iColumnCountMax/100.0;
 	float fSquareHeight = myWindowHeight/2/iRowCountMax/100.0;
+*/
+
+	float fSquareWidth = myWindowWidth/iColumnCountMax/100.0;
+	float fSquareHeight = myWindowHeight/iRowCountMax/100.0;
 
    // Draw a Green Line top-left origin; Quadrant 4, y-axis inverted; x and y positive
    //rows   
@@ -872,7 +884,11 @@ void OpenGLCanvas::drawGridWithZAxis() {
       		glVertex2f(0.0f, 0.15f*iRowCount);    // x, y
       		glVertex2f(0.15f*iRowCountMax, 0.15f*iRowCount);
 */
-      		
+
+			//added by Mike, 20201022			
+			//with Z-axis
+      		glVertex3f(0.0f, 0.0f, fSquareHeight*iRowCount);    // x, z
+      		glVertex3f(fSquareWidth*2*iRowCountMax, 0.0f, fSquareHeight*iRowCount);      		
    		glEnd();   		   	  
 	 }
 
@@ -890,6 +906,11 @@ void OpenGLCanvas::drawGridWithZAxis() {
 */
       		glVertex2f(fSquareWidth*2*iColumnCount, 0.0f);    // x, y
       		glVertex2f(fSquareWidth*2*iColumnCount, fSquareHeight*iColumnCountMax);      		
+
+			//added by Mike, 20201022			
+			//with Z-axis
+      		glVertex3f(fSquareWidth*2*iColumnCount, 0.0f, 0.0f);    // y, z
+      		glVertex3f(fSquareWidth*2*iColumnCount, 0.0f, fSquareHeight*iColumnCountMax);      		
    		glEnd();   		   	  
 	 }
    
