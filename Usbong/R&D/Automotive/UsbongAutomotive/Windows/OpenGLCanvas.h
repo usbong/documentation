@@ -136,7 +136,19 @@ class OpenGLCanvas
             keyPressCounter,
             scoreBeforeBonus;
         bool isTwoPlayers;
-       
+        
+        //added by Mike, 20201023
+        //TO-DO: -update: container names in RobotShip.cpp, etc
+        float myCanvasPosX,
+    		  myCanvasPosY,
+    		  myCanvasPosZ,
+    		  myCanvasEyePosX;
+		
+		float myCanvasStepX,
+		      myCanvasStepY,
+		      myCanvasStepZ,
+			  myCanvasEyeStepX;		       
+
        	//unsigned int myFontTextureObject;
                
         unsigned int myFontListBase;	    

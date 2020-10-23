@@ -127,6 +127,18 @@ bool OpenGLCanvas::init()
 	//TO-DO: -receive: values from main.cpp
     myWindowWidth=640;
     myWindowHeight=640;
+    
+    //added by Mike, 20201023
+    myCanvasPosX=-3.2f;//0.0f;
+	myCanvasPosY=-1.0f;//0.0f;
+	myCanvasPosZ=-3.2f;//0.0f;
+    myCanvasEyePosX=0.0f;
+    
+	myCanvasStepX=0.3f;//0.1f;
+	myCanvasStepY=0.3f;//0.1f;
+	myCanvasStepZ=0.3f;//0.1f;
+	myCanvasEyeStepX=0.3f;
+    
 /*
  	iRowCountMax=10;
  	iColumnCountMax=10;
@@ -684,9 +696,17 @@ void OpenGLCanvas::render()
               0.0, 1.0, 0.0); // up-direction
 */
 
+	//edited by Mike, 20201023
+/*
     gluLookAt(0.0, 1.0, 3.0, // eye position 0.0, 0.0, 3.0
               0.0, 0.0, 1.0, // look-at point
               0.0, 1.0, 0.0); // up-direction
+*/
+    gluLookAt(myCanvasEyePosX, 0.0, 3.0, // eye position 0.0, 0.0, 3.0
+              0.0, 0.0, 1.0, // look-at point
+              0.0, 1.0, 0.0); // up-direction
+
+
 /*
     gluLookAt(0.0, 0.5, 3.0, // eye position 0.0, 0.0, 3.0
               0.0, 0.0, 1.0, // look-at point
@@ -699,7 +719,9 @@ void OpenGLCanvas::render()
 //    glTranslatef(-1.0f, -1.0f, 0.0f);
 //    glTranslatef(-3.0f, -1.0f, 0.0f);
 //    glTranslatef(-3.2f, 0.0f, 0.0f);
-    glTranslatef(-3.2f, 0.0f, -3.2f);
+	//edited by Mike, 20201023
+//    glTranslatef(-3.2f, 0.0f, -3.2f);
+    glTranslatef(myCanvasPosX, myCanvasPosY, myCanvasPosZ);
     
     //TO-DO: -increase size of square in grid
 
@@ -1158,7 +1180,10 @@ void OpenGLCanvas::update()
     	{
     		//added by Mike, 20201001
           	//myRobotShip->move(KEY_UP);
-          	myRobotShip->move(KEY_W);
+
+          	//edited by Mike, 20201023
+//          	myRobotShip->move(KEY_W);
+			  myCanvasPosZ+=myCanvasStepZ;
 
 			//removed by Mike, 20200929
 //			sound->play_sound_clip(thrust);
@@ -1170,8 +1195,9 @@ void OpenGLCanvas::update()
 //    	else if(myKeysDown[KEY_S] == TRUE)
     	{
     		//added by Mike, 20201001
-            myRobotShip->move(KEY_DOWN);
-
+    		//edited by Mike, 20201023
+            //myRobotShip->move(KEY_DOWN);
+			myCanvasPosZ-=myCanvasStepZ;
     	}
        	//edited by Mike, 20201013
     	//else if(myKeysDown[KEY_RIGHT] == TRUE)
@@ -1181,7 +1207,9 @@ void OpenGLCanvas::update()
     	if(myKeysDown[KEY_RIGHT] == TRUE)
     	{
     		//added by Mike, 20201001
-            myRobotShip->move(KEY_RIGHT);
+    		//edited by Mike, 20201023
+            //myRobotShip->move(KEY_RIGHT);
+			myCanvasPosX+=-myCanvasStepX;
 
 			//removed by Mike, 20200929
 //			sound->play_sound_clip(thrust);
@@ -1193,8 +1221,9 @@ void OpenGLCanvas::update()
     	if(myKeysDown[KEY_A] == TRUE)
     	{
     		//added by Mike, 20201001
-            myRobotShip->move(KEY_LEFT);
-
+    		//edited by Mike, 20201023
+            //myRobotShip->move(KEY_LEFT);
+			myCanvasPosX+=myCanvasStepX;
 
 			//removed by Mike, 20200929
 //			sound->play_sound_clip(thrust);
@@ -1216,7 +1245,17 @@ void OpenGLCanvas::update()
 			//edited by Mike, 20201013
 			static int i = 0;
 
-//            myRobotShip->move(KEY_LEFT);
+			//added by Mike, 20201023
+			//move down
+			//myCanvasPosY+=myCanvasStepY;
+			//turn left
+			myCanvasEyePosX+=myCanvasEyeStepX;
+			myCanvasPosX+=myCanvasStepX;
+			
+			//TO-DO: -add: verify if 90degrees turn; update key up to move x-axis, instead of y-axis, etc
+			if (myCanvasEyePosX>5.0f) {
+				myCanvasEyePosX=5.0f;
+			}
 			
             for(i=0; i<MAX_BEAMS; i++) {
               if (!myBeam[i]->isActive()) {
@@ -1239,7 +1278,18 @@ void OpenGLCanvas::update()
 			//edited by Mike, 20201013
 			static int i = 0;
 
-//            myRobotShip->move(KEY_LEFT);
+
+			//added by Mike, 20201023
+			//move up
+			//myCanvasPosY-=myCanvasStepY;
+			//turn right
+			myCanvasEyePosX-=myCanvasEyeStepX;
+			myCanvasPosX-=myCanvasStepX;
+
+			//TO-DO: -add: verify if 90degrees turn; update key up to move x-axis, instead of y-axis, etc
+			if (myCanvasEyePosX<-5.0f) {
+				myCanvasEyePosX=-5.0f;
+			}
 			
             for(i=0; i<MAX_BEAMS; i++) {
               if (!myBeam[i]->isActive()) {
