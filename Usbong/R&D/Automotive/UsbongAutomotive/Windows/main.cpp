@@ -14,7 +14,7 @@
  *
  * @author: Michael Syson
  * @date created: 20200926
- * @date updated: 20201013
+ * @date updated: 20201023
  *
  * References:
  * 1) Dev-C++ 5.11 auto-generated OpenGL example project
