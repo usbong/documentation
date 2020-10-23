@@ -40,5 +40,7 @@ void drawSquare();
 
 //edited by Mike, 20201019
 //void drawCube(float xPos, float yPos, float zPos);
-void drawCube();
+//edited by Mike, 20201023
+//void drawCube();
+void drawCube(float fSideLength);
 

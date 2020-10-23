@@ -17,10 +17,13 @@
  * @date created: 20200930
  * @date updated: 20201017
  *
+ * Reference: 
+ * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
+ *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
  * Syson, M., Camacho, R., Gonzales, D., Del Rosario, R., Vidal, E., et al.
- *
+ * 
  */
 //TO-DO: -update: this
 
@@ -291,9 +294,21 @@ void RobotShip::drawModelRobotShip() {
 /*	glRotatef(-10.0, 1.0, 0.0, 0.0);
 	glRotatef(35.0f, 0.0, 1.0, 0.0);
 */
-    glColor3f(1.0f, 0.0f, 0.0f); // Red
+	
+	//added by Mike, 20201023
+	//set square face with no color fill 
+	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
-	drawCube();
+	    glColor3f(1.0f, 0.0f, 0.0f); // Red
+	
+		//edited by Mike, 20201023
+	//	drawCube();
+		drawCube(myWidth); //myWidth = myHeight
+
+	//added by Mike, 20201023
+	//set square face with color fill 	
+	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+
 }
 
 //edited by Mike, 20201001
@@ -313,9 +328,13 @@ RobotShip::RobotShip(): MyDynamicObject(0,0,0)
     stepY=0.01;
     stepZ=0.01;
 */    
+/*	//edited by Mike, 20201023
 	//added by Mike, 20201001
     stepX=0.03;
     stepY=0.03;
+*/
+    stepX=0.1;
+    stepY=0.1;
 
     invincibleCounter=0;
     currentDeathFrame=0;
@@ -324,8 +343,16 @@ RobotShip::RobotShip(): MyDynamicObject(0,0,0)
 /*  myWidth=2.0f;//1.5;
     myHeight=2.0f;//1.5;
 */    
+/*	//edited by Mike, 20201023
     myWidth=0.1f;
     myHeight=0.1f;
+*/
+/*
+    myWidth=1.0f;
+    myHeight=1.0f;
+*/
+    myWidth=0.5f;
+    myHeight=0.5f;
 
 	//added by Mike, 20201001; edited again by Mike, 20201001
 	//note: initial position, top-left
@@ -589,6 +616,7 @@ void RobotShip::update(float dt)
            		if (myYPos >= 1.0f) myYPos = 0.0f+myHeight/8; //if bottom side
            		else if (myYPos <= 0.0f) myYPos = 1.0f-myHeight/8; //if top side
 */
+/*				//removed by Mike, 20201023
 				//TO-DO: -add: 0.1f*iColumnCountMax
            		if (myXPos <= 0.0f) myXPos = 0.1f*20-myWidth/8; //if left side
            		else if (myXPos >= 0.1f*20) myXPos = 0.0f+myWidth/8; //if right side
@@ -596,7 +624,7 @@ void RobotShip::update(float dt)
 				//TO-DO: -add: 0.1f*iRowCountMax
            		if (myYPos >= 0.1f*20) myYPos = 0.0f+myHeight/8; //if bottom side
            		else if (myYPos <= 0.0f) myYPos = 0.1f*20-myHeight/8; //if top side
-
+*/
 
 /*
           char str[700];                                       

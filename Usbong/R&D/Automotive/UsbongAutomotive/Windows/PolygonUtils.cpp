@@ -128,7 +128,8 @@ void drawSquare() {
 
 //Reference: Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
 //void CGfxOpenGL::DrawCube(float xPos, float yPos, float zPos)
-void drawCube()
+//void drawCube()
+void drawCube(float fSideLength)
 {
 	glPushMatrix();
 	//to make anchor/origin/reference point start at top-left
@@ -167,7 +168,7 @@ void drawCube()
 			glVertex3f(-1.0f, -1.0f, -1.0f);
 			glVertex3f(0.0f, -1.0f, -1.0f);
 */
-
+/*			//edited by Mike, 20201023
 			glVertex3f(0.0f, 0.0f, 0.0f);	// top face
 			glVertex3f(0.0f, 0.0f, -0.1f);
 			glVertex3f(-0.1f, 0.0f, -0.1f);
@@ -192,6 +193,31 @@ void drawCube()
 			glVertex3f(-0.1f, 0.0f, -0.1f);
 			glVertex3f(-0.1f, -0.1f, -0.1f);
 			glVertex3f(0.0f, -0.1f, -0.1f);
+*/
+			glVertex3f(0.0f, 0.0f, 0.0f);	// top face
+			glVertex3f(0.0f, 0.0f, -fSideLength);
+			glVertex3f(-fSideLength, 0.0f, -fSideLength);
+			glVertex3f(-fSideLength, 0.0f, 0.0f);
+			glVertex3f(0.0f, 0.0f, 0.0f);	// front face
+			glVertex3f(-fSideLength, 0.0f, 0.0f);
+			glVertex3f(-fSideLength, -fSideLength, 0.0f);
+			glVertex3f(0.0f, -fSideLength, 0.0f);
+			glVertex3f(0.0f, 0.0f, 0.0f);	// right face
+			glVertex3f(0.0f, -fSideLength, 0.0f);
+			glVertex3f(0.0f, -fSideLength, -fSideLength);
+			glVertex3f(0.0f, 0.0f, -fSideLength);
+			glVertex3f(-fSideLength, 0.0f, 0.0f);	// left face
+			glVertex3f(-fSideLength, 0.0f, -fSideLength);
+			glVertex3f(-fSideLength, -fSideLength, -fSideLength);
+			glVertex3f(-fSideLength, -fSideLength, 0.0f);
+			glVertex3f(0.0f, -fSideLength, 0.0f);	// bottom face
+			glVertex3f(0.0f, -fSideLength, -fSideLength);
+			glVertex3f(-fSideLength, -fSideLength, -fSideLength);
+			glVertex3f(-fSideLength, -fSideLength, 0.0f);
+			glVertex3f(0.0f, 0.0f, -fSideLength);	// back face
+			glVertex3f(-fSideLength, 0.0f, -fSideLength);
+			glVertex3f(-fSideLength, -fSideLength, -fSideLength);
+			glVertex3f(0.0f, -fSideLength, -fSideLength);
 		glEnd();
 	glPopMatrix();
 }
