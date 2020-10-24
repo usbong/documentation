@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20201022
+ * @date updated: 20201024
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -138,6 +138,9 @@ bool OpenGLCanvas::init()
 	myCanvasStepY=0.3f;//0.1f;
 	myCanvasStepZ=0.3f;//0.1f;
 	myCanvasEyeStepX=0.3f;
+	
+	//added by Mike, 20201024
+	myCanvasRotateAxisStepY=0.0f;
     
 /*
  	iRowCountMax=10;
@@ -705,6 +708,7 @@ void OpenGLCanvas::render()
     gluLookAt(myCanvasEyePosX, 0.0, 3.0, // eye position 0.0, 0.0, 3.0
               0.0, 0.0, 1.0, // look-at point
               0.0, 1.0, 0.0); // up-direction
+//              1.0, 1.0, 0.0); // up-direction //floor head down
 
 
 /*
@@ -722,6 +726,9 @@ void OpenGLCanvas::render()
 	//edited by Mike, 20201023
 //    glTranslatef(-3.2f, 0.0f, -3.2f);
     glTranslatef(myCanvasPosX, myCanvasPosY, myCanvasPosZ);
+    
+    //added by Mike, 20201024
+	glRotatef(myCanvasRotateAxisStepY, 0.0f, 1.0f, 0.0f);
     
     //TO-DO: -increase size of square in grid
 
@@ -861,6 +868,7 @@ void OpenGLCanvas::drawGridWithZAxis() {
 	 glMatrixMode(GL_PROJECTION);
 	 glLoadIdentity();
 */
+
 	 //TO-DO: -add: Z plane grid
 	
 	 //draw grid
@@ -1249,14 +1257,41 @@ void OpenGLCanvas::update()
 			//move down
 			//myCanvasPosY+=myCanvasStepY;
 			//turn left
-			myCanvasEyePosX+=myCanvasEyeStepX;
-			myCanvasPosX+=myCanvasStepX;
+			//edited by Mike, 20201024
+//			myCanvasEyePosX+=myCanvasEyeStepX;
+//			myCanvasPosX+=myCanvasStepX;
 			
-			//TO-DO: -add: verify if 90degrees turn; update key up to move x-axis, instead of y-axis, etc
-			if (myCanvasEyePosX>5.0f) {
-				myCanvasEyePosX=5.0f;
+			//TO-DO: -reverify: translate x-axis to be centered during rotation
+			//myCanvasPosX+=myCanvasStepX;
+			myCanvasRotateAxisStepY-=5.0f;
+
+/*			if (myCanvasEyePosX>6.0f) {			
+			  myCanvasRotateAxisStepY=-90;
 			}
-			
+*/
+
+/*			
+			if (!hasTurnedNinetyDegCounterClockWise) {
+				if (myCanvasEyePosX>6.0f) {	
+					hasTurnedNinetyDegCounterClockWise=true;
+				}
+				//added by Mike, 20201024
+				else {
+					myCanvasEyePosX+=myCanvasEyeStepX;
+					myCanvasPosX+=myCanvasStepX;				
+				}				
+			}
+			else {
+				if (myCanvasEyePosX<0.0f) {
+					hasTurnedNinetyDegCounterClockWise=false;
+				}
+				else {
+					myCanvasEyePosX-=myCanvasEyeStepX;
+					myCanvasPosX-=myCanvasStepX;
+				}				
+			}
+*/
+						
             for(i=0; i<MAX_BEAMS; i++) {
               if (!myBeam[i]->isActive()) {
 				  //edited by Mike, 20201013
