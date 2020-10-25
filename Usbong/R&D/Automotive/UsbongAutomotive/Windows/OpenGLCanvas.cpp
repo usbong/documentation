@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20201024
+ * @date updated: 20201025
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -134,9 +134,10 @@ bool OpenGLCanvas::init()
 	myCanvasPosZ=-3.2f;//0.0f;
     myCanvasEyePosX=0.0f;
     
-	myCanvasStepX=0.3f;//0.1f;
-	myCanvasStepY=0.3f;//0.1f;
-	myCanvasStepZ=0.3f;//0.1f;
+    //edited by Mike, 20201025
+	myCanvasStepX=0.32f;//0.3f;//0.1f;
+	myCanvasStepY=0.32f;//0.3f;//0.1f;
+	myCanvasStepZ=0.32f;//0.3f;//0.1f;
 	myCanvasEyeStepX=0.3f;
 	
 	//added by Mike, 20201024
@@ -728,6 +729,9 @@ void OpenGLCanvas::render()
     glTranslatef(myCanvasPosX, myCanvasPosY, myCanvasPosZ);
     
     //added by Mike, 20201024
+//    glTranslatef(3.2f, 1.0f, 3.2f);    
+//    glTranslatef(0.0f, 0.0f, 3.2f);
+//    glTranslatef(3.2f, 0.0f, 6.4f);
 	glRotatef(myCanvasRotateAxisStepY, 0.0f, 1.0f, 0.0f);
     
     //TO-DO: -increase size of square in grid
@@ -1257,13 +1261,51 @@ void OpenGLCanvas::update()
 			//move down
 			//myCanvasPosY+=myCanvasStepY;
 			//turn left
-			//edited by Mike, 20201024
-//			myCanvasEyePosX+=myCanvasEyeStepX;
-//			myCanvasPosX+=myCanvasStepX;
+/*			//edited by Mike, 20201024
+			myCanvasEyePosX+=myCanvasEyeStepX;
+			myCanvasPosX+=myCanvasStepX;
+*/
+/*
+			myCanvasRotateAxisStepY+=myCanvasEyeStepX;
+            myCanvasEyePosX = sin(myCanvasRotateAxisStepY) + myCanvasEyeStepX;
+//            myCanvasEyePosZ = -cos(myCanvasRotateAxisStepY) + myCanvasEyeStepZ;			
+*/
 			
 			//TO-DO: -reverify: translate x-axis to be centered during rotation
-			//myCanvasPosX+=myCanvasStepX;
-			myCanvasRotateAxisStepY-=5.0f;
+			myCanvasRotateAxisStepY-=3.0f;//90.0f;//3.0f;//myCanvasEyeStepX;
+
+            if (myCanvasRotateAxisStepY>360) {
+              myCanvasRotateAxisStepY-=360;
+		    }
+            else if (myCanvasRotateAxisStepY<-360) {
+              myCanvasRotateAxisStepY+=360;
+		    }
+			
+			//note: order/sequence is important
+			//not yet exact as glulookat
+			//with eye source as center
+			if (myCanvasRotateAxisStepY<-360.0f) {			
+				//myCanvasRotateAxisStepY=0;
+				myCanvasPosX+=myCanvasStepX;
+				myCanvasPosZ+=myCanvasStepZ/6;
+			}
+			else if (myCanvasRotateAxisStepY<-270.0f) {			
+				myCanvasPosZ-=myCanvasStepZ;
+				myCanvasPosX+=myCanvasStepX/6;
+			}
+			else if (myCanvasRotateAxisStepY<-180.0f) {			
+				myCanvasPosX-=myCanvasStepX;
+				myCanvasPosZ-=myCanvasStepZ/6;
+			}
+			else if (myCanvasRotateAxisStepY<-90.0f) {			
+				myCanvasPosZ+=myCanvasStepZ;
+				myCanvasPosX-=myCanvasStepX/6;
+			}
+			else {				
+				myCanvasPosX+=myCanvasStepX;
+				myCanvasPosZ+=myCanvasStepZ/6;
+			}
+
 
 /*			if (myCanvasEyePosX>6.0f) {			
 			  myCanvasRotateAxisStepY=-90;
@@ -1318,13 +1360,81 @@ void OpenGLCanvas::update()
 			//move up
 			//myCanvasPosY-=myCanvasStepY;
 			//turn right
+/*			//removed by Mike, 20201025
 			myCanvasEyePosX-=myCanvasEyeStepX;
 			myCanvasPosX-=myCanvasStepX;
+*/
 
-			//TO-DO: -add: verify if 90degrees turn; update key up to move x-axis, instead of y-axis, etc
-			if (myCanvasEyePosX<-5.0f) {
-				myCanvasEyePosX=-5.0f;
+			//TO-DO: -reverify: translate x-axis to be centered during rotation
+			myCanvasRotateAxisStepY+=3.0f;//90.0f;//3.0f;//myCanvasEyeStepX;
+/*			//removed by Mike, 20201025
+			myCanvasPosX+=-myCanvasStepX/6;
+			myCanvasPosZ+=myCanvasStepZ;
+*/
+			//TO-DO: -fix: 30 degrees clockwise, then counter-clockwise
+
+           if (myCanvasRotateAxisStepY>360) {
+             myCanvasRotateAxisStepY-=360;
+		   }
+           else if (myCanvasRotateAxisStepY<-360) {
+             myCanvasRotateAxisStepY+=360;
+		   }
+
+
+			//note: order/sequence is important
+			//not yet exact as glulookat
+			//with eye source as center
+			if (myCanvasRotateAxisStepY>360.0f) {			
+//				myCanvasRotateAxisStepY=0;
+/*				//edited by Mike, 20201025
+				myCanvasPosX+=myCanvasStepX;
+				myCanvasPosZ+=myCanvasStepZ/6;
+*/
+				myCanvasPosX-=myCanvasStepX/6;
+				myCanvasPosZ+=myCanvasStepZ;
+
 			}
+			else if (myCanvasRotateAxisStepY>270.0f) {			
+/*				//edited by Mike, 20201025
+				myCanvasPosZ-=myCanvasStepZ;
+				myCanvasPosX+=myCanvasStepX/6;
+*/				
+				myCanvasPosZ+=myCanvasStepZ/6;
+				myCanvasPosX-=myCanvasStepX;
+			}
+			else if (myCanvasRotateAxisStepY>180.0f) {			
+/*				//edited by Mike, 20201025
+				myCanvasPosX-=myCanvasStepX;
+				myCanvasPosZ-=myCanvasStepZ/6;
+*/				
+				myCanvasPosX+=myCanvasStepX/6;
+				myCanvasPosZ-=myCanvasStepZ;
+			}
+			else if (myCanvasRotateAxisStepY>90.0f) {			
+/*				//edited by Mike, 20201025
+				myCanvasPosZ+=myCanvasStepZ;
+				myCanvasPosX-=myCanvasStepX/6;
+*/
+				myCanvasPosZ-=myCanvasStepZ/6;
+				myCanvasPosX+=myCanvasStepX;
+			}
+			else {				
+/*				//edited by Mike, 20201025
+				myCanvasPosX+=myCanvasStepX;
+				myCanvasPosZ+=myCanvasStepZ/6;
+*/
+				myCanvasPosX-=myCanvasStepX/6;
+				myCanvasPosZ+=myCanvasStepZ;
+			}
+
+/*					
+
+           //since the model ship faces the top, do this...
+           //glRotatef(-90, 1.0f, 0.0f, 0.0f);
+           //since the model ship is facing the opposite direction (in terms of Z)...
+           //glRotatef(180, 0.0f, 0.0f, 1.0f);
+//           glRotatef(myCanvasRotateAxisStepY, 0.0f, 0.0f, 1.0f);
+*/
 			
             for(i=0; i<MAX_BEAMS; i++) {
               if (!myBeam[i]->isActive()) {
