@@ -135,14 +135,25 @@ bool OpenGLCanvas::init()
     myCanvasEyePosX=0.0f;
     
     //edited by Mike, 20201025
-	myCanvasStepX=0.32f;//0.3f;//0.1f;
-	myCanvasStepY=0.32f;//0.3f;//0.1f;
-	myCanvasStepZ=0.32f;//0.3f;//0.1f;
+	myCanvasStepX=0.3f;//0.32f;//0.3f;//0.1f;
+	myCanvasStepY=0.3f;//0.32f;//0.3f;//0.1f;
+	myCanvasStepZ=0.3f;//0.32f;//0.3f;//0.1f;
 	myCanvasEyeStepX=0.3f;
 	
-	//added by Mike, 20201024
-	myCanvasRotateAxisStepY=0.0f;
-    
+	//added by Mike, 20201025
+	myCanvasLookAtAngle=-90.0f;
+	
+	//added by Mike, 20201024; removed by Mike, 20201025
+	//myCanvasRotateAxisStepY=0.0f;
+
+	//added by Mike, 20201025
+    myCanvasEyePosX=0.0f;
+    myCanvasEyePosY=0.0f;
+    myCanvasEyePosZ=3.0f;	
+    myCanvasCenterPosX=0.0f;
+    myCanvasCenterPosY=0.0f;
+    myCanvasCenterPosZ=1.0f;
+
 /*
  	iRowCountMax=10;
  	iColumnCountMax=10;
@@ -706,10 +717,16 @@ void OpenGLCanvas::render()
               0.0, 0.0, 1.0, // look-at point
               0.0, 1.0, 0.0); // up-direction
 */
+
+/*	//edited by Mike, 20201025
     gluLookAt(myCanvasEyePosX, 0.0, 3.0, // eye position 0.0, 0.0, 3.0
               0.0, 0.0, 1.0, // look-at point
               0.0, 1.0, 0.0); // up-direction
 //              1.0, 1.0, 0.0); // up-direction //floor head down
+*/
+    gluLookAt(myCanvasEyePosX, myCanvasEyePosY, myCanvasEyePosZ, // eye position 0.0, 0.0, 3.0
+              myCanvasCenterPosX, myCanvasCenterPosY, myCanvasCenterPosZ, // look-at point
+              0.0, 1.0, 0.0); // up-direction
 
 
 /*
@@ -732,7 +749,8 @@ void OpenGLCanvas::render()
 //    glTranslatef(3.2f, 1.0f, 3.2f);    
 //    glTranslatef(0.0f, 0.0f, 3.2f);
 //    glTranslatef(3.2f, 0.0f, 6.4f);
-	glRotatef(myCanvasRotateAxisStepY, 0.0f, 1.0f, 0.0f);
+	//removed by Mike, 20201025
+//	glRotatef(myCanvasRotateAxisStepY, 0.0f, 1.0f, 0.0f);
     
     //TO-DO: -increase size of square in grid
 
@@ -1261,16 +1279,27 @@ void OpenGLCanvas::update()
 			//move down
 			//myCanvasPosY+=myCanvasStepY;
 			//turn left
-/*			//edited by Mike, 20201024
-			myCanvasEyePosX+=myCanvasEyeStepX;
+			//edited by Mike, 20201024
+/*			myCanvasEyePosX+=myCanvasEyeStepX;
 			myCanvasPosX+=myCanvasStepX;
 */
+			//TO-DO: -add: in turn right
+			
+			//Reference:
+			//https://stackoverflow.com/questions/29452725/how-can-i-make-my-opengl-camera-turn-360-degrees;
+			//answer by: Chris DuPuis, 20150405T0235
+			myCanvasLookAtAngle-=0.1f;
+
+			myCanvasCenterPosZ = myCanvasEyePosZ + sin(myCanvasLookAtAngle);
+			myCanvasCenterPosX = myCanvasEyePosX + cos(myCanvasLookAtAngle);
+
 /*
 			myCanvasRotateAxisStepY+=myCanvasEyeStepX;
             myCanvasEyePosX = sin(myCanvasRotateAxisStepY) + myCanvasEyeStepX;
 //            myCanvasEyePosZ = -cos(myCanvasRotateAxisStepY) + myCanvasEyeStepZ;			
 */
-			
+
+/*			
 			//TO-DO: -reverify: translate x-axis to be centered during rotation
 			myCanvasRotateAxisStepY-=3.0f;//90.0f;//3.0f;//myCanvasEyeStepX;
 
@@ -1305,7 +1334,7 @@ void OpenGLCanvas::update()
 				myCanvasPosX+=myCanvasStepX;
 				myCanvasPosZ+=myCanvasStepZ/6;
 			}
-
+*/
 
 /*			if (myCanvasEyePosX>6.0f) {			
 			  myCanvasRotateAxisStepY=-90;
@@ -1360,17 +1389,14 @@ void OpenGLCanvas::update()
 			//move up
 			//myCanvasPosY-=myCanvasStepY;
 			//turn right
-/*			//removed by Mike, 20201025
+			//removed by Mike, 20201025
 			myCanvasEyePosX-=myCanvasEyeStepX;
 			myCanvasPosX-=myCanvasStepX;
-*/
 
+
+/*
 			//TO-DO: -reverify: translate x-axis to be centered during rotation
 			myCanvasRotateAxisStepY+=3.0f;//90.0f;//3.0f;//myCanvasEyeStepX;
-/*			//removed by Mike, 20201025
-			myCanvasPosX+=-myCanvasStepX/6;
-			myCanvasPosZ+=myCanvasStepZ;
-*/
 			//TO-DO: -fix: 30 degrees clockwise, then counter-clockwise
 
            if (myCanvasRotateAxisStepY>360) {
@@ -1379,53 +1405,56 @@ void OpenGLCanvas::update()
            else if (myCanvasRotateAxisStepY<-360) {
              myCanvasRotateAxisStepY+=360;
 		   }
+*/
 
-
+/*
 			//note: order/sequence is important
 			//not yet exact as glulookat
 			//with eye source as center
 			if (myCanvasRotateAxisStepY>360.0f) {			
 //				myCanvasRotateAxisStepY=0;
-/*				//edited by Mike, 20201025
-				myCanvasPosX+=myCanvasStepX;
-				myCanvasPosZ+=myCanvasStepZ/6;
-*/
+				//edited by Mike, 20201025
+//				myCanvasPosX+=myCanvasStepX;
+//				myCanvasPosZ+=myCanvasStepZ/6;
+
 				myCanvasPosX-=myCanvasStepX/6;
 				myCanvasPosZ+=myCanvasStepZ;
 
 			}
 			else if (myCanvasRotateAxisStepY>270.0f) {			
-/*				//edited by Mike, 20201025
-				myCanvasPosZ-=myCanvasStepZ;
-				myCanvasPosX+=myCanvasStepX/6;
-*/				
+				//edited by Mike, 20201025
+//				myCanvasPosZ-=myCanvasStepZ;
+//				myCanvasPosX+=myCanvasStepX/6;
+				
 				myCanvasPosZ+=myCanvasStepZ/6;
 				myCanvasPosX-=myCanvasStepX;
 			}
 			else if (myCanvasRotateAxisStepY>180.0f) {			
-/*				//edited by Mike, 20201025
-				myCanvasPosX-=myCanvasStepX;
-				myCanvasPosZ-=myCanvasStepZ/6;
-*/				
+				//edited by Mike, 20201025
+//				myCanvasPosX-=myCanvasStepX;
+//				myCanvasPosZ-=myCanvasStepZ/6;
+				
 				myCanvasPosX+=myCanvasStepX/6;
 				myCanvasPosZ-=myCanvasStepZ;
 			}
 			else if (myCanvasRotateAxisStepY>90.0f) {			
-/*				//edited by Mike, 20201025
-				myCanvasPosZ+=myCanvasStepZ;
-				myCanvasPosX-=myCanvasStepX/6;
-*/
+				//edited by Mike, 20201025
+//				myCanvasPosZ+=myCanvasStepZ;
+//				myCanvasPosX-=myCanvasStepX/6;
+
 				myCanvasPosZ-=myCanvasStepZ/6;
 				myCanvasPosX+=myCanvasStepX;
 			}
 			else {				
-/*				//edited by Mike, 20201025
-				myCanvasPosX+=myCanvasStepX;
-				myCanvasPosZ+=myCanvasStepZ/6;
-*/
+				//edited by Mike, 20201025
+//				myCanvasPosX+=myCanvasStepX;
+//				myCanvasPosZ+=myCanvasStepZ/6;
+
 				myCanvasPosX-=myCanvasStepX/6;
 				myCanvasPosZ+=myCanvasStepZ;
 			}
+*/
+
 
 /*					
 

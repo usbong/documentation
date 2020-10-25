@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200929
- * @date updated: 20201024
+ * @date updated: 20201025
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -137,18 +137,25 @@ class OpenGLCanvas
             scoreBeforeBonus;
         bool isTwoPlayers;
         
-        //added by Mike, 20201023
+        //added by Mike, 20201023; edited by Mike, 20201025
         //TO-DO: -update: container names in RobotShip.cpp, etc
         float myCanvasPosX,
     		  myCanvasPosY,
-    		  myCanvasPosZ,
-    		  myCanvasEyePosX;
+    		  myCanvasPosZ;
 		
 		float myCanvasStepX,
 		      myCanvasStepY,
 		      myCanvasStepZ,
 			  myCanvasEyeStepX,
-			  myCanvasRotateAxisStepY; //added by Mike, 20201024		       
+			  myCanvasRotateAxisStepY, //added by Mike, 20201024		       
+			  //added by Mike, 20201025
+			  myCanvasLookAtAngle,
+    		  myCanvasEyePosX,
+    		  myCanvasEyePosY,
+    		  myCanvasEyePosZ,
+    		  myCanvasCenterPosX,
+    		  myCanvasCenterPosY,
+    		  myCanvasCenterPosZ;
 
 		bool hasTurnedNinetyDegCounterClockWise,		       
 			 hasTurnedNinetyDegClockWise;
