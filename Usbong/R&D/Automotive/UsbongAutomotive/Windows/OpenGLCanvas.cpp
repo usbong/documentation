@@ -1277,12 +1277,6 @@ void OpenGLCanvas::update()
 			myCanvasPosX+=-myCanvasStepX;
 */
 
-//			myCanvasPosX-=cos(myCanvasLookAtAngle);
-
-/*
-			myCanvasPosZ+=sin(myCanvasLookAtAngle)*myCanvasStepZ;
-			myCanvasPosX+=cos(myCanvasLookAtAngle)*myCanvasStepX;
-*/
 			//move right
 			//Reference: https://community.khronos.org/t/moving-an-object-with-respect-to-the-camera/40968;
 			//last accessed: 20201026
@@ -1290,25 +1284,6 @@ void OpenGLCanvas::update()
 			myCanvasPosZ-=cos(myCanvasLookAtAngle)*myCanvasStepZ;
 			myCanvasPosX+=sin(myCanvasLookAtAngle)*myCanvasStepX;
 
-/*			//removed by Mike, 20201026
-			//added by Mike, 20201026
-			//note: order/sequence is important
-            if (myCanvasLookAtAngle<-360.0f) {
-				myCanvasPosX+=-myCanvasStepX;
-			}
-            else if (myCanvasLookAtAngle<-270.0f) {
-				myCanvasPosZ+=myCanvasStepZ;
-			}
-            else if (myCanvasLookAtAngle<-180.0f) {
-				myCanvasPosX+=-myCanvasStepX;
-			}
-            else if (myCanvasLookAtAngle<-90.0f) {
-				myCanvasPosZ+=myCanvasStepZ;
-			}
-			else {
-				myCanvasPosX+=-myCanvasStepX;
-			}
-*/
 			//removed by Mike, 20200929
 //			sound->play_sound_clip(thrust);
     	}
@@ -1323,90 +1298,13 @@ void OpenGLCanvas::update()
             //myRobotShip->move(KEY_LEFT);
 			//removed by Mike, 20201026
 /*			myCanvasPosX+=myCanvasStepX;
-*/
-			
+*/			
 			//move left
 			//Reference: https://community.khronos.org/t/moving-an-object-with-respect-to-the-camera/40968;
 			//last accessed: 20201026
 			//answer by: Bob, 200002
 			myCanvasPosZ+=cos(myCanvasLookAtAngle)*myCanvasStepZ;
 			myCanvasPosX-=sin(myCanvasLookAtAngle)*myCanvasStepX;
-
-
-/*
-			myCanvasEyePosX-=myCanvasStepX;
-			myCanvasCenterPosX-=myCanvasStepX;
-*/
-//			myCanvasCenterPosZ = myCanvasEyePosZ + sin(myCanvasLookAtAngle);
-//			myCanvasPosX+=cos(myCanvasLookAtAngle);
-/*
-			new_x = x + vcos(a)
-			new_z = z + vsin(a)
-*/
-
-/*
-//            if (myCanvasLookAtAngle<-90.0f) {
-            if (myCanvasLookAtAngle<-180.0f) {
-			}
-			else {
-				myCanvasPosX+=myCanvasStepX;				
-			}
-*/
-//			myCanvasCenterPosZ = myCanvasEyePosZ + sin(myCanvasLookAtAngle);
-//			myCanvasPosX+=-myCanvasCenterPosX;// = myCanvasEyePosX + cos(myCanvasLookAtAngle);
-
-
-			
-/*
-			myCanvasCenterPosZ = myCanvasEyePosZ + sin(myCanvasLookAtAngle);
-			myCanvasCenterPosX = myCanvasEyePosX + cos(myCanvasLookAtAngle);
-
-            zAccel = myCanvasCenterPosZ;//*myCanvasStepZ;
-            xAccel = myCanvasCenterPosZ;//*myCanvasStepX;
-
-			myCanvasPosZ+=zAccel;
-			myCanvasPosX+=xAccel;
-*/
-/*
-			//added by Mike, 20201026
-            myCanvasLookAtAngleRad = (myCanvasLookAtAngle) * 3.141593f / 180.0f;
-
-            zAccel = (cos(myCanvasLookAtAngleRad)*myCanvasStepZ);
-            xAccel = -(sin(myCanvasLookAtAngleRad)*myCanvasStepX);
-
-			myCanvasPosZ+=zAccel;
-			myCanvasPosX+=xAccel;
-*/
-
-			//note: order/sequence is important
-			//start at -90.0+0.5f
-/*            if (myCanvasLookAtAngle<-360.0f) {
-				myCanvasPosX+=myCanvasStepX;				
-			}
-            else if (myCanvasLookAtAngle<-270.0f) {
-				myCanvasPosX+=myCanvasStepX;				
-			}
-            else if (myCanvasLookAtAngle<-120.0f) {//180.0f) {
-//				myCanvasPosX+=myCanvasStepX;				
-			}
-            else if (myCanvasLookAtAngle<-90.0f) {
-				myCanvasPosZ-=myCanvasStepZ;
-			}
-			else {
-				myCanvasPosX+=myCanvasStepX;				
-			}
-*/
-
-			
-/*			
-            if (myCanvasLookAtAngle>360) {
-              myCanvasLookAtAngle-=360;
-		    }
-            else if (myCanvasLookAtAngle<-360) {
-              myCanvasLookAtAngle+=360;
-		    }
-*/
-
 
 			//removed by Mike, 20200929
 //			sound->play_sound_clip(thrust);
