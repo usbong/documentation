@@ -155,7 +155,12 @@ class OpenGLCanvas
     		  myCanvasEyePosZ,
     		  myCanvasCenterPosX,
     		  myCanvasCenterPosY,
-    		  myCanvasCenterPosZ;
+    		  myCanvasCenterPosZ,
+			  //added by Mike, 20201026
+			  myCanvasLookAtAngleRad,
+			  xAccel,
+			  yAccel,
+			  zAccel;
 
 		bool hasTurnedNinetyDegCounterClockWise,		       
 			 hasTurnedNinetyDegClockWise;

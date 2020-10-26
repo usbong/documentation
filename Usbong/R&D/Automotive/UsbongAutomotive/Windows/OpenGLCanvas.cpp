@@ -17,6 +17,13 @@
  * @date created: 20200926
  * @date updated: 20201025
  *
+ * References:
+ * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
+ * last accessed: 20201026
+ * 
+ * 2) https://community.khronos.org/t/moving-an-object-with-respect-to-the-camera/40968;
+ * last accessed: 20201026
+ * 
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
  * Syson, M., Camacho, R., Gonzales, D., Del Rosario, R., Vidal, E., et al.
@@ -138,10 +145,11 @@ bool OpenGLCanvas::init()
 	myCanvasStepX=0.3f;//0.32f;//0.3f;//0.1f;
 	myCanvasStepY=0.3f;//0.32f;//0.3f;//0.1f;
 	myCanvasStepZ=0.3f;//0.32f;//0.3f;//0.1f;
-	myCanvasEyeStepX=0.3f;
+//	myCanvasEyeStepX=0.3f; //removed by Mike, 20201026
 	
-	//added by Mike, 20201025
-	myCanvasLookAtAngle=-90.0f;
+	//added by Mike, 20201025; edited by Mike, 20201026
+	//add +0.5f to turn right without turning left first
+	myCanvasLookAtAngle=-90.0f+0.5f;//-90.0f;
 	
 	//added by Mike, 20201024; removed by Mike, 20201025
 	//myCanvasRotateAxisStepY=0.0f;
@@ -149,10 +157,17 @@ bool OpenGLCanvas::init()
 	//added by Mike, 20201025
     myCanvasEyePosX=0.0f;
     myCanvasEyePosY=0.0f;
-    myCanvasEyePosZ=3.0f;	
+    myCanvasEyePosZ=3.0f;//0.0f;//3.0f;
     myCanvasCenterPosX=0.0f;
     myCanvasCenterPosY=0.0f;
-    myCanvasCenterPosZ=1.0f;
+    //edited by Mike, 20201026
+    myCanvasCenterPosZ=1.0f;//1.0f;
+/*
+	//added by Mike, 20201026
+    myCanvasLookAtAngleRad = (myCanvasLookAtAngle) * 3.141593f / 180.0f;
+    zAccel = (cos(myCanvasLookAtAngleRad)*myCanvasStepZ);
+    xAccel = -(sin(myCanvasLookAtAngleRad)*myCanvasStepX);
+*/
 
 /*
  	iRowCountMax=10;
@@ -751,9 +766,9 @@ void OpenGLCanvas::render()
 //    glTranslatef(3.2f, 0.0f, 6.4f);
 	//removed by Mike, 20201025
 //	glRotatef(myCanvasRotateAxisStepY, 0.0f, 1.0f, 0.0f);
+	//added by Mike, 20201026; removed by Mike, 20201026
+//	glRotatef(myCanvasLookAtAngle, 0.0f, 1.0f, 0.0f);
     
-    //TO-DO: -increase size of square in grid
-
 
 /*
     	glMatrixMode(GL_PROJECTION);			// set projection matrix current matrix
@@ -1213,7 +1228,17 @@ void OpenGLCanvas::update()
 
           	//edited by Mike, 20201023
 //          	myRobotShip->move(KEY_W);
-			  myCanvasPosZ+=myCanvasStepZ;
+			//removed by Mike, 20201026
+/*			  myCanvasPosZ+=myCanvasStepZ;
+*/
+
+			//move forward
+			//Reference: https://community.khronos.org/t/moving-an-object-with-respect-to-the-camera/40968;
+			//last accessed: 20201026
+			//answer by: Bob, 200002
+			myCanvasPosZ-=sin(myCanvasLookAtAngle)*myCanvasStepZ;
+			myCanvasPosX-=cos(myCanvasLookAtAngle)*myCanvasStepX;
+
 
 			//removed by Mike, 20200929
 //			sound->play_sound_clip(thrust);
@@ -1227,7 +1252,16 @@ void OpenGLCanvas::update()
     		//added by Mike, 20201001
     		//edited by Mike, 20201023
             //myRobotShip->move(KEY_DOWN);
+/*			//removed by Mike, 20201026
 			myCanvasPosZ-=myCanvasStepZ;
+*/
+			//move backward
+			//Reference: https://community.khronos.org/t/moving-an-object-with-respect-to-the-camera/40968;
+			//last accessed: 20201026
+			//answer by: Bob, 200002
+			myCanvasPosZ+=sin(myCanvasLookAtAngle)*myCanvasStepZ;
+			myCanvasPosX+=cos(myCanvasLookAtAngle)*myCanvasStepX;
+
     	}
        	//edited by Mike, 20201013
     	//else if(myKeysDown[KEY_RIGHT] == TRUE)
@@ -1239,8 +1273,42 @@ void OpenGLCanvas::update()
     		//added by Mike, 20201001
     		//edited by Mike, 20201023
             //myRobotShip->move(KEY_RIGHT);
+/*			//removed by Mike, 20201026
 			myCanvasPosX+=-myCanvasStepX;
+*/
 
+//			myCanvasPosX-=cos(myCanvasLookAtAngle);
+
+/*
+			myCanvasPosZ+=sin(myCanvasLookAtAngle)*myCanvasStepZ;
+			myCanvasPosX+=cos(myCanvasLookAtAngle)*myCanvasStepX;
+*/
+			//move right
+			//Reference: https://community.khronos.org/t/moving-an-object-with-respect-to-the-camera/40968;
+			//last accessed: 20201026
+			//answer by: Bob, 200002
+			myCanvasPosZ-=cos(myCanvasLookAtAngle)*myCanvasStepZ;
+			myCanvasPosX+=sin(myCanvasLookAtAngle)*myCanvasStepX;
+
+/*			//removed by Mike, 20201026
+			//added by Mike, 20201026
+			//note: order/sequence is important
+            if (myCanvasLookAtAngle<-360.0f) {
+				myCanvasPosX+=-myCanvasStepX;
+			}
+            else if (myCanvasLookAtAngle<-270.0f) {
+				myCanvasPosZ+=myCanvasStepZ;
+			}
+            else if (myCanvasLookAtAngle<-180.0f) {
+				myCanvasPosX+=-myCanvasStepX;
+			}
+            else if (myCanvasLookAtAngle<-90.0f) {
+				myCanvasPosZ+=myCanvasStepZ;
+			}
+			else {
+				myCanvasPosX+=-myCanvasStepX;
+			}
+*/
 			//removed by Mike, 20200929
 //			sound->play_sound_clip(thrust);
     	}
@@ -1253,7 +1321,92 @@ void OpenGLCanvas::update()
     		//added by Mike, 20201001
     		//edited by Mike, 20201023
             //myRobotShip->move(KEY_LEFT);
-			myCanvasPosX+=myCanvasStepX;
+			//removed by Mike, 20201026
+/*			myCanvasPosX+=myCanvasStepX;
+*/
+			
+			//move left
+			//Reference: https://community.khronos.org/t/moving-an-object-with-respect-to-the-camera/40968;
+			//last accessed: 20201026
+			//answer by: Bob, 200002
+			myCanvasPosZ+=cos(myCanvasLookAtAngle)*myCanvasStepZ;
+			myCanvasPosX-=sin(myCanvasLookAtAngle)*myCanvasStepX;
+
+
+/*
+			myCanvasEyePosX-=myCanvasStepX;
+			myCanvasCenterPosX-=myCanvasStepX;
+*/
+//			myCanvasCenterPosZ = myCanvasEyePosZ + sin(myCanvasLookAtAngle);
+//			myCanvasPosX+=cos(myCanvasLookAtAngle);
+/*
+			new_x = x + vcos(a)
+			new_z = z + vsin(a)
+*/
+
+/*
+//            if (myCanvasLookAtAngle<-90.0f) {
+            if (myCanvasLookAtAngle<-180.0f) {
+			}
+			else {
+				myCanvasPosX+=myCanvasStepX;				
+			}
+*/
+//			myCanvasCenterPosZ = myCanvasEyePosZ + sin(myCanvasLookAtAngle);
+//			myCanvasPosX+=-myCanvasCenterPosX;// = myCanvasEyePosX + cos(myCanvasLookAtAngle);
+
+
+			
+/*
+			myCanvasCenterPosZ = myCanvasEyePosZ + sin(myCanvasLookAtAngle);
+			myCanvasCenterPosX = myCanvasEyePosX + cos(myCanvasLookAtAngle);
+
+            zAccel = myCanvasCenterPosZ;//*myCanvasStepZ;
+            xAccel = myCanvasCenterPosZ;//*myCanvasStepX;
+
+			myCanvasPosZ+=zAccel;
+			myCanvasPosX+=xAccel;
+*/
+/*
+			//added by Mike, 20201026
+            myCanvasLookAtAngleRad = (myCanvasLookAtAngle) * 3.141593f / 180.0f;
+
+            zAccel = (cos(myCanvasLookAtAngleRad)*myCanvasStepZ);
+            xAccel = -(sin(myCanvasLookAtAngleRad)*myCanvasStepX);
+
+			myCanvasPosZ+=zAccel;
+			myCanvasPosX+=xAccel;
+*/
+
+			//note: order/sequence is important
+			//start at -90.0+0.5f
+/*            if (myCanvasLookAtAngle<-360.0f) {
+				myCanvasPosX+=myCanvasStepX;				
+			}
+            else if (myCanvasLookAtAngle<-270.0f) {
+				myCanvasPosX+=myCanvasStepX;				
+			}
+            else if (myCanvasLookAtAngle<-120.0f) {//180.0f) {
+//				myCanvasPosX+=myCanvasStepX;				
+			}
+            else if (myCanvasLookAtAngle<-90.0f) {
+				myCanvasPosZ-=myCanvasStepZ;
+			}
+			else {
+				myCanvasPosX+=myCanvasStepX;				
+			}
+*/
+
+			
+/*			
+            if (myCanvasLookAtAngle>360) {
+              myCanvasLookAtAngle-=360;
+		    }
+            else if (myCanvasLookAtAngle<-360) {
+              myCanvasLookAtAngle+=360;
+		    }
+*/
+
 
 			//removed by Mike, 20200929
 //			sound->play_sound_clip(thrust);
@@ -1292,6 +1445,21 @@ void OpenGLCanvas::update()
 
 			myCanvasCenterPosZ = myCanvasEyePosZ + sin(myCanvasLookAtAngle);
 			myCanvasCenterPosX = myCanvasEyePosX + cos(myCanvasLookAtAngle);
+
+			//added by Mike, 20201026
+            if (myCanvasLookAtAngle>360.0f) {
+              myCanvasLookAtAngle-=360.0f;
+		    }
+            else if (myCanvasLookAtAngle<-360.0f) {
+              myCanvasLookAtAngle+=360.0f;
+		    }
+
+
+/*			//TO-DO: -reverify: this
+			myCanvasLookAtAngle-=0.1f;
+			myCanvasPosZ = myCanvasPosZ + myCanvasEyePosZ + sin(myCanvasLookAtAngle);
+			myCanvasPosX = myCanvasPosX + myCanvasEyePosX + cos(myCanvasLookAtAngle);
+*/
 
 /*
 			myCanvasRotateAxisStepY+=myCanvasEyeStepX;
@@ -1389,9 +1557,29 @@ void OpenGLCanvas::update()
 			//move up
 			//myCanvasPosY-=myCanvasStepY;
 			//turn right
-			//removed by Mike, 20201025
+/*			//removed by Mike, 20201025
 			myCanvasEyePosX-=myCanvasEyeStepX;
 			myCanvasPosX-=myCanvasStepX;
+*/
+			//added by Mike, 20201026
+			//Reference:
+			//https://stackoverflow.com/questions/29452725/how-can-i-make-my-opengl-camera-turn-360-degrees;
+			//answer by: Chris DuPuis, 20150405T0235
+			myCanvasLookAtAngle+=0.1f;
+
+            /* myCanvasLookAtAngle in degrees, convert to radians */
+//            myCanvasLookAtAngle = (myCanvasLookAtAngle) * 3.141593f / 180.0f;
+
+			myCanvasCenterPosZ = myCanvasEyePosZ + sin(myCanvasLookAtAngle);
+			myCanvasCenterPosX = myCanvasEyePosX + cos(myCanvasLookAtAngle);
+
+			//added by Mike, 20201026
+            if (myCanvasLookAtAngle>360) {
+              myCanvasLookAtAngle-=360;
+		    }
+            else if (myCanvasLookAtAngle<-360) {
+              myCanvasLookAtAngle+=360;
+		    }
 
 
 /*
