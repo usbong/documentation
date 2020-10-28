@@ -1,7 +1,7 @@
 # Computer Interactive: Lessons-Learned
 
 ## 1) CAPCOM: Capsule Computer
-### 1.1) Rockman ロックマン
+### 1.1) ロックマン（Rockman）
 --> identify and finish easiest stage and boss, then progress to harder difficulty<br/>
 --> identify value of newly learned skills from defeated bosses and friend, Dr. Raito<br/>
 --> Rockman 1: Elecman stage; Journey's "Faithfully" tune<br/>
@@ -11,15 +11,16 @@
 ### 1.2) Street Fighter Zero 3
 --> You as Blanka can finish arcade matches in 20minutes<br/>
 --> Blanka techniques easier to execute than those of Ryuu, etc<br/>
---> Using PSP, hands become difficult to move after finishing all matches in 20minutes<br/>
+--> Using Playstation Portable (PSP), hands become difficult to move after finishing all matches in 20minutes<br/>
 --> Eating rice bowl with chopsticks afterwards reminded me of manga artist who draws by hand<br/>
 
 ### 1.3) Street Fighter IV
 --> Ryuu and Ken rival battle<br/>
---> computer identifies if you as Ryuu executes actions intended by the developer<br/>
---> i.e., use hadouken, and then shouryuuken when opponent jumps towards you<br/>
+--> Computer identifies if you as Ryuu executes actions intended by the developer<br/>
+--> i.e., use 波動拳（hadouken）, and then 昇竜拳（shouryuuken）when opponent jumps towards you<br/>
 --> Ken executes actions for you to realize what else you can do<br/>
 --> You maintain to use the way, i.e. the developer's intended actions; computer identifies it; ping-pong drill<br/>
+--> Classic Street Figher II battle tune plays as background music<br/>
 --> During battle, what Ken says encourages you; not "thrash talk"<br/>
 --> Additional Note: After battles, you as Ken tells opponent encouragement, i.e. optimistic view<br/>
 
