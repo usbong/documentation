@@ -29,7 +29,7 @@
 --> Tunes remind me of existing songs, e.g. Lighthouse Family's "Lost in Space"<br/>
 --> Graphics no buffer<br/>
 --> Art design of beginning stages better than later stages; 5 stages, 3 acts<br/>
---> You as Sonic move via stages and acts closer to Dr. Robotnic's headquarters, where he makes robots, even out of your animal friends
+--> You as Sonic move via stages and acts closer to Dr. Robotnic's headquarters, where he makes robots, even out of your animal friends<br/>
 --> preference: Super Mario World<br/>
 
 ## 3) KONAMI
