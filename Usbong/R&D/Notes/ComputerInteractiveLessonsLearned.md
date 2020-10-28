@@ -4,15 +4,15 @@
 ### 1.1) Rockman ロックマン
 --> identify and finish easiest stage and boss, then progress to harder difficulty<br/>
 --> identify value of newly learned skills from defeated bosses and friend, Dr. Raito<br/>
---> preference: save anywhere tool<br/>
 --> Rockman 1: Elecman stage; Journey's "Faithfully" tune<br/>
 --> Rockman 2: Bubbleman boss battle; technique to defeat boss once learned, maintain due to requires repetition until boss defeated; ping-pong drill<br/>
+--> preference: save anywhere tool<br/>
 
 ### 1.2) Street Fighter Zero 3
---> Blanka finish arcade matches in 20minutes<br/>
---> using PSP; hands become difficult to move<br/>
---> eat rice bowl; reminded of manga artist who draws by hand<br/>
---> Blanka techniques easy to execute, instead of Ryuu, etc<br/>
+--> You as Blanka can finish arcade matches in 20minutes<br/>
+--> Blanka techniques easier to execute than those of Ryuu, etc<br/>
+--> Using PSP, hands become difficult to move after finishing all matches in 20minutes<br/>
+--> Eating rice bowl with chopsticks afterwards reminded me of manga artist who draws by hand<br/>
 
 ### 1.3) Street Fighter IV
 --> Ryuu and Ken rival battle<br/>
