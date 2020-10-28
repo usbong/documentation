@@ -1,7 +1,9 @@
 # Computer Interactive: Lessons-Learned
 
 ## 1) CAPCOM: Capsule Computer
-### 1.1) Rockman
+### 1.1) Rockman ロックマン
+--> identify and finish easiest stage and boss, then progress to harder difficulty<br/>
+--> identify value of newly learned skills from defeated bosses and friend, Dr. Raito<br/>
 --> preference: save anywhere tool<br/>
 --> Rockman 1: Elecman stage; Journey's "Faithfully" tune<br/>
 --> Rockman 2: Bubbleman boss battle; technique to defeat boss once learned, maintain due to requires repetition until boss defeated; ping-pong drill<br/>
