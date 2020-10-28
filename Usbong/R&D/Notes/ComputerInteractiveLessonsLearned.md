@@ -16,7 +16,7 @@
 
 ### 1.3) Street Fighter IV
 --> Ryuu and Ken rival battle<br/>
---> Computer identifies if you as Ryuu executes actions intended by the developer<br/>
+--> Computer identifies if you as Ryuu execute actions intended by the developer<br/>
 --> i.e., use 波動拳（hadouken）, and then 昇竜拳（shouryuuken）when opponent jumps towards you<br/>
 --> Ken executes actions for you to realize what else you can do<br/>
 --> You maintain to use the way, i.e. the developer's intended actions; computer identifies it; ping-pong drill<br/>
@@ -47,7 +47,7 @@
 ### 5.1) Tekken 6
 --> Bryan Fury; 1) sweeping kick that hits when opponent is standing or down; 2) kick that hits even when opponent is crouching<br/>
 --> Use combinations of 1 and 2<br/>
---> Opponent shall be in the defensive; but only you deals damage;<br/>
+--> Opponent shall be in the defensive; but only you deal damage;<br/>
 --> Technique can be overcome by, for example, Jin Kazama, who uses combinations of 1 and 2 faster, albeit less easier to learn to execute by a human person<br/>
 --> Execution of air combos do not hit 100%, likely due to creation of world; <br/>
 --> Opponent moves farther after air combos<br/>
