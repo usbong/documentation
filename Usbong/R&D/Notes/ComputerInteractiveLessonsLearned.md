@@ -26,30 +26,32 @@
 
 ## 2) SEGA: SERVICE GAMES
 ### 2.1) Sonic 1
---> tunes remind me of existing songs, e.g. "Lost in Space"<br/>
---> graphics no buffer<br/>
+--> Tunes remind me of existing songs, e.g. Lighthouse Family's "Lost in Space"<br/>
+--> Graphics no buffer<br/>
 --> Art design of beginning stages better than later stages; 5 stages, 3 acts<br/>
+--> You as Sonic move via stages and acts closer to Dr. Robotnic's headquarters, where he makes robots, even out of your animal friends
 --> preference: Super Mario World<br/>
 
 ## 3) KONAMI
 ### 3.1) Metal Gear Solid
 --> Sound<br/>
---> VR Training; used to learn how to make mission<br/>
+--> Virtual Reality (VR) Training; used to learn how to make mission<br/>
 
 ## 4) SONY
 ### 4.1) KillZone 2
---> Use Engineer; Elite mode; less death count of being killed<br/>
---> repair robots; add robots; use available/repaired stationary machine guns<br/>
---> technique use in any map; certain maps no available stationary machine guns<br/>
+--> Use Ingeniero (Engineer); Elite mode; less death count of being killed<br/>
+--> Repair robots; add robots; use available/repaired stationary machine-guns<br/>
+--> Technique use in any map; certain maps no available stationary machine-guns<br/>
 
-## 5) NAMCO-BANDAI
+## 5) BANDAI-NAMCO
 ### 5.1) Tekken 6
---> Bryan Fury; 1) sweeping kick that hits when opponent is standing; 2) kick that hits when opponent is crouching<br/>
---> use combinations of 1 and 2<br/>
---> opponent shall be in the defensive; but only you deals damage;<br/>
---> Technique can be overcome by Jin, who uses combinations of 1 and 2 faster, albeit less easier to learn to execute by a human person<br/>
---> execution of air combos do not hit 100%, likely due to creation of world; <br/>
---> opponent moves farther after air combos<br/>
---> simply use combinations 1 and 2;<br/>
+--> Bryan Fury; 1) sweeping kick that hits when opponent is standing or down; 2) kick that hits even when opponent is crouching<br/>
+--> Use combinations of 1 and 2<br/>
+--> Opponent shall be in the defensive; but only you deals damage;<br/>
+--> Technique can be overcome by, for example, Jin Kazama, who uses combinations of 1 and 2 faster, albeit less easier to learn to execute by a human person<br/>
+--> Execution of air combos do not hit 100%, likely due to creation of world; <br/>
+--> Opponent moves farther after air combos<br/>
+--> Simply use combinations 1 and 2;<br/>
+--> You as Bryan may not be the strongest, but using less time to memorize combos, etc can still be a strong fighter.
 
 TO-DO: -update: this
