@@ -20,7 +20,7 @@
 --> i.e., use 波動拳（hadouken）, and then 昇竜拳（shouryuuken）when opponent jumps towards you<br/>
 --> Ken executes actions for you to realize what else you can do<br/>
 --> You maintain to use the way, i.e. the developer's intended actions; computer identifies it; ping-pong drill<br/>
---> Classic Street Figher II battle tune plays as background music<br/>
+--> Computer plays Classic Street Figher II battle tune as background music<br/>
 --> During battle, what Ken says encourages you; not "thrash talk"<br/>
 --> Additional Note: After battles, you as Ken tells opponent encouragement, i.e. optimistic view<br/>
 
@@ -29,7 +29,7 @@
 --> Tunes remind me of existing songs, e.g. Lighthouse Family's "Lost in Space"<br/>
 --> Graphics no buffer<br/>
 --> Art design of beginning stages better than later stages; 5 stages, 3 acts<br/>
---> You as Sonic move via stages and acts closer to Dr. Robotnic's headquarters, where he makes robots, even out of your animal friends<br/>
+--> You as Sonic move via stages and acts closer to Dr. Robotnic's headquarters, where he makes mechanical robots, even out of your animal friends<br/>
 --> preference: Super Mario World<br/>
 
 ## 3) KONAMI
