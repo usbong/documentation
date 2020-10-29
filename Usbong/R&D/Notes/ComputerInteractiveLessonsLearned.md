@@ -39,7 +39,7 @@
 
 ## 4) SONY
 ### 4.1) KillZone 2
---> Use Ingeniero (Engineer); Elite mode; less death count of being killed<br/>
+--> Choose role as Ingeniero (Engineer); Elite mode; less death count of being killed<br/>
 --> Repair robots; add robots; use available/repaired stationary machine-guns<br/>
 --> Technique use in any map; certain maps no available stationary machine-guns<br/>
 
