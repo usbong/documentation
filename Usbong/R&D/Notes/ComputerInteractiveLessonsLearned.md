@@ -15,7 +15,7 @@
 --> Eating rice bowl with chopsticks afterwards reminded me of manga artist who draws by hand<br/>
 
 ### 1.3) Street Fighter IV
---> Ryuu and Ken rival battle<br/>
+--> Ryuu and Ken Rival Battle<br/>
 --> Computer identifies if you as Ryuu execute actions intended by the developer<br/>
 --> i.e., use 波動拳（hadouken）, and then 昇竜拳（shouryuuken）when opponent jumps towards you<br/>
 --> Ken executes actions for you to realize what else you can do<br/>
@@ -37,11 +37,11 @@
 --> Sound<br/>
 --> Virtual Reality (VR) Training; used to learn how to make mission<br/>
 
-## 4) SONY
+## 4) SONY Computer Entertainment Europe and Guerrilla
 ### 4.1) KillZone 2
 --> Choose role as Ingeniero (Engineer); Elite mode; less death count of being killed<br/>
 --> Repair robots; add robots; use available/repaired stationary machine-guns<br/>
---> Technique use in any map; certain maps no available stationary machine-guns<br/>
+--> Use technique in any map; however, certain maps no available stationary machine-guns<br/>
 
 ## 5) BANDAI-NAMCO
 ### 5.1) Tekken 6
