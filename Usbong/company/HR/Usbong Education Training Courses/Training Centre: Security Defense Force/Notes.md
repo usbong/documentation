@@ -1,15 +1,16 @@
 # Training Centre: Security Defense Force
 ## Introduction to Self-Defense
-1) Tanggapin na likas sa tao ang pakikipaglaban.<br/>
+### Part 1
+1.1) Tanggapin na likas sa tao ang pakikipaglaban.<br/>
 --> Magbasa ng kasaysayan mula sa mga sulatin/aklat, e.g. sa Bibliya, Qur'an.<br/>
 --> Unawin ang mga ito kahit gamit muna ang computer manual mula sa bansang Hapon:<br/> 
 --> Front Mission: Gun Hazard, Dragon Quest VI<br/>
 <br/>
 
-2) Sa labanan, tiyakin na ikaw ang mabubuhay.<br/>
+1.2) Sa labanan, tiyakin na ikaw ang mabubuhay.<br/>
 <br/>
 
-3) Mas maiging paniwalaan na kapag patay ka na, talagang patay ka na, i.e. hindi ka pupunta sa isang lugar na kung saan ika'y magiging mas maligaya.<br/>
+1.3) Mas maiging paniwalaan na kapag patay ka na, talagang patay ka na, i.e. hindi ka pupunta sa isang lugar na kung saan ika'y magiging mas maligaya.<br/>
 <br/>
 <b>Mungkahing mga Aksyon:</b><br/>
 1) Puksain ang mga budol-budol/manloloko/carnapper/cybercriminal/communist terrorist group na gumagamit ng wireless broadcasting technology upang gumawa ng mga panlolokong ingay at pisikal na pananakit.<br/>
@@ -32,6 +33,21 @@
 --> <b>"Communist"/Komunista:</b> Tao na naniniwala na dahil sagana na tayo, hindi na natin kailangang maghanap-buhay.<br/>
 --> <b>"Terrorist"/Terorista:</b> Tao na gumagawa ng panloloko at pisikal na pananakit sa isa at higit pang mga tao.<br/>
 --> <b>"Communist Terrorist":</b> Tao na naniwala na sagana na siya, kaya lang naubusan gawa ng pagwawaldas; naging Terorista upang mabilis na makakuha ng pera.<br/>
+
+### Part 2
+Ito'y kapag nakararanas ka ng istres dahil ang pakiramdam mo, wala ka nang kontrol sa mga nangyayari.<br/>
+<br/>
+2.1) Gumawa ng Prediction<br/>
+--> Kung alam mo na ang mangyayari, hindi ka na kailangang mag-alinlangan.<br/>
+<br/>
+
+2.2) Maglakad<br/>
+--> Move your left foot, say out-loud "left"<br/>
+--> Move your right foot, say out-loud "right"<br/>
+<br/>
+
+2.3) Huminga<br/>
+Breathe slowly; Exhale slowly
 
 ## Sanggunian
 1) [Marikina City Ordinance Enacting the Noise Control Regulations (ORDINANCE No. 100 Series of 2010)](http://marikinacitycouncilc.ipage.com/www/mccouncil_ordinances/elibrary/pdf2010/ord10100.pdf)<br/>
