@@ -12,8 +12,8 @@
 
 1.3) Mas maiging paniwalaan na kapag patay ka na, talagang patay ka na, i.e. hindi ka pupunta sa isang lugar na kung saan ika'y magiging mas maligaya.<br/>
 <br/>
-<b>Mungkahing mga Aksyon:</b><br/>
-1) Puksain ang mga budol-budol/manloloko/carnapper/cybercriminal/communist terrorist group na gumagamit ng wireless broadcasting technology upang gumawa ng mga panlolokong ingay at pisikal na pananakit.<br/>
+<b>1.4) Mungkahing mga Aksyon:</b><br/>
+1.4.1) Puksain ang mga budol-budol/manloloko/carnapper/cybercriminal/communist terrorist group na gumagamit ng wireless broadcasting technology upang gumawa ng mga panlolokong ingay at pisikal na pananakit.<br/>
 --> <b>Halimbawa ng Panloloko:</b><br/>
 --> May nakikita kang mga larawan/imahe o may naririnig kang mga bulung-bulong ukol sa mga yumaong kilala o mga anghel/demonyo na sinusundo ka na.<br/>
 --> <b>Paalala:</b><br/>
@@ -25,7 +25,7 @@
 --> <b>Paalala:</b><br/>
 --> Alalahanin na maaaring dumaloy ang kuryente sa hangin, i.e. wireless.<br/>
 <br/>
-2) Wala nang kailangang gawing negotiation kasama ang mga may identification at classification na miyembro ng "budol-budol/manloloko/carnapper/cybercriminal/communist terrorist group".<br/>
+1.4.2) Wala nang kailangang gawing negotiation kasama ang mga may identification at classification na miyembro ng "budol-budol/manloloko/carnapper/cybercriminal/communist terrorist group".<br/>
 --> No need for negotiation.<br/>
 --> Mula sa Tamad ang Masama.<br/>
 <br/>
@@ -39,6 +39,7 @@ Ito'y kapag nakararanas ka ng istres dahil ang pakiramdam mo, wala ka nang kontr
 <br/>
 2.1) Gumawa ng Prediction<br/>
 --> Kung alam mo na ang mangyayari, hindi ka na kailangang mag-alinlangan.<br/>
+--> Kung hindi mo alam kung ano ang mangyayari, dahil mulat ka sa iyong nararamdaman, maisasaayos mo ito.<br/>
 <br/>
 
 2.2) Maglakad<br/>
@@ -49,7 +50,7 @@ Ito'y kapag nakararanas ka ng istres dahil ang pakiramdam mo, wala ka nang kontr
 2.3) Huminga<br/>
 Breathe slowly; Exhale slowly
 
-## Sanggunian
+### Sanggunian
 1) [Marikina City Ordinance Enacting the Noise Control Regulations (ORDINANCE No. 100 Series of 2010)](http://marikinacitycouncilc.ipage.com/www/mccouncil_ordinances/elibrary/pdf2010/ord10100.pdf)<br/>
 --> Please refer to the City Ordinance document for the complete Noise Control Regulations.
 <b>
