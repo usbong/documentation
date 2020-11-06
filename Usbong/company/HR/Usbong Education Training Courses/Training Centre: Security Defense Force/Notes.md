@@ -70,3 +70,10 @@ Breathe slowly; Exhale slowly
             WHEREAS, it is a right of every human being to have a peaceful environment and to have a good night's sleep.<br/>
 <br/>
  </b>
+
+2) Fujitsu Group Total Life. (2008). Information Magazine: プラスワン（Plus 1） (No. 74, Summer 2008). Japan: Fujitsu Health Insurance Group et al.<br/>
+--> 「お悩み12：どこでも誰でも簡単にできるストレス解消法<br/>
+--> 浜松医科大学名誉教授：高田明和先生<br/>
+--> 1935年静岡県生まれ。慶応大学医学部大学院修了、医学博士。<br/>
+--> ニューヨーク州立大学助教授、浜松医科大学教授をへて現職。<br/>
+--> 専門は血液学、大脳生理学、精神医学。<br/>
