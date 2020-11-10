@@ -68,10 +68,15 @@ where: ".pnm" is the image file format<br/>
 Done!<br/>
 <br/>
 
-## 3) Brother DCP-165C Linux Drivers (Printer and Scanner)
-https://support.brother.com/g/b/downloadhowto.aspx?c=ph&lang=en&prod=dcp165c_all&os=128&dlid=dlf006893_000&flang=4&type3=625; last accessed: 20201014
+## 3) Brother DCP Series Linux Drivers (Printer and Scanner)
+### 3.1) Brother DCP Series Model Name Identification
+3.1.1) DCP-165C<br/>
+https://support.brother.com/g/b/downloadhowto.aspx?c=ph&lang=en&prod=dcp165c_all&os=128&dlid=dlf006893_000&flang=4&type3=625; last accessed: 20201014<br/>
+<br/>
+3.1.2) DCP-L2540DW<br/>
+https://support.brother.com/g/b/downloadlist.aspx?c=ph&lang=en&prod=dcpl2540dw_us_as&os=128; last accessed: 20201110
 
-### 3.1) Scan Command<br/>
+### 3.2) Scan Command<br/>
 <b>scanimage --format=jpeg > outputImage.jpeg</b><br/>
 <br/>
 where: ".jpeg" is the image file format
