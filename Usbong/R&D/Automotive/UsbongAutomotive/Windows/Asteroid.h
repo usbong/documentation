@@ -28,6 +28,9 @@
 
 #include "OpenGLCanvas.h"
 
+//added by Mike, 20201113
+#include "PolygonUtils.h"
+
 #define INITIALIZING_STATE 3
 #define MOVING_STATE 0
 #define DEATH_STATE 1
@@ -69,6 +72,8 @@ private:
 	//added by Mike, 20201016
 	float myStartXPos;
 	float myStartYPos;
+	//added by Mike, 20201113
+	float myStartZPos;
         
     //float boundary;
 
@@ -80,8 +85,11 @@ private:
     //float thrustMax;
     float xAccel;
     float yAccel;
+	float zAccel; //added by Mike, 20201113
+
     float xVel;
     float yVel;
+    float zVel; //added by Mike, 20201113
     
     //float maxXVel;
     //float maxYVel;    
@@ -126,7 +134,9 @@ private:
 
 public:
 //	Asteroid();
-    Asteroid(int status, float xPos, float yPos); 
+	//edited by Mike, 20201113
+//    Asteroid(int status, float xPos, float yPos); 
+    Asteroid(int status, float xPos, float yPos, float zPos); 
 
 	~Asteroid();
 	//virtual ~Robot();
@@ -170,8 +180,12 @@ public:
 	void changeStatus(int s);	//parent or child
 
 	int getState();
-	void reset(float xPos, float yPos, float ra);
-	void reset(float xPos, float yPos);
+
+	//edited by Mike, 20201113
+//	void reset(float xPos, float yPos, float ra);
+//	void reset(float xPos, float yPos);
+//	void reset(float xPos, float yPos, float zPos, float ra);
+	void reset(float xPos, float yPos, float zPos);
      
 	void move(int key);	
 	

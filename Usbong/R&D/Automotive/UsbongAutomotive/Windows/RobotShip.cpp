@@ -430,7 +430,8 @@ void RobotShip::drawRobotShip()
 */	
 	//added by Mike, 20201001
 	//edited by Mike, 20201020
-	//TO-DO: -update: this
+	//TO-DO: -update: this; noted by Mike, 20201113
+	//edited by Mike, 20201023
 //    glTranslatef(myXPos, myYPos, myZPos);
     glTranslatef(myXPos, myZPos, myYPos);    
 

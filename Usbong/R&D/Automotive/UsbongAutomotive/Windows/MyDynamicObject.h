@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20201017
+ * @date updated: 20201113
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -49,7 +49,9 @@ public:
     float myWidth;
     float myHeight;
 
-    MyDynamicObject(float xPos = 0.0f, float yPos = 0.0f, float zPos= 300.0f ): myXPos(xPos), myYPos(yPos), myZPos(zPos) 
+	//edited by Mike, 20201113
+//    MyDynamicObject(float xPos = 0.0f, float yPos = 0.0f, float zPos= 300.0f ): myXPos(xPos), myYPos(yPos), myZPos(zPos) 
+    MyDynamicObject(float xPos = 0.0f, float yPos = 0.0f, float zPos= 0.0f ): myXPos(xPos), myYPos(yPos), myZPos(zPos) 
     //{myXPos=0.0f; myYPos=0.0f; myZPos=300.0f;}
     {}
     virtual void hitBy(MyDynamicObject* mdo);

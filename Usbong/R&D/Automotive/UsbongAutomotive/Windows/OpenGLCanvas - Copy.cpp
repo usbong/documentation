@@ -173,14 +173,6 @@ bool OpenGLCanvas::init()
  	iRowCountMax=10;
  	iColumnCountMax=10;
 */
-	
-	//added by Mike, 20201113
- 	iRowCountMax=10;
- 	iColumnCountMax=10;
-
-	fGridSquareWidth = myWindowWidth/iColumnCountMax/100.0;
-	fGridSquareHeight = myWindowHeight/iRowCountMax/100.0;
-
     keyPressCounter=0;
     
     //added by Mike, 20200930
@@ -217,7 +209,7 @@ bool OpenGLCanvas::init()
 		//edited by Mike, 20201113
 //    	myAsteroid[i] = new Asteroid(PARENT_STATUS,0.1f,0.1f);//,10,10); //TOP RIGHT		
 //    	myAsteroid[i] = new Asteroid(PARENT_STATUS,0.1f,0.0f,0.1f);//,10,10); //TOP RIGHT		
-    	myAsteroid[i] = new Asteroid(PARENT_STATUS,fGridSquareWidth,0.0f,fGridSquareHeight);//,10,10); //TOP RIGHT
+    	myAsteroid[i] = new Asteroid(PARENT_STATUS,0.1f,0.0f,0.1f);//,10,10); //TOP RIGHT
 	}
 
 	for (int i=0; i<4; i++) {
@@ -929,14 +921,12 @@ void OpenGLCanvas::drawGridWithZAxis() {
 	 //edited by Mike, 20201015 	 
  	 //TO-DO: -update: iRowCountMax
  	 //edited by Mike, 20201022
- 	 //removed by Mike, 20201113
-// 	 int iRowCountMax=10;
+ 	 int iRowCountMax=10;
 // 	 int iRowCountMax=20;
 
  	 //TO-DO: -update: iColumnCountMax
  	 //edited by Mike, 20201022
- 	 //removed by Mike, 20201113
-// 	 int iColumnCountMax=10;
+ 	 int iColumnCountMax=10;
 // 	 int iColumnCountMax=20;
 
 	//added by Mike, 20201022
@@ -950,12 +940,14 @@ void OpenGLCanvas::drawGridWithZAxis() {
 	//edited by Mike, 20201022
 /*	//half window width and height
 	float fSquareWidth = myWindowWidth/2/iColumnCountMax/100.0;
-	float fGridSquareHeight = myWindowHeight/2/iRowCountMax/100.0;
+	float fSquareHeight = myWindowHeight/2/iRowCountMax/100.0;
 */
 
-	//removed by Mike, 20201113
+	//edited by Mike, 20201113
 //	float fSquareWidth = myWindowWidth/iColumnCountMax/100.0;
-//	float fGridSquareHeight = myWindowHeight/iRowCountMax/100.0;
+//	float fSquareHeight = myWindowHeight/iRowCountMax/100.0;
+	fSquareWidth = myWindowWidth/iColumnCountMax/100.0;
+	fSquareHeight = myWindowHeight/iRowCountMax/100.0;
 
    // Draw a Green Line top-left origin; Quadrant 4, y-axis inverted; x and y positive
    //rows   
@@ -972,11 +964,11 @@ void OpenGLCanvas::drawGridWithZAxis() {
 */
 
 /*			//edited by Mike, 20201023
-      		glVertex2f(0.0f, fGridSquareHeight*iRowCount);    // x, y
-      		glVertex2f(fGridSquareWidth*2*iRowCountMax, fGridSquareHeight*iRowCount);
+      		glVertex2f(0.0f, fSquareHeight*iRowCount);    // x, y
+      		glVertex2f(fSquareWidth*2*iRowCountMax, fSquareHeight*iRowCount);
 */
-      		glVertex2f(0.0f, fGridSquareHeight*iRowCount);    // x, y
-      		glVertex2f(fGridSquareWidth*iRowCountMax, fGridSquareHeight*iRowCount);
+      		glVertex2f(0.0f, fSquareHeight*iRowCount);    // x, y
+      		glVertex2f(fSquareWidth*iRowCountMax, fSquareHeight*iRowCount);
 
 //      		glVertex2f(myWindowWidth, fRowSquareHeight*iRowCount);
 
@@ -988,20 +980,20 @@ void OpenGLCanvas::drawGridWithZAxis() {
 			//added by Mike, 20201023
 			//floor face
 			//with Z-axis
-      		glVertex3f(0.0f, 0.0f, fGridSquareHeight*iRowCount);    // x, z
-      		glVertex3f(fGridSquareWidth*iRowCountMax, 0.0f, fGridSquareHeight*iRowCount);      		
+      		glVertex3f(0.0f, 0.0f, fSquareHeight*iRowCount);    // x, z
+      		glVertex3f(fSquareWidth*iRowCountMax, 0.0f, fSquareHeight*iRowCount);      		
 
 			//added by Mike, 20201023
 			//left face
 			//with Z-axis; with y
-      		glVertex3f(0.0f, 0.0f, fGridSquareHeight*iRowCount);    // y, z
-      		glVertex3f(0.0f, fGridSquareHeight*iRowCountMax, fGridSquareHeight*iRowCount);      		
+      		glVertex3f(0.0f, 0.0f, fSquareHeight*iRowCount);    // y, z
+      		glVertex3f(0.0f, fSquareHeight*iRowCountMax, fSquareHeight*iRowCount);      		
 
 			//added by Mike, 20201023
 			//right face
 			//with Z-axis; with y
-      		glVertex3f(fGridSquareWidth*iRowCountMax, 0.0f, fGridSquareHeight*iRowCount);    // y, z
-      		glVertex3f(fGridSquareWidth*iRowCountMax, fGridSquareHeight*iRowCountMax, fGridSquareHeight*iRowCount);      		
+      		glVertex3f(fSquareWidth*iRowCountMax, 0.0f, fSquareHeight*iRowCount);    // y, z
+      		glVertex3f(fSquareWidth*iRowCountMax, fSquareHeight*iRowCountMax, fSquareHeight*iRowCount);      		
    		glEnd();   		   	  
 	 }
 
@@ -1018,32 +1010,32 @@ void OpenGLCanvas::drawGridWithZAxis() {
       		glVertex2f(0.1f*iColumnCount, 0.1f*iColumnCountMax);
 */
 /*			//edited by Mike, 20201023
-      		glVertex2f(fGridSquareWidth*2*iColumnCount, 0.0f);    // x, y
-      		glVertex2f(fGridSquareWidth*2*iColumnCount, fGridSquareHeight*iColumnCountMax);      		
+      		glVertex2f(fSquareWidth*2*iColumnCount, 0.0f);    // x, y
+      		glVertex2f(fSquareWidth*2*iColumnCount, fSquareHeight*iColumnCountMax);      		
 */
-      		glVertex2f(fGridSquareWidth*iColumnCount, 0.0f);    // x, y
-      		glVertex2f(fGridSquareWidth*iColumnCount, fGridSquareHeight*iColumnCountMax);      		
+      		glVertex2f(fSquareWidth*iColumnCount, 0.0f);    // x, y
+      		glVertex2f(fSquareWidth*iColumnCount, fSquareHeight*iColumnCountMax);      		
 
 			//added by Mike, 20201022			
 			//with Z-axis
 /*			//edited by Mike, 20201023
-      		glVertex3f(fGridSquareWidth*2*iColumnCount, 0.0f, 0.0f);    // y, z
-      		glVertex3f(fGridSquareWidth*2*iColumnCount, 0.0f, fGridSquareHeight*iColumnCountMax);
+      		glVertex3f(fSquareWidth*2*iColumnCount, 0.0f, 0.0f);    // y, z
+      		glVertex3f(fSquareWidth*2*iColumnCount, 0.0f, fSquareHeight*iColumnCountMax);
 */
-      		glVertex3f(fGridSquareWidth*iColumnCount, 0.0f, 0.0f);    // y, z
-      		glVertex3f(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iColumnCountMax);
+      		glVertex3f(fSquareWidth*iColumnCount, 0.0f, 0.0f);    // y, z
+      		glVertex3f(fSquareWidth*iColumnCount, 0.0f, fSquareHeight*iColumnCountMax);
 
 			//added by Mike, 20201023
 			//left face
 			//with Z-axis; with y
-      		glVertex3f(0.0f, fGridSquareHeight*iColumnCount, 0.0f);    // y, z
-      		glVertex3f(0.0f, fGridSquareHeight*iColumnCount, fGridSquareHeight*iColumnCountMax);
+      		glVertex3f(0.0f, fSquareHeight*iColumnCount, 0.0f);    // y, z
+      		glVertex3f(0.0f, fSquareHeight*iColumnCount, fSquareHeight*iColumnCountMax);
 
 			//added by Mike, 20201023
 			//right face
 			//with Z-axis; with y
-      		glVertex3f(fGridSquareWidth*iRowCountMax, fGridSquareHeight*iColumnCount, 0.0f);    // y, z
-      		glVertex3f(fGridSquareWidth*iRowCountMax, fGridSquareHeight*iColumnCount, fGridSquareHeight*iColumnCountMax);
+      		glVertex3f(fSquareWidth*iRowCountMax, fSquareHeight*iColumnCount, 0.0f);    // y, z
+      		glVertex3f(fSquareWidth*iRowCountMax, fSquareHeight*iColumnCount, fSquareHeight*iColumnCountMax);
    		glEnd();   		   	  
 	 }
    

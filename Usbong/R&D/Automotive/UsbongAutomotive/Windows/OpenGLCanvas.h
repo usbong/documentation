@@ -162,6 +162,12 @@ class OpenGLCanvas
 			  yAccel,
 			  zAccel;
 
+		//grid
+	 	int iRowCountMax,
+	 		iColumnCountMax;
+		float fGridSquareWidth,
+			  fGridSquareHeight;
+
 		bool hasTurnedNinetyDegCounterClockWise,		       
 			 hasTurnedNinetyDegClockWise;
 

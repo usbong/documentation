@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201016
- * @date updated: 20201017
+ * @date updated: 20201113
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -155,7 +155,9 @@ void Asteroid::setup()
 //Asteroid::Asteroid(): MyDynamicObject(10,10,300)
 //edited by Mike, 20201016
 //Asteroid::Asteroid(int status, float xPos, float yPos): MyDynamicObject(xPos,yPos,300)
-Asteroid::Asteroid(int status, float xPos, float yPos): MyDynamicObject(xPos,yPos,0.0f)
+//edited by Mike, 20201113
+//Asteroid::Asteroid(int status, float xPos, float yPos): MyDynamicObject(xPos,yPos,0.0f)
+Asteroid::Asteroid(int status, float xPos, float yPos, float zPos): MyDynamicObject(xPos,yPos,0.0f)
 { 
     invincibleCounter=0;
     
@@ -173,12 +175,14 @@ Asteroid::Asteroid(int status, float xPos, float yPos): MyDynamicObject(xPos,yPo
 		//added by Mike, 20201016
     	myXPos=xPos;
 		myYPos=yPos;
-//		myZPos
+		//edited by Mike, 20201113
+		myZPos=zPos;
 		
 		//added by Mike, 20201016
     	myStartXPos=xPos;
 		myStartYPos=yPos;
-//		myZPos
+		//edited by Mike, 20201113
+		myStartZPos=zPos;
         
         myScoreValue=200;
     
@@ -272,26 +276,11 @@ void Asteroid::drawAsteroid() {
 	//to make anchor/origin/reference point start at top-left
     glTranslatef(0.0f, 0.1f, 0.0f);   
 
+/* //removed by Mike, 20201113
    //TO-DO: -update: this due to output is 1 x 2 box, width x height
    glBegin(GL_QUADS);              // Each set of 4 vertices form a quad
 		//removed by Mike, 20201016
 //      glColor3f(0.0f, 0.0f, 1.0f); // blue
-
-/*    //edited by Mike, 20201001  
-	  glVertex2f(-0.1f, -0.1f);    // x, y
-      glVertex2f( 0.1f, -0.1f);
-      glVertex2f( 0.1f,  0.1f);
-      glVertex2f(-0.1f,  0.1f);
-*/      
-	  //edited by Mike, 20201016
-/*
-	  //1x1 square
-	  glVertex2f(0.0f, 0.0f);    // x, y
-      glVertex2f( 0.0f, -0.1f);
-      glVertex2f( 0.1f,  -0.1f);
-      glVertex2f(0.1f,  0.0f);
-*/
-
 	  //1x1 square
 	  glVertex2f(0.0f, 0.0f);    // x, y
       glVertex2f( 0.0f, -myHeight);
@@ -299,6 +288,16 @@ void Asteroid::drawAsteroid() {
       glVertex2f(myWidth,  0.0f);
 
    glEnd();    
+*/   
+   
+	//added by Mike, 20201113
+	//set square face with no color fill 
+	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+	//	drawCube();
+		drawCube(myWidth); //myWidth = myHeight
+
+	//set square face with color fill 	
+	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);   
 }
 
 void Asteroid::drawExplosion() {
@@ -426,7 +425,11 @@ void Asteroid::update(float dt)
                     //im not yet sure why, but i have to deduct 90 to rotationAngle
                     rotationAngleRad = (rotationAngle) * 3.141593f / 180.0f;
                     
-                    yAccel = (cos(rotationAngleRad)*thrust);
+					
+					//edited by Mike, 20201113
+                    //yAccel = (cos(rotationAngleRad)*thrust);
+                    zAccel = (cos(rotationAngleRad)*thrust);
+
                     xAccel = -(sin(rotationAngleRad)*thrust);
 /*
                    rotationAngle+=1;
@@ -435,7 +438,9 @@ void Asteroid::update(float dt)
                    MessageBox(NULL, str, "Welcome!", MB_OK);
 */                   
                     xVel=xAccel;
-                    yVel=yAccel;
+					//edited by Mike, 20201113
+                    //yVel=yAccel;
+                    zVel=zAccel;
                     
 /*                    
                     if (xVel > maxXVel) xVel = maxXVel;
@@ -445,7 +450,9 @@ void Asteroid::update(float dt)
 */                  
 
                     myXPos+=xVel;
-                    myYPos+=yVel;
+					//edited by Mike, 2020113
+                    //myYPos+=yVel;
+                    myZPos+=zVel;
 
 /*                    
                     if (thrust>0)
@@ -459,14 +466,21 @@ void Asteroid::update(float dt)
            		else if (myXPos > 25.0f) myXPos = -25.0f; 
            		if (myYPos <= -17.0f) myYPos = 19.0f;
            		else if (myYPos > 19.0f) myYPos = -17.0f;
-*/           		
+*/
+				//removed by Mike, 20201113
+				//TO-DO: -use: size of grid           		
+/*
 				//TO-DO: -add: 0.1f*iColumnCountMax
            		if (myXPos <= 0.0f) myXPos = 0.1f*20-myWidth/8; //if left side
            		else if (myXPos >= 0.1f*20) myXPos = 0.0f+myWidth/8; //if right side
-
+*/
 				//TO-DO: -add: 0.1f*iRowCountMax
+				//removed by Mike, 20201113
+				//TO-DO: -use myZPos
+/*				
            		if (myYPos >= 0.1f*20) myYPos = 0.0f+myHeight/8; //if bottom side
            		else if (myYPos <= 0.0f) myYPos = 0.1f*20-myHeight/8; //if top side
+*/
            		
                //}
                 break;
@@ -480,7 +494,10 @@ void Asteroid::update(float dt)
 */              
 				//edited by Mike, 20201016
                 if (iDeathAnimationCounter==20) {//40) { //10
-                  reset(myStartXPos,myStartYPos);
+                  //edited by Mike, 20201113
+                  //reset(myStartXPos,myStartYPos);
+                  reset(myStartXPos,myStartYPos,myStartZPos);
+
 					//edited by Mike, 20201016
   //                changeState(MOVING_STATE);
                   setCollidable(true);
@@ -577,6 +594,7 @@ void Asteroid::attachChild(Asteroid* c1, Asteroid* c2)
   child2=c2;
 }
 
+/* //removed by Mike, 20201113
 void Asteroid::reset(float xPos, float yPos,float ra)
 {
     rotationAngle=ra;//(float)(rand()%360);//10.0f;//360.0f;//90.0;
@@ -593,18 +611,25 @@ void Asteroid::reset(float xPos, float yPos,float ra)
     //invincibleCounter=0;
     iDeathAnimationCounter=0;
 
-	//TO-DO: -set: 4 to a defined constant container
-/*	for(int i=0; i<4; i++) {
-		explosionParticle[4][3]
-	}	
-*/	
+//	//TO-DO: -set: 4 to a defined constant container
+//	for(int i=0; i<4; i++) {
+//		explosionParticle[4][3]
+//	}	
+	
 }
-void Asteroid::reset(float xPos, float yPos)
+*/
+
+//edited by Mike, 20201113
+//void Asteroid::reset(float xPos, float yPos)
+void Asteroid::reset(float xPos, float yPos, float zPos)
 {
     rotationAngle=(float)(rand()%360);
 
     myXPos=xPos;
     myYPos=yPos;  
+	//added by Mike, 20201113
+    myZPos=zPos;  
+
     //myXPos=(float)(rand()%640); //640 is the max width of the screen
     //myYPos=(float)(rand()%640); //640 is the max height of the screen
 
