@@ -35,6 +35,10 @@
 #include <GL/glut.h> 
 #include <GL/glu.h>
 
+//added by Mike, 20201114; removed by Mike, 20201114
+// disable implicit float-double casting
+//#pragma warning(disable:4305)
+
 /*
 #include <stdio.h>
 #include <stdlib.h>
@@ -136,7 +140,7 @@ void drawCube(float fSideLength)
 //		glTranslatef(xPos, yPos, zPos);
 		//note: we add 0.2f in x-axis due to vertex locations 
 		//of cube's square face not equal with that of drawSquare()
-//	    glTranslatef(0.0f, 0.1f, 0.0f);   
+//	    glTranslatef(0.0f, 0.1f, 0.0f);
 	    glTranslatef(0.2f, 0.1f, 0.0f);   
 		
 		//TO-DO: -update: vertex locations
@@ -155,11 +159,17 @@ void drawCube(float fSideLength)
 		// Draw black wireframe version of geometry
 //		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
+/*		//removed by Mike, 20201114
+		//added by Mike, 20201114
+		glDepthFunc(GL_LEQUAL);
+
 		glLineWidth(2.0f);
 
 		glEnable( GL_POLYGON_OFFSET_FILL );
         glPolygonOffset( 1.0, 1.0 ); //3.0, 1.0 );	
-		
+*/		
+
+		glLineWidth(2.0f);
 		
 		glBegin(GL_QUADS);
 /*		
@@ -253,16 +263,25 @@ void drawCube(float fSideLength)
 			glVertex3f(-fSideLength, -fSideLength, -fSideLength);
 			glVertex3f(0.0f, -fSideLength, -fSideLength);
 */
-			//TO-DO: -reverify: due to back face not drawn
-			glVertex3f(0.0f, 0.0f, -fSideLength);	// back face
+			//TO-DO: -reverify: disable BackFaceCulling 
+			//+updated: to draw vertices clockwise due to back face not drawn
+/*			glVertex3f(0.0f, 0.0f, -fSideLength);	// back face
 			glVertex3f(-fSideLength, 0.0f, -fSideLength);
 			glVertex3f(-fSideLength, -fSideLength, -fSideLength);
 			glVertex3f(0.0f, -fSideLength, -fSideLength);
+*/
+			//draw vertices clockwise
+			glVertex3f(0.0f, 0.0f, -fSideLength);	// back face
+			glVertex3f(0.0f, -fSideLength, -fSideLength);
+			glVertex3f(-fSideLength, -fSideLength, -fSideLength);
+			glVertex3f(-fSideLength, 0.0f, -fSideLength);
 
 		glEnd();
 		
+/*		//removed by Mike, 20201114		
 		//added by Mike, 20201114
 		glDisable( GL_POLYGON_OFFSET_FILL );
+*/
 
 		//added by Mike, 20201114; removed by Mike, 2020114
 //		glDepthFunc(GL_LESS);
