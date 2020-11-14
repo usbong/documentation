@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20201017
+ * @date updated: 20201114
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -295,9 +295,9 @@ void RobotShip::drawModelRobotShip() {
 	glRotatef(35.0f, 0.0, 1.0, 0.0);
 */
 	
-	//added by Mike, 20201023
+	//added by Mike, 20201023; removed by Mike, 20201114
 	//set square face with no color fill 
-	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+//	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
 	    glColor3f(1.0f, 0.0f, 0.0f); // Red
 	
@@ -305,9 +305,9 @@ void RobotShip::drawModelRobotShip() {
 	//	drawCube();
 		drawCube(myWidth); //myWidth = myHeight
 
-	//added by Mike, 20201023
+	//added by Mike, 20201023; removed by Mike, 20201114
 	//set square face with color fill 	
-	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+//	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
 }
 

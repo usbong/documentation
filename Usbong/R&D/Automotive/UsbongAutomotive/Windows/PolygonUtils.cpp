@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201019
- * @date updated: 20201020
+ * @date updated: 20201114
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -141,6 +141,26 @@ void drawCube(float fSideLength)
 		
 		//TO-DO: -update: vertex locations
 		
+		//added by Mike, 20201114
+//		glDepthFunc(GL_ALWAYS);
+//		glEnable(GL_DEPTH_TEST);	
+		//removed by Mike, 20201114		
+/*
+		// Draw lines antialiased
+		glEnable(GL_LINE_SMOOTH);
+		glEnable(GL_BLEND);
+		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+*/
+		//removed by Mike, 20201114		
+		// Draw black wireframe version of geometry
+//		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+
+		glLineWidth(2.0f);
+
+		glEnable( GL_POLYGON_OFFSET_FILL );
+        glPolygonOffset( 1.0, 1.0 ); //3.0, 1.0 );	
+		
+		
 		glBegin(GL_QUADS);
 /*		
 			glVertex3f(0.0f, 0.0f, 0.0f);	// top face
@@ -194,6 +214,7 @@ void drawCube(float fSideLength)
 			glVertex3f(-0.1f, -0.1f, -0.1f);
 			glVertex3f(0.0f, -0.1f, -0.1f);
 */
+			//note: add vertex counter-clockwise
 			glVertex3f(0.0f, 0.0f, 0.0f);	// top face
 			glVertex3f(0.0f, 0.0f, -fSideLength);
 			glVertex3f(-fSideLength, 0.0f, -fSideLength);
@@ -202,23 +223,50 @@ void drawCube(float fSideLength)
 			glVertex3f(-fSideLength, 0.0f, 0.0f);
 			glVertex3f(-fSideLength, -fSideLength, 0.0f);
 			glVertex3f(0.0f, -fSideLength, 0.0f);
+
 			glVertex3f(0.0f, 0.0f, 0.0f);	// right face
 			glVertex3f(0.0f, -fSideLength, 0.0f);
 			glVertex3f(0.0f, -fSideLength, -fSideLength);
 			glVertex3f(0.0f, 0.0f, -fSideLength);
+			//edited by Mike, 2020114
+			//vertices drawn clock-wise
+			
 			glVertex3f(-fSideLength, 0.0f, 0.0f);	// left face
 			glVertex3f(-fSideLength, 0.0f, -fSideLength);
 			glVertex3f(-fSideLength, -fSideLength, -fSideLength);
 			glVertex3f(-fSideLength, -fSideLength, 0.0f);
+
+/*
+			glVertex3f(-fSideLength, 0.0f, 0.0f);	// left face
+			glVertex3f(-fSideLength, -fSideLength, 0.0f);
+			glVertex3f(-fSideLength, -fSideLength, -fSideLength);
+			glVertex3f(-fSideLength, 0.0f, -fSideLength);
+*/
 			glVertex3f(0.0f, -fSideLength, 0.0f);	// bottom face
 			glVertex3f(0.0f, -fSideLength, -fSideLength);
 			glVertex3f(-fSideLength, -fSideLength, -fSideLength);
 			glVertex3f(-fSideLength, -fSideLength, 0.0f);
+
+			//edited by Mike, 20201114
+/*			glVertex3f(0.0f, 0.0f, -fSideLength);	// back face
+			glVertex3f(-fSideLength, 0.0f, -fSideLength);
+			glVertex3f(-fSideLength, -fSideLength, -fSideLength);
+			glVertex3f(0.0f, -fSideLength, -fSideLength);
+*/
+			//TO-DO: -reverify: due to back face not drawn
 			glVertex3f(0.0f, 0.0f, -fSideLength);	// back face
 			glVertex3f(-fSideLength, 0.0f, -fSideLength);
 			glVertex3f(-fSideLength, -fSideLength, -fSideLength);
 			glVertex3f(0.0f, -fSideLength, -fSideLength);
+
 		glEnd();
+		
+		//added by Mike, 20201114
+		glDisable( GL_POLYGON_OFFSET_FILL );
+
+		//added by Mike, 20201114; removed by Mike, 2020114
+//		glDepthFunc(GL_LESS);
+
 	glPopMatrix();
 }
 

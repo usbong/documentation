@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20201113
+ * @date updated: 20201114
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -701,6 +701,9 @@ void OpenGLCanvas::render()
     glEnable(GL_DEPTH_TEST);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+	//added by Mike, 20201114
+//	glDepthFunc(GL_ALWAYS);
+
 	glMatrixMode(GL_PROJECTION);			// set projection matrix current matrix
 	glLoadIdentity();						// reset projection matrix
 
@@ -713,8 +716,15 @@ void OpenGLCanvas::render()
                    1.0, // near plane
                    100); // far plane
 */
+
+/*	//edited by Mike, 20201114
     gluPerspective(90.0, // field-of-view angle
                    4.0 / 4.0, // aspect ratio
+                   0.1, // near plane
+                   100); // far plane
+*/
+    gluPerspective(90.0, // field-of-view angle
+                   4.0 / 3.0, // aspect ratio
                    0.1, // near plane
                    100); // far plane
 
