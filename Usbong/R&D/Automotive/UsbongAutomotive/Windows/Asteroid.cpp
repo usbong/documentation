@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201016
- * @date updated: 20201115
+ * @date updated: 20201116
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -486,8 +486,10 @@ void Asteroid::update(float dt)
            		else if (myXPos >= myWindowWidth) myXPos = 0.0f+myWidth/8; //if right side
 */
 				//TO-DO: -update: to use myWindowWidth
-           		if (myXPos <= 0.0f) myXPos = 20-myWidth/8; //if left side
-           		else if (myXPos >= myWindowWidth) myXPos = 0.0f+myWidth/8; //if right side
+           		//edited by Mike, 20201116
+//           		if (myXPos <= 0.0f) myXPos = 20-myWidth/8; //if left side
+           		if (myXPos <= 0.0f) myXPos = myWindowWidth/100-myWidth/8; //if left side
+           		else if (myXPos >= myWindowWidth/100) myXPos = 0.0f+myWidth/8; //if right side
 
 				//TO-DO: -add: 0.1f*iRowCountMax
 				//removed by Mike, 20201113
@@ -502,8 +504,10 @@ void Asteroid::update(float dt)
            		if (myZPos >= myWindowHeight) myZPos = 0.0f+myHeight/8; //if bottom side
            		else if (myZPos <= 0.0f) myZPos = myWindowHeight-myHeight/8; //if top side
 */
-           		if (myZPos >= myWindowHeight) myZPos = 0.0f+myHeight/8; //if bottom side
-           		else if (myZPos <= 0.0f) myZPos = 20-myHeight/8; //if top side
+           		if (myZPos >= myWindowHeight/100) myZPos = 0.0f+myHeight/8; //if bottom side
+           		//edited by Mike, 20201116
+//           		else if (myZPos <= 0.0f) myZPos = 20-myHeight/8; //if top side
+           		else if (myZPos <= 0.0f) myZPos = myWindowHeight/100-myHeight/8; //if top side
            		           		
                //}
                 break;
