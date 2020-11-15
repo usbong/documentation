@@ -116,8 +116,12 @@ private:
     //void drawTriangledCube(float xPos, float yPos, float zPos);
     
 public:
-	RobotShip();
+	//edited by Mike, 20201115 
+	//RobotShip();
+    RobotShip(float xPos, float yPos, float zPos,int windowWidth,int windowHeight);
+
 	~RobotShip();
+
 	//virtual ~Robot();
     float rotationAngle;
 

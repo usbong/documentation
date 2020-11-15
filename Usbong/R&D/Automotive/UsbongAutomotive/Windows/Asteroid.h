@@ -136,7 +136,9 @@ public:
 //	Asteroid();
 	//edited by Mike, 20201113
 //    Asteroid(int status, float xPos, float yPos); 
-    Asteroid(int status, float xPos, float yPos, float zPos); 
+	//edited by Mike, 20201115
+//    Asteroid(int status, float xPos, float yPos, float zPos); 
+    Asteroid(int status, float xPos, float yPos, float zPos,int windowWidth,int windowHeight);
 
 	~Asteroid();
 	//virtual ~Robot();

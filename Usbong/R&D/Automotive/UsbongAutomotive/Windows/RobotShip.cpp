@@ -313,7 +313,9 @@ void RobotShip::drawModelRobotShip() {
 
 //edited by Mike, 20201001
 //RobotShip::RobotShip(): MyDynamicObject(0,0,300)
-RobotShip::RobotShip(): MyDynamicObject(0,0,0)
+//edited by Mike, 20201115
+//RobotShip::RobotShip(): MyDynamicObject(0,0,0)
+RobotShip::RobotShip(float xPos, float yPos, float zPos, int windowWidth, int windowHeight): MyDynamicObject(xPos,yPos,0.0f, windowWidth, windowHeight)
 { 
     //edited by Mike, 20201001
 	//currentState=IN_TITLE_STATE;//MOVING_STATE;
@@ -362,6 +364,11 @@ RobotShip::RobotShip(): MyDynamicObject(0,0,0)
 	//note: position: 3,3; width, height; count starts at 0
     myXPos=0.0f+myWidth*3;
     myYPos=0.0f+myHeight*3;
+
+	//added by Mike, 20201115
+	myWindowWidth=windowWidth;
+	myWindowHeight=windowHeight;
+	
 
 //    myWidthX=0.5;
 

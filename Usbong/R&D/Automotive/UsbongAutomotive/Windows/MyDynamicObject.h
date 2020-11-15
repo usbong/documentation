@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20201113
+ * @date updated: 20201115
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -49,11 +49,24 @@ public:
     float myWidth;
     float myHeight;
 
+	//added by Mike, 20201115
+    int myWindowWidth;
+    int myWindowHeight;
+
 	//edited by Mike, 20201113
 //    MyDynamicObject(float xPos = 0.0f, float yPos = 0.0f, float zPos= 300.0f ): myXPos(xPos), myYPos(yPos), myZPos(zPos) 
-    MyDynamicObject(float xPos = 0.0f, float yPos = 0.0f, float zPos= 0.0f ): myXPos(xPos), myYPos(yPos), myZPos(zPos) 
+	//edited by Mike, 20201115
+/*    MyDynamicObject(float xPos = 0.0f, float yPos = 0.0f, float zPos= 0.0f ): myXPos(xPos), myYPos(yPos), myZPos(zPos) 
     //{myXPos=0.0f; myYPos=0.0f; myZPos=300.0f;}
     {}
+*/
+	//TO-DO: -update: to use grid as window Width and window Height instead of windowWidth/100 and windowHeight/100
+	//Note: 
+	//fGridSquareWidth = myWindowWidth/iColumnCountMax/100.0;
+	//fGridSquareHeight = myWindowHeight/iRowCountMax/100.0;
+    MyDynamicObject(float xPos=0.0f, float yPos=0.0f, float zPos=0.0f, int windowWidth=0, int windowHeight=0 ): myXPos(xPos), myYPos(yPos), myZPos(zPos), myWindowWidth(windowWidth/100), myWindowHeight(windowHeight/100)
+    {}
+
     virtual void hitBy(MyDynamicObject* mdo);
         
     //collision stuff

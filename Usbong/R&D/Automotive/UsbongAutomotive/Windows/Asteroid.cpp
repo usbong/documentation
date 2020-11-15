@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201016
- * @date updated: 20201113
+ * @date updated: 20201115
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -157,7 +157,9 @@ void Asteroid::setup()
 //Asteroid::Asteroid(int status, float xPos, float yPos): MyDynamicObject(xPos,yPos,300)
 //edited by Mike, 20201113
 //Asteroid::Asteroid(int status, float xPos, float yPos): MyDynamicObject(xPos,yPos,0.0f)
-Asteroid::Asteroid(int status, float xPos, float yPos, float zPos): MyDynamicObject(xPos,yPos,0.0f)
+//edited by Mike, 20201115
+//Asteroid::Asteroid(int status, float xPos, float yPos, float zPos): MyDynamicObject(xPos,yPos,0.0f)
+Asteroid::Asteroid(int status, float xPos, float yPos, float zPos, int windowWidth, int windowHeight): MyDynamicObject(xPos,yPos,0.0f, windowWidth, windowHeight)
 { 
     invincibleCounter=0;
     
@@ -177,7 +179,11 @@ Asteroid::Asteroid(int status, float xPos, float yPos, float zPos): MyDynamicObj
 		myYPos=yPos;
 		//edited by Mike, 20201113
 		myZPos=zPos;
-		
+
+		//added by Mike, 20201115
+		myWindowWidth=windowWidth;
+		myWindowHeight=windowHeight;
+				
 		//added by Mike, 20201016
     	myStartXPos=xPos;
 		myStartYPos=yPos;
@@ -474,6 +480,15 @@ void Asteroid::update(float dt)
            		if (myXPos <= 0.0f) myXPos = 0.1f*20-myWidth/8; //if left side
            		else if (myXPos >= 0.1f*20) myXPos = 0.0f+myWidth/8; //if right side
 */
+				//added by Mike, 20201115
+/*
+           		if (myXPos <= 0.0f) myXPos = myWindowWidth-myWidth/8; //if left side
+           		else if (myXPos >= myWindowWidth) myXPos = 0.0f+myWidth/8; //if right side
+*/
+				//TO-DO: -update: to use myWindowWidth
+           		if (myXPos <= 0.0f) myXPos = 20-myWidth/8; //if left side
+           		else if (myXPos >= myWindowWidth) myXPos = 0.0f+myWidth/8; //if right side
+
 				//TO-DO: -add: 0.1f*iRowCountMax
 				//removed by Mike, 20201113
 				//TO-DO: -use myZPos
@@ -481,7 +496,15 @@ void Asteroid::update(float dt)
            		if (myYPos >= 0.1f*20) myYPos = 0.0f+myHeight/8; //if bottom side
            		else if (myYPos <= 0.0f) myYPos = 0.1f*20-myHeight/8; //if top side
 */
-           		
+				//added by Mike, 20201115
+				//TO-DO: -update: to use myWindowWidth
+/*
+           		if (myZPos >= myWindowHeight) myZPos = 0.0f+myHeight/8; //if bottom side
+           		else if (myZPos <= 0.0f) myZPos = myWindowHeight-myHeight/8; //if top side
+*/
+           		if (myZPos >= myWindowHeight) myZPos = 0.0f+myHeight/8; //if bottom side
+           		else if (myZPos <= 0.0f) myZPos = 20-myHeight/8; //if top side
+           		           		
                //}
                 break;
            case DEATH_STATE:

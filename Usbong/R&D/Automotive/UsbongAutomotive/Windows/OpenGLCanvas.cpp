@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20201114
+ * @date updated: 20201115
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -132,8 +132,12 @@ OpenGLCanvas::~OpenGLCanvas()
 bool OpenGLCanvas::init()
 {	
 	//TO-DO: -receive: values from main.cpp
-    myWindowWidth=640;
+	//edited by Mike, 20201115
+/*    myWindowWidth=640;
     myWindowHeight=640;
+*/
+    myWindowWidth=2048;
+    myWindowHeight=2048;
     
     //added by Mike, 20201023
     myCanvasPosX=-3.2f;//0.0f;
@@ -174,9 +178,13 @@ bool OpenGLCanvas::init()
  	iColumnCountMax=10;
 */
 	
-	//added by Mike, 20201113
- 	iRowCountMax=10;
+	//added by Mike, 20201113; edited by Mike, 20201115
+/* 	iRowCountMax=10;
  	iColumnCountMax=10;
+*/
+ 	iRowCountMax=20;
+ 	iColumnCountMax=20;
+
 
 	fGridSquareWidth = myWindowWidth/iColumnCountMax/100.0;
 	fGridSquareHeight = myWindowHeight/iRowCountMax/100.0;
@@ -187,7 +195,10 @@ bool OpenGLCanvas::init()
 	currentState = GAME_SCREEN; //TO-DO: -update: this
 	
 	//added by Mike, 20201001
-	myRobotShip = new RobotShip;
+	//edited by Mike, 20201115
+	//myRobotShip = new RobotShip;
+	myRobotShip = new RobotShip(0.0f,0.0f,0.0f,myWindowWidth,myWindowHeight);
+
     myRobotShip->setOpenGLCanvas(this);
 	
 	//added by Mike, 20201013; edited by Mike, 20201014
@@ -217,25 +228,33 @@ bool OpenGLCanvas::init()
 		//edited by Mike, 20201113
 //    	myAsteroid[i] = new Asteroid(PARENT_STATUS,0.1f,0.1f);//,10,10); //TOP RIGHT		
 //    	myAsteroid[i] = new Asteroid(PARENT_STATUS,0.1f,0.0f,0.1f);//,10,10); //TOP RIGHT		
-    	myAsteroid[i] = new Asteroid(PARENT_STATUS,fGridSquareWidth,0.0f,fGridSquareHeight);//,10,10); //TOP RIGHT
+		//edited by Mike, 20201115
+//    	myAsteroid[i] = new Asteroid(PARENT_STATUS,fGridSquareWidth,0.0f,fGridSquareHeight);//,10,10); //TOP RIGHT
+    	myAsteroid[i] = new Asteroid(PARENT_STATUS,fGridSquareWidth,0.0f,fGridSquareHeight,myWindowWidth,myWindowHeight);//TOP RIGHT
 	}
 
 	for (int i=0; i<4; i++) {
 		//edited by Mike, 20201113
 //    	myAsteroid[i+4] = new Asteroid(PARENT_STATUS,0.1f,0.1f);//,10,10); //TOP RIGHT		
-    	myAsteroid[i+4] = new Asteroid(PARENT_STATUS,0.1f,0.0f,0.1f);//,10,10); //TOP RIGHT		
+		//edited by Mike, 20201115
+//    	myAsteroid[i+4] = new Asteroid(PARENT_STATUS,0.1f,0.0f,0.1f);//,10,10); //TOP RIGHT		
+    	myAsteroid[i+4] = new Asteroid(PARENT_STATUS,0.1f,0.0f,0.1f,myWindowWidth,myWindowHeight); //TOP RIGHT		
 	}
 
 	for (int i=0; i<4; i++) {
 		//edited by Mike, 20201113
 //    	myAsteroid[i+8] = new Asteroid(PARENT_STATUS,0.1f,0.1f);//,10,10); //TOP RIGHT		
-    	myAsteroid[i+8] = new Asteroid(PARENT_STATUS,0.1f,0.0f,0.1f);//,10,10); //TOP RIGHT		
+		//edited by Mike, 20201115
+//    	myAsteroid[i+8] = new Asteroid(PARENT_STATUS,0.1f,0.0f,0.1f);//,10,10); //TOP RIGHT		
+    	myAsteroid[i+8] = new Asteroid(PARENT_STATUS,0.1f,0.0f,0.1f,myWindowWidth,myWindowHeight);//TOP RIGHT		
 	}
 
 	for (int i=0; i<4; i++) {
 		//edited by Mike, 20201113
 //    	myAsteroid[i+12] = new Asteroid(PARENT_STATUS,0.1f,0.1f);//,10,10); //TOP RIGHT		
-    	myAsteroid[i+12] = new Asteroid(PARENT_STATUS,0.1f,0.0f,0.1f);//,10,10); //TOP RIGHT		
+		//edited by Mike, 20201115
+//    	myAsteroid[i+12] = new Asteroid(PARENT_STATUS,0.1f,0.0f,0.1f);//,10,10); //TOP RIGHT		
+    	myAsteroid[i+12] = new Asteroid(PARENT_STATUS,0.1f,0.0f,0.1f,myWindowWidth,myWindowHeight);//TOP RIGHT		
 	}
 
 /*	//removed by Mike, 20201016
@@ -766,10 +785,14 @@ void OpenGLCanvas::render()
               0.0, 1.0, 0.0); // up-direction
 //              1.0, 1.0, 0.0); // up-direction //floor head down
 */
+/*	//edited by Mike, 20201115
     gluLookAt(myCanvasEyePosX, myCanvasEyePosY, myCanvasEyePosZ, // eye position 0.0, 0.0, 3.0
               myCanvasCenterPosX, myCanvasCenterPosY, myCanvasCenterPosZ, // look-at point
               0.0, 1.0, 0.0); // up-direction
-
+*/
+    gluLookAt(myCanvasEyePosX, myCanvasEyePosY, myCanvasEyePosZ, // eye position 0.0, 0.0, 3.0
+              myCanvasCenterPosX, myCanvasCenterPosY, myCanvasCenterPosZ, // look-at point
+              0.0, 1.0, 0.0); // up-direction
 
 /*
     gluLookAt(0.0, 0.5, 3.0, // eye position 0.0, 0.0, 3.0
@@ -779,6 +802,14 @@ void OpenGLCanvas::render()
 	//--------------------------------------------------------
 
 	//note: reference point/origin at center; not top-left
+
+	//added by Mike, 20201115
+	glRotatef(45, 1.0f, 0.0f, 0.0f);
+	glRotatef(30, 0.0f, 1.0f, 0.0f);
+    glScalef(0.3f, 0.3f, 0.3f);
+
+//    glTranslatef(-1.0f, -1.0f, 0.0f);
+
 	//edited by Mike, 2021022
 //    glTranslatef(-1.0f, -1.0f, 0.0f);
 //    glTranslatef(-3.0f, -1.0f, 0.0f);
@@ -806,7 +837,6 @@ void OpenGLCanvas::render()
 */
 		
     	//added by Mike, 20200930
-    	//removed by Mike, 20201020
     	drawGridWithZAxis();
 			    
     		//added by Mike, 20201011
@@ -985,8 +1015,11 @@ void OpenGLCanvas::drawGridWithZAxis() {
       		glVertex2f(0.0f, fGridSquareHeight*iRowCount);    // x, y
       		glVertex2f(fGridSquareWidth*2*iRowCountMax, fGridSquareHeight*iRowCount);
 */
+
+/* //removed by Mike, 20201115
       		glVertex2f(0.0f, fGridSquareHeight*iRowCount);    // x, y
       		glVertex2f(fGridSquareWidth*iRowCountMax, fGridSquareHeight*iRowCount);
+*/
 
 //      		glVertex2f(myWindowWidth, fRowSquareHeight*iRowCount);
 
@@ -1001,6 +1034,7 @@ void OpenGLCanvas::drawGridWithZAxis() {
       		glVertex3f(0.0f, 0.0f, fGridSquareHeight*iRowCount);    // x, z
       		glVertex3f(fGridSquareWidth*iRowCountMax, 0.0f, fGridSquareHeight*iRowCount);      		
 
+/*			//removed by Mike, 20201115
 			//added by Mike, 20201023
 			//left face
 			//with Z-axis; with y
@@ -1012,6 +1046,7 @@ void OpenGLCanvas::drawGridWithZAxis() {
 			//with Z-axis; with y
       		glVertex3f(fGridSquareWidth*iRowCountMax, 0.0f, fGridSquareHeight*iRowCount);    // y, z
       		glVertex3f(fGridSquareWidth*iRowCountMax, fGridSquareHeight*iRowCountMax, fGridSquareHeight*iRowCount);      		
+*/      		
    		glEnd();   		   	  
 	 }
 
@@ -1031,8 +1066,11 @@ void OpenGLCanvas::drawGridWithZAxis() {
       		glVertex2f(fGridSquareWidth*2*iColumnCount, 0.0f);    // x, y
       		glVertex2f(fGridSquareWidth*2*iColumnCount, fGridSquareHeight*iColumnCountMax);      		
 */
+
+/* //removed by Mike, 20201115
       		glVertex2f(fGridSquareWidth*iColumnCount, 0.0f);    // x, y
       		glVertex2f(fGridSquareWidth*iColumnCount, fGridSquareHeight*iColumnCountMax);      		
+*/
 
 			//added by Mike, 20201022			
 			//with Z-axis
@@ -1043,6 +1081,7 @@ void OpenGLCanvas::drawGridWithZAxis() {
       		glVertex3f(fGridSquareWidth*iColumnCount, 0.0f, 0.0f);    // y, z
       		glVertex3f(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iColumnCountMax);
 
+/* //removed by Mike, 20201115
 			//added by Mike, 20201023
 			//left face
 			//with Z-axis; with y
@@ -1054,6 +1093,7 @@ void OpenGLCanvas::drawGridWithZAxis() {
 			//with Z-axis; with y
       		glVertex3f(fGridSquareWidth*iRowCountMax, fGridSquareHeight*iColumnCount, 0.0f);    // y, z
       		glVertex3f(fGridSquareWidth*iRowCountMax, fGridSquareHeight*iColumnCount, fGridSquareHeight*iColumnCountMax);
+*/
    		glEnd();   		   	  
 	 }
    
@@ -1365,12 +1405,12 @@ void OpenGLCanvas::update()
 			myCanvasPosX+=myCanvasStepX;
 */
 			//TO-DO: -add: in turn right
-			
+
+/*			//removed by Mike, 20201115; due to top view plus isometric view			
 			//Reference:
 			//https://stackoverflow.com/questions/29452725/how-can-i-make-my-opengl-camera-turn-360-degrees;
 			//answer by: Chris DuPuis, 20150405T0235
 			myCanvasLookAtAngle-=0.1f;
-
 			myCanvasCenterPosZ = myCanvasEyePosZ + sin(myCanvasLookAtAngle);
 			myCanvasCenterPosX = myCanvasEyePosX + cos(myCanvasLookAtAngle);
 
@@ -1381,82 +1421,6 @@ void OpenGLCanvas::update()
             else if (myCanvasLookAtAngle<-360.0f) {
               myCanvasLookAtAngle+=360.0f;
 		    }
-
-
-/*			//TO-DO: -reverify: this
-			myCanvasLookAtAngle-=0.1f;
-			myCanvasPosZ = myCanvasPosZ + myCanvasEyePosZ + sin(myCanvasLookAtAngle);
-			myCanvasPosX = myCanvasPosX + myCanvasEyePosX + cos(myCanvasLookAtAngle);
-*/
-
-/*
-			myCanvasRotateAxisStepY+=myCanvasEyeStepX;
-            myCanvasEyePosX = sin(myCanvasRotateAxisStepY) + myCanvasEyeStepX;
-//            myCanvasEyePosZ = -cos(myCanvasRotateAxisStepY) + myCanvasEyeStepZ;			
-*/
-
-/*			
-			//TO-DO: -reverify: translate x-axis to be centered during rotation
-			myCanvasRotateAxisStepY-=3.0f;//90.0f;//3.0f;//myCanvasEyeStepX;
-
-            if (myCanvasRotateAxisStepY>360) {
-              myCanvasRotateAxisStepY-=360;
-		    }
-            else if (myCanvasRotateAxisStepY<-360) {
-              myCanvasRotateAxisStepY+=360;
-		    }
-			
-			//note: order/sequence is important
-			//not yet exact as glulookat
-			//with eye source as center
-			if (myCanvasRotateAxisStepY<-360.0f) {			
-				//myCanvasRotateAxisStepY=0;
-				myCanvasPosX+=myCanvasStepX;
-				myCanvasPosZ+=myCanvasStepZ/6;
-			}
-			else if (myCanvasRotateAxisStepY<-270.0f) {			
-				myCanvasPosZ-=myCanvasStepZ;
-				myCanvasPosX+=myCanvasStepX/6;
-			}
-			else if (myCanvasRotateAxisStepY<-180.0f) {			
-				myCanvasPosX-=myCanvasStepX;
-				myCanvasPosZ-=myCanvasStepZ/6;
-			}
-			else if (myCanvasRotateAxisStepY<-90.0f) {			
-				myCanvasPosZ+=myCanvasStepZ;
-				myCanvasPosX-=myCanvasStepX/6;
-			}
-			else {				
-				myCanvasPosX+=myCanvasStepX;
-				myCanvasPosZ+=myCanvasStepZ/6;
-			}
-*/
-
-/*			if (myCanvasEyePosX>6.0f) {			
-			  myCanvasRotateAxisStepY=-90;
-			}
-*/
-
-/*			
-			if (!hasTurnedNinetyDegCounterClockWise) {
-				if (myCanvasEyePosX>6.0f) {	
-					hasTurnedNinetyDegCounterClockWise=true;
-				}
-				//added by Mike, 20201024
-				else {
-					myCanvasEyePosX+=myCanvasEyeStepX;
-					myCanvasPosX+=myCanvasStepX;				
-				}				
-			}
-			else {
-				if (myCanvasEyePosX<0.0f) {
-					hasTurnedNinetyDegCounterClockWise=false;
-				}
-				else {
-					myCanvasEyePosX-=myCanvasEyeStepX;
-					myCanvasPosX-=myCanvasStepX;
-				}				
-			}
 */
 						
             for(i=0; i<MAX_BEAMS; i++) {
@@ -1489,15 +1453,13 @@ void OpenGLCanvas::update()
 			myCanvasEyePosX-=myCanvasEyeStepX;
 			myCanvasPosX-=myCanvasStepX;
 */
+
+/*			//removed by Mike, 20201115; due to top view plus isometric view
 			//added by Mike, 20201026
 			//Reference:
 			//https://stackoverflow.com/questions/29452725/how-can-i-make-my-opengl-camera-turn-360-degrees;
 			//answer by: Chris DuPuis, 20150405T0235
 			myCanvasLookAtAngle+=0.1f;
-
-            /* myCanvasLookAtAngle in degrees, convert to radians */
-//            myCanvasLookAtAngle = (myCanvasLookAtAngle) * 3.141593f / 180.0f;
-
 			myCanvasCenterPosZ = myCanvasEyePosZ + sin(myCanvasLookAtAngle);
 			myCanvasCenterPosX = myCanvasEyePosX + cos(myCanvasLookAtAngle);
 
@@ -1508,79 +1470,7 @@ void OpenGLCanvas::update()
             else if (myCanvasLookAtAngle<-360) {
               myCanvasLookAtAngle+=360;
 		    }
-
-
-/*
-			//TO-DO: -reverify: translate x-axis to be centered during rotation
-			myCanvasRotateAxisStepY+=3.0f;//90.0f;//3.0f;//myCanvasEyeStepX;
-			//TO-DO: -fix: 30 degrees clockwise, then counter-clockwise
-
-           if (myCanvasRotateAxisStepY>360) {
-             myCanvasRotateAxisStepY-=360;
-		   }
-           else if (myCanvasRotateAxisStepY<-360) {
-             myCanvasRotateAxisStepY+=360;
-		   }
-*/
-
-/*
-			//note: order/sequence is important
-			//not yet exact as glulookat
-			//with eye source as center
-			if (myCanvasRotateAxisStepY>360.0f) {			
-//				myCanvasRotateAxisStepY=0;
-				//edited by Mike, 20201025
-//				myCanvasPosX+=myCanvasStepX;
-//				myCanvasPosZ+=myCanvasStepZ/6;
-
-				myCanvasPosX-=myCanvasStepX/6;
-				myCanvasPosZ+=myCanvasStepZ;
-
-			}
-			else if (myCanvasRotateAxisStepY>270.0f) {			
-				//edited by Mike, 20201025
-//				myCanvasPosZ-=myCanvasStepZ;
-//				myCanvasPosX+=myCanvasStepX/6;
-				
-				myCanvasPosZ+=myCanvasStepZ/6;
-				myCanvasPosX-=myCanvasStepX;
-			}
-			else if (myCanvasRotateAxisStepY>180.0f) {			
-				//edited by Mike, 20201025
-//				myCanvasPosX-=myCanvasStepX;
-//				myCanvasPosZ-=myCanvasStepZ/6;
-				
-				myCanvasPosX+=myCanvasStepX/6;
-				myCanvasPosZ-=myCanvasStepZ;
-			}
-			else if (myCanvasRotateAxisStepY>90.0f) {			
-				//edited by Mike, 20201025
-//				myCanvasPosZ+=myCanvasStepZ;
-//				myCanvasPosX-=myCanvasStepX/6;
-
-				myCanvasPosZ-=myCanvasStepZ/6;
-				myCanvasPosX+=myCanvasStepX;
-			}
-			else {				
-				//edited by Mike, 20201025
-//				myCanvasPosX+=myCanvasStepX;
-//				myCanvasPosZ+=myCanvasStepZ/6;
-
-				myCanvasPosX-=myCanvasStepX/6;
-				myCanvasPosZ+=myCanvasStepZ;
-			}
-*/
-
-
-/*					
-
-           //since the model ship faces the top, do this...
-           //glRotatef(-90, 1.0f, 0.0f, 0.0f);
-           //since the model ship is facing the opposite direction (in terms of Z)...
-           //glRotatef(180, 0.0f, 0.0f, 1.0f);
-//           glRotatef(myCanvasRotateAxisStepY, 0.0f, 0.0f, 1.0f);
-*/
-			
+*/			
             for(i=0; i<MAX_BEAMS; i++) {
               if (!myBeam[i]->isActive()) {
 				  //edited by Mike, 20201013
