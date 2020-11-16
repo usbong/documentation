@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201013
- * @date updated: 20201017
+ * @date updated: 20201116
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -111,7 +111,9 @@ void Beam::load_tga(char *filename)
     free(data);
 }
 
-Beam::Beam(): MyDynamicObject(0,0,300)
+//edited by Mike, 2020116
+//Beam::Beam(): MyDynamicObject(0,0,300)
+Beam::Beam(float xPos, float yPos, float zPos, int windowWidth, int windowHeight): MyDynamicObject(xPos,yPos,0.0f, windowWidth, windowHeight)
 { 
     currentState=HIDDEN_STATE;
 //    myXPos=0.0;
@@ -124,12 +126,23 @@ Beam::Beam(): MyDynamicObject(0,0,300)
     myWidth=2.0;
     myHeight=2.0;
 */
+
     myWidth=0.2;
     myHeight=0.2;
 
+/*	//edited by Mike, 20201116
     stepX=0.01;
     stepY=0.01;
     stepZ=0.01;
+*/
+	//note: not yet used
+    stepX=2.00;
+    stepY=2.00;
+    stepZ=2.00;
+
+	//added by Mike, 20201116
+	myWindowWidth=windowWidth;
+	myWindowHeight=windowHeight;
 
 	//edited by Mike, 20201013    
 /*    myWidthX=0.5;
@@ -233,7 +246,13 @@ void Beam::drawBeam()
 //    glTranslatef(0.0f, 0.1f, 0.0f);   
 
 	//reference point at center
-    glTranslatef(0.1f/2, 0.1f/2, 0.0f);   
+	//edited by Mike, 20201116
+//    glTranslatef(0.1f/2, 0.1f/2, 0.0f);   
+	//size of robotship
+	//TO-DO: -update: this
+//    glTranslatef(-myWidth/2, 0.0f, -myHeight/2);   
+    glTranslatef(-myWidth, 0.0f, -myHeight);   
+//    glTranslatef(-myWindowWidth/100/20/4, 0.0f, -myWindowHeight/100/20/4);   
 	
 	//Reference: https://www3.ntu.edu.sg/home/ehchua/programming/opengl/HowTo_OpenGL_C.html;
 	//last accessed: 20200928 
@@ -242,27 +261,24 @@ void Beam::drawBeam()
    //TO-DO: -reverify: vertices due to 0.01 not centered at origin
    // Draw a Red 1x1 Square centered at origin
    //TO-DO: -update: this due to output is 1 x 2 box, width x height
+   //edited by Mike, 2020116
+/*
    glBegin(GL_QUADS);              // Each set of 4 vertices form a quad
       glColor3f(1.0f, 1.0f, 0.0f); // yellow
-/*    //edited by Mike, 20201001  
-	  glVertex2f(-0.1f, -0.1f);    // x, y
-      glVertex2f( 0.1f, -0.1f);
-      glVertex2f( 0.1f,  0.1f);
-      glVertex2f(-0.1f,  0.1f);
-*/      
-/*
-	  //1x1 box
-	  glVertex2f(0.0f, 0.0f);    // x, y
-      glVertex2f( 0.0f, -0.1f);
-      glVertex2f( 0.1f,  -0.1f);
-      glVertex2f(0.1f,  0.0f);
-*/
+
 	  glVertex2f(0.0f, 0.0f);    // x, y
       glVertex2f( 0.0f, -0.01f);
       glVertex2f( 0.01f,  -0.01f);
-      glVertex2f(0.01f,  0.0f);
-      
+      glVertex2f(0.01f,  0.0f);      
    glEnd();    
+*/   
+	//added by Mike, 20201116
+	//set square face with no color fill 
+//	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+		drawCube(myWidth); //myWidth = myHeight
+
+	//set square face with color fill 	
+//	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 }
 
 
@@ -278,7 +294,9 @@ void Beam::update(float dt)
                     //im not yet sure why, but i have to deduct 90 to rotationAngle
                     rotationAngleRad = (rotationAngle) * 3.141593f / 180.0f;
                     
-                    yAccel = (cos(rotationAngleRad)*thrust);
+                    //edited by Mike, 20201116
+//                    yAccel = (cos(rotationAngleRad)*thrust);
+                    zAccel = (cos(rotationAngleRad)*thrust);
                     xAccel = -(sin(rotationAngleRad)*thrust);
 
 					//edited by Mike, 20201014
@@ -291,11 +309,19 @@ void Beam::update(float dt)
                     yVel=yAccel*2;
 */
 					//20x20 grid
-                    xVel=xAccel*4;
-                    yVel=yAccel*4;
+					//edited by Mike, 20201116
+//                    xVel=xAccel*4;
+                    xVel=xAccel*30;
+
+                    //edited by Mike, 20201116
+                    //yVel=yAccel*4;
+//                    zVel=zAccel*4;
+                    zVel=zAccel*30;
 
                     myXPos+=xVel;
-                    myYPos+=yVel;
+                    //edited by Mike, 20201116
+                    //myYPos+=yVel;
+                    myZPos+=zVel;
 
 /*                    
                     if (thrust>0)
@@ -310,20 +336,24 @@ void Beam::update(float dt)
                		if ((myYPos <= -21.0f) || (myYPos > 21.0f)) changeState(HIDDEN_STATE);
 */
 
+//removed by Mike, 2020116
 /*					//edited by Mike, 20201015
 	           		if (myXPos <= 0.0f) changeState(HIDDEN_STATE); //if left side
 	           		else if (myXPos >= 1.0f) changeState(HIDDEN_STATE); //if right side
 	
 	           		if (myYPos >= 1.0f) changeState(HIDDEN_STATE); //if bottom side
 	           		else if (myYPos <= 0.0f) changeState(HIDDEN_STATE); //if top side
-*/               		
-					//TO-DO: -add: 0.1f*iColumnCountMax
-	           		if (myXPos <= 0.0f) changeState(HIDDEN_STATE); //if left side
-	           		else if (myXPos >= 0.1f*20) changeState(HIDDEN_STATE); //if right side
-	
+
 					//TO-DO: -add: 0.1f*iRowCountMax
 	           		if (myYPos >= 0.1f*20) changeState(HIDDEN_STATE); //if bottom side
 	           		else if (myYPos <= 0.0f) changeState(HIDDEN_STATE); //if top side
+*/               		
+
+	           		if (myXPos <= 0.0f) changeState(HIDDEN_STATE); //if left side
+	           		else if (myXPos >= myWindowWidth/100) changeState(HIDDEN_STATE); //if right side
+
+	           		if (myZPos >= myWindowHeight/100) changeState(HIDDEN_STATE); //if bottom side
+	           		else if (myZPos <= 0.0f) changeState(HIDDEN_STATE); //if top side
 
                 break;
             default: //STANDING STATE

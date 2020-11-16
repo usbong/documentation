@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201013
- * @date updated: 20201017
+ * @date updated: 20201116
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -25,6 +25,10 @@
  
 #include <stdlib.h>
 #include "MyDynamicObject.h"
+
+//added by Mike, 20201116
+#include "PolygonUtils.h"
+
 
 const int HIDDEN_STATE = 0,
           ACTIVE_STATE = 1;          
@@ -56,11 +60,15 @@ private:
     float thrustMax;
     float xAccel;
     float yAccel;
+    float zAccel; //added by Mike, 2020116
     float xVel;
     float yVel;
+    float zVel; //added by Mike, 2020116
     
     float maxXVel;
     float maxYVel;        
+    float maxZVel; //added by Mike, 2020116
+
 /*
     CTargaImage *myBodyTexture;
    	unsigned int myBodyTextureObject;
@@ -79,7 +87,10 @@ private:
     void setup();
     
 public:
-	Beam();
+	//edited by Mike, 20201116
+	//Beam();
+    Beam(float xPos, float yPos, float zPos,int windowWidth,int windowHeight);
+
 	~Beam();
 	//virtual ~Robot();
 /*	

@@ -204,7 +204,9 @@ bool OpenGLCanvas::init()
 	//added by Mike, 20201013; edited by Mike, 20201014
 //	for (i=0; i<MAX_BEAMS; i++) {
 	for (int i=0; i<MAX_BEAMS; i++) {
-      myBeam[i] = new Beam;
+		//edited by Mike, 2020116
+//      myBeam[i] = new Beam;
+		myBeam[i] = new Beam(0.0f,0.0f,0.0f,myWindowWidth,myWindowHeight);
 	}
 
 	//added by Mike, 20201016
@@ -668,8 +670,9 @@ void OpenGLCanvas::render()
 	//added by Mike, 20201023
 	//note: this is to be print-ready in newsletter
 	//we use recycled paper
-//   glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Set background color to black and opaque
-   glClearColor(1.0f, 1.0f, 1.0f, 0.0f); // Set background color to white and not opaque
+	//edited by Mike, 2020116
+   glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Set background color to black and opaque
+//   glClearColor(1.0f, 1.0f, 1.0f, 0.0f); // Set background color to white and not opaque
 
 	//added by Mike, 20201012
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);    
