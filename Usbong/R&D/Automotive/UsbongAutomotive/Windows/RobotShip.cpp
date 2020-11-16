@@ -586,7 +586,7 @@ void RobotShip::update(float dt)
                     else thrust=0;
 */                                        
 
-/*				//TO-DO: -use: these with update to OpenGLCanvas
+				//Note: Use these with update to OpenGLCanvas
            		//wrap the world 
            		//edited by Mike, 20201116
 //           		if (myXPos <= 0.0f) myXPos = 20-myWidth/8; //if left side
@@ -597,7 +597,7 @@ void RobotShip::update(float dt)
            		//edited by Mike, 20201116
 //           		else if (myZPos <= 0.0f) myZPos = 20-myHeight/8; //if top side
            		else if (myZPos <= 0.0f) myZPos = myWindowHeight/100-myHeight/8; //if top side
-*/           		           		
+           		           		
 
 
            		//edited by Mike, 20201001
