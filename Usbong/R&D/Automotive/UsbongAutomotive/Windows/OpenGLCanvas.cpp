@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20201115
+ * @date updated: 20201116
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -818,6 +818,19 @@ void OpenGLCanvas::render()
 //    glTranslatef(-3.2f, 0.0f, -3.2f);
     glTranslatef(myCanvasPosX, myCanvasPosY, myCanvasPosZ);
     
+/*	//TO-DO: -update: this
+    //added by Mike, 2020116
+   	//wrap the world 
+//           		if (myXPos <= 0.0f) myXPos = 20-myWidth/8; //if left side
+	if (myCanvasPosX <= 0.0f) myCanvasPosX = myWindowWidth/100;//-myWidth/8; //if left side
+	else if (myCanvasPosX >= myWindowWidth/100) myCanvasPosX = 0.0f;//+myWidth/8; //if right side
+
+	if (myCanvasPosZ >= myWindowHeight/100) myCanvasPosZ = 0.0f;//+myHeight/8; //if bottom side
+	//edited by Mike, 20201116
+//           		else if (myZPos <= 0.0f) myZPos = 20-myHeight/8; //if top side
+	else if (myCanvasPosZ <= 0.0f) myCanvasPosZ = myWindowHeight/100;//-myHeight/8; //if top side
+*/
+    
     //added by Mike, 20201024
 //    glTranslatef(3.2f, 1.0f, 3.2f);    
 //    glTranslatef(0.0f, 0.0f, 3.2f);
@@ -1296,8 +1309,8 @@ void OpenGLCanvas::update()
     		//added by Mike, 20201001
           	//myRobotShip->move(KEY_UP);
 
-          	//edited by Mike, 20201023
-//          	myRobotShip->move(KEY_W);
+          	//edited by Mike, 20201115
+          	myRobotShip->move(KEY_W);
 			//removed by Mike, 20201026
 /*			  myCanvasPosZ+=myCanvasStepZ;
 */
@@ -1319,9 +1332,8 @@ void OpenGLCanvas::update()
     	if(myKeysDown[KEY_S] == TRUE)
 //    	else if(myKeysDown[KEY_S] == TRUE)
     	{
-    		//added by Mike, 20201001
-    		//edited by Mike, 20201023
-            //myRobotShip->move(KEY_DOWN);
+    		//edited by Mike, 20201115
+            myRobotShip->move(KEY_DOWN);
 /*			//removed by Mike, 20201026
 			myCanvasPosZ-=myCanvasStepZ;
 */
@@ -1341,8 +1353,8 @@ void OpenGLCanvas::update()
     	if(myKeysDown[KEY_RIGHT] == TRUE)
     	{
     		//added by Mike, 20201001
-    		//edited by Mike, 20201023
-            //myRobotShip->move(KEY_RIGHT);
+    		//edited by Mike, 20201115
+            myRobotShip->move(KEY_RIGHT);
 /*			//removed by Mike, 20201026
 			myCanvasPosX+=-myCanvasStepX;
 */
@@ -1364,8 +1376,9 @@ void OpenGLCanvas::update()
     	if(myKeysDown[KEY_A] == TRUE)
     	{
     		//added by Mike, 20201001
-    		//edited by Mike, 20201023
-            //myRobotShip->move(KEY_LEFT);
+    		//edited by Mike, 20201115
+            myRobotShip->move(KEY_LEFT);
+
 			//removed by Mike, 20201026
 /*			myCanvasPosX+=myCanvasStepX;
 */			

@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201019
- * @date updated: 20201114
+ * @date updated: 20201116
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -141,7 +141,10 @@ void drawCube(float fSideLength)
 		//note: we add 0.2f in x-axis due to vertex locations 
 		//of cube's square face not equal with that of drawSquare()
 //	    glTranslatef(0.0f, 0.1f, 0.0f);
-	    glTranslatef(0.2f, 0.1f, 0.0f);   
+
+		//edited by Mike, 20201116
+//	    glTranslatef(0.2f, 0.1f, 0.0f);   
+	    glTranslatef(0.0f, fSideLength, 0.0f);   //0.0f, 1.0f, 0.0f
 		
 		//TO-DO: -update: vertex locations
 		

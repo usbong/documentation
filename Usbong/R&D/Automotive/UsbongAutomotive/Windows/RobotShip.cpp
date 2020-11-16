@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20201114
+ * @date updated: 20201116
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -335,8 +335,14 @@ RobotShip::RobotShip(float xPos, float yPos, float zPos, int windowWidth, int wi
     stepX=0.03;
     stepY=0.03;
 */
+/*	//edited by Mike, 20201116
     stepX=0.1;
     stepY=0.1;
+*/
+    //edited by Mike, 20201025
+    stepX=0.3;
+    stepY=0.3;
+    stepZ=0.3;
 
     invincibleCounter=0;
     currentDeathFrame=0;
@@ -349,13 +355,13 @@ RobotShip::RobotShip(float xPos, float yPos, float zPos, int windowWidth, int wi
     myWidth=0.1f;
     myHeight=0.1f;
 */
-/*
+	//edited by Mike, 20201116
     myWidth=1.0f;
     myHeight=1.0f;
-*/
+/*
     myWidth=0.5f;
     myHeight=0.5f;
-
+*/
 	//added by Mike, 20201001; edited again by Mike, 20201001
 	//note: initial position, top-left
 /*    myXPos=0.0f;
@@ -363,7 +369,9 @@ RobotShip::RobotShip(float xPos, float yPos, float zPos, int windowWidth, int wi
 */
 	//note: position: 3,3; width, height; count starts at 0
     myXPos=0.0f+myWidth*3;
-    myYPos=0.0f+myHeight*3;
+    //edited by Mike, 2020116
+//    myYPos=0.0f+myHeight*3;
+    myZPos=0.0f+myHeight*3;
 
 	//added by Mike, 20201115
 	myWindowWidth=windowWidth;
@@ -436,11 +444,10 @@ void RobotShip::drawRobotShip()
       	);
 */	
 	//added by Mike, 20201001
-	//edited by Mike, 20201020
-	//TO-DO: -update: this; noted by Mike, 20201113
-	//edited by Mike, 20201023
-//    glTranslatef(myXPos, myYPos, myZPos);
-    glTranslatef(myXPos, myZPos, myYPos);    
+
+	//edited by Mike, 20201116
+    glTranslatef(myXPos, myYPos, myZPos);
+//    glTranslatef(myXPos, myZPos, myYPos);    
 
 	//added by Mike, 20201001
 	//TO-DO: -update: this
@@ -579,7 +586,20 @@ void RobotShip::update(float dt)
                     else thrust=0;
 */                                        
 
+/*				//TO-DO: -use: these with update to OpenGLCanvas
            		//wrap the world 
+           		//edited by Mike, 20201116
+//           		if (myXPos <= 0.0f) myXPos = 20-myWidth/8; //if left side
+           		if (myXPos <= 0.0f) myXPos = myWindowWidth/100-myWidth/8; //if left side
+           		else if (myXPos >= myWindowWidth/100) myXPos = 0.0f+myWidth/8; //if right side
+
+           		if (myZPos >= myWindowHeight/100) myZPos = 0.0f+myHeight/8; //if bottom side
+           		//edited by Mike, 20201116
+//           		else if (myZPos <= 0.0f) myZPos = 20-myHeight/8; //if top side
+           		else if (myZPos <= 0.0f) myZPos = myWindowHeight/100-myHeight/8; //if top side
+*/           		           		
+
+
            		//edited by Mike, 20201001
 /*           		
            		if (myXPos <= -25.0f) myXPos = 25.0f;
@@ -666,16 +686,18 @@ void RobotShip::move(int key)
 /*          if (thrust<thrustMax)
             thrust+=0.1f;
 */      
-          //added by Mike, 20201001            
-	      myYPos+=-stepY;
+          //added by Mike, 20201001; edited by Mike, 20201116
+//	      myYPos+=-stepY;
+	      myZPos+=-stepZ;
           break;      
      case KEY_DOWN:
 /*     	  //added by Mike, 20201001
           if (thrust<thrustMax)
             thrust+=-0.1f;
 */
-          //added by Mike, 20201001            
-	      myYPos+=stepY;
+          //added by Mike, 20201001; edited by Mike, 20201116
+//	      myYPos+=stepY;
+	      myZPos+=stepZ;
           break;      
      case KEY_LEFT:
      		//removed by Mike, 20201001

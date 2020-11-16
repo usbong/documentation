@@ -171,8 +171,13 @@ Asteroid::Asteroid(int status, float xPos, float yPos, float zPos, int windowWid
 		myWidth=4.0;
         myHeight=4.0;
         */
+
+/*       ///edited by Mike, 2020116
 		myWidth=0.15f; //note: 0.1f size of robotship
         myHeight=0.15f; //note: 0.1f size of robotship
+*/
+		myWidth=1.5f; //note: 1.0f size of robotship
+        myHeight=1.5f; //note: 1.0f size of robotship
 		
 		//added by Mike, 20201016
     	myXPos=xPos;
@@ -485,7 +490,6 @@ void Asteroid::update(float dt)
            		if (myXPos <= 0.0f) myXPos = myWindowWidth-myWidth/8; //if left side
            		else if (myXPos >= myWindowWidth) myXPos = 0.0f+myWidth/8; //if right side
 */
-				//TO-DO: -update: to use myWindowWidth
            		//edited by Mike, 20201116
 //           		if (myXPos <= 0.0f) myXPos = 20-myWidth/8; //if left side
            		if (myXPos <= 0.0f) myXPos = myWindowWidth/100-myWidth/8; //if left side
@@ -499,7 +503,6 @@ void Asteroid::update(float dt)
            		else if (myYPos <= 0.0f) myYPos = 0.1f*20-myHeight/8; //if top side
 */
 				//added by Mike, 20201115
-				//TO-DO: -update: to use myWindowWidth
 /*
            		if (myZPos >= myWindowHeight) myZPos = 0.0f+myHeight/8; //if bottom side
            		else if (myZPos <= 0.0f) myZPos = myWindowHeight-myHeight/8; //if top side
