@@ -252,10 +252,16 @@ void Beam::drawBeam()
 	//reference point at center
 	//edited by Mike, 20201116
 //    glTranslatef(0.1f/2, 0.1f/2, 0.0f);   
+
 	//size of robotship
 	//TO-DO: -update: this
 //    glTranslatef(-myWidth/2, 0.0f, -myHeight/2);   
-    glTranslatef(-myWidth, 0.0f, -myHeight);   
+	//edited by Mike, 2020117
+//    glTranslatef(-myWidth, 0.0f, -myHeight);   
+	//note: 20 columns x 20 rows
+	//note: robotship width=1.0f; height=1.0f;
+    glTranslatef(-1.0f/2, 0.0f, -1.0f/2);   
+
 //    glTranslatef(-myWindowWidth/100/20/4, 0.0f, -myWindowHeight/100/20/4);   
 	
 	//Reference: https://www3.ntu.edu.sg/home/ehchua/programming/opengl/HowTo_OpenGL_C.html;
