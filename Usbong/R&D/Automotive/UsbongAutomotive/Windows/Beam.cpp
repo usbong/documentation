@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201013
- * @date updated: 20201116
+ * @date updated: 20201117
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -127,8 +127,12 @@ Beam::Beam(float xPos, float yPos, float zPos, int windowWidth, int windowHeight
     myHeight=2.0;
 */
 
+/*	//edited by Mike, 20201117
     myWidth=0.2;
     myHeight=0.2;
+*/
+    myWidth=0.1;
+    myHeight=0.1;
 
 /*	//edited by Mike, 20201116
     stepX=0.01;

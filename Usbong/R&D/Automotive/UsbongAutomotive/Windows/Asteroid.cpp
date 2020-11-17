@@ -206,7 +206,10 @@ Asteroid::Asteroid(int status, float xPos, float yPos, float zPos, int windowWid
 
 		//edited by Mike, 20201016
 //        thrust=0.2f;
-        thrust=0.02f;
+		//edited by Mike, 20201117
+        //thrust=0.02f;
+        thrust=0.06f;
+        
 //        thrust=0.002f; //explosion animation?
         
         xVel;
@@ -549,9 +552,16 @@ void Asteroid::update(float dt)
 	                    rotationAngleRad = (explosionParticle[i][ROTATION_ANGLE_INDEX]) * 3.141593f / 180.0f;
 						
 						//edited by Mike, 20201117	                    
+/*
 //	                    yAccel = (cos(rotationAngleRad)*thrust);
 	                    zAccel = (cos(rotationAngleRad)*thrust);
 	                    xAccel = -(sin(rotationAngleRad)*thrust);
+
+*/
+						//note: remove divide by 3; add shake via translate during impact?
+//	                    yAccel = (cos(rotationAngleRad)*thrust/3);
+	                    zAccel = (cos(rotationAngleRad)*thrust/3);
+	                    xAccel = -(sin(rotationAngleRad)*thrust/3);
 
 
 
