@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201016
- * @date updated: 20201116
+ * @date updated: 20201117
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -159,7 +159,9 @@ void Asteroid::setup()
 //Asteroid::Asteroid(int status, float xPos, float yPos): MyDynamicObject(xPos,yPos,0.0f)
 //edited by Mike, 20201115
 //Asteroid::Asteroid(int status, float xPos, float yPos, float zPos): MyDynamicObject(xPos,yPos,0.0f)
-Asteroid::Asteroid(int status, float xPos, float yPos, float zPos, int windowWidth, int windowHeight): MyDynamicObject(xPos,yPos,0.0f, windowWidth, windowHeight)
+//edited by Mike, 2020117
+//Asteroid::Asteroid(int status, float xPos, float yPos, float zPos, int windowWidth, int windowHeight): MyDynamicObject(xPos,yPos,0.0f, windowWidth, windowHeight)
+Asteroid::Asteroid(int status, float xPos, float yPos, float zPos, int windowWidth, int windowHeight): MyDynamicObject(xPos,yPos,zPos, windowWidth, windowHeight)
 { 
     invincibleCounter=0;
     
@@ -213,7 +215,9 @@ Asteroid::Asteroid(int status, float xPos, float yPos, float zPos, int windowWid
 		//added by Mike, 20201016
     	explosionParticle = new float*[MAX_EXPLOSION_PARTICLES];
 		for(int i=0; i<MAX_EXPLOSION_PARTICLES; i++) {
-		    explosionParticle [i] = new float[3];
+			//edited by Mike, 20201117
+//		    explosionParticle [i] = new float[3];
+		    explosionParticle [i] = new float[4];
 		}		
     
         //child1=new Asteroid(CHILD_STATUS,0,0);
@@ -285,7 +289,8 @@ Asteroid::~Asteroid()
 void Asteroid::drawAsteroid() {	
 	//added by Mike, 20201002; edited by Mike, 202010015
 	//to make anchor/origin/reference point start at top-left
-    glTranslatef(0.0f, 0.1f, 0.0f);   
+	//removed by Mike, 20201117
+//    glTranslatef(0.0f, 0.1f, 0.0f);   
 
 /* //removed by Mike, 20201113
    //TO-DO: -update: this due to output is 1 x 2 box, width x height
@@ -319,7 +324,10 @@ void Asteroid::drawExplosion() {
 	//edited by Mike, 20201017
 /*   glTranslatef(0.0f, myHeight/4, 0.0f);   
 */
-   glTranslatef(0.0f, myHeight/8, 0.0f);   
+	//edited by Mike, 2020117
+	//TO-DO: -add: this
+//   glTranslatef(0.0f, myHeight/8, 0.0f);   
+//   glTranslatef(0.0f, 0.0f, myHeight/8);   //removed by Mike, 20201117
 	
    //TO-DO: update: this
 //   for(int i=0; i<MAX_EXPLOSION_PARTICLES; i++) {
@@ -328,6 +336,8 @@ void Asteroid::drawExplosion() {
 
 //       glTranslatef(explosionParticle[i][X_POS_INDEX], explosionParticle[i][Y_POS_INDEX], 0); //myZPos);
 
+	//edited by Mike, 2020117
+/*
 	   //TO-DO: -update: this due to output is 1 x 2 box, width x height
 	   glBegin(GL_QUADS);              // Each set of 4 vertices form a quad
 			//edited by Mike, 20201017
@@ -335,19 +345,15 @@ void Asteroid::drawExplosion() {
 	      glColor3f(0.0f, 1.0f, 1.0f); // blue and green
 		  
 		  //edited by Mike, 20201017
-/*	
-		  //1x1 square
-		  glVertex2f(0.0f, 0.0f);    // x, y
-	      glVertex2f( 0.0f, -myHeight/4);
-	      glVertex2f(myWidth/4,  -myHeight/4);
-	      glVertex2f(myWidth/4,  0.0f);
-*/
 		  //1x1 square
 		  glVertex2f(0.0f, 0.0f);    // x, y
 	      glVertex2f( 0.0f, -myHeight/8);
 	      glVertex2f(myWidth/8,  -myHeight/8);
 	      glVertex2f(myWidth/8,  0.0f);
 	   glEnd();   	
+*/
+	    glColor3f(0.0f, 1.0f, 1.0f); // blue and green
+		drawCube(myWidth/8); //myWidth=myHeight; myWidth/8 of Asteroid's width
 //   }   
 }
 
@@ -400,7 +406,9 @@ void Asteroid::draw()
         	case DEATH_STATE:
      			for(int i=0; i<MAX_EXPLOSION_PARTICLES; i++) {
 	           	   glPushMatrix();	
-       					glTranslatef(explosionParticle[i][X_POS_INDEX], explosionParticle[i][Y_POS_INDEX], 0); //myZPos);
+	           	   		//edited by Mike, 2020117
+//       					glTranslatef(explosionParticle[i][X_POS_INDEX], explosionParticle[i][Y_POS_INDEX], 0); //myZPos);
+       					glTranslatef(explosionParticle[i][X_POS_INDEX], 0, explosionParticle[i][Z_POS_INDEX]);
 						drawExplosion();
 	           	   glPopMatrix();	// pop back to original coordinate system
 	           }
@@ -539,9 +547,14 @@ void Asteroid::update(float dt)
 						//edited by Mike, 20201016
 //	                    rotationAngleRad = (rotationAngle) * 3.141593f / 180.0f;
 	                    rotationAngleRad = (explosionParticle[i][ROTATION_ANGLE_INDEX]) * 3.141593f / 180.0f;
-	                    
-	                    yAccel = (cos(rotationAngleRad)*thrust);
+						
+						//edited by Mike, 20201117	                    
+//	                    yAccel = (cos(rotationAngleRad)*thrust);
+	                    zAccel = (cos(rotationAngleRad)*thrust);
 	                    xAccel = -(sin(rotationAngleRad)*thrust);
+
+
+
 	/*
 	                   rotationAngle+=1;
 	                   char str[700];                                       
@@ -553,17 +566,32 @@ void Asteroid::update(float dt)
 	                    xVel=xAccel;
 	                    yVel=yAccel;
 */
-	                    xVel=xAccel;
-	                    yVel=yAccel;
+	                    //edited by Mike, 2020117
+						//xVel=xAccel;
+						xVel=xAccel*30.0;
+	                    
+						//edited by Mike, 20201117	                    
+	                    //yVel=yAccel;
+	                    yVel=0;//yAccel;
+//	                    zVel=zAccel;
+	                    zVel=zAccel*30.0;
 
 /*						//edited by Mike, 20201016
 	                    myXPos+=xVel;
 	                    myYPos+=yVel;
 */	
+
+
 						//TO-DO: -update: this
 						explosionParticle[i][X_POS_INDEX]+=xVel;
-						explosionParticle[i][Y_POS_INDEX]+=yVel;
+						//edited by Mike, 20201117	                    
+						explosionParticle[i][Y_POS_INDEX]+=yVel; //note: set to 0
+						explosionParticle[i][Z_POS_INDEX]+=zVel;
 
+/*
+						explosionParticle[i][X_POS_INDEX]=getX();
+						explosionParticle[i][Z_POS_INDEX]=getZ();
+*/
 
 /*
 						//TO-DO: -add: 0.1f*iColumnCountMax
@@ -583,7 +611,8 @@ void Asteroid::update(float dt)
 		           		if (myYPos >= 0.1f*20) myYPos = 0.0f+myHeight/8; //if bottom side
 		           		else if (myYPos <= 0.0f) myYPos = 0.1f*20-myHeight/8; //if top side
 */
-						//removed by Mike, 20201017
+/*
+						//edited by Mike, 20201117
 						//TO-DO: -update: this
 		           		if (explosionParticle[i][X_POS_INDEX] <= 0.0f) explosionParticle[i][X_POS_INDEX] = 0.1f*20-myWidth/8; //if left side
 		           		else if (explosionParticle[i][X_POS_INDEX] >= 0.1f*20) explosionParticle[i][X_POS_INDEX] = 0.0f+myWidth/8; //if right side
@@ -591,6 +620,17 @@ void Asteroid::update(float dt)
 						//TO-DO: -add: 0.1f*iRowCountMax
 		           		if (explosionParticle[i][Y_POS_INDEX] >= 0.1f*20) explosionParticle[i][Y_POS_INDEX] = 0.0f+myHeight/8; //if bottom side
 		           		else if (explosionParticle[i][Y_POS_INDEX] <= 0.0f) explosionParticle[i][Y_POS_INDEX] = 0.1f*20-myHeight/8; //if top side
+*/
+/*						//removed by Mike, 2020117
+						//note: explosion wrap OK
+						//edited by Mike, 20201117
+		           		if (explosionParticle[i][X_POS_INDEX] <= 0.0f) explosionParticle[i][X_POS_INDEX] = myWindowWidth/100-myWidth/8; //if left side
+		           		else if (explosionParticle[i][X_POS_INDEX] >= myWindowWidth/100) explosionParticle[i][X_POS_INDEX] = 0.0f+myWidth/8; //if right side
+		
+		           		if (explosionParticle[i][Z_POS_INDEX] >= myWindowHeight/100) explosionParticle[i][Z_POS_INDEX] = 0.0f+myHeight/8; //if bottom side
+		           		else if (explosionParticle[i][Z_POS_INDEX] <= 0.0f) explosionParticle[i][Z_POS_INDEX] = myWindowHeight/100-myHeight/8; //if top side
+*/ 
+ 
 					}
 	
                 	iDeathAnimationCounter++;
@@ -665,9 +705,12 @@ void Asteroid::reset(float xPos, float yPos, float zPos)
 
 	//TO-DO: -remove: this?
 	//added by Mike, 20201016
-	for(int i=0; i<MAX_EXPLOSION_PARTICLES; i++) {
-		explosionParticle[i][X_POS_INDEX]=myXPos;
-		explosionParticle[i][Y_POS_INDEX]=myYPos;	
+	for(int i=0; i<MAX_EXPLOSION_PARTICLES; i++) {		
+		//edited by Mike, 2020117
+		explosionParticle[i][X_POS_INDEX]=getX();//myXPos;
+		explosionParticle[i][Y_POS_INDEX]=getY();myYPos;	
+		//added by Mike, 20201117
+		explosionParticle[i][Z_POS_INDEX]=getZ();myZPos;	
 
 		explosionParticle[i][ROTATION_ANGLE_INDEX]=rotationAngle;
 	}
@@ -715,8 +758,10 @@ void Asteroid::hitBy(MyDynamicObject* mdo)
 	
 	//added by Mike, 20201016
 	for(int i=0; i<MAX_EXPLOSION_PARTICLES; i++) {
-		explosionParticle[i][X_POS_INDEX]=myXPos;
-		explosionParticle[i][Y_POS_INDEX]=myYPos;	
+		//edited by Mike, 2020117
+		explosionParticle[i][X_POS_INDEX]=getX();//myXPos;
+		explosionParticle[i][Y_POS_INDEX]=getY();//myYPos;	
+		explosionParticle[i][Z_POS_INDEX]=getZ();//myZPos; //added by Mike, 20201117
 
 		explosionParticle[i][ROTATION_ANGLE_INDEX]=rotationAngle;
 		rotationAngle+=30;

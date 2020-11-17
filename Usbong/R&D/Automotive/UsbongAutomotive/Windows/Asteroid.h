@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201016
- * @date updated: 20201017
+ * @date updated: 20201117
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -43,7 +43,8 @@
 #define MAX_EXPLOSION_PARTICLES 16
 #define X_POS_INDEX 0
 #define Y_POS_INDEX 1
-#define ROTATION_ANGLE_INDEX 2
+#define Z_POS_INDEX 2 //added by Mike, 20201117
+#define ROTATION_ANGLE_INDEX 3 //edited by Mike, 20201117
 
 //class OpenGLCanvas;
 

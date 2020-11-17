@@ -144,8 +144,20 @@ bool MyDynamicObject::isIntersectingRect(MyDynamicObject* mdo1, MyDynamicObject*
     sprintf(str,"here: %f",mdo1->getY());//myZPos
     MessageBox(NULL, str, "Welcome!", MB_OK);
 */
+/*	//edited by Mike, 20201117
     if (mdo2->getY()+mdo2->getHeight() < mdo1->getY() || //is the bottom of mdo2 above the top of mdo1?
         mdo2->getY() > mdo1->getY()+mdo1->getHeight() || //is the top of mdo2 below bottom of mdo1?
+        mdo2->getX()+mdo2->getWidth() < mdo1->getX()  || //is the right of mdo2 to the left of mdo1?
+        mdo2->getX() > mdo1->getX()+mdo1->getWidth()) //is the left of mdo2 to the right of mdo1?
+        return false;
+*/
+	//note: computer computation correct, albeit human person may think 
+	//based on observation in 3D (3-Dimensions) that beam should hit asteroid
+	//alternative collision detection technique 
+	//for computer to verify if not intersecting
+	//Reference: Jongko, J. et al (2004)
+    if (mdo2->getZ()+mdo2->getHeight() < mdo1->getZ() || //is the bottom of mdo2 above the top of mdo1?
+        mdo2->getZ() > mdo1->getZ()+mdo1->getHeight() || //is the top of mdo2 below bottom of mdo1?
         mdo2->getX()+mdo2->getWidth() < mdo1->getX()  || //is the right of mdo2 to the left of mdo1?
         mdo2->getX() > mdo1->getX()+mdo1->getWidth()) //is the left of mdo2 to the right of mdo1?
         return false;
