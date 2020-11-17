@@ -692,12 +692,14 @@ void OpenGLCanvas::render()
         	1.0f //zFar; maximum
       	);
 
+
+/*	//removed by Mike, 20201117
     //font 
-    /* select and enable texture FONT_TEXTURE */
+    // select and enable texture FONT_TEXTURE
 	//edited by Mike, 20201012
     glBindTexture(GL_TEXTURE_2D, FONT_TEXTURE);
     glEnable(GL_TEXTURE_2D);
-		
+*/		
     if (currentState==TITLE_SCREEN) {                                    
     }
     else if (currentState==CONTROLS_SCREEN) {
@@ -707,24 +709,55 @@ void OpenGLCanvas::render()
     else if (currentState==HIGHSCORE_SCREEN) {
     }
     else if (currentState==GAME_SCREEN) {
+/* //removed by Mike, 20201117
 //TO-DO: -update: this
 		sprintf(tempText,"USBONG");
 		//TO-DO: -update: this to not add 0.1 in y-axis
 //	    draw_string(0, 0, tempText);    	
+		//edited by Mike, 2020117
+//	    draw_string(0, 0.1, tempText);    	
 	    draw_string(0, 0.1, tempText);    	
 
 	    glDisable(GL_TEXTURE_2D);
 	    glBindTexture(GL_TEXTURE_2D, 0);
+*/
+
+  	//added by Mike, 20201117
+  	//TO-DO: -reverify: due to font texture cleared
+    //font 
+    /* select and enable texture FONT_TEXTURE */
+	//edited by Mike, 20201012
+    glBindTexture(GL_TEXTURE_2D, FONT_TEXTURE);
+    glEnable(GL_TEXTURE_2D);
+
+  	//TO-DO: -update: this
+	sprintf(tempText,"USBONG");
+	//TO-DO: -update: this to not add 0.1 in y-axis
+//	    draw_string(0, 0, tempText);    	
+	//edited by Mike, 2020117
+//	    draw_string(0, 0.1, tempText);    	
+    draw_string(0.0f, 0.1f, 0.0f, tempText);    	
+
+    glDisable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, 0);
+
 
 	//added by Mike, 20201020
 	//note: we add these to enable complete drawing of 3D shape with z-axis
 	//--------------------------------------------------------
     glEnable(GL_CULL_FACE);
-    glEnable(GL_DEPTH_TEST);
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	//removed by Mike, 20201010
+	//TO-DO: -reverify: this
+	//due to blank output in Font texture
+//    glEnable(GL_DEPTH_TEST);
+	
+	//removed by Mike, 2020117
+//    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	//added by Mike, 20201114
 //	glDepthFunc(GL_ALWAYS);
+
 
 	glMatrixMode(GL_PROJECTION);			// set projection matrix current matrix
 	glLoadIdentity();						// reset projection matrix
@@ -805,7 +838,6 @@ void OpenGLCanvas::render()
 	//--------------------------------------------------------
 
 	//note: reference point/origin at center; not top-left
-
 	//added by Mike, 20201115
 	glRotatef(45, 1.0f, 0.0f, 0.0f);
 	glRotatef(30, 0.0f, 1.0f, 0.0f);
@@ -820,8 +852,7 @@ void OpenGLCanvas::render()
 	//edited by Mike, 20201023
 //    glTranslatef(-3.2f, 0.0f, -3.2f);
     glTranslatef(myCanvasPosX, myCanvasPosY, myCanvasPosZ);
-    
-
+  
     //added by Mike, 2020116; edited by Mike, 20201116
    	//wrap the world 
 /*

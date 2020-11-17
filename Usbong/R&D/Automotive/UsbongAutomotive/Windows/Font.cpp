@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201010
- * @date updated: 20201010
+ * @date updated: 20201117
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -139,9 +139,13 @@ void load_tga(char *filename)
 
 /* text drawing */
 
-void draw_char(GLfloat x, GLfloat y, char c)
+//edited by Mike, 2020117
+//void draw_char(GLfloat x, GLfloat y, char c)
+void draw_char(GLfloat x, GLfloat y, GLfloat z, char c)
 {
-    GLfloat tx, ty;
+	//edited by Mike, 20201117
+//    GLfloat tx, ty;
+    GLfloat tx, ty, tz;
 
     /* check if the character is valid */
     if (c < ' ' || c > '~')
@@ -156,6 +160,8 @@ void draw_char(GLfloat x, GLfloat y, char c)
      * font.tga file to understand what I mean) */
     tx = c % 12 * 0.078125f;
     ty = 0.875f - (c / 12 * 0.125f);
+    //added by Mike, 20201117
+//    tz = 0.875f - (c / 12 * 0.125f);
 
 	//edited by Mike, 20201012
 	//to make anchor/origin/reference point start at top-left
@@ -171,6 +177,8 @@ void draw_char(GLfloat x, GLfloat y, char c)
       glVertex2f( 0.1f,  -0.1f);
       glVertex2f(0.1f,  0.0f);
 */
+	//edited by Mike, 20201117
+/*
 	glBegin(GL_QUADS);              // Each set of 4 vertices form a quad
         glTexCoord2f(tx, ty);
         glVertex3f(x, y, 0.0f);
@@ -188,12 +196,24 @@ void draw_char(GLfloat x, GLfloat y, char c)
       	//glVertex3f(x, y+0.16f, 0.0f);      
       	glVertex3f(x, y-0.16f, 0.0f);      
 //      	glVertex3f(x+0.1f, y+0.16f, 0.0f);              
-
+   glEnd();        
+*/   
+	glBegin(GL_QUADS);              // Each set of 4 vertices form a quad
+        glTexCoord2f(tx, ty);
+        glVertex3f(x, y, 0.0f);
+        glTexCoord2f(tx + 0.078125f, ty);
+      	glVertex3f(x+0.1f, y, 0.0f);      
+        glTexCoord2f(tx + 0.078125f, ty + 0.125f);
+      	glVertex3f(x+0.1f, y-0.16f, 0.0f);              
+		glTexCoord2f(tx, ty + 0.125f);
+      	glVertex3f(x, y-0.16f, 0.0f);      
    glEnd();        
 
 }
 
-void draw_string(GLfloat x, GLfloat y, char *string)
+//edited by Mike, 2020117
+//void draw_string(GLfloat x, GLfloat y, char *string)
+void draw_string(GLfloat x, GLfloat y, GLfloat z, char *string)
 {
 
     GLfloat origX=x;
@@ -214,7 +234,9 @@ void draw_string(GLfloat x, GLfloat y, char *string)
 //            glScalef(2.0f, 2.0f, 2.0f);//1.5f, 1.5f, 1.5f);
 
 //            glScalef(0.5f, 0.5f, 0.5f);
-            draw_char(x, y, string[0]);
+				//edited by Mike, 2020117
+//            draw_char(x, y, string[0]);
+            draw_char(x, y, z, string[0]);
     	glPopMatrix();
 
         

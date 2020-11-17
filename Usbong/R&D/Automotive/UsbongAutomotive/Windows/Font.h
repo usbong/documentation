@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201010
- * @date updated: 20201010
+ * @date updated: 20201117
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -29,6 +29,10 @@
 #include <string>
  
 void setupFont(int myFontTextureObject);
-//edited by Mike, 20201010
-void draw_string(GLfloat x, GLfloat y, char *string);
+//edited by Mike, 20201017
+//void draw_string(GLfloat x, GLfloat y, char *string);
+//void draw_char(GLfloat x, GLfloat y, char c);
+void draw_string(GLfloat x, GLfloat y, GLfloat z, char *string);
+void draw_char(GLfloat x, GLfloat y, GLfloat z, char c);
+
 //void draw_string(GLfloat x, GLfloat y, std::string string);
