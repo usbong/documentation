@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20201116
+ * @date updated: 20201118
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -723,7 +723,6 @@ void OpenGLCanvas::render()
 */
 
   	//added by Mike, 20201117
-  	//TO-DO: -reverify: due to font texture cleared
     //font 
     /* select and enable texture FONT_TEXTURE */
 	//edited by Mike, 20201012
@@ -745,7 +744,8 @@ void OpenGLCanvas::render()
 	//added by Mike, 20201020
 	//note: we add these to enable complete drawing of 3D shape with z-axis
 	//--------------------------------------------------------
-    glEnable(GL_CULL_FACE);
+	//removed by Mike, 20201118
+//    glEnable(GL_CULL_FACE);
 
 	//removed by Mike, 20201010
 	//TO-DO: -reverify: this
@@ -783,9 +783,12 @@ void OpenGLCanvas::render()
                    0.1, // near plane
                    100); // far plane
 
+/* //removed by Mike, 20201118
 	//TO-DO: -reverify: these
 	glMatrixMode(GL_MODELVIEW);				// set modelview matrix
 	glLoadIdentity();						// reset modelview matrix
+*/
+
 /*
     gluLookAt(0.0, 1.0, 3.0, // eye position 0.0, 0.0, 3.0
               0.0, 0.0, 0.0, // look-at point
