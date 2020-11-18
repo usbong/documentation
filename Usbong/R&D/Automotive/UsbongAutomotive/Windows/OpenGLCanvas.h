@@ -79,13 +79,18 @@
 class RobotShip;
 //class Enemy; //removed by Mike, 20201013
 class Beam;
-class Asteroid; //removed by Mike, 20201016
+class Asteroid;
+
+class Level; //added by Mike, 20201118
 
 class OpenGLCanvas
 {
     private:
     	RobotShip *myRobotShip,
     	          *myRobotShipPlayer2;
+		
+		//added by Mike, 20201118
+    	Level *myLevel;
 
         //Enemy *myEnemy[MAX_ENEMY];
         //removed by Mike, 20201013
