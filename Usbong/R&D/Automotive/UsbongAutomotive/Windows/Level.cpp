@@ -161,10 +161,16 @@ void Level::draw_char(GLfloat x, GLfloat y, GLfloat z, char c)
 
 	//edited by Mike, 20201012
 	//to make anchor/origin/reference point start at top-left
-    glTranslatef(0.0f, 0.1f, 0.0f);   
+   //edited by Mike, 20201118
+//    glTranslatef(0.0f, 0.1f, 0.0f);
+	//note: use scale command if necessary
+    glTranslatef(0.0f, 0.0f, 1.0f); //add this due to set location of quad vertices
+    glTranslatef(0.0f, 0.0f, 0.3f); //add this due to size of square in grid 
+
 	glColor3f(1.0f, 1.0f, 1.0f); //set to default, i.e. white
     //glColor3f(0.0f, 0.0f, 0.0f); //set to default, i.e. black
-	
+
+/*	//edited by Mike, 20201118
 	glBegin(GL_QUADS);              // Each set of 4 vertices form a quad
         glTexCoord2f(tx, ty);
         glVertex3f(x, y, 0.0f);
@@ -174,6 +180,32 @@ void Level::draw_char(GLfloat x, GLfloat y, GLfloat z, char c)
       	glVertex3f(x+0.1f, y-0.16f, 0.0f);              
 		glTexCoord2f(tx, ty + 0.125f);
       	glVertex3f(x, y-0.16f, 0.0f);      
+   glEnd();        
+*/
+	glBegin(GL_QUADS);              // Each set of 4 vertices form a quad
+        glTexCoord2f(tx, ty);
+        //edited by Mike, 20201118
+//        glVertex3f(x, y, 0.0f);
+        glVertex3f(x, 0.0f, y);
+ 
+        glTexCoord2f(tx + 0.078125f, ty);
+        //edited by Mike, 20201118
+//      	glVertex3f(x+0.1f, y, 0.0f);      
+//      	glVertex3f(x+0.1f, 0.0f, y);      
+      	glVertex3f(x+1.0f, 0.0f, y);      
+
+        glTexCoord2f(tx + 0.078125f, ty + 0.125f);
+        //edited by Mike, 20201118
+//      	glVertex3f(x+0.1f, y-0.16f, 0.0f);              
+//      	glVertex3f(x+0.1f, 0.0f, y-0.16f);              
+      	glVertex3f(x+1.0f, 0.0f, y-1.6f);              
+
+		glTexCoord2f(tx, ty + 0.125f);
+        //edited by Mike, 20201118
+//      	glVertex3f(x, y-0.16f, 0.0f);      
+//      	glVertex3f(x, 0.0f, y-0.16f);      
+      	glVertex3f(x, 0.0f, y-1.6f);      
+
    glEnd();        
 
 }
@@ -204,7 +236,9 @@ void Level::draw_level(GLfloat x, GLfloat y, GLfloat z, char *string)
 //            glScalef(0.5f, 0.5f, 0.5f);
 				//edited by Mike, 2020117
 //            draw_char(x, y, string[0]);
-            draw_char(x, y, z, string[0]);
+				//edited by Mike, 20201118
+//            draw_char(x, y, z, string[0]);
+            draw_char(x, z, y, string[0]);
     	glPopMatrix();
 
         
