@@ -1063,6 +1063,7 @@ void OpenGLCanvas::drawGridWithZAxis() {
 //	float fSquareWidth = myWindowWidth/iColumnCountMax/100.0;
 //	float fGridSquareHeight = myWindowHeight/iRowCountMax/100.0;
 
+/*	//removed by Mike, 20201119
    // Draw a Green Line top-left origin; Quadrant 4, y-axis inverted; x and y positive
    //rows   
    	//edited by Mike, 20201002
@@ -1070,49 +1071,11 @@ void OpenGLCanvas::drawGridWithZAxis() {
    		// Draw a Green Line top-left origin
    		glBegin(GL_LINES);
       		glColor3f(0.0f, 1.0f, 0.0f); // Green
-/*			//edited by Mike, 20201022
-      		glVertex2f(0.0f, 0.1f*iRowCount);    // x, y
-      		//edited by Mike, 20201015
-//      		glVertex2f(1.0f, 0.1f*iRowCount);
-      		glVertex2f(0.1f*iRowCountMax, 0.1f*iRowCount);
-*/
-
-/*			//edited by Mike, 20201023
-      		glVertex2f(0.0f, fGridSquareHeight*iRowCount);    // x, y
-      		glVertex2f(fGridSquareWidth*2*iRowCountMax, fGridSquareHeight*iRowCount);
-*/
-
-/* //removed by Mike, 20201115
-      		glVertex2f(0.0f, fGridSquareHeight*iRowCount);    // x, y
-      		glVertex2f(fGridSquareWidth*iRowCountMax, fGridSquareHeight*iRowCount);
-*/
-
-//      		glVertex2f(myWindowWidth, fRowSquareHeight*iRowCount);
-
-/*
-      		glVertex2f(0.0f, 0.15f*iRowCount);    // x, y
-      		glVertex2f(0.15f*iRowCountMax, 0.15f*iRowCount);
-*/
-
 			//added by Mike, 20201023
 			//floor face
 			//with Z-axis
       		glVertex3f(0.0f, 0.0f, fGridSquareHeight*iRowCount);    // x, z
       		glVertex3f(fGridSquareWidth*iRowCountMax, 0.0f, fGridSquareHeight*iRowCount);      		
-
-/*			//removed by Mike, 20201115
-			//added by Mike, 20201023
-			//left face
-			//with Z-axis; with y
-      		glVertex3f(0.0f, 0.0f, fGridSquareHeight*iRowCount);    // y, z
-      		glVertex3f(0.0f, fGridSquareHeight*iRowCountMax, fGridSquareHeight*iRowCount);      		
-
-			//added by Mike, 20201023
-			//right face
-			//with Z-axis; with y
-      		glVertex3f(fGridSquareWidth*iRowCountMax, 0.0f, fGridSquareHeight*iRowCount);    // y, z
-      		glVertex3f(fGridSquareWidth*iRowCountMax, fGridSquareHeight*iRowCountMax, fGridSquareHeight*iRowCount);      		
-*/      		
    		glEnd();   		   	  
 	 }
 
@@ -1122,48 +1085,15 @@ void OpenGLCanvas::drawGridWithZAxis() {
    		// Draw a Green Line top-left origin
    		glBegin(GL_LINES);
       		glColor3f(0.0f, 1.0f, 0.0f); // Green
-/*			//edited by Mike, 20201022
-      		glVertex2f(0.1f*iColumnCount, 0.0f);    // x, y
-      		//edited by Mike, 20201015
-//      		glVertex2f(0.1f*iColumnCount, 1.0f);
-      		glVertex2f(0.1f*iColumnCount, 0.1f*iColumnCountMax);
-*/
-/*			//edited by Mike, 20201023
-      		glVertex2f(fGridSquareWidth*2*iColumnCount, 0.0f);    // x, y
-      		glVertex2f(fGridSquareWidth*2*iColumnCount, fGridSquareHeight*iColumnCountMax);      		
-*/
-
-/* //removed by Mike, 20201115
-      		glVertex2f(fGridSquareWidth*iColumnCount, 0.0f);    // x, y
-      		glVertex2f(fGridSquareWidth*iColumnCount, fGridSquareHeight*iColumnCountMax);      		
-*/
-
 			//added by Mike, 20201022			
 			//with Z-axis
-/*			//edited by Mike, 20201023
-      		glVertex3f(fGridSquareWidth*2*iColumnCount, 0.0f, 0.0f);    // y, z
-      		glVertex3f(fGridSquareWidth*2*iColumnCount, 0.0f, fGridSquareHeight*iColumnCountMax);
-*/
       		glVertex3f(fGridSquareWidth*iColumnCount, 0.0f, 0.0f);    // y, z
       		glVertex3f(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iColumnCountMax);
 
-/* //removed by Mike, 20201115
-			//added by Mike, 20201023
-			//left face
-			//with Z-axis; with y
-      		glVertex3f(0.0f, fGridSquareHeight*iColumnCount, 0.0f);    // y, z
-      		glVertex3f(0.0f, fGridSquareHeight*iColumnCount, fGridSquareHeight*iColumnCountMax);
-
-			//added by Mike, 20201023
-			//right face
-			//with Z-axis; with y
-      		glVertex3f(fGridSquareWidth*iRowCountMax, fGridSquareHeight*iColumnCount, 0.0f);    // y, z
-      		glVertex3f(fGridSquareWidth*iRowCountMax, fGridSquareHeight*iColumnCount, fGridSquareHeight*iColumnCountMax);
-*/
    		glEnd();   		   	  
 	 }
+*/
 
-	//TO-DO: -update: this due to not drawn
   	//added by Mike, 20201118
   	//LEVEL TEXTURE
     /* select and enable texture FONT_TEXTURE */
@@ -1171,9 +1101,27 @@ void OpenGLCanvas::drawGridWithZAxis() {
     glBindTexture(GL_TEXTURE_2D, FONT_TEXTURE);
     glEnable(GL_TEXTURE_2D);
 
-  	//TO-DO: -update: this
+	//TO-DO: -fix: column's right border 
+	//column : z-axis
+	//TO-DO: -fix: row's bottom border 
+	//column : x-axis
+	
+	//note: add: randomly tile with texture
+	
+  	//edited by Mike, 20201119
+	//TO-DO: -update: this
+	//note: D = "Door"
+//	sprintf(tempText,"D");
+//	myLevel->draw_level(0.0f, 0.0f, 0.0f, tempText);    	
+ 	//columns
+   	//edited by Mike, 20201015   	
+    //rows   
 	sprintf(tempText,"D");
-    myLevel->draw_level(0.0f, 0.0f, 0.0f, tempText);    	
+ 	for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {	
+	 	for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {		
+	    	myLevel->draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iRowCount, tempText);
+		}
+	}
 
     glDisable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, 0);

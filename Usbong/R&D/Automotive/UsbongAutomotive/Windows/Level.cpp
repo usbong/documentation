@@ -135,6 +135,7 @@ void Level::load_tga(char *filename)
 /* text drawing */
 
 //TO-DO: -update: this
+//note: 10x16 each font character/level texture
 //edited by Mike, 20201117
 //void draw_char(GLfloat x, GLfloat y, char c)
 void Level::draw_char(GLfloat x, GLfloat y, GLfloat z, char c)
@@ -164,10 +165,12 @@ void Level::draw_char(GLfloat x, GLfloat y, GLfloat z, char c)
    //edited by Mike, 20201118
 //    glTranslatef(0.0f, 0.1f, 0.0f);
 	//note: use scale command if necessary
-    glTranslatef(0.0f, 0.0f, 1.0f); //add this due to set location of quad vertices
-    glTranslatef(0.0f, 0.0f, 0.3f); //add this due to size of square in grid 
-
-	glColor3f(1.0f, 1.0f, 1.0f); //set to default, i.e. white
+	//removed by Mike, 20201119
+//    glTranslatef(0.0f, 0.0f, 1.0f); //add this due to set location of quad vertices
+//    glTranslatef(0.0f, 0.0f, 0.3f); //add this due to size of square in grid 
+	
+	//removed by Mike, 20201119
+//	glColor3f(1.0f, 1.0f, 1.0f); //set to default, i.e. white
     //glColor3f(0.0f, 0.0f, 0.0f); //set to default, i.e. black
 
 /*	//edited by Mike, 20201118
@@ -192,13 +195,17 @@ void Level::draw_char(GLfloat x, GLfloat y, GLfloat z, char c)
         //edited by Mike, 20201118
 //      	glVertex3f(x+0.1f, y, 0.0f);      
 //      	glVertex3f(x+0.1f, 0.0f, y);      
-      	glVertex3f(x+1.0f, 0.0f, y);      
+		//edited by Mike, 20201119
+//      	glVertex3f(x+1.0f, 0.0f, y);      
+      	glVertex3f(x+1.2f, 0.0f, y);      
 
         glTexCoord2f(tx + 0.078125f, ty + 0.125f);
         //edited by Mike, 20201118
 //      	glVertex3f(x+0.1f, y-0.16f, 0.0f);              
 //      	glVertex3f(x+0.1f, 0.0f, y-0.16f);              
-      	glVertex3f(x+1.0f, 0.0f, y-1.6f);              
+		//edited by Mike, 20201119
+//      	glVertex3f(x+1.0f, 0.0f, y-1.6f);              
+      	glVertex3f(x+1.2f, 0.0f, y-1.6f);              
 
 		glTexCoord2f(tx, ty + 0.125f);
         //edited by Mike, 20201118
@@ -220,13 +227,14 @@ void Level::draw_level(GLfloat x, GLfloat y, GLfloat z, char *string)
     while (string[0] != 0)
     {
 
+/*		//removed by Mike, 20201119
 		//TO-DO: -update: this
         //added by Mike, Feb14,2007
 		if (string[0]=='\n') {
 			y -= 0.1f;//15.0f;
 			x=origX-0.1f;//-10.0f;			
     	}
-        
+*/        
 
         glPushMatrix();
         	//removed by Mike, 20201010
@@ -245,7 +253,9 @@ void Level::draw_level(GLfloat x, GLfloat y, GLfloat z, char *string)
         // advance 10 pixels after each character
 //TO-DO: -update: this
 //        x += 10.0f;
-        x += 0.1f;
+
+		//removed by Mike, 20201119
+//        x += 0.1f;
 
         // go to the next character in the string
         string++;
