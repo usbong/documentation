@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201118
- * @date updated: 20201118
+ * @date updated: 20201119
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -262,8 +262,9 @@ void Level::setupLevel(int myLevelTextureObject)
     glBindTexture(GL_TEXTURE_2D, myLevelTextureObject);
 
     /* create OpenGL texture out of targa file */
-    //TO-DO: -update: this
-    load_tga("textures/font.tga");
+    //edited by Mike, 20201119
+//    load_tga("textures/font.tga");
+    load_tga("textures/level.tga");
     
 	/* set texture parameters */
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);

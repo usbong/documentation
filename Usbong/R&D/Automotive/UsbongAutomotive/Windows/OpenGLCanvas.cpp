@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20201118
+ * @date updated: 20201119
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -52,6 +52,9 @@
 
 //added by Mike, 20201010
 #include "Font.h"
+
+//added by Mike, 20201118
+#include "Level.h"
 
 //removed by Mike, 20200929
 //TO-DO: -add: these 
@@ -294,6 +297,11 @@ bool OpenGLCanvas::init()
 
     //added by Mike, 20201011
     setupFont(FONT_TEXTURE);
+
+	//TO-DO: -update: this
+    //added by Mike, 20201118
+    myLevel = new Level();
+    myLevel->setupLevel(FONT_TEXTURE);
 
 	return true;
 }
@@ -1154,6 +1162,22 @@ void OpenGLCanvas::drawGridWithZAxis() {
 */
    		glEnd();   		   	  
 	 }
+
+	//TO-DO: -update: this due to not drawn
+  	//added by Mike, 20201118
+  	//LEVEL TEXTURE
+    /* select and enable texture FONT_TEXTURE */
+	//edited by Mike, 20201012
+    glBindTexture(GL_TEXTURE_2D, FONT_TEXTURE);
+    glEnable(GL_TEXTURE_2D);
+
+  	//TO-DO: -update: this
+	sprintf(tempText,"D");
+    myLevel->draw_level(0.0f, 0.0f, 0.0f, tempText);    	
+
+    glDisable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, 0);
+
    
    glFlush();  // Render now
 }
