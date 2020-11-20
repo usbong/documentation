@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20201119
+ * @date updated: 20201120
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -1119,9 +1119,28 @@ void OpenGLCanvas::drawGridWithZAxis() {
 	sprintf(tempText,"D");
  	for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {	
 	 	for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {		
+/*			//edited by Mike, 20201120
 	    	myLevel->draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iRowCount, tempText);
+*/
+			//TO-DO: -update: this
+			//added by Mike, 20201120	    	
+//	    	if ((iColumnCount%3==0) && (iRowCount%7==0)) {
+	    	if ((iColumnCount%9==0) && (iRowCount%7==0)) {
+				sprintf(tempText,"E");
+				myLevel->draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iRowCount, tempText);	    		
+			}
+			else {
+				sprintf(tempText,"D");
+	    		myLevel->draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iRowCount, tempText);				
+			}
 		}
 	}
+
+/*	
+	//added by Mike, 20201120
+	sprintf(tempText,"E");
+	myLevel->draw_level(fGridSquareWidth*6,0.0f, fGridSquareHeight*6, tempText);
+*/
 
     glDisable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, 0);

@@ -204,14 +204,18 @@ void Level::draw_char(GLfloat x, GLfloat y, GLfloat z, char c)
 //      	glVertex3f(x+0.1f, y-0.16f, 0.0f);              
 //      	glVertex3f(x+0.1f, 0.0f, y-0.16f);              
 		//edited by Mike, 20201119
-//      	glVertex3f(x+1.0f, 0.0f, y-1.6f);              
-      	glVertex3f(x+1.2f, 0.0f, y-1.6f);              
+//      	glVertex3f(x+1.0f, 0.0f, y-1.6f);  
+		//edited by Mike, 20201120            
+//      	glVertex3f(x+1.2f, 0.0f, y-1.6f);              
+      	glVertex3f(x+1.2f, 0.0f, y-1.2f);              
 
 		glTexCoord2f(tx, ty + 0.125f);
         //edited by Mike, 20201118
 //      	glVertex3f(x, y-0.16f, 0.0f);      
 //      	glVertex3f(x, 0.0f, y-0.16f);      
-      	glVertex3f(x, 0.0f, y-1.6f);      
+		//edited by Mike, 20201120            
+//      	glVertex3f(x, 0.0f, y-1.6f);      
+      	glVertex3f(x, 0.0f, y-1.2f);      
 
    glEnd();        
 
