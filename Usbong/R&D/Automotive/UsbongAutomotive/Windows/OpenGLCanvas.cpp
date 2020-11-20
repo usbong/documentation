@@ -1028,8 +1028,6 @@ void OpenGLCanvas::drawGridWithZAxis() {
 	 glMatrixMode(GL_PROJECTION);
 	 glLoadIdentity();
 */
-
-	 //TO-DO: -add: Z plane grid
 	
 	 //draw grid
 	 //edited by Mike, 20201015 	 
@@ -1063,7 +1061,10 @@ void OpenGLCanvas::drawGridWithZAxis() {
 //	float fSquareWidth = myWindowWidth/iColumnCountMax/100.0;
 //	float fGridSquareHeight = myWindowHeight/iRowCountMax/100.0;
 
-/*	//removed by Mike, 20201119
+
+	//removed by Mike, 20201119
+	//edited by Mike, 20201120
+	
    // Draw a Green Line top-left origin; Quadrant 4, y-axis inverted; x and y positive
    //rows   
    	//edited by Mike, 20201002
@@ -1092,7 +1093,6 @@ void OpenGLCanvas::drawGridWithZAxis() {
 
    		glEnd();   		   	  
 	 }
-*/
 
   	//added by Mike, 20201118
   	//LEVEL TEXTURE
@@ -1131,7 +1131,7 @@ void OpenGLCanvas::drawGridWithZAxis() {
 			}
 			else {
 				sprintf(tempText,"D");
-	    		myLevel->draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iRowCount, tempText);				
+	    		myLevel->draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iRowCount, tempText);
 			}
 		}
 	}

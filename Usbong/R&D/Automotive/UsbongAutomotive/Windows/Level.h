@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201118
- * @date updated: 20201118
+ * @date updated: 20201120
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -27,6 +27,9 @@
 //edited by Mike, 20201011
 //#include <string.h>
 #include <string>
+
+//added by Mike, 20201120
+#include "PolygonUtils.h"
 
 class Level
 {
@@ -43,5 +46,5 @@ public:
 	*/
 	//TO-DO: -update: this
 	void draw_char(GLfloat x, GLfloat y, GLfloat z, char c);
-	void draw_level(GLfloat x, GLfloat y, GLfloat z, char *string);
+	void draw_level(GLfloat x, GLfloat y, GLfloat z, char *string);	
 };

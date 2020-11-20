@@ -23,6 +23,17 @@
  *
  */
 
+//added by Mike, 20201120
+#if defined(__APPLE__)
+#include <OpenGL/gl.h>
+#include <OpenGL/glu.h>
+//#include <GLUT/glut.h>
+#else
+#include <GL/gl.h>
+#include <GL/glu.h>
+//#include <GL/glut.h>
+#endif
+
 //void load_tga(char *filename);
 //GLboolean test_pow2(GLushort i);
 //bool test_pow2(GLushort i);
@@ -43,4 +54,7 @@ void drawSquare();
 //edited by Mike, 20201023
 //void drawCube();
 void drawCube(float fSideLength);
+
+//added by Mike, 20201120
+void drawCubeWithBlockTexture(float fSideLength, GLfloat tx, GLfloat ty, GLfloat tz, float x, float y, float z);
 

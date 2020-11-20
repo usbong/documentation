@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201118
- * @date updated: 20201119
+ * @date updated: 20201120
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -185,6 +185,9 @@ void Level::draw_char(GLfloat x, GLfloat y, GLfloat z, char c)
       	glVertex3f(x, y-0.16f, 0.0f);      
    glEnd();        
 */
+
+	//edited by Mike, 20201120
+/*
 	glBegin(GL_QUADS);              // Each set of 4 vertices form a quad
         glTexCoord2f(tx, ty);
         //edited by Mike, 20201118
@@ -216,9 +219,14 @@ void Level::draw_char(GLfloat x, GLfloat y, GLfloat z, char c)
 		//edited by Mike, 20201120            
 //      	glVertex3f(x, 0.0f, y-1.6f);      
       	glVertex3f(x, 0.0f, y-1.2f);      
-
    glEnd();        
+*/
 
+	//TO-DO: -update: this
+	//TO-DO: -remove: auto-drawing of not seen from camera
+	//drawCubeWithBlockTexture(fSideLength, tx, ty, tz);
+	drawCubeWithBlockTexture(1.0f, tx, ty, tz, x,y,z);
+//	drawCubeWithBlockTexture(2.0f, tx, ty, tz);
 }
 
 //edited by Mike, 20201118
@@ -248,9 +256,10 @@ void Level::draw_level(GLfloat x, GLfloat y, GLfloat z, char *string)
 //            glScalef(0.5f, 0.5f, 0.5f);
 				//edited by Mike, 2020117
 //            draw_char(x, y, string[0]);
-				//edited by Mike, 20201118
-//            draw_char(x, y, z, string[0]);
-            draw_char(x, z, y, string[0]);
+				//edited by Mike, 20201120
+//            draw_char(x, z, y, string[0]);
+            draw_char(x, y, z, string[0]);
+
     	glPopMatrix();
 
         

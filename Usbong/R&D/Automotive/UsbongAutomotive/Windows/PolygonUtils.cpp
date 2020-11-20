@@ -142,6 +142,7 @@ void drawCube(float fSideLength)
 		//of cube's square face not equal with that of drawSquare()
 //	    glTranslatef(0.0f, 0.1f, 0.0f);
 
+		//TO-DO: -reverify: this if necessary
 		//edited by Mike, 20201116
 //	    glTranslatef(0.2f, 0.1f, 0.0f);   
 	    glTranslatef(0.0f, fSideLength, 0.0f);   //0.0f, 1.0f, 0.0f
@@ -232,6 +233,92 @@ void drawCube(float fSideLength)
 			glVertex3f(0.0f, 0.0f, -fSideLength);
 			glVertex3f(-fSideLength, 0.0f, -fSideLength);
 			glVertex3f(-fSideLength, 0.0f, 0.0f);
+			glVertex3f(0.0f, 0.0f, 0.0f);	// front face
+			glVertex3f(-fSideLength, 0.0f, 0.0f);
+			glVertex3f(-fSideLength, -fSideLength, 0.0f);
+			glVertex3f(0.0f, -fSideLength, 0.0f);
+
+			glVertex3f(0.0f, 0.0f, 0.0f);	// right face
+			glVertex3f(0.0f, -fSideLength, 0.0f);
+			glVertex3f(0.0f, -fSideLength, -fSideLength);
+			glVertex3f(0.0f, 0.0f, -fSideLength);
+			//edited by Mike, 2020114
+			//vertices drawn clock-wise
+			
+			glVertex3f(-fSideLength, 0.0f, 0.0f);	// left face
+			glVertex3f(-fSideLength, 0.0f, -fSideLength);
+			glVertex3f(-fSideLength, -fSideLength, -fSideLength);
+			glVertex3f(-fSideLength, -fSideLength, 0.0f);
+
+/*
+			glVertex3f(-fSideLength, 0.0f, 0.0f);	// left face
+			glVertex3f(-fSideLength, -fSideLength, 0.0f);
+			glVertex3f(-fSideLength, -fSideLength, -fSideLength);
+			glVertex3f(-fSideLength, 0.0f, -fSideLength);
+*/
+			glVertex3f(0.0f, -fSideLength, 0.0f);	// bottom face
+			glVertex3f(0.0f, -fSideLength, -fSideLength);
+			glVertex3f(-fSideLength, -fSideLength, -fSideLength);
+			glVertex3f(-fSideLength, -fSideLength, 0.0f);
+
+			//edited by Mike, 20201114
+/*			glVertex3f(0.0f, 0.0f, -fSideLength);	// back face
+			glVertex3f(-fSideLength, 0.0f, -fSideLength);
+			glVertex3f(-fSideLength, -fSideLength, -fSideLength);
+			glVertex3f(0.0f, -fSideLength, -fSideLength);
+*/
+			//TO-DO: -reverify: disable BackFaceCulling 
+			//+updated: to draw vertices clockwise due to back face not drawn
+/*			glVertex3f(0.0f, 0.0f, -fSideLength);	// back face
+			glVertex3f(-fSideLength, 0.0f, -fSideLength);
+			glVertex3f(-fSideLength, -fSideLength, -fSideLength);
+			glVertex3f(0.0f, -fSideLength, -fSideLength);
+*/
+			//draw vertices clockwise
+			glVertex3f(0.0f, 0.0f, -fSideLength);	// back face
+			glVertex3f(0.0f, -fSideLength, -fSideLength);
+			glVertex3f(-fSideLength, -fSideLength, -fSideLength);
+			glVertex3f(-fSideLength, 0.0f, -fSideLength);
+
+		glEnd();
+		
+/*		//removed by Mike, 20201114		
+		//added by Mike, 20201114
+		glDisable( GL_POLYGON_OFFSET_FILL );
+*/
+
+		//added by Mike, 20201114; removed by Mike, 2020114
+//		glDepthFunc(GL_LESS);
+
+	glPopMatrix();
+}
+
+//Reference: Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
+//added by Mike, 20201120
+void drawCubeWithBlockTexture(float fSideLength, GLfloat tx, GLfloat ty, GLfloat tz, float x, float y, float z)
+{
+	glPushMatrix();
+		//TO-DO: -reverify: cause of cube translation when moving camera	
+//		glLineWidth(2.0f);
+	    glTranslatef(x, y, z);
+
+	    glTranslatef(fSideLength, 0.0f, fSideLength);
+				
+		glBegin(GL_QUADS);
+			// top face		
+	        glTexCoord2f(tx, ty);
+			glVertex3f(0.0f, 0.0f, 0.0f);
+
+			glTexCoord2f(tx, ty + 0.125f);			
+			glVertex3f(0.0f, 0.0f, -fSideLength);
+
+        	glTexCoord2f(tx + 0.078125f, ty + 0.125f);
+			glVertex3f(-fSideLength, 0.0f, -fSideLength);
+
+        	glTexCoord2f(tx + 0.078125f, ty);			
+			glVertex3f(-fSideLength, 0.0f, 0.0f);
+
+			//TO-DO: -update: this
 			glVertex3f(0.0f, 0.0f, 0.0f);	// front face
 			glVertex3f(-fSideLength, 0.0f, 0.0f);
 			glVertex3f(-fSideLength, -fSideLength, 0.0f);
