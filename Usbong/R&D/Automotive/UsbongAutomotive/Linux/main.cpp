@@ -14,7 +14,7 @@
  *
  * @author: Michael Syson
  * @date created: 20200926
- * @date updated: 20201016
+ * @date updated: 20201121
  *
  * References:
  * 1) Dev-C++ 5.11 auto-generated OpenGL example project
@@ -106,9 +106,14 @@ void DisableOpenGL (HWND hWnd, HDC hDC, HGLRC hRC);
 #define VK_LEFT 100
 #define VK_RIGHT 102
 
-//TO-DO: add: these
-//added by Mike, 20201016
-/*
+//note: "static" in C/C++ = "final" in java
+static int myWindowWidth=1024;//640; //320
+static int myWindowHeight=1024;//640; //320
+
+//added by Mike, 20201001
+OpenGLCanvas *myOpenGLCanvas = NULL;
+
+//added by Mike, 20201121
 enum Keys
 {
 	KEY_UP = 0,
@@ -128,25 +133,6 @@ enum Keys
 	KEY_L,
 	KEY_I,
 	KEY_K
-};
-*/
-
-//note: "static" in C/C++ = "final" in java
-static int myWindowWidth=640; //320
-static int myWindowHeight=640; //320
-
-//added by Mike, 20201001
-OpenGLCanvas *myOpenGLCanvas = NULL;
-
-//added by Mike, 20201001
-enum Keys
-{
-	KEY_UP = 0,
-	KEY_DOWN,
-	KEY_RIGHT,
-	KEY_LEFT,
-	KEY_SPACE,
-	KEY_ENTER
 };
 
 //added by Mike, 20201001
@@ -327,12 +313,152 @@ void update(int i) {
 //added by Mike, 20201002
 void keyDown (unsigned char key, int x, int y)
 {
+	//note: space bar and escape keys detected, albeit blank output 
 //    std::cout << "keydown " << key << "\n";
+
+	//added by Mike, 20201121
+	switch (key)
+    {
+/*			   //removed by Mike, 20201121
+			   //TO-DO: -add: identify VK_SPACE in Linux Machine
+			case VK_SPACE:
+                myOpenGLCanvas->keyDown(KEY_SPACE);
+                return;
+*/				
+			
+           //added by Mike, 20201013
+           //reference: 
+           //https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
+           //last accessed: 20201013
+			//TO-DO: -add: auto-identify if Linux Machine
+			//edited by Mike, 20201121
+//   	       case 0x41: //A key //Windows Machine
+   	       case (int) 'a': //A key //Linux Machine
+				myOpenGLCanvas->keyDown(KEY_A);
+                return;     
+			//edited by Mike, 20201121			
+//   	       case 0x44: //D key //Windows Machine
+   	       case (int) 'd': //d key //Linux Machine
+//		        myOpenGLCanvas->keyDown(KEY_D);
+		        myOpenGLCanvas->keyDown(KEY_RIGHT);
+                return;
+			//edited by Mike, 20201121
+//		   case 0x57: //W key //Windows Machine
+   	       case (int) 'w': //w key //Linux Machine			
+//   	       case 0x41: //W key
+//			case VK_UP:
+		        myOpenGLCanvas->keyDown(KEY_UP);//KEY_W);
+//		        myOpenGLCanvas->keyDown(KEY_W);
+                return;
+			//edited by Mike, 20201121
+//		   case 0x53: //S key //Windows Machine
+   	       case (int) 's': //s key //Linux Machine			
+				myOpenGLCanvas->keyDown(KEY_S);
+//		        myOpenGLCanvas->keyDown(KEY_DOWN);
+                return;     
+			//edited by Mike, 20201121
+//			case 0x4A: //J key //Windows Machine
+   	       case (int) 'j': //j key //Linux Machine			
+				myOpenGLCanvas->keyDown(KEY_J);
+                return;     
+			//edited by Mike, 20201121
+//		   case 0x4C: //L key //Windows Machine
+   	       case (int) 'l': //l key //Linux Machine			
+				myOpenGLCanvas->keyDown(KEY_L);
+                return;     
+			//edited by Mike, 20201121
+//			case 0x49: //I key //Windows Machine
+   	       case (int) 'i': //i key //Linux Machine			
+				myOpenGLCanvas->keyDown(KEY_I);
+                return;     
+			//edited by Mike, 20201121
+//			case 0x4B: //K key //Windows Machine
+   	       case (int) 'k': //k key //Linux Machine			
+				myOpenGLCanvas->keyDown(KEY_K);
+                return;     
+
+			//removed by Mike, 20201001 
+/*			               
+   	       case 13: //ENTER
+                myOpenGLCanvas->keyDown(KEY_ENTER);
+                return 0;     
+   	       case 80: //P
+   	            if (myOpenGLCanvas->currentState!=TITLE_SCREEN) {
+			        if (pause==0) //false
+			          pause=1; //make it true
+                    else pause=0;
+                }
+                return 0;     	        
+*/         						
+	}
 }
 //added by Mike, 20201002
 void keyUp (unsigned char key, int x, int y)
 {
 //    std::cout << "keyup " << key << "\n";
+	
+	//added by Mike, 20201121
+	switch (key)
+    {
+/*			   //removed by Mike, 20201121
+			   //TO-DO: -add: identify VK_SPACE in Linux Machine
+       	       case VK_SPACE:
+			        myOpenGLCanvas->keyUp(KEY_SPACE);
+                    return;     
+*/					
+	           //added by Mike, 20201013
+	           //reference: 
+	           //https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
+	           //last accessed: 20201013
+				//edited by Mike, 20201121			
+//			   case 0x41: //A key //Windows Machine
+			   case (int) 'a': //d key //Linux Machine
+				    myOpenGLCanvas->keyUp(KEY_A);
+                    return;
+				//edited by Mike, 20201121			
+	   	       //case 0x44: //D key //Windows Machine
+			   case (int) 'd': //d key //Linux Machine			
+//			        myOpenGLCanvas->keyUp(KEY_D);
+			        myOpenGLCanvas->keyUp(KEY_RIGHT);
+	                return;     
+				//edited by Mike, 20201121
+//	   	       case 0x57: //W key //Windows Machine
+			   case (int) 'w': //w key //Linux Machine			
+//			        myOpenGLCanvas->keyUp(KEY_W);
+			        myOpenGLCanvas->keyUp(KEY_UP);
+	                return;     
+				//edited by Mike, 20201121
+//	   	       case 0x53: //S key //Windows Machine
+			   case (int) 's': //s key //Linux Machine
+					myOpenGLCanvas->keyUp(KEY_S);
+//			        myOpenGLCanvas->keyUp(KEY_DOWN);
+	                return;     	
+				//edited by Mike, 20201121
+//			   case 0x4A: //J key //Windows Machine
+			   case (int) 'j': //j key //Linux Machine			
+					myOpenGLCanvas->keyUp(KEY_J);
+	                return;     
+				//edited by Mike, 20201121
+//				case 0x4C: //L key //Windows Machine
+			   case (int) 'l': //l key //Linux Machine			
+					myOpenGLCanvas->keyUp(KEY_L);
+	                return;     
+				//edited by Mike, 20201121
+//			case 0x49: //I key //Windows Machine
+			   case (int) 'i': //i key //Linux Machine			
+			        myOpenGLCanvas->keyUp(KEY_I);
+	                return;     
+			//edited by Mike, 20201121
+//			case 0x4B: //K key //Windows Machine
+   	       case (int) 'k': //k key //Linux Machine			
+					myOpenGLCanvas->keyUp(KEY_K);
+	                return;     
+
+       	       case 13: //ENTER
+                    myOpenGLCanvas->keyUp(KEY_ENTER);
+                    return;			
+        }
+        return;    			
 }
 
 //note: special functions, e.g. shift, control, arrow keys
@@ -343,16 +469,14 @@ void keyUp (unsigned char key, int x, int y)
 //added by Mike, 20201002
 void specialKeyDown (int specialKey, int x, int y)
 {
+	//noted by Mike, 20201121
+	//Note: space bar and escape key not detected
 //    std::cout << "keydown " << specialKey << "\n";  
   
     switch (specialKey)
     {
-/*				//TO-DO: -add: this        
-	        case VK_ESCAPE:
-	            PostQuitMessage(0);
-	            return 0;
-*/	            
-	        //added by Mike, 20201001
+/* //edited by Mike, 20201121
+			//added by Mike, 20201001
    	       case VK_LEFT:
 		        		myOpenGLCanvas->keyDown(KEY_LEFT);
                 return;
@@ -365,25 +489,32 @@ void specialKeyDown (int specialKey, int x, int y)
    	       case VK_DOWN:
 		        		myOpenGLCanvas->keyDown(KEY_DOWN);
                 return; 
-/*				 //removed by Mike, 20201002                    
-   	       case VK_SPACE:
-                myOpenGLCanvas->keyDown(KEY_SPACE);
+				 //removed by Mike, 20201002                    
+//   	       case VK_SPACE:
+//                myOpenGLCanvas->keyDown(KEY_SPACE);
+//                return;
+*/
+			//TO-DO: -add: this
+			//removed by Mike, 20201121
+/*
+		   case VK_ESCAPE:
+	            PostQuitMessage(0);
+	            return;// 0;
+*/
+		   //added by Mike, 20201001
+   	       case VK_LEFT:
+		        myOpenGLCanvas->keyDown(KEY_LEFT);
+                return;// 0;
+   	       case VK_RIGHT:
+		        myOpenGLCanvas->keyDown(KEY_RIGHT);
                 return;
-*/                
-			//removed by Mike, 20201001 
-/*			               
-   	       case 13: //ENTER
-                myOpenGLCanvas->keyDown(KEY_ENTER);
+   	       case VK_UP:
+		        myOpenGLCanvas->keyDown(KEY_UP);
+                return;                
+   	       case VK_DOWN:
+		        myOpenGLCanvas->keyDown(KEY_DOWN);
                 return;     
-   	       case 80: //P
-   	            if (myOpenGLCanvas->currentState!=TITLE_SCREEN) {
-			        if (pause==0) //false
-			          pause=1; //make it true
-                    else pause=0;
-                }
-                return;     	        
-*/                
-        }
+		}
         return;
 
 }
@@ -392,9 +523,11 @@ void specialKeyUp (int specialKey, int x, int y)
 {
 //    std::cout << "keyup " << specialKey << "\n";
     
-		switch (specialKey)
+	switch (specialKey)
     {
-   	       case VK_LEFT:
+//removed by Mike, 20201121			
+/*
+			case VK_LEFT:
 		        		myOpenGLCanvas->keyUp(KEY_LEFT);
                 return;
    	       case VK_RIGHT:
@@ -406,11 +539,23 @@ void specialKeyUp (int specialKey, int x, int y)
    	       case VK_DOWN:
 		        		myOpenGLCanvas->keyUp(KEY_DOWN);
                 return;
-/*         //removed by Mike, 20201002
-   	       case VK_SPACE:
-                myOpenGLCanvas->keyUp(KEY_SPACE);
-                return;
-*/                
+         //removed by Mike, 20201002
+//   	       case VK_SPACE:
+//                myOpenGLCanvas->keyUp(KEY_SPACE);
+//                return;
+*/
+       	       case VK_LEFT:
+			        myOpenGLCanvas->keyUp(KEY_LEFT);
+                    return;// 0;
+       	       case VK_RIGHT:
+			        myOpenGLCanvas->keyUp(KEY_RIGHT);
+                    return;
+       	       case VK_UP:
+			        myOpenGLCanvas->keyUp(KEY_UP);
+                    return;
+       	       case VK_DOWN:
+			        myOpenGLCanvas->keyUp(KEY_DOWN);
+                    return;         	
         }
         return;    
 }
