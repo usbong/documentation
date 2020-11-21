@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201019
- * @date updated: 20201116
+ * @date updated: 20201121
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -301,11 +301,17 @@ void drawCubeWithBlockTexture(float fSideLength, GLfloat tx, GLfloat ty, GLfloat
 		//TO-DO: -reverify: cause of cube translation when moving camera	
 //		glLineWidth(2.0f);
 	    glTranslatef(x, y, z);
-
-	    glTranslatef(fSideLength, 0.0f, fSideLength);
+	    
+		//edited by Mike, 20201121
+//	    glTranslatef(fSideLength, 0.0f, fSideLength);
+	    glTranslatef(0.0f, 0.0f, fSideLength);
+		//added due to inverted z-axis based on position of vertices 
+		glRotatef(180, 0.0f, 0.0f, 1.0f);
 				
 		glBegin(GL_QUADS);
+/*
 			// top face		
+			//note: added vertices counter-clock-wise
 	        glTexCoord2f(tx, ty);
 			glVertex3f(0.0f, 0.0f, 0.0f);
 
@@ -317,6 +323,20 @@ void drawCubeWithBlockTexture(float fSideLength, GLfloat tx, GLfloat ty, GLfloat
 
         	glTexCoord2f(tx + 0.078125f, ty);			
 			glVertex3f(-fSideLength, 0.0f, 0.0f);
+*/
+			// top face		
+	        glTexCoord2f(tx, ty);
+			glVertex3f(0.0f, 0.0f, 0.0f);
+
+        	glTexCoord2f(tx + 0.078125f, ty);			
+			glVertex3f(-fSideLength, 0.0f, 0.0f);
+
+        	glTexCoord2f(tx + 0.078125f, ty + 0.125f);
+			glVertex3f(-fSideLength, 0.0f, -fSideLength);
+
+			glTexCoord2f(tx, ty + 0.125f);			
+			glVertex3f(0.0f, 0.0f, -fSideLength);
+
 
 			//TO-DO: -update: this
 			glVertex3f(0.0f, 0.0f, 0.0f);	// front face
