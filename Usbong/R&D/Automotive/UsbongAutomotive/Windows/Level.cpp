@@ -286,8 +286,9 @@ void Level::setupLevel(int myLevelTextureObject)
 
     /* create OpenGL texture out of targa file */
     //edited by Mike, 20201119
-    load_tga("textures/font.tga");
-//    load_tga("textures/level.tga");
+//    load_tga("textures/font.tga");
+	//TO-DO: -reverify: if level.tga is loaded
+    load_tga("textures/level.tga");
     
 	/* set texture parameters */
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);

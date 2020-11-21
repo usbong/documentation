@@ -1094,8 +1094,14 @@ void OpenGLCanvas::drawGridWithZAxis() {
    		glEnd();   		   	  
 	 }
 
+
   	//added by Mike, 20201118
   	//LEVEL TEXTURE
+	//added by Mike, 20201121
+//	glColor3f(1.0f, 0.0f, 0.0f);
+//   glClearColor(0.0f, 0.0f, 0.0f, 0.0f); // Set background color to black and opaque
+   glClear(GL_COLOR_BUFFER_BIT);         // Clear the color buffer
+
     /* select and enable texture FONT_TEXTURE */
 	//edited by Mike, 20201012
     glBindTexture(GL_TEXTURE_2D, FONT_TEXTURE);
