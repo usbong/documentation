@@ -682,12 +682,57 @@ void OpenGLCanvas::render()
 	//edited by Mike, 20201122
 //   glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Set background color to black and opaque
 //   glClearColor(1.0f, 1.0f, 1.0f, 0.0f); // Set background color to white and not opaque
-   glClearColor(0.69f, 0.84f, 1.0f, 0.0f); // Set background color to white and not opaque
+	//removed by Mike, 20201122
+	//sky blue
+//   glClearColor(0.69f, 0.84f, 1.0f, 0.0f); // Set background color to white and not opaque
+	//edited by Mike, 20201122
+    glClearColor(1.0f, 1.0f, 1.0f, 0.0f); // Set background color to white and not opaque
 
 	//added by Mike, 20201012
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);    
     //removed by Mike, 20201015
 //    glViewport(0, 0, myWindowWidth, myWindowHeight);		// reset the viewport to new 
+
+	//Reference: https://community.khronos.org/t/gradient-background/54348/2;
+	//last accessed: 20201122
+	//answer by: NiCo1, 2008-03
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+		/* //horizontal
+		glBegin(GL_QUADS);
+			//red color
+			glColor3f(1.0,0.0,0.0);
+			glVertex2f(-1.0, 1.0);
+			glVertex2f(-1.0,-1.0);
+			//blue color
+			glColor3f(0.0,0.0,1.0);
+			glVertex2f(1.0,-1.0);
+			glVertex2f(1.0, 1.0);
+			glEnd();
+		*/
+	
+		glBegin(GL_QUADS);
+		//	glColor3f(0.0f,0.0f,0.0f); //black
+		//	glColor3f(1.0f,1.0f,1.0f); //white
+		
+			//TOP
+			//sky blue color; darker
+		//	glColor3f(0.51f, 0.73f, 0.98f);
+		//	glColor3f(0.08f, 0.51f, 1.00f);
+		//	glColor3f(0.0f, 0.32f, 0.67f);
+			glColor3f(0.0f, 0.44f, 0.67f);
+			glVertex2f(1.0, 1.0);
+			glVertex2f(-1.0, 1.0);
+		
+			//BOTTOM
+			//sky blue color; brighter
+			glColor3f(0.69f, 0.84f, 1.0f);
+			glVertex2f(-1.0,-1.0);
+			glVertex2f(1.0,-1.0);
+		glEnd();
 
 
     //set TOP-LEFT origin/anchor/reference point; quadrant 4, y-axis inverted; x and y positive
