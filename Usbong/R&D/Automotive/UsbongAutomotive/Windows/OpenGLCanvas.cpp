@@ -679,8 +679,10 @@ void OpenGLCanvas::render()
 	//note: this is to be print-ready in newsletter
 	//we use recycled paper
 	//edited by Mike, 2020116
-   glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Set background color to black and opaque
+	//edited by Mike, 20201122
+//   glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Set background color to black and opaque
 //   glClearColor(1.0f, 1.0f, 1.0f, 0.0f); // Set background color to white and not opaque
+   glClearColor(0.69f, 0.84f, 1.0f, 0.0f); // Set background color to white and not opaque
 
 	//added by Mike, 20201012
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);    

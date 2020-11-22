@@ -304,9 +304,16 @@ void drawCubeWithBlockTexture(float fSideLength, GLfloat tx, GLfloat ty, GLfloat
 	    
 		//edited by Mike, 20201121
 //	    glTranslatef(fSideLength, 0.0f, fSideLength);
-	    glTranslatef(0.0f, 0.0f, fSideLength);
+		//removed by Mike, 20201122
+		//based on position of vertices 
+//	    glTranslatef(0.0f, 0.0f, fSideLength);
+	
 		//added due to inverted z-axis based on position of vertices 
 		glRotatef(180, 0.0f, 0.0f, 1.0f);
+		//added by Mike, 20201122
+		//added due to inverted x-axis based on position of vertices 
+		glRotatef(180, 1.0f, 0.0f, 0.0f);
+
 				
 		glBegin(GL_QUADS);
 /*
