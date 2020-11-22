@@ -280,8 +280,9 @@ void Level::setupLevel(int myLevelTextureObject)
 	//removed by Mike, 20201010
 	//due to blank output
     //glEnable(GL_DEPTH_TEST);
-
-    /* select texture 1 */
+	
+	//edited by Mike, 20201122
+    /* select texture 2 */
     glBindTexture(GL_TEXTURE_2D, myLevelTextureObject);
 
     /* create OpenGL texture out of targa file */

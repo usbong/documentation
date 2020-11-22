@@ -298,7 +298,7 @@ void drawCube(float fSideLength)
 void drawCubeWithBlockTexture(float fSideLength, GLfloat tx, GLfloat ty, GLfloat tz, float x, float y, float z)
 {
 	glPushMatrix();
-		//TO-DO: -reverify: cause of cube translation when moving camera	
+		//TO-DO: -reverify: cause of excess cube translation when moving camera	
 //		glLineWidth(2.0f);
 	    glTranslatef(x, y, z);
 	    
@@ -336,7 +336,6 @@ void drawCubeWithBlockTexture(float fSideLength, GLfloat tx, GLfloat ty, GLfloat
 
 			glTexCoord2f(tx, ty + 0.125f);			
 			glVertex3f(0.0f, 0.0f, -fSideLength);
-
 
 			//TO-DO: -update: this
 			glVertex3f(0.0f, 0.0f, 0.0f);	// front face
