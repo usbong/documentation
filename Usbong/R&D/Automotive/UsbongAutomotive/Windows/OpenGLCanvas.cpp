@@ -1169,6 +1169,20 @@ void OpenGLCanvas::drawGridWithZAxis() {
 	//column : x-axis
 	
 	//note: add: randomly tile with texture
+
+	//TO-DO: -use: light effect
+	//TO-DO: -update: robotship
+	//TO-DO: -update: textures	
+	//TO-DO: -add: collision detection with tile blocks
+	
+	//added by Mike, 20201122
+    //Grass
+	sprintf(tempText,"G");
+ 	for (int iRowCount=0; iRowCount<=iRowCountMax; iRowCount++) {	
+	 	for (int iColumnCount=0; iColumnCount<=iColumnCountMax; iColumnCount++) {		
+			myLevel->draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iRowCount, tempText);
+		}
+	}
 	
   	//edited by Mike, 20201119
 	//TO-DO: -update: this
@@ -1184,6 +1198,20 @@ void OpenGLCanvas::drawGridWithZAxis() {
 
 	sprintf(tempText,"E");
 	myLevel->draw_level(0.0f, 1.0f, 0.0f, tempText);    	
+
+	//Tree
+	sprintf(tempText,"F");
+	myLevel->draw_level(6.0f, 0.0f, 6.0f, tempText);    	
+	myLevel->draw_level(6.0f, 1.0f, 6.0f, tempText);    	
+	myLevel->draw_level(6.0f, 2.0f, 6.0f, tempText);
+	sprintf(tempText,"E");
+	myLevel->draw_level(6.0f, 3.0f, 6.0f, tempText);    	
+	myLevel->draw_level(5.0f, 3.0f, 6.0f, tempText);    	
+	myLevel->draw_level(7.0f, 3.0f, 6.0f, tempText);    	
+	myLevel->draw_level(6.0f, 3.0f, 7.0f, tempText);    	
+	myLevel->draw_level(6.0f, 3.0f, 5.0f, tempText);    	
+	myLevel->draw_level(6.0f, 3.0f, 6.0f, tempText);    	
+
 
 /*
  	//columns
