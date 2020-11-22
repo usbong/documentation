@@ -303,11 +303,15 @@ void drawCubeWithBlockTexture(float fSideLength, GLfloat tx, GLfloat ty, GLfloat
 	    glTranslatef(x, y, z);
 	    
 		//edited by Mike, 20201121
-//	    glTranslatef(fSideLength, 0.0f, fSideLength);
+//   	glTranslatef(fSideLength, 0.0f, fSideLength);
 		//removed by Mike, 20201122
 		//based on position of vertices 
 //	    glTranslatef(0.0f, 0.0f, fSideLength);
-	
+		//edited by Mike, 20201122
+   		glTranslatef(0.0f, 0.0f, -fSideLength);
+
+		//due to top face not drawn
+		//TO-DO: -reverify: if we do not add top face 
 		//added due to inverted z-axis based on position of vertices 
 		glRotatef(180, 0.0f, 0.0f, 1.0f);
 		//added by Mike, 20201122
@@ -331,6 +335,9 @@ void drawCubeWithBlockTexture(float fSideLength, GLfloat tx, GLfloat ty, GLfloat
         	glTexCoord2f(tx + 0.078125f, ty);			
 			glVertex3f(-fSideLength, 0.0f, 0.0f);
 */
+			//TO-DO: -add: another texture for left, right, front, and back faces
+
+/*			
 			// top face		
 	        glTexCoord2f(tx, ty);
 			glVertex3f(0.0f, 0.0f, 0.0f);
@@ -343,23 +350,82 @@ void drawCubeWithBlockTexture(float fSideLength, GLfloat tx, GLfloat ty, GLfloat
 
 			glTexCoord2f(tx, ty + 0.125f);			
 			glVertex3f(0.0f, 0.0f, -fSideLength);
+*/
+			//reverify due to not drawn
+			//counter clockwise
+			// top face		
+	        glTexCoord2f(tx, ty);
+			glVertex3f(0.0f, 0.0f, 0.0f);
+
+        	glTexCoord2f(tx + 0.078125f, ty);			
+			glVertex3f(0.0f, 0.0f, -fSideLength);
+
+        	glTexCoord2f(tx + 0.078125f, ty + 0.125f);
+			glVertex3f(-fSideLength, 0.0f, -fSideLength);
+
+			glTexCoord2f(tx, ty + 0.125f);			
+			glVertex3f(-fSideLength, 0.0f, 0.0f);
+
 
 			//TO-DO: -update: this
+/*
 			glVertex3f(0.0f, 0.0f, 0.0f);	// front face
 			glVertex3f(-fSideLength, 0.0f, 0.0f);
 			glVertex3f(-fSideLength, -fSideLength, 0.0f);
 			glVertex3f(0.0f, -fSideLength, 0.0f);
+*/
 
+			//counter clockwise
+	        glTexCoord2f(tx, ty);
+			glVertex3f(0.0f, 0.0f, 0.0f);	// front face
+
+        	glTexCoord2f(tx + 0.078125f, ty);			
+			glVertex3f(-fSideLength, 0.0f, 0.0f);
+
+        	glTexCoord2f(tx + 0.078125f, ty + 0.125f);
+			glVertex3f(-fSideLength, -fSideLength, 0.0f);
+
+			glTexCoord2f(tx, ty + 0.125f);			
+			glVertex3f(0.0f, -fSideLength, 0.0f);
+
+
+/*			//edited by Mike, 20201122
 			glVertex3f(0.0f, 0.0f, 0.0f);	// right face
 			glVertex3f(0.0f, -fSideLength, 0.0f);
 			glVertex3f(0.0f, -fSideLength, -fSideLength);
 			glVertex3f(0.0f, 0.0f, -fSideLength);
+*/			
+	        glTexCoord2f(tx, ty);
+			glVertex3f(0.0f, 0.0f, 0.0f);	// right face
+
+        	glTexCoord2f(tx + 0.078125f, ty);			
+			glVertex3f(0.0f, -fSideLength, 0.0f);
+
+        	glTexCoord2f(tx + 0.078125f, ty + 0.125f);
+			glVertex3f(0.0f, -fSideLength, -fSideLength);
+
+			glTexCoord2f(tx, ty + 0.125f);			
+			glVertex3f(0.0f, 0.0f, -fSideLength);
+			
 			//edited by Mike, 2020114
 			//vertices drawn clock-wise
-			
+
+/*			//edited by Mike, 20201122
 			glVertex3f(-fSideLength, 0.0f, 0.0f);	// left face
 			glVertex3f(-fSideLength, 0.0f, -fSideLength);
 			glVertex3f(-fSideLength, -fSideLength, -fSideLength);
+			glVertex3f(-fSideLength, -fSideLength, 0.0f);
+*/
+	        glTexCoord2f(tx, ty);
+			glVertex3f(-fSideLength, 0.0f, 0.0f);	// left face
+
+        	glTexCoord2f(tx + 0.078125f, ty);			
+			glVertex3f(-fSideLength, 0.0f, -fSideLength);
+
+        	glTexCoord2f(tx + 0.078125f, ty + 0.125f);
+			glVertex3f(-fSideLength, -fSideLength, -fSideLength);
+
+			glTexCoord2f(tx, ty + 0.125f);			
 			glVertex3f(-fSideLength, -fSideLength, 0.0f);
 
 /*
@@ -368,10 +434,40 @@ void drawCubeWithBlockTexture(float fSideLength, GLfloat tx, GLfloat ty, GLfloat
 			glVertex3f(-fSideLength, -fSideLength, -fSideLength);
 			glVertex3f(-fSideLength, 0.0f, -fSideLength);
 */
+/*			//edited by Mike, 20201122
 			glVertex3f(0.0f, -fSideLength, 0.0f);	// bottom face
 			glVertex3f(0.0f, -fSideLength, -fSideLength);
 			glVertex3f(-fSideLength, -fSideLength, -fSideLength);
 			glVertex3f(-fSideLength, -fSideLength, 0.0f);
+*/
+/*
+			//counter clock-wise
+	        glTexCoord2f(tx, ty);
+			glVertex3f(0.0f, -fSideLength, 0.0f);	// bottom face
+
+        	glTexCoord2f(tx + 0.078125f, ty);			
+			glVertex3f(0.0f, -fSideLength, -fSideLength);
+
+        	glTexCoord2f(tx + 0.078125f, ty + 0.125f);
+			glVertex3f(-fSideLength, -fSideLength, -fSideLength);
+
+			glTexCoord2f(tx, ty + 0.125f);			
+			glVertex3f(-fSideLength, -fSideLength, 0.0f);
+*/
+			//TO-DO: -reverify due to not drawn
+			//clock-wise
+	        glTexCoord2f(tx, ty);
+			glVertex3f(0.0f, -fSideLength, 0.0f);	// bottom face
+
+        	glTexCoord2f(tx + 0.078125f, ty);			
+			glVertex3f(-fSideLength, -fSideLength, 0.0f);
+
+        	glTexCoord2f(tx + 0.078125f, ty + 0.125f);
+			glVertex3f(-fSideLength, -fSideLength, -fSideLength);
+
+			glTexCoord2f(tx, ty + 0.125f);			
+			glVertex3f(0.0f, -fSideLength, -fSideLength);
+
 
 			//edited by Mike, 20201114
 /*			glVertex3f(0.0f, 0.0f, -fSideLength);	// back face
@@ -386,10 +482,24 @@ void drawCubeWithBlockTexture(float fSideLength, GLfloat tx, GLfloat ty, GLfloat
 			glVertex3f(-fSideLength, -fSideLength, -fSideLength);
 			glVertex3f(0.0f, -fSideLength, -fSideLength);
 */
+
+/*			//edited by Mike, 20201122
 			//draw vertices clockwise
 			glVertex3f(0.0f, 0.0f, -fSideLength);	// back face
 			glVertex3f(0.0f, -fSideLength, -fSideLength);
 			glVertex3f(-fSideLength, -fSideLength, -fSideLength);
+			glVertex3f(-fSideLength, 0.0f, -fSideLength);
+*/
+	        glTexCoord2f(tx, ty);
+			glVertex3f(0.0f, 0.0f, -fSideLength);	// back face
+
+        	glTexCoord2f(tx + 0.078125f, ty);			
+			glVertex3f(0.0f, -fSideLength, -fSideLength);
+
+        	glTexCoord2f(tx + 0.078125f, ty + 0.125f);
+			glVertex3f(-fSideLength, -fSideLength, -fSideLength);
+
+			glTexCoord2f(tx, ty + 0.125f);			
 			glVertex3f(-fSideLength, 0.0f, -fSideLength);
 
 		glEnd();

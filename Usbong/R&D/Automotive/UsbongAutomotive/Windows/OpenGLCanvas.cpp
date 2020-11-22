@@ -756,6 +756,8 @@ void OpenGLCanvas::render()
 	//--------------------------------------------------------
 	//removed by Mike, 20201118
 //    glEnable(GL_CULL_FACE);
+//https://www.khronos.org/opengl/wiki/Face_Culling; last accessed: 20201122
+//    glCullFace(GL_BACK);
 
 	//removed by Mike, 20201010
 	//TO-DO: -reverify: this
@@ -1130,6 +1132,13 @@ void OpenGLCanvas::drawGridWithZAxis() {
 	//TO-DO: -update: level texture 
 	sprintf(tempText,"E");
 	myLevel->draw_level(0.0f, 0.0f, 0.0f, tempText);    	
+
+	//added by Mike, 20201122
+	sprintf(tempText,"E");
+	myLevel->draw_level(1.0f, 0.0f, 0.0f, tempText);    	
+
+	sprintf(tempText,"E");
+	myLevel->draw_level(0.0f, 1.0f, 0.0f, tempText);    	
 
 /*
  	//columns

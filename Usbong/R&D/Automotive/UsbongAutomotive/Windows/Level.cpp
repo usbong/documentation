@@ -286,6 +286,7 @@ void Level::setupLevel(int myLevelTextureObject)
     glBindTexture(GL_TEXTURE_2D, myLevelTextureObject);
 
     /* create OpenGL texture out of targa file */
+    //TO-DO: -reverify: cube face using font texture
     //edited by Mike, 20201119
 //    load_tga("textures/font.tga");
 	//TO-DO: -reverify: if level.tga is loaded
@@ -298,29 +299,29 @@ void Level::setupLevel(int myLevelTextureObject)
                     GL_LINEAR_MIPMAP_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
-    /* unselect texture myFontTextureObject */
+    /* unselect texture myLevelTextureObject */
     glBindTexture(GL_TEXTURE_2D, 0);
 
-    /* setup alpha blending */
+    // setup alpha blending
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glEnable(GL_BLEND);
 
-    /* set background color to bluish /* set texture parameters */
+    // set background color to bluish // set texture parameters
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
                     GL_LINEAR_MIPMAP_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
-    /* unselect texture myFontTextureObject */
+    // unselect texture myLevelTextureObject
     glBindTexture(GL_TEXTURE_2D, 0);
 
-    /* setup alpha blending */
+    // setup alpha blending
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glEnable(GL_BLEND);
 
 	//removed by Mike, 20201012
-    /* set background color to bluish to demonstrate font transparency */
-//    glClearColor(0.0f, 0.0f, 0.25f, 1.0f); /* to demonstrate font transparency */
+    // set background color to bluish to demonstrate font transparency
+//    glClearColor(0.0f, 0.0f, 0.25f, 1.0f); // to demonstrate font transparency
 
 }
