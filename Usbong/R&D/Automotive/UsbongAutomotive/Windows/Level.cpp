@@ -121,6 +121,12 @@ void Level::load_tga(char *filename)
     fclose(file);
     gluBuild2DMipmaps(GL_TEXTURE_2D, GL_RGBA, targa.width, targa.height,
                       GL_RGBA, GL_UNSIGNED_BYTE, data);
+
+/*	//edited by Mike, 20201123
+    gluBuild2DMipmaps(GL_TEXTURE_2D, GL_RGB, targa.width, targa.height,
+                      GL_RGB, GL_UNSIGNED_BYTE, data);
+*/
+
     free(data);
     
 /*   char str[700];                                       
@@ -293,15 +299,39 @@ void Level::setupLevel(int myLevelTextureObject)
     load_tga("textures/level.tga");
     
 	/* set texture parameters */
+	//Note: GL_CLAMP: each texture had a 1-pixel border
+	//Reference: https://www.khronos.org/opengl/wiki/Common_Mistakes;
+	//last accessed: 20201123
+/*	//edited by Mike, 20201123
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
                     GL_LINEAR_MIPMAP_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+*/
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+
+/*
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
+*/
+/*    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
+                    GL_LINEAR_MIPMAP_NEAREST);
+*/
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
+                    GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+/*
+glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_BASE_LEVEL, 0); 
+glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAX_LEVEL, 0); 
+*/
 
     /* unselect texture myLevelTextureObject */
     glBindTexture(GL_TEXTURE_2D, 0);
 
+/*	//removed by Mike, 20201123
     // setup alpha blending
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glEnable(GL_BLEND);
@@ -319,7 +349,7 @@ void Level::setupLevel(int myLevelTextureObject)
     // setup alpha blending
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glEnable(GL_BLEND);
-
+*/
 	//removed by Mike, 20201012
     // set background color to bluish to demonstrate font transparency
 //    glClearColor(0.0f, 0.0f, 0.25f, 1.0f); // to demonstrate font transparency
