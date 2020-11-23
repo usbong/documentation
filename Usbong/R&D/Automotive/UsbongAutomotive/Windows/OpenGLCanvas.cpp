@@ -1111,7 +1111,8 @@ void OpenGLCanvas::drawGridWithZAxis() {
 //	float fGridSquareHeight = myWindowHeight/iRowCountMax/100.0;
 
 
-	//removed by Mike, 20201119
+	//removed by Mike, 20201123
+/*
 	//TO-DO: -add: grid after drawing level 
 	//due to glClear(GL_COLOR_BUFFER_BIT); // Clear the color buffer
 	//edited by Mike, 20201120
@@ -1144,7 +1145,7 @@ void OpenGLCanvas::drawGridWithZAxis() {
 
    		glEnd();   		   	  
 	 }
-
+*/
 
   	//added by Mike, 20201118
   	//LEVEL TEXTURE

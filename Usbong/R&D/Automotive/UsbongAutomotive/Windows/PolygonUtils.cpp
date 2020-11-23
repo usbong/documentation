@@ -559,6 +559,9 @@ void drawCubeWithBlockTexture(float fSideLength, GLfloat tx, GLfloat ty, GLfloat
 		// Draw black wireframe version of geometry
 //		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
+		//TO-DO: -reverify: this due to wireframe still drawn with cube
+		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+
 /*		//removed by Mike, 20201114
 		//added by Mike, 20201114
 		glDepthFunc(GL_LEQUAL);
@@ -569,7 +572,11 @@ void drawCubeWithBlockTexture(float fSideLength, GLfloat tx, GLfloat ty, GLfloat
         glPolygonOffset( 1.0, 1.0 ); //3.0, 1.0 );	
 */		
 
-		glLineWidth(2.0f);
+		//removed by Mike, 20201123
+//		glLineWidth(2.0f);
+//		glLineWidth(1.0f);
+//		glDisable(GL_LINE_WIDTH);
+//		glLineWidth(0.0f);
 		
 		glBegin(GL_QUADS);
 			//note: inverted y-axis; top face becomes bottom face
