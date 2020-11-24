@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201118
- * @date updated: 20201120
+ * @date updated: 20201124
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -310,8 +310,25 @@ void Level::setupLevel(int myLevelTextureObject)
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 */
 
+/*	//edited by Mike, 20201124
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+*/
+/*
+glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_S,GL_CLAMP_TO_BORDER);
+glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_T,GL_CLAMP_TO_BORDER);
+*/
+
+//Reference: https://www.opengl.org/archives/resources/code/samples/sig99/advanced99/notes/node64.html;
+//last accessed: 20201124
+
+//TO-DO: -reverify: this due to computer still draws border at the edges
+
+glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_S,GL_CLAMP_TO_BORDER);
+glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_T,GL_CLAMP_TO_BORDER);
+
+GLfloat color[4]={1,1,1,1};
+glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, color);
 
 /*
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
@@ -320,13 +337,23 @@ void Level::setupLevel(int myLevelTextureObject)
 /*    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
                     GL_LINEAR_MIPMAP_NEAREST);
 */
+
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
                     GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+
 /*
 glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_BASE_LEVEL, 0); 
 glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAX_LEVEL, 0); 
 */
+
+/*
+float colour[4] = {1.0f, 0.0f, 1.0f, 1.0f};
+glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, colour);
+*/
+
+
 
     /* unselect texture myLevelTextureObject */
     glBindTexture(GL_TEXTURE_2D, 0);
@@ -353,5 +380,6 @@ glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAX_LEVEL, 0);
 	//removed by Mike, 20201012
     // set background color to bluish to demonstrate font transparency
 //    glClearColor(0.0f, 0.0f, 0.25f, 1.0f); // to demonstrate font transparency
+//    glClearColor(0.0f, 1.0f, 0.0f, 1.0f); // to demonstrate font transparency
 
 }

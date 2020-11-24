@@ -1179,11 +1179,13 @@ void OpenGLCanvas::drawGridWithZAxis() {
 	//added by Mike, 20201122
     //Grass
 	sprintf(tempText,"G");
+//    glColor3f(0.14f, 0.68f, 0.06f); // Green
  	for (int iRowCount=0; iRowCount<=iRowCountMax; iRowCount++) {	
 	 	for (int iColumnCount=0; iColumnCount<=iColumnCountMax; iColumnCount++) {		
 			myLevel->draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iRowCount, tempText);
 		}
 	}
+//    glColor3f(1.0f, 1.0f, 1.0f); // white
 	
   	//edited by Mike, 20201119
 	//TO-DO: -update: this

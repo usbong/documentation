@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201019
- * @date updated: 20201121
+ * @date updated: 20201123
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -365,6 +365,10 @@ glCullFace(GL_BACK);
 		//TO-DO: -reverify: this due to wireframe still drawn with cube
 		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
+
+//		glDepthFunc(GL_LESS);
+//		glDepthFunc(GL_LEQUAL);
+
 /*		//removed by Mike, 20201114
 		//added by Mike, 20201114
 		glDepthFunc(GL_LEQUAL);
@@ -382,10 +386,17 @@ glCullFace(GL_BACK);
 //		glDisable(GL_LINE_WIDTH);
 //		glLineWidth(0.0f);
 
-glPointSize(0.1);
+//glPointSize(0.01f);
 
-		//edited by Mike, 20201123		
+		//edited by Mike, 20201123
 //		glColor3f(0.0f,1.0f,0.0f);
+//		glColor4f(0.0f,0.0f,0.0f,0.5f);
+
+//glDisable(GL_LIGHTING);
+//glDisable(GL_TEXTURE_2D);
+
+//glDisable(GL_TEXTURE_2D);
+//glColor3f(1.0f, 1.0f, 1.0f);
 
 		glBegin(GL_QUADS);
 			//note: inverted y-axis; top face becomes bottom face
@@ -508,7 +519,7 @@ glPointSize(0.1);
 			glVertex3f(0.0f, -fSideLength, -fSideLength);
 */
 
-/*			//edited by Mike, 20201123
+			//edited by Mike, 20201123
 			//note: y-axis inverted
 			// bottom face becomes top face 		
 			//set y to be at origin, i.e. 0.0f
@@ -523,9 +534,9 @@ glPointSize(0.1);
 
 			glTexCoord2f(tx, ty + 0.125f);			
 			glVertex3f(0.0f, 0.0f, -fSideLength);
-*/
 
-/* 			//note: use technique +0.5f to create effect, e.g. dishevelled leaves of tree
+
+/* 			//note: use technique +0.5f to create effect, e.g. disheveled leaves of tree
 	        glTexCoord2f(tx, ty);
 			glVertex3f(0.0f+0.5f, 0.0f, 0.0f+0.5f);
 
@@ -538,6 +549,7 @@ glPointSize(0.1);
 			glTexCoord2f(tx, ty + 0.125f);			
 			glVertex3f(0.0f+0.5f, 0.0f, -fSideLength+0.5f);
 */
+/*
 			//TO-DO: -reverify: due to computer still draws borders
 	        glTexCoord2f(tx, ty);
 			glVertex3f(0.0f-0.03f, 0.0f, 0.0f-0.03f);
@@ -550,7 +562,7 @@ glPointSize(0.1);
 
 			glTexCoord2f(tx, ty + 0.125f);			
 			glVertex3f(0.0f-0.03f, 0.0f, -fSideLength+0.03f);
-
+*/
 			//edited by Mike, 20201114
 /*			glVertex3f(0.0f, 0.0f, -fSideLength);	// back face
 			glVertex3f(-fSideLength, 0.0f, -fSideLength);
@@ -595,6 +607,10 @@ glPointSize(0.1);
 
 		//added by Mike, 20201114; removed by Mike, 2020114
 //		glDepthFunc(GL_LESS);
+
+//glEnable(GL_LIGHTING);
+//glEnable(GL_TEXTURE_2D);
+//glColor3f(1.0f, 1.0f, 1.0f);
 
 	glPopMatrix();
 }

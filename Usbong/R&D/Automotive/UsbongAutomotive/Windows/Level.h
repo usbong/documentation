@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201118
- * @date updated: 20201123
+ * @date updated: 20201124
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -35,6 +35,8 @@
 #define GL_CLAMP_TO_EDGE 0x812F
 #define GL_TEXTURE_BASE_LEVEL 0x813C 
 #define GL_TEXTURE_MAX_LEVEL 0x813D
+//added by Mike, 20201124
+#define GL_CLAMP_TO_BORDER 0x812D
 
 class Level
 {
