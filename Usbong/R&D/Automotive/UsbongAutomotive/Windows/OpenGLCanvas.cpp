@@ -299,8 +299,7 @@ bool OpenGLCanvas::init()
 
 	//TO-DO: -update: this
     //added by Mike, 20201118
-    myLevel = new Level();
-    //edited by Mike, 20201122
+    myLevel = new Level();    
     myLevel->setupLevel(LEVEL_TEXTURE); //FONT_TEXTURE);
 
 	return true;
@@ -1179,13 +1178,24 @@ void OpenGLCanvas::drawGridWithZAxis() {
 	//added by Mike, 20201122
     //Grass
 	sprintf(tempText,"G");
-//    glColor3f(0.14f, 0.68f, 0.06f); // Green
+
+	//added by Mike, 20201124
+    glColor3f(0.14f, 0.68f, 0.06f); // Green
+
  	for (int iRowCount=0; iRowCount<=iRowCountMax; iRowCount++) {	
 	 	for (int iColumnCount=0; iColumnCount<=iColumnCountMax; iColumnCount++) {		
+			//added by Mike, 20201124
+			//execute this when using solid colors
+			//for computer to not draw borders
+			glBindTexture( GL_TEXTURE_2D, 0 );
+
 			myLevel->draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iRowCount, tempText);
 		}
 	}
-//    glColor3f(1.0f, 1.0f, 1.0f); // white
+
+	//added by Mike, 20201124
+    glColor3f(1.0f, 1.0f, 1.0f); // white
+	glBindTexture( GL_TEXTURE_2D, LEVEL_TEXTURE );
 	
   	//edited by Mike, 20201119
 	//TO-DO: -update: this
