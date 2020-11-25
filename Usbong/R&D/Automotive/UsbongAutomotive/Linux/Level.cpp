@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201118
- * @date updated: 20201120
+ * @date updated: 20201125
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -121,6 +121,12 @@ void Level::load_tga(char *filename)
     fclose(file);
     gluBuild2DMipmaps(GL_TEXTURE_2D, GL_RGBA, targa.width, targa.height,
                       GL_RGBA, GL_UNSIGNED_BYTE, data);
+
+/*	//edited by Mike, 20201123
+    gluBuild2DMipmaps(GL_TEXTURE_2D, GL_RGB, targa.width, targa.height,
+                      GL_RGB, GL_UNSIGNED_BYTE, data);
+*/
+
     free(data);
     
 /*   char str[700];                                       
@@ -280,46 +286,101 @@ void Level::setupLevel(int myLevelTextureObject)
 	//removed by Mike, 20201010
 	//due to blank output
     //glEnable(GL_DEPTH_TEST);
-
-    /* select texture 1 */
+	
+	//edited by Mike, 20201122
+    /* select texture 2 */
     glBindTexture(GL_TEXTURE_2D, myLevelTextureObject);
 
     /* create OpenGL texture out of targa file */
+    //TO-DO: -reverify: cube face using font texture
     //edited by Mike, 20201119
 //    load_tga("textures/font.tga");
 	//TO-DO: -reverify: if level.tga is loaded
     load_tga("textures/level.tga");
     
 	/* set texture parameters */
+	//Note: GL_CLAMP: each texture had a 1-pixel border
+	//Reference: https://www.khronos.org/opengl/wiki/Common_Mistakes;
+	//last accessed: 20201123
+/*	//edited by Mike, 20201123
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
+                    GL_LINEAR_MIPMAP_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+*/
+
+	//edited by Mike, 20201124
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+
+/*
+glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_S,GL_CLAMP_TO_BORDER);
+glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_T,GL_CLAMP_TO_BORDER);
+*/
+
+//Reference: https://www.opengl.org/archives/resources/code/samples/sig99/advanced99/notes/node64.html;
+//last accessed: 20201124
+
+//TO-DO: -reverify: this due to computer still draws border at the edges
+/*
+glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_S,GL_CLAMP_TO_BORDER);
+glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_T,GL_CLAMP_TO_BORDER);
+
+GLfloat color[4]={1,1,1,1};
+glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, color);
+*/
+
+/*
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
+*/
+/*    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
+                    GL_LINEAR_MIPMAP_NEAREST);
+*/
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
+                    GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+
+/*
+glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_BASE_LEVEL, 0); 
+glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAX_LEVEL, 0); 
+*/
+
+/*
+float colour[4] = {1.0f, 0.0f, 1.0f, 1.0f};
+glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, colour);
+*/
+
+
+
+    /* unselect texture myLevelTextureObject */
+    glBindTexture(GL_TEXTURE_2D, 0);
+
+/*	//removed by Mike, 20201123
+    // setup alpha blending
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glEnable(GL_BLEND);
+
+    // set background color to bluish // set texture parameters
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
                     GL_LINEAR_MIPMAP_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
-    /* unselect texture myFontTextureObject */
+    // unselect texture myLevelTextureObject
     glBindTexture(GL_TEXTURE_2D, 0);
 
-    /* setup alpha blending */
+    // setup alpha blending
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glEnable(GL_BLEND);
-
-    /* set background color to bluish /* set texture parameters */
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
-                    GL_LINEAR_MIPMAP_NEAREST);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
-    /* unselect texture myFontTextureObject */
-    glBindTexture(GL_TEXTURE_2D, 0);
-
-    /* setup alpha blending */
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    glEnable(GL_BLEND);
-
+*/
 	//removed by Mike, 20201012
-    /* set background color to bluish to demonstrate font transparency */
-//    glClearColor(0.0f, 0.0f, 0.25f, 1.0f); /* to demonstrate font transparency */
+    // set background color to bluish to demonstrate font transparency
+//    glClearColor(0.0f, 0.0f, 0.25f, 1.0f); // to demonstrate font transparency
+//    glClearColor(0.0f, 1.0f, 0.0f, 1.0f); // to demonstrate font transparency
 
 }

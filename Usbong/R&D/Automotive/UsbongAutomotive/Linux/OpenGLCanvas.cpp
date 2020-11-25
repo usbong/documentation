@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20201121
+ * @date updated: 20201125
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -57,7 +57,7 @@
 #endif
 
 #include <stdio.h>
-#include <math.h> //added by Mike, 20201121
+//#include <math.h>
 
 #include "OpenGLCanvas.h"
 
@@ -308,14 +308,13 @@ bool OpenGLCanvas::init()
 //        myAsteroid[i]->setOpenGLCanvas(this);
     }
 	//-------------------------------------------
-
     //added by Mike, 20201011
     setupFont(FONT_TEXTURE);
 
 	//TO-DO: -update: this
     //added by Mike, 20201118
-    myLevel = new Level();
-    myLevel->setupLevel(FONT_TEXTURE);
+    myLevel = new Level();    
+    myLevel->setupLevel(LEVEL_TEXTURE); //FONT_TEXTURE);
 
 	return true;
 }
@@ -693,13 +692,60 @@ void OpenGLCanvas::render()
 	//note: this is to be print-ready in newsletter
 	//we use recycled paper
 	//edited by Mike, 2020116
-   glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Set background color to black and opaque
+	//edited by Mike, 20201122
+//   glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Set background color to black and opaque
 //   glClearColor(1.0f, 1.0f, 1.0f, 0.0f); // Set background color to white and not opaque
+	//removed by Mike, 20201122
+	//sky blue
+//   glClearColor(0.69f, 0.84f, 1.0f, 0.0f); // Set background color to white and not opaque
+	//edited by Mike, 20201122
+    glClearColor(1.0f, 1.0f, 1.0f, 0.0f); // Set background color to white and not opaque
 
 	//added by Mike, 20201012
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);    
     //removed by Mike, 20201015
 //    glViewport(0, 0, myWindowWidth, myWindowHeight);		// reset the viewport to new 
+
+	//Reference: https://community.khronos.org/t/gradient-background/54348/2;
+	//last accessed: 20201122
+	//answer by: NiCo1, 2008-03
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+		/* //horizontal
+		glBegin(GL_QUADS);
+			//red color
+			glColor3f(1.0,0.0,0.0);
+			glVertex2f(-1.0, 1.0);
+			glVertex2f(-1.0,-1.0);
+			//blue color
+			glColor3f(0.0,0.0,1.0);
+			glVertex2f(1.0,-1.0);
+			glVertex2f(1.0, 1.0);
+			glEnd();
+		*/
+	
+		glBegin(GL_QUADS);
+		//	glColor3f(0.0f,0.0f,0.0f); //black
+		//	glColor3f(1.0f,1.0f,1.0f); //white
+		
+			//TOP
+			//sky blue color; darker
+		//	glColor3f(0.51f, 0.73f, 0.98f);
+		//	glColor3f(0.08f, 0.51f, 1.00f);
+		//	glColor3f(0.0f, 0.32f, 0.67f);
+			glColor3f(0.0f, 0.44f, 0.67f);
+			glVertex2f(1.0, 1.0);
+			glVertex2f(-1.0, 1.0);
+		
+			//BOTTOM
+			//sky blue color; brighter
+			glColor3f(0.69f, 0.84f, 1.0f);
+			glVertex2f(-1.0,-1.0);
+			glVertex2f(1.0,-1.0);
+		glEnd();
 
 
     //set TOP-LEFT origin/anchor/reference point; quadrant 4, y-axis inverted; x and y positive
@@ -768,6 +814,8 @@ void OpenGLCanvas::render()
 	//--------------------------------------------------------
 	//removed by Mike, 20201118
 //    glEnable(GL_CULL_FACE);
+//https://www.khronos.org/opengl/wiki/Face_Culling; last accessed: 20201122
+//    glCullFace(GL_BACK);
 
 	//removed by Mike, 20201010
 	//TO-DO: -reverify: this
@@ -1076,9 +1124,12 @@ void OpenGLCanvas::drawGridWithZAxis() {
 //	float fGridSquareHeight = myWindowHeight/iRowCountMax/100.0;
 
 
-	//removed by Mike, 20201119
+	//removed by Mike, 20201123
+/*
+	//TO-DO: -add: grid after drawing level 
+	//due to glClear(GL_COLOR_BUFFER_BIT); // Clear the color buffer
 	//edited by Mike, 20201120
-	
+
    // Draw a Green Line top-left origin; Quadrant 4, y-axis inverted; x and y positive
    //rows   
    	//edited by Mike, 20201002
@@ -1107,18 +1158,23 @@ void OpenGLCanvas::drawGridWithZAxis() {
 
    		glEnd();   		   	  
 	 }
-
+*/
 
   	//added by Mike, 20201118
   	//LEVEL TEXTURE
 	//added by Mike, 20201121
-//	glColor3f(1.0f, 0.0f, 0.0f);
+	//previous color of grid: green
+    glColor3f(1.0f, 1.0f, 1.0f); // set back to default
+	//removed by Mike, 20201122
+	//due to font and level textures cleared
+/*	
 //   glClearColor(0.0f, 0.0f, 0.0f, 0.0f); // Set background color to black and opaque
-   glClear(GL_COLOR_BUFFER_BIT);         // Clear the color buffer
-
-    /* select and enable texture FONT_TEXTURE */
-	//edited by Mike, 20201012
-    glBindTexture(GL_TEXTURE_2D, FONT_TEXTURE);
+//   glClear(GL_COLOR_BUFFER_BIT);         // Clear the color buffer
+*/
+    /* select and enable texture LEVEL_TEXTURE */
+	//edited by Mike, 20201122
+//    glBindTexture(GL_TEXTURE_2D, FONT_TEXTURE);
+    glBindTexture(GL_TEXTURE_2D, LEVEL_TEXTURE);
     glEnable(GL_TEXTURE_2D);
 
 	//TO-DO: -fix: column's right border 
@@ -1127,21 +1183,73 @@ void OpenGLCanvas::drawGridWithZAxis() {
 	//column : x-axis
 	
 	//note: add: randomly tile with texture
+
+	//TO-DO: -use: light effect
+	//TO-DO: -update: robotship
+	//TO-DO: -update: textures	
+	//TO-DO: -add: collision detection with tile blocks
+	
+	//added by Mike, 20201122
+    //Grass
+	sprintf(tempText,"G");
+
+	//added by Mike, 20201124
+    glColor3f(0.14f, 0.68f, 0.06f); // Green
+
+ 	for (int iRowCount=0; iRowCount<=iRowCountMax; iRowCount++) {	
+	 	for (int iColumnCount=0; iColumnCount<=iColumnCountMax; iColumnCount++) {		
+			//added by Mike, 20201124
+			//execute this when using solid colors
+			//for computer to not draw borders
+			glBindTexture( GL_TEXTURE_2D, 0 );
+
+			myLevel->draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iRowCount, tempText);
+		}
+	}
+
+	//added by Mike, 20201124
+    glColor3f(1.0f, 1.0f, 1.0f); // white
+	glBindTexture( GL_TEXTURE_2D, LEVEL_TEXTURE );
 	
   	//edited by Mike, 20201119
 	//TO-DO: -update: this
 	//note: D = "Door"
 //	sprintf(tempText,"D");
-//	myLevel->draw_level(0.0f, 0.0f, 0.0f, tempText);    	
+	//TO-DO: -update: level texture 
+	sprintf(tempText,"E");
+	myLevel->draw_level(0.0f, 0.0f, 0.0f, tempText);    	
+
+	//added by Mike, 20201122
+	sprintf(tempText,"E");
+	myLevel->draw_level(1.0f, 0.0f, 0.0f, tempText);    	
+
+	sprintf(tempText,"E");
+	myLevel->draw_level(0.0f, 1.0f, 0.0f, tempText);    	
+
+	//Tree
+	sprintf(tempText,"F");
+	myLevel->draw_level(6.0f, 0.0f, 6.0f, tempText);    	
+	myLevel->draw_level(6.0f, 1.0f, 6.0f, tempText);    	
+	myLevel->draw_level(6.0f, 2.0f, 6.0f, tempText);
+	sprintf(tempText,"E");
+	myLevel->draw_level(6.0f, 3.0f, 6.0f, tempText);    	
+	myLevel->draw_level(5.0f, 3.0f, 6.0f, tempText);    	
+	myLevel->draw_level(7.0f, 3.0f, 6.0f, tempText);    	
+	myLevel->draw_level(6.0f, 3.0f, 7.0f, tempText);    	
+	myLevel->draw_level(6.0f, 3.0f, 5.0f, tempText);    	
+	myLevel->draw_level(6.0f, 3.0f, 6.0f, tempText);    	
+
+
+/*
  	//columns
    	//edited by Mike, 20201015   	
     //rows   
 	sprintf(tempText,"D");
  	for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {	
 	 	for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {		
-/*			//edited by Mike, 20201120
-	    	myLevel->draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iRowCount, tempText);
-*/
+//			//edited by Mike, 20201120
+//	    	myLevel->draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iRowCount, tempText);
+
 			//TO-DO: -update: this
 			//added by Mike, 20201120	    	
 //	    	if ((iColumnCount%3==0) && (iRowCount%7==0)) {
@@ -1155,13 +1263,14 @@ void OpenGLCanvas::drawGridWithZAxis() {
 			}
 		}
 	}
+*/
 
 /*	
 	//added by Mike, 20201120
 	sprintf(tempText,"E");
 	myLevel->draw_level(fGridSquareWidth*6,0.0f, fGridSquareHeight*6, tempText);
 */
-
+	//removed by Mike, 20201122
     glDisable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, 0);
 
@@ -1692,4 +1801,6 @@ void OpenGLCanvas::changeState(int s)
 {
   currentState=s;                  
 }
+
+
 
