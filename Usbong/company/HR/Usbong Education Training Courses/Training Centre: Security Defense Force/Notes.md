@@ -75,6 +75,7 @@ Breathe slowly; Exhale slowly
 
 2) Fujitsu Group Total Life. (2008). Information Magazine: プラスワン（Plus 1） (No. 74, Summer 2008). Japan: Fujitsu Health Insurance Group et al.<br/>
 --> 「お悩み12：どこでも誰でも簡単にできるストレス解消法」<br/>
+--> "Iyong Alinlangan#12: Simpleng paraan ng paglabas ng istres: Saan man, kahit sino" (Translated from nihongo by SYSON, MICHAEL B.)<br/>
 --> 浜松医科大学名誉教授：高田明和先生<br/>
 --> 1935年静岡県生まれ。慶応大学医学部大学院修了、医学博士。<br/>
 --> ニューヨーク州立大学助教授、浜松医科大学教授をへて現職。<br/>
