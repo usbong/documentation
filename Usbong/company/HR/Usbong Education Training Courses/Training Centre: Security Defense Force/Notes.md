@@ -34,6 +34,8 @@
 --> <b>"Terrorist"/Terorista:</b> Tao na gumagawa ng panloloko at pisikal na pananakit sa isa at higit pang mga tao.<br/>
 --> <b>"Communist Terrorist":</b> Tao na naniwala na sagana na siya, kaya lang naubusan gawa ng pagwawaldas; naging Terorista upang mabilis na makakuha ng pera.<br/>
 
+#### Recommended Reading: ["THE PRESIDENT’S PENULTIMATE REPORT TO THE PEOPLE 2016-2020"](https://pcoo.gov.ph/downloads/2020-PRP-PRRD.pdf)
+
 ### Part 2
 Ito'y kapag nakararanas ka ng istres dahil ang pakiramdam mo, wala ka nang kontrol sa mga nangyayari.<br/>
 <br/>
