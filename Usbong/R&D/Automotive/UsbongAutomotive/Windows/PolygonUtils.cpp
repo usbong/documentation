@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201019
- * @date updated: 20201123
+ * @date updated: 20201129
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -505,7 +505,9 @@ glCullFace(GL_BACK);
 }
 
 //PrevV20201124
-//TO-DO: add: fBorderWidth to eliminate excess space between cubes
+//edited by Mike, 20201129
+//+added: fBorderWidth to eliminate excess space between cubes
+//TO-DO: -add: fBorderWidth to rest of cube faces, besides top face
 void drawCubeWithBlockTexture(float fSideLength, GLfloat tx, GLfloat ty, GLfloat tz, float x, float y, float z)
 {
 	glPushMatrix();
@@ -725,11 +727,11 @@ glCullFace(GL_BACK);
 			glVertex3f(0.0f, -fSideLength, -fSideLength);
 */
 
-			//edited by Mike, 20201123
+			//edited by Mike, 20201129			
 			//note: y-axis inverted
 			// bottom face becomes top face 		
 			//set y to be at origin, i.e. 0.0f
-	        glTexCoord2f(tx, ty);
+/*	        glTexCoord2f(tx, ty);
 			glVertex3f(0.0f, 0.0f, 0.0f);
 
         	glTexCoord2f(tx + 0.078125f, ty);			
@@ -741,7 +743,23 @@ glCullFace(GL_BACK);
 			glTexCoord2f(tx, ty + 0.125f);			
 			glVertex3f(0.0f, 0.0f, -fSideLength);
 
+*/
+//			float fBorderWidth = 0.05f;
+			float fBorderWidth = 0.0125f;
 
+	        glTexCoord2f(tx, ty);
+			glVertex3f(0.0f+fBorderWidth, 0.0f, 0.0f+fBorderWidth);
+
+        	glTexCoord2f(tx + 0.078125f, ty);			
+			glVertex3f(-fSideLength-fBorderWidth, 0.0f, 0.0f+fBorderWidth);
+
+        	glTexCoord2f(tx + 0.078125f, ty + 0.125f);
+			glVertex3f(-fSideLength-fBorderWidth, 0.0f, -fSideLength-fBorderWidth);
+
+			glTexCoord2f(tx, ty + 0.125f);			
+			glVertex3f(0.0f+fBorderWidth, 0.0f, -fSideLength-fBorderWidth);
+			
+			
 /* 			//note: use technique +0.5f to create effect, e.g. disheveled leaves of tree
 	        glTexCoord2f(tx, ty);
 			glVertex3f(0.0f+0.5f, 0.0f, 0.0f+0.5f);
