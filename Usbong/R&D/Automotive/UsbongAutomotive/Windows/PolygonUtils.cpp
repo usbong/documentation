@@ -507,9 +507,12 @@ glCullFace(GL_BACK);
 //PrevV20201124
 //edited by Mike, 20201129
 //+added: fBorderWidth to eliminate excess space between cubes
-//TO-DO: -add: fBorderWidth to rest of cube faces, besides top face
 void drawCubeWithBlockTexture(float fSideLength, GLfloat tx, GLfloat ty, GLfloat tz, float x, float y, float z)
 {
+//	float fBorderWidth = 0.05f;
+	float fBorderWidth = 0.0125f;
+//	glColor3f(1.0f, 1.0f, 1.0f);
+
 	glPushMatrix();
 /*
 glEnable(GL_ALPHA_TEST);
@@ -610,6 +613,7 @@ glCullFace(GL_BACK);
 			//note: inverted y-axis; top face becomes bottom face
 			//counter clockwise
 			// top face		
+/*			//edited by Mike, 20201129
 	        glTexCoord2f(tx, ty);
 			glVertex3f(0.0f, 0.0f, 0.0f);
 
@@ -621,6 +625,19 @@ glCullFace(GL_BACK);
 
 			glTexCoord2f(tx, ty + 0.125f);			
 			glVertex3f(-fSideLength, 0.0f, 0.0f);
+*/
+	        glTexCoord2f(tx, ty);
+			glVertex3f(0.0f+fBorderWidth, 0.0f, 0.0f+fBorderWidth);
+
+        	glTexCoord2f(tx + 0.078125f, ty);			
+			glVertex3f(0.0f+fBorderWidth, 0.0f, -fSideLength-fBorderWidth);
+
+        	glTexCoord2f(tx + 0.078125f, ty + 0.125f);
+			glVertex3f(-fSideLength-fBorderWidth, 0.0f, -fSideLength-fBorderWidth);
+
+			glTexCoord2f(tx, ty + 0.125f);			
+			glVertex3f(-fSideLength-fBorderWidth, 0.0f, 0.0f+fBorderWidth);
+
 
 			//TO-DO: -update: this
 /*
@@ -629,7 +646,8 @@ glCullFace(GL_BACK);
 			glVertex3f(-fSideLength, -fSideLength, 0.0f);
 			glVertex3f(0.0f, -fSideLength, 0.0f);
 */
-
+			//edited by Mike, 20201129
+/*
 			//counter clockwise
 	        glTexCoord2f(tx, ty);
 			glVertex3f(0.0f, 0.0f, 0.0f);	// front face
@@ -642,6 +660,19 @@ glCullFace(GL_BACK);
 
 			glTexCoord2f(tx, ty + 0.125f);			
 			glVertex3f(0.0f, -fSideLength, 0.0f);
+*/
+			//counter clockwise
+	        glTexCoord2f(tx, ty);
+			glVertex3f(0.0f+fBorderWidth, 0.0f+fBorderWidth, 0.0f);	// front face
+
+        	glTexCoord2f(tx + 0.078125f, ty);			
+			glVertex3f(-fSideLength-fBorderWidth, 0.0f+fBorderWidth, 0.0f);
+
+        	glTexCoord2f(tx + 0.078125f, ty + 0.125f);
+			glVertex3f(-fSideLength-fBorderWidth, -fSideLength-fBorderWidth, 0.0f);
+
+			glTexCoord2f(tx, ty + 0.125f);			
+			glVertex3f(0.0f+fBorderWidth, -fSideLength-fBorderWidth, 0.0f);
 
 
 /*			//edited by Mike, 20201122
@@ -651,6 +682,7 @@ glCullFace(GL_BACK);
 			glVertex3f(0.0f, 0.0f, -fSideLength);
 */			
 
+/*			//edited by Mike, 20201129
 	        glTexCoord2f(tx, ty);
 			glVertex3f(0.0f, 0.0f, 0.0f);	// right face
 
@@ -662,6 +694,31 @@ glCullFace(GL_BACK);
 
 			glTexCoord2f(tx, ty + 0.125f);			
 			glVertex3f(0.0f, 0.0f, -fSideLength);
+*/	
+/*			//edited by Mike, 20201129
+	        glTexCoord2f(tx, ty);
+			glVertex3f(0.0f, 0.0f, 0.0f);	// right face
+
+        	glTexCoord2f(tx + 0.078125f, ty);			
+			glVertex3f(0.0f, -fSideLength, 0.0f);
+
+        	glTexCoord2f(tx + 0.078125f, ty + 0.125f);
+			glVertex3f(0.0f, -fSideLength, -fSideLength);
+
+			glTexCoord2f(tx, ty + 0.125f);			
+			glVertex3f(0.0f, 0.0f, -fSideLength);
+*/
+	        glTexCoord2f(tx, ty);
+			glVertex3f(0.0f, 0.0f+fBorderWidth, 0.0f+fBorderWidth);	// right face
+
+        	glTexCoord2f(tx + 0.078125f, ty);			
+			glVertex3f(0.0f, -fSideLength-fBorderWidth, 0.0f+fBorderWidth);
+
+        	glTexCoord2f(tx + 0.078125f, ty + 0.125f);
+			glVertex3f(0.0f, -fSideLength-fBorderWidth, -fSideLength-fBorderWidth);
+
+			glTexCoord2f(tx, ty + 0.125f);			
+			glVertex3f(0.0f, 0.0f+fBorderWidth, -fSideLength-fBorderWidth);
 			
 			//edited by Mike, 2020114
 			//vertices drawn clock-wise
@@ -673,16 +730,16 @@ glCullFace(GL_BACK);
 			glVertex3f(-fSideLength, -fSideLength, 0.0f);
 */
 	        glTexCoord2f(tx, ty);
-			glVertex3f(-fSideLength, 0.0f, 0.0f);	// left face
+			glVertex3f(-fSideLength, 0.0f+fBorderWidth, 0.0f+fBorderWidth);	// left face
 
         	glTexCoord2f(tx + 0.078125f, ty);			
-			glVertex3f(-fSideLength, 0.0f, -fSideLength);
+			glVertex3f(-fSideLength, 0.0f+fBorderWidth, -fSideLength-fBorderWidth);
 
         	glTexCoord2f(tx + 0.078125f, ty + 0.125f);
-			glVertex3f(-fSideLength, -fSideLength, -fSideLength);
+			glVertex3f(-fSideLength, -fSideLength-fBorderWidth, -fSideLength-fBorderWidth);
 
 			glTexCoord2f(tx, ty + 0.125f);			
-			glVertex3f(-fSideLength, -fSideLength, 0.0f);
+			glVertex3f(-fSideLength, -fSideLength-fBorderWidth, 0.0f+fBorderWidth);
 
 /*
 			glVertex3f(-fSideLength, 0.0f, 0.0f);	// left face
@@ -731,22 +788,10 @@ glCullFace(GL_BACK);
 			//note: y-axis inverted
 			// bottom face becomes top face 		
 			//set y to be at origin, i.e. 0.0f
-/*	        glTexCoord2f(tx, ty);
-			glVertex3f(0.0f, 0.0f, 0.0f);
-
-        	glTexCoord2f(tx + 0.078125f, ty);			
-			glVertex3f(-fSideLength, 0.0f, 0.0f);
-
-        	glTexCoord2f(tx + 0.078125f, ty + 0.125f);
-			glVertex3f(-fSideLength, 0.0f, -fSideLength);
-
-			glTexCoord2f(tx, ty + 0.125f);			
-			glVertex3f(0.0f, 0.0f, -fSideLength);
-
-*/
+/*			//removed by Mike, 20201129
 //			float fBorderWidth = 0.05f;
 			float fBorderWidth = 0.0125f;
-
+*/
 	        glTexCoord2f(tx, ty);
 			glVertex3f(0.0f+fBorderWidth, 0.0f, 0.0f+fBorderWidth);
 
@@ -810,6 +855,7 @@ glCullFace(GL_BACK);
 */
 
 			//note: inverted z-axis; back face becomes front face
+/*			//edited by Mike, 20201129
 	        glTexCoord2f(tx, ty);
 			glVertex3f(0.0f, 0.0f, -fSideLength);	// back face
 
@@ -821,6 +867,18 @@ glCullFace(GL_BACK);
 
 			glTexCoord2f(tx, ty + 0.125f);			
 			glVertex3f(-fSideLength, 0.0f, -fSideLength);
+*/
+	        glTexCoord2f(tx, ty);
+			glVertex3f(0.0f+fBorderWidth, 0.0f+fBorderWidth, -fSideLength);	// back face
+
+        	glTexCoord2f(tx + 0.078125f, ty);			
+			glVertex3f(0.0f+fBorderWidth, -fSideLength-fBorderWidth, -fSideLength);
+
+        	glTexCoord2f(tx + 0.078125f, ty + 0.125f);
+			glVertex3f(-fSideLength-fBorderWidth, -fSideLength-fBorderWidth, -fSideLength);
+
+			glTexCoord2f(tx, ty + 0.125f);			
+			glVertex3f(-fSideLength-fBorderWidth, 0.0f+fBorderWidth, -fSideLength);
 
 		glEnd();
 		
