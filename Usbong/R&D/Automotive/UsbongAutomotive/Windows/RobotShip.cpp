@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20201130
+ * @date updated: 20201201
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -355,9 +355,16 @@ RobotShip::RobotShip(float xPos, float yPos, float zPos, int windowWidth, int wi
     myWidth=0.1f;
     myHeight=0.1f;
 */
-	//edited by Mike, 20201116
-    myWidth=1.0f;
+
+	//edited by Mike, 20201201    
+	//TO-DO: -update: this
+/*	myWidth=1.0f;
     myHeight=1.0f;
+*/
+	myWidth=1.4f;
+    myHeight=1.4f;
+
+    
 /*
     myWidth=0.5f;
     myHeight=0.5f;
@@ -398,10 +405,8 @@ RobotShip::RobotShip(float xPos, float yPos, float zPos, int windowWidth, int wi
     //init default values
     //previousFacingState=FACING_UP;
     //currentFacingState=FACING_UP;
-    
-    //edited by Mike, 20201130
-    //TO-DO: -add: these
-/*	
+
+    //edited by Mike, 20201201	
 	currentFacingState=FACING_UP;
 
 	armAngles[LEFT] = 0.0;
@@ -414,11 +419,10 @@ RobotShip::RobotShip(float xPos, float yPos, float zPos, int windowWidth, int wi
 
 	legStates[LEFT] = FORWARD_STATE;
 	legStates[RIGHT] = BACKWARD_STATE;
-*/
+
 
 	loadTexture(myBodyTexture, "bodyTexture.tga", &myBodyTextureObject);
 	loadTexture(myHeadTexture, "headTexture.tga", &myHeadTextureObject);	
-
 
 	//removed by Mike, 20201001
 //	setup();
@@ -472,6 +476,26 @@ void RobotShip::drawRobotShip()
     glTranslatef(myXPos, myYPos, myZPos);
 //    glTranslatef(myXPos, myZPos, myYPos);    
 
+	//added by Mike, 20201201
+    if (currentFacingState==FACING_LEFT) 
+    {  
+        glRotatef(90, 0.0f, 1.0f, 0.0f);
+    } 
+    else if (currentFacingState==FACING_RIGHT) 
+    {
+        glTranslatef(0.0f, 0.0f, -myWidth/3); 
+        glRotatef(-90, 0.0f, 1.0f, 0.0f);
+    }
+    else if (currentFacingState==FACING_UP)
+    {
+        //glTranslatef(-myWidthX/3, 0.0f, 0.0f); 
+    }
+    else if (currentFacingState==FACING_DOWN)
+    {
+        glTranslatef(myWidth/3, 0.0f, 0.0f); 
+        glRotatef(180, 0.0f, 1.0f, 0.0f);
+    }
+
 	//added by Mike, 20201001
 	//TO-DO: -update: this
 	//currentState=MOVING_STATE;
@@ -519,14 +543,19 @@ void RobotShip::drawRobotShip()
                    //added by Mike, 20201001
                    drawModelRobotShip(); //TO-DO: -add: ModelPool.cpp
 */
+
+				//added by Mike, 20201201
+                glScalef(2.0f, 2.0f, 2.0f);
+//                glScalef(4.0f, 4.0f, 4.0f);
+
 				//added by Mike, 20201130
            	   glPushMatrix();	
       		       //glTranslatef(xPos, yPos, zPos);	// draw robot at desired coordinates
                    //glTranslatef(myXPos, myYPos, myZPos);
-
+/*					//removed by Mike, 20201201
      		       drawHead(0.1f, 0.2f, 0.0f);		
      		       drawBody(0.1f, -0.15f, 0.0f);
-                
+*/                
     			   drawUpperArm(-0.1f, 0.0f, 0.0f); //left
                    drawUpperArm(0.3f, 0.0f, 0.0f); //right        
       		       drawLowerArm(-0.1f, -0.2f, 0.0f); //left
@@ -537,6 +566,11 @@ void RobotShip::drawRobotShip()
                 
            		   drawLowerLeg(0.0f, -0.7f, 0.0f); //left
                    drawLowerLeg(0.2f, -0.7f, 0.0f); //right
+					
+				   //added by Mike, 20201201
+     		       drawHead(0.1f, 0.2f, 0.0f);		  
+       		       drawBody(0.1f, -0.15f, 0.0f);
+
            	   glPopMatrix();	// pop back to original coordinate system
 
 
@@ -736,6 +770,9 @@ void RobotShip::move(int key)
           //added by Mike, 20201001; edited by Mike, 20201116
 //	      myYPos+=-stepY;
 	      myZPos+=-stepZ;
+	      
+	      //added by Mike, 20201201
+          currentFacingState=FACING_UP;
           break;      
      case KEY_DOWN:
 /*     	  //added by Mike, 20201001
@@ -745,6 +782,9 @@ void RobotShip::move(int key)
           //added by Mike, 20201001; edited by Mike, 20201116
 //	      myYPos+=stepY;
 	      myZPos+=stepZ;
+
+	      //added by Mike, 20201201
+          currentFacingState=FACING_DOWN;
           break;      
      case KEY_LEFT:
      		//removed by Mike, 20201001
@@ -762,6 +802,8 @@ void RobotShip::move(int key)
           sprintf(str,"rotationAngle: %f",rotationAngle);
           MessageBox(NULL, str, "Welcome!", MB_OK);
 */
+	      //added by Mike, 20201201
+          currentFacingState=FACING_LEFT;
           break;      
      case KEY_RIGHT:
      	//removed by Mike, 20201001
@@ -775,6 +817,9 @@ void RobotShip::move(int key)
           //added by Mike, 20201001            
 	      myXPos+=stepX;
 //          return;
+
+	      //added by Mike, 20201201
+          currentFacingState=FACING_RIGHT;
 		  break;
    }
 }
@@ -1065,7 +1110,8 @@ void RobotShip::drawLowerLeg(float xPos, float yPos, float zPos)
 		glPushMatrix();
 			glTranslatef(0.0f, 0.25f, -0.1f);
 			//drawFoot(0.0f, -5.0f, 0.0f);
-			drawFoot(0.0f, -0.4f, 0.0f);
+			//removed by Mike, 20201201
+//			drawFoot(0.0f, -0.4f, 0.0f);
 		glPopMatrix();		
 		
 		glScalef(0.1f, 0.25f, 0.1f);		// leg is a 1x5x1 cube

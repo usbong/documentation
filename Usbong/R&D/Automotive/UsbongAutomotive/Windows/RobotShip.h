@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20201130
+ * @date updated: 20201201
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -33,6 +33,18 @@
 
 //added by Mike, 20201019
 #include "PolygonUtils.h"
+
+//added by Mike, 20201201
+// constants for arm and leg movement states
+const char BACKWARD_STATE = 0;
+const char FORWARD_STATE  = 1;
+
+// index constants for accessing arm and leg array data
+const char LEFT  = 0;
+const char RIGHT = 1;
+
+const int STANDING_STATE = 0;
+const int WALKING_STATE = 1;
 
 //#define STANDING_STATE 0
 //#define WALKING_STATE 1
@@ -99,7 +111,8 @@ private:
     int currentDeathFrame;
     
     //int previousFacingState;
-    //int currentFacingState;    
+	//added by Mike, 20201201    
+    int currentFacingState;    
 
 	//added by Mike, 20201130
     CTargaImage *myBodyTexture;
@@ -107,6 +120,15 @@ private:
 
     CTargaImage *myHeadTexture;
    	unsigned int myHeadTextureObject;
+
+	//added by Mike, 20201201
+	char legStates[2];	
+	char armStates[2];
+
+	float legAngles[2];
+	float armAngles[2];
+	
+
 
     GLint tricount;
     GLint isMovingForward;
