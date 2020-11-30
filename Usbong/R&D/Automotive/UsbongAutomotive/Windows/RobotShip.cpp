@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20201116
+ * @date updated: 20201130
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -394,17 +394,40 @@ RobotShip::RobotShip(float xPos, float yPos, float zPos, int windowWidth, int wi
 
     tricount = 120;
     isMovingForward = 0;
-    
+	
     //init default values
     //previousFacingState=FACING_UP;
     //currentFacingState=FACING_UP;
-	
-	//loadTexture(myBodyTexture, "bodyTexture.tga", &myBodyTextureObject);
-	//loadTexture(myHeadTexture, "headTexture.tga", &myHeadTextureObject);
+    
+    //edited by Mike, 20201130
+    //TO-DO: -add: these
+/*	
+	currentFacingState=FACING_UP;
+
+	armAngles[LEFT] = 0.0;
+	armAngles[RIGHT] = 0.0;
+	legAngles[LEFT] = 0.0;
+	legAngles[RIGHT] = 0.0;
+
+	armStates[LEFT] = FORWARD_STATE;
+	armStates[RIGHT] = BACKWARD_STATE;
+
+	legStates[LEFT] = FORWARD_STATE;
+	legStates[RIGHT] = BACKWARD_STATE;
+*/
+
+	loadTexture(myBodyTexture, "bodyTexture.tga", &myBodyTextureObject);
+	loadTexture(myHeadTexture, "headTexture.tga", &myHeadTextureObject);	
+
+
 	//removed by Mike, 20201001
 //	setup();
 	
     setCollidable(true);
+    
+    
+    
+    
 }
 
 RobotShip::~RobotShip()
@@ -491,9 +514,33 @@ void RobotShip::drawRobotShip()
                 else invincibleCounter++;
 */
             case MOVING_STATE:
-            	
+			//TO-DO: -add: STANDING_STATE
+/*  //removed by Mike, 20201130
                    //added by Mike, 20201001
                    drawModelRobotShip(); //TO-DO: -add: ModelPool.cpp
+*/
+				//added by Mike, 20201130
+           	   glPushMatrix();	
+      		       //glTranslatef(xPos, yPos, zPos);	// draw robot at desired coordinates
+                   //glTranslatef(myXPos, myYPos, myZPos);
+
+     		       drawHead(0.1f, 0.2f, 0.0f);		
+     		       drawBody(0.1f, -0.15f, 0.0f);
+                
+    			   drawUpperArm(-0.1f, 0.0f, 0.0f); //left
+                   drawUpperArm(0.3f, 0.0f, 0.0f); //right        
+      		       drawLowerArm(-0.1f, -0.2f, 0.0f); //left
+                   drawLowerArm(0.3f, -0.2f, 0.0f); //right
+                
+                   drawUpperLeg(0.0f, -0.5f, 0.0f); //left
+                   drawUpperLeg(0.2f, -0.5f, 0.0f); //right        
+                
+           		   drawLowerLeg(0.0f, -0.7f, 0.0f); //left
+                   drawLowerLeg(0.2f, -0.7f, 0.0f); //right
+           	   glPopMatrix();	// pop back to original coordinate system
+
+
+
            	   	
 				//removed by Mike, 20201001
 /*           	                  	
@@ -775,3 +822,271 @@ void RobotShip::destroy()
 	delete [] explosionParticle;
 */
 }
+
+//added by Mike, 20201130
+//TO-DO: -add: in PolygonUtils
+//--------------------------------------------
+bool RobotShip::loadTexture(CTargaImage *myTexture, const char *filename, unsigned int *myTextureObject)
+{
+    //note: Code taken from Dave Astle and Kevin Hawkins's code 
+    //("Beginning OpenGL Game Programming", Chapter 7)
+    //with slight modifications from Mike
+    //-Mike, Dec. 21, 2006
+	// enable 2D texturing
+	glEnable(GL_TEXTURE_2D);
+
+    myTexture = new CTargaImage;
+   	if (!myTexture->Load(filename))//opengl_logo.tga //background.tga //rock.tga
+		return false;
+
+    // retrieve "unused" texture object
+	//glGenTextures(1, &myTextureObject);
+	glGenTextures(1, myTextureObject);
+
+	// bind the texture object
+	//glBindTexture(GL_TEXTURE_2D, myTextureObject);
+	glBindTexture(GL_TEXTURE_2D, *myTextureObject);
+
+	// minimum required to set the min and mag texture filters
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+
+	// now that the texture object is bound, specify a texture for it
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, myTexture->GetWidth(), myTexture->GetHeight(),
+				 0, GL_RGB, GL_UNSIGNED_BYTE, myTexture->GetImage());
+}
+
+void RobotShip::drawTriangledCube(float xPos, float yPos, float zPos)
+{
+	glPushMatrix();
+		glTranslatef(xPos, yPos, zPos);
+		glBegin(GL_TRIANGLES);
+		//note: must be in correct order, counter-clockwise
+            //glColor3f(1.0f, 0.0f, 0.0f);	// red
+            //note: this must be clock-wise so that it will face backwards
+		    //front face		    
+            //part 1  
+            glVertex3f(0.5f, -0.5f, -0.5f);
+            glVertex3f(-0.5f, -0.5f, -0.5f);
+            glVertex3f(-0.5f, 0.5f, -0.5f);          
+
+            //part 2
+            glVertex3f(-0.5f, 0.5f, -0.5f);
+            glVertex3f(0.5f, 0.5f, -0.5f);
+            glVertex3f(0.5f, -0.5f, -0.5f);
+
+            //glColor3f(0.5f, 0.0f, 0.0f);	// dark red
+            //back face 
+            //part 1
+            glVertex3f(0.5f, -0.5f, 0.5f);
+            glVertex3f(0.5f, 0.5f, 0.5f);
+            glVertex3f(-0.5f, 0.5f, 0.5f);
+            //part 2
+            glVertex3f(-0.5f, 0.5f, 0.5f);          
+            glVertex3f(-0.5f, -0.5f, 0.5f);
+            glVertex3f(0.5f, -0.5f, 0.5f);
+            
+    		//glColor3f(0.0f, 1.0f, 0.0f);	// green
+            //right face
+            glVertex3f(0.5f, -0.5f, -0.5f);
+            glVertex3f(0.5f, 0.5f, -0.5f);
+            glVertex3f(0.5f, 0.5f, 0.5f);
+            //part 2
+            glVertex3f(0.5f, -0.5f, 0.5f);
+            glVertex3f(0.5f, -0.5f, -0.5f);
+            glVertex3f(0.5f, 0.5f, 0.5f);          
+
+    		//glColor3f(0.0f, 0.5f, 0.0f);	// dark green
+            //left face
+            //part 1
+            glVertex3f(-0.5f, -0.5f, -0.5f);
+            glVertex3f(-0.5f, -0.5f, 0.5f);
+            glVertex3f(-0.5f, 0.5f, 0.5f);          
+
+            //part 2
+            glVertex3f(-0.5f, 0.5f, 0.5f);
+            glVertex3f(-0.5f, 0.5f, -0.5f);
+            glVertex3f(-0.5f, -0.5f, -0.5f);
+
+    		//glColor3f(0.0f, 0.0f, 1.0f);	// blue
+            //top face
+            glVertex3f(0.5f, 0.5f, 0.5f);
+            glVertex3f(0.5f, 0.5f, -0.5f);
+            glVertex3f(-0.5f, 0.5f, -0.5f);
+            //part 2
+            glVertex3f(-0.5f, 0.5f, 0.5f);
+            glVertex3f(0.5f, 0.5f, 0.5f);
+            glVertex3f(-0.5f, 0.5f, -0.5f);          
+
+    		//glColor3f(0.0f, 0.0f, 0.5f);	// dark blue
+            //bottom face
+            glVertex3f(0.5f, -0.5f, 0.5f);
+            glVertex3f(-0.5f, -0.5f, 0.5f);
+            glVertex3f(-0.5f, -0.5f, -0.5f);          
+
+            //part 2
+            glVertex3f(-0.5f, -0.5f, -0.5f);
+            glVertex3f(0.5f, -0.5f, -0.5f);
+            glVertex3f(0.5f, -0.5f, 0.5f);
+		glEnd();
+	glPopMatrix();     
+}
+
+void RobotShip::drawUpperArm(float xPos, float yPos, float zPos)
+{
+	glPushMatrix();
+		//glColor3f(1.0f, 0.0f, 0.0f);	// red
+		glColor3f(1.0f, 1.0f, 1.0f);
+        glTranslatef(xPos, yPos, zPos);
+		glScalef(0.1f, 0.2f, 0.1f);		
+        drawTriangledCube(0.0f, 0.0f, 0.0f);
+	glPopMatrix();
+}
+
+void RobotShip::drawLowerArm(float xPos, float yPos, float zPos)
+{
+	glPushMatrix();
+		//glColor3f(0.5f, 0.0f, 0.0f);	// dark red
+		glColor3f(0.8f, 0.8f, 0.8f);
+		glTranslatef(xPos, yPos, zPos);
+		glScalef(0.1f, 0.3f, 0.1f);		// arm is a 1x4x1 cube
+        drawTriangledCube(0.0f, 0.0f, 0.0f);
+		//drawCube(0.0f, 0.0f, 0.0f);
+	glPopMatrix();
+}
+
+/*	//removed by Mike, 20201130
+void RobotShip::drawAntenna(float xPos, float yPos, float zPos)
+{
+		glColor3f(0.2f, 0.2f, 0.2f);	// dark gray
+        //left side
+        glPushMatrix();        
+    		glTranslatef(-0.12f, 0.0f, 0.0f);
+            glRotatef(90.0f, 0.0f, 1.0f, 0.0f);
+    		glScalef(0.1f, 0.6f, 0.1f);
+            drawTriangle(0.0f, 0.0f, 0.0f);
+        glPopMatrix();
+        //right side
+        glPushMatrix();        
+    		glTranslatef(0.12f, 0.0f, 0.0f);
+            glRotatef(90.0f, 0.0f, 1.0f, 0.0f);
+    		glScalef(0.1f, 0.6f, 0.1f);
+            drawTriangle(0.0f, 0.0f, 0.0f);
+        glPopMatrix();
+}
+*/
+
+void RobotShip::drawHead(float xPos, float yPos, float zPos)
+{
+	glPushMatrix();
+		glTranslatef(xPos, yPos, zPos);
+		//removed by Mike, 20201130
+//        drawAntenna(0.0f, 0.0f, 0.0f);		
+		glColor3f(1.0f, 1.0f, 1.0f);	// white		
+		//glScalef(2.0f, 2.0f, 2.0f);		// head is a 2x2x2 cube
+		glScalef(0.2f, 0.2f, 0.2f);
+
+		glBindTexture(GL_TEXTURE_2D, myHeadTextureObject);
+        glEnable(GL_TEXTURE_2D); //added by Mike, Dec.21,2006
+        glColor3f(1.0f, 1.0f, 1.0f);//default: white
+    	glBegin(GL_TRIANGLE_STRIP);
+    	    //note: In "glTexCoord2f(1.0, 0.0);", if 1.0 is changed to 2.0, the plane is made up of 4 images instead of just 1 whole image 
+    		glTexCoord2f(1.0, 0.0); 
+            glVertex3f(0.5f, -0.5f, -0.5f);
+    		glTexCoord2f(0.0, 0.0); 
+            glVertex3f(-0.5f, -0.5f, -0.5f);
+    		//note: i don't know why, but i have to create a triangle first, 
+            //then connect the last point of the square next, -Mike, Dec. 22, 2006
+            //a
+            glTexCoord2f(1.0, 1.0);	
+            glVertex3f(0.5f, 0.5f, -0.5f);
+    		//b
+            glTexCoord2f(0.0, 1.0);	
+            glVertex3f(-0.5f, 0.5f, -0.5f);
+    	glEnd();    	
+        drawTriangledCube(0.0f, 0.0f, 0.0f);
+	glPopMatrix();
+    glDisable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, 0);
+}
+
+void RobotShip::drawBody(float xPos, float yPos, float zPos)
+{
+	glPushMatrix();
+		//glColor3f(0.0f, 0.0f, 1.0f);	// blue
+		//glColor3f(0.0f, 0.0f, 0.0f);	// black
+        glTranslatef(xPos, yPos, zPos);
+//		glScalef( 0.2f, 0.2f, 0.1f);
+//		drawSphere();
+		glScalef(0.3f, 0.5f, 0.2f);
+		glBindTexture(GL_TEXTURE_2D, myBodyTextureObject);
+        glEnable(GL_TEXTURE_2D); //added by Mike, Dec.21,2006
+        glColor3f(1.0f, 1.0f, 1.0f);//default: white
+    	glBegin(GL_TRIANGLE_STRIP);
+    	    //note: In "glTexCoord2f(1.0, 0.0);", if 1.0 is changed to 2.0, the plane is made up of 4 images instead of just 1 whole image 
+    		glTexCoord2f(1.0, 0.0); 
+            glVertex3f(0.5f, -0.5f, -0.5f);
+    		glTexCoord2f(0.0, 0.0); 
+            glVertex3f(-0.5f, -0.5f, -0.5f);
+    		//note: i don't know why, but i have to create a triangle first, 
+            //then connect the last point of the square next, -Mike, Dec. 22, 2006
+            //a
+            glTexCoord2f(1.0, 1.0);	
+            glVertex3f(0.5f, 0.5f, -0.5f);
+    		//b
+            glTexCoord2f(0.0, 1.0);	
+            glVertex3f(-0.5f, 0.5f, -0.5f);
+    	glEnd();    	
+        drawTriangledCube(0.0f, 0.0f, 0.0f);
+	glPopMatrix();
+    glDisable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, 0);
+}
+
+void RobotShip::drawUpperLeg(float xPos, float yPos, float zPos)
+{
+	glPushMatrix();
+		glTranslatef(xPos, yPos, zPos);
+		
+		glScalef(0.1f, 0.25f, 0.1f);	
+		//glColor3f(1.0f, 1.0f, 0.0f);	// yellow
+		glColor3f(0.8f, 0.8f, 0.8f); //gray
+        //drawCube(0.0f, 0.0f, 0.0f);
+        drawTriangledCube(0.0f, 0.0f, 0.0f);
+	glPopMatrix();
+}
+
+void RobotShip::drawLowerLeg(float xPos, float yPos, float zPos)
+{
+	glPushMatrix();
+		glTranslatef(xPos, yPos, zPos);
+		
+		// draw the foot
+		glPushMatrix();
+			glTranslatef(0.0f, 0.25f, -0.1f);
+			//drawFoot(0.0f, -5.0f, 0.0f);
+			drawFoot(0.0f, -0.4f, 0.0f);
+		glPopMatrix();		
+		
+		glScalef(0.1f, 0.25f, 0.1f);		// leg is a 1x5x1 cube
+		//glColor3f(0.8f, 0.8f, 0.0f);	// yellow
+        glColor3f(1.0f, 1.0f, 1.0f); //white
+        drawTriangledCube(0.0f, 0.0f, 0.0f);
+	glPopMatrix();
+}
+
+void RobotShip::drawFoot(float xPos, float yPos, float zPos)
+{
+	glPushMatrix();
+		//glColor3f(1.0f, 1.0f, 1.0f);
+		glColor3f(0.2f, 0.2f, 0.2f);	// dark gray
+		glTranslatef(xPos, yPos, zPos);
+		//glScalef(1.0f, 0.5f, 3.0f);
+		glScalef(0.1f, 0.05f, 0.3f);
+        drawTriangledCube(0.0f, 0.0f, 0.0f);
+		//drawCube(0.0f, 0.0f, 0.0f);
+	glPopMatrix();
+}
+//--------------------------------------------
+
+
