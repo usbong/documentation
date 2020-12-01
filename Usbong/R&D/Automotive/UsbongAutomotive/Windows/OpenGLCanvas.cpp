@@ -104,7 +104,9 @@ enum Keys
 	KEY_J,
 	KEY_L,
 	KEY_I,
-	KEY_K
+	KEY_K,
+	//added by Mike, 20201201
+	iNumOfKeyTypes
 };
 
 
@@ -1453,6 +1455,21 @@ void OpenGLCanvas::update()
        	//process input
        	//TO-DO: -update: this
        	//TO-DO: -verify: gamepad
+       	
+       	//added by Mike, 20201201
+       	//verify if no keys are pressed down
+       	int iKeyCount;
+       	for (iKeyCount=0; iKeyCount<iNumOfKeyTypes; iKeyCount++) {
+			if (myKeysDown[iKeyCount]==TRUE) {
+				break;				
+			}
+		}
+
+		if (iKeyCount==iNumOfKeyTypes) {
+			//TO-DO: -update: this
+          	myRobotShip->move(-1); //IDLE_MOVING_STATE			
+		}
+
        	//edited by Mike, 20201013
     	if(myKeysDown[KEY_UP] == TRUE)
 //    	if(myKeysDown[KEY_W] == TRUE)

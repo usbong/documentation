@@ -43,16 +43,19 @@ const char FORWARD_STATE  = 1;
 const char LEFT  = 0;
 const char RIGHT = 1;
 
+/*	//removed by Mike, 20201201
 const int STANDING_STATE = 0;
 const int WALKING_STATE = 1;
+*/
 
-//#define STANDING_STATE 0
-//#define WALKING_STATE 1
+//edited by Mike, 20201201
+#define IDLE_MOVING_STATE 0
+#define WALKING_MOVING_STATE 1
 
 const int INITIALIZING_STATE = 0;
 const int MOVING_STATE = 1;
-const int IN_TITLE_STATE =2;
-const int DYING_STATE =3;
+const int IN_TITLE_STATE = 2;
+const int DYING_STATE = 3;
 
 //added by Mike, 20201130
 //TO-DO: -add: diagonal
@@ -69,6 +72,9 @@ private:
 	Sound *sound;
 	SoundClip *zing;
 */
+	
+	//added by Mike, 20201201
+	int currentMovingState;
 	
 /*
     float myXPos;
@@ -127,8 +133,6 @@ private:
 
 	float legAngles[2];
 	float armAngles[2];
-	
-
 
     GLint tricount;
     GLint isMovingForward;

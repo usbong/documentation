@@ -320,6 +320,8 @@ RobotShip::RobotShip(float xPos, float yPos, float zPos, int windowWidth, int wi
     //edited by Mike, 20201001
 	//currentState=IN_TITLE_STATE;//MOVING_STATE;
 	currentState=MOVING_STATE;
+	//added by Mike, 20201201
+	currentMovingState=IDLE_MOVING_STATE;
 
 //    myXPos=0.0;
 //    myYPos=0.0;
@@ -537,45 +539,96 @@ void RobotShip::drawRobotShip()
                 }
                 else invincibleCounter++;
 */
+				
             case MOVING_STATE:
 			//TO-DO: -add: STANDING_STATE
 /*  //removed by Mike, 20201130
                    //added by Mike, 20201001
                    drawModelRobotShip(); //TO-DO: -add: ModelPool.cpp
 */
-
 				//added by Mike, 20201201
-                glScalef(2.0f, 2.0f, 2.0f);
-//                glScalef(4.0f, 4.0f, 4.0f);
+		                glScalef(2.0f, 2.0f, 2.0f);
+		//                glScalef(4.0f, 4.0f, 4.0f);		
 
-				//added by Mike, 20201130
-           	   glPushMatrix();	
-      		       //glTranslatef(xPos, yPos, zPos);	// draw robot at desired coordinates
-                   //glTranslatef(myXPos, myYPos, myZPos);
-/*					//removed by Mike, 20201201
-     		       drawHead(0.1f, 0.2f, 0.0f);		
-     		       drawBody(0.1f, -0.15f, 0.0f);
-*/                
-    			   drawUpperArm(-0.1f, 0.0f, 0.0f); //left
-                   drawUpperArm(0.3f, 0.0f, 0.0f); //right        
-      		       drawLowerArm(-0.1f, -0.2f, 0.0f); //left
-                   drawLowerArm(0.3f, -0.2f, 0.0f); //right
-                
-                   drawUpperLeg(0.0f, -0.5f, 0.0f); //left
-                   drawUpperLeg(0.2f, -0.5f, 0.0f); //right        
-                
-           		   drawLowerLeg(0.0f, -0.7f, 0.0f); //left
-                   drawLowerLeg(0.2f, -0.7f, 0.0f); //right
-					
-				   //added by Mike, 20201201
-     		       drawHead(0.1f, 0.2f, 0.0f);		  
-       		       drawBody(0.1f, -0.15f, 0.0f);
+				switch(currentMovingState) {
+		            case IDLE_MOVING_STATE:		
+						//added by Mike, 20201130
+		           	     glPushMatrix();	
+		      		       //glTranslatef(xPos, yPos, zPos);	// draw robot at desired coordinates
+		                   //glTranslatef(myXPos, myYPos, myZPos);
+		/*					//removed by Mike, 20201201
+		     		       drawHead(0.1f, 0.2f, 0.0f);		
+		     		       drawBody(0.1f, -0.15f, 0.0f);
+		*/                
+		    			   drawUpperArm(-0.1f, 0.0f, 0.0f); //left
+		                   drawUpperArm(0.3f, 0.0f, 0.0f); //right        
+		      		       drawLowerArm(-0.1f, -0.2f, 0.0f); //left
+		                   drawLowerArm(0.3f, -0.2f, 0.0f); //right
+		                
+		                   drawUpperLeg(0.0f, -0.5f, 0.0f); //left
+		                   drawUpperLeg(0.2f, -0.5f, 0.0f); //right        
+		                
+		           		   drawLowerLeg(0.0f, -0.7f, 0.0f); //left
+		                   drawLowerLeg(0.2f, -0.7f, 0.0f); //right
+							
+						   //added by Mike, 20201201
+		     		       drawHead(0.1f, 0.2f, 0.0f);		  
+		       		       drawBody(0.1f, -0.15f, 0.0f);
+		           	     glPopMatrix();	// pop back to original coordinate system
+						break;
+					case WALKING_MOVING_STATE:
+		            	glPushMatrix();	
+		      		       //glTranslatef(xPos, yPos, zPos);	// draw robot at desired coordinates
+		                   //glTranslatef(myXPos, myYPos, myZPos);
+		            
+		            		//drawTriangledCube(0.0f, 0.0f, 0.0f);            
+		            		// draw head and torso parts
+		            		drawHead(0.1f, 0.2f, 0.0f);		
+		            		drawBody(0.1f, -0.15f, 0.0f);
+		            
+		                    //ARMS
+		                    //UPPER
+		            		glPushMatrix();
+		            			glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);
+		            			drawUpperArm(-0.1f, 0.0f, 0.0f); //left
+		                		glPushMatrix();
+		                            glTranslatef(0.0f, 0.0f, 0.1f);
+		                			glRotatef(45, 1.0f, 0.0f, 0.0f);
+		                		    drawLowerArm(-0.1f, -0.3f, 0.0f); //left
+		                		glPopMatrix();
+		            		glPopMatrix();
+		            		glPushMatrix();
+		            			glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);
+		                        drawUpperArm(0.3f, 0.0f, 0.0f); //right        
+		                		glPushMatrix();
+		                            glTranslatef(0.0f, 0.0f, 0.1f);
+		                			glRotatef(45, 1.0f, 0.0f, 0.0f);
+		                            drawLowerArm(0.3f, -0.3f, 0.0f); //right
+		                		glPopMatrix();
+		            		glPopMatrix();
+		                    //LEGS
+		            		glPushMatrix();					
+		            			glRotatef(legAngles[LEFT], 1.0f, 0.0f, 0.0f);
+		            		    drawUpperLeg(0.0f, -0.5f, 0.0f); //left
+		               		    glPushMatrix();
+		                            //glTranslatef(0.0f, 0.0f, 0.1f);
+		                			//glRotatef(5, 1.0f, 0.0f, 0.0f);
+		            		        drawLowerLeg(0.0f, -0.7f, 0.0f); //left
+		                		glPopMatrix();
+		            		glPopMatrix();
+		            		glPushMatrix();					
+		            			glRotatef(legAngles[RIGHT], 1.0f, 0.0f, 0.0f);
+		                        drawUpperLeg(0.2f, -0.5f, 0.0f); //right        
+		               		    glPushMatrix();
+		                            //glTranslatef(0.0f, 0.0f, 0.1f);
+		                			//glRotatef(5, 1.0f, 0.0f, 0.0f);
+		                            drawLowerLeg(0.2f, -0.7f, 0.0f); //right
+		                		glPopMatrix();
+		            		glPopMatrix();
+		            	glPopMatrix();	// pop back to original coordinate system						
+						break;
+				}
 
-           	   glPopMatrix();	// pop back to original coordinate system
-
-
-
-           	   	
 				//removed by Mike, 20201001
 /*           	                  	
                glColor3f(1.0f, 1.0f, 1.0f); //white
@@ -614,6 +667,45 @@ void RobotShip::update(float dt)
     {
            case INITIALIZING_STATE:
            case MOVING_STATE:      
+				switch(currentMovingState) {
+		           case WALKING_MOVING_STATE:
+		                //note: Code structure taken from Dave Astle and Kevin Hawkins's code 
+		                //("Beginning OpenGL Game Programming", Chapter 4)
+		                //-Mike, Dec. 21, 2006
+		            	// if leg is moving forward, increase angle, else decrease angle
+		            	for (char side = 0; side < 2; side++)
+		            	{
+		            		// arms
+		            		if (armStates[side] == FORWARD_STATE)
+		            			armAngles[side] += 25.0f * dt;//20.0f * dt;
+		            		else
+		            			armAngles[side] -= 30.0f * dt;//20.0f * dt;
+		            
+		            		// change state if exceeding angles
+		            		if (armAngles[side] >= 25.0f) //15.0f
+		            			armStates[side] = BACKWARD_STATE;
+		            		else if (armAngles[side] <= -45.0f) //15.0f
+		            			armStates[side] = FORWARD_STATE;
+		            
+		            		// legs
+		            		if (legStates[side] == FORWARD_STATE)
+		            			legAngles[side] += 15.0f * dt;
+		            		else
+		            			legAngles[side] -= 15.0f * dt;
+		            
+		            		// change state if exceeding angles
+		            		if (legAngles[side] >= 15.0f) //15.0f
+		            			legStates[side] = BACKWARD_STATE;
+		            		else if (legAngles[side] <= -15.0f)
+		            			legStates[side] = FORWARD_STATE;		
+		            	}                
+		                break;
+		            default: //STANDING STATE
+		              break;//do nothing    
+				}
+				
+				
+				//TO-DO: -add: these
            		//added by Mike, 20201001
            		rotationAngle=0; //TO-DO: -update: this
            		
@@ -758,6 +850,9 @@ void RobotShip::changeState(int s)
 
 void RobotShip::move(int key)
 {
+   //added by Mike, 20201201
+   currentMovingState=WALKING_MOVING_STATE;
+
    switch (key)
    {
      case KEY_UP:
@@ -820,6 +915,10 @@ void RobotShip::move(int key)
 
 	      //added by Mike, 20201201
           currentFacingState=FACING_RIGHT;
+		  break;
+		//added by Mike, 20201201
+		default:
+		  currentMovingState=IDLE_MOVING_STATE;
 		  break;
    }
 }
