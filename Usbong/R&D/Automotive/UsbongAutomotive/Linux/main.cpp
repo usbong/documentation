@@ -14,7 +14,7 @@
  *
  * @author: Michael Syson
  * @date created: 20200926
- * @date updated: 20201121
+ * @date updated: 20201202
  *
  * References:
  * 1) Dev-C++ 5.11 auto-generated OpenGL example project
@@ -107,8 +107,12 @@ void DisableOpenGL (HWND hWnd, HDC hDC, HGLRC hRC);
 #define VK_RIGHT 102
 
 //note: "static" in C/C++ = "final" in java
+/*	//edited by Mike, 20201202
 static int myWindowWidth=1024;//640; //320
 static int myWindowHeight=1024;//640; //320
+*/
+static int myWindowWidth=640; //2048;//320
+static int myWindowHeight=640; //2048;//320
 
 //added by Mike, 20201001
 OpenGLCanvas *myOpenGLCanvas = NULL;
@@ -132,7 +136,9 @@ enum Keys
 	KEY_J,
 	KEY_L,
 	KEY_I,
-	KEY_K
+	KEY_K,
+	//added by Mike, 20201202
+	iNumOfKeyTypes		
 };
 
 //added by Mike, 20201001
@@ -156,8 +162,9 @@ void displayExample() {
    glFlush();  // Render now
 }
 
-//added by Mike, 20200928; edited by Mike, 20200930
-void display() {
+//added by Mike, 20200928; edited by Mike, 20201202
+void display() { //Linux Machine
+//void display(HDC hDC) { //Windows Machine
    glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Set background color to black and opaque
    glClear(GL_COLOR_BUFFER_BIT);         // Clear the color buffer
  
@@ -202,7 +209,9 @@ void display() {
    		glEnd();   		   	  
 	 }
    
-   glFlush();  // Render now
+   //edited by Mike, 20201202
+   //glFlush();  // Render now
+   glutSwapBuffers();
 }
 
 //added by Mike, 20200930
@@ -301,7 +310,9 @@ void update(int i) {
 			//edited by: datenwolf, 20160223T0631			
 			//note: void glutTimerFunc(unsigned int numMilliseconds, functionCallback, value);
 			//glutTimerFunc(1000 / SCREEN_FPS, Loop, 0);
-			glutTimerFunc(50, update, 0);
+			//edited by Mike, 20201202
+//			glutTimerFunc(50, update, 0);
+			glutTimerFunc(70, update, 0);
 			
 			//TO-DO: -add: image buffer to reduce flickering due to repainting canvas
 		}	 
@@ -561,12 +572,19 @@ void specialKeyUp (int specialKey, int x, int y)
 }
 
 int main(int argc, char** argv) {
-   glutInit(&argc, argv);                 // Initialize GLUT
-   //edited by Mike, 20200930
-   glutCreateWindow("Usbong OpenGL Halimbawa"); // Create a window with the given title
+   glutInit(&argc, argv);                 // InglutReshapeWindowitialize GLUT
+//   glutInitDisplayMode (GLUT_DOUBLE | GLUT_RGB); //addded by Mike, 20201202
    glutInitWindowSize(myWindowWidth, myWindowHeight);   // Set the window's initial width & height
-   glutInitWindowPosition(50, 50); // Position the window's initial top-left corner
-	 
+//   glutInitWindowSize(2048,2048);   // Set the window's initial width & height
+
+	//edited by Mike, 20201202
+//   glutInitWindowPosition(50, 50); // Position the window's initial top-left corner
+   glutInitWindowPosition(0, 0); // Position the window's initial top-left corner
+
+   //edited by Mike, 20201202
+   //note: put this command after all the glutInit Window commands
+   glutCreateWindow("Usbong OpenGL Automotive"); // Create a window with the given title
+
 	  //added by Mike, 20201002
 	  //Linux Machine
 	  //note: to receive key presses
@@ -585,7 +603,7 @@ int main(int argc, char** argv) {
 	 		
 	 	//added by Mike, 20201002
 	 	glutKeyboardFunc(keyDown);
-   	glutKeyboardUpFunc(keyUp);
+   		glutKeyboardUpFunc(keyUp);
 	 	glutSpecialFunc(specialKeyDown);
 	 	glutSpecialUpFunc(specialKeyUp);
     		

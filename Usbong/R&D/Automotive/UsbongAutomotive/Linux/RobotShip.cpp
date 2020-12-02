@@ -80,7 +80,9 @@ enum Keys
 	KEY_J,
 	KEY_L,
 	KEY_I,
-	KEY_K
+	KEY_K,
+	//added by Mike, 20201201
+	iNumOfKeyTypes
 };
 
 //object: Cube.005_0
@@ -1014,6 +1016,9 @@ bool RobotShip::loadTexture(CTargaImage *myTexture, const char *filename, unsign
 	// now that the texture object is bound, specify a texture for it
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, myTexture->GetWidth(), myTexture->GetHeight(),
 				 0, GL_RGB, GL_UNSIGNED_BYTE, myTexture->GetImage());
+	
+	//added by Mike, 20201202
+	return true;
 }
 
 void RobotShip::drawTriangledCube(float xPos, float yPos, float zPos)

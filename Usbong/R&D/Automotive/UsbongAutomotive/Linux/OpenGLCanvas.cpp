@@ -152,12 +152,13 @@ bool OpenGLCanvas::init()
 {	
 	//TO-DO: -receive: values from main.cpp
 	//edited by Mike, 20201115
+	//noted by Mike, 20201202: smaller grid
 /*    myWindowWidth=640;
     myWindowHeight=640;
 */
-    myWindowWidth=2048;
+	myWindowWidth=2048;
     myWindowHeight=2048;
-    
+
     //added by Mike, 20201023
     myCanvasPosX=-3.2f;//0.0f;
 	myCanvasPosY=-1.0f;//0.0f;
@@ -203,7 +204,6 @@ bool OpenGLCanvas::init()
 */
  	iRowCountMax=20;
  	iColumnCountMax=20;
-
 
 	fGridSquareWidth = myWindowWidth/iColumnCountMax/100.0;
 	fGridSquareHeight = myWindowHeight/iRowCountMax/100.0;
@@ -942,7 +942,9 @@ void OpenGLCanvas::render()
 */
 	//note: negative value
 	if (myRobotShip->getX() <= 0.0f) myCanvasPosX = 0.0f-myWindowWidth/100+myRobotShip->getWidth()/8;//-myWidth/8; //if left side
+	//edited by Mike, 20201202		
 	else if (myRobotShip->getX() >= myWindowWidth/100) myCanvasPosX = 0.0f+myRobotShip->getWidth()/8;//+myWidth/8; //if right side
+//	else if (myRobotShip->getX() >= 10) myCanvasPosX = 0.0f+myRobotShip->getWidth()/8;//+myWidth/8; //if right side
 
 	if (myRobotShip->getZ() >= myWindowHeight/100) myCanvasPosZ = 0.0f+myRobotShip->getHeight()/8; //if bottom side
 	//note: negative value
