@@ -34,6 +34,9 @@
 //#include <GL/glut.h>
 #endif
 
+//added by Mike, 20201123
+#define GL_CLAMP_TO_EDGE 0x812F
+
 //void load_tga(char *filename);
 //GLboolean test_pow2(GLushort i);
 //bool test_pow2(GLushort i);

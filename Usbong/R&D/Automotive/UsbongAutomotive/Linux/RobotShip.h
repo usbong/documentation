@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20201121
+ * @date updated: 20201202
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -24,21 +24,45 @@
  */
  
 //TO-DO: -update: this
- 
-//#include "CTargaImage.h"
+
+//added by Mike, 20201130 
+#include "CTargaImage.h"
+
 #include "OpenGLCanvas.h"
 #include "MyDynamicObject.h"
 
 //added by Mike, 20201019
 #include "PolygonUtils.h"
 
-//#define STANDING_STATE 0
-//#define WALKING_STATE 1
+//added by Mike, 20201201
+// constants for arm and leg movement states
+const char BACKWARD_STATE = 0;
+const char FORWARD_STATE  = 1;
+
+// index constants for accessing arm and leg array data
+const char LEFT  = 0;
+const char RIGHT = 1;
+
+/*	//removed by Mike, 20201201
+const int STANDING_STATE = 0;
+const int WALKING_STATE = 1;
+*/
+
+//edited by Mike, 20201201
+#define IDLE_MOVING_STATE 0
+#define WALKING_MOVING_STATE 1
 
 const int INITIALIZING_STATE = 0;
 const int MOVING_STATE = 1;
-const int IN_TITLE_STATE =2;
-const int DYING_STATE =3;
+const int IN_TITLE_STATE = 2;
+const int DYING_STATE = 3;
+
+//added by Mike, 20201130
+//TO-DO: -add: diagonal
+#define FACING_UP 0
+#define FACING_DOWN 1
+#define FACING_LEFT 2
+#define FACING_RIGHT 3
 
 class RobotShip: public MyDynamicObject
 {
@@ -48,6 +72,9 @@ private:
 	Sound *sound;
 	SoundClip *zing;
 */
+	
+	//added by Mike, 20201201
+	int currentMovingState;
 	
 /*
     float myXPos;
@@ -90,30 +117,54 @@ private:
     int currentDeathFrame;
     
     //int previousFacingState;
-    //int currentFacingState;    
-/*
+	//added by Mike, 20201201    
+    int currentFacingState;    
+
+	//added by Mike, 20201130
     CTargaImage *myBodyTexture;
    	unsigned int myBodyTextureObject;
 
     CTargaImage *myHeadTexture;
    	unsigned int myHeadTextureObject;
-*/
+
+	//added by Mike, 20201201
+	char legStates[2];	
+	char armStates[2];
+
+	float legAngles[2];
+	float armAngles[2];
+
     GLint tricount;
     GLint isMovingForward;
 
     GLboolean test_pow2(GLushort i);
     void load_tga(char *filename);
+	
 
     //draw texture
-    //bool loadTexture(CTargaImage *myTexture, const char *filename, unsigned int *myTextureObject);
+	//added by Mike, 20201130
+    bool loadTexture(CTargaImage *myTexture, const char *filename, unsigned int *myTextureObject);
     void setup();
 
 	// draws a unit cube
 	//void drawCube(float xPos, float yPos, float zPos);
 
+	//added by Mike, 20201130
     // draw a unit triangle, Mike Dec. 19, 2006
-    //void drawTriangle(float xPos, float yPos, float zPos);
-    //void drawTriangledCube(float xPos, float yPos, float zPos);
+    void drawTriangle(float xPos, float yPos, float zPos);
+    void drawTriangledCube(float xPos, float yPos, float zPos);
+
+	//added by Mike, 20201130
+	// methods to draw the parts of the robot
+	void drawUpperArm(float xPos, float yPos, float zPos);
+	void drawLowerArm(float xPos, float yPos, float zPos);
+	//removed by Mike, 20201130
+//	void drawAntenna(float xPos, float yPos, float zPos);
+	void drawHead(float xPos, float yPos, float zPos);
+	void drawBody(float xPos, float yPos, float zPos);
+	void drawUpperLeg(float xPos, float yPos, float zPos);
+	void drawLowerLeg(float xPos, float yPos, float zPos);
+	void drawFoot(float xPos, float yPos, float zPos);
     
 public:
 	//edited by Mike, 20201115 
