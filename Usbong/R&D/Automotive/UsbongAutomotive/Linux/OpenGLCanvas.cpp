@@ -940,6 +940,8 @@ void OpenGLCanvas::render()
 //           		else if (myZPos <= 0.0f) myZPos = 20-myHeight/8; //if top side
 	else if (myCanvasPosZ <= 0.0f) myCanvasPosZ = myWindowHeight/100;//-myHeight/8; //if top side
 */
+	//edited by Mike, 20201202
+/* //Windows Machine
 	//note: negative value
 	if (myRobotShip->getX() <= 0.0f) myCanvasPosX = 0.0f-myWindowWidth/100+myRobotShip->getWidth()/8;//-myWidth/8; //if left side
 	//edited by Mike, 20201202		
@@ -949,7 +951,22 @@ void OpenGLCanvas::render()
 	if (myRobotShip->getZ() >= myWindowHeight/100) myCanvasPosZ = 0.0f+myRobotShip->getHeight()/8; //if bottom side
 	//note: negative value
 	else if (myRobotShip->getZ() <= 0.0f) myCanvasPosZ = 0.0f-myWindowHeight/100+myRobotShip->getHeight()/8;//-myHeight/8; //if top side
-   
+*/
+	//Linux Machine
+	printf("CanvasPosX: %f\n", myCanvasPosX);
+	printf("robotShipX: %f\n", myRobotShip->getX());
+/*
+	printf("CanvasPosZ: %f\n", myCanvasPosZ);
+	printf("robotShipZ: %f\n", myRobotShip->getZ());
+*/
+	//TO-DO: -fix: wrapping bottom and top sides
+	if (myCanvasPosX >= 0.0f) myCanvasPosX = 0.0f-20.0f+myRobotShip->getWidth()/8;//myWindowWidth;//-myWidth/8; //if left side
+	else if (myCanvasPosX-myRobotShip->getWidth()/8 <= -20.0f) myCanvasPosX = 0.0f+myRobotShip->getWidth()/8;//+myWidth/8; //if right side
+		
+	if (myCanvasPosZ-myRobotShip->getWidth()/8 <= -20.f) myCanvasPosZ = 0.0f+myRobotShip->getWidth()/8; //if bottom side
+	else if (myCanvasPosZ >= 0.0f) myCanvasPosZ = 0.0f-20.0f+myRobotShip->getWidth()/8;//-myHeight/8; //if top side
+
+		
     //added by Mike, 20201024
 //    glTranslatef(3.2f, 1.0f, 3.2f);    
 //    glTranslatef(0.0f, 0.0f, 3.2f);
