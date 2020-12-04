@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20201122
+ * @date updated: 20201204
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -926,6 +926,9 @@ void OpenGLCanvas::render()
 //           		else if (myZPos <= 0.0f) myZPos = 20-myHeight/8; //if top side
 	else if (myCanvasPosZ <= 0.0f) myCanvasPosZ = myWindowHeight/100;//-myHeight/8; //if top side
 */
+
+/*	//edited by Mike, 20201204
+	//Windows Machine only
 	//note: negative value
 	if (myRobotShip->getX() <= 0.0f) myCanvasPosX = 0.0f-myWindowWidth/100+myRobotShip->getWidth()/8;//-myWidth/8; //if left side
 	else if (myRobotShip->getX() >= myWindowWidth/100) myCanvasPosX = 0.0f+myRobotShip->getWidth()/8;//+myWidth/8; //if right side
@@ -933,6 +936,14 @@ void OpenGLCanvas::render()
 	if (myRobotShip->getZ() >= myWindowHeight/100) myCanvasPosZ = 0.0f+myRobotShip->getHeight()/8; //if bottom side
 	//note: negative value
 	else if (myRobotShip->getZ() <= 0.0f) myCanvasPosZ = 0.0f-myWindowHeight/100+myRobotShip->getHeight()/8;//-myHeight/8; //if top side
+*/
+	
+	//Use with both Windows and Linux Machines
+	//set canvas camera position relative to MyRobotShip position 
+	myCanvasPosX = -myRobotShip->getX()+1.0f; //-3.2 : 4.2; CanvasPosX : robotShipX
+	myCanvasPosZ = -myRobotShip->getZ()+1.0f; //-3.2 : 4.2; CanvasPosZ : robotShipZ
+
+
    
     //added by Mike, 20201024
 //    glTranslatef(3.2f, 1.0f, 3.2f);    

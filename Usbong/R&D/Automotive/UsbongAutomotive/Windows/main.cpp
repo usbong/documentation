@@ -14,7 +14,7 @@
  *
  * @author: Michael Syson
  * @date created: 20200926
- * @date updated: 20201023
+ * @date updated: 20201204
  *
  * References:
  * 1) Dev-C++ 5.11 auto-generated OpenGL example project
@@ -263,7 +263,10 @@ int WINAPI WinMain (HINSTANCE hInstance,
     //init stuff for delay
     int skip=0, currSysTime=0,
         timeElapsed,
-        idealFrameTime=60;//33;
+        //edited by Mike, 20201204
+        //lower value, faster
+        //TO-DO: -update: this
+        idealFrameTime=33;//60;//33;
     pause=0;
 
     /* program main loop */
