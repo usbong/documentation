@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201013
- * @date updated: 20201121
+ * @date updated: 20201203
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -375,6 +375,7 @@ void Beam::update(float dt)
 	           		else if (myYPos <= 0.0f) changeState(HIDDEN_STATE); //if top side
 */               		
 
+					//TO-DO: -update: wrap for Linux Machine
 	           		if (myXPos <= 0.0f) changeState(HIDDEN_STATE); //if left side
 	           		else if (myXPos >= myWindowWidth/100) changeState(HIDDEN_STATE); //if right side
 

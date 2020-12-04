@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20201204
+ * @date updated: 20201202
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -164,16 +164,7 @@ bool OpenGLCanvas::init()
 	myCanvasPosY=-1.0f;//0.0f;
 	myCanvasPosZ=-3.2f;//0.0f;
     myCanvasEyePosX=0.0f;
-	
-	//added by Mike, 20201204
-	//Linux Machine; Calibrate Canvas positions
-/*    myCanvasPosX-=5.598498;
-	myCanvasPosZ-=5.598498;
-*/
-/*
-	myCanvasPosX=16.8f;
-	myCanvasPosZ=16.8f;
-*/	
+    
     //edited by Mike, 20201025
 	myCanvasStepX=0.3f;//0.32f;//0.3f;//0.1f;
 	myCanvasStepY=0.3f;//0.32f;//0.3f;//0.1f;
@@ -961,39 +952,20 @@ void OpenGLCanvas::render()
 	//note: negative value
 	else if (myRobotShip->getZ() <= 0.0f) myCanvasPosZ = 0.0f-myWindowHeight/100+myRobotShip->getHeight()/8;//-myHeight/8; //if top side
 */
-	//TO-DO: -reverify: with Windows Machine
 	//Linux Machine
-/*	printf("CanvasPosX: %f\n", myCanvasPosX);
+	printf("CanvasPosX: %f\n", myCanvasPosX);
 	printf("robotShipX: %f\n", myRobotShip->getX());
-
+/*
 	printf("CanvasPosZ: %f\n", myCanvasPosZ);
 	printf("robotShipZ: %f\n", myRobotShip->getZ());
 */
-/*	//edited by Mike, 20201204		
 	//TO-DO: -fix: wrapping bottom and top sides
 	if (myCanvasPosX >= 0.0f) myCanvasPosX = 0.0f-20.0f+myRobotShip->getWidth()/8;//myWindowWidth;//-myWidth/8; //if left side
 	else if (myCanvasPosX-myRobotShip->getWidth()/8 <= -20.0f) myCanvasPosX = 0.0f+myRobotShip->getWidth()/8;//+myWidth/8; //if right side
 		
 	if (myCanvasPosZ-myRobotShip->getWidth()/8 <= -20.f) myCanvasPosZ = 0.0f+myRobotShip->getWidth()/8; //if bottom side
 	else if (myCanvasPosZ >= 0.0f) myCanvasPosZ = 0.0f-20.0f+myRobotShip->getWidth()/8;//-myHeight/8; //if top side
-*/
-	//set canvas camera position relative to MyRobotShip position 
-	myCanvasPosX = -myRobotShip->getX()+1.0f; //-3.2 : 4.2; CanvasPosX : robotShipX
-	myCanvasPosZ = -myRobotShip->getZ()+1.0f; //-3.2 : 4.2; CanvasPosZ : robotShipZ
-		
-/*		
-			//note: position calibrate; robotShipX : CanvasPosX
-	//note: negative value; linux machine positive 20.0f, not 0.0f		
-	printf("myWindowWidth/100: %f\n", myWindowWidth/100.0f);
-	if (myRobotShip->getX() <= 0.0f) myCanvasPosX = 0.0f-myWindowWidth/100.0f+myRobotShip->getWidth()/8;//-myWidth/8; //if left side
-	else if (myRobotShip->getX() >= myWindowWidth/100.0f) myCanvasPosX = 0.0f+myRobotShip->getWidth()/8;//+myWidth/8; //if right side
 
-	if (myRobotShip->getZ() >= myWindowHeight/100.0f) myCanvasPosZ = 0.0f+myRobotShip->getHeight()/8; //if bottom side
-	//note: negative value
-	else if (myRobotShip->getZ() <= 0.0f) myCanvasPosZ = 0.0f-myWindowHeight/100+myRobotShip->getHeight()/8;//-myHeight/8; //if top side
-
-		*/
-		
 		
     //added by Mike, 20201024
 //    glTranslatef(3.2f, 1.0f, 3.2f);    
@@ -1076,6 +1048,7 @@ void OpenGLCanvas::render()
                 myAsteroid[i]->draw();
             }
     	glPopMatrix();		
+
      }
 }
 
@@ -1322,8 +1295,8 @@ void OpenGLCanvas::drawGridWithZAxis() {
     glDisable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, 0);
 
-   //removed by Mike, 20201203 to remove flicker
-   //glFlush();  // Render now
+   
+   glFlush();  // Render now
 }
 
 //added by Mike, 20200930
