@@ -14,7 +14,7 @@
  *
  * @author: Michael Syson
  * @date created: 20200926
- * @date updated: 20201202
+ * @date updated: 20201205
  *
  * References:
  * 1) Dev-C++ 5.11 auto-generated OpenGL example project
@@ -226,10 +226,13 @@ void displayOpenGLCanvas() {
     //init stuff for delay
     int skip=0, currSysTime=0,
         timeElapsed,
-        idealFrameTime=60;//33;
+		//edited by Mike, 20201205
+		//TO-DO: -update: this
+        idealFrameTime=33;//60;//33;
     pause=false;//0;
 	 
 		if (!pause) {
+		  //TO-DO: -add: this
 					//removed by Mike, 20201002					
           //currSysTime=GetTickCount(); //Linux Machine
 
@@ -244,7 +247,9 @@ void displayOpenGLCanvas() {
                 myOpenGLCanvas->render();
                 //removed by Mike, 20201002
                 //SwapBuffers (hDC); //Windows Machine
-   							glFlush();  // Render now //Linux Machine
+				//edited by Mike, 20201205
+//   							glFlush();  // Render now //Linux Machine
+			   glutSwapBuffers();
 
 /*							//removed by Mike, 20201002, Linux Machine                
                 timeElapsed=GetTickCount()-currSysTime;
@@ -312,9 +317,9 @@ void update(int i) {
 			//glutTimerFunc(1000 / SCREEN_FPS, Loop, 0);
 			//edited by Mike, 20201202
 //			glutTimerFunc(50, update, 0);
+			//edited by Mike, 20201204
 			glutTimerFunc(70, update, 0);
-			
-			//TO-DO: -add: image buffer to reduce flickering due to repainting canvas
+//			glutTimerFunc(80, update, 0);			
 		}	 
 }
 
