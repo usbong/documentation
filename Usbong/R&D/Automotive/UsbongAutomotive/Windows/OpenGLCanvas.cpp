@@ -971,11 +971,40 @@ void OpenGLCanvas::render()
     	glLoadIdentity();  
 */
 		
+		//TO-DO: -add: z-sort, i.e. auto-draw objects based on z position;
+		//objects with higher z positions are auto-drawn first;
+		//these are objects at the back of those that have lower z positions
+		
     	//added by Mike, 20200930
     	drawGridWithZAxis();
 			    
-    		//added by Mike, 20201011
+		//added by Mike, 20201001
+    	glPushMatrix();		
+    		//added by Mike, 202013; edited by Mike, 20201014
+//            for(i=0; i<MAX_BEAMS; i++) {
+            for(int i=0; i<MAX_BEAMS; i++) {
+              if (myBeam[i]->isActive()) {
+                myBeam[i]->draw();
+			  }
+            }
+        glPopMatrix();       
+		
+		//edited by Mike, 20201016
+    	glPushMatrix();		        
+            myRobotShip->drawRobotShip();			
+        glPopMatrix();       
 
+		//edited by Mike, 20201016
+    	glPushMatrix();		                
+			//added by Mike, 20201016
+            for(int i=0; i<MAX_ASTEROID; i++) {
+              //if (myBeam[i]->isActive())
+                myAsteroid[i]->draw();
+            }
+    	glPopMatrix();		
+
+
+    	//added by Mike, 20201011; removed by Mike, 20201206
 		//TO-DO: -update: this
 /*
         currTextureBackground=gameBackground;
@@ -1010,30 +1039,6 @@ void OpenGLCanvas::render()
                   0.0, 1.0, 0.0); // up-direction
 */
 
-		//added by Mike, 20201001
-    	glPushMatrix();		
-    		//added by Mike, 202013; edited by Mike, 20201014
-//            for(i=0; i<MAX_BEAMS; i++) {
-            for(int i=0; i<MAX_BEAMS; i++) {
-              if (myBeam[i]->isActive()) {
-                myBeam[i]->draw();
-			  }
-            }
-        glPopMatrix();       
-		
-		//edited by Mike, 20201016
-    	glPushMatrix();		        
-            myRobotShip->drawRobotShip();			
-        glPopMatrix();       
-
-		//edited by Mike, 20201016
-    	glPushMatrix();		                
-			//added by Mike, 20201016
-            for(int i=0; i<MAX_ASTEROID; i++) {
-              //if (myBeam[i]->isActive())
-                myAsteroid[i]->draw();
-            }
-    	glPopMatrix();		
 
      }
 }
@@ -1217,12 +1222,17 @@ void OpenGLCanvas::drawGridWithZAxis() {
 	//added by Mike, 20201124
     glColor3f(1.0f, 1.0f, 1.0f); // white
 	glBindTexture( GL_TEXTURE_2D, LEVEL_TEXTURE );
+
+	//added by Mike, 20201206
+	//TO-DO: -put: all cube tiles in an array container
 	
   	//edited by Mike, 20201119
 	//TO-DO: -update: this
 	//note: D = "Door"
 //	sprintf(tempText,"D");
 	//TO-DO: -update: level texture 
+	
+	//TO-DO: -load: from .txt file using myLevel
 	sprintf(tempText,"E");
 	myLevel->draw_level(0.0f, 0.0f, 0.0f, tempText);    	
 

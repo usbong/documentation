@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201118
- * @date updated: 20201124
+ * @date updated: 20201206
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -44,6 +44,12 @@ private:
 	GLboolean test_pow2(GLushort i);
 	void load_tga(char *filename);
 	
+	//added by Mike, 20201206
+	//TO-DO: -add: load from .txt file
+	//TO-DO: -add: increase size
+	//3-Dimensional level; x, y, z
+	float level[20][20][20];
+	
 public: 
 	void setupLevel(int myLevelTextureObject);
 	
@@ -53,5 +59,5 @@ public:
 	*/
 	//TO-DO: -update: this
 	void draw_char(GLfloat x, GLfloat y, GLfloat z, char c);
-	void draw_level(GLfloat x, GLfloat y, GLfloat z, char *string);	
+	void draw_level(GLfloat x, GLfloat y, GLfloat z, char *string);		
 };
