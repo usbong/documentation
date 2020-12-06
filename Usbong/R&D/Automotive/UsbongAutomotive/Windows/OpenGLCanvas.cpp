@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20201205
+ * @date updated: 20201206
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -693,6 +693,14 @@ void OpenGLCanvas::render()
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);    
     //removed by Mike, 20201015
 //    glViewport(0, 0, myWindowWidth, myWindowHeight);		// reset the viewport to new 
+
+	//added by Mike, 20201206
+	//Reference: https://www.khronos.org/opengl/wiki/Depth_Test;
+	//last accessed: 20201206
+	//TO-DO: -verify: this
+	//TO-DO: -add: Z-sort, i.e. sort objects by Z-axis when computer auto-draws
+	glEnable(GL_DEPTH_TEST);
+	glDepthFunc(GL_ALWAYS);
 
 	//Reference: https://community.khronos.org/t/gradient-background/54348/2;
 	//last accessed: 20201122
