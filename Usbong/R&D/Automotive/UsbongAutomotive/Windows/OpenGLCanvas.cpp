@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20201206
+ * @date updated: 20201207
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -50,6 +50,9 @@
 //added by Mike, 20201001
 #include "RobotShip.h"
 
+//added by Mike, 20201207
+#include "Pilot.h"
+
 //added by Mike, 20201010
 #include "Font.h"
 
@@ -62,6 +65,7 @@
 #include "PolygonUtils.h"
 
 #include "RobotShip.h"
+
 #include "Enemy.h"
 #include "Beam.h"
 #include "font.h"
@@ -203,8 +207,12 @@ bool OpenGLCanvas::init()
 	//edited by Mike, 20201115
 	//myRobotShip = new RobotShip;
 	myRobotShip = new RobotShip(0.0f,0.0f,0.0f,myWindowWidth,myWindowHeight);
-
     myRobotShip->setOpenGLCanvas(this);
+
+	//added by Mike, 20201207
+	myPilot = new Pilot(0.0f,0.0f,0.0f,myWindowWidth,myWindowHeight);
+    myPilot->setOpenGLCanvas(this);
+
 	
 	//added by Mike, 20201013; edited by Mike, 20201014
 //	for (i=0; i<MAX_BEAMS; i++) {
@@ -992,6 +1000,11 @@ void OpenGLCanvas::render()
 		//edited by Mike, 20201016
     	glPushMatrix();		        
             myRobotShip->drawRobotShip();			
+        glPopMatrix();       
+
+		//added by Mike, 20201207
+    	glPushMatrix();		        
+            myPilot->drawPilot();			
         glPopMatrix();       
 
 		//edited by Mike, 20201016
