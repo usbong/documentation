@@ -564,10 +564,11 @@ void Pilot::drawPilot()
                    //added by Mike, 20201001
                    drawModelPilot(); //TO-DO: -add: ModelPool.cpp
 */
-				//added by Mike, 20201201; edited by Mike, 20201202
-				//TO-DO: -add: human pilot at smaller scale than Pilot mecha
+				//added by Mike, 20201201; edited by Mike, 20201207
+				//human pilot at smaller scale than Robotship Mecha
+		                glScalef(1.0f, 1.0f, 1.0f);			
 //		                glScalef(2.0f, 2.0f, 2.0f);
-		                glScalef(4.0f, 4.0f, 4.0f);		
+//		                glScalef(4.0f, 4.0f, 4.0f);		
 
 				switch(currentMovingState) {
 		            case IDLE_MOVING_STATE:		
