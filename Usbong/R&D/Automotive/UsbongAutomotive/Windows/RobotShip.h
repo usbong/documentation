@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20201201
+ * @date updated: 20201207
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -34,6 +34,7 @@
 //added by Mike, 20201019
 #include "PolygonUtils.h"
 
+/* //edited by Mike, 20201207
 //added by Mike, 20201201
 // constants for arm and leg movement states
 const char BACKWARD_STATE = 0;
@@ -43,10 +44,10 @@ const char FORWARD_STATE  = 1;
 const char LEFT  = 0;
 const char RIGHT = 1;
 
-/*	//removed by Mike, 20201201
-const int STANDING_STATE = 0;
-const int WALKING_STATE = 1;
-*/
+	//removed by Mike, 20201201
+//const int STANDING_STATE = 0;
+//const int WALKING_STATE = 1;
+
 
 //edited by Mike, 20201201
 #define IDLE_MOVING_STATE 0
@@ -63,6 +64,7 @@ const int DYING_STATE = 3;
 #define FACING_DOWN 1
 #define FACING_LEFT 2
 #define FACING_RIGHT 3
+*/
 
 class RobotShip: public MyDynamicObject
 {
@@ -174,7 +176,7 @@ public:
 	~RobotShip();
 
 	//virtual ~Robot();
-    float rotationAngle;
+    float rotationAngle;	
 
     virtual float getX()
     {

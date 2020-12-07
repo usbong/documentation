@@ -36,11 +36,35 @@
 //#include <SDL.h>
 //edited by Mike, 20200929
 
-#include <windows.h> //Windows Machine
+//added by Mike, 20201207
+//Reference: https://stackoverflow.com/questions/34152424/autodetection-of-os-in-c-c;
+//answer by: Jeegar Patel, 20151208T0940
+//auto-identify if Windows Machine
+#ifdef _WIN32
+	#include <windows.h> //Windows Machine
+#endif
+/*
+#ifdef linux
+    printf("In Linux");
+#endif
+*/
 
+/*	//removed by Mike, 20201121
 #include <GL/gl.h>
 #include <GL/glut.h>
 #include <GL/glu.h>
+*/
+
+//added by Mike, 20201121
+#if defined(__APPLE__)
+#include <OpenGL/gl.h>
+#include <OpenGL/glu.h>
+//#include <GLUT/glut.h>
+#else
+#include <GL/gl.h>
+#include <GL/glu.h>
+//#include <GL/glut.h>
+#endif
 
 #include <stdio.h>
 //#include <math.h>
@@ -65,7 +89,6 @@
 #include "PolygonUtils.h"
 
 #include "RobotShip.h"
-
 #include "Enemy.h"
 #include "Beam.h"
 #include "font.h"
@@ -142,18 +165,28 @@ bool OpenGLCanvas::init()
 {	
 	//TO-DO: -receive: values from main.cpp
 	//edited by Mike, 20201115
+	//noted by Mike, 20201202: smaller grid
 /*    myWindowWidth=640;
     myWindowHeight=640;
 */
-    myWindowWidth=2048;
+	myWindowWidth=2048;
     myWindowHeight=2048;
-    
+
     //added by Mike, 20201023
     myCanvasPosX=-3.2f;//0.0f;
 	myCanvasPosY=-1.0f;//0.0f;
 	myCanvasPosZ=-3.2f;//0.0f;
     myCanvasEyePosX=0.0f;
-    
+	
+	//added by Mike, 20201204
+	//Linux Machine; Calibrate Canvas positions
+/*    myCanvasPosX-=5.598498;
+	myCanvasPosZ-=5.598498;
+*/
+/*
+	myCanvasPosX=16.8f;
+	myCanvasPosZ=16.8f;
+*/	
     //edited by Mike, 20201025
 	myCanvasStepX=0.3f;//0.32f;//0.3f;//0.1f;
 	myCanvasStepY=0.3f;//0.32f;//0.3f;//0.1f;
@@ -194,7 +227,6 @@ bool OpenGLCanvas::init()
  	iRowCountMax=20;
  	iColumnCountMax=20;
 
-
 	fGridSquareWidth = myWindowWidth/iColumnCountMax/100.0;
 	fGridSquareHeight = myWindowHeight/iRowCountMax/100.0;
 
@@ -208,12 +240,11 @@ bool OpenGLCanvas::init()
 	//myRobotShip = new RobotShip;
 	myRobotShip = new RobotShip(0.0f,0.0f,0.0f,myWindowWidth,myWindowHeight);
     myRobotShip->setOpenGLCanvas(this);
-
+	
 	//added by Mike, 20201207
 	myPilot = new Pilot(0.0f,0.0f,0.0f,myWindowWidth,myWindowHeight);
     myPilot->setOpenGLCanvas(this);
 
-	
 	//added by Mike, 20201013; edited by Mike, 20201014
 //	for (i=0; i<MAX_BEAMS; i++) {
 	for (int i=0; i<MAX_BEAMS; i++) {
@@ -702,7 +733,7 @@ void OpenGLCanvas::render()
     //removed by Mike, 20201015
 //    glViewport(0, 0, myWindowWidth, myWindowHeight);		// reset the viewport to new 
 
-	//added by Mike, 20201206
+	//added by Mike, 20201207
 	//Reference: https://www.khronos.org/opengl/wiki/Depth_Test;
 	//last accessed: 20201206
 	//TO-DO: -verify: this
@@ -942,25 +973,52 @@ void OpenGLCanvas::render()
 //           		else if (myZPos <= 0.0f) myZPos = 20-myHeight/8; //if top side
 	else if (myCanvasPosZ <= 0.0f) myCanvasPosZ = myWindowHeight/100;//-myHeight/8; //if top side
 */
-
-/*	//edited by Mike, 20201204
-	//Windows Machine only
+	//edited by Mike, 20201202
+/* //Windows Machine
 	//note: negative value
 	if (myRobotShip->getX() <= 0.0f) myCanvasPosX = 0.0f-myWindowWidth/100+myRobotShip->getWidth()/8;//-myWidth/8; //if left side
+	//edited by Mike, 20201202		
 	else if (myRobotShip->getX() >= myWindowWidth/100) myCanvasPosX = 0.0f+myRobotShip->getWidth()/8;//+myWidth/8; //if right side
+//	else if (myRobotShip->getX() >= 10) myCanvasPosX = 0.0f+myRobotShip->getWidth()/8;//+myWidth/8; //if right side
 
 	if (myRobotShip->getZ() >= myWindowHeight/100) myCanvasPosZ = 0.0f+myRobotShip->getHeight()/8; //if bottom side
 	//note: negative value
 	else if (myRobotShip->getZ() <= 0.0f) myCanvasPosZ = 0.0f-myWindowHeight/100+myRobotShip->getHeight()/8;//-myHeight/8; //if top side
 */
-	
-	//Use with both Windows and Linux Machines
+	//TO-DO: -reverify: with Windows Machine
+	//Linux Machine
+/*	printf("CanvasPosX: %f\n", myCanvasPosX);
+	printf("robotShipX: %f\n", myRobotShip->getX());
+
+	printf("CanvasPosZ: %f\n", myCanvasPosZ);
+	printf("robotShipZ: %f\n", myRobotShip->getZ());
+*/
+/*	//edited by Mike, 20201204		
+	//TO-DO: -fix: wrapping bottom and top sides
+	if (myCanvasPosX >= 0.0f) myCanvasPosX = 0.0f-20.0f+myRobotShip->getWidth()/8;//myWindowWidth;//-myWidth/8; //if left side
+	else if (myCanvasPosX-myRobotShip->getWidth()/8 <= -20.0f) myCanvasPosX = 0.0f+myRobotShip->getWidth()/8;//+myWidth/8; //if right side
+		
+	if (myCanvasPosZ-myRobotShip->getWidth()/8 <= -20.f) myCanvasPosZ = 0.0f+myRobotShip->getWidth()/8; //if bottom side
+	else if (myCanvasPosZ >= 0.0f) myCanvasPosZ = 0.0f-20.0f+myRobotShip->getWidth()/8;//-myHeight/8; //if top side
+*/
 	//set canvas camera position relative to MyRobotShip position 
 	myCanvasPosX = -myRobotShip->getX()+1.0f; //-3.2 : 4.2; CanvasPosX : robotShipX
 	myCanvasPosZ = -myRobotShip->getZ()+1.0f; //-3.2 : 4.2; CanvasPosZ : robotShipZ
+		
+/*		
+			//note: position calibrate; robotShipX : CanvasPosX
+	//note: negative value; linux machine positive 20.0f, not 0.0f		
+	printf("myWindowWidth/100: %f\n", myWindowWidth/100.0f);
+	if (myRobotShip->getX() <= 0.0f) myCanvasPosX = 0.0f-myWindowWidth/100.0f+myRobotShip->getWidth()/8;//-myWidth/8; //if left side
+	else if (myRobotShip->getX() >= myWindowWidth/100.0f) myCanvasPosX = 0.0f+myRobotShip->getWidth()/8;//+myWidth/8; //if right side
 
+	if (myRobotShip->getZ() >= myWindowHeight/100.0f) myCanvasPosZ = 0.0f+myRobotShip->getHeight()/8; //if bottom side
+	//note: negative value
+	else if (myRobotShip->getZ() <= 0.0f) myCanvasPosZ = 0.0f-myWindowHeight/100+myRobotShip->getHeight()/8;//-myHeight/8; //if top side
 
-   
+		*/
+		
+		
     //added by Mike, 20201024
 //    glTranslatef(3.2f, 1.0f, 3.2f);    
 //    glTranslatef(0.0f, 0.0f, 3.2f);
@@ -979,13 +1037,14 @@ void OpenGLCanvas::render()
     	glLoadIdentity();  
 */
 		
+		//added by Mike, 20201207
 		//TO-DO: -add: z-sort, i.e. auto-draw objects based on z position;
 		//objects with higher z positions are auto-drawn first;
 		//these are objects at the back of those that have lower z positions
-		
+
     	//added by Mike, 20200930
     	drawGridWithZAxis();
-			    
+
 		//added by Mike, 20201001
     	glPushMatrix();		
     		//added by Mike, 202013; edited by Mike, 20201014
@@ -1016,8 +1075,7 @@ void OpenGLCanvas::render()
             }
     	glPopMatrix();		
 
-
-    	//added by Mike, 20201011; removed by Mike, 20201206
+		//added by Mike, 20201011; removed by Mike, 20201207
 		//TO-DO: -update: this
 /*
         currTextureBackground=gameBackground;
@@ -1052,8 +1110,7 @@ void OpenGLCanvas::render()
                   0.0, 1.0, 0.0); // up-direction
 */
 
-
-     }
+	}
 }
 
 //edited by Mike, 20201022
@@ -1235,8 +1292,8 @@ void OpenGLCanvas::drawGridWithZAxis() {
 	//added by Mike, 20201124
     glColor3f(1.0f, 1.0f, 1.0f); // white
 	glBindTexture( GL_TEXTURE_2D, LEVEL_TEXTURE );
-
-	//added by Mike, 20201206
+	
+	//added by Mike, 20201207
 	//TO-DO: -put: all cube tiles in an array container
 	
   	//edited by Mike, 20201119
@@ -1244,8 +1301,6 @@ void OpenGLCanvas::drawGridWithZAxis() {
 	//note: D = "Door"
 //	sprintf(tempText,"D");
 	//TO-DO: -update: level texture 
-	
-	//TO-DO: -load: from .txt file using myLevel
 	sprintf(tempText,"E");
 	myLevel->draw_level(0.0f, 0.0f, 0.0f, tempText);    	
 
@@ -1304,9 +1359,8 @@ void OpenGLCanvas::drawGridWithZAxis() {
     glDisable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, 0);
 
-	//removed by Mike, 20201205 to remove flicker
-    //glFlush();  // Render now   
-   
+   //removed by Mike, 20201203 to remove flicker
+   //glFlush();  // Render now
 }
 
 //added by Mike, 20200930
@@ -1498,8 +1552,8 @@ void OpenGLCanvas::update()
        	//process input
        	//TO-DO: -update: this
        	//TO-DO: -verify: gamepad
-       	
-       	//added by Mike, 20201201
+		
+		//added by Mike, 20201202
        	//verify if no keys are pressed down
        	int iKeyCount;
        	for (iKeyCount=0; iKeyCount<iNumOfKeyTypes; iKeyCount++) {
@@ -1512,7 +1566,7 @@ void OpenGLCanvas::update()
 			//TO-DO: -update: this
           	myRobotShip->move(-1); //IDLE_MOVING_STATE			
 		}
-
+		
        	//edited by Mike, 20201013
     	if(myKeysDown[KEY_UP] == TRUE)
 //    	if(myKeysDown[KEY_W] == TRUE)
@@ -1847,4 +1901,6 @@ void OpenGLCanvas::changeState(int s)
 {
   currentState=s;                  
 }
+
+
 

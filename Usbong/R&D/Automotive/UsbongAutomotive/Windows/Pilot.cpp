@@ -30,8 +30,21 @@
 #include <stdio.h>
 #include <math.h>
 
+/*	//removed by Mike, 20201121
 #include <gl/gl.h>
 #include <gl/glu.h>
+*/
+
+//added by Mike, 20201121
+#if defined(__APPLE__)
+#include <OpenGL/gl.h>
+#include <OpenGL/glu.h>
+//#include <GLUT/glut.h>
+#else
+#include <GL/gl.h>
+#include <GL/glu.h>
+//#include <GL/glut.h>
+#endif
 
 //edited by Mike, 20201207
 #include "Pilot.h"
@@ -42,7 +55,20 @@
 */
 
 #include <string.h>
-#include <windows.h> //Windows Machine
+
+//added by Mike, 20201207
+//Reference: https://stackoverflow.com/questions/34152424/autodetection-of-os-in-c-c;
+//answer by: Jeegar Patel, 20151208T0940
+//auto-identify if Windows Machine
+#ifdef _WIN32
+	#include <windows.h> //Windows Machine
+#endif
+/*
+#ifdef linux
+    printf("In Linux");
+#endif
+*/
+
 
 //#include "ModelPool.h"
 
@@ -548,10 +574,11 @@ void Pilot::drawPilot()
                    //added by Mike, 20201001
                    drawModelPilot(); //TO-DO: -add: ModelPool.cpp
 */
-				//added by Mike, 20201201; edited by Mike, 20201202
-				//TO-DO: -add: human pilot at smaller scale than Pilot mecha
-//		                glScalef(2.0f, 2.0f, 2.0f);
-		                glScalef(4.0f, 4.0f, 4.0f);		
+				//added by Mike, 20201201; edited by Mike, 20201207
+				//human pilot at smaller scale than Robotship Mecha
+//		                glScalef(1.0f, 1.0f, 1.0f);			
+		                glScalef(1.5f, 1.5f, 1.5f);
+//		                glScalef(4.0f, 4.0f, 4.0f);		
 
 				switch(currentMovingState) {
 		            case IDLE_MOVING_STATE:		
@@ -1188,6 +1215,9 @@ bool Pilot::loadTexture(CTargaImage *myTexture, const char *filename, unsigned i
 	// now that the texture object is bound, specify a texture for it
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, myTexture->GetWidth(), myTexture->GetHeight(),
 				 0, GL_RGB, GL_UNSIGNED_BYTE, myTexture->GetImage());
+
+	//added by Mike, 20201207
+	return true;
 }
 
 void Pilot::drawTriangledCube(float xPos, float yPos, float zPos)

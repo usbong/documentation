@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20201204
+ * @date updated: 20201207
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -30,8 +30,21 @@
 #include <stdio.h>
 #include <math.h>
 
+/*	//removed by Mike, 20201121
 #include <gl/gl.h>
 #include <gl/glu.h>
+*/
+
+//added by Mike, 20201121
+#if defined(__APPLE__)
+#include <OpenGL/gl.h>
+#include <OpenGL/glu.h>
+//#include <GLUT/glut.h>
+#else
+#include <GL/gl.h>
+#include <GL/glu.h>
+//#include <GL/glut.h>
+#endif
 
 #include "RobotShip.h"
 /* //TO-DO: -add: these
@@ -40,7 +53,19 @@
 */
 
 #include <string.h>
-#include <windows.h> //Windows Machine
+
+//added by Mike, 20201207
+//Reference: https://stackoverflow.com/questions/34152424/autodetection-of-os-in-c-c;
+//answer by: Jeegar Patel, 20151208T0940
+//auto-identify if Windows Machine
+#ifdef _WIN32
+	#include <windows.h> //Windows Machine
+#endif
+/*
+#ifdef linux
+    printf("In Linux");
+#endif
+*/
 
 //#include "ModelPool.h"
 
@@ -158,7 +183,7 @@ void RobotShip::setup()
                     GL_LINEAR_MIPMAP_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 	
-	//...
+	//.../home/unit_member/Documents/USBONG/R&D/With C++ Computer Language and OpenGL/UsbongAutomotive/Linux
 	
 	/* select and enable texture 5 */
     glBindTexture(GL_TEXTURE_2D, 5);
@@ -429,11 +454,7 @@ RobotShip::RobotShip(float xPos, float yPos, float zPos, int windowWidth, int wi
 	//removed by Mike, 20201001
 //	setup();
 	
-    setCollidable(true);
-    
-    
-    
-    
+    setCollidable(true);    
 }
 
 RobotShip::~RobotShip()
@@ -452,7 +473,8 @@ float* RobotShip::getXYZPos()
       return myXYZ;
 }
 
-//TO-DO: -update: this
+//TO-DO: -use: drawRobotShip() instructions for human pilot
+//TO-DO: -update: drawRobotShip()
 void RobotShip::drawRobotShip()
 {
 
@@ -546,10 +568,12 @@ void RobotShip::drawRobotShip()
                    //added by Mike, 20201001
                    drawModelRobotShip(); //TO-DO: -add: ModelPool.cpp
 */
-				//added by Mike, 20201201; edited by Mike, 20201202
-				//TO-DO: -add: human pilot at smaller scale than robotship mecha
+				//added by Mike, 20201201; edited by Mike, 20201207
+				//TO-DO: -reverify: scale
+				//note: human pilot at smaller scale than Robotship mecha
 //		                glScalef(2.0f, 2.0f, 2.0f);
-		                glScalef(4.0f, 4.0f, 4.0f);		
+//		                glScalef(4.0f, 4.0f, 4.0f);		
+		                glScalef(5.0f, 5.0f, 5.0f);		
 
 				switch(currentMovingState) {
 		            case IDLE_MOVING_STATE:		
@@ -577,46 +601,101 @@ void RobotShip::drawRobotShip()
 					    	|| (currentFacingState==FACING_LEFT))
 					    {
 							glPushMatrix();	
+							   //edited by Mike, 20201207
+/*														
 //							   drawUpperArm(-0.1f, 0.0f, 0.0f); //left
 							   drawUpperArm(0.3f, 0.0f, 0.0f); //right        
 //							   drawLowerArm(-0.1f, -0.2f, 0.0f); //left
 							   drawLowerArm(0.3f, -0.2f, 0.0f); //right
+*/
+							   drawUpperArm(0.4f, 0.0f, 0.0f); //right        
+							   drawLowerArm(0.4f, -0.2f, 0.0f); //right
 
+/*							   //edited by Mike, 20201207
 							   drawUpperLeg(0.0f, -0.5f, 0.0f); //left
 							   drawUpperLeg(0.2f, -0.5f, 0.0f); //right        
 
 							   drawLowerLeg(0.0f, -0.7f, 0.0f); //left
 							   drawLowerLeg(0.2f, -0.7f, 0.0f); //right
+*/
+							   drawUpperLeg(-0.1f, -0.5f, 0.0f); //left
+							   drawUpperLeg(0.3f, -0.5f, 0.0f); //right        
 
-							   //added by Mike, 20201201; edited by Mike, 20201204
-							   drawBody(0.1f, -0.15f, 0.0f);
+							   drawLowerLeg(-0.1f, -0.7f, 0.0f); //left
+							   drawLowerLeg(0.3f, -0.7f, 0.0f); //right
+
+							
+							   //added by Mike, 20201201; edited by Mike, 20201207
+/*							   drawBody(0.1f, -0.15f, 0.0f);
 							   drawHead(0.1f, 0.2f, 0.0f);		  
+*/							   
+							   if (currentFacingState==FACING_UP) {
+								   drawHead(0.1f, 0.2f, -0.1f);
+								   drawBody(0.1f, -0.15f, 0.0f);
+							   }
+					    	   //(currentFacingState==FACING_LEFT))																						   
+							   else {
+								   drawBody(0.1f, -0.15f, 0.0f);
+								   drawHead(0.1f, 0.2f, -0.1f);		  
+							   }
 
+/* 							   //edited by Mike, 20201207
 							   drawUpperArm(-0.1f, 0.0f, 0.0f); //left
 							   drawLowerArm(-0.1f, -0.2f, 0.0f); //left
+*/
+							   drawUpperArm(-0.2f, 0.0f, 0.0f); //left
+							   drawLowerArm(-0.2f, -0.2f, 0.0f); //left
+							
 							glPopMatrix();	// pop back to original coordinate system	
 						}
 					    else if ((currentFacingState==FACING_DOWN)
 					    		|| (currentFacingState==FACING_RIGHT))
 					    {
 							glPushMatrix();	
+							   //edited by Mike, 20201207
+/*							
 							   drawUpperArm(-0.1f, 0.0f, 0.0f); //left
 //							   drawUpperArm(0.3f, 0.0f, 0.0f); //right        
 							   drawLowerArm(-0.1f, -0.2f, 0.0f); //left
 //							   drawLowerArm(0.3f, -0.2f, 0.0f); //right
+*/
+							   drawUpperArm(-0.2f, 0.0f, 0.0f); //left
+							   drawLowerArm(-0.2f, -0.2f, 0.0f); //left
 
+/*							   //edited by Mike, 20201207
 							   drawUpperLeg(0.0f, -0.5f, 0.0f); //left
 							   drawUpperLeg(0.2f, -0.5f, 0.0f); //right        
 
 							   drawLowerLeg(0.0f, -0.7f, 0.0f); //left
 							   drawLowerLeg(0.2f, -0.7f, 0.0f); //right
+*/
+							   drawUpperLeg(-0.0f, -0.5f, 0.0f); //left
+							   drawUpperLeg(0.3f, -0.5f, 0.0f); //right        
 
-							   //added by Mike, 20201201; edited by Mike, 20201204
-							   drawBody(0.1f, -0.15f, 0.0f);
+							   drawLowerLeg(-0.0f, -0.7f, 0.0f); //left
+							   drawLowerLeg(0.3f, -0.7f, 0.0f); //right
+							
+							   //added by Mike, 20201201; edited by Mike, 20201207
+/*							   drawBody(0.1f, -0.15f, 0.0f);
 							   drawHead(0.1f, 0.2f, 0.0f);		  
+*/
+							   if (currentFacingState==FACING_DOWN) {
+							   	  drawBody(0.1f, -0.15f, 0.0f);
+								  drawHead(0.1f, 0.2f, -0.1f);
+							   }
+					    	   //(currentFacingState==FACING_RIGHT))														
+							   else {
+								  drawHead(0.1f, 0.2f, -0.1f);
+								  drawBody(0.1f, -0.15f, 0.0f);
+							   }
 
+/*								//edited by Mike, 20201207							
 							   drawUpperArm(0.3f, 0.0f, 0.0f); //right        
 							   drawLowerArm(0.3f, -0.2f, 0.0f); //right
+*/							   
+							   drawUpperArm(0.4f, 0.0f, 0.0f); //right        
+							   drawLowerArm(0.4f, -0.2f, 0.0f); //right
+							
 							glPopMatrix();	// pop back to original coordinate system	
 						}						
 						break;
@@ -641,11 +720,16 @@ void RobotShip::drawRobotShip()
 */
 			            		glPushMatrix();
 			            			glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);
-			                        drawUpperArm(0.3f, 0.0f, 0.0f); //right        
+									//edited by Mike, 20201207
+			                        //drawUpperArm(0.3f, 0.0f, 0.0f); //right       
+			                        drawUpperArm(0.4f, 0.0f, 0.0f); //right       
+							
 			                		glPushMatrix();
 			                            glTranslatef(0.0f, 0.0f, 0.1f);
 			                			glRotatef(45, 1.0f, 0.0f, 0.0f);
-			                            drawLowerArm(0.3f, -0.3f, 0.0f); //right
+										//edited by Mike, 20201207
+										//drawLowerArm(0.3f, -0.3f, 0.0f); //right
+										drawLowerArm(0.4f, -0.3f, 0.0f); //right							
 			                		glPopMatrix();
 			            		glPopMatrix();
 			                    //LEGS
@@ -668,19 +752,34 @@ void RobotShip::drawRobotShip()
 			                		glPopMatrix();
 			            		glPopMatrix();
 	
-							    //added by Mike, 20201202; edited by Mike, 20201204
-			            		drawBody(0.1f, -0.15f, 0.0f);	
+							    //added by Mike, 20201202; edited by Mike, 20201207
+/*			            		drawBody(0.1f, -0.15f, 0.0f);	
 			            		drawHead(0.1f, 0.2f, 0.0f);		
-
+*/
+							   if (currentFacingState==FACING_UP) {
+								   drawHead(0.1f, 0.2f, -0.1f);		
+								   drawBody(0.1f, -0.15f, 0.0f);	
+							   }
+					    	   //(currentFacingState==FACING_LEFT))																						   
+							   else {
+									drawBody(0.1f, -0.15f, 0.0f);	
+									drawHead(0.1f, 0.2f, -0.1f);		
+							   }
+							
 			                    //UPPER
 			            		glPushMatrix();
 			            			glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);
-			            			drawUpperArm(-0.1f, 0.0f, 0.0f); //left
-			                		glPushMatrix();
+									//edited by Mike, 20201207
+			            			//drawUpperArm(-0.1f, 0.0f, 0.0f); //left
+			            			drawUpperArm(-0.2f, 0.0f, 0.0f); //left
+
+									glPushMatrix();
 			                            glTranslatef(0.0f, 0.0f, 0.1f);
 			                			glRotatef(45, 1.0f, 0.0f, 0.0f);
-			                		    drawLowerArm(-0.1f, -0.3f, 0.0f); //left
-			                		glPopMatrix();
+										//edited by Mike, 20201207
+										//drawLowerArm(-0.1f, -0.3f, 0.0f); //left
+										drawLowerArm(-0.2f, -0.3f, 0.0f); //left
+									glPopMatrix();
 			            		glPopMatrix();
 	
 			            	glPopMatrix();	// pop back to original coordinate system						
@@ -693,12 +792,17 @@ void RobotShip::drawRobotShip()
 			                    //UPPER
 			            		glPushMatrix();
 			            			glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);
-			            			drawUpperArm(-0.1f, 0.0f, 0.0f); //left
+			            			//edited by Mike, 20201207
+									//drawUpperArm(-0.1f, 0.0f, 0.0f); //left
+									drawUpperArm(-0.2f, 0.0f, 0.0f); //left
+							
 			                		glPushMatrix();
 			                            glTranslatef(0.0f, 0.0f, 0.1f);
 			                			glRotatef(45, 1.0f, 0.0f, 0.0f);
-			                		    drawLowerArm(-0.1f, -0.3f, 0.0f); //left
-			                		glPopMatrix();
+										//edited by Mike, 20201207
+			                		    //drawLowerArm(-0.1f, -0.3f, 0.0f); //left
+			                		    drawLowerArm(-0.2f, -0.3f, 0.0f); //left
+								     glPopMatrix();
 			            		glPopMatrix();
 /*								/removed by Mike, 20201202 due to draw sequence is important
 			            		glPushMatrix();
@@ -731,17 +835,32 @@ void RobotShip::drawRobotShip()
 			                		glPopMatrix();
 			            		glPopMatrix();
 	
-							    //added by Mike, 20201202; edited by Mike, 20201204
-			            		drawBody(0.1f, -0.15f, 0.0f);
+							    //added by Mike, 20201202; edited by Mike, 20201207
+/*			            		drawBody(0.1f, -0.15f, 0.0f);
 			            		drawHead(0.1f, 0.2f, 0.0f);		
-
+*/
+							   if (currentFacingState==FACING_DOWN) {
+							   	  drawBody(0.1f, -0.15f, 0.0f);
+								  drawHead(0.1f, 0.2f, -0.1f);
+							   }
+					    	   //(currentFacingState==FACING_RIGHT))														
+							   else {
+								  drawHead(0.1f, 0.2f, -0.1f);
+								  drawBody(0.1f, -0.15f, 0.0f);
+							   }
+							
 			            		glPushMatrix();
 			            			glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);
-			                        drawUpperArm(0.3f, 0.0f, 0.0f); //right        
-			                		glPushMatrix();
+									//edited by Mike, 20201207
+			                        //drawUpperArm(0.3f, 0.0f, 0.0f); //right        
+			                        drawUpperArm(0.4f, 0.0f, 0.0f); //right        
+
+									glPushMatrix();
 			                            glTranslatef(0.0f, 0.0f, 0.1f);
 			                			glRotatef(45, 1.0f, 0.0f, 0.0f);
-			                            drawLowerArm(0.3f, -0.3f, 0.0f); //right
+										//edited by Mike, 20201207
+			                            //drawLowerArm(0.3f, -0.3f, 0.0f); //right
+			                            drawLowerArm(0.4f, -0.3f, 0.0f); //right							
 			                		glPopMatrix();
 			            		glPopMatrix();
 	
@@ -1186,6 +1305,8 @@ bool RobotShip::loadTexture(CTargaImage *myTexture, const char *filename, unsign
 	// now that the texture object is bound, specify a texture for it
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, myTexture->GetWidth(), myTexture->GetHeight(),
 				 0, GL_RGB, GL_UNSIGNED_BYTE, myTexture->GetImage());
+	
+	return true;
 }
 
 void RobotShip::drawTriangledCube(float xPos, float yPos, float zPos)
@@ -1270,7 +1391,10 @@ void RobotShip::drawUpperArm(float xPos, float yPos, float zPos)
 		//glColor3f(1.0f, 0.0f, 0.0f);	// red
 		glColor3f(1.0f, 1.0f, 1.0f);
         glTranslatef(xPos, yPos, zPos);
-		glScalef(0.1f, 0.2f, 0.1f);		
+		//edited by Mike, 20201207
+		//glScalef(0.1f, 0.2f, 0.1f);		
+		glScalef(0.2f, 0.2f, 0.2f);		// arm is a 2x3x2 box	
+	
         drawTriangledCube(0.0f, 0.0f, 0.0f);
 	glPopMatrix();
 }
@@ -1281,8 +1405,11 @@ void RobotShip::drawLowerArm(float xPos, float yPos, float zPos)
 		//glColor3f(0.5f, 0.0f, 0.0f);	// dark red
 		glColor3f(0.8f, 0.8f, 0.8f);
 		glTranslatef(xPos, yPos, zPos);
-		glScalef(0.1f, 0.3f, 0.1f);		// arm is a 1x4x1 cube
-        drawTriangledCube(0.0f, 0.0f, 0.0f);
+		//edited by Mike, 20201207
+	//	glScalef(0.1f, 0.3f, 0.1f);		// arm is a 1x4x1 cube
+		glScalef(0.2f, 0.3f, 0.2f);		// arm is a 2x4x2 box
+
+		drawTriangledCube(0.0f, 0.0f, 0.0f);
 		//drawCube(0.0f, 0.0f, 0.0f);
 	glPopMatrix();
 }
@@ -1316,16 +1443,20 @@ void RobotShip::drawHead(float xPos, float yPos, float zPos)
 //        drawAntenna(0.0f, 0.0f, 0.0f);		
 		glColor3f(1.0f, 1.0f, 1.0f);	// white		
 		//glScalef(2.0f, 2.0f, 2.0f);		// head is a 2x2x2 cube
+		//edited by Mike, 20201207
 		glScalef(0.2f, 0.2f, 0.2f);
-
+/*	//TO-DO: -reverify: this	
+		glScalef(0.3f, 0.4f, 0.2f);
+		glTranslatef(0.0f, -0.1f, 0.0f);
+*/
 		glBindTexture(GL_TEXTURE_2D, myHeadTextureObject);
         glEnable(GL_TEXTURE_2D); //added by Mike, Dec.21,2006
-
+        
 		//edited by Mike, 20201204
 		//glColor3f(1.0f, 1.0f, 1.0f);//default: white
 		glColor3f(0.97f, 0.09f, 0.0f);//red
 
-    	glBegin(GL_TRIANGLE_STRIP);
+		glBegin(GL_TRIANGLE_STRIP);
     	    //note: In "glTexCoord2f(1.0, 0.0);", if 1.0 is changed to 2.0, the plane is made up of 4 images instead of just 1 whole image 
     		glTexCoord2f(1.0, 0.0); 
             glVertex3f(0.5f, -0.5f, -0.5f);
@@ -1351,17 +1482,22 @@ void RobotShip::drawBody(float xPos, float yPos, float zPos)
 	glPushMatrix();
 		//glColor3f(0.0f, 0.0f, 1.0f);	// blue
 		//glColor3f(0.0f, 0.0f, 0.0f);	// black
+
         glTranslatef(xPos, yPos, zPos);
 //		glScalef( 0.2f, 0.2f, 0.1f);
 //		drawSphere();
-		glScalef(0.3f, 0.5f, 0.2f);
+		//edited by Mike, 20201207
+//		glScalef(0.3f, 0.5f, 0.2f);
+		glScalef(0.5f, 0.5f, 0.3f);
+        glTranslatef(0.0f, 0.4f, 0.0f);
+	
 		glBindTexture(GL_TEXTURE_2D, myBodyTextureObject);
         glEnable(GL_TEXTURE_2D); //added by Mike, Dec.21,2006
-
+    
 		//edited by Mike, 20201204
 	    //glColor3f(1.0f, 1.0f, 1.0f);//default: white
 	    glColor3f(0.06f, 0.54f, 0.0f);	//green
-
+	
     	glBegin(GL_TRIANGLE_STRIP);
     	    //note: In "glTexCoord2f(1.0, 0.0);", if 1.0 is changed to 2.0, the plane is made up of 4 images instead of just 1 whole image 
     		glTexCoord2f(1.0, 0.0); 
@@ -1381,6 +1517,7 @@ void RobotShip::drawBody(float xPos, float yPos, float zPos)
 	glPopMatrix();
     glDisable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, 0);
+
 }
 
 void RobotShip::drawUpperLeg(float xPos, float yPos, float zPos)
@@ -1388,7 +1525,10 @@ void RobotShip::drawUpperLeg(float xPos, float yPos, float zPos)
 	glPushMatrix();
 		glTranslatef(xPos, yPos, zPos);
 		
-		glScalef(0.1f, 0.25f, 0.1f);	
+		//edited by Mike, 20201207
+//		glScalef(0.1f, 0.25f, 0.1f);	
+		glScalef(0.2f, 0.25f, 0.2f);	
+	
 		//glColor3f(1.0f, 1.0f, 0.0f);	// yellow
 		glColor3f(0.8f, 0.8f, 0.8f); //gray
         //drawCube(0.0f, 0.0f, 0.0f);
@@ -1409,7 +1549,10 @@ void RobotShip::drawLowerLeg(float xPos, float yPos, float zPos)
 //			drawFoot(0.0f, -0.4f, 0.0f);
 		glPopMatrix();		
 		
-		glScalef(0.1f, 0.25f, 0.1f);		// leg is a 1x5x1 cube
+		//edited by Mike, 20201207
+		//glScalef(0.1f, 0.25f, 0.1f);		// leg is a 1x5x1 cube
+		glScalef(0.2f, 0.25f, 0.2f);		// leg is a 1x5x1 cube
+	
 		//glColor3f(0.8f, 0.8f, 0.0f);	// yellow
         glColor3f(1.0f, 1.0f, 1.0f); //white
         drawTriangledCube(0.0f, 0.0f, 0.0f);
@@ -1429,5 +1572,4 @@ void RobotShip::drawFoot(float xPos, float yPos, float zPos)
 	glPopMatrix();
 }
 //--------------------------------------------
-
 

@@ -29,7 +29,17 @@
 #ifndef OPENGLCANVAS_H
 #define OPENGLCANVAS_H
 
-#include <windows.h> //Windows Machine
+//added by Mike, 20201207
+//auto-identify if Windows Machine
+#ifdef _WIN32
+	#include <windows.h> //Windows Machine
+#endif
+/*
+#ifdef linux
+    printf("In Linux");
+#endif
+*/
+
 
 //#include "CTargaImage.h"
 
@@ -81,7 +91,8 @@
 #define GL_CLAMP_TO_EDGE 0x812F
 
 class RobotShip;
-class Pilot; //added by Mike, 20201207
+//added by Mike, 20201207
+class Pilot;
 
 //class Enemy; //removed by Mike, 20201013
 class Beam;
@@ -94,7 +105,7 @@ class OpenGLCanvas
     private:
     	RobotShip *myRobotShip,
     	          *myRobotShipPlayer2;
-
+		
 		//added by Mike, 20201207
     	Pilot *myPilot;
 		
@@ -250,4 +261,3 @@ class OpenGLCanvas
 };
 
 #endif
-
