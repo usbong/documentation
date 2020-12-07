@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200929
- * @date updated: 20201125
+ * @date updated: 20201207
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -83,6 +83,9 @@
 #define GL_CLAMP_TO_EDGE 0x812F
 
 class RobotShip;
+//added by Mike, 20201207
+class Pilot;
+
 //class Enemy; //removed by Mike, 20201013
 class Beam;
 class Asteroid;
@@ -94,6 +97,9 @@ class OpenGLCanvas
     private:
     	RobotShip *myRobotShip,
     	          *myRobotShipPlayer2;
+		
+		//added by Mike, 20201207
+    	Pilot *myPilot;
 		
 		//added by Mike, 20201118
     	Level *myLevel;

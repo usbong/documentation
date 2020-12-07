@@ -8,7 +8,7 @@
 # @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
 # @author: SYSON, MICHAEL B.
 # @date created: 20200930
-# @last updated: 20201202
+# @last updated: 20201207
 #
 # Reference:
 # 1) https://www3.ntu.edu.sg/home/ehchua/programming/cpp/gcc_make.html;
@@ -24,6 +24,7 @@ g++ -c Asteroid.cpp
 g++ -c Level.cpp
 g++ -c PolygonUtils.cpp
 g++ -c CTargaImage.cpp
+g++ -c Pilot.cpp
 
 #g++ -o mainOutput main.o OpenGLCanvas.o -lGL -lGLU -lglut
-g++ -o mainOutput main.o OpenGLCanvas.o MyDynamicObject.o RobotShip.o Font.o Beam.o Asteroid.o Level.o PolygonUtils.o CTargaImage.o -lGL -lGLU -lglut
+g++ -o mainOutput main.o OpenGLCanvas.o MyDynamicObject.o RobotShip.o Font.o Beam.o Asteroid.o Level.o PolygonUtils.o CTargaImage.o Pilot.o -lGL -lGLU -lglut

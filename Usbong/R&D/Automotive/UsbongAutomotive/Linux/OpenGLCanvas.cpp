@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20201204
+ * @date updated: 20201207
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -63,6 +63,9 @@
 
 //added by Mike, 20201001
 #include "RobotShip.h"
+
+//added by Mike, 20201207
+#include "Pilot.h"
 
 //added by Mike, 20201010
 #include "Font.h"
@@ -226,9 +229,12 @@ bool OpenGLCanvas::init()
 	//edited by Mike, 20201115
 	//myRobotShip = new RobotShip;
 	myRobotShip = new RobotShip(0.0f,0.0f,0.0f,myWindowWidth,myWindowHeight);
-
     myRobotShip->setOpenGLCanvas(this);
 	
+	//added by Mike, 20201207
+	myPilot = new Pilot(0.0f,0.0f,0.0f,myWindowWidth,myWindowHeight);
+    myPilot->setOpenGLCanvas(this);
+
 	//added by Mike, 20201013; edited by Mike, 20201014
 //	for (i=0; i<MAX_BEAMS; i++) {
 	for (int i=0; i<MAX_BEAMS; i++) {
@@ -717,6 +723,14 @@ void OpenGLCanvas::render()
     //removed by Mike, 20201015
 //    glViewport(0, 0, myWindowWidth, myWindowHeight);		// reset the viewport to new 
 
+	//added by Mike, 20201207
+	//Reference: https://www.khronos.org/opengl/wiki/Depth_Test;
+	//last accessed: 20201206
+	//TO-DO: -verify: this
+	//TO-DO: -add: Z-sort, i.e. sort objects by Z-axis when computer auto-draws
+	glEnable(GL_DEPTH_TEST);
+	glDepthFunc(GL_ALWAYS);
+
 	//Reference: https://community.khronos.org/t/gradient-background/54348/2;
 	//last accessed: 20201122
 	//answer by: NiCo1, 2008-03
@@ -1013,11 +1027,45 @@ void OpenGLCanvas::render()
     	glLoadIdentity();  
 */
 		
+		//added by Mike, 20201207
+		//TO-DO: -add: z-sort, i.e. auto-draw objects based on z position;
+		//objects with higher z positions are auto-drawn first;
+		//these are objects at the back of those that have lower z positions
+
     	//added by Mike, 20200930
     	drawGridWithZAxis();
-			    
-    		//added by Mike, 20201011
 
+		//added by Mike, 20201001
+    	glPushMatrix();		
+    		//added by Mike, 202013; edited by Mike, 20201014
+//            for(i=0; i<MAX_BEAMS; i++) {
+            for(int i=0; i<MAX_BEAMS; i++) {
+              if (myBeam[i]->isActive()) {
+                myBeam[i]->draw();
+			  }
+            }
+        glPopMatrix();       
+		
+		//edited by Mike, 20201016
+    	glPushMatrix();		        
+            myRobotShip->drawRobotShip();			
+        glPopMatrix();       
+
+		//added by Mike, 20201207
+    	glPushMatrix();		        
+            myPilot->drawPilot();			
+        glPopMatrix();       
+
+		//edited by Mike, 20201016
+    	glPushMatrix();		                
+			//added by Mike, 20201016
+            for(int i=0; i<MAX_ASTEROID; i++) {
+              //if (myBeam[i]->isActive())
+                myAsteroid[i]->draw();
+            }
+    	glPopMatrix();		
+
+		//added by Mike, 20201011; removed by Mike, 20201207
 		//TO-DO: -update: this
 /*
         currTextureBackground=gameBackground;
@@ -1052,31 +1100,7 @@ void OpenGLCanvas::render()
                   0.0, 1.0, 0.0); // up-direction
 */
 
-		//added by Mike, 20201001
-    	glPushMatrix();		
-    		//added by Mike, 202013; edited by Mike, 20201014
-//            for(i=0; i<MAX_BEAMS; i++) {
-            for(int i=0; i<MAX_BEAMS; i++) {
-              if (myBeam[i]->isActive()) {
-                myBeam[i]->draw();
-			  }
-            }
-        glPopMatrix();       
-		
-		//edited by Mike, 20201016
-    	glPushMatrix();		        
-            myRobotShip->drawRobotShip();			
-        glPopMatrix();       
-
-		//edited by Mike, 20201016
-    	glPushMatrix();		                
-			//added by Mike, 20201016
-            for(int i=0; i<MAX_ASTEROID; i++) {
-              //if (myBeam[i]->isActive())
-                myAsteroid[i]->draw();
-            }
-    	glPopMatrix();		
-     }
+	}
 }
 
 //edited by Mike, 20201022
@@ -1258,6 +1282,9 @@ void OpenGLCanvas::drawGridWithZAxis() {
 	//added by Mike, 20201124
     glColor3f(1.0f, 1.0f, 1.0f); // white
 	glBindTexture( GL_TEXTURE_2D, LEVEL_TEXTURE );
+	
+	//added by Mike, 20201207
+	//TO-DO: -put: all cube tiles in an array container
 	
   	//edited by Mike, 20201119
 	//TO-DO: -update: this
