@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Usbong Halimbawa: Image Processing Automation
+# Usbong Automotive: Image Processing Automation
 # C++ Computer Language and OpenGL
 #
 # Compile and Link Multiple Source Files
@@ -8,7 +8,7 @@
 # @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
 # @author: SYSON, MICHAEL B.
 # @date created: 20200930
-# @last updated: 20201207
+# @last updated: 20201209
 #
 # Reference:
 # 1) https://www3.ntu.edu.sg/home/ehchua/programming/cpp/gcc_make.html;
