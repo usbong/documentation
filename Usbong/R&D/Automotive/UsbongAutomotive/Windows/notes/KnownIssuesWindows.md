@@ -15,6 +15,8 @@ System type: 32-bit Operating System<br/>
 
 <img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Automotive/UsbongAutomotive/Windows/notes/res/UsbongAutomotivePilotMechaRobotShipV3TaskManagerV20201209T1954.png" width="80%">
 
-### Additional Note: 
+### Additional Notes: 
 1) Usage of Central Processing Unit (CPU) and Physical Memory, i.e. Random Access Memory (RAM), not maxed out.<br/>
---> RAM: stored data in computer memory disappears when there is no more electricity 
+--> RAM: stored data in computer memory disappears when there is no more electricity<br/>
+2) CPU Usage of UsbongAutomotive.exe only maxes at 36.<br/>
+3) Physical Memory Usage of UsbongAutomotive.exe only remains below 14,000K.<br/>
