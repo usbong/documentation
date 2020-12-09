@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20201207
+ * @date updated: 20201209
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -618,8 +618,7 @@ void RobotShip::drawRobotShip()
 
 							   drawLowerLeg(-0.1f, -0.7f, 0.0f); //left
 							   drawLowerLeg(0.3f, -0.7f, 0.0f); //right
-
-							
+			
 							   //added by Mike, 20201201; edited by Mike, 20201207
 /*							   drawBody(0.1f, -0.15f, 0.0f);
 							   drawHead(0.1f, 0.2f, 0.0f);		  
@@ -664,12 +663,13 @@ void RobotShip::drawRobotShip()
 							   drawLowerLeg(0.0f, -0.7f, 0.0f); //left
 							   drawLowerLeg(0.2f, -0.7f, 0.0f); //right
 */
-							   drawUpperLeg(-0.0f, -0.5f, 0.0f); //left
+							   //edited by Mike, 20201209
+							   drawUpperLeg(-0.1f, -0.5f, 0.0f); //left
 							   drawUpperLeg(0.3f, -0.5f, 0.0f); //right        
-
-							   drawLowerLeg(-0.0f, -0.7f, 0.0f); //left
+							   //edited by Mike, 20201209
+							   drawLowerLeg(-0.1f, -0.7f, 0.0f); //left
 							   drawLowerLeg(0.3f, -0.7f, 0.0f); //right
-							
+														
 							   //added by Mike, 20201201; edited by Mike, 20201207
 /*							   drawBody(0.1f, -0.15f, 0.0f);
 							   drawHead(0.1f, 0.2f, 0.0f);		  
@@ -730,21 +730,29 @@ void RobotShip::drawRobotShip()
 			                    //LEGS
 			            		glPushMatrix();					
 			            			glRotatef(legAngles[LEFT], 1.0f, 0.0f, 0.0f);
-			            		    drawUpperLeg(0.0f, -0.5f, 0.0f); //left
-			               		    glPushMatrix();
+									//edited by Mike, 20201209
+			            		    //drawUpperLeg(0.0f, -0.5f, 0.0f); //left
+			            		    drawUpperLeg(-0.1f, -0.5f, 0.0f); //left
+									glPushMatrix();
 			                            //glTranslatef(0.0f, 0.0f, 0.1f);
 			                			//glRotatef(5, 1.0f, 0.0f, 0.0f);
-			            		        drawLowerLeg(0.0f, -0.7f, 0.0f); //left
-			                		glPopMatrix();
+										//edited by Mike, 20201209
+										//drawLowerLeg(0.0f, -0.7f, 0.0f); //left
+										drawLowerLeg(-0.1f, -0.7f, 0.0f); //left
+									glPopMatrix();
 			            		glPopMatrix();
 			            		glPushMatrix();					
 			            			glRotatef(legAngles[RIGHT], 1.0f, 0.0f, 0.0f);
-			                        drawUpperLeg(0.2f, -0.5f, 0.0f); //right        
-			               		    glPushMatrix();
+									//edited by Mike, 20201207
+//			                        drawUpperLeg(0.2f, -0.5f, 0.0f); //right        
+			                        drawUpperLeg(0.3f, -0.5f, 0.0f); //right        
+									glPushMatrix();
 			                            //glTranslatef(0.0f, 0.0f, 0.1f);
 			                			//glRotatef(5, 1.0f, 0.0f, 0.0f);
-			                            drawLowerLeg(0.2f, -0.7f, 0.0f); //right
-			                		glPopMatrix();
+										//edited by Mike, 20201207
+										//drawLowerLeg(0.2f, -0.7f, 0.0f); //right
+										drawLowerLeg(0.3f, -0.7f, 0.0f); //right
+									glPopMatrix();
 			            		glPopMatrix();
 	
 							    //added by Mike, 20201202; edited by Mike, 20201207
@@ -813,21 +821,29 @@ void RobotShip::drawRobotShip()
 			                    //LEGS
 			            		glPushMatrix();					
 			            			glRotatef(legAngles[LEFT], 1.0f, 0.0f, 0.0f);
-			            		    drawUpperLeg(0.0f, -0.5f, 0.0f); //left
-			               		    glPushMatrix();
+									//edited by Mike, 20201207
+									//drawUpperLeg(0.0f, -0.5f, 0.0f); //left
+									drawUpperLeg(-0.1f, -0.5f, 0.0f); //left
+									glPushMatrix();
 			                            //glTranslatef(0.0f, 0.0f, 0.1f);
 			                			//glRotatef(5, 1.0f, 0.0f, 0.0f);
-			            		        drawLowerLeg(0.0f, -0.7f, 0.0f); //left
-			                		glPopMatrix();
+										//edited by Mike, 20201207							
+//			            		        drawLowerLeg(0.0f, -0.7f, 0.0f); //left
+			            		        drawLowerLeg(-0.1f, -0.7f, 0.0f); //left
+									glPopMatrix();
 			            		glPopMatrix();
 			            		glPushMatrix();					
 			            			glRotatef(legAngles[RIGHT], 1.0f, 0.0f, 0.0f);
-			                        drawUpperLeg(0.2f, -0.5f, 0.0f); //right        
-			               		    glPushMatrix();
+									//edited by Mike, 20201207							
+									//drawUpperLeg(0.2f, -0.5f, 0.0f); //right        
+									drawUpperLeg(0.3f, -0.5f, 0.0f); //right        
+									glPushMatrix();
 			                            //glTranslatef(0.0f, 0.0f, 0.1f);
 			                			//glRotatef(5, 1.0f, 0.0f, 0.0f);
-			                            drawLowerLeg(0.2f, -0.7f, 0.0f); //right
-			                		glPopMatrix();
+										//edited by Mike, 20201207							
+			                            //drawLowerLeg(0.2f, -0.7f, 0.0f); //right
+			                            drawLowerLeg(0.3f, -0.7f, 0.0f); //right
+									glPopMatrix();
 			            		glPopMatrix();
 	
 							    //added by Mike, 20201202; edited by Mike, 20201207
