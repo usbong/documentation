@@ -6,7 +6,8 @@ System type: 32-bit Operating System<br/>
 <br/>
 ## Problem: Computer hangs/freezes when executing "UsbongAutomotive.exe"
 <img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Automotive/UsbongAutomotive/Windows/notes/res/UsbongAutomotivePilotMechaRobotShipV3V20201209T1954.png" width="80%">
-## Solution:
+
+## Solution (at present):
 1) Disconnect both wireless and wired connections.<br/>
 --> The Windows machine should have no Internet access.
 2) Exit/End executing processes from network communication tools, e.g. LAN Messenger, Viber.<br/>
@@ -14,6 +15,6 @@ System type: 32-bit Operating System<br/>
 
 <img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Automotive/UsbongAutomotive/Windows/notes/res/UsbongAutomotivePilotMechaRobotShipV3TaskManagerV20201209T1954.png" width="80%">
 
-Additional Note: 
+### Additional Note: 
 1) Usage of Central Processing Unit (CPU) and Physical Memory, i.e. Random Access Memory (RAM), not maxed out.<br/>
 --> RAM: stored data in computer memory disappears when there is no more electricity 
