@@ -18,5 +18,5 @@ System type: 32-bit Operating System<br/>
 ### Additional Notes: 
 1) Usage of Central Processing Unit (CPU) and Physical Memory, i.e. Random Access Memory (RAM), not maxed out.<br/>
 --> RAM: stored data in computer memory disappears when there is no more electricity<br/>
-2) CPU Usage of UsbongAutomotive.exe only maxes at 36.<br/>
-3) Physical Memory Usage of UsbongAutomotive.exe only remains below 14,000K.<br/>
+2) CPU Usage of UsbongAutomotive.exe maxes at 36.<br/>
+3) Physical Memory Usage of UsbongAutomotive.exe remains below 14,000K, i.e. 14MB.<br/>
