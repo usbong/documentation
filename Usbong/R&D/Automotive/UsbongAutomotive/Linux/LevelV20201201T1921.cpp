@@ -50,9 +50,6 @@
 //added by Mike, 20201118
 #include "Level.h"
 
-//added by Mike, 20201210
-#include "UsbongUtils.h"
-
 /*****************************************************************************/
 
 /* texture loading */
@@ -286,10 +283,6 @@ void Level::draw_level(GLfloat x, GLfloat y, GLfloat z, char *string)
 
 void Level::setupLevel(int myLevelTextureObject)
 {
-	//added by Mike, 20201210
-	myUsbongUtils = new UsbongUtils();
-	myUsbongUtils->read("inputHalimbawa.txt");
-	
 	//removed by Mike, 20201010
 	//due to blank output
     //glEnable(GL_DEPTH_TEST);

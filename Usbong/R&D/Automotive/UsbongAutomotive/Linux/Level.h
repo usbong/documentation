@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201118
- * @date updated: 20201125
+ * @date updated: 20201210
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -31,6 +31,11 @@
 //added by Mike, 20201120
 #include "PolygonUtils.h"
 
+/*	//removed by Mike, 20201210; used in Level.cpp
+//added by Mike, 20201210
+#include "UsbongUtils.h"
+*/
+
 //added by Mike, 20201123
 #define GL_CLAMP_TO_EDGE 0x812F
 #define GL_TEXTURE_BASE_LEVEL 0x813C 
@@ -38,9 +43,16 @@
 //added by Mike, 20201124
 #define GL_CLAMP_TO_BORDER 0x812D
 
+//added by Mike, 20201210
+class UsbongUtils;
+
 class Level
 {
 private:
+	//added by Mike, 20201210
+	//TO-DO: -reverify: immediately useUsbongUtils without need to create instance
+    UsbongUtils *myUsbongUtils;
+
 	GLboolean test_pow2(GLushort i);
 	void load_tga(char *filename);
 	
