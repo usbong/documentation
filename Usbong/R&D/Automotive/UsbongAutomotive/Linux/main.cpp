@@ -14,7 +14,7 @@
  *
  * @author: Michael Syson
  * @date created: 20200926
- * @date updated: 20201205
+ * @date updated: 20201210
  *
  * References:
  * 1) Dev-C++ 5.11 auto-generated OpenGL example project
@@ -78,13 +78,43 @@
  *
  **************************/
 
+/* //edited by Mike, 20201210
 //#include <windows.h> //removed by Mike, 20200928 due to Linux Machine
 #include <GL/gl.h>
 #include <GL/glut.h> //added by Mike, 20200927
 #include <GL/glu.h> //added by Mike, 20200926
+*/
+	
+//added by Mike, 20201209
+//Reference: https://stackoverflow.com/questions/34152424/autodetection-of-os-in-c-c;
+//answer by: Jeegar Patel, 20151208T0940
+//auto-identify if Windows Machine
+#ifdef _WIN32
+	#include <windows.h> //Windows Machine
+#endif
+/*
+#ifdef linux
+    printf("In Linux");
+#endif
+*/
+
+//added by Mike, 20201209
+#if defined(__APPLE__)
+  #include <OpenGL/gl.h>
+  #include <OpenGL/glu.h>
+  #include <GLUT/glut.h>
+#else
+  #include <GL/gl.h>
+  #include <GL/glu.h>
+  #include <GL/glut.h>
+#endif
 
 //added by Mike, 20200930
 #include "OpenGLCanvas.h"
+
+//added by Mike, 20201210
+#include <time.h>
+#include <unistd.h>
 
 //added by Mike, 20201002
 #include <iostream>
@@ -141,8 +171,8 @@ enum Keys
 	iNumOfKeyTypes		
 };
 
-//added by Mike, 20201001
-bool pause;
+//added by Mike, 20201001; edited by Mike, 20201210
+bool bMyPause;
 
 //Reference: https://www3.ntu.edu.sg/home/ehchua/programming/opengl/HowTo_OpenGL_C.html;
 //last accessed: 20200928
@@ -229,16 +259,27 @@ void displayOpenGLCanvas() {
 		//edited by Mike, 20201205
 		//TO-DO: -update: this
         idealFrameTime=33;//60;//33;
-    pause=false;//0;
-	 
-		if (!pause) {
-		  //TO-DO: -add: this
+	//edited by Mike, 20201210
+    //pause=false;//0;
+	bMyPause=false;	 
+	
+//		if (!pause) {
+		if (!bMyPause) {
+			//TO-DO: -add: this
 					//removed by Mike, 20201002					
-          //currSysTime=GetTickCount(); //Linux Machine
+          //currSysTime=GetTickCount(); //Windows Machine
 
+/* //edited by Mike, 20201210			
+		  //added by Mike, 20201210
+		  //time_t now = time(0); //Get the system time
+		  //printf("time now: %d",(int)now);
+		  currSysTime = (int) time(0); //Linux Machine
+*/
+	
           /* OpenGL animation code goes here */
           myOpenGLCanvas->update();
-/*				//removed by Mike, 20201002, Linux Machine
+		  
+/*		  //edited by Mike, 20201210
           if (skip > 0)
               skip = skip-1;
           else {
@@ -250,13 +291,21 @@ void displayOpenGLCanvas() {
 				//edited by Mike, 20201205
 //   							glFlush();  // Render now //Linux Machine
 			   glutSwapBuffers();
-
-/*							//removed by Mike, 20201002, Linux Machine                
-                timeElapsed=GetTickCount()-currSysTime;
-                if (timeElapsed>idealFrameTime)
+			   
+			    //edited by Mike, 20201210
+/*
+			  	//TO-DO: -add: auto-identify if Windows Machine
+                //timeElapsed=GetTickCount()-currSysTime;
+			    timeElapsed=(int)time(0)-currSysTime; //Linux Machine
+			
+			  
+                if (timeElapsed>idealFrameTime) {
                   skip = (timeElapsed/idealFrameTime) - 1;
-                else 
-                  Sleep(idealFrameTime - timeElapsed);
+				}
+                else {
+                  sleep(idealFrameTime - timeElapsed);
+                  //pause(idealFrameTime - timeElapsed);
+				}			  
           }
 */                  
 		  //added by Mike, 20201002
@@ -285,9 +334,14 @@ void update(int i) {
     int skip=0, currSysTime=0,
         timeElapsed,
         idealFrameTime=60;//33;
-    pause=false;//0;
-	 
-		if (!pause) {
+	//edited by Mike, 20201210
+//    pause=false;//0;
+    bMyPause=false;//0;
+	
+	
+		//edited by Mike, 20201210	 
+//		if (!pause) {
+		if (!bMyPause) {			
 					//removed by Mike, 20201002					
           //currSysTime=GetTickCount(); //Linux Machine
 
@@ -310,6 +364,7 @@ void update(int i) {
 		  //added by Mike, 20201002
 			glutPostRedisplay();
 			
+			//TO-DO: -add: auto-identify if Windows Machine
 			//reference: https://stackoverflow.com/questions/35563360/looping-in-opengl-with-gluttimerfunc;
 			//answer by: spookyPuppy, 20160223T0445
 			//edited by: datenwolf, 20160223T0631			
@@ -317,9 +372,11 @@ void update(int i) {
 			//glutTimerFunc(1000 / SCREEN_FPS, Loop, 0);
 			//edited by Mike, 20201202
 //			glutTimerFunc(50, update, 0);
-			//edited by Mike, 20201204
-			glutTimerFunc(70, update, 0);
+			//edited by Mike, 20201210
+//			glutTimerFunc(70, update, 0);
 //			glutTimerFunc(80, update, 0);			
+			glutTimerFunc(60, update, 0);
+			
 		}	 
 }
 
