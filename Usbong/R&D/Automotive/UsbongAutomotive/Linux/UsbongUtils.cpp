@@ -106,6 +106,7 @@
 
 //added by Mike, 20201210
 #include "UsbongUtils.h"
+#include <string.h>
 
 //Reference: https://stackoverflow.com/questions/3463426/in-c-how-should-i-read-a-text-file-and-print-all-strings;
 //last accessed: 20201209
@@ -115,8 +116,22 @@ void UsbongUtils::read(char *inputFilename) {
 	FILE *file;
 	
 	//TO-DO: -update: this
+	
+	//noted by Mike, 20201210
+	//note: if concatenated string exceeds size, "stack smashing detected"; terminated; Aborted (core dumped)
+	//I prefer to set a size, instead of dynamically allocate due to increasing likelihood of memory leaks
+	//where memory leaks = not deallocated storage in memory, albeit not used by software application
+	//identifying not deallocated storage in memory becomes more difficult with increasing use
+	char input[60]; //max size
+	strcpy(input, "input/");
+	strcat(input, inputFilename); //already includes .txt
+//	strcat(input,".txt");
+	
+//	printf("dito: %s",input);
+		
 //	file = fopen("input/"+inputFilename, "r"); //.txt file
-	file = fopen("input/inputHalimbawa.txt", "r"); //.txt file
+//	file = fopen("input/inputHalimbawa.txt", "r"); //.txt file
+	file = fopen(input, "r"); //.txt file
 
 	if (file) {
 		while ((c = getc(file)) != EOF)
