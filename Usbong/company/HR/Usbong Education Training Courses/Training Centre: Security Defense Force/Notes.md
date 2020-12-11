@@ -84,7 +84,12 @@ Breathe slowly; Exhale slowly
 --> ニューヨーク州立大学助教授、浜松医科大学教授をへて現職。<br/>
 --> New York State University Assistant Professor, received present work as Hamamatsu Medical Science University Professor.<br/>
 --> 専門は血液学、大脳生理学、精神医学。<br/>
---> Specialty: Studies on Blood Liquid, Big Grain Grow Reason, Spirit God.  
+--> Specialty: Studies on Blood Liquid, Big Grain Grow Reason, Spirit God Medicine.  
 
-3) Inoue, Tatsuo. 1986. "Living Together Making Law--Justice as Conversation". Soubunsha 
+3) Inoue, Tatsuo. 1986. "Living Together Making Law--Justice as Conversation". Soubunsha<br/>
+--> Pinaiiral ng batas sa loob ang pagnanais (request) ng katarangan.<br/>
+--> To cause justice is the law's essential logical concept.<br/>
+--> Pampublikong Batayan: Ukol sa tunay o hindi ng hatol, hindi maaaring tunay ito mula sa panlabas na pananaw, kung hindi umiiral ang pinagpasiyahang paraan na nagkaisang makakamit ng kahit man lang ng karamihan ng pinagsamang nag-iisip, i.e. nagbibilang (rational/logical), na tao.<br/>
+--> Nibel ng Kahulugan ng Pinagsamang nag-iisip, i.e. nagbibilang (rational/logical), na tao:<br/>
+--> Karaniwang tao, at taong walang higit sa karaniwan ang know-how, kakayanan, kapansanan sa espiritu, labis na excitement, atbp, at hindi nasa sitwasyon na hindi magagamit ang know-how na iyon.<br/>
 
