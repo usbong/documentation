@@ -87,7 +87,7 @@ Breathe slowly; Exhale slowly
 --> Specialty: Studies on Blood Liquid, Big Grain Grow Reason, Spirit God Medicine.  
 
 3) Inoue, Tatsuo. 1986. "Living Together Making Law--Justice as Conversation". Soubunsha<br/>
---> Pinaiiral ng batas sa loob ang pagnanais (request) ng katarangan.<br/>
+--> Pinaiiral ng batas sa loob ang pagnanais (request) ng katarungan.<br/>
 --> To cause justice is the law's essential logical concept.<br/>
 --> Pampublikong Batayan: Ukol sa tunay o hindi ng hatol, hindi maaaring tunay ito mula sa panlabas na pananaw, kung hindi umiiral ang pinagpasiyahang paraan na nagkaisang makakamit ng kahit man lang ng karamihan ng pinagsamang nag-iisip, i.e. nagbibilang (rational/logical), na tao.<br/>
 --> Nibel ng Kahulugan ng Pinagsamang nag-iisip, i.e. nagbibilang (rational/logical), na tao:<br/>
