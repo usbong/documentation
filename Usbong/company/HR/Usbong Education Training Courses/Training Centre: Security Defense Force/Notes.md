@@ -95,6 +95,6 @@ Breathe slowly; Exhale slowly
 --> Karaniwang tao, at taong walang higit sa karaniwan ang know-how, kakayanan, kapansanan sa espiritu, labis na excitement, atbp, at hindi nasa sitwasyon na hindi magagamit ang know-how na iyon.<br/>
 --> "Hindi umiiral bilang tunay ang labanan ng magkabilang panig."<br/>
 --> Hindi maitatayo mula sa wika ang kahulugan ng tunay kung walang aktwal na paggamit ng tao ang wika.<br/> 
---> Kung maibubuo ang pag-unawa na may masasabing malinawag na labanan (contradiction) ang magkabila, wala nang ebidensya na may posibiledad pa na baliktad ang pag-unawa ng tunay.
+--> Kung maibubuo ang pag-unawa na malinawanag na masasabing may labanan (contradiction) ang magkabila, wala nang ebidensya na may posibiledad pa na baliktad ang pag-unawa ng tunay.
 
 
