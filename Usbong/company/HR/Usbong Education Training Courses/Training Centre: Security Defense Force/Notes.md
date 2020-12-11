@@ -87,9 +87,14 @@ Breathe slowly; Exhale slowly
 --> Specialty: Studies on Blood Liquid, Big Grain Grow Reason, Spirit God Medicine.  
 
 3) Inoue, Tatsuo. 1986. "Living Together Making Law--Justice as Conversation". Soubunsha<br/>
---> Pinaiiral ng batas sa loob ang pagnanais (request) ng katarungan.<br/>
+--> Translated from nihongo to Filipino and English by SYSON, MICHAEL B.<br/>
+--> Pinaiiral ng batas sa loob ang paghiling (request) ng katarungan.<br/>
 --> To cause justice is the law's essential logical concept.<br/>
 --> Pampublikong Batayan: Ukol sa tunay o hindi ng hatol, hindi maaaring tunay ito mula sa panlabas na pananaw, kung hindi umiiral ang pinagpasiyahang paraan na nagkaisang makakamit ng kahit man lang ng karamihan ng pinagsamang nag-iisip, i.e. nagbibilang (rational/logical), na tao.<br/>
 --> Nibel ng Kahulugan ng Pinagsamang nag-iisip, i.e. nagbibilang (rational/logical), na tao:<br/>
 --> Karaniwang tao, at taong walang higit sa karaniwan ang know-how, kakayanan, kapansanan sa espiritu, labis na excitement, atbp, at hindi nasa sitwasyon na hindi magagamit ang know-how na iyon.<br/>
+--> "Hindi umiiral bilang tunay ang labanan ng magkabilang panig."<br/>
+--> Hindi maitatayo mula sa wika ang kahulugan ng tunay kung walang aktwal na paggamit ng tao ang wika.<br/> 
+--> Kung maibubuo ang pag-unawa na may masasabing malinawag na labanan (contradiction) ang magkabila, wala nang ebidensya na may posibiledad pa na baliktad ang pag-unawa ng tunay.
+
 
