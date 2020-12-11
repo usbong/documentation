@@ -85,3 +85,6 @@ Breathe slowly; Exhale slowly
 --> New York State University Assistant Professor, received present work as Hamamatsu Medical Science University Professor.<br/>
 --> 専門は血液学、大脳生理学、精神医学。<br/>
 --> Specialty: Studies on Blood Liquid, Big Grain Grow Reason, Spirit God.  
+
+3) Inoue, Tatsuo. 1986. "Living Together Making Law--Justice as Conversation". Soubunsha 
+
