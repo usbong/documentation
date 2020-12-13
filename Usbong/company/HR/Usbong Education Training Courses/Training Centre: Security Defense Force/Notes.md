@@ -88,13 +88,20 @@ Breathe slowly; Exhale slowly
 
 3) Inoue, Tatsuo. 1986. "Living Together Making Law--Justice as Conversation". Soubunsha<br/>
 --> Translated from nihongo to Filipino and English by SYSON, MICHAEL B.<br/>
+「法は正義要求を内在させている」<br/>
 --> Pinaiiral ng batas sa loob ang paghiling (request) ng katarungan.<br/>
---> To cause justice is the law's essential logical concept.<br/>
---> Pampublikong Batayan: Ukol sa tunay o hindi ng hatol, hindi maaaring tunay ito mula sa panlabas na pananaw, kung hindi umiiral ang pinagpasiyahang paraan na magkaisang makakamit ng kahit man lang ng karamihan ng pinagsamang nag-iisip, i.e. nagbibilang (rational/logical), na tao.<br/>
+「言い換えると正義は法の本質的理念をなすということである。」<br/>
+--> Sa isa pang pagsabi, binubuo ng katarungan ang budhi ng lohikal na konsepto ng batas.<br/>
+公準：「ある判断の真偽に関し、少なくとも大多数の合理的人間が一致に到達し得るような決定手続が存在しないならば、その判断は客観的に真ではあり得ない」<br/>
+--> Pampublikong Batayan: Ukol sa tunay o hindi ng hatol, hindi maaaring tunay ito mula sa panlabas na pananaw, kung hindi umiiral ang pinagpasiyahang paraan na magkaisang makakamit ng kahit man lang ng karamihan ng pinagsamang nag-iisip, i.e. nagbibilang (rational/logical), na tao<br/>
+合理的人間という程度の意味：<br/>
 --> Nibel ng Kahulugan ng Pinagsamang Nag-iisip, i.e. Nagbibilang (rational/logical), na Tao:<br/>
+「普通またはそれ以上の知能をもち、酩酊、精神障害、過度の興奮など、その知能の行使を妨げる状況に置かれていない人」<br/>
 --> Karaniwang tao, at taong walang higit sa karaniwan ang know-how, kakayanan, kapansanan sa espiritu, labis na excitement, atbp, at hindi nasa sitwasyon na hindi magagamit ang know-how na iyon.<br/>
---> "Hindi umiiral bilang tunay ang labanan ng magkabilang panig."<br/>
+『両者の対立が事実として存在することはならない』<br/>
+--> "Hindi umiiral bilang tunay ang labanan ng magkabilang panig"<br/>
+「言語の意味に関する事実は言語を使用する人間の実践なくしては存立しない」<br/>
 --> Hindi maitatayo mula sa wika ang kahulugan ng tunay kung walang aktwal na paggamit ng tao ang wika.<br/> 
+「両者の言明が相互に矛盾しているという了解を成立させるものであるならば、事実はかかる了解と逆だと言うことを可能にする根拠はもはやない。」<br/>
 --> Kung maibubuo ang pag-unawa na malinawanag na masasabing may labanan (contradiction) ang magkabila, wala nang ebidensya na may posibiledad pa na baliktad ang pag-unawa ng tunay.
-
 
