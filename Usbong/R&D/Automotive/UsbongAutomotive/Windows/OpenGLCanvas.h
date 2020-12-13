@@ -50,6 +50,9 @@
 */
 
 #include <stdio.h>
+//added by Mike, 20201213
+#include <vector>
+
 
 
 #define PI 3.14159
@@ -76,6 +79,9 @@
 #define MAX_LIFE 3
 #define REQUIRED_POINTS_FOR_BONUS 30000 //5000
 
+//added by Mike, 20201213
+//includes: pilot, robotship, beams, asteroid, 
+#define MAX_DYNAMIC_OBJECT 50 //TO-DO: -update: this
 
 #define MAX 1026 //buffer
 
@@ -89,6 +95,8 @@
 
 //added by Mike, 20201123
 #define GL_CLAMP_TO_EDGE 0x812F
+
+class MyDynamicObject; //added by Mike, 20201213
 
 class RobotShip;
 //added by Mike, 20201207
@@ -122,6 +130,13 @@ class OpenGLCanvas
         Asteroid *myAsteroid[MAX_ASTEROID];
 //        Asteroid *myAsteroid;
 
+		//added by Mike, 20201213
+		//TO-DO: -add: level tile boxes, e.g. parts of tree
+		//TO-DO: -update: MAX_DYNAMIC_OBJECT value
+		//MyDynamicObject *myDynamicObjectContainer[MAX_DYNAMIC_OBJECT];
+		//std::vector<MyDynamicObject> items;
+		std::vector<MyDynamicObject*> vMyDynamicObjectContainer;
+		
        	char *infile;//= "Patches1.txt";		
         char *outfile;
        	FILE *in;

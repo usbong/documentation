@@ -33,6 +33,10 @@
 #include <windows.h> //Windows Machine
 #include <stdio.h>
 
+//added by Mike, 20201213
+void MyDynamicObject::draw() {
+}
+
 void MyDynamicObject::hitBy(MyDynamicObject* mdo){
 }
 

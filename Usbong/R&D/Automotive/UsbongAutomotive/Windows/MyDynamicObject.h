@@ -120,6 +120,9 @@ public:
     
     virtual float getWidth()=0;
     virtual float getHeight()=0;
+	
+	//added by Mike, 20201213
+    virtual void draw();
     
     float getDistance(float x1, float y1, float z1, float x2, float y2, float z2);
     

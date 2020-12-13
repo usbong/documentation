@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20201209
+ * @date updated: 20201213
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -458,6 +458,14 @@ float* RobotShip::getXYZPos()
       
       return myXYZ;
 }
+
+/* //removed by Mike, 20201213
+//added by Mike, 20201213
+void RobotShip::draw()
+{
+	drawRobotShip();
+}
+*/
 
 //TO-DO: -use: drawRobotShip() instructions for human pilot
 //TO-DO: -update: drawRobotShip()

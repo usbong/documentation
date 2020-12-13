@@ -282,6 +282,10 @@ void Beam::drawBeam()
       glVertex2f(0.01f,  0.0f);      
    glEnd();    
 */   
+	//added by Mike, 20201213
+	//TO-DO: -update: size for RobotShip
+	//glScalef(2.0f, 2.0f, 2.0f);
+	
 	//added by Mike, 20201116
 	//set square face with no color fill 
 //	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
