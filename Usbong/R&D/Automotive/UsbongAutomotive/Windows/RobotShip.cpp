@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20201207
+ * @date updated: 20201209
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -54,7 +54,7 @@
 
 #include <string.h>
 
-//added by Mike, 20201207
+//added by Mike, 20201213
 //Reference: https://stackoverflow.com/questions/34152424/autodetection-of-os-in-c-c;
 //answer by: Jeegar Patel, 20151208T0940
 //auto-identify if Windows Machine
@@ -66,6 +66,7 @@
     printf("In Linux");
 #endif
 */
+
 
 //#include "ModelPool.h"
 
@@ -210,62 +211,43 @@ void RobotShip::setup()
 	//EXPLOSION/ DEATH ANIMATION
 	    // retrieve "unused" texture object
 	glGenTextures(1, &myDeathAnimationImg1);
-
     glBindTexture(GL_TEXTURE_2D, myDeathAnimationImg1);
-
     load_tga("textures/explosion/explosion1.tga");
-
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
                     GL_LINEAR_MIPMAP_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
 	    // retrieve "unused" texture object
 	glGenTextures(1, &myDeathAnimationImg2);
-
     glBindTexture(GL_TEXTURE_2D, myDeathAnimationImg2);
-
     load_tga("textures/explosion/explosion2.tga");
-
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
                     GL_LINEAR_MIPMAP_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
 	glGenTextures(1, &myDeathAnimationImg3);
-
     glBindTexture(GL_TEXTURE_2D, myDeathAnimationImg3);
-
     load_tga("textures/explosion/explosion3.tga");
-
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
                     GL_LINEAR_MIPMAP_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
 	    // retrieve "unused" texture object
 	glGenTextures(1, &myDeathAnimationImg4);
-
     glBindTexture(GL_TEXTURE_2D, myDeathAnimationImg4);
-
     load_tga("textures/explosion/explosion4.tga");
-
 	    // retrieve "unused" texture object
 	glGenTextures(1, &myDeathAnimationImg5);
-
     glBindTexture(GL_TEXTURE_2D, myDeathAnimationImg5);
-
     load_tga("textures/explosion/explosion5.tga");
-
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
                     GL_LINEAR_MIPMAP_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
@@ -454,7 +436,11 @@ RobotShip::RobotShip(float xPos, float yPos, float zPos, int windowWidth, int wi
 	//removed by Mike, 20201001
 //	setup();
 	
-    setCollidable(true);    
+    setCollidable(true);
+    
+    
+    
+    
 }
 
 RobotShip::~RobotShip()
@@ -584,13 +570,10 @@ void RobotShip::drawRobotShip()
 							   drawUpperArm(0.3f, 0.0f, 0.0f); //right        
 							   drawLowerArm(-0.1f, -0.2f, 0.0f); //left
 							   drawLowerArm(0.3f, -0.2f, 0.0f); //right
-
 							   drawUpperLeg(0.0f, -0.5f, 0.0f); //left
 							   drawUpperLeg(0.2f, -0.5f, 0.0f); //right        
-
 							   drawLowerLeg(0.0f, -0.7f, 0.0f); //left
 							   drawLowerLeg(0.2f, -0.7f, 0.0f); //right
-
 							   //added by Mike, 20201201
 							   drawHead(0.1f, 0.2f, 0.0f);		  
 							   drawBody(0.1f, -0.15f, 0.0f);
@@ -614,7 +597,6 @@ void RobotShip::drawRobotShip()
 /*							   //edited by Mike, 20201207
 							   drawUpperLeg(0.0f, -0.5f, 0.0f); //left
 							   drawUpperLeg(0.2f, -0.5f, 0.0f); //right        
-
 							   drawLowerLeg(0.0f, -0.7f, 0.0f); //left
 							   drawLowerLeg(0.2f, -0.7f, 0.0f); //right
 */
@@ -623,8 +605,7 @@ void RobotShip::drawRobotShip()
 
 							   drawLowerLeg(-0.1f, -0.7f, 0.0f); //left
 							   drawLowerLeg(0.3f, -0.7f, 0.0f); //right
-
-							
+			
 							   //added by Mike, 20201201; edited by Mike, 20201207
 /*							   drawBody(0.1f, -0.15f, 0.0f);
 							   drawHead(0.1f, 0.2f, 0.0f);		  
@@ -665,16 +646,16 @@ void RobotShip::drawRobotShip()
 /*							   //edited by Mike, 20201207
 							   drawUpperLeg(0.0f, -0.5f, 0.0f); //left
 							   drawUpperLeg(0.2f, -0.5f, 0.0f); //right        
-
 							   drawLowerLeg(0.0f, -0.7f, 0.0f); //left
 							   drawLowerLeg(0.2f, -0.7f, 0.0f); //right
 */
-							   drawUpperLeg(-0.0f, -0.5f, 0.0f); //left
+							   //edited by Mike, 20201209
+							   drawUpperLeg(-0.1f, -0.5f, 0.0f); //left
 							   drawUpperLeg(0.3f, -0.5f, 0.0f); //right        
-
-							   drawLowerLeg(-0.0f, -0.7f, 0.0f); //left
+							   //edited by Mike, 20201209
+							   drawLowerLeg(-0.1f, -0.7f, 0.0f); //left
 							   drawLowerLeg(0.3f, -0.7f, 0.0f); //right
-							
+														
 							   //added by Mike, 20201201; edited by Mike, 20201207
 /*							   drawBody(0.1f, -0.15f, 0.0f);
 							   drawHead(0.1f, 0.2f, 0.0f);		  
@@ -735,21 +716,29 @@ void RobotShip::drawRobotShip()
 			                    //LEGS
 			            		glPushMatrix();					
 			            			glRotatef(legAngles[LEFT], 1.0f, 0.0f, 0.0f);
-			            		    drawUpperLeg(0.0f, -0.5f, 0.0f); //left
-			               		    glPushMatrix();
+									//edited by Mike, 20201209
+			            		    //drawUpperLeg(0.0f, -0.5f, 0.0f); //left
+			            		    drawUpperLeg(-0.1f, -0.5f, 0.0f); //left
+									glPushMatrix();
 			                            //glTranslatef(0.0f, 0.0f, 0.1f);
 			                			//glRotatef(5, 1.0f, 0.0f, 0.0f);
-			            		        drawLowerLeg(0.0f, -0.7f, 0.0f); //left
-			                		glPopMatrix();
+										//edited by Mike, 20201209
+										//drawLowerLeg(0.0f, -0.7f, 0.0f); //left
+										drawLowerLeg(-0.1f, -0.7f, 0.0f); //left
+									glPopMatrix();
 			            		glPopMatrix();
 			            		glPushMatrix();					
 			            			glRotatef(legAngles[RIGHT], 1.0f, 0.0f, 0.0f);
-			                        drawUpperLeg(0.2f, -0.5f, 0.0f); //right        
-			               		    glPushMatrix();
+									//edited by Mike, 20201207
+//			                        drawUpperLeg(0.2f, -0.5f, 0.0f); //right        
+			                        drawUpperLeg(0.3f, -0.5f, 0.0f); //right        
+									glPushMatrix();
 			                            //glTranslatef(0.0f, 0.0f, 0.1f);
 			                			//glRotatef(5, 1.0f, 0.0f, 0.0f);
-			                            drawLowerLeg(0.2f, -0.7f, 0.0f); //right
-			                		glPopMatrix();
+										//edited by Mike, 20201207
+										//drawLowerLeg(0.2f, -0.7f, 0.0f); //right
+										drawLowerLeg(0.3f, -0.7f, 0.0f); //right
+									glPopMatrix();
 			            		glPopMatrix();
 	
 							    //added by Mike, 20201202; edited by Mike, 20201207
@@ -818,21 +807,29 @@ void RobotShip::drawRobotShip()
 			                    //LEGS
 			            		glPushMatrix();					
 			            			glRotatef(legAngles[LEFT], 1.0f, 0.0f, 0.0f);
-			            		    drawUpperLeg(0.0f, -0.5f, 0.0f); //left
-			               		    glPushMatrix();
+									//edited by Mike, 20201207
+									//drawUpperLeg(0.0f, -0.5f, 0.0f); //left
+									drawUpperLeg(-0.1f, -0.5f, 0.0f); //left
+									glPushMatrix();
 			                            //glTranslatef(0.0f, 0.0f, 0.1f);
 			                			//glRotatef(5, 1.0f, 0.0f, 0.0f);
-			            		        drawLowerLeg(0.0f, -0.7f, 0.0f); //left
-			                		glPopMatrix();
+										//edited by Mike, 20201207							
+//			            		        drawLowerLeg(0.0f, -0.7f, 0.0f); //left
+			            		        drawLowerLeg(-0.1f, -0.7f, 0.0f); //left
+									glPopMatrix();
 			            		glPopMatrix();
 			            		glPushMatrix();					
 			            			glRotatef(legAngles[RIGHT], 1.0f, 0.0f, 0.0f);
-			                        drawUpperLeg(0.2f, -0.5f, 0.0f); //right        
-			               		    glPushMatrix();
+									//edited by Mike, 20201207							
+									//drawUpperLeg(0.2f, -0.5f, 0.0f); //right        
+									drawUpperLeg(0.3f, -0.5f, 0.0f); //right        
+									glPushMatrix();
 			                            //glTranslatef(0.0f, 0.0f, 0.1f);
 			                			//glRotatef(5, 1.0f, 0.0f, 0.0f);
-			                            drawLowerLeg(0.2f, -0.7f, 0.0f); //right
-			                		glPopMatrix();
+										//edited by Mike, 20201207							
+			                            //drawLowerLeg(0.2f, -0.7f, 0.0f); //right
+			                            drawLowerLeg(0.3f, -0.7f, 0.0f); //right
+									glPopMatrix();
 			            		glPopMatrix();
 	
 							    //added by Mike, 20201202; edited by Mike, 20201207
@@ -881,10 +878,8 @@ void RobotShip::drawRobotShip()
 		                		    drawLowerArm(-0.1f, -0.3f, 0.0f); //left
 		                		glPopMatrix();
 		            		glPopMatrix();
-
 							//added by Mike, 20201202
 //		            		drawBody(0.1f, -0.15f, 0.0f);
-
 		            		glPushMatrix();
 		            			glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);
 		                        drawUpperArm(0.3f, 0.0f, 0.0f); //right        
@@ -894,7 +889,6 @@ void RobotShip::drawRobotShip()
 		                            drawLowerArm(0.3f, -0.3f, 0.0f); //right
 		                		glPopMatrix();
 		            		glPopMatrix();
-
 		                    //LEGS
 		            		glPushMatrix();					
 		            			glRotatef(legAngles[LEFT], 1.0f, 0.0f, 0.0f);
@@ -914,11 +908,9 @@ void RobotShip::drawRobotShip()
 		                            drawLowerLeg(0.2f, -0.7f, 0.0f); //right
 		                		glPopMatrix();
 		            		glPopMatrix();
-
 							//added by Mike, 20201202
 		            		drawHead(0.1f, 0.2f, 0.0f);		
 		            		drawBody(0.1f, -0.15f, 0.0f);
-
 		            	glPopMatrix();	// pop back to original coordinate system						
 */
 						break;
@@ -939,11 +931,9 @@ void RobotShip::drawRobotShip()
                    glRotatef(rotationAngle, 0.0f, 0.0f, 1.0f);
                    //since the model ship is too big, do this...
                    glScalef(0.1f, 0.1f, 0.1f);
-
                    //removed by Mike, 20201001
                    if ((invincibleCounter%2)==0) //makes the ship blink when in INITIALIZING_STATE
                      drawModelValkyrie();
-
            	   	glPopMatrix();	// pop back to original coordinate system
 */                   
                break;
@@ -1056,7 +1046,6 @@ void RobotShip::update(float dt)
                     else if (xVel < -maxXVel) xVel = -maxXVel;
                     if (yVel > maxYVel) yVel = maxYVel;
                     else if (yVel < -maxYVel) yVel = -maxYVel;
-
                     myXPos+=xVel;
                     myYPos+=yVel;
                    
@@ -1120,7 +1109,6 @@ void RobotShip::update(float dt)
 /*
            		if (myXPos <= 0.0f) myXPos = 1.0f-myWidth/8; //if left side
            		else if (myXPos >= 1.0f) myXPos = 0.0f+myWidth/8; //if right side
-
            		if (myYPos >= 1.0f) myYPos = 0.0f+myHeight/8; //if bottom side
            		else if (myYPos <= 0.0f) myYPos = 1.0f-myHeight/8; //if top side
 */
@@ -1128,7 +1116,6 @@ void RobotShip::update(float dt)
 				//TO-DO: -add: 0.1f*iColumnCountMax
            		if (myXPos <= 0.0f) myXPos = 0.1f*20-myWidth/8; //if left side
            		else if (myXPos >= 0.1f*20) myXPos = 0.0f+myWidth/8; //if right side
-
 				//TO-DO: -add: 0.1f*iRowCountMax
            		if (myYPos >= 0.1f*20) myYPos = 0.0f+myHeight/8; //if bottom side
            		else if (myYPos <= 0.0f) myYPos = 0.1f*20-myHeight/8; //if top side
@@ -1572,4 +1559,3 @@ void RobotShip::drawFoot(float xPos, float yPos, float zPos)
 	glPopMatrix();
 }
 //--------------------------------------------
-

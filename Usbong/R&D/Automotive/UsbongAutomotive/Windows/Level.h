@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201118
- * @date updated: 20201206
+ * @date updated: 20201210
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -31,6 +31,11 @@
 //added by Mike, 20201120
 #include "PolygonUtils.h"
 
+/*	//removed by Mike, 20201210; used in Level.cpp
+//added by Mike, 20201210
+#include "UsbongUtils.h"
+*/
+
 //added by Mike, 20201123
 #define GL_CLAMP_TO_EDGE 0x812F
 #define GL_TEXTURE_BASE_LEVEL 0x813C 
@@ -38,17 +43,18 @@
 //added by Mike, 20201124
 #define GL_CLAMP_TO_BORDER 0x812D
 
+//added by Mike, 20201210
+class UsbongUtils;
+
 class Level
 {
 private:
+	//added by Mike, 20201210
+	//TO-DO: -reverify: immediately useUsbongUtils without need to create instance
+    UsbongUtils *myUsbongUtils;
+
 	GLboolean test_pow2(GLushort i);
 	void load_tga(char *filename);
-	
-	//added by Mike, 20201206
-	//TO-DO: -add: load from .txt file
-	//TO-DO: -add: increase size
-	//3-Dimensional level; x, y, z
-	float level[20][20][20];
 	
 public: 
 	void setupLevel(int myLevelTextureObject);
@@ -59,5 +65,5 @@ public:
 	*/
 	//TO-DO: -update: this
 	void draw_char(GLfloat x, GLfloat y, GLfloat z, char c);
-	void draw_level(GLfloat x, GLfloat y, GLfloat z, char *string);		
+	void draw_level(GLfloat x, GLfloat y, GLfloat z, char *string);	
 };
