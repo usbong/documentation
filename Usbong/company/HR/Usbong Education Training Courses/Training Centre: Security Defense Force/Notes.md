@@ -87,7 +87,7 @@ Breathe slowly; Exhale slowly
 --> Specialty: Studies on Blood Liquid, Big Grain Grow Reason, Spirit God Medicine.  
 
 3) 井上達夫「共生の作法――会話としての正義――」（創文社、一九八六年）<br/>
-Inoue, Tatsuo. 1986. "Living Together Making Law――Justice as Conversation――". Soubunsha<br/>
+Inoue, Tatsuo. (1986). "Living Together Making Law――Justice as Conversation――". Soubunsha<br/>
 --> Translated from nihongo to Filipino and English by SYSON, MICHAEL B.<br/>
 「法は正義要求を内在させている」<br/>
 --> Pinaiiral ng batas sa loob ang paghiling (request) ng katarungan.<br/>
@@ -106,7 +106,7 @@ Inoue, Tatsuo. 1986. "Living Together Making Law――Justice as Conversation―
 「両者の言明が相互に矛盾しているという了解を成立させるものであるならば、事実はかかる了解と逆だと言うことを可能にする根拠はもはやない。」<br/>
 --> Kung maibubuo ang pag-unawa na malinawanag na masasabing may labanan (contradiction) ang magkabila, wala nang ebidensya na may posibiledad pa na baliktad ang pag-unawa ng tunay.
 
-## Additional Note:
+### Additional Note:
 --> This is from the small written/literature discussion part of the following: <br/>
 --> 高島照子, et al. (2013)．防衛大学校（2014年版大学入試シリーズNo.167）.京都：教学社<br/>
 --> Takashima, Teruko, et al. (2013). Defense Force University (2014 Edition University Entrance Examination Series No. 167). Kyoto: kyougakusha
