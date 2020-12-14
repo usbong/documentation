@@ -68,6 +68,8 @@
 
 //edited by Mike, 20201013
 //#define MAX_BEAMS 5
+//added by Mike, 20201214
+//TO-DO: -update: this
 #define MAX_BEAMS 32
 
 //edited by Mike, 20201016

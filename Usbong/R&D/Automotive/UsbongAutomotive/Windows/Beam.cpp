@@ -285,6 +285,7 @@ void Beam::drawBeam()
 	//added by Mike, 20201213
 	//TO-DO: -update: size for RobotShip
 	//glScalef(2.0f, 2.0f, 2.0f);
+	glScalef(4.0f, 4.0f, 4.0f);
 	
 	//added by Mike, 20201116
 	//set square face with no color fill 
@@ -325,12 +326,16 @@ void Beam::update(float dt)
 					//20x20 grid
 					//edited by Mike, 20201116
 //                    xVel=xAccel*4;
-                    xVel=xAccel*30;
+					//edited by Mike, 20201214
+//                    xVel=xAccel*30;
+                    xVel=xAccel*80;
 
                     //edited by Mike, 20201116
                     //yVel=yAccel*4;
 //                    zVel=zAccel*4;
-                    zVel=zAccel*30;
+					//edited by Mike, 20201214
+//                    zVel=zAccel*30;
+                    zVel=zAccel*80;
 
                     myXPos+=xVel;
                     //edited by Mike, 20201116
