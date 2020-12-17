@@ -54,4 +54,14 @@
 --> Simply use combinations 1 and 2;<br/>
 --> You as Bryan may not be the strongest, but using less time to memorize combos, etc can still be a strong fighter.
 
+## 6) Shin-Nihon Kikaku (SNK): New Japan Project
+## 6.1) The King of Fighters '98: Dream Match Never Ends
+--> You as Kim Kaphwan can defeat final stage against Rugal B., using this technique in Single Play:<br/>
+--> 1) Use Strong Punch, i.e. Kim executes a middle kick, which does not necessarily need to hit<br/>
+--> Response: Rugal shall execute an electric ball<br/>
+--> 2) Use charge back and then forward Strong Kick, i.e. Kim executes a slide kick to evade the electric ball and then a flying axe kick<br/>
+--> Reminder: Verify distance using step 1; if too far, step 2 shall not hit<br/>
+--> Reminder: If Rugal does not execute an electric ball, repeat step 1<br/>
+--> Verified: You as Kim can achieve a PERFECT win<br/>
+
 TO-DO: -update: this
