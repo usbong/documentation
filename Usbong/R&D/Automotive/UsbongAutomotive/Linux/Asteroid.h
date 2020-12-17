@@ -174,7 +174,9 @@ public:
 	//void drawRobot(float xPos, float yPos, float zPos);
     //void drawRobotShip();
     //void drawValkyrie();
-    void draw();
+	//edited by Mike, 20201217
+//    void draw();
+    virtual void draw();
     
 	// updates the robot data
 	void update(float dt);

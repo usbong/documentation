@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20201207
+ * @date updated: 20201217
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -121,6 +121,9 @@ public:
     virtual float getWidth()=0;
     virtual float getHeight()=0;
     
+	//added by Mike, 20201217
+    virtual void draw();	
+	
     float getDistance(float x1, float y1, float z1, float x2, float y2, float z2);
     
     bool checkCollision(MyDynamicObject* mdo1, MyDynamicObject* mdo2);

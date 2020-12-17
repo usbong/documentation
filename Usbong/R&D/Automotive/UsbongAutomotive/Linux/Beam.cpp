@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201013
- * @date updated: 20201203
+ * @date updated: 20201217
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -278,6 +278,11 @@ void Beam::drawBeam()
 	//note: robotship width=1.0f; height=1.0f;
     glTranslatef(-1.0f/2, 0.0f, -1.0f/2);   
 
+	//added by Mike, 20201217
+	//TO-DO: -update: size for RobotShip
+	//glScalef(2.0f, 2.0f, 2.0f);
+	glScalef(4.0f, 4.0f, 4.0f);
+	
 //    glTranslatef(-myWindowWidth/100/20/4, 0.0f, -myWindowHeight/100/20/4);   
 	
 	//Reference: https://www3.ntu.edu.sg/home/ehchua/programming/opengl/HowTo_OpenGL_C.html;
@@ -298,6 +303,11 @@ void Beam::drawBeam()
       glVertex2f(0.01f,  0.0f);      
    glEnd();    
 */   
+	
+	//added by Mike, 20201217
+	//TO-DO: -update: size for RobotShip
+	//glScalef(2.0f, 2.0f, 2.0f);
+	
 	//added by Mike, 20201116
 	//set square face with no color fill 
 //	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
@@ -337,12 +347,16 @@ void Beam::update(float dt)
 					//20x20 grid
 					//edited by Mike, 20201116
 //                    xVel=xAccel*4;
-                    xVel=xAccel*30;
+					//edited by Mike, 20201217
+                    //xVel=xAccel*30;
+                    xVel=xAccel*80;
 
                     //edited by Mike, 20201116
                     //yVel=yAccel*4;
 //                    zVel=zAccel*4;
-                    zVel=zAccel*30;
+					//edited by Mike, 20201217			
+                    //zVel=zAccel*30;
+                    zVel=zAccel*80;
 
                     myXPos+=xVel;
                     //edited by Mike, 20201116

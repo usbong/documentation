@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20201207
+ * @date updated: 20201217
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -36,9 +36,18 @@
 //#include <SDL.h>
 //edited by Mike, 20200929
 
-//removed by Mike, 20201002
-//#include <windows.h> //Windows Machine
-
+//added by Mike, 20201217
+//Reference: https://stackoverflow.com/questions/34152424/autodetection-of-os-in-c-c;
+//answer by: Jeegar Patel, 20151208T0940
+//auto-identify if Windows Machine
+#ifdef _WIN32
+	#include <windows.h> //Windows Machine
+#endif
+/*
+#ifdef linux
+    printf("In Linux");
+#endif
+*/
 /*	//removed by Mike, 20201121
 #include <GL/gl.h>
 #include <GL/glut.h>
@@ -90,6 +99,10 @@
 //added by Mike, 20201016
 #include "Asteroid.h"
 
+//added by Mike, 20201217
+#include <algorithm>
+#include <vector>
+
 //#include "Sound.h"
 
 //#include "DynamicObject.h"
@@ -126,6 +139,21 @@ enum Keys
 	iNumOfKeyTypes
 };
 
+//added by Mike, 20201213
+//Reference: https://stackoverflow.com/questions/10287924/fastest-way-to-sort-a-list-of-number-and-their-index;
+//last accessed: 20201213
+//answer by: Jerry Coffin, 20120423T2045
+//edited by: 20131118T1435
+//TO-DO: -add: in UsbongUtils
+//descending
+struct sortByZPosition { 
+    //bool operator()(MyDynamicObject const &left, MyDynamicObject const &right) { 
+    //bool operator()(MyDynamicObject &left, MyDynamicObject &right) { 
+    bool operator()(MyDynamicObject *left, MyDynamicObject *right) { 
+//        return left.getZ() > right.getZ();
+        return left->getZ() > right->getZ();
+    }
+};
 
 /*	//removed by Mike, 20200929
 typedef struct
@@ -318,12 +346,37 @@ bool OpenGLCanvas::init()
     myAsteroid[11]->attachChild(myAsteroid[26],myAsteroid[27]);
 */
     
+/* //removed by Mike, 20201213    
     for (int i=0; i<MAX_ASTEROID; i++)   
     {
 //      myAsteroid[i] = new Asteroid;
 	//removed by Mike, 20201016
 //        myAsteroid[i]->setOpenGLCanvas(this);
     }
+*/
+
+	//added by Mike, 20201213
+	//std::vector<MyDynamicObject*> v;	
+	vMyDynamicObjectContainer.push_back(myPilot);
+	vMyDynamicObjectContainer.push_back(myRobotShip);
+	for (int i=0; i<MAX_BEAMS; i++) { //32
+		vMyDynamicObjectContainer.push_back(myBeam[i]);
+	}
+	for (int i=0; i<MAX_ASTEROID; i++) { //16			
+		vMyDynamicObjectContainer.push_back(myAsteroid[i]);
+	}	
+	
+/*
+	myDynamicObjectContainer[0]=myPilot;
+	myDynamicObjectContainer[1]=myRobotShip;
+	for (int i=0; i<MAX_BEAMS; i++) { //32
+		myDynamicObjectContainer[i+2]=myBeam[i];
+	}
+	for (int i=0; i<MAX_ASTEROID; i++) { //16			
+		myDynamicObjectContainer[i+2+MAX_BEAMS]=myAsteroid[i];
+	}
+*/
+	
 	//-------------------------------------------
     //added by Mike, 20201011
     setupFont(FONT_TEXTURE);
@@ -1035,6 +1088,7 @@ void OpenGLCanvas::render()
     	//added by Mike, 20200930
     	drawGridWithZAxis();
 
+/*	//edited by Mike, 20201213
 		//added by Mike, 20201001
     	glPushMatrix();		
     		//added by Mike, 202013; edited by Mike, 20201014
@@ -1047,15 +1101,13 @@ void OpenGLCanvas::render()
         glPopMatrix();       
 		
 		//edited by Mike, 20201016
-    	glPushMatrix();		        
+    	glPushMatrix();
             myRobotShip->drawRobotShip();			
         glPopMatrix();       
-
 		//added by Mike, 20201207
     	glPushMatrix();		        
             myPilot->drawPilot();			
         glPopMatrix();       
-
 		//edited by Mike, 20201016
     	glPushMatrix();		                
 			//added by Mike, 20201016
@@ -1064,7 +1116,46 @@ void OpenGLCanvas::render()
                 myAsteroid[i]->draw();
             }
     	glPopMatrix();		
-
+*/
+		//added by Mike, 20201213
+		//TO-DO: -reverify: this
+		
+		//z-sort, i.e. auto-draw objects based on z position;
+		//objects with higher z positions are auto-drawn first;
+		//these are objects at the back of those that have lower z positions
+		//MyDynamicObject *myDynamicObjectContainerSorted[MAX_DYNAMIC_OBJECT];		
+		//std::vector<MyDynamicObject*> v;
+		std::sort(vMyDynamicObjectContainer.begin(), vMyDynamicObjectContainer.end(), sortByZPosition());
+		
+		for (int i=0; i<MAX_DYNAMIC_OBJECT; i++) {			
+    		glPushMatrix();
+				vMyDynamicObjectContainer[i]->draw();
+    		glPopMatrix();
+		}
+		
+//vMyDynamicObjectContainer[0]->draw();
+//vMyDynamicObjectContainer[1]->draw();
+/*
+    for (int i=0; i<MAX_ASTEROID; i++)   
+    {
+		vMyDynamicObjectContainer[1]->draw();
+    }
+		
+	myDynamicObjectContainer[0]=myPilot;
+	myDynamicObjectContainer[1]=myRobotShip;
+	for (int i=0; i<MAX_BEAMS; i++) { //32
+		myDynamicObjectContainer[i+2]=myBeam[i];
+	}
+*/
+/*
+	for (int i=0; i<MAX_BEAMS; i++) { //32
+		vMyDynamicObjectContainer[i+2]->draw();
+	}
+	for (int i=0; i<MAX_ASTEROID; i++) { //16			
+		vMyDynamicObjectContainer[i+2+MAX_BEAMS]->draw();
+	}
+*/	
+		
 		//added by Mike, 20201011; removed by Mike, 20201207
 		//TO-DO: -update: this
 /*

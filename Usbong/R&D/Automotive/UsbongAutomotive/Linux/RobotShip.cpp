@@ -54,9 +54,18 @@
 
 #include <string.h>
 
-//TO-DO: -add: auto-identify if Windows Machine
-//removed by Mike, 20201121
-//#include <windows.h> //Windows Machine
+//added by Mike, 20201217
+//Reference: https://stackoverflow.com/questions/34152424/autodetection-of-os-in-c-c;
+//answer by: Jeegar Patel, 20151208T0940
+//auto-identify if Windows Machine
+#ifdef _WIN32
+	#include <windows.h> //Windows Machine
+#endif
+/*
+#ifdef linux
+    printf("In Linux");
+#endif
+*/
 
 //#include "ModelPool.h"
 
@@ -467,6 +476,14 @@ float* RobotShip::getXYZPos()
       
       return myXYZ;
 }
+
+/* //removed by Mike, 20201217
+//added by Mike, 20201213
+void RobotShip::draw()
+{
+	drawRobotShip();
+}
+*/
 
 //TO-DO: -use: drawRobotShip() instructions for human pilot
 //TO-DO: -update: drawRobotShip()
