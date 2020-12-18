@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20201213
+ * @date updated: 20201218
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -36,7 +36,7 @@
 //#include <SDL.h>
 //edited by Mike, 20200929
 
-//added by Mike, 20201207
+//added by Mike, 20201217
 //Reference: https://stackoverflow.com/questions/34152424/autodetection-of-os-in-c-c;
 //answer by: Jeegar Patel, 20151208T0940
 //auto-identify if Windows Machine
@@ -48,7 +48,6 @@
     printf("In Linux");
 #endif
 */
-
 /*	//removed by Mike, 20201121
 #include <GL/gl.h>
 #include <GL/glut.h>
@@ -87,7 +86,6 @@
 //TO-DO: -add: these 
 /*
 #include "PolygonUtils.h"
-
 #include "RobotShip.h"
 #include "Enemy.h"
 #include "Beam.h"
@@ -100,7 +98,7 @@
 //added by Mike, 20201016
 #include "Asteroid.h"
 
-//added by Mike, 20201213
+//added by Mike, 20201217
 #include <algorithm>
 #include <vector>
 
@@ -155,7 +153,6 @@ struct sortByZPosition {
         return left->getZ() > right->getZ();
     }
 };
-
 
 /*	//removed by Mike, 20200929
 typedef struct
@@ -333,7 +330,6 @@ bool OpenGLCanvas::init()
     myAsteroid[1]->attachChild(myAsteroid[6],myAsteroid[7]);
     myAsteroid[2]->attachChild(myAsteroid[8],myAsteroid[9]);
     myAsteroid[3]->attachChild(myAsteroid[10],myAsteroid[11]);
-
     for (int i=12; i<MAX_ASTEROID; i++)   
     {
         myAsteroid[i] = new Asteroid(GRANDCHILD_STATUS,0,0);
@@ -347,7 +343,7 @@ bool OpenGLCanvas::init()
     myAsteroid[10]->attachChild(myAsteroid[24],myAsteroid[25]);
     myAsteroid[11]->attachChild(myAsteroid[26],myAsteroid[27]);
 */
-  
+    
 /* //removed by Mike, 20201213    
     for (int i=0; i<MAX_ASTEROID; i++)   
     {
@@ -366,8 +362,8 @@ bool OpenGLCanvas::init()
 	}
 	for (int i=0; i<MAX_ASTEROID; i++) { //16			
 		vMyDynamicObjectContainer.push_back(myAsteroid[i]);
-	}
-
+	}	
+	
 /*
 	myDynamicObjectContainer[0]=myPilot;
 	myDynamicObjectContainer[1]=myRobotShip;
@@ -378,7 +374,7 @@ bool OpenGLCanvas::init()
 		myDynamicObjectContainer[i+2+MAX_BEAMS]=myAsteroid[i];
 	}
 */
-
+	
 	//-------------------------------------------
     //added by Mike, 20201011
     setupFont(FONT_TEXTURE);
@@ -408,7 +404,6 @@ bool OpenGLCanvas::shutdown()
     glDeleteTextures(1, &myTextureObjectFont);
     glDeleteTextures(1, &titleBackground);
     glDeleteTextures(1, &gameBackground);
-
 	//myBackground->Release();
 	//delete myBackground;
 	
@@ -459,7 +454,6 @@ void display() {
  	 int iRowCountMax=10;
  	 //TO-DO: -update: iColumnCountMax
  	 int iColumnCountMax=10;
-
    // Draw a Green Line top-left origin; Quadrant 4, y-axis inverted; x and y positive
    //rows   
  	 for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
@@ -471,7 +465,6 @@ void display() {
       		glVertex2f(1.0f, 0.1f*iRowCount);
    		glEnd();   		   	  
 	 }
-
    //columns
  	 for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {
    		// Draw a Green Line top-left origin
@@ -514,7 +507,6 @@ void display() {
  	 int iRowCountMax=10;
  	 //TO-DO: -update: iColumnCountMax
  	 int iColumnCountMax=10;
-
    // Draw a Green Line top-left origin; Quadrant 4, y-axis inverted; x and y positive
    //rows   
  	 for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
@@ -526,7 +518,6 @@ void display() {
       		glVertex2f(1.0f, 0.1f*iRowCount);
    		glEnd();   		   	  
 	 }
-
    //columns
  	 for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {
    		// Draw a Green Line top-left origin
@@ -542,11 +533,9 @@ void display() {
 }
     GLubyte *data;
     GLuint i;
-
     file = fopen(filename, "rb");
     if (file == NULL)
         return;
-
     // test validity of targa file
     if (fread(&targa, 1, sizeof(targa), file) != sizeof(targa) ||
         targa.id_field_length != 0 || targa.color_map_type != 0 ||
@@ -590,7 +579,6 @@ void display() {
  	 int iRowCountMax=10;
  	 //TO-DO: -update: iColumnCountMax
  	 int iColumnCountMax=10;
-
    // Draw a Green Line top-left origin; Quadrant 4, y-axis inverted; x and y positive
    //rows   
  	 for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
@@ -602,7 +590,6 @@ void display() {
       		glVertex2f(1.0f, 0.1f*iRowCount);
    		glEnd();   		   	  
 	 }
-
    //columns
  	 for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {
    		// Draw a Green Line top-left origin
@@ -621,7 +608,6 @@ void display() {
  	 int iRowCountMax=10;
  	 //TO-DO: -update: iColumnCountMax
  	 int iColumnCountMax=10;
-
    // Draw a Green Line top-left origin; Quadrant 4, y-axis inverted; x and y positive
    //rows   
  	 for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
@@ -633,7 +619,6 @@ void display() {
       		glVertex2f(1.0f, 0.1f*iRowCount);
    		glEnd();   		   	  
 	 }
-
    //columns
  	 for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {
    		// Draw a Green Line top-left origin
@@ -654,7 +639,6 @@ void display() {
         free(data);
         return;
     }
-
     // read targa file into memory
     data = (GLubyte *) malloc(targa.width * targa.height * 4);
     if (fread(data, targa.width * targa.height * 4, 1, file) != 1)
@@ -662,7 +646,6 @@ void display() {
         fclose(file);
         return;
     }
-
     // swap texture bytes so that BGRA becomes RGBA
     for (i = 0; i < targa.width * targa.height * 4; i += 4)
     {
@@ -670,7 +653,6 @@ void display() {
         data[i] = data[i + 2];
         data[i + 2] = swap;
     }
-
     // build OpenGL texture
     fclose(file);
     gluBuild2DMipmaps(GL_TEXTURE_2D, GL_RGBA, targa.width, targa.height,
@@ -684,45 +666,34 @@ bool OpenGLCanvas::loadBackground()
 {
     // retrieve "unused" texture object
 	glGenTextures(1, &titleBackground);
-
     // select texture 1
     glBindTexture(GL_TEXTURE_2D, titleBackground);//1);
-
     // create OpenGL texture out of targa file
     //removed by Mike, 20200929
     //TO-DO: -update: this
     //load_tga("textures/title.tga");//background.
-
-
     // set texture parameters
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
                     GL_LINEAR_MIPMAP_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
 	// retrieve "unused" texture object
 	glGenTextures(1, &gameBackground);
-
     // select texture 1
     glBindTexture(GL_TEXTURE_2D, gameBackground);//1);
-
     // create OpenGL texture out of targa file
     //removed by Mike, 20200929
     //TO-DO: -update: this
 //    load_tga("textures/background.tga");//background.
-
-
     // set texture parameters
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
                     GL_LINEAR_MIPMAP_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
     // unselect texture 1
     glBindTexture(GL_TEXTURE_2D, 0);
-
     currTextureBackground=titleBackground;
 }
 */
@@ -865,7 +836,6 @@ void OpenGLCanvas::render()
 		//edited by Mike, 2020117
 //	    draw_string(0, 0.1, tempText);    	
 	    draw_string(0, 0.1, tempText);    	
-
 	    glDisable(GL_TEXTURE_2D);
 	    glBindTexture(GL_TEXTURE_2D, 0);
 */
@@ -1012,7 +982,6 @@ void OpenGLCanvas::render()
 //           		if (myXPos <= 0.0f) myXPos = 20-myWidth/8; //if left side
 	if (myCanvasPosX <= 0.0f) myCanvasPosX = myWindowWidth/100;//-myWidth/8; //if left side
 	else if (myCanvasPosX >= myWindowWidth/100) myCanvasPosX = 0.0f;//+myWidth/8; //if right side
-
 	if (myCanvasPosZ >= myWindowHeight/100) myCanvasPosZ = 0.0f;//+myHeight/8; //if bottom side
 	//edited by Mike, 20201116
 //           		else if (myZPos <= 0.0f) myZPos = 20-myHeight/8; //if top side
@@ -1025,7 +994,6 @@ void OpenGLCanvas::render()
 	//edited by Mike, 20201202		
 	else if (myRobotShip->getX() >= myWindowWidth/100) myCanvasPosX = 0.0f+myRobotShip->getWidth()/8;//+myWidth/8; //if right side
 //	else if (myRobotShip->getX() >= 10) myCanvasPosX = 0.0f+myRobotShip->getWidth()/8;//+myWidth/8; //if right side
-
 	if (myRobotShip->getZ() >= myWindowHeight/100) myCanvasPosZ = 0.0f+myRobotShip->getHeight()/8; //if bottom side
 	//note: negative value
 	else if (myRobotShip->getZ() <= 0.0f) myCanvasPosZ = 0.0f-myWindowHeight/100+myRobotShip->getHeight()/8;//-myHeight/8; //if top side
@@ -1034,7 +1002,6 @@ void OpenGLCanvas::render()
 	//Linux Machine
 /*	printf("CanvasPosX: %f\n", myCanvasPosX);
 	printf("robotShipX: %f\n", myRobotShip->getX());
-
 	printf("CanvasPosZ: %f\n", myCanvasPosZ);
 	printf("robotShipZ: %f\n", myRobotShip->getZ());
 */
@@ -1056,11 +1023,9 @@ void OpenGLCanvas::render()
 	printf("myWindowWidth/100: %f\n", myWindowWidth/100.0f);
 	if (myRobotShip->getX() <= 0.0f) myCanvasPosX = 0.0f-myWindowWidth/100.0f+myRobotShip->getWidth()/8;//-myWidth/8; //if left side
 	else if (myRobotShip->getX() >= myWindowWidth/100.0f) myCanvasPosX = 0.0f+myRobotShip->getWidth()/8;//+myWidth/8; //if right side
-
 	if (myRobotShip->getZ() >= myWindowHeight/100.0f) myCanvasPosZ = 0.0f+myRobotShip->getHeight()/8; //if bottom side
 	//note: negative value
 	else if (myRobotShip->getZ() <= 0.0f) myCanvasPosZ = 0.0f-myWindowHeight/100+myRobotShip->getHeight()/8;//-myHeight/8; //if top side
-
 		*/
 		
 		
@@ -1082,7 +1047,11 @@ void OpenGLCanvas::render()
     	glLoadIdentity();  
 */
 		
-		//TO-DO: -update: this
+		//added by Mike, 20201207
+		//TO-DO: -add: z-sort, i.e. auto-draw objects based on z position;
+		//objects with higher z positions are auto-drawn first;
+		//these are objects at the back of those that have lower z positions
+
     	//added by Mike, 20200930
     	drawGridWithZAxis();
 
@@ -1102,12 +1071,10 @@ void OpenGLCanvas::render()
     	glPushMatrix();
             myRobotShip->drawRobotShip();			
         glPopMatrix();       
-
 		//added by Mike, 20201207
     	glPushMatrix();		        
             myPilot->drawPilot();			
         glPopMatrix();       
-
 		//edited by Mike, 20201016
     	glPushMatrix();		                
 			//added by Mike, 20201016
@@ -1132,7 +1099,7 @@ void OpenGLCanvas::render()
 				vMyDynamicObjectContainer[i]->draw();
     		glPopMatrix();
 		}
-
+		
 //vMyDynamicObjectContainer[0]->draw();
 //vMyDynamicObjectContainer[1]->draw();
 /*
@@ -1151,16 +1118,15 @@ void OpenGLCanvas::render()
 	for (int i=0; i<MAX_BEAMS; i++) { //32
 		vMyDynamicObjectContainer[i+2]->draw();
 	}
-
 	for (int i=0; i<MAX_ASTEROID; i++) { //16			
 		vMyDynamicObjectContainer[i+2+MAX_BEAMS]->draw();
 	}
-*/		
+*/	
+		
 		//added by Mike, 20201011; removed by Mike, 20201207
 		//TO-DO: -update: this
 /*
         currTextureBackground=gameBackground;
-
         sprintf(tempText,"1P \n       %d", score);
         draw_string(-200, 130, tempText);
     
@@ -1169,10 +1135,8 @@ void OpenGLCanvas::render()
     
     	sprintf(tempText,"REST %d", rest);
         draw_string(100, -150, tempText);
-
         glDisable(GL_TEXTURE_2D);
         glBindTexture(GL_TEXTURE_2D, 0);
-
         //for the rest of the objects in the world
     	glMatrixMode(GL_PROJECTION);			// set projection matrix current matrix
     	glLoadIdentity();						// reset projection matrix
@@ -1202,7 +1166,6 @@ void OpenGLCanvas::drawGridWithZAxis() {
 //     //set TOP-LEFT origin/anchor/reference point; quadrant 4, y-axis inverted; x and y positive
 //	 glMatrixMode(GL_PROJECTION);
 //	 glLoadIdentity();
-
 	 //TO-DO: -add: Z plane grid
 	
 	 //draw grid
@@ -1213,7 +1176,6 @@ void OpenGLCanvas::drawGridWithZAxis() {
  	 //TO-DO: -update: iColumnCountMax
 // 	 int iColumnCountMax=10;
  	 int iColumnCountMax=20;
-
    // Draw a Green Line top-left origin; Quadrant 4, y-axis inverted; x and y positive
    //rows   
    	//edited by Mike, 20201002
@@ -1229,7 +1191,6 @@ void OpenGLCanvas::drawGridWithZAxis() {
       		
    		glEnd();   		   	  
 	 }
-
    //columns
    	//edited by Mike, 20201015   	
  	 for (int iColumnCount=0; iColumnCount<=iColumnCountMax; iColumnCount++) {
@@ -1292,7 +1253,6 @@ void OpenGLCanvas::drawGridWithZAxis() {
 	//TO-DO: -add: grid after drawing level 
 	//due to glClear(GL_COLOR_BUFFER_BIT); // Clear the color buffer
 	//edited by Mike, 20201120
-
    // Draw a Green Line top-left origin; Quadrant 4, y-axis inverted; x and y positive
    //rows   
    	//edited by Mike, 20201002
@@ -1307,7 +1267,6 @@ void OpenGLCanvas::drawGridWithZAxis() {
       		glVertex3f(fGridSquareWidth*iRowCountMax, 0.0f, fGridSquareHeight*iRowCount);      		
    		glEnd();   		   	  
 	 }
-
    //columns
    	//edited by Mike, 20201015   	
  	 for (int iColumnCount=0; iColumnCount<=iColumnCountMax; iColumnCount++) {
@@ -1318,7 +1277,6 @@ void OpenGLCanvas::drawGridWithZAxis() {
 			//with Z-axis
       		glVertex3f(fGridSquareWidth*iColumnCount, 0.0f, 0.0f);    // y, z
       		glVertex3f(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iColumnCountMax);
-
    		glEnd();   		   	  
 	 }
 */
@@ -1415,7 +1373,6 @@ void OpenGLCanvas::drawGridWithZAxis() {
 	 	for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {		
 //			//edited by Mike, 20201120
 //	    	myLevel->draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iRowCount, tempText);
-
 			//TO-DO: -update: this
 			//added by Mike, 20201120	    	
 //	    	if ((iColumnCount%3==0) && (iRowCount%7==0)) {
@@ -1500,7 +1457,6 @@ void OpenGLCanvas::drawGrid() {
 //    glRotatef(30, 0.0f, 0.0f, 0.2f);
 //    glRotatef(30, 0.0f, 0.0f, 1.0f);
     glRotatef(60, 1.0f, 0.0f, 0.0f);
-
 //    glTranslatef(0.45f, -0.15f, 0.0f); //10x10 grid
     glTranslatef(0.45f, -0.20f, 0.0f); //20x20 grid
 //    glScalef(0.5f, 0.5f, 0.5f); //10x10 grid
@@ -1534,7 +1490,6 @@ void OpenGLCanvas::drawGrid() {
 //    glRotatef(80.0f, 1.0f, 0.0f, 0.0f);
 //    glRotatef(100.0f, 1.0f, 0.0f, 0.0f);
     glRotatef(45.0f, 1.0f, 0.0f, 0.0f);
-
 //    glTranslatef(0.2f, -0.5f, -0.5f); //20x20 grid
 //    glTranslatef(0.0f, -0.5f, -0.9f); //20x20 grid
 //    glTranslatef(0.0f, -0.7f, -0.9f); //20x20 grid
@@ -1772,9 +1727,10 @@ void OpenGLCanvas::update()
 			myCanvasLookAtAngle-=0.1f;
 			myCanvasCenterPosZ = myCanvasEyePosZ + sin(myCanvasLookAtAngle);
 			myCanvasCenterPosX = myCanvasEyePosX + cos(myCanvasLookAtAngle);
-
 			//added by Mike, 20201026
-            if (myCanvasLookAtAngle>360.0f) {
+            if (myCanvasLookAtAngle   //added by Mike, 20201201
+   currentMovingState=WALKING_MOVING_STATE;
+>360.0f) {
               myCanvasLookAtAngle-=360.0f;
 		    }
             else if (myCanvasLookAtAngle<-360.0f) {
@@ -1821,7 +1777,6 @@ void OpenGLCanvas::update()
 			myCanvasLookAtAngle+=0.1f;
 			myCanvasCenterPosZ = myCanvasEyePosZ + sin(myCanvasLookAtAngle);
 			myCanvasCenterPosX = myCanvasEyePosX + cos(myCanvasLookAtAngle);
-
 			//added by Mike, 20201026
             if (myCanvasLookAtAngle>360) {
               myCanvasLookAtAngle-=360;
@@ -1850,8 +1805,10 @@ void OpenGLCanvas::update()
     	{
 			//edited by Mike, 20201013
 			static int i = 0;
-
-//            myRobotShip->move(KEY_LEFT);
+			
+			//edited by Mike, 20201218
+            //myRobotShip->move(KEY_LEFT);
+            myRobotShip->move(KEY_I);
 			
             for(i=0; i<MAX_BEAMS; i++) {
               if (!myBeam[i]->isActive()) {
@@ -1917,7 +1874,6 @@ void OpenGLCanvas::gameReset(){
     scoreBeforeBonus=0;
     myRobotShip->reset();
     rest=MAX_LIFE;
-
     resetDynamicObjects();
     changeState(GAME_SCREEN);
 */	
@@ -1929,7 +1885,6 @@ void OpenGLCanvas::resetDynamicObjects(){
     myAsteroid[1]->reset(-15,15); //TOP LEFT
     myAsteroid[2]->reset(-15,-15); //BOTTOM LEFT
     myAsteroid[3]->reset(15,-15); //BOTTOM RIGHT
-
     for (i=4; i<12; i++) {   
       myAsteroid[i]->changeState(CHILD_STATUS);
       myAsteroid[i]->setCollidable(false);
@@ -1982,6 +1937,3 @@ void OpenGLCanvas::changeState(int s)
 {
   currentState=s;                  
 }
-
-
-
