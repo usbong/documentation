@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20201217
+ * @date updated: 20201218
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -50,6 +50,7 @@ const char RIGHT = 1;
 //edited by Mike, 20201201
 #define IDLE_MOVING_STATE 0
 #define WALKING_MOVING_STATE 1
+#define ATTACKING_MOVING_STATE 2 //added by Mike, 20201218
 
 const int INITIALIZING_STATE = 0;
 const int MOVING_STATE = 1;

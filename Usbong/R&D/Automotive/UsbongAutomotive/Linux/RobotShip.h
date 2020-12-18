@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20201213
+ * @date updated: 20201218
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -34,37 +34,7 @@
 //added by Mike, 20201019
 #include "PolygonUtils.h"
 
-/* //edited by Mike, 20201207
-//added by Mike, 20201201
-// constants for arm and leg movement states
-const char BACKWARD_STATE = 0;
-const char FORWARD_STATE  = 1;
-
-// index constants for accessing arm and leg array data
-const char LEFT  = 0;
-const char RIGHT = 1;
-
-	//removed by Mike, 20201201
-//const int STANDING_STATE = 0;
-//const int WALKING_STATE = 1;
-
-
-//edited by Mike, 20201201
-#define IDLE_MOVING_STATE 0
-#define WALKING_MOVING_STATE 1
-
-const int INITIALIZING_STATE = 0;
-const int MOVING_STATE = 1;
-const int IN_TITLE_STATE = 2;
-const int DYING_STATE = 3;
-
-//added by Mike, 20201130
-//TO-DO: -add: diagonal
-#define FACING_UP 0
-#define FACING_DOWN 1
-#define FACING_LEFT 2
-#define FACING_RIGHT 3
-*/
+//note: select containers classified as constants located in MyDynamicObject.h 
 
 class RobotShip: public MyDynamicObject
 {

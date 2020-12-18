@@ -1774,7 +1774,9 @@ void OpenGLCanvas::update()
 			myCanvasCenterPosX = myCanvasEyePosX + cos(myCanvasLookAtAngle);
 
 			//added by Mike, 20201026
-            if (myCanvasLookAtAngle>360.0f) {
+            if (myCanvasLookAtAngle   //added by Mike, 20201201
+   currentMovingState=WALKING_MOVING_STATE;
+>360.0f) {
               myCanvasLookAtAngle-=360.0f;
 		    }
             else if (myCanvasLookAtAngle<-360.0f) {
@@ -1850,8 +1852,10 @@ void OpenGLCanvas::update()
     	{
 			//edited by Mike, 20201013
 			static int i = 0;
-
-//            myRobotShip->move(KEY_LEFT);
+			
+			//edited by Mike, 20201218
+            //myRobotShip->move(KEY_LEFT);
+            myRobotShip->move(KEY_I);
 			
             for(i=0; i<MAX_BEAMS; i++) {
               if (!myBeam[i]->isActive()) {
