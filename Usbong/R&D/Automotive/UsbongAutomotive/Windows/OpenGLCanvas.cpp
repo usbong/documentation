@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20201218
+ * @date updated: 20201226
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -1601,7 +1601,7 @@ void OpenGLCanvas::update()
 		if (iKeyCount==iNumOfKeyTypes) {
 			//TO-DO: -update: this
           	myRobotShip->move(-1); //IDLE_MOVING_STATE			
-		}
+		}		
 		
        	//edited by Mike, 20201013
     	if(myKeysDown[KEY_UP] == TRUE)
@@ -1836,6 +1836,15 @@ void OpenGLCanvas::update()
               }
             }			
     	}
+/*    	
+		//added by Mike, 20201226; removed by Mike, 20201226
+//		else {
+    	if(myKeysDown[KEY_I] == FALSE) {
+			//KEY_I off; not pressed
+            myRobotShip->move(-KEY_I);
+            return;
+		}
+*/		
 		//edited by Mike, 20201015
 //    	else if(myKeysDown[KEY_K] == TRUE)
     	if(myKeysDown[KEY_K] == TRUE)

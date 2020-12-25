@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20201218
+ * @date updated: 20201226
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -413,6 +413,9 @@ RobotShip::RobotShip(float xPos, float yPos, float zPos, int windowWidth, int wi
     //init default values
     //previousFacingState=FACING_UP;
     //currentFacingState=FACING_UP;
+
+	//added by Mike, 20201225
+	bIsFiringBeam=false;
 
     //edited by Mike, 20201201	
 	currentFacingState=FACING_UP;
@@ -1372,17 +1375,41 @@ void RobotShip::changeState(int s)
 
 void RobotShip::move(int key)
 {
-   //added by Mike, 20201201
-   currentMovingState=WALKING_MOVING_STATE;
+   //Note: Unit member as Pilot has to release hold of directional keys,
+   //so that RobotShip faces in the correct direction;
+   //holding the fire beam key, e.g. KEY_I, causes RobotShip 
+   //to move without changing the direction that it faces
+	
+   //added by Mike, 20201201; removed by Mike, 20201226
+//   currentMovingState=WALKING_MOVING_STATE;
+
+   //added by Mike, 20201225; removed by Mike, 20201225
+   //bIsFiringBeam=false;
 
    switch (key)
    {
      //added by Mike, 20201218
      case KEY_I:
-   		  currentMovingState=ATTACKING_MOVING_STATE;		   
+     	//removed by Mike, 20201225
+/*   		  
+		  currentMovingState=ATTACKING_MOVING_STATE;		   
           currentFacingState=FACING_UP;
+*/          
+          //added by Mike, 20201225
+          bIsFiringBeam=true;
           break;
-	
+     //added by Mike, 20201226
+     case -KEY_I:
+//		  currentMovingState=IDLE_MOVING_STATE;
+          bIsFiringBeam=false;
+
+   		  if (currentMovingState==WALKING_MOVING_STATE) {   		  	
+		  }
+		  else {
+		  	currentMovingState=IDLE_MOVING_STATE;		  	
+		  }			
+          break;	
+
 	 case KEY_UP:
      case KEY_W:
           //isMovingForward=1;
@@ -1394,8 +1421,16 @@ void RobotShip::move(int key)
 //	      myYPos+=-stepY;
 	      myZPos+=-stepZ;
 	      
-	      //added by Mike, 20201201
-          currentFacingState=FACING_UP;
+	      //added by Mike, 20201201; edited by Mike, 20201225
+          //currentFacingState=FACING_UP;
+	      if (bIsFiringBeam) {	      	
+		  }
+		  else {
+          	currentFacingState=FACING_UP;		  	
+		  }
+		  
+		  //added by Mike, 20201226
+   		  currentMovingState=WALKING_MOVING_STATE;
           break;
      case KEY_DOWN:
 /*     	  //added by Mike, 20201001
@@ -1406,8 +1441,16 @@ void RobotShip::move(int key)
 //	      myYPos+=stepY;
 	      myZPos+=stepZ;
 
-	      //added by Mike, 20201201
-          currentFacingState=FACING_DOWN;
+	      //added by Mike, 20201201; edited by Mike, 20201225
+          //currentFacingState=FACING_DOWN;
+	      if (bIsFiringBeam) {	      	
+		  }
+		  else {
+          	currentFacingState=FACING_DOWN;
+		  }
+
+		  //added by Mike, 20201226
+   		  currentMovingState=WALKING_MOVING_STATE;
           break;      
      case KEY_LEFT:
      		//removed by Mike, 20201001
@@ -1425,8 +1468,16 @@ void RobotShip::move(int key)
           sprintf(str,"rotationAngle: %f",rotationAngle);
           MessageBox(NULL, str, "Welcome!", MB_OK);
 */
-	      //added by Mike, 20201201
-          currentFacingState=FACING_LEFT;
+	      //added by Mike, 20201201; edited by Mike, 20201225
+          //currentFacingState=FACING_LEFT;
+	      if (bIsFiringBeam) {	      	
+		  }
+		  else {
+          	currentFacingState=FACING_LEFT;
+		  }
+
+		  //added by Mike, 20201226
+   		  currentMovingState=WALKING_MOVING_STATE;
           break;      
      case KEY_RIGHT:
      	//removed by Mike, 20201001
@@ -1441,12 +1492,21 @@ void RobotShip::move(int key)
 	      myXPos+=stepX;
 //          return;
 
-	      //added by Mike, 20201201
-          currentFacingState=FACING_RIGHT;
+	      //added by Mike, 20201201; edited by Mike, 20201225
+          //currentFacingState=FACING_RIGHT;
+	      if (bIsFiringBeam) {	      	
+		  }
+		  else {
+          	currentFacingState=FACING_RIGHT;
+		  }
+
+		  //added by Mike, 20201226
+   		  currentMovingState=WALKING_MOVING_STATE;
 		  break;
 		//added by Mike, 20201201
 		default:
 		  currentMovingState=IDLE_MOVING_STATE;
+		  bIsFiringBeam=false; //added by Mike, 20201226
 		  break;
    }
 }
