@@ -181,6 +181,10 @@ Beam::Beam(float xPos, float yPos, float zPos, int windowWidth, int windowHeight
     addSphere(0.0f, 0.0f, 0.0f, 0.5f);
     setCollidable(true);
 
+	//added by Mike, 20201225
+	iDelayCountMax=1;
+	iDelayCount=iDelayCountMax;
+
     //init default values
     //previousFacingState=FACING_UP;
 //    currentFacingState=FACING_UP;
@@ -202,8 +206,16 @@ void Beam::move(float rot, float* xyz)
      myXPos = xyz[0];
      myYPos = xyz[1];
      myZPos = xyz[2];
-     
-     changeState(ACTIVE_STATE);
+	
+	 //edited by Mike, 20201225	 
+     //changeState(ACTIVE_STATE);
+	 if (iDelayCount < iDelayCountMax) {
+	 	iDelayCount=iDelayCount+1;		
+	 }
+	 else {
+	 	changeState(ACTIVE_STATE);
+	 	iDelayCount=0;	 	
+	 }	      
 }
 
 void Beam::draw()
@@ -213,7 +225,7 @@ void Beam::draw()
 
     switch (currentState)
     {
-            case ACTIVE_STATE:
+            case ACTIVE_STATE:               
                glColor3f(1.0f, 1.0f, 0.0f); //yellow
            	   glPushMatrix();	
 /*

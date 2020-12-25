@@ -1815,9 +1815,20 @@ void OpenGLCanvas::update()
 				  //edited by Mike, 20201013
 //                myBeam[i]->move(myRobotShip->getRotationAngle(), myRobotShip->getXYZPos());
 				
+				//TO-DO: -update: to immediately move a beam if only single press, i.e. not held
+				//TO-DO: -update: to move beam in curve
+				
 				//UP
 				rotationAngle=180;
-                myBeam[i]->move(rotationAngle, myRobotShip->getXYZPos());
+				//edited by Mike, 20201225
+//              myBeam[i]->move(rotationAngle, myRobotShip->getXYZPos());
+				//note: when held, beam particles move in waves
+				if (i%2==0) {
+                	myBeam[i]->move(rotationAngle+4, myRobotShip->getXYZPos());
+				}
+				else {
+                	myBeam[i]->move(rotationAngle, myRobotShip->getXYZPos());					
+				}
 
 //		        sound->play_sound_clip(beam);
                 return;
