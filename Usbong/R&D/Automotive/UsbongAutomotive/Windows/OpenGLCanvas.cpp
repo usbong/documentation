@@ -1823,6 +1823,7 @@ void OpenGLCanvas::update()
 				//edited by Mike, 20201225
 //              myBeam[i]->move(rotationAngle, myRobotShip->getXYZPos());
 				//note: when held, beam particles move in waves
+				//TO-DO: -update: to move beams based on direction where robot faces 
 				if (i%2==0) {
                 	myBeam[i]->move(rotationAngle+4, myRobotShip->getXYZPos());
 				}

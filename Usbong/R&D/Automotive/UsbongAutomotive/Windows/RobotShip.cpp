@@ -923,7 +923,9 @@ void RobotShip::drawRobotShip()
 						break;
 						
 					//added by Mike, 20201218
+					//TO-DO: -add: move robot feet while attacking using beams
 					case ATTACKING_MOVING_STATE:
+						//note: FACING_UP via z-axis
 						if ((currentFacingState==FACING_UP)
 					    	|| (currentFacingState==FACING_LEFT))
 					    {
@@ -984,15 +986,19 @@ void RobotShip::drawRobotShip()
 			            		glPopMatrix();
 */	
 								//LEGS
+/*							//edited by Mike, 20201225
 			            	    drawUpperLeg(-0.1f, -0.5f, 0.0f); //left
 							    drawUpperLeg(0.3f, -0.5f, 0.0f); //right        
 
-/*								//edited by Mike, 20201218
-							    drawLowerLeg(-0.1f, -0.7f, 0.0f); //left
-							    drawLowerLeg(0.3f, -0.7f, 0.0f); //right
-*/
 							    drawLowerLeg(-0.15f, -0.7f, 0.0f); //left
 							    drawLowerLeg(0.35f, -0.7f, 0.0f); //right
+*/								
+								//TO-DO: -verify: if robot faces down
+							    drawLowerLeg(-0.15f, -0.7f, 0.0f); //left
+							    drawLowerLeg(0.35f, -0.7f, 0.0f); //right
+
+			            	    drawUpperLeg(-0.1f, -0.5f, 0.0f); //left
+							    drawUpperLeg(0.3f, -0.5f, 0.0f); //right        
 							
 								//added by Mike, 20201202; edited by Mike, 20201207
 /*			            		drawBody(0.1f, -0.15f, 0.0f);	
@@ -1014,14 +1020,14 @@ void RobotShip::drawRobotShip()
 										//drawLowerArm(-0.2f, -0.3f, 0.0f); //left
 										//edited by Mike, 20201218
 										drawLowerArm(-0.3f, 0.0f, 0.0f); //left							
-			            	   glPopMatrix();
+			            	   glPopMatrix();							
 
-								//TO-DO: -update: sequence of robot parts; remove body and head first
-							
 							   if (currentFacingState==FACING_UP) {
 								   drawHead(0.1f, 0.2f, -0.1f);		
 								   drawBody(0.1f, -0.15f, 0.0f);	
+								   
 							   }
+							   //TO-DO: -verify: sequence of robot parts; remove body and head first
 					    	   //(currentFacingState==FACING_LEFT))																						   
 							   else {
 									drawBody(0.1f, -0.15f, 0.0f);	
@@ -1127,6 +1133,13 @@ void RobotShip::drawRobotShip()
 	
 			            	glPopMatrix();	// pop back to original coordinate system						
 					    }
+					    
+						//added by Mike, 20201225
+						//TO-DO: -reverify: that angles are correct in WALKING_STATE
+						armAngles[LEFT] = 0.0;
+						armAngles[RIGHT] = 0.0;
+						legAngles[LEFT] = 0.0;
+						legAngles[RIGHT] = 0.0;					    
 						break;
 
 				}
