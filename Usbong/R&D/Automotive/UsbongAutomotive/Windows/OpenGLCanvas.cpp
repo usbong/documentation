@@ -723,10 +723,16 @@ void OpenGLCanvas::drawPlane()
 void OpenGLCanvas::keyDown(int keyCode)
 {
 	myKeysDown[keyCode] = TRUE;	
+	
+	//added by Mike, 20201226
+	myRobotShip->keyDown(keyCode);
 }
 void OpenGLCanvas::keyUp(int keyCode)
 {
 	myKeysDown[keyCode] = FALSE;	
+
+	//added by Mike, 20201226
+	myRobotShip->keyUp(keyCode);
 }
 
 void OpenGLCanvas::render()

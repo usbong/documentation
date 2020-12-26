@@ -89,7 +89,9 @@ enum Keys
 	KEY_J,
 	KEY_L,
 	KEY_I,
-	KEY_K
+	KEY_K,
+	//added by Mike, 20201226
+	iNumOfKeyTypes
 };
 
 //object: Cube.005_0
@@ -1416,6 +1418,16 @@ void RobotShip::changeState(int s)
   currentState=s;                  
 }
 
+//added by Mike, 20201226
+void RobotShip::keyDown(int keyCode) {
+	myKeysDown[keyCode] = TRUE;
+}
+
+void RobotShip::keyUp(int keyCode) {
+	myKeysDown[keyCode] = FALSE;	
+}
+
+
 void RobotShip::move(int key)
 {
    //Note: Unit member as Pilot has to release hold of directional keys,
@@ -1430,6 +1442,9 @@ void RobotShip::move(int key)
    //bIsFiringBeam=false;
    
    //TO-DO: -add: bIsMovingLeft, etc, while facing up, etc
+
+   //added by Mike, 20201226; removed by Mike, 20201226
+//   myKeysDown[key] = TRUE;	
 
    switch (key)
    {

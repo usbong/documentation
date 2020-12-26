@@ -34,6 +34,10 @@
 //added by Mike, 20201019
 #include "PolygonUtils.h"
 
+//added by Mike, 20201226
+#define TRUE 1
+#define FALSE 0
+
 /* //edited by Mike, 20201207
 //added by Mike, 20201201
 // constants for arm and leg movement states
@@ -135,6 +139,9 @@ private:
 
 	float legAngles[2];
 	float armAngles[2];
+	
+	//added by Mike, 20201225
+	bool bIsFiringBeam;
 
     GLint tricount;
     GLint isMovingForward;
@@ -142,7 +149,6 @@ private:
     GLboolean test_pow2(GLushort i);
     void load_tga(char *filename);
 	
-
     //draw texture
 	//added by Mike, 20201130
     bool loadTexture(CTargaImage *myTexture, const char *filename, unsigned int *myTextureObject);
@@ -174,6 +180,11 @@ public:
     RobotShip(float xPos, float yPos, float zPos,int windowWidth,int windowHeight);
 
 	~RobotShip();
+
+	//added by Mike, 20201226
+	//note: we classify this container as public;
+	//otherwise; computer notifies us of error when we update value inside container
+   	int myKeysDown[4]; //TO-DO: -update: this to include diagonal directional movement
 
 	//virtual ~Robot();
     float rotationAngle;	
@@ -226,6 +237,10 @@ public:
 	void changeState(int s);
 	
 	void move(int key);
+	
+	//added by Mike, 20201226
+	void keyDown(int keyCode);	
+	void keyUp(int keyCode);	
 	
 	void setOpenGLCanvas(OpenGLCanvas* c);
     virtual void hitBy(MyDynamicObject* mdo);

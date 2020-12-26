@@ -160,6 +160,8 @@ class OpenGLCanvas
 		//edited by Mike, 20201015 	
 		//TO-DO: -reverify: this; malloc?
 //   		int myKeysDown[14];	
+		//added by Mike, 20201226
+		//TO-DO: -update: this to include diagonal directional movement
    		int myKeysDown[4];
 		   	
    		float rotationSpeed;
