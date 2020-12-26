@@ -925,7 +925,7 @@ void OpenGLCanvas::render()
               0.0, 0.0, 1.0); // up-direction
 */
 /*	UFO Catcher View; Y as up
-	//reverify: roboship cube
+	//reverify: robotship cube
     gluLookAt(0.0, -1.0, 3.0, // eye position 0.0, 0.0, 3.0
               0.0, 0.0, 1.0, // look-at point
               0.0, 1.0, 0.0); // up-direction

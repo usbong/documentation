@@ -691,38 +691,48 @@ void RobotShip::drawRobotShip()
 						}						
 						break;
 					case WALKING_MOVING_STATE:
+						//TO-DO: -update: sequence of legs, i.e. upper and lower
 						//added by Mike, 20201202
 						if ((currentFacingState==FACING_UP)
 					    	|| (currentFacingState==FACING_LEFT))
 					    {
 			            	glPushMatrix();			            
 			                    //ARMS
-/*								/removed by Mike, 20201202 due to draw sequence is important
-			                    //UPPER
-			            		glPushMatrix();
-			            			glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);
-			            			drawUpperArm(-0.1f, 0.0f, 0.0f); //left
-			                		glPushMatrix();
-			                            glTranslatef(0.0f, 0.0f, 0.1f);
-			                			glRotatef(45, 1.0f, 0.0f, 0.0f);
-			                		    drawLowerArm(-0.1f, -0.3f, 0.0f); //left
-			                		glPopMatrix();
-			            		glPopMatrix();
-*/
-			            		glPushMatrix();
-			            			glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);
-									//edited by Mike, 20201207
-			                        //drawUpperArm(0.3f, 0.0f, 0.0f); //right       
-			                        drawUpperArm(0.4f, 0.0f, 0.0f); //right       
-							
-			                		glPushMatrix();
-			                            glTranslatef(0.0f, 0.0f, 0.1f);
-			                			glRotatef(45, 1.0f, 0.0f, 0.0f);
+			                    //note: draw sequence is important
+			                    if (bIsFiringBeam) {
+							   		armAngles[RIGHT]=30.0f;
+									armAngles[LEFT]=30.0f;
+
+				            		glPushMatrix();
+										glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);
+				                        drawUpperArm(0.4f, 0.0f, 0.0f); //right       
+								
+				                		glPushMatrix();
+				                            glTranslatef(0.0f, 0.0f, 0.1f);
+				                			glRotatef(45, 1.0f, 0.0f, 0.0f);
+											//edited by Mike, 20201207
+											//drawLowerArm(0.3f, -0.3f, 0.0f); //right
+											drawLowerArm(0.4f, -0.3f, 0.0f); //right							
+				                		glPopMatrix();
+				            		glPopMatrix();							   	
+								}
+								else {
+				            		glPushMatrix();
+				            			glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);
 										//edited by Mike, 20201207
-										//drawLowerArm(0.3f, -0.3f, 0.0f); //right
-										drawLowerArm(0.4f, -0.3f, 0.0f); //right							
-			                		glPopMatrix();
-			            		glPopMatrix();
+				                        //drawUpperArm(0.3f, 0.0f, 0.0f); //right       
+				                        drawUpperArm(0.4f, 0.0f, 0.0f); //right       
+								
+				                		glPushMatrix();
+				                            glTranslatef(0.0f, 0.0f, 0.1f);
+				                			glRotatef(45, 1.0f, 0.0f, 0.0f);
+											//edited by Mike, 20201207
+											//drawLowerArm(0.3f, -0.3f, 0.0f); //right
+											drawLowerArm(0.4f, -0.3f, 0.0f); //right							
+				                		glPopMatrix();
+				            		glPopMatrix();
+				            	}
+
 			                    //LEGS
 			            		glPushMatrix();					
 			            			glRotatef(legAngles[LEFT], 1.0f, 0.0f, 0.0f);
@@ -765,21 +775,54 @@ void RobotShip::drawRobotShip()
 									drawHead(0.1f, 0.2f, -0.1f);		
 							   }
 							
-			                    //UPPER
-			            		glPushMatrix();
-			            			glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);
-									//edited by Mike, 20201207
-			            			//drawUpperArm(-0.1f, 0.0f, 0.0f); //left
-			            			drawUpperArm(-0.2f, 0.0f, 0.0f); //left
-
-									glPushMatrix();
+							   //edited by Mike, 20201226
+							   //TO-DO: -add: attack (punch)
+							   //TO-DO: -add: defend (shield)
+							   //TO-DO: -add: weapons, e.g. shotgun
+			                   //walking + attacking (firing beam)
+			                   //ARM
+							   if (bIsFiringBeam) {
+								  //LOWER ARM
+								  glPushMatrix();
 			                            glTranslatef(0.0f, 0.0f, 0.1f);
-			                			glRotatef(45, 1.0f, 0.0f, 0.0f);
+										glRotatef(45, 1.0f, 0.0f, 0.0f);
+	
+										//added by Mike, 20201218
+										glRotatef(45.0f, 0.0f, 0.0f, 1.0f);
+										glRotatef(-30.0f, 0.0f, 1.0f, 0.0f);
+	//                   					glScalef(2.0f, 1.0f, 1.0f);
+												
 										//edited by Mike, 20201207
 										//drawLowerArm(-0.1f, -0.3f, 0.0f); //left
-										drawLowerArm(-0.2f, -0.3f, 0.0f); //left
-									glPopMatrix();
-			            		glPopMatrix();
+										//drawLowerArm(-0.2f, -0.3f, 0.0f); //left
+										//edited by Mike, 20201218
+										drawLowerArm(-0.3f, 0.0f, 0.0f); //left							
+				            	  glPopMatrix();							
+							   	
+							   	  //UPPER ARM
+				            	  glPushMatrix();
+				            			glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);							
+										//edited by Mike, 20201207
+				            			//drawUpperArm(-0.1f, 0.0f, 0.0f); //left
+				            			drawUpperArm(-0.2f, 0.0f, 0.0f); //left				            			
+				            	  glPopMatrix();	// pop back to original coordinate system
+							   }
+							   else {
+			            			glPushMatrix();
+			            				glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);
+										//edited by Mike, 20201207
+				            			//drawUpperArm(-0.1f, 0.0f, 0.0f); //left
+				            			drawUpperArm(-0.2f, 0.0f, 0.0f); //left
+	
+										glPushMatrix();
+				                            glTranslatef(0.0f, 0.0f, 0.1f);
+				                			glRotatef(45, 1.0f, 0.0f, 0.0f);
+											//edited by Mike, 20201207
+											//drawLowerArm(-0.1f, -0.3f, 0.0f); //left
+											drawLowerArm(-0.2f, -0.3f, 0.0f); //left
+										glPopMatrix();
+				            		glPopMatrix();
+							   }
 	
 			            	glPopMatrix();	// pop back to original coordinate system						
 					    }
@@ -1385,6 +1428,8 @@ void RobotShip::move(int key)
 
    //added by Mike, 20201225; removed by Mike, 20201225
    //bIsFiringBeam=false;
+   
+   //TO-DO: -add: bIsMovingLeft, etc, while facing up, etc
 
    switch (key)
    {
