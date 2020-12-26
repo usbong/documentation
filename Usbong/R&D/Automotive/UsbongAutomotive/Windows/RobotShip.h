@@ -142,6 +142,7 @@ private:
 	
 	//added by Mike, 20201225
 	bool bIsFiringBeam;
+	bool bHasPressedADirectionalKey; //added by Mike, 20201226
 
     GLint tricount;
     GLint isMovingForward;

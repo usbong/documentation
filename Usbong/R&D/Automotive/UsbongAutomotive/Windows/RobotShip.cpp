@@ -498,7 +498,7 @@ void RobotShip::drawRobotShip()
     glTranslatef(myXPos, myYPos, myZPos);
 //    glTranslatef(myXPos, myZPos, myYPos);    
 
-	//added by Mike, 20201201
+	//added by Mike, 20201201; edited by Mike, 20201226	
     if (currentFacingState==FACING_LEFT) 
     {  
         glRotatef(90, 0.0f, 1.0f, 0.0f);
@@ -735,7 +735,19 @@ void RobotShip::drawRobotShip()
 				            		glPopMatrix();
 				            	}
 
+								//added by Mike, 20201226
+								if (currentFacingState==FACING_UP) {
+									if (myKeysDown[KEY_A]==TRUE) {
+										//note: walk wall right side
+										//glRotatef(60, 0.0f, 0.0f, 1.0f);			
+
+//				                        glTranslatef(0.0f, 0.0f, 0.1f);							        	
+										glRotatef(40, 0.0f, 1.0f, 0.0f);			
+									}
+								}
+
 			                    //LEGS
+/* 	//edited by Mike, 20201226
 			            		glPushMatrix();					
 			            			glRotatef(legAngles[LEFT], 1.0f, 0.0f, 0.0f);
 									//edited by Mike, 20201209
@@ -762,6 +774,33 @@ void RobotShip::drawRobotShip()
 										drawLowerLeg(0.3f, -0.7f, 0.0f); //right
 									glPopMatrix();
 			            		glPopMatrix();
+*/
+
+			            		glPushMatrix();					
+			            			glRotatef(legAngles[RIGHT], 1.0f, 0.0f, 0.0f);
+									glPushMatrix();
+										drawLowerLeg(0.3f, -0.7f, 0.0f); //right
+									glPopMatrix();
+			                        drawUpperLeg(0.3f, -0.5f, 0.0f); //right        
+			            		glPopMatrix();
+
+			            		glPushMatrix();					
+			            			glRotatef(legAngles[LEFT], 1.0f, 0.0f, 0.0f);
+									glPushMatrix();
+										drawLowerLeg(-0.1f, -0.7f, 0.0f); //left
+									glPopMatrix();
+									
+			            		    drawUpperLeg(-0.1f, -0.5f, 0.0f); //left
+			            		glPopMatrix();
+
+								//added by Mike, 20201226
+								//set to default rotation
+								if (currentFacingState==FACING_UP) {
+									if (myKeysDown[KEY_A]==TRUE) {
+							        	glRotatef(-40, 0.0f, 1.0f, 0.0f);			
+//				                        glTranslatef(0.0f, 0.0f, -0.1f);
+									}
+								}
 	
 							    //added by Mike, 20201202; edited by Mike, 20201207
 /*			            		drawBody(0.1f, -0.15f, 0.0f);	
@@ -1457,13 +1496,33 @@ void RobotShip::move(int key)
 */          
           //added by Mike, 20201225
           bIsFiringBeam=true;
+          
+          //added by Mike, 20201226
+          //iNumOfKeyTypes
+          bHasPressedADirectionalKey=false;
+          //based on enum Keys 
+          for (int iCount=0; iCount<10; iCount++) {
+   		    if (myKeysDown[iCount]==TRUE) {
+          		bHasPressedADirectionalKey=true;
+   		    	break;
+			}
+		  }
+		  
+		  if (!bHasPressedADirectionalKey) {
+		  	currentMovingState=ATTACKING_MOVING_STATE;		   		  	
+		  }          
           break;
      //added by Mike, 20201226
      case -KEY_I:
 //		  currentMovingState=IDLE_MOVING_STATE;
           bIsFiringBeam=false;
+          //removed by Mike, 20201226
+//          bHasPressedADirectionalKey=false; //added by Mike, 20201226
 
    		  if (currentMovingState==WALKING_MOVING_STATE) {   		  	
+		  }
+		  //added by Mike, 20201226
+ 		  else if (currentMovingState==ATTACKING_MOVING_STATE) {   		  	
 		  }
 		  else {
 		  	currentMovingState=IDLE_MOVING_STATE;		  	
