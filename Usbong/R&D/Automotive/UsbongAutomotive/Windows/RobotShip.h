@@ -185,8 +185,12 @@ public:
 	//added by Mike, 20201226
 	//note: we classify this container as public;
 	//otherwise; computer notifies us of error when we update value inside container
-   	int myKeysDown[4]; //TO-DO: -update: this to include diagonal directional movement
+   	//edited by Mike, 20201227
+   	//TO-DO: -update: this to include diagonal directional movement
+	//int myKeysDown[4];
+	int myKeysDown[10]; //note: does not include KEY_J, KEY_L, KEY_I, KEY_K,
 
+	
 	//virtual ~Robot();
     float rotationAngle;	
 

@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20201226
+ * @date updated: 20201227
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -690,7 +690,15 @@ void RobotShip::drawRobotShip()
 							   drawLowerArm(0.4f, -0.2f, 0.0f); //right
 							
 							glPopMatrix();	// pop back to original coordinate system	
-						}						
+						}			
+/*	//removed by Mike, 20201227									
+						//added by Mike, 20201227
+						//TO-DO: -reverify: that angles are correct in WALKING_STATE
+						armAngles[LEFT] = 0.0;
+						armAngles[RIGHT] = 0.0;
+						legAngles[LEFT] = 0.0;
+						legAngles[RIGHT] = 0.0;
+*/
 						break;
 					case WALKING_MOVING_STATE:
 						//TO-DO: -update: sequence of legs, i.e. upper and lower
@@ -741,8 +749,15 @@ void RobotShip::drawRobotShip()
 										//note: walk wall right side
 										//glRotatef(60, 0.0f, 0.0f, 1.0f);			
 
-//				                        glTranslatef(0.0f, 0.0f, 0.1f);							        	
 										glRotatef(40, 0.0f, 1.0f, 0.0f);			
+				                        glTranslatef(0.05f, 0.0f, 0.0f);
+									}
+									//added by Mike, 20201227
+//									else if (myKeysDown[KEY_D]==TRUE) {
+									else if (myKeysDown[KEY_RIGHT]==TRUE) {
+										glRotatef(-40, 0.0f, 1.0f, 0.0f);										
+				                        glTranslatef(0.0f, 0.2f, 0.0f);
+				                        glTranslatef(0.05f, 0.0f, 0.0f);							        	
 									}
 								}
 
@@ -779,17 +794,20 @@ void RobotShip::drawRobotShip()
 			            		glPushMatrix();					
 			            			glRotatef(legAngles[RIGHT], 1.0f, 0.0f, 0.0f);
 									glPushMatrix();
-										drawLowerLeg(0.3f, -0.7f, 0.0f); //right
+										//edited by Mike, 20201227
+//										drawLowerLeg(0.3f, -0.7f, 0.0f); //right
+										drawLowerLeg(0.2f, -0.7f, 0.0f); //right
 									glPopMatrix();
-			                        drawUpperLeg(0.3f, -0.5f, 0.0f); //right        
+									//edited by Mike, 20201227
+//			                        drawUpperLeg(0.3f, -0.5f, 0.0f); //right        
+			                        drawUpperLeg(0.2f, -0.5f, 0.0f); //right        
 			            		glPopMatrix();
 
 			            		glPushMatrix();					
 			            			glRotatef(legAngles[LEFT], 1.0f, 0.0f, 0.0f);
 									glPushMatrix();
 										drawLowerLeg(-0.1f, -0.7f, 0.0f); //left
-									glPopMatrix();
-									
+									glPopMatrix();									
 			            		    drawUpperLeg(-0.1f, -0.5f, 0.0f); //left
 			            		glPopMatrix();
 
@@ -797,8 +815,16 @@ void RobotShip::drawRobotShip()
 								//set to default rotation
 								if (currentFacingState==FACING_UP) {
 									if (myKeysDown[KEY_A]==TRUE) {
+				                        glTranslatef(-0.05f, 0.0f, 0.0f);
 							        	glRotatef(-40, 0.0f, 1.0f, 0.0f);			
 //				                        glTranslatef(0.0f, 0.0f, -0.1f);
+									}
+									//added by Mike, 20201227
+//									else if (myKeysDown[KEY_D]==TRUE) {
+									else if (myKeysDown[KEY_RIGHT]==TRUE) {
+				                        glTranslatef(-0.05f, 0.0f, 0.0f);							        	
+				                        glTranslatef(0.0f, -0.2f, 0.0f);
+										glRotatef(40, 0.0f, 1.0f, 0.0f);										
 									}
 								}
 	
@@ -898,6 +924,22 @@ void RobotShip::drawRobotShip()
 			                		glPopMatrix();
 			            		glPopMatrix();
 */	
+
+								//added by Mike, 20201227; removed by Mike, 20201227
+								//TO-DO: -update: this to be FACING_DOWN
+/*								
+								if (currentFacingState==FACING_UP) {
+//									if (myKeysDown[KEY_D]==TRUE) {
+									if (myKeysDown[KEY_RIGHT]==TRUE) {
+										//note: walk wall right side
+										//glRotatef(60, 0.0f, 0.0f, 1.0f);			
+
+//				                        glTranslatef(0.0f, 0.0f, 0.1f);							        	
+										glRotatef(40, 0.0f, 1.0f, 0.0f);
+										
+									}
+								}
+*/
 			                    //LEGS
 			            		glPushMatrix();					
 			            			glRotatef(legAngles[LEFT], 1.0f, 0.0f, 0.0f);
@@ -914,17 +956,28 @@ void RobotShip::drawRobotShip()
 			            		glPopMatrix();
 			            		glPushMatrix();					
 			            			glRotatef(legAngles[RIGHT], 1.0f, 0.0f, 0.0f);
-									//edited by Mike, 20201207							
-									//drawUpperLeg(0.2f, -0.5f, 0.0f); //right        
-									drawUpperLeg(0.3f, -0.5f, 0.0f); //right        
+									//edited by Mike, 20201207; edited again by Mike, 20201227
+									drawUpperLeg(0.2f, -0.5f, 0.0f); //right        
+//									drawUpperLeg(0.3f, -0.5f, 0.0f); //right        
 									glPushMatrix();
 			                            //glTranslatef(0.0f, 0.0f, 0.1f);
 			                			//glRotatef(5, 1.0f, 0.0f, 0.0f);
-										//edited by Mike, 20201207							
-			                            //drawLowerLeg(0.2f, -0.7f, 0.0f); //right
-			                            drawLowerLeg(0.3f, -0.7f, 0.0f); //right
+										//edited by Mike, 20201207; edited again by Mike, 20201227
+			                            drawLowerLeg(0.2f, -0.7f, 0.0f); //right
+//			                            drawLowerLeg(0.3f, -0.7f, 0.0f); //right
 									glPopMatrix();
 			            		glPopMatrix();
+
+/*	
+								//added by Mike, 20201227; removed by Mike, 20201227
+								//set to default rotation
+								if (currentFacingState==FACING_UP) {
+									if (myKeysDown[KEY_D]==TRUE) {
+//									if (myKeysDown[KEY_RIGHT]==TRUE) {
+										glRotatef(-40, 0.0f, 1.0f, 0.0f);			
+									}
+//								}
+*/
 	
 							    //added by Mike, 20201202; edited by Mike, 20201207
 /*			            		drawBody(0.1f, -0.15f, 0.0f);
@@ -1219,14 +1272,7 @@ void RobotShip::drawRobotShip()
 	
 	
 			            	glPopMatrix();	// pop back to original coordinate system						
-					    }
-					    
-						//added by Mike, 20201225
-						//TO-DO: -reverify: that angles are correct in WALKING_STATE
-						armAngles[LEFT] = 0.0;
-						armAngles[RIGHT] = 0.0;
-						legAngles[LEFT] = 0.0;
-						legAngles[RIGHT] = 0.0;					    
+					    }			
 						break;
 
 				}
@@ -1269,6 +1315,22 @@ void RobotShip::update(float dt)
            case MOVING_STATE:      
 				switch(currentMovingState) {
 		           case WALKING_MOVING_STATE:
+		           		//added by Mike, 20201227
+						//TO-DO: -reverify: that angles are correct in WALKING_STATE
+						if ((armAngles[LEFT]==0) && (armAngles[RIGHT]==0)) {
+							armAngles[LEFT] = 8.3f;
+							armAngles[RIGHT] = -10.0f*2;
+							legAngles[LEFT] = 0.0f;
+							legAngles[RIGHT] = 0.0f;		            
+
+/*			            	for (char side = 0; side < 2; side++)
+			            	{
+		            			armStates[side] = FORWARD_STATE;
+			            	}							
+*/			            	
+						}
+		           		
+		           	
 		                //note: Code structure taken from Dave Astle and Kevin Hawkins's code 
 		                //("Beginning OpenGL Game Programming", Chapter 4)
 		                //-Mike, Dec. 21, 2006
@@ -1312,7 +1374,7 @@ void RobotShip::update(float dt)
 		            			legStates[side] = FORWARD_STATE;		
 		            	}                
 		                break;
-		            default: //STANDING STATE
+		            default: //STANDING STATE		            
 		              break;//do nothing    
 				}
 				
