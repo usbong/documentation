@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20201227
+ * @date updated: 20201229
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -575,6 +575,14 @@ void RobotShip::drawRobotShip()
 
 				switch(currentMovingState) {
 		            case IDLE_MOVING_STATE:		
+		            
+					  	//added by Mike, 20201229
+					  	//TO-DO: -reverify: that problem with not smooth movement of right arm
+					  	//after firing beam up z-axis, and walking down without firing
+				   		armAngles[RIGHT]=0.0f;
+						armAngles[LEFT]=0.0f;
+			
+		            
 						//edited by Mike, 20201204
 /*
 							glPushMatrix();	
@@ -688,6 +696,7 @@ void RobotShip::drawRobotShip()
 */							   
 							   drawUpperArm(0.4f, 0.0f, 0.0f); //right        
 							   drawLowerArm(0.4f, -0.2f, 0.0f); //right
+
 							
 							glPopMatrix();	// pop back to original coordinate system	
 						}			
@@ -1254,7 +1263,7 @@ void RobotShip::drawRobotShip()
 								  drawHead(0.1f, 0.2f, -0.1f);
 								  drawBody(0.1f, -0.15f, 0.0f);
 							   }
-							
+/*							
 			            		glPushMatrix();
 			            			glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);
 									//edited by Mike, 20201207
@@ -1269,7 +1278,21 @@ void RobotShip::drawRobotShip()
 			                            drawLowerArm(0.4f, -0.3f, 0.0f); //right							
 			                		glPopMatrix();
 			            		glPopMatrix();
-	
+*/	
+			            		glPushMatrix();
+			            			glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);
+									//edited by Mike, 20201207
+			                        //drawUpperArm(0.3f, 0.0f, 0.0f); //right        
+			                        drawUpperArm(0.4f, 0.0f, 0.0f); //right        
+
+									glPushMatrix();
+			                            glTranslatef(0.0f, 0.0f, 0.1f);
+			                			glRotatef(45, 1.0f, 0.0f, 0.0f);
+										//edited by Mike, 20201207
+			                            //drawLowerArm(0.3f, -0.3f, 0.0f); //right
+			                            drawLowerArm(0.4f, -0.3f, 0.0f); //right							
+			                		glPopMatrix();
+			            		glPopMatrix();
 	
 			            	glPopMatrix();	// pop back to original coordinate system						
 					    }			
@@ -1315,19 +1338,18 @@ void RobotShip::update(float dt)
            case MOVING_STATE:      
 				switch(currentMovingState) {
 		           case WALKING_MOVING_STATE:
-		           		//added by Mike, 20201227
+		           		//added by Mike, 20201227; edited by Mike, 20201229
 						//TO-DO: -reverify: that angles are correct in WALKING_STATE
+						//TO-DO: -reverify: sequence of upper and lower arms 
 						if ((armAngles[LEFT]==0) && (armAngles[RIGHT]==0)) {
 							armAngles[LEFT] = 8.3f;
-							armAngles[RIGHT] = -10.0f*2;
+							armAngles[RIGHT] = -10.0f*3-5.0f;
 							legAngles[LEFT] = 0.0f;
-							legAngles[RIGHT] = 0.0f;		            
-
-/*			            	for (char side = 0; side < 2; side++)
-			            	{
-		            			armStates[side] = FORWARD_STATE;
-			            	}							
-*/			            	
+							legAngles[RIGHT] = 0.0f;		    
+							
+							//added by Mike, 20201229
+							armStates[0] == FORWARD_STATE;        
+							armStates[1] == BACKWARD_STATE;        
 						}
 		           		
 		           	
@@ -1587,7 +1609,7 @@ void RobotShip::move(int key)
  		  else if (currentMovingState==ATTACKING_MOVING_STATE) {   		  	
 		  }
 		  else {
-		  	currentMovingState=IDLE_MOVING_STATE;		  	
+		  	currentMovingState=IDLE_MOVING_STATE;
 		  }			
           break;	
 
