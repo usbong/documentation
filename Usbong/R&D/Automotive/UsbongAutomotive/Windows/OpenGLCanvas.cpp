@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20201226
+ * @date updated: 20201230
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -1823,9 +1823,32 @@ void OpenGLCanvas::update()
 				
 				//TO-DO: -update: to immediately move a beam if only single press, i.e. not held
 				//TO-DO: -update: to move beam in curve
-				
-				//UP
+
+				//edited by Mike, 20201230				
+/*				//UP
 				rotationAngle=180;
+*/
+				//TO-DO: -update: beam shape, delay
+				//TO-DO: -reverify: speed-up of facing movement to fire beam
+			    if (myRobotShip->getCurrentFacingState()==FACING_LEFT) 
+			    {  
+					rotationAngle=90;
+			    } 
+			    else if (myRobotShip->getCurrentFacingState()==FACING_RIGHT) 
+			    {
+					rotationAngle=-90;
+			    }
+			    else if (myRobotShip->getCurrentFacingState()==FACING_UP)
+			    {
+					rotationAngle=180;
+			    }
+			    else if (myRobotShip->getCurrentFacingState()==FACING_DOWN)
+			    {
+					rotationAngle=0;
+			    }
+
+
+
 				//edited by Mike, 20201225
 //              myBeam[i]->move(rotationAngle, myRobotShip->getXYZPos());
 				//note: when held, beam particles move in waves
