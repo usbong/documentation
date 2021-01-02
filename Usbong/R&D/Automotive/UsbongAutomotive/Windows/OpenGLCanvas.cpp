@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20201230
+ * @date updated: 20210102
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -1711,110 +1711,18 @@ void OpenGLCanvas::update()
         //last accessed: 20201013    	
         //edited by Mike, 20201015
 //    	else if(myKeysDown[KEY_J] == TRUE)
+		//edited by Mike, 20210102
     	if(myKeysDown[KEY_J] == TRUE)
-    	{
-			//edited by Mike, 20201013
-			static int i = 0;
-
-			//added by Mike, 20201023
-			//move down
-			//myCanvasPosY+=myCanvasStepY;
-			//turn left
-			//edited by Mike, 20201024
-/*			myCanvasEyePosX+=myCanvasEyeStepX;
-			myCanvasPosX+=myCanvasStepX;
-*/
-			//TO-DO: -add: in turn right
-
-/*			//removed by Mike, 20201115; due to top view plus isometric view			
-			//Reference:
-			//https://stackoverflow.com/questions/29452725/how-can-i-make-my-opengl-camera-turn-360-degrees;
-			//answer by: Chris DuPuis, 20150405T0235
-			myCanvasLookAtAngle-=0.1f;
-			myCanvasCenterPosZ = myCanvasEyePosZ + sin(myCanvasLookAtAngle);
-			myCanvasCenterPosX = myCanvasEyePosX + cos(myCanvasLookAtAngle);
-			//added by Mike, 20201026
-            if (myCanvasLookAtAngle   //added by Mike, 20201201
-   currentMovingState=WALKING_MOVING_STATE;
->360.0f) {
-              myCanvasLookAtAngle-=360.0f;
-		    }
-            else if (myCanvasLookAtAngle<-360.0f) {
-              myCanvasLookAtAngle+=360.0f;
-		    }
-*/
-						
-            for(i=0; i<MAX_BEAMS; i++) {
-              if (!myBeam[i]->isActive()) {
-				  //edited by Mike, 20201013
-//                myBeam[i]->move(myRobotShip->getRotationAngle(), myRobotShip->getXYZPos());
-				
-				//LEFT
-				rotationAngle=90;
-                myBeam[i]->move(rotationAngle, myRobotShip->getXYZPos());
-
-//		        sound->play_sound_clip(beam);
-                return;
-              }
-            }			
-    	}
-    	//edited by Mike, 20201015
-//    	else if(myKeysDown[KEY_L] == TRUE)
-    	if(myKeysDown[KEY_L] == TRUE)
-    	{
-			//edited by Mike, 20201013
-			static int i = 0;
-
-
-			//added by Mike, 20201023
-			//move up
-			//myCanvasPosY-=myCanvasStepY;
-			//turn right
-/*			//removed by Mike, 20201025
-			myCanvasEyePosX-=myCanvasEyeStepX;
-			myCanvasPosX-=myCanvasStepX;
-*/
-
-/*			//removed by Mike, 20201115; due to top view plus isometric view
-			//added by Mike, 20201026
-			//Reference:
-			//https://stackoverflow.com/questions/29452725/how-can-i-make-my-opengl-camera-turn-360-degrees;
-			//answer by: Chris DuPuis, 20150405T0235
-			myCanvasLookAtAngle+=0.1f;
-			myCanvasCenterPosZ = myCanvasEyePosZ + sin(myCanvasLookAtAngle);
-			myCanvasCenterPosX = myCanvasEyePosX + cos(myCanvasLookAtAngle);
-			//added by Mike, 20201026
-            if (myCanvasLookAtAngle>360) {
-              myCanvasLookAtAngle-=360;
-		    }
-            else if (myCanvasLookAtAngle<-360) {
-              myCanvasLookAtAngle+=360;
-		    }
-*/			
-            for(i=0; i<MAX_BEAMS; i++) {
-              if (!myBeam[i]->isActive()) {
-				  //edited by Mike, 20201013
-//                myBeam[i]->move(myRobotShip->getRotationAngle(), myRobotShip->getXYZPos());
-				
-				//RIGHT
-				rotationAngle=-90;
-                myBeam[i]->move(rotationAngle, myRobotShip->getXYZPos());
-
-//		        sound->play_sound_clip(beam);
-                return;
-              }
-            }			
-    	}
-		//edited by Mike, 20201015
-//    	else if(myKeysDown[KEY_I] == TRUE)
-    	if(myKeysDown[KEY_I] == TRUE)
     	{
 			//edited by Mike, 20201013
 			static int i = 0;
 			
 			//edited by Mike, 20201218
             //myRobotShip->move(KEY_LEFT);
+            //TO-DO: -update: this; we use KEY_I for now
+            //myRobotShip->move(KEY_J);
             myRobotShip->move(KEY_I);
+    		myRobotShip->setCurrentFacingState(FACING_LEFT); //added by Mike, 20210102
 			
             for(i=0; i<MAX_BEAMS; i++) {
               if (!myBeam[i]->isActive()) {
@@ -1828,6 +1736,9 @@ void OpenGLCanvas::update()
 /*				//UP
 				rotationAngle=180;
 */
+
+
+/*				//removed by Mike, 20210102
 				//TO-DO: -update: beam shape, delay
 				//TO-DO: -reverify: speed-up of facing movement to fire beam
 			    if (myRobotShip->getCurrentFacingState()==FACING_LEFT) 
@@ -1846,7 +1757,141 @@ void OpenGLCanvas::update()
 			    {
 					rotationAngle=0;
 			    }
+*/
 
+				//LEFT
+				rotationAngle=90;
+
+				//edited by Mike, 20201225
+//              myBeam[i]->move(rotationAngle, myRobotShip->getXYZPos());
+				//note: when held, beam particles move in waves
+				//TO-DO: -update: to move beams based on direction where robot faces 
+				if (i%2==0) {
+                	myBeam[i]->move(rotationAngle+4, myRobotShip->getXYZPos());
+				}
+				else {
+                	myBeam[i]->move(rotationAngle, myRobotShip->getXYZPos());					
+				}
+
+//		        sound->play_sound_clip(beam);
+                return;
+              }
+            }			
+		}
+
+    	//edited by Mike, 20201015
+//    	else if(myKeysDown[KEY_L] == TRUE)
+		//edited by Mike, 20210102
+    	if(myKeysDown[KEY_L] == TRUE)
+    	{
+			//edited by Mike, 20201013
+			static int i = 0;
+			
+			//edited by Mike, 20201218
+            //myRobotShip->move(KEY_LEFT);
+            //TO-DO: -update: this; we use KEY_I for now
+            //myRobotShip->move(KEY_J);
+            myRobotShip->move(KEY_I);
+    		myRobotShip->setCurrentFacingState(FACING_RIGHT);  //added by Mike, 20210102
+			
+            for(i=0; i<MAX_BEAMS; i++) {
+              if (!myBeam[i]->isActive()) {
+				  //edited by Mike, 20201013
+//                myBeam[i]->move(myRobotShip->getRotationAngle(), myRobotShip->getXYZPos());
+				
+				//TO-DO: -update: to immediately move a beam if only single press, i.e. not held
+				//TO-DO: -update: to move beam in curve
+
+				//edited by Mike, 20201230				
+/*				//UP
+				rotationAngle=180;
+*/
+
+
+/*				//removed by Mike, 20210102
+				//TO-DO: -update: beam shape, delay
+				//TO-DO: -reverify: speed-up of facing movement to fire beam
+			    if (myRobotShip->getCurrentFacingState()==FACING_LEFT) 
+			    {  
+					rotationAngle=90;
+			    } 
+			    else if (myRobotShip->getCurrentFacingState()==FACING_RIGHT) 
+			    {
+					rotationAngle=-90;
+			    }
+			    else if (myRobotShip->getCurrentFacingState()==FACING_UP)
+			    {
+					rotationAngle=180;
+			    }
+			    else if (myRobotShip->getCurrentFacingState()==FACING_DOWN)
+			    {
+					rotationAngle=0;
+			    }
+*/
+
+				//RIGHT
+				rotationAngle=-90;
+
+				//edited by Mike, 20201225
+//              myBeam[i]->move(rotationAngle, myRobotShip->getXYZPos());
+				//note: when held, beam particles move in waves
+				//TO-DO: -update: to move beams based on direction where robot faces 
+				if (i%2==0) {
+                	myBeam[i]->move(rotationAngle+4, myRobotShip->getXYZPos());
+				}
+				else {
+                	myBeam[i]->move(rotationAngle, myRobotShip->getXYZPos());					
+				}
+
+//		        sound->play_sound_clip(beam);
+                return;
+              }
+            }			
+		}
+
+		//edited by Mike, 20201015
+//    	else if(myKeysDown[KEY_I] == TRUE)
+    	if(myKeysDown[KEY_I] == TRUE)
+    	{
+			//edited by Mike, 20201013
+			static int i = 0;
+			
+			//edited by Mike, 20201218
+            //myRobotShip->move(KEY_LEFT);
+            myRobotShip->move(KEY_I);
+    		myRobotShip->setCurrentFacingState(FACING_UP);
+			
+            for(i=0; i<MAX_BEAMS; i++) {
+              if (!myBeam[i]->isActive()) {
+				  //edited by Mike, 20201013
+//                myBeam[i]->move(myRobotShip->getRotationAngle(), myRobotShip->getXYZPos());
+				
+				//TO-DO: -update: to immediately move a beam if only single press, i.e. not held
+				//TO-DO: -update: to move beam in curve
+
+				//UP
+				rotationAngle=180;
+
+/*				//removed by Mike, 20210102
+				//TO-DO: -update: beam shape, delay
+				//TO-DO: -reverify: speed-up of facing movement to fire beam
+			    if (myRobotShip->getCurrentFacingState()==FACING_LEFT) 
+			    {  
+					rotationAngle=90;
+			    } 
+			    else if (myRobotShip->getCurrentFacingState()==FACING_RIGHT) 
+			    {
+					rotationAngle=-90;
+			    }
+			    else if (myRobotShip->getCurrentFacingState()==FACING_UP)
+			    {
+					rotationAngle=180;
+			    }
+			    else if (myRobotShip->getCurrentFacingState()==FACING_DOWN)
+			    {
+					rotationAngle=0;
+			    }
+*/
 
 
 				//edited by Mike, 20201225
@@ -1876,21 +1921,60 @@ void OpenGLCanvas::update()
 */		
 		//edited by Mike, 20201015
 //    	else if(myKeysDown[KEY_K] == TRUE)
+		//edited by Mike, 20210102
     	if(myKeysDown[KEY_K] == TRUE)
     	{
 			//edited by Mike, 20201013
 			static int i = 0;
-
-//            myRobotShip->move(KEY_LEFT);
+			
+			//edited by Mike, 20201218
+            //myRobotShip->move(KEY_LEFT);
+            myRobotShip->move(KEY_I);
+    		myRobotShip->setCurrentFacingState(FACING_DOWN);
 			
             for(i=0; i<MAX_BEAMS; i++) {
               if (!myBeam[i]->isActive()) {
 				  //edited by Mike, 20201013
 //                myBeam[i]->move(myRobotShip->getRotationAngle(), myRobotShip->getXYZPos());
 				
+				//TO-DO: -update: to immediately move a beam if only single press, i.e. not held
+				//TO-DO: -update: to move beam in curve
+
 				//DOWN
 				rotationAngle=0;
-                myBeam[i]->move(rotationAngle, myRobotShip->getXYZPos());
+
+/*				//removed by Mike, 20210102
+				//TO-DO: -update: beam shape, delay
+				//TO-DO: -reverify: speed-up of facing movement to fire beam
+			    if (myRobotShip->getCurrentFacingState()==FACING_LEFT) 
+			    {  
+					rotationAngle=90;
+			    } 
+			    else if (myRobotShip->getCurrentFacingState()==FACING_RIGHT) 
+			    {
+					rotationAngle=-90;
+			    }
+			    else if (myRobotShip->getCurrentFacingState()==FACING_UP)
+			    {
+					rotationAngle=180;
+			    }
+			    else if (myRobotShip->getCurrentFacingState()==FACING_DOWN)
+			    {
+					rotationAngle=0;
+			    }
+*/
+
+
+				//edited by Mike, 20201225
+//              myBeam[i]->move(rotationAngle, myRobotShip->getXYZPos());
+				//note: when held, beam particles move in waves
+				//TO-DO: -update: to move beams based on direction where robot faces 
+				if (i%2==0) {
+                	myBeam[i]->move(rotationAngle+4, myRobotShip->getXYZPos());
+				}
+				else {
+                	myBeam[i]->move(rotationAngle, myRobotShip->getXYZPos());					
+				}
 
 //		        sound->play_sound_clip(beam);
                 return;

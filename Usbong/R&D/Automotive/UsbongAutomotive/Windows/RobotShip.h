@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20201230
+ * @date updated: 20210102
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -188,8 +188,9 @@ public:
    	//edited by Mike, 20201227
    	//TO-DO: -update: this to include diagonal directional movement
 	//int myKeysDown[4];
-	int myKeysDown[10]; //note: does not include KEY_J, KEY_L, KEY_I, KEY_K,
-
+	//edited by Mike, 20210102
+	//int myKeysDown[10]; //note: does not include KEY_J, KEY_L, KEY_I, KEY_K,
+	int myKeysDown[14]; //note: includes KEY_J, KEY_L, KEY_I, KEY_K,
 	
 	//virtual ~Robot();
     float rotationAngle;	
@@ -225,6 +226,11 @@ public:
     //added by Mike, 20201230
     float getCurrentFacingState() {
     	return currentFacingState;
+	}
+
+    //added by Mike, 20210102
+    float setCurrentFacingState(int iNewFacingState) {
+    	currentFacingState = iNewFacingState;
 	}
     
     //added by Mike, 20201213
