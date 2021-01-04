@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210104
+ * @date updated: 20210105
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -902,6 +902,8 @@ void RobotShip::drawRobotShip()
 	
 			            	glPopMatrix();	// pop back to original coordinate system						
 					    }
+					    //added by Mike, 20210105
+						//note: x-axis in reverse due to rotated to face down
 					    else if ((currentFacingState==FACING_DOWN)
 					    		|| (currentFacingState==FACING_RIGHT))
 					    {
@@ -951,6 +953,31 @@ void RobotShip::drawRobotShip()
 				            		glPopMatrix();
 								}
 
+								//TO-DO: -reverify: this to use glPushMatrix()...
+								//added by Mike, 20210105
+								if (currentFacingState==FACING_DOWN) {
+									if (myKeysDown[KEY_A]==TRUE) {
+										//note: walk wall right side
+										//glRotatef(60, 0.0f, 0.0f, 1.0f);			
+
+										glRotatef(40, 0.0f, 1.0f, 0.0f);			
+				                        glTranslatef(0.05f, 0.0f, 0.0f);
+
+									}
+									//added by Mike, 20201227
+//									else if (myKeysDown[KEY_D]==TRUE) {
+									else if (myKeysDown[KEY_RIGHT]==TRUE) {
+										glRotatef(-40, 0.0f, 1.0f, 0.0f);										
+				                        glTranslatef(0.0f, 0.2f, 0.0f);
+				                        glTranslatef(0.05f, 0.0f, 0.0f);							        	
+
+										//added by Mike, 20210105
+										//note: x-axis in reverse due to rotated to face down
+				                        glTranslatef(0.0f, 0.0f, -0.1f);					        											
+				                        glTranslatef(-0.05f, 0.0f, 0.0f);
+									}
+								}
+
 			                    //LEGS
 			            		glPushMatrix();					
 			            			glRotatef(legAngles[LEFT], 1.0f, 0.0f, 0.0f);
@@ -983,6 +1010,28 @@ void RobotShip::drawRobotShip()
 									drawUpperLeg(0.2f, -0.5f, 0.0f); //right        
 //									drawUpperLeg(0.3f, -0.5f, 0.0f); //right        
 			            		glPopMatrix();
+
+								//TO-DO: -reverify: this
+								//added by Mike, 20210105
+								//set to default rotation
+								if (currentFacingState==FACING_DOWN) {
+									if (myKeysDown[KEY_A]==TRUE) {
+				                        glTranslatef(-0.05f, 0.0f, 0.0f);
+							        	glRotatef(-40, 0.0f, 1.0f, 0.0f);			
+//				                        glTranslatef(0.0f, 0.0f, -0.1f);
+									}
+									//added by Mike, 20201227
+//									else if (myKeysDown[KEY_D]==TRUE) {
+									else if (myKeysDown[KEY_RIGHT]==TRUE) {
+										//added by Mike, 20210105
+				                        glTranslatef(0.0f, 0.0f, 0.1f);							        											
+				                        glTranslatef(0.05f, 0.0f, 0.0f);
+
+				                        glTranslatef(-0.05f, 0.0f, 0.0f);							        					                        
+				                        glTranslatef(0.0f, -0.2f, 0.0f);
+										glRotatef(40, 0.0f, 1.0f, 0.0f);										
+									}
+								}
 
 /*	
 								//added by Mike, 20201227; removed by Mike, 20201227
