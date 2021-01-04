@@ -753,6 +753,7 @@ void RobotShip::drawRobotShip()
 				            		glPopMatrix();
 				            	}
 
+								//TO-DO: -reverify: this to use glPushMatrix()...
 								//added by Mike, 20201226
 								if (currentFacingState==FACING_UP) {
 									if (myKeysDown[KEY_A]==TRUE) {
@@ -761,6 +762,7 @@ void RobotShip::drawRobotShip()
 
 										glRotatef(40, 0.0f, 1.0f, 0.0f);			
 				                        glTranslatef(0.05f, 0.0f, 0.0f);
+
 									}
 									//added by Mike, 20201227
 //									else if (myKeysDown[KEY_D]==TRUE) {
@@ -792,6 +794,7 @@ void RobotShip::drawRobotShip()
 			            		    drawUpperLeg(-0.1f, -0.5f, 0.0f); //left
 			            		glPopMatrix();
 
+								//TO-DO: -reverify: this
 								//added by Mike, 20201226
 								//set to default rotation
 								if (currentFacingState==FACING_UP) {
@@ -815,10 +818,12 @@ void RobotShip::drawRobotShip()
 */
 							   //TO-DO: -reverify: sequence of robot parts; remove body and head first
 					    	   if (currentFacingState==FACING_LEFT) {
+
 									//added by Mike, 20210104
-									glRotatef(-40, 0.0f, 1.0f, 0.0f);										
-			                        glTranslatef(0.05f, 0.0f, 0.0f);
-														    	   	
+			                    	if (bIsFiringBeam) {
+										glRotatef(-40, 0.0f, 1.0f, 0.0f);										
+				                        glTranslatef(0.05f, 0.0f, 0.0f);
+									}	
 									drawBody(0.1f, -0.15f, 0.0f);	
 									drawHead(0.1f, 0.2f, -0.1f);		
 							   }
@@ -871,18 +876,27 @@ void RobotShip::drawRobotShip()
 								   }
 
 			            			glPushMatrix();
+				            	  		//edited by Mike, 20210104
 			            				glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);
-										//edited by Mike, 20201207
-				            			//drawUpperArm(-0.1f, 0.0f, 0.0f); //left
-				            			drawUpperArm(-0.2f, 0.0f, 0.0f); //left
-	
+//				            			glRotatef(armAngles[LEFT], 0.0f, 0.0f, 1.0f);
+
+										//edited by Mike, 20210104
 										glPushMatrix();
 				                            glTranslatef(0.0f, 0.0f, 0.1f);
-				                			glRotatef(45, 1.0f, 0.0f, 0.0f);
+
+					            	  		//edited by Mike, 20210104
+//				                			glRotatef(45, 1.0f, 0.0f, 0.0f);
+					            			glRotatef(45, 1.0f, 0.0f, 0.0f);							
+
 											//edited by Mike, 20201207
 											//drawLowerArm(-0.1f, -0.3f, 0.0f); //left
 											drawLowerArm(-0.2f, -0.3f, 0.0f); //left
 										glPopMatrix();
+
+										//edited by Mike, 20201207
+				            			//drawUpperArm(-0.1f, 0.0f, 0.0f); //left
+				            			drawUpperArm(-0.2f, 0.0f, 0.0f); //left
+	
 				            		glPopMatrix();
 							   }
 	
@@ -899,7 +913,12 @@ void RobotShip::drawRobotShip()
 							   		armAngles[RIGHT]=30.0f;
 									armAngles[LEFT]=30.0f;
 
-				            		glPushMatrix();								
+				            		glPushMatrix();				                		
+										glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);
+//				                        drawUpperArm(0.4f, 0.0f, 0.0f); //right       
+										drawUpperArm(-0.2f, 0.0f, 0.0f); //left
+										
+										//edited by Mike, 20210104
 				                		glPushMatrix();
 				                            glTranslatef(0.2f, 0.0f, 0.0f);
 				                            glTranslatef(0.0f, 0.0f, -0.4f);
@@ -913,10 +932,6 @@ void RobotShip::drawRobotShip()
 //											drawLowerArm(0.4f, -0.3f, 0.0f); //right							
 				                		    drawLowerArm(-0.2f, -0.3f, 0.0f); //left
 				                		glPopMatrix();
-				                		
-										glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);
-//				                        drawUpperArm(0.4f, 0.0f, 0.0f); //right       
-										drawUpperArm(-0.2f, 0.0f, 0.0f); //left
 				            		glPopMatrix();							   	
 								}
 								else {
@@ -1018,11 +1033,8 @@ void RobotShip::drawRobotShip()
 							   }
 							   else {							
 			            		 glPushMatrix();
+			            		 	//edited by Mike, 20210104
 			            			glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);
-									//edited by Mike, 20201207
-			                        //drawUpperArm(0.3f, 0.0f, 0.0f); //right        
-			                        drawUpperArm(0.4f, 0.0f, 0.0f); //right        
-
 									glPushMatrix();
 			                            glTranslatef(0.0f, 0.0f, 0.1f);
 			                			glRotatef(45, 1.0f, 0.0f, 0.0f);
@@ -1030,6 +1042,11 @@ void RobotShip::drawRobotShip()
 			                            //drawLowerArm(0.3f, -0.3f, 0.0f); //right
 			                            drawLowerArm(0.4f, -0.3f, 0.0f); //right							
 			                		glPopMatrix();
+
+									//edited by Mike, 20201207
+			                        //drawUpperArm(0.3f, 0.0f, 0.0f); //right        
+			                        drawUpperArm(0.4f, 0.0f, 0.0f); //right        
+
 			            		  glPopMatrix();
 								}
 	
