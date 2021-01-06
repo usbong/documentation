@@ -1023,6 +1023,31 @@ void RobotShip::drawRobotShip()
 									}
 								}
 
+								//added by Mike, 20210106
+								if (currentFacingState==FACING_RIGHT) {
+									if (myKeysDown[KEY_UP]==TRUE) {
+										//note: walk wall right side
+										//glRotatef(60, 0.0f, 0.0f, 1.0f);			
+
+										glRotatef(40, 0.0f, 1.0f, 0.0f);			
+										//removed by Mike, 20210106
+//				                        glTranslatef(0.05f, 0.0f, 0.0f);
+//				                        glTranslatef(-0.025f, 0.0f, 0.0f);
+									}
+									//added by Mike, 20201227
+//									else if (myKeysDown[KEY_D]==TRUE) {
+									else if (myKeysDown[KEY_S]==TRUE) {
+										glRotatef(-40, 0.0f, 1.0f, 0.0f);										
+										//edited by Mike, 20210105
+				                        //glTranslatef(0.0f, 0.2f, 0.0f);
+//				                        glTranslatef(0.0f, 0.2f, 0.0f);				                        
+										//removed by Mike, 20210106
+//				                        glTranslatef(0.05f, 0.0f, 0.0f);							        
+										//added by Mike, 20210106	
+				                        glTranslatef(0.0f, 0.0f, -0.1f);							        	
+									}
+								}
+
 			                    //LEGS
 			            		glPushMatrix();					
 			            			glRotatef(legAngles[LEFT], 1.0f, 0.0f, 0.0f);
@@ -1074,6 +1099,31 @@ void RobotShip::drawRobotShip()
 
 				                        glTranslatef(-0.05f, 0.0f, 0.0f);							        					                        
 				                        glTranslatef(0.0f, -0.2f, 0.0f);
+										glRotatef(40, 0.0f, 1.0f, 0.0f);										
+									}
+								}
+
+								//added by Mike, 20210106
+								if (currentFacingState==FACING_RIGHT) {
+									if (myKeysDown[KEY_UP]==TRUE) {
+										//removed by Mike, 20210106
+//				                        glTranslatef(-0.05f, 0.0f, 0.0f);
+//				                        glTranslatef(0.025f, 0.0f, 0.0f);
+
+							        	glRotatef(-40, 0.0f, 1.0f, 0.0f);			
+//				                        glTranslatef(0.0f, 0.0f, -0.1f);
+									}
+									//added by Mike, 20201227
+//									else if (myKeysDown[KEY_D]==TRUE) {
+									else if (myKeysDown[KEY_S]==TRUE) {
+										//added by Mike, 20210106	
+				                    	//glTranslatef(-0.0f, 0.0f, 0.1f);							        	
+				                        glTranslatef(0.0f, 0.0f, 0.1f);							        	
+
+										//removed by Mike, 20210106
+//				                        glTranslatef(-0.05f, 0.0f, 0.0f);							        	
+				                        //removed by Mike, 20210105
+//				                        glTranslatef(0.0f, -0.2f, 0.0f);
 										glRotatef(40, 0.0f, 1.0f, 0.0f);										
 									}
 								}
