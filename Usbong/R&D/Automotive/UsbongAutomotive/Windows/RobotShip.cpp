@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210106
+ * @date updated: 20210107
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -734,7 +734,7 @@ void RobotShip::drawRobotShip()
 											//drawLowerArm(0.3f, -0.3f, 0.0f); //right
 											drawLowerArm(0.4f, -0.3f, 0.0f); //right							
 				                		glPopMatrix();
-				            		glPopMatrix();							   	
+				            		glPopMatrix();									
 								}
 								else {
 				            		glPushMatrix();
@@ -944,6 +944,16 @@ void RobotShip::drawRobotShip()
 	
 				            		glPopMatrix();
 							   }
+
+
+									//added by Mike, 20210107
+									//center
+									//drawWeapon(0.25f, 0.0f, -0.25f);	
+									//IF FACING_UP
+									//drawWeapon(0.25f, 0.0f, -0.25f);	
+									//IF FACING_LEFT									
+									//drawWeapon(0.25f, -0.25f, -0.25f);	
+									drawWeapon(0.4f, -0.25f, -0.5f);	
 	
 			            	glPopMatrix();	// pop back to original coordinate system						
 					    }
@@ -2209,4 +2219,28 @@ void RobotShip::drawFoot(float xPos, float yPos, float zPos)
 		//drawCube(0.0f, 0.0f, 0.0f);
 	glPopMatrix();
 }
+
+//added by Mike, 20210107
+//TO-DO: -update: this
+void RobotShip::drawWeapon(float xPos, float yPos, float zPos)
+{
+	glPushMatrix();
+		glTranslatef(xPos, yPos, zPos);
+		
+		//edited by Mike, 20201207
+//		glScalef(0.1f, 0.25f, 0.1f);	
+		glScalef(0.1f, 0.25f, 0.7f);		
+//		glScalef(0.5f, 0.3f, 0.7f);
+		//TO-DO: -update: this
+		glColor3f(0.55f, 0.55f, 0.55f); //gray
+        drawTriangledCube(0.0f, 0.0f, 0.0f);
+
+/*		glTranslatef(xPos, yPos, zPos);
+		glScalef(0.1f, 0.25f, 0.4f);		
+		glColor3f(0.4f, 0.4f, 0.4f); //gray
+        drawTriangledCube(0.0f, 0.0f, 0.0f);
+*/        
+	glPopMatrix();
+}
+
 //--------------------------------------------
