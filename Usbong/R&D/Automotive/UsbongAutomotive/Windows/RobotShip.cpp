@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210105
+ * @date updated: 20210106
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -772,6 +772,29 @@ void RobotShip::drawRobotShip()
 				                        glTranslatef(0.05f, 0.0f, 0.0f);							        	
 									}
 								}
+								//added by Mike, 20210105
+								if (currentFacingState==FACING_LEFT) {
+									if (myKeysDown[KEY_UP]==TRUE) {
+										//note: walk wall right side
+										//glRotatef(60, 0.0f, 0.0f, 1.0f);			
+
+										glRotatef(40, 0.0f, 1.0f, 0.0f);			
+										//removed by Mike, 20210106
+//				                        glTranslatef(0.05f, 0.0f, 0.0f);
+//				                        glTranslatef(-0.025f, 0.0f, 0.0f);
+									}
+									//added by Mike, 20201227
+//									else if (myKeysDown[KEY_D]==TRUE) {
+									else if (myKeysDown[KEY_S]==TRUE) {
+										glRotatef(-40, 0.0f, 1.0f, 0.0f);										
+										//edited by Mike, 20210105
+				                        //glTranslatef(0.0f, 0.2f, 0.0f);
+//				                        glTranslatef(0.0f, 0.2f, 0.0f);				                        
+										//removed by Mike, 20210106
+//				                        glTranslatef(0.05f, 0.0f, 0.0f);							        	
+									}
+								}
+
 
 			                    //LEGS
 			            		glPushMatrix();					
@@ -811,6 +834,27 @@ void RobotShip::drawRobotShip()
 										glRotatef(40, 0.0f, 1.0f, 0.0f);										
 									}
 								}
+								//added by Mike, 20210105
+								if (currentFacingState==FACING_LEFT) {
+									if (myKeysDown[KEY_UP]==TRUE) {
+										//removed by Mike, 20210106
+//				                        glTranslatef(-0.05f, 0.0f, 0.0f);
+//				                        glTranslatef(0.025f, 0.0f, 0.0f);
+
+							        	glRotatef(-40, 0.0f, 1.0f, 0.0f);			
+//				                        glTranslatef(0.0f, 0.0f, -0.1f);
+									}
+									//added by Mike, 20201227
+//									else if (myKeysDown[KEY_D]==TRUE) {
+									else if (myKeysDown[KEY_S]==TRUE) {
+										//removed by Mike, 20210106
+//				                        glTranslatef(-0.05f, 0.0f, 0.0f);							        	
+				                        //removed by Mike, 20210105
+//				                        glTranslatef(0.0f, -0.2f, 0.0f);
+										glRotatef(40, 0.0f, 1.0f, 0.0f);										
+									}
+								}
+
 	
 							    //added by Mike, 20201202; edited by Mike, 20201207
 /*			            		drawBody(0.1f, -0.15f, 0.0f);	
@@ -818,12 +862,13 @@ void RobotShip::drawRobotShip()
 */
 							   //TO-DO: -reverify: sequence of robot parts; remove body and head first
 					    	   if (currentFacingState==FACING_LEFT) {
-
+/*	//removed by Mike, 20210105
 									//added by Mike, 20210104
 			                    	if (bIsFiringBeam) {
 										glRotatef(-40, 0.0f, 1.0f, 0.0f);										
 				                        glTranslatef(0.05f, 0.0f, 0.0f);
 									}	
+*/
 									drawBody(0.1f, -0.15f, 0.0f);	
 									drawHead(0.1f, 0.2f, -0.1f);		
 							   }
