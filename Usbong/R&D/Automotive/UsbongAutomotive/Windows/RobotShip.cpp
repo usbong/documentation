@@ -833,6 +833,12 @@ void RobotShip::drawRobotShip()
 				                        glTranslatef(0.0f, -0.2f, 0.0f);
 										glRotatef(40, 0.0f, 1.0f, 0.0f);										
 									}
+
+									//added by Mike, 20210107
+									//center
+									//drawWeapon(0.25f, 0.0f, -0.25f);	
+									//IF FACING_UP
+									drawWeapon(0.5f, -0.15f, -0.7);
 								}
 								//added by Mike, 20210105
 								if (currentFacingState==FACING_LEFT) {
@@ -949,11 +955,11 @@ void RobotShip::drawRobotShip()
 									//added by Mike, 20210107
 									//center
 									//drawWeapon(0.25f, 0.0f, -0.25f);	
-									//IF FACING_UP
-									//drawWeapon(0.25f, 0.0f, -0.25f);	
-									//IF FACING_LEFT									
-									//drawWeapon(0.25f, -0.25f, -0.25f);	
-									drawWeapon(0.4f, -0.25f, -0.5f);	
+									if (currentFacingState==FACING_LEFT) {
+										//drawWeapon(0.25f, -0.25f, -0.25f);	
+	//									drawWeapon(0.4f, -0.25f, -0.5f);	
+										drawWeapon(0.4f, -0.15f, -0.5f);	
+									}
 	
 			            	glPopMatrix();	// pop back to original coordinate system						
 					    }
