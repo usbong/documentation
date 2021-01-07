@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 2006
- * @date updated: 20201130
+ * @date updated: 20210107
  *
  * Reference:
  * 1) Dave Astle and Kevin Hawkins's code ("Beginning OpenGL Game Programming", Chapter 6)
@@ -28,6 +28,9 @@
 
 //note: Code taken from Dave Astle and Kevin Hawkins's code ("Beginning OpenGL Game Programming")
 //-Mike, Dec. 21, 2006
+
+//added by Mike, 20210107
+#include <cstring>
 
 #include <iostream>
 #include "CTargaImage.h"

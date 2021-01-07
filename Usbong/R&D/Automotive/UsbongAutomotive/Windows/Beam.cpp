@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201013
- * @date updated: 20201117
+ * @date updated: 20210107
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -23,7 +23,18 @@
  *
  */
 
-#include <windows.h> //Windows Machine
+//added by Mike, 20210107
+//Reference: https://stackoverflow.com/questions/34152424/autodetection-of-os-in-c-c;
+//answer by: Jeegar Patel, 20151208T0940
+//auto-identify if Windows Machine
+#ifdef _WIN32
+	#include <windows.h> //Windows Machine
+#endif
+/*
+#ifdef linux
+    printf("In Linux");
+#endif
+*/
 
 #include <GL/gl.h>
 #include <GL/glut.h>

@@ -231,8 +231,8 @@ public:
     	return currentFacingState;
 	}
 
-    //added by Mike, 20210102
-    float setCurrentFacingState(int iNewFacingState) {
+    //added by Mike, 20210102; edited by Mike, 20210106
+    void setCurrentFacingState(int iNewFacingState) {
     	currentFacingState = iNewFacingState;
 	}
     

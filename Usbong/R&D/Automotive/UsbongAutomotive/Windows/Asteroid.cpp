@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201016
- * @date updated: 20201117
+ * @date updated: 20210107
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -26,8 +26,16 @@
 #include <stdio.h>
 #include <math.h>
 
-#include <gl/gl.h>
-#include <gl/glu.h>
+//added by Mike, 20210107
+#if defined(__APPLE__)
+#include <OpenGL/gl.h>
+#include <OpenGL/glu.h>
+//#include <GLUT/glut.h>
+#else
+#include <GL/gl.h>
+#include <GL/glu.h>
+//#include <GL/glut.h>
+#endif
 
 #include "Asteroid.h"
 
@@ -42,7 +50,18 @@
 //#include <string.h>
 #include <string>
 
-#include <windows.h> //windows machine
+//added by Mike, 20210107
+//Reference: https://stackoverflow.com/questions/34152424/autodetection-of-os-in-c-c;
+//answer by: Jeegar Patel, 20151208T0940
+//auto-identify if Windows Machine
+#ifdef _WIN32
+	#include <windows.h> //Windows Machine
+#endif
+/*
+#ifdef linux
+    printf("In Linux");
+#endif
+*/
 
 //#include "MyDynamicObject.h"
 
