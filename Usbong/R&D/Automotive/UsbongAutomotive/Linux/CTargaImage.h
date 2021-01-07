@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 2006
- * @date updated: 20201202
+ * @date updated: 20201130
  *
  * Reference:
  * 1) Dave Astle and Kevin Hawkins's code ("Beginning OpenGL Game Programming", Chapter 6)
@@ -28,9 +28,6 @@
  
 //note: Code taken from Dave Astle and Kevin Hawkins's code ("Beginning OpenGL Game Programming", Chapter 6)
 //-Mike, Dec. 21, 2006
-
-//added by Mike, 20201202
-#include <cstring>
 
 #ifndef __TARGA_LIB
 #define __TARGA_LIB

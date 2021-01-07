@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201019
- * @date updated: 20201202
+ * @date updated: 20201129
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -1169,6 +1169,4 @@ void drawCubeWithBlockTexturePrev(float fSideLength, GLfloat tx, GLfloat ty, GLf
 
 	glPopMatrix();
 }
-
-
 

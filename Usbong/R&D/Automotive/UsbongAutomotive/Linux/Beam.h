@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201013
- * @date updated: 20201217
+ * @date updated: 20201225
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -37,6 +37,8 @@ class Beam: public MyDynamicObject
 {
 private:	
 	int currentState;
+	int iDelayCount, //added by Mike, 20201225
+		iDelayCountMax; //added by Mike, 20201225
 
     float myXPos;
     float myYPos;
@@ -126,17 +128,17 @@ public:
 	//void drawRobot(float xPos, float yPos, float zPos);
     //void drawRobotShip();
     //void drawValkyrie();
-	//edited by Mike, 20201217
-//    void draw();
+    //edited by Mike, 20201213
+    //void draw();
     virtual void draw();
     
     //added by Mike, 20201013
 	void drawBeam();
     
-	// updates the robot data
+	// updates the beam data
 	void update(float dt);
 	
-	// changes the robot's state
+	// changes the beam's state
 	void changeState(int s);
 	void move(float rot, float* xyz);
 	

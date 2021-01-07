@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200929
- * @date updated: 20201217
+ * @date updated: 20201207
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -29,9 +29,17 @@
 #ifndef OPENGLCANVAS_H
 #define OPENGLCANVAS_H
 
-//TO-DO: -add: auto-identify if Windows Machine
-//removed by Mike, 20201002
-//#include <windows.h> //Windows Machine
+//added by Mike, 20201207
+//auto-identify if Windows Machine
+#ifdef _WIN32
+	#include <windows.h> //Windows Machine
+#endif
+/*
+#ifdef linux
+    printf("In Linux");
+#endif
+*/
+
 
 //#include "CTargaImage.h"
 
@@ -42,8 +50,10 @@
 */
 
 #include <stdio.h>
-//added by Mike, 20201217
+//added by Mike, 20201213
 #include <vector>
+
+
 
 #define PI 3.14159
 #define TWO_PI PI*2.0
@@ -58,7 +68,7 @@
 
 //edited by Mike, 20201013
 //#define MAX_BEAMS 5
-//added by Mike, 20201217
+//added by Mike, 20201214
 //TO-DO: -update: this
 #define MAX_BEAMS 32
 
@@ -71,7 +81,7 @@
 #define MAX_LIFE 3
 #define REQUIRED_POINTS_FOR_BONUS 30000 //5000
 
-//added by Mike, 20201217
+//added by Mike, 20201213
 //includes: pilot, robotship, beams, asteroid, 
 #define MAX_DYNAMIC_OBJECT 50 //TO-DO: -update: this
 
@@ -88,7 +98,7 @@
 //added by Mike, 20201123
 #define GL_CLAMP_TO_EDGE 0x812F
 
-class MyDynamicObject; //added by Mike, 20201217
+class MyDynamicObject; //added by Mike, 20201213
 
 class RobotShip;
 //added by Mike, 20201207
@@ -122,7 +132,7 @@ class OpenGLCanvas
         Asteroid *myAsteroid[MAX_ASTEROID];
 //        Asteroid *myAsteroid;
 
-		//added by Mike, 20201217
+		//added by Mike, 20201213
 		//TO-DO: -add: level tile boxes, e.g. parts of tree
 		//TO-DO: -update: MAX_DYNAMIC_OBJECT value
 		//MyDynamicObject *myDynamicObjectContainer[MAX_DYNAMIC_OBJECT];
@@ -150,6 +160,8 @@ class OpenGLCanvas
 		//edited by Mike, 20201015 	
 		//TO-DO: -reverify: this; malloc?
 //   		int myKeysDown[14];	
+		//added by Mike, 20201226
+		//TO-DO: -update: this to include diagonal directional movement
    		int myKeysDown[4];
 		   	
    		float rotationSpeed;

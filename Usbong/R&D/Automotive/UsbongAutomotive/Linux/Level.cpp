@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201118
- * @date updated: 20201125
+ * @date updated: 20201124
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -49,9 +49,6 @@
 
 //added by Mike, 20201118
 #include "Level.h"
-
-//added by Mike, 20201210
-#include "UsbongUtils.h"
 
 /*****************************************************************************/
 
@@ -286,10 +283,6 @@ void Level::draw_level(GLfloat x, GLfloat y, GLfloat z, char *string)
 
 void Level::setupLevel(int myLevelTextureObject)
 {
-	//added by Mike, 20201210
-	myUsbongUtils = new UsbongUtils();
-	myUsbongUtils->read("inputHalimbawa.txt");
-	
 	//removed by Mike, 20201010
 	//due to blank output
     //glEnable(GL_DEPTH_TEST);

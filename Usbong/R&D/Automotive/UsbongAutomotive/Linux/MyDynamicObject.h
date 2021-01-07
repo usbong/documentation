@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20201218
+ * @date updated: 20201226
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -28,11 +28,31 @@
 #ifndef MYDYNAMICOBJECT_H
 #define MYDYNAMICOBJECT_H
 
-//edited by Mike, 20201121
+/*
+//edited by Mike, 20201226
 //#include <Math.h> //Windows Machine
 #include <math.h> //Linux Machine
+*/
+//TO-DO: -reverify: this
+#include <math.h> //Windows and Linux Machines
+
+//added by Mike, 20201217
+//Reference: https://stackoverflow.com/questions/34152424/autodetection-of-os-in-c-c;
+//answer by: Jeegar Patel, 20151208T0940
+//auto-identify if Windows Machine
+#ifdef _WIN32
+	#include <windows.h> //Windows Machine
+#endif
+/*
+#ifdef linux
+    printf("In Linux");
+#endif
+*/
 
 #include <stdlib.h>
+//removed by Mike, 20201226
+//#include <stdio.h> //added by Mike, 20201226
+
 
 //added by Mike, 20201207
 // constants for arm and leg movement states
@@ -87,6 +107,11 @@ public:
     int myWindowWidth;
     int myWindowHeight;
 
+/*	//removed by Mike, 20201226
+	//added by Mike, 20201226
+   	int myKeysDown[4]; //TO-DO: -update: this to include diagonal directional movement
+*/
+
 	//edited by Mike, 20201113
 //    MyDynamicObject(float xPos = 0.0f, float yPos = 0.0f, float zPos= 300.0f ): myXPos(xPos), myYPos(yPos), myZPos(zPos) 
 	//edited by Mike, 20201115
@@ -131,6 +156,17 @@ public:
     void collideWith(MyDynamicObject* mdo);
         
     bool isIntersectingRect(MyDynamicObject* mdo1, MyDynamicObject* mdo2);
+
+	//added by Mike, 20201226
+/*	//removed by Mike, 20201226
+	void keyDown(int keyCode) {
+		myKeysDown[keyCode] = TRUE;
+	}
+	
+    void keyUp(int keyCode) {
+		myKeysDown[keyCode] = FALSE;	
+	}
+*/
     
     //added by Mike, 20201016
     virtual void destroy();

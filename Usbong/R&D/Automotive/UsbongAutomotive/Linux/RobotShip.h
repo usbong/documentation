@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20201218
+ * @date updated: 20210107
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -34,7 +34,41 @@
 //added by Mike, 20201019
 #include "PolygonUtils.h"
 
-//note: select containers classified as constants located in MyDynamicObject.h 
+//added by Mike, 20201226
+#define TRUE 1
+#define FALSE 0
+
+/* //edited by Mike, 20201207
+//added by Mike, 20201201
+// constants for arm and leg movement states
+const char BACKWARD_STATE = 0;
+const char FORWARD_STATE  = 1;
+
+// index constants for accessing arm and leg array data
+const char LEFT  = 0;
+const char RIGHT = 1;
+
+	//removed by Mike, 20201201
+//const int STANDING_STATE = 0;
+//const int WALKING_STATE = 1;
+
+
+//edited by Mike, 20201201
+#define IDLE_MOVING_STATE 0
+#define WALKING_MOVING_STATE 1
+
+const int INITIALIZING_STATE = 0;
+const int MOVING_STATE = 1;
+const int IN_TITLE_STATE = 2;
+const int DYING_STATE = 3;
+
+//added by Mike, 20201130
+//TO-DO: -add: diagonal
+#define FACING_UP 0
+#define FACING_DOWN 1
+#define FACING_LEFT 2
+#define FACING_RIGHT 3
+*/
 
 class RobotShip: public MyDynamicObject
 {
@@ -105,6 +139,10 @@ private:
 
 	float legAngles[2];
 	float armAngles[2];
+	
+	//added by Mike, 20201225
+	bool bIsFiringBeam;
+	bool bHasPressedADirectionalKey; //added by Mike, 20201226
 
     GLint tricount;
     GLint isMovingForward;
@@ -112,7 +150,6 @@ private:
     GLboolean test_pow2(GLushort i);
     void load_tga(char *filename);
 	
-
     //draw texture
 	//added by Mike, 20201130
     bool loadTexture(CTargaImage *myTexture, const char *filename, unsigned int *myTextureObject);
@@ -138,6 +175,9 @@ private:
 	void drawLowerLeg(float xPos, float yPos, float zPos);
 	void drawFoot(float xPos, float yPos, float zPos);
     
+    //added by Mike, 20210107
+	void drawWeapon(float xPos, float yPos, float zPos);
+
 public:
 	//edited by Mike, 20201115 
 	//RobotShip();
@@ -145,6 +185,16 @@ public:
 
 	~RobotShip();
 
+	//added by Mike, 20201226
+	//note: we classify this container as public;
+	//otherwise; computer notifies us of error when we update value inside container
+   	//edited by Mike, 20201227
+   	//TO-DO: -update: this to include diagonal directional movement
+	//int myKeysDown[4];
+	//edited by Mike, 20210102
+	//int myKeysDown[10]; //note: does not include KEY_J, KEY_L, KEY_I, KEY_K,
+	int myKeysDown[14]; //note: includes KEY_J, KEY_L, KEY_I, KEY_K,
+	
 	//virtual ~Robot();
     float rotationAngle;	
 
@@ -175,11 +225,21 @@ public:
     }
     
     float* getXYZPos();
+    
+    //added by Mike, 20201230
+    float getCurrentFacingState() {
+    	return currentFacingState;
+	}
 
-    //added by Mike, 20201217
+    //added by Mike, 20210102; edited by Mike, 20210106
+    void setCurrentFacingState(int iNewFacingState) {
+    	currentFacingState = iNewFacingState;
+	}
+    
+    //added by Mike, 20201213
     virtual void draw() {
     	drawRobotShip();
-    }  
+    }
   
 	// draws the entire robot
 	//void drawRobot(float xPos, float yPos, float zPos);
@@ -196,6 +256,10 @@ public:
 	void changeState(int s);
 	
 	void move(int key);
+	
+	//added by Mike, 20201226
+	void keyDown(int keyCode);	
+	void keyUp(int keyCode);	
 	
 	void setOpenGLCanvas(OpenGLCanvas* c);
     virtual void hitBy(MyDynamicObject* mdo);

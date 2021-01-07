@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20201207
+ * @date updated: 20201213
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -56,9 +56,19 @@
 
 #include <string.h>
 
-//TO-DO: -add: auto-identify if Windows Machine
-//removed by Mike, 20201207
-//#include <windows.h> //Windows Machine
+//added by Mike, 20201207
+//Reference: https://stackoverflow.com/questions/34152424/autodetection-of-os-in-c-c;
+//answer by: Jeegar Patel, 20151208T0940
+//auto-identify if Windows Machine
+#ifdef _WIN32
+	#include <windows.h> //Windows Machine
+#endif
+/*
+#ifdef linux
+    printf("In Linux");
+#endif
+*/
+
 
 //#include "ModelPool.h"
 
@@ -566,8 +576,8 @@ void Pilot::drawPilot()
 */
 				//added by Mike, 20201201; edited by Mike, 20201207
 				//human pilot at smaller scale than Robotship Mecha
-		                glScalef(1.0f, 1.0f, 1.0f);			
-//		                glScalef(2.0f, 2.0f, 2.0f);
+//		                glScalef(1.0f, 1.0f, 1.0f);			
+		                glScalef(1.5f, 1.5f, 1.5f);
 //		                glScalef(4.0f, 4.0f, 4.0f);		
 
 				switch(currentMovingState) {

@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201016
- * @date updated: 20201117
+ * @date updated: 20201213
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -174,8 +174,8 @@ public:
 	//void drawRobot(float xPos, float yPos, float zPos);
     //void drawRobotShip();
     //void drawValkyrie();
-	//edited by Mike, 20201217
-//    void draw();
+    //edited by Mike, 20201213
+    //void draw();
     virtual void draw();
     
 	// updates the robot data

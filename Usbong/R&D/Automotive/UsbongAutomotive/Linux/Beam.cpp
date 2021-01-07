@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201013
- * @date updated: 20201217
+ * @date updated: 20210107
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -23,27 +23,22 @@
  *
  */
 
-//removed by Mike, 20201121
-//#include <windows.h> //Windows Machine
+//added by Mike, 20210107
+//Reference: https://stackoverflow.com/questions/34152424/autodetection-of-os-in-c-c;
+//answer by: Jeegar Patel, 20151208T0940
+//auto-identify if Windows Machine
+#ifdef _WIN32
+	#include <windows.h> //Windows Machine
+#endif
+/*
+#ifdef linux
+    printf("In Linux");
+#endif
+*/
 
-/*	//removed by Mike, 20201121
 #include <GL/gl.h>
 #include <GL/glut.h>
 #include <GL/glu.h>
-*/
-
-//added by Mike, 20201121
-#if defined(__APPLE__)
-#include <OpenGL/gl.h>
-#include <OpenGL/glu.h>
-//#include <GLUT/glut.h>
-#else
-#include <GL/gl.h>
-#include <GL/glu.h>
-//#include <GL/glut.h>
-#endif
-
-
  
 #include <stdio.h>
 #include <math.h>
@@ -197,6 +192,10 @@ Beam::Beam(float xPos, float yPos, float zPos, int windowWidth, int windowHeight
     addSphere(0.0f, 0.0f, 0.0f, 0.5f);
     setCollidable(true);
 
+	//added by Mike, 20201225
+	iDelayCountMax=1;
+	iDelayCount=iDelayCountMax;
+
     //init default values
     //previousFacingState=FACING_UP;
 //    currentFacingState=FACING_UP;
@@ -218,8 +217,16 @@ void Beam::move(float rot, float* xyz)
      myXPos = xyz[0];
      myYPos = xyz[1];
      myZPos = xyz[2];
-     
-     changeState(ACTIVE_STATE);
+	
+	 //edited by Mike, 20201225	 
+     //changeState(ACTIVE_STATE);
+	 if (iDelayCount < iDelayCountMax) {
+	 	iDelayCount=iDelayCount+1;		
+	 }
+	 else {
+	 	changeState(ACTIVE_STATE);
+	 	iDelayCount=0;	 	
+	 }	      
 }
 
 void Beam::draw()
@@ -229,7 +236,7 @@ void Beam::draw()
 
     switch (currentState)
     {
-            case ACTIVE_STATE:
+            case ACTIVE_STATE:               
                glColor3f(1.0f, 1.0f, 0.0f); //yellow
            	   glPushMatrix();	
 /*
@@ -278,11 +285,6 @@ void Beam::drawBeam()
 	//note: robotship width=1.0f; height=1.0f;
     glTranslatef(-1.0f/2, 0.0f, -1.0f/2);   
 
-	//added by Mike, 20201217
-	//TO-DO: -update: size for RobotShip
-	//glScalef(2.0f, 2.0f, 2.0f);
-	glScalef(4.0f, 4.0f, 4.0f);
-	
 //    glTranslatef(-myWindowWidth/100/20/4, 0.0f, -myWindowHeight/100/20/4);   
 	
 	//Reference: https://www3.ntu.edu.sg/home/ehchua/programming/opengl/HowTo_OpenGL_C.html;
@@ -303,10 +305,10 @@ void Beam::drawBeam()
       glVertex2f(0.01f,  0.0f);      
    glEnd();    
 */   
-	
-	//added by Mike, 20201217
+	//added by Mike, 20201213
 	//TO-DO: -update: size for RobotShip
 	//glScalef(2.0f, 2.0f, 2.0f);
+	glScalef(4.0f, 4.0f, 4.0f);
 	
 	//added by Mike, 20201116
 	//set square face with no color fill 
@@ -347,15 +349,15 @@ void Beam::update(float dt)
 					//20x20 grid
 					//edited by Mike, 20201116
 //                    xVel=xAccel*4;
-					//edited by Mike, 20201217
-                    //xVel=xAccel*30;
+					//edited by Mike, 20201214
+//                    xVel=xAccel*30;
                     xVel=xAccel*80;
 
                     //edited by Mike, 20201116
                     //yVel=yAccel*4;
 //                    zVel=zAccel*4;
-					//edited by Mike, 20201217			
-                    //zVel=zAccel*30;
+					//edited by Mike, 20201214
+//                    zVel=zAccel*30;
                     zVel=zAccel*80;
 
                     myXPos+=xVel;
@@ -389,7 +391,6 @@ void Beam::update(float dt)
 	           		else if (myYPos <= 0.0f) changeState(HIDDEN_STATE); //if top side
 */               		
 
-					//TO-DO: -update: wrap for Linux Machine
 	           		if (myXPos <= 0.0f) changeState(HIDDEN_STATE); //if left side
 	           		else if (myXPos >= myWindowWidth/100) changeState(HIDDEN_STATE); //if right side
 

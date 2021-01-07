@@ -14,7 +14,7 @@
  *
  * @author: Michael Syson
  * @date created: 20201210
- * @date updated: 20201210
+ * @date updated: 20201213
  *
  * References:
  * 1) Dev-C++ 5.11 auto-generated OpenGL example project
@@ -145,7 +145,6 @@ void UsbongUtils::read(char *inputFilename) {
 char buf[CHUNK];
 FILE *file;
 size_t nread;
-
 file = fopen("test.txt", "r");
 if (file) {
     while ((nread = fread(buf, 1, sizeof buf, file)) > 0)
@@ -160,11 +159,9 @@ if (file) {
 	
 /*
 char *buf = malloc(chunk);
-
 if (buf == NULL) {
     // deal with malloc() failure
 }
-
 // otherwise do this.  Note 'chunk' instead of 'sizeof buf'
 while ((nread = fread(buf, 1, chunk, file)) > 0) {
     //as above
