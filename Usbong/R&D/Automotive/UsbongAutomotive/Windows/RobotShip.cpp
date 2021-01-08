@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210107
+ * @date updated: 20210108
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -952,14 +952,14 @@ void RobotShip::drawRobotShip()
 							   }
 
 
-									//added by Mike, 20210107
-									//center
-									//drawWeapon(0.25f, 0.0f, -0.25f);	
-									if (currentFacingState==FACING_LEFT) {
-										//drawWeapon(0.25f, -0.25f, -0.25f);	
-	//									drawWeapon(0.4f, -0.25f, -0.5f);	
-										drawWeapon(0.4f, -0.15f, -0.5f);	
-									}
+								//added by Mike, 20210107
+								//center
+								//drawWeapon(0.25f, 0.0f, -0.25f);	
+								if (currentFacingState==FACING_LEFT) {
+									//drawWeapon(0.25f, -0.25f, -0.25f);	
+//									drawWeapon(0.4f, -0.25f, -0.5f);	
+									drawWeapon(0.4f, -0.15f, -0.5f);	
+								}
 	
 			            	glPopMatrix();	// pop back to original coordinate system						
 					    }
@@ -1037,6 +1037,13 @@ void RobotShip::drawRobotShip()
 				                        glTranslatef(0.0f, 0.0f, -0.1f);					        											
 				                        glTranslatef(-0.05f, 0.0f, 0.0f);
 									}
+
+/*									//note: diagonal weapon aim
+									//added by Mike, 20210108
+									//center
+									//drawWeapon(0.25f, 0.0f, -0.25f);	
+									drawWeapon(0.3f, -0.15f, -0.5f);	
+*/									
 								}
 
 								//added by Mike, 20210106
@@ -1209,6 +1216,20 @@ void RobotShip::drawRobotShip()
 
 			            		  glPopMatrix();
 								}
+
+
+							//added by Mike, 20210108
+							//center
+							//drawWeapon(0.25f, 0.0f, -0.25f);	
+							if (currentFacingState==FACING_DOWN) {
+				                glRotatef(-30, 1.0f, 0.0f, 0.0f);
+								drawWeapon(0.3f, 0.10f, -0.4f);	
+							}
+							if (currentFacingState==FACING_RIGHT) {
+								//added by Mike, 20210108
+				                glRotatef(-10, 0.0f, 1.0f, 0.0f);
+								drawWeapon(0.3f, -0.15f, -0.5f);	
+							}
 	
 			            	glPopMatrix();	// pop back to original coordinate system						
 					    }
