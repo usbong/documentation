@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210108
+ * @date updated: 20210109
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -973,11 +973,18 @@ void RobotShip::drawRobotShip()
 			                    //ARMS
 			                    //note: draw sequence is important
 			                    if (bIsFiringBeam) {
+			                    	//added by Mike, 20210108
+			                    	//note: add: rotation movement
 							   		armAngles[RIGHT]=30.0f;
 									armAngles[LEFT]=30.0f;
 
+									//added by Mike, 20210109
+//							   		armAngles[RIGHT]=12.0f; //move down
+//									armAngles[LEFT]=-10.0f; //move down
+
 				            		glPushMatrix();				                		
-										glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);
+				            			//removed by Mike, 20210109
+//										glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);
 //				                        drawUpperArm(0.4f, 0.0f, 0.0f); //right       
 										drawUpperArm(-0.2f, 0.0f, 0.0f); //left
 										
@@ -1037,7 +1044,6 @@ void RobotShip::drawRobotShip()
 				                        glTranslatef(0.0f, 0.0f, -0.1f);					        											
 				                        glTranslatef(-0.05f, 0.0f, 0.0f);
 									}
-
 /*									//note: diagonal weapon aim
 									//added by Mike, 20210108
 									//center
@@ -1147,6 +1153,7 @@ void RobotShip::drawRobotShip()
 //				                        glTranslatef(-0.05f, 0.0f, 0.0f);							        	
 				                        //removed by Mike, 20210105
 //				                        glTranslatef(0.0f, -0.2f, 0.0f);
+
 										glRotatef(40, 0.0f, 1.0f, 0.0f);										
 									}
 								}
@@ -1183,9 +1190,14 @@ void RobotShip::drawRobotShip()
 			                   //walking + attacking (firing beam)
 			                   //ARM
 							   if (bIsFiringBeam) {
+							   	  //added by Mike, 20210109
+								  //TO-DO: -add: rotation movement
+								  armAngles[RIGHT]=30.0f;
+								  armAngles[LEFT]=30.0f;							   	
+							   	  
 							   	  //edited by Mike, 20210103
 				            	  glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);
-
+				            	  
 								  //LOWER ARM
 				            	  glPushMatrix();
 			                            glTranslatef(0.0f, 0.0f, 0.1f);			                						                            
@@ -1226,8 +1238,9 @@ void RobotShip::drawRobotShip()
 								drawWeapon(0.3f, 0.10f, -0.4f);	
 							}
 							if (currentFacingState==FACING_RIGHT) {
-								//added by Mike, 20210108
-				                glRotatef(-10, 0.0f, 1.0f, 0.0f);
+								//added by Mike, 20210108; edited by Mike, 20210108
+//				                glRotatef(-10, 0.0f, 1.0f, 0.0f);
+				                glRotatef(-15, 0.0f, 1.0f, 0.0f);
 								drawWeapon(0.3f, -0.15f, -0.5f);	
 							}
 	
@@ -1462,6 +1475,7 @@ void RobotShip::drawRobotShip()
 			                		glPopMatrix();
 			            		glPopMatrix();
 */	
+
 			            		glPushMatrix();
 			            			glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);
 									glPushMatrix();
@@ -1472,10 +1486,38 @@ void RobotShip::drawRobotShip()
 			                            drawLowerArm(0.4f, -0.3f, 0.0f); //right							
 			                		glPopMatrix();
 
+									//added by Mike, 20210109
+									if (currentFacingState==FACING_RIGHT) {
+										glPushMatrix();
+							                glRotatef(-15, 0.0f, 1.0f, 0.0f);
+											drawWeapon(0.3f, -0.15f, -0.5f);	
+				                		glPopMatrix();
+									}
+
 									//edited by Mike, 20210103
 			                        //drawUpperArm(0.3f, 0.0f, 0.0f); //right        
 			                        drawUpperArm(0.4f, 0.0f, 0.0f); //right        
 			            		glPopMatrix();	
+			            		
+			            		
+							//added by Mike, 20210108
+							//center
+							//drawWeapon(0.25f, 0.0f, -0.25f);	
+							if (currentFacingState==FACING_DOWN) {
+								//edited by Mike, 20210109
+//				                glRotatef(-30, 1.0f, 0.0f, 0.0f);
+								drawWeapon(0.3f, 0.10f, -0.4f);	
+							}
+							//removed by Mike, 20210109
+/*							
+							if (currentFacingState==FACING_RIGHT) {
+								//added by Mike, 20210108; edited by Mike, 20210108
+//				                glRotatef(-10, 0.0f, 1.0f, 0.0f);
+//				                glRotatef(-15, 0.0f, 1.0f, 0.0f);
+				                //glRotatef(-20, 0.0f, 1.0f, 0.0f);
+								drawWeapon(0.3f, -0.15f, -0.5f);	
+							}
+*/			            		
 			            	glPopMatrix();	// pop back to original coordinate system						
 					    }			
 						break;
