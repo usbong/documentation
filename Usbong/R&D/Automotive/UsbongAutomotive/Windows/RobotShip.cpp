@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210109
+ * @date updated: 20210110
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -1205,6 +1205,16 @@ void RobotShip::drawRobotShip()
 			                            drawLowerArm(0.4f, -0.3f, 0.0f); //right							
 				            	  glPopMatrix();	// pop back to original coordinate system
 
+							//added by Mike, 20210110
+							if (currentFacingState==FACING_RIGHT) {
+				            	glPushMatrix();
+									//added by Mike, 20210108; edited by Mike, 20210108
+	//				                glRotatef(-10, 0.0f, 1.0f, 0.0f);
+					                glRotatef(-15, 0.0f, 1.0f, 0.0f);
+									drawWeapon(0.3f, -0.15f, -0.5f);	
+				            	glPopMatrix();	// pop back to original coordinate system
+							}
+
 							   	  //UPPER ARM
 //								  glPushMatrix();
 			                        drawUpperArm(0.4f, 0.0f, 0.0f); //right
@@ -1222,6 +1232,15 @@ void RobotShip::drawRobotShip()
 			                            drawLowerArm(0.4f, -0.3f, 0.0f); //right							
 			                		glPopMatrix();
 
+/*	//removed by Mike, 20210110
+	//TO-DO: -update: this
+							if (currentFacingState==FACING_RIGHT) {
+								//added by Mike, 20210108; edited by Mike, 20210108
+//				                glRotatef(-10, 0.0f, 1.0f, 0.0f);
+				                glRotatef(-15, 0.0f, 1.0f, 0.0f);
+								drawWeapon(0.3f, -0.15f, -0.5f);	
+							}
+*/
 									//edited by Mike, 20201207
 			                        //drawUpperArm(0.3f, 0.0f, 0.0f); //right        
 			                        drawUpperArm(0.4f, 0.0f, 0.0f); //right        
@@ -1237,13 +1256,14 @@ void RobotShip::drawRobotShip()
 				                glRotatef(-30, 1.0f, 0.0f, 0.0f);
 								drawWeapon(0.3f, 0.10f, -0.4f);	
 							}
+/*	//removed by Mike, 20210110
 							if (currentFacingState==FACING_RIGHT) {
 								//added by Mike, 20210108; edited by Mike, 20210108
 //				                glRotatef(-10, 0.0f, 1.0f, 0.0f);
 				                glRotatef(-15, 0.0f, 1.0f, 0.0f);
 								drawWeapon(0.3f, -0.15f, -0.5f);	
 							}
-	
+*/	
 			            	glPopMatrix();	// pop back to original coordinate system						
 					    }
 
