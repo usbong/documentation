@@ -983,10 +983,12 @@ void RobotShip::drawRobotShip()
 //									armAngles[LEFT]=-10.0f; //move down
 
 				            		glPushMatrix();				                		
-				            			//removed by Mike, 20210109
-//										glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);
-//				                        drawUpperArm(0.4f, 0.0f, 0.0f); //right       
-										drawUpperArm(-0.2f, 0.0f, 0.0f); //left
+				            			//edited by Mike, 20210109
+				                		glPushMatrix();
+											glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);
+	//				                        drawUpperArm(0.4f, 0.0f, 0.0f); //right       
+											drawUpperArm(-0.2f, 0.0f, 0.0f); //left
+				                		glPopMatrix();
 										
 										//edited by Mike, 20210104
 				                		glPushMatrix();
