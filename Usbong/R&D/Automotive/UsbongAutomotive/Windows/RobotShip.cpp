@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210110
+ * @date updated: 20210111
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -1338,7 +1338,7 @@ void RobotShip::drawRobotShip()
 							//TO-DO: -update: this
 							armAngles[RIGHT]=30.0f;
 							armAngles[LEFT]=30.0f;
-							
+
 							glPushMatrix();
 			                    //ARMS
 			            		glPushMatrix();
@@ -1374,10 +1374,11 @@ void RobotShip::drawRobotShip()
 
 							   //TO-DO: -reverify: sequence of robot parts; remove body and head first
 					    	   if (currentFacingState==FACING_LEFT) {
+/*	//removed by Mike, 20210111
 									//added by Mike, 20210104
 									glRotatef(-40, 0.0f, 1.0f, 0.0f);										
 			                        glTranslatef(0.05f, 0.0f, 0.0f);
-
+*/
 									drawBody(0.1f, -0.15f, 0.0f);	
 									drawHead(0.1f, 0.2f, -0.1f);		
 							   }
@@ -1395,10 +1396,16 @@ void RobotShip::drawRobotShip()
 									drawLowerArm(-0.3f, 0.0f, 0.0f); //left							
 			            	   glPopMatrix();							
 
+
 							   if (currentFacingState==FACING_UP) {
+								   //added by Mike, 20210111
+					               if (bIsFiringBeam) {		
+										//IF FACING_UP
+										drawWeapon(0.5f, -0.15f, -0.7);
+								   }
+
 								   drawHead(0.1f, 0.2f, -0.1f);		
-								   drawBody(0.1f, -0.15f, 0.0f);	
-								   
+								   drawBody(0.1f, -0.15f, 0.0f);									   
 							   }
 							
 			                    //UPPER
@@ -1407,7 +1414,17 @@ void RobotShip::drawRobotShip()
 									//edited by Mike, 20201207
 			            			//drawUpperArm(-0.1f, 0.0f, 0.0f); //left
 			            			drawUpperArm(-0.2f, 0.0f, 0.0f); //left				            			
-			            		glPopMatrix();	// pop back to original coordinate system						
+			            		glPopMatrix();	
+
+							//added by Mike, 20210111
+			                if (bIsFiringBeam) {
+								if (currentFacingState==FACING_LEFT) {
+									drawWeapon(0.4f, -0.15f, -0.5f);	
+								}							
+							}
+
+							//added by Mike, 20210111
+			            	glPopMatrix();	// pop back to original coordinate system						
 					    }
 					    else if ((currentFacingState==FACING_DOWN)
 					    		|| (currentFacingState==FACING_RIGHT))
