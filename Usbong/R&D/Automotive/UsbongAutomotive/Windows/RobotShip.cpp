@@ -834,11 +834,14 @@ void RobotShip::drawRobotShip()
 										glRotatef(40, 0.0f, 1.0f, 0.0f);										
 									}
 
-									//added by Mike, 20210107
-									//center
-									//drawWeapon(0.25f, 0.0f, -0.25f);	
-									//IF FACING_UP
-									drawWeapon(0.5f, -0.15f, -0.7);
+									//added by Mike, 20210110
+					                if (bIsFiringBeam) {		
+										//added by Mike, 20210107
+										//center
+										//drawWeapon(0.25f, 0.0f, -0.25f);	
+										//IF FACING_UP
+										drawWeapon(0.5f, -0.15f, -0.7);
+									}
 								}
 								//added by Mike, 20210105
 								if (currentFacingState==FACING_LEFT) {
@@ -950,8 +953,9 @@ void RobotShip::drawRobotShip()
 	
 				            		glPopMatrix();
 							   }
-
-
+							
+							//added by Mike, 20210110
+			                if (bIsFiringBeam) {
 								//added by Mike, 20210107
 								//center
 								//drawWeapon(0.25f, 0.0f, -0.25f);	
@@ -959,7 +963,8 @@ void RobotShip::drawRobotShip()
 									//drawWeapon(0.25f, -0.25f, -0.25f);	
 //									drawWeapon(0.4f, -0.25f, -0.5f);	
 									drawWeapon(0.4f, -0.15f, -0.5f);	
-								}
+								}							
+							}
 	
 			            	glPopMatrix();	// pop back to original coordinate system						
 					    }
@@ -1250,22 +1255,25 @@ void RobotShip::drawRobotShip()
 			            		  glPopMatrix();
 								}
 
-
-							//added by Mike, 20210108
-							//center
-							//drawWeapon(0.25f, 0.0f, -0.25f);	
-							if (currentFacingState==FACING_DOWN) {
-				                glRotatef(-30, 1.0f, 0.0f, 0.0f);
-								drawWeapon(0.3f, 0.10f, -0.4f);	
+							//added by Mike, 20210110
+			                if (bIsFiringBeam) {
+								//added by Mike, 20210108
+								//center
+								//drawWeapon(0.25f, 0.0f, -0.25f);	
+								if (currentFacingState==FACING_DOWN) {
+					                glRotatef(-30, 1.0f, 0.0f, 0.0f);
+									drawWeapon(0.3f, 0.10f, -0.4f);	
+								}
+	/*	//removed by Mike, 20210110
+								if (currentFacingState==FACING_RIGHT) {
+									//added by Mike, 20210108; edited by Mike, 20210108
+	//				                glRotatef(-10, 0.0f, 1.0f, 0.0f);
+					                glRotatef(-15, 0.0f, 1.0f, 0.0f);
+									drawWeapon(0.3f, -0.15f, -0.5f);	
+								}
+	*/	
 							}
-/*	//removed by Mike, 20210110
-							if (currentFacingState==FACING_RIGHT) {
-								//added by Mike, 20210108; edited by Mike, 20210108
-//				                glRotatef(-10, 0.0f, 1.0f, 0.0f);
-				                glRotatef(-15, 0.0f, 1.0f, 0.0f);
-								drawWeapon(0.3f, -0.15f, -0.5f);	
-							}
-*/	
+							
 			            	glPopMatrix();	// pop back to original coordinate system						
 					    }
 
