@@ -1470,6 +1470,14 @@ void RobotShip::drawRobotShip()
 							armAngles[RIGHT]=30.0f;
 							armAngles[LEFT]=30.0f;
 
+							//added by Mike, 20210111
+			                if (bIsFiringBeam) {	
+								if (iFiringBeamCount%2==0) {
+			                        glTranslatef(0.0f, 0.0f, 0.05f);			                        
+								}	
+//								iFiringBeamCount=iFiringBeamCount+1;
+							}
+
 			            	glPushMatrix();			            
 			                    //ARMS
 			                    //UPPER
@@ -1519,6 +1527,16 @@ void RobotShip::drawRobotShip()
 			                		glPopMatrix();
 			            		glPopMatrix();
 */	
+								//added by Mike, 20210111
+								//reset for robotship legs
+				                if (bIsFiringBeam) {	
+									if (iFiringBeamCount%2==0) {
+								   		glTranslatef(0.0f, 0.0f, -0.05f);
+									}									
+	//								iFiringBeamCount=iFiringBeamCount+1;
+								}
+
+
 			                    //LEGS
 			                    //edited by Mike, 20210103
 								//TO-DO: -verify: if robot faces down
@@ -1532,6 +1550,16 @@ void RobotShip::drawRobotShip()
 /*			            		drawBody(0.1f, -0.15f, 0.0f);
 			            		drawHead(0.1f, 0.2f, 0.0f);		
 */
+
+								//added by Mike, 20210111
+								//reset for robotship legs
+				                if (bIsFiringBeam) {	
+									if (iFiringBeamCount%2==0) {
+								   		glTranslatef(0.0f, 0.0f, -0.05f);
+									}									
+									iFiringBeamCount=iFiringBeamCount+1;
+								}
+
 							   if (currentFacingState==FACING_DOWN) {
 							   	  drawBody(0.1f, -0.15f, 0.0f);
 								  drawHead(0.1f, 0.2f, -0.1f);
