@@ -90,6 +90,7 @@ enum Keys
 	KEY_L,
 	KEY_I,
 	KEY_K,
+	KEY_H, //added by Mike, 20210111
 	//added by Mike, 20201226
 	iNumOfKeyTypes
 };
@@ -1337,7 +1338,7 @@ void RobotShip::drawRobotShip()
 							//note: draw sequence is important
 							//TO-DO: -update: this
 							armAngles[RIGHT]=30.0f;
-							armAngles[LEFT]=30.0f;
+							armAngles[LEFT]=30.0f;						
 
 							//added by Mike, 20210111
 			                if (bIsFiringBeam) {	
@@ -1417,6 +1418,13 @@ void RobotShip::drawRobotShip()
 									drawBody(0.1f, -0.15f, 0.0f);	
 									drawHead(0.1f, 0.2f, -0.1f);		
 							   }
+							  
+							  //added by Mike, 20210111
+							  if (bIsExecutingPunch) {
+							  	//punch using left arm
+							  	//note: can use with executing shield defense
+		                        glTranslatef(0.0f, 0.0f, 0.05f);							  	
+							  }
 
 							   //LOWER ARM
 							   glPushMatrix();
@@ -1497,6 +1505,14 @@ void RobotShip::drawRobotShip()
 								     glPopMatrix();
 			            		glPopMatrix();
 */
+
+							  //added by Mike, 20210111
+							  if (bIsExecutingPunch) {
+							  	//punch using left arm
+							  	//note: can use with executing shield defense
+		                        glTranslatef(0.0f, 0.0f, 0.05f);							  	
+							  }
+
 
 				            		glPushMatrix();								
 				                		glPushMatrix();
@@ -1596,12 +1612,14 @@ void RobotShip::drawRobotShip()
 			                            drawLowerArm(0.4f, -0.3f, 0.0f); //right							
 			                		glPopMatrix();
 
-									//added by Mike, 20210109
 									if (currentFacingState==FACING_RIGHT) {
-										glPushMatrix();
-							                glRotatef(-15, 0.0f, 1.0f, 0.0f);
-											drawWeapon(0.3f, -0.15f, -0.5f);	
-				                		glPopMatrix();
+										//added by Mike, 20210111
+					                	if (bIsFiringBeam) {	
+											glPushMatrix();
+								                glRotatef(-15, 0.0f, 1.0f, 0.0f);
+												drawWeapon(0.3f, -0.15f, -0.5f);	
+					                		glPopMatrix();
+					                	}
 									}
 
 									//edited by Mike, 20210103
@@ -1614,9 +1632,12 @@ void RobotShip::drawRobotShip()
 							//center
 							//drawWeapon(0.25f, 0.0f, -0.25f);	
 							if (currentFacingState==FACING_DOWN) {
-								//edited by Mike, 20210109
-//				                glRotatef(-30, 1.0f, 0.0f, 0.0f);
-								drawWeapon(0.3f, 0.10f, -0.4f);	
+								//added by Mike, 20210111
+			                	if (bIsFiringBeam) {
+									//edited by Mike, 20210109
+	//				                glRotatef(-30, 1.0f, 0.0f, 0.0f);
+									drawWeapon(0.3f, 0.10f, -0.4f);	
+								}
 							}
 							//removed by Mike, 20210109
 /*							
@@ -1947,17 +1968,53 @@ void RobotShip::move(int key)
 		  }			
           break;	
 
+     //added by Mike, 2021011
+     case KEY_H:
+          bIsExecutingPunch=true;
+          
+          bHasPressedADirectionalKey=false;
+          //based on enum Keys 
+          for (int iCount=0; iCount<10; iCount++) {
+   		    if (myKeysDown[iCount]==TRUE) {
+          		bHasPressedADirectionalKey=true;
+   		    	break;
+			}
+		  }
+		  
+//		  if (!bHasPressedADirectionalKey) {
+		  	currentMovingState=ATTACKING_MOVING_STATE;		   		  	
+//		  }          
+          break;
+     case -KEY_H:
+          bIsExecutingPunch=false;
+
+   		  if (currentMovingState==WALKING_MOVING_STATE) {   		  	
+		  }
+		  //added by Mike, 20201226
+ 		  else if (currentMovingState==ATTACKING_MOVING_STATE) {   		  	
+		  }
+		  else {
+		  	currentMovingState=IDLE_MOVING_STATE;
+		  }			
+          break;
+
 	 case KEY_UP:
      case KEY_W:
           //isMovingForward=1;
           //myZPos-=1.0f;
 /*          if (thrust<thrustMax)
             thrust+=0.1f;
-*/      
+*/  
+
+	//added by Mike, 20210111
+	if (bIsExecutingPunch) {
+	}
+	else {    
           //added by Mike, 20201001; edited by Mike, 20201116
 //	      myYPos+=-stepY;
 	      myZPos+=-stepZ;
-	      
+	}
+	
 	      //added by Mike, 20201201; edited by Mike, 20201225
           //currentFacingState=FACING_UP;
 	      if (bIsFiringBeam) {	      	
@@ -1974,10 +2031,15 @@ void RobotShip::move(int key)
           if (thrust<thrustMax)
             thrust+=-0.1f;
 */
+
+	//added by Mike, 20210111
+	if (bIsExecutingPunch) {
+	}
+	else {
           //added by Mike, 20201001; edited by Mike, 20201116
 //	      myYPos+=stepY;
 	      myZPos+=stepZ;
-
+	}
 	      //added by Mike, 20201201; edited by Mike, 20201225
           //currentFacingState=FACING_DOWN;
 	      if (bIsFiringBeam) {	      	
@@ -1997,9 +2059,14 @@ void RobotShip::move(int key)
           if (thrust<thrustMax)
             thrust+=-0.1f;
 */
+	//added by Mike, 20210111
+	if (bIsExecutingPunch) {
+	}
+	else {
           //added by Mike, 20201001            
 	      myXPos+=-stepX;
-
+	}
+	
 /*          
           char str[700];                                       
           sprintf(str,"rotationAngle: %f",rotationAngle);
@@ -2025,9 +2092,14 @@ void RobotShip::move(int key)
           if (thrust<thrustMax)
             thrust+=0.1f;
 */
+
+	//added by Mike, 20210111
+	if (bIsExecutingPunch) {
+	}
+	else {
           //added by Mike, 20201001            
 	      myXPos+=stepX;
-//          return;
+	}
 
 	      //added by Mike, 20201201; edited by Mike, 20201225
           //currentFacingState=FACING_RIGHT;
@@ -2044,8 +2116,16 @@ void RobotShip::move(int key)
 		default:
 		  currentMovingState=IDLE_MOVING_STATE;
 		  bIsFiringBeam=false; //added by Mike, 20201226
-		  break;
+		  bIsExecutingPunch=false; //added by Mike, 20210111
+		  break;		  		  
    }
+
+	//added by Mike, 20210111
+	if (bIsExecutingPunch) {
+		currentMovingState=ATTACKING_MOVING_STATE;
+		bIsFiringBeam=false;
+	}
+   
 }
 void RobotShip::hitBy(MyDynamicObject* mdo)
 {

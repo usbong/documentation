@@ -14,7 +14,7 @@
  *
  * @author: Michael Syson
  * @date created: 20200926
- * @date updated: 20201204
+ * @date updated: 20210111
  *
  * References:
  * 1) Dev-C++ 5.11 auto-generated OpenGL example project
@@ -120,7 +120,10 @@ enum Keys
 	KEY_J,
 	KEY_L,
 	KEY_I,
-	KEY_K
+	KEY_K,
+	//added by Mike, 20210111
+	KEY_H,
+	iNumOfKeyTypes
 };
 
 //added by Mike, 20201001
@@ -429,6 +432,10 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT message,
    	       case 0x4B: //K key
 		        myOpenGLCanvas->keyDown(KEY_K);
                 return 0;     
+		   //added by Mike, 20210111     
+   	       case 0x48: //H key
+		        myOpenGLCanvas->keyDown(KEY_H);
+                return 0;
 
 			//removed by Mike, 20201001 
 /*			               
@@ -494,8 +501,11 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT message,
 	                return 0;     
 	   	       case 0x4B: //K key
 			        myOpenGLCanvas->keyUp(KEY_K);
-	                return 0;     
-
+	                return 0;
+				//added by Mike, 20210111     
+	   	       case 0x48: //H key
+			        myOpenGLCanvas->keyUp(KEY_H);
+	                return 0;
        	       case 13: //ENTER
                     myOpenGLCanvas->keyUp(KEY_ENTER);
                     return 0;

@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210107
+ * @date updated: 20210111
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -146,6 +146,9 @@ private:
 	//added by Mike, 20201225
 	bool bIsFiringBeam;
 	bool bHasPressedADirectionalKey; //added by Mike, 20201226
+	
+	//added by Mike, 20210111
+	bool bIsExecutingPunch;
 
     GLint tricount;
     GLint isMovingForward;
