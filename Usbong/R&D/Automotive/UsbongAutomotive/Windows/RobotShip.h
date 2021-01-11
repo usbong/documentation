@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210111
+ * @date updated: 20210112
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -148,7 +148,8 @@ private:
 	bool bHasPressedADirectionalKey; //added by Mike, 20201226
 	
 	//added by Mike, 20210111
-	bool bIsExecutingPunch;
+	bool bIsExecutingPunch,	
+		bIsExecutingDefense; //added by Mike, 20210112
 
     GLint tricount;
     GLint isMovingForward;
@@ -240,6 +241,18 @@ public:
     //added by Mike, 20210102; edited by Mike, 20210106
     void setCurrentFacingState(int iNewFacingState) {
     	currentFacingState = iNewFacingState;
+	}
+
+    //added by Mike, 20210111
+//    bool getIsExcutingPunchDefense() {
+    bool getIsExecuteWithWeaponReady() {
+    	if (bIsExecutingPunch) {
+    		return false;
+		}
+		else if (bIsExecutingDefense) {
+    		return false;
+		}
+    	return true;
 	}
     
     //added by Mike, 20201213

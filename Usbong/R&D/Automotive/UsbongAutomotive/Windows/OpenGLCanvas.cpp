@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210111
+ * @date updated: 20210112
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -1725,13 +1725,19 @@ void OpenGLCanvas::update()
 			//edited by Mike, 20201013
 			static int i = 0;
 			
+			
+			//added by Mike, 20210112
+			if (!myRobotShip->getIsExecuteWithWeaponReady()) {
+				return;
+			}
+			
 			//edited by Mike, 20201218
             //myRobotShip->move(KEY_LEFT);
             //TO-DO: -update: this; we use KEY_I for now
             //myRobotShip->move(KEY_J);
             myRobotShip->move(KEY_I);
     		myRobotShip->setCurrentFacingState(FACING_LEFT); //added by Mike, 20210102
-			
+						
             for(i=0; i<MAX_BEAMS; i++) {
               if (!myBeam[i]->isActive()) {
 				  //edited by Mike, 20201013
@@ -1794,6 +1800,11 @@ void OpenGLCanvas::update()
     	{
 			//edited by Mike, 20201013
 			static int i = 0;
+
+			//added by Mike, 20210112
+			if (!myRobotShip->getIsExecuteWithWeaponReady()) {
+				return;
+			}
 			
 			//edited by Mike, 20201218
             //myRobotShip->move(KEY_LEFT);
@@ -1863,6 +1874,11 @@ void OpenGLCanvas::update()
     	{
 			//edited by Mike, 20201013
 			static int i = 0;
+
+			//added by Mike, 20210112
+			if (!myRobotShip->getIsExecuteWithWeaponReady()) {
+				return;
+			}
 			
 			//edited by Mike, 20201218
             //myRobotShip->move(KEY_LEFT);
@@ -1934,6 +1950,11 @@ void OpenGLCanvas::update()
     	{
 			//edited by Mike, 20201013
 			static int i = 0;
+
+			//added by Mike, 20210112
+			if (!myRobotShip->getIsExecuteWithWeaponReady()) {
+				return;
+			}
 			
 			//edited by Mike, 20201218
             //myRobotShip->move(KEY_LEFT);
