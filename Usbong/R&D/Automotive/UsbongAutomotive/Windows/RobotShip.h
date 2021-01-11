@@ -126,6 +126,9 @@ private:
 	//added by Mike, 20201201    
     int currentFacingState;    
 
+	//added by Mike, 20210111
+    int iFiringBeamCount;    
+
 	//added by Mike, 20201130
     CTargaImage *myBodyTexture;
    	unsigned int myBodyTextureObject;
