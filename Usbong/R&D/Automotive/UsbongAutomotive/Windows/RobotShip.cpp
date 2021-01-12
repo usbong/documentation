@@ -1176,6 +1176,20 @@ void RobotShip::drawRobotShip()
 									}
 //								}
 */
+
+								if (currentFacingState==FACING_RIGHT) {
+									//added by Mike, 20210111
+				                	if (bIsFiringBeam) {	
+										glPushMatrix();
+			            					glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);
+							                glRotatef(-15, 0.0f, 1.0f, 0.0f);
+							                //edited by Mike, 20210112
+//												drawWeapon(0.3f, -0.15f, -0.5f);	
+											drawWeapon(0.0f, -0.5f, -0.5f);	
+				                		glPopMatrix();
+				                	}
+								}
+
 	
 							    //added by Mike, 20201202; edited by Mike, 20201207
 /*			            		drawBody(0.1f, -0.15f, 0.0f);
@@ -1212,7 +1226,7 @@ void RobotShip::drawRobotShip()
 					                    glRotatef(45, 1.0f, 0.0f, 0.0f);
 			                            drawLowerArm(0.4f, -0.3f, 0.0f); //right							
 				            	  glPopMatrix();	// pop back to original coordinate system
-
+/* //removed by Mike, 20210112
 							//added by Mike, 20210110
 							if (currentFacingState==FACING_RIGHT) {
 				            	glPushMatrix();
@@ -1222,7 +1236,7 @@ void RobotShip::drawRobotShip()
 									drawWeapon(0.3f, -0.15f, -0.5f);	
 				            	glPopMatrix();	// pop back to original coordinate system
 							}
-
+*/
 							   	  //UPPER ARM
 //								  glPushMatrix();
 			                        drawUpperArm(0.4f, 0.0f, 0.0f); //right
@@ -1576,6 +1590,20 @@ void RobotShip::drawRobotShip()
 									iFiringBeamCount=iFiringBeamCount+1;
 								}
 
+								if (currentFacingState==FACING_RIGHT) {
+									//added by Mike, 20210111
+				                	if (bIsFiringBeam) {	
+										glPushMatrix();
+			            					glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);
+							                glRotatef(-15, 0.0f, 1.0f, 0.0f);
+							                //edited by Mike, 20210112
+//												drawWeapon(0.3f, -0.15f, -0.5f);	
+											drawWeapon(0.0f, -0.5f, -0.5f);	
+				                		glPopMatrix();
+				                	}
+								}
+
+
 							   if (currentFacingState==FACING_DOWN) {
 							   	  drawBody(0.1f, -0.15f, 0.0f);
 								  drawHead(0.1f, 0.2f, -0.1f);
@@ -1612,22 +1640,24 @@ void RobotShip::drawRobotShip()
 			                            drawLowerArm(0.4f, -0.3f, 0.0f); //right							
 			                		glPopMatrix();
 
-									if (currentFacingState==FACING_RIGHT) {
+									//removed by Mike, 20210112
+/*									if (currentFacingState==FACING_RIGHT) {
 										//added by Mike, 20210111
 					                	if (bIsFiringBeam) {	
 											glPushMatrix();
 								                glRotatef(-15, 0.0f, 1.0f, 0.0f);
-												drawWeapon(0.3f, -0.15f, -0.5f);	
+								                //edited by Mike, 20210112
+//												drawWeapon(0.3f, -0.15f, -0.5f);	
+												drawWeapon(0.0f, -0.5f, -0.5f);	
 					                		glPopMatrix();
 					                	}
 									}
-
+*/
 									//edited by Mike, 20210103
 			                        //drawUpperArm(0.3f, 0.0f, 0.0f); //right        
-			                        drawUpperArm(0.4f, 0.0f, 0.0f); //right        
-			            		glPopMatrix();	
-			            		
-			            		
+			                        drawUpperArm(0.4f, 0.0f, 0.0f); //right        			            		
+								glPopMatrix();	
+			            					            		
 							//added by Mike, 20210108
 							//center
 							//drawWeapon(0.25f, 0.0f, -0.25f);	
