@@ -209,7 +209,9 @@ Beam::~Beam()
 {
 }
 
+//edited by Mike, 20210112
 void Beam::move(float rot, float* xyz)
+//void Beam::move(float rot, float* xyz[3])
 {	
      //fprintf(stdout, "%f", rot);
      //fprintf(stderr, "testing");
