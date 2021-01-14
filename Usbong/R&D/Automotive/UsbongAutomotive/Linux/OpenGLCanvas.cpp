@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210102
+ * @date updated: 20210112
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -134,6 +134,7 @@ enum Keys
 	KEY_L,
 	KEY_I,
 	KEY_K,
+	KEY_H, //added by Mike, 20210111
 	//added by Mike, 20201201
 	iNumOfKeyTypes
 };
@@ -1608,6 +1609,13 @@ void OpenGLCanvas::update()
 			//TO-DO: -update: this
           	myRobotShip->move(-1); //IDLE_MOVING_STATE			
 		}		
+
+       	//added by Mike, 20210111
+       	//robotship; punch command
+    	if(myKeysDown[KEY_H] == TRUE)
+    	{
+          	myRobotShip->move(KEY_H);
+		}
 		
        	//edited by Mike, 20201013
     	if(myKeysDown[KEY_UP] == TRUE)
@@ -1717,13 +1725,19 @@ void OpenGLCanvas::update()
 			//edited by Mike, 20201013
 			static int i = 0;
 			
+			
+			//added by Mike, 20210112
+			if (!myRobotShip->getIsExecuteWithWeaponReady()) {
+				return;
+			}
+			
 			//edited by Mike, 20201218
             //myRobotShip->move(KEY_LEFT);
             //TO-DO: -update: this; we use KEY_I for now
             //myRobotShip->move(KEY_J);
             myRobotShip->move(KEY_I);
     		myRobotShip->setCurrentFacingState(FACING_LEFT); //added by Mike, 20210102
-			
+						
             for(i=0; i<MAX_BEAMS; i++) {
               if (!myBeam[i]->isActive()) {
 				  //edited by Mike, 20201013
@@ -1762,15 +1776,21 @@ void OpenGLCanvas::update()
 				//LEFT
 				rotationAngle=90;
 
+				//added by Mike, 20210112
+				float *beamPosXyz = {myRobotShip->getXYZPos()};
+//				float beamPosXyz[3] = myRobotShip->getXYZPos();
+
 				//edited by Mike, 20201225
 //              myBeam[i]->move(rotationAngle, myRobotShip->getXYZPos());
 				//note: when held, beam particles move in waves
-				//TO-DO: -update: to move beams based on direction where robot faces 
+				//note: move beams based on direction where robot faces 
 				if (i%2==0) {
-                	myBeam[i]->move(rotationAngle+4, myRobotShip->getXYZPos());
+//                	myBeam[i]->move(rotationAngle+4, myRobotShip->getXYZPos());
+                	myBeam[i]->move(rotationAngle+4, beamPosXyz);
 				}
 				else {
-                	myBeam[i]->move(rotationAngle, myRobotShip->getXYZPos());					
+//                	myBeam[i]->move(rotationAngle, myRobotShip->getXYZPos());					
+                	myBeam[i]->move(rotationAngle, beamPosXyz);					
 				}
 
 //		        sound->play_sound_clip(beam);
@@ -1786,6 +1806,11 @@ void OpenGLCanvas::update()
     	{
 			//edited by Mike, 20201013
 			static int i = 0;
+
+			//added by Mike, 20210112
+			if (!myRobotShip->getIsExecuteWithWeaponReady()) {
+				return;
+			}
 			
 			//edited by Mike, 20201218
             //myRobotShip->move(KEY_LEFT);
@@ -1835,12 +1860,27 @@ void OpenGLCanvas::update()
 				//edited by Mike, 20201225
 //              myBeam[i]->move(rotationAngle, myRobotShip->getXYZPos());
 				//note: when held, beam particles move in waves
-				//TO-DO: -update: to move beams based on direction where robot faces 
+				//note: move beams based on direction where robot faces 
+				
+				//added by Mike, 20210112
+				float *beamPosXyz = {myRobotShip->getXYZPos()};
+//				float *beamPosXyz[3] = {myRobotShip->getXYZPos()};
+				beamPosXyz[2]+=2.0f;
+				//TO-DO: -add: move weapon with beam
+				//TO-DO: -verify: shorter weapon length
+/*				
 				if (i%2==0) {
                 	myBeam[i]->move(rotationAngle+4, myRobotShip->getXYZPos());
 				}
 				else {
                 	myBeam[i]->move(rotationAngle, myRobotShip->getXYZPos());					
+				}
+*/
+				if (i%2==0) {
+                	myBeam[i]->move(rotationAngle+4, beamPosXyz);
+				}
+				else {
+                	myBeam[i]->move(rotationAngle, beamPosXyz);					
 				}
 
 //		        sound->play_sound_clip(beam);
@@ -1855,6 +1895,11 @@ void OpenGLCanvas::update()
     	{
 			//edited by Mike, 20201013
 			static int i = 0;
+
+			//added by Mike, 20210112
+			if (!myRobotShip->getIsExecuteWithWeaponReady()) {
+				return;
+			}
 			
 			//edited by Mike, 20201218
             //myRobotShip->move(KEY_LEFT);
@@ -1893,16 +1938,22 @@ void OpenGLCanvas::update()
 			    }
 */
 
+				//added by Mike, 20210112
+				float *beamPosXyz = {myRobotShip->getXYZPos()};
+//				float *beamPosXyz[3] = {myRobotShip->getXYZPos()};
+				beamPosXyz[0]+=2.0f;
 
 				//edited by Mike, 20201225
 //              myBeam[i]->move(rotationAngle, myRobotShip->getXYZPos());
 				//note: when held, beam particles move in waves
-				//TO-DO: -update: to move beams based on direction where robot faces 
+				//note: move beams based on direction where robot faces 
 				if (i%2==0) {
-                	myBeam[i]->move(rotationAngle+4, myRobotShip->getXYZPos());
+//                	myBeam[i]->move(rotationAngle+4, myRobotShip->getXYZPos());
+                	myBeam[i]->move(rotationAngle+4, beamPosXyz);
 				}
 				else {
-                	myBeam[i]->move(rotationAngle, myRobotShip->getXYZPos());					
+//                	myBeam[i]->move(rotationAngle, myRobotShip->getXYZPos());					
+                	myBeam[i]->move(rotationAngle, beamPosXyz);					
 				}
 
 //		        sound->play_sound_clip(beam);
@@ -1926,6 +1977,11 @@ void OpenGLCanvas::update()
     	{
 			//edited by Mike, 20201013
 			static int i = 0;
+
+			//added by Mike, 20210112
+			if (!myRobotShip->getIsExecuteWithWeaponReady()) {
+				return;
+			}
 			
 			//edited by Mike, 20201218
             //myRobotShip->move(KEY_LEFT);
@@ -1964,16 +2020,22 @@ void OpenGLCanvas::update()
 			    }
 */
 
+				//added by Mike, 20210112
+				//TO-DO: -reverify: if causes memory leak problem
+				float *beamPosXyz = {myRobotShip->getXYZPos()};
+//				float *beamPosXyz[3] = {myRobotShip->getXYZPos()};
 
 				//edited by Mike, 20201225
 //              myBeam[i]->move(rotationAngle, myRobotShip->getXYZPos());
 				//note: when held, beam particles move in waves
-				//TO-DO: -update: to move beams based on direction where robot faces 
+				//note: move beams based on direction where robot faces 
 				if (i%2==0) {
-                	myBeam[i]->move(rotationAngle+4, myRobotShip->getXYZPos());
+//                	myBeam[i]->move(rotationAngle+4, myRobotShip->getXYZPos());
+                	myBeam[i]->move(rotationAngle+4, beamPosXyz);
 				}
 				else {
-                	myBeam[i]->move(rotationAngle, myRobotShip->getXYZPos());					
+//                	myBeam[i]->move(rotationAngle, myRobotShip->getXYZPos());					
+                	myBeam[i]->move(rotationAngle, beamPosXyz);					
 				}
 
 //		        sound->play_sound_clip(beam);

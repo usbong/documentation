@@ -140,7 +140,10 @@ public:
 	
 	// changes the beam's state
 	void changeState(int s);
+
+	//edited by Mike, 20210112
 	void move(float rot, float* xyz);
+//	void move(float rot, float* xyz[3]);
 	
 	bool isActive(){
          if (currentState==ACTIVE_STATE)
