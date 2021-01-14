@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210112
+ * @date updated: 20210114
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -187,8 +187,12 @@ bool OpenGLCanvas::init()
 /*    myWindowWidth=640;
     myWindowHeight=640;
 */
+/*	//edited by Mike, 20210114
 	myWindowWidth=2048;
     myWindowHeight=2048;
+*/
+	myWindowWidth=4096;
+    myWindowHeight=4096;
 
     //added by Mike, 20201023
     myCanvasPosX=-3.2f;//0.0f;
@@ -242,8 +246,25 @@ bool OpenGLCanvas::init()
 /* 	iRowCountMax=10;
  	iColumnCountMax=10;
 */
+/*	//edited by Mike, 20210114
  	iRowCountMax=20;
  	iColumnCountMax=20;
+*/
+	//note: noticeably delay in computer's auto-draw
+	//myWindowWidth and myWindowHeight: 4096
+	//iRowCountMax and iColumnCountMax: 40
+	//Computer specifications:
+	//Processor: Genuine Intel(R) CPU T2130 @1.86GHz
+	//RAM: 3.00GB (2.87 GB usable)
+	//System type: 32-bit Operating System
+	//Windows 7 Ultimate (C) 2009 Service Pack 1
+	//additional note: this is a stress test
+	//for 3D grid using tiles as cube
+	//Solution: in main.cpp
+	//lower auto-draw sleep delay number to update OpenGLCanvas.cpp
+	//TO-DO: -reverify: animation skipping problem 
+ 	iRowCountMax=40;
+ 	iColumnCountMax=40;
 
 	fGridSquareWidth = myWindowWidth/iColumnCountMax/100.0;
 	fGridSquareHeight = myWindowHeight/iRowCountMax/100.0;
@@ -971,7 +992,13 @@ void OpenGLCanvas::render()
 	//added by Mike, 20201115
 	glRotatef(45, 1.0f, 0.0f, 0.0f);
 	glRotatef(30, 0.0f, 1.0f, 0.0f);
-    glScalef(0.3f, 0.3f, 0.3f);
+
+	//edited by Mike, 20210114
+/*    glScalef(0.3f, 0.3f, 0.3f);
+*/
+//    glScalef(0.05f, 0.05f, 0.05f);
+//    glScalef(0.1f, 0.1f, 0.1f);
+    glScalef(0.2f, 0.2f, 0.2f);
 
 //    glTranslatef(-1.0f, -1.0f, 0.0f);
 
