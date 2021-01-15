@@ -14,7 +14,7 @@
  *
  * @author: Michael Syson
  * @date created: 20200926
- * @date updated: 20201210
+ * @date updated: 20210115
  *
  * References:
  * 1) Dev-C++ 5.11 auto-generated OpenGL example project
@@ -374,9 +374,13 @@ void update(int i) {
 //			glutTimerFunc(50, update, 0);
 			//edited by Mike, 20201210
 //			glutTimerFunc(70, update, 0);
-//			glutTimerFunc(80, update, 0);			
-			glutTimerFunc(60, update, 0);
-			
+//			glutTimerFunc(80, update, 0);
+			//edited by Mike, 20210115
+			//TO-DO: -reverify: add RobotShip movement animation delay
+			//using lower canvas auto-draw update delay
+			//glutTimerFunc(40, update, 0);
+			glutTimerFunc(50, update, 0);
+
 		}	 
 }
 
