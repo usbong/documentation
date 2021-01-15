@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Usbong Social Systems, Inc.
+ * Copyright 2020~2021 Usbong Social Systems, Inc.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210114
+ * @date updated: 20210115
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -58,7 +58,7 @@
 #if defined(__APPLE__)
 #include <OpenGL/gl.h>
 #include <OpenGL/glu.h>
-//#include <GLUT/glut.h>
+//#include <GLUT/glut.h>s
 #else
 #include <GL/gl.h>
 #include <GL/glu.h>
@@ -263,6 +263,15 @@ bool OpenGLCanvas::init()
 	//Solution: in main.cpp
 	//lower auto-draw sleep delay number to update OpenGLCanvas.cpp
 	//TO-DO: -reverify: animation skipping problem 
+	
+	//added by Mike, 20210115
+	//note: no noticeable delay in computer's auto-draw
+	//Computer specifications:
+	//Processor: Intel(R) Celeron(R) CPU  N2940  @ 1.83GHz
+	//RAM: 2.00GB (1.91 GB usable)
+	//System type: 64-bit Operating System
+	//LUBUNTU 20.04 LTS
+	
  	iRowCountMax=40;
  	iColumnCountMax=40;
 
