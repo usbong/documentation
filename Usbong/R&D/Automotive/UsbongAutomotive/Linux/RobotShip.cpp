@@ -350,7 +350,12 @@ RobotShip::RobotShip(float xPos, float yPos, float zPos, int windowWidth, int wi
     stepX=0.1;
     stepY=0.1;
 */
+	
     //edited by Mike, 20201025
+	//edited again by Mike, 20210114
+	//reverified double step due to double the size of Window	
+	//4096x4096; update in main.cpp
+	//OpenGLCanvas update sleep delay, instead of step
     stepX=0.3;
     stepY=0.3;
     stepZ=0.3;
