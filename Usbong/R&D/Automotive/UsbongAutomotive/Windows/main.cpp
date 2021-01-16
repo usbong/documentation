@@ -14,7 +14,7 @@
  *
  * @author: Michael Syson
  * @date created: 20200926
- * @date updated: 20210114
+ * @date updated: 20210116
  *
  * References:
  * 1) Dev-C++ 5.11 auto-generated OpenGL example project
@@ -271,7 +271,11 @@ int WINAPI WinMain (HINSTANCE hInstance,
         //TO-DO: -update: this
         //edited by Mike, 20210114
 //        idealFrameTime=33;//60;//33;
-        idealFrameTime=24;//33;
+		//edited by Mike, 20210116
+//        idealFrameTime=24;//33;
+		//TO-DO: -reverify: due to skipping animation sequence
+		//with 8192x8192 window size and 80x80grid
+        idealFrameTime=30;//36;//50;//16;//33;
 
     pause=0;
 

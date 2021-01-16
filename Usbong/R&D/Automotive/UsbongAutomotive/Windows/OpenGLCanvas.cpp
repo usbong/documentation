@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210114
+ * @date updated: 20210116
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -191,8 +191,12 @@ bool OpenGLCanvas::init()
 	myWindowWidth=2048;
     myWindowHeight=2048;
 */
+/*	//edited by Mike, 20210116
 	myWindowWidth=4096;
     myWindowHeight=4096;
+*/
+	myWindowWidth=8192;
+    myWindowHeight=8192;
 
     //added by Mike, 20201023
     myCanvasPosX=-3.2f;//0.0f;
@@ -263,8 +267,12 @@ bool OpenGLCanvas::init()
 	//Solution: in main.cpp
 	//lower auto-draw sleep delay number to update OpenGLCanvas.cpp
 	//TO-DO: -reverify: animation skipping problem 
+/*	//edited by Mike, 20210116
  	iRowCountMax=40;
  	iColumnCountMax=40;
+*/
+ 	iRowCountMax=80;
+ 	iColumnCountMax=80;
 
 	fGridSquareWidth = myWindowWidth/iColumnCountMax/100.0;
 	fGridSquareHeight = myWindowHeight/iRowCountMax/100.0;

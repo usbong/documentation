@@ -597,13 +597,17 @@ void Asteroid::update(float dt)
 */
 	                    //edited by Mike, 2020117
 						//xVel=xAccel;
-						xVel=xAccel*30.0;
+						//edited by Mike, 20210116
+//						xVel=xAccel*30.0;
+						xVel=xAccel*0.1;
 	                    
 						//edited by Mike, 20201117	                    
 	                    //yVel=yAccel;
 	                    yVel=0;//yAccel;
 //	                    zVel=zAccel;
-	                    zVel=zAccel*30.0;
+						//edited by Mike, 20210116
+//	                    zVel=zAccel*30.0;
+	                    zVel=zAccel*0.1;
 
 /*						//edited by Mike, 20201016
 	                    myXPos+=xVel;
