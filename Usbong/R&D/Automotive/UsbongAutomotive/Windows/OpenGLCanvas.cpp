@@ -195,8 +195,12 @@ bool OpenGLCanvas::init()
 	myWindowWidth=4096;
     myWindowHeight=4096;
 */
+/*	//edited by Mike, 20210116; noticeable animation skipping problem
 	myWindowWidth=8192;
     myWindowHeight=8192;
+*/
+	myWindowWidth=6144;
+    myWindowHeight=6144;
 
     //added by Mike, 20201023
     myCanvasPosX=-3.2f;//0.0f;
@@ -271,8 +275,16 @@ bool OpenGLCanvas::init()
  	iRowCountMax=40;
  	iColumnCountMax=40;
 */
+/*	//edited by Mike, 20210116; noticeable animation skipping problem
  	iRowCountMax=80;
  	iColumnCountMax=80;
+*/
+	//note: reducing size of iRowCountMax and iColumnCountMax
+	//to make cube smaller causes smoother animation
+	//example: 30x30
+	//TO-DO: -add: no need to draw all faces of each cube if not seen
+ 	iRowCountMax=60;
+ 	iColumnCountMax=60;
 
 	fGridSquareWidth = myWindowWidth/iColumnCountMax/100.0;
 	fGridSquareHeight = myWindowHeight/iRowCountMax/100.0;
