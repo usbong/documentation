@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210111
+ * @date updated: 20210117
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -1195,7 +1195,9 @@ void RobotShip::drawRobotShip()
 							                glRotatef(-15, 0.0f, 1.0f, 0.0f);
 							                //edited by Mike, 20210112
 //												drawWeapon(0.3f, -0.15f, -0.5f);	
-											drawWeapon(0.0f, -0.5f, -0.5f);	
+//edited by Mike, 20210117
+//											drawWeapon(0.0f, -0.5f, -0.5f);	
+											drawWeapon(0.2f, -0.15f, -0.5f);	
 				                		glPopMatrix();
 				                	}
 								}
@@ -1600,15 +1602,20 @@ void RobotShip::drawRobotShip()
 									iFiringBeamCount=iFiringBeamCount+1;
 								}
 
+
 								if (currentFacingState==FACING_RIGHT) {
 									//added by Mike, 20210111
 				                	if (bIsFiringBeam) {	
 										glPushMatrix();
 			            					glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);
+//noted by Mike, 20210117
+//can remove this instruction for weapon recoil
 							                glRotatef(-15, 0.0f, 1.0f, 0.0f);
 							                //edited by Mike, 20210112
 //												drawWeapon(0.3f, -0.15f, -0.5f);	
-											drawWeapon(0.0f, -0.5f, -0.5f);	
+											//edited by Mike, 20210117
+											//drawWeapon(0.0f, -0.5f, -0.5f);	
+											drawWeapon(0.2f, -0.15f, -0.5f);
 				                		glPopMatrix();
 				                	}
 								}
@@ -1650,8 +1657,8 @@ void RobotShip::drawRobotShip()
 			                            drawLowerArm(0.4f, -0.3f, 0.0f); //right							
 			                		glPopMatrix();
 
-									//removed by Mike, 20210112
-/*									if (currentFacingState==FACING_RIGHT) {
+/*									//removed by Mike, 20210112
+									if (currentFacingState==FACING_RIGHT) {
 										//added by Mike, 20210111
 					                	if (bIsFiringBeam) {	
 											glPushMatrix();
