@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210116
+ * @date updated: 20210117
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -232,8 +232,17 @@ bool OpenGLCanvas::init()
 
 	//added by Mike, 20201025
     myCanvasEyePosX=0.0f;
-    myCanvasEyePosY=0.0f;
-    myCanvasEyePosZ=3.0f;//0.0f;//3.0f;
+	//edited by Mike, 20210117
+//    myCanvasEyePosY=0.0f;
+    myCanvasEyePosY=1.0f;
+
+	//edited by Mike, 20210117
+	//note: 3.0f OK if not rapid fire of beams as projectile
+	//5.0f OK for rapid fire, but edge of 30x30 grid 
+	//with window size 6144x6144 already visible
+//    myCanvasEyePosZ=3.0f;//0.0f;//3.0f;
+    myCanvasEyePosZ=5.0f;//0.0f;//3.0f;
+
     myCanvasCenterPosX=0.0f;
     myCanvasCenterPosY=0.0f;
     //edited by Mike, 20201026
@@ -283,8 +292,12 @@ bool OpenGLCanvas::init()
 	//to make cube smaller causes smoother animation
 	//example: 30x30
 	//TO-DO: -add: no need to draw all faces of each cube if not seen
- 	iRowCountMax=60;
+	//edited by Mike, 20210117
+/* 	iRowCountMax=60;
  	iColumnCountMax=60;
+*/
+ 	iRowCountMax=30;
+ 	iColumnCountMax=30;
 
 	fGridSquareWidth = myWindowWidth/iColumnCountMax/100.0;
 	fGridSquareHeight = myWindowHeight/iRowCountMax/100.0;
