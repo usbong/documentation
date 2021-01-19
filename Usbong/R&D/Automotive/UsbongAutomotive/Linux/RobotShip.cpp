@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210117
+ * @date updated: 20210118
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -851,7 +851,11 @@ void RobotShip::drawRobotShip()
 										//center
 										//drawWeapon(0.25f, 0.0f, -0.25f);	
 										//IF FACING_UP
-										drawWeapon(0.5f, -0.15f, -0.7);
+										//edited by Mike, 20210118
+										//note: put weapon closer to center
+//										drawWeapon(0.5f, -0.15f, -0.7);
+										drawWeapon(0.3f, -0.15f, -0.7);
+
 									}
 								}
 								//added by Mike, 20210105
@@ -973,7 +977,10 @@ void RobotShip::drawRobotShip()
 								if (currentFacingState==FACING_LEFT) {
 									//drawWeapon(0.25f, -0.25f, -0.25f);	
 //									drawWeapon(0.4f, -0.25f, -0.5f);	
-									drawWeapon(0.4f, -0.15f, -0.5f);	
+									//edited by Mike, 20210118
+									//note: put weapon closer to center
+//									drawWeapon(0.4f, -0.15f, -0.5f);	
+									drawWeapon(0.3f, -0.15f, -0.5f);
 								}							
 							}
 	
@@ -1470,7 +1477,10 @@ void RobotShip::drawRobotShip()
 								   //added by Mike, 20210111
 					               if (bIsFiringBeam) {		
 										//IF FACING_UP
-										drawWeapon(0.5f, -0.15f, -0.7);
+										//edited by Mike, 20210118
+										//note: put weapon closer to center
+//										drawWeapon(0.5f, -0.15f, -0.7);
+										drawWeapon(0.3f, -0.15f, -0.7);
 								   }
 
 								   drawHead(0.1f, 0.2f, -0.1f);		
@@ -1488,7 +1498,10 @@ void RobotShip::drawRobotShip()
 							//added by Mike, 20210111
 			                if (bIsFiringBeam) {
 								if (currentFacingState==FACING_LEFT) {
-									drawWeapon(0.4f, -0.15f, -0.5f);	
+									//edited by Mike, 20210118
+									//note: put weapon closer to center
+//									drawWeapon(0.4f, -0.15f, -0.5f);	
+									drawWeapon(0.3f, -0.15f, -0.5f);
 								}							
 							}
 

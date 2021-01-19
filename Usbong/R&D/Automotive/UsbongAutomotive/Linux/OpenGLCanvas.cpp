@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210117
+ * @date updated: 20210118
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -1925,7 +1925,10 @@ void OpenGLCanvas::update()
 				//added by Mike, 20210112
 				float *beamPosXyz = {myRobotShip->getXYZPos()};
 //				float *beamPosXyz[3] = {myRobotShip->getXYZPos()};
-				beamPosXyz[2]+=2.0f;
+				//edited by Mike, 20210118
+//				beamPosXyz[2]+=2.0f;
+				beamPosXyz[2]+=1.5f;
+
 				//TO-DO: -add: move weapon with beam
 				//TO-DO: -verify: shorter weapon length
 /*				
