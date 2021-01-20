@@ -127,4 +127,5 @@ Inoue, Tatsuo. (1986). "Living Together Making Law――Justice as Conversation�
 --> 4.1.2) Put oil in padlock's open portions, e.g. keyhole, top portion.<br/>
 --> 4.1.3) Put key to unlock the padlock.<br/>
 --> 4.1.4) If padlock is still locked using key, repeat to Step 4.1.1).<br/>
---> Additional Note: Metal rust can be due to among others: water combined with shampoo and/or soap.
+--> Additional Note: Metal rust can be due to among others: water combined with shampoo and/or soap.<br/>
+--> Recommendation: For publicly accessible padlocks, e.g. for use with bicycles, use with key as physical material object, instead of those that require entering of Personal Identification Numbers (PIN).
