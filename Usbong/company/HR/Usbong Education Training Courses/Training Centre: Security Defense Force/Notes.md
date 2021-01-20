@@ -119,6 +119,7 @@ Inoue, Tatsuo. (1986). "Living Together Making Law――Justice as Conversation�
 --> There is a known problem with what we see, such that we do not hit targets.<br/>
 --> This is even if it appears that we should have hit the targets.<br/>
 <img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Automotive/UsbongAutomotive/Linux/screenshots/stressTestFor3DGridUsingTilesAsCube/UsbongAutomotiveUpdatedViewAngleGridStressSmoothAnimationV2V20210118T1519.png" width="60%">
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Automotive/UsbongAutomotive/Windows/screenshots/stressTestFor3DGridUsingTilesAsCube/UsbongAutomotiveDoubleWindowSizeAt4096NoticebleDelayInAutoDrawV20210114T1954.png" width="60%">
 
 ### Part 4
 --> 4.1) Question: How to solve unable to open rusted padlock?<br/>
