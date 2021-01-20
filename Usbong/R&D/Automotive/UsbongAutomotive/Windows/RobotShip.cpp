@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210120
+ * @date updated: 20210121
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -847,18 +847,53 @@ void RobotShip::drawRobotShip()
 
 									//added by Mike, 20210110
 					                if (bIsFiringBeam) {		
-										//added by Mike, 20210107
-										//center
-										//drawWeapon(0.25f, 0.0f, -0.25f);	
-										//IF FACING_UP
-										//edited by Mike, 20210118
-										//note: put weapon closer to center
-//										drawWeapon(0.5f, -0.15f, -0.7);
+/*					      	//note: use with diagonal movement
+										//added by Mike, 20210121
+										if (currentFacingState==FACING_UP) {
+											if (myKeysDown[KEY_A]==TRUE) {
+												glRotatef(40, 0.0f, 1.0f, 0.0f);			
+											}
+											else if (myKeysDown[KEY_RIGHT]==TRUE) {
+												glRotatef(-40, 0.0f, 1.0f, 0.0f);										
+							        	
+											}
+										}
+										if (currentFacingState==FACING_LEFT) {
+											if (myKeysDown[KEY_UP]==TRUE) {
+												glRotatef(40, 0.0f, 1.0f, 0.0f);			
+											}
+											else if (myKeysDown[KEY_S]==TRUE) {
+												glRotatef(-40, 0.0f, 1.0f, 0.0f);															        	
+											}
+										}
+*/
+										//added by Mike, 20210121
+				            			glPushMatrix();					
+				            				//note: already facing up
+//											if (currentFacingState==FACING_UP) {
+												if (myKeysDown[KEY_A]==TRUE) {
+													glRotatef(-8, 0.0f, 1.0f, 0.0f);			
+						                            glTranslatef(0.0f, 0.0f, 0.1f);
+												}
+												else if (myKeysDown[KEY_RIGHT]==TRUE) {
+													glRotatef(6, 0.0f, 1.0f, 0.0f);																		        	
+												}
+//											}
+	
+											//added by Mike, 20210107
+											//center
+											//drawWeapon(0.25f, 0.0f, -0.25f);	
+											//IF FACING_UP
+											//edited by Mike, 20210118
+											//note: put weapon closer to center
+	//										drawWeapon(0.5f, -0.15f, -0.7);
+	
+											//TO-DO: -add: fire where beam exits from weapon
+											//edited by Mike, 20210120
+	//										drawWeapon(0.3f, -0.15f, -0.7);
+											drawWeapon(0.35f, -0.15f, -0.7);
 
-										//TO-DO: -add: fire where beam exits from weapon
-										//edited by Mike, 20210120
-//										drawWeapon(0.3f, -0.15f, -0.7);
-										drawWeapon(0.35f, -0.15f, -0.7);
+			            				glPopMatrix();
 									}
 								}
 								//added by Mike, 20210105
@@ -897,7 +932,9 @@ void RobotShip::drawRobotShip()
 									}	
 */
 									drawBody(0.1f, -0.15f, 0.0f);	
-									drawHead(0.1f, 0.2f, -0.1f);		
+
+									//removed by Mike, 20210121
+//									drawHead(0.1f, 0.2f, -0.1f);		
 							   }
 							
 							   //edited by Mike, 20201226
@@ -978,14 +1015,32 @@ void RobotShip::drawRobotShip()
 								//center
 								//drawWeapon(0.25f, 0.0f, -0.25f);	
 								if (currentFacingState==FACING_LEFT) {
-									//drawWeapon(0.25f, -0.25f, -0.25f);	
-//									drawWeapon(0.4f, -0.25f, -0.5f);	
-									//edited by Mike, 20210118
-									//note: put weapon closer to center
-//									drawWeapon(0.4f, -0.15f, -0.5f);	
-									drawWeapon(0.3f, -0.15f, -0.5f);
+									//added by Mike, 20210121
+									glPushMatrix();
+//									if (currentFacingState==FACING_LEFT) {
+										if (myKeysDown[KEY_UP]==TRUE) {
+											glRotatef(12, 0.0f, 1.0f, 0.0f);			
+				                            glTranslatef(0.0f, 0.0f, 0.1f);
+										}
+										else if (myKeysDown[KEY_S]==TRUE) {
+											glRotatef(-6, 0.0f, 1.0f, 0.0f);															        	
+										}
+//									}
+										//drawWeapon(0.25f, -0.25f, -0.25f);	
+	//									drawWeapon(0.4f, -0.25f, -0.5f);	
+										//edited by Mike, 20210118
+										//note: put weapon closer to center
+	//									drawWeapon(0.4f, -0.15f, -0.5f);	
+										drawWeapon(0.3f, -0.15f, -0.5f);	
+				            		glPopMatrix();
 								}							
 							}
+	
+	
+							//added by Mike, 20210121
+				    	    if (currentFacingState==FACING_LEFT) {
+								drawHead(0.1f, 0.2f, -0.1f);		
+						    }
 	
 			            	glPopMatrix();	// pop back to original coordinate system						
 					    }
@@ -1201,6 +1256,16 @@ void RobotShip::drawRobotShip()
 									//added by Mike, 20210111
 				                	if (bIsFiringBeam) {	
 										glPushMatrix();
+											//added by Mike, 20210121
+											if (myKeysDown[KEY_UP]==TRUE) {
+												glRotatef(-20, 1.0f, 0.0f, 0.0f);
+											}
+											else if (myKeysDown[KEY_S]==TRUE) {
+												glRotatef(58, 1.0f, 0.0f, 0.0f);			
+//				                        		glTranslatef(0.1f, -0.1f, 0.0f);
+				                        		glTranslatef(0.1f, 0.0f, 0.0f);
+											}
+																				
 			            					glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);
 							                glRotatef(-15, 0.0f, 1.0f, 0.0f);
 							                //edited by Mike, 20210112
@@ -1298,8 +1363,19 @@ void RobotShip::drawRobotShip()
 								//center
 								//drawWeapon(0.25f, 0.0f, -0.25f);	
 								if (currentFacingState==FACING_DOWN) {
-					                glRotatef(-30, 1.0f, 0.0f, 0.0f);
-									drawWeapon(0.3f, 0.10f, -0.4f);	
+									//added by Mike, 20210121
+			            			glPushMatrix();					
+										if (myKeysDown[KEY_A]==TRUE) {
+											glRotatef(14, 0.0f, 1.0f, 0.0f);
+				                            glTranslatef(0.0f, 0.0f, 0.1f);
+										}
+										else if (myKeysDown[KEY_RIGHT]==TRUE) {
+											glRotatef(-10, 0.0f, 1.0f, 0.0f);			
+										}
+
+						                glRotatef(-30, 1.0f, 0.0f, 0.0f);
+										drawWeapon(0.3f, 0.10f, -0.4f);	
+			            		  	glPopMatrix();
 								}
 	/*	//removed by Mike, 20210110
 								if (currentFacingState==FACING_RIGHT) {
