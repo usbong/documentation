@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Usbong Social Systems, Inc.
+ * Copyright 2020~2021 Usbong Social Systems, Inc.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201013
- * @date updated: 20210107
+ * @date updated: 20210120
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -219,7 +219,7 @@ void Beam::move(float rot, float* xyz)
      myXPos = xyz[0];
      myYPos = xyz[1];
      myZPos = xyz[2];
-	
+		
 	 //edited by Mike, 20201225	 
      //changeState(ACTIVE_STATE);
 	 if (iDelayCount < iDelayCountMax) {
@@ -284,8 +284,12 @@ void Beam::drawBeam()
 	//edited by Mike, 2020117
 //    glTranslatef(-myWidth, 0.0f, -myHeight);   
 	//note: 20 columns x 20 rows
+
 	//note: robotship width=1.0f; height=1.0f;
+	//edited by Mike, 20210120
     glTranslatef(-1.0f/2, 0.0f, -1.0f/2);   
+//    glTranslatef(-1.0f/2, -1.00f, -1.0f/2);   
+
 
 //    glTranslatef(-myWindowWidth/100/20/4, 0.0f, -myWindowHeight/100/20/4);   
 	
@@ -311,7 +315,7 @@ void Beam::drawBeam()
 	//TO-DO: -update: size for RobotShip
 	//glScalef(2.0f, 2.0f, 2.0f);
 	glScalef(4.0f, 4.0f, 4.0f);
-	
+		
 	//added by Mike, 20201116
 	//set square face with no color fill 
 //	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);

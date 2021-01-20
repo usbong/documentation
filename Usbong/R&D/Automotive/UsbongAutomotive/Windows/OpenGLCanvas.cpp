@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Usbong Social Systems, Inc.
+ * Copyright 2020~2021 Usbong Social Systems, Inc.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210118
+ * @date updated: 20210120
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -412,9 +412,13 @@ bool OpenGLCanvas::init()
 	//std::vector<MyDynamicObject*> v;	
 	vMyDynamicObjectContainer.push_back(myPilot);
 	vMyDynamicObjectContainer.push_back(myRobotShip);
+
+/*	//removed by Mike, 20210120
 	for (int i=0; i<MAX_BEAMS; i++) { //32
 		vMyDynamicObjectContainer.push_back(myBeam[i]);
 	}
+*/
+
 	for (int i=0; i<MAX_ASTEROID; i++) { //16			
 		vMyDynamicObjectContainer.push_back(myAsteroid[i]);
 	}	
@@ -1151,6 +1155,17 @@ void OpenGLCanvas::render()
             }
     	glPopMatrix();		
 */
+
+		//added by Mike, 20210120
+		//note: draw beam first to be below the rest during auto-draw
+    	glPushMatrix();		
+            for(int i=0; i<MAX_BEAMS; i++) {
+              if (myBeam[i]->isActive()) {
+                myBeam[i]->draw();
+			  }
+            }
+        glPopMatrix();       
+
 		//added by Mike, 20201213
 		//TO-DO: -reverify: this
 		
