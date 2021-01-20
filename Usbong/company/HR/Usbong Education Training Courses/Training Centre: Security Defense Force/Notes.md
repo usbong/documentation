@@ -120,3 +120,11 @@ Inoue, Tatsuo. (1986). "Living Together Making Law――Justice as Conversation�
 --> This is even if it appears that we should have hit the targets.<br/>
 <img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Automotive/UsbongAutomotive/Linux/screenshots/stressTestFor3DGridUsingTilesAsCube/UsbongAutomotiveUpdatedViewAngleGridStressSmoothAnimationV2V20210118T1519.png" width="60%">
 
+### Part 4
+--> 4.1) Question: How to solve unable to open rusted padlock?<br/>
+--> Answer: Steps:<br/>
+--> 4.1.1) Clean visible rust using cloth or tissue paper.<br/>
+--> 4.1.2) Put oil in padlock's open portions, e.g. keyhole, top portion.<br/>
+--> 4.1.3) Put key to unlock the padlock.<br/>
+--> 4.1.4) If padlock is still locked using key, repeat to Step 4.1.1).<br/>
+--> Additional Note: Metal rust can be due to among others: water combined with shampoo and/or soap.
