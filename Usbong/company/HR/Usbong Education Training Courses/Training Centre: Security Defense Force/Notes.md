@@ -110,3 +110,12 @@ Inoue, Tatsuo. (1986). "Living Together Making Law――Justice as Conversation�
 --> This is from the small written/literature discussion part of the following: <br/>
 --> 高島照子, et al. (2013)．防衛大学校（2014年版大学入試シリーズNo.167）.京都：教学社<br/>
 --> Takashima, Teruko, et al. (2013). Defense Force University (2014 Edition University Entrance Examination Series No. 167). Kyoto: kyougakusha
+
+### Part 3
+--> 3.1) From [Usbong R&D: Automotive:](https://github.com/usbong/documentation/tree/master/Usbong/R%26D/Automotive)<br/>
+--> 3.1.1) put tool close to your center position when firing beams as projectiles to quickly and correctly hit targets<br/>
+--> If you put tool closer to your right side, hitting targets becomes difficult, especially when you also move your position.<br/>
+--> 3.1.2) use oscillating, i.e. wave movement, with rapid firing of beams as projectiles to increase hits<br/>
+--> There is a known problem with what we see, such that we do not hit targets.<br/>
+--> This is even if it appears that we should have hit the targets.
+
