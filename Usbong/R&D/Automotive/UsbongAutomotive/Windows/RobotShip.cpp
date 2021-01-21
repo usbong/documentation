@@ -2115,7 +2115,7 @@ void RobotShip::move(int key)
      //added by Mike, 2021011
      //TO-DO: -update: this to be defend using shield
      case KEY_H:
-          bIsExecutingPunch=true;
+          bIsExecutingDefend=true;
           
           bHasPressedADirectionalKey=false;
           //based on enum Keys 
@@ -2131,7 +2131,7 @@ void RobotShip::move(int key)
 //		  }          
           break;
      case -KEY_H:
-          bIsExecutingPunch=false;
+          bIsExecutingDefend=false;
 
    		  if (currentMovingState==WALKING_MOVING_STATE) {   		  	
 		  }
@@ -2184,6 +2184,9 @@ void RobotShip::move(int key)
 	//added by Mike, 20210111
 	if (bIsExecutingPunch) {
 	}
+	//added by Mike, 20210121
+	else if (bIsExecutingDefend) {
+	}	
 	else {    
           //added by Mike, 20201001; edited by Mike, 20201116
 //	      myYPos+=-stepY;
@@ -2209,6 +2212,9 @@ void RobotShip::move(int key)
 
 	//added by Mike, 20210111
 	if (bIsExecutingPunch) {
+	}
+	//added by Mike, 20210121
+	else if (bIsExecutingDefend) {
 	}
 	else {
           //added by Mike, 20201001; edited by Mike, 20201116
@@ -2236,6 +2242,9 @@ void RobotShip::move(int key)
 */
 	//added by Mike, 20210111
 	if (bIsExecutingPunch) {
+	}
+	//added by Mike, 20210121
+	else if (bIsExecutingDefend) {
 	}
 	else {
           //added by Mike, 20201001            
@@ -2271,6 +2280,9 @@ void RobotShip::move(int key)
 	//added by Mike, 20210111
 	if (bIsExecutingPunch) {
 	}
+	//added by Mike, 20210121
+	else if (bIsExecutingDefend) {
+	}
 	else {
           //added by Mike, 20201001            
 	      myXPos+=stepX;
@@ -2292,6 +2304,7 @@ void RobotShip::move(int key)
 		  currentMovingState=IDLE_MOVING_STATE;
 		  bIsFiringBeam=false; //added by Mike, 20201226
 		  bIsExecutingPunch=false; //added by Mike, 20210111
+		  bIsExecutingDefend=false; //added by Mike, 20210121
 		  break;		  		  
    }
 
@@ -2300,7 +2313,12 @@ void RobotShip::move(int key)
 		currentMovingState=ATTACKING_MOVING_STATE;
 		bIsFiringBeam=false;
 	}
-   
+
+	//added by Mike, 20210121
+	if (bIsExecutingDefend) {
+		currentMovingState=ATTACKING_MOVING_STATE;
+		bIsFiringBeam=false;
+	}   
 }
 void RobotShip::hitBy(MyDynamicObject* mdo)
 {
