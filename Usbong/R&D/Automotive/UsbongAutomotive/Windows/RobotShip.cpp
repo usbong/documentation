@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Usbong Social Systems, Inc.
+ * Copyright 2020~2021 Usbong Social Systems, Inc.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -91,6 +91,8 @@ enum Keys
 	KEY_I,
 	KEY_K,
 	KEY_H, //added by Mike, 20210111
+	KEY_U, //added by Mike, 20210121
+
 	//added by Mike, 20201226
 	iNumOfKeyTypes
 };
@@ -2111,6 +2113,7 @@ void RobotShip::move(int key)
           break;	
 
      //added by Mike, 2021011
+     //TO-DO: -update: this to be defend using shield
      case KEY_H:
           bIsExecutingPunch=true;
           
@@ -2128,6 +2131,36 @@ void RobotShip::move(int key)
 //		  }          
           break;
      case -KEY_H:
+          bIsExecutingPunch=false;
+
+   		  if (currentMovingState==WALKING_MOVING_STATE) {   		  	
+		  }
+		  //added by Mike, 20201226
+ 		  else if (currentMovingState==ATTACKING_MOVING_STATE) {   		  	
+		  }
+		  else {
+		  	currentMovingState=IDLE_MOVING_STATE;
+		  }			
+          break;
+	
+	//added by Mike, 20210121
+    case KEY_U:
+          bIsExecutingPunch=true;
+          
+          bHasPressedADirectionalKey=false;
+          //based on enum Keys 
+          for (int iCount=0; iCount<10; iCount++) {
+   		    if (myKeysDown[iCount]==TRUE) {
+          		bHasPressedADirectionalKey=true;
+   		    	break;
+			}
+		  }
+		  
+//		  if (!bHasPressedADirectionalKey) {
+		  	currentMovingState=ATTACKING_MOVING_STATE;		   		  	
+//		  }          
+          break;
+     case -KEY_U:
           bIsExecutingPunch=false;
 
    		  if (currentMovingState==WALKING_MOVING_STATE) {   		  	

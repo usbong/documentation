@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Usbong Social Systems, Inc.
+ * Copyright 2020~2021 Usbong Social Systems, Inc.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -14,7 +14,7 @@
  *
  * @author: Michael Syson
  * @date created: 20200926
- * @date updated: 20210116
+ * @date updated: 20210121
  *
  * References:
  * 1) Dev-C++ 5.11 auto-generated OpenGL example project
@@ -123,6 +123,9 @@ enum Keys
 	KEY_K,
 	//added by Mike, 20210111
 	KEY_H,
+	//added by Mike, 20210121
+	KEY_U,
+
 	iNumOfKeyTypes
 };
 
@@ -443,6 +446,10 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT message,
    	       case 0x48: //H key
 		        myOpenGLCanvas->keyDown(KEY_H);
                 return 0;
+		   //added by Mike, 20210121
+   	       case 0x55: //U key
+		        myOpenGLCanvas->keyDown(KEY_U);
+                return 0;
 
 			//removed by Mike, 20201001 
 /*			               
@@ -513,6 +520,11 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT message,
 	   	       case 0x48: //H key
 			        myOpenGLCanvas->keyUp(KEY_H);
 	                return 0;
+			   //added by Mike, 20210121
+	   	       case 0x55: //U key
+			        myOpenGLCanvas->keyUp(KEY_U);
+	                return 0;
+
        	       case 13: //ENTER
                     myOpenGLCanvas->keyUp(KEY_ENTER);
                     return 0;
