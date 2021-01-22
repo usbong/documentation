@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210121
+ * @date updated: 20210122
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -37,6 +37,9 @@
 //added by Mike, 20201226
 #define TRUE 1
 #define FALSE 0
+
+//added by Mike, 20210122
+#define MAX_PUNCH_ANIMATION_COUNT 2
 
 /* //edited by Mike, 20201207
 //added by Mike, 20201201
@@ -127,7 +130,11 @@ private:
     int currentFacingState;    
 
 	//added by Mike, 20210111
-    int iFiringBeamCount;    
+    int iFiringBeamCount; 
+	
+	//added by Mike, 20210122
+	int iPunchAnimationCount,
+		iPunchAnimationCountDelay;
 
 	//added by Mike, 20201130
     CTargaImage *myBodyTexture;

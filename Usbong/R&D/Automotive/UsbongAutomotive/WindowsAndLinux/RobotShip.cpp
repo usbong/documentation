@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210121
+ * @date updated: 20210122
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -424,6 +424,9 @@ RobotShip::RobotShip(float xPos, float yPos, float zPos, int windowWidth, int wi
 
     tricount = 120;
     isMovingForward = 0;
+
+	//added by Mike, 20210122
+	iPunchAnimationCountDelay=0;
 	
     //init default values
     //previousFacingState=FACING_UP;
@@ -1546,7 +1549,10 @@ void RobotShip::drawRobotShip()
 			                            glTranslatef(0.0f, 0.0f, 0.05f);
 
 										//note: -add: assistant robot drone?										
-			                            glTranslatef(-0.2f, 1.0f, 0.2f);
+										//edited by Mike, 20210122
+			                            //glTranslatef(-0.2f, 1.0f, 0.2f);
+			                    		glTranslatef(-0.2f, 1.0f, 0.2f*iPunchAnimationCount);
+
 										glRotatef(90, 1.0f, 0.0f, 0.0f);
 
 										glScalef(1.0f, 1.0f, 1.5f);										
@@ -1622,12 +1628,17 @@ void RobotShip::drawRobotShip()
 								    glPushMatrix();									
 			                            glTranslatef(0.0f, 0.0f, 0.05f);
 
-			                            glTranslatef(-0.2f, 0.5f, -0.6f);
+										//edited by Mike, 20210122
+//			                            glTranslatef(-0.2f, 0.5f, -0.6f);
+			                            glTranslatef(-0.2f, 0.6f, -0.8f);
+			                            glTranslatef(0.0f, 0.0f, 0.2f*iPunchAnimationCount);
+
 										glRotatef(90, 1.0f, 0.0f, 0.0f);
 										
 										//note: use scale to make arm shield
 //										glScalef(1.5f, 1.0f, 1.5f);
-										glScalef(1.0f, 1.0f, 1.5f);
+										//removed by Mike, 20210122
+//										glScalef(1.0f, 1.0f, 1.5f);
 										drawLowerArm(-0.3f, 0.0f, 0.0f); //left							
 				            	    glPopMatrix();							
 				            	}	
@@ -1952,6 +1963,16 @@ void RobotShip::update(float dt)
 
 		            //added by Mike, 20210121
 		            case ATTACKING_MOVING_STATE:
+		            	if (bIsExecutingPunch) {
+		            		if (iPunchAnimationCount<MAX_PUNCH_ANIMATION_COUNT) {
+								//edited by Mike, 20210122
+		            			//iPunchAnimationCount+=1;
+								if ((iPunchAnimationCountDelay)%2==0) {
+									iPunchAnimationCount+=1;
+								}
+								iPunchAnimationCountDelay+=1;
+							}
+						}
 		            	break;
 		                
 		            default: //STANDING STATE		            
@@ -2206,6 +2227,13 @@ void RobotShip::move(int key)
     case KEY_U:
           bIsExecutingPunch=true;
           
+		  //added by Mike, 20210122
+		  if (iPunchAnimationCount<MAX_PUNCH_ANIMATION_COUNT) {		  	
+		  }
+		  else {
+		  	iPunchAnimationCount=0;		  	
+		  }
+          
           bHasPressedADirectionalKey=false;
           //based on enum Keys 
           for (int iCount=0; iCount<10; iCount++) {
@@ -2214,6 +2242,7 @@ void RobotShip::move(int key)
    		    	break;
 			}
 		  }
+
 		  
 //		  if (!bHasPressedADirectionalKey) {
 		  	currentMovingState=ATTACKING_MOVING_STATE;		   		  	
@@ -2221,6 +2250,15 @@ void RobotShip::move(int key)
           break;
      case -KEY_U:
           bIsExecutingPunch=false;
+
+/* //removed by Mike, 20210122
+		  //added by Mike, 20210122
+		  if (iPunchAnimationCount<MAX_PUNCH_ANIMATION_COUNT) {		  	
+		  }
+		  else {
+		  	iPunchAnimationCount=MAX_PUNCH_ANIMATION_COUNT;		  	
+		  }
+*/
 
    		  if (currentMovingState==WALKING_MOVING_STATE) {   		  	
 		  }
@@ -2755,3 +2793,4 @@ void RobotShip::drawWeapon(float xPos, float yPos, float zPos)
 }
 
 //--------------------------------------------
+
