@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Usbong Social Systems, Inc.
+ * Copyright 2020~2021 Usbong Social Systems, Inc.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -91,6 +91,8 @@ enum Keys
 	KEY_I,
 	KEY_K,
 	KEY_H, //added by Mike, 20210111
+	KEY_U, //added by Mike, 20210121
+
 	//added by Mike, 20201226
 	iNumOfKeyTypes
 };
@@ -1441,7 +1443,6 @@ void RobotShip::drawRobotShip()
 						break;
 						
 					//added by Mike, 20201218
-					//TO-DO: -add: move robot feet while attacking using beams
 					case ATTACKING_MOVING_STATE:
 						//note: FACING_UP via z-axis
 						if ((currentFacingState==FACING_UP)
@@ -1536,10 +1537,39 @@ void RobotShip::drawRobotShip()
 							  	//punch using left arm
 							  	//note: can use with executing shield defense
 		                        glTranslatef(0.0f, 0.0f, 0.05f);							  	
-							  }
 
-							   //LOWER ARM
-							   glPushMatrix();
+								//added by Mike, 20210121
+								//TO-DO: -add: punch animation
+								if (currentFacingState==FACING_UP) {								
+								    //LOWER ARM
+								    glPushMatrix();									
+			                            glTranslatef(0.0f, 0.0f, 0.05f);
+
+										//note: -add: assistant robot drone?										
+			                            glTranslatef(-0.2f, 1.0f, 0.2f);
+										glRotatef(90, 1.0f, 0.0f, 0.0f);
+
+										glScalef(1.0f, 1.0f, 1.5f);										
+										drawLowerArm(-0.3f, 0.0f, 0.0f); //left							
+				            	    glPopMatrix();							
+				            	}
+/*	//removed by Mike, 20210121
+					    	   	else if (currentFacingState==FACING_LEFT) {
+								    //LOWER ARM
+								    glPushMatrix();									
+			                            glTranslatef(0.0f, 0.0f, 0.05f);
+
+			                            glTranslatef(-0.2f, 0.7f, -0.5f);
+										glRotatef(90, 1.0f, 0.0f, 0.0f);
+										
+										drawLowerArm(-0.3f, 0.0f, 0.0f); //left							
+				            	    glPopMatrix();							
+				            	}	
+*/
+							  }
+							  else {
+								//LOWER ARM
+								glPushMatrix();
 							  		//edited by Mike, 20210103
 //			                            glTranslatef(0.0f, 0.0f, 0.1f);
 		                            glTranslatef(0.0f, 0.0f, 0.05f);
@@ -1549,8 +1579,8 @@ void RobotShip::drawRobotShip()
 									glRotatef(45.0f, 0.0f, 0.0f, 1.0f);
 									glRotatef(-30.0f, 0.0f, 1.0f, 0.0f);
 									drawLowerArm(-0.3f, 0.0f, 0.0f); //left							
-			            	   glPopMatrix();							
-
+				            	glPopMatrix();							
+							  }
 
 							   if (currentFacingState==FACING_UP) {
 								   //added by Mike, 20210111
@@ -1576,6 +1606,32 @@ void RobotShip::drawRobotShip()
 			            			//drawUpperArm(-0.1f, 0.0f, 0.0f); //left
 			            			drawUpperArm(-0.2f, 0.0f, 0.0f); //left				            			
 			            		glPopMatrix();	
+
+							  //added by Mike, 20210111
+							  if (bIsExecutingPunch) {
+							  	//punch using left arm
+							  	//note: can use with executing shield defense
+		                        glTranslatef(0.0f, 0.0f, 0.05f);							  	
+
+								//added by Mike, 20210121
+								//TO-DO: -add: punch animation
+								if (currentFacingState==FACING_UP) {								
+				            	}
+					    	   	else if (currentFacingState==FACING_LEFT) {
+								    //LOWER ARM
+								    glPushMatrix();									
+			                            glTranslatef(0.0f, 0.0f, 0.05f);
+
+			                            glTranslatef(-0.2f, 0.5f, -0.6f);
+										glRotatef(90, 1.0f, 0.0f, 0.0f);
+										
+										//note: use scale to make arm shield
+//										glScalef(1.5f, 1.0f, 1.5f);
+										glScalef(1.0f, 1.0f, 1.5f);
+										drawLowerArm(-0.3f, 0.0f, 0.0f); //left							
+				            	    glPopMatrix();							
+				            	}	
+							}
 
 							//added by Mike, 20210111
 			                if (bIsFiringBeam) {
@@ -1893,6 +1949,11 @@ void RobotShip::update(float dt)
 		            			legStates[side] = FORWARD_STATE;		
 		            	}                
 		                break;
+
+		            //added by Mike, 20210121
+		            case ATTACKING_MOVING_STATE:
+		            	break;
+		                
 		            default: //STANDING STATE		            
 		              break;//do nothing    
 				}
@@ -2111,8 +2172,9 @@ void RobotShip::move(int key)
           break;	
 
      //added by Mike, 2021011
+     //TO-DO: -update: this to be defend using shield
      case KEY_H:
-          bIsExecutingPunch=true;
+          bIsExecutingDefend=true;
           
           bHasPressedADirectionalKey=false;
           //based on enum Keys 
@@ -2128,6 +2190,36 @@ void RobotShip::move(int key)
 //		  }          
           break;
      case -KEY_H:
+          bIsExecutingDefend=false;
+
+   		  if (currentMovingState==WALKING_MOVING_STATE) {   		  	
+		  }
+		  //added by Mike, 20201226
+ 		  else if (currentMovingState==ATTACKING_MOVING_STATE) {   		  	
+		  }
+		  else {
+		  	currentMovingState=IDLE_MOVING_STATE;
+		  }			
+          break;
+	
+	//added by Mike, 20210121
+    case KEY_U:
+          bIsExecutingPunch=true;
+          
+          bHasPressedADirectionalKey=false;
+          //based on enum Keys 
+          for (int iCount=0; iCount<10; iCount++) {
+   		    if (myKeysDown[iCount]==TRUE) {
+          		bHasPressedADirectionalKey=true;
+   		    	break;
+			}
+		  }
+		  
+//		  if (!bHasPressedADirectionalKey) {
+		  	currentMovingState=ATTACKING_MOVING_STATE;		   		  	
+//		  }          
+          break;
+     case -KEY_U:
           bIsExecutingPunch=false;
 
    		  if (currentMovingState==WALKING_MOVING_STATE) {   		  	
@@ -2151,6 +2243,9 @@ void RobotShip::move(int key)
 	//added by Mike, 20210111
 	if (bIsExecutingPunch) {
 	}
+	//added by Mike, 20210121
+	else if (bIsExecutingDefend) {
+	}	
 	else {    
           //added by Mike, 20201001; edited by Mike, 20201116
 //	      myYPos+=-stepY;
@@ -2176,6 +2271,9 @@ void RobotShip::move(int key)
 
 	//added by Mike, 20210111
 	if (bIsExecutingPunch) {
+	}
+	//added by Mike, 20210121
+	else if (bIsExecutingDefend) {
 	}
 	else {
           //added by Mike, 20201001; edited by Mike, 20201116
@@ -2203,6 +2301,9 @@ void RobotShip::move(int key)
 */
 	//added by Mike, 20210111
 	if (bIsExecutingPunch) {
+	}
+	//added by Mike, 20210121
+	else if (bIsExecutingDefend) {
 	}
 	else {
           //added by Mike, 20201001            
@@ -2238,6 +2339,9 @@ void RobotShip::move(int key)
 	//added by Mike, 20210111
 	if (bIsExecutingPunch) {
 	}
+	//added by Mike, 20210121
+	else if (bIsExecutingDefend) {
+	}
 	else {
           //added by Mike, 20201001            
 	      myXPos+=stepX;
@@ -2259,6 +2363,7 @@ void RobotShip::move(int key)
 		  currentMovingState=IDLE_MOVING_STATE;
 		  bIsFiringBeam=false; //added by Mike, 20201226
 		  bIsExecutingPunch=false; //added by Mike, 20210111
+		  bIsExecutingDefend=false; //added by Mike, 20210121
 		  break;		  		  
    }
 
@@ -2267,7 +2372,12 @@ void RobotShip::move(int key)
 		currentMovingState=ATTACKING_MOVING_STATE;
 		bIsFiringBeam=false;
 	}
-   
+
+	//added by Mike, 20210121
+	if (bIsExecutingDefend) {
+		currentMovingState=ATTACKING_MOVING_STATE;
+		bIsFiringBeam=false;
+	}   
 }
 void RobotShip::hitBy(MyDynamicObject* mdo)
 {

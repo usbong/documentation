@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Usbong Social Systems, Inc.
+ * Copyright 2020~2021 Usbong Social Systems, Inc.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210112
+ * @date updated: 20210121
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -149,7 +149,7 @@ private:
 	
 	//added by Mike, 20210111
 	bool bIsExecutingPunch,	
-		bIsExecutingDefense; //added by Mike, 20210112
+		 bIsExecutingDefend; //added by Mike, 20210112; edited by Mike, 20210121
 
     GLint tricount;
     GLint isMovingForward;
@@ -249,7 +249,8 @@ public:
     	if (bIsExecutingPunch) {
     		return false;
 		}
-		else if (bIsExecutingDefense) {
+		//edited by Mike, 20210121
+		else if (bIsExecutingDefend) {
     		return false;
 		}
     	return true;

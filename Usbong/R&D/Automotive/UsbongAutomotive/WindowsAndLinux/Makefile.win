@@ -4,8 +4,8 @@
 CPP      = g++.exe -D__DEBUG__
 CC       = gcc.exe -D__DEBUG__
 WINDRES  = windres.exe
-OBJ      = main.o OpenGLCanvas.o MyDynamicObject.o RobotShip.o Font.o Beam.o Asteroid.o PolygonUtils.o Level.o CTargaImage.o UsbongUtils.o Pilot.o
-LINKOBJ  = main.o OpenGLCanvas.o MyDynamicObject.o RobotShip.o Font.o Beam.o Asteroid.o PolygonUtils.o Level.o CTargaImage.o UsbongUtils.o Pilot.o
+OBJ      = OpenGLCanvas.o MyDynamicObject.o RobotShip.o Font.o Beam.o Asteroid.o PolygonUtils.o Level.o CTargaImage.o UsbongUtils.o Pilot.o main.o
+LINKOBJ  = OpenGLCanvas.o MyDynamicObject.o RobotShip.o Font.o Beam.o Asteroid.o PolygonUtils.o Level.o CTargaImage.o UsbongUtils.o Pilot.o main.o
 LIBS     = -L"C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -L"C:/Usbong/SDL2-2.0.12/lib/x86" -static-libgcc -mwindows "C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32/libopengl32.a" "C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32/libglu32.a" "C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32/libglut32.a" -m32 -g3
 INCS     = -I"C:/Program Files/Dev-Cpp/MinGW64/include" -I"C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Usbong/SDL2-2.0.12/include"
 CXXINCS  = -I"C:/Program Files/Dev-Cpp/MinGW64/include" -I"C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++" -I"C:/Usbong/SDL2-2.0.12/include"
@@ -23,9 +23,6 @@ clean: clean-custom
 
 $(BIN): $(OBJ)
 	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
-
-main.o: main.cpp
-	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
 
 OpenGLCanvas.o: OpenGLCanvas.cpp
 	$(CPP) -c OpenGLCanvas.cpp -o OpenGLCanvas.o $(CXXFLAGS)
@@ -59,3 +56,6 @@ UsbongUtils.o: UsbongUtils.cpp
 
 Pilot.o: Pilot.cpp
 	$(CPP) -c Pilot.cpp -o Pilot.o $(CXXFLAGS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
