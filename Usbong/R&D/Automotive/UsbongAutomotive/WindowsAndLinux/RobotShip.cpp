@@ -1561,7 +1561,15 @@ void RobotShip::drawRobotShip()
 
 										glRotatef(90, 1.0f, 0.0f, 0.0f);
 
-										glScalef(1.0f, 1.0f, 1.5f);										
+										//edited by Mike, 20210123
+										//glScalef(1.0f, 1.0f, 1.5f);										
+
+										if (iPunchAnimationCount==0) {//MAX_PUNCHING_ANIMATION_COUNT) {
+											glScalef(1.0f, 1.0f, 1.5f);										
+										}
+										else {
+										}
+
 										drawLowerArm(-0.3f, 0.0f, 0.0f); //left							
 				            	    glPopMatrix();							
 				            	}
@@ -1634,18 +1642,39 @@ void RobotShip::drawRobotShip()
 										//TO-DO: -reverify this
 										//edited by Mike, 20210123
 			                            //glTranslatef(-0.0f, 0.1f, -0.8f);
+//			                            glTranslatef(0.1f, -0.2f, -0.6f);
+
 			                            glTranslatef(0.1f, -0.2f, -0.6f);
+
+										if (iPunchAnimationCount==0) {//MAX_PUNCHING_ANIMATION_COUNT) {
+//			                            	glTranslatef(0.1f, 0.2f, -0.7f);
+//											glScalef(1.5f, 1.5f, 2.0f);
+			                            	glTranslatef(0.0f, 0.2f, 0.0f);
+											glScalef(1.0f, 1.0f, 1.5f);
+										}
+/*										else {
+			                            	glTranslatef(0.1f, -0.2f, -0.6f);
+										}
+*/
+//			                            glTranslatef(0.1f, -0.2f, -0.6f);
+
 			                            glTranslatef(0.0f, 0.0f, 0.2f*iPunchAnimationCount);
 /*
 			                            glTranslatef(-0.0f, 0.1f, -0.2f);
-			                            glTranslatef(0.0f, 0.0f, -0.2f*iPunchAnimationCount);
+			                            glTranslatef(0.0f, 0.0f, -0.d2f*iPunchAnimationCount);
+
 */
+
+//										glScalef(1.5f, 1.5f, 1.5f);										
+
 										glRotatef(90, 1.0f, 0.0f, 0.0f);
 										
 										//note: use scale to make arm shield
 //										glScalef(1.5f, 1.0f, 1.5f);
 										//removed by Mike, 20210122
 //										glScalef(1.0f, 1.0f, 1.5f);
+
+
 										drawLowerArm(-0.3f, 0.0f, 0.0f); //left
 				            	    glPopMatrix();							
 				            	}	
@@ -2021,7 +2050,7 @@ void RobotShip::update(float dt)
 		            //added by Mike, 20210121
 		            case ATTACKING_MOVING_STATE:
 		            	if (bIsExecutingPunch) {
-		            		if (iPunchAnimationCount<MAX_PUNCH_ANIMATION_COUNT) {
+		            		if (iPunchAnimationCount<MAX_PUNCHING_ANIMATION_COUNT) {
 								//edited by Mike, 20210122
 		            			//iPunchAnimationCount+=1;
 								if ((iPunchAnimationCountDelay)%2==0) {

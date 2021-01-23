@@ -38,8 +38,8 @@
 #define TRUE 1
 #define FALSE 0
 
-//added by Mike, 20210122
-#define MAX_PUNCH_ANIMATION_COUNT 2
+//added by Mike, 20210122; edited by Mike, 20210123
+#define MAX_PUNCHING_ANIMATION_COUNT 2
 
 /* //edited by Mike, 20201207
 //added by Mike, 20201201
