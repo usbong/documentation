@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210122
+ * @date updated: 20210123
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -427,6 +427,8 @@ RobotShip::RobotShip(float xPos, float yPos, float zPos, int windowWidth, int wi
 
 	//added by Mike, 20210122
 	iPunchAnimationCountDelay=0;
+	//added by Mike, 20210123
+	iPunchAnimationCount=0;
 	
     //init default values
     //previousFacingState=FACING_UP;
@@ -1969,6 +1971,20 @@ void RobotShip::update(float dt)
 		            			//iPunchAnimationCount+=1;
 								if ((iPunchAnimationCountDelay)%2==0) {
 									iPunchAnimationCount+=1;
+									//added by Mike, 20210123
+									iPunchAnimationCountDelay=0;
+								}
+								iPunchAnimationCountDelay+=1;
+							}
+							//added by Mike, 20210123
+							//TO-DO: -add: no continuous punch via hold punch button
+							else {
+								if (iPunchAnimationCountDelay<5) {
+								}
+								else {
+									bIsExecutingPunch=false;
+									iPunchAnimationCount=0;
+									iPunchAnimationCountDelay=0;
 								}
 								iPunchAnimationCountDelay+=1;
 							}
@@ -2225,15 +2241,14 @@ void RobotShip::move(int key)
 	
 	//added by Mike, 20210121
     case KEY_U:
-          bIsExecutingPunch=true;
+		  //removed by Mike, 20210123
+          //bIsExecutingPunch=true;
           
-		  //added by Mike, 20210122
-		  if (iPunchAnimationCount<MAX_PUNCH_ANIMATION_COUNT) {		  	
+		  //added by Mike, 20210122; edited by Mike, 202101213
+		  if ((iPunchAnimationCount==0)){// or (iPunchAnimationCount>=MAX_PUNCH_ANIMATION_COUNT)) {		  	
+            bIsExecutingPunch=true;
 		  }
-		  else {
-		  	iPunchAnimationCount=0;		  	
-		  }
-          
+		             
           bHasPressedADirectionalKey=false;
           //based on enum Keys 
           for (int iCount=0; iCount<10; iCount++) {
@@ -2249,8 +2264,11 @@ void RobotShip::move(int key)
 //		  }          
           break;
      case -KEY_U:
-          bIsExecutingPunch=false;
-
+		   
+/*      //removed by Mike, 20210123 
+		bIsExecutingPunch=false;
+*/
+		   
 /* //removed by Mike, 20210122
 		  //added by Mike, 20210122
 		  if (iPunchAnimationCount<MAX_PUNCH_ANIMATION_COUNT) {		  	
@@ -2400,7 +2418,9 @@ void RobotShip::move(int key)
 		default:
 		  currentMovingState=IDLE_MOVING_STATE;
 		  bIsFiringBeam=false; //added by Mike, 20201226
-		  bIsExecutingPunch=false; //added by Mike, 20210111
+		  //removed by Mike, 20210123
+		  //bIsExecutingPunch=false; //added by Mike, 20210111
+		  
 		  bIsExecutingDefend=false; //added by Mike, 20210121
 		  break;		  		  
    }
