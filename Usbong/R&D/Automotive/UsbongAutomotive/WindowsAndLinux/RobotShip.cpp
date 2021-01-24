@@ -1760,6 +1760,15 @@ void RobotShip::drawRobotShip()
 							armAngles[RIGHT]=30.0f;
 							armAngles[LEFT]=30.0f;
 
+		                    //LEGS
+		                    //edited by Mike, 20210103
+							//TO-DO: -verify: if robot faces down
+						    drawLowerLeg(-0.15f, -0.7f, 0.0f); //left
+						    drawLowerLeg(0.35f, -0.7f, 0.0f); //right
+
+		            	    drawUpperLeg(-0.1f, -0.5f, 0.0f); //left
+						    drawUpperLeg(0.3f, -0.5f, 0.0f); //right        
+
 							//added by Mike, 20210111
 			                if (bIsFiringBeam) {	
 								if (iFiringBeamCount%2==0) {
@@ -1888,7 +1897,7 @@ void RobotShip::drawRobotShip()
 	//								iFiringBeamCount=iFiringBeamCount+1;
 								}
 
-
+/*//removed by Mike, 20210124
 			                    //LEGS
 			                    //edited by Mike, 20210103
 								//TO-DO: -verify: if robot faces down
@@ -1897,6 +1906,7 @@ void RobotShip::drawRobotShip()
 
 			            	    drawUpperLeg(-0.1f, -0.5f, 0.0f); //left
 							    drawUpperLeg(0.3f, -0.5f, 0.0f); //right        
+*/
 	
 							    //added by Mike, 20201202; edited by Mike, 20201207
 /*			            		drawBody(0.1f, -0.15f, 0.0f);
@@ -2993,4 +3003,5 @@ void RobotShip::drawWeapon(float xPos, float yPos, float zPos)
 }
 
 //--------------------------------------------
+
 
