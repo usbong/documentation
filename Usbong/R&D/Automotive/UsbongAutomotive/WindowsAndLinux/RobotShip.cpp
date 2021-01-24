@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210123
+ * @date updated: 20210124
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -1626,6 +1626,22 @@ void RobotShip::drawRobotShip()
 							  	//note: can use with executing shield defense
 		                        glTranslatef(0.0f, 0.0f, 0.05f);							  	
 
+
+									if (iPunchAnimationCount<MAX_PUNCHING_ANIMATION_COUNT) {
+					                    //UPPER
+					            		glPushMatrix();
+											//FACING_UP OR FACING_LEFT
+							            	glRotatef(-45, 1.0f, 0.0f, 0.0f);
+
+
+					            			glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);							
+											//edited by Mike, 20201207
+					            			//drawUpperArm(-0.1f, 0.0f, 0.0f); //left
+					            			drawUpperArm(-0.2f, 0.0f, 0.0f); //left				            			
+					            		glPopMatrix();	
+									}
+
+
 								//added by Mike, 20210121
 								//TO-DO: -add: punch animation
 								if (currentFacingState==FACING_UP) {								
@@ -1649,13 +1665,26 @@ void RobotShip::drawRobotShip()
 										if (iPunchAnimationCount==0) {//MAX_PUNCHING_ANIMATION_COUNT) {
 //			                            	glTranslatef(0.1f, 0.2f, -0.7f);
 //											glScalef(1.5f, 1.5f, 2.0f);
-			                            	glTranslatef(0.0f, 0.2f, 0.0f);
+											//edited by Mike, 20210124
+//			                            	glTranslatef(0.0f, 0.2f, 0.0f);
+											//edited by Mike, 20210124
+//			                            	glTranslatef(0.0f, 0.4f, 0.0f);
+			                            	glTranslatef(0.0f, 0.4f, -0.2f);
+											
+											//edited by Mike, 20210124
+//											glScalef(1.0f, 1.0f, 1.5f);
+											glScalef(1.0f, 1.0f, 1.8f);
+
+										}
+										else if (iPunchAnimationCount<MAX_PUNCHING_ANIMATION_COUNT) {
 											glScalef(1.0f, 1.0f, 1.5f);
 										}
+										
 /*										else {
 			                            	glTranslatef(0.1f, -0.2f, -0.6f);
 										}
 */
+
 //			                            glTranslatef(0.1f, -0.2f, -0.6f);
 
 			                            glTranslatef(0.0f, 0.0f, 0.2f*iPunchAnimationCount);
@@ -1678,8 +1707,14 @@ void RobotShip::drawRobotShip()
 										drawLowerArm(-0.3f, 0.0f, 0.0f); //left
 				            	    glPopMatrix();							
 				            	}	
+//added by Mike, 20210124
+							}
 
-							
+							//added by Mike, 20210124
+//							if (bIsExecutingPunch) {
+							if (iPunchAnimationCount<MAX_PUNCHING_ANIMATION_COUNT) {
+							}
+							else {
 			                    //UPPER
 			            		glPushMatrix();
 			            			glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);							
@@ -1687,6 +1722,18 @@ void RobotShip::drawRobotShip()
 			            			//drawUpperArm(-0.1f, 0.0f, 0.0f); //left
 			            			drawUpperArm(-0.2f, 0.0f, 0.0f); //left				            			
 			            		glPopMatrix();	
+							}
+							
+							
+/*	//removed by Mike, 20210124
+			                    //UPPER
+			            		glPushMatrix();
+			            			glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);							
+									//edited by Mike, 20201207
+			            			//drawUpperArm(-0.1f, 0.0f, 0.0f); //left
+			            			drawUpperArm(-0.2f, 0.0f, 0.0f); //left				            			
+			            		glPopMatrix();	
+*/
 
 /* //removed by Mike, 20210123
 							  //added by Mike, 20210111
@@ -1727,8 +1774,8 @@ void RobotShip::drawRobotShip()
 				            	    glPopMatrix();							
 				            	}	
 */
-
-							}
+//removed by Mike, 20210124
+//							}
 
 							//added by Mike, 20210111
 			                if (bIsFiringBeam) {
