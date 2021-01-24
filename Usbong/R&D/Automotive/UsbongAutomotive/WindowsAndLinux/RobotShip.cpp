@@ -1555,25 +1555,42 @@ void RobotShip::drawRobotShip()
 								    glPushMatrix();									
 			                            glTranslatef(0.0f, 0.0f, 0.05f);
 
+							   			if (currentFacingState==FACING_UP) {
+											if (iPunchAnimationCount==0) {//MAX_PUNCHING_ANIMATION_COUNT) {
+//				                            	glTranslatef(-0.2f, 0.4f, -0.6f);
+//												glScalef(1.0f, 1.0f, 1.5f);
+
+				                            	glTranslatef(-0.2f, 0.4f, 0.3f);
+												glScalef(1.0f, 1.0f, 1.5f);
+											}
+											//edited by Mike, 20210124
+											else if (iPunchAnimationCount<MAX_PUNCHING_ANIMATION_COUNT) {
+												glScalef(1.0f, 1.0f, 1.5f);
+											}
+										}
+							   			else if (currentFacingState==FACING_LEFT) {
+											if (iPunchAnimationCount==0) {//MAX_PUNCHING_ANIMATION_COUNT) {
+				                            	glTranslatef(-0.2f, 0.4f, -0.6f);
+												glScalef(1.0f, 1.0f, 1.5f);
+											}
+											//edited by Mike, 20210124
+											else if (iPunchAnimationCount<MAX_PUNCHING_ANIMATION_COUNT) {
+												glScalef(1.0f, 1.0f, 1.5f);
+											}										
+										}
+										
 										//note: -add: assistant robot drone?										
 										//edited by Mike, 20210122
 			                            //glTranslatef(-0.2f, 1.0f, 0.2f);
 			                    		glTranslatef(-0.2f, 1.0f, 0.2f*iPunchAnimationCount);
 
-										glRotatef(90, 1.0f, 0.0f, 0.0f);
+										//removed by Mike, 20210124
+//										glRotatef(90, 1.0f, 0.0f, 0.0f);
 
 										//edited by Mike, 20210123
 										//glScalef(1.0f, 1.0f, 1.5f);										
 
-										if (iPunchAnimationCount==0) {//MAX_PUNCHING_ANIMATION_COUNT) {
-			                            	glTranslatef(-0.2f, 0.4f, -0.6f);
-											glScalef(1.0f, 1.0f, 1.5f);
-										}
-										//edited by Mike, 20210124
-										else if (iPunchAnimationCount<MAX_PUNCHING_ANIMATION_COUNT) {
-											glScalef(1.0f, 1.0f, 1.5f);
-										}										
-
+										glRotatef(90, 1.0f, 0.0f, 0.0f);
 
 										drawLowerArm(-0.3f, 0.0f, 0.0f); //left							
 				            	    glPopMatrix();							
@@ -1656,22 +1673,8 @@ void RobotShip::drawRobotShip()
 								    glPushMatrix();									
 			                            glTranslatef(0.0f, 0.0f, 0.05f);
 
-										//edited by Mike, 20210122
-//			                            glTranslatef(-0.2f, 0.5f, -0.6f);
-										//edited by Mike, 20210123
-//			                            glTranslatef(-0.2f, 0.6f, -0.8f);
-										//TO-DO: -reverify this
-										//edited by Mike, 20210123
-			                            //glTranslatef(-0.0f, 0.1f, -0.8f);
-//			                            glTranslatef(0.1f, -0.2f, -0.6f);
-
 			                            glTranslatef(0.1f, -0.2f, -0.6f);
-
 										if (iPunchAnimationCount==0) {//MAX_PUNCHING_ANIMATION_COUNT) {
-//			                            	glTranslatef(0.1f, 0.2f, -0.7f);
-//											glScalef(1.5f, 1.5f, 2.0f);
-											//edited by Mike, 20210124
-//			                            	glTranslatef(0.0f, 0.2f, 0.0f);
 											//edited by Mike, 20210124
 //			                            	glTranslatef(0.0f, 0.4f, 0.0f);
 			                            	glTranslatef(0.0f, 0.4f, -0.2f);
@@ -1683,30 +1686,14 @@ void RobotShip::drawRobotShip()
 										else if (iPunchAnimationCount<MAX_PUNCHING_ANIMATION_COUNT) {
 											glScalef(1.0f, 1.0f, 1.5f);
 										}
-										
-/*										else {
-			                            	glTranslatef(0.1f, -0.2f, -0.6f);
-										}
-*/
-
-//			                            glTranslatef(0.1f, -0.2f, -0.6f);
 
 			                            glTranslatef(0.0f, 0.0f, 0.2f*iPunchAnimationCount);
-/*
-			                            glTranslatef(-0.0f, 0.1f, -0.2f);
-			                            glTranslatef(0.0f, 0.0f, -0.d2f*iPunchAnimationCount);
-
-*/
-
-//										glScalef(1.5f, 1.5f, 1.5f);										
-
 										glRotatef(90, 1.0f, 0.0f, 0.0f);
 										
 										//note: use scale to make arm shield
 //										glScalef(1.5f, 1.0f, 1.5f);
 										//removed by Mike, 20210122
 //										glScalef(1.0f, 1.0f, 1.5f);
-
 
 										drawLowerArm(-0.3f, 0.0f, 0.0f); //left
 				            	    glPopMatrix();							
@@ -1803,12 +1790,65 @@ void RobotShip::drawRobotShip()
 
 							  //added by Mike, 20210111
 							  if (bIsExecutingPunch) {
-							  	//punch using left arm
-							  	//note: can use with executing shield defense
-		                        glTranslatef(0.0f, 0.0f, 0.05f);							  	
+				            		glPushMatrix();
+										if (iPunchAnimationCount<MAX_PUNCHING_ANIMATION_COUNT) {
+						            		glPushMatrix();
+												//FACING_UP OR FACING_LEFT
+								            	glRotatef(-45, 1.0f, 0.0f, 0.0f);
+		
+						            			glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);							
+												//edited by Mike, 20201207
+						            			//drawUpperArm(-0.1f, 0.0f, 0.0f); //left
+						            			drawUpperArm(-0.2f, 0.0f, 0.0f); //left				            			
+						            		glPopMatrix();	
+										}
+										else {
+					            			glPushMatrix();
+												glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);
+												drawUpperArm(-0.2f, 0.0f, 0.0f); //left
+					            			glPopMatrix();							   	
+										}
+
+
+									  	//punch using left arm
+									  	//note: can use with executing shield defense
+				                        glTranslatef(0.0f, 0.0f, 0.05f);				
+
+			                            glTranslatef(0.1f, 0.0f, -0.4f);
+		
+										if (iPunchAnimationCount==0) {//MAX_PUNCHING_ANIMATION_COUNT) {
+											//FACING_DOWN or FACING_RIGHT
+											//increase negative value for z-axis increase forward punch
+//			                            	glTranslatef(0.0f, 0.3f, 0.1f);											
+//											glScalef(1.0f, 1.0f, 1.5f);
+
+//			                            	glTranslatef(0.0f, -0.1f, 0.15f);
+//											glScalef(1.2f, 1.2f, 1.6f);
+
+//			                            	glTranslatef(0.0f, -0.1f, 0.2f);
+//											glScalef(1.2f, 1.2f, 1.8f);
+
+			                            	glTranslatef(0.0f, -0.1f, 0.2f);
+											glScalef(1.2f, 1.2f, 1.6f);
+
+										}
+										else if (iPunchAnimationCount<MAX_PUNCHING_ANIMATION_COUNT) {
+											glScalef(1.0f, 1.0f, 1.5f);
+										}
+	
+			                            glTranslatef(0.0f, 0.0f, 0.2f*iPunchAnimationCount);
+										glRotatef(90, 1.0f, 0.0f, 0.0f);
+
+				                		drawLowerArm(-0.2f, -0.3f, 0.0f); //left
+				                		
+/*										glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);
+										drawUpperArm(-0.2f, 0.0f, 0.0f); //left
+*/										
+				            	glPopMatrix();							   	
+
 							  }
-
-
+							  //added by Mike, 20210124
+							  else {
 				            		glPushMatrix();								
 				                		glPushMatrix();
 				                            glTranslatef(0.2f, 0.0f, 0.0f);
@@ -1826,7 +1866,8 @@ void RobotShip::drawRobotShip()
 										glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);
 										drawUpperArm(-0.2f, 0.0f, 0.0f); //left
 				            		glPopMatrix();							   	
-
+								}
+								
 /*								/removed by Mike, 20201202 due to draw sequence is important
 			            		glPushMatrix();
 			            			glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);
@@ -1890,15 +1931,22 @@ void RobotShip::drawRobotShip()
 								}
 
 
-							   if (currentFacingState==FACING_DOWN) {
-							   	  drawBody(0.1f, -0.15f, 0.0f);
-								  drawHead(0.1f, 0.2f, -0.1f);
-							   }
-					    	   //(currentFacingState==FACING_RIGHT))														
-							   else {
-								  drawHead(0.1f, 0.2f, -0.1f);
-								  drawBody(0.1f, -0.15f, 0.0f);
-							   }
+							   //added by Mike, 20210124
+							   glPushMatrix();
+		                         glTranslatef(0.0f, -0.05f, 0.05f);
+
+								   if (currentFacingState==FACING_DOWN) {
+								   	  drawBody(0.1f, -0.15f, 0.0f);
+									  drawHead(0.1f, 0.2f, -0.1f);
+								   }
+						    	   //(currentFacingState==FACING_RIGHT))														
+								   else {
+									  drawHead(0.1f, 0.2f, -0.1f);
+									  drawBody(0.1f, -0.15f, 0.0f);
+								   }
+				            	glPopMatrix();
+							   
+								   
 /*							
 			            		glPushMatrix();
 			            			glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);
