@@ -2157,11 +2157,26 @@ void RobotShip::update(float dt)
 										bIsExecutingPunch=false;
 										iPunchAnimationCount=0;
 										iPunchAnimationCountDelay=0;
+
+										//added by Mike, 20210124
+								   		armAngles[RIGHT]=0.0f;
+										armAngles[LEFT]=0.0f;
 									} 
 								}
 								iPunchAnimationCountDelay+=1;
 							}
 						}
+						
+						//added by Mike, 20210124
+						if (bIsExecutingDefend) {
+    						if (myKeysDown[KEY_H]==FALSE) {  
+								bIsExecutingDefend=false;
+
+								//added by Mike, 20210124
+						   		armAngles[RIGHT]=0.0f;
+								armAngles[LEFT]=0.0f;
+							} 
+						}						
 		            	break;
 		                
 		            default: //STANDING STATE		            
@@ -2400,8 +2415,9 @@ void RobotShip::move(int key)
 //		  }          
           break;
      case -KEY_H:
-          bIsExecutingDefend=false;
-
+/*          //removed by Mike, 20210124
+			bIsExecutingDefend=false;
+*/
    		  if (currentMovingState==WALKING_MOVING_STATE) {   		  	
 		  }
 		  //added by Mike, 20201226
@@ -2415,8 +2431,8 @@ void RobotShip::move(int key)
 	//added by Mike, 20210121
     case KEY_U:
 		  //removed by Mike, 20210123
-          //bIsExecutingPunch=true;
-          
+//          bIsExecutingPunch=true;
+		            
 		  //added by Mike, 20210122; edited by Mike, 202101213
 		  if ((iPunchAnimationCount==0)){// or (iPunchAnimationCount>=MAX_PUNCH_ANIMATION_COUNT)) {		  	
             bIsExecutingPunch=true;
@@ -2437,6 +2453,8 @@ void RobotShip::move(int key)
 //		  }          
           break;
      case -KEY_U:
+    	//TO-DO: -reverify: arm angles after release of punch button and then press move down
+     	
 /*
 			//added by Mike, 20210123
         	if (bIsExecutingPunch) {
