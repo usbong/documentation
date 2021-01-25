@@ -130,3 +130,38 @@ Inoue, Tatsuo. (1986). "Living Together Making Law――Justice as Conversation�
 --> 4.1.4) If padlock is still locked using key, repeat to Step 4.1.1).<br/>
 --> Additional Note: Metal rust can be due to among others: water combined with shampoo and/or soap.<br/>
 --> Recommendation: For publicly accessible padlocks, e.g. for use with bicycles, use with key as physical material object, instead of those that require entering of Personal Identification Numbers (PIN).
+
+### Part 5
+--> 5.1) In Osaka, Japan, the following is a known greeting:<br/>
+--> 儲かりますか。<br/>
+--> moukarimasu ka.<br/>
+--> Kumikita po ba kayo?<br/>
+--> ぼちぼちですよ。<br/>
+--> bochi-bochi desu yo.<br/>
+--> Unti-unti po.<br/>
+<br/>
+--> 5.2) 松下電器 (matsushita denki; PANASONIC) founder, 松下幸之助 (Matsushita, Kounosuke), reminds us that when we start to think about quickly getting money, actions become dirty; People classified to be Mandurugas increases.<br/>
+--> Mandurugas = Masama, e.g. budol-budol/manloloko/carnapper/cybercriminal/communist terrorist group<br/>
+--> Reminder: Increase in Tamad causes Increase in Masama.<br/>
+--> From observation, a Unit member who intends to continue working with the same company, i.e. lifetime employment, executes the following actions:<br/>
+--> 1) increasing financial investment in company via stocks<br/>
+--> 2) increasing company income contribution<br/>
+<br/>
+--> If we set the Philippines as the company, this Communist Terrorist group executes the opposite of these actions.<br/>
+--> Indeed, "company ease people", i.e. uplift human lives; where Founder Matsushita uses the word, "business", for "company".
+<br/>
+--> Example: We offer computer services assistance to quickly and correctly count the population.<br/>
+--> This is instead of inefficiently counting the population by hand.<br/>
+--> The speed-up can be from weeks to days.<br/>
+--> In addition, we use the population count to compute our income and expenses. If our expenses count is higher than our income, we forecast an increase in Mandurugas to quickly get money.<br/>
+<br/>
+--> From Hotta Yoshie, Shiba Ryoutarou, and Miyazaki Hayao's 「時代の風音 (jidai no fuuin; wind sound of the times; Zeitgeist)」, we are reminded that what we only need is money from those who buy our products and services due to quality.<br/>
+<br/>
+--> <b>Additional Notes:</b><br/>
+--> 1) Wild, J. et. al's "Principles of Accounting" textbook notes that accounting is the life-blood of business.<br/>
+--> 2) Yamamoto Yuuzou's「路傍の石」(1935~1937): 方を楽にする = business・company ease people<br/>
+--> 3) 勇者: 「すべての職業の頂点にたつ者」<br/>
+--> "Strong person: person who stands at the top point of all work."<br/>
+-->  We reach the highest skill-level and know-how after executing each and all work to the highest degree of training maturity.<br/>
+--> Example: Cashier person at Accounting/Cashier Unit, Receptionist at Information Desk Unit, Pharmacist, i.e. Item Scholar, at Item Inventory Unit, Janitor at Sanitary and Waste Disposal Unit, et cetera<br/>
+--> Reference: Enix. (1995). Dragon Quest VI: Usage and Explanation Book/Manual (translated from nihongo by SYSON, MICHAEL B.; Super Family Computer version). Tokyo: Enix Stock Corporation
