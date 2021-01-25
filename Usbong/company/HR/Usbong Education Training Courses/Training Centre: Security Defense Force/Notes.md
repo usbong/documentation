@@ -161,7 +161,8 @@ Inoue, Tatsuo. (1986). "Living Together Making Law――Justice as Conversation�
 <br/>
 --> <b>Additional Notes:</b><br/>
 --> 1) Wild, J. et. al's "Principles of Accounting" textbook notes that accounting is the life-blood of business.<br/>
---> 2) 山本有三 (Yamamoto, Yuuzou)'s「路傍の石」(1935~1937): 方を楽にする = business・company ease people<br/>
+--> 2) 山本有三 (Yamamoto, Yuuzou)'s「路傍の石」(1935~1937):<br/>
+--> 方を楽にする = business・company ease people<br/>
 --> 3) 勇者: 「すべての職業の頂点にたつ者」<br/>
 --> "Strong person: person who stands at the top point of all work."<br/>
 -->  We reach the highest skill-level and know-how after executing each and all work to the highest degree of training maturity.<br/>
