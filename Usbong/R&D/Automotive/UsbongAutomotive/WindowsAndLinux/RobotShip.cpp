@@ -437,6 +437,11 @@ RobotShip::RobotShip(float xPos, float yPos, float zPos, int windowWidth, int wi
 
 	//added by Mike, 20201225
 	bIsFiringBeam=false;
+	
+	//added by Mike, 20210126
+	bIsExecutingDash=false,
+	bIsDashReady=false;
+	iInputWaitCount=0;
 
     //edited by Mike, 20201201	
 	currentFacingState=FACING_UP;
@@ -459,11 +464,7 @@ RobotShip::RobotShip(float xPos, float yPos, float zPos, int windowWidth, int wi
 	//removed by Mike, 20201001
 //	setup();
 	
-    setCollidable(true);
-    
-    
-    
-    
+    setCollidable(true);    
 }
 
 RobotShip::~RobotShip()
@@ -2182,7 +2183,22 @@ void RobotShip::update(float dt)
 		            default: //STANDING STATE		            
 		              break;//do nothing    
 				}
-				
+
+/* //removed by Mike, 20210126				
+				//added by Mike, 20210126
+				if (myKeysDown[KEY_RIGHT]==FALSE) {
+					bIsDashReady=false;
+					bIsExecutingDash=false;				
+				}
+*/
+
+				//added by Mike, 20210126
+				if (myKeysDown[KEY_RIGHT]==FALSE) {
+					if (iInputWaitCount<MAX_WAIT_COUNT) {
+						iInputWaitCount+=1;
+					}
+				}
+
 				
 				//TO-DO: -add: these
            		//added by Mike, 20201001
@@ -2327,9 +2343,37 @@ void RobotShip::changeState(int s)
 //added by Mike, 20201226
 void RobotShip::keyDown(int keyCode) {
 	myKeysDown[keyCode] = TRUE;
+
+	//added by Mike, 20210126
+	if (myKeysDown[KEY_RIGHT]==TRUE) {
+		if (bIsDashReady==true) {
+			if (iInputWaitCount<MAX_WAIT_COUNT) {
+				bIsExecutingDash=true;
+			}
+		}
+	}
+
 }
 
 void RobotShip::keyUp(int keyCode) {
+	//added by Mike, 20210126
+	if (keyCode==KEY_RIGHT) {
+		if (myKeysDown[KEY_RIGHT]==TRUE) {
+			if (bIsExecutingDash) {
+				bIsExecutingDash=false;
+				bIsDashReady=false;			
+			}
+			else {
+				bIsDashReady=true;			
+				iInputWaitCount=0;
+			}
+		}
+	}
+	else {
+		bIsExecutingDash=false;
+		bIsDashReady=false;			
+	}
+
 	myKeysDown[keyCode] = FALSE;	
 }
 
@@ -2609,8 +2653,38 @@ void RobotShip::move(int key)
 	else {
           //added by Mike, 20201001            
 	      myXPos+=stepX;
+
+			//added by Mike, 20210126
+			if (bIsExecutingDash) {
+				myXPos+=stepX;
+			}
 	}
 
+/*
+	if (bIsDashReady==false) {
+		bIsDashReady=true;
+		bIsExecutingDash=true;
+
+			myXPos+=stepX;
+
+	}
+	else {
+		if (bIsExecutingDash) {
+			myXPos+=stepX*2;
+		}
+////		else {
+////			bIsExecutingDash=true;
+////		}
+		
+//		bIsExecutingDash=true;		
+	}
+*/
+/*
+	if ((bIsDashReady==true) || (bIsExecutingDash==true)){
+		myXPos+=stepX;
+		bIsExecutingDash=true;
+	}
+*/
 	      //added by Mike, 20201201; edited by Mike, 20201225
           //currentFacingState=FACING_RIGHT;
 	      if (bIsFiringBeam) {	      	
@@ -2622,6 +2696,23 @@ void RobotShip::move(int key)
 		  //added by Mike, 20201226
    		  currentMovingState=WALKING_MOVING_STATE;
 		  break;
+		//added by Mike, 20210126
+		case -KEY_RIGHT:
+			bIsDashReady=false;
+			bIsExecutingDash=false;
+
+
+/*			if (bIsDashReady) {
+				bIsExecutingDash=false;
+				bIsDashReady=false;
+			}
+			else {
+				bIsDashReady=true;
+			}
+*/
+//				bIsDashReady=true;
+
+			break;
 		//added by Mike, 20201201
 		default:
 		  currentMovingState=IDLE_MOVING_STATE;

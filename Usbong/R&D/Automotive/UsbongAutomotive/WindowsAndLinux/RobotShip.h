@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210122
+ * @date updated: 20210126
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -40,6 +40,7 @@
 
 //added by Mike, 20210122; edited by Mike, 20210123
 #define MAX_PUNCHING_ANIMATION_COUNT 2
+#define MAX_WAIT_COUNT 4 //added by Mike, 20210126
 
 /* //edited by Mike, 20201207
 //added by Mike, 20201201
@@ -156,7 +157,12 @@ private:
 	
 	//added by Mike, 20210111
 	bool bIsExecutingPunch,	
-		 bIsExecutingDefend; //added by Mike, 20210112; edited by Mike, 20210121
+		 bIsExecutingDefend, //added by Mike, 20210112; edited by Mike, 20210121
+		 bIsExecutingDash, //added by Mike, 20210126
+		 bIsDashReady; //added by Mike, 20210126
+	
+	//added by Mike, 20210126
+	int iInputWaitCount; //we use with dash
 
     GLint tricount;
     GLint isMovingForward;
