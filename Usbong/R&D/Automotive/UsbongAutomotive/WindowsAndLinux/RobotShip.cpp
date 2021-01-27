@@ -2344,98 +2344,81 @@ void RobotShip::changeState(int s)
 void RobotShip::keyDown(int keyCode) {
 	myKeysDown[keyCode] = TRUE;
 
-	//added by Mike, 20210126
-	if (myKeysDown[KEY_RIGHT]==TRUE) {
-		if (bIsDashReady==true) {
-			if (iInputWaitCount<MAX_WAIT_COUNT) {
-				bIsExecutingDash=true;
-			}
+	//added by Mike, 20210127
+	autoVerifyDashStateWithKeyDown(keyCode);
+}
+
+//added by Mike, 20201227
+void RobotShip::setDashStateWithKeyDown() {
+	if (bIsDashReady==true) {
+		if (iInputWaitCount<MAX_WAIT_COUNT) {
+			bIsExecutingDash=true;
 		}
 	}
-	//added by Mike, 20210127
+}
+
+//added by Mike, 20201226
+void RobotShip::autoVerifyDashStateWithKeyDown(int keyCode) {
+	if (myKeysDown[KEY_RIGHT]==TRUE) {
+		setDashStateWithKeyDown();
+	}
 	else if (myKeysDown[KEY_UP]==TRUE) {
-		if (bIsDashReady==true) {
-			if (iInputWaitCount<MAX_WAIT_COUNT) {
-				bIsExecutingDash=true;
-			}
-		}
+		setDashStateWithKeyDown();
 	}
 	else if (myKeysDown[KEY_A]==TRUE) {
-		if (bIsDashReady==true) {
-			if (iInputWaitCount<MAX_WAIT_COUNT) {
-				bIsExecutingDash=true;
-			}
-		}
+		setDashStateWithKeyDown();
 	}
 	else if (myKeysDown[KEY_S]==TRUE) {
-		if (bIsDashReady==true) {
-			if (iInputWaitCount<MAX_WAIT_COUNT) {
-				bIsExecutingDash=true;
-			}
-		}
+		setDashStateWithKeyDown();
 	}
-
 }
 
 void RobotShip::keyUp(int keyCode) {
 	//added by Mike, 20210127
-	//TO-DO: -add: these set of instructions in a function
+	autoVerifyDashStateWithKeyUp(keyCode);
+
+	myKeysDown[keyCode] = FALSE;	
+}
+
+//added by Mike, 20210127
+void RobotShip::setDashStateWithKeyUp() {
+	if (bIsExecutingDash) {
+		bIsExecutingDash=false;
+		bIsDashReady=false;			
+	}
+	else {
+		bIsDashReady=true;			
+		iInputWaitCount=0;
+	}
+}
+
+//added by Mike, 20210127
+void RobotShip::autoVerifyDashStateWithKeyUp(int keyCode) {
 	//added by Mike, 20210126
 	if (keyCode==KEY_RIGHT) {
 		if (myKeysDown[KEY_RIGHT]==TRUE) {
-			if (bIsExecutingDash) {
-				bIsExecutingDash=false;
-				bIsDashReady=false;			
-			}
-			else {
-				bIsDashReady=true;			
-				iInputWaitCount=0;
-			}
+			setDashStateWithKeyUp();
 		}
 	}
-	//added by Mike, 20210127
 	else if (keyCode==KEY_UP) {
 		if (myKeysDown[KEY_UP]==TRUE) {
-			if (bIsExecutingDash) {
-				bIsExecutingDash=false;
-				bIsDashReady=false;			
-			}
-			else {
-				bIsDashReady=true;			
-				iInputWaitCount=0;
-			}
+			setDashStateWithKeyUp();
 		}
 	}
 	else if (keyCode==KEY_A) {
 		if (myKeysDown[KEY_A]==TRUE) {
-			if (bIsExecutingDash) {
-				bIsExecutingDash=false;
-				bIsDashReady=false;			
-			}
-			else {
-				bIsDashReady=true;			
-				iInputWaitCount=0;
-			}
+			setDashStateWithKeyUp();
 		}
 	}
 	else if (keyCode==KEY_S) {
 		if (myKeysDown[KEY_S]==TRUE) {
-			if (bIsExecutingDash) {
-				bIsExecutingDash=false;
-				bIsDashReady=false;			
-			}
-			else {
-				bIsDashReady=true;			
-				iInputWaitCount=0;
-			}
+			setDashStateWithKeyUp();
 		}
 	}	
 	else {
 		bIsExecutingDash=false;
 		bIsDashReady=false;			
 	}
-
-	myKeysDown[keyCode] = FALSE;	
 }
 
 
