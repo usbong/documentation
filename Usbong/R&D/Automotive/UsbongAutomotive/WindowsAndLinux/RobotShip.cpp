@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210124
+ * @date updated: 20210127
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -2352,10 +2352,34 @@ void RobotShip::keyDown(int keyCode) {
 			}
 		}
 	}
+	//added by Mike, 20210127
+	else if (myKeysDown[KEY_UP]==TRUE) {
+		if (bIsDashReady==true) {
+			if (iInputWaitCount<MAX_WAIT_COUNT) {
+				bIsExecutingDash=true;
+			}
+		}
+	}
+	else if (myKeysDown[KEY_A]==TRUE) {
+		if (bIsDashReady==true) {
+			if (iInputWaitCount<MAX_WAIT_COUNT) {
+				bIsExecutingDash=true;
+			}
+		}
+	}
+	else if (myKeysDown[KEY_S]==TRUE) {
+		if (bIsDashReady==true) {
+			if (iInputWaitCount<MAX_WAIT_COUNT) {
+				bIsExecutingDash=true;
+			}
+		}
+	}
 
 }
 
 void RobotShip::keyUp(int keyCode) {
+	//added by Mike, 20210127
+	//TO-DO: -add: these set of instructions in a function
 	//added by Mike, 20210126
 	if (keyCode==KEY_RIGHT) {
 		if (myKeysDown[KEY_RIGHT]==TRUE) {
@@ -2369,6 +2393,43 @@ void RobotShip::keyUp(int keyCode) {
 			}
 		}
 	}
+	//added by Mike, 20210127
+	else if (keyCode==KEY_UP) {
+		if (myKeysDown[KEY_UP]==TRUE) {
+			if (bIsExecutingDash) {
+				bIsExecutingDash=false;
+				bIsDashReady=false;			
+			}
+			else {
+				bIsDashReady=true;			
+				iInputWaitCount=0;
+			}
+		}
+	}
+	else if (keyCode==KEY_A) {
+		if (myKeysDown[KEY_A]==TRUE) {
+			if (bIsExecutingDash) {
+				bIsExecutingDash=false;
+				bIsDashReady=false;			
+			}
+			else {
+				bIsDashReady=true;			
+				iInputWaitCount=0;
+			}
+		}
+	}
+	else if (keyCode==KEY_S) {
+		if (myKeysDown[KEY_S]==TRUE) {
+			if (bIsExecutingDash) {
+				bIsExecutingDash=false;
+				bIsDashReady=false;			
+			}
+			else {
+				bIsDashReady=true;			
+				iInputWaitCount=0;
+			}
+		}
+	}	
 	else {
 		bIsExecutingDash=false;
 		bIsDashReady=false;			
@@ -2558,6 +2619,11 @@ void RobotShip::move(int key)
           //added by Mike, 20201001; edited by Mike, 20201116
 //	      myYPos+=-stepY;
 	      myZPos+=-stepZ;
+
+			//added by Mike, 20210127
+			if (bIsExecutingDash) {
+	      		myZPos+=-stepZ;
+			}
 	}
 	
 	      //added by Mike, 20201201; edited by Mike, 20201225
@@ -2587,6 +2653,11 @@ void RobotShip::move(int key)
           //added by Mike, 20201001; edited by Mike, 20201116
 //	      myYPos+=stepY;
 	      myZPos+=stepZ;
+
+		//added by Mike, 20210127
+		if (bIsExecutingDash) {
+	    	myZPos+=stepZ;
+		}
 	}
 	      //added by Mike, 20201201; edited by Mike, 20201225
           //currentFacingState=FACING_DOWN;
@@ -2616,6 +2687,11 @@ void RobotShip::move(int key)
 	else {
           //added by Mike, 20201001            
 	      myXPos+=-stepX;
+
+		//added by Mike, 20210127
+		if (bIsExecutingDash) {
+	    	myXPos+=-stepX;
+		}
 	}
 	
 /*          
