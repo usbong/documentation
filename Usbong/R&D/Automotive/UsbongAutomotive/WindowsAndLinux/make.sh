@@ -8,7 +8,7 @@
 # @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
 # @author: SYSON, MICHAEL B.
 # @date created: 20200930
-# @last updated: 20210126
+# @last updated: 20210128
 #
 # Reference:
 # 1) https://www3.ntu.edu.sg/home/ehchua/programming/cpp/gcc_make.html;
@@ -16,6 +16,8 @@
 
 cp -r ./textures ./output/
 cp -r ./input ./output/
+
+#rm *.o
 
 g++ -c mainLinux.cpp
 g++ -c OpenGLCanvas.cpp
@@ -34,3 +36,4 @@ g++ -c UsbongUtils.cpp
 # edited by Mike, 20210126
 # g++ -o ./output/mainOutputLinux mainLinux.o OpenGLCanvas.o MyDynamicObject.o RobotShip.o Font.o Beam.o Asteroid.o Level.o PolygonUtils.o CTargaImage.o Pilot.o UsbongUtils.o -lGL -lGLU -lglut
 g++ -o ./output/UsbongAutomotiveLinux mainLinux.o OpenGLCanvas.o MyDynamicObject.o RobotShip.o Font.o Beam.o Asteroid.o Level.o PolygonUtils.o CTargaImage.o Pilot.o UsbongUtils.o -lGL -lGLU -lglut
+

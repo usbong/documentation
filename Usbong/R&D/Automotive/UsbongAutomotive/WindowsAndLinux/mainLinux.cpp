@@ -150,6 +150,7 @@ OpenGLCanvas *myOpenGLCanvas = NULL;
 //added by Mike, 20201121
 enum Keys
 {
+/*	//edited by Mike, 20210128
 	KEY_UP = 0,
 	KEY_DOWN,
 	KEY_RIGHT,
@@ -162,6 +163,19 @@ enum Keys
 	KEY_D,
 	KEY_W,
 	KEY_S,
+*/
+	//TO-DO: -verify: gamepad
+	KEY_A = 0,
+	KEY_D,
+	KEY_W,
+	KEY_S,
+
+	KEY_UP,
+	KEY_DOWN,
+	KEY_RIGHT,
+	KEY_LEFT,
+	KEY_SPACE,
+	KEY_ENTER,
 
 	KEY_J,
 	KEY_L,

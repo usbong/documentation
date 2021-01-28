@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210127
+ * @date updated: 20210128
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -41,6 +41,8 @@
 //added by Mike, 20210122; edited by Mike, 20210123
 #define MAX_PUNCHING_ANIMATION_COUNT 2
 #define MAX_WAIT_COUNT 4 //added by Mike, 20210126
+
+#define MAX_DIRECTIONAL_KEY_DASH_COUNT 10 //added by Mike, 20210128
 
 /* //edited by Mike, 20201207
 //added by Mike, 20201201
@@ -158,9 +160,19 @@ private:
 	//added by Mike, 20210111
 	bool bIsExecutingPunch,	
 		 bIsExecutingDefend, //added by Mike, 20210112; edited by Mike, 20210121
+		 //removed by Mike, 20210128
 		 bIsExecutingDash, //added by Mike, 20210126
 		 bIsDashReady; //added by Mike, 20210126
-	
+
+	//added by Mike, 20210128
+	//note: size limit reached at value 7 due to compiler 
+	//Reference: https://stackoverflow.com/questions/216259/is-there-a-max-array-length-limit-in-c;
+	//last accessed: 20210128; answer by: Martin York, 20081019T1752; edited 20130125T2158
+	//Additional Note: The following do not solve the problem
+	//bool* bIsExecutingDashArray;
+	//bool* bIsExecutingDashArray = new bool[6];//MAX_DIRECTIONAL_KEY_DASH_COUNT];
+	bool bIsExecutingDashArray[6]; //MAX_DIRECTIONAL_KEY_DASH_COUNT];
+
 	//added by Mike, 20210126
 	int iInputWaitCount; //we use with dash
 
@@ -199,9 +211,14 @@ private:
 	void drawWeapon(float xPos, float yPos, float zPos);
 
 	//added by Mike, 20210127
-	void autoVerifyDashStateWithKeyDown(int keyCode);
+	void autoVerifyDashStateWithKeyDown(int keyCode); //edited by Mike, 20210128
+//	void autoVerifyDashStateWithKeyDown();
+
 	void autoVerifyDashStateWithKeyUp(int keyCode);
+	//edited by Mike, 20210128
 	void setDashStateWithKeyDown();
+//	void setDashStateWithKeyDown(int keyCode);
+
 	void setDashStateWithKeyUp();
 
 public:

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Usbong Social Systems, Inc.
+ * Copyright 2020~2021 Usbong Social Systems, Inc.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20201213
+ * @date updated: 20210128
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -76,6 +76,7 @@
 //added by Mike, 20201001
 enum Keys
 {
+/*	//edited by Mike, 20210128
 	KEY_UP = 0,
 	KEY_DOWN,
 	KEY_RIGHT,
@@ -88,6 +89,19 @@ enum Keys
 	KEY_D,
 	KEY_W,
 	KEY_S,
+*/
+	//TO-DO: -verify: gamepad
+	KEY_A = 0,
+	KEY_D,
+	KEY_W,
+	KEY_S,
+
+	KEY_UP,
+	KEY_DOWN,
+	KEY_RIGHT,
+	KEY_LEFT,
+	KEY_SPACE,
+	KEY_ENTER,
 
 	KEY_J,
 	KEY_L,

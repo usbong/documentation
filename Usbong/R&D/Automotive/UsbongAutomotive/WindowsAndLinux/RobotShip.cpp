@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210127
+ * @date updated: 20210128
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -74,6 +74,7 @@
 //added by Mike, 20201001
 enum Keys
 {
+/*	//edited by Mike, 20210128
 	KEY_UP = 0,
 	KEY_DOWN,
 	KEY_RIGHT,
@@ -86,6 +87,19 @@ enum Keys
 	KEY_D,
 	KEY_W,
 	KEY_S,
+*/
+	//TO-DO: -verify: gamepad
+	KEY_A = 0,
+	KEY_D,
+	KEY_W,
+	KEY_S,
+
+	KEY_UP,
+	KEY_DOWN,
+	KEY_RIGHT,
+	KEY_LEFT,
+	KEY_SPACE,
+	KEY_ENTER,
 
 	KEY_J,
 	KEY_L,
@@ -442,6 +456,9 @@ RobotShip::RobotShip(float xPos, float yPos, float zPos, int windowWidth, int wi
 	bIsExecutingDash=false,
 	bIsDashReady=false;
 	iInputWaitCount=0;
+	
+	//added by Mike, 20210128
+//	bIsExecutingDashArray = new bool[6];//MAX_DIRECTIONAL_KEY_DASH_COUNT];
 
     //edited by Mike, 20201201	
 	currentFacingState=FACING_UP;
@@ -2621,6 +2638,7 @@ void RobotShip::move(int key)
    		  currentMovingState=WALKING_MOVING_STATE;
           break;
      case KEY_DOWN:
+     case KEY_S: //added by Mike, 20210128		   
 /*     	  //added by Mike, 20201001
           if (thrust<thrustMax)
             thrust+=-0.1f;
