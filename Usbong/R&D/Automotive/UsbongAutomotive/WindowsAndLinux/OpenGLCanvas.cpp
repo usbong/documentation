@@ -1715,8 +1715,8 @@ void OpenGLCanvas::update()
           	myRobotShip->move(KEY_U);
 		}
 		
-       	//edited by Mike, 20201013
-    	if(myKeysDown[KEY_UP] == TRUE)
+       	//edited by Mike, 20201013; edited again by Mike, 20210128
+    	if ((myKeysDown[KEY_UP] == TRUE) || (myKeysDown[KEY_W] == TRUE)) 
 //    	if(myKeysDown[KEY_W] == TRUE)
     	{
     		//added by Mike, 20201001
@@ -1765,11 +1765,15 @@ void OpenGLCanvas::update()
     	//edited by Mike, 20201014
     	//else if(myKeysDown[KEY_D] == TRUE)
 //    	if(myKeysDown[KEY_D] == TRUE)
-    	if(myKeysDown[KEY_RIGHT] == TRUE)
-    	{
+		//edited by Mike, 20210128
+//    	if(myKeysDown[KEY_RIGHT] == TRUE)
+    	if ((myKeysDown[KEY_RIGHT] == TRUE) || (myKeysDown[KEY_D] == TRUE)) 
+		{
     		//added by Mike, 20201001
-    		//edited by Mike, 20201115
-            myRobotShip->move(KEY_RIGHT);
+    		//edited by Mike, 20201115; edited again by Mike, 20210128
+//            myRobotShip->move(KEY_RIGHT);
+            myRobotShip->move(KEY_D);
+			
 /*			//removed by Mike, 20201026
 			myCanvasPosX+=-myCanvasStepX;
 */

@@ -453,13 +453,15 @@ RobotShip::RobotShip(float xPos, float yPos, float zPos, int windowWidth, int wi
 	bIsFiringBeam=false;
 	
 	//added by Mike, 20210126
-	bIsExecutingDash=false,
+//	bIsExecutingDash=false, //removed by Mike, 20210128
 	bIsDashReady=false;
 	iInputWaitCount=0;
-	
-	//added by Mike, 20210128
-//	bIsExecutingDashArray = new bool[6];//MAX_DIRECTIONAL_KEY_DASH_COUNT];
 
+	//added by Mike, 20210128
+	for (int iCount=0; iCount<MAX_DIRECTIONAL_KEY_DASH_COUNT; iCount++) {
+		bIsExecutingDashArray[iCount]=false;
+	}
+	
     //edited by Mike, 20201201	
 	currentFacingState=FACING_UP;
 
@@ -2209,13 +2211,28 @@ void RobotShip::update(float dt)
 				}
 */
 
-				//added by Mike, 20210126
-				if (myKeysDown[KEY_RIGHT]==FALSE) {
+				//added by Mike, 20210126; edited by Mike, 20210128
+//				if (myKeysDown[KEY_RIGHT]==FALSE) {
+				if (myKeysDown[KEY_D]==FALSE) {
 					if (iInputWaitCount<MAX_WAIT_COUNT) {
 						iInputWaitCount+=1;
 					}
 				}
-
+				else if (myKeysDown[KEY_A]==FALSE) {
+					if (iInputWaitCount<MAX_WAIT_COUNT) {
+						iInputWaitCount+=1;
+					}
+				}
+				else if (myKeysDown[KEY_W]==FALSE) {
+					if (iInputWaitCount<MAX_WAIT_COUNT) {
+						iInputWaitCount+=1;
+					}
+				}
+				else if (myKeysDown[KEY_D]==FALSE) {
+					if (iInputWaitCount<MAX_WAIT_COUNT) {
+						iInputWaitCount+=1;
+					}
+				}
 				
 				//TO-DO: -add: these
            		//added by Mike, 20201001
@@ -2361,32 +2378,38 @@ void RobotShip::changeState(int s)
 void RobotShip::keyDown(int keyCode) {
 	myKeysDown[keyCode] = TRUE;
 
-	//added by Mike, 20210127
-	autoVerifyDashStateWithKeyDown(keyCode);
+	//added by Mike, 20210127; edited by Mike, 20210128
+	autoVerifyDashStateWithKeyDown();//keyCode);
 }
 
-//added by Mike, 20201227
-void RobotShip::setDashStateWithKeyDown() {
-	if (bIsDashReady==true) {
+//added by Mike, 20201227; edited by Mike, 20210128
+//void RobotShip::setDashStateWithKeyDown() {
+void RobotShip::setDashStateWithKeyDown(int keyCode) {
+//	if (bIsDashReady==true) {
 		if (iInputWaitCount<MAX_WAIT_COUNT) {
-			bIsExecutingDash=true;
+			//edited by Mike, 20210128
+			//bIsExecutingDash=true;
+			bIsExecutingDashArray[keyCode]=true;			
 		}
-	}
+//	}
 }
 
-//added by Mike, 20201226
-void RobotShip::autoVerifyDashStateWithKeyDown(int keyCode) {
-	if (myKeysDown[KEY_RIGHT]==TRUE) {
-		setDashStateWithKeyDown();
+//added by Mike, 20201226; edited by Mike, 20210128
+//void RobotShip::autoVerifyDashStateWithKeyDown(int keyCode) {
+void RobotShip::autoVerifyDashStateWithKeyDown() { //int keyCode) {
+	//edited by Mike, 20210128
+	//if (myKeysDown[KEY_RIGHT]==TRUE) {
+	if ((myKeysDown[KEY_RIGHT]==TRUE) || (myKeysDown[KEY_D]==TRUE)) {		
+		setDashStateWithKeyDown(KEY_D);
 	}
-	else if (myKeysDown[KEY_UP]==TRUE) {
-		setDashStateWithKeyDown();
+	else if ((myKeysDown[KEY_UP]==TRUE) || (myKeysDown[KEY_W]==TRUE)) {
+		setDashStateWithKeyDown(KEY_W);//KEY_UP);
 	}
 	else if (myKeysDown[KEY_A]==TRUE) {
-		setDashStateWithKeyDown();
+		setDashStateWithKeyDown(KEY_A);
 	}
 	else if (myKeysDown[KEY_S]==TRUE) {
-		setDashStateWithKeyDown();
+		setDashStateWithKeyDown(KEY_S);
 	}
 }
 
@@ -2397,11 +2420,53 @@ void RobotShip::keyUp(int keyCode) {
 	myKeysDown[keyCode] = FALSE;	
 }
 
-//added by Mike, 20210127
+//added by Mike, 20210127; edited by Mike, 20210126
+/*
 void RobotShip::setDashStateWithKeyUp() {
 	if (bIsExecutingDash) {
-		bIsExecutingDash=false;
+		//edited by Mike, 20210128
+//		bIsExecutingDash=false;
+		for (int iCount=0; iCount<MAX_DIRECTIONAL_KEY_DASH_COUNT; iCount++) {
+			bIsExecutingDashArray[iCount]=false;			
+		}
+
 		bIsDashReady=false;			
+	}
+	else {
+		bIsDashReady=true;			
+		iInputWaitCount=0;
+	}
+}
+*/
+//added by Mike, 20210127
+void RobotShip::setDashStateWithKeyUp() {
+	//edited by Mike, 20210128
+	bool bIsExecutingDash=false;
+	for (int iCount=0; iCount<MAX_DIRECTIONAL_KEY_DASH_COUNT; iCount++) {
+		if (bIsExecutingDashArray[iCount]) {
+			bIsExecutingDash=true;
+			break;
+		}			
+	}
+
+	if (bIsExecutingDash) {
+		//if (bIsExecutingDashArray[KEY_RIGHT]) {
+		if ((bIsExecutingDashArray[KEY_RIGHT]) || (bIsExecutingDashArray[KEY_D])) {		
+			bIsExecutingDashArray[KEY_D]=false;
+			bIsDashReady=false;
+		}
+		else if ((bIsExecutingDashArray[KEY_UP]) || (bIsExecutingDashArray[KEY_W])) {
+			bIsExecutingDashArray[KEY_W]=false;//KEY_UP);
+			bIsDashReady=false;
+		}
+		else if (bIsExecutingDashArray[KEY_A]) {
+			bIsExecutingDashArray[KEY_A]=false;
+			bIsDashReady=false;
+		}
+		else if (bIsExecutingDashArray[KEY_S]) {
+			bIsExecutingDashArray[KEY_S]=false;
+			bIsDashReady=false;
+		}
 	}
 	else {
 		bIsDashReady=true;			
@@ -2411,14 +2476,17 @@ void RobotShip::setDashStateWithKeyUp() {
 
 //added by Mike, 20210127
 void RobotShip::autoVerifyDashStateWithKeyUp(int keyCode) {
-	//added by Mike, 20210126
-	if (keyCode==KEY_RIGHT) {
-		if (myKeysDown[KEY_RIGHT]==TRUE) {
+	//added by Mike, 20210126; edited by Mike, 20210128
+//	if (keyCode==KEY_RIGHT) {
+	if ((keyCode==KEY_RIGHT) || (keyCode==KEY_D)) {
+		//edited by Mike, 20210128
+//		if (myKeysDown[KEY_RIGHT]==TRUE) {
+		if (myKeysDown[KEY_D]==TRUE) {
 			setDashStateWithKeyUp();
 		}
 	}
-	else if (keyCode==KEY_UP) {
-		if (myKeysDown[KEY_UP]==TRUE) {
+	else if ((keyCode==KEY_UP) || (keyCode==KEY_W)) {
+		if ((myKeysDown[KEY_UP]==TRUE) || (myKeysDown[KEY_W]==TRUE)) {
 			setDashStateWithKeyUp();
 		}
 	}
@@ -2432,10 +2500,18 @@ void RobotShip::autoVerifyDashStateWithKeyUp(int keyCode) {
 			setDashStateWithKeyUp();
 		}
 	}	
+	//removed by Mike, 20210128
+/*
 	else {
-		bIsExecutingDash=false;
+		//edited by Mike, 20210128
+//		bIsExecutingDash=false;
+		for (int iCount=0; iCount<MAX_DIRECTIONAL_KEY_DASH_COUNT; iCount++) {
+			bIsExecutingDashArray[iCount]=false;			
+		}
+		
 		bIsDashReady=false;			
 	}
+*/	
 }
 
 
@@ -2620,9 +2696,11 @@ void RobotShip::move(int key)
 //	      myYPos+=-stepY;
 	      myZPos+=-stepZ;
 
-			//added by Mike, 20210127
-			if (bIsExecutingDash) {
-	      		myZPos+=-stepZ;
+			//added by Mike, 20210127; edited by Mike, 20210128
+//			if (bIsExecutingDash) {
+			if ((bIsExecutingDashArray[KEY_UP]) || (bIsExecutingDashArray[KEY_W])) {			
+//			if ((bIsExecutingDashArray[KEY_W])) {
+				myZPos+=-stepZ;
 			}
 	}
 	
@@ -2655,8 +2733,9 @@ void RobotShip::move(int key)
 //	      myYPos+=stepY;
 	      myZPos+=stepZ;
 
-		//added by Mike, 20210127
-		if (bIsExecutingDash) {
+		//added by Mike, 20210127; edited by Mike, 20210128
+//			if (bIsExecutingDash) {
+		if ((bIsExecutingDashArray[KEY_S])) {		
 	    	myZPos+=stepZ;
 		}
 	}
@@ -2672,6 +2751,7 @@ void RobotShip::move(int key)
    		  currentMovingState=WALKING_MOVING_STATE;
           break;      
      case KEY_LEFT:
+     case KEY_A: //added by Mike, 20210128		   
      		//removed by Mike, 20201001
 //          rotationAngle+=rotationStep;
 /*		//removed by Mike, 20201014
@@ -2689,9 +2769,10 @@ void RobotShip::move(int key)
           //added by Mike, 20201001            
 	      myXPos+=-stepX;
 
-		//added by Mike, 20210127
-		if (bIsExecutingDash) {
-	    	myXPos+=-stepX;
+		//added by Mike, 20210127; edited by Mike, 20210128
+//			if (bIsExecutingDash) {
+		if ((bIsExecutingDashArray[KEY_A])) {		
+			myXPos+=-stepX;
 		}
 	}
 	
@@ -2712,7 +2793,8 @@ void RobotShip::move(int key)
    		  currentMovingState=WALKING_MOVING_STATE;
           break;      
      case KEY_RIGHT:
-     	//removed by Mike, 20201001
+     case KEY_D: //added by Mike, 20210128
+		   //removed by Mike, 20201001
 //          rotationAngle-=rotationStep;
 
 /*		//removed by Mike, 20201014
@@ -2731,8 +2813,9 @@ void RobotShip::move(int key)
           //added by Mike, 20201001            
 	      myXPos+=stepX;
 
-			//added by Mike, 20210126
-			if (bIsExecutingDash) {
+		//added by Mike, 20210126; edited by Mike, 20210128
+//			if (bIsExecutingDash) {
+			if ((bIsExecutingDashArray[KEY_D])) {
 				myXPos+=stepX;
 			}
 	}
@@ -2775,9 +2858,15 @@ void RobotShip::move(int key)
 		  break;
 		//added by Mike, 20210126
 		case -KEY_RIGHT:
+/*	//removed by Mike, 20210128		   
 			bIsDashReady=false;
-			bIsExecutingDash=false;
 
+		   	//edited by Mike, 20210128
+//		bIsExecutingDash=false;
+			for (int iCount=0; iCount<MAX_DIRECTIONAL_KEY_DASH_COUNT; iCount++) {
+				bIsExecutingDashArray[iCount]=false;			
+			}
+*/			
 
 /*			if (bIsDashReady) {
 				bIsExecutingDash=false;

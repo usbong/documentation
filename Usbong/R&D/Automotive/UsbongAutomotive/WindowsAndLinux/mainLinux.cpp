@@ -434,16 +434,18 @@ void keyDown (unsigned char key, int x, int y)
 			//edited by Mike, 20201121			
 //   	       case 0x44: //D key //Windows Machine
    	       case (int) 'd': //d key //Linux Machine
-//		        myOpenGLCanvas->keyDown(KEY_D);
-		        myOpenGLCanvas->keyDown(KEY_RIGHT);
+				//edited by Mike, 20210128
+		        myOpenGLCanvas->keyDown(KEY_D);
+//		        myOpenGLCanvas->keyDown(KEY_RIGHT);
                 return;
 			//edited by Mike, 20201121
 //		   case 0x57: //W key //Windows Machine
    	       case (int) 'w': //w key //Linux Machine			
 //   	       case 0x41: //W key
 //			case VK_UP:
-		        myOpenGLCanvas->keyDown(KEY_UP);//KEY_W);
-//		        myOpenGLCanvas->keyDown(KEY_W);
+				//edited by Mike, 20210128
+//		        myOpenGLCanvas->keyDown(KEY_UP);//KEY_W);
+		        myOpenGLCanvas->keyDown(KEY_W);
                 return;
 			//edited by Mike, 20201121
 //		   case 0x53: //S key //Windows Machine
@@ -520,15 +522,17 @@ void keyUp (unsigned char key, int x, int y)
 				//edited by Mike, 20201121			
 	   	       //case 0x44: //D key //Windows Machine
 			   case (int) 'd': //d key //Linux Machine			
-//			        myOpenGLCanvas->keyUp(KEY_D);
-			        myOpenGLCanvas->keyUp(KEY_RIGHT);
+					//edited by Mike, 20210128
+			        myOpenGLCanvas->keyUp(KEY_D);
+//			        myOpenGLCanvas->keyUp(KEY_RIGHT);
 	                return;     
 				//edited by Mike, 20201121
 //	   	       case 0x57: //W key //Windows Machine
 			   case (int) 'w': //w key //Linux Machine			
-//			        myOpenGLCanvas->keyUp(KEY_W);
-			        myOpenGLCanvas->keyUp(KEY_UP);
-	                return;     
+					//edited by Mike, 20210128
+//			        myOpenGLCanvas->keyUp(KEY_UP);
+			        myOpenGLCanvas->keyUp(KEY_W);
+					return;     
 				//edited by Mike, 20201121
 //	   	       case 0x53: //S key //Windows Machine
 			   case (int) 's': //s key //Linux Machine
