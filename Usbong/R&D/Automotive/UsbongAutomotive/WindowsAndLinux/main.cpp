@@ -14,7 +14,7 @@
  *
  * @author: Michael Syson
  * @date created: 20200926
- * @date updated: 20210121
+ * @date updated: 20210128
  *
  * References:
  * 1) Dev-C++ 5.11 auto-generated OpenGL example project
@@ -104,6 +104,7 @@ OpenGLCanvas *myOpenGLCanvas = NULL;
 //added by Mike, 20201001
 enum Keys
 {
+/*	//edited by Mike, 20210128
 	KEY_UP = 0,
 	KEY_DOWN,
 	KEY_RIGHT,
@@ -116,6 +117,19 @@ enum Keys
 	KEY_D,
 	KEY_W,
 	KEY_S,
+*/
+	//TO-DO: -verify: gamepad
+	KEY_A = 0,
+	KEY_D,
+	KEY_W,
+	KEY_S,
+
+	KEY_UP,
+	KEY_DOWN,
+	KEY_RIGHT,
+	KEY_LEFT,
+	KEY_SPACE,
+	KEY_ENTER,
 
 	KEY_J,
 	KEY_L,
@@ -417,14 +431,16 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT message,
 		        myOpenGLCanvas->keyDown(KEY_A);
                 return 0;     
    	       case 0x44: //D key
-//		        myOpenGLCanvas->keyDown(KEY_D);
-		        myOpenGLCanvas->keyDown(KEY_RIGHT);
+   	       		//edited by Mike, 20210128
+		        myOpenGLCanvas->keyDown(KEY_D);
+//		        myOpenGLCanvas->keyDown(KEY_RIGHT);
                 return 0;
    	       case 0x57: //W key
 //   	       case 0x41: //W key
 //			case VK_UP:
-		        myOpenGLCanvas->keyDown(KEY_UP);//KEY_W);
-//		        myOpenGLCanvas->keyDown(KEY_W);
+				//edited by Mike, 20210128
+//		        myOpenGLCanvas->keyDown(KEY_UP);//KEY_W);
+		        myOpenGLCanvas->keyDown(KEY_W);
                 return 0;
    	       case 0x53: //S key
 		        myOpenGLCanvas->keyDown(KEY_S);
@@ -493,12 +509,14 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT message,
 			        myOpenGLCanvas->keyUp(KEY_A);
                     return 0;
 	   	       case 0x44: //D key
-//			        myOpenGLCanvas->keyUp(KEY_D);
-			        myOpenGLCanvas->keyUp(KEY_RIGHT);
+	   	       		//edited by Mike, 20210128
+			        myOpenGLCanvas->keyUp(KEY_D);
+//			        myOpenGLCanvas->keyUp(KEY_RIGHT);
 	                return 0;     
 	   	       case 0x57: //W key
-//			        myOpenGLCanvas->keyUp(KEY_W);
-			        myOpenGLCanvas->keyUp(KEY_UP);
+	   	       		//edited by Mike, 20210128
+			        myOpenGLCanvas->keyUp(KEY_W);
+//			        myOpenGLCanvas->keyUp(KEY_UP);
 	                return 0;     
 	   	       case 0x53: //S key
 			        myOpenGLCanvas->keyUp(KEY_S);

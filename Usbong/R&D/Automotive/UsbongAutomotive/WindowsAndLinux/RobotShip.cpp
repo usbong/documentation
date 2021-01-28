@@ -455,11 +455,15 @@ RobotShip::RobotShip(float xPos, float yPos, float zPos, int windowWidth, int wi
 	//added by Mike, 20210126
 //	bIsExecutingDash=false, //removed by Mike, 20210128
 	bIsDashReady=false;
-	iInputWaitCount=0;
+	//edited by Mike, 20210128
+//	iInputWaitCount=0;
 
 	//added by Mike, 20210128
 	for (int iCount=0; iCount<MAX_DIRECTIONAL_KEY_DASH_COUNT; iCount++) {
 		bIsExecutingDashArray[iCount]=false;
+		
+		//added by Mike, 20210128
+		iInputWaitCountArray[iCount]=0;
 	}
 	
     //edited by Mike, 20201201	
@@ -2214,23 +2218,25 @@ void RobotShip::update(float dt)
 				//added by Mike, 20210126; edited by Mike, 20210128
 //				if (myKeysDown[KEY_RIGHT]==FALSE) {
 				if (myKeysDown[KEY_D]==FALSE) {
-					if (iInputWaitCount<MAX_WAIT_COUNT) {
-						iInputWaitCount+=1;
+//					if (iInputWaitCount<MAX_WAIT_COUNT) {
+					if (iInputWaitCountArray[KEY_D]<MAX_WAIT_COUNT) {
+//						iInputWaitCount+=1;
+						iInputWaitCountArray[KEY_D]+=1;
 					}
 				}
-				else if (myKeysDown[KEY_A]==FALSE) {
-					if (iInputWaitCount<MAX_WAIT_COUNT) {
-						iInputWaitCount+=1;
+				if (myKeysDown[KEY_A]==FALSE) {
+					if (iInputWaitCountArray[KEY_A]<MAX_WAIT_COUNT) {
+						iInputWaitCountArray[KEY_A]+=1;
 					}
 				}
-				else if (myKeysDown[KEY_W]==FALSE) {
-					if (iInputWaitCount<MAX_WAIT_COUNT) {
-						iInputWaitCount+=1;
+				if (myKeysDown[KEY_W]==FALSE) {
+					if (iInputWaitCountArray[KEY_W]<MAX_WAIT_COUNT) {
+						iInputWaitCountArray[KEY_W]+=1;
 					}
 				}
-				else if (myKeysDown[KEY_D]==FALSE) {
-					if (iInputWaitCount<MAX_WAIT_COUNT) {
-						iInputWaitCount+=1;
+				if (myKeysDown[KEY_S]==FALSE) {
+					if (iInputWaitCountArray[KEY_S]<MAX_WAIT_COUNT) {
+						iInputWaitCountArray[KEY_S]+=1;
 					}
 				}
 				
@@ -2385,13 +2391,19 @@ void RobotShip::keyDown(int keyCode) {
 //added by Mike, 20201227; edited by Mike, 20210128
 //void RobotShip::setDashStateWithKeyDown() {
 void RobotShip::setDashStateWithKeyDown(int keyCode) {
-//	if (bIsDashReady==true) {
+	if (bIsDashReady==true) {
+/*		//edited by Mike, 20210128
 		if (iInputWaitCount<MAX_WAIT_COUNT) {
 			//edited by Mike, 20210128
 			//bIsExecutingDash=true;
 			bIsExecutingDashArray[keyCode]=true;			
 		}
-//	}
+*/		
+		if (iInputWaitCountArray[keyCode]<MAX_WAIT_COUNT) {
+			bIsExecutingDashArray[keyCode]=true;			
+		}
+		
+	}
 }
 
 //added by Mike, 20201226; edited by Mike, 20210128
@@ -2470,7 +2482,11 @@ void RobotShip::setDashStateWithKeyUp() {
 	}
 	else {
 		bIsDashReady=true;			
-		iInputWaitCount=0;
+		//edited by Mike, 20210128		
+//		iInputWaitCount=0;
+		for (int iCountKey=0; iCountKey<MAX_DIRECTIONAL_KEY_DASH_COUNT; iCountKey++) {
+			iInputWaitCountArray[iCountKey]=0;
+		}		
 	}
 }
 

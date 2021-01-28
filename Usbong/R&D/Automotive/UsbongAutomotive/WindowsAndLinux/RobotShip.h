@@ -40,7 +40,7 @@
 
 //added by Mike, 20210122; edited by Mike, 20210123
 #define MAX_PUNCHING_ANIMATION_COUNT 2
-#define MAX_WAIT_COUNT 10 //4 //added by Mike, 20210126; edited by Mike, 20210128
+#define MAX_WAIT_COUNT 4 //4 //added by Mike, 20210126; edited by Mike, 20210128
 
 //edited by Mike, 20210128
 #define MAX_DIRECTIONAL_KEY_DASH_COUNT 6 //10 //added by Mike, 20210128
@@ -175,8 +175,9 @@ private:
 	//bool* bIsExecutingDashArray = new bool[6];//MAX_DIRECTIONAL_KEY_DASH_COUNT];
 	bool bIsExecutingDashArray[MAX_DIRECTIONAL_KEY_DASH_COUNT]; //6
 
-	//added by Mike, 20210126
-	int iInputWaitCount; //we use with dash
+	//added by Mike, 20210126; edited by Mike, 20210128
+	//int iInputWaitCount; //we use with dash
+	int iInputWaitCountArray[MAX_DIRECTIONAL_KEY_DASH_COUNT]; //6
 
     GLint tricount;
     GLint isMovingForward;
