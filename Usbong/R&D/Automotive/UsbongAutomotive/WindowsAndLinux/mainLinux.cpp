@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Usbong Social Systems, Inc.
+ * Copyright 2020~2021 Usbong Social Systems, Inc.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -14,7 +14,7 @@
  *
  * @author: Michael Syson
  * @date created: 20200926
- * @date updated: 20210123
+ * @date updated: 20210128
  *
  * References:
  * 1) Dev-C++ 5.11 auto-generated OpenGL example project
@@ -690,6 +690,9 @@ int main(int argc, char** argv) {
    		glutKeyboardUpFunc(keyUp);
 	 	glutSpecialFunc(specialKeyDown);
 	 	glutSpecialUpFunc(specialKeyUp);
+	
+		//added by Mike, 20210128
+		glutIgnoreKeyRepeat(1);
     		
    	glutMainLoop();           // Enter the infinitely event-processing loop
    	
