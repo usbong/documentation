@@ -40,11 +40,13 @@
 
 //added by Mike, 20210122; edited by Mike, 20210123
 #define MAX_PUNCHING_ANIMATION_COUNT 2
-#define MAX_WAIT_COUNT 4 //4 //added by Mike, 20210126; edited by Mike, 20210128
+//added by Mike, 20210129
+//TO-DO: -reverify: with Windows Machine; 5 with Linux Machine
+#define MAX_WAIT_COUNT 5 //4 //added by Mike, 20210126; edited by Mike, 20210128
 
 //edited by Mike, 20210129
 //TO-DO: -add: robotship dash background movement animation
-#define MAX_DIRECTIONAL_KEY_DASH_COUNT 3//4 //10 //added by Mike, 20210128
+#define MAX_DIRECTIONAL_KEY_DASH_COUNT 4//4 //10 //added by Mike, 20210128
 
 /* //edited by Mike, 20201207
 //added by Mike, 20201201
