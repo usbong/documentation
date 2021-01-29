@@ -254,7 +254,9 @@ public:
 	//int myKeysDown[4];
 	//edited by Mike, 20210102
 	//int myKeysDown[10]; //note: does not include KEY_J, KEY_L, KEY_I, KEY_K,
-	int myKeysDown[14]; //note: includes KEY_J, KEY_L, KEY_I, KEY_K,
+	//edited by Mike, 20210130
+//	int myKeysDown[14]; //note: includes KEY_J, KEY_L, KEY_I, KEY_K,
+	int myKeysDown[10]; //note: includes KEY_J, KEY_L, KEY_I, KEY_K,
 	
 	//virtual ~Robot();
     float rotationAngle;	

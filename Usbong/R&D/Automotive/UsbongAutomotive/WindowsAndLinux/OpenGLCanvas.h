@@ -164,7 +164,9 @@ class OpenGLCanvas
 //   		int myKeysDown[14];	
 		//added by Mike, 20201226
 		//TO-DO: -update: this to include diagonal directional movement
-   		int myKeysDown[4];
+		//edited by Mike, 20210130
+//   		int myKeysDown[4];
+   		int myKeysDown[10];
 		   	
    		float rotationSpeed;
     

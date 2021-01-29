@@ -119,18 +119,24 @@ enum Keys
 	KEY_S,
 */
 	//TO-DO: -verify: gamepad
+/*	//edited by Mike, 20210129
 	KEY_A = 0,
 	KEY_D,
 	KEY_W,
 	KEY_S,
-
+*/
+	KEY_W = 0,
+	KEY_S,
+	KEY_D,
+	KEY_A,
+/* //removed by Mike, 20210130
 	KEY_UP,
 	KEY_DOWN,
 	KEY_RIGHT,
 	KEY_LEFT,
 	KEY_SPACE,
 	KEY_ENTER,
-
+*/
 	KEY_J,
 	KEY_L,
 	KEY_I,
@@ -407,6 +413,7 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT message,
 	        case VK_ESCAPE:
 	            PostQuitMessage(0);
 	            return 0;
+/*	//removed by Mike, 20210130
 	        //added by Mike, 20201001
    	       case VK_LEFT:
 		        myOpenGLCanvas->keyDown(KEY_LEFT);
@@ -423,6 +430,7 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT message,
    	       case VK_SPACE:
                 myOpenGLCanvas->keyDown(KEY_SPACE);
                 return 0;
+*/                
            //added by Mike, 20201013
            //reference: 
            //https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
@@ -486,6 +494,7 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT message,
     case WM_KEYUP:
         switch (wParam)
         {
+/*	//removed by Mike, 20210130
        	       case VK_LEFT:
 			        myOpenGLCanvas->keyUp(KEY_LEFT);
                     return 0;
@@ -501,6 +510,7 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT message,
        	       case VK_SPACE:
 			        myOpenGLCanvas->keyUp(KEY_SPACE);
                     return 0;     
+*/
 	           //added by Mike, 20201013
 	           //reference: 
 	           //https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
@@ -542,10 +552,11 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT message,
 	   	       case 0x55: //U key
 			        myOpenGLCanvas->keyUp(KEY_U);
 	                return 0;
-
+/*	//removed by Mike, 20210130
        	       case 13: //ENTER
                     myOpenGLCanvas->keyUp(KEY_ENTER);
                     return 0;
+*/                    
         }
         return 0;
     default:

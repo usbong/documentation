@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210129
+ * @date updated: 20210130
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -132,18 +132,24 @@ enum Keys
 	KEY_S,
 */
 	//TO-DO: -verify: gamepad
+/*	//edited by Mike, 20210129
 	KEY_A = 0,
 	KEY_D,
 	KEY_W,
 	KEY_S,
-
+*/
+	KEY_W = 0,
+	KEY_S,
+	KEY_D,
+	KEY_A,
+/* //removed by Mike, 20210130
 	KEY_UP,
 	KEY_DOWN,
 	KEY_RIGHT,
 	KEY_LEFT,
 	KEY_SPACE,
 	KEY_ENTER,
-
+*/
 	KEY_J,
 	KEY_L,
 	KEY_I,
@@ -1716,8 +1722,9 @@ void OpenGLCanvas::update()
 		}
 		
        	//edited by Mike, 20201013; edited again by Mike, 20210128
-    	if ((myKeysDown[KEY_UP] == TRUE) || (myKeysDown[KEY_W] == TRUE)) 
-//    	if(myKeysDown[KEY_W] == TRUE)
+       	//edited by Mike, 20210130
+//    	if ((myKeysDown[KEY_UP] == TRUE) || (myKeysDown[KEY_W] == TRUE)) 
+    	if (myKeysDown[KEY_W] == TRUE)
     	{
     		//added by Mike, 20201001
           	//myRobotShip->move(KEY_UP);

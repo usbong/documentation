@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210129
+ * @date updated: 20210130
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -70,6 +70,10 @@
 
 //#include "ModelPool.h"
 
+//added by Mike, 20210130
+//TO-DO: -reverify: fire beam down, move left up not OK
+//TO-DO: -reverify: fire beam up, move left down not OK
+
 //edited by Mike, 20201014
 //added by Mike, 20201001
 enum Keys
@@ -89,18 +93,24 @@ enum Keys
 	KEY_S,
 */
 	//TO-DO: -verify: gamepad
+/*	//edited by Mike, 20210129
 	KEY_A = 0,
 	KEY_D,
 	KEY_W,
 	KEY_S,
-
+*/
+	KEY_W = 0,
+	KEY_S,
+	KEY_D,
+	KEY_A,
+/* //removed by Mike, 20210130
 	KEY_UP,
 	KEY_DOWN,
 	KEY_RIGHT,
 	KEY_LEFT,
 	KEY_SPACE,
 	KEY_ENTER,
-
+*/
 	KEY_J,
 	KEY_L,
 	KEY_I,
@@ -807,9 +817,9 @@ void RobotShip::drawRobotShip()
 				                        glTranslatef(0.05f, 0.0f, 0.0f);
 
 									}
-									//added by Mike, 20201227
-//									else if (myKeysDown[KEY_D]==TRUE) {
-									else if (myKeysDown[KEY_RIGHT]==TRUE) {
+									//added by Mike, 20201227; edited by Mike, 20210129
+									else if (myKeysDown[KEY_D]==TRUE) {
+//									else if (myKeysDown[KEY_RIGHT]==TRUE) {
 										glRotatef(-40, 0.0f, 1.0f, 0.0f);										
 				                        glTranslatef(0.0f, 0.2f, 0.0f);
 				                        glTranslatef(0.05f, 0.0f, 0.0f);							        	
@@ -817,7 +827,9 @@ void RobotShip::drawRobotShip()
 								}
 								//added by Mike, 20210105
 								if (currentFacingState==FACING_LEFT) {
-									if (myKeysDown[KEY_UP]==TRUE) {
+//edited by Mike, 20210130
+//									if (myKeysDown[KEY_UP]==TRUE) {
+									if (myKeysDown[KEY_W]==TRUE) {
 										//note: walk wall right side
 										//glRotatef(60, 0.0f, 0.0f, 1.0f);			
 
@@ -871,8 +883,9 @@ void RobotShip::drawRobotShip()
 									}
 									//added by Mike, 20201227; edited by Mike, 20210129
 									//TO-DO: -reverify: due to diagonal
-//									else if (myKeysDown[KEY_D]==TRUE) {
-									else if (myKeysDown[KEY_RIGHT]==TRUE) {
+									//edited by Mike, 20210130
+									else if (myKeysDown[KEY_D]==TRUE) {
+//									else if (myKeysDown[KEY_RIGHT]==TRUE) {
 				                        glTranslatef(-0.05f, 0.0f, 0.0f);							        	
 				                        glTranslatef(0.0f, -0.2f, 0.0f);
 										glRotatef(40, 0.0f, 1.0f, 0.0f);										
@@ -910,8 +923,9 @@ void RobotShip::drawRobotShip()
 												}
 												//edited by Mike, 20210129
 												//TO-DO: -reverify: due to diagonal
-												else if (myKeysDown[KEY_RIGHT]==TRUE) {
-//												else if (myKeysDown[KEY_D]==TRUE) {
+												//edited by Mike, 20210130
+//												else if (myKeysDown[KEY_RIGHT]==TRUE) {
+												else if (myKeysDown[KEY_D]==TRUE) {
 													glRotatef(6, 0.0f, 1.0f, 0.0f);																		        	
 												}
 //											}
@@ -934,7 +948,9 @@ void RobotShip::drawRobotShip()
 								}
 								//added by Mike, 20210105
 								if (currentFacingState==FACING_LEFT) {
-									if (myKeysDown[KEY_UP]==TRUE) {
+									//edited by Mike, 20210130
+//									if (myKeysDown[KEY_UP]==TRUE) {
+									if (myKeysDown[KEY_W]==TRUE) {
 										//removed by Mike, 20210106
 //				                        glTranslatef(-0.05f, 0.0f, 0.0f);
 //				                        glTranslatef(0.025f, 0.0f, 0.0f);
@@ -1054,7 +1070,9 @@ void RobotShip::drawRobotShip()
 									//added by Mike, 20210121
 									glPushMatrix();
 //									if (currentFacingState==FACING_LEFT) {
-										if (myKeysDown[KEY_UP]==TRUE) {
+										//edited by Mike, 20210130
+//										if (myKeysDown[KEY_UP]==TRUE) {
+										if (myKeysDown[KEY_W]==TRUE) {
 											glRotatef(12, 0.0f, 1.0f, 0.0f);			
 				                            glTranslatef(0.0f, 0.0f, 0.1f);
 										}
@@ -1151,9 +1169,9 @@ void RobotShip::drawRobotShip()
 				                        glTranslatef(0.05f, 0.0f, 0.0f);
 
 									}
-									//added by Mike, 20201227
-//									else if (myKeysDown[KEY_D]==TRUE) {
-									else if (myKeysDown[KEY_RIGHT]==TRUE) {
+									//added by Mike, 20201227; edited by Mike, 20210130
+									else if (myKeysDown[KEY_D]==TRUE) {
+//									else if (myKeysDown[KEY_RIGHT]==TRUE) {
 										glRotatef(-40, 0.0f, 1.0f, 0.0f);										
 				                        glTranslatef(0.0f, 0.2f, 0.0f);
 				                        glTranslatef(0.05f, 0.0f, 0.0f);							        	
@@ -1173,7 +1191,9 @@ void RobotShip::drawRobotShip()
 
 								//added by Mike, 20210106
 								if (currentFacingState==FACING_RIGHT) {
-									if (myKeysDown[KEY_UP]==TRUE) {
+//edited by Mike, 20210130
+//									if (myKeysDown[KEY_UP]==TRUE) {
+									if (myKeysDown[KEY_W]==TRUE) {
 										//note: walk wall right side
 										//glRotatef(60, 0.0f, 0.0f, 1.0f);			
 
@@ -1238,9 +1258,9 @@ void RobotShip::drawRobotShip()
 							        	glRotatef(-40, 0.0f, 1.0f, 0.0f);			
 //				                        glTranslatef(0.0f, 0.0f, -0.1f);
 									}
-									//added by Mike, 20201227
-//									else if (myKeysDown[KEY_D]==TRUE) {
-									else if (myKeysDown[KEY_RIGHT]==TRUE) {
+									//added by Mike, 20201227; edited by Mike, 20210130
+									else if (myKeysDown[KEY_D]==TRUE) {
+//									else if (myKeysDown[KEY_RIGHT]==TRUE) {
 										//added by Mike, 20210105
 				                        glTranslatef(0.0f, 0.0f, 0.1f);							        											
 				                        glTranslatef(0.05f, 0.0f, 0.0f);
@@ -1253,7 +1273,9 @@ void RobotShip::drawRobotShip()
 
 								//added by Mike, 20210106
 								if (currentFacingState==FACING_RIGHT) {
-									if (myKeysDown[KEY_UP]==TRUE) {
+//edited by Mike, 20210130
+//									if (myKeysDown[KEY_UP]==TRUE) {
+									if (myKeysDown[KEY_W]==TRUE) {
 										//removed by Mike, 20210106
 //				                        glTranslatef(-0.05f, 0.0f, 0.0f);
 //				                        glTranslatef(0.025f, 0.0f, 0.0f);
@@ -1292,8 +1314,9 @@ void RobotShip::drawRobotShip()
 									//added by Mike, 20210111
 				                	if (bIsFiringBeam) {	
 										glPushMatrix();
-											//added by Mike, 20210121
-											if (myKeysDown[KEY_UP]==TRUE) {
+											//added by Mike, 20210121; edited by Mike, 20210130
+//											if (myKeysDown[KEY_UP]==TRUE) {
+											if (myKeysDown[KEY_W]==TRUE) {
 												glRotatef(-20, 1.0f, 0.0f, 0.0f);
 											}
 											else if (myKeysDown[KEY_S]==TRUE) {
@@ -1405,7 +1428,9 @@ void RobotShip::drawRobotShip()
 											glRotatef(14, 0.0f, 1.0f, 0.0f);
 				                            glTranslatef(0.0f, 0.0f, 0.1f);
 										}
-										else if (myKeysDown[KEY_RIGHT]==TRUE) {
+										//edited by Mike, 20210130
+//										else if (myKeysDown[KEY_RIGHT]==TRUE) {
+										else if (myKeysDown[KEY_D]==TRUE) {
 											glRotatef(-10, 0.0f, 1.0f, 0.0f);			
 										}
 
@@ -2243,6 +2268,7 @@ void RobotShip::update(float dt)
 						iInputWaitCountArray[KEY_S]+=1;
 					}
 				}
+
 				
 				//TO-DO: -add: these
            		//added by Mike, 20201001
@@ -2423,10 +2449,14 @@ void RobotShip::setDashStateWithKeyDown(int keyCode) {
 void RobotShip::autoVerifyDashStateWithKeyDown() { //int keyCode) {
 	//edited by Mike, 20210128
 	//if (myKeysDown[KEY_RIGHT]==TRUE) {
-	if ((myKeysDown[KEY_RIGHT]==TRUE) || (myKeysDown[KEY_D]==TRUE)) {		
+	//edited by Mike, 20210130
+//	if ((myKeysDown[KEY_RIGHT]==TRUE) || (myKeysDown[KEY_D]==TRUE)) {		
+	if (myKeysDown[KEY_D]==TRUE) {
 		setDashStateWithKeyDown(KEY_D);
 	}
-	else if ((myKeysDown[KEY_UP]==TRUE) || (myKeysDown[KEY_W]==TRUE)) {
+	//edited by Mike, 20210130
+//	else if ((myKeysDown[KEY_UP]==TRUE) || (myKeysDown[KEY_W]==TRUE)) {
+	else if (myKeysDown[KEY_W]==TRUE) {
 		setDashStateWithKeyDown(KEY_W);//KEY_UP);
 	}
 	else if (myKeysDown[KEY_A]==TRUE) {
@@ -2478,11 +2508,15 @@ void RobotShip::setDashStateWithKeyUp(int keyCode) {
 
 	if (bIsExecutingDash) {
 		//if (bIsExecutingDashArray[KEY_RIGHT]) {
-		if ((bIsExecutingDashArray[KEY_RIGHT]) || (bIsExecutingDashArray[KEY_D])) {		
+		//edited by Mike, 20210130
+//		if ((bIsExecutingDashArray[KEY_RIGHT]) || (bIsExecutingDashArray[KEY_D])) {		
+		if (bIsExecutingDashArray[KEY_D]) {
 			bIsExecutingDashArray[KEY_D]=false;
 			bIsDashReady=false;
 		}
-		else if ((bIsExecutingDashArray[KEY_UP]) || (bIsExecutingDashArray[KEY_W])) {
+		//edited by Mike, 20210130
+//		else if ((bIsExecutingDashArray[KEY_UP]) || (bIsExecutingDashArray[KEY_W])) {
+		if (bIsExecutingDashArray[KEY_W]) {
 			bIsExecutingDashArray[KEY_W]=false;//KEY_UP);
 			bIsDashReady=false;
 		}
@@ -2514,7 +2548,9 @@ void RobotShip::setDashStateWithKeyUp(int keyCode) {
 void RobotShip::autoVerifyDashStateWithKeyUp(int keyCode) {
 	//added by Mike, 20210126; edited by Mike, 20210128
 //	if (keyCode==KEY_RIGHT) {
-	if ((keyCode==KEY_RIGHT) || (keyCode==KEY_D)) {
+	//edited by Mike, 20210130
+//	if ((keyCode==KEY_RIGHT) || (keyCode==KEY_D)) {
+	if (keyCode==KEY_D) {
 		//edited by Mike, 20210128
 //		if (myKeysDown[KEY_RIGHT]==TRUE) {
 		if (myKeysDown[KEY_D]==TRUE) {
@@ -2523,8 +2559,12 @@ void RobotShip::autoVerifyDashStateWithKeyUp(int keyCode) {
 			setDashStateWithKeyUp(KEY_D);
 		}
 	}
-	else if ((keyCode==KEY_UP) || (keyCode==KEY_W)) {
-		if ((myKeysDown[KEY_UP]==TRUE) || (myKeysDown[KEY_W]==TRUE)) {
+	//edited by Mike, 20210130
+//	else if ((keyCode==KEY_UP) || (keyCode==KEY_W)) {
+	else if (keyCode==KEY_W) {
+		//edited by Mike, 20210130
+//		if ((myKeysDown[KEY_UP]==TRUE) || (myKeysDown[KEY_W]==TRUE)) {
+		if (myKeysDown[KEY_W]==TRUE) {
 			//edited by Mike, 20210129
 //			setDashStateWithKeyUp();
 			setDashStateWithKeyUp(KEY_W);
@@ -2689,37 +2729,6 @@ void RobotShip::move(int key)
      case -KEY_U:
     	//TO-DO: -reverify: arm angles after release of punch button and then press move down
      	
-/*
-			//added by Mike, 20210123
-        	if (bIsExecutingPunch) {
-        		if (iPunchAnimationCount<MAX_PUNCH_ANIMATION_COUNT) {
-				}
-				//TO-DO: -add: no continuous punch via hold punch button
-				else {
-					if (iPunchAnimationCountDelay<5) {
-					}
-					else {
-						bIsExecutingPunch=false;
-						iPunchAnimationCount=0;
-						iPunchAnimationCountDelay=0;
-					}
-				}
-			}
-*/
-		   
-/*      //removed by Mike, 20210123 
-		bIsExecutingPunch=false;
-*/
-		   
-/* //removed by Mike, 20210122
-		  //added by Mike, 20210122
-		  if (iPunchAnimationCount<MAX_PUNCH_ANIMATION_COUNT) {		  	
-		  }
-		  else {
-		  	iPunchAnimationCount=MAX_PUNCH_ANIMATION_COUNT;		  	
-		  }
-*/
-
    		  if (currentMovingState==WALKING_MOVING_STATE) {   		  	
 		  }
 		  //added by Mike, 20201226
@@ -2730,7 +2739,7 @@ void RobotShip::move(int key)
 		  }			
           break;
 
-	 case KEY_UP:
+//	 case KEY_UP: //removed by Mike, 20210130
      case KEY_W:
           //isMovingForward=1;
           //myZPos-=1.0f;
@@ -2751,7 +2760,9 @@ void RobotShip::move(int key)
 
 			//added by Mike, 20210127; edited by Mike, 20210128
 //			if (bIsExecutingDash) {
-			if ((bIsExecutingDashArray[KEY_UP]) || (bIsExecutingDashArray[KEY_W])) {			
+			//edited by Mike, 20210130
+			if (bIsExecutingDashArray[KEY_W]) {			
+//			if ((bIsExecutingDashArray[KEY_UP]) || (bIsExecutingDashArray[KEY_W])) {			
 //			if ((bIsExecutingDashArray[KEY_W])) {
 				myZPos+=-stepZ;
 			}
@@ -2768,7 +2779,8 @@ void RobotShip::move(int key)
 		  //added by Mike, 20201226
    		  currentMovingState=WALKING_MOVING_STATE;
           break;
-     case KEY_DOWN:
+          
+//     case KEY_DOWN:  //removed by Mike, 20210130
      case KEY_S: //added by Mike, 20210128		   
 /*     	  //added by Mike, 20201001
           if (thrust<thrustMax)
@@ -2803,7 +2815,7 @@ void RobotShip::move(int key)
 		  //added by Mike, 20201226
    		  currentMovingState=WALKING_MOVING_STATE;
           break;      
-     case KEY_LEFT:
+//     case KEY_LEFT: //removed by Mike, 20210130
      case KEY_A: //added by Mike, 20210128		   
      		//removed by Mike, 20201001
 //          rotationAngle+=rotationStep;
@@ -2845,7 +2857,7 @@ void RobotShip::move(int key)
 		  //added by Mike, 20201226
    		  currentMovingState=WALKING_MOVING_STATE;
           break;      
-     case KEY_RIGHT:
+//     case KEY_RIGHT: //removed by Mike, 20210130
      case KEY_D: //added by Mike, 20210128
 		   //removed by Mike, 20201001
 //          rotationAngle-=rotationStep;
@@ -2873,31 +2885,6 @@ void RobotShip::move(int key)
 			}
 	}
 
-/*
-	if (bIsDashReady==false) {
-		bIsDashReady=true;
-		bIsExecutingDash=true;
-
-			myXPos+=stepX;
-
-	}
-	else {
-		if (bIsExecutingDash) {
-			myXPos+=stepX*2;
-		}
-////		else {
-////			bIsExecutingDash=true;
-////		}
-		
-//		bIsExecutingDash=true;		
-	}
-*/
-/*
-	if ((bIsDashReady==true) || (bIsExecutingDash==true)){
-		myXPos+=stepX;
-		bIsExecutingDash=true;
-	}
-*/
 	      //added by Mike, 20201201; edited by Mike, 20201225
           //currentFacingState=FACING_RIGHT;
 	      if (bIsFiringBeam) {	      	
@@ -2909,29 +2896,6 @@ void RobotShip::move(int key)
 		  //added by Mike, 20201226
    		  currentMovingState=WALKING_MOVING_STATE;
 		  break;
-		//added by Mike, 20210126
-		case -KEY_RIGHT:
-/*	//removed by Mike, 20210128		   
-			bIsDashReady=false;
-
-		   	//edited by Mike, 20210128
-//		bIsExecutingDash=false;
-			for (int iCount=0; iCount<MAX_DIRECTIONAL_KEY_DASH_COUNT; iCount++) {
-				bIsExecutingDashArray[iCount]=false;			
-			}
-*/			
-
-/*			if (bIsDashReady) {
-				bIsExecutingDash=false;
-				bIsDashReady=false;
-			}
-			else {
-				bIsDashReady=true;
-			}
-*/
-//				bIsDashReady=true;
-
-			break;
 		//added by Mike, 20201201
 		default:
 		  currentMovingState=IDLE_MOVING_STATE;

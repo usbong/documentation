@@ -91,10 +91,16 @@ enum Keys
 	KEY_S,
 */
 	//TO-DO: -verify: gamepad
+/*	//edited by Mike, 20210129
 	KEY_A = 0,
 	KEY_D,
 	KEY_W,
 	KEY_S,
+*/
+	KEY_W = 0,
+	KEY_S,
+	KEY_D,
+	KEY_A,
 
 	KEY_UP,
 	KEY_DOWN,
