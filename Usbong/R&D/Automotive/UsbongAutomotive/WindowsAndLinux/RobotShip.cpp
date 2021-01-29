@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210128
+ * @date updated: 20210129
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -869,7 +869,8 @@ void RobotShip::drawRobotShip()
 							        	glRotatef(-40, 0.0f, 1.0f, 0.0f);			
 //				                        glTranslatef(0.0f, 0.0f, -0.1f);
 									}
-									//added by Mike, 20201227
+									//added by Mike, 20201227; edited by Mike, 20210129
+									//TO-DO: -reverify: due to diagonal
 //									else if (myKeysDown[KEY_D]==TRUE) {
 									else if (myKeysDown[KEY_RIGHT]==TRUE) {
 				                        glTranslatef(-0.05f, 0.0f, 0.0f);							        	
@@ -907,7 +908,10 @@ void RobotShip::drawRobotShip()
 													glRotatef(-8, 0.0f, 1.0f, 0.0f);			
 						                            glTranslatef(0.0f, 0.0f, 0.1f);
 												}
+												//edited by Mike, 20210129
+												//TO-DO: -reverify: due to diagonal
 												else if (myKeysDown[KEY_RIGHT]==TRUE) {
+//												else if (myKeysDown[KEY_D]==TRUE) {
 													glRotatef(6, 0.0f, 1.0f, 0.0f);																		        	
 												}
 //											}
@@ -2400,9 +2404,17 @@ void RobotShip::setDashStateWithKeyDown(int keyCode) {
 		}
 */		
 		if (iInputWaitCountArray[keyCode]<MAX_WAIT_COUNT) {
-			bIsExecutingDashArray[keyCode]=true;			
+			//edited by Mike, 20210129
+//			bIsExecutingDashArray[keyCode]=true;			
+			//verify if any directional key already executes dash
+			for (int iCount=0; iCount<MAX_DIRECTIONAL_KEY_DASH_COUNT; iCount++) {
+				if (bIsExecutingDashArray[keyCode]) {
+					return;
+				}							
+			}
+
+			bIsExecutingDashArray[keyCode]=true;
 		}
-		
 	}
 }
 
@@ -2450,16 +2462,19 @@ void RobotShip::setDashStateWithKeyUp() {
 	}
 }
 */
-//added by Mike, 20210127
-void RobotShip::setDashStateWithKeyUp() {
+//added by Mike, 20210127; edited by Mike, 20210129
+//void RobotShip::setDashStateWithKeyUp() {
+void RobotShip::setDashStateWithKeyUp(int keyCode) {
 	//edited by Mike, 20210128
 	bool bIsExecutingDash=false;
+
+	//TO-DO: reverify: this if necessary
 	for (int iCount=0; iCount<MAX_DIRECTIONAL_KEY_DASH_COUNT; iCount++) {
 		if (bIsExecutingDashArray[iCount]) {
 			bIsExecutingDash=true;
 			break;
 		}			
-	}
+	}	
 
 	if (bIsExecutingDash) {
 		//if (bIsExecutingDashArray[KEY_RIGHT]) {
@@ -2484,10 +2499,15 @@ void RobotShip::setDashStateWithKeyUp() {
 		bIsDashReady=true;			
 		//edited by Mike, 20210128		
 //		iInputWaitCount=0;
-		for (int iCountKey=0; iCountKey<MAX_DIRECTIONAL_KEY_DASH_COUNT; iCountKey++) {
+
+		//edited by Mike, 20210129
+/*		for (int iCountKey=0; iCountKey<MAX_DIRECTIONAL_KEY_DASH_COUNT; iCountKey++) {
 			iInputWaitCountArray[iCountKey]=0;
 		}		
+*/		
+		iInputWaitCountArray[keyCode]=0;
 	}
+	
 }
 
 //added by Mike, 20210127
@@ -2498,22 +2518,30 @@ void RobotShip::autoVerifyDashStateWithKeyUp(int keyCode) {
 		//edited by Mike, 20210128
 //		if (myKeysDown[KEY_RIGHT]==TRUE) {
 		if (myKeysDown[KEY_D]==TRUE) {
-			setDashStateWithKeyUp();
+			//edited by Mike, 20210129
+//			setDashStateWithKeyUp();
+			setDashStateWithKeyUp(KEY_D);
 		}
 	}
 	else if ((keyCode==KEY_UP) || (keyCode==KEY_W)) {
 		if ((myKeysDown[KEY_UP]==TRUE) || (myKeysDown[KEY_W]==TRUE)) {
-			setDashStateWithKeyUp();
+			//edited by Mike, 20210129
+//			setDashStateWithKeyUp();
+			setDashStateWithKeyUp(KEY_W);
 		}
 	}
 	else if (keyCode==KEY_A) {
 		if (myKeysDown[KEY_A]==TRUE) {
-			setDashStateWithKeyUp();
+			//edited by Mike, 20210129
+//			setDashStateWithKeyUp();
+			setDashStateWithKeyUp(KEY_A);
 		}
 	}
 	else if (keyCode==KEY_S) {
 		if (myKeysDown[KEY_S]==TRUE) {
-			setDashStateWithKeyUp();
+			//edited by Mike, 20210129
+//			setDashStateWithKeyUp();
+			setDashStateWithKeyUp(KEY_S);
 		}
 	}	
 	//removed by Mike, 20210128
@@ -2565,7 +2593,11 @@ void RobotShip::move(int key)
           //iNumOfKeyTypes
           bHasPressedADirectionalKey=false;
           //based on enum Keys 
-          for (int iCount=0; iCount<10; iCount++) {
+          //edited by Mike, 20210129
+          //TO-DO: -reverify: Robotship does not execute correctly
+		  //when down and left buttons are pressed while firing beam
+//          for (int iCount=0; iCount<10; iCount++) {
+          for (int iCount=0; iCount<MAX_DIRECTIONAL_KEY_DASH_COUNT; iCount++) {
    		    if (myKeysDown[iCount]==TRUE) {
           		bHasPressedADirectionalKey=true;
    		    	break;
@@ -2600,7 +2632,9 @@ void RobotShip::move(int key)
           
           bHasPressedADirectionalKey=false;
           //based on enum Keys 
-          for (int iCount=0; iCount<10; iCount++) {
+          //edited by Mike, 20210129
+//          for (int iCount=0; iCount<10; iCount++) {
+          for (int iCount=0; iCount<MAX_DIRECTIONAL_KEY_DASH_COUNT; iCount++) {
    		    if (myKeysDown[iCount]==TRUE) {
           		bHasPressedADirectionalKey=true;
    		    	break;
@@ -2636,8 +2670,11 @@ void RobotShip::move(int key)
 		  }
 		             
           bHasPressedADirectionalKey=false;
+
           //based on enum Keys 
-          for (int iCount=0; iCount<10; iCount++) {
+          //edited by Mike, 20210129
+//          for (int iCount=0; iCount<10; iCount++) {
+          for (int iCount=0; iCount<MAX_DIRECTIONAL_KEY_DASH_COUNT; iCount++) {
    		    if (myKeysDown[iCount]==TRUE) {
           		bHasPressedADirectionalKey=true;
    		    	break;

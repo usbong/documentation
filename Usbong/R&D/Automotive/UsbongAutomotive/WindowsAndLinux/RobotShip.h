@@ -40,12 +40,22 @@
 
 //added by Mike, 20210122; edited by Mike, 20210123
 #define MAX_PUNCHING_ANIMATION_COUNT 2
+
 //added by Mike, 20210129
-//TO-DO: -reverify: with Windows Machine; 5 with Linux Machine
-#define MAX_WAIT_COUNT 5 //4 //added by Mike, 20210126; edited by Mike, 20210128
+//+reverified: with Windows Machine; 5 with Linux Machine
+//#define MAX_WAIT_COUNT 5 //4 //added by Mike, 20210126; edited by Mike, 20210128
+
+#ifdef _WIN32
+	#define MAX_WAIT_COUNT 5 //Windows Machine
+#endif
+
+#ifdef linux
+	#define MAX_WAIT_COUNT 5
+#endif
 
 //edited by Mike, 20210129
 //TO-DO: -add: robotship dash background movement animation
+//note: start at 0
 #define MAX_DIRECTIONAL_KEY_DASH_COUNT 4//4 //10 //added by Mike, 20210128
 
 /* //edited by Mike, 20201207
@@ -224,8 +234,10 @@ private:
 	//edited by Mike, 20210128
 //	void setDashStateWithKeyDown();
 	void setDashStateWithKeyDown(int keyCode);
-
-	void setDashStateWithKeyUp();
+	
+	//edited by Mike, 20210129
+//	void setDashStateWithKeyUp();
+	void setDashStateWithKeyUp(int keyCode);
 
 public:
 	//edited by Mike, 20201115 
