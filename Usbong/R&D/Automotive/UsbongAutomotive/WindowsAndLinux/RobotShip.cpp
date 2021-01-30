@@ -2637,8 +2637,13 @@ void RobotShip::move(int key)
           //TO-DO: -reverify: Robotship does not execute correctly
 		  //when down and left buttons are pressed while firing beam
 //          for (int iCount=0; iCount<10; iCount++) {
-          for (int iCount=0; iCount<MAX_DIRECTIONAL_KEY_DASH_COUNT; iCount++) {
-   		    if (myKeysDown[iCount]==TRUE) {
+		   //edited by Mike, 20210130
+		   //note: in RobotShip.h set MAX_DIRECTIONAL_KEY_DASH_COUNT=4, not 6,
+		   //causes RobotShip movement error
+//          for (int iCount=0; iCount<MAX_DIRECTIONAL_KEY_DASH_COUNT; iCount++) {
+          for (int iCount=0; iCount<4; iCount++) {
+
+			  if (myKeysDown[iCount]==TRUE) {
           		bHasPressedADirectionalKey=true;
    		    	break;
 			}
@@ -2715,7 +2720,7 @@ void RobotShip::move(int key)
           //edited by Mike, 20210129
 //          for (int iCount=0; iCount<10; iCount++) {
           for (int iCount=0; iCount<MAX_DIRECTIONAL_KEY_DASH_COUNT; iCount++) {
-   		    if (myKeysDown[iCount]==TRUE) {
+		   	if (myKeysDown[iCount]==TRUE) {
           		bHasPressedADirectionalKey=true;
    		    	break;
 			}

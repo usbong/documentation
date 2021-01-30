@@ -14,7 +14,7 @@
  *
  * @author: Michael Syson
  * @date created: 20200926
- * @date updated: 20210128
+ * @date updated: 20210130
  *
  * References:
  * 1) Dev-C++ 5.11 auto-generated OpenGL example project
@@ -130,12 +130,14 @@ void EnableOpenGL (HWND hWnd, HDC *hDC, HGLRC *hRC);
 void DisableOpenGL (HWND hWnd, HDC hDC, HGLRC hRC);
 */
 
+/* //removed by Mike, 20210130
 //added by Mike, 20201002
 #define VK_UP 101
 #define VK_DOWN 103
 #define VK_LEFT 100
 #define VK_RIGHT 102
-
+*/
+	
 //note: "static" in C/C++ = "final" in java
 /*	//edited by Mike, 20201202
 static int myWindowWidth=1024;//640; //320
@@ -165,18 +167,24 @@ enum Keys
 	KEY_S,
 */
 	//TO-DO: -verify: gamepad
+/*	//edited by Mike, 20210129
 	KEY_A = 0,
 	KEY_D,
 	KEY_W,
 	KEY_S,
-
+*/
+	KEY_W = 0,
+	KEY_S,
+	KEY_D,
+	KEY_A,
+/* //removed by Mike, 20210130
 	KEY_UP,
 	KEY_DOWN,
 	KEY_RIGHT,
 	KEY_LEFT,
 	KEY_SPACE,
 	KEY_ENTER,
-
+*/
 	KEY_J,
 	KEY_L,
 	KEY_I,
@@ -184,9 +192,8 @@ enum Keys
 	//added by Mike, 20210123
 	KEY_H,
 	KEY_U,
-	
-	//added by Mike, 20201202
-	iNumOfKeyTypes		
+
+	iNumOfKeyTypes	
 };
 
 //added by Mike, 20201001; edited by Mike, 20201210
@@ -566,10 +573,11 @@ void keyUp (unsigned char key, int x, int y)
   	       case (int) 'u': //u key //Linux Machine
 		        myOpenGLCanvas->keyUp(KEY_U);
                 return;
-
+/*	//removed by Mike, 20210130
        	       case 13: //ENTER
                     myOpenGLCanvas->keyUp(KEY_ENTER);
                     return;			
+*/					
         }
         return;    			
 }
@@ -614,6 +622,8 @@ void specialKeyDown (int specialKey, int x, int y)
 	            PostQuitMessage(0);
 	            return;// 0;
 */
+			//removed by Mike, 20210130
+/*			
 		   //added by Mike, 20201001
    	       case VK_LEFT:
 		        myOpenGLCanvas->keyDown(KEY_LEFT);
@@ -627,6 +637,7 @@ void specialKeyDown (int specialKey, int x, int y)
    	       case VK_DOWN:
 		        myOpenGLCanvas->keyDown(KEY_DOWN);
                 return;     
+*/				
 		}
         return;
 
@@ -657,6 +668,8 @@ void specialKeyUp (int specialKey, int x, int y)
 //                myOpenGLCanvas->keyUp(KEY_SPACE);
 //                return;
 */
+	//removed by Mike,  20210130			
+/*			
        	       case VK_LEFT:
 			        myOpenGLCanvas->keyUp(KEY_LEFT);
                     return;// 0;
@@ -669,6 +682,7 @@ void specialKeyUp (int specialKey, int x, int y)
        	       case VK_DOWN:
 			        myOpenGLCanvas->keyUp(KEY_DOWN);
                     return;         	
+*/					
         }
         return;    
 }
@@ -706,9 +720,10 @@ int main(int argc, char** argv) {
 	 	//added by Mike, 20201002
 	 	glutKeyboardFunc(keyDown);
    		glutKeyboardUpFunc(keyUp);
+/*	//removed by Mike, 20210130	
 	 	glutSpecialFunc(specialKeyDown);
 	 	glutSpecialUpFunc(specialKeyUp);
-	
+*/	
 		//added by Mike, 20210128
 		glutIgnoreKeyRepeat(1);
     		
