@@ -1797,6 +1797,12 @@ void OpenGLCanvas::update()
 			//removed by Mike, 20200929
 //			sound->play_sound_clip(thrust);
     	}
+
+//added by Mike, 20210130
+//note: reverify due to sequence if-then instructions causes RobotShip to not execute rapid fire down with move up-left, etc
+//using Windows Machine
+//verified: problem does not occur using Linux Machine
+
        	//edited by Mike, 20201013
     	//else if(myKeysDown[KEY_LEFT] == TRUE)
     	//edited by Mike, 20201014
@@ -1810,8 +1816,8 @@ void OpenGLCanvas::update()
             myRobotShip->move(KEY_A);
 
 			//removed by Mike, 20201026
-/*			myCanvasPosX+=myCanvasStepX;
-*/			
+/////			myCanvasPosX+=myCanvasStepX;
+			
 			//move left
 			//Reference: https://community.khronos.org/t/moving-an-object-with-respect-to-the-camera/40968;
 			//last accessed: 20201026
@@ -1821,19 +1827,11 @@ void OpenGLCanvas::update()
 
 			//removed by Mike, 20200929
 //			sound->play_sound_clip(thrust);
-    	}
-    	
+    	}    	
     	
     	//TO-DO: -update: to execute diagonal beams
 		//TO-DO: -reverify: rotation angle
     	
-    	//edited by Mike, 20201013
-    	//else if(myKeysDown[KEY_SPACE] == TRUE)
-        //Reference: 
-        //https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
-        //last accessed: 20201013    	
-        //edited by Mike, 20201015
-//    	else if(myKeysDown[KEY_J] == TRUE)
 		//edited by Mike, 20210102
     	if(myKeysDown[KEY_J] == TRUE)
     	{
@@ -2035,27 +2033,6 @@ void OpenGLCanvas::update()
 				//UP
 				rotationAngle=180;
 
-/*				//removed by Mike, 20210102
-				//TO-DO: -update: beam shape, delay
-				//TO-DO: -reverify: speed-up of facing movement to fire beam
-			    if (myRobotShip->getCurrentFacingState()==FACING_LEFT) 
-			    {  
-					rotationAngle=90;
-			    } 
-			    else if (myRobotShip->getCurrentFacingState()==FACING_RIGHT) 
-			    {
-					rotationAngle=-90;
-			    }
-			    else if (myRobotShip->getCurrentFacingState()==FACING_UP)
-			    {
-					rotationAngle=180;
-			    }
-			    else if (myRobotShip->getCurrentFacingState()==FACING_DOWN)
-			    {
-					rotationAngle=0;
-			    }
-*/
-
 				//added by Mike, 20210112
 				float *beamPosXyz = {myRobotShip->getXYZPos()};
 //				float *beamPosXyz[3] = {myRobotShip->getXYZPos()};
@@ -2159,7 +2136,7 @@ void OpenGLCanvas::update()
 //		        sound->play_sound_clip(beam);
                 return;
               }
-            }			
+            }
     	}
      }
      else if (currentState==TITLE_SCREEN)

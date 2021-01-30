@@ -504,11 +504,14 @@ RobotShip::~RobotShip()
 {
 }
 
+//added by Mike, 20210130
+//TO-DO: -reverify: this
 float* RobotShip::getXYZPos()
 {
       //float myXYZ[3];
       float* myXYZ;
       myXYZ = (float*) malloc(3*sizeof(float));
+
       myXYZ[0]=myXPos;
       myXYZ[1]=myYPos;
       myXYZ[2]=myZPos;
@@ -2642,7 +2645,6 @@ void RobotShip::move(int key)
 		   //causes RobotShip movement error
 //          for (int iCount=0; iCount<MAX_DIRECTIONAL_KEY_DASH_COUNT; iCount++) {
           for (int iCount=0; iCount<4; iCount++) {
-
 			  if (myKeysDown[iCount]==TRUE) {
           		bHasPressedADirectionalKey=true;
    		    	break;

@@ -58,7 +58,17 @@
 //note: start at 0
 //edited by Mike, 20210130
 //TO-DO: -reverify: cause why value is 6, not 4 in Linux machine
-#define MAX_DIRECTIONAL_KEY_DASH_COUNT 6//4 //10 //added by Mike, 20210128
+//edited by Mike, 20210130
+//#define MAX_DIRECTIONAL_KEY_DASH_COUNT 6//4 //10 //added by Mike, 20210128
+
+#ifdef _WIN32
+	#define MAX_DIRECTIONAL_KEY_DASH_COUNT 4 //10 //added by Mike, 20210128
+#endif
+
+#ifdef linux
+	#define MAX_DIRECTIONAL_KEY_DASH_COUNT 6//4 //10 //added by Mike, 20210128
+#endif
+
 
 /* //edited by Mike, 20201207
 //added by Mike, 20201201
