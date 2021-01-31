@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210130
+ * @date updated: 20210131
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -1799,9 +1799,11 @@ void OpenGLCanvas::update()
     	}
 
 //added by Mike, 20210130
-//note: reverify due to sequence if-then instructions causes RobotShip to not execute rapid fire down with move up-left, etc
+//note: +reverified due to sequence if-then instructions causes RobotShip to not execute rapid fire down with move up-left, etc
 //using Windows Machine
-//verified: problem does not occur using Linux Machine
+//verified: problem does not occur using Linux Machine (with external USB keyboard)
+//added by Mike, 20210131
+//note: add use of external USB keyboard solves the problem		  
 
        	//edited by Mike, 20201013
     	//else if(myKeysDown[KEY_LEFT] == TRUE)

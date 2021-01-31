@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210130
+ * @date updated: 20210131
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -25,7 +25,15 @@
  * Syson, M., Camacho, R., Gonzales, D., Del Rosario, R., Vidal, E., et al.
  * 
  */
-//TO-DO: -reverify: robotship rotation
+//added by Mike, 20210130
+//reverify: Robotship does not execute correctly
+//when down and left buttons are pressed while firing beam down
+//AND when up and left buttons are pressed while firing beam up		  
+//in Windows Machine
+//problem did not occur on Linux Machine (with external USB keyboard)
+//added by Mike, 20210131
+//note: add use of external USB keyboard solves the problem		  
+
 //TO-DO: -update: this
 
 #include <stdio.h>
@@ -2637,8 +2645,14 @@ void RobotShip::move(int key)
           bHasPressedADirectionalKey=false;
           //based on enum Keys 
           //edited by Mike, 20210129
-          //TO-DO: -reverify: Robotship does not execute correctly
-		  //when down and left buttons are pressed while firing beam
+          //TO-DO: +reverified: Robotship does not execute correctly
+		  //when down and left buttons are pressed while firing beam down
+		  //AND when up and left buttons are pressed while firing beam up		  
+		  //in Windows Machine
+		  //problem did not occur on Linux Machine (with external USB keyboard)			
+		  //added by Mike, 20210131
+		  //note: add use of external USB keyboard solves the problem		  
+
 //          for (int iCount=0; iCount<10; iCount++) {
 		   //edited by Mike, 20210130
 		   //note: in RobotShip.h set MAX_DIRECTIONAL_KEY_DASH_COUNT=4, not 6,
