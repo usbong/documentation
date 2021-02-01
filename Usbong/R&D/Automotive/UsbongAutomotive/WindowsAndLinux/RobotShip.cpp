@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210201
+ * @date updated: 20210202
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -39,6 +39,10 @@
 //added by Mike, 20210201
 //TO-DO: -delete: excess instructions
 //TO-DO: increase lower right arm angle to go up y-axis
+
+//added by Mike, 20210202
+//TO-DO: -update: instructions when diagonal movement is combined with attack and defend keys
+
 
 #include <stdio.h>
 #include <math.h>
@@ -573,6 +577,13 @@ void RobotShip::drawRobotShip()
 	else if (currentFacingState==FACING_RIGHT_AND_UP) {
         glRotatef(-45, 0.0f, 1.0f, 0.0f);    	
 	}
+	//added by Mike, 20210202
+	else if (currentFacingState==FACING_LEFT_AND_DOWN) {
+        glRotatef(135, 0.0f, 1.0f, 0.0f);    	
+	}
+	else if (currentFacingState==FACING_RIGHT_AND_DOWN) {
+        glRotatef(-135, 0.0f, 1.0f, 0.0f);    	
+	}
 	//added by Mike, 20201201; edited by Mike, 20210201
     else if (currentFacingState==FACING_LEFT) 
     {  
@@ -684,7 +695,8 @@ void RobotShip::drawRobotShip()
 						if ((currentFacingState==FACING_UP)
 					    	|| (currentFacingState==FACING_LEFT)
 							|| (currentFacingState==FACING_LEFT_AND_UP)
-							|| (currentFacingState==FACING_RIGHT_AND_DOWN))
+							/*	//removed by Mike, 20210202
+							|| (currentFacingState==FACING_RIGHT_AND_DOWN)*/)
 					    {
 							glPushMatrix();	
 							   //edited by Mike, 20210103
@@ -739,7 +751,8 @@ void RobotShip::drawRobotShip()
 					    else if ((currentFacingState==FACING_DOWN)
 					    		|| (currentFacingState==FACING_RIGHT)/*
 								|| (currentFacingState==FACING_RIGHT_AND_UP)
-								*/)
+								*/
+								|| (currentFacingState==FACING_RIGHT_AND_DOWN))									
 					    {
 							glPushMatrix();	
 							   //edited by Mike, 20210103
@@ -822,6 +835,40 @@ void RobotShip::drawRobotShip()
 							
 							glPopMatrix();	// pop back to original coordinate system	
 						}			
+						//added by Mike, 20210202
+						else if (currentFacingState==FACING_LEFT_AND_DOWN)
+					    {
+							glPushMatrix();	
+							   //edited by Mike, 20210103
+/*							   drawUpperArm(0.4f, 0.0f, 0.0f); //right        
+							   drawLowerArm(0.4f, -0.2f, 0.0f); //right
+*/
+							   glPushMatrix();	
+	                   		     glScalef(1.0f, 1.4f, 1.0f);
+							   	 drawLowerArm(0.4f, -0.2f, 0.0f); //right
+							   glPopMatrix();	// pop back to original coordinate system	
+
+							   drawUpperArm(0.4f, 0.0f, 0.0f); //right        
+
+							   drawLowerLeg(-0.1f, -0.7f, 0.0f); //left
+							   drawLowerLeg(0.3f, -0.7f, 0.0f); //right
+
+							   //edited by Mike, 20210103
+							   drawUpperLeg(-0.1f, -0.5f, 0.0f); //left
+							   drawUpperLeg(0.3f, -0.5f, 0.0f); //right        
+			
+							   glPushMatrix();	
+	                   		     glScalef(1.0f, 1.4f, 1.0f);
+							   	 drawLowerArm(-0.2f, -0.2f, 0.0f); //left
+							   glPopMatrix();	// pop back to original coordinate system	
+
+							   drawUpperArm(-0.2f, 0.0f, 0.0f); //left
+
+							   drawBody(0.1f, -0.15f, 0.0f);
+							   drawHead(0.1f, 0.2f, -0.1f);		  
+							
+							glPopMatrix();	// pop back to original coordinate system	
+						}
 
 
 /*	//removed by Mike, 20201227									
@@ -1189,7 +1236,9 @@ void RobotShip::drawRobotShip()
 */					    		
 						else if ((currentFacingState==FACING_DOWN)
 					    		|| (currentFacingState==FACING_RIGHT)/*
-								|| (currentFacingState==FACING_RIGHT_AND_UP)*/)
+								|| (currentFacingState==FACING_RIGHT_AND_UP)*/
+								//added by Mike, 20210202
+								|| (currentFacingState==FACING_RIGHT_AND_DOWN))
 					    {
 			            	glPushMatrix();			            
 			            		//edited by Mike, 20210103
@@ -1281,7 +1330,8 @@ void RobotShip::drawRobotShip()
 /*								if (currentFacingState==FACING_RIGHT) {
 */
 								if ((currentFacingState==FACING_RIGHT)
-								|| (currentFacingState==FACING_RIGHT_AND_UP)) {
+								//removed by Mike, 20210202
+/*								|| (currentFacingState==FACING_RIGHT_AND_UP)*/) {
 									
 //edited by Mike, 20210130
 //									if (myKeysDown[KEY_UP]==TRUE) {
@@ -1366,8 +1416,9 @@ void RobotShip::drawRobotShip()
 								//added by Mike, 20210106; edited by Mike, 20210201
 /*								if (currentFacingState==FACING_RIGHT) {
 */
-								if ((currentFacingState==FACING_RIGHT)
-								|| (currentFacingState==FACING_RIGHT_AND_UP)) {									
+								if ((currentFacingState==FACING_RIGHT)/*
+								//removed by Mike, 20210202
+								|| (currentFacingState==FACING_RIGHT_AND_UP)*/) {									
 									
 //edited by Mike, 20210130
 //									if (myKeysDown[KEY_UP]==TRUE) {
@@ -1409,8 +1460,9 @@ void RobotShip::drawRobotShip()
 								//edited by Mike, 20210201
 /*								if (currentFacingState==FACING_RIGHT) {
 */
-								if ((currentFacingState==FACING_RIGHT)
-								|| (currentFacingState==FACING_RIGHT_AND_UP)) {									
+								if ((currentFacingState==FACING_RIGHT)/*
+								//removed by Mike, 20210202
+								|| (currentFacingState==FACING_RIGHT_AND_UP)*/) {									
 
 									//added by Mike, 20210111
 				                	if (bIsFiringBeam) {	
@@ -1650,9 +1702,17 @@ void RobotShip::drawRobotShip()
 //		                			glRotatef(-5, 0.0f, 1.0f, 0.0f);
 								}
 */
+
 								
 			                    //LEGS
+			                    //addded by Mike, 20210202
+//				            	glPushMatrix();					
+//				                    glTranslatef(0.05f, 0.0f, 0.0f);
+
 				            		glPushMatrix();					
+				            			//added by Mike, 20210202
+				                    	glTranslatef(0.05f, 0.0f, 0.0f);
+
 				            			glRotatef(legAngles[LEFT], 1.0f, 0.0f, 0.0f);
 	
 										//edited by Mike, 20210103
@@ -1669,6 +1729,9 @@ void RobotShip::drawRobotShip()
 										drawUpperLeg(-0.1f, -0.5f, 0.0f); //left
 				            		glPopMatrix();
 				            		glPushMatrix();					
+				            			//added by Mike, 20210202
+				                    	glTranslatef(0.05f, 0.0f, 0.0f);
+
 				            			glRotatef(legAngles[RIGHT], 1.0f, 0.0f, 0.0f);
 										//edited by Mike, 20210103
 										glPushMatrix();
@@ -1683,7 +1746,9 @@ void RobotShip::drawRobotShip()
 										drawUpperLeg(0.2f, -0.5f, 0.0f); //right        
 	//									drawUpperLeg(0.3f, -0.5f, 0.0f); //right        
 				            		glPopMatrix();
+//				            	glPopMatrix(); //added by Mike, 20210202
 
+/* //removed by Mike, 20210202
 								//TO-DO: -reverify: this
 								//added by Mike, 20210105
 								//set to default rotation
@@ -1705,6 +1770,7 @@ void RobotShip::drawRobotShip()
 										glRotatef(40, 0.0f, 1.0f, 0.0f);										
 									}
 								}
+*/
 
 								//added by Mike, 20210106; edited by Mike, 20210201
 /*								if (currentFacingState==FACING_RIGHT) {
@@ -1755,7 +1821,8 @@ void RobotShip::drawRobotShip()
 /*								if (currentFacingState==FACING_RIGHT) {
 */
 								if ((currentFacingState==FACING_RIGHT)
-								|| (currentFacingState==FACING_RIGHT_AND_UP)) {									
+								//removed by Mike, 20210202
+/*								|| (currentFacingState==FACING_RIGHT_AND_UP)*/) {									
 
 									//added by Mike, 20210111
 				                	if (bIsFiringBeam) {	
@@ -1899,6 +1966,1003 @@ void RobotShip::drawRobotShip()
 						    drawHead(0.1f, 0.2f, -0.1f);
 						    drawBody(0.1f, -0.15f, 0.0f);
 
+			            	glPopMatrix();	// pop back to original coordinate system						
+					    }
+						if ((currentFacingState==FACING_UP)
+					    	|| (currentFacingState==FACING_LEFT)
+							|| (currentFacingState==FACING_LEFT_AND_UP))
+					    {
+			            	glPushMatrix();			            
+			                    //ARMS
+			                    //note: draw sequence is important
+			                    if (bIsFiringBeam) {
+							   		armAngles[RIGHT]=30.0f;
+									armAngles[LEFT]=30.0f;
+
+				            		glPushMatrix();
+										glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);
+				                        drawUpperArm(0.4f, 0.0f, 0.0f); //right       
+								
+				                		glPushMatrix();
+				                            glTranslatef(0.0f, 0.0f, 0.1f);
+				                			glRotatef(45, 1.0f, 0.0f, 0.0f);
+											//edited by Mike, 20201207
+											//drawLowerArm(0.3f, -0.3f, 0.0f); //right
+											drawLowerArm(0.4f, -0.3f, 0.0f); //right							
+				                		glPopMatrix();
+				            		glPopMatrix();									
+								}
+								else {
+				            		glPushMatrix();
+				            			glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);
+										//edited by Mike, 20201207
+				                        //drawUpperArm(0.3f, 0.0f, 0.0f); //right       
+				                        drawUpperArm(0.4f, 0.0f, 0.0f); //right       
+								
+				                		glPushMatrix();
+				                            glTranslatef(0.0f, 0.0f, 0.1f);
+				                			glRotatef(45, 1.0f, 0.0f, 0.0f);
+											//edited by Mike, 20201207
+											//drawLowerArm(0.3f, -0.3f, 0.0f); //right
+											drawLowerArm(0.4f, -0.3f, 0.0f); //right							
+				                		glPopMatrix();
+				            		glPopMatrix();
+				            	}
+
+								//TO-DO: -reverify: this to use glPushMatrix()...
+								//added by Mike, 20201226
+								if (currentFacingState==FACING_UP) {
+									if (myKeysDown[KEY_A]==TRUE) {
+										//note: walk wall right side
+										//glRotatef(60, 0.0f, 0.0f, 1.0f);			
+
+										glRotatef(40, 0.0f, 1.0f, 0.0f);			
+				                        glTranslatef(0.05f, 0.0f, 0.0f);
+
+									}
+									//added by Mike, 20201227; edited by Mike, 20210129
+									else if (myKeysDown[KEY_D]==TRUE) {
+//									else if (myKeysDown[KEY_RIGHT]==TRUE) {
+										glRotatef(-40, 0.0f, 1.0f, 0.0f);										
+				                        glTranslatef(0.0f, 0.2f, 0.0f);
+				                        glTranslatef(0.05f, 0.0f, 0.0f);							        	
+									}
+								}
+								//added by Mike, 20210105
+								if (currentFacingState==FACING_LEFT) {
+//edited by Mike, 20210130
+//									if (myKeysDown[KEY_UP]==TRUE) {
+									if (myKeysDown[KEY_W]==TRUE) {
+										//note: walk wall right side
+										//glRotatef(60, 0.0f, 0.0f, 1.0f);			
+
+										glRotatef(40, 0.0f, 1.0f, 0.0f);			
+										//removed by Mike, 20210106
+//				                        glTranslatef(0.05f, 0.0f, 0.0f);
+//				                        glTranslatef(-0.025f, 0.0f, 0.0f);
+									}
+									//added by Mike, 20201227
+//									else if (myKeysDown[KEY_D]==TRUE) {
+									else if (myKeysDown[KEY_S]==TRUE) {
+										glRotatef(-40, 0.0f, 1.0f, 0.0f);										
+										//edited by Mike, 20210105
+				                        //glTranslatef(0.0f, 0.2f, 0.0f);
+//				                        glTranslatef(0.0f, 0.2f, 0.0f);				                        
+										//removed by Mike, 20210106
+//				                        glTranslatef(0.05f, 0.0f, 0.0f);							        	
+									}
+								}
+
+
+			                    //LEGS
+			            		glPushMatrix();					
+			            			glRotatef(legAngles[RIGHT], 1.0f, 0.0f, 0.0f);
+									glPushMatrix();
+										//edited by Mike, 20201227
+//										drawLowerLeg(0.3f, -0.7f, 0.0f); //right
+										drawLowerLeg(0.2f, -0.7f, 0.0f); //right
+									glPopMatrix();
+									//edited by Mike, 20201227
+//			                        drawUpperLeg(0.3f, -0.5f, 0.0f); //right        
+			                        drawUpperLeg(0.2f, -0.5f, 0.0f); //right        
+			            		glPopMatrix();
+
+			            		glPushMatrix();					
+			            			glRotatef(legAngles[LEFT], 1.0f, 0.0f, 0.0f);
+									glPushMatrix();
+										drawLowerLeg(-0.1f, -0.7f, 0.0f); //left
+									glPopMatrix();									
+			            		    drawUpperLeg(-0.1f, -0.5f, 0.0f); //left
+			            		glPopMatrix();
+
+								//TO-DO: -reverify: this
+								//added by Mike, 20201226
+								//set to default rotation
+								if (currentFacingState==FACING_UP) {
+									if (myKeysDown[KEY_A]==TRUE) {
+				                        glTranslatef(-0.05f, 0.0f, 0.0f);
+							        	glRotatef(-40, 0.0f, 1.0f, 0.0f);			
+//				                        glTranslatef(0.0f, 0.0f, -0.1f);
+									}
+									//added by Mike, 20201227; edited by Mike, 20210129
+									//TO-DO: -reverify: due to diagonal
+									//edited by Mike, 20210130
+									else if (myKeysDown[KEY_D]==TRUE) {
+//									else if (myKeysDown[KEY_RIGHT]==TRUE) {
+				                        glTranslatef(-0.05f, 0.0f, 0.0f);							        	
+				                        glTranslatef(0.0f, -0.2f, 0.0f);
+										glRotatef(40, 0.0f, 1.0f, 0.0f);										
+									}
+
+									//added by Mike, 20210110
+					                if (bIsFiringBeam) {		
+/*					      	//note: use with diagonal movement
+										//added by Mike, 20210121
+										if (currentFacingState==FACING_UP) {
+											if (myKeysDown[KEY_A]==TRUE) {
+												glRotatef(40, 0.0f, 1.0f, 0.0f);			
+											}
+											else if (myKeysDown[KEY_RIGHT]==TRUE) {
+												glRotatef(-40, 0.0f, 1.0f, 0.0f);										
+							        	
+											}
+										}
+										if (currentFacingState==FACING_LEFT) {
+											if (myKeysDown[KEY_UP]==TRUE) {
+												glRotatef(40, 0.0f, 1.0f, 0.0f);			
+											}
+											else if (myKeysDown[KEY_S]==TRUE) {
+												glRotatef(-40, 0.0f, 1.0f, 0.0f);															        	
+											}
+										}
+*/
+										//added by Mike, 20210121
+				            			glPushMatrix();					
+				            				//note: already facing up
+//											if (currentFacingState==FACING_UP) {
+												if (myKeysDown[KEY_A]==TRUE) {
+													glRotatef(-8, 0.0f, 1.0f, 0.0f);			
+						                            glTranslatef(0.0f, 0.0f, 0.1f);
+												}
+												//edited by Mike, 20210129
+												//TO-DO: -reverify: due to diagonal
+												//edited by Mike, 20210130
+//												else if (myKeysDown[KEY_RIGHT]==TRUE) {
+												else if (myKeysDown[KEY_D]==TRUE) {
+													glRotatef(6, 0.0f, 1.0f, 0.0f);																		        	
+												}
+//											}
+	
+											//added by Mike, 20210107
+											//center
+											//drawWeapon(0.25f, 0.0f, -0.25f);	
+											//IF FACING_UP
+											//edited by Mike, 20210118
+											//note: put weapon closer to center
+	//										drawWeapon(0.5f, -0.15f, -0.7);
+	
+											//TO-DO: -add: fire where beam exits from weapon
+											//edited by Mike, 20210120
+	//										drawWeapon(0.3f, -0.15f, -0.7);
+											drawWeapon(0.35f, -0.15f, -0.7);
+
+			            				glPopMatrix();
+									}
+								}
+								//added by Mike, 20210105
+								if (currentFacingState==FACING_LEFT) {
+									//edited by Mike, 20210130
+//									if (myKeysDown[KEY_UP]==TRUE) {
+									if (myKeysDown[KEY_W]==TRUE) {
+										//removed by Mike, 20210106
+//				                        glTranslatef(-0.05f, 0.0f, 0.0f);
+//				                        glTranslatef(0.025f, 0.0f, 0.0f);
+
+							        	glRotatef(-40, 0.0f, 1.0f, 0.0f);			
+//				                        glTranslatef(0.0f, 0.0f, -0.1f);
+									}
+									//added by Mike, 20201227
+//									else if (myKeysDown[KEY_D]==TRUE) {
+									else if (myKeysDown[KEY_S]==TRUE) {
+										//removed by Mike, 20210106
+//				                        glTranslatef(-0.05f, 0.0f, 0.0f);							        	
+				                        //removed by Mike, 20210105
+//				                        glTranslatef(0.0f, -0.2f, 0.0f);
+										glRotatef(40, 0.0f, 1.0f, 0.0f);										
+									}
+								}
+
+	
+							    //added by Mike, 20201202; edited by Mike, 20201207
+/*			            		drawBody(0.1f, -0.15f, 0.0f);	
+			            		drawHead(0.1f, 0.2f, 0.0f);		
+*/
+							   //TO-DO: -reverify: sequence of robot parts; remove body and head first
+							   //edited by Mike, 20210201
+/*					    	   if (currentFacingState==FACING_LEFT) {
+*/
+					    	   if ((currentFacingState==FACING_LEFT)
+								|| (currentFacingState==FACING_LEFT_AND_UP)) {
+/*	//removed by Mike, 20210105
+									//added by Mike, 20210104
+			                    	if (bIsFiringBeam) {
+										glRotatef(-40, 0.0f, 1.0f, 0.0f);										
+				                        glTranslatef(0.05f, 0.0f, 0.0f);
+									}	
+*/
+									drawBody(0.1f, -0.15f, 0.0f);	
+
+									//removed by Mike, 20210121
+//									drawHead(0.1f, 0.2f, -0.1f);		
+							   }
+							
+							   //edited by Mike, 20201226
+							   //TO-DO: -add: attack (punch)
+							   //TO-DO: -add: defend (shield)
+							   //TO-DO: -add: weapons, e.g. shotgun
+			                   //walking + attacking (firing beam)
+			                   //ARM
+							   if (bIsFiringBeam) {
+								  //LOWER ARM
+								  glPushMatrix();
+								  	//edited by Mike, 20210103
+//			                            glTranslatef(0.0f, 0.0f, 0.1f);
+			                            glTranslatef(0.0f, 0.0f, 0.05f);
+										glRotatef(45, 1.0f, 0.0f, 0.0f);
+	
+										//added by Mike, 20201218
+										glRotatef(45.0f, 0.0f, 0.0f, 1.0f);
+										glRotatef(-30.0f, 0.0f, 1.0f, 0.0f);
+	//                   					glScalef(2.0f, 1.0f, 1.0f);
+												
+										//edited by Mike, 20201207
+										//drawLowerArm(-0.1f, -0.3f, 0.0f); //left
+										//drawLowerArm(-0.2f, -0.3f, 0.0f); //left
+										//edited by Mike, 20201218
+										drawLowerArm(-0.3f, 0.0f, 0.0f); //left							
+				            	  glPopMatrix();							
+
+							   	   //added by Mike, 20210103
+								   if (currentFacingState==FACING_UP) {
+									   drawHead(0.1f, 0.2f, -0.1f);		
+									   drawBody(0.1f, -0.15f, 0.0f);	
+								   }
+							   	
+							   	  //UPPER ARM
+				            	  glPushMatrix();
+				            			glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);							
+										//edited by Mike, 20201207
+				            			//drawUpperArm(-0.1f, 0.0f, 0.0f); //left
+				            			drawUpperArm(-0.2f, 0.0f, 0.0f); //left				            			
+				            	  glPopMatrix();	// pop back to original coordinate system
+							   }
+							   else {
+							   	   //added by Mike, 20210103
+								   if (currentFacingState==FACING_UP) {
+									   drawHead(0.1f, 0.2f, -0.1f);		
+									   drawBody(0.1f, -0.15f, 0.0f);	
+								   }
+
+			            			glPushMatrix();
+				            	  		//edited by Mike, 20210104
+			            				glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);
+//				            			glRotatef(armAngles[LEFT], 0.0f, 0.0f, 1.0f);
+
+										//edited by Mike, 20210104
+										glPushMatrix();
+				                            glTranslatef(0.0f, 0.0f, 0.1f);
+
+					            	  		//edited by Mike, 20210104
+//				                			glRotatef(45, 1.0f, 0.0f, 0.0f);
+					            			glRotatef(45, 1.0f, 0.0f, 0.0f);							
+
+											//edited by Mike, 20201207
+											//drawLowerArm(-0.1f, -0.3f, 0.0f); //left
+											drawLowerArm(-0.2f, -0.3f, 0.0f); //left
+										glPopMatrix();
+
+										//edited by Mike, 20201207
+				            			//drawUpperArm(-0.1f, 0.0f, 0.0f); //left
+				            			drawUpperArm(-0.2f, 0.0f, 0.0f); //left
+	
+				            		glPopMatrix();
+							   }
+							
+							//added by Mike, 20210110
+			                if (bIsFiringBeam) {
+								//added by Mike, 20210107
+								//center
+								//drawWeapon(0.25f, 0.0f, -0.25f);	
+								if (currentFacingState==FACING_LEFT) {
+									//added by Mike, 20210121
+									glPushMatrix();
+//									if (currentFacingState==FACING_LEFT) {
+										//edited by Mike, 20210130
+//										if (myKeysDown[KEY_UP]==TRUE) {
+										if (myKeysDown[KEY_W]==TRUE) {
+											glRotatef(12, 0.0f, 1.0f, 0.0f);			
+				                            glTranslatef(0.0f, 0.0f, 0.1f);
+										}
+										else if (myKeysDown[KEY_S]==TRUE) {
+											glRotatef(-6, 0.0f, 1.0f, 0.0f);															        	
+										}
+//									}
+										//drawWeapon(0.25f, -0.25f, -0.25f);	
+	//									drawWeapon(0.4f, -0.25f, -0.5f);	
+										//edited by Mike, 20210118
+										//note: put weapon closer to center
+	//									drawWeapon(0.4f, -0.15f, -0.5f);	
+										drawWeapon(0.3f, -0.15f, -0.5f);	
+				            		glPopMatrix();
+								}							
+							}
+	
+	
+							//added by Mike, 20210121; edited by Mike, 20210201
+/*					    	   if (currentFacingState==FACING_LEFT) {
+*/
+					    	   if ((currentFacingState==FACING_LEFT)
+								|| (currentFacingState==FACING_LEFT_AND_UP)) {
+
+								drawHead(0.1f, 0.2f, -0.1f);		
+						    }
+	
+			            	glPopMatrix();	// pop back to original coordinate system						
+					    }
+
+
+
+						if ((currentFacingState==FACING_UP)
+					    	|| (currentFacingState==FACING_LEFT)
+							|| (currentFacingState==FACING_LEFT_AND_UP))
+					    {
+			            	glPushMatrix();			            
+			                    //ARMS
+			                    //note: draw sequence is important
+			                    if (bIsFiringBeam) {
+							   		armAngles[RIGHT]=30.0f;
+									armAngles[LEFT]=30.0f;
+
+				            		glPushMatrix();
+										glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);
+				                        drawUpperArm(0.4f, 0.0f, 0.0f); //right       
+								
+				                		glPushMatrix();
+				                            glTranslatef(0.0f, 0.0f, 0.1f);
+				                			glRotatef(45, 1.0f, 0.0f, 0.0f);
+											//edited by Mike, 20201207
+											//drawLowerArm(0.3f, -0.3f, 0.0f); //right
+											drawLowerArm(0.4f, -0.3f, 0.0f); //right							
+				                		glPopMatrix();
+				            		glPopMatrix();									
+								}
+								else {
+				            		glPushMatrix();
+				            			glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);
+										//edited by Mike, 20201207
+				                        //drawUpperArm(0.3f, 0.0f, 0.0f); //right       
+				                        drawUpperArm(0.4f, 0.0f, 0.0f); //right       
+								
+				                		glPushMatrix();
+				                            glTranslatef(0.0f, 0.0f, 0.1f);
+				                			glRotatef(45, 1.0f, 0.0f, 0.0f);
+											//edited by Mike, 20201207
+											//drawLowerArm(0.3f, -0.3f, 0.0f); //right
+											drawLowerArm(0.4f, -0.3f, 0.0f); //right							
+				                		glPopMatrix();
+				            		glPopMatrix();
+				            	}
+
+								//TO-DO: -reverify: this to use glPushMatrix()...
+								//added by Mike, 20201226
+								if (currentFacingState==FACING_UP) {
+									if (myKeysDown[KEY_A]==TRUE) {
+										//note: walk wall right side
+										//glRotatef(60, 0.0f, 0.0f, 1.0f);			
+
+										glRotatef(40, 0.0f, 1.0f, 0.0f);			
+				                        glTranslatef(0.05f, 0.0f, 0.0f);
+
+									}
+									//added by Mike, 20201227; edited by Mike, 20210129
+									else if (myKeysDown[KEY_D]==TRUE) {
+//									else if (myKeysDown[KEY_RIGHT]==TRUE) {
+										glRotatef(-40, 0.0f, 1.0f, 0.0f);										
+				                        glTranslatef(0.0f, 0.2f, 0.0f);
+				                        glTranslatef(0.05f, 0.0f, 0.0f);							        	
+									}
+								}
+								//added by Mike, 20210105
+								if (currentFacingState==FACING_LEFT) {
+//edited by Mike, 20210130
+//									if (myKeysDown[KEY_UP]==TRUE) {
+									if (myKeysDown[KEY_W]==TRUE) {
+										//note: walk wall right side
+										//glRotatef(60, 0.0f, 0.0f, 1.0f);			
+
+										glRotatef(40, 0.0f, 1.0f, 0.0f);			
+										//removed by Mike, 20210106
+//				                        glTranslatef(0.05f, 0.0f, 0.0f);
+//				                        glTranslatef(-0.025f, 0.0f, 0.0f);
+									}
+									//added by Mike, 20201227
+//									else if (myKeysDown[KEY_D]==TRUE) {
+									else if (myKeysDown[KEY_S]==TRUE) {
+										glRotatef(-40, 0.0f, 1.0f, 0.0f);										
+										//edited by Mike, 20210105
+				                        //glTranslatef(0.0f, 0.2f, 0.0f);
+//				                        glTranslatef(0.0f, 0.2f, 0.0f);				                        
+										//removed by Mike, 20210106
+//				                        glTranslatef(0.05f, 0.0f, 0.0f);							        	
+									}
+								}
+
+
+			                    //LEGS
+			            		glPushMatrix();					
+			            			glRotatef(legAngles[RIGHT], 1.0f, 0.0f, 0.0f);
+									glPushMatrix();
+										//edited by Mike, 20201227
+//										drawLowerLeg(0.3f, -0.7f, 0.0f); //right
+										drawLowerLeg(0.2f, -0.7f, 0.0f); //right
+									glPopMatrix();
+									//edited by Mike, 20201227
+//			                        drawUpperLeg(0.3f, -0.5f, 0.0f); //right        
+			                        drawUpperLeg(0.2f, -0.5f, 0.0f); //right        
+			            		glPopMatrix();
+
+			            		glPushMatrix();					
+			            			glRotatef(legAngles[LEFT], 1.0f, 0.0f, 0.0f);
+									glPushMatrix();
+										drawLowerLeg(-0.1f, -0.7f, 0.0f); //left
+									glPopMatrix();									
+			            		    drawUpperLeg(-0.1f, -0.5f, 0.0f); //left
+			            		glPopMatrix();
+
+								//TO-DO: -reverify: this
+								//added by Mike, 20201226
+								//set to default rotation
+								if (currentFacingState==FACING_UP) {
+									if (myKeysDown[KEY_A]==TRUE) {
+				                        glTranslatef(-0.05f, 0.0f, 0.0f);
+							        	glRotatef(-40, 0.0f, 1.0f, 0.0f);			
+//				                        glTranslatef(0.0f, 0.0f, -0.1f);
+									}
+									//added by Mike, 20201227; edited by Mike, 20210129
+									//TO-DO: -reverify: due to diagonal
+									//edited by Mike, 20210130
+									else if (myKeysDown[KEY_D]==TRUE) {
+//									else if (myKeysDown[KEY_RIGHT]==TRUE) {
+				                        glTranslatef(-0.05f, 0.0f, 0.0f);							        	
+				                        glTranslatef(0.0f, -0.2f, 0.0f);
+										glRotatef(40, 0.0f, 1.0f, 0.0f);										
+									}
+
+									//added by Mike, 20210110
+					                if (bIsFiringBeam) {		
+/*					      	//note: use with diagonal movement
+										//added by Mike, 20210121
+										if (currentFacingState==FACING_UP) {
+											if (myKeysDown[KEY_A]==TRUE) {
+												glRotatef(40, 0.0f, 1.0f, 0.0f);			
+											}
+											else if (myKeysDown[KEY_RIGHT]==TRUE) {
+												glRotatef(-40, 0.0f, 1.0f, 0.0f);										
+							        	
+											}
+										}
+										if (currentFacingState==FACING_LEFT) {
+											if (myKeysDown[KEY_UP]==TRUE) {
+												glRotatef(40, 0.0f, 1.0f, 0.0f);			
+											}
+											else if (myKeysDown[KEY_S]==TRUE) {
+												glRotatef(-40, 0.0f, 1.0f, 0.0f);															        	
+											}
+										}
+*/
+										//added by Mike, 20210121
+				            			glPushMatrix();					
+				            				//note: already facing up
+//											if (currentFacingState==FACING_UP) {
+												if (myKeysDown[KEY_A]==TRUE) {
+													glRotatef(-8, 0.0f, 1.0f, 0.0f);			
+						                            glTranslatef(0.0f, 0.0f, 0.1f);
+												}
+												//edited by Mike, 20210129
+												//TO-DO: -reverify: due to diagonal
+												//edited by Mike, 20210130
+//												else if (myKeysDown[KEY_RIGHT]==TRUE) {
+												else if (myKeysDown[KEY_D]==TRUE) {
+													glRotatef(6, 0.0f, 1.0f, 0.0f);																		        	
+												}
+//											}
+	
+											//added by Mike, 20210107
+											//center
+											//drawWeapon(0.25f, 0.0f, -0.25f);	
+											//IF FACING_UP
+											//edited by Mike, 20210118
+											//note: put weapon closer to center
+	//										drawWeapon(0.5f, -0.15f, -0.7);
+	
+											//TO-DO: -add: fire where beam exits from weapon
+											//edited by Mike, 20210120
+	//										drawWeapon(0.3f, -0.15f, -0.7);
+											drawWeapon(0.35f, -0.15f, -0.7);
+
+			            				glPopMatrix();
+									}
+								}
+								//added by Mike, 20210105
+								if (currentFacingState==FACING_LEFT) {
+									//edited by Mike, 20210130
+//									if (myKeysDown[KEY_UP]==TRUE) {
+									if (myKeysDown[KEY_W]==TRUE) {
+										//removed by Mike, 20210106
+//				                        glTranslatef(-0.05f, 0.0f, 0.0f);
+//				                        glTranslatef(0.025f, 0.0f, 0.0f);
+
+							        	glRotatef(-40, 0.0f, 1.0f, 0.0f);			
+//				                        glTranslatef(0.0f, 0.0f, -0.1f);
+									}
+									//added by Mike, 20201227
+//									else if (myKeysDown[KEY_D]==TRUE) {
+									else if (myKeysDown[KEY_S]==TRUE) {
+										//removed by Mike, 20210106
+//				                        glTranslatef(-0.05f, 0.0f, 0.0f);							        	
+				                        //removed by Mike, 20210105
+//				                        glTranslatef(0.0f, -0.2f, 0.0f);
+										glRotatef(40, 0.0f, 1.0f, 0.0f);										
+									}
+								}
+
+	
+							    //added by Mike, 20201202; edited by Mike, 20201207
+/*			            		drawBody(0.1f, -0.15f, 0.0f);	
+			            		drawHead(0.1f, 0.2f, 0.0f);		
+*/
+							   //TO-DO: -reverify: sequence of robot parts; remove body and head first
+							   //edited by Mike, 20210201
+/*					    	   if (currentFacingState==FACING_LEFT) {
+*/
+					    	   if ((currentFacingState==FACING_LEFT)
+								|| (currentFacingState==FACING_LEFT_AND_UP)) {
+/*	//removed by Mike, 20210105
+									//added by Mike, 20210104
+			                    	if (bIsFiringBeam) {
+										glRotatef(-40, 0.0f, 1.0f, 0.0f);										
+				                        glTranslatef(0.05f, 0.0f, 0.0f);
+									}	
+*/
+									drawBody(0.1f, -0.15f, 0.0f);	
+
+									//removed by Mike, 20210121
+//									drawHead(0.1f, 0.2f, -0.1f);		
+							   }
+							
+							   //edited by Mike, 20201226
+							   //TO-DO: -add: attack (punch)
+							   //TO-DO: -add: defend (shield)
+							   //TO-DO: -add: weapons, e.g. shotgun
+			                   //walking + attacking (firing beam)
+			                   //ARM
+							   if (bIsFiringBeam) {
+								  //LOWER ARM
+								  glPushMatrix();
+								  	//edited by Mike, 20210103
+//			                            glTranslatef(0.0f, 0.0f, 0.1f);
+			                            glTranslatef(0.0f, 0.0f, 0.05f);
+										glRotatef(45, 1.0f, 0.0f, 0.0f);
+	
+										//added by Mike, 20201218
+										glRotatef(45.0f, 0.0f, 0.0f, 1.0f);
+										glRotatef(-30.0f, 0.0f, 1.0f, 0.0f);
+	//                   					glScalef(2.0f, 1.0f, 1.0f);
+												
+										//edited by Mike, 20201207
+										//drawLowerArm(-0.1f, -0.3f, 0.0f); //left
+										//drawLowerArm(-0.2f, -0.3f, 0.0f); //left
+										//edited by Mike, 20201218
+										drawLowerArm(-0.3f, 0.0f, 0.0f); //left							
+				            	  glPopMatrix();							
+
+							   	   //added by Mike, 20210103
+								   if (currentFacingState==FACING_UP) {
+									   drawHead(0.1f, 0.2f, -0.1f);		
+									   drawBody(0.1f, -0.15f, 0.0f);	
+								   }
+							   	
+							   	  //UPPER ARM
+				            	  glPushMatrix();
+				            			glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);							
+										//edited by Mike, 20201207
+				            			//drawUpperArm(-0.1f, 0.0f, 0.0f); //left
+				            			drawUpperArm(-0.2f, 0.0f, 0.0f); //left				            			
+				            	  glPopMatrix();	// pop back to original coordinate system
+							   }
+							   else {
+							   	   //added by Mike, 20210103
+								   if (currentFacingState==FACING_UP) {
+									   drawHead(0.1f, 0.2f, -0.1f);		
+									   drawBody(0.1f, -0.15f, 0.0f);	
+								   }
+
+			            			glPushMatrix();
+				            	  		//edited by Mike, 20210104
+			            				glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);
+//				            			glRotatef(armAngles[LEFT], 0.0f, 0.0f, 1.0f);
+
+										//edited by Mike, 20210104
+										glPushMatrix();
+				                            glTranslatef(0.0f, 0.0f, 0.1f);
+
+					            	  		//edited by Mike, 20210104
+//				                			glRotatef(45, 1.0f, 0.0f, 0.0f);
+					            			glRotatef(45, 1.0f, 0.0f, 0.0f);							
+
+											//edited by Mike, 20201207
+											//drawLowerArm(-0.1f, -0.3f, 0.0f); //left
+											drawLowerArm(-0.2f, -0.3f, 0.0f); //left
+										glPopMatrix();
+
+										//edited by Mike, 20201207
+				            			//drawUpperArm(-0.1f, 0.0f, 0.0f); //left
+				            			drawUpperArm(-0.2f, 0.0f, 0.0f); //left
+	
+				            		glPopMatrix();
+							   }
+							
+							//added by Mike, 20210110
+			                if (bIsFiringBeam) {
+								//added by Mike, 20210107
+								//center
+								//drawWeapon(0.25f, 0.0f, -0.25f);	
+								if (currentFacingState==FACING_LEFT) {
+									//added by Mike, 20210121
+									glPushMatrix();
+//									if (currentFacingState==FACING_LEFT) {
+										//edited by Mike, 20210130
+//										if (myKeysDown[KEY_UP]==TRUE) {
+										if (myKeysDown[KEY_W]==TRUE) {
+											glRotatef(12, 0.0f, 1.0f, 0.0f);			
+				                            glTranslatef(0.0f, 0.0f, 0.1f);
+										}
+										else if (myKeysDown[KEY_S]==TRUE) {
+											glRotatef(-6, 0.0f, 1.0f, 0.0f);															        	
+										}
+//									}
+										//drawWeapon(0.25f, -0.25f, -0.25f);	
+	//									drawWeapon(0.4f, -0.25f, -0.5f);	
+										//edited by Mike, 20210118
+										//note: put weapon closer to center
+	//									drawWeapon(0.4f, -0.15f, -0.5f);	
+										drawWeapon(0.3f, -0.15f, -0.5f);	
+				            		glPopMatrix();
+								}							
+							}
+	
+	
+							//added by Mike, 20210121; edited by Mike, 20210201
+/*					    	   if (currentFacingState==FACING_LEFT) {
+*/
+					    	   if ((currentFacingState==FACING_LEFT)
+								|| (currentFacingState==FACING_LEFT_AND_UP)) {
+
+								drawHead(0.1f, 0.2f, -0.1f);		
+						    }
+	
+			            	glPopMatrix();	// pop back to original coordinate system						
+					    }
+						//added by Mike, 20210202
+						else if (currentFacingState==FACING_LEFT_AND_DOWN)
+					    {
+			            	glPushMatrix();			            
+			                    //ARMS
+			                    //note: draw sequence is important
+			                    if (bIsFiringBeam) {
+							   		armAngles[RIGHT]=30.0f;
+									armAngles[LEFT]=30.0f;
+
+				            		glPushMatrix();
+										glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);								
+				                		glPushMatrix();
+				                            glTranslatef(0.0f, 0.0f, 0.1f);
+				                			glRotatef(45, 1.0f, 0.0f, 0.0f);
+											//edited by Mike, 20201207
+											//drawLowerArm(0.3f, -0.3f, 0.0f); //right
+											drawLowerArm(0.4f, -0.3f, 0.0f); //right							
+				                		glPopMatrix();
+
+				                        drawUpperArm(0.4f, 0.0f, 0.0f); //right       
+				            		glPopMatrix();									
+								}
+								else {
+				            		glPushMatrix();
+				            			glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);								
+				                		glPushMatrix();
+				                            glTranslatef(0.0f, 0.0f, 0.1f);
+				                			glRotatef(45, 1.0f, 0.0f, 0.0f);
+											//edited by Mike, 20201207
+											//drawLowerArm(0.3f, -0.3f, 0.0f); //right
+											drawLowerArm(0.4f, -0.3f, 0.0f); //right							
+				                		glPopMatrix();
+
+										//edited by Mike, 20201207
+				                        //drawUpperArm(0.3f, 0.0f, 0.0f); //right       
+				                        drawUpperArm(0.4f, 0.0f, 0.0f); //right       
+				            		glPopMatrix();
+				            	}
+
+								//TO-DO: -reverify: this to use glPushMatrix()...
+								//added by Mike, 20201226
+								if (currentFacingState==FACING_UP) {
+									if (myKeysDown[KEY_A]==TRUE) {
+										//note: walk wall right side
+										//glRotatef(60, 0.0f, 0.0f, 1.0f);			
+
+										glRotatef(40, 0.0f, 1.0f, 0.0f);			
+				                        glTranslatef(0.05f, 0.0f, 0.0f);
+
+									}
+									//added by Mike, 20201227; edited by Mike, 20210129
+									else if (myKeysDown[KEY_D]==TRUE) {
+//									else if (myKeysDown[KEY_RIGHT]==TRUE) {
+										glRotatef(-40, 0.0f, 1.0f, 0.0f);										
+				                        glTranslatef(0.0f, 0.2f, 0.0f);
+				                        glTranslatef(0.05f, 0.0f, 0.0f);							        	
+									}
+								}
+								//added by Mike, 20210105
+								if (currentFacingState==FACING_LEFT) {
+//edited by Mike, 20210130
+//									if (myKeysDown[KEY_UP]==TRUE) {
+									if (myKeysDown[KEY_W]==TRUE) {
+										//note: walk wall right side
+										//glRotatef(60, 0.0f, 0.0f, 1.0f);			
+
+										glRotatef(40, 0.0f, 1.0f, 0.0f);			
+										//removed by Mike, 20210106
+//				                        glTranslatef(0.05f, 0.0f, 0.0f);
+//				                        glTranslatef(-0.025f, 0.0f, 0.0f);
+									}
+									//added by Mike, 20201227
+//									else if (myKeysDown[KEY_D]==TRUE) {
+									else if (myKeysDown[KEY_S]==TRUE) {
+										glRotatef(-40, 0.0f, 1.0f, 0.0f);										
+										//edited by Mike, 20210105
+				                        //glTranslatef(0.0f, 0.2f, 0.0f);
+//				                        glTranslatef(0.0f, 0.2f, 0.0f);				                        
+										//removed by Mike, 20210106
+//				                        glTranslatef(0.05f, 0.0f, 0.0f);							        	
+									}
+								}
+
+
+			                    //LEGS
+			            		glPushMatrix();					
+			            			glRotatef(legAngles[RIGHT], 1.0f, 0.0f, 0.0f);
+									glPushMatrix();
+										//edited by Mike, 20201227
+//										drawLowerLeg(0.3f, -0.7f, 0.0f); //right
+										drawLowerLeg(0.2f, -0.7f, 0.0f); //right
+									glPopMatrix();
+									//edited by Mike, 20201227
+//			                        drawUpperLeg(0.3f, -0.5f, 0.0f); //right        
+			                        drawUpperLeg(0.2f, -0.5f, 0.0f); //right        
+			            		glPopMatrix();
+
+			            		glPushMatrix();					
+			            			glRotatef(legAngles[LEFT], 1.0f, 0.0f, 0.0f);
+									glPushMatrix();
+										drawLowerLeg(-0.1f, -0.7f, 0.0f); //left
+									glPopMatrix();									
+			            		    drawUpperLeg(-0.1f, -0.5f, 0.0f); //left
+			            		glPopMatrix();
+
+								//TO-DO: -reverify: this
+								//added by Mike, 20201226
+								//set to default rotation
+								if (currentFacingState==FACING_UP) {
+									if (myKeysDown[KEY_A]==TRUE) {
+				                        glTranslatef(-0.05f, 0.0f, 0.0f);
+							        	glRotatef(-40, 0.0f, 1.0f, 0.0f);			
+//				                        glTranslatef(0.0f, 0.0f, -0.1f);
+									}
+									//added by Mike, 20201227; edited by Mike, 20210129
+									//TO-DO: -reverify: due to diagonal
+									//edited by Mike, 20210130
+									else if (myKeysDown[KEY_D]==TRUE) {
+//									else if (myKeysDown[KEY_RIGHT]==TRUE) {
+				                        glTranslatef(-0.05f, 0.0f, 0.0f);							        	
+				                        glTranslatef(0.0f, -0.2f, 0.0f);
+										glRotatef(40, 0.0f, 1.0f, 0.0f);										
+									}
+
+									//added by Mike, 20210110
+					                if (bIsFiringBeam) {		
+/*					      	//note: use with diagonal movement
+										//added by Mike, 20210121
+										if (currentFacingState==FACING_UP) {
+											if (myKeysDown[KEY_A]==TRUE) {
+												glRotatef(40, 0.0f, 1.0f, 0.0f);			
+											}
+											else if (myKeysDown[KEY_RIGHT]==TRUE) {
+												glRotatef(-40, 0.0f, 1.0f, 0.0f);										
+							        	
+											}
+										}
+										if (currentFacingState==FACING_LEFT) {
+											if (myKeysDown[KEY_UP]==TRUE) {
+												glRotatef(40, 0.0f, 1.0f, 0.0f);			
+											}
+											else if (myKeysDown[KEY_S]==TRUE) {
+												glRotatef(-40, 0.0f, 1.0f, 0.0f);															        	
+											}
+										}
+*/
+										//added by Mike, 20210121
+				            			glPushMatrix();					
+				            				//note: already facing up
+//											if (currentFacingState==FACING_UP) {
+												if (myKeysDown[KEY_A]==TRUE) {
+													glRotatef(-8, 0.0f, 1.0f, 0.0f);			
+						                            glTranslatef(0.0f, 0.0f, 0.1f);
+												}
+												//edited by Mike, 20210129
+												//TO-DO: -reverify: due to diagonal
+												//edited by Mike, 20210130
+//												else if (myKeysDown[KEY_RIGHT]==TRUE) {
+												else if (myKeysDown[KEY_D]==TRUE) {
+													glRotatef(6, 0.0f, 1.0f, 0.0f);																		        	
+												}
+//											}
+	
+											//added by Mike, 20210107
+											//center
+											//drawWeapon(0.25f, 0.0f, -0.25f);	
+											//IF FACING_UP
+											//edited by Mike, 20210118
+											//note: put weapon closer to center
+	//										drawWeapon(0.5f, -0.15f, -0.7);
+	
+											//TO-DO: -add: fire where beam exits from weapon
+											//edited by Mike, 20210120
+	//										drawWeapon(0.3f, -0.15f, -0.7);
+											drawWeapon(0.35f, -0.15f, -0.7);
+
+			            				glPopMatrix();
+									}
+								}
+								//added by Mike, 20210105
+								if (currentFacingState==FACING_LEFT) {
+									//edited by Mike, 20210130
+//									if (myKeysDown[KEY_UP]==TRUE) {
+									if (myKeysDown[KEY_W]==TRUE) {
+										//removed by Mike, 20210106
+//				                        glTranslatef(-0.05f, 0.0f, 0.0f);
+//				                        glTranslatef(0.025f, 0.0f, 0.0f);
+
+							        	glRotatef(-40, 0.0f, 1.0f, 0.0f);			
+//				                        glTranslatef(0.0f, 0.0f, -0.1f);
+									}
+									//added by Mike, 20201227
+//									else if (myKeysDown[KEY_D]==TRUE) {
+									else if (myKeysDown[KEY_S]==TRUE) {
+										//removed by Mike, 20210106
+//				                        glTranslatef(-0.05f, 0.0f, 0.0f);							        	
+				                        //removed by Mike, 20210105
+//				                        glTranslatef(0.0f, -0.2f, 0.0f);
+										glRotatef(40, 0.0f, 1.0f, 0.0f);										
+									}
+								}
+
+/*	//removed by Mike, 20210202	
+								drawBody(0.1f, -0.15f, 0.0f);	
+*/							
+							   //edited by Mike, 20201226
+							   //TO-DO: -add: attack (punch)
+							   //TO-DO: -add: defend (shield)
+							   //TO-DO: -add: weapons, e.g. shotgun
+			                   //walking + attacking (firing beam)
+			                   //ARM
+							   if (bIsFiringBeam) {
+								  //LOWER ARM
+								  glPushMatrix();
+								  	//edited by Mike, 20210103
+//			                            glTranslatef(0.0f, 0.0f, 0.1f);
+			                            glTranslatef(0.0f, 0.0f, 0.05f);
+										glRotatef(45, 1.0f, 0.0f, 0.0f);
+	
+										//added by Mike, 20201218
+										glRotatef(45.0f, 0.0f, 0.0f, 1.0f);
+										glRotatef(-30.0f, 0.0f, 1.0f, 0.0f);
+	//                   					glScalef(2.0f, 1.0f, 1.0f);
+												
+										//edited by Mike, 20201207
+										//drawLowerArm(-0.1f, -0.3f, 0.0f); //left
+										//drawLowerArm(-0.2f, -0.3f, 0.0f); //left
+										//edited by Mike, 20201218
+										drawLowerArm(-0.3f, 0.0f, 0.0f); //left							
+				            	  glPopMatrix();							
+
+							   	   //added by Mike, 20210103
+								   if (currentFacingState==FACING_UP) {
+									   drawHead(0.1f, 0.2f, -0.1f);		
+									   drawBody(0.1f, -0.15f, 0.0f);	
+								   }
+							   	
+							   	  //UPPER ARM
+				            	  glPushMatrix();
+				            			glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);							
+										//edited by Mike, 20201207
+				            			//drawUpperArm(-0.1f, 0.0f, 0.0f); //left
+				            			drawUpperArm(-0.2f, 0.0f, 0.0f); //left				            			
+				            	  glPopMatrix();	// pop back to original coordinate system
+							   }
+							   else {
+							   	   //added by Mike, 20210103
+								   if (currentFacingState==FACING_UP) {
+									   drawHead(0.1f, 0.2f, -0.1f);		
+									   drawBody(0.1f, -0.15f, 0.0f);	
+								   }
+
+			            			glPushMatrix();
+				            	  		//edited by Mike, 20210104
+			            				glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);
+//				            			glRotatef(armAngles[LEFT], 0.0f, 0.0f, 1.0f);
+
+										//edited by Mike, 20210104
+										glPushMatrix();
+				                            glTranslatef(0.0f, 0.0f, 0.1f);
+
+					            	  		//edited by Mike, 20210104
+//				                			glRotatef(45, 1.0f, 0.0f, 0.0f);
+					            			glRotatef(45, 1.0f, 0.0f, 0.0f);							
+
+											//edited by Mike, 20201207
+											//drawLowerArm(-0.1f, -0.3f, 0.0f); //left
+											drawLowerArm(-0.2f, -0.3f, 0.0f); //left
+										glPopMatrix();
+
+										//edited by Mike, 20201207
+				            			//drawUpperArm(-0.1f, 0.0f, 0.0f); //left
+				            			drawUpperArm(-0.2f, 0.0f, 0.0f); //left
+	
+				            		glPopMatrix();
+							   }
+							
+							//added by Mike, 20210110
+			                if (bIsFiringBeam) {
+								//added by Mike, 20210107
+								//center
+								//drawWeapon(0.25f, 0.0f, -0.25f);	
+								if (currentFacingState==FACING_LEFT) {
+									//added by Mike, 20210121
+									glPushMatrix();
+//									if (currentFacingState==FACING_LEFT) {
+										//edited by Mike, 20210130
+//										if (myKeysDown[KEY_UP]==TRUE) {
+										if (myKeysDown[KEY_W]==TRUE) {
+											glRotatef(12, 0.0f, 1.0f, 0.0f);			
+				                            glTranslatef(0.0f, 0.0f, 0.1f);
+										}
+										else if (myKeysDown[KEY_S]==TRUE) {
+											glRotatef(-6, 0.0f, 1.0f, 0.0f);															        	
+										}
+//									}
+										//drawWeapon(0.25f, -0.25f, -0.25f);	
+	//									drawWeapon(0.4f, -0.25f, -0.5f);	
+										//edited by Mike, 20210118
+										//note: put weapon closer to center
+	//									drawWeapon(0.4f, -0.15f, -0.5f);	
+										drawWeapon(0.3f, -0.15f, -0.5f);	
+				            		glPopMatrix();
+								}							
+							}
+	
+							drawBody(0.1f, -0.15f, 0.0f);		
+							drawHead(0.1f, 0.2f, -0.1f);		
+	
 			            	glPopMatrix();	// pop back to original coordinate system						
 					    }
 
@@ -3338,6 +4402,13 @@ void RobotShip::move(int key)
 	}
 	else if ((myKeysDown[KEY_D]) && (myKeysDown[KEY_W])) {
         currentFacingState=FACING_RIGHT_AND_UP;
+	}
+	//added by Mike, 20210202
+	else if ((myKeysDown[KEY_A]) && (myKeysDown[KEY_S])) {
+        currentFacingState=FACING_LEFT_AND_DOWN;
+	}
+	else if ((myKeysDown[KEY_D]) && (myKeysDown[KEY_S])) {
+        currentFacingState=FACING_RIGHT_AND_DOWN;
 	}
 
 }
