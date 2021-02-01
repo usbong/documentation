@@ -78,12 +78,16 @@ const int IN_TITLE_STATE = 2;
 const int DYING_STATE = 3;
 
 //added by Mike, 20201130
-//TO-DO: -add: diagonal
 #define FACING_UP 0
 #define FACING_DOWN 1
 #define FACING_LEFT 2
 #define FACING_RIGHT 3
-
+//added by Mike, 20210201
+//diagonal
+#define FACING_LEFT_AND_UP 4
+#define FACING_RIGHT_AND_UP 5
+#define FACING_LEFT_AND_DOWN 6
+#define FACING_RIGHT_AND_DOWN 7
 
 class MyDynamicObject
 {
