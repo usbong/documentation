@@ -483,7 +483,12 @@ RobotShip::RobotShip(float xPos, float yPos, float zPos, int windowWidth, int wi
 	bIsDashReady=false;
 	//edited by Mike, 20210128
 //	iInputWaitCount=0;
-
+	
+	//added by Mike, 20210202
+	for (int iCount=0; iCount<iNumOfKeyTypes; iCount++) {
+		myKeysDown[iCount]=false;
+	}	
+	
 	//added by Mike, 20210128
 	for (int iCount=0; iCount<MAX_DIRECTIONAL_KEY_DASH_COUNT; iCount++) {
 		bIsExecutingDashArray[iCount]=false;
