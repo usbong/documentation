@@ -1,16 +1,14 @@
 # Usbong Automotive: Notes
 ## 1) Linux Machine
-<b>Execute Command (in Terminal Window):</b> ./UsbongAutomotiveLinux<br/>
+Execute Command (in Terminal Window): <b>./UsbongAutomotiveLinux</b><br/>
 --> <b>location:</b> "output" folder
 ### 1.1) Problem: "./UsbongAutomotiveLinux: error while loading shared libraries: libglut.so.3: cannot open shared object file: No such file or directory"
-<b>Answer:</b><br/>
-Execute Commands (in Terminal Window):<br/>
+<b>Answer:</b> Execute Commands (in Terminal Window):<br/>
 <b>sudo apt-get update</b><br/>
 <b>sudo apt-get install freeglut3</b><br/>
 
 #### 1.1.1) Problem: "E: Unmet dependencies. Try 'apt --fix-broken install' with no packages (or specify a solution)."
-<b>Answer:</b><br/>
-Execute Commands (in Terminal Window):<br/>
+<b>Answer:</b> Execute Commands (in Terminal Window):<br/>
 <b>sudo apt --fix-broken install</b><br/>
 <b>sudo apt-get install freeglut3</b><br/>
 
