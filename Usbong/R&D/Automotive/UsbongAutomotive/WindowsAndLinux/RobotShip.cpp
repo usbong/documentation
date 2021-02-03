@@ -3865,7 +3865,8 @@ void RobotShip::setDashStateWithKeyUp(int keyCode) {
 	//edited by Mike, 20210128
 	bool bIsExecutingDash=false;
 
-	//TO-DO: reverify: this if necessary
+	//added by Mike, 20210202
+	//if removed, dash persists
 	for (int iCount=0; iCount<MAX_DIRECTIONAL_KEY_DASH_COUNT; iCount++) {
 		if (bIsExecutingDashArray[iCount]) {
 			bIsExecutingDash=true;
@@ -3983,6 +3984,23 @@ void RobotShip::move(int key)
 
    //added by Mike, 20201226; removed by Mike, 20201226
 //   myKeysDown[key] = TRUE;	
+
+	//removed by Mike, 20210203
+/*	//added by Mike, 20210203
+	if ((myKeysDown[KEY_A]) && (myKeysDown[KEY_W])) {
+        currentFacingState=FACING_LEFT_AND_UP;
+	}
+	else if ((myKeysDown[KEY_D]) && (myKeysDown[KEY_W])) {
+        currentFacingState=FACING_RIGHT_AND_UP;
+	}
+	//added by Mike, 20210202
+	else if ((myKeysDown[KEY_A]) && (myKeysDown[KEY_S])) {
+        currentFacingState=FACING_LEFT_AND_DOWN;
+	}
+	else if ((myKeysDown[KEY_D]) && (myKeysDown[KEY_S])) {
+        currentFacingState=FACING_RIGHT_AND_DOWN;
+	}
+*/
 
    switch (key)
    {
@@ -4138,12 +4156,14 @@ void RobotShip::move(int key)
 
 			//added by Mike, 20210127; edited by Mike, 20210128
 //			if (bIsExecutingDash) {
-			//edited by Mike, 20210130
-			if (bIsExecutingDashArray[KEY_W]) {			
-//			if ((bIsExecutingDashArray[KEY_UP]) || (bIsExecutingDashArray[KEY_W])) {			
-//			if ((bIsExecutingDashArray[KEY_W])) {
-				myZPos+=-stepZ;
-			}
+				//edited by Mike, 20210130
+				if (bIsExecutingDashArray[KEY_W]) {			
+	
+	
+	//			if ((bIsExecutingDashArray[KEY_UP]) || (bIsExecutingDashArray[KEY_W])) {			
+	//			if ((bIsExecutingDashArray[KEY_W])) {
+					myZPos+=-stepZ;
+				}
 	}
 	
 	      //added by Mike, 20201201; edited by Mike, 20201225
@@ -4151,7 +4171,7 @@ void RobotShip::move(int key)
 	      if (bIsFiringBeam) {	      	
 		  }
 		  else {
-          	currentFacingState=FACING_UP;		  	
+      		currentFacingState=FACING_UP;		  	
 		  }
 		  
 		  //added by Mike, 20201226
@@ -4296,7 +4316,9 @@ void RobotShip::move(int key)
 		currentMovingState=ATTACKING_MOVING_STATE;
 		bIsFiringBeam=false;
 	}   
-	
+
+	//added by Mike, 20210203
+	//TO-DO: -reverify: fire beam, move diagonal, move non-diagonal direction
 	//added by Mike, 20210201
 	if ((myKeysDown[KEY_A]) && (myKeysDown[KEY_W])) {
         currentFacingState=FACING_LEFT_AND_UP;
@@ -4311,7 +4333,6 @@ void RobotShip::move(int key)
 	else if ((myKeysDown[KEY_D]) && (myKeysDown[KEY_S])) {
         currentFacingState=FACING_RIGHT_AND_DOWN;
 	}
-
 }
 void RobotShip::hitBy(MyDynamicObject* mdo)
 {

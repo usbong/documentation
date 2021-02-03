@@ -62,7 +62,9 @@
 //#define MAX_DIRECTIONAL_KEY_DASH_COUNT 6//4 //10 //added by Mike, 20210128
 
 #ifdef _WIN32
+	//edited by Mike, 20210203
 	#define MAX_DIRECTIONAL_KEY_DASH_COUNT 4 //10 //added by Mike, 20210128
+//	#define MAX_DIRECTIONAL_KEY_DASH_COUNT 6 //10 //added by Mike, 20210128
 #endif
 
 #ifdef linux
