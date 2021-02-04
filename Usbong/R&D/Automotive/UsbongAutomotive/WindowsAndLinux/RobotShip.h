@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210129
+ * @date updated: 20210204
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -68,7 +68,9 @@
 #endif
 
 #ifdef linux
-	#define MAX_DIRECTIONAL_KEY_DASH_COUNT 6//4 //10 //added by Mike, 20210128
+	//edited by Mike, 20210204
+//	#define MAX_DIRECTIONAL_KEY_DASH_COUNT 6//4 //10 //added by Mike, 20210128
+	#define MAX_DIRECTIONAL_KEY_DASH_COUNT 4 //added by Mike, 20210128
 #endif
 
 
