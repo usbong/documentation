@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210204
+ * @date updated: 20210202
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -4290,6 +4290,7 @@ void RobotShip::move(int key)
 		  else {
           	currentFacingState=FACING_RIGHT;
 		  }
+		  
 
 		  //added by Mike, 20201226
    		  currentMovingState=WALKING_MOVING_STATE;
@@ -4317,21 +4318,25 @@ void RobotShip::move(int key)
 		bIsFiringBeam=false;
 	}   
 
-	//added by Mike, 20210203
-	//TO-DO: -reverify: fire beam, move diagonal, move non-diagonal direction
-	//added by Mike, 20210201
-	if ((myKeysDown[KEY_A]) && (myKeysDown[KEY_W])) {
-        currentFacingState=FACING_LEFT_AND_UP;
-	}
-	else if ((myKeysDown[KEY_D]) && (myKeysDown[KEY_W])) {
-        currentFacingState=FACING_RIGHT_AND_UP;
-	}
-	//added by Mike, 20210202
-	else if ((myKeysDown[KEY_A]) && (myKeysDown[KEY_S])) {
-        currentFacingState=FACING_LEFT_AND_DOWN;
-	}
-	else if ((myKeysDown[KEY_D]) && (myKeysDown[KEY_S])) {
-        currentFacingState=FACING_RIGHT_AND_DOWN;
+	//added by Mike, 20210104
+//	if (!bIsExecutingDefend) {	
+	if (!bIsFiringBeam) {
+		//added by Mike, 20210203
+		//TO-DO: -reverify: fire beam, move diagonal, move non-diagonal direction
+		//added by Mike, 20210201
+		if ((myKeysDown[KEY_A]) && (myKeysDown[KEY_W])) {
+	        currentFacingState=FACING_LEFT_AND_UP;
+		}
+		else if ((myKeysDown[KEY_D]) && (myKeysDown[KEY_W])) {
+	        currentFacingState=FACING_RIGHT_AND_UP;
+		}
+		//added by Mike, 20210202
+		else if ((myKeysDown[KEY_A]) && (myKeysDown[KEY_S])) {
+	        currentFacingState=FACING_LEFT_AND_DOWN;
+		}
+		else if ((myKeysDown[KEY_D]) && (myKeysDown[KEY_S])) {
+	        currentFacingState=FACING_RIGHT_AND_DOWN;
+		}
 	}
 }
 void RobotShip::hitBy(MyDynamicObject* mdo)
