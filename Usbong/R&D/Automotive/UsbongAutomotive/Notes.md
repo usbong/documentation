@@ -15,6 +15,21 @@ Execute Command (in Terminal Window): <b>./UsbongAutomotiveLinux</b><br/>
 <b>sudo apt --fix-broken install</b><br/>
 <b>sudo apt-get install freeglut3</b><br/>
 
+### 1.2) Problem: How to execute recording of continuous sequence of screenshots?
+<b>Answer:</b> Execute Commands (in Terminal Window):<br/>
+<b>sudo apt-get install byzanz</b><br/>
+<b>byzanz-record --duration=6 --x=0 --y=0 --width=600 --height=600 outHalimbawa.gif</b><br/>
+
+#### References:
+1.2.1) https://askubuntu.com/questions/4428/how-can-i-record-my-screen;<br/>
+last accessed: 20210205T1722<br/>
+answer by: fossfreedom, 20170413T1224<br/>
+
+1.2.2) https://askubuntu.com/questions/107726/how-to-create-animated-gif-images-of-a-screencast;<br/>
+last accessed: 20210205T1722<br/>
+answer by: Bruno Pereira, 20120419T1947<br/>
+edited by: Pablo Bianchi, 20190504T0401<br/>
+
 ## 3) Human Person
 3.1) upper arm;<br/>
 3.1.1) humerus<br/>
