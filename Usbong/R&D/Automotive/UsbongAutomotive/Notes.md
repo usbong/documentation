@@ -1,4 +1,7 @@
 # Usbong Automotive: Notes
+
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Automotive/UsbongAutomotive/res/UsbongAutomotiveV20210205T1703.gif" width="60%">
+
 ## 1) Linux Machine
 Execute Command (in Terminal Window): <b>./UsbongAutomotiveLinux</b><br/>
 --> <b>location:</b> "output" folder
