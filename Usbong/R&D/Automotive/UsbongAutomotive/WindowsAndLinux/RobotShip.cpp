@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210202
+ * @date updated: 20210206
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -664,6 +664,7 @@ void RobotShip::drawRobotShip()
 //		                glScalef(4.0f, 4.0f, 4.0f);		
 					//edited by Mike, 20210103
 		                glScalef(5.0f, 5.0f, 5.0f);		
+
 		                //glScalef(7.0f, 7.0f, 7.0f);		
 
 				switch(currentMovingState) {
@@ -1977,7 +1978,8 @@ void RobotShip::drawRobotShip()
 
 			            	glPopMatrix();	// pop back to original coordinate system						
 					    }
-						if ((currentFacingState==FACING_UP)
+//edited by Mike, 20210206
+						else if ((currentFacingState==FACING_UP)
 					    	|| (currentFacingState==FACING_LEFT)
 							|| (currentFacingState==FACING_LEFT_AND_UP))
 					    {
@@ -2190,6 +2192,7 @@ void RobotShip::drawRobotShip()
 							   //edited by Mike, 20210201
 /*					    	   if (currentFacingState==FACING_LEFT) {
 */
+
 					    	   if ((currentFacingState==FACING_LEFT)
 								|| (currentFacingState==FACING_LEFT_AND_UP)) {
 /*	//removed by Mike, 20210105
@@ -2320,8 +2323,8 @@ void RobotShip::drawRobotShip()
 					    }
 
 
-
-						if ((currentFacingState==FACING_UP)
+//edited by Mike, 20210206
+						else if ((currentFacingState==FACING_UP)
 					    	|| (currentFacingState==FACING_LEFT)
 							|| (currentFacingState==FACING_LEFT_AND_UP))
 					    {

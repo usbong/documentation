@@ -334,7 +334,8 @@ bool OpenGLCanvas::init()
 	//myRobotShip = new RobotShip;
 	myRobotShip = new RobotShip(0.0f,0.0f,0.0f,myWindowWidth,myWindowHeight);
     myRobotShip->setOpenGLCanvas(this);
-	
+
+//TO-DO: -update: myPilot instructions, e.g. movement
 	//added by Mike, 20201207
 	myPilot = new Pilot(0.0f,0.0f,0.0f,myWindowWidth,myWindowHeight);
     myPilot->setOpenGLCanvas(this);

@@ -85,7 +85,10 @@
 //includes: pilot, robotship, beams, asteroid, 
 //edited by Mike, 20210120
 //#define MAX_DYNAMIC_OBJECT 50 //TO-DO: -update: this
+
+//edited by Mike, 20210206
 #define MAX_DYNAMIC_OBJECT 18 //remove beams x32
+//#define MAX_DYNAMIC_OBJECT 17 //remove beams x32
 
 #define MAX 1026 //buffer
 
