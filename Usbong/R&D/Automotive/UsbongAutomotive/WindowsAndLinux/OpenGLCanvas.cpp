@@ -1658,6 +1658,9 @@ void OpenGLCanvas::update()
             resetDynamicObjects();
         }
 */
+
+    	//added by Mike, 20210206
+    	myPilot->update(1); //dt
     	
     	//added by Mike, 20201001
     	myRobotShip->update(1); //dt
