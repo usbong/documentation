@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210206
+ * @date updated: 20210207
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -1613,7 +1613,7 @@ void RobotShip::drawRobotShip()
 						else if (currentFacingState==FACING_RIGHT_AND_UP)
 					    {
 			            	glPushMatrix();			            
-/* //removed by Mike, 20210202
+ //removed by Mike, 20210202; added by Mike, 20210207
 			            		//edited by Mike, 20210103
 			                    //ARMS
 			                    //note: draw sequence is important
@@ -1652,7 +1652,7 @@ void RobotShip::drawRobotShip()
 				            		glPopMatrix();							   	
 								}
 								else {
-*/
+
 				            		glPushMatrix();
 				            			glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);
 
@@ -1668,9 +1668,13 @@ void RobotShip::drawRobotShip()
 										//drawUpperArm(-0.1f, 0.0f, 0.0f); //left
 										drawUpperArm(-0.2f, 0.0f, 0.0f); //left								
 				            		glPopMatrix();
-/*	//removed by Mike, 20210202
+	//removed by Mike, 20210202; added by Mike, 20210207
 								}
-*/
+
+//TO-DO: -reverify: right arm sequence with body
+//added by Mike, 20210207; edited by Mike, 20210207
+									drawWeapon(0.3f, -0.15f, -0.5f);	
+//									drawWeapon(0.2f, -0.15f, -0.5f);	
 
 /*
 								//TO-DO: -reverify: this to use glPushMatrix()...
@@ -2537,7 +2541,8 @@ void RobotShip::drawRobotShip()
 							   //edited by Mike, 20210201
 /*					    	   if (currentFacingState==FACING_LEFT) {
 */
-					    	   if ((currentFacingState==FACING_LEFT)
+//edited by Mike, 20210207
+					    	   else if ((currentFacingState==FACING_LEFT)
 								|| (currentFacingState==FACING_LEFT_AND_UP)) {
 /*	//removed by Mike, 20210105
 									//added by Mike, 20210104
@@ -3930,14 +3935,17 @@ void RobotShip::drawRobotShip()
 				                	if (bIsFiringBeam) {	
 										glPushMatrix();
 			            					glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);
+
 //noted by Mike, 20210117
 //can remove this instruction for weapon recoil
 							                glRotatef(-15, 0.0f, 1.0f, 0.0f);
 							                //edited by Mike, 20210112
 //												drawWeapon(0.3f, -0.15f, -0.5f);	
 											//edited by Mike, 20210117
-											//drawWeapon(0.0f, -0.5f, -0.5f);	
+											//drawWeapon(0.0f, -0.5f, -0.5f);
+											//edited by Mike, 20210207												
 											drawWeapon(0.2f, -0.15f, -0.5f);
+//											drawWeapon(0.2f, -0.15f, -0.2f);
 				                		glPopMatrix();
 				                	}
 //								}
@@ -4927,6 +4935,7 @@ void RobotShip::move(int key)
 	        currentFacingState=FACING_RIGHT_AND_DOWN;
 		}
 	}
+
 }
 void RobotShip::hitBy(MyDynamicObject* mdo)
 {

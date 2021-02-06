@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210131
+ * @date updated: 20210207
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -1837,6 +1837,59 @@ void OpenGLCanvas::update()
     	
     	//TO-DO: -update: to execute diagonal beams
 		//TO-DO: -reverify: rotation angle
+
+		//added by Mike, 20210207
+//note: add this diagonal set of instructions first
+		//diagonal weapon attack
+		if ((myKeysDown[KEY_I]==TRUE) && (myKeysDown[KEY_L]))
+    	{
+			//edited by Mike, 20201013
+			static int i = 0;
+
+			//added by Mike, 20210112
+			if (!myRobotShip->getIsExecuteWithWeaponReady()) {
+				return;
+			}
+			
+			//edited by Mike, 20201218
+            //myRobotShip->move(KEY_LEFT);
+            myRobotShip->move(KEY_I);
+
+    		//edited by Mike, 20210207
+			//myRobotShip->setCurrentFacingState(FACING_UP);
+			myRobotShip->setCurrentFacingState(FACING_RIGHT_AND_UP);
+			
+            for(i=0; i<MAX_BEAMS; i++) {
+              if (!myBeam[i]->isActive()) {
+				//UP
+//				rotationAngle=180;
+				//RIGHT AND UP
+//				rotationAngle=135; //LEFT AND UP
+				rotationAngle=225;
+
+				//added by Mike, 20210112
+				float *beamPosXyz = {myRobotShip->getXYZPos()};
+//				float *beamPosXyz[3] = {myRobotShip->getXYZPos()};
+//edited by Mike, 20210207	
+//				beamPosXyz[0]+=2.0f; //center
+//				beamPosXyz[0]+=0.0f; //left arm 
+				beamPosXyz[0]+=4.0f; //right arm 
+
+				if (i%2==0) {
+                	myBeam[i]->move(rotationAngle+4, beamPosXyz);
+				}
+				else {
+                	myBeam[i]->move(rotationAngle, beamPosXyz);					
+				}
+
+//		        sound->play_sound_clip(beam);
+                return;
+              }
+            }			
+    	}
+
+
+
     	
 		//edited by Mike, 20210102
     	if(myKeysDown[KEY_J] == TRUE)
@@ -1859,39 +1912,6 @@ void OpenGLCanvas::update()
 						
             for(i=0; i<MAX_BEAMS; i++) {
               if (!myBeam[i]->isActive()) {
-				  //edited by Mike, 20201013
-//                myBeam[i]->move(myRobotShip->getRotationAngle(), myRobotShip->getXYZPos());
-				
-				//TO-DO: -update: to immediately move a beam if only single press, i.e. not held
-				//TO-DO: -update: to move beam in curve
-
-				//edited by Mike, 20201230				
-/*				//UP
-				rotationAngle=180;
-*/
-
-
-/*				//removed by Mike, 20210102
-				//TO-DO: -update: beam shape, delay
-				//TO-DO: -reverify: speed-up of facing movement to fire beam
-			    if (myRobotShip->getCurrentFacingState()==FACING_LEFT) 
-			    {  
-					rotationAngle=90;
-			    } 
-			    else if (myRobotShip->getCurrentFacingState()==FACING_RIGHT) 
-			    {
-					rotationAngle=-90;
-			    }
-			    else if (myRobotShip->getCurrentFacingState()==FACING_UP)
-			    {
-					rotationAngle=180;
-			    }
-			    else if (myRobotShip->getCurrentFacingState()==FACING_DOWN)
-			    {
-					rotationAngle=0;
-			    }
-*/
-
 				//LEFT
 				rotationAngle=90;
 
@@ -1940,46 +1960,9 @@ void OpenGLCanvas::update()
 			
             for(i=0; i<MAX_BEAMS; i++) {
               if (!myBeam[i]->isActive()) {
-				  //edited by Mike, 20201013
-//                myBeam[i]->move(myRobotShip->getRotationAngle(), myRobotShip->getXYZPos());
-				
-				//TO-DO: -update: to immediately move a beam if only single press, i.e. not held
-				//TO-DO: -update: to move beam in curve
-
-				//edited by Mike, 20201230				
-/*				//UP
-				rotationAngle=180;
-*/
-
-
-/*				//removed by Mike, 20210102
-				//TO-DO: -update: beam shape, delay
-				//TO-DO: -reverify: speed-up of facing movement to fire beam
-			    if (myRobotShip->getCurrentFacingState()==FACING_LEFT) 
-			    {  
-					rotationAngle=90;
-			    } 
-			    else if (myRobotShip->getCurrentFacingState()==FACING_RIGHT) 
-			    {
-					rotationAngle=-90;
-			    }
-			    else if (myRobotShip->getCurrentFacingState()==FACING_UP)
-			    {
-					rotationAngle=180;
-			    }
-			    else if (myRobotShip->getCurrentFacingState()==FACING_DOWN)
-			    {
-					rotationAngle=0;
-			    }
-*/
 
 				//RIGHT
 				rotationAngle=-90;
-
-				//edited by Mike, 20201225
-//              myBeam[i]->move(rotationAngle, myRobotShip->getXYZPos());
-				//note: when held, beam particles move in waves
-				//note: move beams based on direction where robot faces 
 				
 				//added by Mike, 20210112
 				float *beamPosXyz = {myRobotShip->getXYZPos()};
@@ -1988,16 +1971,6 @@ void OpenGLCanvas::update()
 //				beamPosXyz[2]+=2.0f;
 				beamPosXyz[2]+=1.5f;
 
-				//TO-DO: -add: move weapon with beam
-				//TO-DO: -verify: shorter weapon length
-/*				
-				if (i%2==0) {
-                	myBeam[i]->move(rotationAngle+4, myRobotShip->getXYZPos());
-				}
-				else {
-                	myBeam[i]->move(rotationAngle, myRobotShip->getXYZPos());					
-				}
-*/
 				if (i%2==0) {
                 	myBeam[i]->move(rotationAngle+4, beamPosXyz);
 				}
@@ -2030,12 +2003,6 @@ void OpenGLCanvas::update()
 			
             for(i=0; i<MAX_BEAMS; i++) {
               if (!myBeam[i]->isActive()) {
-				  //edited by Mike, 20201013
-//                myBeam[i]->move(myRobotShip->getRotationAngle(), myRobotShip->getXYZPos());
-				
-				//TO-DO: -update: to immediately move a beam if only single press, i.e. not held
-				//TO-DO: -update: to move beam in curve
-
 				//UP
 				rotationAngle=180;
 
@@ -2062,15 +2029,7 @@ void OpenGLCanvas::update()
               }
             }			
     	}
-/*    	
-		//added by Mike, 20201226; removed by Mike, 20201226
-//		else {
-    	if(myKeysDown[KEY_I] == FALSE) {
-			//KEY_I off; not pressed
-            myRobotShip->move(-KEY_I);
-            return;
-		}
-*/		
+
 		//edited by Mike, 20201015
 //    	else if(myKeysDown[KEY_K] == TRUE)
 		//edited by Mike, 20210102
@@ -2100,27 +2059,6 @@ void OpenGLCanvas::update()
 				//DOWN
 				rotationAngle=0;
 
-/*				//removed by Mike, 20210102
-				//TO-DO: -update: beam shape, delay
-				//TO-DO: -reverify: speed-up of facing movement to fire beam
-			    if (myRobotShip->getCurrentFacingState()==FACING_LEFT) 
-			    {  
-					rotationAngle=90;
-			    } 
-			    else if (myRobotShip->getCurrentFacingState()==FACING_RIGHT) 
-			    {
-					rotationAngle=-90;
-			    }
-			    else if (myRobotShip->getCurrentFacingState()==FACING_UP)
-			    {
-					rotationAngle=180;
-			    }
-			    else if (myRobotShip->getCurrentFacingState()==FACING_DOWN)
-			    {
-					rotationAngle=0;
-			    }
-*/
-
 				//added by Mike, 20210112
 				//TO-DO: -reverify: if causes memory leak problem
 				float *beamPosXyz = {myRobotShip->getXYZPos()};
@@ -2144,6 +2082,9 @@ void OpenGLCanvas::update()
               }
             }
     	}
+
+
+
      }
      else if (currentState==TITLE_SCREEN)
      {
