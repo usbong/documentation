@@ -224,6 +224,14 @@ bool OpenGLCanvas::init()
 	myWindowWidth=6144;
     myWindowHeight=6144;
 
+//added by Mike, 20210207
+//TO-DO: -add: load level map as input.txt file
+//TO-DO: -update: legs during diagonal firing of beams
+/*	//30x30 grid OK
+	myWindowWidth=8192;
+    myWindowHeight=8192;
+*/
+
     //added by Mike, 20201023
     myCanvasPosX=-3.2f;//0.0f;
 	myCanvasPosY=-1.0f;//0.0f;
