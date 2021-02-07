@@ -1858,6 +1858,14 @@ void RobotShip::drawRobotShip()
 //								  glPushMatrix();
 			                        drawUpperArm(0.4f, 0.0f, 0.0f); //right
 //				            	  glPopMatrix();							   	
+
+								  //added by Mike, 20210207 
+							   if (currentFacingState==FACING_RIGHT_AND_DOWN) {
+//can remove this instruction for weapon recoil
+				                glRotatef(-15, 0.0f, 1.0f, 0.0f);
+								drawWeapon(0.2f, -0.15f, -0.5f);
+								}
+
 							   }
 							   else {							
 			            		 glPushMatrix();
@@ -3184,6 +3192,12 @@ void RobotShip::drawRobotShip()
 		            			drawUpperArm(-0.2f, 0.0f, 0.0f); //left				            			
 		            	  glPopMatrix();	// pop back to original coordinate system
 */
+
+							//added by Mike, 20210207
+			                if (bIsFiringBeam) {
+									//note: put weapon closer to center
+									drawWeapon(0.3f, -0.15f, -0.5f);
+							}
 						}
 	
 			            	glPopMatrix();	// pop back to original coordinate system						

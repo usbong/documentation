@@ -1664,6 +1664,15 @@ void OpenGLCanvas::update()
     	
     	//added by Mike, 20201001
     	myRobotShip->update(1); //dt
+
+		//added by Mike, 20210207
+		//TO-DO: -add: myRobotShip collide with Asteroid
+		//TO-DO: -add: myRobotShip's punch collide with Asteroid		
+		//TO-DO: -add: myRobotShip's shield collide with Asteroid		
+/*        for(int a=0; a<MAX_ASTEROID; a++) {
+          myBeam[i]->collideWith(myAsteroid[a]);
+		}              
+*/
 		
 		//added by Mike, 20201013
 /*    	int a;
@@ -1838,6 +1847,8 @@ void OpenGLCanvas::update()
     	//TO-DO: -update: to execute diagonal beams
 		//TO-DO: -reverify: rotation angle
 
+		//TO-DO: -reverify beam start position during firing
+
 		//added by Mike, 20210207
 //note: add this diagonal set of instructions first
 		//diagonal weapon attack
@@ -1938,7 +1949,111 @@ void OpenGLCanvas::update()
             }			
     	}
 
+		//added by Mike, 20210207
+		//LEFT AND DOWN keys
+		if ((myKeysDown[KEY_J]) && (myKeysDown[KEY_K]==TRUE))
+    	{
+			//edited by Mike, 20201013
+			static int i = 0;
 
+			//added by Mike, 20210112
+			if (!myRobotShip->getIsExecuteWithWeaponReady()) {
+				return;
+			}
+			
+			//edited by Mike, 20201218
+            //myRobotShip->move(KEY_LEFT);
+            myRobotShip->move(KEY_I);
+
+    		//edited by Mike, 20210207
+			//myRobotShip->setCurrentFacingState(FACING_UP);
+			myRobotShip->setCurrentFacingState(FACING_LEFT_AND_DOWN);
+			
+            for(i=0; i<MAX_BEAMS; i++) {
+              if (!myBeam[i]->isActive()) {
+				//UP
+//				rotationAngle=180;
+				//RIGHT AND UP
+//				rotationAngle=135; //LEFT AND UP
+//				rotationAngle=225; //RIGHT AND UP
+				rotationAngle=45; //LEFT AND DOWN
+
+
+				//added by Mike, 20210112
+				float *beamPosXyz = {myRobotShip->getXYZPos()};
+//				float *beamPosXyz[3] = {myRobotShip->getXYZPos()};
+//edited by Mike, 20210207	
+//				beamPosXyz[0]+=2.0f; //center
+//				beamPosXyz[0]+=0.0f; //left arm 
+//				beamPosXyz[0]+=4.0f; //right arm 
+//removed by Mike, 20210207
+//				beamPosXyz[0]+=1.0f; //right arm 
+
+				if (i%2==0) {
+                	myBeam[i]->move(rotationAngle+4, beamPosXyz);
+				}
+				else {
+                	myBeam[i]->move(rotationAngle, beamPosXyz);					
+				}
+
+//		        sound->play_sound_clip(beam);
+                return;
+              }
+            }			
+    	}
+
+		//added by Mike, 20210207
+		//RIGHT AND DOWN keys
+		if ((myKeysDown[KEY_L]) && (myKeysDown[KEY_K]==TRUE))
+    	{
+			//edited by Mike, 20201013
+			static int i = 0;
+
+			//added by Mike, 20210112
+			if (!myRobotShip->getIsExecuteWithWeaponReady()) {
+				return;
+			}
+			
+			//edited by Mike, 20201218
+            //myRobotShip->move(KEY_LEFT);
+            myRobotShip->move(KEY_I);
+
+    		//edited by Mike, 20210207
+			//myRobotShip->setCurrentFacingState(FACING_UP);
+			myRobotShip->setCurrentFacingState(FACING_RIGHT_AND_DOWN);
+			
+            for(i=0; i<MAX_BEAMS; i++) {
+              if (!myBeam[i]->isActive()) {
+				//UP
+//				rotationAngle=180;
+				//RIGHT AND UP
+//				rotationAngle=135; //LEFT AND UP
+//				rotationAngle=225; //RIGHT AND UP
+//				rotationAngle=45; //LEFT AND DOWN
+				rotationAngle=-45; //RIGHT AND DOWN
+
+				//added by Mike, 20210112
+				float *beamPosXyz = {myRobotShip->getXYZPos()};
+//				float *beamPosXyz[3] = {myRobotShip->getXYZPos()};
+//edited by Mike, 20210207	
+//				beamPosXyz[0]+=2.0f; //center
+//				beamPosXyz[0]+=0.0f; //left arm 
+//				beamPosXyz[0]+=4.0f; //right arm 
+//				beamPosXyz[0]-=1.0f; //right arm 
+				beamPosXyz[2]+=2.0f; //right arm 
+
+				if (i%2==0) {
+                	myBeam[i]->move(rotationAngle+4, beamPosXyz);
+				}
+				else {
+                	myBeam[i]->move(rotationAngle, beamPosXyz);					
+				}
+
+//		        sound->play_sound_clip(beam);
+                return;
+              }
+            }			
+    	}
 
     	
 		//edited by Mike, 20210102
