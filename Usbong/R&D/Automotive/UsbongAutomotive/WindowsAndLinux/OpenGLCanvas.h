@@ -53,8 +53,6 @@
 //added by Mike, 20201213
 #include <vector>
 
-
-
 #define PI 3.14159
 #define TWO_PI PI*2.0
 #define HALF_PI PI/2.0
@@ -102,6 +100,18 @@
 
 //added by Mike, 20201123
 #define GL_CLAMP_TO_EDGE 0x812F
+
+//added by Mike, 20210207
+#define FACING_UP 0
+#define FACING_DOWN 1
+#define FACING_LEFT 2
+#define FACING_RIGHT 3
+//diagonal
+#define FACING_LEFT_AND_UP 4
+#define FACING_RIGHT_AND_UP 5
+#define FACING_LEFT_AND_DOWN 6
+#define FACING_RIGHT_AND_DOWN 7
+
 
 class MyDynamicObject; //added by Mike, 20201213
 

@@ -1887,6 +1887,56 @@ void OpenGLCanvas::update()
               }
             }			
     	}
+		
+		//added by Mike, 20210207
+		//LEFT AND UP keys
+		if ((myKeysDown[KEY_I]==TRUE) && (myKeysDown[KEY_J]))
+    	{
+			//edited by Mike, 20201013
+			static int i = 0;
+
+			//added by Mike, 20210112
+			if (!myRobotShip->getIsExecuteWithWeaponReady()) {
+				return;
+			}
+			
+			//edited by Mike, 20201218
+            //myRobotShip->move(KEY_LEFT);
+            myRobotShip->move(KEY_I);
+
+    		//edited by Mike, 20210207
+			//myRobotShip->setCurrentFacingState(FACING_UP);
+			myRobotShip->setCurrentFacingState(FACING_LEFT_AND_UP);
+			
+            for(i=0; i<MAX_BEAMS; i++) {
+              if (!myBeam[i]->isActive()) {
+				//UP
+//				rotationAngle=180;
+				//RIGHT AND UP
+				rotationAngle=135; //LEFT AND UP
+//				rotationAngle=225; //RIGHT AND UP
+
+				//added by Mike, 20210112
+				float *beamPosXyz = {myRobotShip->getXYZPos()};
+//				float *beamPosXyz[3] = {myRobotShip->getXYZPos()};
+//edited by Mike, 20210207	
+//				beamPosXyz[0]+=2.0f; //center
+//				beamPosXyz[0]+=0.0f; //left arm 
+//				beamPosXyz[0]+=4.0f; //right arm 
+				beamPosXyz[0]+=1.0f; //right arm 
+
+				if (i%2==0) {
+                	myBeam[i]->move(rotationAngle+4, beamPosXyz);
+				}
+				else {
+                	myBeam[i]->move(rotationAngle, beamPosXyz);					
+				}
+
+//		        sound->play_sound_clip(beam);
+                return;
+              }
+            }			
+    	}
 
 
 
