@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210207
+ * @date updated: 20210208
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -328,7 +328,8 @@ bool OpenGLCanvas::init()
 */
  	iRowCountMax=30;
  	iColumnCountMax=30;
-
+	iHeightCountMax=30; //added by Mike, 20210208
+	
 	fGridSquareWidth = myWindowWidth/iColumnCountMax/100.0;
 	fGridSquareHeight = myWindowHeight/iRowCountMax/100.0;
 
@@ -1423,6 +1424,8 @@ void OpenGLCanvas::drawGridWithZAxis() {
 	//TO-DO: -update: textures	
 	//TO-DO: -add: collision detection with tile blocks
 	
+
+/* //removed by Mike, 20210208	
 	//added by Mike, 20201122
     //Grass
 	sprintf(tempText,"G");
@@ -1440,7 +1443,9 @@ void OpenGLCanvas::drawGridWithZAxis() {
 			myLevel->draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iRowCount, tempText);
 		}
 	}
-
+*/
+	myLevel->drawLevelMapInViewPort(0,0,0,fGridSquareWidth*iRowCountMax,fGridSquareWidth*iColumnCountMax,fGridSquareWidth*iHeightCountMax);
+	
 	//added by Mike, 20201124
     glColor3f(1.0f, 1.0f, 1.0f); // white
 	glBindTexture( GL_TEXTURE_2D, LEVEL_TEXTURE );

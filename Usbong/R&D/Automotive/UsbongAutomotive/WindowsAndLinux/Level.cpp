@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Usbong Social Systems, Inc.
+ * Copyright 2020~2021 Usbong Social Systems, Inc.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201118
- * @date updated: 20201124
+ * @date updated: 20210208
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -279,6 +279,42 @@ void Level::draw_level(GLfloat x, GLfloat y, GLfloat z, char *string)
         // go to the next character in the string
         string++;
     }    
+}
+
+//added by Mike, 20210208
+//TO-DO: -add: read input .txt file
+//TO-DO: -add: water tiles; pilot in water, no firing; RobotShip in water, firing OK; 
+//note: palaka
+void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat fXSize, GLfloat fYSize, GLfloat fZSize) {
+	int myWindowWidth=6144;
+    int myWindowHeight=6144;
+
+	int iRowCountMax=30;
+ 	int iColumnCountMax=30;
+ 	int iHeightCountMax=30; //added by Mike, 20210208
+
+	float fGridSquareWidth = myWindowWidth/iColumnCountMax/100.0;
+	float fGridSquareHeight = myWindowHeight/iRowCountMax/100.0;
+	
+	char tempText[50];
+
+	//added by Mike, 20201122
+    //Grass
+	sprintf(tempText,"G");
+
+	//added by Mike, 20201124
+    glColor3f(0.14f, 0.68f, 0.06f); // Green
+
+ 	for (int iRowCount=0; iRowCount<=iRowCountMax; iRowCount++) {	
+	 	for (int iColumnCount=0; iColumnCount<=iColumnCountMax; iColumnCount++) {		
+			//added by Mike, 20201124
+			//execute this when using solid colors
+			//for computer to not draw borders
+			glBindTexture( GL_TEXTURE_2D, 0 );
+
+			draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iRowCount, tempText);
+		}
+	}
 }
 
 void Level::setupLevel(int myLevelTextureObject)

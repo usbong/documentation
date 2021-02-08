@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200929
- * @date updated: 20210120
+ * @date updated: 20210208
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -225,7 +225,10 @@ class OpenGLCanvas
 
 		//grid
 	 	int iRowCountMax,
-	 		iColumnCountMax;
+	 		iColumnCountMax, 
+			iHeightCountMax; //added by Mike, 20210208
+		
+		//TO-DO: -update: this to use "x", "y", "z" keywords
 		float fGridSquareWidth,
 			  fGridSquareHeight;
 
