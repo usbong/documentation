@@ -320,7 +320,30 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 		}
 	}
 */	
+
+	for (int iRowCount=0; iRowCount<100; iRowCount++) {	
+	 	for (int iColumnCount=0; iColumnCount<100; iColumnCount++) {		
+			if (cCurrentLevelMapContainer[iRowCount][iColumnCount]=='G') {
+			    //Grass
+				sprintf(tempText,"G");
+			
+				//added by Mike, 20201124
+			    glColor3f(0.14f, 0.68f, 0.06f); // Green
+
+				//added by Mike, 20201124
+				//execute this when using solid colors
+				//for computer to not draw borders
+				glBindTexture( GL_TEXTURE_2D, 0 );
 	
+				draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iRowCount, tempText);
+//				draw_level(fGridSquareWidth*iRowCount, 0.0f, fGridSquareHeight*iColumnCount, tempText);
+			}			
+		}
+	}
+
+
+
+/* //removed by Mike, 20210208	
 	for (int iRowCount=0; iRowCount<=iRowCountMax; iRowCount++) {	
 	 	for (int iColumnCount=0; iColumnCount<=iColumnCountMax; iColumnCount++) {		
 			//added by Mike, 20201124
@@ -331,11 +354,12 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 			draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iRowCount, tempText);
 		}
 	}
-
+*/
 }
 
 void Level::setupLevel(int myLevelTextureObject)
 {
+/*	//removed by Mike, 20210208
 	//added by Mike, 20210208
 //	UsbongUtils myUsbongUtils = UsbongUtils();
 	myUsbongUtils = new UsbongUtils();
@@ -344,24 +368,16 @@ void Level::setupLevel(int myLevelTextureObject)
 //	char sOutput[100] = myUsbongUtils->read("inputLevel1.csv"); 	
 	
 	//TO-DO: -add: read command in Level.cpp 
-	myUsbongUtils->read("inputLevel1.csv"); 	
+//	myUsbongUtils->read("inputLevel1.csv"); 	
+*/	
+	//added by Mike, 20210208
+	read("inputLevel1.csv");
 	
 	//TO-DO: -add: in input file, max size of x, y, and z axes
 	//TO-DO: -add: auto-update iCurrentLevelMapContainer
 
 //	printf("%s\n",sOutput);
-		
-/*		
-	int** iCurrentLevelMapContainer
-
-	for (int iRowCount=0; iRowCount<=100; iRowCount++) {	
-	 	for (int iColumnCount=0; iColumnCount<=100; iColumnCount++) {		
-			if ()
-			iCurrentLevelMapContainer[iRowCount][iColumnCount]=
-		}
-	}
-*/
-	
+			
 	//removed by Mike, 20201010
 	//due to blank output
     //glEnable(GL_DEPTH_TEST);
@@ -463,3 +479,124 @@ glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, colour);
 //    glClearColor(0.0f, 1.0f, 0.0f, 1.0f); // to demonstrate font transparency
 
 }
+
+//added by Mike, 20210208
+/* //previous; removed by Mike, 20210208
+void Level::read(char *inputFilename) {
+	int c;
+	FILE *file;
+	
+	//TO-DO: update: this	
+	
+	//noted by Mike, 20201210
+	//note: if concatenated string exceeds size, "stack smashing detected"; terminated; Aborted (core dumped)
+	//I prefer to set a size, instead of dynamically allocate due to increasing likelihood of memory leaks
+	//where memory leaks = not deallocated storage in memory, albeit not used by software application
+	//identifying not deallocated storage in memory becomes more difficult with increasing use
+	char input[60]; //max size
+	strcpy(input, "input/");
+	strcat(input, inputFilename); //already includes .txt
+//	strcat(input,".txt");
+	
+//	printf("dito: %s",input);
+
+//	file = fopen("input/"+inputFilename, "r"); //.txt file
+//	file = fopen("input/inputHalimbawa.txt", "r"); //.txt file
+	file = fopen(input, "r"); //.txt file
+
+	if (file) {
+		while ((c = getc(file)) != EOF) {
+			putchar(c);
+		}
+		fclose(file);
+	}	
+}
+*/
+
+//added by Mike, 20210208
+void Level::read(char *inputFilename) {
+	int c;
+	FILE *file;
+	
+	//TO-DO: update: this		
+//	char** iCurrentLevelMapContainer = new char[100][100];	
+	int iRowCount=0;
+	int iColumnCount=0;
+
+	//set to 0 value		
+	for (iRowCount=0; iRowCount<100; iRowCount++) {	
+	 	for (iColumnCount=0; iColumnCount<100; iColumnCount++) {		
+	 		cCurrentLevelMapContainer[iRowCount][iColumnCount]='0';//'G';
+		}
+	}
+
+	iRowCount=0;
+	iColumnCount=0;
+				
+	//noted by Mike, 20201210
+	//note: if concatenated string exceeds size, "stack smashing detected"; terminated; Aborted (core dumped)
+	//I prefer to set a size, instead of dynamically allocate due to increasing likelihood of memory leaks
+	//where memory leaks = not deallocated storage in memory, albeit not used by software application
+	//identifying not deallocated storage in memory becomes more difficult with increasing use
+	char input[60]; //max size
+	strcpy(input, "input/");
+	strcat(input, inputFilename); //already includes .txt
+//	strcat(input,".txt");
+	
+//	printf("dito: %s",input);
+
+//	file = fopen("input/"+inputFilename, "r"); //.txt file
+//	file = fopen("input/inputHalimbawa.txt", "r"); //.txt file
+	file = fopen(input, "r"); //.txt file
+
+	//TO-DO: -reverify: tile positions
+
+	if (file) {
+		while ((c = getc(file)) != EOF) {
+//			putchar(c);
+
+			char sRow[2] = {c};
+			
+			//delimited using new line
+			char *chRow = strtok(sRow, "\n");
+
+			while (chRow != NULL) {
+				//added by Mike, 20210208
+				iColumnCount=0;
+	
+	//			char s[2] = {0};
+	//			*s = c;
+				char s[2] = {c};
+				
+				//delimited using comma
+				char *ch = strtok(s, ",");
+				while (ch != NULL) {
+				  cCurrentLevelMapContainer[iRowCount][iColumnCount]=c;
+	
+	/*			  
+					if (iColumnCount<100) {
+						iColumnCount=iColumnCount+1;
+					}
+					else {
+						iColumnCount=0;
+					}
+	*/
+				  iColumnCount=iColumnCount+1;
+				  ch = strtok(NULL, ",");
+				}			
+
+				if (iRowCount<100) {
+					iRowCount=iRowCount+1;
+				}
+				else {
+					iRowCount=0;
+				}
+
+				chRow = strtok(NULL, "\n");
+			}
+		}
+		fclose(file);
+	}	
+		
+}
+

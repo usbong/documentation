@@ -55,10 +55,16 @@ private:
 
 	//added by Mike, 20210208
 //	int[100][100] iCurrentLevelMapContainer; //TO-DO: -add: auto-update max size 
-	int** iCurrentLevelMapContainer; //TO-DO: -add: auto-update max size 
+	//int** iCurrentLevelMapContainer; //TO-DO: -add: auto-update max size 
+//	char** iCurrentLevelMapContainer; //TO-DO: -add: auto-update max size 
+//	char[100][100] cCurrentLevelMapContainer; //TO-DO: -add: auto-update max size 
+	char cCurrentLevelMapContainer[100][100]; //TO-DO: -add: auto-update max size 
 
 	GLboolean test_pow2(GLushort i);
 	void load_tga(char *filename);
+
+	//added by Mike, 20210208
+	void read(char *inputFilename);
 	
 public: 
 	void setupLevel(int myLevelTextureObject);
