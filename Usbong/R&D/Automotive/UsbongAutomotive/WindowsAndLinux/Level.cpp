@@ -301,6 +301,7 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 	
 	char tempText[50];
 
+/*
 	//added by Mike, 20201122
     //Grass
 	sprintf(tempText,"G");
@@ -318,6 +319,19 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 			draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iRowCount, tempText);
 		}
 	}
+*/	
+	
+	for (int iRowCount=0; iRowCount<=iRowCountMax; iRowCount++) {	
+	 	for (int iColumnCount=0; iColumnCount<=iColumnCountMax; iColumnCount++) {		
+			//added by Mike, 20201124
+			//execute this when using solid colors
+			//for computer to not draw borders
+			glBindTexture( GL_TEXTURE_2D, 0 );
+
+			draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iRowCount, tempText);
+		}
+	}
+
 }
 
 void Level::setupLevel(int myLevelTextureObject)
@@ -325,7 +339,28 @@ void Level::setupLevel(int myLevelTextureObject)
 	//added by Mike, 20210208
 //	UsbongUtils myUsbongUtils = UsbongUtils();
 	myUsbongUtils = new UsbongUtils();
-	myUsbongUtils->read("inputHalimbawa.txt");
+//	myUsbongUtils->read("inputHalimbawa.txt");
+//	char* sOutput = myUsbongUtils->read("inputLevel1.csv"); 	
+//	char sOutput[100] = myUsbongUtils->read("inputLevel1.csv"); 	
+	
+	//TO-DO: -add: read command in Level.cpp 
+	myUsbongUtils->read("inputLevel1.csv"); 	
+	
+	//TO-DO: -add: in input file, max size of x, y, and z axes
+	//TO-DO: -add: auto-update iCurrentLevelMapContainer
+
+//	printf("%s\n",sOutput);
+		
+/*		
+	int** iCurrentLevelMapContainer
+
+	for (int iRowCount=0; iRowCount<=100; iRowCount++) {	
+	 	for (int iColumnCount=0; iColumnCount<=100; iColumnCount++) {		
+			if ()
+			iCurrentLevelMapContainer[iRowCount][iColumnCount]=
+		}
+	}
+*/
 	
 	//removed by Mike, 20201010
 	//due to blank output

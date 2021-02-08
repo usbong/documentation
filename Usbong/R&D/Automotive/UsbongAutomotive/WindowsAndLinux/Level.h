@@ -53,6 +53,10 @@ private:
 	//TO-DO: -reverify: immediately use UsbongUtils without need to create instance
     UsbongUtils *myUsbongUtils;
 
+	//added by Mike, 20210208
+//	int[100][100] iCurrentLevelMapContainer; //TO-DO: -add: auto-update max size 
+	int** iCurrentLevelMapContainer; //TO-DO: -add: auto-update max size 
+
 	GLboolean test_pow2(GLushort i);
 	void load_tga(char *filename);
 	

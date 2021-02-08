@@ -108,12 +108,23 @@
 #include "UsbongUtils.h"
 #include <string.h>
 
+/*
 //Reference: https://stackoverflow.com/questions/3463426/in-c-how-should-i-read-a-text-file-and-print-all-strings;
 //last accessed: 20201209
 //answer by: Alok Singhal, 20100812T0003
-void UsbongUtils::read(char *inputFilename) {
+//edited by Mike, 20210208
+//void UsbongUtils::read(char *inputFilename) {
+//FILE UsbongUtils::read(char *inputFilename) {
+//char* UsbongUtils::read(char *inputFilename) {
+char[] UsbongUtils::read(char *inputFilename) {	
 	int c;
+//	char* ch;
 	FILE *file;
+	
+	//TO-DO: update: this
+	//note: verify: if there exists variation in max size 
+//	char* sOutput = new char[100]; //added by Mike, 20210208
+	char sOutput[100]; //added by Mike, 20210208
 	
 	//TO-DO: -update: this
 	
@@ -128,17 +139,63 @@ void UsbongUtils::read(char *inputFilename) {
 //	strcat(input,".txt");
 	
 //	printf("dito: %s",input);
-		
+
 //	file = fopen("input/"+inputFilename, "r"); //.txt file
 //	file = fopen("input/inputHalimbawa.txt", "r"); //.txt file
 	file = fopen(input, "r"); //.txt file
 
 	if (file) {
-		while ((c = getc(file)) != EOF)
-			putchar(c);
+		while ((c = getc(file)) != EOF) {
+//		while ((ch = fgetc(file)) != EOF) {
+//			putchar(c);
+//			strcat(atoi(c),sOutput);
+//			strcat(ch,sOutput);
+			char sBuffer[10]; //TO-DO: -update: this
+//			sprintf(sBuffer[10],"%i",c);
+			sprintf(sBuffer,"%i",c);
+			strcat(sBuffer,sOutput);
+		}
 		fclose(file);
 	}
+	
+	return sOutput;
 }
+*/
+
+//Reference: https://stackoverflow.com/questions/3463426/in-c-how-should-i-read-a-text-file-and-print-all-strings;
+//last accessed: 20201209
+//answer by: Alok Singhal, 20100812T0003
+//edited by Mike, 20210208
+void UsbongUtils::read(char *inputFilename) {
+	int c;
+	FILE *file;
+	
+	//TO-DO: update: this	
+	
+	//noted by Mike, 20201210
+	//note: if concatenated string exceeds size, "stack smashing detected"; terminated; Aborted (core dumped)
+	//I prefer to set a size, instead of dynamically allocate due to increasing likelihood of memory leaks
+	//where memory leaks = not deallocated storage in memory, albeit not used by software application
+	//identifying not deallocated storage in memory becomes more difficult with increasing use
+	char input[60]; //max size
+	strcpy(input, "input/");
+	strcat(input, inputFilename); //already includes .txt
+//	strcat(input,".txt");
+	
+//	printf("dito: %s",input);
+
+//	file = fopen("input/"+inputFilename, "r"); //.txt file
+//	file = fopen("input/inputHalimbawa.txt", "r"); //.txt file
+	file = fopen(input, "r"); //.txt file
+
+	if (file) {
+		while ((c = getc(file)) != EOF) {
+			putchar(c);
+		}
+		fclose(file);
+	}	
+}
+
 
 /*
 #define CHUNK 1024 // read 1024 bytes at a time

@@ -43,6 +43,11 @@ public:
 	Pilot(float xPos, float yPos, float zPos,int windowWidth,int windowHeight);
 	~Pilot();
 */	
+	//edited by Mike, 20210208
     void read(char *filename);
+//    FILE read(char *filename);
+// char* read(char *filename);
+//char read(char *filename);
+// char[] read(char *filename);
 
 };
