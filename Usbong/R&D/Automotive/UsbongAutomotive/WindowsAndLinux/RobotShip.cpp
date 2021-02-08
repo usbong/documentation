@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210207
+ * @date updated: 20210208
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -3068,9 +3068,20 @@ void RobotShip::drawRobotShip()
 							   		//added by Mike, 20210202
 							   		armAngles[RIGHT]=30.0f;
 									armAngles[LEFT]=30.0f;
-
+/* //removed by Mike, 20210208
+								   	//UPPER ARM
+				            	    glPushMatrix();
+				            			glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);							
+										//edited by Mike, 20201207
+				            			//drawUpperArm(-0.1f, 0.0f, 0.0f); //left
+				            			drawUpperArm(-0.2f, 0.0f, 0.0f); //left				            			
+				            	    glPopMatrix();	// pop back to original coordinate system
+*/
 				            		glPushMatrix();
-										glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);								
+								   		//added by Mike, 20210208
+				                        drawUpperArm(0.4f, 0.0f, 0.0f); //right       
+	
+								   		glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);								
 				                		glPushMatrix();
 				                            glTranslatef(0.0f, 0.0f, 0.1f);
 				                			glRotatef(45, 1.0f, 0.0f, 0.0f);
@@ -3078,10 +3089,12 @@ void RobotShip::drawRobotShip()
 											//drawLowerArm(0.3f, -0.3f, 0.0f); //right
 											drawLowerArm(0.4f, -0.3f, 0.0f); //right							
 				                		glPopMatrix();
-
-				                        drawUpperArm(0.4f, 0.0f, 0.0f); //right       
+//removed by Mike, 20210208
+//				                        drawUpperArm(0.4f, 0.0f, 0.0f); //right       
 				            		glPopMatrix();									
 									//--
+								   
+								   
 /* //removed by Mike, 20210202
 								  //LOWER ARM
 								  glPushMatrix();
@@ -3102,6 +3115,8 @@ void RobotShip::drawRobotShip()
 										drawLowerArm(-0.3f, 0.0f, 0.0f); //left							
 				            	  glPopMatrix();							
 */
+
+/*	//removed by Mike, 20210208								   
 							   	  //UPPER ARM
 				            	  glPushMatrix();
 				            			glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);							
@@ -3109,7 +3124,7 @@ void RobotShip::drawRobotShip()
 				            			//drawUpperArm(-0.1f, 0.0f, 0.0f); //left
 				            			drawUpperArm(-0.2f, 0.0f, 0.0f); //left				            			
 				            	  glPopMatrix();	// pop back to original coordinate system
-
+*/
 							   }
 							   else {
 
@@ -3138,6 +3153,11 @@ void RobotShip::drawRobotShip()
 			            				glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);
 //				            			glRotatef(armAngles[LEFT], 0.0f, 0.0f, 1.0f);
 
+								   
+								   		//added by Mike, 20210208
+				            			//drawUpperArm(-0.1f, 0.0f, 0.0f); //left
+				            			drawUpperArm(-0.2f, 0.0f, 0.0f); //left
+
 										//edited by Mike, 20210104
 										glPushMatrix();
 				                            glTranslatef(0.0f, 0.0f, 0.1f);
@@ -3151,10 +3171,11 @@ void RobotShip::drawRobotShip()
 											drawLowerArm(-0.2f, -0.3f, 0.0f); //left
 										glPopMatrix();
 
+/*								   		//removed by Mike, 20210208
 										//edited by Mike, 20201207
 				            			//drawUpperArm(-0.1f, 0.0f, 0.0f); //left
 				            			drawUpperArm(-0.2f, 0.0f, 0.0f); //left
-	
+*/	
 				            		glPopMatrix();
 
 							   }
@@ -3182,8 +3203,7 @@ void RobotShip::drawRobotShip()
 								//edited by Mike, 20201218
 								drawLowerArm(-0.3f, 0.0f, 0.0f); //left							
 		            	  glPopMatrix();
-
-/* //removed by Mike, 20210202
+	
 					   	  //UPPER ARM
 		            	  glPushMatrix();
 		            			glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);							
@@ -3191,13 +3211,12 @@ void RobotShip::drawRobotShip()
 		            			//drawUpperArm(-0.1f, 0.0f, 0.0f); //left
 		            			drawUpperArm(-0.2f, 0.0f, 0.0f); //left				            			
 		            	  glPopMatrix();	// pop back to original coordinate system
-*/
 
 							//added by Mike, 20210207
-			                if (bIsFiringBeam) {
+//			                if (bIsFiringBeam) { //removed by Mike, 20210208
 									//note: put weapon closer to center
 									drawWeapon(0.3f, -0.15f, -0.5f);
-							}
+//							}
 						}
 	
 			            	glPopMatrix();	// pop back to original coordinate system						
