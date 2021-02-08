@@ -50,7 +50,7 @@ class Level
 {
 private:
 	//added by Mike, 20201210
-	//TO-DO: -reverify: immediately useUsbongUtils without need to create instance
+	//TO-DO: -reverify: immediately use UsbongUtils without need to create instance
     UsbongUtils *myUsbongUtils;
 
 	GLboolean test_pow2(GLushort i);
