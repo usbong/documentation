@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201118
- * @date updated: 20210208
+ * @date updated: 20210209
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -41,8 +41,9 @@
 #include <stdlib.h>
 
 //edited by Mike, 20201011
-//#include <string.h>
-#include <string>
+#include <string.h>
+//#include <string> //edited by mike, 20210209
+
 
 //added by Mike, 20201011
 #include <iostream>
@@ -554,8 +555,11 @@ void Level::read(char *inputFilename) {
 	if (file) {
 		while ((c = getc(file)) != EOF) {
 //			putchar(c);
-
-			char sRow[2] = {c};
+			
+			//edited by Mike, 20210209
+//			char sRow[2] = {c};
+//			char sRow[2] = {itoa(c)};
+			char sRow[2] = {(char)c};
 			
 			//delimited using new line
 			char *chRow = strtok(sRow, "\n");
@@ -566,7 +570,11 @@ void Level::read(char *inputFilename) {
 	
 	//			char s[2] = {0};
 	//			*s = c;
-				char s[2] = {c};
+				
+				//edited by Mike, 20210209
+//				char s[2] = {c};
+//				char s[2] = {itoa(c)};
+				char s[2] = {(char)c};
 				
 				//delimited using comma
 				char *ch = strtok(s, ",");
