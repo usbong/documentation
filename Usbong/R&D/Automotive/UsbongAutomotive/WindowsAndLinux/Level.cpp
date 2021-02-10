@@ -301,7 +301,16 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 	float fGridSquareHeight = myWindowHeight/iRowCountMax/100.0;
 	
 	char tempText[50];
+/*
+	for (int iRowCount=0; iRowCount<10; iRowCount++) {	
+	 	for (int iColumnCount=0; iColumnCount<10; iColumnCount++) {		
+//	 		printf("%s",cCurrentLevelMapContainer[iRowCount][iColumnCount]);
+			std::cout << cCurrentLevelMapContainer[iRowCount][iColumnCount];
 
+		}
+			printf("\n");			
+	}	
+*/	
 /*
 	//added by Mike, 20201122
     //Grass
@@ -322,14 +331,19 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 	}
 */	
 
-	printf("draw!");
+//	printf("draw!");
 
 	for (int iRowCount=0; iRowCount<10; iRowCount++) {	
 	 	for (int iColumnCount=0; iColumnCount<10; iColumnCount++) {		
 //				printf("%s",cCurrentLevelMapContainer[iRowCount][iColumnCount]);
 
-			if (cCurrentLevelMapContainer[iRowCount][iColumnCount]=="G") {
-				printf("DITO");
+			//if (cCurrentLevelMapContainer[iRowCount][iColumnCount]=="G") {
+//			  if (strcmp(cCurrentLevelMapContainer[iRowCount][iColumnCount],"G") != 0) {
+			  //Reference: http://www.cplusplus.com/reference/string/string/compare/;
+			  //last accessed: 20210210
+			  //note: quotation marks
+			  if (cCurrentLevelMapContainer[iRowCount][iColumnCount].compare("\"G\"") == 0) { //TRUE
+//				  printf("DITO");
 				
 			    //Grass
 				sprintf(tempText,"G");
@@ -530,9 +544,10 @@ void Level::read(char *inputFilename) {
 	int iRowCount=0;
 	int iColumnCount=0;
 
-	//set to 0 value		
-	for (iRowCount=0; iRowCount<100; iRowCount++) {	
-	 	for (iColumnCount=0; iColumnCount<100; iColumnCount++) {		
+	//set to 0 value
+	//10;100
+	for (iRowCount=0; iRowCount<10; iRowCount++) {	
+	 	for (iColumnCount=0; iColumnCount<10; iColumnCount++) {		
 	 		cCurrentLevelMapContainer[iRowCount][iColumnCount]=(char*)"-1";//'G';
 		}
 	}
@@ -610,6 +625,7 @@ void Level::read(char *inputFilename) {
 					
 				//TO-DO: use String, instead of char
 				//TO-DO: -reverify: output due to "G" not put in container
+//				cCurrentLevelMapContainer[iRowCount][iColumnCount]=&ch;
 				cCurrentLevelMapContainer[iRowCount][iColumnCount]=ch;
 
 				printf("%s:",ch);
@@ -629,6 +645,14 @@ void Level::read(char *inputFilename) {
 		}
 		fclose(file);
 	}	
-		
+
+/*	
+	for (iRowCount=0; iRowCount<100; iRowCount++) {	
+	 	for (iColumnCount=0; iColumnCount<100; iColumnCount++) {		
+	 		printf("%s",cCurrentLevelMapContainer[iRowCount][iColumnCount]);
+		}
+			printf("\n");			
+	}	
+*/		
 }
 

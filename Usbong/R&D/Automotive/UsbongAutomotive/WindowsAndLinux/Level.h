@@ -62,7 +62,8 @@ private:
 //	char** iCurrentLevelMapContainer; //TO-DO: -add: auto-update max size 
 //	char[100][100] cCurrentLevelMapContainer; //TO-DO: -add: auto-update max size 
 //TO-DO: -update: "c" to "s"
-	char* cCurrentLevelMapContainer[100][100]; //TO-DO: -add: auto-update max size 
+//	char* cCurrentLevelMapContainer[100][100]; //TO-DO: -add: auto-update max size 
+	std::string cCurrentLevelMapContainer[100][100]; //TO-DO: -add: auto-update max size 
 
 	GLboolean test_pow2(GLushort i);
 	void load_tga(char *filename);
