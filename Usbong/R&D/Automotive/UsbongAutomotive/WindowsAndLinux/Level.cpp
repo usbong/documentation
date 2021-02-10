@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201118
- * @date updated: 20210209
+ * @date updated: 20210210
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -322,9 +322,15 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 	}
 */	
 
-	for (int iRowCount=0; iRowCount<100; iRowCount++) {	
-	 	for (int iColumnCount=0; iColumnCount<100; iColumnCount++) {		
-			if (cCurrentLevelMapContainer[iRowCount][iColumnCount]=='G') {
+	printf("draw!");
+
+	for (int iRowCount=0; iRowCount<10; iRowCount++) {	
+	 	for (int iColumnCount=0; iColumnCount<10; iColumnCount++) {		
+//				printf("%s",cCurrentLevelMapContainer[iRowCount][iColumnCount]);
+
+			if (cCurrentLevelMapContainer[iRowCount][iColumnCount]=="G") {
+				printf("DITO");
+				
 			    //Grass
 				sprintf(tempText,"G");
 			
@@ -527,7 +533,7 @@ void Level::read(char *inputFilename) {
 	//set to 0 value		
 	for (iRowCount=0; iRowCount<100; iRowCount++) {	
 	 	for (iColumnCount=0; iColumnCount<100; iColumnCount++) {		
-	 		cCurrentLevelMapContainer[iRowCount][iColumnCount]='0';//'G';
+	 		cCurrentLevelMapContainer[iRowCount][iColumnCount]=(char*)"-1";//'G';
 		}
 	}
 
@@ -539,7 +545,10 @@ void Level::read(char *inputFilename) {
 	//I prefer to set a size, instead of dynamically allocate due to increasing likelihood of memory leaks
 	//where memory leaks = not deallocated storage in memory, albeit not used by software application
 	//identifying not deallocated storage in memory becomes more difficult with increasing use
-	char input[60]; //max size
+	char input[MAX_INPUT_TEXT_PER_LINE]; //max size
+	char inputTextLine[MAX_INPUT_TEXT_PER_LINE]; //max size
+	char tempInputTextLine[MAX_INPUT_TEXT_PER_LINE]; //max size
+	
 	strcpy(input, "input/");
 	strcat(input, inputFilename); //already includes .txt
 //	strcat(input,".txt");
@@ -551,26 +560,37 @@ void Level::read(char *inputFilename) {
 	file = fopen(input, "r"); //.txt file
 
 	//TO-DO: -reverify: tile positions
-
+	int iCount=0;
+	
 	if (file) {
-		while ((c = getc(file)) != EOF) {
-//			putchar(c);
+		//edited by Mike, 20210210
+//		while ((c = getc(file)) != EOF) {
+		while (fgets (input, MAX_INPUT_TEXT_PER_LINE, file)) { /* read each line of input */			
+//	putchar(c);
 			
-			//edited by Mike, 20210209
-//			char sRow[2] = {c};
-//			char sRow[2] = {itoa(c)};
+/*	//removed by Mike, 20210210
 			char sRow[2] = {(char)c};
-			
+*/			
 			//delimited using new line
-			char *chRow = strtok(sRow, "\n");
-
-			while (chRow != NULL) {
+/*			char *chRow = strtok(sRow, "\n");
+*/
+			sscanf (input, "%s", inputTextLine);
+         
+			
+//			iCount=0;
+	//input text per line			
+//			printf("%i;\n",iCount);
+			printf("%i;",iCount);
+			iCount=iCount+1;
+						
 				//added by Mike, 20210208
 				iColumnCount=0;
 	
+				//removed by Mike, 20210210
+/*				
 	//			char s[2] = {0};
 	//			*s = c;
-				
+
 				//edited by Mike, 20210209
 //				char s[2] = {c};
 //				char s[2] = {itoa(c)};
@@ -578,30 +598,34 @@ void Level::read(char *inputFilename) {
 				
 				//delimited using comma
 				char *ch = strtok(s, ",");
-				while (ch != NULL) {
-				  cCurrentLevelMapContainer[iRowCount][iColumnCount]=c;
+*/					
+			strcpy(tempInputTextLine,inputTextLine);
 	
-	/*			  
-					if (iColumnCount<100) {
-						iColumnCount=iColumnCount+1;
-					}
-					else {
-						iColumnCount=0;
-					}
-	*/
-				  iColumnCount=iColumnCount+1;
+			//note: add "-1" for empty
+			//otherwise, comma as column is skipped
+			char *ch = strtok(tempInputTextLine, ",");
+				
+			while (ch != NULL) {	
+//				printf("%i,",iColumnCount);
+					
+				//TO-DO: use String, instead of char
+				//TO-DO: -reverify: output due to "G" not put in container
+				cCurrentLevelMapContainer[iRowCount][iColumnCount]=ch;
+
+				printf("%s:",ch);
+				printf("%i,",iColumnCount);
+				
+				iColumnCount=iColumnCount+1;
 				  ch = strtok(NULL, ",");
-				}			
+			}			
 
-				if (iRowCount<100) {
-					iRowCount=iRowCount+1;
-				}
-				else {
-					iRowCount=0;
-				}
-
-				chRow = strtok(NULL, "\n");
+			if (iRowCount<100) {
+				iRowCount=iRowCount+1;
 			}
+			else {
+				iRowCount=0;
+			}
+			printf("\n");			
 		}
 		fclose(file);
 	}	

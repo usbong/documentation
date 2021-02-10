@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201118
- * @date updated: 20210208
+ * @date updated: 20210210
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -43,6 +43,9 @@
 //added by Mike, 20201124
 #define GL_CLAMP_TO_BORDER 0x812D
 
+//added by Mike, 20210210
+#define MAX_INPUT_TEXT_PER_LINE 60
+
 //added by Mike, 20201210
 class UsbongUtils;
 
@@ -58,7 +61,8 @@ private:
 	//int** iCurrentLevelMapContainer; //TO-DO: -add: auto-update max size 
 //	char** iCurrentLevelMapContainer; //TO-DO: -add: auto-update max size 
 //	char[100][100] cCurrentLevelMapContainer; //TO-DO: -add: auto-update max size 
-	char cCurrentLevelMapContainer[100][100]; //TO-DO: -add: auto-update max size 
+//TO-DO: -update: "c" to "s"
+	char* cCurrentLevelMapContainer[100][100]; //TO-DO: -add: auto-update max size 
 
 	GLboolean test_pow2(GLushort i);
 	void load_tga(char *filename);
