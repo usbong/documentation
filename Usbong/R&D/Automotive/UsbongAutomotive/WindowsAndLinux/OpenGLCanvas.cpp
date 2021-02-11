@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210210
+ * @date updated: 20210211
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -337,12 +337,20 @@ bool OpenGLCanvas::init()
     
     //added by Mike, 20200930
 	currentState = GAME_SCREEN; //TO-DO: -update: this
-	
+
+    //added by Mike, 20210211
+    myLevel = new Level();    
+    myLevel->setupLevel(LEVEL_TEXTURE); //FONT_TEXTURE);
+		
 	//added by Mike, 20201001
 	//edited by Mike, 20201115
 	//myRobotShip = new RobotShip;
-	myRobotShip = new RobotShip(0.0f,0.0f,0.0f,myWindowWidth,myWindowHeight);
-    myRobotShip->setOpenGLCanvas(this);
+	//edited by Mike, 20210211
+	//myRobotShip = new RobotShip(0.0f,0.0f,0.0f,myWindowWidth,myWindowHeight);
+	
+//	printf("%d",myLevel->getMaxXAxisViewport());
+	myRobotShip = new RobotShip(0.0f,0.0f,0.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
+	myRobotShip->setOpenGLCanvas(this);
 
 //TO-DO: -update: myPilot instructions, e.g. movement
 	//added by Mike, 20201207
@@ -470,11 +478,12 @@ bool OpenGLCanvas::init()
     //added by Mike, 20201011
     setupFont(FONT_TEXTURE);
 
-	//TO-DO: -update: this
+/* //removed by Mike, 20210211	
     //added by Mike, 20201118
     myLevel = new Level();    
     myLevel->setupLevel(LEVEL_TEXTURE); //FONT_TEXTURE);
-
+*/
+	
 	return true;
 }
 

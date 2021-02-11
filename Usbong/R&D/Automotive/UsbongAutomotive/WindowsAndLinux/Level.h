@@ -80,6 +80,17 @@ private:
 public: 
 	void setupLevel(int myLevelTextureObject);
 	
+	//added by Mike, 20210211
+	int getMaxXAxisViewport() {
+		return MAX_X_AXIS_VIEWPORT;
+	}
+	int getMaxYAxisViewport() {
+		return MAX_Y_AXIS_VIEWPORT; 
+	}
+	int getMaxZAxisViewport() {
+		return MAX_Z_AXIS_VIEWPORT; 
+	}
+	
 	/*	//removed by Mike, 2020118
 	void draw_string(GLfloat x, GLfloat y, GLfloat z, char *string);
 	void draw_char(GLfloat x, GLfloat y, GLfloat z, char c);
