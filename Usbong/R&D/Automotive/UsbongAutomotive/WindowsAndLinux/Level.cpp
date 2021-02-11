@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201118
- * @date updated: 20210210
+ * @date updated: 20210211
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -332,9 +332,13 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 */	
 
 //	printf("draw!");
-
-	for (int iRowCount=0; iRowCount<10; iRowCount++) {	
-	 	for (int iColumnCount=0; iColumnCount<10; iColumnCount++) {		
+ 
+	 //edited by Mike, 20210211
+//	for (int iRowCount=0; iRowCount<10; iRowCount++) {	
+	for (int iRowCount=0; iRowCount<MAX_Z_AXIS_VIEWPORT; iRowCount++) {	
+	 //edited by Mike, 20210211
+//		for (int iColumnCount=0; iColumnCount<10; iColumnCount++) {		
+		for (int iColumnCount=0; iColumnCount<MAX_X_AXIS_VIEWPORT; iColumnCount++) {					
 //				printf("%s",cCurrentLevelMapContainer[iRowCount][iColumnCount]);
 
 			//if (cCurrentLevelMapContainer[iRowCount][iColumnCount]=="G") {
@@ -546,8 +550,12 @@ void Level::read(char *inputFilename) {
 
 	//set to 0 value
 	//10;100
+/*	//edited by Mike, 20210211
 	for (iRowCount=0; iRowCount<10; iRowCount++) {	
-	 	for (iColumnCount=0; iColumnCount<10; iColumnCount++) {		
+		for (iColumnCount=0; iColumnCount<10; iColumnCount++) {		
+*/
+	for (iRowCount=0; iRowCount<MAX_Z_AXIS_VIEWPORT; iRowCount++) {	
+		for (iColumnCount=0; iColumnCount<MAX_X_AXIS_VIEWPORT; iColumnCount++) {		
 	 		cCurrentLevelMapContainer[iRowCount][iColumnCount]=(char*)"-1";//'G';
 		}
 	}
@@ -628,8 +636,12 @@ void Level::read(char *inputFilename) {
 //				cCurrentLevelMapContainer[iRowCount][iColumnCount]=&ch;
 				cCurrentLevelMapContainer[iRowCount][iColumnCount]=ch;
 
+/*	//edited by Mike, 20210211		
 				printf("%s:",ch);
 				printf("%i,",iColumnCount);
+*/
+				printf("%i:",iColumnCount);
+				printf("%s,",ch);
 				
 				iColumnCount=iColumnCount+1;
 				  ch = strtok(NULL, ",");
