@@ -43,7 +43,12 @@ edited by: Pablo Bianchi, 20190504T0401<br/>
 2.1.4) Paste "glut32.dll" to UsbongAutomotive's WindowsAndLinux output folder.<br/>
 --> Reminder: UsbongAutomotive.exe is located in the output folder.<br/>
 <br/>
-Done! You can now execute UsbongAutomotive.exe
+Done! You can now execute UsbongAutomotive.exe!
+
+#### Reference:
+2.1.5) https://answers.microsoft.com/en-us/windows/forum/windows_vista-windows_programs/opengl-glut-used-to-work-on-xp-get-glut32dll-not/8858c510-dc6c-4e11-9958-d3cb4a883227<br/>
+last accessed: 20210216T0512<br/>
+answer by: MattS440, 20100118<br/>
 
 ## 3) Human Person
 3.1) upper arm;<br/>
