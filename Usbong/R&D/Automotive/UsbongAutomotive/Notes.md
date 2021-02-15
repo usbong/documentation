@@ -30,6 +30,21 @@ last accessed: 20210205T1722<br/>
 answer by: Bruno Pereira, 20120419T1947<br/>
 edited by: Pablo Bianchi, 20190504T0401<br/>
 
+## 2) Windows Machine
+### 2.1) Problem: When executing UsbongAutomotive.exe, computer notifies you that glut32.dll does not exist
+<b>Answer:</b> Execute the following steps:<br/>
+2.1.1) Download <b>glut-3.7.6-bin.zip (117 KB)</b> from https://user.xmission.com/~nate/glut.html.<br/>
+--> web address last accessed: 20210216<br/>
+<br/>
+2.1.2) Extract zip file to present directory.<br/>
+<br/>
+2.1.3) Copy "glut32.dll" from extracted folder.<br/>
+<br/>
+2.1.4) Paste "glut32.dll" to UsbongAutomotive's WindowsAndLinux output folder.<br/>
+--> Reminder: UsbongAutomotive.exe is located in the output folder.<br/>
+<br/>
+Done! You can now execute UsbongAutomotive.exe
+
 ## 3) Human Person
 3.1) upper arm;<br/>
 3.1.1) humerus<br/>
