@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210208
+ * @date updated: 20210219
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -425,9 +425,13 @@ RobotShip::RobotShip(float xPos, float yPos, float zPos, int windowWidth, int wi
 /*	myWidth=1.0f;
     myHeight=1.0f;
 */
+	
+/*	//edited by Mike, 20210219
 	myWidth=1.4f;
     myHeight=1.4f;
-
+*/
+	myWidth=4.0f; //TO-DO: -add: fGridSquareWidth, etc
+    myHeight=4.0f;
     
 /*
     myWidth=0.5f;
@@ -448,6 +452,8 @@ RobotShip::RobotShip(float xPos, float yPos, float zPos, int windowWidth, int wi
 	myWindowWidth=windowWidth;
 	myWindowHeight=windowHeight;
 	
+	//added by Mike, 20210219
+	setCollidable(true);
 
 //    myWidthX=0.5;
 
@@ -5608,14 +5614,16 @@ void RobotShip::hitBy(MyDynamicObject* mdo)
 {
      //changeState(DEATH_STATE);
      //setCollidable(false);
-    myOpenGLCanvas->loseLife();
+	
+/*	//removed by Mike, 20210219
+	myOpenGLCanvas->loseLife();
     
     //removed by Mike, 20201001
-/*
-	zing = sound->load_sound_clip(RESETSOUND);
-	sound->play_sound_clip(zing);	
-*/
+////	zing = sound->load_sound_clip(RESETSOUND);
+////	sound->play_sound_clip(zing);	
+
     reset();    
+*/	
 }
 
 void RobotShip::setOpenGLCanvas(OpenGLCanvas* c)
@@ -5979,6 +5987,38 @@ void RobotShip::drawWeapon(float xPos, float yPos, float zPos)
 	glPopMatrix();
 }
 
+bool RobotShip::isIntersectingRect(MyDynamicObject* mdo1, MyDynamicObject* mdo2)
+{     
+/*
+    char str[700];
+    sprintf(str,"here: %f",mdo1->getY());//myZPos
+    MessageBox(NULL, str, "Welcome!", MB_OK);
+*/
+
+	//note: computer computation correct, albeit human person may think 
+	//based on observation in 3D (3-Dimensions) that beam should hit asteroid
+	//alternative collision detection technique 
+	//for computer to verify if not intersecting
+	//Reference: Jongko, J. et al (2004)
+/* //edited by Mike, 20210219	
+    if (mdo2->getZ()+mdo2->getHeight() < mdo1->getZ() || //is the bottom of mdo2 above the top of mdo1?
+        mdo2->getZ() > mdo1->getZ()+mdo1->getHeight() || //is the top of mdo2 below bottom of mdo1?
+        mdo2->getX()+mdo2->getWidth() < mdo1->getX()  || //is the right of mdo2 to the left of mdo1?
+        mdo2->getX() > mdo1->getX()+mdo1->getWidth()) //is the left of mdo2 to the right of mdo1?
+        return false;
+*/
+	float fLowerArm=1.2f; //punch
+	
+	//TO-DO: -update: to use keyword for object size in z-axis, etc
+    if (mdo2->getZ()+mdo2->getWidth()+fLowerArm < mdo1->getZ() || //is the bottom of mdo2 above the top of mdo1?
+        mdo2->getZ() > mdo1->getZ()+mdo1->getWidth()+fLowerArm|| //is the top of mdo2 below bottom of mdo1?
+        mdo2->getX()+mdo2->getWidth()+fLowerArm < mdo1->getX()  || //is the right of mdo2 to the left of mdo1?
+        mdo2->getX() > mdo1->getX()+mdo1->getWidth()+fLowerArm) {//is the left of mdo2 to the right of mdo1?
+        return false;
+	}
+	
+    return true;
+}
 //--------------------------------------------
 
 

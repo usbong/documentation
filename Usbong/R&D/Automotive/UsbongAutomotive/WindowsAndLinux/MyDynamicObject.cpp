@@ -176,12 +176,21 @@ bool MyDynamicObject::isIntersectingRect(MyDynamicObject* mdo1, MyDynamicObject*
 	//alternative collision detection technique 
 	//for computer to verify if not intersecting
 	//Reference: Jongko, J. et al (2004)
+/* //edited by Mike, 20210219	
     if (mdo2->getZ()+mdo2->getHeight() < mdo1->getZ() || //is the bottom of mdo2 above the top of mdo1?
         mdo2->getZ() > mdo1->getZ()+mdo1->getHeight() || //is the top of mdo2 below bottom of mdo1?
         mdo2->getX()+mdo2->getWidth() < mdo1->getX()  || //is the right of mdo2 to the left of mdo1?
         mdo2->getX() > mdo1->getX()+mdo1->getWidth()) //is the left of mdo2 to the right of mdo1?
         return false;
-
+*/
+	//TO-DO: -update: to use keyword for object size in z-axis, etc
+    if (mdo2->getZ()+mdo2->getWidth() < mdo1->getZ() || //is the bottom of mdo2 above the top of mdo1?
+        mdo2->getZ() > mdo1->getZ()+mdo1->getWidth() || //is the top of mdo2 below bottom of mdo1?
+        mdo2->getX()+mdo2->getWidth() < mdo1->getX()  || //is the right of mdo2 to the left of mdo1?
+        mdo2->getX() > mdo1->getX()+mdo1->getWidth()) {//is the left of mdo2 to the right of mdo1?
+        return false;
+	}
+	
     return true;
 }
 

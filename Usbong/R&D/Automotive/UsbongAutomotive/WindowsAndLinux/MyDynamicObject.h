@@ -158,8 +158,10 @@ public:
     
     bool checkCollision(MyDynamicObject* mdo1, MyDynamicObject* mdo2);
     void collideWith(MyDynamicObject* mdo);
-        
-    bool isIntersectingRect(MyDynamicObject* mdo1, MyDynamicObject* mdo2);
+
+	//edited by Mike, 20210219
+    //bool isIntersectingRect(MyDynamicObject* mdo1, MyDynamicObject* mdo2);
+    virtual bool isIntersectingRect(MyDynamicObject* mdo1, MyDynamicObject* mdo2);
 
 	//added by Mike, 20201226
 /*	//removed by Mike, 20201226

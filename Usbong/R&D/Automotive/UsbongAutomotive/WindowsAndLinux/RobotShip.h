@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210207
+ * @date updated: 20210219
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -324,7 +324,16 @@ public:
 		}
     	return true;
 	}
-    
+	
+	//added by Mike, 20210219
+    bool getIsExecutingPunch() {
+    	if (bIsExecutingPunch) {
+    		return true;
+		}
+		
+		return false;
+	}
+	
     //added by Mike, 20201213
     virtual void draw() {
     	drawRobotShip();
@@ -358,4 +367,8 @@ public:
     
     void reset();
     int getState();
+	
+	//added by Mike, 20210219
+	//TO-DO: -fix: punch left; reverify: due to rotation, etc
+    virtual bool isIntersectingRect(MyDynamicObject* mdo1, MyDynamicObject* mdo2);	
 };

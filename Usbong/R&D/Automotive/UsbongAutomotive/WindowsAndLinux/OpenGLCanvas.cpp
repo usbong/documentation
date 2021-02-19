@@ -1726,8 +1726,8 @@ void OpenGLCanvas::update()
 			//added by Mike, 20201016
             for(int a=0; a<MAX_ASTEROID; a++) {
               myBeam[i]->collideWith(myAsteroid[a]);
-			}              
-          }
+			}   			  
+		  }
 		}
 
 		//added by Mike, 20201016
@@ -1735,7 +1735,12 @@ void OpenGLCanvas::update()
           //if (myBeam[i]->isActive())
             myAsteroid[i]->update(1);
             //removed by Mike, 20201016
-//            myAsteroid[i]->collideWith(myRobotShip);        
+//            myAsteroid[i]->collideWith(myRobotShip);       
+			
+			//added by Mike, 20210219  
+          	if (myRobotShip->getIsExecutingPunch()) {
+              myAsteroid[i]->collideWith(myRobotShip);			  
+            }			
         }
 
        	//process input

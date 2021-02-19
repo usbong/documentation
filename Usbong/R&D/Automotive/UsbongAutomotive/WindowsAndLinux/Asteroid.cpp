@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Usbong Social Systems, Inc.
+ * Copyright 2020~2021 Usbong Social Systems, Inc.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201016
- * @date updated: 20210107
+ * @date updated: 20210219
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -205,6 +205,11 @@ Asteroid::Asteroid(int status, float xPos, float yPos, float zPos, int windowWid
 		myYPos=yPos;
 		//edited by Mike, 20201113
 		myZPos=zPos;
+
+		//added by Mike, 20210219
+		stepX=2.00; //0.1
+		stepY=2.00;
+		stepZ=2.00;
 
 		//added by Mike, 20201115
 		myWindowWidth=windowWidth;
@@ -520,30 +525,19 @@ void Asteroid::update(float dt)
            		if (myXPos <= 0.0f) myXPos = myWindowWidth-myWidth/8; //if left side
            		else if (myXPos >= myWindowWidth) myXPos = 0.0f+myWidth/8; //if right side
 */
-           		//edited by Mike, 20201116
-//           		if (myXPos <= 0.0f) myXPos = 20-myWidth/8; //if left side
+           		//edited by Mike, 20201116; edited again by Mike, 20210219
+/*			
            		if (myXPos <= 0.0f) myXPos = myWindowWidth/100-myWidth/8; //if left side
            		else if (myXPos >= myWindowWidth/100) myXPos = 0.0f+myWidth/8; //if right side
-
-				//TO-DO: -add: 0.1f*iRowCountMax
-				//removed by Mike, 20201113
-				//TO-DO: -use myZPos
-/*				
-           		if (myYPos >= 0.1f*20) myYPos = 0.0f+myHeight/8; //if bottom side
-           		else if (myYPos <= 0.0f) myYPos = 0.1f*20-myHeight/8; //if top side
-*/
-				//added by Mike, 20201115
-/*
+           		if (myZPos >= myWindowHeight/100) myZPos = 0.0f+myHeight/8; //if bottom side
+           		else if (myZPos <= 0.0f) myZPos = myWindowHeight/100-myHeight/8; //if top side
+*/           		           		
+           		if (myXPos <= 0.0f) myXPos = myWindowWidth-myWidth/8; //if left side
+           		else if (myXPos >= myWindowWidth) myXPos = 0.0f+myWidth/8; //if right side
            		if (myZPos >= myWindowHeight) myZPos = 0.0f+myHeight/8; //if bottom side
            		else if (myZPos <= 0.0f) myZPos = myWindowHeight-myHeight/8; //if top side
-*/
-           		if (myZPos >= myWindowHeight/100) myZPos = 0.0f+myHeight/8; //if bottom side
-           		//edited by Mike, 20201116
-//           		else if (myZPos <= 0.0f) myZPos = 20-myHeight/8; //if top side
-           		else if (myZPos <= 0.0f) myZPos = myWindowHeight/100-myHeight/8; //if top side
-           		           		
-               //}
-                break;
+
+				break;
            case DEATH_STATE:
 /*			//added by Mike, 20201016
                 if (invincibleCounter==10) {
@@ -552,9 +546,10 @@ void Asteroid::update(float dt)
                 }
                 else invincibleCounter++;
 */              
-				//edited by Mike, 20201016
-                if (iDeathAnimationCounter==20) {//40) { //10
-                  //edited by Mike, 20201113
+				//edited by Mike, 20201016; edited again by Mike, 20210219
+//                if (iDeathAnimationCounter==20) {//40) { //10
+                if (iDeathAnimationCounter==40) {//40) { //10
+				  //edited by Mike, 20201113
                   //reset(myStartXPos,myStartYPos);
                   reset(myStartXPos,myStartYPos,myStartZPos);
 
@@ -599,16 +594,22 @@ void Asteroid::update(float dt)
 						//xVel=xAccel;
 						//edited by Mike, 20210116
 //						xVel=xAccel*30.0;
-						xVel=xAccel*0.1;
+						//edited by Mike, 20210219
+						//xVel=xAccel*0.1;
+						xVel=xAccel*stepX;
 	                    
 						//edited by Mike, 20201117	                    
 	                    //yVel=yAccel;
 	                    yVel=0;//yAccel;
+						
 //	                    zVel=zAccel;
 						//edited by Mike, 20210116
 //	                    zVel=zAccel*30.0;
-	                    zVel=zAccel*0.1;
+						//edited by Mike, 20210219
+	                    //zVel=zAccel*0.1;
+	                    zVel=zAccel*stepZ;
 
+						
 /*						//edited by Mike, 20201016
 	                    myXPos+=xVel;
 	                    myYPos+=yVel;
