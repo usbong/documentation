@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210206
+ * @date updated: 20210219
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -490,7 +490,7 @@ Pilot::Pilot(float xPos, float yPos, float zPos, int windowWidth, int windowHeig
 	}	
 	
 	//added by Mike, 20210128
-	for (int iCount=0; iCount<MAX_DIRECTIONAL_KEY_DASH_COUNT; iCount++) {
+	for (int iCount=0; iCount<PILOT_MAX_DIRECTIONAL_KEY_DASH_COUNT; iCount++) {
 		bIsExecutingDashArray[iCount]=false;
 		
 		//added by Mike, 20210128
@@ -4392,7 +4392,7 @@ void Pilot::setDashStateWithKeyDown(int keyCode) {
 			//edited by Mike, 20210129
 //			bIsExecutingDashArray[keyCode]=true;			
 			//verify if any directional key already executes dash
-			for (int iCount=0; iCount<MAX_DIRECTIONAL_KEY_DASH_COUNT; iCount++) {
+			for (int iCount=0; iCount<PILOT_MAX_DIRECTIONAL_KEY_DASH_COUNT; iCount++) {
 				if (bIsExecutingDashArray[keyCode]) {
 					return;
 				}							
@@ -4439,7 +4439,7 @@ void Pilot::setDashStateWithKeyUp() {
 	if (bIsExecutingDash) {
 		//edited by Mike, 20210128
 //		bIsExecutingDash=false;
-		for (int iCount=0; iCount<MAX_DIRECTIONAL_KEY_DASH_COUNT; iCount++) {
+		for (int iCount=0; iCount<PILOT_MAX_DIRECTIONAL_KEY_DASH_COUNT; iCount++) {
 			bIsExecutingDashArray[iCount]=false;			
 		}
 
@@ -4459,7 +4459,7 @@ void Pilot::setDashStateWithKeyUp(int keyCode) {
 
 	//added by Mike, 20210202
 	//if removed, dash persists
-	for (int iCount=0; iCount<MAX_DIRECTIONAL_KEY_DASH_COUNT; iCount++) {
+	for (int iCount=0; iCount<PILOT_MAX_DIRECTIONAL_KEY_DASH_COUNT; iCount++) {
 		if (bIsExecutingDashArray[iCount]) {
 			bIsExecutingDash=true;
 			break;
@@ -4495,7 +4495,7 @@ void Pilot::setDashStateWithKeyUp(int keyCode) {
 //		iInputWaitCount=0;
 
 		//edited by Mike, 20210129
-/*		for (int iCountKey=0; iCountKey<MAX_DIRECTIONAL_KEY_DASH_COUNT; iCountKey++) {
+/*		for (int iCountKey=0; iCountKey<PILOT_MAX_DIRECTIONAL_KEY_DASH_COUNT; iCountKey++) {
 			iInputWaitCountArray[iCountKey]=0;
 		}		
 */		
@@ -4549,7 +4549,7 @@ void Pilot::autoVerifyDashStateWithKeyUp(int keyCode) {
 	else {
 		//edited by Mike, 20210128
 //		bIsExecutingDash=false;
-		for (int iCount=0; iCount<MAX_DIRECTIONAL_KEY_DASH_COUNT; iCount++) {
+		for (int iCount=0; iCount<PILOT_MAX_DIRECTIONAL_KEY_DASH_COUNT; iCount++) {
 			bIsExecutingDashArray[iCount]=false;			
 		}
 		
@@ -4621,10 +4621,10 @@ void Pilot::move(int key)
 
 //          for (int iCount=0; iCount<10; iCount++) {
 		   //edited by Mike, 20210130
-		   //note: in RobotShip.h set MAX_DIRECTIONAL_KEY_DASH_COUNT=4, not 6,
+		   //note: in RobotShip.h set PILOT_MAX_DIRECTIONAL_KEY_DASH_COUNT=4, not 6,
 		   //causes RobotShip movement error
 		   //edited by Mike, 20210202
-          for (int iCount=0; iCount<MAX_DIRECTIONAL_KEY_DASH_COUNT; iCount++) {
+          for (int iCount=0; iCount<PILOT_MAX_DIRECTIONAL_KEY_DASH_COUNT; iCount++) {
 //          for (int iCount=0; iCount<4; iCount++) {
 			  if (myKeysDown[iCount]==TRUE) {
           		bHasPressedADirectionalKey=true;
@@ -4662,7 +4662,7 @@ void Pilot::move(int key)
           //based on enum Keys 
           //edited by Mike, 20210129
 //          for (int iCount=0; iCount<10; iCount++) {
-          for (int iCount=0; iCount<MAX_DIRECTIONAL_KEY_DASH_COUNT; iCount++) {
+          for (int iCount=0; iCount<PILOT_MAX_DIRECTIONAL_KEY_DASH_COUNT; iCount++) {
    		    if (myKeysDown[iCount]==TRUE) {
           		bHasPressedADirectionalKey=true;
    		    	break;
@@ -4702,7 +4702,7 @@ void Pilot::move(int key)
           //based on enum Keys 
           //edited by Mike, 20210129
 //          for (int iCount=0; iCount<10; iCount++) {
-          for (int iCount=0; iCount<MAX_DIRECTIONAL_KEY_DASH_COUNT; iCount++) {
+          for (int iCount=0; iCount<PILOT_MAX_DIRECTIONAL_KEY_DASH_COUNT; iCount++) {
 		   	if (myKeysDown[iCount]==TRUE) {
           		bHasPressedADirectionalKey=true;
    		    	break;

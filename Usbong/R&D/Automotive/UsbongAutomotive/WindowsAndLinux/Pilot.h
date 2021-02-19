@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210206
+ * @date updated: 20210219
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -59,18 +59,18 @@
 //edited by Mike, 20210130
 //TO-DO: -reverify: cause why value is 6, not 4 in Linux machine
 //edited by Mike, 20210130
-//#define MAX_DIRECTIONAL_KEY_DASH_COUNT 6//4 //10 //added by Mike, 20210128
+//#define PILOT_MAX_DIRECTIONAL_KEY_DASH_COUNT 6//4 //10 //added by Mike, 20210128
 
 #ifdef _WIN32
-	//edited by Mike, 20210203
-	#define MAX_DIRECTIONAL_KEY_DASH_COUNT 4 //10 //added by Mike, 20210128
+	//edited by Mike, 20210203; edited again by Mike, 20210219
+	#define PILOT_MAX_DIRECTIONAL_KEY_DASH_COUNT 4 //10 //added by Mike, 20210128
 //	#define MAX_DIRECTIONAL_KEY_DASH_COUNT 6 //10 //added by Mike, 20210128
 #endif
 
 #ifdef linux
-	//edited by Mike, 20210204
+	//edited by Mike, 20210204; edited again by Mike, 20210219
 //	#define MAX_DIRECTIONAL_KEY_DASH_COUNT 6//4 //10 //added by Mike, 20210128
-	#define MAX_DIRECTIONAL_KEY_DASH_COUNT 4 //added by Mike, 20210128
+	#define PILOT_MAX_DIRECTIONAL_KEY_DASH_COUNT 4 //added by Mike, 20210128
 #endif
 
 
@@ -195,12 +195,12 @@ private:
 	//last accessed: 20210128; answer by: Martin York, 20081019T1752; edited 20130125T2158
 	//Additional Note: The following do not solve the problem
 	//bool* bIsExecutingDashArray;
-	//bool* bIsExecutingDashArray = new bool[6];//MAX_DIRECTIONAL_KEY_DASH_COUNT];
-	bool bIsExecutingDashArray[MAX_DIRECTIONAL_KEY_DASH_COUNT]; //6
+	//bool* bIsExecutingDashArray = new bool[6];//PILOT_MAX_DIRECTIONAL_KEY_DASH_COUNT];
+	bool bIsExecutingDashArray[PILOT_MAX_DIRECTIONAL_KEY_DASH_COUNT]; //6
 
 	//added by Mike, 20210126; edited by Mike, 20210128
 	//int iInputWaitCount; //we use with dash
-	int iInputWaitCountArray[MAX_DIRECTIONAL_KEY_DASH_COUNT]; //6
+	int iInputWaitCountArray[PILOT_MAX_DIRECTIONAL_KEY_DASH_COUNT]; //6
 
     GLint tricount;
     GLint isMovingForward;
