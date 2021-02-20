@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210211
+ * @date updated: 20210220
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -1070,6 +1070,8 @@ void OpenGLCanvas::render()
               myCanvasCenterPosX, myCanvasCenterPosY, myCanvasCenterPosZ, // look-at point
               0.0, 1.0, 0.0); // up-direction
 
+		
+		
 /*
     gluLookAt(0.0, 0.5, 3.0, // eye position 0.0, 0.0, 3.0
               0.0, 0.0, 1.0, // look-at point
@@ -1078,17 +1080,27 @@ void OpenGLCanvas::render()
 	//--------------------------------------------------------
 
 	//note: reference point/origin at center; not top-left
+
+	//added by Mike, 20210220
+	//ISOMETRIC VIEW					  	
+	//-----
 	//added by Mike, 20201115
-	glRotatef(45, 1.0f, 0.0f, 0.0f);
+/*	glRotatef(45, 1.0f, 0.0f, 0.0f);
 	glRotatef(30, 0.0f, 1.0f, 0.0f);
-
-	//edited by Mike, 20210114
-/*    glScalef(0.3f, 0.3f, 0.3f);
-*/
-//    glScalef(0.05f, 0.05f, 0.05f);
-//    glScalef(0.1f, 0.1f, 0.1f);
     glScalef(0.2f, 0.2f, 0.2f);
+	//-----
+*/
 
+	//added by Mike, 20210220
+	//3rd-person view
+	//without additional rotate and scale
+	//TO-DO: -reverify: robot's draw sequence
+
+	//added by Mike, 20210220
+	//TO-DO: -add: 2D horizontal-scrolling view
+	//note: Zelda Link's Awakening DX; Gameboy Color
+
+		
 //    glTranslatef(-1.0f, -1.0f, 0.0f);
 
 	//edited by Mike, 2021022
