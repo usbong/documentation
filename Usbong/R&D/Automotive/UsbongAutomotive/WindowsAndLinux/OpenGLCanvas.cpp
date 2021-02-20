@@ -1096,9 +1096,13 @@ void OpenGLCanvas::render()
 	//without additional rotate and scale
 	//TO-DO: -reverify: robot's draw sequence
 
-	//added by Mike, 20210220
-	//TO-DO: -add: 2D horizontal-scrolling view
+	//added by Mike, 20210220; edited by Mike, 20210220
+	//TO-DO: -add: 2D horizontal-scrolling, vertical-scrolling view
 	//note: Zelda Link's Awakening DX; Gameboy Color
+	//-----
+//	glRotatef(30, 0.0f, 1.0f, 0.0f);
+    glScalef(0.2f, 0.2f, 0.2f);
+	//-----
 
 		
 //    glTranslatef(-1.0f, -1.0f, 0.0f);
