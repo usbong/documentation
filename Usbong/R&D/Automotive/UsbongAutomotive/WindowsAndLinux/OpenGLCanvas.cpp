@@ -1085,9 +1085,9 @@ void OpenGLCanvas::render()
 	//ISOMETRIC VIEW					  	
 	//-----
 	//added by Mike, 20201115
-/*	glRotatef(45, 1.0f, 0.0f, 0.0f);
+	glRotatef(45, 1.0f, 0.0f, 0.0f);
 	glRotatef(30, 0.0f, 1.0f, 0.0f);
-    glScalef(0.2f, 0.2f, 0.2f);
+/*    glScalef(0.2f, 0.2f, 0.2f);
 	//-----
 */
 
@@ -1097,11 +1097,12 @@ void OpenGLCanvas::render()
 	//TO-DO: -reverify: robot's draw sequence
 
 	//added by Mike, 20210220; edited by Mike, 20210220
-	//TO-DO: -add: 2D horizontal-scrolling, vertical-scrolling view
+	//2D horizontal-scrolling, vertical-scrolling view
 	//note: Zelda Link's Awakening DX; Gameboy Color
 	//-----
 //	glRotatef(30, 0.0f, 1.0f, 0.0f);
-    glScalef(0.2f, 0.2f, 0.2f);
+/*    glScalef(0.2f, 0.2f, 0.2f);
+*/
 	//-----
 
 		
