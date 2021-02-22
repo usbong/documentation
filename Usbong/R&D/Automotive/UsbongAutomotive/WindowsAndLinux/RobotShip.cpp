@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210219
+ * @date updated: 20210222
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -711,7 +711,9 @@ void RobotShip::drawRobotShip()
 							/*	//removed by Mike, 20210202
 							|| (currentFacingState==FACING_RIGHT_AND_DOWN)*/)
 					    {
-							glPushMatrix();	
+							//removed by Mike, 20210222
+//							glPushMatrix();	
+							
 							   //edited by Mike, 20210103
 /*							   drawUpperArm(0.4f, 0.0f, 0.0f); //right        
 							   drawLowerArm(0.4f, -0.2f, 0.0f); //right
@@ -740,13 +742,19 @@ void RobotShip::drawRobotShip()
 							   drawHead(0.1f, 0.2f, 0.0f);		  
 */							   
 							   if (currentFacingState==FACING_UP) {
-								   drawHead(0.1f, 0.2f, -0.1f);
-								   drawBody(0.1f, -0.15f, 0.0f);
+								   //edite by Mike, 20210123
+								   glScalef(1.0f, 0.7f, 1.0f);
+									   drawHead(0.1f, 0.2f, -0.1f);
+									   drawBody(0.1f, -0.15f, 0.0f);
+								   glScalef(1.0f, 1.0f, 1.0f);
 							   }
 					    	   //(currentFacingState==FACING_LEFT))																						   
 							   else {
-								   drawBody(0.1f, -0.15f, 0.0f);
-								   drawHead(0.1f, 0.2f, -0.1f);		  
+								   //edited by Mike, 20210123
+								   glScalef(1.0f, 0.7f, 1.0f);
+									   drawBody(0.1f, -0.15f, 0.0f);
+									   drawHead(0.1f, 0.2f, -0.1f);		  
+								   glScalef(1.0f, 1.0f, 1.0f);
 							   }
 
  							   //edited by Mike, 20210103
@@ -765,8 +773,9 @@ void RobotShip::drawRobotShip()
 
 
 							   drawUpperArm(-0.2f, 0.0f, 0.0f); //left
-							
-							glPopMatrix();	// pop back to original coordinate system	
+
+							//removed by Mike, 20210222							
+//							glPopMatrix();	// pop back to original coordinate system	
 						}
 /*	//edited by Mike, 20210201
 					    else if ((currentFacingState==FACING_DOWN)
@@ -778,7 +787,10 @@ void RobotShip::drawRobotShip()
 								*/
 								|| (currentFacingState==FACING_RIGHT_AND_DOWN))									
 					    {
-							glPushMatrix();	
+						//removed by Mike, 20210222
+//							glPushMatrix();	
+
+							
 							   //edited by Mike, 20210103
 /*							   drawUpperArm(-0.2f, 0.0f, 0.0f); //left
 							   drawLowerArm(-0.2f, -0.2f, 0.0f); //left
@@ -808,13 +820,19 @@ void RobotShip::drawRobotShip()
 							   drawHead(0.1f, 0.2f, 0.0f);		  
 */
 							   if (currentFacingState==FACING_DOWN) {
-							   	  drawBody(0.1f, -0.15f, 0.0f);
-								  drawHead(0.1f, 0.2f, -0.1f);
+								  //added by Mike, 20210123
+								  glScalef(1.0f, 0.65f, 1.0f);
+									  drawBody(0.1f, -0.15f, 0.0f);
+									  drawHead(0.1f, 0.2f, -0.1f);
+								  glScalef(1.0f, 1.0f, 1.0f);
 							   }
 					    	   //(currentFacingState==FACING_RIGHT))														
 							   else {
-								  drawHead(0.1f, 0.2f, -0.1f);
-								  drawBody(0.1f, -0.15f, 0.0f);
+								  //added by Mike, 20210123
+								  glScalef(1.0f, 0.65f, 1.0f);
+									  drawHead(0.1f, 0.2f, -0.1f);
+									  drawBody(0.1f, -0.15f, 0.0f);
+								  glScalef(1.0f, 1.0f, 1.0f);
 							   }
 
 								//edited by Mike, 20210103
@@ -832,12 +850,14 @@ void RobotShip::drawRobotShip()
                    		     glScalef(1.0f, 1.0f, 1.0f); //reset
 							   
 							   drawUpperArm(0.4f, 0.0f, 0.0f); //right        
-							
-							glPopMatrix();	// pop back to original coordinate system	
+
+							//removed by Mike, 20210222
+//							glPopMatrix();	// pop back to original coordinate system	
 						}			
 					    else if ((currentFacingState==FACING_RIGHT_AND_UP))
 					    {
-							glPushMatrix();	
+							//removed by Mike, 20210222
+//							glPushMatrix();	
 							   //edited by Mike, 20210103
 /*							   drawUpperArm(-0.2f, 0.0f, 0.0f); //left
 							   drawLowerArm(-0.2f, -0.2f, 0.0f); //left
@@ -874,16 +894,22 @@ void RobotShip::drawRobotShip()
 							   //edited by Mike, 20210103
 							   drawUpperLeg(-0.1f, -0.5f, 0.0f); //left
 							   drawUpperLeg(0.3f, -0.5f, 0.0f); //right        
-														
-							  drawHead(0.1f, 0.2f, -0.1f);
-							  drawBody(0.1f, -0.15f, 0.0f);
-							
-							glPopMatrix();	// pop back to original coordinate system	
+												
+							  //added by Mike, 20210123
+							  glScalef(1.0f, 0.5f, 1.0f);							
+								  drawHead(0.1f, 0.2f, -0.1f);
+								  drawBody(0.1f, -0.15f, 0.0f);
+							  glScalef(1.0f, 1.0f, 1.0f);							
+
+							//removed by Mike, 20210222
+							//glPopMatrix();	// pop back to original coordinate system	
 						}			
 						//added by Mike, 20210202
 						else if (currentFacingState==FACING_LEFT_AND_DOWN)
 					    {
-							glPushMatrix();	
+//removed by Mike, 20210222
+//					glPushMatrix();	
+							
 							   //edited by Mike, 20210103
 /*							   drawUpperArm(0.4f, 0.0f, 0.0f); //right        
 							   drawLowerArm(0.4f, -0.2f, 0.0f); //right
@@ -918,10 +944,14 @@ void RobotShip::drawRobotShip()
 
 							   drawUpperArm(-0.2f, 0.0f, 0.0f); //left
 
-							   drawBody(0.1f, -0.15f, 0.0f);
-							   drawHead(0.1f, 0.2f, -0.1f);		  
-							
-							glPopMatrix();	// pop back to original coordinate system	
+							  //added by Mike, 20210123
+							  glScalef(1.0f, 0.5f, 1.0f);							
+							    drawBody(0.1f, -0.15f, 0.0f);
+							    drawHead(0.1f, 0.2f, -0.1f);		  
+							  glScalef(1.0f, 1.0f, 1.0f);														
+
+							//removed by Mike, 20210222
+//					glPopMatrix();	// pop back to original coordinate system	
 						}
 
 
@@ -1530,7 +1560,9 @@ void RobotShip::drawRobotShip()
 					    		|| (currentFacingState==FACING_RIGHT)
 								|| (currentFacingState==FACING_RIGHT_AND_DOWN))
 					    {
-			            	glPushMatrix();			            
+//removed by Mike, 20210222							
+//			            	glPushMatrix();			   
+							
 			            		//edited by Mike, 20210103
 			                    //ARMS
 			                    //note: draw sequence is important
@@ -1929,13 +1961,16 @@ void RobotShip::drawRobotShip()
 
 								}
 							}
-							
-			            	glPopMatrix();	// pop back to original coordinate system						
+
+//removed by Mike, 20210222														
+//			            	glPopMatrix();	// pop back to original coordinate system						
 					    }
 					    //added by Mike, 20210201
 						else if (currentFacingState==FACING_RIGHT_AND_UP)
 					    {
-			            	glPushMatrix();			            
+//removed by Mike, 20210222																					
+//			            	glPushMatrix();			            
+							
  //removed by Mike, 20210202; added by Mike, 20210207
 			            		//edited by Mike, 20210103
 			                    //ARMS
@@ -2306,7 +2341,8 @@ void RobotShip::drawRobotShip()
 						    drawHead(0.1f, 0.2f, -0.1f);
 						    drawBody(0.1f, -0.15f, 0.0f);
 
-			            	glPopMatrix();	// pop back to original coordinate system						
+//removed by Mike, 20210222														
+//			            	glPopMatrix();	// pop back to original coordinate system						
 					    }
 //edited by Mike, 20210206
 						else if ((currentFacingState==FACING_UP)
