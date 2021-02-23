@@ -168,3 +168,11 @@ Inoue, Tatsuo. (1986). "Living Together Making Law――Justice as Conversation�
 -->  We reach the highest skill-level and know-how after executing each and all work to the highest degree of training maturity.<br/>
 --> Example: Cashier person at Accounting/Cashier Unit, Receptionist at Information Desk Unit, Pharmacist, i.e. Item Scholar, at Item Inventory Unit, Janitor at Sanitary and Waste Disposal Unit, et cetera<br/>
 --> Reference: Enix. (1995). Dragon Quest VI: Usage and Explanation Book/Manual (translated from nihongo by SYSON, MICHAEL B.; Super Family Computer version). Tokyo: Enix Stock Corporation
+
+### Part 6
+Michelangelo Buonarroti's "Giudizio Universale"<br/>
+<b>Recommended Action:</b> verify: http://www.arte.it/opera/giudizio-universale-4709;<br/>
+last accessed: 20210223<br/>
+<b>Additional Note:</b><br/>
+Matatandaan na sa unang pagdating ni Kristo, nagbigay siya ng mensahe ng pagbabago at pagbabalik kay Bathala. Sa kanyang ikalawang pagbabalik, pupuksain na niya ang mga Teroristang Komunista.
+
