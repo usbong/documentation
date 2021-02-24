@@ -7,6 +7,16 @@
 --> Rockman 1: Elecman stage; Journey's "Faithfully" tune<br/>
 --> Rockman 2: Bubbleman boss battle; technique to defeat boss once learned, maintain due to requires repetition until boss defeated; ping-pong drill<br/>
 --> preference: save anywhere tool<br/>
+--> Rockman X:<br/>
+--> sigma stage: toro boss battle<br/>
+--> excess use of rockets, i.e. homing missile, in stage<br/>
+--> less available rockets during boss battle<br/>
+--> sigma stage: spider boss battle<br/>
+--> "no money", but have time<br/>
+--> make money using time<br/>
+--> Example: カプセル(capusel, i.e. Capsule) 　コンピュータ(Computer); CAPCOM<br/>
+<br/>
+TO-DO: -update: this<br/>
 
 ### 1.2) Street Fighter Zero 3
 --> You as Blanka can finish arcade matches in 20minutes<br/>
@@ -57,12 +67,14 @@
 ## 6) Shin-Nihon Kikaku (SNK): New Japan Project
 ## 6.1) The King of Fighters '98: Dream Match Never Ends
 --> You as Kim Kaphwan can defeat final stage against Rugal B., using this technique in Single Play:<br/>
---> 1) Use Strong Punch, i.e. Kim executes a middle kick, which does not need to hit<br/>
+--> 6.1.1) Use Strong Punch, i.e. Kim executes a middle kick, which does not need to hit<br/>
 --> Response: Rugal shall execute an electric ball<br/>
---> 2) Use charge back and then forward Strong Kick, i.e. Kim executes a slide kick to evade the electric ball and then a flying axe kick<br/>
+--> 6.1.2) Use charge back and then forward Strong Kick, i.e. Kim executes a slide kick to evade the electric ball and then a flying axe kick<br/>
 --> Reminder: Verify distance using step 1; if too far, step 2 shall not hit<br/>
 --> Reminder: If Rugal does not execute an electric ball, repeat step 1<br/>
 --> Verified: You as Kim can achieve a PERFECT win<br/>
---> Additional Note: Technique to defeat boss once learned, maintain due to requires repetition until boss defeated; ping-pong drill<br/>
+--> 6.1.3) Additional Notes:<br/> 
+--> 6.1.3.1) Technique to defeat boss once learned, maintain due to requires repetition until boss defeated; ping-pong drill<br/>
+--> 6.1.3.2) Set difficulty level to highest; Technique not anymore effective
 
 TO-DO: -update: this
