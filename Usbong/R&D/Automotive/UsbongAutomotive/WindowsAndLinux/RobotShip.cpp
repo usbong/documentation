@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210224
+ * @date updated: 20210225
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -1143,26 +1143,12 @@ void RobotShip::drawRobotShip()
 
 									//added by Mike, 20210110
 					                if (bIsFiringBeam) {		
-/*					      	//note: use with diagonal movement
+					      	//note: use with diagonal movement
 										//added by Mike, 20210121
-										if (currentFacingState==FACING_UP) {
-											if (myKeysDown[KEY_A]==TRUE) {
-												glRotatef(40, 0.0f, 1.0f, 0.0f);			
-											}
-											else if (myKeysDown[KEY_RIGHT]==TRUE) {
-												glRotatef(-40, 0.0f, 1.0f, 0.0f);										
-							        	
-											}
-										}
-										if (currentFacingState==FACING_LEFT) {
-											if (myKeysDown[KEY_UP]==TRUE) {
-												glRotatef(40, 0.0f, 1.0f, 0.0f);			
-											}
-											else if (myKeysDown[KEY_S]==TRUE) {
-												glRotatef(-40, 0.0f, 1.0f, 0.0f);															        	
-											}
-										}
-*/
+//										if (currentFacingState==FACING_UP) {
+											drawWeapon(0.35f, -0.15f, -0.7);
+//										}
+
 /* //edited by Mike, 20210221
 										//added by Mike, 20210121
 				            			glPushMatrix();					
@@ -1265,7 +1251,7 @@ void RobotShip::drawRobotShip()
 										glRotatef(45, 1.0f, 0.0f, 0.0f);
 										glRotatef(45.0f, 0.0f, 0.0f, 1.0f);
 										glRotatef(-30.0f, 0.0f, 1.0f, 0.0f);												
-										drawLowerArm(-0.3f, 0.0f, 0.0f); //left							
+											drawLowerArm(-0.3f, 0.0f, 0.0f); //left							
 										//reset
 										glRotatef(30.0f, 0.0f, 1.0f, 0.0f);												
 										glRotatef(-45.0f, 0.0f, 0.0f, 1.0f);
@@ -1351,7 +1337,9 @@ void RobotShip::drawRobotShip()
 											drawWeapon(0.3f, -0.15f, -0.5f);	
 										glRotatef(6, 0.0f, 1.0f, 0.0f);															        	
 									}
-
+									else {
+										drawWeapon(0.3f, -0.15f, -0.5f);										
+									}
 								}							
 							}
 	
