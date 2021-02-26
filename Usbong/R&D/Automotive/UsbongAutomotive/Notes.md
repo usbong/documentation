@@ -45,6 +45,12 @@ edited by: Pablo Bianchi, 20190504T0401<br/>
 <b>sudo apt-get install mesa-utils</b><br/>
 <b>sudo apt-get install freeglut3-dev</b><br/>
 
+#### References (1.3 and 1.4):
+https://askubuntu.com/questions/96087/how-to-install-opengl-glut-libraries;<br/>
+last accessed: 20210226<br/>
+answered by: A-Sharabiani, 20170719T0335<br/>
+edited by: Amir, 20180425T1940
+
 ## 2) Windows Machine
 ### 2.1) Problem: When executing UsbongAutomotive.exe, computer notifies you that glut32.dll does not exist
 <b>Answer:</b> Execute the following steps:<br/>
