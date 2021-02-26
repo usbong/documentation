@@ -30,6 +30,21 @@ last accessed: 20210205T1722<br/>
 answer by: Bruno Pereira, 20120419T1947<br/>
 edited by: Pablo Bianchi, 20190504T0401<br/>
 
+### 1.3) Problem: ./make.sh: line 22: g++: command not found
+<b>Answer:</b> Execute Commands (in Terminal Window):<br/>
+<b>sudo apt-get install g++</b><br/>
+
+### 1.4) Problem: compilation terminated.
+<b>
+/usr/bin/ld: cannot find -lGL<br/>
+/usr/bin/ld: cannot find -lGLU<br/>
+/usr/bin/ld: cannot find -lglut<br/>
+</b>
+<br/>
+<b>Answer:</b> Execute Commands (in Terminal Window):<br/>
+<b>sudo apt-get install mesa-utils</b><br/>
+<b>sudo apt-get install freeglut3-dev</b><br/>
+
 ## 2) Windows Machine
 ### 2.1) Problem: When executing UsbongAutomotive.exe, computer notifies you that glut32.dll does not exist
 <b>Answer:</b> Execute the following steps:<br/>
