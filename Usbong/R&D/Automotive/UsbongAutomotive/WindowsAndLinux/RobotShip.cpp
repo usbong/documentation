@@ -1898,7 +1898,12 @@ void RobotShip::drawRobotShip()
 										drawWeapon(0.2f, -0.15f, -0.5f);
 									glRotatef(15, 0.0f, 1.0f, 0.0f);								   
 								}
-
+					    		//added by Mike, 20210201
+								else if (currentFacingState==FACING_DOWN) {
+									glRotatef(-armAngles[RIGHT], 1.0f, 0.0f, 0.0f);			
+										drawWeapon(0.3f, 0.10f, -0.4f);											
+									glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);			
+								}
 							   }
 							   else {							
 /* //removed by Mike, 20210221
@@ -1968,12 +1973,6 @@ void RobotShip::drawRobotShip()
 										glRotatef(10, 0.0f, 1.0f, 0.0f);			
 
 									}
-									//added by Mike, 20210226
-									else {
-										glRotatef(-armAngles[RIGHT], 1.0f, 0.0f, 0.0f);			
-											drawWeapon(0.3f, 0.10f, -0.4f);											
-										glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);			
-									}									
 								}
 							}
 
