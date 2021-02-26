@@ -3386,18 +3386,15 @@ void RobotShip::drawRobotShip()
 
 								//added by Mike, 20210121
 								//TO-DO: -add: punch animation
-								if (currentFacingState==FACING_UP) {								
+//removed by Mike, 20210226								  
+//								if (currentFacingState==FACING_UP) {								
 								    //LOWER ARM
 //removed by Mike, 20210226									
-//								    glPushMatrix();									
-									
-			                            glTranslatef(0.0f, 0.0f, 0.05f);
-
+//								    glPushMatrix();																		
+//			                            glTranslatef(0.0f, 0.0f, 0.05f);
+/*
 							   			if (currentFacingState==FACING_UP) {
 											if (iPunchAnimationCount==0) {//MAX_PUNCHING_ANIMATION_COUNT) {
-//				                            	glTranslatef(-0.2f, 0.4f, -0.6f);
-//												glScalef(1.0f, 1.0f, 1.5f);
-
 				                            	glTranslatef(-0.2f, 0.4f, 0.3f);
 												glScalef(1.0f, 1.0f, 1.5f);
 											}
@@ -3416,17 +3413,52 @@ void RobotShip::drawRobotShip()
 												glScalef(1.0f, 1.0f, 1.5f);
 											}										
 										}
-										
-										//note: -add: assistant robot drone?										
-										//edited by Mike, 20210122
-			                            //glTranslatef(-0.2f, 1.0f, 0.2f);
-			                    		glTranslatef(-0.2f, 1.0f, 0.2f*iPunchAnimationCount);
-										glRotatef(90, 1.0f, 0.0f, 0.0f);
-
-										drawLowerArm(-0.3f, 0.0f, 0.0f); //left							
+*/
+										if (iPunchAnimationCount==0) {//MAX_PUNCHING_ANIMATION_COUNT) {
+							   				if (currentFacingState==FACING_UP) {											
+												glTranslatef(-0.2f, 0.4f, 0.3f);
+												glScalef(1.0f, 1.0f, 1.5f);
+													glTranslatef(-0.2f, 1.0f, 0.2f*iPunchAnimationCount);
+													glRotatef(90, 1.0f, 0.0f, 0.0f);
+														drawLowerArm(-0.3f, 0.0f, 0.0f); //left							
+													glRotatef(-90, 1.0f, 0.0f, 0.0f);
+													glTranslatef(0.2f, -1.0f, -0.2f*iPunchAnimationCount);
+												glScalef(1.0f, 1.0f, 1.0f);
+												glTranslatef(0.2f, -0.4f, -0.3f);												
+											}
+							   				else if (currentFacingState==FACING_LEFT) {
+				                            	glTranslatef(-0.2f, 0.4f, -0.6f);
+												glScalef(1.0f, 1.0f, 1.5f);
+													glTranslatef(-0.2f, 1.0f, 0.2f*iPunchAnimationCount);
+													glRotatef(90, 1.0f, 0.0f, 0.0f);
+														drawLowerArm(-0.3f, 0.0f, 0.0f); //left							
+													glRotatef(-90, 1.0f, 0.0f, 0.0f);
+													glTranslatef(0.2f, -1.0f, -0.2f*iPunchAnimationCount);
+												glScalef(1.0f, 1.0f, 1.0f);
+				                            	glTranslatef(0.2f, -0.4f, 0.6f);											
+											}												
+										}
+										//edited by Mike, 20210124
+										else if (iPunchAnimationCount<MAX_PUNCHING_ANIMATION_COUNT) {
+											glScalef(1.0f, 1.0f, 1.5f);
+												glTranslatef(-0.2f, 1.0f, 0.2f*iPunchAnimationCount);
+												glRotatef(90, 1.0f, 0.0f, 0.0f);
+													drawLowerArm(-0.3f, 0.0f, 0.0f); //left							
+												glRotatef(-90, 1.0f, 0.0f, 0.0f);
+												glTranslatef(0.2f, -1.0f, -0.2f*iPunchAnimationCount);
+											glScalef(1.0f, 1.0f, 1.0f);
+										}
+								  		else {
+											glRotatef(90, 1.0f, 0.0f, 0.0f);											
+												drawLowerArm(-0.2f, 0.0f, 0.4f); //left							
+											glRotatef(-90, 1.0f, 0.0f, 0.0f);											
+										}
+								  
+								  
 //removed by Mike, 20210226																		
 //				            	    glPopMatrix();							
-				            	}
+//removed by Mike, 20210226								  
+//				            	}
 /*	//removed by Mike, 20210121
 					    	   	else if (currentFacingState==FACING_LEFT) {
 								    //LOWER ARM
@@ -3440,6 +3472,8 @@ void RobotShip::drawRobotShip()
 				            	    glPopMatrix();							
 				            	}	
 */
+		                        glTranslatef(0.0f, 0.0f, -0.05f);							  	
+								  
 							  }
 							  else {
 								//LOWER ARM
