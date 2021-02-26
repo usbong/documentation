@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210225
+ * @date updated: 20210226
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -1752,6 +1752,7 @@ void RobotShip::drawRobotShip()
 //				                        glTranslatef(0.025f, 0.0f, 0.0f);
 
 							        	glRotatef(-40, 0.0f, 1.0f, 0.0f);			
+										
 //				                        glTranslatef(0.0f, 0.0f, -0.1f);
 									}
 									//added by Mike, 20201227
@@ -1768,9 +1769,7 @@ void RobotShip::drawRobotShip()
 
 										glRotatef(40, 0.0f, 1.0f, 0.0f);										
 									}
-								}
-
-								if (currentFacingState==FACING_RIGHT) {									
+								
 									//added by Mike, 20210111
 				                	if (bIsFiringBeam) {	
 /*	//edited by Mike, 20210221
@@ -1796,28 +1795,42 @@ void RobotShip::drawRobotShip()
 				                		glPopMatrix();
 */
 										if (myKeysDown[KEY_W]==TRUE) {
-											glRotatef(-20, 1.0f, 0.0f, 0.0f);
+//											glRotatef(-20, 1.0f, 0.0f, 0.0f);
 
+//			            					glRotatef(armAngles[RIGHT], 0.0f, 1.0f, 0.0f);
+//							                glRotatef(-15, 1.0f, 0.0f, 0.0f);
+//							                glRotatef(-20, 1.0f, 0.0f, 0.0f);
+											
 			            					glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);
-							                glRotatef(-15, 0.0f, 1.0f, 0.0f);
+							                glRotatef(-20, 0.0f, 1.0f, 0.0f);
+//							                glRotatef(15, 0.0f, 1.0f, 0.0f);
+											
 												drawWeapon(0.2f, -0.15f, -0.5f);	
-							                glRotatef(15, 0.0f, 1.0f, 0.0f);
-			            					glRotatef(-armAngles[RIGHT], 1.0f, 0.0f, 0.0f);
 
-											glRotatef(20, 1.0f, 0.0f, 0.0f);
+//											glRotatef(-15, 0.0f, 1.0f, 0.0f);
+							                glRotatef(20, 0.0f, 1.0f, 0.0f);
+			            					glRotatef(-armAngles[RIGHT], 1.0f, 0.0f, 0.0f);
+											
+//							                glRotatef(20, 1.0f, 0.0f, 0.0f);											
+//							                glRotatef(15, 1.0f, 0.0f, 0.0f);
+//			            					glRotatef(-armAngles[RIGHT], 0.0f, 1.0f, 0.0f);
+
+//											glRotatef(20, 1.0f, 0.0f, 0.0f);
 										}
 										else if (myKeysDown[KEY_S]==TRUE) {
-											glRotatef(58, 1.0f, 0.0f, 0.0f);			
-			                        		glTranslatef(0.1f, 0.0f, 0.0f);
+//											glRotatef(58, 1.0f, 0.0f, 0.0f);			
+//			                        		glTranslatef(0.1f, 0.0f, 0.0f);
 
-			            					glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);
-							                glRotatef(-15, 0.0f, 1.0f, 0.0f);
+//			            					glRotatef(armAngles[RIGHT], 0.0f, 1.0f, 0.0f);
+//							                glRotatef(-15, 1.0f, 0.0f, 0.0f);
+							                glRotatef(15, 1.0f, 0.0f, 0.0f);
 												drawWeapon(0.2f, -0.15f, -0.5f);	
-							                glRotatef(15, 0.0f, 1.0f, 0.0f);
-			            					glRotatef(-armAngles[RIGHT], 1.0f, 0.0f, 0.0f);
+							                glRotatef(-15, 1.0f, 0.0f, 0.0f);
+//							                glRotatef(15, 1.0f, 0.0f, 0.0f);
+//			            					glRotatef(-armAngles[RIGHT], 0.0f, 1.0f, 0.0f);
 
-			                        		glTranslatef(-0.1f, 0.0f, 0.0f);
-											glRotatef(-58, 1.0f, 0.0f, 0.0f);			
+//			                        		glTranslatef(-0.1f, 0.0f, 0.0f);
+//											glRotatef(-58, 1.0f, 0.0f, 0.0f);			
 										}																			
 				                	}
 								}
@@ -1948,8 +1961,12 @@ void RobotShip::drawRobotShip()
 										glRotatef(10, 0.0f, 1.0f, 0.0f);			
 
 									}
-
-
+									//added by Mike, 20210226
+									else {
+										glRotatef(-armAngles[RIGHT], 1.0f, 0.0f, 0.0f);			
+											drawWeapon(0.3f, 0.10f, -0.4f);											
+										glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);			
+									}									
 								}
 							}
 
