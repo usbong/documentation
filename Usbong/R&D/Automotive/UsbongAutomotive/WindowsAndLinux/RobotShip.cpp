@@ -879,17 +879,126 @@ void RobotShip::drawRobotShip()
 						}
 						break;
 					case WALKING_MOVING_STATE:
-						//TO-DO: -update: sequence of legs, i.e. upper and lower
-						//added by Mike, 20201202
-//edited by Mike, 20210201
-/*						if ((currentFacingState==FACING_UP)
-					    	|| (currentFacingState==FACING_LEFT))
-*/
-						if ((currentFacingState==FACING_UP)
-					    	|| (currentFacingState==FACING_LEFT)
-					    	//removed by Mike, 20210207
-//							|| (currentFacingState==FACING_LEFT_AND_UP))
-						   )
+						if (currentFacingState==FACING_UP)					    	
+					    {
+							//ARMS
+							//note: draw sequence is important
+							if (bIsFiringBeam) {
+								armAngles[RIGHT]=30.0f;
+								armAngles[LEFT]=30.0f;
+
+								glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);
+									drawUpperArm(0.4f, 0.0f, 0.0f); //right       
+
+									glTranslatef(0.0f, 0.0f, 0.1f);
+									glRotatef(45, 1.0f, 0.0f, 0.0f);
+										drawLowerArm(0.4f, -0.3f, 0.0f); //right
+									//reset
+									glRotatef(-45, 1.0f, 0.0f, 0.0f);
+									glTranslatef(0.0f, 0.0f, -0.1f);
+								glRotatef(-armAngles[RIGHT], 1.0f, 0.0f, 0.0f);
+
+							}
+							else {
+								glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);
+									drawUpperArm(0.4f, 0.0f, 0.0f); //right       
+
+									glTranslatef(0.0f, 0.0f, 0.1f);
+									glRotatef(45, 1.0f, 0.0f, 0.0f);
+										drawLowerArm(0.4f, -0.3f, 0.0f); //right							
+
+									//reset
+									glRotatef(-45, 1.0f, 0.0f, 0.0f);
+									glTranslatef(0.0f, 0.0f, -0.1f);
+								glRotatef(-armAngles[RIGHT], 1.0f, 0.0f, 0.0f);
+							}
+
+							if (myKeysDown[KEY_A]==TRUE) {
+								//note: walk wall right side
+								//glRotatef(60, 0.0f, 0.0f, 1.0f);			
+
+								glRotatef(40, 0.0f, 1.0f, 0.0f);			
+								glTranslatef(0.05f, 0.0f, 0.0f);
+
+							}
+							else if (myKeysDown[KEY_D]==TRUE) {
+								glRotatef(-40, 0.0f, 1.0f, 0.0f);										
+								glTranslatef(0.0f, 0.2f, 0.0f);
+								glTranslatef(0.05f, 0.0f, 0.0f);							        	
+							}
+							
+							//LEGS
+							glRotatef(legAngles[RIGHT], 1.0f, 0.0f, 0.0f);
+								drawLowerLeg(0.2f, -0.7f, 0.0f); //right
+								drawUpperLeg(0.2f, -0.5f, 0.0f); //right        
+							glRotatef(legAngles[RIGHT], -1.0f, 0.0f, 0.0f); //reset
+
+							glRotatef(legAngles[LEFT], 1.0f, 0.0f, 0.0f);
+								drawLowerLeg(-0.1f, -0.7f, 0.0f); //left
+								drawUpperLeg(-0.1f, -0.5f, 0.0f); //left
+							glRotatef(-legAngles[LEFT], 1.0f, 0.0f, 0.0f); //reset
+
+							if (myKeysDown[KEY_A]==TRUE) {
+								glTranslatef(-0.05f, 0.0f, 0.0f);
+								glRotatef(-40, 0.0f, 1.0f, 0.0f);			
+							}
+							else if (myKeysDown[KEY_D]==TRUE) {
+								glTranslatef(-0.05f, 0.0f, 0.0f);							        	
+								glTranslatef(0.0f, -0.2f, 0.0f);
+								glRotatef(40, 0.0f, 1.0f, 0.0f);										
+							}
+
+							//added by Mike, 20210110
+							if (bIsFiringBeam) {		
+								drawWeapon(0.35f, -0.15f, -0.7);
+
+								//note: already facing up
+								if (myKeysDown[KEY_A]==TRUE) {
+									glRotatef(-8, 0.0f, 1.0f, 0.0f);			
+									glTranslatef(0.0f, 0.0f, 0.1f);
+									drawWeapon(0.35f, -0.15f, -0.7);
+									//reset
+									glTranslatef(0.0f, 0.0f, -0.1f);
+									glRotatef(8, 0.0f, 1.0f, 0.0f);			
+								}
+								else if (myKeysDown[KEY_D]==TRUE) {
+									glRotatef(6, 0.0f, 1.0f, 0.0f);																		        	
+									drawWeapon(0.35f, -0.15f, -0.7);
+									glRotatef(-6, 0.0f, 1.0f, 0.0f); //reset
+								}
+
+							}
+							
+							glTranslatef(0.0f, 0.0f, 0.05f);
+							glRotatef(45, 1.0f, 0.0f, 0.0f);
+							glRotatef(45.0f, 0.0f, 0.0f, 1.0f);
+							glRotatef(-30.0f, 0.0f, 1.0f, 0.0f);												
+								drawLowerArm(-0.3f, 0.0f, 0.0f); //left							
+							//reset
+							glRotatef(30.0f, 0.0f, 1.0f, 0.0f);												
+							glRotatef(-45.0f, 0.0f, 0.0f, 1.0f);
+							glRotatef(-45, 1.0f, 0.0f, 0.0f);
+							glTranslatef(0.0f, 0.0f, -0.05f);
+
+						    drawHead(0.1f, 0.2f, -0.1f);		
+						    drawBody(0.1f, -0.15f, 0.0f);	
+							   	
+							//UPPER ARM
+							glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);							
+								drawUpperArm(-0.2f, 0.0f, 0.0f); //left				            			
+							glRotatef(-armAngles[LEFT], 1.0f, 0.0f, 0.0f);  //reset
+
+							glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);
+								glTranslatef(0.0f, 0.0f, 0.1f);
+								glRotatef(45, 1.0f, 0.0f, 0.0f);							
+									drawLowerArm(-0.2f, -0.3f, 0.0f); //left
+								glRotatef(-45, 1.0f, 0.0f, 0.0f);							
+								glTranslatef(0.0f, 0.0f, -0.1f);
+
+								drawUpperArm(-0.2f, 0.0f, 0.0f); //left	
+							glRotatef(-armAngles[LEFT], 1.0f, 0.0f, 0.0f);				            		
+					    }
+						else if (currentFacingState==FACING_LEFT)
 					    {
 //removed by Mike, 20210221					    	
 //			            	glPushMatrix();			            
