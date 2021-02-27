@@ -2062,188 +2062,78 @@ void RobotShip::drawRobotShip()
 						//added by Mike, 20210202
 						else if (currentFacingState==FACING_LEFT_AND_DOWN)
 					    {
-			            	//removed by Mike, 202102024							
-//			            	glPushMatrix();			            
-			            	//removed by Mike, 20210202
-/*			            	
-			                    //ARMS
-			                    //note: draw sequence is important
-			                    if (bIsFiringBeam) {
-							   		armAngles[RIGHT]=30.0f;
-									armAngles[LEFT]=30.0f;
-
-				            		glPushMatrix();
-										glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);								
-				                		glPushMatrix();
-				                            glTranslatef(0.0f, 0.0f, 0.1f);
-				                			glRotatef(45, 1.0f, 0.0f, 0.0f);
-											//edited by Mike, 20201207
-											//drawLowerArm(0.3f, -0.3f, 0.0f); //right
-											drawLowerArm(0.4f, -0.3f, 0.0f); //right							
-				                		glPopMatrix();
-
-				                        drawUpperArm(0.4f, 0.0f, 0.0f); //right       
-				            		glPopMatrix();									
-								}
-								else {
-				            		glPushMatrix();
-				            			glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);								
-				                		glPushMatrix();
-				                            glTranslatef(0.0f, 0.0f, 0.1f);
-				                			glRotatef(45, 1.0f, 0.0f, 0.0f);
-											//edited by Mike, 20201207
-											//drawLowerArm(0.3f, -0.3f, 0.0f); //right
-											drawLowerArm(0.4f, -0.3f, 0.0f); //right							
-				                		glPopMatrix();
-
-										//edited by Mike, 20201207
-				                        //drawUpperArm(0.3f, 0.0f, 0.0f); //right       
-				                        drawUpperArm(0.4f, 0.0f, 0.0f); //right       
-				            		glPopMatrix();
-				            	}
-*/
-
-			                    //LEGS
-			                    //added by Mike, 20210202
-			                    //note: delete excess glPushMatrix(), glPopMatrix()
-//			            		glPushMatrix();					
-//removed by Mike, 20210224							
-//									glPushMatrix();
-				            			glRotatef(legAngles[RIGHT], 1.0f, 0.0f, 0.0f);
-											drawLowerLeg(0.2f, -0.7f, 0.0f); //right
-											drawUpperLeg(0.2f, -0.5f, 0.0f); //right        
-				            			glRotatef(-legAngles[RIGHT], 1.0f, 0.0f, 0.0f);
+							glRotatef(legAngles[RIGHT], 1.0f, 0.0f, 0.0f);
+								drawLowerLeg(0.2f, -0.7f, 0.0f); //right
+								drawUpperLeg(0.2f, -0.5f, 0.0f); //right        
+							glRotatef(-legAngles[RIGHT], 1.0f, 0.0f, 0.0f);
 							
-//removed by Mike, 20210224							
-//									glPopMatrix();
-
-							//removed by Mike, 20210224							
-//									glPushMatrix();
-									glRotatef(legAngles[LEFT], 1.0f, 0.0f, 0.0f);	
-										drawLowerLeg(-0.1f, -0.7f, 0.0f); //left
-				            		    drawUpperLeg(-0.1f, -0.5f, 0.0f); //left
-									glRotatef(-legAngles[LEFT], 1.0f, 0.0f, 0.0f);	
+							glRotatef(legAngles[LEFT], 1.0f, 0.0f, 0.0f);	
+								drawLowerLeg(-0.1f, -0.7f, 0.0f); //left
+								drawUpperLeg(-0.1f, -0.5f, 0.0f); //left
+							glRotatef(-legAngles[LEFT], 1.0f, 0.0f, 0.0f);	
 							
-//removed by Mike, 20210224														
-//									glPopMatrix();
-//removed by Mike, 20210224														
-//			            		glPopMatrix();
+						    //ARM
+						    if (bIsFiringBeam) {
+								armAngles[RIGHT]=30.0f;
+								armAngles[LEFT]=30.0f;
 
+								drawUpperArm(0.4f, 0.0f, 0.0f); //right       
 
-/*	//removed by Mike, 20210202	
-								drawBody(0.1f, -0.15f, 0.0f);	
-*/							
+								glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);								
+									glTranslatef(0.0f, 0.0f, 0.1f);
+									glRotatef(45, 1.0f, 0.0f, 0.0f);
+										drawLowerArm(0.4f, -0.3f, 0.0f); //right							
+									glRotatef(-45, 1.0f, 0.0f, 0.0f);
+									glTranslatef(0.0f, 0.0f, -0.1f);
+								glRotatef(-armAngles[RIGHT], 1.0f, 0.0f, 0.0f);		
 
-							   //edited by Mike, 20201226
-							   //TO-DO: -add: attack (punch)
-							   //TO-DO: -add: defend (shield)
-							   //TO-DO: -add: weapons, e.g. shotgun
-			                   //walking + attacking (firing beam)
-			                   //ARM
-							   if (bIsFiringBeam) {
-							   		//added by Mike, 20210202
-							   		armAngles[RIGHT]=30.0f;
-									armAngles[LEFT]=30.0f;
+								//UPPER ARM
+								glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);							
+									drawUpperArm(-0.2f, 0.0f, 0.0f); //left				            			
+								glRotatef(-armAngles[LEFT], 1.0f, 0.0f, 0.0f);								   
+						    }
+						    else {
+								glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);																   
+									glTranslatef(0.0f, 0.0f, 0.1f);
+									glRotatef(45, 1.0f, 0.0f, 0.0f);
+										drawLowerArm(0.4f, -0.3f, 0.0f); //right							
+									glRotatef(-45, 1.0f, 0.0f, 0.0f);
+									glTranslatef(0.0f, 0.0f, -0.1f);
 
-								    drawUpperArm(0.4f, 0.0f, 0.0f); //right       
-	
-									glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);								
-										glTranslatef(0.0f, 0.0f, 0.1f);
-										glRotatef(45, 1.0f, 0.0f, 0.0f);
-											drawLowerArm(0.4f, -0.3f, 0.0f); //right							
-										glRotatef(-45, 1.0f, 0.0f, 0.0f);
-										glTranslatef(0.0f, 0.0f, -0.1f);
-									glRotatef(-armAngles[RIGHT], 1.0f, 0.0f, 0.0f);		
+									drawUpperArm(0.4f, 0.0f, 0.0f); //right       								   
+								glRotatef(-armAngles[RIGHT], 1.0f, 0.0f, 0.0f);								
 
-								   
-							   	    //UPPER ARM
-									glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);							
-										drawUpperArm(-0.2f, 0.0f, 0.0f); //left				            			
-									glRotatef(-armAngles[LEFT], 1.0f, 0.0f, 0.0f);							
-								   
-							   }
-							   else {
+								glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);
+									glTranslatef(0.0f, 0.0f, 0.1f);
+									glRotatef(45, 1.0f, 0.0f, 0.0f);							
+										drawLowerArm(-0.2f, -0.3f, 0.0f); //left
+									glRotatef(-45, 1.0f, 0.0f, 0.0f);							
+									glTranslatef(0.0f, 0.0f, -0.1f);
 
-//added by Mike, 20210202
-			                    //ARMS
-			                    //note: draw sequence is important
-//removed by Mike, 20210224								   
-//				            		glPushMatrix();
-								   
-				            			glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);																   
-											glTranslatef(0.0f, 0.0f, 0.1f);
-											glRotatef(45, 1.0f, 0.0f, 0.0f);
-												drawLowerArm(0.4f, -0.3f, 0.0f); //right							
-											glRotatef(-45, 1.0f, 0.0f, 0.0f);
-											glTranslatef(0.0f, 0.0f, -0.1f);
-
-											drawUpperArm(0.4f, 0.0f, 0.0f); //right       								   
-				            			glRotatef(-armAngles[RIGHT], 1.0f, 0.0f, 0.0f);								
-								   
-//removed by Mike, 20210224								   
-//								   glPopMatrix();
-//--
-
-//removed by Mike, 20210224								   
-//			            			glPushMatrix();
-				            	  		//edited by Mike, 20210104
-			            				glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);
-				                            glTranslatef(0.0f, 0.0f, 0.1f);
-					            			glRotatef(45, 1.0f, 0.0f, 0.0f);							
-												drawLowerArm(-0.2f, -0.3f, 0.0f); //left
-					            			glRotatef(-45, 1.0f, 0.0f, 0.0f);							
-				                            glTranslatef(0.0f, 0.0f, -0.1f);
-
-											//added by Mike, 20210208
-											drawUpperArm(-0.2f, 0.0f, 0.0f); //left
-
-			            				glRotatef(-armAngles[LEFT], 1.0f, 0.0f, 0.0f);
-							   }
+									//added by Mike, 20210208
+									drawUpperArm(-0.2f, 0.0f, 0.0f); //left
+								glRotatef(-armAngles[LEFT], 1.0f, 0.0f, 0.0f);
+						    }
 								
 							drawBody(0.1f, -0.15f, 0.0f);		
 							drawHead(0.1f, 0.2f, -0.1f);		
 
-//added by Mike, 20210202
-						if (bIsFiringBeam) {
-						  //LOWER ARM
-//removed by Mike, 20210224							
-//						  glPushMatrix();
-						  	//edited by Mike, 20210103
-//			                            glTranslatef(0.0f, 0.0f, 0.1f);
-	                            glTranslatef(0.0f, 0.0f, 0.05f);
+							if (bIsFiringBeam) {
+							  //LOWER ARM
+								glTranslatef(0.0f, 0.0f, 0.05f);
 								glRotatef(45, 1.0f, 0.0f, 0.0f);
-
-								//added by Mike, 20201218
-								glRotatef(45.0f, 0.0f, 0.0f, 1.0f);
-								glRotatef(-30.0f, 0.0f, 1.0f, 0.0f);
-									drawLowerArm(-0.3f, 0.0f, 0.0f); //left							
-								glRotatef(30.0f, 0.0f, 1.0f, 0.0f);
-								glRotatef(-45.0f, 0.0f, 0.0f, 1.0f);
-
+									//added by Mike, 20201218
+									glRotatef(45.0f, 0.0f, 0.0f, 1.0f);
+									glRotatef(-30.0f, 0.0f, 1.0f, 0.0f);
+										drawLowerArm(-0.3f, 0.0f, 0.0f); //left							
+									glRotatef(30.0f, 0.0f, 1.0f, 0.0f);
+									glRotatef(-45.0f, 0.0f, 0.0f, 1.0f);
 								glRotatef(-45, 1.0f, 0.0f, 0.0f);
-	                            glTranslatef(0.0f, 0.0f, -0.05f);
+								glTranslatef(0.0f, 0.0f, -0.05f);
 
-							//removed by Mike, 20210224							
-//							glPopMatrix();
-	
-/* //removed by Mike, 20210224							
-					   	  //UPPER ARM
-								glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);							
-		            				drawUpperArm(-0.2f, 0.0f, 0.0f); //left				            			
-		            			glRotatef(-armAngles[LEFT], 1.0f, 0.0f, 0.0f);							
-*/							
-
-							//added by Mike, 20210207
-//			                if (bIsFiringBeam) { //removed by Mike, 20210208
-									//note: put weapon closer to center
-									drawWeapon(0.3f, -0.15f, -0.5f);
-//							}
-						}
-	
-//removed by Mike, 20210224							
-//							glPopMatrix();	// pop back to original coordinate system						
+								drawWeapon(0.3f, -0.15f, -0.5f);
+							}
 					    }
-
 						break;
 						
 					//added by Mike, 20201218
