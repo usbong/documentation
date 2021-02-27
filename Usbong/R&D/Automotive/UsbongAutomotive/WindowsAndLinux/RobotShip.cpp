@@ -1332,8 +1332,130 @@ void RobotShip::drawRobotShip()
 					    }
 					    //added by Mike, 20210105
 						//note: x-axis in reverse due to rotated to face down
-						else if ((currentFacingState==FACING_RIGHT)
-								|| (currentFacingState==FACING_RIGHT_AND_DOWN))
+						else if (currentFacingState==FACING_RIGHT)								
+					    {
+			                    //ARMS
+			                    //note: draw sequence is important
+			                    if (bIsFiringBeam) {
+							   		armAngles[RIGHT]=30.0f;
+									armAngles[LEFT]=30.0f;
+									
+									glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);
+										drawUpperArm(-0.2f, 0.0f, 0.0f); //left
+									glRotatef(-armAngles[LEFT], 1.0f, 0.0f, 0.0f);
+
+									glTranslatef(0.2f, 0.0f, 0.0f);
+									glTranslatef(0.0f, 0.0f, -0.4f);
+									glRotatef(-45, 1.0f, 0.0f, 0.0f);
+
+									glRotatef(-45.0f, 0.0f, 0.0f, 1.0f);
+									glRotatef(30.0f, 0.0f, 1.0f, 0.0f);
+										drawLowerArm(-0.2f, -0.3f, 0.0f); //left
+									glRotatef(-30.0f, 0.0f, 1.0f, 0.0f);
+									glRotatef(45.0f, 0.0f, 0.0f, 1.0f);
+									glRotatef(45, 1.0f, 0.0f, 0.0f);
+									glTranslatef(0.0f, 0.0f, 0.4f);
+									glTranslatef(-0.2f, 0.0f, 0.0f);
+								}
+								else {
+			            			glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);
+										drawUpperArm(-0.2f, 0.0f, 0.0f); //left
+								
+			                            glTranslatef(0.0f, 0.0f, 0.1f);
+			                			glRotatef(45, 1.0f, 0.0f, 0.0f);
+				                		    drawLowerArm(-0.2f, -0.3f, 0.0f); //left
+			                			glRotatef(-45, 1.0f, 0.0f, 0.0f);
+			                            glTranslatef(0.0f, 0.0f, -0.1f);
+			            			glRotatef(-armAngles[LEFT], 1.0f, 0.0f, 0.0f);
+
+								}
+
+								if (myKeysDown[KEY_W]==TRUE) {
+									//note: walk wall right side
+									//glRotatef(60, 0.0f, 0.0f, 1.0f);			
+
+									glRotatef(40, 0.0f, 1.0f, 0.0f);			
+								}
+								else if (myKeysDown[KEY_S]==TRUE) {
+									glRotatef(-40, 0.0f, 1.0f, 0.0f);										
+									glTranslatef(0.0f, 0.0f, -0.1f);							        	
+								}
+
+			                    //LEGS
+		            			glRotatef(legAngles[LEFT], 1.0f, 0.0f, 0.0f);
+		            		        drawLowerLeg(-0.1f, -0.7f, 0.0f); //left
+									drawUpperLeg(-0.1f, -0.5f, 0.0f); //left
+		            			glRotatef(-legAngles[LEFT], 1.0f, 0.0f, 0.0f);
+
+		            			glRotatef(legAngles[RIGHT], 1.0f, 0.0f, 0.0f);
+		                            drawLowerLeg(0.2f, -0.7f, 0.0f); //right
+									drawUpperLeg(0.2f, -0.5f, 0.0f); //right        
+		            			glRotatef(-legAngles[RIGHT], 1.0f, 0.0f, 0.0f);
+
+								if (myKeysDown[KEY_W]==TRUE) {
+									glRotatef(-40, 0.0f, 1.0f, 0.0f);			
+								}
+								else if (myKeysDown[KEY_S]==TRUE) {
+									glTranslatef(0.0f, 0.0f, 0.1f);							        	
+									glRotatef(40, 0.0f, 1.0f, 0.0f);										
+								}
+								
+								if (bIsFiringBeam) {	
+									if (myKeysDown[KEY_W]==TRUE) {
+										glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);
+										glRotatef(-20, 0.0f, 1.0f, 0.0f);
+											drawWeapon(0.2f, -0.15f, -0.5f);	
+										glRotatef(20, 0.0f, 1.0f, 0.0f);
+										glRotatef(-armAngles[RIGHT], 1.0f, 0.0f, 0.0f);
+									}
+									else if (myKeysDown[KEY_S]==TRUE) {
+										glRotatef(15, 1.0f, 0.0f, 0.0f);
+											drawWeapon(0.2f, -0.15f, -0.5f);	
+										glRotatef(-15, 1.0f, 0.0f, 0.0f);
+									}		
+									else {
+										glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);
+										glRotatef(-15, 0.0f, 1.0f, 0.0f);
+											drawWeapon(0.2f, -0.15f, -0.5f);
+										glRotatef(15, 0.0f, 1.0f, 0.0f);
+										glRotatef(-armAngles[RIGHT], 1.0f, 0.0f, 0.0f);																					
+									}
+								}
+
+								  drawHead(0.1f, 0.2f, -0.1f);
+								  drawBody(0.1f, -0.15f, 0.0f);
+
+			                   //ARM
+							   if (bIsFiringBeam) {
+								armAngles[RIGHT]=30.0f;
+								armAngles[LEFT]=30.0f;							   	
+							   	  
+				            	glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);
+				            	  
+								//LOWER ARM
+								glTranslatef(0.0f, 0.0f, 0.1f);			                						                            
+								glRotatef(45, 1.0f, 0.0f, 0.0f);
+									drawLowerArm(0.4f, -0.3f, 0.0f); //right							
+								glRotatef(-45, 1.0f, 0.0f, 0.0f);
+								glTranslatef(0.0f, 0.0f, -0.1f);
+
+							   	//UPPER ARM
+		                        drawUpperArm(0.4f, 0.0f, 0.0f); //right
+							   }
+							   else {							
+		            			glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);
+		                            glTranslatef(0.0f, 0.0f, 0.1f);
+		                			glRotatef(45, 1.0f, 0.0f, 0.0f);
+			                            drawLowerArm(0.4f, -0.3f, 0.0f); //right							
+		                			glRotatef(-45, 1.0f, 0.0f, 0.0f);
+		                            glTranslatef(0.0f, 0.0f, -0.1f);
+
+			                        drawUpperArm(0.4f, 0.0f, 0.0f); //right        
+		            			glRotatef(-armAngles[RIGHT], 1.0f, 0.0f, 0.0f);
+							}
+					    }
+						//note: x-axis in reverse due to rotated to face down
+						else if (currentFacingState==FACING_RIGHT_AND_DOWN)
 					    {
 //removed by Mike, 20210222							
 //			            	glPushMatrix();			   
@@ -1763,6 +1885,7 @@ void RobotShip::drawRobotShip()
 //removed by Mike, 20210222														
 //			            	glPopMatrix();	// pop back to original coordinate system						
 					    }
+						
 					    //added by Mike, 20210201
 						else if (currentFacingState==FACING_RIGHT_AND_UP)
 					    {
