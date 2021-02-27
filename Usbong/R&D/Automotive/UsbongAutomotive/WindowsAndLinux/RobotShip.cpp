@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210226
+ * @date updated: 20210227
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -659,20 +659,8 @@ void RobotShip::drawRobotShip()
 */
 				
             case MOVING_STATE:
-			//TO-DO: -add: STANDING_STATE
-/*  //removed by Mike, 20201130
-                   //added by Mike, 20201001
-                   drawModelRobotShip(); //TO-DO: -add: ModelPool.cpp
-*/
-				//added by Mike, 20201201; edited by Mike, 20201207
-				//TO-DO: -reverify: scale
 				//note: human pilot at smaller scale than Robotship mecha
-//		                glScalef(2.0f, 2.0f, 2.0f);
-//		                glScalef(4.0f, 4.0f, 4.0f);		
-					//edited by Mike, 20210103
-		                glScalef(5.0f, 5.0f, 5.0f);		
-
-		                //glScalef(7.0f, 7.0f, 7.0f);		
+				glScalef(5.0f, 5.0f, 5.0f);		
 
 				switch(currentMovingState) {
 		            case IDLE_MOVING_STATE:		
@@ -753,188 +741,142 @@ void RobotShip::drawRobotShip()
 
 						     drawUpperArm(-0.2f, 0.0f, 0.0f); //left
 						}
-					    else if ((currentFacingState==FACING_DOWN)
-					    		|| (currentFacingState==FACING_RIGHT)/*
-								|| (currentFacingState==FACING_RIGHT_AND_UP)
-								*/
-								|| (currentFacingState==FACING_RIGHT_AND_DOWN))									
+						else if (currentFacingState==FACING_DOWN)									
 					    {
-						//removed by Mike, 20210222
-//							glPushMatrix();	
-
-							
-							   //edited by Mike, 20210103
-/*							   drawUpperArm(-0.2f, 0.0f, 0.0f); //left
-							   drawLowerArm(-0.2f, -0.2f, 0.0f); //left
-*/
-/* //edited by Mike, 20210221
-							   glPushMatrix();	
-	                   		     glScalef(1.0f, 1.4f, 1.0f);
-							   	 drawLowerArm(-0.2f, -0.2f, 0.0f); //left
-							   glPopMatrix();	// pop back to original coordinate system	
-*/
                    		     glScalef(1.0f, 1.4f, 1.0f);
 							   	 drawLowerArm(-0.2f, -0.2f, 0.0f); //left
                    		     glScalef(1.0f, 1.1f, 1.0f); //reset
 
-							   drawUpperArm(-0.2f, 0.0f, 0.0f); //left
+							 drawUpperArm(-0.2f, 0.0f, 0.0f); //left
 
-							   //edited by Mike, 20201209
-							   drawLowerLeg(-0.1f, -0.7f, 0.0f); //left
-							   drawLowerLeg(0.3f, -0.7f, 0.0f); //right
+							 //edited by Mike, 20201209
+							 drawLowerLeg(-0.1f, -0.7f, 0.0f); //left
+							 drawLowerLeg(0.3f, -0.7f, 0.0f); //right
 
-							   //edited by Mike, 20210103
-							   drawUpperLeg(-0.1f, -0.5f, 0.0f); //left
-							   drawUpperLeg(0.3f, -0.5f, 0.0f); //right        
+							 //edited by Mike, 20210103
+							 drawUpperLeg(-0.1f, -0.5f, 0.0f); //left
+							 drawUpperLeg(0.3f, -0.5f, 0.0f); //right        
 														
-							   //added by Mike, 20201201; edited by Mike, 20201207
-/*							   drawBody(0.1f, -0.15f, 0.0f);
-							   drawHead(0.1f, 0.2f, 0.0f);		  
-*/
-							   if (currentFacingState==FACING_DOWN) {
-								  //added by Mike, 20210123
-								  glScalef(1.0f, 0.65f, 1.0f);
-									  drawBody(0.1f, -0.15f, 0.0f);
-									  drawHead(0.1f, 0.2f, -0.1f);
-								  glScalef(1.0f, 1.0f, 1.0f);
-							   }
-					    	   //(currentFacingState==FACING_RIGHT))														
-							   else {
-								  //added by Mike, 20210123
-								  glScalef(1.0f, 0.65f, 1.0f);
-									  drawHead(0.1f, 0.2f, -0.1f);
-									  drawBody(0.1f, -0.15f, 0.0f);
-								  glScalef(1.0f, 1.0f, 1.0f);
-							   }
+							 glScalef(1.0f, 0.65f, 1.0f);
+							   drawBody(0.1f, -0.15f, 0.0f);
+							   drawHead(0.1f, 0.2f, -0.1f);
+							 glScalef(1.0f, 1.0f, 1.0f);
 
-								//edited by Mike, 20210103
-/*							   drawUpperArm(0.4f, 0.0f, 0.0f); //right        
+							 glScalef(1.0f, 1.4f, 1.0f);
 							   drawLowerArm(0.4f, -0.2f, 0.0f); //right
-*/
-/* //edited by Mike, 20210221
-							   glPushMatrix();	
-	                   		     glScalef(1.0f, 1.4f, 1.0f);
-							     drawLowerArm(0.4f, -0.2f, 0.0f); //right
-							   glPopMatrix();	// pop back to original coordinate system	
-*/
+                   		     glScalef(1.0f, 1.0f, 1.0f); //reset
+							   
+							 drawUpperArm(0.4f, 0.0f, 0.0f); //right        
+						}			
+					    else if (currentFacingState==FACING_RIGHT)								
+					    {
                    		     glScalef(1.0f, 1.4f, 1.0f);
+							   	 drawLowerArm(-0.2f, -0.2f, 0.0f); //left
+                   		     glScalef(1.0f, 1.1f, 1.0f); //reset
+
+							 drawUpperArm(-0.2f, 0.0f, 0.0f); //left
+
+							 //edited by Mike, 20201209							 
+							 drawLowerLeg(-0.1f, -0.7f, 0.0f); //left
+							 drawLowerLeg(0.3f, -0.7f, 0.0f); //right
+
+							 //edited by Mike, 20210103
+							 drawUpperLeg(-0.1f, -0.5f, 0.0f); //left
+							 drawUpperLeg(0.3f, -0.5f, 0.0f); //right        
+														
+							 glScalef(1.0f, 0.65f, 1.0f);
+								  drawHead(0.1f, 0.2f, -0.1f);
+								  drawBody(0.1f, -0.15f, 0.0f);
+							 glScalef(1.0f, 1.0f, 1.0f);
+
+							 glScalef(1.0f, 1.4f, 1.0f);
 							     drawLowerArm(0.4f, -0.2f, 0.0f); //right
                    		     glScalef(1.0f, 1.0f, 1.0f); //reset
 							   
-							   drawUpperArm(0.4f, 0.0f, 0.0f); //right        
+							 drawUpperArm(0.4f, 0.0f, 0.0f); //right        
+						}									
+					    else if (currentFacingState==FACING_RIGHT_AND_DOWN)
+					    {
+                   		     glScalef(1.0f, 1.4f, 1.0f);
+							   	 drawLowerArm(-0.2f, -0.2f, 0.0f); //left
+                   		     glScalef(1.0f, 1.1f, 1.0f); //reset
 
-							//removed by Mike, 20210222
-//							glPopMatrix();	// pop back to original coordinate system	
+							 drawUpperArm(-0.2f, 0.0f, 0.0f); //left
+
+							 //edited by Mike, 20201209
+							 drawLowerLeg(-0.1f, -0.7f, 0.0f); //left
+							 drawLowerLeg(0.3f, -0.7f, 0.0f); //right
+
+							 //edited by Mike, 20210103
+							 drawUpperLeg(-0.1f, -0.5f, 0.0f); //left
+							 drawUpperLeg(0.3f, -0.5f, 0.0f); //right        
+														
+							 glScalef(1.0f, 0.65f, 1.0f);
+							  drawHead(0.1f, 0.2f, -0.1f);
+							  drawBody(0.1f, -0.15f, 0.0f);
+							 glScalef(1.0f, 1.0f, 1.0f);
+
+                   		     glScalef(1.0f, 1.4f, 1.0f);
+							   drawLowerArm(0.4f, -0.2f, 0.0f); //right
+                   		     glScalef(1.0f, 1.0f, 1.0f); //reset
+							   
+							 drawUpperArm(0.4f, 0.0f, 0.0f); //right        
 						}			
 					    else if ((currentFacingState==FACING_RIGHT_AND_UP))
 					    {
-							//removed by Mike, 20210222
-//							glPushMatrix();	
-							   //edited by Mike, 20210103
-/*							   drawUpperArm(-0.2f, 0.0f, 0.0f); //left
-							   drawLowerArm(-0.2f, -0.2f, 0.0f); //left
-*/
-/* //edited by Mike, 20210221
-							   glPushMatrix();	
-	                   		     glScalef(1.0f, 1.4f, 1.0f);
-							   	 drawLowerArm(-0.2f, -0.2f, 0.0f); //left
-							   glPopMatrix();	// pop back to original coordinate system	
-*/
                    		     glScalef(1.0f, 1.4f, 1.0f);
-							   	 drawLowerArm(-0.2f, -0.2f, 0.0f); //left
+							   drawLowerArm(-0.2f, -0.2f, 0.0f); //left
                    		     glScalef(1.0f, 1.0f, 1.0f); //reset
 
-							   drawUpperArm(-0.2f, 0.0f, 0.0f); //left
+							 drawUpperArm(-0.2f, 0.0f, 0.0f); //left
 
-/* //edited by Mike, 20210221
-							   glPushMatrix();	
-	                   		     glScalef(1.0f, 1.4f, 1.0f);
-							     drawLowerArm(0.4f, -0.2f, 0.0f); //right
-							   glPopMatrix();	// pop back to original coordinate system	
-*/
                    		     glScalef(1.0f, 1.4f, 1.0f);
 							     drawLowerArm(0.4f, -0.2f, 0.0f); //right
                    		     glScalef(1.0f, 1.0f, 1.0f); //reset
 							   
-							   drawUpperArm(0.4f, 0.0f, 0.0f); //right        
+							 drawUpperArm(0.4f, 0.0f, 0.0f); //right        
 
+							 //edited by Mike, 20201209
+							 drawLowerLeg(-0.1f, -0.7f, 0.0f); //left
+							 drawLowerLeg(0.3f, -0.7f, 0.0f); //right
 
-							   //edited by Mike, 20201209
-							   drawLowerLeg(-0.1f, -0.7f, 0.0f); //left
-							   drawLowerLeg(0.3f, -0.7f, 0.0f); //right
-
-							   //edited by Mike, 20210103
-							   drawUpperLeg(-0.1f, -0.5f, 0.0f); //left
-							   drawUpperLeg(0.3f, -0.5f, 0.0f); //right        
+							 //edited by Mike, 20210103
+							 drawUpperLeg(-0.1f, -0.5f, 0.0f); //left
+							 drawUpperLeg(0.3f, -0.5f, 0.0f); //right        
 												
-							  //added by Mike, 20210123
-							  glScalef(1.0f, 0.5f, 1.0f);							
-								  drawHead(0.1f, 0.2f, -0.1f);
-								  drawBody(0.1f, -0.15f, 0.0f);
-							  glScalef(1.0f, 1.0f, 1.0f);							
-
-							//removed by Mike, 20210222
-							//glPopMatrix();	// pop back to original coordinate system	
+							 //added by Mike, 20210123
+							 glScalef(1.0f, 0.5f, 1.0f);							
+							   drawHead(0.1f, 0.2f, -0.1f);
+							   drawBody(0.1f, -0.15f, 0.0f);
+							 glScalef(1.0f, 1.0f, 1.0f);							
 						}			
-						//added by Mike, 20210202
 						else if (currentFacingState==FACING_LEFT_AND_DOWN)
 					    {
-//removed by Mike, 20210222
-//					glPushMatrix();	
-							
-							   //edited by Mike, 20210103
-/*							   drawUpperArm(0.4f, 0.0f, 0.0f); //right        
-							   drawLowerArm(0.4f, -0.2f, 0.0f); //right
-*/
-/* //edited by Mike, 20210221
-							   glPushMatrix();	
-	                   		     glScalef(1.0f, 1.4f, 1.0f);
-							   	 drawLowerArm(0.4f, -0.2f, 0.0f); //right
-							   glPopMatrix();	// pop back to original coordinate system	
-*/
                    		     glScalef(1.0f, 1.4f, 1.0f);
 							   	 drawLowerArm(0.4f, -0.2f, 0.0f); //right
                    		     glScalef(1.0f, 1.0f, 1.0f); //reset
 
-							   drawUpperArm(0.4f, 0.0f, 0.0f); //right        
+							 drawUpperArm(0.4f, 0.0f, 0.0f); //right        
 
-							   drawLowerLeg(-0.1f, -0.7f, 0.0f); //left
-							   drawLowerLeg(0.3f, -0.7f, 0.0f); //right
+							 drawLowerLeg(-0.1f, -0.7f, 0.0f); //left
+							 drawLowerLeg(0.3f, -0.7f, 0.0f); //right
 
-							   //edited by Mike, 20210103
-							   drawUpperLeg(-0.1f, -0.5f, 0.0f); //left
-							   drawUpperLeg(0.3f, -0.5f, 0.0f); //right        
-/* //edited by Mike, 20210221			
-							   glPushMatrix();	
-	                   		     glScalef(1.0f, 1.4f, 1.0f);
-							   	 drawLowerArm(-0.2f, -0.2f, 0.0f); //left
-							   glPopMatrix();	// pop back to original coordinate system	
-*/
-                   		     glScalef(1.0f, 1.4f, 1.0f);
+							 //edited by Mike, 20210103
+							 drawUpperLeg(-0.1f, -0.5f, 0.0f); //left
+							 drawUpperLeg(0.3f, -0.5f, 0.0f); //right        
+
+							 glScalef(1.0f, 1.4f, 1.0f);
 							   	 drawLowerArm(-0.2f, -0.2f, 0.0f); //left
                    		     glScalef(1.0f, 1.0f, 1.0f); //reset
 
-							   drawUpperArm(-0.2f, 0.0f, 0.0f); //left
+							 drawUpperArm(-0.2f, 0.0f, 0.0f); //left
 
-							  //added by Mike, 20210123
-							  glScalef(1.0f, 0.5f, 1.0f);							
-							    drawBody(0.1f, -0.15f, 0.0f);
-							    drawHead(0.1f, 0.2f, -0.1f);		  
-							  glScalef(1.0f, 1.0f, 1.0f);														
-
-							//removed by Mike, 20210222
-//					glPopMatrix();	// pop back to original coordinate system	
+							 //added by Mike, 20210123
+							 glScalef(1.0f, 0.5f, 1.0f);							
+							   drawBody(0.1f, -0.15f, 0.0f);
+							   drawHead(0.1f, 0.2f, -0.1f);		  
+							 glScalef(1.0f, 1.0f, 1.0f);														
 						}
-
-
-/*	//removed by Mike, 20201227									
-						//added by Mike, 20201227
-						//TO-DO: -reverify: that angles are correct in WALKING_STATE
-						armAngles[LEFT] = 0.0;
-						armAngles[RIGHT] = 0.0;
-						legAngles[LEFT] = 0.0;
-						legAngles[RIGHT] = 0.0;
-*/
 						break;
 					case WALKING_MOVING_STATE:
 						//TO-DO: -update: sequence of legs, i.e. upper and lower
