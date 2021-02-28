@@ -194,7 +194,7 @@ In addition, possession, cultivation, etc of taima are strictly regulated via "R
 2) The International Criminal Police Organization International Police (INTERPOL) notes that due to COVID-19, it is expected that there is an increase in criminal activies by budol-budol/manloloko/carnapper/cybercriminal/communist terrorist group to quickly get money.<br/>
 3) マリファナ (marijuana) is classified to be with taima<br/>
 --> identified: Dr. Pedro Syson's younger brother, "tai-ah", i.e. Ramon Syson, to be with this Manloloko group.<br/>
---> verified: Uses 福建話 (fujianhua, hokkien, liannanoue ("our people's language")) to classify Filipinos as "juana" to signify "inutil"<br/>
+--> verified: Ramon uses 福建話 (fujianhua, hokkienoue, liannanoue ("our people's language")) to classify Filipinos as "juana" to signify "inutil"<br/>
 --> requested: assistance from law enforcement via filing of written reports<br/>
  
 #### References:
