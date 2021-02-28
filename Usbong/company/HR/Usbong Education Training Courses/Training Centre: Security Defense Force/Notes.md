@@ -183,7 +183,7 @@ Matatandaan na sa unang pagdating ni Kristo, nagbigay siya ng mensahe ng pagbaba
 使い方には「乾燥大麻を燃やしてけむりを吸う」などがあります。<br/>
 なお、大麻の所持や栽培などは「大麻取締法」で厳しく規制されています。」<br/>
 <br/>
-Translated from nihongo to English by SYSON, MICHAEL B.<br/>
+<b>Translated from nihongo to English by SYSON, MICHAEL B.</b><br/>
 taima, i.e. "big hemp weed" (studied name: kanabis・satiba・el) as manufactured product.<br/>
 Included in taima is a made part THC (tetrahidro kanabis so-l) mainly made to use with central nerve, i.e. 神経 (God Passage), to cause excitement, dizziness, illusion, etc.<br/> 
 Usage: There exist "burn dried taima, breathe smoke", etc<br/>  
@@ -195,7 +195,7 @@ In addition, possession, cultivation, etc of taima are strictly regulated via "R
 3) マリファナ (marijuana) is classified to be with taima<br/>
 --> identified: Dr. Pedro Syson's younger brother, "tai-ah", i.e. Ramon Syson, to be with this Manloloko group.<br/>
 --> Uses 福建話 (fujianhua, hokkien, liannanoue ("our people's language")) to classify Filipinos as "juana" to signify "inutil"<br/>
---> requested: assistance from law enforecement via filing of written reports<br/>
+--> requested: assistance from law enforcement via filing of written reports<br/>
  
 #### References:
 1) https://www.keishicho.metro.tokyo.jp/kurashi/drug/drug/taima_interview.html;<br/>
