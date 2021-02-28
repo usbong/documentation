@@ -176,3 +176,28 @@ last accessed: 20210223<br/>
 <b>Additional Note:</b><br/>
 Matatandaan na sa unang pagdating ni Kristo, nagbigay siya ng mensahe ng pagbabago at pagbabalik kay Bathala. Sa kanyang ikalawang pagbabalik, pupuksain na niya ang mga Teroristang Komunista.
 
+### Part 7
+大麻とは・・・<br/>
+「大麻草（学名：カンナビス・サティバ・エル）とその製品をいいます。<br/>
+大麻に含まれる成分のひとつTHC（テトラヒドロカンナビノール）が主に中枢神経に作用し、興奮、陶酔、幻覚などを引き起こします。<br/>
+使い方には「乾燥大麻を燃やしてけむりを吸う」などがあります。<br/>
+なお、大麻の所持や栽培などは「大麻取締法」で厳しく規制されています。」<br/>
+<br/>
+Translated from nihongo to English by SYSON, MICHAEL B.<br/>
+taima, i.e. "big hemp weed" (studied name: kanabis・satiba・el) as manufactured product.<br/>
+Included in taima is a made part THC (tetrahidro kanabis so-l) mainly made to use with central nerve, i.e. 神経 (God Passage), to cause excitement, dizziness, illusion, etc.<br/> 
+Usage: There exist "burn dried taima, breathe smoke", etc<br/>  
+In addition, possession, cultivation, etc of taima are strictly regulated via "Rule on Controlling taima"<br/> 
+
+#### Additional Notes:
+1) The budol-budol/manloloko/carnapper/cybercriminal/communist terrorist group uses wireless broadcasting technology to cause the effects of taima.<br/>
+2) The International Criminal Police Organization International Police (INTERPOL) notes that due to COVID-19, it is expected that there is an increase in criminal activies by budol-budol/manloloko/carnapper/cybercriminal/communist terrorist group to quickly get money.<br/>
+3) マリファナ (marijuana) is classified to be with taima<br/>
+--> identified: Dr. Pedro Syson's younger brother, "tai-ah", i.e. Ramon Syson, to be with this Manloloko group.<br/>
+--> Uses 福建話 (fujianhua, hokkien, liannanoue ("our people's language")) to classify Filipinos as "juana" to signify "inutil"<br/>
+--> requested: assistance from law enforecement via filing of written reports<br/>
+ 
+#### References:
+1) https://www.keishicho.metro.tokyo.jp/kurashi/drug/drug/taima_interview.html;<br/>
+last accessed: 20210117<br/>
+2) https://www.interpol.int/en/News-and-Events/News/2021/INTERPOL-report-charts-top-cyberthreats-in-Southeast-Asia; last accessed: 20210228<br/>
