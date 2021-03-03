@@ -2557,13 +2557,13 @@ void RobotShip::drawRobotShip()
 							armAngles[RIGHT]=30.0f;
 							armAngles[LEFT]=30.0f;						
 
-							//added by Mike, 20210111
+/*							//added by Mike, 20210111
 			                if (bIsFiringBeam) {	
 								if (iFiringBeamCount%2==0) {
 			                        glTranslatef(0.0f, 0.0f, 0.05f);			                        
 								}	
 							}
-							
+*/							
 							//ARMS
 							glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);
 /*							
@@ -2581,6 +2581,7 @@ void RobotShip::drawRobotShip()
 								if (iFiringBeamCount%2==0) {
 							   		glTranslatef(0.0f, 0.0f, -0.05f);
 								}									
+								iFiringBeamCount=iFiringBeamCount+1;								
 							}
 
 							drawLowerLeg(-0.15f, -0.7f, 0.0f); //left
@@ -2588,14 +2589,14 @@ void RobotShip::drawRobotShip()
 
 							drawUpperLeg(-0.1f, -0.5f, 0.0f); //left
 							drawUpperLeg(0.3f, -0.5f, 0.0f); //right        
-							
+/*							
 			                if (bIsFiringBeam) {	
 								if (iFiringBeamCount%2==0) {
 			                        glTranslatef(0.0f, 0.0f, 0.05f);
 								}	
 								iFiringBeamCount=iFiringBeamCount+1;
 							}
-
+*/
 							//ARMS
 							glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);							
 								glTranslatef(0.0f, 0.0f, 0.1f);
@@ -2604,7 +2605,7 @@ void RobotShip::drawRobotShip()
 								glRotatef(-45, 1.0f, 0.0f, 0.0f);
 								glTranslatef(0.0f, 0.0f, -0.1f);
 							glRotatef(-armAngles[RIGHT], 1.0f, 0.0f, 0.0f);							
-
+/*
 							//UPPER
 							glTranslatef(0.0f, 0.0f, 0.05f);
 								glRotatef(45, 1.0f, 0.0f, 0.0f);
@@ -2613,17 +2614,15 @@ void RobotShip::drawRobotShip()
 									glRotatef(-armAngles[LEFT], 1.0f, 0.0f, 0.0f);							
 								glRotatef(-45, 1.0f, 0.0f, 0.0f);
 							glTranslatef(0.0f, 0.0f, -0.05f);
-								  
+*/								  
 							glTranslatef(0.0f, -0.05f, 0.05f);
-
-							drawBody(0.1f, -0.15f, 0.0f);	
-							drawHead(0.1f, 0.2f, -0.1f);		
 							
 						    if (bIsExecutingPunch) {							  	
 						    }
 						    else {
+/*								
  							  //LOWER ARM
-							  glTranslatef(0.0f, 0.0f, 0.05f);
+//							  glTranslatef(0.0f, 0.0f, 0.05f);
 							  glRotatef(45, 1.0f, 0.0f, 0.0f);
 								//added by Mike, 20201218
 								glRotatef(45.0f, 0.0f, 0.0f, 1.0f);
@@ -2632,7 +2631,16 @@ void RobotShip::drawRobotShip()
 								glRotatef(30.0f, 0.0f, 1.0f, 0.0f);
 								glRotatef(-45.0f, 0.0f, 0.0f, 1.0f);							  									  
 							  glRotatef(-45, 1.0f, 0.0f, 0.0f);
-							  glTranslatef(0.0f, 0.0f, -0.05f);
+//							  glTranslatef(0.0f, 0.0f, -0.05f);
+*/								
+								//UPPER
+								glTranslatef(0.0f, 0.0f, 0.05f);
+									glRotatef(45, 1.0f, 0.0f, 0.0f);
+										glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);							
+											drawUpperArm(-0.2f, 0.0f, 0.0f); //left				            			
+										glRotatef(-armAngles[LEFT], 1.0f, 0.0f, 0.0f);							
+									glRotatef(-45, 1.0f, 0.0f, 0.0f);
+								glTranslatef(0.0f, 0.0f, -0.05f);								
 						    }
 
 						    //added by Mike, 20210111
@@ -2648,38 +2656,84 @@ void RobotShip::drawRobotShip()
 									drawUpperArm(-0.2f, 0.0f, 0.0f); //left				            			
 								glRotatef(-armAngles[LEFT], 1.0f, 0.0f, 0.0f);							
 								glRotatef(45, 1.0f, 0.0f, 0.0f);									
-						    }
+						   	  }
+/*
+							  //LOWER ARM
+							  glTranslatef(0.0f, 0.0f, 0.05f);
+							  glTranslatef(0.1f, -0.2f, -0.6f);
+*/
+							  if (iPunchAnimationCount==0) {//MAX_PUNCHING_ANIMATION_COUNT) {
+//									glTranslatef(0.0f, 0.4f, -0.2f);
+//									glScalef(1.0f, 1.0f, 1.5f);
+								  
+//									glTranslatef(0.0f, 0.0f, 0.4f);
+//									glTranslatef(0.0f, -0.4f, 0.0f);	
+//									glTranslatef(0.0f, 0.4f, 0.0f);	
+									glTranslatef(0.0f, 0.0f, -0.4f);									  
+							  }
+							  else if (iPunchAnimationCount<MAX_PUNCHING_ANIMATION_COUNT) {
+//								glScalef(1.0f, 1.0f, 1.5f);								  
+							  }
+								
+								//note: y-axis for FACING_LEFT_AND_DOWN
+								glTranslatef(0.0f, -0.2f*iPunchAnimationCount, 0.0f);
+								
+								glRotatef(90, 1.0f, 0.0f, 0.0f);
+									drawLowerArm(-0.4f, 0.0f, 0.0f); //left
 
-							//LOWER ARM
-							glTranslatef(0.0f, 0.0f, 0.05f);
-							glTranslatef(0.1f, -0.2f, -0.6f);
+									if (iPunchAnimationCount<MAX_PUNCHING_ANIMATION_COUNT) {
+									}
+									else {
+										//UPPER
+										glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);							
+											drawUpperArm(-0.4f, 0.0f, -0.2f); //left				            			
+										glRotatef(-armAngles[LEFT], 1.0f, 0.0f, 0.0f);							
+									}							
+								glRotatef(-90, 1.0f, 0.0f, 0.0f);
+								
+								glTranslatef(0.0f, 0.2f*iPunchAnimationCount, 0.0f);
 
-							if (iPunchAnimationCount==0) {//MAX_PUNCHING_ANIMATION_COUNT) {
-								glTranslatef(0.0f, 0.4f, -0.2f);
-								glScalef(1.0f, 1.0f, 1.5f);
-							}
-							else if (iPunchAnimationCount<MAX_PUNCHING_ANIMATION_COUNT) {
-								glScalef(1.0f, 1.0f, 1.5f);
-							}
-
-							glTranslatef(0.0f, 0.0f, 0.2f*iPunchAnimationCount);
-							glRotatef(90, 1.0f, 0.0f, 0.0f);
-
-							drawLowerArm(-0.3f, 0.0f, 0.0f); //left
-						  }	
-
-							//added by Mike, 20210124
-							if (bIsExecutingPunch) {
-								if (iPunchAnimationCount<MAX_PUNCHING_ANIMATION_COUNT) {
+								if (iPunchAnimationCount==0) {//MAX_PUNCHING_ANIMATION_COUNT) {
+//									glScalef(1.0f, 1.0f, 1.0f);
+//									glTranslatef(0.0f, -0.4f, 0.2f);
+//									glTranslatef(0.0f, 0.0f, -0.4f);		
+									//glTranslatef(0.0f, -0.4f, 0.2f);								  
+//									glTranslatef(0.0f, -0.0f, 0.0f);								  									
+//									glTranslatef(0.0f, 0.4f, 0.0f);								  
+//									glTranslatef(0.0f, -0.4f, 0.0f);								  
+									glTranslatef(0.0f, 0.0f, 0.4f);	
+									glScalef(1.0f, 1.0f, 1.0f);									
 								}
-								else {
-				                    //UPPER
-									glRotatef(armAngles[LEFT], 1.0f, 0.0f, 0.0f);							
-				            			drawUpperArm(-0.2f, 0.0f, 0.0f); //left				            			
-									glRotatef(-armAngles[LEFT], 1.0f, 0.0f, 0.0f);							
-								}							
+								else if (iPunchAnimationCount<MAX_PUNCHING_ANIMATION_COUNT) {
+//								  glScalef(1.0f, 1.0f, 1.0f);								  
+								}								
+/*								
+								glTranslatef(-0.1f, 0.2f, 0.6f);
+*/								
+								glTranslatef(0.0f, 0.0f, -0.05f);								
 							}
-						
+
+	
+//							glTranslatef(0.0f, -0.4f, 0.2f);
+							drawBody(0.1f, -0.15f, 0.0f);	
+							drawHead(0.1f, 0.2f, -0.1f);		
+
+							if (bIsExecutingPunch) {							  	
+						    }
+						    else {
+ 							  //LOWER ARM
+//							  glTranslatef(0.0f, 0.0f, 0.05f);
+							  glRotatef(45, 1.0f, 0.0f, 0.0f);
+								//added by Mike, 20201218
+								glRotatef(45.0f, 0.0f, 0.0f, 1.0f);
+								glRotatef(-30.0f, 0.0f, 1.0f, 0.0f);
+									drawLowerArm(-0.3f, 0.0f, 0.0f); //left							
+								glRotatef(30.0f, 0.0f, 1.0f, 0.0f);
+								glRotatef(-45.0f, 0.0f, 0.0f, 1.0f);							  									  
+							  glRotatef(-45, 1.0f, 0.0f, 0.0f);
+//							  glTranslatef(0.0f, 0.0f, -0.05f);								
+						    }							
+							
 							//added by Mike, 20210111
 			                if (bIsFiringBeam) {
 								drawWeapon(0.3f, -0.15f, -0.5f);
