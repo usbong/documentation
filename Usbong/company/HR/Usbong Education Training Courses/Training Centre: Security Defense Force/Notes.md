@@ -185,7 +185,7 @@ Matatandaan na sa unang pagdating ni Kristo, nagbigay siya ng mensahe ng pagbaba
 <br/>
 <b>Translated from nihongo to English by SYSON, MICHAEL B.</b><br/>
 taima, i.e. "big hemp weed" (studied name: kanabis・satiba・el) as manufactured product.<br/>
-Included in taima is a made part THC (tetrahidro kanabis so-l) mainly made to use with central nerve, i.e. 神経 (God Passage), to cause excitement, dizziness, illusion, etc.<br/> 
+Included in taima is a made part THC (tetrahidro kanabi no-l, i.e. Tetrahydrocannabinol) mainly made to use with central nerve, i.e. 神経 (God Passage), to cause excitement, dizziness, illusion, etc.<br/> 
 Usage: There exist "burn dried taima, breathe smoke", etc<br/>  
 In addition, possession, cultivation, etc of taima are strictly regulated via "Rule on Controlling taima"<br/> 
 
