@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210303
+ * @date updated: 20210304
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -2323,6 +2323,7 @@ void RobotShip::drawRobotShip()
 								if (iFiringBeamCount%2==0) {
 			                        glTranslatef(0.0f, 0.0f, 0.05f);			                        
 								}	
+								iFiringBeamCount=iFiringBeamCount+1;								
 							}
 
 						  //added by Mike, 20210111
@@ -2396,7 +2397,7 @@ void RobotShip::drawRobotShip()
 									drawUpperArm(-0.2f, 0.0f, 0.0f); //left
 								glRotatef(-armAngles[LEFT], 1.0f, 0.0f, 0.0f);								  
 							}
-
+/*
 							//added by Mike, 20210111
 							//reset for robotship legs
 							if (bIsFiringBeam) {	
@@ -2405,7 +2406,7 @@ void RobotShip::drawRobotShip()
 								}									
 								iFiringBeamCount=iFiringBeamCount+1;
 							}
-
+*/
 		                    glTranslatef(0.0f, -0.05f, 0.05f);
 							
 						  	drawBody(0.1f, -0.15f, 0.0f);
@@ -2557,13 +2558,19 @@ void RobotShip::drawRobotShip()
 							armAngles[RIGHT]=30.0f;
 							armAngles[LEFT]=30.0f;						
 
-/*							//added by Mike, 20210111
+							drawLowerLeg(-0.15f, -0.7f, 0.0f); //left
+							drawLowerLeg(0.35f, -0.7f, 0.0f); //right
+
+							drawUpperLeg(-0.1f, -0.5f, 0.0f); //left
+							drawUpperLeg(0.3f, -0.5f, 0.0f); //right        
+
 			                if (bIsFiringBeam) {	
 								if (iFiringBeamCount%2==0) {
 			                        glTranslatef(0.0f, 0.0f, 0.05f);			                        
 								}	
+								iFiringBeamCount=iFiringBeamCount+1;								
 							}
-*/							
+							
 							//ARMS
 							glRotatef(armAngles[RIGHT], 1.0f, 0.0f, 0.0f);
 /*							
@@ -2575,7 +2582,7 @@ void RobotShip::drawRobotShip()
 */							
 								drawUpperArm(0.4f, 0.0f, 0.0f); //right
 							glRotatef(-armAngles[RIGHT], 1.0f, 0.0f, 0.0f);
-
+/*
 							//reset for robotship legs
 			                if (bIsFiringBeam) {	
 								if (iFiringBeamCount%2==0) {
@@ -2589,6 +2596,8 @@ void RobotShip::drawRobotShip()
 
 							drawUpperLeg(-0.1f, -0.5f, 0.0f); //left
 							drawUpperLeg(0.3f, -0.5f, 0.0f); //right        
+
+*/
 /*							
 			                if (bIsFiringBeam) {	
 								if (iFiringBeamCount%2==0) {
