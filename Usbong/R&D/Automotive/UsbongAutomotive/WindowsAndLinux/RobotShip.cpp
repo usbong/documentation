@@ -681,7 +681,8 @@ void RobotShip::drawRobotShip()
 							 drawUpperLeg(0.3f, -0.5f, 0.0f); //right        
 			
 						     glScalef(1.0f, 0.7f, 1.0f);
-							   drawHead(0.1f, 0.2f, -0.1f);
+							   //edited by Mike, 20210304
+						   	   drawHead(0.0f, 0.2f, -0.1f);									
 							   drawBody(0.1f, -0.15f, 0.0f);
 						     glScalef(1.0f, 1.0f, 1.0f);
 
@@ -982,7 +983,8 @@ void RobotShip::drawRobotShip()
 								glTranslatef(0.0f, 0.0f, -0.05f);
 							}
 */
-						    drawHead(0.1f, 0.2f, -0.1f);		
+						    //edited by Mike, 20210304
+						    drawHead(0.0f, 0.2f, -0.1f);																
 						    drawBody(0.1f, -0.15f, 0.0f);	
 							   	
 							//UPPER ARM
@@ -2130,8 +2132,9 @@ void RobotShip::drawRobotShip()
 								drawWeapon(0.35f, -0.15f, -0.7);
 						   }
 
-						   drawHead(0.1f, 0.2f, -0.1f);		
-						   drawBody(0.1f, -0.15f, 0.0f);									   
+							//edited by Mike, 20210304
+						   	drawHead(0.0f, 0.2f, -0.1f);		
+							drawBody(0.1f, -0.15f, 0.0f);									   
 
 						   if (bIsExecutingPunch) {
 							  	//punch using left arm
@@ -4259,8 +4262,13 @@ void RobotShip::drawBody(float xPos, float yPos, float zPos)
 //		drawSphere();
 		//edited by Mike, 20201207
 //		glScalef(0.3f, 0.5f, 0.2f);
-		glScalef(0.5f, 0.5f, 0.3f);
+		//edited by Mike, 20210304
+/*		glScalef(0.5f, 0.5f, 0.3f);
         glTranslatef(0.0f, 0.4f, 0.0f);
+*/
+		glScalef(0.5f, 0.7f, 0.3f);
+        glTranslatef(0.0f, 0.1f, 0.0f);
+	
 	
 		glBindTexture(GL_TEXTURE_2D, myBodyTextureObject);
         glEnable(GL_TEXTURE_2D); //added by Mike, Dec.21,2006

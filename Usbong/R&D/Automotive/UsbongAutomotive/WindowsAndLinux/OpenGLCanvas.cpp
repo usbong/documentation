@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210220
+ * @date updated: 20210304
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -1085,9 +1085,10 @@ void OpenGLCanvas::render()
 	//ISOMETRIC VIEW					  	
 	//-----
 	//added by Mike, 20201115
+/*		
 	glRotatef(45, 1.0f, 0.0f, 0.0f);
 	glRotatef(30, 0.0f, 1.0f, 0.0f);
-/*    glScalef(0.2f, 0.2f, 0.2f);
+////    glScalef(0.2f, 0.2f, 0.2f);
 	//-----
 */
 
@@ -1100,7 +1101,7 @@ void OpenGLCanvas::render()
 	//2D horizontal-scrolling, vertical-scrolling view
 	//note: Zelda Link's Awakening DX; Gameboy Color
 	//-----
-//	glRotatef(30, 0.0f, 1.0f, 0.0f);
+	glRotatef(30, 0.0f, 1.0f, 0.0f);
 /*    glScalef(0.2f, 0.2f, 0.2f);
 */
 	//-----
