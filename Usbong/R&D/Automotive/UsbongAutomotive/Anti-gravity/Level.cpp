@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201118
- * @date updated: 20210211
+ * @date updated: 20210305
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -301,11 +301,21 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 	float fGridSquareHeight = myWindowHeight/iRowCountMax/100.0;
 	
 	char tempText[50];
+	
+	//added by Mike, 20210305
+/*	int iX=fX;
+	int iY=fY;
+	int iZ=fZ;
+*/	
+	int iX=fX/2;
+	int iY=fY/2;
+	int iZ=fZ/2;
+	
 /*
 	for (int iRowCount=0; iRowCount<10; iRowCount++) {	
 	 	for (int iColumnCount=0; iColumnCount<10; iColumnCount++) {		
-//	 		printf("%s",cCurrentLevelMapContainer[iRowCount][iColumnCount]);
-			std::cout << cCurrentLevelMapContainer[iRowCount][iColumnCount];
+//	 		printf("%s",sCurrentLevelMapContainer[iRowCount][iColumnCount]);
+			std::cout << sCurrentLevelMapContainer[iRowCount][iColumnCount];
 
 		}
 			printf("\n");			
@@ -332,21 +342,96 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 */	
 
 //	printf("draw!");
- 
+
+   std::cout << "iZ: " << iZ << "\n";
+   std::cout << "MAX_Z_AXIS_VIEWPORT: " << MAX_Z_AXIS_VIEWPORT << "\n";
+	
+   int iMovementGridZ = iPrevZ-iZ;
+   int iMovementGridX = iPrevX-iX;
+   int iMovementGridY = iPrevY-iY;
+	
+   //example: iPrevZ=-3; iZ=-2;
+   //-3 - (-2) = -1
+   //if -1 < 0, moved forward	
+//   if ((iPrevZ-iZ) < 0) { //moved forward
+   if (iMovementGridZ < 0) { //moved forward
+     std::cout << "positive forward" << "\n";
+//			  std::cout << "iMovementGridZ" << iMovementGridZ <<"\n";
+	   
+   }
+   else if (iMovementGridZ == 0) { //no movement in Z-axis
+     std::cout << "no movement" << "\n";	   
+   }	
+   //example: iPrevZ=-2; iZ=-3;
+	//-2 - (-3) = 1
+	//if 1 > 0, moved forward		
+   else {
+     std::cout << "negative backward" << "\n";	   
+	 iMovementGridZ=iMovementGridZ*-1; //get absolute value, i.e. positive number
+	   
+   }
+	
+/*	//TO-DO: -reverify: this
+   if (iMovementGridZ<0) { //if negative value
+   	iMovementGridZ=iMovementGridZ*-1; //get absolute value, i.e. positive number
+   }
+*/
+	
+/*	
+   if (iZ>0) {
+   std::cout << "positive forward" << "\n";
+	   
+//	   iZ=iZ-MAX_Z_AXIS_VIEWPORT;
+   }
+*/	
+	
+	iPrevX=iX;
+	iPrevY=iY;
+	iPrevZ=iZ;
+	
 	 //edited by Mike, 20210211
 //	for (int iRowCount=0; iRowCount<10; iRowCount++) {	
-	for (int iRowCount=0; iRowCount<MAX_Z_AXIS_VIEWPORT; iRowCount++) {	
+	//edited by Mike, 20210305
+//	for (int iRowCount=0; iRowCount<MAX_Z_AXIS_VIEWPORT; iRowCount++) {	
+//	for (int iRowCount=fZ; iRowCount<fZ+MAX_Z_AXIS_VIEWPORT; iRowCount++) {	
+//	for (int iRowCount=iZ; iRowCount<iZ+MAX_Z_AXIS_VIEWPORT; iRowCount++) {	
+	for (int iRowCount=0; iRowCount<MAX_Z_AXIS_VIEWPORT; iRowCount++) {		
+		//added by Mike, 20210305
+		if (iMovementGridZ+iRowCount<0) {
+//			iMovementGridZ=0;
+			iMovementGridZ=0;
+			iRowCount=0;			
+		}
+	
 	 //edited by Mike, 20210211
 //		for (int iColumnCount=0; iColumnCount<10; iColumnCount++) {		
-		for (int iColumnCount=0; iColumnCount<MAX_X_AXIS_VIEWPORT; iColumnCount++) {					
-//				printf("%s",cCurrentLevelMapContainer[iRowCount][iColumnCount]);
+	//edited by Mike, 20210305		
+//		for (int iColumnCount=0; iColumnCount<MAX_X_AXIS_VIEWPORT; iColumnCount++) {					
+//		for (int iColumnCount=fX; iColumnCount<fX+MAX_X_AXIS_VIEWPORT; iColumnCount++) {								
+//		for (int iColumnCount=iX; iColumnCount<iX+MAX_X_AXIS_VIEWPORT; iColumnCount++) {								
+		for (int iColumnCount=0; iColumnCount<MAX_X_AXIS_VIEWPORT; iColumnCount++) {			
+//				printf("%s",sCurrentLevelMapContainer[iRowCount][iColumnCount]);
 
-			//if (cCurrentLevelMapContainer[iRowCount][iColumnCount]=="G") {
-//			  if (strcmp(cCurrentLevelMapContainer[iRowCount][iColumnCount],"G") != 0) {
+			//if (sCurrentLevelMapContainer[iRowCount][iColumnCount]=="G") {
+//			  if (strcmp(sCurrentLevelMapContainer[iRowCount][iColumnCount],"G") != 0) {
 			  //Reference: http://www.cplusplus.com/reference/string/string/compare/;
 			  //last accessed: 20210210
 			  //note: quotation marks
-			  if (cCurrentLevelMapContainer[iRowCount][iColumnCount].compare("\"G\"") == 0) { //TRUE
+			  //edited by Mike, 20210305
+//			  if (sCurrentLevelMapContainer[iRowCount][iColumnCount].compare("\"G\"") == 0) { //TRUE			
+//			  if (sCurrentLevelMapContainer[fX+iRowCount][fZ+iColumnCount].compare("\"G\"") == 0) { //TRUE
+//			  if (sCurrentLevelMapContainer[iZ+iRowCount][iX+iColumnCount].compare("\"G\"") == 0) { //TRUE
+/*
+			  std::cout << "iMovementGridZ" << iMovementGridZ <<"\n";
+     		  std::cout << "iRowCount" << iRowCount <<"\n";
+     		  std::cout << "iMovementGridZ+iRowCount" << iMovementGridZ+iRowCount <<"\n";
+*/			
+			  if (sCurrentLevelMapContainer[iMovementGridZ+iRowCount][iMovementGridX+iColumnCount].compare("\"G\"") == 0) { //TRUE
+//			  if (sCurrentLevelMapContainer[iZ+iRowCount][iX+iColumnCount].compare("\"G\"") == 0) { //TRUE
+//			  if (sCurrentLevelMapContainer[iZ][iX].compare("\"G\"") == 0) { //TRUE
+
+//				  			  std::cout << "DITO" <<"\n";
+
 //				  printf("DITO");
 				
 			    //Grass
@@ -359,8 +444,17 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 				//execute this when using solid colors
 				//for computer to not draw borders
 				glBindTexture( GL_TEXTURE_2D, 0 );
-	
+				
+				//edited by Mike, 20210305
+//				draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iRowCount, tempText);
+//				draw_level(fX+fGridSquareWidth*iColumnCount, fY+0.0f, fZ+fGridSquareHeight*iRowCount, tempText);
+//				draw_level(iX+fGridSquareWidth*iColumnCount, iY+0.0f, iZ+fGridSquareHeight*iRowCount, tempText);
+//				draw_level(iMovementGridX+fGridSquareWidth*iColumnCount, iMovementGridY+0.0f, iMovementGridZ+fGridSquareHeight*iRowCount, tempText);
+//				draw_level(iX+fGridSquareWidth*iColumnCount, iY+0.0f, iZ+fGridSquareHeight*iRowCount, tempText);
+//				draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iRowCount, tempText);
+//				draw_level(iMovementGridX+fGridSquareWidth*iColumnCount, iMovementGridY+0.0f, iMovementGridZ+fGridSquareHeight*iRowCount, tempText);
 				draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iRowCount, tempText);
+				  
 //				draw_level(fGridSquareWidth*iRowCount, 0.0f, fGridSquareHeight*iColumnCount, tempText);
 			}			
 		}
@@ -554,12 +648,19 @@ void Level::read(char *inputFilename) {
 	for (iRowCount=0; iRowCount<10; iRowCount++) {	
 		for (iColumnCount=0; iColumnCount<10; iColumnCount++) {		
 */
+/*	//edited by Mike, 20210305
 	for (iRowCount=0; iRowCount<MAX_Z_AXIS_VIEWPORT; iRowCount++) {	
 		for (iColumnCount=0; iColumnCount<MAX_X_AXIS_VIEWPORT; iColumnCount++) {		
-	 		cCurrentLevelMapContainer[iRowCount][iColumnCount]=(char*)"-1";//'G';
+	 		sCurrentLevelMapContainer[iRowCount][iColumnCount]=(char*)"-1";//'G';
 		}
 	}
-
+*/
+	for (iRowCount=0; iRowCount<100; iRowCount++) {	
+		for (iColumnCount=0; iColumnCount<100; iColumnCount++) {		
+	 		sCurrentLevelMapContainer[iRowCount][iColumnCount]=(char*)"-1";//'G';
+		}
+	}
+	
 	iRowCount=0;
 	iColumnCount=0;
 				
@@ -633,8 +734,8 @@ void Level::read(char *inputFilename) {
 					
 				//TO-DO: use String, instead of char
 				//TO-DO: -reverify: output due to "G" not put in container
-//				cCurrentLevelMapContainer[iRowCount][iColumnCount]=&ch;
-				cCurrentLevelMapContainer[iRowCount][iColumnCount]=ch;
+//				sCurrentLevelMapContainer[iRowCount][iColumnCount]=&ch;
+				sCurrentLevelMapContainer[iRowCount][iColumnCount]=ch;
 
 /*	//edited by Mike, 20210211		
 				printf("%s:",ch);
@@ -661,7 +762,7 @@ void Level::read(char *inputFilename) {
 /*	
 	for (iRowCount=0; iRowCount<100; iRowCount++) {	
 	 	for (iColumnCount=0; iColumnCount<100; iColumnCount++) {		
-	 		printf("%s",cCurrentLevelMapContainer[iRowCount][iColumnCount]);
+	 		printf("%s",sCurrentLevelMapContainer[iRowCount][iColumnCount]);
 		}
 			printf("\n");			
 	}	
