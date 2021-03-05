@@ -1,7 +1,7 @@
 # Computer Interactive: Lessons-Learned
-
-## 1) CAPCOM: Capsule Computer
-### 1.1) ロックマン（Rockman）
+## 1) Software
+## 1.1) CAPCOM: Capsule Computer
+### 1.1.1) ロックマン（Rockman）
 --> identify and finish easiest stage and boss, then progress to harder difficulty<br/>
 --> identify value of newly learned skills from defeated bosses and friend, Dr. Raito<br/>
 --> Rockman 1: Elecman stage; Journey's "Faithfully" tune<br/>
@@ -18,13 +18,13 @@
 <br/>
 TO-DO: -update: this<br/>
 
-### 1.2) Street Fighter Zero 3
+### 1.1.2) Street Fighter Zero 3
 --> You as Blanka can finish arcade matches in 20minutes<br/>
 --> Blanka techniques easier to execute than those of Ryuu, etc<br/>
 --> Using Playstation Portable (PSP), hands become difficult to move after finishing all matches in 20minutes<br/>
 --> Eating rice bowl with chopsticks afterwards reminded me of manga artist who draws by hand<br/>
 
-### 1.3) Street Fighter IV
+### 1.1.3) Street Fighter IV
 --> Ryuu and Ken Rival Battle<br/>
 --> Computer identifies if you as Ryuu execute actions intended by the developer<br/>
 --> i.e., use 波動拳（hadouken）, and then 昇竜拳（shouryuuken）when opponent jumps towards you<br/>
@@ -34,27 +34,27 @@ TO-DO: -update: this<br/>
 --> During battle, what Ken says encourages you; not "thrash talk"<br/>
 --> Additional Note: After battles, you as Ken tells opponent encouragement, i.e. optimistic view<br/>
 
-## 2) SEGA: SERVICE GAMES
-### 2.1) Sonic 1
+## 1.2) SEGA: SERVICE GAMES
+### 1.2.1) Sonic 1
 --> Tunes remind me of existing songs, e.g. Lighthouse Family's "Lost in Space"<br/>
 --> Graphics no buffer<br/>
 --> Art design of beginning stages better than later stages; 5 stages, 3 acts<br/>
 --> You as Sonic move via stages and acts closer to Dr. Robotnic's headquarters, where he makes mechanical robots, even out of your animal friends<br/>
 --> preference: Super Mario World<br/>
 
-## 3) KONAMI
-### 3.1) Metal Gear Solid
+## 1.3) KONAMI
+### 1.3.1) Metal Gear Solid
 --> Sound<br/>
 --> Virtual Reality (VR) Training; used to learn how to make mission<br/>
 
-## 4) SONY Computer Entertainment Europe and Guerrilla
-### 4.1) KillZone 2
+## 1.4) SONY Computer Entertainment Europe and Guerrilla
+### 1.4.1) KillZone 2
 --> Choose role as Ingeniero (Engineer); Elite mode; less death count of being killed<br/>
 --> Repair robots; add robots; use available/repaired stationary machine-guns<br/>
 --> Use technique in any map; however, certain maps no available stationary machine-guns<br/>
 
-## 5) BANDAI-NAMCO
-### 5.1) Tekken 6
+## 1.5) BANDAI-NAMCO
+### 1.5.1) Tekken 6
 --> Bryan Fury; 1) sweeping kick that hits when opponent is standing or down; 2) kick that hits even when opponent is crouching<br/>
 --> Use combinations of 1 and 2<br/>
 --> Opponent shall be in the defensive; but only you deal damage;<br/>
@@ -64,17 +64,34 @@ TO-DO: -update: this<br/>
 --> Simply use combinations 1 and 2;<br/>
 --> You as Bryan may not be the strongest, but using less time to memorize combos, etc can still be a strong fighter.
 
-## 6) Shin-Nihon Kikaku (SNK): New Japan Project
-## 6.1) The King of Fighters '98: Dream Match Never Ends
+## 1.6) Shin-Nihon Kikaku (SNK): New Japan Project
+## 1.6.1) The King of Fighters '98: Dream Match Never Ends
 --> You as Kim Kaphwan can defeat final stage against Rugal B., using this technique in Single Play:<br/>
---> 6.1.1) Use Strong Punch, i.e. Kim executes a middle kick, which does not need to hit<br/>
+--> 1.6.1.1) Use Strong Punch, i.e. Kim executes a middle kick, which does not need to hit<br/>
 --> Response: Rugal shall execute an electric ball<br/>
---> 6.1.2) Use charge back and then forward Strong Kick, i.e. Kim executes a slide kick to evade the electric ball and then a flying axe kick<br/>
+--> 1.6.1.2) Use charge back and then forward Strong Kick, i.e. Kim executes a slide kick to evade the electric ball and then a flying axe kick<br/>
 --> Reminder: Verify distance using step 1; if too far, step 2 shall not hit<br/>
 --> Reminder: If Rugal does not execute an electric ball, repeat step 1<br/>
 --> Verified: You as Kim can achieve a PERFECT win<br/>
---> 6.1.3) Additional Notes:<br/> 
---> 6.1.3.1) Technique to defeat boss once learned, maintain due to requires repetition until boss defeated; ping-pong drill<br/>
---> 6.1.3.2) Set difficulty level to highest; Technique not anymore effective
+--> 1.6.1.3) Additional Notes:<br/> 
+--> 1.6.1.3.1) Technique to defeat boss once learned, maintain due to requires repetition until boss defeated; ping-pong drill<br/>
+--> 1.6.1.3.2) Set difficulty level to highest; Technique not anymore effective
 
 TO-DO: -update: this
+
+## 2) Hardware
+## 2.1) SONY PlayStation Portable (PSP)
+--> <b>Problem:</b> When playing Universal Media Disc (UMD) game, PSP keeps on displaying 「ゲームを終了しますか (Do you want to end the game?)」<br/>
+--> <b>Solution:</b> Add masking tape on the protruding portion on the right side of UMD lid near the battery.<br/>
+--> This is so as to securely press the sensor button when the lid is closed.<br/>
+<br/>
+--> <b>Additional Notes:</b><br/>
+--> 2.1.1) The thin metal near sensor button will bend due to the added masking tape when the lid is closed. 
+--> 2.1.2) verified: with PSP Model 2001<br/>
+<br/>
+--> <b>Reference:</b><br/>
+--> https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1052217060; 
+--> last accessed: 20210305<br/>
+--> answer by: クマ（熊田）　※クマさんと呼んでくださいさん, 20101218T1324<br/>
+--> 「・PSPの蓋を感知するセンサーが誤動作を起こしている」
+
