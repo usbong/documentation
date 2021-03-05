@@ -81,8 +81,8 @@ TO-DO: -update: this
 
 ## 2) Hardware
 ## 2.1) SONY PlayStation Portable (PSP)
---> <b>Problem:</b> When playing Universal Media Disc (UMD) game, PSP keeps on displaying 「ゲームを終了しますか (Do you want to end the game?)」<br/>
---> <b>Solution:</b> Add masking tape on the protruding portion on the right side of UMD lid near the battery.<br/>
+--> <b>Problem:</b> When playing Universal Media Disc (UMD) game, PSP keeps on displaying 「ゲームを終了しますか (Do you end the game?)」<br/>
+--> <b>Solution:</b> Add masking tape with folded paper on the protruding portion on the right side of UMD lid near the battery.<br/>
 --> This is so as to securely press the sensor button when the lid is closed.<br/>
 <br/>
 --> <b>Additional Notes:</b><br/>
