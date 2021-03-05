@@ -86,11 +86,11 @@ TO-DO: -update: this
 --> This is so as to securely press the sensor button when the lid is closed.<br/>
 <br/>
 --> <b>Additional Notes:</b><br/>
---> 2.1.1) The thin metal near sensor button will bend due to the added masking tape when the lid is closed. 
+--> 2.1.1) The thin metal near sensor button will bend due to the added masking tape when the lid is closed.<br/> 
 --> 2.1.2) verified: with PSP Model 2001<br/>
 <br/>
 --> <b>Reference:</b><br/>
---> https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1052217060; 
+--> https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1052217060;<br/>
 --> last accessed: 20210305<br/>
 --> answer by: クマ（熊田）　※クマさんと呼んでくださいさん, 20101218T1324<br/>
 --> 「・PSPの蓋を感知するセンサーが誤動作を起こしている」
