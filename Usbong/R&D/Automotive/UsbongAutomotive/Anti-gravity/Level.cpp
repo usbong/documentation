@@ -300,14 +300,37 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 	
 	char tempText[50];
 	
+	//TO-DO: -reverify: viewPort scrolling movement
+	
 	//added by Mike, 20210305
 /*	int iX=fX;
 	int iY=fY;
 	int iZ=fZ;
 */	
+/*	
 	int iX=fX/2;
 	int iY=fY/2;
 	int iZ=fZ/2;
+*/	
+	int iX=fX/(iColumnCountMax*fGridSquareWidth) - iColumnCountMax*fGridSquareWidth;
+	int iY=fY/(iColumnCountMax*fGridSquareWidth);
+	int iZ=fZ/(iRowCountMax*fGridSquareHeight) - iRowCountMax*fGridSquareHeight;
+
+	
+	if (iZ<0) {
+		iZ=0;
+	}
+	else if (iZ>(iRowCountMax*fGridSquareHeight)) {
+		iZ=iRowCountMax*fGridSquareHeight;
+	}
+	
+	
+	if (iX<0) {
+		iX=0;
+	}
+	else if (iX>(iColumnCountMax*fGridSquareWidth)) {
+		iX=iColumnCountMax*fGridSquareWidth;
+	}
 	
 /*
 	for (int iRowCount=0; iRowCount<10; iRowCount++) {	
@@ -336,8 +359,8 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 */	
 
 //	printf("draw!");
-/*
    std::cout << "iZ: " << iZ << "\n";
+/*	
    std::cout << "MAX_Z_AXIS_VIEWPORT: " << MAX_Z_AXIS_VIEWPORT << "\n";
 */	
    int iMovementGridZ = iPrevZ-iZ;
@@ -383,16 +406,18 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
    }
 */	
 	
+/* //removed by Mike, 20210306	
 	iPrevX=iX;
 	iPrevY=iY;
 	iPrevZ=iZ;
-
+*/
+	
 	//added by Mike, 20210306
 	//TO-DO: -reverify: iMovementGridZ value
-	
+/*  //removed by Mike, 20210306	
    std::cout << "iMovementGridZ: " << iMovementGridZ << "\n";
    std::cout << "iPrevZ: " << iPrevZ << "\n";
-	
+*/	
 	
 	 //edited by Mike, 20210211
 //	for (int iRowCount=0; iRowCount<10; iRowCount++) {	
@@ -409,7 +434,8 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 			iRowCount=0;			
 		}
 */
-		
+
+/*		
 		//added by Mike, 20210305
 		if (iMovementGridZ+iRowCount<0) {
 //			iMovementGridZ=0;
@@ -429,9 +455,10 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 
 			iPrevZ=iRowCount;			
 		}
-		
-		
-		
+*/		
+/*  //removed by Mike, 20210306			
+   std::cout << "HALLO: iMovementGridZ+iRowCount: " <<  iMovementGridZ << "+" << iRowCount << "=" << iMovementGridZ+iRowCount << "\n";
+*/		
 	
 	 //edited by Mike, 20210211
 //		for (int iColumnCount=0; iColumnCount<10; iColumnCount++) {		
@@ -456,8 +483,9 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
      		  std::cout << "iRowCount" << iRowCount <<"\n";
      		  std::cout << "iMovementGridZ+iRowCount" << iMovementGridZ+iRowCount <<"\n";
 */			
-			  if (sCurrentLevelMapContainer[iMovementGridZ+iRowCount][iMovementGridX+iColumnCount].compare("\"G\"") == 0) { //TRUE
-//			  if (sCurrentLevelMapContainer[iZ+iRowCount][iX+iColumnCount].compare("\"G\"") == 0) { //TRUE
+			//edited by Mike, 20210306
+//			  if (sCurrentLevelMapContainer[iMovementGridZ+iRowCount][iMovementGridX+iColumnCount].compare("\"G\"") == 0) { //TRUE
+			  if (sCurrentLevelMapContainer[iZ+iRowCount][iX+iColumnCount].compare("\"G\"") == 0) { //TRUE
 //			  if (sCurrentLevelMapContainer[iZ][iX].compare("\"G\"") == 0) { //TRUE
 
 //				  			  std::cout << "DITO" <<"\n";
@@ -490,6 +518,33 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 		}
 	}
 
+/*	
+		//added by Mike, 20210305
+		if (iMovementGridZ+iRowCount<0) {
+//			iMovementGridZ=0;
+			iMovementGridZ=0;
+			iRowCount=0;	
+			
+			iPrevZ=iMovementGridZ;
+			
+			
+   std::cout << "DITO" << "\n";
+			
+		}
+		//added by Mike, 20210306
+		else if (iMovementGridZ+iRowCount>100) { //TO-DO: -add: auto-set max 
+			iMovementGridZ=0;
+			iRowCount=99;			
+
+			iPrevZ=iRowCount;			
+		}
+*/	
+
+	//added by Mike, 20210306
+	iPrevX=iX;
+	iPrevY=iY;
+	iPrevZ=iZ;
+	
 
 
 /* //removed by Mike, 20210208	

@@ -3359,7 +3359,6 @@ void RobotShip::update(float dt)
 //           		else if (myZPos <= 0.0f) myZPos = 20-myHeight/8; //if top side
            		else if (myZPos <= 0.0f) myZPos = myWindowHeight/100-myHeight/8; //if top side
 */
-/* //removed by Mike, 20210306			
 			//added by Mike, 20210219
 			//TO-DO: -remove: wrap world
 				//Note: Use these with update to OpenGLCanvas
@@ -3369,7 +3368,6 @@ void RobotShip::update(float dt)
            		else if (myXPos >= myWindowWidth) myXPos = 0.0f+myWidth/8; //if right side
            		if (myZPos >= myWindowHeight) myZPos = 0.0f+myHeight/8; //if bottom side
            		else if (myZPos <= 0.0f) myZPos = myWindowHeight-myHeight/8; //if top side
-*/
 
 
            		//edited by Mike, 20201001
