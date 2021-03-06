@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201118
- * @date updated: 20210305
+ * @date updated: 20210306
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -211,7 +211,6 @@ void Level::draw_char(GLfloat x, GLfloat y, GLfloat z, char c)
 		//edited by Mike, 20201119
 //      	glVertex3f(x+1.0f, 0.0f, y);      
       	glVertex3f(x+1.2f, 0.0f, y);      
-
         glTexCoord2f(tx + 0.078125f, ty + 0.125f);
         //edited by Mike, 20201118
 //      	glVertex3f(x+0.1f, y-0.16f, 0.0f);              
@@ -221,7 +220,6 @@ void Level::draw_char(GLfloat x, GLfloat y, GLfloat z, char c)
 		//edited by Mike, 20201120            
 //      	glVertex3f(x+1.2f, 0.0f, y-1.6f);              
       	glVertex3f(x+1.2f, 0.0f, y-1.2f);              
-
 		glTexCoord2f(tx, ty + 0.125f);
         //edited by Mike, 20201118
 //      	glVertex3f(x, y-0.16f, 0.0f);      
@@ -316,7 +314,6 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 	 	for (int iColumnCount=0; iColumnCount<10; iColumnCount++) {		
 //	 		printf("%s",sCurrentLevelMapContainer[iRowCount][iColumnCount]);
 			std::cout << sCurrentLevelMapContainer[iRowCount][iColumnCount];
-
 		}
 			printf("\n");			
 	}	
@@ -325,51 +322,52 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 	//added by Mike, 20201122
     //Grass
 	sprintf(tempText,"G");
-
 	//added by Mike, 20201124
     glColor3f(0.14f, 0.68f, 0.06f); // Green
-
  	for (int iRowCount=0; iRowCount<=iRowCountMax; iRowCount++) {	
 	 	for (int iColumnCount=0; iColumnCount<=iColumnCountMax; iColumnCount++) {		
 			//added by Mike, 20201124
 			//execute this when using solid colors
 			//for computer to not draw borders
 			glBindTexture( GL_TEXTURE_2D, 0 );
-
 			draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iRowCount, tempText);
 		}
 	}
 */	
 
 //	printf("draw!");
-
+/*
    std::cout << "iZ: " << iZ << "\n";
    std::cout << "MAX_Z_AXIS_VIEWPORT: " << MAX_Z_AXIS_VIEWPORT << "\n";
-	
+*/	
    int iMovementGridZ = iPrevZ-iZ;
    int iMovementGridX = iPrevX-iX;
    int iMovementGridY = iPrevY-iY;
 	
-   //example: iPrevZ=-3; iZ=-2;
+   //example#1: iPrevZ=-3; iZ=-2;
    //-3 - (-2) = -1
-   //if -1 < 0, moved forward	
+   //-1 < 0, moved forward	
+	
+   //example#2: iPrevZ=-3; iZ=-2;
+   //-3 - (-2) = -1
+   //-1 < 0, moved forward	
+	
 //   if ((iPrevZ-iZ) < 0) { //moved forward
    if (iMovementGridZ < 0) { //moved forward
-     std::cout << "positive forward" << "\n";
-//			  std::cout << "iMovementGridZ" << iMovementGridZ <<"\n";
-	   
+     std::cout << "forward" << "\n";
+//			  std::cout << "iMovementGridZ" << iMovementGridZ <<"\n";	   
    }
    else if (iMovementGridZ == 0) { //no movement in Z-axis
      std::cout << "no movement" << "\n";	   
    }	
    //example: iPrevZ=-2; iZ=-3;
 	//-2 - (-3) = 1
-	//if 1 > 0, moved forward		
+	//1 > 0, moved backward		
    else {
-     std::cout << "negative backward" << "\n";	   
-	 iMovementGridZ=iMovementGridZ*-1; //get absolute value, i.e. positive number
-	   
+     std::cout << "backward" << "\n";	   
+//	 iMovementGridZ=iMovementGridZ*-1; //get absolute value, i.e. positive number	   
    }
+	
 	
 /*	//TO-DO: -reverify: this
    if (iMovementGridZ<0) { //if negative value
@@ -388,6 +386,13 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 	iPrevX=iX;
 	iPrevY=iY;
 	iPrevZ=iZ;
+
+	//added by Mike, 20210306
+	//TO-DO: -reverify: iMovementGridZ value
+	
+   std::cout << "iMovementGridZ: " << iMovementGridZ << "\n";
+   std::cout << "iPrevZ: " << iPrevZ << "\n";
+	
 	
 	 //edited by Mike, 20210211
 //	for (int iRowCount=0; iRowCount<10; iRowCount++) {	
@@ -396,12 +401,37 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 //	for (int iRowCount=fZ; iRowCount<fZ+MAX_Z_AXIS_VIEWPORT; iRowCount++) {	
 //	for (int iRowCount=iZ; iRowCount<iZ+MAX_Z_AXIS_VIEWPORT; iRowCount++) {	
 	for (int iRowCount=0; iRowCount<MAX_Z_AXIS_VIEWPORT; iRowCount++) {		
+/*		
 		//added by Mike, 20210305
 		if (iMovementGridZ+iRowCount<0) {
 //			iMovementGridZ=0;
 			iMovementGridZ=0;
 			iRowCount=0;			
 		}
+*/
+		
+		//added by Mike, 20210305
+		if (iMovementGridZ+iRowCount<0) {
+//			iMovementGridZ=0;
+			iMovementGridZ=0;
+			iRowCount=0;	
+			
+			iPrevZ=iMovementGridZ;
+			
+			
+   std::cout << "DITO" << "\n";
+			
+		}
+		//added by Mike, 20210306
+		else if (iMovementGridZ+iRowCount>100) { //TO-DO: -add: auto-set max 
+			iMovementGridZ=0;
+			iRowCount=99;			
+
+			iPrevZ=iRowCount;			
+		}
+		
+		
+		
 	
 	 //edited by Mike, 20210211
 //		for (int iColumnCount=0; iColumnCount<10; iColumnCount++) {		
@@ -469,7 +499,6 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 			//execute this when using solid colors
 			//for computer to not draw borders
 			glBindTexture( GL_TEXTURE_2D, 0 );
-
 			draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iRowCount, tempText);
 		}
 	}
@@ -540,7 +569,6 @@ glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_T,GL_CLAMP_TO_BORDER);
 /*
 glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_S,GL_CLAMP_TO_BORDER);
 glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_T,GL_CLAMP_TO_BORDER);
-
 GLfloat color[4]={1,1,1,1};
 glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, color);
 */
@@ -577,17 +605,14 @@ glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, colour);
     // setup alpha blending
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glEnable(GL_BLEND);
-
     // set background color to bluish // set texture parameters
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
                     GL_LINEAR_MIPMAP_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
     // unselect texture myLevelTextureObject
     glBindTexture(GL_TEXTURE_2D, 0);
-
     // setup alpha blending
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glEnable(GL_BLEND);
@@ -618,11 +643,9 @@ void Level::read(char *inputFilename) {
 //	strcat(input,".txt");
 	
 //	printf("dito: %s",input);
-
 //	file = fopen("input/"+inputFilename, "r"); //.txt file
 //	file = fopen("input/inputHalimbawa.txt", "r"); //.txt file
 	file = fopen(input, "r"); //.txt file
-
 	if (file) {
 		while ((c = getc(file)) != EOF) {
 			putchar(c);
@@ -714,7 +737,6 @@ void Level::read(char *inputFilename) {
 /*				
 	//			char s[2] = {0};
 	//			*s = c;
-
 				//edited by Mike, 20210209
 //				char s[2] = {c};
 //				char s[2] = {itoa(c)};
@@ -768,4 +790,3 @@ void Level::read(char *inputFilename) {
 	}	
 */		
 }
-
