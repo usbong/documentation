@@ -109,4 +109,5 @@ TO-DO: -update: this
 <br/>
 --> <b>Reference:</b><br/>
 https://gaming.stackexchange.com/questions/124745/why-does-my-nintendo-64-randomly-reset<br/>
+--> last accessed: 20210307<br/>
 --> answer by: ssokolow, 20150306T1951
