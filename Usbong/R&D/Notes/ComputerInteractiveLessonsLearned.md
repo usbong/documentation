@@ -99,6 +99,8 @@ TO-DO: -update: this
 --> <b>Problem:</b> N64 unit automatically resets<br/>
 --> <b>Solution:</b> Use a foldable object to securely connect the Power Supply Adapter to the N64 unit<br/>
 --> Previously, the Power Supply Adapter was wobbly.<br/>
+--> In addition, the display on the Television/Computer Monitor to which the N64 unit was connected was unclear, e.g. blurry.<br/>
+--> <b>Reminder:</b> Insufficient electricity causes machine/device problems.<br/>
 <br/>
 --> <b>Additional Notes:</b><br/>
 --> 2.2.1) verified: using paper envelope with plastic as cover as the foldable object<br/>
