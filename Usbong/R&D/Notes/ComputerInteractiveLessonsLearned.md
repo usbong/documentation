@@ -87,7 +87,7 @@ TO-DO: -update: this
 <br/>
 --> <b>Additional Notes:</b><br/>
 --> 2.1.1) The thin metal near sensor button will bend due to the added masking tape when the lid is closed.<br/> 
---> 2.1.2) verified: with PSP Model 2001<br/>
+--> 2.1.2) verified: with pre-used PSP (Model 2001)<br/>
 <br/>
 --> <b>Reference:</b><br/>
 --> https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1052217060;<br/>
@@ -95,3 +95,16 @@ TO-DO: -update: this
 --> answer by: クマ（熊田）　※クマさんと呼んでくださいさん, 20101218T1324<br/>
 --> 「・PSPの蓋を感知するセンサーが誤動作を起こしている」
 
+## 2.2) Nintendo 64 (ろくよん rokuyon)
+--> <b>Problem:</b> N64 unit automatically resets<br/>
+--> <b>Solution:</b> Use a foldable object to securely connect the Power Supply Adapter to the N64 unit<br/>
+--> Previously, the Power Supply Adapter was wobbly.<br/>
+<br/>
+--> <b>Additional Notes:</b><br/>
+--> 2.2.1) verified: using paper envelope with plastic as cover as the foldable object<br/>
+--> <b>Reminder:</b> Paper can catch fire, albeit usually spark from fire occurs when connecting Power Supply plug to the electrical outlet.<br/>
+--> 2.2.2) verified: with pre-used N64 console unit (Japanese version)<br/>
+<br/>
+--> <b>Reference:</b><br/>
+https://gaming.stackexchange.com/questions/124745/why-does-my-nintendo-64-randomly-reset<br/>
+--> answer by: ssokolow, 20150306T1951
