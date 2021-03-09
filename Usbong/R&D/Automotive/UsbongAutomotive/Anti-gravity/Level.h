@@ -95,6 +95,11 @@ private:
     int iTotalMovementGridZ,
 		iTotalMovementGridX,
 		iTotalMovementGridY;
+	
+	//added by Mike, 20210309
+	int iCurrentLevelMapContainerOffsetX,
+		iCurrentLevelMapContainerOffsetY,
+		iCurrentLevelMapContainerOffsetZ;
 
 	GLboolean test_pow2(GLushort i);
 	void load_tga(char *filename);

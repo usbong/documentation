@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201118
- * @date updated: 20210308
+ * @date updated: 20210309
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -407,9 +407,19 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 /*	
    std::cout << "MAX_Z_AXIS_VIEWPORT: " << MAX_Z_AXIS_VIEWPORT << "\n";
 */	
+	
+	
+   std::cout << "sCurrentLevelMapContainer: " << sCurrentLevelMapContainer[96][10] << "\n";
+	
    int iMovementGridZ = iPrevZ-iZ;
    int iMovementGridX = iPrevX-iX;
    int iMovementGridY = iPrevY-iY;
+	
+   //added by Mike, 20210309
+   iCurrentLevelMapContainerOffsetZ +=iMovementGridZ; 
+   iCurrentLevelMapContainerOffsetX +=iMovementGridX; 
+   iCurrentLevelMapContainerOffsetY +=iMovementGridY; 
+	
 	
    //example#1: iPrevZ=-3; iZ=-2;
    //-3 - (-2) = -1
@@ -539,7 +549,9 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 //MAX_Z_AXIS_VIEWPORT
 //			  if (sCurrentLevelMapContainer[iTotalMovementGridZ+iRowCount][iTotalMovementGridX+iColumnCount].compare("\"G\"") == 0) { //TRUE
 //			  if (sCurrentLevelMapContainer[40+iRowCount][iTotalMovementGridX+iColumnCount].compare("\"G\"") == 0) { //TRUE
-			  if (sCurrentLevelMapContainer[40+iRowCount][iColumnCount].compare("\"G\"") == 0) { //TRUE
+//			  if (sCurrentLevelMapContainer[40+iRowCount][iColumnCount].compare("\"G\"") == 0) { //TRUE
+//			  if (sCurrentLevelMapContainer[40+iRowCount][10].compare("\"G\"") == 0) { //TRUE
+			  if (sCurrentLevelMapContainer[iCurrentLevelMapContainerOffsetZ+iRowCount][iCurrentLevelMapContainerOffsetX+iColumnCount].compare("\"G\"") == 0) { //TRUE
 
 //				  			  std::cout << "DITO" <<"\n";
 
@@ -653,7 +665,11 @@ void Level::setupLevel(int myLevelTextureObject)
 	iTotalMovementGridZ=0;
     iTotalMovementGridX=0;
     iTotalMovementGridY=0;	
-	
+
+	//added by Mike, 20210309
+	iCurrentLevelMapContainerOffsetX=0;
+	iCurrentLevelMapContainerOffsetY=0;
+	iCurrentLevelMapContainerOffsetZ=0;
 	
 	//TO-DO: -add: in input file, max size of x, y, and z axes
 	//TO-DO: -add: auto-update iCurrentLevelMapContainer
