@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201118
- * @date updated: 20210306
+ * @date updated: 20210308
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -295,27 +295,38 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
  	int iColumnCountMax=30;
  	int iHeightCountMax=30; //added by Mike, 20210208
 
+/*
+	int iRowCountMax=MAX_Z_AXIS_VIEWPORT;
+ 	int iColumnCountMax=MAX_Z_AXIS_VIEWPORT;
+ 	int iHeightCountMax=MAX_Z_AXIS_VIEWPORT;
+*/
+
 	float fGridSquareWidth = myWindowWidth/iColumnCountMax/100.0;
 	float fGridSquareHeight = myWindowHeight/iRowCountMax/100.0;
 	
 	char tempText[50];
 	
 	//TO-DO: -reverify: viewPort scrolling movement
-	
-	//added by Mike, 20210305
-/*	int iX=fX;
+/*
+	fZ=fZ-1;
+	fX=fX-1;
+	fY=fY-1;
+*/	
+	//added by Mike, 20210305; added again by Mike, 20210308
+	int iX=fX;
 	int iY=fY;
 	int iZ=fZ;
-*/	
+	
 /*	
 	int iX=fX/2;
 	int iY=fY/2;
 	int iZ=fZ/2;
 */	
+
+/*	//removed by Mike, 20210308
 	int iX=fX/(iColumnCountMax*fGridSquareWidth) - iColumnCountMax*fGridSquareWidth;
 	int iY=fY/(iColumnCountMax*fGridSquareWidth);
 	int iZ=fZ/(iRowCountMax*fGridSquareHeight) - iRowCountMax*fGridSquareHeight;
-
 	
 	if (iZ<0) {
 		iZ=0;
@@ -331,6 +342,8 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 	else if (iX>(iColumnCountMax*fGridSquareWidth)) {
 		iX=iColumnCountMax*fGridSquareWidth;
 	}
+*/
+
 	
 /*
 	for (int iRowCount=0; iRowCount<10; iRowCount++) {	
@@ -357,6 +370,37 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 		}
 	}
 */	
+
+	//added by Mike, 20210308
+/*	
+   fTotalMovementGridZ = (fTotalMovementGridZ+fPrevZ)%fGridSquareWidth;
+   fTotalMovementGridX = (fTotalMovementGridX+fPrevX)%fGridSquareWidth;
+   fTotalMovementGridY = (fTotalMovementGridY+fPrevY)%fGridSquareWidth;
+*/
+/*
+   iTotalMovementGridZ = (iTotalMovementGridZ+iPrevZ)%((int)fGridSquareWidth);
+   iTotalMovementGridX = (iTotalMovementGridX+iPrevX)%((int)fGridSquareWidth);
+   iTotalMovementGridY = (iTotalMovementGridY+iPrevY)%((int)fGridSquareWidth);
+*/
+/*
+   iTotalMovementGridZ = 0;
+   iTotalMovementGridX = 0;
+   iTotalMovementGridY = 0;
+*/
+/*
+   iTotalMovementGridZ = (iTotalMovementGridZ+iPrevZ)%(1);
+   iTotalMovementGridX = (iTotalMovementGridX+iPrevX)%(1);
+   iTotalMovementGridY = (iTotalMovementGridY+iPrevY)%(1);
+*/
+/*
+   iTotalMovementGridZ = 1;
+   iTotalMovementGridX = 1;
+   iTotalMovementGridY = 1;
+*/
+   iTotalMovementGridZ = (iPrevZ-iZ)%((int)fGridSquareWidth);
+//   iTotalMovementGridX = 1;
+//   iTotalMovementGridY = 1;
+
 
 //	printf("draw!");
    std::cout << "iZ: " << iZ << "\n";
@@ -485,8 +529,17 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 */			
 			//edited by Mike, 20210306
 //			  if (sCurrentLevelMapContainer[iMovementGridZ+iRowCount][iMovementGridX+iColumnCount].compare("\"G\"") == 0) { //TRUE
-			  if (sCurrentLevelMapContainer[iZ+iRowCount][iX+iColumnCount].compare("\"G\"") == 0) { //TRUE
+//			  if (sCurrentLevelMapContainer[iZ+iRowCount][iX+iColumnCount].compare("\"G\"") == 0) { //TRUE
+
+//edited by Mike, 20210308
 //			  if (sCurrentLevelMapContainer[iZ][iX].compare("\"G\"") == 0) { //TRUE
+//edited by Mike, 20210308
+//			  if (sCurrentLevelMapContainer[iRowCount][iColumnCount].compare("\"G\"") == 0) { //TRUE
+//edited by Mike, 20210309
+//MAX_Z_AXIS_VIEWPORT
+//			  if (sCurrentLevelMapContainer[iTotalMovementGridZ+iRowCount][iTotalMovementGridX+iColumnCount].compare("\"G\"") == 0) { //TRUE
+//			  if (sCurrentLevelMapContainer[40+iRowCount][iTotalMovementGridX+iColumnCount].compare("\"G\"") == 0) { //TRUE
+			  if (sCurrentLevelMapContainer[40+iRowCount][iColumnCount].compare("\"G\"") == 0) { //TRUE
 
 //				  			  std::cout << "DITO" <<"\n";
 
@@ -510,8 +563,19 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 //				draw_level(iMovementGridX+fGridSquareWidth*iColumnCount, iMovementGridY+0.0f, iMovementGridZ+fGridSquareHeight*iRowCount, tempText);
 //				draw_level(iX+fGridSquareWidth*iColumnCount, iY+0.0f, iZ+fGridSquareHeight*iRowCount, tempText);
 //				draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iRowCount, tempText);
+
+
 //				draw_level(iMovementGridX+fGridSquareWidth*iColumnCount, iMovementGridY+0.0f, iMovementGridZ+fGridSquareHeight*iRowCount, tempText);
+//				draw_level(iTotalMovementGridX+fGridSquareWidth*iColumnCount, iTotalMovementGridY+0.0f, iTotalMovementGridZ+fGridSquareHeight*iRowCount, tempText);
+				
+//edited by Mike, 20210309
+//				draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iRowCount, tempText);
+//				draw_level(fGridSquareWidth*iColumnCount, 0.0f, fZ+fGridSquareHeight*iRowCount, tempText);
+//set position
+//				draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*40+fGridSquareHeight*iRowCount, tempText);
 				draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iRowCount, tempText);
+
+//				draw_level(iX+fGridSquareWidth*iColumnCount, 0.0f, iZ+fGridSquareHeight*iRowCount, tempText);
 				  
 //				draw_level(fGridSquareWidth*iRowCount, 0.0f, fGridSquareHeight*iColumnCount, tempText);
 			}			
@@ -540,11 +604,17 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 		}
 */	
 
-	//added by Mike, 20210306
+	//added by Mike, 20210306; edited by Mike, 20210308	
 	iPrevX=iX;
 	iPrevY=iY;
 	iPrevZ=iZ;
-	
+
+/*	
+	//added by Mike, 20210308
+	fPrevX=fX;
+	fPrevY=fY;
+	fPrevZ=fZ;
+*/	
 
 
 /* //removed by Mike, 20210208	
@@ -575,6 +645,15 @@ void Level::setupLevel(int myLevelTextureObject)
 */	
 	//added by Mike, 20210208
 	read("inputLevel1.csv");
+
+	//added by Mike, 20210308
+	iPrevZ=0;
+	iPrevY=0;
+	iPrevX=0;
+	iTotalMovementGridZ=0;
+    iTotalMovementGridX=0;
+    iTotalMovementGridY=0;	
+	
 	
 	//TO-DO: -add: in input file, max size of x, y, and z axes
 	//TO-DO: -add: auto-update iCurrentLevelMapContainer
@@ -738,7 +817,19 @@ void Level::read(char *inputFilename) {
 	 		sCurrentLevelMapContainer[iRowCount][iColumnCount]=(char*)"-1";//'G';
 		}
 	}
+
+//added by Mike, 20210309
+/*
+	for (iRowCount=40; iRowCount<60; iRowCount++) {	
+	 	sCurrentLevelMapContainer[iRowCount][2]=(char*)"\"G\"";//'G';
+	}
+
+	for (iRowCount=60; iRowCount<100; iRowCount++) {	
+	 	sCurrentLevelMapContainer[iRowCount][4]=(char*)"\"G\"";//'G';
+	}
+*/	
 	
+
 	iRowCount=0;
 	iColumnCount=0;
 				
@@ -831,6 +922,7 @@ void Level::read(char *inputFilename) {
 			else {
 				iRowCount=0;
 			}
+			
 			printf("\n");			
 		}
 		fclose(file);
@@ -843,5 +935,7 @@ void Level::read(char *inputFilename) {
 		}
 			printf("\n");			
 	}	
-*/		
+*/
+	
+		
 }

@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201118
- * @date updated: 20210305
+ * @date updated: 20210309
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -43,8 +43,9 @@
 //added by Mike, 20201124
 #define GL_CLAMP_TO_BORDER 0x812D
 
-//added by Mike, 20210210
-#define MAX_INPUT_TEXT_PER_LINE 60
+//added by Mike, 20210210; edited by Mike, 20210309
+//#define MAX_INPUT_TEXT_PER_LINE 60
+#define MAX_INPUT_TEXT_PER_LINE 100
 
 //added by Mike, 20210211; edited by Mike, 20210305
 #define MAX_X_AXIS_VIEWPORT 60
@@ -81,6 +82,19 @@ private:
 	int iPrevX=0;
 	int iPrevY=0;
 	int iPrevZ=0;
+	
+	//added by Mike, 20210308
+	float fPrevX=0,
+		  fPrevY=0,
+		  fPrevZ=0;
+/*
+    float fTotalMovementGridZ,
+		  fTotalMovementGridX,
+		  fTotalMovementGridY;
+*/
+    int iTotalMovementGridZ,
+		iTotalMovementGridX,
+		iTotalMovementGridY;
 
 	GLboolean test_pow2(GLushort i);
 	void load_tga(char *filename);
