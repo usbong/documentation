@@ -1485,7 +1485,8 @@ void OpenGLCanvas::drawGridWithZAxis() {
 	//edited by Mike, 20210305
 //	myLevel->drawLevelMapInViewPort(0,0,0,fGridSquareWidth*iRowCountMax,fGridSquareWidth*iColumnCountMax,fGridSquareWidth*iHeightCountMax);
 	myLevel->drawLevelMapInViewPort(myCanvasPosX,myCanvasPosY,myCanvasPosZ,fGridSquareWidth*iRowCountMax,fGridSquareWidth*iColumnCountMax,fGridSquareWidth*iHeightCountMax);
-	
+
+/* //removed by Mike, 20210309	
 	//added by Mike, 20201124
     glColor3f(1.0f, 1.0f, 1.0f); // white
 	glBindTexture( GL_TEXTURE_2D, LEVEL_TEXTURE );
@@ -1520,7 +1521,7 @@ void OpenGLCanvas::drawGridWithZAxis() {
 	myLevel->draw_level(6.0f, 3.0f, 7.0f, tempText);    	
 	myLevel->draw_level(6.0f, 3.0f, 5.0f, tempText);    	
 	myLevel->draw_level(6.0f, 3.0f, 6.0f, tempText);    	
-
+*/
 
 /*
  	//columns
