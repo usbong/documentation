@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201118
- * @date updated: 20210309
+ * @date updated: 20210310
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -45,7 +45,10 @@
 
 //added by Mike, 20210210; edited by Mike, 20210309
 //#define MAX_INPUT_TEXT_PER_LINE 60
-#define MAX_INPUT_TEXT_PER_LINE 100
+//edited by Mike, 20210310
+//#define MAX_INPUT_TEXT_PER_LINE 100
+#define MAX_INPUT_TEXT_PER_LINE 160
+
 
 //added by Mike, 20210211; edited by Mike, 20210305
 #define MAX_X_AXIS_VIEWPORT 60
@@ -75,7 +78,9 @@ private:
 //	char[100][100] cCurrentLevelMapContainer; //TO-DO: -add: auto-update max size 
 //TO-DO: -update: "c" to "s"
 //	char* cCurrentLevelMapContainer[100][100]; //TO-DO: -add: auto-update max size 
-	std::string sCurrentLevelMapContainer[100][100]; //TO-DO: -add: auto-update max size 
+//edited by Mike, 20210310
+//	std::string sCurrentLevelMapContainer[100][100]; //TO-DO: -add: auto-update max size 	
+	std::string sCurrentLevelMapContainer[160][160]; //TO-DO: -add: auto-update max size 
 
 	//added by Mike, 20210305
 	//note: we use this to verify if the position moved forward, backward, etc

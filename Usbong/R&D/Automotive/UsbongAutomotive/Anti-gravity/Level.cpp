@@ -290,11 +290,16 @@ void Level::draw_level(GLfloat x, GLfloat y, GLfloat z, char *string)
 void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat fXSize, GLfloat fYSize, GLfloat fZSize) {
 	int myWindowWidth=6144;
     int myWindowHeight=6144;
-
+	
 	int iRowCountMax=30;
  	int iColumnCountMax=30;
  	int iHeightCountMax=30; //added by Mike, 20210208
-
+/* //edited by Mike, 20210310
+	int iRowCountMax=MAX_Z_AXIS_VIEWPORT; //60
+ 	int iColumnCountMax=MAX_X_AXIS_VIEWPORT; //60
+ 	int iHeightCountMax=60; //added by Mike, 20210208
+*/	
+	
 /*
 	int iRowCountMax=MAX_Z_AXIS_VIEWPORT;
  	int iColumnCountMax=MAX_Z_AXIS_VIEWPORT;
@@ -474,7 +479,7 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
    } 
    else if (iCurrentLevelMapContainerOffsetZ>=MAX_INPUT_TEXT_PER_LINE) {
 //     iCurrentLevelMapContainerOffsetZ=MAX_INPUT_TEXT_PER_LINE-1;
-	 iRowCount=MAX_INPUT_TEXT_PER_LINE;//-1;   
+	 iRowCount=MAX_INPUT_TEXT_PER_LINE-1;   
    } 
 
 /*	
@@ -773,10 +778,28 @@ iColumnCount=MAX_INPUT_TEXT_PER_LINE;//-1;
 //				draw_level(fGridSquareWidth*iColumnCount, 0.0f, fZ+fGridSquareHeight*iRowCount, tempText);
 //set position
 //				draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*40+fGridSquareHeight*iRowCount, tempText);
-				draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iRowCount, tempText);
+//edited by Mike, 20210310				
+//				draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iRowCount, tempText);
 
+//				draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iRowCount+(fGridSquareWidth*(MAX_X_AXIS_VIEWPORT/2)), tempText);
+//				draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareWidth*iRowCount*2, tempText);
+
+//				float fDrawLevelRowCount =  fGridSquareWidth*iRowCount*2;
+
+/*				float fDrawLevelRowCount =  fGridSquareWidth*iRowCount;	
+				std::cout << "fZ:" << fZ << "; iRowCount" << iRowCount << "; fDrawLevelRowCount:" <<  fDrawLevelRowCount << "\n";
+*/
+	
+//				draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareWidth*iRowCount*2, tempText);
+				draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareWidth*iRowCount, tempText);
+				
 //				draw_level(fGridSquareWidth*10, 0.0f, fGridSquareHeight*99, tempText);
 //				draw_level(fGridSquareWidth*5, 0.0f, fGridSquareHeight*5, tempText);
+//iCurrentLevelMapContainerOffsetZ: 30
+//				draw_level(fGridSquareWidth*0, 0.0f, fGridSquareWidth*60, tempText);
+
+//iCurrentLevelMapContainerOffsetZ: 45
+//				draw_level(fGridSquareWidth*0, 0.0f, fGridSquareWidth*90, tempText);
 				
 			}			
 		}
@@ -1032,12 +1055,21 @@ void Level::read(char *inputFilename) {
 		}
 	}
 */
+//edited by Mike, 20210310
+/*	
 	for (iRowCount=0; iRowCount<100; iRowCount++) {	
 		for (iColumnCount=0; iColumnCount<100; iColumnCount++) {		
 	 		sCurrentLevelMapContainer[iRowCount][iColumnCount]=(char*)"-1";//'G';
 		}
 	}
-
+*/
+	//add +60 to be 160; where 60 : viewport max
+	for (iRowCount=0; iRowCount<160; iRowCount++) {	
+		for (iColumnCount=0; iColumnCount<160; iColumnCount++) {		
+	 		sCurrentLevelMapContainer[iRowCount][iColumnCount]=(char*)"-1";//'G';
+		}
+	}
+	
 //added by Mike, 20210309
 /*
 	for (iRowCount=40; iRowCount<60; iRowCount++) {	
