@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210308
+ * @date updated: 20210310
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -408,6 +408,24 @@ RobotShip::RobotShip(float xPos, float yPos, float zPos, int windowWidth, int wi
     stepY=0.3;
     stepZ=0.3;
 
+/*	
+	//added by Mike, 20210310	
+	int myWindowWidth=6144;
+    int myWindowHeight=6144;
+
+	int iRowCountMax=30;
+ 	int iColumnCountMax=30;
+ 	int iHeightCountMax=30; //added by Mike, 20210208
+
+	float fGridSquareWidth = myWindowWidth/iColumnCountMax/100.0;
+	float fGridSquareHeight = myWindowHeight/iRowCountMax/100.0;
+
+	stepX=fGridSquareWidth;
+    stepY=fGridSquareWidth;
+    stepZ=fGridSquareWidth;
+*/	
+	
+	
     invincibleCounter=0;
     currentDeathFrame=0;
 

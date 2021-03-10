@@ -87,6 +87,12 @@ private:
 	float fPrevX=0,
 		  fPrevY=0,
 		  fPrevZ=0;
+		  
+	//added by Mike, 20210310
+	float fStepMovemenGridZ=0,
+		  fStepMovemenGridX=0,
+		  fStepMovemenGridY=0;
+	
 /*
     float fTotalMovementGridZ,
 		  fTotalMovementGridX,
