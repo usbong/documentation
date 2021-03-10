@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201118
- * @date updated: 20210309
+ * @date updated: 20210310
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -403,13 +403,14 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 
 
 //	printf("draw!");
-   std::cout << "iZ: " << iZ << "\n";
+//   std::cout << "iZ: " << iZ << "\n";
+	
 /*	
    std::cout << "MAX_Z_AXIS_VIEWPORT: " << MAX_Z_AXIS_VIEWPORT << "\n";
 */	
 	
 	
-   std::cout << "sCurrentLevelMapContainer: " << sCurrentLevelMapContainer[96][10] << "\n";
+//   std::cout << "sCurrentLevelMapContainer: " << sCurrentLevelMapContainer[96][10] << "\n";
 	
    int iMovementGridZ = iPrevZ-iZ;
    int iMovementGridX = iPrevX-iX;
@@ -417,10 +418,28 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 	
    //added by Mike, 20210309
    //TO-DO: -reverify: iMovementGridZ, etc value
+   std::cout << "iMovementGridZ: " << iMovementGridZ << "\n";
+   std::cout << "iMovementGridX: " << iMovementGridX << "\n";
+		
    iCurrentLevelMapContainerOffsetZ += iMovementGridZ; 
    iCurrentLevelMapContainerOffsetX += iMovementGridX; 
    iCurrentLevelMapContainerOffsetY += iMovementGridY; 
+
+/* //removed by Mike, 20210310	
+	//added by Mike, 20210310	
+   if (iMovementGridZ!=0) {
+     iCurrentLevelMapContainerOffsetZ += -MAX_Z_AXIS_VIEWPORT/2; 
+   }
+   if (iMovementGridX!=0) {
+	iCurrentLevelMapContainerOffsetX += -MAX_X_AXIS_VIEWPORT/2; 
+   }
+//   iCurrentLevelMapContainerOffsetY += -MAX_Y_AXIS_VIEWPORT/2; 
+*/
 	
+
+   std::cout << "iCurrentLevelMapContainerOffsetZ: " << iCurrentLevelMapContainerOffsetZ << "\n";
+   std::cout << "iCurrentLevelMapContainerOffsetX: " << iCurrentLevelMapContainerOffsetX << "\n";
+
 /*
    iCurrentLevelMapContainerOffsetZ += (iMovementGridZ-MAX_Z_AXIS_VIEWPORT/2); 
    iCurrentLevelMapContainerOffsetX += (iMovementGridX-MAX_X_AXIS_VIEWPORT/2); 
@@ -431,14 +450,28 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
    iCurrentLevelMapContainerOffsetX += (iMovementGridX-MAX_X_AXIS_VIEWPORT); 
    iCurrentLevelMapContainerOffsetY += (iMovementGridY-MAX_Y_AXIS_VIEWPORT); 
 */	
+
+  int iRowCount=iCurrentLevelMapContainerOffsetZ;
+  int iColumnCount=iCurrentLevelMapContainerOffsetX;
 	
    if (iCurrentLevelMapContainerOffsetZ<0) {
-     iCurrentLevelMapContainerOffsetZ=0;
+//     iCurrentLevelMapContainerOffsetZ=0;
+	 iRowCount=0;   
    } 
    else if (iCurrentLevelMapContainerOffsetZ>=MAX_INPUT_TEXT_PER_LINE) {
-     iCurrentLevelMapContainerOffsetZ=MAX_INPUT_TEXT_PER_LINE-1;
+//     iCurrentLevelMapContainerOffsetZ=MAX_INPUT_TEXT_PER_LINE-1;
+	 iRowCount=MAX_INPUT_TEXT_PER_LINE-1;   
    } 
 
+   if (iCurrentLevelMapContainerOffsetX<0) {
+//     iCurrentLevelMapContainerOffsetX=0;
+	iColumnCount=0;   
+   } 
+   else if (iCurrentLevelMapContainerOffsetX>=MAX_INPUT_TEXT_PER_LINE) {
+//     iCurrentLevelMapContainerOffsetX=MAX_INPUT_TEXT_PER_LINE-1;
+iColumnCount=MAX_INPUT_TEXT_PER_LINE-1;	   
+   } 	
+	
 //     iCurrentLevelMapContainerOffsetZ=0;
 
 /*   else if (iCurrentLevelMapContainerOffsetZ>=MAX_Z_AXIS_VIEWPORT) {
@@ -446,17 +479,17 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
    } 
 */
 
+/* //removed by Mike, 20210310	
    if (iCurrentLevelMapContainerOffsetX<0) {
      iCurrentLevelMapContainerOffsetX=0;
    } 
-/*   else if (iCurrentLevelMapContainerOffsetX>=MAX_X_AXIS_VIEWPORT) {
-     iCurrentLevelMapContainerOffsetX=MAX_X_AXIS_VIEWPORT-1;
-   } 
-*/
+////   else if (iCurrentLevelMapContainerOffsetX>=MAX_X_AXIS_VIEWPORT) {
+////     iCurrentLevelMapContainerOffsetX=MAX_X_AXIS_VIEWPORT-1;
+////   } 
    else if (iCurrentLevelMapContainerOffsetX>=MAX_INPUT_TEXT_PER_LINE) {
      iCurrentLevelMapContainerOffsetX=MAX_INPUT_TEXT_PER_LINE-1;
    } 
-
+*/
 
 	
    //example#1: iPrevZ=-3; iZ=-2;
@@ -519,10 +552,37 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 //	for (int iRowCount=iZ; iRowCount<iZ+MAX_Z_AXIS_VIEWPORT; iRowCount++) {	
 //edited by Mike, 20210309
 //	for (int iRowCount=0; iRowCount<MAX_Z_AXIS_VIEWPORT; iRowCount++) {		
-//edited by Mike, 20210309
+//edited by Mike, 20210309; edited again by Mike, 20210310
 //	for (int iRowCount=0+iCurrentLevelMapContainerOffsetZ; iRowCount<MAX_Z_AXIS_VIEWPORT; iRowCount++) {		
-	for (int iRowCount=0+iCurrentLevelMapContainerOffsetZ; iRowCount<MAX_INPUT_TEXT_PER_LINE; iRowCount++) {		
+//	for (int iRowCount=0+iCurrentLevelMapContainerOffsetZ; iRowCount<MAX_INPUT_TEXT_PER_LINE; iRowCount++) {		
 	
+	int iCurrentLevelMapContainerOffsetMaxViewPortZ=iCurrentLevelMapContainerOffsetZ+MAX_Z_AXIS_VIEWPORT;
+	if (iCurrentLevelMapContainerOffsetMaxViewPortZ>MAX_INPUT_TEXT_PER_LINE) {
+		iCurrentLevelMapContainerOffsetMaxViewPortZ=MAX_INPUT_TEXT_PER_LINE;
+	}
+
+	int iCurrentLevelMapContainerOffsetMaxViewPortX=iCurrentLevelMapContainerOffsetX+MAX_X_AXIS_VIEWPORT;
+	if (iCurrentLevelMapContainerOffsetMaxViewPortX>MAX_INPUT_TEXT_PER_LINE) {
+		iCurrentLevelMapContainerOffsetMaxViewPortX=MAX_INPUT_TEXT_PER_LINE;
+	}
+
+//   std::cout << "iCurrentLevelMapContainerOffsetMaxViewPortZ: " << iCurrentLevelMapContainerOffsetMaxViewPortZ << "\n";
+	
+	//edited by Mike, 20210310
+//	for (int iRowCount=0+iCurrentLevelMapContainerOffsetZ; iRowCount<iCurrentLevelMapContainerOffsetMaxViewPortZ; iRowCount++) {		
+	for (;iRowCount<iCurrentLevelMapContainerOffsetMaxViewPortZ; iRowCount++) {		
+
+//	for (int iRowCount=0; iRowCount<MAX_INPUT_TEXT_PER_LINE; iRowCount++) {		
+	
+/*		
+   if (iCurrentLevelMapContainerOffsetZ<0) {
+     iCurrentLevelMapContainerOffsetZ=0;
+   } 
+   else if (iCurrentLevelMapContainerOffsetZ>=MAX_INPUT_TEXT_PER_LINE) {
+     iCurrentLevelMapContainerOffsetZ=MAX_INPUT_TEXT_PER_LINE-1;
+   } 
+*/
+
 /*		
 		//added by Mike, 20210305
 		if (iMovementGridZ+iRowCount<0) {
@@ -566,8 +626,16 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 //		for (int iColumnCount=0; iColumnCount<MAX_X_AXIS_VIEWPORT; iColumnCount++) {			
 //edited by Mike, 20210309
 //		for (int iColumnCount=0+iCurrentLevelMapContainerOffsetX; iColumnCount<MAX_X_AXIS_VIEWPORT; iColumnCount++) {
-		for (int iColumnCount=0+iCurrentLevelMapContainerOffsetX; iColumnCount<MAX_INPUT_TEXT_PER_LINE; iColumnCount++) {
+//edited by Mike, 20210310
+//		for (int iColumnCount=0+iCurrentLevelMapContainerOffsetX; iColumnCount<MAX_INPUT_TEXT_PER_LINE; iColumnCount++) {
 
+//edited by Mike, 20210310		
+//		for (int iColumnCount=0+iCurrentLevelMapContainerOffsetX; iColumnCount<(iCurrentLevelMapContainerOffsetX+MAX_INPUT_TEXT_PER_LINE); iColumnCount++) {
+	//edited by Mike, 20210310
+//		for (int iColumnCount=0+iCurrentLevelMapContainerOffsetX; iColumnCount<iCurrentLevelMapContainerOffsetMaxViewPortX; iColumnCount++) {
+		for (;iColumnCount<iCurrentLevelMapContainerOffsetMaxViewPortX; iColumnCount++) {
+
+					
 //				printf("%s",sCurrentLevelMapContainer[iRowCount][iColumnCount]);
 
 			//if (sCurrentLevelMapContainer[iRowCount][iColumnCount]=="G") {
@@ -600,8 +668,10 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 //			  if (sCurrentLevelMapContainer[40+iRowCount][10].compare("\"G\"") == 0) { //TRUE
 //edited by Mike, 20210309
 //			  if (sCurrentLevelMapContainer[iCurrentLevelMapContainerOffsetZ+iRowCount][iCurrentLevelMapContainerOffsetX+iColumnCount].compare("\"G\"") == 0) { //TRUE
-			  if (sCurrentLevelMapContainer[iRowCount][iColumnCount].compare("\"G\"") == 0) { //TRUE
 
+//							  			  std::cout << "iRowCount:" << iRowCount << "iColumnCount:" << iColumnCount << "\n";
+
+			if (sCurrentLevelMapContainer[iRowCount][iColumnCount].compare("\"G\"") == 0) { //TRUE
 //				  			  std::cout << "DITO" <<"\n";
 
 //				  printf("DITO");
@@ -707,9 +777,26 @@ void Level::setupLevel(int myLevelTextureObject)
 	read("inputLevel1.csv");
 
 	//added by Mike, 20210308
+/*	//edited by Mike, 20210310	
 	iPrevZ=0;
 	iPrevY=0;
 	iPrevX=0;
+*/	//start values
+	//+12 for robotShip start position, i.e. 3*4
+/*	iPrevZ=-11+12; //11;
+	iPrevY=0;
+	iPrevX=-11+12;//-11;
+*/
+	//viewport
+/*	
+	iPrevZ=-11-MAX_Z_AXIS_VIEWPORT/2; //11;
+	iPrevY=0;
+	iPrevX=-11-MAX_X_AXIS_VIEWPORT/2;//-11;
+*/
+	iPrevZ=-MAX_Z_AXIS_VIEWPORT/2-11;
+	iPrevY=0;
+	iPrevX=-MAX_X_AXIS_VIEWPORT/2-11;
+	
 	iTotalMovementGridZ=0;
     iTotalMovementGridX=0;
     iTotalMovementGridY=0;	
