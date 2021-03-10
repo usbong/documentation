@@ -407,7 +407,11 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
    int iMovementGridY=0;
 	
    if (fStepMovemenGridZ>=1) {
+   	 //added by Mike, 20210310
+	 //note: actual fZ position and fGridSquareWidth*rowCount  position
+	 //TO-DO: -reverify: this
    	 iMovementGridZ = iPrevZ-iZ;
+   	 
 	 fStepMovemenGridZ=0;
    }
 
@@ -580,7 +584,6 @@ iColumnCount=MAX_INPUT_TEXT_PER_LINE;//-1;
 	if (iCurrentLevelMapContainerOffsetMaxViewPortZ>MAX_INPUT_TEXT_PER_LINE) {
 		iCurrentLevelMapContainerOffsetMaxViewPortZ=MAX_INPUT_TEXT_PER_LINE;
 	}
-
 	int iCurrentLevelMapContainerOffsetMaxViewPortX=iCurrentLevelMapContainerOffsetX+MAX_X_AXIS_VIEWPORT;
 	if (iCurrentLevelMapContainerOffsetMaxViewPortX>MAX_INPUT_TEXT_PER_LINE) {
 		iCurrentLevelMapContainerOffsetMaxViewPortX=MAX_INPUT_TEXT_PER_LINE;
