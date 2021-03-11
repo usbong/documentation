@@ -637,6 +637,7 @@ iColumnCount=MAX_INPUT_TEXT_PER_LINE;//-1;
    std::cout << "iCurrentLevelMapContainerOffsetMaxViewPortZ: " << iCurrentLevelMapContainerOffsetMaxViewPortZ << "\n";
 //   std::cout << "iCurrentLevelMapContainerOffsetMaxViewPortX: " << iCurrentLevelMapContainerOffsetMaxViewPortX << "\n";
 
+   std::cout << "fZ: " << fZ << "\n";
 	
 //	   std::cout << "DITO iRowCount: " << iRowCount << "\n";
 
@@ -645,10 +646,11 @@ iColumnCount=MAX_INPUT_TEXT_PER_LINE;//-1;
 	//edited by Mike, 20210310
 //	for (int iRowCount=0+iCurrentLevelMapContainerOffsetZ; iRowCount<iCurrentLevelMapContainerOffsetMaxViewPortZ; iRowCount++) {		
 //edited by Mike, 20210311
-//	for (;iRowCount<iCurrentLevelMapContainerOffsetMaxViewPortZ; iRowCount++) {		
-iRowCount=0;
+	for (;iRowCount<iCurrentLevelMapContainerOffsetMaxViewPortZ; iRowCount++) {		
+/*	//removed by Mike, 20210311	
+	iRowCount=0;
 	for (;iRowCount<160; iRowCount++) {		
-
+*/
 
 //	for (int iRowCount=0; iRowCount<MAX_INPUT_TEXT_PER_LINE; iRowCount++) {		
 	
@@ -736,10 +738,11 @@ iRowCount=0;
 	//edited by Mike, 20210310
 //		for (int iColumnCount=0+iCurrentLevelMapContainerOffsetX; iColumnCount<iCurrentLevelMapContainerOffsetMaxViewPortX; iColumnCount++) {
 //edited by Mike, 20210311
-//		for (;iColumnCount<iCurrentLevelMapContainerOffsetMaxViewPortX; iColumnCount++) {
-iColumnCount=0;
+		for (;iColumnCount<iCurrentLevelMapContainerOffsetMaxViewPortX; iColumnCount++) {
+/*	//removed by Mike, 20210311
+		iColumnCount=0;
 		for (;iColumnCount<20; iColumnCount++) {
-					
+*/					
 //				printf("%s",sCurrentLevelMapContainer[iRowCount][iColumnCount]);
 
 			//if (sCurrentLevelMapContainer[iRowCount][iColumnCount]=="G") {
@@ -1205,7 +1208,9 @@ void Level::read(char *inputFilename) {
 				  ch = strtok(NULL, ",");
 			}			
 
-			if (iRowCount<100) {
+			//edited by Mike, 20210311
+//			if (iRowCount<100) {
+			if (iRowCount<160) {				
 				iRowCount=iRowCount+1;
 			}
 			else {

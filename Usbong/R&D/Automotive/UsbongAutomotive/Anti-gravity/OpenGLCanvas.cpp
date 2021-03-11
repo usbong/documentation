@@ -1110,7 +1110,9 @@ void OpenGLCanvas::render()
 
 //added by Mike, 20210311
 //note: all rows of input level not yet drawn by computer
-    glScalef(0.2f, 0.2f, 0.2f);
+	//TOP-VIEW
+	glRotatef(90, 1.0f, 0.0f, 0.0f);
+	glScalef(0.2f, 0.2f, 0.2f);
 		
 //    glTranslatef(-1.0f, -1.0f, 0.0f);
 
@@ -1490,11 +1492,19 @@ void OpenGLCanvas::drawGridWithZAxis() {
 
 //added by Mike, 20210311
 //note: computer does not draw this
-/*
 	sprintf(tempText,"G");
-	myLevel->draw_level(10.0f, 0.0f, 99.0f, tempText);    	
-*/
 
+	//added by Mike, 20201124
+	glColor3f(0.14f, 0.68f, 0.06f); // Green
+
+	//added by Mike, 20201124
+	//execute this when using solid colors
+	//for computer to not draw borders
+	glBindTexture( GL_TEXTURE_2D, 0 );
+
+	myLevel->draw_level(5.0f, 0.0f, -420.0f, tempText);    	
+
+	
 /* //removed by Mike, 20210309	
 	//added by Mike, 20201124
     glColor3f(1.0f, 1.0f, 1.0f); // white
