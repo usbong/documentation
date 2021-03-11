@@ -1109,7 +1109,6 @@ void OpenGLCanvas::render()
 	//-----
 
 //added by Mike, 20210311
-//note: all rows of input level not yet drawn by computer
 	//TOP-VIEW
 	glRotatef(90, 1.0f, 0.0f, 0.0f);
 	glScalef(0.2f, 0.2f, 0.2f);

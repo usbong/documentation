@@ -343,71 +343,6 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 	int iY=fY;
 	int iZ=fZ;
 	
-/*	
-	int iX=fX/2;
-	int iY=fY/2;
-	int iZ=fZ/2;
-*/	
-
-/*	//removed by Mike, 20210308
-	int iX=fX/(iColumnCountMax*fGridSquareWidth) - iColumnCountMax*fGridSquareWidth;
-	int iY=fY/(iColumnCountMax*fGridSquareWidth);
-	int iZ=fZ/(iRowCountMax*fGridSquareHeight) - iRowCountMax*fGridSquareHeight;
-	
-	if (iZ<0) {
-		iZ=0;
-	}
-	else if (iZ>(iRowCountMax*fGridSquareHeight)) {
-		iZ=iRowCountMax*fGridSquareHeight;
-	}
-	
-	
-	if (iX<0) {
-		iX=0;
-	}
-	else if (iX>(iColumnCountMax*fGridSquareWidth)) {
-		iX=iColumnCountMax*fGridSquareWidth;
-	}
-*/
-
-	
-/*
-	for (int iRowCount=0; iRowCount<10; iRowCount++) {	
-	 	for (int iColumnCount=0; iColumnCount<10; iColumnCount++) {		
-//	 		printf("%s",sCurrentLevelMapContainer[iRowCount][iColumnCount]);
-			std::cout << sCurrentLevelMapContainer[iRowCount][iColumnCount];
-		}
-			printf("\n");			
-	}	
-*/	
-/*
-	//added by Mike, 20201122
-    //Grass
-	sprintf(tempText,"G");
-	//added by Mike, 20201124
-    glColor3f(0.14f, 0.68f, 0.06f); // Green
- 	for (int iRowCount=0; iRowCount<=iRowCountMax; iRowCount++) {	
-	 	for (int iColumnCount=0; iColumnCount<=iColumnCountMax; iColumnCount++) {		
-			//added by Mike, 20201124
-			//execute this when using solid colors
-			//for computer to not draw borders
-			glBindTexture( GL_TEXTURE_2D, 0 );
-			draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iRowCount, tempText);
-		}
-	}
-*/	
-
-
-//	printf("draw!");
-//   std::cout << "iZ: " << iZ << "\n";
-	
-/*	
-   std::cout << "MAX_Z_AXIS_VIEWPORT: " << MAX_Z_AXIS_VIEWPORT << "\n";
-*/	
-	
-	
-//   std::cout << "sCurrentLevelMapContainer: " << sCurrentLevelMapContainer[96][10] << "\n";
-	
    //RobotShip Step: 0.3f
 /*	
   fStepMovemenGridZ=(fStepMovemenGridZ+0.3f)%1;
@@ -456,48 +391,14 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
    iCurrentLevelMapContainerOffsetX += iMovementGridX; 
    iCurrentLevelMapContainerOffsetY += iMovementGridY; 
 
-/* //removed by Mike, 20210310	
-	//added by Mike, 20210310	
-   if (iMovementGridZ!=0) {
-     iCurrentLevelMapContainerOffsetZ += -MAX_Z_AXIS_VIEWPORT/2; 
-   }
-   if (iMovementGridX!=0) {
-	iCurrentLevelMapContainerOffsetX += -MAX_X_AXIS_VIEWPORT/2; 
-   }
-//   iCurrentLevelMapContainerOffsetY += -MAX_Y_AXIS_VIEWPORT/2; 
-*/
-	
-
    std::cout << "iCurrentLevelMapContainerOffsetZ: " << iCurrentLevelMapContainerOffsetZ << "\n";
    std::cout << "iCurrentLevelMapContainerOffsetX: " << iCurrentLevelMapContainerOffsetX << "\n";
 
-	
-//		   std::cout << "MAX_INPUT_TEXT_PER_LINE: " << MAX_INPUT_TEXT_PER_LINE << "\n";
-	
-/*
-   iCurrentLevelMapContainerOffsetZ += (iMovementGridZ-MAX_Z_AXIS_VIEWPORT/2); 
-   iCurrentLevelMapContainerOffsetX += (iMovementGridX-MAX_X_AXIS_VIEWPORT/2); 
-   iCurrentLevelMapContainerOffsetY += (iMovementGridY-MAX_Y_AXIS_VIEWPORT/2); 
-*/
-/*
-   iCurrentLevelMapContainerOffsetZ += (iMovementGridZ-MAX_Z_AXIS_VIEWPORT); 
-   iCurrentLevelMapContainerOffsetX += (iMovementGridX-MAX_X_AXIS_VIEWPORT); 
-   iCurrentLevelMapContainerOffsetY += (iMovementGridY-MAX_Y_AXIS_VIEWPORT); 
-*/	
 
-  //-1 due to start at zero
 //  int iRowCount=iCurrentLevelMapContainerOffsetZ-1;
-  int iRowCount=iCurrentLevelMapContainerOffsetZ;
-/*	
-//  int iColumnCount=iCurrentLevelMapContainerOffsetX-1;
-  int iColumnCount=iCurrentLevelMapContainerOffsetX;
-*/	
-	
+  int iRowCount=iCurrentLevelMapContainerOffsetZ;	
   int iCurrentLevelMapContainerOffsetMaxViewPortZ=iRowCount+MAX_Z_AXIS_VIEWPORT;
-/*  int iCurrentLevelMapContainerOffsetMaxViewPortX=iColumnCount+MAX_X_AXIS_VIEWPORT;
-*/	
-	
-	
+		
    if (iCurrentLevelMapContainerOffsetZ<0) {
 //     iCurrentLevelMapContainerOffsetZ=0;
 	 iRowCount=0;   
@@ -506,34 +407,6 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 //     iCurrentLevelMapContainerOffsetZ=MAX_INPUT_TEXT_PER_LINE-1;
 	 iRowCount=MAX_INPUT_TEXT_PER_LINE-1;   
    } 
-
-/*	
-   if (iCurrentLevelMapContainerOffsetX<0) {
-	iColumnCount=0;   
-   } 
-   else if (iCurrentLevelMapContainerOffsetX>=MAX_INPUT_TEXT_PER_LINE) {
-iColumnCount=MAX_INPUT_TEXT_PER_LINE;//-1;	   
-   } 	
-*/	
-	
-//     iCurrentLevelMapContainerOffsetZ=0;
-
-/*   else if (iCurrentLevelMapContainerOffsetZ>=MAX_Z_AXIS_VIEWPORT) {
-     iCurrentLevelMapContainerOffsetZ=MAX_Z_AXIS_VIEWPORT-1;
-   } 
-*/
-
-/* //removed by Mike, 20210310	
-   if (iCurrentLevelMapContainerOffsetX<0) {
-     iCurrentLevelMapContainerOffsetX=0;
-   } 
-////   else if (iCurrentLevelMapContainerOffsetX>=MAX_X_AXIS_VIEWPORT) {
-////     iCurrentLevelMapContainerOffsetX=MAX_X_AXIS_VIEWPORT-1;
-////   } 
-   else if (iCurrentLevelMapContainerOffsetX>=MAX_INPUT_TEXT_PER_LINE) {
-     iCurrentLevelMapContainerOffsetX=MAX_INPUT_TEXT_PER_LINE-1;
-   } 
-*/
 
 	
    //example#1: iPrevZ=-3; iZ=-2;
@@ -566,56 +439,7 @@ iColumnCount=MAX_INPUT_TEXT_PER_LINE;//-1;
    	iMovementGridZ=iMovementGridZ*-1; //get absolute value, i.e. positive number
    }
 */
-	
-/*	
-   if (iZ>0) {
-   std::cout << "positive forward" << "\n";
-	   
-//	   iZ=iZ-MAX_Z_AXIS_VIEWPORT;
-   }
-*/	
-	
-/* //removed by Mike, 20210306	
-	iPrevX=iX;
-	iPrevY=iY;
-	iPrevZ=iZ;
-*/
-	
-	//added by Mike, 20210306
-	//TO-DO: -reverify: iMovementGridZ value
-/*  //removed by Mike, 20210306	
-   std::cout << "iMovementGridZ: " << iMovementGridZ << "\n";
-   std::cout << "iPrevZ: " << iPrevZ << "\n";
-*/	
-	
-	 //edited by Mike, 20210211
-//	for (int iRowCount=0; iRowCount<10; iRowCount++) {	
-	//edited by Mike, 20210305
-//	for (int iRowCount=0; iRowCount<MAX_Z_AXIS_VIEWPORT; iRowCount++) {	
-//	for (int iRowCount=fZ; iRowCount<fZ+MAX_Z_AXIS_VIEWPORT; iRowCount++) {	
-//	for (int iRowCount=iZ; iRowCount<iZ+MAX_Z_AXIS_VIEWPORT; iRowCount++) {	
-//edited by Mike, 20210309
-//	for (int iRowCount=0; iRowCount<MAX_Z_AXIS_VIEWPORT; iRowCount++) {		
-//edited by Mike, 20210309; edited again by Mike, 20210310
-//	for (int iRowCount=0+iCurrentLevelMapContainerOffsetZ; iRowCount<MAX_Z_AXIS_VIEWPORT; iRowCount++) {		
-//	for (int iRowCount=0+iCurrentLevelMapContainerOffsetZ; iRowCount<MAX_INPUT_TEXT_PER_LINE; iRowCount++) {		
-
-/* //edited by Mike, 20210310	
-	int iCurrentLevelMapContainerOffsetMaxViewPortZ=iCurrentLevelMapContainerOffsetZ+MAX_Z_AXIS_VIEWPORT;
-	if (iCurrentLevelMapContainerOffsetMaxViewPortZ>MAX_INPUT_TEXT_PER_LINE) {
-		iCurrentLevelMapContainerOffsetMaxViewPortZ=MAX_INPUT_TEXT_PER_LINE;
-	}
-	int iCurrentLevelMapContainerOffsetMaxViewPortX=iCurrentLevelMapContainerOffsetX+MAX_X_AXIS_VIEWPORT;
-	if (iCurrentLevelMapContainerOffsetMaxViewPortX>MAX_INPUT_TEXT_PER_LINE) {
-		iCurrentLevelMapContainerOffsetMaxViewPortX=MAX_INPUT_TEXT_PER_LINE;
-	}
-*/	
-
-/*	//removed by Mike, 20210310
-  int iCurrentLevelMapContainerOffsetMaxViewPortZ=iRowCount+MAX_Z_AXIS_VIEWPORT/2;
-  int iCurrentLevelMapContainerOffsetMaxViewPortX=iColumnCount+MAX_X_AXIS_VIEWPORT/2;
-*/
-	
+		
    if (iCurrentLevelMapContainerOffsetMaxViewPortZ<0) {
 //     iCurrentLevelMapContainerOffsetZ=0;
 	 iCurrentLevelMapContainerOffsetMaxViewPortZ=0;   
@@ -625,15 +449,6 @@ iColumnCount=MAX_INPUT_TEXT_PER_LINE;//-1;
 	 iCurrentLevelMapContainerOffsetMaxViewPortZ=MAX_INPUT_TEXT_PER_LINE-1;   
    } 
 
-/*	
-   if (iCurrentLevelMapContainerOffsetMaxViewPortX<0) {
-	 iCurrentLevelMapContainerOffsetMaxViewPortX=0;   
-   } 
-   else if (iCurrentLevelMapContainerOffsetMaxViewPortX>=MAX_INPUT_TEXT_PER_LINE) {
-	 iCurrentLevelMapContainerOffsetMaxViewPortX=MAX_INPUT_TEXT_PER_LINE-1;	   
-   } 		
-*/	
-
    std::cout << "iCurrentLevelMapContainerOffsetMaxViewPortZ: " << iCurrentLevelMapContainerOffsetMaxViewPortZ << "\n";
 //   std::cout << "iCurrentLevelMapContainerOffsetMaxViewPortX: " << iCurrentLevelMapContainerOffsetMaxViewPortX << "\n";
 
@@ -641,7 +456,6 @@ iColumnCount=MAX_INPUT_TEXT_PER_LINE;//-1;
 	
 //	   std::cout << "DITO iRowCount: " << iRowCount << "\n";
 
-//	iRowCount=iRowCount+30;
 		
 	//edited by Mike, 20210310
 //	for (int iRowCount=0+iCurrentLevelMapContainerOffsetZ; iRowCount<iCurrentLevelMapContainerOffsetMaxViewPortZ; iRowCount++) {		
@@ -654,64 +468,9 @@ iColumnCount=MAX_INPUT_TEXT_PER_LINE;//-1;
 
 //	for (int iRowCount=0; iRowCount<MAX_INPUT_TEXT_PER_LINE; iRowCount++) {		
 	
-/*		
-   if (iCurrentLevelMapContainerOffsetZ<0) {
-     iCurrentLevelMapContainerOffsetZ=0;
-   } 
-   else if (iCurrentLevelMapContainerOffsetZ>=MAX_INPUT_TEXT_PER_LINE) {
-     iCurrentLevelMapContainerOffsetZ=MAX_INPUT_TEXT_PER_LINE-1;
-   } 
-*/
-
-/*		
-		//added by Mike, 20210305
-		if (iMovementGridZ+iRowCount<0) {
-//			iMovementGridZ=0;
-			iMovementGridZ=0;
-			iRowCount=0;			
-		}
-*/
-
-/*		
-		//added by Mike, 20210305
-		if (iMovementGridZ+iRowCount<0) {
-//			iMovementGridZ=0;
-			iMovementGridZ=0;
-			iRowCount=0;	
-			
-			iPrevZ=iMovementGridZ;
-			
-			
-   std::cout << "DITO" << "\n";
-			
-		}
-		//added by Mike, 20210306
-		else if (iMovementGridZ+iRowCount>100) { //TO-DO: -add: auto-set max 
-			iMovementGridZ=0;
-			iRowCount=99;			
-			iPrevZ=iRowCount;			
-		}
-*/		
-/*  //removed by Mike, 20210306			
-   std::cout << "HALLO: iMovementGridZ+iRowCount: " <<  iMovementGridZ << "+" << iRowCount << "=" << iMovementGridZ+iRowCount << "\n";
-*/		
-	
-	 //edited by Mike, 20210211
-//		for (int iColumnCount=0; iColumnCount<10; iColumnCount++) {		
-	//edited by Mike, 20210305		
-//		for (int iColumnCount=0; iColumnCount<MAX_X_AXIS_VIEWPORT; iColumnCount++) {					
-//		for (int iColumnCount=fX; iColumnCount<fX+MAX_X_AXIS_VIEWPORT; iColumnCount++) {								
-//		for (int iColumnCount=iX; iColumnCount<iX+MAX_X_AXIS_VIEWPORT; iColumnCount++) {								
-//edited by Mike, 20210309
-//		for (int iColumnCount=0; iColumnCount<MAX_X_AXIS_VIEWPORT; iColumnCount++) {			
-//edited by Mike, 20210309
-//		for (int iColumnCount=0+iCurrentLevelMapContainerOffsetX; iColumnCount<MAX_X_AXIS_VIEWPORT; iColumnCount++) {
-//edited by Mike, 20210310
-//		for (int iColumnCount=0+iCurrentLevelMapContainerOffsetX; iColumnCount<MAX_INPUT_TEXT_PER_LINE; iColumnCount++) {
 
 //     		  std::cout << "iRowCount" << iRowCount <<"\n";
 		
-
 		//added by Mike, 202103010
 //  int iColumnCount=iCurrentLevelMapContainerOffsetX-1;	
   int iColumnCount=iCurrentLevelMapContainerOffsetX;	
@@ -739,45 +498,8 @@ iColumnCount=MAX_INPUT_TEXT_PER_LINE;//-1;
 //		for (int iColumnCount=0+iCurrentLevelMapContainerOffsetX; iColumnCount<iCurrentLevelMapContainerOffsetMaxViewPortX; iColumnCount++) {
 //edited by Mike, 20210311
 		for (;iColumnCount<iCurrentLevelMapContainerOffsetMaxViewPortX; iColumnCount++) {
-/*	//removed by Mike, 20210311
-		iColumnCount=0;
-		for (;iColumnCount<20; iColumnCount++) {
-*/					
-//				printf("%s",sCurrentLevelMapContainer[iRowCount][iColumnCount]);
-
-			//if (sCurrentLevelMapContainer[iRowCount][iColumnCount]=="G") {
-//			  if (strcmp(sCurrentLevelMapContainer[iRowCount][iColumnCount],"G") != 0) {
-			  //Reference: http://www.cplusplus.com/reference/string/string/compare/;
-			  //last accessed: 20210210
-			  //note: quotation marks
-			  //edited by Mike, 20210305
-//			  if (sCurrentLevelMapContainer[iRowCount][iColumnCount].compare("\"G\"") == 0) { //TRUE			
-//			  if (sCurrentLevelMapContainer[fX+iRowCount][fZ+iColumnCount].compare("\"G\"") == 0) { //TRUE
-//			  if (sCurrentLevelMapContainer[iZ+iRowCount][iX+iColumnCount].compare("\"G\"") == 0) { //TRUE
-/*
-			  std::cout << "iMovementGridZ" << iMovementGridZ <<"\n";
->     		  std::cout << "iRowCount" << iRowCount <<"\n";
-     		  std::cout << "iMovementGridZ+iRowCount" << iMovementGridZ+iRowCount <<"\n";
-*/			
 
 //			std::cout << "LOOB iRowCount" << iRowCount <<"\n";
-
-			//edited by Mike, 20210306
-//			  if (sCurrentLevelMapContainer[iMovementGridZ+iRowCount][iMovementGridX+iColumnCount].compare("\"G\"") == 0) { //TRUE
-//			  if (sCurrentLevelMapContainer[iZ+iRowCount][iX+iColumnCount].compare("\"G\"") == 0) { //TRUE
-
-//edited by Mike, 20210308
-//			  if (sCurrentLevelMapContainer[iZ][iX].compare("\"G\"") == 0) { //TRUE
-//edited by Mike, 20210308
-//			  if (sCurrentLevelMapContainer[iRowCount][iColumnCount].compare("\"G\"") == 0) { //TRUE
-//edited by Mike, 20210309
-//MAX_Z_AXIS_VIEWPORT
-//			  if (sCurrentLevelMapContainer[iTotalMovementGridZ+iRowCount][iTotalMovementGridX+iColumnCount].compare("\"G\"") == 0) { //TRUE
-//			  if (sCurrentLevelMapContainer[40+iRowCount][iTotalMovementGridX+iColumnCount].compare("\"G\"") == 0) { //TRUE
-//			  if (sCurrentLevelMapContainer[40+iRowCount][iColumnCount].compare("\"G\"") == 0) { //TRUE
-//			  if (sCurrentLevelMapContainer[40+iRowCount][10].compare("\"G\"") == 0) { //TRUE
-//edited by Mike, 20210309
-//			  if (sCurrentLevelMapContainer[iCurrentLevelMapContainerOffsetZ+iRowCount][iCurrentLevelMapContainerOffsetX+iColumnCount].compare("\"G\"") == 0) { //TRUE
 
 //			std::cout << "iRowCount:" << iRowCount << "iColumnCount:" << iColumnCount << "\n";
 
@@ -786,7 +508,6 @@ iColumnCount=MAX_INPUT_TEXT_PER_LINE;//-1;
 //		    if (sCurrentLevelMapContainer[99][10].compare("\"G\"") == 0) { //TRUE
 //			
 //				  			  std::cout << "DITO" <<"\n";
-
 //				  printf("DITO");
 				
 			    //Grass
@@ -800,97 +521,17 @@ iColumnCount=MAX_INPUT_TEXT_PER_LINE;//-1;
 				//for computer to not draw borders
 				glBindTexture( GL_TEXTURE_2D, 0 );
 				
-				//edited by Mike, 20210305
-//				draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iRowCount, tempText);
-//				draw_level(fX+fGridSquareWidth*iColumnCount, fY+0.0f, fZ+fGridSquareHeight*iRowCount, tempText);
-//				draw_level(iX+fGridSquareWidth*iColumnCount, iY+0.0f, iZ+fGridSquareHeight*iRowCount, tempText);
-//				draw_level(iMovementGridX+fGridSquareWidth*iColumnCount, iMovementGridY+0.0f, iMovementGridZ+fGridSquareHeight*iRowCount, tempText);
-//				draw_level(iX+fGridSquareWidth*iColumnCount, iY+0.0f, iZ+fGridSquareHeight*iRowCount, tempText);
-//				draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iRowCount, tempText);
-
-
-//				draw_level(iMovementGridX+fGridSquareWidth*iColumnCount, iMovementGridY+0.0f, iMovementGridZ+fGridSquareHeight*iRowCount, tempText);
-//				draw_level(iTotalMovementGridX+fGridSquareWidth*iColumnCount, iTotalMovementGridY+0.0f, iTotalMovementGridZ+fGridSquareHeight*iRowCount, tempText);
-				
-//edited by Mike, 20210309
-//				draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iRowCount, tempText);
-//				draw_level(fGridSquareWidth*iColumnCount, 0.0f, fZ+fGridSquareHeight*iRowCount, tempText);
-//set position
-//				draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*40+fGridSquareHeight*iRowCount, tempText);
-//edited by Mike, 20210310				
-//				draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iRowCount, tempText);
-
-//				draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iRowCount+(fGridSquareWidth*(MAX_X_AXIS_VIEWPORT/2)), tempText);
-//				draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareWidth*iRowCount*2, tempText);
-
-//				float fDrawLevelRowCount =  fGridSquareWidth*iRowCount*2;
-
-/*				float fDrawLevelRowCount =  fGridSquareWidth*iRowCount;	
-				std::cout << "fZ:" << fZ << "; iRowCount" << iRowCount << "; fDrawLevelRowCount:" <<  fDrawLevelRowCount << "\n";
-*/
-	
-//				draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareWidth*iRowCount*2, tempText);
 				draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareWidth*iRowCount, tempText);
 //computer draws this box
 //				draw_level(fGridSquareWidth*0, 0.0f, fGridSquareWidth*300, tempText);
-				
-//				draw_level(fGridSquareWidth*10, 0.0f, fGridSquareHeight*99, tempText);
-//				draw_level(fGridSquareWidth*5, 0.0f, fGridSquareHeight*5, tempText);
-//iCurrentLevelMapContainerOffsetZ: 30
-//				draw_level(fGridSquareWidth*0, 0.0f, fGridSquareWidth*60, tempText);
-
-//iCurrentLevelMapContainerOffsetZ: 45
-//				draw_level(fGridSquareWidth*0, 0.0f, fGridSquareWidth*90, tempText);
-				
 			}			
 		}
 	}
-
-/*	
-		//added by Mike, 20210305
-		if (iMovementGridZ+iRowCount<0) {
-//			iMovementGridZ=0;
-			iMovementGridZ=0;
-			iRowCount=0;	
-			
-			iPrevZ=iMovementGridZ;
-			
-			
-   std::cout << "DITO" << "\n";
-			
-		}
-		//added by Mike, 20210306
-		else if (iMovementGridZ+iRowCount>100) { //TO-DO: -add: auto-set max 
-			iMovementGridZ=0;
-			iRowCount=99;			
-			iPrevZ=iRowCount;			
-		}
-*/	
 
 	//added by Mike, 20210306; edited by Mike, 20210308	
 	iPrevX=iX;
 	iPrevY=iY;
 	iPrevZ=iZ;
-
-/*	
-	//added by Mike, 20210308
-	fPrevX=fX;
-	fPrevY=fY;
-	fPrevZ=fZ;
-*/	
-
-
-/* //removed by Mike, 20210208	
-	for (int iRowCount=0; iRowCount<=iRowCountMax; iRowCount++) {	
-	 	for (int iColumnCount=0; iColumnCount<=iColumnCountMax; iColumnCount++) {		
-			//added by Mike, 20201124
-			//execute this when using solid colors
-			//for computer to not draw borders
-			glBindTexture( GL_TEXTURE_2D, 0 );
-			draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iRowCount, tempText);
-		}
-	}
-*/
 }
 
 void Level::setupLevel(int myLevelTextureObject)
@@ -1083,12 +724,7 @@ void Level::read(char *inputFilename) {
 	int iRowCount=0;
 	int iColumnCount=0;
 
-	//set to 0 value
-	//10;100
-/*	//edited by Mike, 20210211
-	for (iRowCount=0; iRowCount<10; iRowCount++) {	
-		for (iColumnCount=0; iColumnCount<10; iColumnCount++) {		
-*/
+
 /*	//edited by Mike, 20210305
 	for (iRowCount=0; iRowCount<MAX_Z_AXIS_VIEWPORT; iRowCount++) {	
 		for (iColumnCount=0; iColumnCount<MAX_X_AXIS_VIEWPORT; iColumnCount++) {		
@@ -1110,17 +746,6 @@ void Level::read(char *inputFilename) {
 	 		sCurrentLevelMapContainer[iRowCount][iColumnCount]=(char*)"-1";//'G';
 		}
 	}
-	
-//added by Mike, 20210309
-/*
-	for (iRowCount=40; iRowCount<60; iRowCount++) {	
-	 	sCurrentLevelMapContainer[iRowCount][2]=(char*)"\"G\"";//'G';
-	}
-	for (iRowCount=60; iRowCount<100; iRowCount++) {	
-	 	sCurrentLevelMapContainer[iRowCount][4]=(char*)"\"G\"";//'G';
-	}
-*/	
-	
 
 	iRowCount=0;
 	iColumnCount=0;
@@ -1221,15 +846,4 @@ void Level::read(char *inputFilename) {
 		}
 		fclose(file);
 	}	
-
-/*	
-	for (iRowCount=0; iRowCount<100; iRowCount++) {	
-	 	for (iColumnCount=0; iColumnCount<100; iColumnCount++) {		
-	 		printf("%s",sCurrentLevelMapContainer[iRowCount][iColumnCount]);
-		}
-			printf("\n");			
-	}	
-*/
-	
-		
 }
