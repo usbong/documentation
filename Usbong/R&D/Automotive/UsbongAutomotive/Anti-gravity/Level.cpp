@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201118
- * @date updated: 20210310
+ * @date updated: 20210311
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -233,6 +233,8 @@ void Level::draw_char(GLfloat x, GLfloat y, GLfloat z, char c)
 	//TO-DO: -update: this
 	//TO-DO: -remove: auto-drawing of not seen from camera
 	//drawCubeWithBlockTexture(fSideLength, tx, ty, tz);
+	//added by Mike, 20210311
+	//note: fSideLength not yet used
 	drawCubeWithBlockTexture(1.0f, tx, ty, tz, x,y,z);
 //	drawCubeWithBlockTexture(2.0f, tx, ty, tz);
 }
@@ -305,9 +307,28 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
  	int iColumnCountMax=MAX_Z_AXIS_VIEWPORT;
  	int iHeightCountMax=MAX_Z_AXIS_VIEWPORT;
 */
-
+/*	//edited by Mike, 20210311
 	float fGridSquareWidth = myWindowWidth/iColumnCountMax/100.0;
 	float fGridSquareHeight = myWindowHeight/iRowCountMax/100.0;
+
+/*
+	float fGridSquareWidth = 0.3f;
+	float fGridSquareHeight = 0.3f;
+*/
+/*
+	float fGridSquareWidth = 3.0f;
+	float fGridSquareHeight = 3.0f;
+*/
+/*
+	float fGridSquareWidth = fZSize;
+	float fGridSquareHeight = fXSize;
+*/
+/*
+	float fGridSquareWidth = 1.0f;
+	float fGridSquareHeight = 1.0f;
+*/
+	float fGridSquareWidth = 4.0f;
+	float fGridSquareHeight = 4.0f;
 	
 	char tempText[50];
 	
@@ -407,8 +428,8 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
    int iMovementGridY=0;
 	
    if (fStepMovemenGridZ>=1) {
-   	 //added by Mike, 20210310
-	 //note: actual fZ position and fGridSquareWidth*rowCount  position
+   	 //added by Mike, 20210311
+	 //note: actual fZ position and fGridSquareWidth*rowCount position
 	 //TO-DO: -reverify: this
    	 iMovementGridZ = iPrevZ-iZ;
    	 
@@ -623,7 +644,11 @@ iColumnCount=MAX_INPUT_TEXT_PER_LINE;//-1;
 		
 	//edited by Mike, 20210310
 //	for (int iRowCount=0+iCurrentLevelMapContainerOffsetZ; iRowCount<iCurrentLevelMapContainerOffsetMaxViewPortZ; iRowCount++) {		
-	for (;iRowCount<iCurrentLevelMapContainerOffsetMaxViewPortZ; iRowCount++) {		
+//edited by Mike, 20210311
+//	for (;iRowCount<iCurrentLevelMapContainerOffsetMaxViewPortZ; iRowCount++) {		
+iRowCount=0;
+	for (;iRowCount<160; iRowCount++) {		
+
 
 //	for (int iRowCount=0; iRowCount<MAX_INPUT_TEXT_PER_LINE; iRowCount++) {		
 	
@@ -697,6 +722,12 @@ iColumnCount=MAX_INPUT_TEXT_PER_LINE;//-1;
 	 iColumnCount=MAX_INPUT_TEXT_PER_LINE-1;
    } 	
 		
+   if (iCurrentLevelMapContainerOffsetMaxViewPortX<0) {
+	 iCurrentLevelMapContainerOffsetMaxViewPortX=0;   
+   } 
+   else if (iCurrentLevelMapContainerOffsetMaxViewPortX>=MAX_INPUT_TEXT_PER_LINE) {
+	 iCurrentLevelMapContainerOffsetMaxViewPortX=MAX_INPUT_TEXT_PER_LINE-1;	   
+   } 		
 		
 		
 		
@@ -704,8 +735,10 @@ iColumnCount=MAX_INPUT_TEXT_PER_LINE;//-1;
 //		for (int iColumnCount=0+iCurrentLevelMapContainerOffsetX; iColumnCount<(iCurrentLevelMapContainerOffsetX+MAX_INPUT_TEXT_PER_LINE); iColumnCount++) {
 	//edited by Mike, 20210310
 //		for (int iColumnCount=0+iCurrentLevelMapContainerOffsetX; iColumnCount<iCurrentLevelMapContainerOffsetMaxViewPortX; iColumnCount++) {
-		for (;iColumnCount<iCurrentLevelMapContainerOffsetMaxViewPortX; iColumnCount++) {
-
+//edited by Mike, 20210311
+//		for (;iColumnCount<iCurrentLevelMapContainerOffsetMaxViewPortX; iColumnCount++) {
+iColumnCount=0;
+		for (;iColumnCount<20; iColumnCount++) {
 					
 //				printf("%s",sCurrentLevelMapContainer[iRowCount][iColumnCount]);
 
@@ -795,6 +828,8 @@ iColumnCount=MAX_INPUT_TEXT_PER_LINE;//-1;
 	
 //				draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareWidth*iRowCount*2, tempText);
 				draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareWidth*iRowCount, tempText);
+//computer draws this box
+//				draw_level(fGridSquareWidth*0, 0.0f, fGridSquareWidth*300, tempText);
 				
 //				draw_level(fGridSquareWidth*10, 0.0f, fGridSquareHeight*99, tempText);
 //				draw_level(fGridSquareWidth*5, 0.0f, fGridSquareHeight*5, tempText);

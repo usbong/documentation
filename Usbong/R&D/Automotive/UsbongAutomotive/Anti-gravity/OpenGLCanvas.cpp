@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210305
+ * @date updated: 20210311
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -928,7 +928,6 @@ void OpenGLCanvas::render()
         	1.0f //zFar; maximum
       	);
 
-
 /*	//removed by Mike, 20201117
     //font 
     // select and enable texture FONT_TEXTURE
@@ -1069,8 +1068,11 @@ void OpenGLCanvas::render()
     gluLookAt(myCanvasEyePosX, myCanvasEyePosY, myCanvasEyePosZ, // eye position 0.0, 0.0, 3.0
               myCanvasCenterPosX, myCanvasCenterPosY, myCanvasCenterPosZ, // look-at point
               0.0, 1.0, 0.0); // up-direction
-
-		
+/*	//edited by Mike, 20210311
+    gluLookAt(myCanvasEyePosX, myCanvasEyePosY, myCanvasEyePosZ*2, // eye position 0.0, 0.0, 3.0
+              myCanvasCenterPosX, myCanvasCenterPosY, myCanvasCenterPosZ, // look-at point
+              0.0, 1.0, 0.0); // up-direction
+*/		
 		
 /*
     gluLookAt(0.0, 0.5, 3.0, // eye position 0.0, 0.0, 3.0
@@ -1106,6 +1108,9 @@ void OpenGLCanvas::render()
 */
 	//-----
 
+//added by Mike, 20210311
+//note: all rows of input level not yet drawn by computer
+    glScalef(0.2f, 0.2f, 0.2f);
 		
 //    glTranslatef(-1.0f, -1.0f, 0.0f);
 
@@ -1467,17 +1472,14 @@ void OpenGLCanvas::drawGridWithZAxis() {
 	//added by Mike, 20201122
     //Grass
 	sprintf(tempText,"G");
-
 	//added by Mike, 20201124
     glColor3f(0.14f, 0.68f, 0.06f); // Green
-
  	for (int iRowCount=0; iRowCount<=iRowCountMax; iRowCount++) {	
 	 	for (int iColumnCount=0; iColumnCount<=iColumnCountMax; iColumnCount++) {		
 			//added by Mike, 20201124
 			//execute this when using solid colors
 			//for computer to not draw borders
 			glBindTexture( GL_TEXTURE_2D, 0 );
-
 			myLevel->draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iRowCount, tempText);
 		}
 	}
@@ -1485,6 +1487,13 @@ void OpenGLCanvas::drawGridWithZAxis() {
 	//edited by Mike, 20210305
 //	myLevel->drawLevelMapInViewPort(0,0,0,fGridSquareWidth*iRowCountMax,fGridSquareWidth*iColumnCountMax,fGridSquareWidth*iHeightCountMax);
 	myLevel->drawLevelMapInViewPort(myCanvasPosX,myCanvasPosY,myCanvasPosZ,fGridSquareWidth*iRowCountMax,fGridSquareWidth*iColumnCountMax,fGridSquareWidth*iHeightCountMax);
+
+//added by Mike, 20210311
+//note: computer does not draw this
+/*
+	sprintf(tempText,"G");
+	myLevel->draw_level(10.0f, 0.0f, 99.0f, tempText);    	
+*/
 
 /* //removed by Mike, 20210309	
 	//added by Mike, 20201124
@@ -1501,14 +1510,11 @@ void OpenGLCanvas::drawGridWithZAxis() {
 	//TO-DO: -update: level texture 
 	sprintf(tempText,"E");
 	myLevel->draw_level(0.0f, 0.0f, 0.0f, tempText);    	
-
 	//added by Mike, 20201122
 	sprintf(tempText,"E");
 	myLevel->draw_level(1.0f, 0.0f, 0.0f, tempText);    	
-
 	sprintf(tempText,"E");
 	myLevel->draw_level(0.0f, 1.0f, 0.0f, tempText);    	
-
 	//Tree
 	sprintf(tempText,"F");
 	myLevel->draw_level(6.0f, 0.0f, 6.0f, tempText);    	

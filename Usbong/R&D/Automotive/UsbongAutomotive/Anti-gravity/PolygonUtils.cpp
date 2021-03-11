@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201019
- * @date updated: 20201129
+ * @date updated: 20210311
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -510,7 +510,10 @@ glCullFace(GL_BACK);
 void drawCubeWithBlockTexture(float fSideLength, GLfloat tx, GLfloat ty, GLfloat tz, float x, float y, float z)
 {
 //	float fBorderWidth = 0.05f;
+//edited by Mike, 20210311
 	float fBorderWidth = 0.0125f;
+//	float fBorderWidth = fSideLength;
+	
 //	glColor3f(1.0f, 1.0f, 1.0f);
 
 	glPushMatrix();

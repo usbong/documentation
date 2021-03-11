@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210310
+ * @date updated: 20210311
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -412,14 +412,11 @@ RobotShip::RobotShip(float xPos, float yPos, float zPos, int windowWidth, int wi
 	//added by Mike, 20210310	
 	int myWindowWidth=6144;
     int myWindowHeight=6144;
-
 	int iRowCountMax=30;
  	int iColumnCountMax=30;
  	int iHeightCountMax=30; //added by Mike, 20210208
-
 	float fGridSquareWidth = myWindowWidth/iColumnCountMax/100.0;
 	float fGridSquareHeight = myWindowHeight/iRowCountMax/100.0;
-
 	stepX=fGridSquareWidth;
     stepY=fGridSquareWidth;
     stepZ=fGridSquareWidth;
@@ -448,6 +445,9 @@ RobotShip::RobotShip(float xPos, float yPos, float zPos, int windowWidth, int wi
 	myWidth=1.4f;
     myHeight=1.4f;
 */
+	
+	//added by Mike, 20210311
+	//TO-DO: -reverify: this
 	myWidth=4.0f; //TO-DO: -add: fGridSquareWidth, etc
     myHeight=4.0f;
     
@@ -2617,13 +2617,10 @@ void RobotShip::drawRobotShipPrev()
 								}									
 								iFiringBeamCount=iFiringBeamCount+1;								
 							}
-
 							drawLowerLeg(-0.15f, -0.7f, 0.0f); //left
 							drawLowerLeg(0.35f, -0.7f, 0.0f); //right
-
 							drawUpperLeg(-0.1f, -0.5f, 0.0f); //left
 							drawUpperLeg(0.3f, -0.5f, 0.0f); //right        
-
 */
 /*							
 			                if (bIsFiringBeam) {	
@@ -3371,7 +3368,6 @@ void RobotShip::update(float dt)
 //           		if (myXPos <= 0.0f) myXPos = 20-myWidth/8; //if left side
            		if (myXPos <= 0.0f) myXPos = myWindowWidth/100-myWidth/8; //if left side
            		else if (myXPos >= myWindowWidth/100) myXPos = 0.0f+myWidth/8; //if right side
-
            		if (myZPos >= myWindowHeight/100) myZPos = 0.0f+myHeight/8; //if bottom side
            		//edited by Mike, 20201116
 //           		else if (myZPos <= 0.0f) myZPos = 20-myHeight/8; //if top side
@@ -3536,7 +3532,6 @@ void RobotShip::setDashStateWithKeyUp() {
 		for (int iCount=0; iCount<MAX_DIRECTIONAL_KEY_DASH_COUNT; iCount++) {
 			bIsExecutingDashArray[iCount]=false;			
 		}
-
 		bIsDashReady=false;			
 	}
 	else {
@@ -4037,7 +4032,6 @@ void RobotShip::hitBy(MyDynamicObject* mdo)
     //removed by Mike, 20201001
 ////	zing = sound->load_sound_clip(RESETSOUND);
 ////	sound->play_sound_clip(zing);	
-
     reset();    
 */	
 }
@@ -4144,7 +4138,6 @@ void RobotShip::drawTriangle(float xPos, float yPos, float zPos)
             glVertex3f(-0.5f, 0.5f, -0.5f);
             glVertex3f(0.5f, 0.5f, -0.5f);
             glVertex3f(0.5f, -0.5f, -0.5f);
-
             //glColor3f(0.5f, 0.0f, 0.0f);	// dark red
             //back face 
             //part 1
@@ -4165,19 +4158,16 @@ void RobotShip::drawTriangle(float xPos, float yPos, float zPos)
             glVertex3f(0.5f, -0.5f, 0.5f);
             glVertex3f(0.5f, -0.5f, -0.5f);
             glVertex3f(0.5f, 0.5f, 0.5f);          
-
     		//glColor3f(0.0f, 0.5f, 0.0f);	// dark green
             //left face
             //part 1
             glVertex3f(-0.5f, -0.5f, -0.5f);
             glVertex3f(-0.5f, -0.5f, 0.5f);
             glVertex3f(-0.5f, 0.5f, 0.5f);          
-
             //part 2
             glVertex3f(-0.5f, 0.5f, 0.5f);
             glVertex3f(-0.5f, 0.5f, -0.5f);
             glVertex3f(-0.5f, -0.5f, -0.5f);
-
     		//glColor3f(0.0f, 0.0f, 1.0f);	// blue
             //top face
             glVertex3f(0.5f, 0.5f, 0.5f);
@@ -4187,13 +4177,11 @@ void RobotShip::drawTriangle(float xPos, float yPos, float zPos)
             glVertex3f(-0.5f, 0.5f, 0.5f);
             glVertex3f(0.5f, 0.5f, 0.5f);
             glVertex3f(-0.5f, 0.5f, -0.5f);          
-
     		//glColor3f(0.0f, 0.0f, 0.5f);	// dark blue
             //bottom face
             glVertex3f(0.5f, -0.5f, 0.5f);
             glVertex3f(-0.5f, -0.5f, 0.5f);
             glVertex3f(-0.5f, -0.5f, -0.5f);          
-
             //part 2
             glVertex3f(-0.5f, -0.5f, -0.5f);
             glVertex3f(0.5f, -0.5f, -0.5f);
@@ -4553,4 +4541,3 @@ void RobotShip::drawShipBody(float xPos, float yPos, float zPos)
 		//drawCube(0.0f, 0.0f, 0.0f);
 	glPopMatrix();
 }
-
