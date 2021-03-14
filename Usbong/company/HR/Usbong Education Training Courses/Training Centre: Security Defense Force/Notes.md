@@ -174,7 +174,7 @@ Michelangelo Buonarroti's "Giudizio Universale"<br/>
 <b>Recommended Action:</b> verify: http://www.arte.it/opera/giudizio-universale-4709;<br/>
 last accessed: 20210223<br/>
 <b>Additional Notes:</b><br/>
-1) Maalala na sa unang pagdating ni Kristo, nagbigay siya ng mensahe ng pagbabago at pagbabalik kay Bathala. Sa kanyang ikalawang pagbabalik, pinupuksa na niya ang mga Teroristang Komunista.<br/>
+1) Maaalala na sa unang pagdating ni Kristo, nagbigay siya ng mensahe ng pagbabago at pagbabalik kay Bathala. Sa kanyang ikalawang pagbabalik, pinupuksa na niya ang mga Teroristang Komunista.<br/>
 2) Naiiba ang kasalukuyang "Giudizio Universale" sapagkat pinalitan ng mga hindi Michelangelo ang ilang mga bahagi nito.
 
 ### Part 7
