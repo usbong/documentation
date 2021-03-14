@@ -173,8 +173,9 @@ Inoue, Tatsuo. (1986). "Living Together Making Law――Justice as Conversation�
 Michelangelo Buonarroti's "Giudizio Universale"<br/>
 <b>Recommended Action:</b> verify: http://www.arte.it/opera/giudizio-universale-4709;<br/>
 last accessed: 20210223<br/>
-<b>Additional Note:</b><br/>
-Matatandaan na sa unang pagdating ni Kristo, nagbigay siya ng mensahe ng pagbabago at pagbabalik kay Bathala. Sa kanyang ikalawang pagbabalik, pupuksain na niya ang mga Teroristang Komunista.
+<b>Additional Notes:</b><br/>
+1) Maalala na sa unang pagdating ni Kristo, nagbigay siya ng mensahe ng pagbabago at pagbabalik kay Bathala. Sa kanyang ikalawang pagbabalik, pinupuksa na niya ang mga Teroristang Komunista.<br/>
+2) Naiiba ang kasalukuyang "Giudizio Universale" sapagkat pinalitan ng mga hindi Michelangelo ang ilang mga bahagi nito.
 
 ### Part 7
 大麻とは・・・<br/>
@@ -201,3 +202,32 @@ In addition, possession, cultivation, etc of taima are strictly regulated via "R
 1) https://www.keishicho.metro.tokyo.jp/kurashi/drug/drug/taima_interview.html;<br/>
 last accessed: 20210117<br/>
 2) https://www.interpol.int/en/News-and-Events/News/2021/INTERPOL-report-charts-top-cyberthreats-in-Southeast-Asia; last accessed: 20210228<br/>
+
+### Part 9
+Dagdag na halimbawa ng mga panloloko mula sa grupo ng Teroristang Komunista at ang kanilang "our people's language":<br/>
+<br/>
+1) Hindi maaaring ipaalam sa may-sakit na nagtatanong kung anong araw at oras na ngayon.<br/>
+--> Halintulad ito sa pagbibigay ng relos o orasan sa may-sakit.<br/>
+--> verified: may maririnig kang tumutunog-tunog na ingay, e.g. "tick-tock", sa silid ng may-sakit, halimbawa, ang kay 阿媽 (amah, a-ma), i.e. Lola.<br/>
+--> Mula ito sa wireless broadcasting ng mga Teroristang Komunista, at hindi sa orasan.<br/>
+--> Hanggang pinaka-itaas na palapag sa silid ng Lola, umaabot ang panlolokong ingay ng mga ito.<br/>
+--> Gumagawa iyan ng mga sakit na nagdudulot ng paglala ng karamdaman, lalo na kapag hindi ka aakma sa nais ng kanilang grupo.<br/>
+--> <b>Dahilan:</b> quick money<br/>
+--> <b>Aksyon:</b> harrassment; extortion<br/>
+<br/>
+2) Hindi ipinagdiriwang ang kaarawan kasama ang mga kamag-anak, kung hindi ika-unang taon pagkatapos ipanganak.<br/>
+--> Ito'y upang hindi gumasta nang malaki taun-taon.<br/>
+--> verified: nauubusan pa rin ng pera, kaya kailangan gumawa ng mga panlolokong ingay at pisikal na pananakit.<br/>
+<br/>
+3) YES/NO na dalawang bato<br/>
+--> Kapag ang isa nakabaliktad at ang isa hindi, YES.<br/>
+--> Kapag parehong nakabaliktad o pareho ang lapag, NO.<br/>
+--> Kailangan may isa wala, para may isa na meron.<br/>
+--> "yin/yang" : dark/light<br/>
+--> verified: kahit alin ang sagot ng bato, iaakma lang ng Teroristang Komunista ang sagot sa kanilang nais.<br/>
+--> Halimbawa: Gagaling ba ako sa aking karamdaman?<br/>
+--> YES! OK.<br/>
+--> NO! Magaling na kasi ako.<br/>
+
+#### Additional Notes:
+1) Halintulad ito sa gawa-gawang paliwanag na hindi mo mauunawan ang isang bagay sapagkat hindi ka Indian; hindi mo kailanman matututunan ito, kahit anong aral mo.<br/>
