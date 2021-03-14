@@ -214,11 +214,11 @@ Dagdag na halimbawa ng mga panloloko mula sa grupo ng Teroristang Komunista at a
 --> Gumagawa iyan ng mga sakit na nagdudulot ng paglala ng karamdaman, lalo na kapag hindi ka aakma sa nais ng kanilang grupo.<br/>
 --> <b>Dahilan:</b> quick money<br/>
 --> <b>Aksyon:</b> harrassment; extortion<br/>
-<br/>
+
 2) Hindi ipinagdiriwang ang kaarawan kasama ang mga kamag-anak, kung hindi ika-unang taon pagkatapos ipanganak.<br/>
 --> Ito'y upang hindi gumasta nang malaki taun-taon.<br/>
 --> verified: nauubusan pa rin ng pera, kaya kailangan gumawa ng mga panlolokong ingay at pisikal na pananakit.<br/>
-<br/>
+
 3) YES/NO na dalawang bato<br/>
 --> Kapag ang isa nakabaliktad at ang isa hindi, YES.<br/>
 --> Kapag parehong nakabaliktad o pareho ang lapag, NO.<br/>
@@ -229,5 +229,5 @@ Dagdag na halimbawa ng mga panloloko mula sa grupo ng Teroristang Komunista at a
 --> YES! OK.<br/>
 --> NO! Magaling na kasi ako.<br/>
 
-#### Additional Notes:
-1) Halintulad ito sa gawa-gawang paliwanag na hindi mo mauunawan ang isang bagay sapagkat hindi ka Indian; hindi mo kailanman matututunan ito, kahit anong aral mo.<br/>
+#### Additional Note:
+1) Halintulad ang mga ito sa gawa-gawang paliwanag na hindi mo mauunawan ang isang bagay sapagkat hindi ka Indian; hindi mo kailanman matututunan ito, kahit anong aral mo.<br/>
