@@ -203,7 +203,7 @@ In addition, possession, cultivation, etc of taima are strictly regulated via "R
 last accessed: 20210117<br/>
 2) https://www.interpol.int/en/News-and-Events/News/2021/INTERPOL-report-charts-top-cyberthreats-in-Southeast-Asia; last accessed: 20210228<br/>
 
-### Part 9
+### Part 8
 Dagdag na halimbawa ng mga panloloko mula sa grupo ng Teroristang Komunista at ang kanilang "our people's language":<br/>
 <br/>
 1) Hindi maaaring ipaalam sa may-sakit na nagtatanong kung anong araw at oras na ngayon.<br/>
