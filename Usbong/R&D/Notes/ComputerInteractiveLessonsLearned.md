@@ -82,7 +82,6 @@ TO-DO: -update: this<br/>
 majikku card notes
 ### 1.7.1.1) magic: 
 poison increased damage against tyranosaurus<br/> 
-<br/>  
 reflect sends magic attack to enemy (reflected magic is not reflected again)<br/>
 genjuu summon is not reflected<br/>
 reflect from all 4 team members sends magic attack x4<br/>
@@ -96,14 +95,13 @@ white cape:  increased defense<br/>
 #### 1.7.1.2.2) weapon:
 flail star: attack (non-magic) damage at back row position equal with front row position;<br/>
 back row position received (non-magic) damage 1/2.<br/>		
-
 tiger claw: stronger than dragon claw
 		
 ### 1.7.1.3) enemy/monster
 profile, e.g. weakness, not yet known can destroy whole team<br/>
 <br/>
 after verifying the following:<br/>
-what defense to use, e.g. gravitate spell, i.e. levetate/float, to evade earthquake attack<br/>
+what defense to use, e.g. gravitate spell, i.e. levitate/float, to evade earthquake attack<br/>
 what attack to use, e.g. faira, i.e. fire attack level 2<br/>
 <br/>
 add random enemy encounter (pinagninilayan ko pa ang gagawin at inaalam kung saan ang daan, may lalabas na agad na kalaban/halimaw; naalala ko ang Wild Arms (PS1), bagama't mas mabilis ang loading dito)<br/>
@@ -121,6 +119,7 @@ add active time battle, i.e. undecided team member of action is skipped in turn 
 <br/>
 <b>Seres (Rune Knight):</b> Mas pipiliin kong isama sa pangkat kaysa kay Tina. May kakayahang humigop ng magic/mahika attack at gawing panghilom ng sarili. Isa siya sa mga ginawang eksperimento ni Kefka gamit ang mga genjuu (illusion beast). Nakaligtas mula sa mga nanamantala, at nagkaroon ng kakayahang mahika. Mapipili ring gumanap sa teatro gawa ng kamukha ng isang tangyag na aktres ayon sa daloy ng istorya. Malakas.<br/>
 <br/>
+
 TO-DO: -update: this
 
 #### Additional Note:
