@@ -99,7 +99,7 @@ back row position received (non-magic) damage 1/2.<br/>
 
 tiger claw: stronger than dragon claw
 		
-#### 1.7.1.3) enemy/monster
+### 1.7.1.3) enemy/monster
 profile, e.g. weakness, not yet known can destroy whole team<br/>
 <br/>
 after verifying the following:<br/>
@@ -110,7 +110,7 @@ add random enemy encounter (pinagninilayan ko pa ang gagawin at inaalam kung saa
 <br/>
 add active time battle, i.e. undecided team member of action is skipped in turn sequence<br/>
 
-#### 1.7.1.4) team member character
+### 1.7.1.4) team member character
 <b>Shadow (Ninja):</b> Nais kong isama sa team/pangkat, bagama't hindi naman pala ganoong kalakas. Kailangan ding patuloy na bumili ng mga ibabato hango sa bala, e.g. shuriken.<br/> 
 <br/>
 <b>Rokku/Locke (Treasure Hunter):</b> Hindi ko nais isama sa pangkat, bagama't kailangang isama gawa ng daloy ng istorya; Malakas<br/>
