@@ -83,18 +83,23 @@ majikku card notes
 ### 1.7.1.1) magic: 
 poison increased damage against tyranosaurus<br/> 
 reflect sends magic attack to enemy (reflected magic is not reflected again)<br/>
-genjuu summon is not reflected<br/>
+genjuu (illusion beast) summon is not reflected<br/>
 reflect from all 4 team members sends magic attack x4<br/>
 
 ### 1.7.1.2) items inventory:
 #### 1.7.1.2.1) accessories: 
 reflect ring: reflect magic<br/>
 blackbelt: counter-attack (non-magic)<br/>
-white cape:  increased defense<br/>
+white cape:  increased defense (magic, non-magic, magic evade, immune to silence and kappa curses)<br/>
+<b>notes:</b><br/>
+--> silence curse causes enemy or member to be in state of cannot cast any magic<br/>
+--> kappa curse causes enemy or member to be in state of "kappa", i.e. turtle-like demon creature with water on head; damage when received as kappa is higher, even quick death<br/>
+--> select genjuu, e.g. Arutima, can be cursed to be kappa to be destroyed in battle, albeit regenerates to reappear
 
 #### 1.7.1.2.2) weapon:
-flail star: attack (non-magic) damage at back row position equal with front row position;<br/>
-back row position received (non-magic) damage 1/2.<br/>		
+morning star: attack (non-magic) damage at back row position equal with front row position;<br/>
+note: back row position received (non-magic) damage is cut by 1/2.<br/>		
+
 tiger claw: stronger than dragon claw
 		
 ### 1.7.1.3) enemy/monster
@@ -115,10 +120,11 @@ add active time battle, i.e. undecided team member of action is skipped in turn 
 <br/>
 <b>Edgar (Machinery):</b> Pinakanais kong isama sa pangkat; Hari ng bansang Figaro. May Castillo na lumulubog at maaaring maglakbay sa ilalim ng buhangin; Gumagawa ng mga non-magic attack gamit ang makina, i.e. machine.<br/>
 <br/>
-<b>Masshu (Monk):</b> Mas pipiliin kong isama sa pangkat si Edgar kaysa kay Masshu. Kambal na kapatid siya ni Edgar. Pinili niyang maging malaya, sa halip na maging Hari ng Castillo.<br/>
+<b>Masshu (Monk):</b> Mas pipiliin kong isama sa pangkat si Edgar kaysa kay Masshu. Kambal na kapatid siya ni Edgar. Pinili niyang maging malaya, sa halip na maging Hari ng Castillo. May kakayanang maghilom gamit ang "chakra" at gumawa ng mga mala-mahikang atake bukod pa sa mga non-magic attack. Mula ang mga kakayanan, i.e. waza, sa kanyang pagsasanay sa bundok at sa pagiging kasama sa daloy ng istorya. Gayunpaman, kailangang alalahanin ang wastong input at pagkasusunod/sequence nito upang matagumpay na magawa ang waza. Hindi ito tulad ng kay Edgar na pipiliin na lamang mula sa lista ang nais na gawin bilang input.<br/>
 <br/>
 <b>Seres (Rune Knight):</b> Mas pipiliin kong isama sa pangkat kaysa kay Tina. May kakayahang humigop ng magic/mahika attack at gawing panghilom ng sarili. Isa siya sa mga ginawang eksperimento ni Kefka gamit ang mga genjuu (illusion beast). Nakaligtas mula sa mga nanamantala, at nagkaroon ng kakayahang mahika. Mapipili ring gumanap sa teatro gawa ng kamukha ng isang tanyag na aktres ayon sa daloy ng istorya. Malakas.<br/>
 <br/>
+<b>Kaen (Samurai):</b> Mas pipiliin ko kaysa kay Masshu, bagama't hindi siya kasing lakas ni Edgar o Locke. Naisasama kay Masshu dahil sa daloy ng istorya.<br/>
 
 TO-DO: -update: this
 
