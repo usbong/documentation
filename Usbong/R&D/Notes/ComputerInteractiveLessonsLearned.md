@@ -101,7 +101,7 @@ tiger claw: stronger than dragon claw
 profile, e.g. weakness, not yet known can destroy whole team<br/>
 <br/>
 after verifying the following:<br/>
-what defense to use, e.g. gravitate spell, i.e. levitate/float, to evade earthquake attack<br/>
+what defense to use, e.g. levitate spell, to evade earthquake attack<br/>
 what attack to use, e.g. faira, i.e. fire attack level 2<br/>
 <br/>
 add random enemy encounter (pinagninilayan ko pa ang gagawin at inaalam kung saan ang daan, may lalabas na agad na kalaban/halimaw; naalala ko ang Wild Arms (PS1), bagama't mas mabilis ang loading dito)<br/>
@@ -109,7 +109,7 @@ add random enemy encounter (pinagninilayan ko pa ang gagawin at inaalam kung saa
 add active time battle, i.e. undecided team member of action is skipped in turn sequence<br/>
 
 ### 1.7.1.4) team member character
-<b>Shadow (Ninja):</b> Nais kong isama sa team/pangkat, bagama't hindi naman pala ganoong kalakas. Kailangan ding patuloy na bumili ng mga ibabato hango sa bala, e.g. shuriken.<br/> 
+<b>Shadow (Assassin):</b> Nais kong isama sa team/pangkat, bagama't hindi naman pala ganoong kalakas. Kailangan ding patuloy na bumili ng mga ibabato niya hango sa bala, e.g. shuriken.<br/> 
 <br/>
 <b>Rokku/Locke (Treasure Hunter):</b> Hindi ko nais isama sa pangkat, bagama't kailangang isama gawa ng daloy ng istorya; Malakas<br/>
 <br/>
