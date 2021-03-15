@@ -111,8 +111,18 @@ add random enemy encounter (pinagninilayan ko pa ang gagawin at inaalam kung saa
 add active time battle, i.e. undecided team member of action is skipped in turn sequence<br/>
 
 #### 1.7.1.4) team member character
-	
-	
+<b>Shadow (Ninja):</b> Nais kong isama sa team/pangkat, bagama't hindi naman pala ganoong kalakas. Kailangan ding patuloy na bumili ng mga ibabato hango sa bala, e.g. shuriken.<br/> 
+<br/>
+<b>Rokku/Locke (Treasure Hunter):</b> Hindi ko nais isama sa pangkat, bagama't kailangang isama gawa ng daloy ng istorya; Malakas<br/>
+<br/>
+<b>Edgar (Machinery):</b> Pinakanais kong isama sa pangkat; Hari ng Castillo ng bansang Figaro na lumulubog at maaaring maglakbay sa ilalim ng buhangin; Gumagawa ng mga non-magic attack gamit ang makina, i.e. machine.<br/>
+<br/>
+<b>Masshu (Monk):</b> Mas pipiliin kong isama sa pangkat si Edgar kaysa kay Masshu. Kambal na kapatid siya ni Edgar. Pinili niyang maging malaya, sa halip na maging Hari ng Castillo.<br/>
+<br/>
+<b>Seres (Rune Knight):</b> Mas pipiliin kong isama sa pangkat kaysa kay Tina. May kakayahang humigop ng magic/mahika attack at gawing panghilom ng sarili. Isa siya sa mga ginawang eksperimento ni Kefka gamit ang mga genjuu (illusion beast). Nakaligtas mula sa mga nanamantala, at nagkaroon ng kakayahang mahika. Mapipili ring gumanap sa teatro gawa ng kamukha ng isang tangyag na aktres ayon sa daloy ng istorya. Malakas.<br/>
+<br/>
+TO-DO: -update: this
+
 #### Additional Note:
 1) Sa pook at panahon na magugunaw na ang mundo dahil sa kagagawan ni Kefka, na hinigitan pa ang kapangyarihan ng Emperor, ipaaalam sa iyo ng kompyuter na may magagawa ka pa bago ang katapusan.<br/>
 --> Halimbawa: May mga magic, e.g. poison, item, e.g. reflect ring, at team member na kailangan mo rin, bukod pa sa mga kinasanayan mo.
