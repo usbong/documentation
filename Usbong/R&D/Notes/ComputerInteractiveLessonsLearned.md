@@ -117,7 +117,7 @@ add active time battle, i.e. undecided team member of action is skipped in turn 
 <br/>
 <b>Masshu (Monk):</b> Mas pipiliin kong isama sa pangkat si Edgar kaysa kay Masshu. Kambal na kapatid siya ni Edgar. Pinili niyang maging malaya, sa halip na maging Hari ng Castillo.<br/>
 <br/>
-<b>Seres (Rune Knight):</b> Mas pipiliin kong isama sa pangkat kaysa kay Tina. May kakayahang humigop ng magic/mahika attack at gawing panghilom ng sarili. Isa siya sa mga ginawang eksperimento ni Kefka gamit ang mga genjuu (illusion beast). Nakaligtas mula sa mga nanamantala, at nagkaroon ng kakayahang mahika. Mapipili ring gumanap sa teatro gawa ng kamukha ng isang tangyag na aktres ayon sa daloy ng istorya. Malakas.<br/>
+<b>Seres (Rune Knight):</b> Mas pipiliin kong isama sa pangkat kaysa kay Tina. May kakayahang humigop ng magic/mahika attack at gawing panghilom ng sarili. Isa siya sa mga ginawang eksperimento ni Kefka gamit ang mga genjuu (illusion beast). Nakaligtas mula sa mga nanamantala, at nagkaroon ng kakayahang mahika. Mapipili ring gumanap sa teatro gawa ng kamukha ng isang tanyag na aktres ayon sa daloy ng istorya. Malakas.<br/>
 <br/>
 
 TO-DO: -update: this
