@@ -77,6 +77,39 @@ TO-DO: -update: this<br/>
 --> 1.6.1.3.1) Technique to defeat boss once learned, maintain due to requires repetition until boss defeated; ping-pong drill<br/>
 --> 1.6.1.3.2) Set difficulty level to highest; Technique not anymore effective
 
+## 1.7) SQUARE ENIX
+## 1.7.1) Final Fantasy 6 (Japanese version)
+majikku card notes
+### 1.7.1.1) magic: 
+  poison increased damage against tyranosaurus<br/> 
+	reflect sends magic attack to enemy (reflected magic is not reflected again)<br/>
+	genjuu summon is not reflected<br/>
+	reflect from all 4 team members sends magic attack x4<br/>
+
+### 1.7.1.2) items inventory:
+#### 1.7.1.2.1) accessories: 
+		reflect ring: reflect magic<br/>
+		blackbelt: counter-attack (non-magic)<br/>
+		white cape:  increased defense<br/>
+#### 1.7.1.2.2) weapon:
+		flail star: attack (non-magic) damage back row position is equal with front row position;<br/>
+    back row position received (non-magic) damage 1/2.<br/>		
+		tiger claw stronger than dragon claw
+		
+#### 1.7.1.2.3) enemy/monster
+	profile, e.g. weakness, not yet known can destroy whole team<br/>
+	after verifying what defense to use, e.g. gravitate spell to evade earthquake attack,<br/>
+					what attack to use, e.g. faira, i.e. fire attack level 2<br/>
+	add random enemy encounter (pinagninilayan ko pa ang gagawin at inaalam kung saan ang daan, may lalabas na agad na kalaban/halimaw; naalala ko ang Wild Arms (PS1), bagama't mas mabilis ang loading dito)<br/>
+	add active time battle, i.e. undecided team member is skipped in turn sequence<br/>
+
+#### 1.7.1.2.4) team member character
+	
+	
+#### Additional Note:
+1) Sa pook na magugunaw na ang mundo dahil sa kagagawan ni Kefka, na hinigitan pa ang kapangyarihan ng Emperor, ipaaalam sa iyo ng kompyuter na may magagawa ka pa bago ang katapusan.<br/>
+--> Halimbawa: May mga magic, e.g. poison, item, e.g. reflect ring, at team member na kailangan mo rin, bukod pa sa mga kinasanayan mo.
+
 TO-DO: -update: this
 
 ## 2) Hardware
