@@ -122,9 +122,14 @@ add active time battle, i.e. undecided team member of action is skipped in turn 
 
 TO-DO: -update: this
 
-#### Additional Note:
+#### Additional Notes:
 1) Sa pook at panahon na magugunaw na ang mundo dahil sa kagagawan ni Kefka, na hinigitan pa ang kapangyarihan ng Emperor, ipaaalam sa iyo ng kompyuter na may magagawa ka pa bago ang katapusan.<br/>
---> Halimbawa: May mga magic, e.g. poison, item, e.g. reflect ring, at team member na kailangan mo rin, bukod pa sa mga kinasanayan mo.
+--> Halimbawa: May mga magic, item, at team member na kailangan mo rin, bukod pa sa mga kinasanayan mo.</br>
+magic, e.g. poison<br/>
+item, e.g. reflect ring<br/>
+team member
+
+2) Mas nais ko ang istorya ng unang Final Fantasy sa Family Computer. Sinsagot nito ang tanong na matatagpuan sa Bibliya at Qur'an: Paano magagawang maging hari ng kahariang walang hanggan.
 
 TO-DO: -update: this
 
