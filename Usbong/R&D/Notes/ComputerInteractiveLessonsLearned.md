@@ -88,26 +88,29 @@ majikku card notes
 
 ### 1.7.1.2) items inventory:
 #### 1.7.1.2.1) accessories: 
-		reflect ring: reflect magic<br/>
-		blackbelt: counter-attack (non-magic)<br/>
-		white cape:  increased defense<br/>
+reflect ring: reflect magic<br/>
+blackbelt: counter-attack (non-magic)<br/>
+white cape:  increased defense<br/>
 #### 1.7.1.2.2) weapon:
-		flail star: attack (non-magic) damage back row position is equal with front row position;<br/>
-    back row position received (non-magic) damage 1/2.<br/>		
-		tiger claw stronger than dragon claw
+flail star: attack (non-magic) damage back row position is equal with front row position; back row position received (non-magic) damage 1/2.<br/>		
+tiger claw stronger than dragon claw
 		
-#### 1.7.1.2.3) enemy/monster
-	profile, e.g. weakness, not yet known can destroy whole team<br/>
-	after verifying what defense to use, e.g. gravitate spell to evade earthquake attack,<br/>
-					what attack to use, e.g. faira, i.e. fire attack level 2<br/>
-	add random enemy encounter (pinagninilayan ko pa ang gagawin at inaalam kung saan ang daan, may lalabas na agad na kalaban/halimaw; naalala ko ang Wild Arms (PS1), bagama't mas mabilis ang loading dito)<br/>
-	add active time battle, i.e. undecided team member is skipped in turn sequence<br/>
+#### 1.7.1.3) enemy/monster
+profile, e.g. weakness, not yet known can destroy whole team<br/>
+<br/>
+after verifying the following:<br/>
+what defense to use, e.g. gravitate spell to evade earthquake attack,<br/>
+what attack to use, e.g. faira, i.e. fire attack level 2<br/>
+<br/>
+add random enemy encounter (pinagninilayan ko pa ang gagawin at inaalam kung saan ang daan, may lalabas na agad na kalaban/halimaw; naalala ko ang Wild Arms (PS1), bagama't mas mabilis ang loading dito<br/>
+<br/>
+add active time battle, i.e. undecided team member is skipped in turn sequence<br/>
 
-#### 1.7.1.2.4) team member character
+#### 1.7.1.4) team member character
 	
 	
 #### Additional Note:
-1) Sa pook na magugunaw na ang mundo dahil sa kagagawan ni Kefka, na hinigitan pa ang kapangyarihan ng Emperor, ipaaalam sa iyo ng kompyuter na may magagawa ka pa bago ang katapusan.<br/>
+1) Sa pook at panahon na magugunaw na ang mundo dahil sa kagagawan ni Kefka, na hinigitan pa ang kapangyarihan ng Emperor, ipaaalam sa iyo ng kompyuter na may magagawa ka pa bago ang katapusan.<br/>
 --> Halimbawa: May mga magic, e.g. poison, item, e.g. reflect ring, at team member na kailangan mo rin, bukod pa sa mga kinasanayan mo.
 
 TO-DO: -update: this
