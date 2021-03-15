@@ -81,30 +81,34 @@ TO-DO: -update: this<br/>
 ## 1.7.1) Final Fantasy 6 (Japanese version)
 majikku card notes
 ### 1.7.1.1) magic: 
-  poison increased damage against tyranosaurus<br/> 
-	reflect sends magic attack to enemy (reflected magic is not reflected again)<br/>
-	genjuu summon is not reflected<br/>
-	reflect from all 4 team members sends magic attack x4<br/>
+poison increased damage against tyranosaurus<br/> 
+<br/>  
+reflect sends magic attack to enemy (reflected magic is not reflected again)<br/>
+genjuu summon is not reflected<br/>
+reflect from all 4 team members sends magic attack x4<br/>
 
 ### 1.7.1.2) items inventory:
 #### 1.7.1.2.1) accessories: 
 reflect ring: reflect magic<br/>
 blackbelt: counter-attack (non-magic)<br/>
 white cape:  increased defense<br/>
+
 #### 1.7.1.2.2) weapon:
-flail star: attack (non-magic) damage back row position is equal with front row position; back row position received (non-magic) damage 1/2.<br/>		
-tiger claw stronger than dragon claw
+flail star: attack (non-magic) damage at back row position equal with front row position;<br/>
+back row position received (non-magic) damage 1/2.<br/>		
+
+tiger claw: stronger than dragon claw
 		
 #### 1.7.1.3) enemy/monster
 profile, e.g. weakness, not yet known can destroy whole team<br/>
 <br/>
 after verifying the following:<br/>
-what defense to use, e.g. gravitate spell to evade earthquake attack,<br/>
+what defense to use, e.g. gravitate spell, i.e. levetate/float, to evade earthquake attack<br/>
 what attack to use, e.g. faira, i.e. fire attack level 2<br/>
 <br/>
-add random enemy encounter (pinagninilayan ko pa ang gagawin at inaalam kung saan ang daan, may lalabas na agad na kalaban/halimaw; naalala ko ang Wild Arms (PS1), bagama't mas mabilis ang loading dito<br/>
+add random enemy encounter (pinagninilayan ko pa ang gagawin at inaalam kung saan ang daan, may lalabas na agad na kalaban/halimaw; naalala ko ang Wild Arms (PS1), bagama't mas mabilis ang loading dito)<br/>
 <br/>
-add active time battle, i.e. undecided team member is skipped in turn sequence<br/>
+add active time battle, i.e. undecided team member of action is skipped in turn sequence<br/>
 
 #### 1.7.1.4) team member character
 	
