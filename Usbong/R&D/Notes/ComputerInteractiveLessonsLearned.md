@@ -90,11 +90,11 @@ reflect from all 4 team members sends magic attack x4<br/>
 #### 1.7.1.2.1) accessories: 
 reflect ring: reflect magic<br/>
 blackbelt: counter-attack (non-magic)<br/>
-white cape:  increased defense (magic, non-magic, magic evade, immune to silence and kappa curses)<br/>
+white cape:  increased defense (magic, non-magic, magic evade, immune to silence and kappa- curses)<br/>
 <b>notes:</b><br/>
 --> silence curse causes enemy or member to be in state of cannot cast any magic<br/>
---> kappa curse causes enemy or member to be in state of "kappa", i.e. turtle-like demon creature with water on head; damage when received as kappa is higher, even quick death<br/>
---> select genjuu, e.g. Arutima, can be cursed to be kappa to be destroyed in battle, albeit regenerates to reappear
+--> kappa- curse causes enemy or member to be in state of "kappa-", i.e. turtle-like demon creature with water on head; damage when received as kappa- is higher, even quick death<br/>
+--> select genjuu, e.g. Arutima, can be cursed to be kappa- to be destroyed in battle, albeit regenerates to reappear
 
 #### 1.7.1.2.2) weapon:
 morning star: attack (non-magic) damage at back row position equal with front row position;<br/>
@@ -142,6 +142,13 @@ team member, e.g. Settsa-
 --> preference: save anywhere tool<br/>
 --> Sa Dragon Quest VI, maglalabas ang kompyuter ng malakas na kalaban/halimaw na pupuksa sa iyong pangkat, kapag nasukat nito na nakalipas na, halimbawa, ang 20minutos.<br/>
 <br/>
+
+#### Recommended Reading:
+1) Baxter, G. and Smith, L. (1995). "Mastering magic cards: an introduction to the art of masterful deck construction". USA: Wordware Publishing Inc.<br/>
+--> Forword from "Magic: The Gathering" creator Richard Garfield: pastime with social involvement<br/>
+--> Richard Garfield, professor of combinatorial mathematics at Whitman College, Walla Walla, Washington<br/>
+--> History: Magic Cards released in August 1993; patterned after "Cosmic Encounter" from Eon Products and Mayfair Games
+
 TO-DO: -update: this
 
 ## 2) Hardware
