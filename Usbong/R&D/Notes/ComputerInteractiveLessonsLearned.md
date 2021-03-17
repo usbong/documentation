@@ -145,8 +145,14 @@ team member, e.g. Settsa-
 --> preference: save anywhere tool<br/>
 --> Sa Dragon Quest VI, maglalabas ang kompyuter ng malakas na kalaban/halimaw na pupuksa sa iyong pangkat, kapag nasukat nito na nakalipas na, halimbawa, ang 20minutos.<br/>
 <br/>
+4) ブシドーブレード解説書 (BUSHIDO BLADE SOLVE TELL, i.e. EXPLANATION, BOOK)<br/>
+打刀 (うちかたな)KATANA<br/>
+全体 (WHOLE BODY)：92cm<br/>
+刃長 (BLADE LENGTH)：69.3cm<br/>
+反り (REFLECT CUT)：2.1cm<br/>
+重量 (WEIGHT QUANTITY)：1.5kg<br/>
 
-#### Recommended Reading:
+#### Recommended Reading: 
 1) Baxter, G. and Smith, L. (1995). "Mastering magic cards: an introduction to the art of masterful deck construction". USA: Wordware Publishing Inc.<br/>
 --> Forword from "Magic: The Gathering" creator Richard Garfield: pastime with social involvement<br/>
 --> Richard Garfield, professor of combinatorial mathematics at Whitman College, Walla Walla, Washington<br/>
