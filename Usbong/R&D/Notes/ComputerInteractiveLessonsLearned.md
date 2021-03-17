@@ -78,7 +78,7 @@ TO-DO: -update: this<br/>
 --> 1.6.1.3.2) Set difficulty level to highest; Technique not anymore effective
 
 ## 1.7) SQUARE ENIX
-## 1.7.1) Final Fantasy 6 (Japanese version)
+## 1.7.1) [Final Fantasy 6 (Japanese version)](https://jp.finalfantasy.com/titles/finalfantasy6)
 majikku card notes
 ### 1.7.1.1) magic: 
 poison increased damage against tyranosaurus<br/> 
@@ -126,7 +126,7 @@ add active time battle, i.e. undecided team member of action is skipped in turn 
 <br/>
 <b>Kaen (Samurai):</b> Mas pipiliin ko kaysa kay Masshu, bagama't hindi siya kasing lakas ni Edgar o Locke. Naisasama kay Masshu dahil sa daloy ng istorya.<br/>
 <br/>
-<b>Emperor:</b> Hihikayatin ang inyong pangkat upang magapi si Kefka. Maaalala na tutol ang inyong pangkat sa ginagawa ng Emperor, kasama ni Kefka, na ginagamit ang mga genjuu upang mapalawak ang kanyang empire dahil sa taglay na kapangyarihan/lakas ng mga genjuu. Imumungkahi naman sa inyo ng Emperor na kausapin ninyo ang mga tao sa Castillo. Matutuklasan ninyo na maaari ninyong mahikayat ang mga miyembro ng kanyang Empire na tutol na gawin kayong kasapi sa pamamagitan ng paggapi sa kanila sa labanan. Nakasalalay ang Empire sa lakas.<br/>
+<b>Gasutora (Emperor):</b> Hihikayatin ang inyong pangkat upang magapi si Kefka. Maaalala na tutol ang inyong pangkat sa ginagawa ng Emperor, kasama ni Kefka, na ginagamit ang mga genjuu upang mapalawak ang kanyang empire dahil sa taglay na kapangyarihan/lakas ng mga genjuu. Imumungkahi naman sa inyo ng Emperor na kausapin ninyo ang mga tao sa Castillo. Matutuklasan ninyo na maaari ninyong mahikayat ang mga miyembro ng kanyang Empire na tutol na gawin kayong kasapi sa pamamagitan ng paggapi sa kanila sa labanan. Nakasalalay ang Empire sa lakas.<br/>
 
 
 TO-DO: -update: this
