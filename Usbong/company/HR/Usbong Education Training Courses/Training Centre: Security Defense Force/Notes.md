@@ -231,3 +231,11 @@ Dagdag na halimbawa ng mga panloloko mula sa grupo ng Teroristang Komunista at a
 
 #### Additional Note:
 1) Halintulad ang mga ito sa gawa-gawang paliwanag na hindi mo mauunawan ang isang bagay sapagkat hindi ka Indian; hindi mo kailanman matututunan ito, kahit anong aral mo.<br/>
+
+### Part 9: ブシドーブレード解説書 (BUSHIDO BLADE SOLVE TELL, i.e. EXPLANATION, BOOK)
+<b>打刀 (うちかたな; KATANA)</b><br/>
+<b>全体 (WHOLE BODY)：</b>92cm<br/>
+<b>刃長 (BLADE LENGTH)：</b>69.3cm<br/>
+<b>反り (REFLECT CUT)：</b>2.1cm<br/>
+<b>重量 (WEIGHT QUANTITY)：</b>1.5kg<br/>
+
