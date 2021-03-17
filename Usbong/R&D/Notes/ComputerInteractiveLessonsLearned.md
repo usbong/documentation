@@ -144,9 +144,9 @@ team member, e.g. Settsa-
 --> Kasama sa mga isinusulat ng kompyuter ang daloy ng istorya, mga natutunang kakayahan, mga item/bagay na nakuha, atbp.<br/>
 --> preference: save anywhere tool<br/>
 --> Sa Dragon Quest VI, maglalabas ang kompyuter ng malakas na kalaban/halimaw na pupuksa sa iyong pangkat, kapag nasukat nito na nakalipas na, halimbawa, ang 20minutos.<br/>
-<br/>
+
 4) ブシドーブレード解説書 (BUSHIDO BLADE SOLVE TELL, i.e. EXPLANATION, BOOK)<br/>
-打刀 (うちかたな)KATANA<br/>
+打刀 (うちかたな; KATANA)<br/>
 全体 (WHOLE BODY)：92cm<br/>
 刃長 (BLADE LENGTH)：69.3cm<br/>
 反り (REFLECT CUT)：2.1cm<br/>
