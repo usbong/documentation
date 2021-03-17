@@ -138,7 +138,7 @@ magic, e.g. poison<br/>
 item, e.g. reflect ring<br/>
 team member, e.g. Settsa-
 
-2) Mas nais ko ang istorya ng unang Final Fantasy sa Family Computer. Sinasagot nito ang tanong na matatagpuan sa Bibliya at Qur'an: Paano magagawang maging hari ng kahariang walang hanggan.
+2) Mas nais ko ang istorya ng [unang Final Fantasy](https://jp.finalfantasy.com/titles/finalfantasy1) sa Family Computer. Sinasagot nito ang tanong na matatagpuan sa Bibliya at Qur'an: Paano magagawang maging hari ng kahariang walang hanggan.
 
 3) Maaaring tumuloy-tuloy ang istorya sa Final Fantasy 6 ng dalawang oras nang walang hinto,  dahil wala pang save point, i.e. pook sa isang dungeon, kuweba, intramuros, atbp kung saan maaaring isulat ng kompyuter ang iyong mga ginawa upang mabalikan pagkatapos mong magpahinga.<br/>
 --> Kasama sa mga isinusulat ng kompyuter ang daloy ng istorya, mga natutunang kakayahan, mga item/bagay na nakuha, atbp.<br/>
