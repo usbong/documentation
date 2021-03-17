@@ -93,8 +93,8 @@ blackbelt: counter-attack (non-magic)<br/>
 white cape:  increased defense (magic, non-magic, magic evade, immune to silence and kappa- curses)<br/>
 <b>notes:</b><br/>
 --> silence curse causes enemy or member to be in state of cannot cast any magic<br/>
---> kappa- curse causes enemy or member to be in state of "kappa-", i.e. turtle-like demon creature with water on head; damage when received as kappa- is higher, even quick death<br/>
---> select genjuu, e.g. Arutima, can be cursed to be kappa- to be destroyed in battle, albeit regenerates to reappear
+--> kappa- curse causes enemy or member to be in state of "kappa", i.e. turtle-like demon creature with water on head; damage when received as kappa is higher, even quick death<br/>
+--> select genjuu, e.g. Arutima, can be cursed to be kappa to be destroyed in battle, albeit regenerates to reappear
 
 #### 1.7.1.2.2) weapon:
 morning star: attack (non-magic) damage at back row position equal with front row position;<br/>
