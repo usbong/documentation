@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201118
- * @date updated: 20210311
+ * @date updated: 20210318
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -349,9 +349,11 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
   fStepMovemenGridX=(fStepMovemenGridX+0.3f)%1;
   fStepMovemenGridY=(fStepMovemenGridY+0.3f)%1;
 */
+/*	//removed by Mike, 20210318	
   fStepMovemenGridZ=(fStepMovemenGridZ+0.3f);
   fStepMovemenGridX=(fStepMovemenGridX+0.3f);
   fStepMovemenGridY=(fStepMovemenGridY+0.3f);
+*/
 	
 /*	//edited by Mike, 20210310
    int iMovementGridZ = iPrevZ-iZ;
@@ -371,8 +373,22 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 	 fStepMovemenGridZ=0;
    }
 
+   //added by Mike, 20210318
+   //TO-DO: -update: this to synchronize actual position with double array container
+   iMovementGridX = iPrevX-iX;
+   //x-axis
+   if (iMovementGridX < 0) { //moved backward
+     fStepMovemenGridX=(fStepMovemenGridX+0.3f);
+   }
+   else if (iMovementGridX == 0) { //no movement in X-axis
+   }	
+   else {
+     fStepMovemenGridX=(fStepMovemenGridX+0.3f);
+   }	
+   iMovementGridX = 0;
+	
    if (fStepMovemenGridX>=1) {
-   	 iMovementGridX = iPrevX-iX;
+	 iMovementGridX = iPrevX-iX;
 	 fStepMovemenGridX=0;
    }
 
@@ -381,6 +397,30 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 	 fStepMovemenGridY=0;
    }
 
+   //added by Mike, 20210318; removed by Mike, 20210318
+/*	
+   if (iMovementGridZ < 0) { //moved forward
+     std::cout << "forward" << "\n";
+//			  std::cout << "iMovementGridZ" << iMovementGridZ <<"\n";	   
+   }
+   else if (iMovementGridZ == 0) { //no movement in Z-axis
+     std::cout << "no movement" << "\n";	   
+   }	
+   else {
+     std::cout << "backward" << "\n";	   
+//	 iMovementGridZ=iMovementGridZ*-1; //get absolute value, i.e. positive number	   
+   }	
+	
+   //x-axis
+   if (iMovementGridX < 0) { //moved backward
+     iMovementGridX=iMovementGridX*-1;
+   }
+   else if (iMovementGridX == 0) { //no movement in Z-axis
+   }	
+   else {
+     iMovementGridX=iMovementGridX*1;
+   }	
+*/
 	
    //added by Mike, 20210309
    //TO-DO: -reverify: iMovementGridZ, etc value
@@ -400,8 +440,8 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
   int iCurrentLevelMapContainerOffsetMaxViewPortZ=iRowCount+MAX_Z_AXIS_VIEWPORT;
 		
    if (iCurrentLevelMapContainerOffsetZ<0) {
-//     iCurrentLevelMapContainerOffsetZ=0;
-	 iRowCount=0;   
+	 iRowCount=0;   	   
+	 iCurrentLevelMapContainerOffsetZ=0; //added by Mike, 20210318	   
    } 
    else if (iCurrentLevelMapContainerOffsetZ>=MAX_INPUT_TEXT_PER_LINE) {
 //     iCurrentLevelMapContainerOffsetZ=MAX_INPUT_TEXT_PER_LINE-1;
@@ -416,7 +456,7 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
    //example#2: iPrevZ=-3; iZ=-2;
    //-3 - (-2) = -1
    //-1 < 0, moved forward	
-	
+/* //removed by Mike, 20210318	
 //   if ((iPrevZ-iZ) < 0) { //moved forward
    if (iMovementGridZ < 0) { //moved forward
      std::cout << "forward" << "\n";
@@ -432,7 +472,7 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
      std::cout << "backward" << "\n";	   
 //	 iMovementGridZ=iMovementGridZ*-1; //get absolute value, i.e. positive number	   
    }
-	
+*/	
 	
 /*	//TO-DO: -reverify: this
    if (iMovementGridZ<0) { //if negative value
@@ -442,7 +482,7 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 		
    if (iCurrentLevelMapContainerOffsetMaxViewPortZ<0) {
 //     iCurrentLevelMapContainerOffsetZ=0;
-	 iCurrentLevelMapContainerOffsetMaxViewPortZ=0;   
+	 iCurrentLevelMapContainerOffsetMaxViewPortZ=0;   	   
    } 
    else if (iCurrentLevelMapContainerOffsetMaxViewPortZ>=MAX_INPUT_TEXT_PER_LINE) {
 //     iCurrentLevelMapContainerOffsetZ=MAX_INPUT_TEXT_PER_LINE-1;
@@ -452,7 +492,9 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
    std::cout << "iCurrentLevelMapContainerOffsetMaxViewPortZ: " << iCurrentLevelMapContainerOffsetMaxViewPortZ << "\n";
 //   std::cout << "iCurrentLevelMapContainerOffsetMaxViewPortX: " << iCurrentLevelMapContainerOffsetMaxViewPortX << "\n";
 
-   std::cout << "fZ: " << fZ << "\n";
+	//edited by Mike, 20210318
+//   std::cout << "fZ: " << fZ << "\n";
+   std::cout << "fX: " << fX << "\n";
 	
 //	   std::cout << "DITO iRowCount: " << iRowCount << "\n";
 
@@ -473,11 +515,13 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 		
 		//added by Mike, 202103010
 //  int iColumnCount=iCurrentLevelMapContainerOffsetX-1;	
-  int iColumnCount=iCurrentLevelMapContainerOffsetX;	
-		int iCurrentLevelMapContainerOffsetMaxViewPortX=iColumnCount+MAX_X_AXIS_VIEWPORT;
-	
-   if (iCurrentLevelMapContainerOffsetX<0) {
+   int iColumnCount=iCurrentLevelMapContainerOffsetX;
+   int iCurrentLevelMapContainerOffsetMaxViewPortX=iColumnCount+MAX_X_AXIS_VIEWPORT;
+
+   //edited by Mike, 20210318		
+   if ((iColumnCount<0) or (iCurrentLevelMapContainerOffsetX<0)) {
 	 iColumnCount=0;   
+	 iCurrentLevelMapContainerOffsetX=0; //added by Mike, 20210318
    } 
    else if (iCurrentLevelMapContainerOffsetX>=MAX_INPUT_TEXT_PER_LINE) {
 	 iColumnCount=MAX_INPUT_TEXT_PER_LINE-1;

@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210311
+ * @date updated: 20210318
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;

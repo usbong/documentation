@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210311
+ * @date updated: 20210318
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -460,12 +460,18 @@ RobotShip::RobotShip(float xPos, float yPos, float zPos, int windowWidth, int wi
 /*    myXPos=0.0f;
     myYPos=0+myHeight;//0.1f;
 */
+	
+/*	//edited by Mike, 20210318
 	//note: position: 3,3; width, height; count starts at 0
     myXPos=0.0f+myWidth*3;
     //edited by Mike, 2020116
 //    myYPos=0.0f+myHeight*3;
     myZPos=0.0f+myHeight*3;
-
+*/
+	//note: position: 0,0; width, height; count starts at 0
+    myXPos=0.0f+myWidth*0;
+    myZPos=0.0f+myHeight*0;
+	
 	//added by Mike, 20201115
 	myWindowWidth=windowWidth;
 	myWindowHeight=windowHeight;
@@ -3386,6 +3392,18 @@ void RobotShip::update(float dt)
            		else if (myZPos <= 0.0f) myZPos = myWindowHeight-myHeight/8; //if top side
 */
 
+			
+				//added by Mike, 20210318
+				//Note: Use these with update to OpenGLCanvas
+           		//no wrap of world 
+           		if (myXPos <= 0.0f) myXPos = 0+myWidth/8; //if left side
+           		else if (myXPos >= myWindowWidth) myXPos = myWindowWidth-myWidth/8; //if right side
+
+				if (myZPos >= myWindowHeight) myZPos = myWindowHeight-myHeight/8; //if bottom side
+           		else if (myZPos <= 0.0f) myZPos =0+myHeight/8; //if top side
+
+			
+			
            		//edited by Mike, 20201001
 /*           		
            		if (myXPos <= -25.0f) myXPos = 25.0f;
