@@ -131,13 +131,13 @@ add active time battle, i.e. undecided team member of action is skipped in turn 
 TO-DO: -update: this
 
 ### 1.7.1.5) Istorya/Salaysay
-Sa mga panahong iyon, pinaniwalaan na tuluyan nang nawala ang mahika/magic sa daigdig. Gayunpaman, nakatuklas ang mga tao ng paraan gamit ang mga makina upang makagawa ng mga malamahikang gawain.<br/>
+Sa mga panahong iyon, pinaniwalaan na tuluyan nang nawala ang mahika/magic/himala sa daigdig. Gayunpaman, nakatuklas ang mga tao ng paraan gamit ang mga makina upang makagawa ng mga malamahikang gawain.<br/>
 <br/>
 Lingid sa kaalaman ng mga mamamayan, matutuklasan ng Empire na may umiiral pang mahika mula sa mga genjuu (illusion beast) na magagamit sa pagpapalawak pa ng Empire dahil sa taglay nitong kapangyarihan.<br/>
 <br/>
-Subalit magdudulot ang layuning ito sa pagkawasak ng mga bansa na dapat ipagtanggol ng Empire. Gayundin ang magiging ikahihinatnan ng mga tutol na bansa sa gawaing ito ng Empire.<br/>
+Subalit magdudulot ang layuning ito sa pagkawasak ng mga bansa na ayon sa kasunduan, dapat ipagtanggol ng Empire. Gayundin ang magiging ikahihinatnan ng mga tutol na bansa sa kanyang gawaing ito.<br/>
 <br/>
-Sa kabila nito, 
+Sa kabila nito, may mga tao at nilalang na tutol sa Empire ang bubuo ng pangkat at magkasasama upang pagtulungang gapiin ang Empire.
 <br/>
 TO-DO: update: this
 
