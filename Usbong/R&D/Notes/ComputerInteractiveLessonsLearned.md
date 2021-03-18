@@ -130,6 +130,17 @@ add active time battle, i.e. undecided team member of action is skipped in turn 
 
 TO-DO: -update: this
 
+### 1.7.1.5) Istorya/Salaysay
+Sa mga panahong iyon, pinaniwalaan na tuluyan nang nawala ang mahika/magic sa daigdig. Gayunpaman, nakatuklas ang mga tao ng paraan gamit ang mga makina upang makagawa ng mga malamahikang gawain.<br/>
+<br/>
+Lingid sa kaalaman ng mga mamamayan, matutuklasan ng Empire na may umiiral pang mahika mula sa mga genjuu (illusion beast) na magagamit sa pagpapalawak pa ng Empire dahil sa taglay nitong kapangyarihan.<br/>
+<br/>
+Subalit magdudulot ang layuning ito sa pagkawasak ng mga bansa na dapat ipagtanggol ng Empire. Gayundin ang magiging ikahihinatnan ng mga tutol na bansa sa gawaing ito ng Empire.<br/>
+<br/>
+Sa kabila nito, 
+<br/>
+TO-DO: update: this
+
 #### Additional Notes:
 1) Sa pook at panahon na magugunaw na ang mundo dahil sa kagagawan ni Kefka, na hinigitan pa ang kapangyarihan ng Emperor, ipaaalam sa iyo ng kompyuter na may magagawa ka pa bago ang katapusan.<br/>
 --> Halimbawa: May mga magic, item, at team member na kailangan mo rin, bukod pa sa mga kinasanayan mo.</br>
