@@ -116,7 +116,7 @@ add active time battle, i.e. undecided team member of action is skipped in turn 
 ### 1.7.1.4) team member character
 <b>Shadow (Assassin):</b> Nais kong isama sa team/pangkat, bagama't hindi naman pala ganoong kalakas. Kailangan ding patuloy na bumili ng mga ibabato niya hango sa bala, e.g. shuriken. May alagang asong Dobermann, "Interceptor", na humaharang bilang depensa upang hindi tamaan ng non-magic attack si Shadow. <br/> 
 <br/>
-<b>Rokku/Locke (Treasure Hunter):</b> Hindi ko nais isama sa pangkat, bagama't kailangang isama gawa ng daloy ng istorya; Malakas<br/>
+<b>Rokku/Locke (Treasure Hunter):</b> Hindi ko nais isama sa pangkat, bagama't kailangang isama gawa ng daloy ng istorya; Malakas; Kabilang sa pangkat na tutol sa Emperor, kay Kefka, at ang gawain ng Empire. Kaibigan ni Edgar. Kaaya-aya ang tunog ng kanilang bayan.<br/>
 <br/>
 <b>Edgar (Machinery):</b> Pinakanais kong isama sa pangkat; Hari ng bansang Figaro. May Castillo na lumulubog at maaaring maglakbay sa ilalim ng buhangin; Gumagawa ng mga non-magic attack gamit ang makina, i.e. machine. Maaalala ang wika ng Chief Ingeniero ng Castillo sa pananalita ng mga taga-Osaka sa bansang Hapon.<br/>
 <br/>
