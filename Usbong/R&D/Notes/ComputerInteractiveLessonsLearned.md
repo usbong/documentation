@@ -131,7 +131,7 @@ add active time battle, i.e. undecided team member of action is skipped in turn 
 TO-DO: -update: this
 
 ### 1.7.1.5) Istorya/Salaysay
-Sa mga panahong iyon, pinaniwalaan na tuluyan nang nawala ang mahika/magic/himala sa daigdig. Gayunpaman, nakatuklas ang mga tao ng paraan gamit ang mga makina upang makagawa ng mga malamahikang gawain.<br/>
+Noong mga panahong iyon, pinaniwalaan na tuluyan nang nawala ang mahika/magic/himala sa daigdig. Gayunpaman, nakatuklas ang mga tao ng paraan gamit ang mga makina upang makagawa ng mga malamahikang gawain.<br/>
 <br/>
 Lingid sa kaalaman ng mga mamamayan, matutuklasan ng Empire na may umiiral pang mahika mula sa mga genjuu (illusion beast) na magagamit sa pagpapalawak pa ng Empire dahil sa taglay nitong kapangyarihan.<br/>
 <br/>
@@ -163,12 +163,17 @@ team member, e.g. Settsa-
 反り (REFLECT CUT)：2.1cm<br/>
 重量 (WEIGHT QUANTITY)：1.5kg<br/>
 
-#### Recommended Reading: 
+#### Recommended Readings: 
 1) Baxter, G. and Smith, L. (1995). "Mastering magic cards: an introduction to the art of masterful deck construction". USA: Wordware Publishing Inc.<br/>
 --> Foreword from "Magic: The Gathering" creator Richard Garfield: pastime with social involvement<br/>
 --> Richard Garfield, professor of combinatorial mathematics at Whitman College, Walla Walla, Washington<br/>
 --> History: Magic Cards released in August 1993; patterned after "Cosmic Encounter" from Eon Products and Mayfair Games
 
+2) Lucas, G. (1976). "Star wars". USA: Ballantine Books.<br/>
+--> Prologue: "But as often happens when wealth and power pass beyond the admirable and attain the awesome, then appear those evil ones who have greed to match."<br/>
+--> Empire rots from within, albeit may not be visible outside.<br/>
+--> The cause of the fall of an empire is due to problems at the core.<br/>
+<br/>
 TO-DO: -update: this
 
 ## 2) Hardware
