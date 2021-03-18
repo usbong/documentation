@@ -118,7 +118,7 @@ add active time battle, i.e. undecided team member of action is skipped in turn 
 <br/>
 <b>Rokku/Locke (Treasure Hunter):</b> Hindi ko nais isama sa pangkat, bagama't kailangang isama gawa ng daloy ng istorya; Malakas<br/>
 <br/>
-<b>Edgar (Machinery):</b> Pinakanais kong isama sa pangkat; Hari ng bansang Figaro. May Castillo na lumulubog at maaaring maglakbay sa ilalim ng buhangin; Gumagawa ng mga non-magic attack gamit ang makina, i.e. machine.<br/>
+<b>Edgar (Machinery):</b> Pinakanais kong isama sa pangkat; Hari ng bansang Figaro. May Castillo na lumulubog at maaaring maglakbay sa ilalim ng buhangin; Gumagawa ng mga non-magic attack gamit ang makina, i.e. machine. Maaalala ang wika ng Chief Ingeniero ng Castillo sa pananalita ng mga taga-Osaka sa bansang Hapon.<br/>
 <br/>
 <b>Masshu (Monk):</b> Mas pipiliin kong isama sa pangkat si Edgar kaysa kay Masshu. Kambal na kapatid siya ni Edgar. Pinili niyang maging malaya, sa halip na maging Hari ng Castillo. May kakayanang maghilom gamit ang chakra at gumawa ng mga mala-mahikang atake bukod pa sa mga non-magic attack. Mula ang mga kakayanan, i.e. waza, sa kanyang pagsasanay sa bundok at sa pagiging kasama sa daloy ng istorya. Gayunpaman, kailangang alalahanin ang wastong input at pagkasusunod/sequence nito upang matagumpay na magawa ang waza. Hindi ito tulad ng kay Edgar na pipiliin na lamang mula sa lista ang nais na gawin bilang input.<br/>
 <br/>
