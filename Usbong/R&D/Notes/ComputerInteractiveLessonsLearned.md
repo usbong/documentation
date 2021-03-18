@@ -124,10 +124,9 @@ add active time battle, i.e. undecided team member of action is skipped in turn 
 <br/>
 <b>Seres (Rune Knight):</b> Mas pipiliin kong isama sa pangkat kaysa kay Tina. May kakayahang humigop ng magic/mahika attack at gawing panghilom ng sarili. Isa siya sa mga ginawang eksperimento ni Kefka gamit ang mga genjuu (illusion beast). Nakaligtas mula sa mga nanamantala, at nagkaroon ng kakayahang mahika. Mapipili ring gumanap sa teatro gawa ng kamukha ng isang tanyag na aktres ayon sa daloy ng istorya. Malakas.<br/>
 <br/>
-<b>Kaen (Samurai):</b> Mas pipiliin ko kaysa kay Masshu, bagama't hindi siya kasing lakas ni Edgar o Locke. Naisasama kay Masshu dahil sa daloy ng istorya. Mula siya sa bansang Doma na gawa ng hindi mapuksa ng Empire sa tindi ng depensa ng kanilang Castillo, darating si Kefka na maglalagay ng lason, i.e. poison (magic attack), sa tubig na dumadaloy papasok ng bansa. Mapupuksa nito ang mamamayan ng Doma, kabilang ang asawa at anak ni Kaen. Mananatili ang Castillo ng Doma at si Kaen, na magiging kasapi ng inyong pangkat upang gapiin si Kefka.<br/>
+<b>Kaen (Samurai):</b> Mas pipiliin ko kaysa kay Masshu, bagama't hindi siya kasing lakas ni Edgar o Locke. Naisasama kay Masshu dahil sa daloy ng istorya. Mula siya sa bansang Doma na gawa ng hindi mapuksa ng Empire sa tindi ng depensa ng kanilang Castillo, darating si Kefka na maglalagay ng lason, i.e. poison (magic attack), sa tubig na dumadaloy papasok ng bansa. Mapupuksa nito ang mamamayan ng Doma, kabilang ang asawa at anak ni Kaen. Mananatili ang Castillo ng Doma at si Kaen, na magiging kasapi ng inyong pangkat upang gapiin si Kefka. Maaalala ang hugis at gawa ng Castillo ng Doma sa Castillo ng Figaro, bagama't wala na itong mamamayan bukod kay Kaen.<br/>
 <br/>
 <b>Gasutora (Emperor):</b> Hihikayatin ang inyong pangkat upang magapi si Kefka. Maaalala na tutol ang inyong pangkat sa ginagawa ng Emperor, kasama ni Kefka, na ginagamit ang mga genjuu upang mapalawak ang kanyang empire dahil sa taglay na kapangyarihan/lakas ng mga genjuu. Imumungkahi naman sa inyo ng Emperor na kausapin ninyo ang mga tao sa Castillo. Matutuklasan ninyo na maaari ninyong mahikayat ang mga miyembro ng kanyang Empire na tutol na gawin kayong kasapi sa pamamagitan ng paggapi sa kanila sa labanan. Nakasalalay ang Empire sa lakas.<br/>
-
 
 TO-DO: -update: this
 
