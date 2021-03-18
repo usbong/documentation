@@ -139,6 +139,7 @@ Subalit magdudulot ang layuning ito sa pagkawasak ng mga bansa na ayon sa kasund
 <br/>
 Sa kabila nito, may mga tao at nilalang na tutol sa Empire ang bubuo ng pangkat at magkasasama upang pagtulungang gapiin ang Empire.
 <br/>
+<br/>
 TO-DO: update: this
 
 #### Additional Notes:
@@ -164,7 +165,7 @@ team member, e.g. Settsa-
 
 #### Recommended Reading: 
 1) Baxter, G. and Smith, L. (1995). "Mastering magic cards: an introduction to the art of masterful deck construction". USA: Wordware Publishing Inc.<br/>
---> Forword from "Magic: The Gathering" creator Richard Garfield: pastime with social involvement<br/>
+--> Foreword from "Magic: The Gathering" creator Richard Garfield: pastime with social involvement<br/>
 --> Richard Garfield, professor of combinatorial mathematics at Whitman College, Walla Walla, Washington<br/>
 --> History: Magic Cards released in August 1993; patterned after "Cosmic Encounter" from Eon Products and Mayfair Games
 
