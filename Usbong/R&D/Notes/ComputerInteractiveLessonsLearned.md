@@ -37,10 +37,10 @@ TO-DO: -update: this<br/>
 ### 1.1.4) Street Fighter II: Hyper Fighting
 --> attacks do not 100% hit; (due to speed of created world)<br/>
 --> you winning status can quickly end with you lose<br/>
---> verified: this result with self as Blanka against computer Blanka by attempting to use variation in technique, e.g. down + strong punch, instead of simply 1) cannon ball and 2) jump + strong kick with down +strong kick<br/>
+--> verified: this result with self as Blanka against computer Blanka by attempting to use variation in technique, e.g. down + strong punch, instead of simply 1) cannon ball and 2) jump + strong kick with down + strong kick<br/>
 --> There exist layers of background illustrations, which move based on Fighter's x and y positions<br/>
---> Select background illustrations do not include additional animation, e.g. Ryuu's stage in Japan<br/>
---> Additional Note: Street Fighter Zero series' background illustration's color combination with Fighting Characters progress to be vibrant by Street Fighter Zero 3.<br/>  
+--> Select background illustrations do not include additional animation, e.g. Ryuu's stage in Japan.<br/>
+--> Additional Note: Street Fighter Zero series' background illustrations' color combination with Fighting Characters progress to be vibrant by Street Fighter Zero 3.<br/>
 --> This is despite additional animating portions with background may not have increased.<br/>
 
 ## 1.2) SEGA: SERVICE GAMES
