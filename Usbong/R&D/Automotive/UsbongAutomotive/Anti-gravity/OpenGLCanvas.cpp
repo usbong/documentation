@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210318
+ * @date updated: 20210320
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -221,9 +221,11 @@ bool OpenGLCanvas::init()
 	myWindowWidth=8192;
     myWindowHeight=8192;
 */
+/*	//edited by Mike, 20210320
 	myWindowWidth=6144;
     myWindowHeight=6144;
-
+*/
+	
 //added by Mike, 20210207
 //TO-DO: -add: load level map as input.txt file
 //TO-DO: -update: legs during diagonal firing of beams
@@ -330,9 +332,13 @@ bool OpenGLCanvas::init()
  	iColumnCountMax=30;
 	iHeightCountMax=30; //added by Mike, 20210208
 	
+/*	//edited by Mike, 20210320
 	fGridSquareWidth = myWindowWidth/iColumnCountMax/100.0;
 	fGridSquareHeight = myWindowHeight/iRowCountMax/100.0;
-
+*/
+	fGridSquareWidth = 4.0f;
+	fGridSquareHeight = 4.0f;
+	
     keyPressCounter=0;
     
     //added by Mike, 20200930
@@ -341,7 +347,12 @@ bool OpenGLCanvas::init()
     //added by Mike, 20210211
     myLevel = new Level();    
     myLevel->setupLevel(LEVEL_TEXTURE); //FONT_TEXTURE);
-		
+
+    //added by Mike, 20210320	
+	myWindowWidth=myLevel->getMaxXAxisViewport()*fGridSquareWidth;
+    myWindowHeight=myLevel->getMaxZAxisViewport()*fGridSquareHeight;
+
+
 	//added by Mike, 20201001
 	//edited by Mike, 20201115
 	//myRobotShip = new RobotShip;
@@ -1115,6 +1126,11 @@ void OpenGLCanvas::render()
 		
 //    glTranslatef(-1.0f, -1.0f, 0.0f);
 
+	//added by Mike, 20210320
+ 	//set to TOP-LEFT
+//	glTranslatef(-myWindowWidth/100/2, 0.0f, -myWindowHeight/100/2);
+
+		
 	//edited by Mike, 2021022
 //    glTranslatef(-1.0f, -1.0f, 0.0f);
 //    glTranslatef(-3.0f, -1.0f, 0.0f);
@@ -1161,8 +1177,17 @@ void OpenGLCanvas::render()
 	else if (myCanvasPosZ >= 0.0f) myCanvasPosZ = 0.0f-20.0f+myRobotShip->getWidth()/8;//-myHeight/8; //if top side
 */
 	//set canvas camera position relative to MyRobotShip position 
+/* //edited by Mike, 20210320		
 	myCanvasPosX = -myRobotShip->getX()+1.0f; //-3.2 : 4.2; CanvasPosX : robotShipX
 	myCanvasPosZ = -myRobotShip->getZ()+1.0f; //-3.2 : 4.2; CanvasPosZ : robotShipZ
+*/
+ 	//set to TOP-LEFT
+ 	//inverted controller movement
+/*	myCanvasPosX = myRobotShip->getX()-myWindowWidth/100/2; //-3.2 : 4.2; CanvasPosX : robotShipX
+	myCanvasPosZ = myRobotShip->getZ()-myWindowHeight/100/2; //-3.2 : 4.2; CanvasPosZ : robotShipZ
+*/		
+	myCanvasPosX = -myRobotShip->getX(); //-3.2 : 4.2; CanvasPosX : robotShipX
+	myCanvasPosZ = -myRobotShip->getZ(); //-3.2 : 4.2; CanvasPosZ : robotShipZ
 		
 /*		
 			//note: position calibrate; robotShipX : CanvasPosX
@@ -1485,6 +1510,13 @@ void OpenGLCanvas::drawGridWithZAxis() {
 		}
 	}
 */
+	//added by Mike, 20210320
+ 	//set to TOP-LEFT
+//	glTranslatef(-myWindowWidth/100/2, 0.0f, -myWindowHeight/100/2);
+//	glTranslatef(-myWindowWidth/2, 0.0f, -myWindowHeight/2);
+	//TO-DO: -reverify: cause for use of 8	
+	glTranslatef(-myWindowWidth/8, 0.0f, -myWindowHeight/8);
+		
 	//edited by Mike, 20210305
 //	myLevel->drawLevelMapInViewPort(0,0,0,fGridSquareWidth*iRowCountMax,fGridSquareWidth*iColumnCountMax,fGridSquareWidth*iHeightCountMax);
 	myLevel->drawLevelMapInViewPort(myCanvasPosX,myCanvasPosY,myCanvasPosZ,fGridSquareWidth*iRowCountMax,fGridSquareWidth*iColumnCountMax,fGridSquareWidth*iHeightCountMax);
@@ -1574,6 +1606,13 @@ void OpenGLCanvas::drawGridWithZAxis() {
     glDisable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, 0);
 
+	//added by Mike, 20210320	
+ 	//reset from TOP-LEFT
+//	glTranslatef(myWindowWidth/100/2, 0.0f, myWindowHeight/100/2);
+//	glTranslatef(myWindowWidth/2, 0.0f, myWindowHeight/2);
+	//TO-DO: -reverify: cause for use of 8
+	glTranslatef(myWindowWidth/8, 0.0f, myWindowHeight/8);
+	
    //removed by Mike, 20201203 to remove flicker
    //glFlush();  // Render now
 }

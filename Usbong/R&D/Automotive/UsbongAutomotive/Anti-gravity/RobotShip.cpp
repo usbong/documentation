@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210318
+ * @date updated: 20210320
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -3396,12 +3396,23 @@ void RobotShip::update(float dt)
 				//added by Mike, 20210318
 				//Note: Use these with update to OpenGLCanvas
            		//no wrap of world 
+/* edited by Mike, 20210320			
            		if (myXPos <= 0.0f) myXPos = 0+myWidth/8; //if left side
            		else if (myXPos >= myWindowWidth) myXPos = myWindowWidth-myWidth/8; //if right side
 
 				if (myZPos >= myWindowHeight) myZPos = myWindowHeight-myHeight/8; //if bottom side
            		else if (myZPos <= 0.0f) myZPos =0+myHeight/8; //if top side
+*/
+				//TO-DO: -reverify: cause for use of 11, not 8
+//           		if (myXPos <= 0.0f-myWindowWidth/11) myXPos = 0-myWindowWidth/11+myWidth/8; //if left side
+           		if (myXPos <= 0.0f-myWindowWidth/7) myXPos = 0-myWindowWidth/7+myWidth/8; //if left side
 
+//           		else if (myXPos >= myWindowWidth) myXPos = myWindowWidth-myWidth/8; //if right side
+
+//				if (myZPos >= myWindowHeight) myZPos = myWindowHeight-myHeight/8; //if bottom side
+//           		else if (myZPos <= 0.0f) myZPos =0+myHeight/8; //if top side
+				//TO-DO: -reverify: cause for use of 7
+				if (myZPos <= 0.0f-myWindowHeight/7) myZPos = 0-myWindowWidth/7+myHeight/8; //if top side
 			
 			
            		//edited by Mike, 20201001
