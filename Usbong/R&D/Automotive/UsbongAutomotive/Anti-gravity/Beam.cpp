@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201013
- * @date updated: 20210120
+ * @date updated: 20210321
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -404,12 +404,24 @@ void Beam::update(float dt)
 	           		if (myZPos >= myWindowHeight/100) changeState(HIDDEN_STATE); //if bottom side
 	           		else if (myZPos <= 0.0f) changeState(HIDDEN_STATE); //if top side
 */
+/*	//edited by Mike, 20210321
 				//added by Mike, 20210219
 				if (myXPos <= 0.0f) changeState(HIDDEN_STATE); //if left side
 				else if (myXPos >= myWindowWidth) changeState(HIDDEN_STATE); //if right side
 				if (myZPos >= myWindowHeight) changeState(HIDDEN_STATE); //if bottom side
 				else if (myZPos <= 0.0f) changeState(HIDDEN_STATE); //if top side
-			
+*/			
+/*
+				if (myXPos <= 0.0f-MAX_X_AXIS_VIEWPORT/2) changeState(HIDDEN_STATE); //if left side
+				else if (myXPos >= myWindowWidth) changeState(HIDDEN_STATE); //if right side
+				if (myZPos >= myWindowHeight) changeState(HIDDEN_STATE); //if bottom side
+				else if (myZPos <= 0.0f-MAX_Z_AXIS_VIEWPORT/2) changeState(HIDDEN_STATE); //if top side
+*/
+				if (myXPos <= 0.0f-myWindowWidth/3) changeState(HIDDEN_STATE); //if left side
+				else if (myXPos >= myWindowWidth/3) changeState(HIDDEN_STATE); //if right side
+				if (myZPos >= myWindowHeight/3) changeState(HIDDEN_STATE); //if bottom side
+				else if (myZPos <= 0.0f-myWindowHeight/3) changeState(HIDDEN_STATE); //if top side
+
                 break;
             default: //STANDING STATE
               break;//do nothing    

@@ -397,9 +397,9 @@ bool OpenGLCanvas::init()
 	for (int i=0; i<MAX_BEAMS; i++) {
 		//edited by Mike, 2020116
 //      myBeam[i] = new Beam;
-		//edited by Mike, 20210219
-//		myBeam[i] = new Beam(0.0f,0.0f,0.0f,myWindowWidth,myWindowHeight);
-		myBeam[i] = new Beam(0.0f,0.0f,0.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
+		//edited by Mike, 20210219; edited by Mike, 20210321
+		myBeam[i] = new Beam(0.0f,0.0f,0.0f,myWindowWidth,myWindowHeight);
+//		myBeam[i] = new Beam(0.0f,0.0f,0.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
 	}
 
 	//added by Mike, 20201016
