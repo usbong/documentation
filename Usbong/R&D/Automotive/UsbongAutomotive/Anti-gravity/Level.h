@@ -47,7 +47,9 @@
 //#define MAX_INPUT_TEXT_PER_LINE 60
 //edited by Mike, 20210310
 //#define MAX_INPUT_TEXT_PER_LINE 100
-#define MAX_INPUT_TEXT_PER_LINE 160
+//edited by Mike, 20210321
+//#define MAX_INPUT_TEXT_PER_LINE 160
+#define MAX_INPUT_TEXT_PER_LINE 240
 
 
 //added by Mike, 20210211; edited by Mike, 20210305
@@ -57,10 +59,18 @@
 #define MAX_Z_AXIS_VIEWPORT 60
 */
 //myWindowWidth = 240
+//fGridSquareWidth = 4
+//240/4=60 columns and rows per viewport
+//reverify: to be excess due to size of fGridSquareWidth
 #define MAX_X_AXIS_VIEWPORT 240
 #define MAX_Y_AXIS_VIEWPORT 240
 #define MAX_Z_AXIS_VIEWPORT 240
 
+//TO-DO: -add: increase map size to be more than viewport
+//added by Mike, 20210321
+#define MAX_X_AXIS_MAP 240
+#define MAX_Y_AXIS_MAP 240
+#define MAX_Z_AXIS_MAP 240
 
 /*
 //TO-DO: add: move viewport x, y, and z position
@@ -88,7 +98,10 @@ private:
 //	char* cCurrentLevelMapContainer[100][100]; //TO-DO: -add: auto-update max size 
 //edited by Mike, 20210310
 //	std::string sCurrentLevelMapContainer[100][100]; //TO-DO: -add: auto-update max size 	
-	std::string sCurrentLevelMapContainer[160][160]; //TO-DO: -add: auto-update max size 
+	//edited by Mike, 20210321
+//	std::string sCurrentLevelMapContainer[160][160]; //TO-DO: -add: auto-update max size 
+	//row, column
+	std::string sCurrentLevelMapContainer[MAX_Z_AXIS_MAP][MAX_X_AXIS_MAP]; //TO-DO: -add: auto-update max size 
 
 	//added by Mike, 20210305
 	//note: we use this to verify if the position moved forward, backward, etc

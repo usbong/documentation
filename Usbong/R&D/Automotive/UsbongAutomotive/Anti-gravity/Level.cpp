@@ -289,13 +289,18 @@ void Level::draw_level(GLfloat x, GLfloat y, GLfloat z, char *string)
 //TO-DO: -add: read input .txt file
 //TO-DO: -add: water tiles; pilot in water, no firing; RobotShip in water, firing OK; 
 //note: palaka
+//added by Mike, 20210321
+//note: fXSize... not yet used
 void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat fXSize, GLfloat fYSize, GLfloat fZSize) {
+/* //removed by Mike, 20210321
 	int myWindowWidth=6144;
     int myWindowHeight=6144;
 	
 	int iRowCountMax=30;
  	int iColumnCountMax=30;
  	int iHeightCountMax=30; //added by Mike, 20210208
+*/
+	
 /* //edited by Mike, 20210310
 	int iRowCountMax=MAX_Z_AXIS_VIEWPORT; //60
  	int iColumnCountMax=MAX_X_AXIS_VIEWPORT; //60
@@ -310,7 +315,6 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 /*	//edited by Mike, 20210311
 	float fGridSquareWidth = myWindowWidth/iColumnCountMax/100.0;
 	float fGridSquareHeight = myWindowHeight/iRowCountMax/100.0;
-
 /*
 	float fGridSquareWidth = 0.3f;
 	float fGridSquareHeight = 0.3f;
@@ -531,7 +535,6 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
    //edited by Mike, 20210319
    int iColumnCount=iCurrentLevelMapContainerOffsetX;
    int iCurrentLevelMapContainerOffsetMaxViewPortX=iColumnCount+MAX_X_AXIS_VIEWPORT;
-
 		
    //edited by Mike, 20210318		
    if ((iColumnCount<0) or (iCurrentLevelMapContainerOffsetX<0)) {
@@ -806,13 +809,21 @@ void Level::read(char *inputFilename) {
 		}
 	}
 */
+/*	//edited by Mike, 20210321
 	//add +60 to be 160; where 60 : viewport max
 	for (iRowCount=0; iRowCount<160; iRowCount++) {	
 		for (iColumnCount=0; iColumnCount<160; iColumnCount++) {		
 	 		sCurrentLevelMapContainer[iRowCount][iColumnCount]=(char*)"-1";//'G';
 		}
 	}
-
+*/
+	
+	for (iRowCount=0; iRowCount<MAX_Z_AXIS_MAP; iRowCount++) {	
+		for (iColumnCount=0; iColumnCount<MAX_X_AXIS_MAP; iColumnCount++) {		
+	 		sCurrentLevelMapContainer[iRowCount][iColumnCount]=(char*)"-1";//'G';
+		}
+	}
+	
 	iRowCount=0;
 	iColumnCount=0;
 				
@@ -901,7 +912,9 @@ void Level::read(char *inputFilename) {
 
 			//edited by Mike, 20210311
 //			if (iRowCount<100) {
-			if (iRowCount<160) {				
+			//edited by Mike, 20210321
+//			if (iRowCount<160) {	
+			if (iRowCount<MAX_X_AXIS_MAP) {				
 				iRowCount=iRowCount+1;
 			}
 			else {

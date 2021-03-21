@@ -363,16 +363,24 @@ bool OpenGLCanvas::init()
     myLevel = new Level();    
     myLevel->setupLevel(LEVEL_TEXTURE); //FONT_TEXTURE);
 
-    //added by Mike, 20210320	
+    //added by Mike, 20210320; edited by Mike, 20210321
+/*	
 	myWindowWidth=myLevel->getMaxXAxisViewport()*fGridSquareWidth;
     myWindowHeight=myLevel->getMaxZAxisViewport()*fGridSquareHeight;
-
+*/
+	//getMaxXAxisViewport()... already the actual size
+	myWindowWidth=myLevel->getMaxXAxisViewport();
+    myWindowHeight=myLevel->getMaxZAxisViewport();
+	
 
 	//added by Mike, 20201001
 	//edited by Mike, 20201115
 	//myRobotShip = new RobotShip;
 	//edited by Mike, 20210211
 	//myRobotShip = new RobotShip(0.0f,0.0f,0.0f,myWindowWidth,myWindowHeight);
+	
+	//added by Mike, 20210321
+	//TO-DO: -update: these due to getMaxXAxisViewport()... already the actual size
 	
 //	printf("%d",myLevel->getMaxXAxisViewport());
 	myRobotShip = new RobotShip(0.0f,0.0f,0.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
