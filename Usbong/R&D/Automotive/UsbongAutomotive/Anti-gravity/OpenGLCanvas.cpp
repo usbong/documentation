@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210321
+ * @date updated: 20210322
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -1839,7 +1839,11 @@ void OpenGLCanvas::update()
         for(int i=0; i<MAX_BEAMS; i++) {
           if ( (myRobotShip->getState()!=ROBOTSHIP_INITIALIZING_STATE) &&
                (myBeam[i]->isActive()) ){
-            myBeam[i]->update(1);
+			//edited by Mike, 20210322
+//            myBeam[i]->update(1);
+			//TO-DO: reverify: cause of myCanvasPosX, etc does not move
+//            myBeam[i]->update(myCanvasPosX,myCanvasPosY,myCanvasPosZ);
+            myBeam[i]->update(myRobotShip->getX(),myRobotShip->getY(),myRobotShip->getZ());
 
             //check collisions
             //myBeam[i]->collideWith(myEnemy);
@@ -1847,7 +1851,7 @@ void OpenGLCanvas::update()
 			//added by Mike, 20201016
             for(int a=0; a<MAX_ASTEROID; a++) {
               myBeam[i]->collideWith(myAsteroid[a]);
-			}   			  
+			}   			  			
 		  }
 		}
 

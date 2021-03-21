@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201013
- * @date updated: 20210321
+ * @date updated: 20210322
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -325,8 +325,9 @@ void Beam::drawBeam()
 //	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 }
 
-
-void Beam::update(float dt)
+//edited by Mike, 20210322
+//void Beam::update(float dt)
+void Beam::update(float fViewportX, float fViewportY, float fViewportZ)
 {
     switch (currentState)
     {
@@ -417,10 +418,17 @@ void Beam::update(float dt)
 				if (myZPos >= myWindowHeight) changeState(HIDDEN_STATE); //if bottom side
 				else if (myZPos <= 0.0f-MAX_Z_AXIS_VIEWPORT/2) changeState(HIDDEN_STATE); //if top side
 */
+/* //edited by Mike, 20210322
 				if (myXPos <= 0.0f-myWindowWidth/3) changeState(HIDDEN_STATE); //if left side
 				else if (myXPos >= myWindowWidth/3) changeState(HIDDEN_STATE); //if right side
 				if (myZPos >= myWindowHeight/3) changeState(HIDDEN_STATE); //if bottom side
 				else if (myZPos <= 0.0f-myWindowHeight/3) changeState(HIDDEN_STATE); //if top side
+*/
+				//TO-DO: -reverify: beam firing stops, likely due myWindowWidth, etc
+				if (myXPos <= fViewportX-myWindowWidth/3) changeState(HIDDEN_STATE); //if left side
+				else if (myXPos >= fViewportX+myWindowWidth/3) changeState(HIDDEN_STATE); //if right side
+				if (myZPos >= fViewportZ+myWindowHeight/3) changeState(HIDDEN_STATE); //if bottom side
+				else if (myZPos <= fViewportZ-myWindowHeight/3) changeState(HIDDEN_STATE); //if top side
 
                 break;
             default: //STANDING STATE

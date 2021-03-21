@@ -136,7 +136,9 @@ public:
 	void drawBeam();
     
 	// updates the beam data
-	void update(float dt);
+	//edited by Mike, 20210322
+//	void update(float dt);
+	void update(float fViewportX, float fViewportY, float fViewportZ);
 	
 	// changes the beam's state
 	void changeState(int s);
