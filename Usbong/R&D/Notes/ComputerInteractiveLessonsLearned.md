@@ -54,8 +54,15 @@ TO-DO: -update: this<br/>
 
 ## 1.3) KONAMI
 ### 1.3.1) Metal Gear Solid
---> Sound<br/>
---> Virtual Reality (VR) Training; used to learn how to make mission<br/>
+#### 1.3.1.1) Sound<br/>
+--> weapons sound echoes<br/>
+--> preference: English voice-acting, e.g. David Hayter;<br/> 
+--> Japanese voice-acting, e.g. 大塚 明夫, (ootsuka akio) reminds me of Japanese dubbing of foreign, e.g. American, films and 川端 康成 (Kawabata, Yasunari)'s 雪国 (yukiguni) 1935's literature<br/>
+--> However, no problem with Japanese voice-acting of Solid Snake as ネモ船長 (nemo senchou; Captain Nemo) in ふしぎの海のナディア (fushigi no umi no nadia)<br/>
+--> re-verify: cause to be script?<br/>
+#### 1.3.1.2) Virtual Reality (VR) Training
+--> used with LEGO blocks to learn how to make mission<br/>
+--> illustrations not as emphasized as rest of parts?<br/>
 
 ## 1.4) SONY Computer Entertainment Europe and Guerrilla
 ### 1.4.1) KillZone 2
