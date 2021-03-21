@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210320
+ * @date updated: 20210321
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -113,6 +113,9 @@
 
 //TO-DO: -reverify: KEY_D!=OK; KEY_RIGHT=OK
 //TO-DO: -reverify: KEY_W!=OK; KEY_UP=OK
+
+//added by Mike, 20210321
+#include <iostream> //we use with std::cout
 
 //added by Mike, 20201001
 enum Keys
@@ -328,10 +331,22 @@ bool OpenGLCanvas::init()
 /* 	iRowCountMax=60;
  	iColumnCountMax=60;
 */
- 	iRowCountMax=30;
+	
+/*	//edited by Mike, 20210321
+	iRowCountMax=30;
  	iColumnCountMax=30;
 	iHeightCountMax=30; //added by Mike, 20210208
-	
+*/
+	//TO-DO: -reverify: auto-draw based on double array container 
+	//for excess auto-drawing of objects even those already outside viewport,
+	//e.g. over 3 rows or 3 columns excess
+	//60*4=240; 240=maxViewPort
+	//we use excess auto-draw outside camera viewport to eliminate object noticeably appearing
+	//to be auto-drawn on screen while we move the camera viewport
+	iRowCountMax=60;
+ 	iColumnCountMax=60;
+	iHeightCountMax=60; //added by Mike, 20210208
+
 /*	//edited by Mike, 20210320
 	fGridSquareWidth = myWindowWidth/iColumnCountMax/100.0;
 	fGridSquareHeight = myWindowHeight/iRowCountMax/100.0;
@@ -1515,8 +1530,20 @@ void OpenGLCanvas::drawGridWithZAxis() {
 //	glTranslatef(-myWindowWidth/100/2, 0.0f, -myWindowHeight/100/2);
 //	glTranslatef(-myWindowWidth/2, 0.0f, -myWindowHeight/2);
 	//TO-DO: -reverify: cause for use of 8	
-	glTranslatef(-myWindowWidth/8, 0.0f, -myWindowHeight/8);
-		
+	//removed by Mike, 20210321
+//	glTranslatef(-myWindowWidth/8, 0.0f, -myWindowHeight/8);
+	//updated: viewport to be 240, from 60
+//	glTranslatef(-myWindowWidth/6, 0.0f, -myWindowHeight/6);
+	glTranslatef(-30, 0.0f, -30);
+
+	//myWindowWidth = 240
+	//myWindowWidth/8 = 240/8 = 30
+	//left-most : -74
+//	glTranslatef(-20, 0.0f, -20);
+//	glTranslatef(10, 0.0f, 10);
+
+//	std::cout << "myWindowWidth: " << myWindowWidth << "\n";
+
 	//edited by Mike, 20210305
 //	myLevel->drawLevelMapInViewPort(0,0,0,fGridSquareWidth*iRowCountMax,fGridSquareWidth*iColumnCountMax,fGridSquareWidth*iHeightCountMax);
 	myLevel->drawLevelMapInViewPort(myCanvasPosX,myCanvasPosY,myCanvasPosZ,fGridSquareWidth*iRowCountMax,fGridSquareWidth*iColumnCountMax,fGridSquareWidth*iHeightCountMax);
@@ -1611,7 +1638,18 @@ void OpenGLCanvas::drawGridWithZAxis() {
 //	glTranslatef(myWindowWidth/100/2, 0.0f, myWindowHeight/100/2);
 //	glTranslatef(myWindowWidth/2, 0.0f, myWindowHeight/2);
 	//TO-DO: -reverify: cause for use of 8
-	glTranslatef(myWindowWidth/8, 0.0f, myWindowHeight/8);
+	//edited by Mike, 20210321
+	//removed by Mike, 20210321	
+//	glTranslatef(myWindowWidth/8, 0.0f, myWindowHeight/8);
+	//updated: viewport to be 240, from 60
+	//set: myWindowWidth = viewport
+//	glTranslatef(myWindowWidth/6, 0.0f, myWindowHeight/6);
+	glTranslatef(30, 0.0f, 30);
+	
+	std::cout << "myWindowWidth: " << myWindowWidth;
+
+//	glTranslatef(20, 0.0f, 20);
+//	glTranslatef(-10, 0.0f, -10);
 	
    //removed by Mike, 20201203 to remove flicker
    //glFlush();  // Render now

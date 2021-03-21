@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201118
- * @date updated: 20210310
+ * @date updated: 20210321
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -51,9 +51,17 @@
 
 
 //added by Mike, 20210211; edited by Mike, 20210305
+/* //edited by Mike, 20210321
 #define MAX_X_AXIS_VIEWPORT 60
 #define MAX_Y_AXIS_VIEWPORT 60
 #define MAX_Z_AXIS_VIEWPORT 60
+*/
+//myWindowWidth = 240
+#define MAX_X_AXIS_VIEWPORT 240
+#define MAX_Y_AXIS_VIEWPORT 240
+#define MAX_Z_AXIS_VIEWPORT 240
+
+
 /*
 //TO-DO: add: move viewport x, y, and z position
 #define MAX_X_AXIS_VIEWPORT 100
