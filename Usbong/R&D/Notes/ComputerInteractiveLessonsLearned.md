@@ -36,7 +36,7 @@ TO-DO: -update: this<br/>
 --> During battle, what Ken says encourages you; not "thrash talk"<br/>
 --> Additional Note: After battles, you as Ken tells opponent encouragement, i.e. optimistic view<br/>
 
-### 1.1.4) Street Fighter II: Hyper Fighting
+### 1.1.4) Street Fighter II': Hyper Fighting
 --> attacks do not hit 100%; (due to speed of created world)<br/>
 --> you winning status, e.g. 90% remaining health strength, can quickly end with you lose<br/>
 --> verified: this result with self as Blanka against computer Blanka by attempting to use variation in technique, e.g. down + strong punch, instead of simply 1) cannon ball and 2) jump + strong kick with down + strong kick<br/>
