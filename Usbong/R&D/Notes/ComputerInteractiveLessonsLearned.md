@@ -23,6 +23,8 @@ TO-DO: -update: this<br/>
 --> Blanka techniques easier to execute than those of Ryuu, etc<br/>
 --> Using Playstation Portable (PSP), hands become difficult to move after finishing all matches in 20minutes<br/>
 --> Eating rice bowl with chopsticks afterwards reminded me of manga artist who draws by hand<br/>
+--> Street Fighter Zero series' background illustrations' color combination with Fighting Characters progress to be vibrant by Street Fighter Zero 3.<br/>
+--> This is despite additional animating portions with background may not have increased.<br/>
 
 ### 1.1.3) Street Fighter IV
 --> Ryuu and Ken Rival Battle<br/>
@@ -35,14 +37,12 @@ TO-DO: -update: this<br/>
 --> Additional Note: After battles, you as Ken tells opponent encouragement, i.e. optimistic view<br/>
 
 ### 1.1.4) Street Fighter II: Hyper Fighting
---> attacks do not 100% hit; (due to speed of created world)<br/>
+--> attacks do not hit 100%; (due to speed of created world)<br/>
 --> you winning status, e.g. 90% remaining health strength, can quickly end with you lose<br/>
 --> verified: this result with self as Blanka against computer Blanka by attempting to use variation in technique, e.g. down + strong punch, instead of simply 1) cannon ball and 2) jump + strong kick with down + strong kick<br/>
 --> There exist layers of background illustrations, which move based on Fighter's x and y positions<br/>
 --> Select background illustrations do not include additional noticeable animations,<br/> 
 --> e.g. Ryuu's stage in Japan : Ken's stage in USA.<br/>
---> Additional Note: Street Fighter Zero series' background illustrations' color combination with Fighting Characters progress to be vibrant by Street Fighter Zero 3.<br/>
---> This is despite additional animating portions with background may not have increased.<br/>
 
 ## 1.2) SEGA: SERVICE GAMES
 ### 1.2.1) Sonic 1
