@@ -43,6 +43,11 @@ TO-DO: -update: this<br/>
 --> There exist layers of background illustrations, which move based on Fighter's x and y positions<br/>
 --> Select background illustrations do not include additional noticeable animations,<br/> 
 --> e.g. Ryuu's stage in Japan : Ken's stage in USA.<br/>
+--> Use Playstation Portable (PSP) version to quickly start after choosing unlock during locked state, instead of boot Operating System (OS) and reload Universal Media Device (UMD) after shutdown state<br/>
+--> verified: result to be equal with Nintendo Dual Screen (DS) Lite<br/>
+--> <b>Recommended Actions:</b><br/> 
+--> verify: this result during Boss battle, e.g. boxer M.BISON; Computer as M.BISON immediately attacks<br/>
+--> verify: speed-up to be hyper after opening and closing PSP lid<br/>
 
 ## 1.2) SEGA: SERVICE GAMES
 ### 1.2.1) Sonic 1
