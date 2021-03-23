@@ -14,7 +14,7 @@
  *
  * @author: Michael Syson
  * @date created: 20200926
- * @date updated: 20210128
+ * @date updated: 20210323
  *
  * References:
  * 1) Dev-C++ 5.11 auto-generated OpenGL example project
@@ -281,8 +281,8 @@ int WINAPI WinMain (HINSTANCE hInstance,
     /* enable OpenGL for the window */
     EnableOpenGL (hWnd, &hDC, &hRC);
 
-    //added by Mike, 20201001
-    myOpenGLCanvas = new OpenGLCanvas;
+    //added by Mike, 20201001; edited by Mike, 20210323
+    myOpenGLCanvas = new OpenGLCanvas();
     myOpenGLCanvas->init();
 
 	//added by Mike, 20201001

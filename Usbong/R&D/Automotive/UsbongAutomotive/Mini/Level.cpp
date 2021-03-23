@@ -183,53 +183,6 @@ void Level::draw_char(GLfloat x, GLfloat y, GLfloat z, char c)
 //	glColor3f(1.0f, 1.0f, 1.0f); //set to default, i.e. white
     //glColor3f(0.0f, 0.0f, 0.0f); //set to default, i.e. black
 
-/*	//edited by Mike, 20201118
-	glBegin(GL_QUADS);              // Each set of 4 vertices form a quad
-        glTexCoord2f(tx, ty);
-        glVertex3f(x, y, 0.0f);
-        glTexCoord2f(tx + 0.078125f, ty);
-      	glVertex3f(x+0.1f, y, 0.0f);      
-        glTexCoord2f(tx + 0.078125f, ty + 0.125f);
-      	glVertex3f(x+0.1f, y-0.16f, 0.0f);              
-		glTexCoord2f(tx, ty + 0.125f);
-      	glVertex3f(x, y-0.16f, 0.0f);      
-   glEnd();        
-*/
-
-	//edited by Mike, 20201120
-/*
-	glBegin(GL_QUADS);              // Each set of 4 vertices form a quad
-        glTexCoord2f(tx, ty);
-        //edited by Mike, 20201118
-//        glVertex3f(x, y, 0.0f);
-        glVertex3f(x, 0.0f, y);
- 
-        glTexCoord2f(tx + 0.078125f, ty);
-        //edited by Mike, 20201118
-//      	glVertex3f(x+0.1f, y, 0.0f);      
-//      	glVertex3f(x+0.1f, 0.0f, y);      
-		//edited by Mike, 20201119
-//      	glVertex3f(x+1.0f, 0.0f, y);      
-      	glVertex3f(x+1.2f, 0.0f, y);      
-        glTexCoord2f(tx + 0.078125f, ty + 0.125f);
-        //edited by Mike, 20201118
-//      	glVertex3f(x+0.1f, y-0.16f, 0.0f);              
-//      	glVertex3f(x+0.1f, 0.0f, y-0.16f);              
-		//edited by Mike, 20201119
-//      	glVertex3f(x+1.0f, 0.0f, y-1.6f);  
-		//edited by Mike, 20201120            
-//      	glVertex3f(x+1.2f, 0.0f, y-1.6f);              
-      	glVertex3f(x+1.2f, 0.0f, y-1.2f);              
-		glTexCoord2f(tx, ty + 0.125f);
-        //edited by Mike, 20201118
-//      	glVertex3f(x, y-0.16f, 0.0f);      
-//      	glVertex3f(x, 0.0f, y-0.16f);      
-		//edited by Mike, 20201120            
-//      	glVertex3f(x, 0.0f, y-1.6f);      
-      	glVertex3f(x, 0.0f, y-1.2f);      
-   glEnd();        
-*/
-
 	//TO-DO: -update: this
 	//TO-DO: -remove: auto-drawing of not seen from camera
 	//drawCubeWithBlockTexture(fSideLength, tx, ty, tz);
@@ -237,7 +190,17 @@ void Level::draw_char(GLfloat x, GLfloat y, GLfloat z, char c)
 	//note: fSideLength used
 //	drawCubeWithBlockTexture(1.0f, tx, ty, tz, x,y,z);
 //	drawCubeWithBlockTexture(2.0f, tx, ty, tz, x,y,z);
-	drawCubeWithBlockTexture(4.0f, tx, ty, tz, x,y,z);
+	//edited by Mike, 20210323
+/*
+	if (c=='M') { //TO-DO: -reverify: c value in if condition
+		
+	}
+	else {
+		drawCubeWithBlockTexture(4.0f, tx, ty, tz, x,y,z);
+	}
+*/
+	//TO-DO: -update: set of instructions for Quad to Face Camera
+	drawCubeWithBlockTextureQuadFacingCameraOnly(4.0f, tx, ty, tz, x,y,z);
 }
 
 //edited by Mike, 20201118

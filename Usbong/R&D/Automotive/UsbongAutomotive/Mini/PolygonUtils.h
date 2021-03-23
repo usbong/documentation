@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201019
- * @date updated: 20201023
+ * @date updated: 20210323
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -61,3 +61,5 @@ void drawCube(float fSideLength);
 //added by Mike, 20201120
 void drawCubeWithBlockTexture(float fSideLength, GLfloat tx, GLfloat ty, GLfloat tz, float x, float y, float z);
 
+//added by Mike, 20210323
+void drawCubeWithBlockTextureQuadFacingCameraOnly(float fSideLength, GLfloat tx, GLfloat ty, GLfloat tz, float x, float y, float z);
