@@ -1613,6 +1613,19 @@ void OpenGLCanvas::drawGridWithZAxis() {
 	myLevel->draw_level(6.0f, 3.0f, 6.0f, tempText);    	
 */
 
+	//added by Mike, 20210323
+	//TO-DO: -reverify: cause of square cube to be rectangular
+	//TO-DO: -reverify: texture rotation
+	glColor3f(1.0f, 1.0f, 1.0f); // white
+	glBindTexture( GL_TEXTURE_2D, LEVEL_TEXTURE );
+	sprintf(tempText,"M");	
+	myLevel->draw_level(fGridSquareWidth*1.0f, 0.0f, fGridSquareWidth*1.0f, tempText);    	
+	
+    glColor3f(1.0f, 1.0f, 1.0f); // white
+	glBindTexture( GL_TEXTURE_2D, LEVEL_TEXTURE );
+	sprintf(tempText,"M");	
+	myLevel->draw_level(fGridSquareWidth*3.0f, 0.0f, fGridSquareWidth*3.0f, tempText);    	
+
 /*
  	//columns
    	//edited by Mike, 20201015   	
