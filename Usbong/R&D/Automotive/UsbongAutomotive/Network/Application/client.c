@@ -17,7 +17,7 @@ Free Documentation License".
   @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
   @author: SYSON, MICHAEL B.
   @date created: 20201119
-  @last updated: 20210323
+  @last updated: 20210324
 
   Notes:
   1) Execute Commands in sequence:
@@ -50,10 +50,59 @@ int main(){
 	//edited by Mike, 20201119
 	//int sock = make_socket(ADRESS_PORT, CLIENT_SOCKET, "10.35.43.41");
 	int sock = make_socket(ADRESS_PORT, CLIENT_SOCKET, "127.0.0.1");
-
+	
+	//added by Mike, 20210324
+	read("imageSample.png");
+		 
 	//edited by Mike, 20210323
 	//send_data (sock, "Some data to be sent");
-	send_data (sock, "Kumusta!");
+	send_data(sock, "Kumusta!");
 
 	close_socket(sock);
+}
+
+
+//added by Mike, 20210324
+void read(char *inputFilename) {
+	int c;
+	FILE *file;
+	
+	int MAX_INPUT_TEXT_PER_LINE=100;
+	int iCount=0;
+	
+	//note: if concatenated string exceeds size, "stack smashing detected"; terminated; Aborted (core dumped)
+	//I prefer to set a size, instead of dynamically allocate due to increasing likelihood of memory leaks
+	//where memory leaks = not deallocated storage in memory, albeit not used by software application
+	//identifying not deallocated storage in memory becomes more difficult with increasing use
+	char input[MAX_INPUT_TEXT_PER_LINE]; //max size
+	char inputTextLine[MAX_INPUT_TEXT_PER_LINE]; //max size
+	char tempInputTextLine[MAX_INPUT_TEXT_PER_LINE]; //max size
+	
+	strcpy(input, "input/");
+	strcat(input, inputFilename); //already includes .png, .txt, et cetera
+
+//	file = fopen("input/inputHalimbawa.txt", "r"); //.txt file
+	file = fopen(input, "r"); //.txt file
+
+	if (file) {
+//		while ((c = getc(file)) != EOF) {
+		while (fgets (input, MAX_INPUT_TEXT_PER_LINE, file)) { /* read each line of input */			
+			sscanf (input, "%s", inputTextLine);
+         			
+			//input text per line			
+			printf("count %i: ",iCount);
+			iCount=iCount+1;
+						
+			printf("%s;",inputTextLine);
+/*			
+			strcpy(tempInputTextLine,inputTextLine);
+	
+			//note: add "-1" for empty
+			//otherwise, comma as column is skipped
+			char *ch = strtok(tempInputTextLine, ",");
+*/							
+			printf("\n");			
+		}
+		fclose(file);
+	}	
 }
