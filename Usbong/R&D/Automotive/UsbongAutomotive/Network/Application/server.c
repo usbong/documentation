@@ -50,23 +50,27 @@ Free Documentation License".
 
 #include "network.h"
 
+//added by Mike, 20210324
+int isFileMessageDone=FALSE;
+int iCount=0;
+
 int accept_connection(int server_socket){
-int client_socket; /* Socket descriptor for client */
-struct sockaddr_in client_address; /* Client address */
-unsigned int client_length; /* Length of client address data structure */
+	int client_socket; /* Socket descriptor for client */
+	struct sockaddr_in client_address; /* Client address */
+	unsigned int client_length; /* Length of client address data structure */
 
-/* Set the size of the in-out parameter */
-client_length = sizeof(client_address);
+	/* Set the size of the in-out parameter */
+	client_length = sizeof(client_address);
 
-/* Wait for a client to connect */
-if ((client_socket = accept(server_socket, (struct sockaddr *) &client_address,
-&client_length)) < 0)
-printf("accept() failed");
+	/* Wait for a client to connect */
+	if ((client_socket = accept(server_socket, (struct sockaddr *) &client_address,
+	&client_length)) < 0)
+	printf("accept() failed");
 
-/* client_socket is connected to a client! */
-printf("Handling client %s\n", inet_ntoa(client_address.sin_addr));
+	/* client_socket is connected to a client! */
+	printf("Handling client %s\n", inet_ntoa(client_address.sin_addr));
 
-return client_socket;
+	return client_socket;
 }
 
 void handle_client (int client_socket){
@@ -84,29 +88,53 @@ void handle_client (int client_socket){
 		alarm (60);
 		//edited by Mike, 20210324
 		msg_size = read (client_socket, buffer, BUFFSIZE);
+		
 /*		//removed by Mike, 20210324; 
 		//segmenation fault error, buffer only 100*100, i.e. 10,000		
 		msg_size = read (client_socket, buffer, MAX_INPUT_LINE_ROW*BUFFSIZE);
 */		
 		alarm (0);
+		
+		//added by Mike, 20210324
+		printf ("Count: %i; ", iCount);
+		printf ("Message Size: %i; ", msg_size);
+		printf ("Data received: %s", buffer);
 
+		//TO-DO: -reverify: received data due multiple iCount data in one packet
+		//iCount not increased due to msg_size > 0
+		strcpy(cImageMapContainer[iCount],buffer);		
+
+		printf("\n");
+		
 		if ( msg_size <= 0 ){
-			printf ( " %i ", msg_size );
+//			printf ( " %i ", msg_size );
 			printf ( "End of data\n" );
 		}
 	} while ( msg_size > 0 );
 	
+	//added by Mike, 20210324; removed by Mike, 20210324
+	//clean_data(buffer);
+	
+	//added by Mike, 20210324
+	//if buffer is ""
+	if (strcmp(buffer,"")==0) {
+		isFileMessageDone=TRUE;
+		return;
+	}
+
+/* //removed by Mike, 20210324	
 	printf ("Data received: %s", buffer);
 	printf("\n"); //added by Mike, 20210324
+*/	
 	
 	//added by Mike, 20210324
 	//write(inputFilename, char *cInputTextLine);
-	write("outputImageSample.png", buffer);
+	//TO-DO: -update: write instructions after verifying all data received
+	//write("outputImageSample.png", buffer);
 	
 	bytes = 0;
-	
-	//added by Mike, 20210324; removed by Mike, 20210324
-	//clean_data(buffer);
+		
+	strcpy(buffer, "");	
 }
 
 int main(){
@@ -119,12 +147,18 @@ int main(){
 	handle_client(clnt_sock);
 */
 	clnt_sock = accept_connection(sock);
-	
+
+	//edited by Mike, 20210324
 //	while (1) {
+	while (!isFileMessageDone) {
 		handle_client(clnt_sock);
-//	}		
+		iCount=iCount+1;
+	}		
 	
 	close_socket(sock);
+	
+	//added by Mike, 20210324
+	return 0;
 }
 
 //added by Mike, 20210324
@@ -157,5 +191,8 @@ void write(char *outputFilename, char *cOutputTextLine) {
 	if ( num != cOutputTextLineSize )
 	{
 		//error
-	}			
+	}	
+	
+	//added by Mike, 20210324
+	fclose(file);	
 }

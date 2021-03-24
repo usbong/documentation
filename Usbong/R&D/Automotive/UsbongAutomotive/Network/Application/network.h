@@ -75,3 +75,7 @@ Free Documentation License".
 #define FALSE 0
 #define START 11
 #define DIVIDER ":"
+
+//added by Mike, 20210324
+#define MAX_INPUT_LINE_ROW 316
+char cImageMapContainer[MAX_INPUT_LINE_ROW][MAX_INPUT_TEXT_PER_LINE];
