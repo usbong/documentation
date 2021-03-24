@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201019
- * @date updated: 20210323
+ * @date updated: 20210324
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -548,9 +548,16 @@ glCullFace(GL_BACK);
 		//TO-DO: -reverify: if we do not add top face 
 		//added due to inverted z-axis based on position of vertices 
 		glRotatef(180, 0.0f, 0.0f, 1.0f);
+
+		//removed by Mike, 20210323
+		//facing the camera
 		//added by Mike, 20201122
 		//added due to inverted x-axis based on position of vertices 
-		glRotatef(180, 1.0f, 0.0f, 0.0f);
+//		glRotatef(180, 1.0f, 0.0f, 0.0f);
+
+		//added by Mike, 20210324
+		glRotatef(-90, 1.0f, 0.0f, 0.0f);
+
 		
 //		glScalef(0.99f, 0.99f, 0.99f);
 
