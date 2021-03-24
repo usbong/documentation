@@ -60,7 +60,9 @@ Free Documentation License".
 #define MAXPENDING 5
 //edited by Mike, 20210324
 //#define BUFFSIZE 21
-#define BUFFSIZE 100 //#define MAX_INPUT_TEXT_PER_LINE 100
+//edited by Mike, 20210324
+#define MAX_INPUT_TEXT_PER_LINE 100
+#define BUFFSIZE MAX_INPUT_TEXT_PER_LINE
 
 #define SERVER_SOCKET 1
 #define CLIENT_SOCKET 0

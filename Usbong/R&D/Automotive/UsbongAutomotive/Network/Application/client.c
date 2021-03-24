@@ -47,7 +47,7 @@ Free Documentation License".
 #include "network.h"
 
 //added by Mike, 20210324
-#define MAX_INPUT_TEXT_PER_LINE 100
+//#define MAX_INPUT_TEXT_PER_LINE 100 //removed by Mike, 20210324 to network.h
 #define MAX_INPUT_LINE_ROW 316
 
 char cImageMapContainer[MAX_INPUT_LINE_ROW][MAX_INPUT_TEXT_PER_LINE];

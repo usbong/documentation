@@ -42,6 +42,10 @@ Free Documentation License".
   Reference: 
   1) https://www.linuxquestions.org/linux/answers/Programming/BSD_Sockets_programming_in_C_with_examples; 
   last accessed: 20201119; answer by: By nhydra, 2006-11-11T08:44 
+  
+  Recommended Reading:
+  1) https://www.php.net/manual/en/function.fopen.php;
+  last accessed: 20210324
 */
 
 #include "network.h"
@@ -66,28 +70,65 @@ return client_socket;
 }
 
 void handle_client (int client_socket){
-char buffer [BUFFSIZE]; /* Buffer for incomming data */
-int msg_size; /* Size of received message */
-int bytes, all_bytes;
+	char buffer [BUFFSIZE]; /* Buffer for incoming data */
+	int msg_size; /* Size of received message */
+	int bytes, all_bytes;
 
-do {
-alarm (60);
-msg_size = read (client_socket, buffer, BUFFSIZE);
-alarm (0);
+	do {
+		alarm (60);
+		msg_size = read (client_socket, buffer, BUFFSIZE);
+		alarm (0);
 
-if ( msg_size <= 0 ){
-printf ( " %i ", msg_size );
-printf ( "End of data\n" );
-}
-} while ( msg_size > 0 );
-printf ("Data received: %s", buffer);
-bytes = 0;
+		if ( msg_size <= 0 ){
+			printf ( " %i ", msg_size );
+			printf ( "End of data\n" );
+		}
+	} while ( msg_size > 0 );
+	
+	printf ("Data received: %s", buffer);
+	
+	//added by Mike, 20210324
+	//write(inputFilename, char *cInputTextLine);
+	write("outputImageSample.png", buffer);
+	
+	bytes = 0;
 }
 
 int main(){
-int clnt_sock;
-int sock = make_socket(ADRESS_PORT, SERVER_SOCKET, "none");
-clnt_sock = accept_connection (sock);
-handle_client(clnt_sock);
-close_socket(sock);
+	int clnt_sock;
+	int sock = make_socket(ADRESS_PORT, SERVER_SOCKET, "none");
+	clnt_sock = accept_connection (sock);
+	handle_client(clnt_sock);
+	close_socket(sock);
+}
+
+//added by Mike, 20210324
+//TO-DO: -add: write whole input cImageMapContainer
+void write(char *outputFilename, char *cOutputTextLine) {
+	FILE *file;
+	
+	//note: if concatenated string exceeds size, "stack smashing detected"; terminated; Aborted (core dumped)
+	//I prefer to set a size, instead of dynamically allocate due to increasing likelihood of memory leaks
+	//where memory leaks = not deallocated storage in memory, albeit not used by software application
+	//identifying not deallocated storage in memory becomes more difficult with increasing use
+	char output[MAX_INPUT_TEXT_PER_LINE]; //max size
+	
+	strcpy(output, "output/");
+	strcat(output, outputFilename); //already includes .png, .txt, et cetera
+	
+	file = fopen(output, "w"); //.png file
+
+	//Reference: https://stackoverflow.com/questions/27630855/fwrite-function-in-c;
+	//last accessed: 20210324
+	//answered by: R Sahu, 20141224T0304
+	//edited by: paxdiablo, 20141224T0309
+	
+//	size_t num = fwrite(array, sizeof(int), arraySize, file);
+	int cOutputTextLineSize = sizeof(cOutputTextLine);	
+	size_t num = fwrite(cOutputTextLine, sizeof(int), cOutputTextLineSize, file);
+	
+	if ( num != cOutputTextLineSize )
+	{
+		//error
+	}			
 }
