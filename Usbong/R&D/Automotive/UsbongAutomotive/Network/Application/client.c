@@ -46,6 +46,12 @@ Free Documentation License".
 
 #include "network.h"
 
+//added by Mike, 20210324
+#define MAX_INPUT_TEXT_PER_LINE 100
+#define MAX_INPUT_LINE_ROW 316
+
+char cImageMapContainer[MAX_INPUT_LINE_ROW][MAX_INPUT_TEXT_PER_LINE];
+
 int main(){
 	//edited by Mike, 20201119
 	//int sock = make_socket(ADRESS_PORT, CLIENT_SOCKET, "10.35.43.41");
@@ -53,11 +59,13 @@ int main(){
 	
 	//added by Mike, 20210324
 	read("imageSample.png");
-		 
+	
 	//edited by Mike, 20210323
 	//send_data (sock, "Some data to be sent");
-	send_data(sock, "Kumusta!");
-
+	//edited by Mike, 20210324
+//	send_data(sock, "Kumusta!");
+	send_data(sock, cImageMapContainer[316]);
+	
 	close_socket(sock);
 }
 
@@ -67,7 +75,6 @@ void read(char *inputFilename) {
 	int c;
 	FILE *file;
 	
-	int MAX_INPUT_TEXT_PER_LINE=100;
 	int iCount=0;
 	
 	//note: if concatenated string exceeds size, "stack smashing detected"; terminated; Aborted (core dumped)
@@ -91,9 +98,13 @@ void read(char *inputFilename) {
          			
 			//input text per line			
 			printf("count %i: ",iCount);
-			iCount=iCount+1;
 						
 			printf("%s;",inputTextLine);
+			
+			strcpy(cImageMapContainer[iCount],inputTextLine);
+
+			iCount=iCount+1;
+
 /*			
 			strcpy(tempInputTextLine,inputTextLine);
 	

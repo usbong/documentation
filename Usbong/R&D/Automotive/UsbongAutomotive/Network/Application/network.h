@@ -17,7 +17,7 @@ Free Documentation License".
   @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
   @author: SYSON, MICHAEL B.
   @date created: 20201119
-  @last updated: 20210323
+  @last updated: 20210324
 
   Notes:
   1) Execute Commands in sequence:
@@ -58,7 +58,9 @@ Free Documentation License".
 #define ADRESS_PORT 10203
 #define ADRESS_IP "127.0.0.1"
 #define MAXPENDING 5
-#define BUFFSIZE 21
+//edited by Mike, 20210324
+//#define BUFFSIZE 21
+#define BUFFSIZE 100 //#define MAX_INPUT_TEXT_PER_LINE 100
 
 #define SERVER_SOCKET 1
 #define CLIENT_SOCKET 0
