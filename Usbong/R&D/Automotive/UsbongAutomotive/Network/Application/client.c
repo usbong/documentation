@@ -64,7 +64,27 @@ int main(){
 	//send_data (sock, "Some data to be sent");
 	//edited by Mike, 20210324
 //	send_data(sock, "Kumusta!");
-	send_data(sock, cImageMapContainer[316]);
+
+	//edited by Mike, 20210324
+//	send_data(sock, cImageMapContainer[316]);
+	send_data(sock, cImageMapContainer[300]);
+
+	//edited by Mike, 20210324
+/*	
+	for (int iCount=0; iCount<MAX_INPUT_LINE_ROW; iCount++) {
+		send_data(sock, cImageMapContainer[iCount]);
+	}
+*/
+	
+/*	//removed by Mike, 20210324; segmentation fault error
+	char cDataToSend[MAX_INPUT_LINE_ROW*BUFFSIZE];
+	strcpy(cDataToSend, "");
+
+	for (int iCount=0; iCount<MAX_INPUT_LINE_ROW; iCount++) {
+		strcat(cDataToSend[iCount], cImageMapContainer[iCount]);
+	}	
+	send_data(sock, cDataToSend);
+*/
 	
 	close_socket(sock);
 }
@@ -89,7 +109,9 @@ void read(char *inputFilename) {
 	strcat(input, inputFilename); //already includes .png, .txt, et cetera
 
 //	file = fopen("input/inputHalimbawa.txt", "r"); //.txt file
-	file = fopen(input, "r"); //.txt file
+	//edited by Mike, 20210324
+//	file = fopen(input, "r"); //.txt file
+	file = fopen(input, "rb"); //.txt file
 
 	if (file) {
 //		while ((c = getc(file)) != EOF) {

@@ -55,6 +55,10 @@ Free Documentation License".
 //added by Mike, 20201119
 #include <string.h>
 
+//added by Mike, 20210324
+//TO-DO: -reverify: this
+//#include <unistd.h> 
+
 #define ADRESS_PORT 10203
 #define ADRESS_IP "127.0.0.1"
 #define MAXPENDING 5

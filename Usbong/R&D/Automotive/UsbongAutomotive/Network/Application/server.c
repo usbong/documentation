@@ -70,13 +70,24 @@ return client_socket;
 }
 
 void handle_client (int client_socket){
+	//edited by Mike, 20210324
 	char buffer [BUFFSIZE]; /* Buffer for incoming data */
+/*	//removed by Mike, 20210324; 
+	//segmenation fault error, buffer only 100*100, i.e. 10,000
+	char buffer [MAX_INPUT_LINE_ROW*BUFFSIZE]; //Buffer for incoming data
+*/
+	
 	int msg_size; /* Size of received message */
 	int bytes, all_bytes;
 
 	do {
 		alarm (60);
+		//edited by Mike, 20210324
 		msg_size = read (client_socket, buffer, BUFFSIZE);
+/*		//removed by Mike, 20210324; 
+		//segmenation fault error, buffer only 100*100, i.e. 10,000		
+		msg_size = read (client_socket, buffer, MAX_INPUT_LINE_ROW*BUFFSIZE);
+*/		
 		alarm (0);
 
 		if ( msg_size <= 0 ){
@@ -86,19 +97,33 @@ void handle_client (int client_socket){
 	} while ( msg_size > 0 );
 	
 	printf ("Data received: %s", buffer);
+	printf("\n"); //added by Mike, 20210324
 	
 	//added by Mike, 20210324
 	//write(inputFilename, char *cInputTextLine);
 	write("outputImageSample.png", buffer);
 	
 	bytes = 0;
+	
+	//added by Mike, 20210324; removed by Mike, 20210324
+	//clean_data(buffer);
 }
 
 int main(){
 	int clnt_sock;
 	int sock = make_socket(ADRESS_PORT, SERVER_SOCKET, "none");
+	
+	//edited by Mike, 20210324
+/*	
 	clnt_sock = accept_connection (sock);
 	handle_client(clnt_sock);
+*/
+	clnt_sock = accept_connection(sock);
+	
+//	while (1) {
+		handle_client(clnt_sock);
+//	}		
+	
 	close_socket(sock);
 }
 
@@ -116,7 +141,9 @@ void write(char *outputFilename, char *cOutputTextLine) {
 	strcpy(output, "output/");
 	strcat(output, outputFilename); //already includes .png, .txt, et cetera
 	
-	file = fopen(output, "w"); //.png file
+	//edited by Mike, 20210324	
+//	file = fopen(output, "w"); //.png file
+	file = fopen(output, "wb"); //.png file
 
 	//Reference: https://stackoverflow.com/questions/27630855/fwrite-function-in-c;
 	//last accessed: 20210324
