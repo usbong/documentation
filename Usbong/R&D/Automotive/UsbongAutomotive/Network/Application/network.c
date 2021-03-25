@@ -107,7 +107,9 @@ char * clean_data( const char * data ){
 	return result_data;
 }
 
-void send_data (int socket, const char * data ){
+//edited by Mike, 20210325
+//void send_data(int socket, const char * data){
+int send_data(int socket, const char * data){
 	int sent_bytes, all_sent_bytes;
 	int err_status;
 	int sendstrlen;
@@ -122,4 +124,8 @@ void send_data (int socket, const char * data ){
 	//printf ("\t !!! Sent data: %s --- \n", data);
 	printf ("Data sent: %s", data);
 	printf("\n");
+	//added by Mike, 20210325	
+	printf ("all_sent_bytes: %i\n", all_sent_bytes);
+	
+	return all_sent_bytes;
 }

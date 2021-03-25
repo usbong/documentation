@@ -159,12 +159,11 @@ void handle_client (int client_socket){
 	printf ("All data received: %s", cImageMapContainer[0]);
 	//added by Mike, 20210325
 	printf("\n");
-	printf ("iTotalMessageSize: %i", iTotalMessageSize);
+	printf ("SERVER iTotalMessageSize: %i", iTotalMessageSize);
 	
 	//edited by Mike, 20210325
-//	write("outputImageSample.png", cImageMapContainer[0]);
-//	write("outputImageSample.txt", cImageMapContainer[0]);
-	write("outputHalimbawa.txt", cImageMapContainer[0]);
+	write("outputImageSample.png", cImageMapContainer[0]);
+//	write("outputHalimbawa.txt", cImageMapContainer[0]);
 		
 	bytes = 0;
 		
@@ -215,8 +214,8 @@ void write(char *outputFilename, char *cOutputTextLine) {
 	strcat(output, outputFilename); //already includes .png, .txt, et cetera
 	
 	//edited by Mike, 20210324	
-	file = fopen(output, "w"); //.png file
-//	file = fopen(output, "wb"); //.png file
+//	file = fopen(output, "w"); //.png file
+	file = fopen(output, "wb"); //.png file
 
 	//Reference: https://stackoverflow.com/questions/27630855/fwrite-function-in-c;
 	//last accessed: 20210324
@@ -232,7 +231,7 @@ void write(char *outputFilename, char *cOutputTextLine) {
 	int cOutputTextLineSize = sizeof(cOutputTextLine);	
 	
 //	printf("cOutputTextLineSize: %i",cOutputTextLineSize); 
-	printf("size of char: %li",sizeof(char)); 
+//	printf("size of char: %li",sizeof(char)); 
 
 	//edited by Mike, 20210325
 	//TO-DO: -reverify: output size
@@ -246,8 +245,11 @@ void write(char *outputFilename, char *cOutputTextLine) {
 	
 	//added by Mike, 20210325
 	//outputs: 
-	//num=3584
-	//iTotalMessageSize=10822
+	//num=16266
+	//iTotalMessageSize=16266
+	
+	printf("\nnum: %zu",num);
+	printf("\niTotalMessageSize: %i",iTotalMessageSize);
 	
 //	if ( num != cOutputTextLineSize*iTotalMessageSize )
 //	if ( num != sizeof(char)*ciTotalMessageSize )
@@ -255,9 +257,9 @@ void write(char *outputFilename, char *cOutputTextLine) {
 	{
 		//error
 		printf("Error: num != cOutputTextLineSize*iTotalMessageSize");
-		printf("\nnum: %zu",num);
-
 	}	
+
+	
 	
 	//added by Mike, 20210324
 	fclose(file);	

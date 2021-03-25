@@ -57,11 +57,13 @@ int main(){
 	//edited by Mike, 20201119
 	//int sock = make_socket(ADRESS_PORT, CLIENT_SOCKET, "10.35.43.41");
 	int sock = make_socket(ADRESS_PORT, CLIENT_SOCKET, "127.0.0.1");
+	int iTotalMessageSize = 0; //added by Mike, 20210325
 	
 	//edited by Mike, 20210325
 //	read("imageSample.png");
-	read("inputHalimbawa.txt");	
-	
+//	read("inputHalimbawa.txt");	
+	read("inputImageSample.png");
+		
 	//edited by Mike, 20210323
 	//send_data (sock, "Some data to be sent");
 	//edited by Mike, 20210324
@@ -73,7 +75,14 @@ int main(){
 
 	//edited by Mike, 20210324	
 	for (int iCount=0; iCount<MAX_INPUT_LINE_ROW; iCount++) {
-		send_data(sock, cImageMapContainer[iCount]);
+		//edited by Mike, 20210325
+		//send_data(sock, cImageMapContainer[iCount]);
+		if (strcmp(cImageMapContainer[iCount],"")==0) {
+			//if blank
+		}
+		else {
+			iTotalMessageSize = iTotalMessageSize + send_data(sock, cImageMapContainer[iCount]);
+		}		
 	}
 	//added by Mike, 20210325
 //	send_data(sock,"\0");
@@ -89,6 +98,11 @@ int main(){
 	}	
 	send_data(sock, cDataToSend);
 */
+	//TO-DO: -reverify: cause output .png image file is less than input .png image file
+	//file size (input): 25612B
+	//file size (output): 16266B
+	//iTotalMessageSize output: 16266 = with SERVER's iTotalMessageSize
+	printf ("CLIENT iTotalMessageSize: %i", iTotalMessageSize);
 	
 	close_socket(sock);
 }
@@ -114,8 +128,8 @@ void read(char *inputFilename) {
 
 //	file = fopen("input/inputHalimbawa.txt", "r"); //.txt file
 	//edited by Mike, 20210324
-	file = fopen(input, "r"); //.txt file
-//	file = fopen(input, "rb"); //.txt file
+//	file = fopen(input, "r"); //.txt file
+	file = fopen(input, "rb"); //.txt file
 
 	if (file) {		
 //		while ((c = getc(file)) != EOF) {
