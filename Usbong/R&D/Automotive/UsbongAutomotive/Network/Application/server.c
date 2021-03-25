@@ -162,8 +162,9 @@ void handle_client (int client_socket){
 	printf ("iTotalMessageSize: %i", iTotalMessageSize);
 	
 	//edited by Mike, 20210325
-	write("outputImageSample.png", cImageMapContainer[0]);
+//	write("outputImageSample.png", cImageMapContainer[0]);
 //	write("outputImageSample.txt", cImageMapContainer[0]);
+	write("outputHalimbawa.txt", cImageMapContainer[0]);
 		
 	bytes = 0;
 		
@@ -214,8 +215,8 @@ void write(char *outputFilename, char *cOutputTextLine) {
 	strcat(output, outputFilename); //already includes .png, .txt, et cetera
 	
 	//edited by Mike, 20210324	
-//	file = fopen(output, "w"); //.png file
-	file = fopen(output, "wb"); //.png file
+	file = fopen(output, "w"); //.png file
+//	file = fopen(output, "wb"); //.png file
 
 	//Reference: https://stackoverflow.com/questions/27630855/fwrite-function-in-c;
 	//last accessed: 20210324

@@ -58,8 +58,9 @@ int main(){
 	//int sock = make_socket(ADRESS_PORT, CLIENT_SOCKET, "10.35.43.41");
 	int sock = make_socket(ADRESS_PORT, CLIENT_SOCKET, "127.0.0.1");
 	
-	//added by Mike, 20210324
-	read("imageSample.png");
+	//edited by Mike, 20210325
+//	read("imageSample.png");
+	read("halimbawa.txt");	
 	
 	//edited by Mike, 20210323
 	//send_data (sock, "Some data to be sent");
@@ -71,7 +72,6 @@ int main(){
 //	send_data(sock, cImageMapContainer[300]);
 
 	//edited by Mike, 20210324	
-	
 	for (int iCount=0; iCount<MAX_INPUT_LINE_ROW; iCount++) {
 		send_data(sock, cImageMapContainer[iCount]);
 	}
@@ -114,17 +114,26 @@ void read(char *inputFilename) {
 
 //	file = fopen("input/inputHalimbawa.txt", "r"); //.txt file
 	//edited by Mike, 20210324
-//	file = fopen(input, "r"); //.txt file
-	file = fopen(input, "rb"); //.txt file
+	file = fopen(input, "r"); //.txt file
+//	file = fopen(input, "rb"); //.txt file
 
-	if (file) {
+	if (file) {		
 //		while ((c = getc(file)) != EOF) {
+		//TO-DO: -reverify: first line read twice
 		while (fgets (input, MAX_INPUT_TEXT_PER_LINE, file)) { /* read each line of input */			
-			sscanf (input, "%s", inputTextLine);
-         			
+			//edited by Mike, 20210325
+			//TO-DO: -reverify: getLine(...) Command
+			//include blank space, et cetera
+			//sscanf (input, "%s", inputTextLine);         			
+//			sscanf(input, "%[^\n]",inputTextLine); 
+			sscanf(input,"%[^\n]",inputTextLine); 
+			
+			//added by Mike, 20210325
+			//add new line
+			strcat(inputTextLine, "\n");
+
 			//input text per line			
-			printf("count %i: ",iCount);
-						
+			printf("count %i: ",iCount);						
 			printf("%s;",inputTextLine);
 			
 			strcpy(cImageMapContainer[iCount],inputTextLine);

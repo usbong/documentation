@@ -1,0 +1,7 @@
+To eliminate excess steps and inefficient time usage, Marikina Orthopedic Specialty Clinic (MOSC) requested Usbong's services to automate routine, monotonous tasks and share with unit members know-how on computers.
+To eliminate excess steps and inefficient time usage, Marikina Orthopedic Specialty Clinic (MOSC) requested Usbong's services to automate routine, monotonous tasks and share with unit members know-how on computers.
+
+1) Continued to update Knowledge Management System (KMS)
+--> 1.1) updated set of computer instructions @MOSC
+--> 1.1.1) removed: the delete button at the Information Desk Patient Wait List page
+--> This is due to an increase in delay to finish re-verification of end of day reports.
