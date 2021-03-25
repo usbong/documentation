@@ -17,7 +17,7 @@ Free Documentation License".
   @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
   @author: SYSON, MICHAEL B.
   @date created: 20201119
-  @last updated: 20210324
+  @last updated: 20210325
 
   Notes:
   1) Execute Commands in sequence:
@@ -53,6 +53,8 @@ Free Documentation License".
 //added by Mike, 20210324
 int isFileMessageDone=FALSE;
 int iCount=0;
+//added by Mike, 20210325
+int iTotalMessageSize=0;
 
 int accept_connection(int server_socket){
 	int client_socket; /* Socket descriptor for client */
@@ -75,7 +77,9 @@ int accept_connection(int server_socket){
 
 void handle_client (int client_socket){
 	//edited by Mike, 20210324
+//	char buffer [BUFFSIZE]; /* Buffer for incoming data */
 	char buffer [BUFFSIZE]; /* Buffer for incoming data */
+	
 /*	//removed by Mike, 20210324; 
 	//segmenation fault error, buffer only 100*100, i.e. 10,000
 	char buffer [MAX_INPUT_LINE_ROW*BUFFSIZE]; //Buffer for incoming data
@@ -85,6 +89,15 @@ void handle_client (int client_socket){
 	int bytes, all_bytes;
 
 	do {
+		//added by Mike, 20210325
+		bytes = 0;		
+//		strcpy(buffer, clean_data(buffer));
+		//we execute zero-initialize to char array container
+		//due to copied string may be 
+		//shorter than the previous one, et cetera
+		memset(buffer, '\0', BUFFSIZE);
+		strcpy(buffer, "");	
+		
 		alarm (60);
 		//edited by Mike, 20210324
 		msg_size = read (client_socket, buffer, BUFFSIZE);
@@ -95,33 +108,43 @@ void handle_client (int client_socket){
 */		
 		alarm (0);
 		
-		//added by Mike, 20210324
-		printf ("Count: %i; ", iCount);
-		printf ("Message Size: %i; ", msg_size);
-		printf ("Data received: %s", buffer);
-
-		//TO-DO: -reverify: received data due multiple iCount data in one packet
-		//iCount not increased due to msg_size > 0
-		strcpy(cImageMapContainer[iCount],buffer);		
-
-		printf("\n");
-		
 		if ( msg_size <= 0 ){
 //			printf ( " %i ", msg_size );
 			printf ( "End of data\n" );
 		}
+		else {
+			//added by Mike, 20210324
+			printf ("Count: %i; ", iCount);
+			printf ("Message Size: %i; ", msg_size);
+			printf ("Data received: %s", buffer);
+
+			iTotalMessageSize=iTotalMessageSize+msg_size;
+			
+			//TO-DO: -reverify: received data due multiple iCount data in one packet
+			//iCount not increased due to msg_size > 0
+			//edited by Mike, 20210325
+			//strcpy(cImageMapContainer[iCount],buffer);		
+			strcat(cImageMapContainer[iCount],buffer);
+
+			printf("\n");
+		}		
 	} while ( msg_size > 0 );
 	
 	//added by Mike, 20210324; removed by Mike, 20210324
 	//clean_data(buffer);
-	
+
+/* //removed by Mike, 20210325
 	//added by Mike, 20210324
 	//if buffer is ""
 	if (strcmp(buffer,"")==0) {
+		
+		printf ("Data received: %s", cImageMapContainer[0]);
+		
 		isFileMessageDone=TRUE;
 		return;
 	}
-
+*/
+	
 /* //removed by Mike, 20210324	
 	printf ("Data received: %s", buffer);
 	printf("\n"); //added by Mike, 20210324
@@ -131,10 +154,22 @@ void handle_client (int client_socket){
 	//write(inputFilename, char *cInputTextLine);
 	//TO-DO: -update: write instructions after verifying all data received
 	//write("outputImageSample.png", buffer);
+
+	printf("\n"); //added by Mike, 20210324
+	printf ("All data received: %s", cImageMapContainer[0]);
+	//added by Mike, 20210325
+	printf("\n");
+	printf ("iTotalMessageSize: %i", iTotalMessageSize);
 	
+	//edited by Mike, 20210325
+	write("outputImageSample.png", cImageMapContainer[0]);
+//	write("outputImageSample.txt", cImageMapContainer[0]);
+		
 	bytes = 0;
 		
 	strcpy(buffer, "");	
+	
+	isFileMessageDone=TRUE;
 }
 
 int main(){
@@ -148,6 +183,9 @@ int main(){
 */
 	clnt_sock = accept_connection(sock);
 
+	//added by Mike, 20210325
+	strcpy(cImageMapContainer[0],"");		
+	
 	//edited by Mike, 20210324
 //	while (1) {
 	while (!isFileMessageDone) {
@@ -183,14 +221,41 @@ void write(char *outputFilename, char *cOutputTextLine) {
 	//last accessed: 20210324
 	//answered by: R Sahu, 20141224T0304
 	//edited by: paxdiablo, 20141224T0309
+		printf("\n");
+		printf("\n");
+		printf("dito: %s",cOutputTextLine);
+		printf("\n");
+	
 	
 //	size_t num = fwrite(array, sizeof(int), arraySize, file);
 	int cOutputTextLineSize = sizeof(cOutputTextLine);	
-	size_t num = fwrite(cOutputTextLine, sizeof(int), cOutputTextLineSize, file);
 	
-	if ( num != cOutputTextLineSize )
+//	printf("cOutputTextLineSize: %i",cOutputTextLineSize); 
+	printf("size of char: %li",sizeof(char)); 
+
+	//edited by Mike, 20210325
+	//TO-DO: -reverify: output size
+	//TO-DO: -reverify: using .txt file, instead of .png file for input and output
+//	size_t num = fwrite(cOutputTextLine, sizeof(int), cOutputTextLineSize, file);
+//	size_t num = fwrite(cOutputTextLine, sizeof(char), BUFFSIZE*cOutputTextLineSize, file);
+//	size_t num = fwrite(cOutputTextLine, cOutputTextLineSize, cOutputTextLineSize*iTotalMessageSize, file);
+//	size_t num = fwrite(cOutputTextLine, cOutputTextLineSize, 3584, file);
+//	size_t num = fwrite(cOutputTextLine, sizeof(char), iTotalMessageSize, file);
+	size_t num = fwrite(cOutputTextLine, 1, iTotalMessageSize, file);
+	
+	//added by Mike, 20210325
+	//outputs: 
+	//num=3584
+	//iTotalMessageSize=10822
+	
+//	if ( num != cOutputTextLineSize*iTotalMessageSize )
+//	if ( num != sizeof(char)*ciTotalMessageSize )
+	if ( num != iTotalMessageSize )
 	{
 		//error
+		printf("Error: num != cOutputTextLineSize*iTotalMessageSize");
+		printf("\nnum: %zu",num);
+
 	}	
 	
 	//added by Mike, 20210324

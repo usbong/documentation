@@ -17,7 +17,7 @@ Free Documentation License".
   @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
   @author: SYSON, MICHAEL B.
   @date created: 20201119
-  @last updated: 20210324
+  @last updated: 20210325
 
   Notes:
   1) Execute Commands in sequence:
@@ -71,10 +71,14 @@ int main(){
 //	send_data(sock, cImageMapContainer[300]);
 
 	//edited by Mike, 20210324	
+	
 	for (int iCount=0; iCount<MAX_INPUT_LINE_ROW; iCount++) {
 		send_data(sock, cImageMapContainer[iCount]);
 	}
+	//added by Mike, 20210325
+//	send_data(sock,"\0");
 
+//	send_data(sock, cImageMapContainer[0]);
 	
 /*	//removed by Mike, 20210324; segmentation fault error
 	char cDataToSend[MAX_INPUT_LINE_ROW*BUFFSIZE];

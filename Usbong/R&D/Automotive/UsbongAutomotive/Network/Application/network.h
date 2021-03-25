@@ -65,7 +65,7 @@ Free Documentation License".
 //edited by Mike, 20210324
 //#define BUFFSIZE 21
 //edited by Mike, 20210324
-#define MAX_INPUT_TEXT_PER_LINE 100
+#define MAX_INPUT_TEXT_PER_LINE 10241//100
 #define BUFFSIZE MAX_INPUT_TEXT_PER_LINE
 
 #define SERVER_SOCKET 1
