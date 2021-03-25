@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200929
- * @date updated: 20210208
+ * @date updated: 20210325
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -234,6 +234,10 @@ class OpenGLCanvas
 
 		bool hasTurnedNinetyDegCounterClockWise,		       
 			 hasTurnedNinetyDegClockWise;
+
+		//added by Mike, 20210325
+		//TO-DO: -update: this
+		int iCountLevelM;
 
        	//unsigned int myFontTextureObject;
                
