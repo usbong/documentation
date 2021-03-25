@@ -67,9 +67,16 @@ TO-DO: -update: this<br/>
 --> 1.3.1.1.2) Japanese reading out-loud by 林隆三 (hayashi ryuuzou) of 川端 康成 (Kawabata, Yasunari)'s 雪国 (yukiguni) 1935's literature<br/>
 --> In addition, I found no problem with Japanese voice-acting of Solid Snake as ネモ船長 (nemo senchou; Captain Nemo) in ふしぎの海のナディア (fushigi no umi no nadia)<br/>
 --> re-verify: cause to be script?<br/>
+
 #### 1.3.1.2) Virtual Reality (VR) Training
 --> used with LEGO blocks to learn how to make mission<br/>
 --> illustrations not as emphasized as rest of parts?<br/>
+
+#### 1.3.1.3) Recommended Action
+--> verify: Metal Gear Solid (Gameboy Color version)<br/>
+--> longplays.org: https://www.youtube.com/watch?v=qOIe1bcWAn0;<br/> 
+--> last accessed: 20210325
+
 
 ## 1.4) SONY Computer Entertainment Europe and Guerrilla
 ### 1.4.1) KillZone 2
