@@ -60,7 +60,7 @@ int main(){
 	
 	//edited by Mike, 20210325
 //	read("imageSample.png");
-	read("halimbawa.txt");	
+	read("inputHalimbawa.txt");	
 	
 	//edited by Mike, 20210323
 	//send_data (sock, "Some data to be sent");
@@ -119,24 +119,27 @@ void read(char *inputFilename) {
 
 	if (file) {		
 //		while ((c = getc(file)) != EOF) {
-		//TO-DO: -reverify: first line read twice
-		while (fgets (input, MAX_INPUT_TEXT_PER_LINE, file)) { /* read each line of input */			
-			//edited by Mike, 20210325
-			//TO-DO: -reverify: getLine(...) Command
-			//include blank space, et cetera
-			//sscanf (input, "%s", inputTextLine);         			
-//			sscanf(input, "%[^\n]",inputTextLine); 
-			sscanf(input,"%[^\n]",inputTextLine); 
+		while (fgets (input, MAX_INPUT_TEXT_PER_LINE, file)) { //read each line of input
+			int iSscanFReturnValue = sscanf(input,"%[^\n]",inputTextLine);
 			
-			//added by Mike, 20210325
-			//add new line
-			strcat(inputTextLine, "\n");
+			printf("iSscanFReturnValue: %i",iSscanFReturnValue);
+			
+			if (iSscanFReturnValue!=0) { //if text before "\n" found
+				//added by Mike, 20210325
+				//add new line
+				strcat(inputTextLine, "\n");
 
-			//input text per line			
-			printf("count %i: ",iCount);						
-			printf("%s;",inputTextLine);
-			
-			strcpy(cImageMapContainer[iCount],inputTextLine);
+				//input text per line			
+				printf("count %i: ",iCount);						
+				printf("%s;",inputTextLine);
+
+				strcpy(cImageMapContainer[iCount],inputTextLine);
+			}
+			//no text before "\n" match found using sscanf(...) command
+			//example: only "\n", i.e. new line
+			else {
+				strcpy(cImageMapContainer[iCount],"\n");				
+			}
 
 			iCount=iCount+1;
 
