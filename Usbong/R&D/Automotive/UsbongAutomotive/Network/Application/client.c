@@ -120,17 +120,17 @@ void read(char *inputFilename) {
 	if (file) {		
 //		while ((c = getc(file)) != EOF) {
 		while (fgets (input, MAX_INPUT_TEXT_PER_LINE, file)) { //read each line of input
-			int iSscanFReturnValue = sscanf(input,"%[^\n]",inputTextLine);
+			int iSscanfReturnValue = sscanf(input,"%[^\n]",inputTextLine);
 			
-			printf("iSscanFReturnValue: %i",iSscanFReturnValue);
+//			printf("iSscanfReturnValue: %i",iSscanfReturnValue);
+			printf("count %i: ",iCount);						
 			
-			if (iSscanFReturnValue!=0) { //if text before "\n" found
+			if (iSscanfReturnValue!=0) { //if text before "\n" found
 				//added by Mike, 20210325
 				//add new line
 				strcat(inputTextLine, "\n");
 
 				//input text per line			
-				printf("count %i: ",iCount);						
 				printf("%s;",inputTextLine);
 
 				strcpy(cImageMapContainer[iCount],inputTextLine);
@@ -138,6 +138,7 @@ void read(char *inputFilename) {
 			//no text before "\n" match found using sscanf(...) command
 			//example: only "\n", i.e. new line
 			else {
+				printf("%s","only new line found");
 				strcpy(cImageMapContainer[iCount],"\n");				
 			}
 
