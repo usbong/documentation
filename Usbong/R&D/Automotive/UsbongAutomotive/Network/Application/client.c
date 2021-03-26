@@ -135,7 +135,8 @@ FILE* inputReadTextFile(char *inputFilename) {
 //last accessed: 20210326
 FILE* inputReadImageFile(char *inputFilename) {
 	int c;
-	FILE *file;
+	//edited by Mike, 20210326
+	FILE *file, fTarget;
 	
 	int iCount=0;
 	
@@ -145,30 +146,61 @@ FILE* inputReadImageFile(char *inputFilename) {
 	//identifying not deallocated storage in memory becomes more difficult with increasing use
 	//added by Mike, 20210326
 	//TO-DO: -update: max_size for input filename
-	char input[MAX_INPUT_TEXT_PER_LINE]; //max size
+	char cbUpdatedInputFilename[MAX_INPUT_TEXT_PER_LINE]; //max size
 	//edited by Mike, 20210326
 	//char inputTextLine[MAX_INPUT_TEXT_PER_LINE]; //max size
-	unsigned char inputTextLine[MAX_INPUT_TEXT_PER_LINE]; //max size
+	//edited by Mike, 20210326
+	//unsigned char inputTextLine[MAX_INPUT_TEXT_PER_LINE]; //max size
 
 	//removed by Mike, 20210326
 //	char tempInputTextLine[MAX_INPUT_TEXT_PER_LINE]; //max size
 	
-	strcpy(input, "input/");
-	strcat(input, inputFilename); //already includes .png, .txt, et cetera
+	strcpy(cbUpdatedInputFilename, "input/");
+	strcat(cbUpdatedInputFilename, inputFilename); //already includes .png, .txt, et cetera
 
+	
+	//printf("cbUpdatedInputFilename %s: ",cbUpdatedInputFilename);						
+	
 //	file = fopen("input/inputHalimbawa.txt", "r"); //.txt file
 	//edited by Mike, 20210324
 //	file = fopen(input, "r"); //.txt file
-	file = fopen(input, "rb"); //.txt file
-
-	if (file) {				
-/* //removed by Mike, 20210326		
-		//added by Mike, 20210326
-		fseek(file, 0, SEEK_END);
-		//size = ftell(picture);
-		fseek(file, 0, SEEK_SET);
-*/
+	//edited by Mike, 20210326
+	file = fopen(cbUpdatedInputFilename, "rb"); //.txt file
+ 	
+	fseek(file, 0, SEEK_END);
+	int iLength = ftell(file);	
+	fseek(file, 0, SEEK_SET);
 	
+	printf("iLength %i: ",iLength);						
+	
+
+//	unsigned char inputTextLine[iLength]; //max size
+//	char inputTextLine[iLength]; //max size
+	unsigned char inputTextLine[MAX_INPUT_TEXT_PER_LINE]; //max size
+	
+	for(int i=0; i<iLength; i++) {
+//		fputc(fgetc(file), fTarget);
+
+		//Note:
+		//https://stackoverflow.com/questions/49241835/insert-char-into-char-array-c-string;
+		//answer by: jxh, 20180312T1813
+		//output: "Banana"
+		//--
+		//char array[7] = "anana";
+		//memmove(array+1, array, 6);
+		//array[0] = 'B';		
+		//--
+		
+//		putc(fgetc(file), inputTextLine[i]);		
+//		printf("putc %i: ",inputTextLine[i]);	
+		printf("putc %c: ",fgetc(file));				
+		//TO-DO: -add: put in container from fgetc(...)
+		
+	}	
+	
+	strcpy(cImageMapContainer[iCount],inputTextLine);
+	
+/*	
 //		while ((c = getc(file)) != EOF) {
 		while (fgets (input, MAX_INPUT_TEXT_PER_LINE, file)) { //read each line of input
 			//edited by Mike, 20210326
@@ -199,18 +231,14 @@ FILE* inputReadImageFile(char *inputFilename) {
 			}
 
 			iCount=iCount+1;
-
-/*			
-			strcpy(tempInputTextLine,inputTextLine);
-	
-			//note: add "-1" for empty
-			//otherwise, comma as column is skipped
-			char *ch = strtok(tempInputTextLine, ",");
-*/							
 			printf("\n");			
 		}
+		
 		fclose(file);
+//		fclose(fTarget);
 	}	
+*/		
+	fclose(file);
 	
 	//added by Mike, 20210326
 	return file;
