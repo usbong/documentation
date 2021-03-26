@@ -17,7 +17,7 @@ Free Documentation License".
   @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
   @author: SYSON, MICHAEL B.
   @date created: 20201119
-  @last updated: 20210325
+  @last updated: 20210326
 
   Notes:
   1) Execute Commands in sequence:
@@ -53,63 +53,10 @@ Free Documentation License".
 char cImageMapContainer[MAX_INPUT_LINE_ROW][MAX_INPUT_TEXT_PER_LINE];
 */
 
-int main(){
-	//edited by Mike, 20201119
-	//int sock = make_socket(ADRESS_PORT, CLIENT_SOCKET, "10.35.43.41");
-	int sock = make_socket(ADRESS_PORT, CLIENT_SOCKET, "127.0.0.1");
-	int iTotalMessageSize = 0; //added by Mike, 20210325
-	
-	//edited by Mike, 20210325
-//	read("imageSample.png");
-//	read("inputHalimbawa.txt");	
-	read("inputImageSample.png");
-		
-	//edited by Mike, 20210323
-	//send_data (sock, "Some data to be sent");
-	//edited by Mike, 20210324
-//	send_data(sock, "Kumusta!");
-
-	//edited by Mike, 20210324
-//	send_data(sock, cImageMapContainer[316]);
-//	send_data(sock, cImageMapContainer[300]);
-
-	//edited by Mike, 20210324	
-	for (int iCount=0; iCount<MAX_INPUT_LINE_ROW; iCount++) {
-		//edited by Mike, 20210325
-		//send_data(sock, cImageMapContainer[iCount]);
-		if (strcmp(cImageMapContainer[iCount],"")==0) {
-			//if blank
-		}
-		else {
-			iTotalMessageSize = iTotalMessageSize + send_data(sock, cImageMapContainer[iCount]);
-		}		
-	}
-	//added by Mike, 20210325
-//	send_data(sock,"\0");
-
-//	send_data(sock, cImageMapContainer[0]);
-	
-/*	//removed by Mike, 20210324; segmentation fault error
-	char cDataToSend[MAX_INPUT_LINE_ROW*BUFFSIZE];
-	strcpy(cDataToSend, "");
-
-	for (int iCount=0; iCount<MAX_INPUT_LINE_ROW; iCount++) {
-		strcat(cDataToSend[iCount], cImageMapContainer[iCount]);
-	}	
-	send_data(sock, cDataToSend);
-*/
-	//TO-DO: -reverify: cause output .png image file is less than input .png image file
-	//file size (input): 25612B
-	//file size (output): 16266B
-	//iTotalMessageSize output: 16266 = with SERVER's iTotalMessageSize
-	printf ("CLIENT iTotalMessageSize: %i", iTotalMessageSize);
-	
-	close_socket(sock);
-}
-
-
 //added by Mike, 20210324
-void read(char *inputFilename) {
+//edited by Mike, 20210326
+//void read(char *inputFilename) {
+FILE* inputReadTextFile(char *inputFilename) {
 	int c;
 	FILE *file;
 	
@@ -119,6 +66,8 @@ void read(char *inputFilename) {
 	//I prefer to set a size, instead of dynamically allocate due to increasing likelihood of memory leaks
 	//where memory leaks = not deallocated storage in memory, albeit not used by software application
 	//identifying not deallocated storage in memory becomes more difficult with increasing use
+	//added by Mike, 20210326
+	//TO-DO: -update: max_size for input filename
 	char input[MAX_INPUT_TEXT_PER_LINE]; //max size
 	char inputTextLine[MAX_INPUT_TEXT_PER_LINE]; //max size
 	char tempInputTextLine[MAX_INPUT_TEXT_PER_LINE]; //max size
@@ -131,7 +80,13 @@ void read(char *inputFilename) {
 //	file = fopen(input, "r"); //.txt file
 	file = fopen(input, "rb"); //.txt file
 
-	if (file) {		
+	if (file) {				
+		//added by Mike, 20210326
+		//TO-DO: -reverify: this
+		fseek(file, 0, SEEK_END);
+		//size = ftell(picture);
+		fseek(file, 0, SEEK_SET);
+		
 //		while ((c = getc(file)) != EOF) {
 		while (fgets (input, MAX_INPUT_TEXT_PER_LINE, file)) { //read each line of input
 			int iSscanfReturnValue = sscanf(input,"%[^\n]",inputTextLine);
@@ -169,4 +124,157 @@ void read(char *inputFilename) {
 		}
 		fclose(file);
 	}	
+	
+	//added by Mike, 20210326
+	return file;
 }
+
+//added by Mike, 20210326
+//TO-DO: -update: this
+//Reference: https://www.codeproject.com/Questions/1119117/How-can-read-image-with-fopen-using-C-language;
+//last accessed: 20210326
+FILE* inputReadImageFile(char *inputFilename) {
+	int c;
+	FILE *file;
+	
+	int iCount=0;
+	
+	//note: if concatenated string exceeds size, "stack smashing detected"; terminated; Aborted (core dumped)
+	//I prefer to set a size, instead of dynamically allocate due to increasing likelihood of memory leaks
+	//where memory leaks = not deallocated storage in memory, albeit not used by software application
+	//identifying not deallocated storage in memory becomes more difficult with increasing use
+	//added by Mike, 20210326
+	//TO-DO: -update: max_size for input filename
+	char input[MAX_INPUT_TEXT_PER_LINE]; //max size
+	//edited by Mike, 20210326
+	//char inputTextLine[MAX_INPUT_TEXT_PER_LINE]; //max size
+	unsigned char inputTextLine[MAX_INPUT_TEXT_PER_LINE]; //max size
+
+	//removed by Mike, 20210326
+//	char tempInputTextLine[MAX_INPUT_TEXT_PER_LINE]; //max size
+	
+	strcpy(input, "input/");
+	strcat(input, inputFilename); //already includes .png, .txt, et cetera
+
+//	file = fopen("input/inputHalimbawa.txt", "r"); //.txt file
+	//edited by Mike, 20210324
+//	file = fopen(input, "r"); //.txt file
+	file = fopen(input, "rb"); //.txt file
+
+	if (file) {				
+/* //removed by Mike, 20210326		
+		//added by Mike, 20210326
+		fseek(file, 0, SEEK_END);
+		//size = ftell(picture);
+		fseek(file, 0, SEEK_SET);
+*/
+	
+//		while ((c = getc(file)) != EOF) {
+		while (fgets (input, MAX_INPUT_TEXT_PER_LINE, file)) { //read each line of input
+			//edited by Mike, 20210326
+			int iSscanfReturnValue = sscanf(input,"%[^\n]",inputTextLine);
+			
+//			printf("iSscanfReturnValue: %i",iSscanfReturnValue);
+			printf("count %i: ",iCount);						
+			
+			if (iSscanfReturnValue!=0) { //if text before "\n" found
+				//added by Mike, 20210325
+				//add new line
+				strcat(inputTextLine, "\n");
+
+				//input text per line			
+				printf("%s;",inputTextLine);
+				
+				//added by Mike, 20210326
+				fread(inputTextLine,strlen(inputTextLine)+1,1,file);
+				printf("fread output: %s\n", inputTextLine);
+				
+				strcpy(cImageMapContainer[iCount],inputTextLine);
+			}
+			//no text before "\n" match found using sscanf(...) command
+			//example: only "\n", i.e. new line
+			else {
+				printf("%s","only new line found");
+				strcpy(cImageMapContainer[iCount],"\n");				
+			}
+
+			iCount=iCount+1;
+
+/*			
+			strcpy(tempInputTextLine,inputTextLine);
+	
+			//note: add "-1" for empty
+			//otherwise, comma as column is skipped
+			char *ch = strtok(tempInputTextLine, ",");
+*/							
+			printf("\n");			
+		}
+		fclose(file);
+	}	
+	
+	//added by Mike, 20210326
+	return file;
+}
+
+int main(){
+	//edited by Mike, 20201119
+	//int sock = make_socket(ADRESS_PORT, CLIENT_SOCKET, "10.35.43.41");
+	int sock = make_socket(ADRESS_PORT, CLIENT_SOCKET, "127.0.0.1");
+	int iTotalMessageSize = 0; //added by Mike, 20210325
+	
+	//edited by Mike, 20210325
+//	read("imageSample.png");
+//	read("inputHalimbawa.txt");	
+	//edited by Mike, 20210326
+//	read("inputImageSample.png");
+	//edited by Mike, 20210326
+//	FILE *file = inputReadTextFile("inputImageSample.bmp");
+//	FILE *file = inputReadImageFile("inputImageSample.png");
+	FILE *file = inputReadImageFile("inputImageSample.bmp");
+			
+	//edited by Mike, 20210323
+	//send_data (sock, "Some data to be sent");
+	//edited by Mike, 20210324
+//	send_data(sock, "Kumusta!");
+
+	//edited by Mike, 20210324
+//	send_data(sock, cImageMapContainer[316]);
+//	send_data(sock, cImageMapContainer[300]);
+
+	//edited by Mike, 20210324	
+	for (int iCount=0; iCount<MAX_INPUT_LINE_ROW; iCount++) {
+		//edited by Mike, 20210325
+		//send_data(sock, cImageMapContainer[iCount]);
+		if (strcmp(cImageMapContainer[iCount],"")==0) {
+			//if blank
+		}
+		else {
+			//edited by Mike, 20210326
+//			iTotalMessageSize = iTotalMessageSize + send_data(sock, cImageMapContainer[iCount]);
+			iTotalMessageSize = iTotalMessageSize + send_data(sock, cImageMapContainer[iCount], file);			
+		}	
+	}
+	//added by Mike, 20210325
+//	send_data(sock,"\0");
+
+//	send_data(sock, cImageMapContainer[0]);
+	
+/*	//removed by Mike, 20210324; segmentation fault error
+	char cDataToSend[MAX_INPUT_LINE_ROW*BUFFSIZE];
+	strcpy(cDataToSend, "");
+
+	for (int iCount=0; iCount<MAX_INPUT_LINE_ROW; iCount++) {
+		strcat(cDataToSend[iCount], cImageMapContainer[iCount]);
+	}	
+	send_data(sock, cDataToSend);
+*/
+	//TO-DO: -reverify: cause output .png image file is less than input .png image file
+	//file size (input): 25612B
+	//file size (output): 16266B
+	//iTotalMessageSize output: 16266 = with SERVER's iTotalMessageSize
+	printf ("CLIENT iTotalMessageSize: %i", iTotalMessageSize);
+	
+	close_socket(sock);
+}
+
+

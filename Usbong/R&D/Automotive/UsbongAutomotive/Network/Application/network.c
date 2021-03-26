@@ -109,7 +109,10 @@ char * clean_data( const char * data ){
 
 //edited by Mike, 20210325
 //void send_data(int socket, const char * data){
-int send_data(int socket, const char * data){
+//edited by Mike, 20210326
+//int send_data(int socket, const char * data){
+int send_data(int socket, const char *data, FILE *file){
+
 	int sent_bytes, all_sent_bytes;
 	int err_status;
 	int sendstrlen;
@@ -117,15 +120,25 @@ int send_data(int socket, const char * data){
 	sendstrlen = strlen ( data );
 	all_sent_bytes = 0;
 
+	//edited by Mike, 20210326
 	sent_bytes = send ( socket, data, sendstrlen, 0 );
+/*	
+	int iResult;
+//	while (( iResult = fread( data, 1, sendstrlen, file )) > 0 ) {	
+		//send( sock_fd, buff, result, 0 );
+		sent_bytes = send (socket, data, iResult, 0);
+//	}
+*/	
+	
 	all_sent_bytes = all_sent_bytes + sent_bytes;
 
 	//edited by Mike, 20210324
 	//printf ("\t !!! Sent data: %s --- \n", data);
 	printf ("Data sent: %s", data);
 	printf("\n");
-	//added by Mike, 20210325	
-	printf ("all_sent_bytes: %i\n", all_sent_bytes);
+	//added by Mike, 20210325; edited by Mike, 20210325
+//	printf ("all_sent_bytes: %i\n", all_sent_bytes);
+	printf ("Sent bytes for this packet: %i\n", all_sent_bytes);
 	
 	return all_sent_bytes;
 }

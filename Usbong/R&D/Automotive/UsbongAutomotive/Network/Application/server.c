@@ -161,10 +161,15 @@ void handle_client (int client_socket){
 	printf("\n");
 	printf ("SERVER iTotalMessageSize: %i", iTotalMessageSize);
 	
-	//edited by Mike, 20210325
-	write("outputImageSample.png", cImageMapContainer[0]);
+	//edited by Mike, 20210325; edited by Mike, 2021326
+//	write("outputImageSample.png", cImageMapContainer[0]);
+//	fwrite("outputImageSample.png", cImageMapContainer[0]);
 //	write("outputHalimbawa.txt", cImageMapContainer[0]);
-		
+	//edited by Mike, 20210326
+	write("outputImageSample.bmp", cImageMapContainer[0]);
+//	write("outputImageSample.png", cImageMapContainer[0]);
+
+	
 	bytes = 0;
 		
 	strcpy(buffer, "");	
@@ -199,9 +204,10 @@ int main(){
 	return 0;
 }
 
-//added by Mike, 20210324
-//TO-DO: -add: write whole input cImageMapContainer
-void write(char *outputFilename, char *cOutputTextLine) {
+//added by Mike, 20210324; edited by Mike, 20210326
+//void write(char *outputFilename, char *cOutputTextLine) {
+void write(char *outputFilename, unsigned char *cOutputTextLine) {
+
 	FILE *file;
 	
 	//note: if concatenated string exceeds size, "stack smashing detected"; terminated; Aborted (core dumped)
@@ -257,9 +263,7 @@ void write(char *outputFilename, char *cOutputTextLine) {
 	{
 		//error
 		printf("Error: num != cOutputTextLineSize*iTotalMessageSize");
-	}	
-
-	
+	}
 	
 	//added by Mike, 20210324
 	fclose(file);	
