@@ -168,17 +168,25 @@ FILE* inputReadImageFile(char *inputFilename) {
 	file = fopen(cbUpdatedInputFilename, "rb"); //.txt file
  	
 	fseek(file, 0, SEEK_END);
-	int iLength = ftell(file);	
-	fseek(file, 0, SEEK_SET);
+//	int iLength = ftell(file);	
+	int iLength = 100+1;	
+//	int iLength = ftell(file)+1;	
+
+//	fseek(file, 0, SEEK_SET);
+	rewind(file);
 	
 	printf("iLength %i: ",iLength);						
 	
 
-//	unsigned char inputTextLine[iLength]; //max size
+	unsigned char inputTextLine[iLength]; //max size
 //	char inputTextLine[iLength]; //max size
-	unsigned char inputTextLine[MAX_INPUT_TEXT_PER_LINE]; //max size
+//	unsigned char inputTextLine[MAX_INPUT_TEXT_PER_LINE]; //max size
 	
-	for(int i=0; i<iLength; i++) {
+	strcpy(inputTextLine, "");
+	
+	for(int i=0; i<iLength-1; i++) {
+//	for(int i=0; i<10; i++) {
+		
 //		fputc(fgetc(file), fTarget);
 
 		//Note:
@@ -193,12 +201,45 @@ FILE* inputReadImageFile(char *inputFilename) {
 		
 //		putc(fgetc(file), inputTextLine[i]);		
 //		printf("putc %i: ",inputTextLine[i]);	
-		printf("putc %c: ",fgetc(file));				
-		//TO-DO: -add: put in container from fgetc(...)
+		//removed by Mike, 20210326
+//		printf("putc: %c;",fgetc(file));				
 		
+//		inputTextLine[i]=fgetc(file);
+		char c=fgetc(file);
+		
+		//TO-DO: -reverify: this
+		if (c=='\0') { //'', i.e. blank
+			printf("blank\n");
+			do {
+				if (i<iLength-1) {				
+					i++;	
+					c=fgetc(file);
+					
+					inputTextLine[i]=c;
+				}
+				else {
+					break;
+				}
+			}
+			while(c=='\0');
+		}
+		else {
+			inputTextLine[i]=c;
+		}
+		
+			//inputTextLine[i]=c;
+
+		printf("inputTextLine[%i]: %c;",i,inputTextLine[i]);	
 	}	
 	
-	strcpy(cImageMapContainer[iCount],inputTextLine);
+		inputTextLine[iLength-1] = '\0';	
+
+		printf("\ninputTextLine: %s\n",inputTextLine);						
+	
+//		strcat(cImageMapContainer[iCount],inputTextLine);
+		strcpy(cImageMapContainer[iCount],inputTextLine);
+
+		printf("\ncImageMapContainer[iCount]: %s\n",cImageMapContainer[iCount]);						
 	
 /*	
 //		while ((c = getc(file)) != EOF) {
@@ -269,8 +310,9 @@ int main(){
 //	send_data(sock, cImageMapContainer[316]);
 //	send_data(sock, cImageMapContainer[300]);
 
-	//edited by Mike, 20210324	
+	//edited by Mike, 20210324
 	for (int iCount=0; iCount<MAX_INPUT_LINE_ROW; iCount++) {
+
 		//edited by Mike, 20210325
 		//send_data(sock, cImageMapContainer[iCount]);
 		if (strcmp(cImageMapContainer[iCount],"")==0) {

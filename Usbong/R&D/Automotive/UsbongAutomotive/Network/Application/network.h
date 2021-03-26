@@ -76,6 +76,6 @@ Free Documentation License".
 #define START 11
 #define DIVIDER ":"
 
-//added by Mike, 20210324
-#define MAX_INPUT_LINE_ROW 316
+//added by Mike, 20210324; edited by Mike, 20210326
+#define MAX_INPUT_LINE_ROW 1 //316
 char cImageMapContainer[MAX_INPUT_LINE_ROW][MAX_INPUT_TEXT_PER_LINE];
