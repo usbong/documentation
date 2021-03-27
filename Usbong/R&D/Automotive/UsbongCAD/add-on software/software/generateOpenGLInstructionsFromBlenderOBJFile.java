@@ -15,9 +15,13 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B.
  * @date created: 2018
- * @last updated: 20210327
+ * @last updated: 20210328
  * @website: http://www.usbong.ph
  *
+ * Reference:
+ * http://www.opengl-tutorial.org/beginners-tutorials/tutorial-7-model-loading/;
+ * last accessed: 20210328
+ * 
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
  * Syson, M., Camacho, R., Gonzales, D., Del Rosario, R., Vidal, E., et al.
