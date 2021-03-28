@@ -83,13 +83,17 @@ public class generateOpenGLInstructionsFromBlenderOBJFile {
 	private static String inputFilename = "input202103"; //without extension; default input file
 	
 	//added by Mike, 20210328
-	private static Vector<String[]> vVertexContainer;
-	private static Vector<String[]> vNormalContainer;
-	private static Vector<String[]> vTextureCoordinatesContainer;
+	private static Vector<String[]> vVertexContainerTemp;
+	private static Vector<String[]> vNormalContainerTemp;
+	private static Vector<String[]> vTextureCoordinatesContainerTemp;
 	
-	private static Vector<String[]> vVertexIndicesContainer;
-	private static Vector<String[]> vUVIndicesContainer;
-	private static Vector<String[]> vNormalIndicesContainer;
+	private static Vector<String> vVertexIndicesContainer;
+	private static Vector<String> vNormalIndicesContainer;
+	private static Vector<String> vTextureCoordinatesIndicesContainer;
+
+	private static Vector<String[]> vVertexContainerOutput;
+	private static Vector<String[]> vNormalContainerOutput;
+	private static Vector<String[]> vTextureCoordinatesContainerOutput;	
 	
 	private static String medicalDoctorInput = ""; //added by Mike, 20200216
 	private static PrintWriter consultationWriter; //added by Mike, 20200217
@@ -211,21 +215,23 @@ public class generateOpenGLInstructionsFromBlenderOBJFile {
 		//OUTPUT
 		outputWriter.print("glBegin(GL_QUADS);\n");
 		
-		int iVertexContainerSize = vVertexContainer.size();
+		int iVertexContainerSize = vVertexContainerTemp.size();
 
 		//TO-DO: -update: this based on indices containers
 		//output: example: glVertex3f(0.421715, 1.200705, -0.286078);
+/*
 		for (int iCount=0; iCount<iVertexContainerSize; iCount++) {
-			String[] sbVertexArray = vVertexContainer.get(iCount);
+			String[] sbVertexArray = vVertexContainerTemp.get(iCount);
 			outputWriter.print("\tglVertex3f("+sbVertexArray[0]+","+sbVertexArray[1]+","+sbVertexArray[2]+");\n");
 		}
-/*
-			String[] sbTextureCoordinatesArray = vTextureCoordinatesContainer.get(iCount);
+			String[] sbTextureCoordinatesArray = vTextureCoordinatesContainerTemp.get(iCount);
 			outputWriter.print("\tglTexCoord2f("+sbVertexArray[0]+","+sbVertexArray[1]+");\n");
 
-			String[] sbNormalArray = vNormalContainer.get(iCount);
+			String[] sbNormalArray = vNormalContainerTemp.get(iCount);
 			outputWriter.print("\tgglNormal3f("+sbNormalArray[0]+","+sbNormalArray[1]+","+sbNormalArray[2]+");\n");
 */
+	
+
 		
 		outputWriter.print("glEnd();\n");
 		outputWriter.close();
@@ -407,14 +413,18 @@ if ((inputColumns[INPUT_CONSULTATION_MEDICAL_DOCTOR_COLUMN].toUpperCase().trim()
 	}
 
 	private static void processInputFiles(String[] args, boolean isPhaseOne) throws Exception {
-		//Vector<String[]> vVertexContainer = new Vector<String[]>();
-		vVertexContainer = new Vector<String[]>();
-		vTextureCoordinatesContainer = new Vector<String[]>();
-		vNormalContainer = new Vector<String[]>();
+		//Vector<String[]> vVertexContainerTemp = new Vector<String[]>();
+		vVertexContainerTemp = new Vector<String[]>();
+		vTextureCoordinatesContainerTemp = new Vector<String[]>();
+		vNormalContainerTemp = new Vector<String[]>();
 		
-		vVertexIndicesContainer = new Vector<String[]>();
-		vUVIndicesContainer = new Vector<String[]>();
-		vNormalIndicesContainer = new Vector<String[]>();
+		vVertexIndicesContainer = new Vector<String>();
+		vTextureCoordinatesIndicesContainer = new Vector<String>();
+		vNormalIndicesContainer = new Vector<String>();
+
+		vVertexContainerOutput = new Vector<String[]>();
+		vTextureCoordinatesContainerOutput = new Vector<String[]>();
+		vNormalContainerOutput = new Vector<String[]>();
 				
 		for (int i=0; i<args.length; i++) {						
 			inputFilename = args[i].replaceAll(".obj","");			
@@ -471,17 +481,17 @@ if ((inputColumns[INPUT_CONSULTATION_MEDICAL_DOCTOR_COLUMN].toUpperCase().trim()
 				//vertex
 				else if (inputColumns[0].equals("v")) {
 					String[] sbVertexArray = {inputColumns[1],inputColumns[2],inputColumns[3]};
-					vVertexContainer.add(sbVertexArray);
+					vVertexContainerTemp.add(sbVertexArray);
 				}
 				//vertex texture
 				else if (inputColumns[0].equals("vt")) {
 					String[] sbTextureCoordinatesArray = {inputColumns[1],inputColumns[2]};
-					vTextureCoordinatesContainer.add(sbTextureCoordinatesArray);					
+					vTextureCoordinatesContainerTemp.add(sbTextureCoordinatesArray);					
 				}
 				//vertex normal
 				else if (inputColumns[0].equals("vn")) {
 					String[] sbNormalArray = {inputColumns[1],inputColumns[2],inputColumns[3]};
-					vNormalContainer.add(sbNormalArray);					
+					vNormalContainerTemp.add(sbNormalArray);					
 				}
 				//TO-DO: -reverify: this
 				//face; vertex index starts at 1, instead of 0
@@ -489,22 +499,58 @@ if ((inputColumns[INPUT_CONSULTATION_MEDICAL_DOCTOR_COLUMN].toUpperCase().trim()
 					//we start at iCountInputColumns=1
 					//iCountInputColumns[0] is for "f"					
 					for (int iCountInputColumns=1; iCountInputColumns<4; iCountInputColumns++) {
+						//we do not include "f"
 						String[] sbInputColumnsF = inputColumns[iCountInputColumns].split("/");
-						String[] sbIndexArray = {sbInputColumnsF[0],sbInputColumnsF[1],sbInputColumnsF[2]};
 						
+//						System.out.println("sbInputColumnsF[0]: "+sbInputColumnsF[0]);
+									
+						String[] sbIndexArray = {sbInputColumnsF[0],sbInputColumnsF[1],sbInputColumnsF[2]};
+												
 						if (iCountInputColumns==1) {
-							vVertexIndicesContainer.add(sbIndexArray);
+//							vVertexIndicesContainer.add(sbIndexArray);
+							vVertexIndicesContainer.add(sbIndexArray[0]);
 						}
 						else if (iCountInputColumns==2) {
-							vUVIndicesContainer.add(sbIndexArray);
+//							vTextureCoordinatesIndicesContainer.add(sbIndexArray);
+							vTextureCoordinatesIndicesContainer.add(sbIndexArray[1]);
 						}
 						else {
-							vNormalIndicesContainer.add(sbIndexArray);
+//							vNormalIndicesContainer.add(sbIndexArray);
+							vNormalIndicesContainer.add(sbIndexArray[2]);
 						}
 					}
 				}
 			}		
 		}		
+			
+	    int iVertexIndicesContainerSize = vVertexIndicesContainer.size();
+	    int iTextureCoordinatesIndicesContainerSize = vTextureCoordinatesIndicesContainer.size();
+	    int iNormalIndicesContainerSize = vNormalIndicesContainer.size();
+		
+	    for (int iCount=0; iCount<iVertexIndicesContainerSize; iCount++ ) {		 
+	    	int iVertexIndex = Integer.parseInt(vVertexIndicesContainer.get(iCount));		   
+			//-1 due to .obj file indexing starts at 1, instead of 0
+/*			System.out.println("iVertexIndex: "+iVertexIndex);
+			System.out.println("vVertexContainerTempSize: "+vVertexContainerTemp.size());
+			System.out.println("vVertexContainerValue: "+vVertexContainerTemp.get(iVertexIndex-1)[0]);
+*/				
+		 	vVertexContainerOutput.add(vVertexContainerTemp.get(iVertexIndex-1));
+		}		
+
+		for (int iCount=0; iCount<iTextureCoordinatesIndicesContainerSize; iCount++ ) {		 
+	    	int iTextureCoordinatesIndex = Integer.parseInt(vTextureCoordinatesIndicesContainer.get(iCount));
+		   
+			//-1 due to .obj file indexing starts at 1, instead of 0
+			vTextureCoordinatesContainerOutput.add(vTextureCoordinatesContainerTemp.get(iTextureCoordinatesIndex-1));
+		}		
+
+	    for (int iCount=0; iCount<iNormalIndicesContainerSize; iCount++ ) {		 
+	    	int iNormalIndex = Integer.parseInt(vNormalIndicesContainer.get(iCount));
+		   
+			//-1 due to .obj file indexing starts at 1, instead of 0
+			vNormalContainerOutput.add(vNormalContainerTemp.get(iNormalIndex-1));
+		}		
+		
 	}
 	
 	//edited by Mike, 20210328
