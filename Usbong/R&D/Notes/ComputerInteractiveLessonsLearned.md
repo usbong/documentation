@@ -57,7 +57,7 @@ TO-DO: -update: this<br/>
 --> Dhalsim's advice after fighting: excess becomes 毒 (doku; poison, lason)<br/>
 --> <b>Recommended Action:</b><br/>
 --> verify: Intelligent Systems Co., Ltd's [TOP MESSAGE](https://www.intsys.co.jp/company/message/)<br/>
---> [https://www.intsys.co.jp/company/message/](https://www.intsys.co.jp/company/message/)<br/>
+--> [https://www.intsys.co.jp/company/message/](https://www.intsys.co.jp/company/message/); last accessed: 20210328<br/>
 --> 開発支援ツール (development support tool), developer<br/>
 --> Examples (Representative Works):<br/>
 --> ファミコンウォーズ (famicom wars; family computer wars; Advance Wars) series,<br/> 
