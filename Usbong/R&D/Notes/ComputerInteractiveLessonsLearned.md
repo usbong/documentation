@@ -49,10 +49,10 @@ TO-DO: -update: this<br/>
 --> verify: this result during Boss battle, e.g. boxer M.BISON; Computer as M.BISON immediately attacks<br/>
 --> verify: speed-up to be hyper after opening and closing PSP lid<br/>
 
-### 1.1.5) Capcom vs SNK 2: Millionaire Fighting
+### 1.1.5) Capcom vs SNK 2: Millionaire Fighting 2001
 --> Fighting becomes 勝負 (shoubu; win・lose), e.g. both fighters have low remaining health strength and clock time at less than 3seconds<br/>
---> verified: with self as Ryuu (smiling illustrated photograph version) that I lose the fight due to verifying the clock and deciding to attack first before computer (set at highest difficulty) as Blanka<br/>
---> I as Ryuu had been executing continuously 波動拳（hadouken）to reduce Computer Blanka's health strength to severity low, i.e. close to zero<br/>
+--> verified: with self as Ryuu (smiling illustrated photograph version; fighting style: K-Groove, i.e. Just Defense) that I lost the fight due to verifying the clock and deciding to attack first before computer (set at highest difficulty) as Blanka, with fighting style also K-Groove<br/>
+--> I as Ryuu had been executing continuously 波動拳（hadouken）to reduce Computer Blanka's health strength to severity low, i.e. close to zero.<br/>
 --> However, Computer Blanka's health was still stronger than mine due to I as Ryuu received several attacks.<br/> 
 --> Dhalsim's advice after fighting: excess becomes 毒 (doku; poison, lason)<br/>
 --> <b>Recommended Action:</b><br/>
@@ -91,7 +91,6 @@ TO-DO: -update: this<br/>
 --> verify: Metal Gear Solid (Gameboy Color version)<br/>
 --> longplays.org: https://www.youtube.com/watch?v=qOIe1bcWAn0;<br/> 
 --> last accessed: 20210325
-
 
 ## 1.4) SONY Computer Entertainment Europe and Guerrilla
 ### 1.4.1) KillZone 2
@@ -254,3 +253,6 @@ TO-DO: -update: this
 https://gaming.stackexchange.com/questions/124745/why-does-my-nintendo-64-randomly-reset<br/>
 --> last accessed: 20210307<br/>
 --> answer by: ssokolow, 20150306T1951
+
+## 2.3) Computer Machine Controller
+--> preference: XBOX360 Controller's analog stick over the PS3's 
