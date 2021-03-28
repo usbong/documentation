@@ -84,6 +84,9 @@ public class generateOpenGLInstructionsFromBlenderOBJFile {
 	
 	//added by Mike, 20210328
 	private static Vector<String[]> vVertexContainer;
+	private static Vector<String[]> vNormalContainer;
+	private static Vector<String[]> vTextureCoordinatesContainer;
+	
 	private static Vector<String[]> vVertexIndicesContainer;
 	private static Vector<String[]> vUVIndicesContainer;
 	private static Vector<String[]> vNormalIndicesContainer;
@@ -203,7 +206,6 @@ public class generateOpenGLInstructionsFromBlenderOBJFile {
 		dateValuesArrayInt = new int[args.length]; //added by Mike, 20180412
 		//dateValuesArrayInt = new ArrayList<int>(); //edited by Mike, 20181221
 
-
 		processInputFiles(args, true);	
 
 		//OUTPUT
@@ -211,11 +213,19 @@ public class generateOpenGLInstructionsFromBlenderOBJFile {
 		
 		int iVertexContainerSize = vVertexContainer.size();
 
+		//TO-DO: -update: this based on indices containers
 		//output: example: glVertex3f(0.421715, 1.200705, -0.286078);
 		for (int iCount=0; iCount<iVertexContainerSize; iCount++) {
 			String[] sbVertexArray = vVertexContainer.get(iCount);
 			outputWriter.print("\tglVertex3f("+sbVertexArray[0]+","+sbVertexArray[1]+","+sbVertexArray[2]+");\n");
 		}
+/*
+			String[] sbTextureCoordinatesArray = vTextureCoordinatesContainer.get(iCount);
+			outputWriter.print("\tglTexCoord2f("+sbVertexArray[0]+","+sbVertexArray[1]+");\n");
+
+			String[] sbNormalArray = vNormalContainer.get(iCount);
+			outputWriter.print("\tgglNormal3f("+sbNormalArray[0]+","+sbNormalArray[1]+","+sbNormalArray[2]+");\n");
+*/
 		
 		outputWriter.print("glEnd();\n");
 		outputWriter.close();
@@ -399,6 +409,9 @@ if ((inputColumns[INPUT_CONSULTATION_MEDICAL_DOCTOR_COLUMN].toUpperCase().trim()
 	private static void processInputFiles(String[] args, boolean isPhaseOne) throws Exception {
 		//Vector<String[]> vVertexContainer = new Vector<String[]>();
 		vVertexContainer = new Vector<String[]>();
+		vTextureCoordinatesContainer = new Vector<String[]>();
+		vNormalContainer = new Vector<String[]>();
+		
 		vVertexIndicesContainer = new Vector<String[]>();
 		vUVIndicesContainer = new Vector<String[]>();
 		vNormalIndicesContainer = new Vector<String[]>();
@@ -462,9 +475,13 @@ if ((inputColumns[INPUT_CONSULTATION_MEDICAL_DOCTOR_COLUMN].toUpperCase().trim()
 				}
 				//vertex texture
 				else if (inputColumns[0].equals("vt")) {
+					String[] sbTextureCoordinatesArray = {inputColumns[1],inputColumns[2]};
+					vTextureCoordinatesContainer.add(sbTextureCoordinatesArray);					
 				}
 				//vertex normal
 				else if (inputColumns[0].equals("vn")) {
+					String[] sbNormalArray = {inputColumns[1],inputColumns[2],inputColumns[3]};
+					vNormalContainer.add(sbNormalArray);					
 				}
 				//TO-DO: -reverify: this
 				//face; vertex index starts at 1, instead of 0
