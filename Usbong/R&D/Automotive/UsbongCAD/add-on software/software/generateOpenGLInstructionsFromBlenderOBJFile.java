@@ -84,6 +84,9 @@ public class generateOpenGLInstructionsFromBlenderOBJFile {
 	
 	//added by Mike, 20210328
 	private static Vector<String[]> vVertexContainer;
+	private static Vector<String[]> vVertexIndicesContainer;
+	private static Vector<String[]> vUVIndicesContainer;
+	private static Vector<String[]> vNormalIndicesContainer;
 	
 	private static String medicalDoctorInput = ""; //added by Mike, 20200216
 	private static PrintWriter consultationWriter; //added by Mike, 20200217
@@ -396,7 +399,10 @@ if ((inputColumns[INPUT_CONSULTATION_MEDICAL_DOCTOR_COLUMN].toUpperCase().trim()
 	private static void processInputFiles(String[] args, boolean isPhaseOne) throws Exception {
 		//Vector<String[]> vVertexContainer = new Vector<String[]>();
 		vVertexContainer = new Vector<String[]>();
-		
+		vVertexIndicesContainer = new Vector<String[]>();
+		vUVIndicesContainer = new Vector<String[]>();
+		vNormalIndicesContainer = new Vector<String[]>();
+				
 		for (int i=0; i<args.length; i++) {						
 			inputFilename = args[i].replaceAll(".obj","");			
 			File f = new File(inputFilename+".obj");
@@ -460,8 +466,25 @@ if ((inputColumns[INPUT_CONSULTATION_MEDICAL_DOCTOR_COLUMN].toUpperCase().trim()
 				//vertex normal
 				else if (inputColumns[0].equals("vn")) {
 				}
+				//TO-DO: -reverify: this
 				//face; vertex index starts at 1, instead of 0
 				else if (inputColumns[0].equals("f")) {
+					//we start at iCountInputColumns=1
+					//iCountInputColumns[0] is for "f"					
+					for (int iCountInputColumns=1; iCountInputColumns<4; iCountInputColumns++) {
+						String[] sbInputColumnsF = inputColumns[iCountInputColumns].split("/");
+						String[] sbIndexArray = {sbInputColumnsF[0],sbInputColumnsF[1],sbInputColumnsF[2]};
+						
+						if (iCountInputColumns==1) {
+							vVertexIndicesContainer.add(sbIndexArray);
+						}
+						else if (iCountInputColumns==2) {
+							vUVIndicesContainer.add(sbIndexArray);
+						}
+						else {
+							vNormalIndicesContainer.add(sbIndexArray);
+						}
+					}
 				}
 			}		
 		}		
