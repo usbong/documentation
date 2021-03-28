@@ -52,8 +52,9 @@ TO-DO: -update: this<br/>
 ### 1.1.5) Capcom vs SNK 2: Millionaire Fighting 2001
 --> Fighting becomes 勝負 (shoubu; win・lose), e.g. both fighters have low remaining health strength and clock time at less than 3seconds<br/>
 --> verified: with self as Ryuu (smiling illustrated photograph version; fighting style: K-Groove, i.e. Just Defense) that I lost the fight due to verifying the clock and deciding to attack first before computer (set at highest difficulty) as Blanka, with fighting style also K-Groove<br/>
---> I as Ryuu had been executing continuously 波動拳（hadouken）to reduce Computer Blanka's health strength to severity low, i.e. close to zero.<br/>
---> However, Computer Blanka's health was still stronger than mine due to I as Ryuu received several attacks.<br/> 
+--> I as Ryuu had been executing continuously 波動拳（hadouken; wave movement fist）to reduce Computer Blanka's health strength to severity low, i.e. close to zero.<br/>
+--> However, Computer Blanka's health was still stronger than mine due to I as Ryuu received several hits from Blanka's attacks.<br/>
+--> Meanwhile, Computer Blanka was still guarding as defense against my 波動拳 attacks.<br/>
 --> Dhalsim's advice after fighting: excess becomes 毒 (doku; poison, lason)<br/>
 --> <b>Recommended Action:</b><br/>
 --> verify: Intelligent Systems Co., Ltd's [TOP MESSAGE](https://www.intsys.co.jp/company/message/)<br/>
@@ -255,4 +256,4 @@ https://gaming.stackexchange.com/questions/124745/why-does-my-nintendo-64-random
 --> answer by: ssokolow, 20150306T1951
 
 ## 2.3) Computer Machine Controller
---> preference: XBOX360 Controller's analog stick over the PS3's 
+--> preference: XBOX360 Controller's analog stick over the PS3 Controller's 
