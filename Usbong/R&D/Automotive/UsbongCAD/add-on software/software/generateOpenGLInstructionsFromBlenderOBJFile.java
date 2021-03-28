@@ -64,39 +64,23 @@ import java.text.DecimalFormat;
 
 /*
 ' Given:
-' 1) Encoding for the Month Input Worksheet
-' --> Saved/Exported as "Tab delimited" .txt file from Excel
-' --> Example: input201808.txt (where the date format is YYYYMM; based on ISO 8601)
+' 1) .obj file exported from Blender 3D Tool
 '
 ' Output:
-' 1) Auto-generated Unpaid HMO Summary Report
-' --> "Tab delimited" .txt file 
-' --> Regardless of the name of the input file or input files, the output file will be "UnpaidHMOSummaryReportOutput.txt".
+' 1) .txt file with the auto-generated set of instructions 
+' 	   to be executed using OpenGL (Graphics Library)
 '
 ' Notes:
 ' 1) To execute the add-on software/application simply use the following command:
-'   java generateUnpaidHMOSummaryReportOfAllInputFilesFromMasterList input201801.txt
+'   java generateOpenGLInstructionsFromBlenderOBJFile *.obj
 ' 
-' where: "input201801.txt" is the name of the file.
+' reminder: verify that at least 1 .obj file exists inside the input folder
 ' 
-' 2) To execute a set of input files, e.g. input201801.txt, input201802.txt, you can use the following command: 
-'   java generateUnpaidHMOSummaryReportOfAllInputFilesFromMasterList input*
-' 
-' where: "input*" means any file in the directory that starts with "input".
-'
-' 3) Make sure to include "Consultation" in the input file name.
-' --> This is so that the add-on software would be able to properly identify it as a set of "Consultation" transactions, instead of those of "Treatment".
-' --> Example: inputConsultation201801.txt
-'
-' 4) If you use space in your file name, e.g. "input Consultation 201801.txt", you will have to execute the input files as follows.
-'   java generateUnpaidHMOSummaryReportOfAllInputFilesFromMasterList *"2018"*.txt
-'
-' where: * means any set of characters
 */ 
 
 public class generateOpenGLInstructionsFromBlenderOBJFile {	
 	private static boolean inDebugMode = true;
-	private static String inputFilename = "input201801"; //without extension; default input file
+	private static String inputFilename = "input202103"; //without extension; default input file
 	
 	private static String medicalDoctorInput = ""; //added by Mike, 20200216
 	private static PrintWriter consultationWriter; //added by Mike, 20200217
@@ -205,31 +189,18 @@ public class generateOpenGLInstructionsFromBlenderOBJFile {
 	{					
 		makeFilePath("output"); //"output" is the folder where I've instructed the add-on software/application to store the output file			
 		
-		//removed by Mike, 20200217
-/*		
-		PrintWriter consultationWriter = new PrintWriter("output/UnpaidHMOSummaryReportOutputConsultation.txt", "UTF-8");			
-*/		
-		PrintWriter treatmentWriter = new PrintWriter("output/UnpaidHMOSummaryReportOutputTreatment.txt", "UTF-8");			
+		PrintWriter openGLWriter = new PrintWriter("output/openGLInstructions.txt", "UTF-8");			
 
-		/*referringDoctorContainer = new HashMap<String, double[]>();
-		*/
-
-/*		
-		transactionDateContainer = new ArrayList<String[]>(); //added by Mike, 20190119
-		
-		dateContainer = new HashMap<Integer, double[]>();
-		hmoContainer = new HashMap<String, double[]>();
-		nonHmoContainer = new HashMap<String, double[]>();
-		referringDoctorContainer = new HashMap<String, double[]>();
-//		medicalDoctorContainer = new HashMap<String, double[]>();
-		classificationContainerPerMedicalDoctor = new HashMap<String, HashMap<String, double[]>>();							
-*/		
 		//added by Mike, 20181116
 		startDate = null; //properly set the month and year in the output file of each input file
 		dateValuesArray = new String[args.length]; //added by Mike, 20180412
 		dateValuesArrayInt = new int[args.length]; //added by Mike, 20180412
 		//dateValuesArrayInt = new ArrayList<int>(); //edited by Mike, 20181221
 
+
+		processInputFiles(args, true);	
+
+/*
 		//added by Mike, 20200217		
 		//medicalDoctorInput = "CIELO"; //added by Mike, 20200216
 
@@ -308,74 +279,6 @@ public class generateOpenGLInstructionsFromBlenderOBJFile {
 				treatmentWriter.close();
 			}
 		}
-/*
-		//PART/COMPONENT/MODULE/PHASE 1
-		processInputFiles(args, true);
-*/
-		//PART/COMPONENT/MODULE/PHASE 2		
-/*		setClassificationContainerPerMedicalDoctor(classificationContainerPerMedicalDoctor);
-		processInputFiles(args, false);
-*/				
-		
-		/*
-		 * --------------------------------------------------------------------
-		 * OUTPUT
-		 * --------------------------------------------------------------------
-		*/
-/*		
-		//added by Mike, 20181118
-		consultationWriter.print("Unpaid HMO Summary Report (CONSULTATION)\n");
-		
-		//--------------------------------------------------------------------
-		//added by Mike, 20190122
-		double totalUnpaidHMOFeeConsultation = 0;
-		double totalUnpaidHMOFeeTreatment = 0;
-		
-		//init table header names
-//		writer.print("CONSULTATION\n");
-		consultationWriter.print("DATE:\tPATIENT NAME:\tFEE:\tCLASSIFICATION:\tAPPROVAL CODE:\tUNPAID REASON:\n"); 		
-		for(int i=0; i<transactionDateContainer.size(); i++) {
-			if (transactionDateContainer.get(i)[OUTPUT_HMO_FILE_TYPE_COLUMN].toLowerCase().trim().equals("consultation")){
-				consultationWriter.print(
-								transactionDateContainer.get(i)[OUTPUT_HMO_DATE_COLUMN]+"\t"+
-								transactionDateContainer.get(i)[OUTPUT_HMO_NAME_COLUMN]+"\t"+
-								transactionDateContainer.get(i)[OUTPUT_HMO_FEE_COLUMN]+"\t"+
-								transactionDateContainer.get(i)[OUTPUT_HMO_CLASS_COLUMN]+"\t"+
-//								transactionDateContainer.get(i)[OUTPUT_HMO_APPROVAL_CODE_COLUMN]+"\n"
-								"\t\n"
-							); 				   											
-							
-				//added by Mike, 20190122
-				totalUnpaidHMOFeeConsultation += Double.parseDouble(transactionDateContainer.get(i)[OUTPUT_HMO_FEE_COLUMN].replace("\"","").replace(",",""));
-			}
-		}
-		consultationWriter.print("TOTAL:\t\t"+totalUnpaidHMOFeeConsultation+"\n"); 		
-*/
-/*
-		double totalUnpaidHMOFeeTreatment = 0;
-
-		treatmentWriter.print("Unpaid HMO Summary Report (PT TREATMENT)\n");
-
-//		treatmentWriter.print("\nPT TREATMENT\n");
-		treatmentWriter.print("DATE:\tPATIENT NAME:\tFEE:\tCLASSIFICATION:\tAPPROVAL CODE:\tUNPAID REASON:\n"); 		
-		for(int i=0; i<transactionDateContainer.size(); i++) {
-			if (transactionDateContainer.get(i)[OUTPUT_HMO_FILE_TYPE_COLUMN].toLowerCase().trim().equals("treatment")){
-				treatmentWriter.print(
-								transactionDateContainer.get(i)[OUTPUT_HMO_DATE_COLUMN]+"\t"+
-								transactionDateContainer.get(i)[OUTPUT_HMO_NAME_COLUMN]+"\t"+
-								transactionDateContainer.get(i)[OUTPUT_HMO_FEE_COLUMN]+"\t"+
-								transactionDateContainer.get(i)[OUTPUT_HMO_CLASS_COLUMN]+"\t"+
-								transactionDateContainer.get(i)[OUTPUT_HMO_APPROVAL_CODE_COLUMN]+"\n"
-							); 				   											
-							
-				//added by Mike, 20190122
-				totalUnpaidHMOFeeTreatment += Double.parseDouble(transactionDateContainer.get(i)[OUTPUT_HMO_FEE_COLUMN].replace("\"","").replace(",",""));
-			}
-		}
-		treatmentWriter.print("TOTAL:\t\t"+totalUnpaidHMOFeeTreatment+"\n"); 		
-		
-//		consultationWriter.close();		//removed by Mike, 20200217
-		treatmentWriter.close();
 */		
 	}
 	
@@ -474,6 +377,76 @@ if ((inputColumns[INPUT_CONSULTATION_MEDICAL_DOCTOR_COLUMN].toUpperCase().trim()
 	}
 
 	private static void processInputFiles(String[] args, boolean isPhaseOne) throws Exception {
+		for (int i=0; i<args.length; i++) {						
+			inputFilename = args[i].replaceAll(".obj","");			
+			File f = new File(inputFilename+".obj");
+
+			System.out.println("inputFilename: " + inputFilename);
+						
+			Scanner sc = new Scanner(new FileInputStream(f));				
+		
+			String s;		
+			//removed by Mike, 20210328
+//			s=sc.nextLine(); //skip the first row, which is the input file's table headers
+	
+			if (inDebugMode) {
+				rowCount=0;
+			}
+						
+			//count/compute the number-based values of inputColumns 
+			while (sc.hasNextLine()) {
+				s=sc.nextLine();
+
+				//we put this here to include all rows in the count
+				//start at 1
+				if (inDebugMode) {
+					rowCount++;
+					System.out.println("rowCount: "+rowCount);
+				}
+
+				//if the row is blank
+				if (s.trim().equals("")) {
+					continue;
+				}
+				
+				String[] inputColumns = s.split(" "); //blank space as delimiter
+
+				if (inputColumns[0].equals("#")) {
+					continue;
+				}
+				else if (inputColumns[0].equals("mtllib")) {
+					continue;
+				}
+				else if (inputColumns[0].equals("usemtl")) {
+					continue;
+				}
+				else if (inputColumns[0].equals("o")) {
+					//o: object type, e.g. cube
+					//TO-DO: -update: this
+					continue;
+				}
+				else if (inputColumns[0].equals("s")) {
+					//TO-DO: -update: this
+					continue;
+				}
+				//vertex
+				else if (inputColumns[0].equals("v")) {
+				}
+				//vertex texture
+				else if (inputColumns[0].equals("vt")) {
+				}
+				//vertex normal
+				else if (inputColumns[0].equals("vn")) {
+				}
+				//face; vertex index starts at 1, instead of 0
+				else if (inputColumns[0].equals("f")) {
+				}
+			}		
+		}		
+	}
+	
+	//edited by Mike, 20210328
+	private static void processInputFilesPrev(String[] args, boolean isPhaseOne) throws Exception {
 		//edited by Mike, 20181030
 		for (int i=0; i<args.length; i++) {						
 			//added by Mike, 20181030
@@ -562,6 +535,5 @@ if ((inputColumns[INPUT_CONSULTATION_MEDICAL_DOCTOR_COLUMN].toUpperCase().trim()
 				}
 			}		
 		}		
-
 	}
 }
