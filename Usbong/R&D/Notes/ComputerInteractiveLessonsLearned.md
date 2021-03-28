@@ -54,8 +54,13 @@ TO-DO: -update: this<br/>
 --> verified: with self as Ryuu (smiling illustrated photograph version) that I lose the fight due to verifying the clock and deciding to attack first before computer (set at highest difficulty) as Blanka<br/>
 --> Previously, I as Ryuu was executing continuously 波動拳（hadouken）to reduce Computer Blanka's health strength<br/>
 --> Computer Blanka's health was stronger than mine after I as Ryuu received several attacks.<br/> 
---> Dhalsim advice after fighting: excess becomes poison<br/>
---> Recommended Action: verify: Intelligent Systems Co., Ltd's [TOP MESSAGE](https://www.intsys.co.jp/company/message/)
+--> Dhalsim's advice after fighting: excess becomes poison<br/>
+--> <b>Recommended Action:</b><br/>
+--> verify: Intelligent Systems Co., Ltd's [TOP MESSAGE](https://www.intsys.co.jp/company/message/)<br/>
+--> 開発支援ツール (development support tool), developer<br/>
+--> Examples (Representative Works): ファミコンウォーズ (famicom wars; Advance Wars) series,<br/> 
+--> ファイアーエムブレム (faia- emuburemu; Fire Emblem) series,<br/>
+--> メトロイド (Metroid), et cetera<br/>
 
 ## 1.2) SEGA: SERVICE GAMES
 ### 1.2.1) Sonic 1
