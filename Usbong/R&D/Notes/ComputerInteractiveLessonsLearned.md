@@ -64,6 +64,11 @@ TO-DO: -update: this<br/>
 --> ファミコンウォーズ (famicom wars; family computer wars; Advance Wars) series,<br/> 
 --> ファイアーエムブレム (faia- emuburemu; Fire Emblem) series,<br/>
 --> メトロイド (Metroid), et cetera<br/>
+--> <b>Additional Notes:</b><br/>
+--> played: Capcom vs SNK: Millennium Fight 2000 at the Arcade Game Center<br/>
+--> Blanka technique in Street Fighter Zero 3 can be used to finish all matches with Computer.<br/>
+--> Additional team members empower me to verify select Characters whom I have yet to learn.<br/>
+--> Examples: Yamazaki, Vice<br/>
 
 ## 1.2) SEGA: SERVICE GAMES
 ### 1.2.1) Sonic 1
@@ -256,4 +261,26 @@ https://gaming.stackexchange.com/questions/124745/why-does-my-nintendo-64-random
 --> answer by: ssokolow, 20150306T1951
 
 ## 2.3) Computer Machine Controller
---> preference: XBOX360 Controller's analog stick over the PS3 Controller's 
+--> preference: XBOX360 Controller's analog stick over the PlayStation (PS) 3 Controller's<br/>
+--> This is due to the rubber top of the PS3's analog stick becomes sticky and eventually has to be removed.<br/>
+--> The rubber top of the XBOX360's analog stick does not become sticky, thereby the stick does not feel hard plastic when touched.<br/>
+--> At present, I do not have an XBOX360 machine; I still use a pre-used PS3 machine.<br/>
+
+### Additional Note:
+--> bought: XBOX360 Controller in 2008 in 秋葉原 (Akihabara), Tokyo, Japan<br/>
+--> At the time, such controllers were not yet sold in the Philippines.<br/>
+--> It uses a Universal Serial Bus (USB) port that can be connected to a Computer for use,<br/>
+--> e.g. with Microsoft XNA Development Kit.<br/>
+--> observed: select devices, e.g. Nintendo Dual Screen (DS) USB cable to receive electricity after connecting to a Computer, take longer to be sold or do not exist at all in the Philippines<br/>
+--> bought: DS USB cable at a convenience store in Japan<br/>
+--> observed: this is due to the target market was not the Philippines<br/>
+
+### Recommended Action: 
+--> verify: target market's preferences, e.g. Magic Trading Cards, create a version that solves their problems, while adding Philippine culture<br/>
+--> Japanese example: Final Fantasy 6<br/>
+--> Additional Examples:<br/>
+--> Mario Kart 64 -> Diddy Kong Racing 64 -> Crash Team Racing
+
+### Recommended Reading: 
+--> David Shippy and Mickie Phipps' ["The Race for a New Game Machine"](https://www.amazon.com/Race-New-Game-Machine-Playstation/dp/0806531010)<br/>
+--> Asakura Reiji's ["Revolutionaries at Sony"](https://github.com/usbong/documentation/blob/master/Usbong/R%26D/CaseStudyNTT/res/References.md)
