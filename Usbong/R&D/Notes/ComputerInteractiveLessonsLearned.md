@@ -66,9 +66,9 @@ TO-DO: -update: this<br/>
 --> メトロイド (Metroid), et cetera<br/>
 --> <b>Additional Notes:</b><br/>
 --> played: Capcom vs SNK: Millennium Fight 2000 at the Arcade Game Center<br/>
---> Blanka technique in Street Fighter Zero 3 can be used to finish all matches with Computer.<br/>
+--> Blanka technique in Street Fighter Zero 3 can be used to finish all matches with Computer with only 1 coin.<br/>
 --> Additional team members empower me to verify select Characters whom I have yet to learn.<br/>
---> Examples: Yamazaki, Vice<br/>
+--> Examples: Yamazaki, Vice, Terry Bogard<br/>
 
 ## 1.2) SEGA: SERVICE GAMES
 ### 1.2.1) Sonic 1
