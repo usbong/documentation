@@ -52,13 +52,15 @@ TO-DO: -update: this<br/>
 ### 1.1.5) Capcom vs SNK 2: Millionaire Fighting
 --> Fighting becomes 勝負 (shoubu; win・lose), e.g. both fighters have low remaining health strength and clock time at less than 3seconds<br/>
 --> verified: with self as Ryuu (smiling illustrated photograph version) that I lose the fight due to verifying the clock and deciding to attack first before computer (set at highest difficulty) as Blanka<br/>
---> Previously, I as Ryuu was executing continuously 波動拳（hadouken）to reduce Computer Blanka's health strength<br/>
---> Computer Blanka's health was stronger than mine after I as Ryuu received several attacks.<br/> 
---> Dhalsim's advice after fighting: excess becomes poison<br/>
+--> I as Ryuu had been executing continuously 波動拳（hadouken）to reduce Computer Blanka's health strength to severity low, i.e. close to zero<br/>
+--> However, Computer Blanka's health was still stronger than mine due to I as Ryuu received several attacks.<br/> 
+--> Dhalsim's advice after fighting: excess becomes 毒 (doku; poison, lason)<br/>
 --> <b>Recommended Action:</b><br/>
 --> verify: Intelligent Systems Co., Ltd's [TOP MESSAGE](https://www.intsys.co.jp/company/message/)<br/>
+--> [https://www.intsys.co.jp/company/message/](https://www.intsys.co.jp/company/message/)<br/>
 --> 開発支援ツール (development support tool), developer<br/>
---> Examples (Representative Works): ファミコンウォーズ (famicom wars; Advance Wars) series,<br/> 
+--> Examples (Representative Works):<br/>
+--> ファミコンウォーズ (famicom wars; family computer wars; Advance Wars) series,<br/> 
 --> ファイアーエムブレム (faia- emuburemu; Fire Emblem) series,<br/>
 --> メトロイド (Metroid), et cetera<br/>
 
