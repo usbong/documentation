@@ -377,6 +377,8 @@ if ((inputColumns[INPUT_CONSULTATION_MEDICAL_DOCTOR_COLUMN].toUpperCase().trim()
 	}
 
 	private static void processInputFiles(String[] args, boolean isPhaseOne) throws Exception {
+		Vector<String[]> vVertexContainer = new Vector<String[]>();
+		
 		for (int i=0; i<args.length; i++) {						
 			inputFilename = args[i].replaceAll(".obj","");			
 			File f = new File(inputFilename+".obj");
@@ -431,6 +433,8 @@ if ((inputColumns[INPUT_CONSULTATION_MEDICAL_DOCTOR_COLUMN].toUpperCase().trim()
 				}
 				//vertex
 				else if (inputColumns[0].equals("v")) {
+					String[] sArray = {inputColumns[0],inputColumns[1],inputColumns[2]};
+					vVertexContainer.add(sArray);
 				}
 				//vertex texture
 				else if (inputColumns[0].equals("vt")) {
