@@ -82,6 +82,9 @@ public class generateOpenGLInstructionsFromBlenderOBJFile {
 	private static boolean inDebugMode = true;
 	private static String inputFilename = "input202103"; //without extension; default input file
 	
+	//added by Mike, 20210328
+	private static Vector<String[]> vVertexContainer;
+	
 	private static String medicalDoctorInput = ""; //added by Mike, 20200216
 	private static PrintWriter consultationWriter; //added by Mike, 20200217
 	
@@ -189,7 +192,7 @@ public class generateOpenGLInstructionsFromBlenderOBJFile {
 	{					
 		makeFilePath("output"); //"output" is the folder where I've instructed the add-on software/application to store the output file			
 		
-		PrintWriter openGLWriter = new PrintWriter("output/openGLInstructions.txt", "UTF-8");			
+		PrintWriter outputWriter = new PrintWriter("output/openGLInstructions.txt", "UTF-8");			
 
 		//added by Mike, 20181116
 		startDate = null; //properly set the month and year in the output file of each input file
@@ -200,6 +203,20 @@ public class generateOpenGLInstructionsFromBlenderOBJFile {
 
 		processInputFiles(args, true);	
 
+		//OUTPUT
+		outputWriter.print("glBegin(GL_QUADS);\n");
+		
+		int iVertexContainerSize = vVertexContainer.size();
+
+		//output: example: glVertex3f(0.421715, 1.200705, -0.286078);
+		for (int iCount=0; iCount<iVertexContainerSize; iCount++) {
+			String[] sbVertexArray = vVertexContainer.get(iCount);
+			outputWriter.print("\tglVertex3f("+sbVertexArray[0]+","+sbVertexArray[1]+","+sbVertexArray[2]+");\n");
+		}
+		
+		outputWriter.print("glEnd();\n");
+		outputWriter.close();
+		
 /*
 		//added by Mike, 20200217		
 		//medicalDoctorInput = "CIELO"; //added by Mike, 20200216
@@ -377,7 +394,8 @@ if ((inputColumns[INPUT_CONSULTATION_MEDICAL_DOCTOR_COLUMN].toUpperCase().trim()
 	}
 
 	private static void processInputFiles(String[] args, boolean isPhaseOne) throws Exception {
-		Vector<String[]> vVertexContainer = new Vector<String[]>();
+		//Vector<String[]> vVertexContainer = new Vector<String[]>();
+		vVertexContainer = new Vector<String[]>();
 		
 		for (int i=0; i<args.length; i++) {						
 			inputFilename = args[i].replaceAll(".obj","");			
@@ -433,8 +451,8 @@ if ((inputColumns[INPUT_CONSULTATION_MEDICAL_DOCTOR_COLUMN].toUpperCase().trim()
 				}
 				//vertex
 				else if (inputColumns[0].equals("v")) {
-					String[] sArray = {inputColumns[0],inputColumns[1],inputColumns[2]};
-					vVertexContainer.add(sArray);
+					String[] sbVertexArray = {inputColumns[1],inputColumns[2],inputColumns[3]};
+					vVertexContainer.add(sbVertexArray);
 				}
 				//vertex texture
 				else if (inputColumns[0].equals("vt")) {
