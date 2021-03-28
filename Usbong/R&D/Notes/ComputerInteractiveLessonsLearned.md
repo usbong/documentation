@@ -49,6 +49,14 @@ TO-DO: -update: this<br/>
 --> verify: this result during Boss battle, e.g. boxer M.BISON; Computer as M.BISON immediately attacks<br/>
 --> verify: speed-up to be hyper after opening and closing PSP lid<br/>
 
+### 1.1.5) Capcom vs SNK 2: Millionaire Fighting
+--> Fighting becomes 勝負 (shoubu; win・lose), e.g. both fighters have low remaining health strength and clock time at less than 3seconds<br/>
+--> verified: with self as Ryuu (smiling illustrated photograph version) that I lose the fight due to verifying the clock and deciding to attack first before computer (set at highest difficulty) as Blanka<br/>
+--> Previously, I as Ryuu was executing continuously 波動拳（hadouken）to reduce Computer Blanka's health strength<br/>
+--> Computer Blanka's health was stronger than mine after I as Ryuu received several attacks.<br/> 
+--> Dhalsim advice after fighting: excess becomes poison<br/>
+--> Recommended Action: verify: Intelligent Systems Co., Ltd's [TOP MESSAGE](https://www.intsys.co.jp/company/message/)
+
 ## 1.2) SEGA: SERVICE GAMES
 ### 1.2.1) Sonic 1
 --> Tunes remind me of existing songs, e.g. Lighthouse Family's "Lost in Space"<br/>
