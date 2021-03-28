@@ -276,7 +276,7 @@ https://gaming.stackexchange.com/questions/124745/why-does-my-nintendo-64-random
 --> observed: this is due to the target market was not the Philippines<br/>
 
 ### Recommended Action: 
---> verify: target market's preferences, e.g. Magic Trading Cards, create a version that solves their problems, while adding Philippine culture<br/>
+--> verify: target market's preferences, e.g. Magic Trading Cards, create a version that solves the problems, while adding Philippine culture<br/>
 --> Japanese example: Final Fantasy 6<br/>
 --> Additional Examples:<br/>
 --> Mario Kart 64 -> Diddy Kong Racing 64 -> Crash Team Racing
