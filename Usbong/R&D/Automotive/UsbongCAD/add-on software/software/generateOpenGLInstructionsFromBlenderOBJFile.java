@@ -231,7 +231,8 @@ public class generateOpenGLInstructionsFromBlenderOBJFile {
 			String[] sbNormalArray = vNormalContainerOutput.get(iCount);
 			String[] sbTextureCoordinatesArray = vTextureCoordinatesContainerOutput.get(iCount);
 			String[] sbVertexArray = vVertexContainerOutput.get(iCount);
-
+			
+			//edited by Mike, 20210329
 			//output example: glNormal3f(0.203681, 0.975646, -0.081118);
 			outputWriter.print("\tglNormal3f("+sbNormalArray[0]+","+sbNormalArray[1]+","+sbNormalArray[2]+");\n");
 
@@ -240,6 +241,10 @@ public class generateOpenGLInstructionsFromBlenderOBJFile {
 			
 			//output example: glVertex3f(0.421715, 1.200705, -0.286078);
 			outputWriter.print("\tglVertex3f("+sbVertexArray[0]+","+sbVertexArray[1]+","+sbVertexArray[2]+");\n");			
+						
+			//output example: glVertex3f(0.421715, 1.200705, -0.286078);
+			//edited by Mike, 20210329
+//			outputWriter.print("\tglVertex3f("+sbVertexArray[0]+","+sbVertexArray[1]+","+sbVertexArray[2]+");\n");
 		}
 
 		outputWriter.print("glEnd();\n");
@@ -508,26 +513,31 @@ if ((inputColumns[INPUT_CONSULTATION_MEDICAL_DOCTOR_COLUMN].toUpperCase().trim()
 				//face; vertex index starts at 1, instead of 0
 				else if (inputColumns[0].equals("f")) {
 					//we start at iCountInputColumns=1
-					//iCountInputColumns[0] is for "f"					
-					for (int iCountInputColumns=1; iCountInputColumns<4; iCountInputColumns++) {
-						//we do not include "f"
-						String[] sbInputColumnsF = inputColumns[iCountInputColumns].split("/");
-						
-//						System.out.println("sbInputColumnsF[0]: "+sbInputColumnsF[0]);
-									
-						String[] sbIndexArray = {sbInputColumnsF[0],sbInputColumnsF[1],sbInputColumnsF[2]};
-												
-						if (iCountInputColumns==1) {
-//							vVertexIndicesContainer.add(sbIndexArray);
-							vVertexIndicesContainer.add(sbIndexArray[0]);
-						}
-						else if (iCountInputColumns==2) {
-//							vTextureCoordinatesIndicesContainer.add(sbIndexArray);
-							vTextureCoordinatesIndicesContainer.add(sbIndexArray[1]);
-						}
-						else {
-//							vNormalIndicesContainer.add(sbIndexArray);
-							vNormalIndicesContainer.add(sbIndexArray[2]);
+					//iCountInputColumns[0] is for "f"	
+					//three sets delimited by blank space, i.e. " " 
+					//we do not include "f"
+					for (int iCountInputColumnsSet=1; iCountInputColumnsSet<4; iCountInputColumnsSet++) {					
+						//three sets delimited by forward slash, i.e. "/" 
+						for (int iCountInputColumns=0; iCountInputColumns<3; iCountInputColumns++) {
+							//we do not include "f"
+							String[] sbInputColumnsF = inputColumns[iCountInputColumnsSet].split("/");
+
+	//						System.out.println("sbInputColumnsF[0]: "+sbInputColumnsF[0]);
+
+							String[] sbIndexArray = {sbInputColumnsF[0],sbInputColumnsF[1],sbInputColumnsF[2]};
+
+							if (iCountInputColumns==1) {
+	//							vVertexIndicesContainer.add(sbIndexArray);
+								vVertexIndicesContainer.add(sbIndexArray[0]);
+							}
+							else if (iCountInputColumns==2) {
+	//							vTextureCoordinatesIndicesContainer.add(sbIndexArray);
+								vTextureCoordinatesIndicesContainer.add(sbIndexArray[1]);
+							}
+							else {
+	//							vNormalIndicesContainer.add(sbIndexArray);
+								vNormalIndicesContainer.add(sbIndexArray[2]);
+							}
 						}
 					}
 				}
@@ -547,7 +557,9 @@ if ((inputColumns[INPUT_CONSULTATION_MEDICAL_DOCTOR_COLUMN].toUpperCase().trim()
 /*			System.out.println("iVertexIndex: "+iVertexIndex);
 			System.out.println("vVertexContainerTempSize: "+vVertexContainerTemp.size());
 			System.out.println("vVertexContainerValue: "+vVertexContainerTemp.get(iVertexIndex-1)[0]);
-*/				
+*/			
+			//TO-DO: -add: increment via iCount
+			//TO-DO: -get array of f, 3 sets
 		 	vVertexContainerOutput.add(vVertexContainerTemp.get(iVertexIndex-1));
 		}		
 
