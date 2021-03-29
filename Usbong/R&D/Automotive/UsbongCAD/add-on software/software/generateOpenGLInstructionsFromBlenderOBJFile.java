@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B.
  * @date created: 2018
- * @last updated: 20210328
+ * @last updated: 20210329
  * @website: http://www.usbong.ph
  *
  * Reference:
@@ -212,27 +212,36 @@ public class generateOpenGLInstructionsFromBlenderOBJFile {
 
 		processInputFiles(args, true);	
 
-		//OUTPUT
+		//TO-DO: -reverify: output
+		//OUTPUT		
 		outputWriter.print("glBegin(GL_QUADS);\n");
 		
-		int iVertexContainerSize = vVertexContainerTemp.size();
-
-		//TO-DO: -update: this based on indices containers
-		//output: example: glVertex3f(0.421715, 1.200705, -0.286078);
-/*
-		for (int iCount=0; iCount<iVertexContainerSize; iCount++) {
-			String[] sbVertexArray = vVertexContainerTemp.get(iCount);
-			outputWriter.print("\tglVertex3f("+sbVertexArray[0]+","+sbVertexArray[1]+","+sbVertexArray[2]+");\n");
-		}
-			String[] sbTextureCoordinatesArray = vTextureCoordinatesContainerTemp.get(iCount);
-			outputWriter.print("\tglTexCoord2f("+sbVertexArray[0]+","+sbVertexArray[1]+");\n");
-
-			String[] sbNormalArray = vNormalContainerTemp.get(iCount);
-			outputWriter.print("\tgglNormal3f("+sbNormalArray[0]+","+sbNormalArray[1]+","+sbNormalArray[2]+");\n");
-*/
-	
-
+	    int iVertexContainerOutputSize = vVertexContainerOutput.size();
+	    int iTextureCoordinatesContainerOutputSize = vTextureCoordinatesContainerOutput.size();
+	    int iNormalContainerOutputSize = vNormalContainerOutput.size();		
 		
+		//note: size of all Output containers equal
+/*		
+		System.out.println("iVertexContainerOutputSize: " + iVertexContainerOutputSize);
+		System.out.println("iTextureCoordinatesContainerOutputSize: " + iTextureCoordinatesContainerOutputSize);
+		System.out.println("iNormalContainerOutputSize: " + iNormalContainerOutputSize);
+*/		
+
+		for (int iCount=0; iCount<iVertexContainerOutputSize; iCount++) {
+			String[] sbNormalArray = vNormalContainerOutput.get(iCount);
+			String[] sbTextureCoordinatesArray = vTextureCoordinatesContainerOutput.get(iCount);
+			String[] sbVertexArray = vVertexContainerOutput.get(iCount);
+
+			//output example: glNormal3f(0.203681, 0.975646, -0.081118);
+			outputWriter.print("\tglNormal3f("+sbNormalArray[0]+","+sbNormalArray[1]+","+sbNormalArray[2]+");\n");
+
+			//output example: glTexCoord2f(0.796491, 0.833459);
+			outputWriter.print("\tglTexCoord2f("+sbTextureCoordinatesArray[0]+","+sbTextureCoordinatesArray[1]+");\n");
+			
+			//output example: glVertex3f(0.421715, 1.200705, -0.286078);
+			outputWriter.print("\tglVertex3f("+sbVertexArray[0]+","+sbVertexArray[1]+","+sbVertexArray[2]+");\n");			
+		}
+
 		outputWriter.print("glEnd();\n");
 		outputWriter.close();
 		
@@ -426,6 +435,8 @@ if ((inputColumns[INPUT_CONSULTATION_MEDICAL_DOCTOR_COLUMN].toUpperCase().trim()
 		vTextureCoordinatesContainerOutput = new Vector<String[]>();
 		vNormalContainerOutput = new Vector<String[]>();
 				
+		//---------------------------------------------------------------------------
+		//part 1		
 		for (int i=0; i<args.length; i++) {						
 			inputFilename = args[i].replaceAll(".obj","");			
 			File f = new File(inputFilename+".obj");
@@ -521,8 +532,11 @@ if ((inputColumns[INPUT_CONSULTATION_MEDICAL_DOCTOR_COLUMN].toUpperCase().trim()
 					}
 				}
 			}		
-		}		
-			
+		}	
+		//---------------------------------------------------------------------------		
+		
+		//---------------------------------------------------------------------------
+		//part 2		
 	    int iVertexIndicesContainerSize = vVertexIndicesContainer.size();
 	    int iTextureCoordinatesIndicesContainerSize = vTextureCoordinatesIndicesContainer.size();
 	    int iNormalIndicesContainerSize = vNormalIndicesContainer.size();
@@ -550,6 +564,7 @@ if ((inputColumns[INPUT_CONSULTATION_MEDICAL_DOCTOR_COLUMN].toUpperCase().trim()
 			//-1 due to .obj file indexing starts at 1, instead of 0
 			vNormalContainerOutput.add(vNormalContainerTemp.get(iNormalIndex-1));
 		}		
+		//---------------------------------------------------------------------------		
 		
 	}
 	
