@@ -519,9 +519,9 @@ if ((inputColumns[INPUT_CONSULTATION_MEDICAL_DOCTOR_COLUMN].toUpperCase().trim()
 					for (int iCountInputColumnsSet=1; iCountInputColumnsSet<4; iCountInputColumnsSet++) {					
 						//three sets delimited by forward slash, i.e. "/" 
 						for (int iCountInputColumns=0; iCountInputColumns<3; iCountInputColumns++) {
-							//we do not include "f"
+							//added by Mike, 20210329
 							String[] sbInputColumnsF = inputColumns[iCountInputColumnsSet].split("/");
-
+							
 	//						System.out.println("sbInputColumnsF[0]: "+sbInputColumnsF[0]);
 
 							String[] sbIndexArray = {sbInputColumnsF[0],sbInputColumnsF[1],sbInputColumnsF[2]};
@@ -564,10 +564,23 @@ if ((inputColumns[INPUT_CONSULTATION_MEDICAL_DOCTOR_COLUMN].toUpperCase().trim()
 		}		
 
 		for (int iCount=0; iCount<iTextureCoordinatesIndicesContainerSize; iCount++ ) {		 
-	    	int iTextureCoordinatesIndex = Integer.parseInt(vTextureCoordinatesIndicesContainer.get(iCount));
-		   
+			//edited by Mike, 20210329
+/*	    	int iTextureCoordinatesIndex = Integer.parseInt(vTextureCoordinatesIndicesContainer.get(iCount));
 			//-1 due to .obj file indexing starts at 1, instead of 0
 			vTextureCoordinatesContainerOutput.add(vTextureCoordinatesContainerTemp.get(iTextureCoordinatesIndex-1));
+*/
+			int iTextureCoordinatesIndex;
+			//note: select values blank
+			if (vTextureCoordinatesIndicesContainer.get(iCount).equals("")) {
+				iTextureCoordinatesIndex = 0; 
+				//-1 due to .obj file indexing starts at 1, instead of 0
+				vTextureCoordinatesContainerOutput.add(vTextureCoordinatesContainerTemp.get(0));
+			}
+			else {
+	    		iTextureCoordinatesIndex = Integer.parseInt(vTextureCoordinatesIndicesContainer.get(iCount));
+				//-1 due to .obj file indexing starts at 1, instead of 0
+				vTextureCoordinatesContainerOutput.add(vTextureCoordinatesContainerTemp.get(iTextureCoordinatesIndex-1));
+			}				
 		}		
 
 	    for (int iCount=0; iCount<iNormalIndicesContainerSize; iCount++ ) {		 
