@@ -1632,13 +1632,23 @@ void OpenGLCanvas::drawGridWithZAxis() {
 	//TO-DO: -add: identification for object to draw by Level.cpp	
 	//edited by Mike, 20210325	
 //    glColor3f(1.0f, 1.0f, 1.0f); // white
+/*	//edited by Mike, 20210330
 	if ((iCountLevelM%2)==0) {
     	glColor3f(1.0f, 0.0f, 0.0f); // red
 	}
 	else {
     	glColor3f(1.0f, 1.0f, 1.0f); // white
 	}
-	iCountLevelM=iCountLevelM+1;
+	iCountLevelM=iCountLevelM+1;	
+*/
+	iCountLevelM=(iCountLevelM+1)%2;
+	if (iCountLevelM==0) {
+    	glColor3f(1.0f, 0.0f, 0.0f); // red
+	}
+	else {
+    	glColor3f(1.0f, 1.0f, 1.0f); // white
+	}
+	printf("iCountLevelM: %i\n",iCountLevelM);
 	
 	glBindTexture( GL_TEXTURE_2D, LEVEL_TEXTURE );
 	sprintf(tempText,"M");	
