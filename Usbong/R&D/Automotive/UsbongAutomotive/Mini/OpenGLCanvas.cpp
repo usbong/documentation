@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210329
+ * @date updated: 20210330
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -23,7 +23,13 @@
  * 
  * 2) https://community.khronos.org/t/moving-an-object-with-respect-to-the-camera/40968;
  * last accessed: 20201026
+ *
+ * 3) https://github.com/opengl-tutorials/ogl/blob/master/tutorial08_basic_shading/tutorial08.cpp;
+ * last accessed: 20210330
  * 
+ * 4) http://www.opengl-tutorial.org/beginners-tutorials/tutorial-8-basic-shading/;
+ * last accessed: 20210330
+ *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
  * Syson, M., Camacho, R., Gonzales, D., Del Rosario, R., Vidal, E., et al.
@@ -1790,6 +1796,60 @@ void OpenGLCanvas::drawGridWithZAxis() {
 			glVertex3f(1.000000,-1.000000,-1.540123);
 		glEnd();
 */
+
+	//added by Mike, 20210330
+	//BASIC SHADING
+	//TO-DO: -add: https://github.com/opengl-tutorials/ogl/blob/master/tutorial08_basic_shading/tutorial08.cpp;
+	//last accessed: 20210330
+/*	
+	// Read our .obj file
+	std::vector<glm::vec3> vertices;
+	std::vector<glm::vec2> uvs;
+	std::vector<glm::vec3> normals;
+	bool res = loadOBJ("halimbawaMellow.obj", vertices, uvs, normals);
+
+	// Load it into a VBO
+
+	GLuint vertexbuffer;
+	glGenBuffers(1, &vertexbuffer);
+	glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
+	glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(glm::vec3), &vertices[0], GL_STATIC_DRAW);
+
+	GLuint uvbuffer;
+	glGenBuffers(1, &uvbuffer);
+	glBindBuffer(GL_ARRAY_BUFFER, uvbuffer);
+	glBufferData(GL_ARRAY_BUFFER, uvs.size() * sizeof(glm::vec2), &uvs[0], GL_STATIC_DRAW);
+
+	GLuint normalbuffer;
+	glGenBuffers(1, &normalbuffer);
+	glBindBuffer(GL_ARRAY_BUFFER, normalbuffer);
+	glBufferData(GL_ARRAY_BUFFER, normals.size() * sizeof(glm::vec3), &normals[0], GL_STATIC_DRAW);
+
+	//...
+
+// 3rd attribute buffer : normals
+ glEnableVertexAttribArray(2);
+ glBindBuffer(GL_ARRAY_BUFFER, normalbuffer);
+ glVertexAttribPointer(
+     2,                                // attribute
+     3,                                // size
+     GL_FLOAT,                         // type
+     GL_FALSE,                         // normalized?
+     0,                                // stride
+     (void*)0                          // array buffer offset
+ );	
+ 
+
+	// Draw the triangles !
+	glDrawArrays(GL_TRIANGLES, 0, vertices.size() );
+
+	glDisableVertexAttribArray(0);
+	glDisableVertexAttribArray(1);
+	glDisableVertexAttribArray(2);
+
+	//...
+*/	
+	
 //mellow
 glBegin(GL_QUADS);
 	glNormal3f(0.0978,0.4025,-0.9102);
