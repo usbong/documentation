@@ -225,15 +225,21 @@ Dagdag na halimbawa ng mga panloloko mula sa grupo ng Teroristang Komunista at a
 --> Kailangan may isa wala, para may isa na meron.<br/>
 --> "yin/yang" : dark/light<br/>
 --> verified: kahit alin ang sagot ng bato, iaakma lang ng Teroristang Komunista ang sagot sa kanilang nais.<br/>
---> Halimbawa: Gagaling ba ako sa aking karamdaman?<br/>
+--> 3.1) Halimbawa: Gagaling ba ako sa aking karamdaman?<br/>
 --> YES! OK.<br/>
 --> NO! Magaling na kasi ako.<br/>
+--> Kapag iaakma ng Teroristang Komunista
+--> 3.2) Halimbawa: Gagaling ba ako sa aking karamdaman?<br/>
+--> YES! <Gagawan kita ng sakit.><br/>
+--> NO! <Palulubhain ko pa.><br/>
+--> <b>Dahilan:</b> quick money<br/>
+--> <b>Aksyon:</b> harrassment; extortion<br/>
 
 #### Additional Note:
 1) Halintulad ang mga ito sa gawa-gawang paliwanag na hindi mo mauunawan ang isang bagay sapagkat hindi ka Indian; hindi mo kailanman matututunan ito, kahit anong aral mo.<br/>
 
 ### Part 9: ブシドーブレード解説書 (BUSHIDO BLADE SOLVE TELL, i.e. EXPLANATION, BOOK)
-<b>打刀 (うちかたな; KATANA)</b><br/>
+<b>打刀 (うちかたな; uchikata, i.e. hit knife; KATANA)</b><br/>
 <b>全体 (WHOLE BODY)：</b>92cm<br/>
 <b>刃長 (BLADE LENGTH)：</b>69.3cm<br/>
 <b>反り (REFLECT CUT)：</b>2.1cm<br/>
