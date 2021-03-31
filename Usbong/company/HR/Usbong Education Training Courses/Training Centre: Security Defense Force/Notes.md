@@ -236,7 +236,7 @@ Dagdag na halimbawa ng mga panloloko mula sa grupo ng Teroristang Komunista at a
 --> <b>Aksyon:</b> harrassment; extortion<br/>
 
 #### Additional Note:
-1) Halintulad ang mga ito sa gawa-gawang paliwanag na hindi mo mauunawan ang isang bagay sapagkat hindi ka Indian; hindi mo kailanman matututunan ito, kahit anong aral mo.<br/>
+1) Halintulad ang mga panloloko sa gawa-gawang paliwanag na hindi mo mauunawan ang isang bagay sapagkat hindi ka Indian; hindi mo kailanman matututunan ito, kahit anong aral mo.<br/>
 
 ### Part 9: ブシドーブレード解説書 (BUSHIDO BLADE SOLVE TELL, i.e. EXPLANATION, BOOK)
 <b>打刀 (うちかたな; uchikata, i.e. hit knife; KATANA)</b><br/>
