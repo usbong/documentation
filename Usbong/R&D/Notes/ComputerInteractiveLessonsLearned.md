@@ -234,7 +234,7 @@ TO-DO: -update: this
 --> Sa pagdalaw mo sa daigdig nito, maiging pumunta muna sa Simbahan at pagkatapos kausapin ang mga tao upang malaman kung ano ang kanilang kailangan.<br/>
 --> Hindi mo kailangang mamalagi sa daigdig; kung hindi mo na nais magpatuloy, maaari kang huminto.<br/>
 --> <b>Paalala:</b> Sa matagal na hindi mo pagbabalik, kinalaunan nawawala/nabubura rin ang mga naisulat sa aklat sa Simbahan, bagama't may tumatagal na isa.<br/> 
---> Ibabahagi sa iyo ng kompyuter kapag nabura: お気の毒 (lason sa iyong enerhiya)<br/>
+--> Ibabahagi sa iyo ng kompyuter kapag nabura: お気の毒 (lason po sa iyong enerhiya)<br/>
 <br/>
 ### Halimbawa ng mga matutuklasan mong kailangan ng tao:
 --> 1) Kailangan maibalik ang nawawalang Hari.<br/> 
