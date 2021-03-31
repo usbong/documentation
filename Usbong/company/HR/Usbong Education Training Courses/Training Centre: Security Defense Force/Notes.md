@@ -228,10 +228,11 @@ Dagdag na halimbawa ng mga panloloko mula sa grupo ng Teroristang Komunista at a
 --> 3.1) Halimbawa: Gagaling ba ako sa aking karamdaman?<br/>
 --> YES! OK.<br/>
 --> NO! Magaling na kasi ako.<br/>
---> Kapag iaakma ng Teroristang Komunista
+<br/>
+--> Kapag iaakma ng Teroristang Komunista<br/>
 --> 3.2) Halimbawa: Gagaling ba ako sa aking karamdaman?<br/>
---> YES! <Gagawan kita ng sakit.><br/>
---> NO! <Palulubhain ko pa.><br/>
+--> YES! Gagawan kita ng sakit.<br/>
+--> NO! Palulubhain ko pa.<br/>
 --> <b>Dahilan:</b> quick money<br/>
 --> <b>Aksyon:</b> harrassment; extortion<br/>
 
