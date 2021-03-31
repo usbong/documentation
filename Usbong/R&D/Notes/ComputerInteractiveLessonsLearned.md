@@ -229,6 +229,26 @@ team member, e.g. Settsa-
 <br/>
 TO-DO: -update: this
 
+## 1.7.2) Dragon Quest VI (Japanese version)
+--> open world, i.e. hindi dumadaloy ang istorya/salaysay sa isang daan lamang<br/>
+--> Sa pagdalaw mo sa daigdig nito, maiging pumunta muna sa Simbahan at pagkatapos kausapin ang mga tao upang malaman kung ano ang kanilang kailangan.<br/>
+--> Hindi mo kailangang mamalagi sa daigdig; kung hindi mo na nais magpatuloy, maaari kang huminto.<br/>
+--> <b>Paalala:</b> Sa matagal na hindi mo pagbabalik, kinalaunan nawawala/nabubura rin ang mga naisulat sa aklat sa Simbahan, bagama't may tumatagal na isa.<br/> 
+--> Ibabahagi sa iyo ng kompyuter kapag nabura: お気の毒 (lason sa iyong enerhiya)<br/>
+<br/>
+### Halimbawa ng mga matutuklasan mong kailangan ng tao:
+--> 1) Kailangan maibalik ang nawawalang Hari.<br/> 
+--> Ayon sa mga tao, naglakbay siya upang gapiin ang Halimaw na mananakop. Mula sa inyong pagsisiyasat, kakailanganin niyo ang Salamin ni Ra- upang mailigtas ang Hari. Kapag nalampasan ninyo ang mga pagsubok upang makuha ang Salamin ni Ra-, kakailanganin naman ninyong kalabanin ang Halimaw. Pagkatapos ninyong magapi ito, kailangan naman ninyo sunod na ilabas at ipakita ang Salamin ni Ra- sa harapan nito. Dito mamumulat ang Halimaw na siya pala ang Hari. Pag-uwi ninyo, makakausap na ninyo ang nagmumuning Hari sa Castillo. Aaminin niya sa inyo na hirap siyang makapaniwala na siya ang naging Halimaw.<br/>
+<br/>
+--> 2) <br/>
+<br/>
+TO-DO: -update: this<br/>
+<br/>
+### Recommended Reading:
+1) Micromégas ni Voltaire<br/>
+--> Mababasa rin ang salin nito sa Ingles dito: http://www.gutenberg.org/cache/epub/30123/pg30123.txt;<br/>
+--> last accessed: 20210401
+
 ## 2) Hardware
 ## 2.1) SONY PlayStation Portable (PSP)
 --> <b>Problem:</b> When playing Universal Media Disc (UMD) game, PSP keeps on displaying 「ゲームを終了しますか (Do you end the game?)」<br/>
