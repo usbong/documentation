@@ -132,7 +132,7 @@ TO-DO: -update: this<br/>
 ## 1.7.1) [Final Fantasy 6 (Japanese version)](https://jp.finalfantasy.com/titles/finalfantasy6)
 majikku card notes
 ### 1.7.1.1) magic: 
-poison increased damage against tyranosaurus<br/> 
+poison increased damage against tyrannosaurus<br/> 
 reflect sends magic attack to enemy (reflected magic is not reflected again)<br/>
 genjuu (illusion beast) summon is not reflected<br/>
 reflect from all 4 team members sends magic attack x4<br/>
