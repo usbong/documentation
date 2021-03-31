@@ -209,8 +209,8 @@ team member, e.g. Settsa-
 --> preference: save anywhere tool<br/>
 --> Sa Dragon Quest VI, maglalabas ang kompyuter ng malakas na kalaban/halimaw na pupuksa sa iyong pangkat, kapag nasukat nito na nakalipas na, halimbawa, ang 20minutos.<br/>
 
-4) ブシドーブレード解説書 (BUSHIDO BLADE SOLVE TELL, i.e. EXPLANATION, BOOK)<br/>
-打刀 (うちかたな; KATANA)<br/>
+4) ブシドーブレード(BUSHIDO BLADE) 解説書 (SOLVE TELL, i.e. EXPLANATION, BOOK)<br/>
+打刀 (うちかたな; uchikatana, i.e. hit knife; KATANA)<br/>
 全体 (WHOLE BODY)：92cm<br/>
 刃長 (BLADE LENGTH)：69.3cm<br/>
 反り (REFLECT CUT)：2.1cm<br/>
@@ -237,8 +237,8 @@ TO-DO: -update: this
 --> Ibabahagi sa iyo ng kompyuter kapag nabura: お気の毒 (lason po sa iyong enerhiya)<br/>
 <br/>
 ### Halimbawa ng mga matutuklasan mong kailangan ng tao:
---> 1) Kailangan maibalik ang nawawalang Hari.<br/> 
---> Ayon sa mga tao, naglakbay siya upang gapiin ang Halimaw na mananakop. Mula sa inyong pagsisiyasat, kakailanganin niyo ang Salamin ni Ra- upang mailigtas ang Hari. Kapag nalampasan ninyo ang mga pagsubok upang makuha ang Salamin ni Ra-, kakailanganin naman ninyong kalabanin ang Halimaw. Pagkatapos ninyong magapi ito, kailangan naman ninyo sunod na ilabas at ipakita ang Salamin ni Ra- sa harapan nito. Dito mamumulat ang Halimaw na siya pala ang Hari. Pag-uwi ninyo, makakausap na ninyo ang nagmumuning Hari sa Castillo. Aaminin niya sa inyo na hirap siyang makapaniwala na siya ang naging Halimaw.<br/>
+--> 1) Kailangan maibalik ang nawawalang Hari ng Reidokku.<br/> 
+--> Ayon sa mga tao, naglakbay siya upang gapiin ang Halimaw, "Mudo-", na mananakop. Mula sa inyong pagsisiyasat, kakailanganin niyo ang Salamin ni Ra- upang mailigtas ang Hari. Kapag nalampasan ninyo ang mga pagsubok upang makuha ang Salamin ni Ra-, kakailanganin naman ninyong kalabanin ang Halimaw. Pagkatapos ninyong magapi ito, kailangan naman ninyo sunod na ilabas at ipakita ang Salamin ni Ra- sa harapan nito. Dito mamumulat ang Halimaw na siya pala ang Hari. Pag-uwi ninyo, makakausap na ninyo ang nagmumuning Hari sa Castillo ng Reidokku. Aaminin niya sa inyo na hirap siyang makapaniwala na siya ang naging Halimaw.<br/>
 <br/>
 --> 2) <br/>
 <br/>
