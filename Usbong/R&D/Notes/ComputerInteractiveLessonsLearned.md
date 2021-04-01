@@ -240,7 +240,7 @@ TO-DO: -update: this
 --> 1.7.2.1.1) Kailangan maibalik ang nawawalang Hari ng kaharian ng Reidokku.<br/> 
 --> Ayon sa mga tao, naglakbay siya upang gapiin ang tinaguriang pinakamalakas na Halimaw, "Mudo-", na nais sakupin ang lahat. Mula sa inyong pagsisiyasat, kakailanganin niyo ang Salamin ni Ra- upang mailigtas ang Hari. Kapag nalampasan ninyo ang mga pagsubok upang makuha ang Salamin ni Ra-, kakailanganin naman ninyong kalabanin ang Halimaw. Pagkatapos ninyong magapi ito, kailangan naman ninyo sunod na ilabas at ipakita ang Salamin ni Ra- sa harapan nito. Dito mamumulat ang Halimaw na siya pala ang Hari. Pag-uwi ninyo, makakausap na ninyo ang nagmumuning Hari sa Castillo ng Reidokku. Aaminin niya sa inyo na hirap siyang makapaniwala na siya ang naging Halimaw.<br/>
 <br/>
---> 1.7.2.1.2) <br/>
+--> 1.7.2.1.2) Kailangang malutas bakit wala nang bumabalik pagsakay ng barko patungong Bansa/Kaharian ng Ligaya, i.e. "Langit"<br/>
 <br/>
 TO-DO: -update: this<br/>
 <br/>
@@ -260,7 +260,7 @@ TO-DO: -update: this<br/>
 --> Halimbawa: Paggawa ng bahay.
 <br/>
 --> 1.7.2.2.1) Amo-ru<br/>
---> Ito ang tanging bayan na gumagawa ng tubig na nagbibigay buhay.<br/>
+--> Ito ang tanging bayan na gumagawa at kung saan makabibili ng tubig na nagbibigay buhay.<br/>
 --> Mula ito sa dumadaloy na tubig mula sa bundok.<br/>
 --> May salaysay ukol sa dalawang magkasintahan sa bayang ito.<br/>
 
