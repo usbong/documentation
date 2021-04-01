@@ -269,11 +269,12 @@ TO-DO: -update: this<br/>
 --> Sa bayan ng Gento din magmumula ang barko na maaari ninyong magamit sa inyong paglalakbay.<br/>
 --> Magiging mas malakas pa si Chamoro kapag natutunan niya ang gawain ng 魔物使い　(mamonotsukai; manggagamit ng mga halimaw), gawa ng hindi nito kakailanganing gumasta ng Magic Power (MP; magic=mahika/himala).<br/>
 --> <b>Paalala:</b> Sa daigig ng Dragon Quest, hindi sagana ang kapangyarihan ng magic/himala, hindi tulad sa Final Fantasy.<br/>
---> <b>Dagdag na paalala:</b> Maaaring matutunan ng 魔物使い na maging halimaw, i.e. Dragon. Gayunpaman, mawawalan ka ng kontrol sa kanya, at kakailanganin ng inyong pangkat na tulungan siya sa pamamagitan ng paggawa ng mga depensa, e.g. mahikang mga kalasag sa inyong pangkat (スクルト; sukuruto), pangpahina ng pangkat ng mga kalabang halimaw (ルカナン; rukanan), atbp.<br/>
+--> <b>Dagdag na paalala:</b> Maaaring matutunan ng 魔物使い na maging halimaw, i.e. Dragon. Gayunpaman, mawawalan siya ng kontrol sa sarili, at kakailanganin ng inyong pangkat na tulungan siya sa pamamagitan ng paggawa ng mga depensa, e.g. mahikang mga kalasag sa inyong pangkat (スクルト; sukuruto), pangpahina ng pangkat ng mga kalabang halimaw (ルカナン; rukanan), atbp.<br/>
 --> Maaalala na si Mire-yu ang maiging gagawa ng スクルト; At ikaw bilang ang pangunihang tauhan ang gagawa ng ルカナン.<br/>
---> Dagdag pa rito, maiging kasama rin si Hassan, na isa sa mga una mong kaibigan na kasabayan mong pumasok sa sandatahang lakas ng Kaharian ng Reidokku upang maging sundalo nito.<br/> 
+--> Karaniwan din na sa unang paggamit ng kakayahang maging Dragon, nasasawi ang buong pangkat.<br/>
+--> Sa kabila nito, maiging isama si Hassan, na isa sa mga una mong kaibigan na kasabayan mong pumasok sa sandatahang lakas ng Kaharian ng Reidokku upang maging sundalo nito.<br/> 
 --> Sa daigdig ng Dragon Quest VI, at maging sa daigdig sa labas nito, alam natin na malakas si Hassan gawa ng kanyang pisikal na mga kakayahan.<br/>
---> Halimbawa: Paggawa ng bahay.
+--> Halimbawa: Paggawa ng bahay
 <br/>
 --> 1.7.2.2.1) Amo-ru<br/>
 --> Ito ang tanging bayan na gumagawa at kung saan makabibili ng tubig na nagbibigay buhay.<br/>
