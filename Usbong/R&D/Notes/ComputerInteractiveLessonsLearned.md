@@ -229,7 +229,7 @@ team member, e.g. Settsa-
 <br/>
 TO-DO: -update: this
 
-## 1.7.2) Dragon Quest VI (Japanese version)
+## 1.7.2) [Dragon Quest VI (Japanese version)](https://www.jp.square-enix.com/game/detail/dq6/)
 --> open world, i.e. hindi dumadaloy ang istorya/salaysay sa isang daan lamang<br/>
 --> Sa pagdalaw mo sa daigdig nito, maiging pumunta muna sa Simbahan at pagkatapos kausapin ang mga tao upang malaman kung ano ang kanilang kailangan.<br/>
 --> Hindi mo kailangang mamalagi sa daigdig; kung hindi mo na nais magpatuloy, maaari kang huminto.<br/>
@@ -268,7 +268,7 @@ TO-DO: -update: this<br/>
 --> Maaalala na sa Simbahan karaniwang ginagawa ang pagbubuhay ng mga namatay sa inyong pangkat upang ito'y 100% na matagumpay; May kaukulang bayad ito na nakabatay sa lakas ng miyembro.<br/>
 --> Sa bayan ng Gento din magmumula ang barko na maaari ninyong magamit sa inyong paglalakbay.<br/>
 --> Magiging mas malakas pa si Chamoro kapag natutunan niya ang gawain ng 魔物使い　(mamonotsukai; manggagamit ng mga halimaw), gawa ng hindi nito kakailanganing gumasta ng Magic Power (MP; magic=mahika/himala).<br/>
---> <b>Paalala:</b> Sa daigig ng Dragon Quest, hindi sagana ang kapangyarihan ng magic/himala, hindi tulad sa Final Fantasy.<br/>
+--> <b>Paalala:</b> Sa daigdig ng Dragon Quest, hindi sagana ang kapangyarihan ng magic/himala, hindi tulad sa Final Fantasy.<br/>
 --> <b>Dagdag na paalala:</b> Maaaring matutunan ng 魔物使い na maging halimaw, i.e. Dragon. Gayunpaman, mawawalan siya ng kontrol sa sarili, at kakailanganin ng inyong pangkat na tulungan siya sa pamamagitan ng paggawa ng mga depensa, e.g. himalang kalasag sa inyong pangkat (スクルト; sukuruto), pangpahina ng pangkat ng mga kalabang halimaw (ルカナン; rukanan), atbp.<br/>
 --> Maaalala na si Mire-yu ang maiging gagawa ng スクルト; At ikaw bilang ang pangunihang tauhan ang gagawa ng ルカナン.<br/>
 --> Karaniwan din na sa unang paggamit ng kakayahang maging Dragon, nasasawi ang buong pangkat.<br/>
