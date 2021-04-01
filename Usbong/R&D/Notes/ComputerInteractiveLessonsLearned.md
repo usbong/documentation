@@ -288,6 +288,13 @@ TO-DO: -update: this<br/>
 --> Mababasa rin ang salin nito sa Ingles dito: http://www.gutenberg.org/cache/epub/30123/pg30123.txt;<br/>
 --> last accessed: 20210401
 
+2) Kia Asamiya's Batman: Child of Dreams<br/>
+--> https://www.dccomics.com/graphic-novels/batman-child-of-dreams<br/>
+--> last accessed: 20210402<br/>
+--> Pupunta si Batman sa Tokyo, Japan upang malutas ang problema/suliranin ukol sa dumaraming namamatay sa iligal na droga, i.e. ipinagbabawal na gamot, na kung saan maaaring matupad ang anumang nais ng iinom nito, bagama't pagkatapos ng isang araw, mamamatay.<br/>
+--> <b>Additional Note:</b><br/>
+--> Mas nais ko ang kanyang istorya/salaysay, kaysa sa kanyang pagguhit.<br/>
+
 ## 2) Hardware
 ## 2.1) SONY PlayStation Portable (PSP)
 --> <b>Problem:</b> When playing Universal Media Disc (UMD) game, PSP keeps on displaying 「ゲームを終了しますか (Do you end the game?)」<br/>
