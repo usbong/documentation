@@ -13,6 +13,8 @@ If installation using LINUX drivers unsuccessful due to dependency requirements,
 #### Reference:
 https://askubuntu.com/questions/1046087/error-during-the-cups-operation-client-error-document-format-not-supported;
 last accessed: 202100401<br/>
+answer by: Gayan Weerakutti, 20201031T1119<br/>
+edited by: Kulfy, 20201031T1931<br/>
 --> verified: with LUBUNTU (LTS 20.04)<br/>
 
 ## Problem & Answer
