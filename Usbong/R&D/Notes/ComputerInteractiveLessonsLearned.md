@@ -249,7 +249,8 @@ TO-DO: -update: this<br/>
 --> 1.7.2.2.1) Bayan ng Gento<br/>
 --> Naninirahan dito ang mga nagpapakadalubhasa sa panggagamot/panghihilom.<br/> 
 --> Maaalala na sa Bayan ng Gento nakatira si Chamoro, na ibinabanggit ng mga tao (sa bayan sa loob ng daigdig ng Dragon Quest VI at sa daidig sa labas nito) na malakas.<br/>
---> May kakayahan siyang bumuhay ng mga namatay, bagama't hindi ito parating matagumpay na nagagawa.<br/>
+--> May kakayahan siyang bumuhay ng mga namatay gamit ang pagbigkas ng zaoraru upang gumawa ng himala, bagama't hindi ito parating matagumpay na nagagawa.<br/>
+--> Maaalala na sa Simbahan karaniwang ginagawa ang pagbubuhay ng mga namatay sa inyong pangkat upang ito'y 100% na matagumpay; May kaukulang bayad ito na nakabatay sa lakas ng miyembro.<br/>
 --> Sa bayan ng Gento din magmumula ang barko na maaari ninyong magamit sa inyong paglalakbay.<br/>
 --> Magiging mas malakas pa si Chamoro kapag natutunan niya ang gawain ng 魔物使い　(mamonotsukai; manggagamit ng mga halimaw), gawa ng hindi nito kakailanganing gumasta ng Magic Power (MP; magic=mahika/himala).<br/>
 --> <b>Paalala:</b> Sa daigig ng Dragon Quest, hindi sagana ang kapangyarihan ng magic/himala, hindi tulad sa Final Fantasy.<br/>
