@@ -236,14 +236,34 @@ TO-DO: -update: this
 --> <b>Paalala:</b> Sa matagal na hindi mo pagbabalik, kinalaunan nawawala/nabubura rin ang mga naisulat sa aklat sa Simbahan, bagama't may tumatagal na isa.<br/> 
 --> Ibabahagi sa iyo ng kompyuter kapag nabura: お気の毒 (lason po sa iyong enerhiya)<br/>
 <br/>
-### Halimbawa ng mga matutuklasan mong kailangan ng tao:
---> 1) Kailangan maibalik ang nawawalang Hari ng Reidokku.<br/> 
+### 1.7.2.1) Halimbawa ng mga matutuklasan mong kailangan ng tao:
+--> 1.7.2.1.1) Kailangan maibalik ang nawawalang Hari ng Reidokku.<br/> 
 --> Ayon sa mga tao, naglakbay siya upang gapiin ang Halimaw, "Mudo-", na mananakop. Mula sa inyong pagsisiyasat, kakailanganin niyo ang Salamin ni Ra- upang mailigtas ang Hari. Kapag nalampasan ninyo ang mga pagsubok upang makuha ang Salamin ni Ra-, kakailanganin naman ninyong kalabanin ang Halimaw. Pagkatapos ninyong magapi ito, kailangan naman ninyo sunod na ilabas at ipakita ang Salamin ni Ra- sa harapan nito. Dito mamumulat ang Halimaw na siya pala ang Hari. Pag-uwi ninyo, makakausap na ninyo ang nagmumuning Hari sa Castillo ng Reidokku. Aaminin niya sa inyo na hirap siyang makapaniwala na siya ang naging Halimaw.<br/>
 <br/>
---> 2) <br/>
+--> 1.7.2.1.2) <br/>
 <br/>
 TO-DO: -update: this<br/>
 <br/>
+
+### 1.7.2.2) Halimbawa ng mga matutuklasan mo sa paglalakbay:
+--> 1.7.2.2.1) Bayan ng Gento<br/>
+--> Naninirahan dito ang mga nagpapakadalubhasa sa panggagamot/panghihilom.<br/> 
+--> Maaalala na sa Bayan ng Gento nakatira si Chamoro, na ibinabanggit ng mga tao (sa bayan sa loob ng daigdig ng Dragon Quest VI at sa daidig sa labas nito) na malakas.<br/>
+--> May kakayahan siyang bumuhay ng mga namatay, bagama't hindi ito parating matagumpay na nagagawa.<br/>
+--> Sa bayan ng Gento din magmumula ang barko na maaari ninyong magamit sa inyong paglalakbay.<br/>
+--> Magiging mas malakas pa si Chamoro kapag natutunan niya ang gawain ng 魔物使い　(mamonotsukai; manggagamit ng mga halimaw), gawa ng hindi nito kakailanganing gumasta ng Magic Power (MP; magic=mahika/himala).<br/>
+--> <b>Paalala:</b> Sa daigig ng Dragon Quest, hindi sagana ang kapangyarihan ng magic/himala, hindi tulad sa Final Fantasy.<br/>
+--> <b>Dagdag na paalala:</b> Maaaring matutunan ng 魔物使い na maging halimaw, i.e. Dragon. Gayunpaman, mawawalan ka ng kontrol sa kanya, at kakailanganin ng inyong pangkat na tulungan siya sa pamamagitan ng paggawa ng mga depensa, e.g. mahikang mga kalasag sa inyong pangkat (スクルト; sukuruto), pangpahina ng pangkat ng mga kalabang halimaw (ルカナン; rukanan), atbp.<br/>
+--> Maaalala na si Mire-yu ang maiging gagawa ng スクルト; At ikaw bilang ang pangunihang tauhan ang gagawa ng ルカナン.<br/>
+--> Dagdag pa rito, maiging kasama rin si Hassan, na isa sa mga una mong kaibigan na kasabayan mong pumasok sa sandatahang lakas ng Kaharian ng Reidokku upang maging sundalo nito.<br/> 
+--> Sa daigdig ng Dragon Quest VI, at maging sa daigdig sa labas nito, alam natin na malakas si Hassan gawa ng kanyang pisikal na mga kakayahan.<br/>
+--> Halimbawa: Paggawa ng bahay.
+<br/>
+--> 1.7.2.2.1) Amo-ru<br/>
+--> Ito ang tanging bayan na gumagawa ng tubig na nagbibigay buhay.<br/>
+--> Mula ito sa dumadaloy na tubig mula sa bundok.<br/>
+--> May salaysay ukol sa dalawang magkasintahan sa bayang ito.<br/>
+
 ### Recommended Reading:
 1) Micromégas ni Voltaire<br/>
 --> Mababasa rin ang salin nito sa Ingles dito: http://www.gutenberg.org/cache/epub/30123/pg30123.txt;<br/>
