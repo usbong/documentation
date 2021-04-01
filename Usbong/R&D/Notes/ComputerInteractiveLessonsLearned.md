@@ -241,6 +241,21 @@ TO-DO: -update: this
 --> Ayon sa mga tao, naglakbay siya upang gapiin ang tinaguriang pinakamalakas na Halimaw, "Mudo-", na nais sakupin ang lahat. Mula sa inyong pagsisiyasat, kakailanganin niyo ang Salamin ni Ra- upang mailigtas ang Hari. Kapag nalampasan ninyo ang mga pagsubok upang makuha ang Salamin ni Ra-, kakailanganin naman ninyong kalabanin ang Halimaw. Pagkatapos ninyong magapi ito, kailangan naman ninyo sunod na ilabas at ipakita ang Salamin ni Ra- sa harapan nito. Dito mamumulat ang Halimaw na siya pala ang Hari. Pag-uwi ninyo, makakausap na ninyo ang nagmumuning Hari sa Castillo ng Reidokku. Aaminin niya sa inyo na hirap siyang makapaniwala na siya ang naging Halimaw.<br/>
 <br/>
 --> 1.7.2.1.2) Kailangang malutas bakit wala nang bumabalik pagsakay ng barko patungong Bansa/Kaharian ng Ligaya, i.e. "Langit"<br/>
+--> Ayon sa mga tao, may dumarating na barko sa kanilang bayan. Pagkatapos, kailangan lamang na sumakay sa barko ang sinumang may nais na iwan ang kanilang kasalukuyang buhay upang pumunta sa Kaharian ng Ligaya. Hindi kailangang bumili ng ticket bilang bayad sa pagsakay.<br/>
+--> Kapag sinubukan ng inyong pangkat na sumakay sa barko, matutuklasan ninyo na mayroong isang katerbang pagkain at inumin sa loob nito. Maliligaya ang mga sumakay ng barko.<br/>
+--> Magigising kayo na sinisipa ng demonyo, i.e. uri ng halimaw.<br/>
+--> Dadalhin niya kayo sa kanilang panginoon.<br/>
+--> Pagpasok niyo sa kanyang Castillo, madirinig niyong may sinisigawan ng "BOBO".<br/>
+--> Matutuklasan ninyo na wala nang buhay ang mga kasama niyong sumakay sa barko.<br/>
+--> Jamiras (na mukhang baliw na agila) ang pangalan ng panginoon ng mga demonyo.<br/>
+--> Kilala rin niya si Mudo-, na nabalitaan niyang nagapi kamakailan.<br/>
+--> Gawa nito, maaari na si Jamiras na palawakin pa ang kanyang sakop.<br/>
+--> Makikita niya na buhay pa ang dugo ng inyong pangkat.<br/>
+--> Kakalabinin niyo siya at maaaring umabot ng tatlong beses na ulit bago niyo matutunan ang paraan upang tuluyan siyang magapi.<br/>
+--> Mas mahirap na katunggali si Jamiras kaysa kay Mudo-.<br/>
+--> Maaari ring makatulong ang Tubig na nagbibigay buhay mula sa bayan ng Amo-ru.<br/>
+--> Uuwi ang mga kaluluwa ng mga kasama ninyong sumakay sa barko, atbp sa kanilang mga katawan.<br/>
+--> Kapag kinausap ninyo ang mga tao na iyon, ibabahagi nila sa inyo na nanaginip sila ng bangungot, i.e. hindi kaaya-ayang panaginip.<br/>
 <br/>
 TO-DO: -update: this<br/>
 <br/>
