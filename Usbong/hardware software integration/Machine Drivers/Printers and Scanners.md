@@ -2,6 +2,19 @@
 ## 1) Hewlett-Packard (HP) Deskjet Ink Advantage 2010 LINUX Drivers (Printer)
 https://developers.hp.com/hp-linux-imaging-and-printing; last accessed: 20200620
 
+### Additional Note
+If installation using LINUX drivers unsuccessful due to dependency requirements, e.g. python library, verify executing the following actions:<br/>
+#### 1.1) In Terminal Window... <br/>
+<b>sudo apt-get install printer-driver-all</b><br/>
+<b>sudo systemctl restart cups</b>
+
+#### 1.2) Preferences -> Printers -> Add<br/>
+
+#### Reference:
+https://askubuntu.com/questions/1046087/error-during-the-cups-operation-client-error-document-format-not-supported;
+last accessed: 202100401<br/>
+--> verified: with LUBUNTU (LTS 20.04)<br/>
+
 ## Problem & Answer
 <b>Problem:</b> Printer prints blank page when using LibreOffice Writer (ver: 6.4.3.2) on LUBUNTU (ver: 20.04)<br/>
 <b>Answer:</b><br/>
