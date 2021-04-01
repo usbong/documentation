@@ -237,8 +237,8 @@ TO-DO: -update: this
 --> Ibabahagi sa iyo ng kompyuter kapag nabura: お気の毒 (lason po sa iyong enerhiya)<br/>
 <br/>
 ### 1.7.2.1) Halimbawa ng mga matutuklasan mong kailangan ng tao:
---> 1.7.2.1.1) Kailangan maibalik ang nawawalang Hari ng Reidokku.<br/> 
---> Ayon sa mga tao, naglakbay siya upang gapiin ang Halimaw, "Mudo-", na mananakop. Mula sa inyong pagsisiyasat, kakailanganin niyo ang Salamin ni Ra- upang mailigtas ang Hari. Kapag nalampasan ninyo ang mga pagsubok upang makuha ang Salamin ni Ra-, kakailanganin naman ninyong kalabanin ang Halimaw. Pagkatapos ninyong magapi ito, kailangan naman ninyo sunod na ilabas at ipakita ang Salamin ni Ra- sa harapan nito. Dito mamumulat ang Halimaw na siya pala ang Hari. Pag-uwi ninyo, makakausap na ninyo ang nagmumuning Hari sa Castillo ng Reidokku. Aaminin niya sa inyo na hirap siyang makapaniwala na siya ang naging Halimaw.<br/>
+--> 1.7.2.1.1) Kailangan maibalik ang nawawalang Hari ng kaharian ng Reidokku.<br/> 
+--> Ayon sa mga tao, naglakbay siya upang gapiin ang tinaguriang pinakamalakas na Halimaw, "Mudo-", na nais sakupin ang lahat. Mula sa inyong pagsisiyasat, kakailanganin niyo ang Salamin ni Ra- upang mailigtas ang Hari. Kapag nalampasan ninyo ang mga pagsubok upang makuha ang Salamin ni Ra-, kakailanganin naman ninyong kalabanin ang Halimaw. Pagkatapos ninyong magapi ito, kailangan naman ninyo sunod na ilabas at ipakita ang Salamin ni Ra- sa harapan nito. Dito mamumulat ang Halimaw na siya pala ang Hari. Pag-uwi ninyo, makakausap na ninyo ang nagmumuning Hari sa Castillo ng Reidokku. Aaminin niya sa inyo na hirap siyang makapaniwala na siya ang naging Halimaw.<br/>
 <br/>
 --> 1.7.2.1.2) <br/>
 <br/>
