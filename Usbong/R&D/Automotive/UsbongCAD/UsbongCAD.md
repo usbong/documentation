@@ -13,3 +13,14 @@ TO-DO: -update: this<br/>
 
 ## 2) Add Tool to verify animation frame sequences
 TO-DO: -add: tool to import 2-Dimensional (2D) image files and verify animation frame sequences
+
+## 3) Use Blender 3D Tool (version: 2.80) Tutorials as Guide
+--> https://www.blender.org/;<br/>
+--> last accessed: 20210402<br/>
+<br/>
+--> "Example: Intro to Texturing - Blender 2.80 Fundamentals"<br/>
+--> https://www.youtube.com/watch?v=TMPjKVgTfYs&list=PLa1F2ddGya_-UvuAqHAksYnB0qL9yWDO6&index=18;<br/>
+--> last accessed: 20210402<br/>
+<br/>
+--> <b>Reminder:</b> Set Computer Monitor Resolution to higher than 800x600 resolution<br/>
+--> This is due to select options, e.g. in horizontal bar for Layout, Modeling, etc, in Blender are not visible.
