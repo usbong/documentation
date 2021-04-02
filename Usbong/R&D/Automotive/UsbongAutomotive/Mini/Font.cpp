@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201010
- * @date updated: 20201117
+ * @date updated: 20210402
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -165,7 +165,9 @@ void draw_char(GLfloat x, GLfloat y, GLfloat z, char c)
 
 	//edited by Mike, 20201012
 	//to make anchor/origin/reference point start at top-left
-    glTranslatef(0.0f, 0.1f, 0.0f);   
+/*//removed by Mike, 20210402
+	glTranslatef(0.0f, 0.1f, 0.0f);   
+*/	
 	glColor3f(1.0f, 1.0f, 1.0f); //set to default, i.e. white
     //glColor3f(0.0f, 0.0f, 0.0f); //set to default, i.e. black
 	
@@ -177,8 +179,8 @@ void draw_char(GLfloat x, GLfloat y, GLfloat z, char c)
       glVertex2f( 0.1f,  -0.1f);
       glVertex2f(0.1f,  0.0f);
 */
-	//edited by Mike, 20201117
-/*
+	//edited by Mike, 20201117; added by Mike, 20210402
+
 	glBegin(GL_QUADS);              // Each set of 4 vertices form a quad
         glTexCoord2f(tx, ty);
         glVertex3f(x, y, 0.0f);
@@ -197,7 +199,7 @@ void draw_char(GLfloat x, GLfloat y, GLfloat z, char c)
       	glVertex3f(x, y-0.16f, 0.0f);      
 //      	glVertex3f(x+0.1f, y+0.16f, 0.0f);              
    glEnd();        
-*/   
+/*   //removed by Mike, 20210402
 	glBegin(GL_QUADS);              // Each set of 4 vertices form a quad
         glTexCoord2f(tx, ty);
         glVertex3f(x, y, 0.0f);
@@ -208,7 +210,7 @@ void draw_char(GLfloat x, GLfloat y, GLfloat z, char c)
 		glTexCoord2f(tx, ty + 0.125f);
       	glVertex3f(x, y-0.16f, 0.0f);      
    glEnd();        
-
+*/
 }
 
 //edited by Mike, 2020117
@@ -260,7 +262,8 @@ void setupFont(int myFontTextureObject)
     glBindTexture(GL_TEXTURE_2D, myFontTextureObject);
 
     /* create OpenGL texture out of targa file */
-    load_tga("textures/font.tga");
+//    load_tga("textures/font.tga");
+    load_tga("textures/concrete.tga");
     
 	/* set texture parameters */
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);

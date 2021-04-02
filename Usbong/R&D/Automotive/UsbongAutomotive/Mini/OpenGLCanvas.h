@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200929
- * @date updated: 20210325
+ * @date updated: 20210402
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -61,6 +61,9 @@
 
 #define FONT_TEXTURE 2
 #define LEVEL_TEXTURE 3 //added by Mike, 20201122
+
+//TO-DO: -update: this
+#define KAHON_TEXTURE 4 //added by Mike, 20210402
 
 #define MAX_ENEMY 2
 
@@ -266,6 +269,9 @@ class OpenGLCanvas
     	
         GLboolean test_pow2(GLushort i);
         void load_tga(char *filename);
+		
+		//added by Mike, 20210402
+		void setupKahonTexture(int myKahonTextureObject);
 
 /*
         //methods to generate bitmap texts
