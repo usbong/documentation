@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B.
  * @date created: 2018
- * @last updated: 20210329
+ * @last updated: 20210402
  * @website: http://www.usbong.ph
  *
  * Reference:
@@ -526,11 +526,19 @@ if ((inputColumns[INPUT_CONSULTATION_MEDICAL_DOCTOR_COLUMN].toUpperCase().trim()
 
 							String[] sbIndexArray = {sbInputColumnsF[0],sbInputColumnsF[1],sbInputColumnsF[2]};
 
-							if (iCountInputColumns==1) {
+							//added by Mike, 20210402
+							System.out.println("sbInputColumnsF["+iCountInputColumns+"]: "+sbInputColumnsF[iCountInputColumns]);
+
+							
+							//edited by Mike, 20210402
+//							if (iCountInputColumns==1) {
+							if (iCountInputColumns==0) {								
 	//							vVertexIndicesContainer.add(sbIndexArray);
 								vVertexIndicesContainer.add(sbIndexArray[0]);
 							}
-							else if (iCountInputColumns==2) {
+							//edited by Mike, 20210402
+//							else if (iCountInputColumns==2) {
+							else if (iCountInputColumns==1) {								
 	//							vTextureCoordinatesIndicesContainer.add(sbIndexArray);
 								vTextureCoordinatesIndicesContainer.add(sbIndexArray[1]);
 							}
@@ -551,7 +559,7 @@ if ((inputColumns[INPUT_CONSULTATION_MEDICAL_DOCTOR_COLUMN].toUpperCase().trim()
 	    int iTextureCoordinatesIndicesContainerSize = vTextureCoordinatesIndicesContainer.size();
 	    int iNormalIndicesContainerSize = vNormalIndicesContainer.size();
 		
-	    for (int iCount=0; iCount<iVertexIndicesContainerSize; iCount++ ) {		 
+	    for (int iCount=0; iCount<iVertexIndicesContainerSize; iCount++) {		 
 	    	int iVertexIndex = Integer.parseInt(vVertexIndicesContainer.get(iCount));		   
 			//-1 due to .obj file indexing starts at 1, instead of 0
 /*			System.out.println("iVertexIndex: "+iVertexIndex);
@@ -563,7 +571,7 @@ if ((inputColumns[INPUT_CONSULTATION_MEDICAL_DOCTOR_COLUMN].toUpperCase().trim()
 		 	vVertexContainerOutput.add(vVertexContainerTemp.get(iVertexIndex-1));
 		}		
 
-		for (int iCount=0; iCount<iTextureCoordinatesIndicesContainerSize; iCount++ ) {		 
+		for (int iCount=0; iCount<iTextureCoordinatesIndicesContainerSize; iCount++) {		 
 			//edited by Mike, 20210329
 /*	    	int iTextureCoordinatesIndex = Integer.parseInt(vTextureCoordinatesIndicesContainer.get(iCount));
 			//-1 due to .obj file indexing starts at 1, instead of 0
@@ -583,7 +591,7 @@ if ((inputColumns[INPUT_CONSULTATION_MEDICAL_DOCTOR_COLUMN].toUpperCase().trim()
 			}				
 		}		
 
-	    for (int iCount=0; iCount<iNormalIndicesContainerSize; iCount++ ) {		 
+	    for (int iCount=0; iCount<iNormalIndicesContainerSize; iCount++) {		 
 	    	int iNormalIndex = Integer.parseInt(vNormalIndicesContainer.get(iCount));
 		   
 			//-1 due to .obj file indexing starts at 1, instead of 0
