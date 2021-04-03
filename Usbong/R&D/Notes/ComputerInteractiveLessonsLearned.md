@@ -235,12 +235,12 @@ TO-DO: -update: this
 --> Sa pagdalaw mo sa daigdig nito, maiging pumunta muna sa Simbahan at pagkatapos kausapin ang mga tao upang malaman kung ano ang kanilang kailangan.<br/>
 --> Hindi mo kailangang mamalagi sa daigdig; kung hindi mo na nais magpatuloy, maaari kang huminto.<br/>
 --> <b>Paalala:</b> Sa matagal na hindi mo pagbabalik, kinalaunan nawawala/nabubura rin ang mga naisulat sa aklat sa Simbahan, bagama't may tumatagal na isa.<br/> 
---> Ibabahagi sa iyo ng kompyuter kapag nabura: お気の毒 (oki no doku; lason po sa iyong enerhiya)<br/>
---> Pagkapili ninyo ng aklat ng inyong paglalakbay, ibabalik kayo ng kompyuter sa Simbahan kung saan isinulat ang aklat.<br/>
+--> Ibabahagi sa iyo ng kompyuter kapag nabura: お気の毒 (oki no doku; lason po sa iyong enerhiya/espiritu/kaluluwa)<br/>
+--> Pagkapili mo ng aklat ng inyong paglalakbay, ibabalik kayo ng kompyuter sa Simbahan kung saan isinulat ang aklat.<br/>
 <br/>
 ### 1.7.2.1) Halimbawa ng mga matutuklasan mong kailangan ng tao:
 --> 1.7.2.1.1) Kailangan maibalik ang nawawalang Hari ng kaharian ng Reidokku.<br/> 
---> Ayon sa mga tao, naglakbay siya upang gapiin ang tinaguriang pinakamalakas na Halimaw, "Mudo-", na nais sakupin ang lahat. Mula sa inyong pagsisiyasat, kakailanganin niyo ang Salamin ni Ra- upang mailigtas ang Hari. Kapag nalampasan ninyo ang mga pagsubok upang makuha ang Salamin ni Ra-, kakailanganin naman ninyong kalabanin ang Halimaw. Pagkatapos ninyong magapi ito, kailangan naman ninyo sunod na ilabas at ipakita ang Salamin ni Ra- sa harapan nito. Dito mamumulat ang Halimaw na siya pala ang Hari. Pag-uwi ninyo, makakausap na ninyo ang nagmumuning Hari sa Castillo ng Reidokku. Aaminin niya sa inyo na hirap siyang makapaniwala na siya ang naging Halimaw.<br/>
+--> Ayon sa mga tao, naglakbay siya upang gapiin ang tinaguriang pinakamalakas na Halimaw, "Mudo-", na nais sakupin ang lahat. Mula sa inyong pagsisiyasat, kakailanganin niyo ang Salamin ni Ra- upang mailigtas ang Hari. Kapag nalampasan ninyo ang mga pagsubok upang makuha ang Salamin ni Ra-, kakailanganin naman ninyong kalabanin ang Halimaw. Pagkatapos ninyong magapi ito, kailangan naman ninyo sunod na ilabas at ipakita ang Salamin ni Ra- sa harapan nito. Dito mamumulat ang Halimaw na siya pala ang Hari. Pag-uwi ninyo, makakausap na ninyo sa Castillo ng Reidokku ang nagmumuning Hari na nakatingin nang malayo palabas. Aaminin niya sa inyo na hirap siyang makapaniwala na siya ang naging Halimaw.<br/>
 <br/>
 --> 1.7.2.1.2) Kailangang malutas bakit wala nang bumabalik pagsakay ng barko patungong Bansa/Kaharian ng Ligaya, i.e. "Langit"<br/>
 --> Ayon sa mga tao, may dumarating na barko sa kanilang bayan. Pagkatapos, kailangan lamang na sumakay sa barko ang sinumang may nais na iwan ang kanilang kasalukuyang buhay upang pumunta sa Kaharian ng Ligaya. Hindi kailangang bumili ng ticket bilang bayad sa pagsakay.<br/>
@@ -253,9 +253,10 @@ TO-DO: -update: this
 --> Kilala rin niya si Mudo-, na nabalitaan niyang nagapi kamakailan.<br/>
 --> Gawa nito, maaari na si Jamiras na palawakin pa ang kanyang sakop.<br/>
 --> Makikita niya na buhay pa ang dugo ng inyong pangkat.<br/>
---> Kakalabinin niyo siya at maaaring umabot ng tatlong beses na ulit bago niyo matutunan ang paraan upang tuluyan siyang magapi.<br/>
+--> Kakalabanin niyo siya at maaaring umabot ng tatlong beses bago niyo matutunan ang paraan upang tuluyan siyang magapi.<br/>
 --> Mas mahirap na katunggali si Jamiras kaysa kay Mudo-.<br/>
 --> Maaari ring makatulong ang Tubig na nagbibigay buhay mula sa bayan ng Amo-ru.<br/>
+--> Maaalala na isang paglalakbay din ang pagpunta sa bayan ng Amo-ru.
 --> Uuwi ang mga kaluluwa ng mga kasama ninyong sumakay sa barko, atbp sa kanilang mga katawan.<br/>
 --> Kapag kinausap ninyo ang mga tao na iyon, ibabahagi nila sa inyo na nanaginip sila ng bangungot, i.e. hindi kaaya-ayang panaginip.<br/>
 <br/>
@@ -280,7 +281,7 @@ TO-DO: -update: this<br/>
 --> Dagdag pa rito, walang alinlangan niyang ipinaaalam sa inyo kung ano ang kanyang saloobin.<br/>
 <br/>
 --> 1.7.2.2.1) Amo-ru<br/>
---> Ito ang tanging bayan na gumagawa at kung saan makabibili ng tubig na nagbibigay buhay.<br/>
+--> Ito ang tanging bayan na gumagawa at kung saan makabibili ng Tubig na nagbibigay buhay.<br/>
 --> Mula ito sa dumadaloy na tubig mula sa bundok.<br/>
 --> May salaysay ukol sa dalawang magkasintahan sa bayang ito.<br/>
 
