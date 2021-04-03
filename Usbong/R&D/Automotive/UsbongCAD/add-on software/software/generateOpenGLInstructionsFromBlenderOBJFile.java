@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B.
  * @date created: 2018
- * @last updated: 20210402
+ * @last updated: 20210403
  * @website: http://www.usbong.ph
  *
  * Reference:
@@ -214,7 +214,9 @@ public class generateOpenGLInstructionsFromBlenderOBJFile {
 
 		//TO-DO: -reverify: output
 		//OUTPUT		
-		outputWriter.print("glBegin(GL_QUADS);\n");
+		//edited by Mike, 20210403
+//		outputWriter.print("glBegin(GL_QUADS);\n");
+		outputWriter.print("glBegin(GL_TRIANGLES);\n");
 		
 	    int iVertexContainerOutputSize = vVertexContainerOutput.size();
 	    int iTextureCoordinatesContainerOutputSize = vTextureCoordinatesContainerOutput.size();
@@ -559,13 +561,16 @@ if ((inputColumns[INPUT_CONSULTATION_MEDICAL_DOCTOR_COLUMN].toUpperCase().trim()
 	    int iTextureCoordinatesIndicesContainerSize = vTextureCoordinatesIndicesContainer.size();
 	    int iNormalIndicesContainerSize = vNormalIndicesContainer.size();
 		
+		//edited by Mike, 20210403
+		//eliminated execss loops classified to be "for"
+/*		
 	    for (int iCount=0; iCount<iVertexIndicesContainerSize; iCount++) {		 
 	    	int iVertexIndex = Integer.parseInt(vVertexIndicesContainer.get(iCount));		   
 			//-1 due to .obj file indexing starts at 1, instead of 0
-/*			System.out.println("iVertexIndex: "+iVertexIndex);
-			System.out.println("vVertexContainerTempSize: "+vVertexContainerTemp.size());
-			System.out.println("vVertexContainerValue: "+vVertexContainerTemp.get(iVertexIndex-1)[0]);
-*/			
+////			System.out.println("iVertexIndex: "+iVertexIndex);
+////			System.out.println("vVertexContainerTempSize: "+vVertexContainerTemp.size());
+////			System.out.println("vVertexContainerValue: "+vVertexContainerTemp.get(iVertexIndex-1)[0]);
+		
 			//TO-DO: -add: increment via iCount
 			//TO-DO: -get array of f, 3 sets
 		 	vVertexContainerOutput.add(vVertexContainerTemp.get(iVertexIndex-1));
@@ -573,10 +578,10 @@ if ((inputColumns[INPUT_CONSULTATION_MEDICAL_DOCTOR_COLUMN].toUpperCase().trim()
 
 		for (int iCount=0; iCount<iTextureCoordinatesIndicesContainerSize; iCount++) {		 
 			//edited by Mike, 20210329
-/*	    	int iTextureCoordinatesIndex = Integer.parseInt(vTextureCoordinatesIndicesContainer.get(iCount));
-			//-1 due to .obj file indexing starts at 1, instead of 0
-			vTextureCoordinatesContainerOutput.add(vTextureCoordinatesContainerTemp.get(iTextureCoordinatesIndex-1));
-*/
+////	    	int iTextureCoordinatesIndex = Integer.parseInt(vTextureCoordinatesIndicesContainer.get(iCount));
+////			//-1 due to .obj file indexing starts at 1, instead of 0
+////			vTextureCoordinatesContainerOutput.add(vTextureCoordinatesContainerTemp.get(iTextureCoordinatesIndex-1));
+
 			int iTextureCoordinatesIndex;
 			//note: select values blank
 			if (vTextureCoordinatesIndicesContainer.get(iCount).equals("")) {
@@ -597,6 +602,39 @@ if ((inputColumns[INPUT_CONSULTATION_MEDICAL_DOCTOR_COLUMN].toUpperCase().trim()
 			//-1 due to .obj file indexing starts at 1, instead of 0
 			vNormalContainerOutput.add(vNormalContainerTemp.get(iNormalIndex-1));
 		}		
+*/		
+		//note: index size for all container outputs, e.g. textures, normals,
+		//equal with iVertexIndicesContainerSize
+	    for (int iCount=0; iCount<iVertexIndicesContainerSize; iCount++) {		 
+	    	int iVertexIndex = Integer.parseInt(vVertexIndicesContainer.get(iCount));		   
+			//-1 due to .obj file indexing starts at 1, instead of 0
+////			System.out.println("iVertexIndex: "+iVertexIndex);
+////			System.out.println("vVertexContainerTempSize: "+vVertexContainerTemp.size());
+////			System.out.println("vVertexContainerValue: "+vVertexContainerTemp.get(iVertexIndex-1)[0]);
+		
+			//TO-DO: -add: increment via iCount
+			//TO-DO: -get array of f, 3 sets
+		 	vVertexContainerOutput.add(vVertexContainerTemp.get(iVertexIndex-1));
+			
+			int iTextureCoordinatesIndex;
+			//note: select values blank
+			if (vTextureCoordinatesIndicesContainer.get(iCount).equals("")) {
+				iTextureCoordinatesIndex = 0; 
+				//-1 due to .obj file indexing starts at 1, instead of 0
+				vTextureCoordinatesContainerOutput.add(vTextureCoordinatesContainerTemp.get(0));
+			}
+			else {
+	    		iTextureCoordinatesIndex = Integer.parseInt(vTextureCoordinatesIndicesContainer.get(iCount));
+				//-1 due to .obj file indexing starts at 1, instead of 0
+				vTextureCoordinatesContainerOutput.add(vTextureCoordinatesContainerTemp.get(iTextureCoordinatesIndex-1));
+			}		
+			
+			int iNormalIndex = Integer.parseInt(vNormalIndicesContainer.get(iCount));
+		   
+			//-1 due to .obj file indexing starts at 1, instead of 0
+			vNormalContainerOutput.add(vNormalContainerTemp.get(iNormalIndex-1));
+		}		
+		
 		//---------------------------------------------------------------------------		
 		
 	}
