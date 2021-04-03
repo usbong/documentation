@@ -215,8 +215,8 @@ public class generateOpenGLInstructionsFromBlenderOBJFile {
 		//TO-DO: -reverify: output
 		//OUTPUT		
 		//edited by Mike, 20210403
-//		outputWriter.print("glBegin(GL_QUADS);\n");
-		outputWriter.print("glBegin(GL_TRIANGLES);\n");
+		outputWriter.print("glBegin(GL_QUADS);\n");
+//		outputWriter.print("glBegin(GL_TRIANGLES);\n");
 		
 	    int iVertexContainerOutputSize = vVertexContainerOutput.size();
 	    int iTextureCoordinatesContainerOutputSize = vTextureCoordinatesContainerOutput.size();
