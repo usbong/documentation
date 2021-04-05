@@ -24,3 +24,12 @@ TO-DO: -add: tool to import 2-Dimensional (2D) image files and verify animation 
 <br/>
 --> <b>Reminder:</b> Set Computer Monitor Resolution to higher than 800x600 resolution<br/>
 --> This is due to select options, e.g. in horizontal bar for Layout, Modeling, etc, in Blender are not visible.
+
+## 4) Press Print Screen button to capture photograph
+--> Alternating Red and Yellow Boxes;<br/>
+--> Capture Red; Capture Yellow<br/>
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Automotive/UsbongCAD/screenshots/kahonWireFrameQuads.jpg" width="30%">
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Automotive/UsbongCAD/screenshots/kahonWireFrameTriangles.jpg" width="30%">
+
+### Recommended Action: 
+--> learn: gambling machine as randomly generating machine to be against human instinct, i.e. create order from chaos.
