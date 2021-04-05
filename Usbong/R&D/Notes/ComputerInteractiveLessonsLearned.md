@@ -297,6 +297,16 @@ TO-DO: -update: this<br/>
 --> <b>Additional Note:</b><br/>
 --> Mas nais ko ang kanyang istorya/salaysay, kaysa sa kanyang pagguhit.<br/>
 
+## 1.8) USBONG
+## 1.8.1) Press Print Screen button to capture photograph
+--> Alternating Red and Yellow Boxes;<br/>
+--> Capture Red; Capture Yellow<br/>
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Automotive/UsbongCAD/screenshots/kahonWireFrameQuads.jpg" width="30%">
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Automotive/UsbongCAD/screenshots/kahonWireFrameTriangles.jpg" width="30%">
+
+### Recommended Action: 
+--> learn: gambling machine as randomly generating machine to be against human instinct, i.e. create order from chaos.
+
 ## 2) Hardware
 ## 2.1) SONY PlayStation Portable (PSP)
 --> <b>Problem:</b> When playing Universal Media Disc (UMD) game, PSP keeps on displaying 「ゲームを終了しますか (Do you end the game?)」<br/>
