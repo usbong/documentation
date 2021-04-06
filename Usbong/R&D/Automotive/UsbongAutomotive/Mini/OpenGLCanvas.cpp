@@ -985,7 +985,8 @@ void OpenGLCanvas::setupKahonTexture(int myKahonTextureObject)
 
     /* create OpenGL texture out of targa file */
 //    load_tga("textures/font.tga");
-    load_tga("textures/concrete.tga");
+//    load_tga("textures/concrete.tga");
+    load_tga("textures/armor.tga");	
 //    load_tga("textures/uvtemplate.tga");
 //    load_tga("textures/uvHalimbawa.tga");
     
@@ -2132,13 +2133,18 @@ glEnd();
 
 //added by Mike, 20210405
 //with additional rotations: use glBegin(GL_TRIANGLES);
-/*	
+
+//added by Mike, 20210406	
+//TO-DO: -reverify: texture coordinates; face not drawn outside box; excess texture coordinates due to triangle
+	
 //added due to inverted z-axis based on position of vertices 
 glRotatef(180, 0.0f, 0.0f, 1.0f);
 //added due to inverted x-axis based on position of vertices 
-glRotatef(180, 1.0f, 0.0f, 0.0f);
+//glRotatef(180, 1.0f, 0.0f, 0.0f);
 
+glRotatef(180, 0.0f, 1.0f, 0.0f);
 	
+/*	
 //    	glTranslated(2.212117, 1.613276, 3.332175);
 //		glRotated(-90.000035,0,1,0);
 //    	glScaled(1.000000, 1.000000, 1.000000);	
