@@ -1843,11 +1843,14 @@ void OpenGLCanvas::drawGridWithZAxis() {
 	//set with 2 triangles to create quad not yet identified 
 	
 //output from Blender3D  2.82
-	
-glBegin(GL_QUADS);
-//glBegin(GL_TRIANGLES);
 
-//triangle#1
+//added by Mike, 20210408
+//note: if we use GL_QUADS, computer draws only 1 triangle, instead of 2 for a set of quad
+//TO-DO: -reverify: texture coordinates for a set with 2 triangles
+//glBegin(GL_QUADS);
+glBegin(GL_TRIANGLES);
+/*
+//triangle#1 //top face right part
 	glNormal3f(0.0000,1.0000,0.0000);
 	glTexCoord2f(0.875000,0.500000);
 	glVertex3f(-1.000000,1.000000,-1.000000);
@@ -1859,8 +1862,8 @@ glBegin(GL_QUADS);
 	glNormal3f(0.0000,1.0000,0.0000);
 	glTexCoord2f(0.625000,0.500000);
 	glVertex3f(1.000000,1.000000,-1.000000);
-/*
-//triangle#2	
+
+//triangle#2 //front face right part
 	glNormal3f(0.0000,0.0000,1.0000);
 	glTexCoord2f(0.625000,0.750000);
 	glVertex3f(1.000000,1.000000,1.000000);
@@ -1873,7 +1876,7 @@ glBegin(GL_QUADS);
 	glTexCoord2f(0.375000,0.750000);
 	glVertex3f(1.000000,-1.000000,1.000000);
 	
-//triangle#3	
+//triangle#3 //left face bottom part
 	glNormal3f(-1.0000,0.0000,0.0000);
 	glTexCoord2f(0.625000,0.000000);
 	glVertex3f(-1.000000,1.000000,1.000000);
@@ -1886,7 +1889,7 @@ glBegin(GL_QUADS);
 	glTexCoord2f(0.375000,0.000000);
 	glVertex3f(-1.000000,-1.000000,1.000000);
 
-//triangle#4	
+//triangle#4 //bottom face left part	
 	glNormal3f(0.0000,-1.0000,0.0000);
 	glTexCoord2f(0.375000,0.500000);
 	glVertex3f(1.000000,-1.000000,-1.000000);
@@ -1899,7 +1902,7 @@ glBegin(GL_QUADS);
 	glTexCoord2f(0.125000,0.500000);
 	glVertex3f(-1.000000,-1.000000,-1.000000);
 
-//triangle#5	
+//triangle#5 //right face bottom part
 	glNormal3f(1.0000,0.0000,0.0000);
 	glTexCoord2f(0.625000,0.500000);
 	glVertex3f(1.000000,1.000000,-1.000000);
@@ -1911,8 +1914,8 @@ glBegin(GL_QUADS);
 	glNormal3f(1.0000,0.0000,0.0000);
 	glTexCoord2f(0.375000,0.500000);
 	glVertex3f(1.000000,-1.000000,-1.000000);
-
-//triangle#6	
+*/
+//triangle#6 //back face left part	
 	glNormal3f(0.0000,0.0000,-1.0000);
 	glTexCoord2f(0.625000,0.250000);
 	glVertex3f(-1.000000,1.000000,-1.000000);
@@ -1924,8 +1927,8 @@ glBegin(GL_QUADS);
 	glNormal3f(0.0000,0.0000,-1.0000);
 	glTexCoord2f(0.375000,0.250000);
 	glVertex3f(-1.000000,-1.000000,-1.000000);
-
-//triangle#7	
+/*
+//triangle#7 //top face left part
 	glNormal3f(0.0000,1.0000,0.0000);
 	glTexCoord2f(0.875000,0.500000);
 	glVertex3f(-1.000000,1.000000,-1.000000);
@@ -1937,8 +1940,8 @@ glBegin(GL_QUADS);
 	glNormal3f(0.0000,1.0000,0.0000);
 	glTexCoord2f(0.625000,0.750000);
 	glVertex3f(1.000000,1.000000,1.000000);
-
-//triangle#8	
+	
+//triangle#8 //front face left part
 	glNormal3f(0.0000,0.0000,1.0000);
 	glTexCoord2f(0.625000,0.750000);
 	glVertex3f(1.000000,1.000000,1.000000);
@@ -1951,7 +1954,7 @@ glBegin(GL_QUADS);
 	glTexCoord2f(0.375000,1.000000);
 	glVertex3f(-1.000000,-1.000000,1.000000);
 
-//triangle#9	
+//triangle#9 //left face top part
 	glNormal3f(-1.0000,0.0000,0.0000);
 	glTexCoord2f(0.625000,0.000000);
 	glVertex3f(-1.000000,1.000000,1.000000);
@@ -1963,9 +1966,8 @@ glBegin(GL_QUADS);
 	glNormal3f(-1.0000,0.0000,0.0000);
 	glTexCoord2f(0.375000,0.250000);
 	glVertex3f(-1.000000,-1.000000,-1.000000);
-*/
-	
-//triangle#10	
+		
+//triangle#10 //top face right part
 	glNormal3f(0.0000,-1.0000,0.0000);
 	glTexCoord2f(0.375000,0.500000);
 	glVertex3f(1.000000,-1.000000,-1.000000);
@@ -1977,9 +1979,9 @@ glBegin(GL_QUADS);
 	glNormal3f(0.0000,-1.0000,0.0000);
 	glTexCoord2f(0.125000,0.750000);
 	glVertex3f(-1.000000,-1.000000,1.000000);
-	
-/*
-//triangle#11	
+
+
+//triangle#11 //right face top part
 	glNormal3f(1.0000,0.0000,0.0000);
 	glTexCoord2f(0.625000,0.500000);
 	glVertex3f(1.000000,1.000000,-1.000000);
@@ -1991,8 +1993,9 @@ glBegin(GL_QUADS);
 	glNormal3f(1.0000,0.0000,0.0000);
 	glTexCoord2f(0.375000,0.750000);
 	glVertex3f(1.000000,-1.000000,1.000000);
-
-//triangle#12	
+*/
+	
+//triangle#12 //back face right part	
 	glNormal3f(0.0000,0.0000,-1.0000);
 	glTexCoord2f(0.625000,0.250000);
 	glVertex3f(-1.000000,1.000000,-1.000000);
@@ -2004,7 +2007,7 @@ glBegin(GL_QUADS);
 	glNormal3f(0.0000,0.0000,-1.0000);
 	glTexCoord2f(0.375000,0.500000);
 	glVertex3f(1.000000,-1.000000,-1.000000);
-*/	
+	
 glEnd();
 
 	
