@@ -1940,24 +1940,29 @@ glBegin(GL_TRIANGLES);
 	glVertex3f(1.000000,-1.000000,-1.000000);
 */
 //triangle#6 //back face left part
-//texture coordinates; anchor bottom-left
+//blender output texture coordinates; origin/anchor bottom-left; counter-clockwise
+	//note: glRotatef(180, 1.0f, 0.0f, 0.0f);
+	//now anchor top-left
+	//clockwise
+	
 	glNormal3f(0.0000,0.0000,-1.0000);
 //edited by Mike, 20210409	
 //	glTexCoord2f(0.625000,0.250000);
 	glTexCoord2f(0.0,0.0);	
-	glVertex3f(-1.000000,1.000000,-1.000000);
+	glVertex3f(-1.000000,1.000000,-1.000000); //A1
 
 	glNormal3f(0.0000,0.0000,-1.0000);
 //edited by Mike, 20210409	
 //	glTexCoord2f(0.375000,0.500000);
 	glTexCoord2f(1.0,1.0);
-	glVertex3f(1.000000,-1.000000,-1.000000);
+	glVertex3f(1.000000,-1.000000,-1.000000); //B1
 
 	glNormal3f(0.0000,0.0000,-1.0000);
 //edited by Mike, 20210409	
 //	glTexCoord2f(0.375000,0.250000);
 	glTexCoord2f(0.0,1.0);	
-	glVertex3f(-1.000000,-1.000000,-1.000000);
+	glVertex3f(-1.000000,-1.000000,-1.000000); //C1
+	
 /*
 //triangle#7 //top face left part
 	glNormal3f(0.0000,1.0000,0.0000);
@@ -2027,28 +2032,30 @@ glBegin(GL_TRIANGLES);
 */
 	
 //triangle#12 //back face right part	
-	//texture coordinates bottom-left anchor; counter-clockwise
+//blender output texture coordinates; origin/anchor bottom-left; counter-clockwise
+	//note: glRotatef(180, 1.0f, 0.0f, 0.0f);
+	//now anchor top-left
+	//clockwise
+	
 	glNormal3f(0.0000,0.0000,-1.0000);
 //edited by Mike, 20210409		
 //	glTexCoord2f(0.625000,0.250000);
 	glTexCoord2f(0.0,0.0);	
-	glVertex3f(-1.000000,1.000000,-1.000000);
+	glVertex3f(-1.000000,1.000000,-1.000000); //A2
 
 	glNormal3f(0.0000,0.0000,-1.0000);
 //edited by Mike, 20210409		
 //	glTexCoord2f(0.625000,0.500000);
 	glTexCoord2f(1.0,0.0);
 //	glTexCoord2f(1.0,1.0);
-
-	glVertex3f(1.000000,1.000000,-1.000000);
+	glVertex3f(1.000000,1.000000,-1.000000); //B2
 
 	glNormal3f(0.0000,0.0000,-1.0000);
 //edited by Mike, 20210409		
 //	glTexCoord2f(0.375000,0.500000);
 	glTexCoord2f(1.0,1.0);
-//	glTexCoord2f(1.0,0.0);
-	
-	glVertex3f(1.000000,-1.000000,-1.000000);
+//	glTexCoord2f(1.0,0.0);	
+	glVertex3f(1.000000,-1.000000,-1.000000); //C2
 	
 glEnd();
 
