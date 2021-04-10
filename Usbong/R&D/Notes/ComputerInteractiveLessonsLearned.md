@@ -307,6 +307,18 @@ TO-DO: -update: this<br/>
 ### Recommended Action: 
 --> learn: gambling machine as randomly generating machine to be against human instinct, i.e. create order from chaos.
 
+## 1.9) INTELLIGENT SYSTEMS + NINTENDO
+## 1.9.1) Mario Story (Japanese version)
+--> create/update system to be the following:<br/>
+
+### 1.9.1.1) Save Point available for short bursts, instead of continuous for 1hr, 2hrs, et cetera
+--> Example: after 5mins; if you as Mario prefer to continue, it is again available after 15mins<br/>
+
+### 1.9.1.2) Answer to questions becomes simple due to system
+--> Example: kuriko, i.e. sister of your friend, kurio, has been wanting the photograph item; do you give it to her or not? YES/NO<br/>
+--> An answer of NO, i.e. variation can occur if person's character is a joker, et cetera<br/>
+--> ji, i.e. Text font, for conversations reminds me of my handwriting, albeit I already use another accepted writing for the hiragana SO<br/>
+
 ## 2) Hardware
 ## 2.1) SONY PlayStation Portable (PSP)
 --> <b>Problem:</b> When playing Universal Media Disc (UMD) game, PSP keeps on displaying 「ゲームを終了しますか (Do you end the game?)」<br/>
