@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210409
+ * @date updated: 20210410
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -1871,6 +1871,10 @@ void OpenGLCanvas::drawGridWithZAxis() {
 //note: texture coordinates anchor bottom-left
 //ship controls to fire beams, inverted x and z-axes 
 	
+//added by Mike, 20210410
+//cube's bottom face; image texture, i.e. imageSpriteExampleMikeWithoutBG.tga
+//facing to the right, i.e. rotated +90degrees
+	
 //glBegin(GL_QUADS);
 glBegin(GL_TRIANGLES);
 /*
@@ -1912,20 +1916,26 @@ glBegin(GL_TRIANGLES);
 	glNormal3f(-1.0000,0.0000,0.0000);
 	glTexCoord2f(0.375000,0.000000);
 	glVertex3f(-1.000000,-1.000000,1.000000);
-
+*/
 //triangle#4 //bottom face left part	
 	glNormal3f(0.0000,-1.0000,0.0000);
-	glTexCoord2f(0.375000,0.500000);
+	//edited by Mike, 20210410
+//	glTexCoord2f(0.375000,0.500000);
+	glTexCoord2f(0.0,0.0);		
 	glVertex3f(1.000000,-1.000000,-1.000000);
 
 	glNormal3f(0.0000,-1.0000,0.0000);
-	glTexCoord2f(0.125000,0.750000);
+	//edited by Mike, 20210410	
+//	glTexCoord2f(0.125000,0.750000);
+	glTexCoord2f(1.0,1.0);	
 	glVertex3f(-1.000000,-1.000000,1.000000);
 
 	glNormal3f(0.0000,-1.0000,0.0000);
-	glTexCoord2f(0.125000,0.500000);
+	//edited by Mike, 20210410	
+//	glTexCoord2f(0.125000,0.500000);
+	glTexCoord2f(0.0,1.0);	
 	glVertex3f(-1.000000,-1.000000,-1.000000);
-
+/*
 //triangle#5 //right face bottom part
 	glNormal3f(1.0000,0.0000,0.0000);
 	glTexCoord2f(0.625000,0.500000);
@@ -1938,7 +1948,7 @@ glBegin(GL_TRIANGLES);
 	glNormal3f(1.0000,0.0000,0.0000);
 	glTexCoord2f(0.375000,0.500000);
 	glVertex3f(1.000000,-1.000000,-1.000000);
-*/
+
 //triangle#6 //back face left part
 //blender output texture coordinates; origin/anchor bottom-left; counter-clockwise
 	//note: glRotatef(180, 1.0f, 0.0f, 0.0f);
@@ -1963,7 +1973,7 @@ glBegin(GL_TRIANGLES);
 	glTexCoord2f(0.0,1.0);	
 	glVertex3f(-1.000000,-1.000000,-1.000000); //C1
 	
-/*
+
 //triangle#7 //top face left part
 	glNormal3f(0.0000,1.0000,0.0000);
 	glTexCoord2f(0.875000,0.500000);
@@ -2002,21 +2012,27 @@ glBegin(GL_TRIANGLES);
 	glNormal3f(-1.0000,0.0000,0.0000);
 	glTexCoord2f(0.375000,0.250000);
 	glVertex3f(-1.000000,-1.000000,-1.000000);
-		
+*/		
 //triangle#10 //top face right part
 	glNormal3f(0.0000,-1.0000,0.0000);
-	glTexCoord2f(0.375000,0.500000);
+	//edited by Mike, 20210410		
+//	glTexCoord2f(0.375000,0.500000);
+	glTexCoord2f(0.0,0.0);		
 	glVertex3f(1.000000,-1.000000,-1.000000);
 
 	glNormal3f(0.0000,-1.0000,0.0000);
-	glTexCoord2f(0.375000,0.750000);
+	//edited by Mike, 20210410		
+//	glTexCoord2f(0.375000,0.750000);
+	glTexCoord2f(1.0,0.0);	
 	glVertex3f(1.000000,-1.000000,1.000000);
 
 	glNormal3f(0.0000,-1.0000,0.0000);
-	glTexCoord2f(0.125000,0.750000);
+	//edited by Mike, 20210410		
+//	glTexCoord2f(0.125000,0.750000);
+	glTexCoord2f(1.0,1.0);	
 	glVertex3f(-1.000000,-1.000000,1.000000);
 
-
+/*
 //triangle#11 //right face top part
 	glNormal3f(1.0000,0.0000,0.0000);
 	glTexCoord2f(0.625000,0.500000);
@@ -2030,7 +2046,7 @@ glBegin(GL_TRIANGLES);
 	glTexCoord2f(0.375000,0.750000);
 	glVertex3f(1.000000,-1.000000,1.000000);
 */
-	
+/*	
 //triangle#12 //back face right part	
 //blender output texture coordinates; origin/anchor bottom-left; counter-clockwise
 	//note: glRotatef(180, 1.0f, 0.0f, 0.0f);
@@ -2056,6 +2072,7 @@ glBegin(GL_TRIANGLES);
 	glTexCoord2f(1.0,1.0);
 //	glTexCoord2f(1.0,0.0);	
 	glVertex3f(1.000000,-1.000000,-1.000000); //C2
+*/
 	
 glEnd();
 
