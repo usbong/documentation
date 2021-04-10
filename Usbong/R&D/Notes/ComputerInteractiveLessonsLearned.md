@@ -316,7 +316,7 @@ TO-DO: -update: this<br/>
 
 ### 1.9.1.2) Answer to questions becomes simple due to system
 --> Example: kuriko, i.e. sister of your friend, kurio, has been wanting the photograph item; do you give it to her or not? YES/NO<br/>
---> An answer of NO, i.e. variation can occur if person's character is a joker, et cetera<br/>
+--> An answer of NO, i.e. variation, can occur if person's character is a joker, et cetera<br/>
 --> ji, i.e. Text font, for conversations reminds me of my handwriting, albeit I already use another accepted writing for the hiragana SO<br/>
 
 ## 2) Hardware
