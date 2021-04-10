@@ -2013,7 +2013,7 @@ glBegin(GL_TRIANGLES);
 	glTexCoord2f(0.375000,0.250000);
 	glVertex3f(-1.000000,-1.000000,-1.000000);
 */		
-//triangle#10 //top face right part
+//triangle#10 //bottom face right part
 	glNormal3f(0.0000,-1.0000,0.0000);
 	//edited by Mike, 20210410		
 //	glTexCoord2f(0.375000,0.500000);
