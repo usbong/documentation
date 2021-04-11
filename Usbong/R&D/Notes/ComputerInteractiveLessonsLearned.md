@@ -310,7 +310,7 @@ TO-DO: -update: this<br/>
 ## 1.9) INTELLIGENT SYSTEMS + NINTENDO
 ## 1.9.1) マリオ ストーリー (Mario Story; Japanese version)
 --> create/update computer interactive systems to be the following:<br/>
---> note: computer interactive systems company : usbong social systems incorporated : nintendo intelligent systems<br/>
+--> note: Computer Interactive Systems Company : Usbong Social Systems Inc : Intelligent Systems + Nintendo<br/>
 
 --> TO-DO: -update: this
 
@@ -323,7 +323,7 @@ TO-DO: -update: this<br/>
 --> 字（じ；ji）, i.e. Text font, for conversations reminds me of my handwriting, albeit I already use another accepted writing for the hiragana そ（so）<br/>
 
 ### Recommended Actions: 
---> verify: [ARCADE LAB: ザ・シンプソンズ（KONAMI / 1991）](https://www.youtube.com/channel/UCy53rIJfxqI2S3qohAdfvvA); ARCADE MACHINE<br/>
+--> verify: [ARCADE LAB](https://www.youtube.com/channel/UCy53rIJfxqI2S3qohAdfvvA): [ザ・シンプソンズ（KONAMI / 1991）](https://www.youtube.com/watch?v=_FfLmrNaudI&list=PLEB4zro_ieO0QLObEFmwpxdG4-MKA7MzI&index=2); ARCADE MACHINE<br/>
 --> verify: ＭＯＴＨＥＲ２ギーグの逆襲（NINTENDO / 1994）; Super Family Computer (SFC)
 
 ## 2) Hardware
