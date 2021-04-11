@@ -310,7 +310,8 @@ TO-DO: -update: this<br/>
 ## 1.9) INTELLIGENT SYSTEMS + NINTENDO
 ## 1.9.1) マリオ ストーリー (Mario Story; Japanese version)
 --> create/update computer interactive systems to be the following:<br/>
---> note: Computer Interactive Systems Company : Usbong Social Systems Inc : Intelligent Systems + Nintendo<br/>
+--> note: Computer Interactive Systems Company : Usbong Social Systems Inc : <br/>
+--> Intelligent Systems + Nintendo<br/>
 
 --> TO-DO: -update: this
 
