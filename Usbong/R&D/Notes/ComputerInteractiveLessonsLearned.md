@@ -255,7 +255,7 @@ TO-DO: -update: this
 --> Makikita niya na buhay pa ang dugo ng inyong pangkat.<br/>
 --> Kakalabanin niyo siya at maaaring umabot ng tatlong beses bago niyo matutunan ang paraan upang tuluyan siyang magapi.<br/>
 --> Mas mahirap na katunggali si Jamiras kaysa kay Mudo-.<br/>
---> Maaari ring makatulong ang Tubig na nagbibigay buhay mula sa bayan ng Amo-ru.<br/>
+--> Maaari ring makatulong ang Tubig na nagbibigay-buhay mula sa bayan ng Amo-ru.<br/>
 --> Maaalala na isang paglalakbay din ang pagpunta sa bayan ng Amo-ru.<br/>
 --> Uuwi ang mga kaluluwa ng mga kasama ninyong sumakay sa barko, atbp sa kanilang mga katawan.<br/>
 --> Kapag kinausap ninyo ang mga tao na iyon, ibabahagi nila sa inyo na nanaginip sila ng bangungot, i.e. hindi kaaya-ayang panaginip.<br/>
@@ -281,7 +281,7 @@ TO-DO: -update: this<br/>
 --> Dagdag pa rito, walang alinlangan niyang ipinaaalam sa inyo kung ano ang kanyang saloobin.<br/>
 <br/>
 --> 1.7.2.2.1) Amo-ru<br/>
---> Ito ang tanging bayan na gumagawa at kung saan makabibili ng Tubig na nagbibigay buhay.<br/>
+--> Ito ang tanging bayan na gumagawa at kung saan makabibili ng Tubig na nagbibigay-buhay.<br/>
 --> Mula ito sa dumadaloy na tubig mula sa bundok.<br/>
 --> May salaysay ukol sa dalawang magkasintahan sa bayang ito.<br/>
 --> Matutuklasan ng inyong pangkat na mga dayo ang dalawang magkasintahan sa bayan ng Amo-ru.<br/>
@@ -289,10 +289,10 @@ TO-DO: -update: this<br/>
 --> Kakailanganin ninyong iligtas ang dalawang nawawala.<br/>
 --> Bata-bata pa nang dumating sila sa bayan ng Amo-ru.<br/>
 --> Naghahanap kasi sila ng adventure & treasure, i.e. paglalakabay & yaman.<br/>
---> Sa kuweba kung saan dumadaloy ang Tubig na nagbibigay buhay sila nagtungo.<br/>
+--> Sa kuweba kung saan dumadaloy ang Tubig na nagbibigay-buhay sila nagtungo.<br/>
 --> May matatagpuan silang kutsilyo/patalim na pinaniwalaan nilang ang nakatagong yaman sa kuweba.<br/>
 --> Ngunit nang sila'y pauwi na at palabas na ng kuweba, sasaksakin ng kasintahan ang kanyang irog gamit ang patalim.<br/>
---> Magdurugo siya at hahalo ang kanyang dugo sa Tubig na nagbibigay buhay.<br/>
+--> Magdurugo siya at hahalo ang kanyang dugo sa Tubig na nagbibigay-buhay.<br/>
 --> Magdudulot ito ng pamumula ng Tubig na dadaloy hanggang sa Bayan ng Amo-ru.<br/>
 --> Upang maibalik ang Tubig sa wasto, kakailanganin ninyong iuwi ang sinaksak na irog sa Simbahan kung saan naman naroon ang kanyang kasintahan, na parating tulog.<br/>
 --> Pagkatapos ninyong maiuwi ang irog, pareho ang dalawang magkasintahan na magpapasalamat sa inyo.<br/>
