@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210410
+ * @date updated: 20210412
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -561,6 +561,10 @@ bool OpenGLCanvas::init()
 	
 	//added by Mike, 20210403
 	setupKahonTexture(KAHON_TEXTURE);
+
+	//added by Mike, 20210403
+	setupKahonTexture(ARMOR_TEXTURE);
+
 	
 	return true;
 }
@@ -990,7 +994,14 @@ void OpenGLCanvas::setupKahonTexture(int myKahonTextureObject)
 	//edited by Mike, 20210409
 //    load_tga("textures/armor.tga");	
 //    load_tga("textures/imageSpriteExampleMike.tga");	
-    load_tga("textures/imageSpriteExampleMikeWithoutBG.tga");	
+	
+	//edited by Mike, 20210412
+	if (myKahonTextureObject==ARMOR_TEXTURE) {
+    	load_tga("textures/armor.tga");			
+	}
+	else { //KAHON_TEXTURE
+    	load_tga("textures/imageSpriteExampleMikeWithoutBG.tga");	
+	}
 
 	//    load_tga("textures/uvtemplate.tga");
 //    load_tga("textures/uvHalimbawa.tga");
@@ -1834,16 +1845,17 @@ void OpenGLCanvas::drawGridWithZAxis() {
 //	exit(0);
 	
 	
-	//removed by Mike, 20201122
     glDisable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, 0);
 
-	//added by Mike, 20210409
+	//added by Mike, 20210412
+	//TO-DO: -reverify: alpha transparency of texture, etc 
+	
+	//added by Mike, 20210412
     glColor3f(1.0f, 1.0f, 1.0f); // white
     glEnable(GL_TEXTURE_2D);
-    glBindTexture(GL_TEXTURE_2D, KAHON_TEXTURE);
-	
-	
+    glBindTexture(GL_TEXTURE_2D, ARMOR_TEXTURE);
+		
 	
 	//added by Mike, 20210408
 	//------		
@@ -1854,235 +1866,134 @@ void OpenGLCanvas::drawGridWithZAxis() {
 		//added due to inverted x-axis based on position of vertices 
 //		glRotatef(-90, 1.0f, 0.0f, 0.0f);
 
-		glRotatef(180, 1.0f, 0.0f, 0.0f);
-	
-	//added by Mike, 20210408
-	//TO-DO: -reverify: http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-9-vbo-indexing/
-	//displayed output using 3D object from Blender3D (version 2.82)
-	//set with 2 triangles to create quad not yet identified 
-	
-//output from Blender3D  2.82
+//removed by Mike, 20210412
+//		glRotatef(180, 1.0f, 0.0f, 0.0f);
 
-//added by Mike, 20210408
-//note: if we use GL_QUADS, computer draws only 1 triangle, instead of 2 for a set of quad
-//TO-DO: -reverify: texture coordinates for a set with 2 triangles
-
-//added by Mike, 20210409
-//note: texture coordinates anchor bottom-left
-//ship controls to fire beams, inverted x and z-axes 
-	
-//added by Mike, 20210410
-//cube's bottom face; image texture, i.e. imageSpriteExampleMikeWithoutBG.tga
-//facing to the right, i.e. rotated +90degrees
-	
-//glBegin(GL_QUADS);
-glBegin(GL_TRIANGLES);
-/*
-//triangle#1 //top face right part
+//added by Mike, 20210412
+	//halimbawaKahonUsingResolution1366x768
+	glBegin(GL_TRIANGLES);
 	glNormal3f(0.0000,1.0000,0.0000);
-	glTexCoord2f(0.875000,0.500000);
+	glTexCoord2f(1.016934,1.975160);
 	glVertex3f(-1.000000,1.000000,-1.000000);
-
 	glNormal3f(0.0000,1.0000,0.0000);
-	glTexCoord2f(0.625000,0.750000);
+	glTexCoord2f(0.013506,1.005580);
 	glVertex3f(1.000000,1.000000,1.000000);
-	
 	glNormal3f(0.0000,1.0000,0.0000);
-	glTexCoord2f(0.625000,0.500000);
+	glTexCoord2f(1.016515,0.995418);
 	glVertex3f(1.000000,1.000000,-1.000000);
-
-//triangle#2 //front face right part
 	glNormal3f(0.0000,0.0000,1.0000);
-	glTexCoord2f(0.625000,0.750000);
+	glTexCoord2f(0.013506,1.005580);
 	glVertex3f(1.000000,1.000000,1.000000);
-
 	glNormal3f(0.0000,0.0000,1.0000);
-	glTexCoord2f(0.375000,1.000000);
+	glTexCoord2f(-0.912089,0.045031);
 	glVertex3f(-1.000000,-1.000000,1.000000);
-
 	glNormal3f(0.0000,0.0000,1.0000);
-	glTexCoord2f(0.375000,0.750000);
+	glTexCoord2f(0.009742,0.041433);
 	glVertex3f(1.000000,-1.000000,1.000000);
-	
-//triangle#3 //left face bottom part
 	glNormal3f(-1.0000,0.0000,0.0000);
-	glTexCoord2f(0.625000,0.000000);
+	glTexCoord2f(2.779000,0.994784);
 	glVertex3f(-1.000000,1.000000,1.000000);
-
 	glNormal3f(-1.0000,0.0000,0.0000);
-	glTexCoord2f(0.375000,0.250000);
+	glTexCoord2f(1.853405,0.034236);
 	glVertex3f(-1.000000,-1.000000,-1.000000);
-
 	glNormal3f(-1.0000,0.0000,0.0000);
-	glTexCoord2f(0.375000,0.000000);
+	glTexCoord2f(2.775236,0.030637);
 	glVertex3f(-1.000000,-1.000000,1.000000);
-*/
-//triangle#4 //bottom face left part	
 	glNormal3f(0.0000,-1.0000,0.0000);
-	//edited by Mike, 20210410
-//	glTexCoord2f(0.375000,0.500000);
-	glTexCoord2f(0.0,0.0);		
+	glTexCoord2f(1.012184,0.049914);
 	glVertex3f(1.000000,-1.000000,-1.000000);
-
 	glNormal3f(0.0000,-1.0000,0.0000);
-	//edited by Mike, 20210410	
-//	glTexCoord2f(0.125000,0.750000);
-	glTexCoord2f(1.0,1.0);	
+	glTexCoord2f(0.005979,-0.922715);
 	glVertex3f(-1.000000,-1.000000,1.000000);
-
 	glNormal3f(0.0000,-1.0000,0.0000);
-	//edited by Mike, 20210410	
-//	glTexCoord2f(0.125000,0.500000);
-	glTexCoord2f(0.0,1.0);	
+	glTexCoord2f(1.005781,-0.923499);
 	glVertex3f(-1.000000,-1.000000,-1.000000);
-/*
-//triangle#5 //right face bottom part
 	glNormal3f(1.0000,0.0000,0.0000);
-	glTexCoord2f(0.625000,0.500000);
+	glTexCoord2f(1.016515,0.995418);
 	glVertex3f(1.000000,1.000000,-1.000000);
-
 	glNormal3f(1.0000,0.0000,0.0000);
-	glTexCoord2f(0.375000,0.750000);
+	glTexCoord2f(0.009742,0.041433);
 	glVertex3f(1.000000,-1.000000,1.000000);
-
 	glNormal3f(1.0000,0.0000,0.0000);
-	glTexCoord2f(0.375000,0.500000);
+	glTexCoord2f(1.012184,0.049914);
 	glVertex3f(1.000000,-1.000000,-1.000000);
-
-//triangle#6 //back face left part
-//blender output texture coordinates; origin/anchor bottom-left; counter-clockwise
-	//note: glRotatef(180, 1.0f, 0.0f, 0.0f);
-	//now anchor top-left
-	//clockwise
-	
 	glNormal3f(0.0000,0.0000,-1.0000);
-//edited by Mike, 20210409	
-//	glTexCoord2f(0.625000,0.250000);
-	glTexCoord2f(0.0,0.0);	
-	glVertex3f(-1.000000,1.000000,-1.000000); //A1
-
-	glNormal3f(0.0000,0.0000,-1.0000);
-//edited by Mike, 20210409	
-//	glTexCoord2f(0.375000,0.500000);
-	glTexCoord2f(1.0,1.0);
-	glVertex3f(1.000000,-1.000000,-1.000000); //B1
-
-	glNormal3f(0.0000,0.0000,-1.0000);
-//edited by Mike, 20210409	
-//	glTexCoord2f(0.375000,0.250000);
-	glTexCoord2f(0.0,1.0);	
-	glVertex3f(-1.000000,-1.000000,-1.000000); //C1
-	
-
-//triangle#7 //top face left part
-	glNormal3f(0.0000,1.0000,0.0000);
-	glTexCoord2f(0.875000,0.500000);
+	glTexCoord2f(1.857169,0.998383);
 	glVertex3f(-1.000000,1.000000,-1.000000);
-
-	glNormal3f(0.0000,1.0000,0.0000);
-	glTexCoord2f(0.875000,0.750000);
-	glVertex3f(-1.000000,1.000000,1.000000);
-
-	glNormal3f(0.0000,1.0000,0.0000);
-	glTexCoord2f(0.625000,0.750000);
-	glVertex3f(1.000000,1.000000,1.000000);
-	
-//triangle#8 //front face left part
-	glNormal3f(0.0000,0.0000,1.0000);
-	glTexCoord2f(0.625000,0.750000);
-	glVertex3f(1.000000,1.000000,1.000000);
-
-	glNormal3f(0.0000,0.0000,1.0000);
-	glTexCoord2f(0.625000,1.000000);
-	glVertex3f(-1.000000,1.000000,1.000000);
-
-	glNormal3f(0.0000,0.0000,1.0000);
-	glTexCoord2f(0.375000,1.000000);
-	glVertex3f(-1.000000,-1.000000,1.000000);
-
-//triangle#9 //left face top part
-	glNormal3f(-1.0000,0.0000,0.0000);
-	glTexCoord2f(0.625000,0.000000);
-	glVertex3f(-1.000000,1.000000,1.000000);
-
-	glNormal3f(-1.0000,0.0000,0.0000);
-	glTexCoord2f(0.625000,0.250000);
-	glVertex3f(-1.000000,1.000000,-1.000000);
-
-	glNormal3f(-1.0000,0.0000,0.0000);
-	glTexCoord2f(0.375000,0.250000);
-	glVertex3f(-1.000000,-1.000000,-1.000000);
-*/		
-//triangle#10 //bottom face right part
-	glNormal3f(0.0000,-1.0000,0.0000);
-	//edited by Mike, 20210410		
-//	glTexCoord2f(0.375000,0.500000);
-	glTexCoord2f(0.0,0.0);		
+	glNormal3f(0.0000,0.0000,-1.0000);
+	glTexCoord2f(1.012184,0.049914);
 	glVertex3f(1.000000,-1.000000,-1.000000);
-
-	glNormal3f(0.0000,-1.0000,0.0000);
-	//edited by Mike, 20210410		
-//	glTexCoord2f(0.375000,0.750000);
-	glTexCoord2f(1.0,0.0);	
-	glVertex3f(1.000000,-1.000000,1.000000);
-
-	glNormal3f(0.0000,-1.0000,0.0000);
-	//edited by Mike, 20210410		
-//	glTexCoord2f(0.125000,0.750000);
-	glTexCoord2f(1.0,1.0);	
-	glVertex3f(-1.000000,-1.000000,1.000000);
-
-/*
-//triangle#11 //right face top part
-	glNormal3f(1.0000,0.0000,0.0000);
-	glTexCoord2f(0.625000,0.500000);
-	glVertex3f(1.000000,1.000000,-1.000000);
-
-	glNormal3f(1.0000,0.0000,0.0000);
-	glTexCoord2f(0.625000,0.750000);
+	glNormal3f(0.0000,0.0000,-1.0000);
+	glTexCoord2f(1.853405,0.034236);
+	glVertex3f(-1.000000,-1.000000,-1.000000);
+	glNormal3f(0.0000,1.0000,0.0000);
+	glTexCoord2f(1.016934,1.975160);
+	glVertex3f(-1.000000,1.000000,-1.000000);
+	glNormal3f(0.0000,1.0000,0.0000);
+	glTexCoord2f(0.017270,1.969727);
+	glVertex3f(-1.000000,1.000000,1.000000);
+	glNormal3f(0.0000,1.0000,0.0000);
+	glTexCoord2f(0.013506,1.005580);
 	glVertex3f(1.000000,1.000000,1.000000);
-
-	glNormal3f(1.0000,0.0000,0.0000);
-	glTexCoord2f(0.375000,0.750000);
+	glNormal3f(0.0000,0.0000,1.0000);
+	glTexCoord2f(0.013506,1.005580);
+	glVertex3f(1.000000,1.000000,1.000000);
+	glNormal3f(0.0000,0.0000,1.0000);
+	glTexCoord2f(-0.908325,1.009178);
+	glVertex3f(-1.000000,1.000000,1.000000);
+	glNormal3f(0.0000,0.0000,1.0000);
+	glTexCoord2f(-0.912089,0.045031);
+	glVertex3f(-1.000000,-1.000000,1.000000);
+	glNormal3f(-1.0000,0.0000,0.0000);
+	glTexCoord2f(2.779000,0.994784);
+	glVertex3f(-1.000000,1.000000,1.000000);
+	glNormal3f(-1.0000,0.0000,0.0000);
+	glTexCoord2f(1.857169,0.998383);
+	glVertex3f(-1.000000,1.000000,-1.000000);
+	glNormal3f(-1.0000,0.0000,0.0000);
+	glTexCoord2f(1.853405,0.034236);
+	glVertex3f(-1.000000,-1.000000,-1.000000);
+	glNormal3f(0.0000,-1.0000,0.0000);
+	glTexCoord2f(1.012184,0.049914);
+	glVertex3f(1.000000,-1.000000,-1.000000);
+	glNormal3f(0.0000,-1.0000,0.0000);
+	glTexCoord2f(0.009742,0.041433);
 	glVertex3f(1.000000,-1.000000,1.000000);
-*/
-/*	
-//triangle#12 //back face right part	
-//blender output texture coordinates; origin/anchor bottom-left; counter-clockwise
-	//note: glRotatef(180, 1.0f, 0.0f, 0.0f);
-	//now anchor top-left
-	//clockwise
-	
+	glNormal3f(0.0000,-1.0000,0.0000);
+	glTexCoord2f(0.005979,-0.922715);
+	glVertex3f(-1.000000,-1.000000,1.000000);
+	glNormal3f(1.0000,0.0000,0.0000);
+	glTexCoord2f(1.016515,0.995418);
+	glVertex3f(1.000000,1.000000,-1.000000);
+	glNormal3f(1.0000,0.0000,0.0000);
+	glTexCoord2f(0.013506,1.005580);
+	glVertex3f(1.000000,1.000000,1.000000);
+	glNormal3f(1.0000,0.0000,0.0000);
+	glTexCoord2f(0.009742,0.041433);
+	glVertex3f(1.000000,-1.000000,1.000000);
 	glNormal3f(0.0000,0.0000,-1.0000);
-//edited by Mike, 20210409		
-//	glTexCoord2f(0.625000,0.250000);
-	glTexCoord2f(0.0,0.0);	
-	glVertex3f(-1.000000,1.000000,-1.000000); //A2
-
+	glTexCoord2f(1.857169,0.998383);
+	glVertex3f(-1.000000,1.000000,-1.000000);
 	glNormal3f(0.0000,0.0000,-1.0000);
-//edited by Mike, 20210409		
-//	glTexCoord2f(0.625000,0.500000);
-	glTexCoord2f(1.0,0.0);
-//	glTexCoord2f(1.0,1.0);
-	glVertex3f(1.000000,1.000000,-1.000000); //B2
-
+	glTexCoord2f(1.016515,0.995418);
+	glVertex3f(1.000000,1.000000,-1.000000);
 	glNormal3f(0.0000,0.0000,-1.0000);
-//edited by Mike, 20210409		
-//	glTexCoord2f(0.375000,0.500000);
-	glTexCoord2f(1.0,1.0);
-//	glTexCoord2f(1.0,0.0);	
-	glVertex3f(1.000000,-1.000000,-1.000000); //C2
-*/
-	
+	glTexCoord2f(1.012184,0.049914);
+	glVertex3f(1.000000,-1.000000,-1.000000);
 glEnd();
+
+	glBindTexture(GL_TEXTURE_2D, 0);
+glDisable(GL_TEXTURE_2D);	
+	
 
 	
 		//added due to inverted z-axis based on position of vertices 
 //		glRotatef(-180, 0.0f, 0.0f, 1.0f);
 		//added due to inverted x-axis based on position of vertices 
 //		glRotatef(90, 1.0f, 0.0f, 0.0f);
-	
-		glRotatef(-180, 0.0f, 0.0f, 1.0f);
+
+//removed by Mike, 20210412	
+//		glRotatef(-180, 0.0f, 0.0f, 1.0f);
 	
 	glTranslatef(-20.0f, 0.0f, -30.0f);		
 
@@ -2220,7 +2131,7 @@ vn 0.0000 0.0000 -1.0000
 ////	glBegin(GL_QUADS);
 //	glBegin(GL_TRIANGLES);		
 	
-
+/* //removed by Mike, 20210412
 //triangle#1
 //back face triangle part 1
 	glNormal3f(0.000000,0.000000,-1.000000);
@@ -2234,7 +2145,7 @@ vn 0.0000 0.0000 -1.0000
 	glNormal3f(0.000000,0.000000,-1.000000);
 	glTexCoord2f(0.999110,0.501077);
 	glVertex3f(-1.000000,-1.000000,-1.000000);
-
+*/
 	
 //triangle#2
 ////	glNormal3f(0.000000,0.000000,-1.000000);
@@ -3263,4 +3174,233 @@ void OpenGLCanvas::loseLife()
 void OpenGLCanvas::changeState(int s)
 {
   currentState=s;                  
+}
+
+//added by Mike, 20210412
+void OpenGLCanvas::drawKahonWithTextureForVerification() {	
+	glColor3f(1.0f, 1.0f, 1.0f); // white
+	glEnable(GL_TEXTURE_2D);
+	glBindTexture(GL_TEXTURE_2D, KAHON_TEXTURE);
+
+	
+	//added by Mike, 20210408
+	//TO-DO: -reverify: http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-9-vbo-indexing/
+	//displayed output using 3D object from Blender3D (version 2.82)
+	//set with 2 triangles to create quad not yet identified 
+	
+	//output from Blender3D  2.82
+
+	//added by Mike, 20210408
+	//note: if we use GL_QUADS, computer draws only 1 triangle, instead of 2 for a set of quad
+	//TO-DO: -reverify: texture coordinates for a set with 2 triangles
+
+	//added by Mike, 20210409
+	//note: texture coordinates anchor bottom-left
+	//ship controls to fire beams, inverted x and z-axes 
+
+	//added by Mike, 20210410
+	//cube's bottom face; image texture, i.e. imageSpriteExampleMikeWithoutBG.tga
+	//facing to the right, i.e. rotated +90degrees
+
+	//glBegin(GL_QUADS);
+	glBegin(GL_TRIANGLES);
+	/*
+	//triangle#1 //top face right part
+		glNormal3f(0.0000,1.0000,0.0000);
+		glTexCoord2f(0.875000,0.500000);
+		glVertex3f(-1.000000,1.000000,-1.000000);
+
+		glNormal3f(0.0000,1.0000,0.0000);
+		glTexCoord2f(0.625000,0.750000);
+		glVertex3f(1.000000,1.000000,1.000000);
+
+		glNormal3f(0.0000,1.0000,0.0000);
+		glTexCoord2f(0.625000,0.500000);
+		glVertex3f(1.000000,1.000000,-1.000000);
+
+	//triangle#2 //front face right part
+		glNormal3f(0.0000,0.0000,1.0000);
+		glTexCoord2f(0.625000,0.750000);
+		glVertex3f(1.000000,1.000000,1.000000);
+
+		glNormal3f(0.0000,0.0000,1.0000);
+		glTexCoord2f(0.375000,1.000000);
+		glVertex3f(-1.000000,-1.000000,1.000000);
+
+		glNormal3f(0.0000,0.0000,1.0000);
+		glTexCoord2f(0.375000,0.750000);
+		glVertex3f(1.000000,-1.000000,1.000000);
+
+	//triangle#3 //left face bottom part
+		glNormal3f(-1.0000,0.0000,0.0000);
+		glTexCoord2f(0.625000,0.000000);
+		glVertex3f(-1.000000,1.000000,1.000000);
+
+		glNormal3f(-1.0000,0.0000,0.0000);
+		glTexCoord2f(0.375000,0.250000);
+		glVertex3f(-1.000000,-1.000000,-1.000000);
+
+		glNormal3f(-1.0000,0.0000,0.0000);
+		glTexCoord2f(0.375000,0.000000);
+		glVertex3f(-1.000000,-1.000000,1.000000);
+	*/
+	//triangle#4 //bottom face left part	
+		glNormal3f(0.0000,-1.0000,0.0000);
+		//edited by Mike, 20210410
+	//	glTexCoord2f(0.375000,0.500000);
+		glTexCoord2f(0.0,0.0);		
+		glVertex3f(1.000000,-1.000000,-1.000000);
+
+		glNormal3f(0.0000,-1.0000,0.0000);
+		//edited by Mike, 20210410	
+	//	glTexCoord2f(0.125000,0.750000);
+		glTexCoord2f(1.0,1.0);	
+		glVertex3f(-1.000000,-1.000000,1.000000);
+
+		glNormal3f(0.0000,-1.0000,0.0000);
+		//edited by Mike, 20210410	
+	//	glTexCoord2f(0.125000,0.500000);
+		glTexCoord2f(0.0,1.0);	
+		glVertex3f(-1.000000,-1.000000,-1.000000);
+	/*
+	//triangle#5 //right face bottom part
+		glNormal3f(1.0000,0.0000,0.0000);
+		glTexCoord2f(0.625000,0.500000);
+		glVertex3f(1.000000,1.000000,-1.000000);
+
+		glNormal3f(1.0000,0.0000,0.0000);
+		glTexCoord2f(0.375000,0.750000);
+		glVertex3f(1.000000,-1.000000,1.000000);
+
+		glNormal3f(1.0000,0.0000,0.0000);
+		glTexCoord2f(0.375000,0.500000);
+		glVertex3f(1.000000,-1.000000,-1.000000);
+
+	//triangle#6 //back face left part
+	//blender output texture coordinates; origin/anchor bottom-left; counter-clockwise
+		//note: glRotatef(180, 1.0f, 0.0f, 0.0f);
+		//now anchor top-left
+		//clockwise
+
+		glNormal3f(0.0000,0.0000,-1.0000);
+	//edited by Mike, 20210409	
+	//	glTexCoord2f(0.625000,0.250000);
+		glTexCoord2f(0.0,0.0);	
+		glVertex3f(-1.000000,1.000000,-1.000000); //A1
+
+		glNormal3f(0.0000,0.0000,-1.0000);
+	//edited by Mike, 20210409	
+	//	glTexCoord2f(0.375000,0.500000);
+		glTexCoord2f(1.0,1.0);
+		glVertex3f(1.000000,-1.000000,-1.000000); //B1
+
+		glNormal3f(0.0000,0.0000,-1.0000);
+	//edited by Mike, 20210409	
+	//	glTexCoord2f(0.375000,0.250000);
+		glTexCoord2f(0.0,1.0);	
+		glVertex3f(-1.000000,-1.000000,-1.000000); //C1
+
+
+	//triangle#7 //top face left part
+		glNormal3f(0.0000,1.0000,0.0000);
+		glTexCoord2f(0.875000,0.500000);
+		glVertex3f(-1.000000,1.000000,-1.000000);
+
+		glNormal3f(0.0000,1.0000,0.0000);
+		glTexCoord2f(0.875000,0.750000);
+		glVertex3f(-1.000000,1.000000,1.000000);
+
+		glNormal3f(0.0000,1.0000,0.0000);
+		glTexCoord2f(0.625000,0.750000);
+		glVertex3f(1.000000,1.000000,1.000000);
+
+	//triangle#8 //front face left part
+		glNormal3f(0.0000,0.0000,1.0000);
+		glTexCoord2f(0.625000,0.750000);
+		glVertex3f(1.000000,1.000000,1.000000);
+
+		glNormal3f(0.0000,0.0000,1.0000);
+		glTexCoord2f(0.625000,1.000000);
+		glVertex3f(-1.000000,1.000000,1.000000);
+
+		glNormal3f(0.0000,0.0000,1.0000);
+		glTexCoord2f(0.375000,1.000000);
+		glVertex3f(-1.000000,-1.000000,1.000000);
+
+	//triangle#9 //left face top part
+		glNormal3f(-1.0000,0.0000,0.0000);
+		glTexCoord2f(0.625000,0.000000);
+		glVertex3f(-1.000000,1.000000,1.000000);
+
+		glNormal3f(-1.0000,0.0000,0.0000);
+		glTexCoord2f(0.625000,0.250000);
+		glVertex3f(-1.000000,1.000000,-1.000000);
+
+		glNormal3f(-1.0000,0.0000,0.0000);
+		glTexCoord2f(0.375000,0.250000);
+		glVertex3f(-1.000000,-1.000000,-1.000000);
+	*/		
+	//triangle#10 //bottom face right part
+		glNormal3f(0.0000,-1.0000,0.0000);
+		//edited by Mike, 20210410		
+	//	glTexCoord2f(0.375000,0.500000);
+		glTexCoord2f(0.0,0.0);		
+		glVertex3f(1.000000,-1.000000,-1.000000);
+
+		glNormal3f(0.0000,-1.0000,0.0000);
+		//edited by Mike, 20210410		
+	//	glTexCoord2f(0.375000,0.750000);
+		glTexCoord2f(1.0,0.0);	
+		glVertex3f(1.000000,-1.000000,1.000000);
+
+		glNormal3f(0.0000,-1.0000,0.0000);
+		//edited by Mike, 20210410		
+	//	glTexCoord2f(0.125000,0.750000);
+		glTexCoord2f(1.0,1.0);	
+		glVertex3f(-1.000000,-1.000000,1.000000);
+
+	/*
+	//triangle#11 //right face top part
+		glNormal3f(1.0000,0.0000,0.0000);
+		glTexCoord2f(0.625000,0.500000);
+		glVertex3f(1.000000,1.000000,-1.000000);
+
+		glNormal3f(1.0000,0.0000,0.0000);
+		glTexCoord2f(0.625000,0.750000);
+		glVertex3f(1.000000,1.000000,1.000000);
+
+		glNormal3f(1.0000,0.0000,0.0000);
+		glTexCoord2f(0.375000,0.750000);
+		glVertex3f(1.000000,-1.000000,1.000000);
+	*/
+	/*	
+	//triangle#12 //back face right part	
+	//blender output texture coordinates; origin/anchor bottom-left; counter-clockwise
+		//note: glRotatef(180, 1.0f, 0.0f, 0.0f);
+		//now anchor top-left
+		//clockwise
+
+		glNormal3f(0.0000,0.0000,-1.0000);
+	//edited by Mike, 20210409		
+	//	glTexCoord2f(0.625000,0.250000);
+		glTexCoord2f(0.0,0.0);	
+		glVertex3f(-1.000000,1.000000,-1.000000); //A2
+
+		glNormal3f(0.0000,0.0000,-1.0000);
+	//edited by Mike, 20210409		
+	//	glTexCoord2f(0.625000,0.500000);
+		glTexCoord2f(1.0,0.0);
+	//	glTexCoord2f(1.0,1.0);
+		glVertex3f(1.000000,1.000000,-1.000000); //B2
+
+		glNormal3f(0.0000,0.0000,-1.0000);
+	//edited by Mike, 20210409		
+	//	glTexCoord2f(0.375000,0.500000);
+		glTexCoord2f(1.0,1.0);
+	//	glTexCoord2f(1.0,0.0);	
+		glVertex3f(1.000000,-1.000000,-1.000000); //C2
+	*/
+
+	glEnd();
+	
 }
