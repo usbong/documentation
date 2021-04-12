@@ -307,7 +307,7 @@ TO-DO: -update: this<br/>
 2) Kia Asamiya's Batman: Child of Dreams<br/>
 --> https://www.dccomics.com/graphic-novels/batman-child-of-dreams<br/>
 --> last accessed: 20210402<br/>
---> Pupunta si Batman sa Tokyo, Japan upang malutas ang problema/suliranin ukol sa dumaraming namamatay sa iligal na droga, i.e. ipinagbabawal na gamot, na kung saan maaaring matupad ang anumang nais ng iinom nito, bagama't pagkatapos ng isang araw, mamamatay.<br/>
+--> Pupunta si Batman sa Tokyo, Japan upang malutas ang problema/suliranin ukol sa dumaraming namamatay sa iligal na droga, i.e. ipinagbabawal na gamot, na maaaring magpatupad ng anumang nais ng iinom nito, bagama't pagkatapos ng isang araw, mamamatay.<br/>
 --> <b>Additional Note:</b><br/>
 --> Mas nais ko ang kanyang istorya/salaysay, kaysa sa kanyang pagguhit.<br/>
 
