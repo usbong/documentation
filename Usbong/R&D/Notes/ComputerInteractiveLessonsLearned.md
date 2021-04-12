@@ -165,7 +165,7 @@ add random enemy encounter (pinagninilayan ko pa ang gagawin at inaalam kung saa
 add active time battle, i.e. undecided team member of action is skipped in turn sequence<br/>
 
 ### 1.7.1.4) team member character
-<b>Shadow (Assassin):</b> Nais kong isama sa team/pangkat, bagama't hindi naman pala ganoong kalakas. Kailangan ding patuloy na bumili ng mga ibabato niya hango sa bala, e.g. shuriken. May alagang asong Dobermann, "Interceptor", na humaharang bilang depensa upang hindi tamaan ng non-magic attack si Shadow. <br/> 
+<b>Shadow (Assassin):</b> Nais kong isama sa team/pangkat, bagama't hindi naman pala ganoong kalakas. Kailangan ding patuloy na bumili ng mga ibabato niya hango sa bala, e.g. shuriken. May alagang asong Dobermann, "Interceptor", na humaharang bilang depensa upang hindi tamaan ng non-magic attack si Shadow. Dagdag pa rito, ililigtas ni Interceptor ang batang babaeng pintor, Rirum, sa panahong magugunaw na ang daigdig at kung saan nagkalayo sila ni Shadow.<br/> 
 <br/>
 <b>Rokku/Locke (Treasure Hunter):</b> Hindi ko nais isama sa pangkat, bagama't kailangang isama gawa ng daloy ng istorya; Malakas; Kabilang sa pangkat na tutol sa Emperor, kay Kefka, at ang gawain ng Empire. Kaibigan ni Edgar. Kaaya-aya ang tunog ng kanilang bayan, "Timog Figaro".<br/>
 <br/>
