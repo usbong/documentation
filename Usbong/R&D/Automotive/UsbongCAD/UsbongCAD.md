@@ -23,7 +23,10 @@ TO-DO: -add: tool to import 2-Dimensional (2D) image files and verify animation 
 --> last accessed: 20210402<br/>
 <br/>
 --> <b>Reminder:</b> Set Computer Monitor Resolution to higher than 800x600 resolution<br/>
---> This is due to select options, e.g. in horizontal bar for Layout, Modeling, etc, in Blender are not visible.
+--> This is due to select options, e.g. in horizontal bar for Layout, Modeling, etc, in Blender are not visible.<br/>
+--> verified: options, et cetera visible using the following:<br/>
+--> Resolution: 1366x768<br/>
+--> Added Delay: > 7 days<br/>
 
 ## 4) Press Print Screen button to capture photograph
 --> Alternating Red and Yellow Boxes;<br/>
