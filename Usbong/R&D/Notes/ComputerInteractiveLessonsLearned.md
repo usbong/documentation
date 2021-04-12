@@ -297,7 +297,7 @@ TO-DO: -update: this<br/>
 --> Upang maibalik ang Tubig sa wasto, kakailanganin ninyong iuwi ang sinaksak na irog sa Simbahan kung saan naman naroon ang kanyang kasintahan, na parating tulog.<br/>
 --> Pagkatapos ninyong maiuwi ang irog, pareho ang dalawang magkasintahan na magpapasalamat sa inyo.<br/>
 --> Hindi magtatagal, mababalitaan ninyong magkasamang yumao na ang dalawa, habang naninirahan sa Bayan ng Amo-ru.<br/>
---> Paalala: Humahalo ang bangungot, i.e. hindi kaaya-ayang panaginip, sa daloy ng istorya/salaysay.<br/>
+--> <b>Paalala:</b> Humahalo ang bangungot, i.e. hindi kaaya-ayang panaginip, sa daloy ng istorya/salaysay.<br/>
 
 ### Recommended Reading:
 1) Micromégas ni Voltaire<br/>
