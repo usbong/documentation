@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B.
  * @date created: 2018
- * @last updated: 20210403
+ * @last updated: 20210412
  * @website: http://www.usbong.ph
  *
  * Reference:
@@ -214,9 +214,9 @@ public class generateOpenGLInstructionsFromBlenderOBJFile {
 
 		//TO-DO: -reverify: output
 		//OUTPUT		
-		//edited by Mike, 20210403
-		outputWriter.print("glBegin(GL_QUADS);\n");
-//		outputWriter.print("glBegin(GL_TRIANGLES);\n");
+		//edited by Mike, 20210403; edited by Mike, 20210412
+//		outputWriter.print("glBegin(GL_QUADS);\n");
+		outputWriter.print("glBegin(GL_TRIANGLES);\n");
 		
 	    int iVertexContainerOutputSize = vVertexContainerOutput.size();
 	    int iTextureCoordinatesContainerOutputSize = vTextureCoordinatesContainerOutput.size();
