@@ -291,7 +291,7 @@ TO-DO: -update: this<br/>
 --> Naghahanap kasi sila ng adventure & treasure, i.e. paglalakabay & yaman.<br/>
 --> Sa kuweba kung saan dumadaloy ang Tubig na nagbibigay buhay sila nagtungo.<br/>
 --> May matatagpuan silang kutsilyo/patalim na pinaniwalaan nilang ang nakatagong yaman sa kuweba.<br/>
---> Ngunit nang sila'y pauuwi na at palabas na ng kuweba, sasaksakin ng kasintahan ang kanyang irog gamit ang patalim.<br/>
+--> Ngunit nang sila'y pauwi na at palabas na ng kuweba, sasaksakin ng kasintahan ang kanyang irog gamit ang patalim.<br/>
 --> Magdurugo siya at hahalo ang kanyang dugo sa Tubig na nagbibigay buhay.<br/>
 --> Magdudulot ito ng pamumula ng Tubig na dadaloy hanggang sa Bayan ng Amo-ru.<br/>
 --> Upang maibalik ang Tubig sa wasto, kakailanganin ninyong iuwi ang sinaksak na irog sa Simbahan kung saan naman naroon ang kanyang kasintahan, na parating tulog.<br/>
