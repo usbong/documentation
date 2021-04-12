@@ -284,6 +284,20 @@ TO-DO: -update: this<br/>
 --> Ito ang tanging bayan na gumagawa at kung saan makabibili ng Tubig na nagbibigay buhay.<br/>
 --> Mula ito sa dumadaloy na tubig mula sa bundok.<br/>
 --> May salaysay ukol sa dalawang magkasintahan sa bayang ito.<br/>
+--> Matutuklasan ng inyong pangkat na mga dayo ang dalawang magkasintahan sa bayan ng Amo-ru.<br/>
+--> Tumuloy at nanirahan sila sa Simbahan kung saan naroon ang Pari nito.<br/>
+--> Kakailanganin ninyong iligtas ang dalawang nawawala.<br/>
+--> Bata-bata pa nang dumating sila sa bayan ng Amo-ru.<br/>
+--> Naghahanap kasi sila ng adventure & treasure, i.e. paglalakabay & yaman.<br/>
+--> Sa kuweba kung saan dumadaloy ang Tubig na nagbibigay buhay sila nagtungo.<br/>
+--> May matatagpuan silang kutsilyo/patalim na pinaniwalaan nilang ang nakatagong yaman sa kuweba.<br/>
+--> Ngunit nang sila'y pauuwi na at palabas na ng kuweba, sasaksakin ng kasintahan ang kanyang irog gamit ang patalim.<br/>
+--> Magdurugo siya at hahalo ang kanyang dugo sa Tubig na nagbibigay buhay.<br/>
+--> Magdudulot ito ng pamumula ng Tubig na dadaloy hanggang sa Bayan ng Amo-ru.<br/>
+--> Upang maibalik ang Tubig sa wasto, kakailanganin ninyong iuwi ang sinaksak na irog sa Simbahan kung saan naman naroon ang kanyang kasintahan, na parating tulog.<br/>
+--> Pagkatapos ninyong maiuwi ang irog, pareho ang dalawang magkasintahan na magpapasalamat sa inyo.<br/>
+--> Hindi magtatagal, mababalitaan ninyong magkasamang yumao na ang dalawa, habang naninirahan sa Bayan ng Amo-ru.<br/>
+--> Paalala: Humahalo ang bangungot, i.e. hindi kaaya-ayang panaginip, sa daloy ng istorya/salaysay.<br/>
 
 ### Recommended Reading:
 1) Micromégas ni Voltaire<br/>
