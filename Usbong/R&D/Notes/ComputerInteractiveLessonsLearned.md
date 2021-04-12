@@ -256,7 +256,7 @@ TO-DO: -update: this
 --> Kakalabanin niyo siya at maaaring umabot ng tatlong beses bago niyo matutunan ang paraan upang tuluyan siyang magapi.<br/>
 --> Mas mahirap na katunggali si Jamiras kaysa kay Mudo-.<br/>
 --> Maaari ring makatulong ang Tubig na nagbibigay buhay mula sa bayan ng Amo-ru.<br/>
---> Maaalala na isang paglalakbay din ang pagpunta sa bayan ng Amo-ru.
+--> Maaalala na isang paglalakbay din ang pagpunta sa bayan ng Amo-ru.<br/>
 --> Uuwi ang mga kaluluwa ng mga kasama ninyong sumakay sa barko, atbp sa kanilang mga katawan.<br/>
 --> Kapag kinausap ninyo ang mga tao na iyon, ibabahagi nila sa inyo na nanaginip sila ng bangungot, i.e. hindi kaaya-ayang panaginip.<br/>
 <br/>
