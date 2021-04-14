@@ -263,15 +263,10 @@ TO-DO: -update: this
 
 --> 1.7.2.1.3) Kailangang samahan ang batang anak ni Haring Horuten, ng basang Horusutokku sa kuweba upang tanggapin ang basbas na tubig<br/>
 --> Maaalala na mahilig pumunta sa bayan ng Horukotta at gumawa ng mga kalokohan si Prinsipe Horsu. Pagkatapos ninyong mahagilap si Prinsipe Horsu, pagpunta ninyo sa kuweba, pakiramdam ng inyong pangkat na malakas na kayo, gawa ng inyong mga pinagdaanan sa paglalakbay.<br/>
-<br/>
 --> Gayunpaman, mahalagang alalahanin na sinusukat pa rin ng kompyuter kung mahigit 20minutos na kayo sa kuweba. Kung oo, maglalabas na ito ng malakas na kalabang halimaw na pupuksa sa inyo. Halimbawa nito ang halimaw na kabayo ng kuweba. Hindi ito magiging madaling gapiin kapag iilan lamang sa inyong pangkat ang natuto ng mga mahahalagang kakayahan at suot ang akmang kalasag.<br/>
-<br/>
 --> Halimbawa, nito ang 戦士(senshi; fighting scholar) at 武闘家(butouka; battle fighting house/person), bukod pa sa kanilang likas na pinagsasanayang gawain, e.g. 魔法使い (mahou tsukai; manggagamit ng patakaran ng mahika/himala).<br/>
-<br/>
 --> Dagdag pa rito, mahalagang suot ninyo ang kalasag mula sa mga atake ng mahika/himala, gawa ng mas mabilis kayong mapupuksa kung wala nito.<br/>
-<br/>
 --> Maaari ring hindi niyo matutuklasan ito kung hindi ninyo kasama si Babara sa kuweba, gawa ng suot niya ang kalasag na iyon. Ibig sabihin maiging siyasatin ninyo kung bakit si Babara lamang ang hindi tinatamaan nang malakas ng mga halimaw sa kuweba. Maaalala na si Babara lang din ang hindi nais bumaba sa barko upang harapin ang Halimaw na si Mudo-.<br/>
-<br/>
 --> Kapag nagapi na ninyo ang halimaw na kabayo ng kuweba, at nabasbasan na si Prinsipe Horusu, mababalitaan ninyo na hindi na siya muling gumagawa ng kalokohan tulad noong dati at naging seryoso.<br/>
 
 TO-DO: -update: this<br/>
