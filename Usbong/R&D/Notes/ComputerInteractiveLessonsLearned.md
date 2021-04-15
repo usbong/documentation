@@ -307,6 +307,13 @@ TO-DO: -update: this<br/>
 --> Pagkatapos ninyong maiuwi ang irog, pareho ang dalawang magkasintahan na magpapasalamat sa inyo.<br/>
 --> Hindi magtatagal, mababalitaan ninyong magkasamang yumao na ang dalawa, habang naninirahan sa Bayan ng Amo-ru.<br/>
 --> <b>Paalala:</b> Humahalo ang bangungot, i.e. hindi kaaya-ayang panaginip, sa daloy ng istorya/salaysay.<br/>
+<br/>
+--> 1.7.2.2.1) ダーマ神殿　(da-ma shinden; da-ma + God + templo)<br/>
+--> Maaari ritong pumili ng nais sanayin ng miyembro ng inyong pangkat, bukod pa sa kinagawiang gawain, e.g.　僧侶 (souryou; manghihilom gamit ang mahika/himala), 踊り子 (sumasayaw na bata, mananayaw),　商人 (mangangalakal/businessperson).<br/>
+--> Ayon sa mga naroon, maiging matutunan ang pagiging 商人 sa panahon ng kapayapaan.<br/>
+--> Dagdag pa rito, bagama't nagapi na ng inyong pangkat ang Halimaw, na si Mudo-, may mga gumagala pa ring mga halimaw.<br/>
+--> <b>Paalala:</b> Kapag ginamit mo ang mga atake ng 商人, e.g. ぐんたいよび (guntai yobi; tawagin ang hukbong militar), mangangalahati ang dala mong salapi, at hindi rin ganoong kalakas ang atake nito sa kalaban.<br/>
+--> Hindi ito katulad ng 魔物使い(mamonotsukai; manggagamit ng halimaw).<br/>
 
 ### Recommended Reading:
 1) Micromégas ni Voltaire<br/>
