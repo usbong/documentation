@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B.
  * @date created: 2018
- * @last updated: 20210412
+ * @last updated: 20210415
  * @website: http://www.usbong.ph
  *
  * Reference:
@@ -229,10 +229,30 @@ public class generateOpenGLInstructionsFromBlenderOBJFile {
 		System.out.println("iNormalContainerOutputSize: " + iNormalContainerOutputSize);
 */		
 
+		//added by Mike, 20210415
+		int iTriangleCount=1;
+		int iVertexCount=0;
+		
 		for (int iCount=0; iCount<iVertexContainerOutputSize; iCount++) {
 			String[] sbNormalArray = vNormalContainerOutput.get(iCount);
 			String[] sbTextureCoordinatesArray = vTextureCoordinatesContainerOutput.get(iCount);
 			String[] sbVertexArray = vVertexContainerOutput.get(iCount);
+			
+			//added by Mike, 20210415
+			if (iVertexCount==0) {
+				outputWriter.print("\tTriangle#"+iTriangleCount+"-----\n");
+				iTriangleCount=iTriangleCount+1;				
+				iVertexCount=iVertexCount+1;
+			}
+			else {
+				if (iVertexCount<2) { //0 included in count as 1
+					iVertexCount=iVertexCount+1;				
+				}
+				else {
+					iVertexCount=0;
+				}
+			}
+			
 			
 			//edited by Mike, 20210329
 			//output example: glNormal3f(0.203681, 0.975646, -0.081118);
@@ -247,6 +267,11 @@ public class generateOpenGLInstructionsFromBlenderOBJFile {
 			//output example: glVertex3f(0.421715, 1.200705, -0.286078);
 			//edited by Mike, 20210329
 //			outputWriter.print("\tglVertex3f("+sbVertexArray[0]+","+sbVertexArray[1]+","+sbVertexArray[2]+");\n");
+			
+			//added by Mike, 20210415
+			if (iCount+1<iVertexContainerOutputSize) {
+				outputWriter.print("\n");			
+			}
 		}
 
 		outputWriter.print("glEnd();\n");
