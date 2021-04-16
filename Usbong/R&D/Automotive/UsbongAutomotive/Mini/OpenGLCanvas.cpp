@@ -384,6 +384,9 @@ bool OpenGLCanvas::init()
 	fGridSquareWidth = 4.0f;
 	fGridSquareHeight = 4.0f;
 	
+	//added by Mike, 20210416
+	fKahonRotation=0;
+	
     keyPressCounter=0;
     
     //added by Mike, 20200930
@@ -2115,6 +2118,8 @@ glEnd();
 	
 //added by Mike, 20210416
 	glTranslatef(15.0f, 0.0f, 30.0f);		
+
+glRotatef(fKahonRotation, 0.0f, 1.0f, 0.0f);
 	
 	//halimbawaKahonUsingResolution1366x768
 	glBegin(GL_TRIANGLES);
@@ -2232,11 +2237,15 @@ glEnd();
 glDisable(GL_TEXTURE_2D);	
 	
 	
+glRotatef(-fKahonRotation, 0.0f, 1.0f, 0.0f);
 	
 	
 	
 	glTranslatef(-15.0f, 0.0f, -30.0f);		
 
+	
+fKahonRotation+=10;
+	
 //------	
 	
 	//added by Mike, 20210329

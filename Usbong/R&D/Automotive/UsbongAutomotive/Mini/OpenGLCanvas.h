@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200929
- * @date updated: 20210412
+ * @date updated: 20210416
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -238,6 +238,9 @@ class OpenGLCanvas
 
 		bool hasTurnedNinetyDegCounterClockWise,		       
 			 hasTurnedNinetyDegClockWise;
+			 
+		//added by Mike, 20210416
+		float fKahonRotation;
 
 		//added by Mike, 20210325
 		//TO-DO: -update: this
