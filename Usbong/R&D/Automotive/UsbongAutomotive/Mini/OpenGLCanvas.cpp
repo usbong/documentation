@@ -2243,9 +2243,14 @@ glRotatef(-fKahonRotation, 0.0f, 1.0f, 0.0f);
 	
 	glTranslatef(-15.0f, 0.0f, -30.0f);		
 
-	
-fKahonRotation+=10;
-	
+//edited by Mike, 20210416	
+//fKahonRotation+=10;
+
+	fKahonRotation+=10;
+	if (fKahonRotation>=360) { //note: % operation uses integer, i.e. whole number
+		fKahonRotation=0;
+	}
+		
 //------	
 	
 	//added by Mike, 20210329
