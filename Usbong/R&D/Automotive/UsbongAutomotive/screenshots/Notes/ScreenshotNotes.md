@@ -4,3 +4,5 @@
 <img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Automotive/UsbongAutomotive/screenshots/Notes/usbongEngineOpenGLCubeFromBlenderTextureByHandImageMergeProblemV20210416T1019.jpg" width="60%">
 
 ## Solution: Add: "glEnable(GL_CULL_FACE);"
+
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Automotive/UsbongAutomotive/screenshots/Notes/UsbongEngineAutomotiveGlCullFaceTaguanV20210416T1215.gif" width="60%">
