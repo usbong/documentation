@@ -1166,8 +1166,9 @@ void OpenGLCanvas::render()
 	//added by Mike, 20201020
 	//note: we add these to enable complete drawing of 3D shape with z-axis
 	//--------------------------------------------------------
-	//removed by Mike, 20201118
-//    glEnable(GL_CULL_FACE);
+	//removed by Mike, 20201118; added by Mike, 20210416
+	//solves problem with quad face image texture merging
+    glEnable(GL_CULL_FACE);
 //https://www.khronos.org/opengl/wiki/Face_Culling; last accessed: 20201122
 //    glCullFace(GL_BACK);
 
@@ -2246,7 +2247,7 @@ vn 0.0000 0.0000 -1.0000
 ////	glBegin(GL_QUADS);
 //	glBegin(GL_TRIANGLES);		
 	
-
+/* //removed by Mike, 20210416
 //triangle#1
 //back face triangle part 1
 	glNormal3f(0.000000,0.000000,-1.000000);
@@ -2415,7 +2416,8 @@ vn 0.0000 0.0000 -1.0000
 
 ////glEnd();
 
-
+*/
+	
 	//added by Mike, 20210402
     	// unselect and disable textures
         glBindTexture(GL_TEXTURE_2D, 0);
