@@ -135,7 +135,7 @@ TO-DO: -update: this<br/>
 --> Character movement appears slow, after verifying Street Fighter speed, e.g. Street Fighter II': Hyper Fighting, Capcom vs SNK 2: Millionaire Fighting 2001 (speed set to highest)<br/> 
 --> Use 怒り(ikari) to stop Time<br/>
 --> Nakoruru to Hanzo; 「あなたのその気、鬼と同じよ」 (That spirit of yours, equal with demon!)<br/>
---> Hanzo's jumping strong slash does not hit Nakoruru due short height<br/>
+--> Hanzo's jumping strong slash does not hit Nakoruru due to short height<br/>
 --> Hanzo's sword hilt, murasaki
 
 ## 1.7) SQUARE ENIX
