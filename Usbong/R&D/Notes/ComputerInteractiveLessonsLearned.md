@@ -128,15 +128,24 @@ TO-DO: -update: this<br/>
 --> 1.6.1.3.1) Technique to defeat boss once learned, maintain due to requires repetition until boss defeated; ping-pong drill<br/>
 --> 1.6.1.3.2) Set difficulty level to highest; Technique not anymore effective
 
-## 1.6.2) Samurai Spirits IV: サムライスピリッツ天草降臨
+## 1.6.2) Samurai Spirits IV SPECIAL: サムライスピリッツ天草降臨
 --> set computer difficulty to highest<br/>
 --> set capacity to highest<br/>
 --> Time of 60seconds quickly reaches zero<br/>
 --> Character movement appears slow, after verifying Street Fighter speed, e.g. Street Fighter II': Hyper Fighting, Capcom vs SNK 2: Millionaire Fighting 2001 (speed set to highest)<br/> 
+--> In approaching zero, Time can appear to move slow, i.e. not as quick as we think<br/>
 --> Use 怒り(ikari) to stop Time<br/>
---> Nakoruru to Hanzo; 「あなたのその気、鬼と同じよ」 (That spirit of yours, equal with demon!)<br/>
---> Hanzo's jumping strong slash does not hit Nakoruru due to short height<br/>
---> Hanzo's sword hilt, murasaki
+--> Nakoruru to Hanzo; 「あなたのその気、鬼と同じのよ」 (That spirit of yours, equal with that of demon!)<br/>
+--> Ang iyong kaluluwa (enerhiya, espiritu), katulad ng sa demonyo!<br/> 
+--> Hanzo's jumping strong slash does not hit Nakoruru due to her short height<br/>
+--> Hanzo's sword hilt (柄；つか; tsuka), murasaki<br/>
+--> Jubei, 二刀(nitou)<br/>
+--> Hanzo attacks using combinations of weak and medium slashes to be quick not effective against Jubei<br/>
+--> Jubei's Swords' reach farther due to length<br/>
+--> Jubei's strong slash higher damage than Hanzo's several combinations of weak and medium slashes<br/>
+--> Execute Hanzo's bouncing fireball, Jubei executes jumping slash that can reach Hanzo; damage exchanged lower for Hanzo<br/>
+--> verifying: attack to deal damage first, execute bouncing fireball continuously<br/>
+--> note: my execution of bouncing fireballs not yet perfect due to created world's input system<br/>
 
 ## 1.7) SQUARE ENIX
 ## 1.7.1) [Final Fantasy 6 (Japanese version)](https://jp.finalfantasy.com/titles/finalfantasy6)
