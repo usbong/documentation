@@ -1,6 +1,8 @@
 # Music
 --> Makinig ng mga tugtugin.<br/>
 --> Subukang gayahin ang tugtugin.<br/>
+--> Gumawa ng iyong tugtugin gamit ang mga bahagi mula sa mga natutunan.<br/>
+<br/>
 --> <b>Mungkahing Aksyon:</b> Matutong pakinggan kung tunog mula robot o kompyuter na hindi pa pulido ang paliwang sa paraan ng pagtugtog.<br/>
 --> <b>Paalala:</b> Siyasatin ang tunog sa karaoke, i.e. kaya nitong magpatunog ng mga ito:<br/>
 --> Tunog na mula sa hindi pulido ang paliwanag sa robot o kompyuter<br/>
@@ -25,6 +27,11 @@
 --> 1.3) Sa simula pasadahan muna gamit ang kanang kamay ang nota kahit may maling piano key<br/>
 --> 1.4) Unti-unting ayusin ang mga bahagi na may maling tunog<br/>
 --> 1.5) Unti-unting idagdag ang sa kaliwang kamay<br/>
+--> <b>Paalala:</b> Karaniwang mula sa key na tinutugtog gamit ang kanang kamay nakikilala ang kanta, gawa ng doon sumasabay ang pagbigkas ng titik, i.e. lyric.<br/>
+--> Gayunpaman, matutuklusan mong mahalaga rin ang tunog mula sa kaliwang kamay.<br/>
+--> <b>Mungkahing Aksyon:</b> Pakinggan lamang ang bahagi na tinutugtog ng kaliwang kamay, atbp na nasa likod ng kumakanta.<br/>
+--> May Bass, Drums, atbp.<br/>
+--> <b>Halimbawa:</b> 「おやすみなさい」　ni AIKO　(ALBUM: 「秋　そばにいるよ」)
 
 ## 2) Violin
 --> <b>Mungkahing Aksyon:</b> Tugtugin ang HAPPY BIRTHDAY upang magawa ang mga ito:<br/>
