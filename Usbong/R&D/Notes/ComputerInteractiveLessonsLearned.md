@@ -128,6 +128,16 @@ TO-DO: -update: this<br/>
 --> 1.6.1.3.1) Technique to defeat boss once learned, maintain due to requires repetition until boss defeated; ping-pong drill<br/>
 --> 1.6.1.3.2) Set difficulty level to highest; Technique not anymore effective
 
+## 1.6.2) Samurai Spirits IV: サムライスピリッツ天草降臨
+--> set computer difficulty to highest<br/>
+--> set capacity to highest<br/>
+--> Time of 60seconds quickly reaches zero<br/>
+--> Character movement appears slow, after verifying Street Fighter speed, e.g. Street Fighter II': Hyper Fighting, Capcom vs SNK 2: Millionaire Fighting 2001 (speed set to highest)<br/> 
+--> Use 怒り(ikari) to stop Time<br/>
+--> Nakoruru to Hanzo; 「あなたのその気、鬼と同じよ」 (That spirit of yours, equal with demon!)<br/>
+--> Hanzo's jumping strong slash does not hit Nakoruru due short height<br/>
+--> Hanzo's sword hilt, murasaki
+
 ## 1.7) SQUARE ENIX
 ## 1.7.1) [Final Fantasy 6 (Japanese version)](https://jp.finalfantasy.com/titles/finalfantasy6)
 majikku card notes
