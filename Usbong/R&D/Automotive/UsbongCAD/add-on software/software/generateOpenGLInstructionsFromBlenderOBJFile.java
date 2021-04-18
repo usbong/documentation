@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B.
  * @date created: 2018
- * @last updated: 20210415
+ * @last updated: 20210418
  * @website: http://www.usbong.ph
  *
  * Reference:
@@ -240,7 +240,10 @@ public class generateOpenGLInstructionsFromBlenderOBJFile {
 			
 			//added by Mike, 20210415
 			if (iVertexCount==0) {
-				outputWriter.print("\tTriangle#"+iTriangleCount+"-----\n");
+				//edited by Mike, 20210418
+//				outputWriter.print("\tTriangle#"+iTriangleCount+"-----\n");
+				outputWriter.print("\t//Triangle#"+iTriangleCount+"-----\n");
+				
 				iTriangleCount=iTriangleCount+1;				
 				iVertexCount=iVertexCount+1;
 			}
