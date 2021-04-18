@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210416
+ * @date updated: 20210418
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -562,8 +562,9 @@ bool OpenGLCanvas::init()
     myLevel->setupLevel(LEVEL_TEXTURE); //FONT_TEXTURE);
 */
 	
-	//added by Mike, 20210403
-	setupKahonTexture(KAHON_TEXTURE);
+	//added by Mike, 20210403; edited by Mike, 20210418
+//	setupKahonTexture(KAHON_TEXTURE);
+	setupKahonTexture(BAHAY_TEXTURE);
 	
 	return true;
 }
@@ -984,8 +985,8 @@ void OpenGLCanvas::setupKahonTexture(int myKahonTextureObject)
     //glEnable(GL_DEPTH_TEST);
 
     /* select texture 1 */
-    glBindTexture(GL_TEXTURE_2D, myKahonTextureObject);
-
+	glBindTexture(GL_TEXTURE_2D, myKahonTextureObject);
+	
     /* create OpenGL texture out of targa file */
 //    load_tga("textures/font.tga");
 //    load_tga("textures/concrete.tga");
@@ -995,8 +996,21 @@ void OpenGLCanvas::setupKahonTexture(int myKahonTextureObject)
 //    load_tga("textures/imageSpriteExampleMike.tga");	
 	//edited by Mike, 20210416
 //    load_tga("textures/imageSpriteExampleMikeWithoutBG.tga");	
-    load_tga("textures/armor.tga");	
+//edited by Mike, 20210418	
+//    load_tga("textures/armor.tga");	
 
+	if (myKahonTextureObject==KAHON_TEXTURE) {
+    	load_tga("textures/imageSpriteExampleMikeWithoutBG.tga");	
+	}
+	else if (myKahonTextureObject==ARMOR_TEXTURE) {
+    	load_tga("textures/armor.tga");	
+	}
+	else {  //BAHAY_TEXTURE
+    	load_tga("textures/bahay.tga");	
+	}
+
+	
+	
 	//    load_tga("textures/uvtemplate.tga");
 //    load_tga("textures/uvHalimbawa.tga");
     
@@ -2118,9 +2132,182 @@ glEnd();
 	
 //added by Mike, 20210416
 	glTranslatef(15.0f, 0.0f, 30.0f);		
+	
+//added by Mike, 20210418
+/*    glDisable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, 0);
+*/
+    glColor3f(1.0f, 1.0f, 1.0f); // white
+    glEnable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, BAHAY_TEXTURE);
+	
+	
 
 glRotatef(fKahonRotation, 0.0f, 1.0f, 0.0f);
+
+//added by Mike, 20210418
+glBegin(GL_TRIANGLES);
+	//Triangle#1-----
+	glNormal3f(0.0000,1.0000,0.0000);
+	glTexCoord2f(0.993468,-0.002000);
+	glVertex3f(-1.000000,1.000000,-1.000000);
+
+	glNormal3f(0.0000,1.0000,0.0000);
+	glTexCoord2f(0.493875,0.998368);
+	glVertex3f(1.000000,1.000000,1.000000);
+
+	glNormal3f(0.0000,1.0000,0.0000);
+	glTexCoord2f(0.493875,-0.002000);
+	glVertex3f(1.000000,1.000000,-1.000000);
+
+	//Triangle#2-----
+	glNormal3f(0.0000,0.0000,1.0000);
+	glTexCoord2f(0.493875,0.998368);
+	glVertex3f(1.000000,1.000000,1.000000);
+
+	glNormal3f(0.0000,0.0000,1.0000);
+	glTexCoord2f(-0.005718,1.998735);
+	glVertex3f(-1.000000,-1.000000,1.000000);
+
+	glNormal3f(0.0000,0.0000,1.0000);
+	glTexCoord2f(-0.005718,0.998368);
+	glVertex3f(1.000000,-1.000000,1.000000);
+
+	//Triangle#3-----
+	glNormal3f(-1.0000,0.0000,0.0000);
+	glTexCoord2f(0.493875,-2.002735);
+	glVertex3f(-1.000000,1.000000,1.000000);
+
+	glNormal3f(-1.0000,0.0000,0.0000);
+	glTexCoord2f(-0.005718,-1.002367);
+	glVertex3f(-1.000000,-1.000000,-1.000000);
+
+	glNormal3f(-1.0000,0.0000,0.0000);
+	glTexCoord2f(-0.005718,-2.002735);
+	glVertex3f(-1.000000,-1.000000,1.000000);
+
+	//Triangle#4-----
+	glNormal3f(0.0000,-1.0000,0.0000);
+	glTexCoord2f(-0.005718,-0.002000);
+	glVertex3f(1.000000,-1.000000,-1.000000);
+
+	glNormal3f(0.0000,-1.0000,0.0000);
+	glTexCoord2f(-0.505311,0.998368);
+	glVertex3f(-1.000000,-1.000000,1.000000);
+
+	glNormal3f(0.0000,-1.0000,0.0000);
+	glTexCoord2f(-0.505311,-0.002000);
+	glVertex3f(-1.000000,-1.000000,-1.000000);
+
+	//Triangle#5-----
+	glNormal3f(1.0000,0.0000,0.0000);
+	glTexCoord2f(0.493875,-0.002000);
+	glVertex3f(1.000000,1.000000,-1.000000);
+
+	glNormal3f(1.0000,0.0000,0.0000);
+	glTexCoord2f(-0.005718,0.998368);
+	glVertex3f(1.000000,-1.000000,1.000000);
+
+	glNormal3f(1.0000,0.0000,0.0000);
+	glTexCoord2f(-0.005718,-0.002000);
+	glVertex3f(1.000000,-1.000000,-1.000000);
+
+	//Triangle#6-----
+	glNormal3f(0.0000,0.0000,-1.0000);
+	glTexCoord2f(0.493875,-1.002367);
+	glVertex3f(-1.000000,1.000000,-1.000000);
+
+	glNormal3f(0.0000,0.0000,-1.0000);
+	glTexCoord2f(-0.005718,-0.002000);
+	glVertex3f(1.000000,-1.000000,-1.000000);
+
+	glNormal3f(0.0000,0.0000,-1.0000);
+	glTexCoord2f(-0.005718,-1.002367);
+	glVertex3f(-1.000000,-1.000000,-1.000000);
+
+	//Triangle#7-----
+	glNormal3f(0.0000,1.0000,0.0000);
+	glTexCoord2f(0.993468,-0.002000);
+	glVertex3f(-1.000000,1.000000,-1.000000);
+
+	glNormal3f(0.0000,1.0000,0.0000);
+	glTexCoord2f(0.993468,0.998368);
+	glVertex3f(-1.000000,1.000000,1.000000);
+
+	glNormal3f(0.0000,1.0000,0.0000);
+	glTexCoord2f(0.493875,0.998368);
+	glVertex3f(1.000000,1.000000,1.000000);
+
+	//Triangle#8-----
+	glNormal3f(0.0000,0.0000,1.0000);
+	glTexCoord2f(0.493875,0.998368);
+	glVertex3f(1.000000,1.000000,1.000000);
+
+	glNormal3f(0.0000,0.0000,1.0000);
+	glTexCoord2f(0.493875,1.998735);
+	glVertex3f(-1.000000,1.000000,1.000000);
+
+	glNormal3f(0.0000,0.0000,1.0000);
+	glTexCoord2f(-0.005718,1.998735);
+	glVertex3f(-1.000000,-1.000000,1.000000);
+
+	//Triangle#9-----
+	glNormal3f(-1.0000,0.0000,0.0000);
+	glTexCoord2f(0.493875,-2.002735);
+	glVertex3f(-1.000000,1.000000,1.000000);
+
+	glNormal3f(-1.0000,0.0000,0.0000);
+	glTexCoord2f(0.493875,-1.002367);
+	glVertex3f(-1.000000,1.000000,-1.000000);
+
+	glNormal3f(-1.0000,0.0000,0.0000);
+	glTexCoord2f(-0.005718,-1.002367);
+	glVertex3f(-1.000000,-1.000000,-1.000000);
+
+	//Triangle#10-----
+	glNormal3f(0.0000,-1.0000,0.0000);
+	glTexCoord2f(-0.005718,-0.002000);
+	glVertex3f(1.000000,-1.000000,-1.000000);
+
+	glNormal3f(0.0000,-1.0000,0.0000);
+	glTexCoord2f(-0.005718,0.998368);
+	glVertex3f(1.000000,-1.000000,1.000000);
+
+	glNormal3f(0.0000,-1.0000,0.0000);
+	glTexCoord2f(-0.505311,0.998368);
+	glVertex3f(-1.000000,-1.000000,1.000000);
+
+	//Triangle#11-----
+	glNormal3f(1.0000,0.0000,0.0000);
+	glTexCoord2f(0.493875,-0.002000);
+	glVertex3f(1.000000,1.000000,-1.000000);
+
+	glNormal3f(1.0000,0.0000,0.0000);
+	glTexCoord2f(0.493875,0.998368);
+	glVertex3f(1.000000,1.000000,1.000000);
+
+	glNormal3f(1.0000,0.0000,0.0000);
+	glTexCoord2f(-0.005718,0.998368);
+	glVertex3f(1.000000,-1.000000,1.000000);
+
+	//Triangle#12-----
+	glNormal3f(0.0000,0.0000,-1.0000);
+	glTexCoord2f(0.493875,-1.002367);
+	glVertex3f(-1.000000,1.000000,-1.000000);
+
+	glNormal3f(0.0000,0.0000,-1.0000);
+	glTexCoord2f(0.493875,-0.002000);
+	glVertex3f(1.000000,1.000000,-1.000000);
+
+	glNormal3f(0.0000,0.0000,-1.0000);
+	glTexCoord2f(-0.005718,-0.002000);
+	glVertex3f(1.000000,-1.000000,-1.000000);
+glEnd();
+
+
+
 	
+/*	//removed by Mike, 20210418
 	//halimbawaKahonUsingResolution1366x768
 	glBegin(GL_TRIANGLES);
 	glNormal3f(0.0000,1.0000,0.0000);
@@ -2232,7 +2419,8 @@ glRotatef(fKahonRotation, 0.0f, 1.0f, 0.0f);
 	glTexCoord2f(1.012184,0.049914);
 	glVertex3f(1.000000,-1.000000,-1.000000);
 glEnd();
-
+*/
+	
 	glBindTexture(GL_TEXTURE_2D, 0);
 glDisable(GL_TEXTURE_2D);	
 	

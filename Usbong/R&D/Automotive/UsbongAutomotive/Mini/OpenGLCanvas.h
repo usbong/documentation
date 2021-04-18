@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200929
- * @date updated: 20210416
+ * @date updated: 20210418
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -65,6 +65,7 @@
 //TO-DO: -update: this
 #define KAHON_TEXTURE 4 //added by Mike, 20210402
 #define ARMOR_TEXTURE 5 //added by Mike, 20210412
+#define BAHAY_TEXTURE 6 //added by Mike, 20210418
 
 #define MAX_ENEMY 2
 
