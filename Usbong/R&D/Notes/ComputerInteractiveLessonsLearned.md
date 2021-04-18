@@ -137,15 +137,16 @@ TO-DO: -update: this<br/>
 --> Use 怒 (ikari) to temporarily stop Time,<br/> 
 --> i.e. make Time move slowly to appear to stop until 怒 disappears<br/>
 --> Reminder: This causes 怒 gauge meter to not anymore be usable.<br/> 
---> Nakoruru to Hanzo; 「あなたのその気、鬼と同じのよ」 (That spirit of yours, equal with that of demon!)<br/>
---> Ang iyong kaluluwa (enerhiya, espiritu), pareho ng sa demonyo!<br/> 
+--> When 怒 gauge meter is maxed, Character movement becomes faster.<br/>
+--> Nakoruru to Hanzo; 「あなたのその気、鬼と同じよ」 (That spirit of yours, equal with demon!)<br/>
+--> Ang iyong kaluluwa (enerhiya, espiritu), pareho sa demonyo!<br/> 
 --> 半蔵 (Hanzo)'s jumping strong slash does not hit Nakoruru due to her short height<br/>
 --> Hanzo (修羅；剣豪; middle level version)'s sword hilt (柄；つか; tsuka), murasaki (violet : poison)<br/>
 --> Jubei, 二刀(nitou; 2 Swords)<br/>
 --> Hanzo attacks using combinations of weak and medium slashes to be quick not effective against Jubei<br/>
---> Jubei's Swords' reach farther due to length<br/>
+--> Jubei's Swords' reach farther due to length.<br/>
 --> Jubei's strong slash higher damage than Hanzo's several combinations of weak and medium slashes<br/>
---> Execute Hanzo's bouncing fireball, Jubei executes jumping slash that can reach Hanzo; damage exchanged lower for Hanzo<br/>
+--> Execute Hanzo's bouncing fireball, Jubei executes jumping slash that can reach Hanzo; damage exchanged lower for Hanzo.<br/>
 --> verifying: attack to deal damage first, execute bouncing fireball continuously<br/>
 --> note: my execution of bouncing fireballs not yet perfect due to created world's input system<br/>
 --> expected: Computer Jubei shall move closer to Hanzo, due to his Swords reach at a set length
