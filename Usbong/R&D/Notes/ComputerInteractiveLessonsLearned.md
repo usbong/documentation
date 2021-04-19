@@ -381,7 +381,7 @@ TO-DO: -update: this<br/>
 --> Sa isa pang bahagi ng libingan, mayroon ulit na mga nakahilerang kabaong.<br/>
 --> Mas dahan-dahan ang iyong paglalakad, sapagkat inaasahan mong may lalabas ulit na halimaw.<br/>
 --> Wala naman.<br/>
---> Kapag pinindot mo na ang tapakan sa dulo, saka ang mga halimaw magsisilabasan mula sa mga kabaong.<br/>
+--> Kapag pinindot mo na ang tapakan sa dulo, saka magsisilabasan ang mga halimaw mula sa mga kabaong.<br/>
 --> May nakangiting guhit na kamukha ni Kuppa, i.e. Bowser, sa harapan ng bawat isang nakatayong kabaong.<br/>
 --> scary due to expectation<br/>
 --> surprise to be funny due to not as expected<br/>
