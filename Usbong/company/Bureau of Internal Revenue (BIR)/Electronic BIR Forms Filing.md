@@ -22,8 +22,8 @@ https://www.bir.gov.ph/index.php/eservices/ebirforms.html; last accessed: 201809
 --> This is in contrast to a private bank.<br/>
 --> <b>Recommended Action:</b><br/> 
 --> verify: private banks in the Philippines to be owned by Filipino citizens, i.e. majority shareholder.<br/>
+--> reminder: select Filipino citizens are classified to be fake due to being Teroristang Komunista<br/>
 <br/>
-
 3) To make your BIR payment at a BPI branch that accepts BIR payments, you must do the following:<br/>
 --> You must prepare three (3) copies of the BIR Form.<br/>
 --> You must get the BTR・BIR Deposit Payment Slip from the Security Guard and then go to the BEA Machine to receive your queuing number.<br/>
@@ -51,7 +51,6 @@ a) <b>CORP: BIR FORM 1702</b><br/>
 Annual (Oct\~Dec): 15-APR<br/>
 --> With Financial Statement (FS) if with payment<br/>
 <br/>
-
 b) <b>SINGLE PROPRIETOR: BIR FORM 1701</b><br/>
 1st Quarter 15-APR<br/>
 2nd Quarter 15-AUG<br/>
