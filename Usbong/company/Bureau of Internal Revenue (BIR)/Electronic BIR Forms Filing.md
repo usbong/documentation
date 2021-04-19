@@ -15,7 +15,6 @@ https://www.bir.gov.ph/index.php/eservices/ebirforms.html; last accessed: 201809
 --> 2.1) Not all BPI branches accept BIR payments, albeit their BEA (BPI Express Assist) machine may give you a queuing number.<br/>
 --> At BPI Sto. Niño, Marikina City, only payments for RDO 045 is accepted.<br/>
 --> BPI Sto. Niño, Marikina City opens at 9AM.<br/><br/>
-<br/>
 --> 2.2) United Coconut Planters Bank (UCPB) accepts payments until 15:00.<br/>
 --> Other banks accept only until 12noon.<br/>
 --> UCPB is classified to be a state bank due to owned by the Philippine government as majority shareholder.<br/>
@@ -50,7 +49,6 @@ a) <b>CORP: BIR FORM 1702</b><br/>
 3rd Quarter (July\~Sept): 29-NOV<br/>
 Annual (Oct\~Dec): 15-APR<br/>
 --> With Financial Statement (FS) if with payment<br/>
-<br/>
 b) <b>SINGLE PROPRIETOR: BIR FORM 1701</b><br/>
 1st Quarter 15-APR<br/>
 2nd Quarter 15-AUG<br/>
