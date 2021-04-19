@@ -9,9 +9,19 @@ https://www.bir.gov.ph/index.php/eservices/ebirforms.html; last accessed: 201809
 ## Notes:
 1) While a person can still use the eBIRForms Package to automatically send BIR tax forms online, this is only for those transactions without tax dues.</br>
 --> For tax forms, e.g. 2551Q Quarterly Percentage Tax, where a person would need to pay tax dues, he/she can print the filled up tax form and go to a local bank that accepts BIR payments.</br></br>
-2) Not all BPI branches accept BIR payments, albeit their BEA (BPI Express Assist) machine may give you a queuing number.</br>
+<br/>
+2) Bank Payment
+--> 2.1) Not all BPI branches accept BIR payments, albeit their BEA (BPI Express Assist) machine may give you a queuing number.</br>
 --> At BPI Sto. Niño, Marikina City, only payments for RDO 045 is accepted.</br>
 --> BPI Sto. Niño, Marikina City opens at 9AM.</br></br>
+<br/>
+--> 2.2) United Coconut Planters Bank (UCPB) accepts payments until 15:00.<br/>
+--> Other banks accept only until 12noon.<br/>
+--> UCPB is classified to be a state bank due to owned by the Philippine government as majority shareholder.<br/>
+--> This is in contrast to a private bank.<br/>
+--> <b>Recommended Action:</b><br/> 
+--> verify: private banks in the Philippines to be owned by Filipino citizens, i.e. majority shareholder.
+<br/>
 3) To make your BIR payment at a BPI branch that accepts BIR payments, you must do the following:</br>
 --> You must prepare three (3) copies of the BIR Form.</br>
 --> You must get the BTR・BIR Deposit Payment Slip from the Security Guard and then go to the BEA Machine to receive your queuing number.</br>
@@ -36,7 +46,10 @@ a) <b>CORP: BIR FORM 1702</b></br>
 1st Quarter (Jan\~March): 30-MAY</br>
 2nd Quarter (April\~June): 29-AUG</br>
 3rd Quarter (July\~Sept): 29-NOV</br>
-Annual (Oct\~Dec): 15-APR</br></br>
+Annual (Oct\~Dec): 15-APR</br>
+--> With Financial Statement (FS) if with payment</br>
+</br>
+
 b) <b>SINGLE PROPRIETOR: BIR FORM 1701</b></br>
 1st Quarter 15-APR</br>
 2nd Quarter 15-AUG</br>
