@@ -394,7 +394,8 @@ TO-DO: -update: this<br/>
 ### 1.9.1.2) Answer to questions becomes simple due to system
 --> Example: kuriko, i.e. sister of your friend, kurio, has been wanting the photograph item; do you give it to her or not? YES/NO<br/>
 --> An answer of NO, i.e. variation, can occur if person's character is a joker, et cetera<br/>
---> 字（じ；ji）, i.e. Text font, for conversations reminds me of my handwriting, albeit I already use another accepted writing for the hiragana そ（so）<br/>
+--> 字（じ；ji）, i.e. Text font, for conversations reminds me of my handwriting,<br/> 
+--> albeit I already use another accepted writing for the hiragana そ（so）<br/>
 
 ### Recommended Actions: 
 --> verify: [ARCADE LAB](https://www.youtube.com/channel/UCy53rIJfxqI2S3qohAdfvvA): [ザ・シンプソンズ（KONAMI / 1991）](https://www.youtube.com/watch?v=_FfLmrNaudI&list=PLEB4zro_ieO0QLObEFmwpxdG4-MKA7MzI&index=2); ARCADE MACHINE<br/>
