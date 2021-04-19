@@ -154,7 +154,7 @@ TO-DO: -update: this<br/>
 --> note: my execution of bouncing fireballs not yet perfect due to created world's input system<br/>
 --> expected: Computer Jubei shall move closer to Hanzo, due to his Swords reach at a set length<br/>
 --> verified: I as Hanzo can defeat Computer Jubei, albeit requires several attempts<br/>
---> In addition, Hanzo does not kill Computer Jubei; We use 時間切れ (jikangire, Time Cut)<br/>
+--> In addition, Hanzo does not kill Computer Jubei; We use 時間切れ (jikangire, Time Cut; Time has reached zero)<br/>
 --> observed: requires several movement actions, e.g. tumbling (double back command), jumping on walls<br/>
 --> Jubei runs towards you with iku zo! (heto na'ko!), albeit does not always execute attack, i.e. dashing forward cut with rising cut<br/>
 --> Bagama't Kompyuter ang ating katunggali, hango na rin ito sa pagiging katunggali ang developer na gumawa ng paliwanag at nagturo sa Kompyuter.
