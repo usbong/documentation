@@ -22,7 +22,6 @@ https://www.bir.gov.ph/index.php/eservices/ebirforms.html; last accessed: 201809
 --> <b>Recommended Action:</b><br/> 
 --> verify: private banks in the Philippines to be owned by Filipino citizens, i.e. majority shareholder.<br/>
 --> reminder: select Filipino citizens are classified to be fake due to being Teroristang Komunista<br/>
-<br/>
 3) To make your BIR payment at a BPI branch that accepts BIR payments, you must do the following:<br/>
 --> You must prepare three (3) copies of the BIR Form.<br/>
 --> You must get the BTR・BIR Deposit Payment Slip from the Security Guard and then go to the BEA Machine to receive your queuing number.<br/>
@@ -55,7 +54,10 @@ b) <b>SINGLE PROPRIETOR: BIR FORM 1701</b><br/>
 3rd Quarter 15-NOV<br/>
 Annual 15-APR (Following Year)<br/>
 
-4) <b>RENEWAL OF ANNUAL REGISTRATION FEE ON OR BEFORE 31-JAN: BIR FORM 1605</b>
+4) <b>RENEWAL OF ANNUAL REGISTRATION FEE ON OR BEFORE 31-JAN: BIR FORM 1605</b><br/>
+--> General Information Sheet (GIS)<br/>
+--> With Alpha List with Certification (Notarized)<br/>
+--> Use: BIR's Alphalist Data Entry and Validation Module
 
 ## Select Acronyms:
 1) BIR = "Bureau of Internal Revenue"
