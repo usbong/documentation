@@ -128,7 +128,7 @@ TO-DO: -update: this<br/>
 --> 1.6.1.3.1) Technique to defeat boss once learned, maintain due to requires repetition until boss defeated; ping-pong drill<br/>
 --> 1.6.1.3.2) Set difficulty level to highest; Technique not anymore effective
 
-## 1.6.2) Samurai Spirits IV SPECIAL: サムライスピリッツ天草降臨
+## 1.6.2) Samurai Spirits IV SPECIAL: サムライスピリッツ天草降臨 (heaven grass fall temporary; langit damo bumaba pansamantala)
 --> set computer difficulty to highest<br/>
 --> set capacity to highest<br/>
 --> Time of 60seconds quickly reaches zero<br/>
@@ -140,21 +140,21 @@ TO-DO: -update: this<br/>
 --> When 怒 gauge meter is maxed, Character movement becomes faster and attacks stronger.<br/>
 --> Nakoruru to Hanzo; 「あなたのその気、鬼と同じよ」 (That spirit of yours, equal with demon!)<br/>
 --> Ang iyong kaluluwa (enerhiya, espiritu), pareho sa demonyo!<br/> 
---> 半蔵 (Hanzo)'s jumping strong slash does not hit Nakoruru due to her short height<br/>
+--> 半蔵 (Hanzo; half inside-body; kalahati laman-sa-loob)'s jumping strong slash does not hit Nakoruru due to her short height<br/>
 --> Hanzo (修羅；剣豪; middle level version)'s sword hilt (柄；つか; tsuka), murasaki (violet : poison/lason)<br/>
---> 十兵衛(Jubei), 二刀(nitou; 2 Swords)<br/>
+--> 十兵衛(Jubei; ten soldiers clean; sampung sundalo malinis), 二刀 (nitou; 2 Swords/Knives)<br/>
 --> Hanzo attacks using combinations of weak and medium slashes to be quick are not effective against Jubei<br/>
 --> Jubei's Swords' reach farther due to length.<br/>
 --> Jubei's strong slash higher damage than Hanzo's several combinations of weak and medium slashes<br/>
 --> Note: We use Hanzo's strong slash when opponent attacks, e.g. strong slash, that requires recovery time<br/>
 --> Execute Hanzo's bouncing fireball, Jubei executes jumping slash that can reach Hanzo; damage exchanged lower for Hanzo.<br/>
 --> verified: execute weak attack to deal damage first at start, execute bouncing fireball continuously<br/>
---> Jubei may attack as defense Hanzo's weak attack to cause swords to hit but no damage to Character<br/>
+--> Jubei may attack as defense against Hanzo's weak attack to cause swords to hit but no damage to both Characters<br/>
 --> note: my execution of bouncing fireballs not yet perfect due to created world's input system<br/>
 --> expected: Computer Jubei shall move closer to Hanzo, due to his Swords reach at a set length<br/>
 --> verified: I as Hanzo can defeat Computer Jubei, albeit requires several attempts<br/>
 --> In addition, Hanzo does not kill Computer Jubei; We use 時間切れ (jikangire, Time Cut)<br/>
---> observed: requires several tumbling, i.e. double back command, jumping on walls, and running<br/>
+--> observed: requires several movement actions, e.g. tumbling (double back command), jumping on walls<br/>
 --> Bagama't Kompyuter ang ating katunggali, hango na rin ito sa pagiging katunggali ang developer na gumawa ng paliwanag at nagturo sa Kompyuter.
 
 ## 1.7) SQUARE ENIX
