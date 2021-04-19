@@ -149,12 +149,13 @@ TO-DO: -update: this<br/>
 --> Note: We use Hanzo's strong slash when opponent attacks, e.g. strong slash, that requires recovery time<br/>
 --> Execute Hanzo's bouncing fireball, Jubei executes jumping slash that can reach Hanzo; damage exchanged lower for Hanzo.<br/>
 --> verified: execute weak attack to deal damage first at start, execute bouncing fireball continuously<br/>
---> Jubei may attack as defense against Hanzo's weak attack to cause swords to hit but no damage to both Characters<br/>
+--> Jubei may also attack at the same time as Hanzo's weak attack to cause swords to hit but no damage to both Characters<br/>
 --> note: my execution of bouncing fireballs not yet perfect due to created world's input system<br/>
 --> expected: Computer Jubei shall move closer to Hanzo, due to his Swords reach at a set length<br/>
 --> verified: I as Hanzo can defeat Computer Jubei, albeit requires several attempts<br/>
 --> In addition, Hanzo does not kill Computer Jubei; We use 時間切れ (jikangire, Time Cut)<br/>
 --> observed: requires several movement actions, e.g. tumbling (double back command), jumping on walls<br/>
+--> Jubei runs towards you with iku zo! (heto na'ko!), albeit does not always execute attack, i.e. dashing forward cut with rising cut<br/>
 --> Bagama't Kompyuter ang ating katunggali, hango na rin ito sa pagiging katunggali ang developer na gumawa ng paliwanag at nagturo sa Kompyuter.
 
 ## 1.7) SQUARE ENIX
