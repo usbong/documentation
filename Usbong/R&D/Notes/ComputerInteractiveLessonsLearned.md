@@ -141,7 +141,7 @@ TO-DO: -update: this<br/>
 --> Nakoruru to Hanzo; 「あなたのその気、鬼と同じよ」 (That spirit of yours, equal with demon!)<br/>
 --> Ang iyong kaluluwa (enerhiya, espiritu), pareho sa demonyo!<br/> 
 --> 半蔵 (Hanzo; half inside; kalahati laman-sa-loob)'s jumping strong slash does not hit Nakoruru due to her short height<br/>
---> 臓 with 月 (tsuki; buwan): used with 内臓 (naizou; inside-body), e.g. 心臓(shinzou; physical heart), 肝臓(kanzou; liver; atay); 
+--> 臓 with 月 (tsuki; buwan): used with 内臓 (naizou; inside-body), e.g. 心臓(shinzou; physical heart), 肝臓(kanzou; liver; atay)<br/>
 --> Hanzo (修羅(shura)；剣豪(kengou); middle level version)'s sword hilt (柄；つか; tsuka), murasaki (violet : poison/lason)<br/>
 --> 十兵衛(Jubei; ten soldiers clean; sampung sundalo malinis), 二刀 (nitou; 2 Swords/Knives)<br/>
 --> Hanzo attacks using combinations of weak and medium slashes to be quick are not effective against Jubei<br/>
