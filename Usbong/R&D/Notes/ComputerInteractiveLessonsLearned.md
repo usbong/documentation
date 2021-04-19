@@ -375,7 +375,7 @@ TO-DO: -update: this<br/>
 --> Intelligent Systems + Nintendo<br/>
 --> Kapag ipinakita na sa iyo ng kompyuter ang sistema, ipakikita ulit sa iyo ito nito,<br/> 
 --> bagama't hindi ang resulta nito sa paraan na inaasahan mo;<br/>
---> halimbawa: may mga nakahilirang nakatayong kabaong (kanoke) sa loob ng nakatagong libingan sa disierto<br/>
+--> halimbawa: may mga nakahilerang nakatayong kabaong (kanoke) sa loob ng nakatagong libingan sa disierto<br/>
 --> Hango ito sa lugar kung saan nakatago ang lampara sa Aladdin ng Disney;<br/>
 --> Kapag lumapit ka sa mga kabaong, may lalabas na halimaw.<br/>
 --> Sa isa pang bahagi ng libingan, mayroon ulit na mga nakahilerang kabaong.<br/>
