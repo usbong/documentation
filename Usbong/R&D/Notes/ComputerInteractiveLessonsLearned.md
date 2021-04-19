@@ -134,22 +134,27 @@ TO-DO: -update: this<br/>
 --> Time of 60seconds quickly reaches zero<br/>
 --> Character movement appears slow, after verifying Street Fighter speed, e.g. Street Fighter II': Hyper Fighting, Capcom vs SNK 2: Millionaire Fighting 2001 (speed set to highest)<br/> 
 --> In approaching zero, Time can appear to move slow, i.e. not as quick as we think<br/>
---> Use 怒 (ikari) to temporarily stop Time,<br/> 
+--> Use 怒 (ikari; anger emotion) to temporarily stop Time,<br/> 
 --> i.e. make Time move slowly to appear to stop until 怒 disappears<br/>
 --> Reminder: This causes 怒 gauge meter to not anymore be usable.<br/> 
---> When 怒 gauge meter is maxed, Character movement becomes faster.<br/>
+--> When 怒 gauge meter is maxed, Character movement becomes faster and attacks stronger.<br/>
 --> Nakoruru to Hanzo; 「あなたのその気、鬼と同じよ」 (That spirit of yours, equal with demon!)<br/>
 --> Ang iyong kaluluwa (enerhiya, espiritu), pareho sa demonyo!<br/> 
 --> 半蔵 (Hanzo)'s jumping strong slash does not hit Nakoruru due to her short height<br/>
---> Hanzo (修羅；剣豪; middle level version)'s sword hilt (柄；つか; tsuka), murasaki (violet : poison)<br/>
---> Jubei, 二刀(nitou; 2 Swords)<br/>
---> Hanzo attacks using combinations of weak and medium slashes to be quick not effective against Jubei<br/>
+--> Hanzo (修羅；剣豪; middle level version)'s sword hilt (柄；つか; tsuka), murasaki (violet : poison/lason)<br/>
+--> 十兵衛(Jubei), 二刀(nitou; 2 Swords)<br/>
+--> Hanzo attacks using combinations of weak and medium slashes to be quick are not effective against Jubei<br/>
 --> Jubei's Swords' reach farther due to length.<br/>
 --> Jubei's strong slash higher damage than Hanzo's several combinations of weak and medium slashes<br/>
+--> Note: We use Hanzo's strong slash when opponent attacks, e.g. strong slash, that requires recovery time<br/>  
 --> Execute Hanzo's bouncing fireball, Jubei executes jumping slash that can reach Hanzo; damage exchanged lower for Hanzo.<br/>
---> verifying: attack to deal damage first, execute bouncing fireball continuously<br/>
+--> verified: execute weak attack to deal damage first at start, execute bouncing fireball continuously<br/>
+--> Jubei may attack as defense Hanzo's weak attack to cause swords to hit but no damage to Character<br/>
 --> note: my execution of bouncing fireballs not yet perfect due to created world's input system<br/>
---> expected: Computer Jubei shall move closer to Hanzo, due to his Swords reach at a set length
+--> expected: Computer Jubei shall move closer to Hanzo, due to his Swords reach at a set length<br/>
+--> verified: I as Hanzo can defeat Computer Jubei, albeit requires several attempts<br/>
+--> In addition, Hanzo does not kill Computer Jubei; We use 時間切れ (jikangire, Time Cut)<br/>
+--> observed: requires several tumbling, i.e. double back command, jumping on walls, and running
 
 ## 1.7) SQUARE ENIX
 ## 1.7.1) [Final Fantasy 6 (Japanese version)](https://jp.finalfantasy.com/titles/finalfantasy6)
