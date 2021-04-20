@@ -14,7 +14,7 @@ https://www.bir.gov.ph/index.php/eservices/ebirforms.html; last accessed: 201809
 2) Bank Payment<br/>
 --> 2.1) Not all BPI branches accept BIR payments, albeit their BEA (BPI Express Assist) machine may give you a queuing number.<br/>
 --> At BPI Sto. Niño, Marikina City, only payments for RDO 045 is accepted.<br/>
---> BPI Sto. Niño, Marikina City opens at 9AM.<br/><br/>
+--> BPI Sto. Niño, Marikina City opens at 9AM.<br/>
 --> 2.2) United Coconut Planters Bank (UCPB) accepts payments until 15:00.<br/>
 --> Other banks accept only until 12noon.<br/>
 --> UCPB is classified to be a state bank due to owned by the Philippine government as majority shareholder.<br/>
@@ -22,6 +22,7 @@ https://www.bir.gov.ph/index.php/eservices/ebirforms.html; last accessed: 201809
 --> <b>Recommended Action:</b><br/> 
 --> verify: private banks in the Philippines to be owned by Filipino citizens, i.e. majority shareholder.<br/>
 --> reminder: select Filipino citizens are classified to be fake due to being Teroristang Komunista<br/>
+
 3) To make your BIR payment at a BPI branch that accepts BIR payments, you must do the following:<br/>
 --> You must prepare three (3) copies of the BIR Form.<br/>
 --> You must get the BTR・BIR Deposit Payment Slip from the Security Guard and then go to the BEA Machine to receive your queuing number.<br/>
@@ -56,7 +57,8 @@ Annual 15-APR (Following Year)<br/>
 
 4) <b>RENEWAL OF ANNUAL REGISTRATION FEE ON OR BEFORE 31-JAN: BIR FORM 1605</b><br/>
 --> General Information Sheet (GIS) with Secretary's Certificate (Notarized)<br/>
---> With Alpha List with Certification (Notarized)<br/>
+--> Add Alpha List with "Annex F" Certification (Notarized)<br/>
+--> BIR Template (RR 11-2018): [Annex F RR-2018.docx file](https://www.bir.gov.ph/images/bir_files/internal_communications_1/Full%20Text%20RR%202018/RR%20No.%2011-2018/Annex%20F%20RR%2011-2018.docx)<br/>
 --> Use: BIR's Alphalist Data Entry and Validation Module
 
 ## Select Acronyms:
