@@ -67,6 +67,12 @@
 #define ARMOR_TEXTURE 5 //added by Mike, 20210412
 #define BAHAY_TEXTURE 6 //added by Mike, 20210418
 
+//added by Mike, 20210420
+//TO-DO: -update: this
+#define MIKE_TEXTURE_A 7 
+#define MIKE_TEXTURE_B 8 
+#define MIKE_TEXTURE_C 9 
+
 #define MAX_ENEMY 2
 
 //edited by Mike, 20201013
@@ -247,6 +253,11 @@ class OpenGLCanvas
 		//TO-DO: -update: this
 		int iCountLevelM;
 
+		//added by Mike, 20210420
+		//TO-DO: -update: this
+		int iCountTaoAnimationFrame;
+		int iTaoAnimationFrameOffset;
+
        	//unsigned int myFontTextureObject;
                
         unsigned int myFontListBase;	    
@@ -278,6 +289,10 @@ class OpenGLCanvas
 		//added by Mike, 20210402
 		void setupKahonTexture(int myKahonTextureObject);
 		
+		//added by Mike, 20210420
+		//TO-DO: -update: this
+		void setupTaoTexture();
+
 		//added by Mike, 20210412
 		void drawKahonWithTextureForVerification();
 

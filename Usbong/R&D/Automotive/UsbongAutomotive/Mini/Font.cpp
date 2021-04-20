@@ -262,8 +262,9 @@ void setupFont(int myFontTextureObject)
     glBindTexture(GL_TEXTURE_2D, myFontTextureObject);
 
     /* create OpenGL texture out of targa file */
-//    load_tga("textures/font.tga");
-    load_tga("textures/concrete.tga");
+	//edited by Mike, 20210420
+    load_tga("textures/font.tga");
+//    load_tga("textures/concrete.tga");
     
 	/* set texture parameters */
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);

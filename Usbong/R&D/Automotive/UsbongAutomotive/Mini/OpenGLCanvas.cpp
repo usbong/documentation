@@ -565,6 +565,10 @@ bool OpenGLCanvas::init()
 	//added by Mike, 20210403; edited by Mike, 20210418
 //	setupKahonTexture(KAHON_TEXTURE);
 	setupKahonTexture(BAHAY_TEXTURE);
+
+	//added by Mike, 20210420
+	//TO-DO: -update: this
+	setupTaoTexture();
 	
 	return true;
 }
@@ -1007,9 +1011,7 @@ void OpenGLCanvas::setupKahonTexture(int myKahonTextureObject)
 	}
 	else {  //BAHAY_TEXTURE
     	load_tga("textures/bahay.tga");	
-	}
-
-	
+	}	
 	
 	//    load_tga("textures/uvtemplate.tga");
 //    load_tga("textures/uvHalimbawa.tga");
@@ -1047,6 +1049,65 @@ void OpenGLCanvas::setupKahonTexture(int myKahonTextureObject)
     /* set background color to bluish to demonstrate font transparency */
 //    glClearColor(0.0f, 0.0f, 0.25f, 1.0f); /* to demonstrate font transparency */
 
+}
+
+//added by Mike, 20210420
+//TO-DO: -update: this
+void OpenGLCanvas::setupTaoTexture()
+{
+	//removed by Mike, 20201010
+	//due to blank output
+    //glEnable(GL_DEPTH_TEST);
+
+    // select texture 1
+	glBindTexture(GL_TEXTURE_2D, MIKE_TEXTURE_A);
+	
+    /* create OpenGL texture out of targa file */
+	//edited by Mike, 20210420
+//    load_tga("textures/armor.tga");	
+    load_tga("textures/imageSpriteExampleMikeWithoutBG.tga");	
+	
+	// set texture parameters
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
+                    GL_LINEAR_MIPMAP_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+/*
+    // select texture 1
+	glBindTexture(GL_TEXTURE_2D, MIKE_TEXTURE_B);
+	
+    // create OpenGL texture out of targa file
+    load_tga("textures/armor.tga");	
+	
+	// set texture parameters
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
+                    GL_LINEAR_MIPMAP_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+			
+    // select texture 1
+	glBindTexture(GL_TEXTURE_2D, MIKE_TEXTURE_C);
+	
+    // create OpenGL texture out of targa file
+    load_tga("textures/armor.tga");	
+	
+	// set texture parameters
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
+                    GL_LINEAR_MIPMAP_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);	
+*/
+	
+    /* unselect texture myFontTextureObject */
+    glBindTexture(GL_TEXTURE_2D, 0);
+
+    /* setup alpha blending */
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glEnable(GL_BLEND);
 }
 
 void OpenGLCanvas::render()
@@ -1867,14 +1928,56 @@ void OpenGLCanvas::drawGridWithZAxis() {
     glBindTexture(GL_TEXTURE_2D, 0);
 	
 	//added by Mike, 20210420
-	//added by Mike, 20210409
     glColor3f(1.0f, 1.0f, 1.0f); // white
     glEnable(GL_TEXTURE_2D);
-    glBindTexture(GL_TEXTURE_2D, LEVEL_TEXTURE);		
+    glBindTexture(GL_TEXTURE_2D, MIKE_TEXTURE_A);		
 	glTranslatef(20.0f, 0.0f, 40.0f);
-		glRotatef(180, 1.0f, 0.0f, 0.0f);
+	glRotatef(180, 1.0f, 0.0f, 0.0f);
 		
+	iCountTaoAnimationFrame=(iCountTaoAnimationFrame+1)%3;
+	iTaoAnimationFrameOffset=256*iCountTaoAnimationFrame;
 	
+/*	
+	if (iCountTaoAnimationFrame==0) {
+    	glColor3f(1.0f, 0.0f, 0.0f); // red
+	}
+	else {
+    	glColor3f(1.0f, 1.0f, 1.0f); // white
+	}
+*/
+	
+//-----	
+glBegin(GL_TRIANGLES);	
+	//triangle#6 //back face left part
+	glNormal3f(0.0000,0.0000,-1.0000);
+	glTexCoord2f(0.0+iTaoAnimationFrameOffset,0.0);	
+	glVertex3f(-1.000000,1.000000,-1.000000); //A1
+
+	glNormal3f(0.0000,0.0000,-1.0000);
+	glTexCoord2f(1.0+iTaoAnimationFrameOffset,1.0);
+	glVertex3f(1.000000,-1.000000,-1.000000); //B1
+
+	glNormal3f(0.0000,0.0000,-1.0000);
+	glTexCoord2f(0.0+iTaoAnimationFrameOffset,1.0);	
+	glVertex3f(-1.000000,-1.000000,-1.000000); //C1	
+	
+
+	//triangle#12 //back face right part		
+	glNormal3f(0.0000,0.0000,-1.0000);
+	glTexCoord2f(0.0+iTaoAnimationFrameOffset,0.0);	
+	glVertex3f(-1.000000,1.000000,-1.000000); //A2
+
+	glNormal3f(0.0000,0.0000,-1.0000);
+	glTexCoord2f(1.0+iTaoAnimationFrameOffset,0.0);
+	glVertex3f(1.000000,1.000000,-1.000000); //B2
+
+	glNormal3f(0.0000,0.0000,-1.0000);
+	glTexCoord2f(1.0+iTaoAnimationFrameOffset,1.0);
+	glVertex3f(1.000000,-1.000000,-1.000000); //C2	
+glEnd();
+	
+//-----		
+/*	
 //-----	
 glBegin(GL_TRIANGLES);	
 	//triangle#6 //back face left part
@@ -1905,7 +2008,8 @@ glBegin(GL_TRIANGLES);
 	glVertex3f(1.000000,-1.000000,-1.000000); //C2	
 glEnd();
 //-----	
-		glRotatef(-180, 1.0f, 0.0f, 0.0f);
+*/
+	glRotatef(-180, 1.0f, 0.0f, 0.0f);
 	glTranslatef(-20.0f, 0.0f, -40.0f);		
 	
     glDisable(GL_TEXTURE_2D);
