@@ -9,7 +9,6 @@ https://www.bir.gov.ph/index.php/eservices/ebirforms.html; last accessed: 201809
 ## Notes:
 1) While a person can still use the eBIRForms Package to automatically send BIR tax forms online, this is only for those transactions without tax dues.<br/>
 --> For tax forms, e.g. 2551Q Quarterly Percentage Tax, where a person would need to pay tax dues, he/she can print the filled up tax form and go to a local bank that accepts BIR payments.<br/>
-<br/>
 
 2) Bank Payment<br/>
 --> 2.1) Not all BPI branches accept BIR payments, albeit their BEA (BPI Express Assist) machine may give you a queuing number.<br/>
@@ -32,9 +31,9 @@ https://www.bir.gov.ph/index.php/eservices/ebirforms.html; last accessed: 201809
 
 ## Filing Dates:
 1) <b>WITHHOLDING TAX-COMPENSATION</b><br/>
-a) 1601C 10th day of the following month<br/>
+1.1) 1601C 10th day of the following month<br/>
 --> MONTHLY REMITTANCE RETURN<br/>
-b) 1604CF Annual Information Return: 31-JAN<br/>
+1.2) 1604CF Annual Information Return: 31-JAN<br/>
 
 2) <b>PERCENTAGE TAX: BIR FORM 2551Q</b><br/>
 1st Quarter (Jan\~March): 20-APR<br/>
@@ -43,13 +42,13 @@ b) 1604CF Annual Information Return: 31-JAN<br/>
 4th Quarter (Oct\~Dec): 20-JAN<br/>
 
 3) <b>INCOME TAX</b><br/>
-a) <b>CORP: BIR FORM 1702</b><br/>
+3.1) <b>CORP: BIR FORM 1702</b><br/>
 1st Quarter (Jan\~March): 30-MAY<br/>
 2nd Quarter (April\~June): 29-AUG<br/>
 3rd Quarter (July\~Sept): 29-NOV<br/>
 Annual (Oct\~Dec): 15-APR<br/>
 --> if with payment, add Financial Statement (FS) with Treasurer's Certificate (Notarized)<br/>
-b) <b>SINGLE PROPRIETOR: BIR FORM 1701</b><br/>
+3.2) <b>SINGLE PROPRIETOR: BIR FORM 1701</b><br/>
 1st Quarter 15-APR<br/>
 2nd Quarter 15-AUG<br/>
 3rd Quarter 15-NOV<br/>
@@ -59,6 +58,8 @@ Annual 15-APR (Following Year)<br/>
 --> General Information Sheet (GIS) with Secretary's Certificate (Notarized)<br/>
 --> Add Alpha List with "Annex F" Certification (Notarized)<br/>
 --> BIR Template (RR 11-2018): [Annex F RR-2018.docx file](https://www.bir.gov.ph/images/bir_files/internal_communications_1/Full%20Text%20RR%202018/RR%20No.%2011-2018/Annex%20F%20RR%2011-2018.docx)<br/>
+--> Print: 3 sets of Annex F<br/>
+--> Add: to Annex F, 3 sets of documentary steps @PHP30 each<br/>
 --> Use: BIR's Alphalist Data Entry and Validation Module
 
 ## Select Acronyms:
