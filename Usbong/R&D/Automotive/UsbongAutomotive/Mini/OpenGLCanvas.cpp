@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210418
+ * @date updated: 20210420
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -1865,14 +1865,58 @@ void OpenGLCanvas::drawGridWithZAxis() {
 	//removed by Mike, 20201122
     glDisable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, 0);
+	
+	//added by Mike, 20210420
+	//added by Mike, 20210409
+    glColor3f(1.0f, 1.0f, 1.0f); // white
+    glEnable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, LEVEL_TEXTURE);		
+	glTranslatef(20.0f, 0.0f, 40.0f);
+		glRotatef(180, 1.0f, 0.0f, 0.0f);
+		
+	
+//-----	
+glBegin(GL_TRIANGLES);	
+	//triangle#6 //back face left part
+	glNormal3f(0.0000,0.0000,-1.0000);
+	glTexCoord2f(0.0,0.0);	
+	glVertex3f(-1.000000,1.000000,-1.000000); //A1
 
+	glNormal3f(0.0000,0.0000,-1.0000);
+	glTexCoord2f(1.0,1.0);
+	glVertex3f(1.000000,-1.000000,-1.000000); //B1
+
+	glNormal3f(0.0000,0.0000,-1.0000);
+	glTexCoord2f(0.0,1.0);	
+	glVertex3f(-1.000000,-1.000000,-1.000000); //C1	
+	
+
+	//triangle#12 //back face right part		
+	glNormal3f(0.0000,0.0000,-1.0000);
+	glTexCoord2f(0.0,0.0);	
+	glVertex3f(-1.000000,1.000000,-1.000000); //A2
+
+	glNormal3f(0.0000,0.0000,-1.0000);
+	glTexCoord2f(1.0,0.0);
+	glVertex3f(1.000000,1.000000,-1.000000); //B2
+
+	glNormal3f(0.0000,0.0000,-1.0000);
+	glTexCoord2f(1.0,1.0);
+	glVertex3f(1.000000,-1.000000,-1.000000); //C2	
+glEnd();
+//-----	
+		glRotatef(-180, 1.0f, 0.0f, 0.0f);
+	glTranslatef(-20.0f, 0.0f, -40.0f);		
+	
+    glDisable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, 0);
+	
+	
 	//added by Mike, 20210409
     glColor3f(1.0f, 1.0f, 1.0f); // white
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, KAHON_TEXTURE);
-	
-	
-	
+		
 	//added by Mike, 20210408
 	//------		
 	glTranslatef(20.0f, 0.0f, 30.0f);		
@@ -2622,121 +2666,6 @@ glBegin(GL_TRIANGLES);
 glEnd();
 */
 
-
-	
-/*	//removed by Mike, 20210418
-	//halimbawaKahonUsingResolution1366x768
-	glBegin(GL_TRIANGLES);
-	glNormal3f(0.0000,1.0000,0.0000);
-	glTexCoord2f(1.016934,1.975160);
-	glVertex3f(-1.000000,1.000000,-1.000000);
-	glNormal3f(0.0000,1.0000,0.0000);
-	glTexCoord2f(0.013506,1.005580);
-	glVertex3f(1.000000,1.000000,1.000000);
-	glNormal3f(0.0000,1.0000,0.0000);
-	glTexCoord2f(1.016515,0.995418);
-	glVertex3f(1.000000,1.000000,-1.000000);
-	glNormal3f(0.0000,0.0000,1.0000);
-	glTexCoord2f(0.013506,1.005580);
-	glVertex3f(1.000000,1.000000,1.000000);
-	glNormal3f(0.0000,0.0000,1.0000);
-	glTexCoord2f(-0.912089,0.045031);
-	glVertex3f(-1.000000,-1.000000,1.000000);
-	glNormal3f(0.0000,0.0000,1.0000);
-	glTexCoord2f(0.009742,0.041433);
-	glVertex3f(1.000000,-1.000000,1.000000);
-	glNormal3f(-1.0000,0.0000,0.0000);
-	glTexCoord2f(2.779000,0.994784);
-	glVertex3f(-1.000000,1.000000,1.000000);
-	glNormal3f(-1.0000,0.0000,0.0000);
-	glTexCoord2f(1.853405,0.034236);
-	glVertex3f(-1.000000,-1.000000,-1.000000);
-	glNormal3f(-1.0000,0.0000,0.0000);
-	glTexCoord2f(2.775236,0.030637);
-	glVertex3f(-1.000000,-1.000000,1.000000);
-	glNormal3f(0.0000,-1.0000,0.0000);
-	glTexCoord2f(1.012184,0.049914);
-	glVertex3f(1.000000,-1.000000,-1.000000);
-	glNormal3f(0.0000,-1.0000,0.0000);
-	glTexCoord2f(0.005979,-0.922715);
-	glVertex3f(-1.000000,-1.000000,1.000000);
-	glNormal3f(0.0000,-1.0000,0.0000);
-	glTexCoord2f(1.005781,-0.923499);
-	glVertex3f(-1.000000,-1.000000,-1.000000);
-	glNormal3f(1.0000,0.0000,0.0000);
-	glTexCoord2f(1.016515,0.995418);
-	glVertex3f(1.000000,1.000000,-1.000000);
-	glNormal3f(1.0000,0.0000,0.0000);
-	glTexCoord2f(0.009742,0.041433);
-	glVertex3f(1.000000,-1.000000,1.000000);
-	glNormal3f(1.0000,0.0000,0.0000);
-	glTexCoord2f(1.012184,0.049914);
-	glVertex3f(1.000000,-1.000000,-1.000000);
-	glNormal3f(0.0000,0.0000,-1.0000);
-	glTexCoord2f(1.857169,0.998383);
-	glVertex3f(-1.000000,1.000000,-1.000000);
-	glNormal3f(0.0000,0.0000,-1.0000);
-	glTexCoord2f(1.012184,0.049914);
-	glVertex3f(1.000000,-1.000000,-1.000000);
-	glNormal3f(0.0000,0.0000,-1.0000);
-	glTexCoord2f(1.853405,0.034236);
-	glVertex3f(-1.000000,-1.000000,-1.000000);
-	glNormal3f(0.0000,1.0000,0.0000);
-	glTexCoord2f(1.016934,1.975160);
-	glVertex3f(-1.000000,1.000000,-1.000000);
-	glNormal3f(0.0000,1.0000,0.0000);
-	glTexCoord2f(0.017270,1.969727);
-	glVertex3f(-1.000000,1.000000,1.000000);
-	glNormal3f(0.0000,1.0000,0.0000);
-	glTexCoord2f(0.013506,1.005580);
-	glVertex3f(1.000000,1.000000,1.000000);
-	glNormal3f(0.0000,0.0000,1.0000);
-	glTexCoord2f(0.013506,1.005580);
-	glVertex3f(1.000000,1.000000,1.000000);
-	glNormal3f(0.0000,0.0000,1.0000);
-	glTexCoord2f(-0.908325,1.009178);
-	glVertex3f(-1.000000,1.000000,1.000000);
-	glNormal3f(0.0000,0.0000,1.0000);
-	glTexCoord2f(-0.912089,0.045031);
-	glVertex3f(-1.000000,-1.000000,1.000000);
-	glNormal3f(-1.0000,0.0000,0.0000);
-	glTexCoord2f(2.779000,0.994784);
-	glVertex3f(-1.000000,1.000000,1.000000);
-	glNormal3f(-1.0000,0.0000,0.0000);
-	glTexCoord2f(1.857169,0.998383);
-	glVertex3f(-1.000000,1.000000,-1.000000);
-	glNormal3f(-1.0000,0.0000,0.0000);
-	glTexCoord2f(1.853405,0.034236);
-	glVertex3f(-1.000000,-1.000000,-1.000000);
-	glNormal3f(0.0000,-1.0000,0.0000);
-	glTexCoord2f(1.012184,0.049914);
-	glVertex3f(1.000000,-1.000000,-1.000000);
-	glNormal3f(0.0000,-1.0000,0.0000);
-	glTexCoord2f(0.009742,0.041433);
-	glVertex3f(1.000000,-1.000000,1.000000);
-	glNormal3f(0.0000,-1.0000,0.0000);
-	glTexCoord2f(0.005979,-0.922715);
-	glVertex3f(-1.000000,-1.000000,1.000000);
-	glNormal3f(1.0000,0.0000,0.0000);
-	glTexCoord2f(1.016515,0.995418);
-	glVertex3f(1.000000,1.000000,-1.000000);
-	glNormal3f(1.0000,0.0000,0.0000);
-	glTexCoord2f(0.013506,1.005580);
-	glVertex3f(1.000000,1.000000,1.000000);
-	glNormal3f(1.0000,0.0000,0.0000);
-	glTexCoord2f(0.009742,0.041433);
-	glVertex3f(1.000000,-1.000000,1.000000);
-	glNormal3f(0.0000,0.0000,-1.0000);
-	glTexCoord2f(1.857169,0.998383);
-	glVertex3f(-1.000000,1.000000,-1.000000);
-	glNormal3f(0.0000,0.0000,-1.0000);
-	glTexCoord2f(1.016515,0.995418);
-	glVertex3f(1.000000,1.000000,-1.000000);
-	glNormal3f(0.0000,0.0000,-1.0000);
-	glTexCoord2f(1.012184,0.049914);
-	glVertex3f(1.000000,-1.000000,-1.000000);
-glEnd();
-*/
 	
 	glBindTexture(GL_TEXTURE_2D, 0);
 glDisable(GL_TEXTURE_2D);	
