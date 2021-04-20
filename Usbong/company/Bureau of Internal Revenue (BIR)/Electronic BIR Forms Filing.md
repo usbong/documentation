@@ -47,7 +47,7 @@ a) <b>CORP: BIR FORM 1702</b><br/>
 2nd Quarter (April\~June): 29-AUG<br/>
 3rd Quarter (July\~Sept): 29-NOV<br/>
 Annual (Oct\~Dec): 15-APR<br/>
---> With Financial Statement (FS) if with payment<br/>
+--> if with payment, add Financial Statement (FS) with Treasurer's Certificate (Notarized)<br/>
 b) <b>SINGLE PROPRIETOR: BIR FORM 1701</b><br/>
 1st Quarter 15-APR<br/>
 2nd Quarter 15-AUG<br/>
@@ -55,7 +55,7 @@ b) <b>SINGLE PROPRIETOR: BIR FORM 1701</b><br/>
 Annual 15-APR (Following Year)<br/>
 
 4) <b>RENEWAL OF ANNUAL REGISTRATION FEE ON OR BEFORE 31-JAN: BIR FORM 1605</b><br/>
---> General Information Sheet (GIS)<br/>
+--> General Information Sheet (GIS) with Secretary's Certificate (Notarized)<br/>
 --> With Alpha List with Certification (Notarized)<br/>
 --> Use: BIR's Alphalist Data Entry and Validation Module
 
