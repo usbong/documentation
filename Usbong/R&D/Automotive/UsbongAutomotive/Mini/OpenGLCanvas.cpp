@@ -1934,8 +1934,24 @@ void OpenGLCanvas::drawGridWithZAxis() {
 	glTranslatef(20.0f, 0.0f, 40.0f);
 	glRotatef(180, 1.0f, 0.0f, 0.0f);
 		
-	iCountTaoAnimationFrame=(iCountTaoAnimationFrame+1)%3;
-	iTaoAnimationFrameOffset=256*iCountTaoAnimationFrame;
+	//edited by Mike, 20210420
+	//note: 3 animation frames; .tga image file has 4 frames @128x256, i.e. width x height
+//	iCountTaoAnimationFrame=(iCountTaoAnimationFrame)%2;
+	iCountTaoAnimationFrame=(iCountTaoAnimationFrame)%3;
+	
+/*
+	iTaoAnimationFrameOffset=256*iCountTaoAnimationFrame;	
+	int iTaoAnimationFrameWidthMax=256;
+	iTaoAnimationFrameOffset=iTaoAnimationFrameOffset/iTaoAnimationFrameWidthMax;
+*/
+//	fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.5;
+	fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.25;
+	
+	printf("iCountTaoAnimationFrame: %i",iCountTaoAnimationFrame);
+
+	iCountTaoAnimationFrame=iCountTaoAnimationFrame+1;
+		
+	//printf("iTaoAnimationFrameOffset: %i",iTaoAnimationFrameOffset);
 	
 /*	
 	if (iCountTaoAnimationFrame==0) {
@@ -1950,29 +1966,38 @@ void OpenGLCanvas::drawGridWithZAxis() {
 glBegin(GL_TRIANGLES);	
 	//triangle#6 //back face left part
 	glNormal3f(0.0000,0.0000,-1.0000);
-	glTexCoord2f(0.0+iTaoAnimationFrameOffset,0.0);	
+	glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	
 	glVertex3f(-1.000000,1.000000,-1.000000); //A1
 
 	glNormal3f(0.0000,0.0000,-1.0000);
-	glTexCoord2f(1.0+iTaoAnimationFrameOffset,1.0);
+	//edited by Mike, 20210420
+//	glTexCoord2f(1.0+iTaoAnimationFrameOffset,1.0);
+//	glTexCoord2f(0.5+fTaoAnimationFrameOffset,1.0);
+	glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0);
 	glVertex3f(1.000000,-1.000000,-1.000000); //B1
 
 	glNormal3f(0.0000,0.0000,-1.0000);
-	glTexCoord2f(0.0+iTaoAnimationFrameOffset,1.0);	
+	glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);	
 	glVertex3f(-1.000000,-1.000000,-1.000000); //C1	
 	
 
 	//triangle#12 //back face right part		
 	glNormal3f(0.0000,0.0000,-1.0000);
-	glTexCoord2f(0.0+iTaoAnimationFrameOffset,0.0);	
+	glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	
 	glVertex3f(-1.000000,1.000000,-1.000000); //A2
 
 	glNormal3f(0.0000,0.0000,-1.0000);
-	glTexCoord2f(1.0+iTaoAnimationFrameOffset,0.0);
+	//edited by Mike, 20210420	
+//	glTexCoord2f(1.0+iTaoAnimationFrameOffset,0.0);
+//	glTexCoord2f(0.5+fTaoAnimationFrameOffset,0.0);
+	glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0);
 	glVertex3f(1.000000,1.000000,-1.000000); //B2
 
 	glNormal3f(0.0000,0.0000,-1.0000);
-	glTexCoord2f(1.0+iTaoAnimationFrameOffset,1.0);
+	//edited by Mike, 20210420	
+//	glTexCoord2f(1.0+iTaoAnimationFrameOffset,1.0);
+//	glTexCoord2f(0.5+fTaoAnimationFrameOffset,1.0);
+	glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0);	
 	glVertex3f(1.000000,-1.000000,-1.000000); //C2	
 glEnd();
 	

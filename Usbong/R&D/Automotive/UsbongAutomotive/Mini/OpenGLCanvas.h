@@ -256,7 +256,8 @@ class OpenGLCanvas
 		//added by Mike, 20210420
 		//TO-DO: -update: this
 		int iCountTaoAnimationFrame;
-		int iTaoAnimationFrameOffset;
+//		int iTaoAnimationFrameOffset;
+		float fTaoAnimationFrameOffset;
 
        	//unsigned int myFontTextureObject;
                
