@@ -129,6 +129,7 @@ TO-DO: -update: this<br/>
 --> 1.6.1.3.2) Set difficulty level to highest; Technique not anymore effective
 
 ## 1.6.2) Samurai Spirits IV SPECIAL: サムライスピリッツ天草降臨 (heaven grass fall temporary; langit damo bumaba pansamantala)
+### 1.6.2.1) Sony PlayStation version
 --> set computer difficulty to highest<br/>
 --> set capacity to highest<br/>
 --> Time of 60seconds quickly reaches zero<br/>
@@ -158,6 +159,25 @@ TO-DO: -update: this<br/>
 --> observed: requires several movement actions, e.g. tumbling (double back command), jumping on walls<br/>
 --> Jubei runs towards you with iku zo! (heto na'ko!), albeit does not always execute attack, i.e. dashing forward cut with rising cut<br/>
 --> Bagama't Kompyuter ang ating katunggali, hango na rin ito sa pagiging katunggali ang developer na gumawa ng paliwanag at nagturo sa Kompyuter.
+### 1.6.2.2) SNK Neo Geo Mini version
+--> verified: can finish all matches using only one (1) coin in 14:35:03,<br/>
+--> where Minutes:Seconds:Milliseconds<br/>
+--> Difficulty set to highest<br/>
+--> No setting for Capacity<br/>
+--> Beginning matches, e.g. first two (2) Computer Characters, are for verifying action control<br/>
+--> use: technique to defeat Jubei for all matches<br/>
+--> learn: 忍 (shinobi; literally: sword/knife mind;<br/>
+--> to signify: 我慢 (gaman; literally: I-slow) and しんぼう (shinbou),<br/>
+--> i.e. bear to execute patience<br/>
+--> This is due to person tends to not stick with technique<br/>
+--> when it appears technique not effective against opponent<br/>
+--> Example: Time is zero at Time minus 10 seconds<br/>
+--> defeated Jubei's fist : bato, i.e. ishi; intention<br/>
+--> reminder: Hanzo and Jubei find each other at the start;<br/>
+--> Both are pulled to the Evil Spirit coming from the mountain Castle in Kyuushuu Island.<br/>
+--> Hanzo arrives to learn that Jubei has already defeated the Evil Spirit.<br/>
+--> However, Jubei is still seeking a Strong person.<br/>
+--> Hanzo and Jubei fight.<br/>
 
 ## 1.7) SQUARE ENIX
 ## 1.7.1) [Final Fantasy 6 (Japanese version)](https://jp.finalfantasy.com/titles/finalfantasy6)
