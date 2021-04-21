@@ -55,11 +55,11 @@ Annual (Oct\~Dec): 15-APR<br/>
 Annual 15-APR (Following Year)<br/>
 
 4) <b>RENEWAL OF ANNUAL REGISTRATION FEE ON OR BEFORE 31-JAN: BIR FORM 1605</b><br/>
---> Add General Information Sheet (GIS) with Secretary's Certificate (Notarized)<br/>
---> Add Alpha List with "Annex F" Certification (Notarized)<br/>
+--> Add: General Information Sheet (GIS) with Secretary's Certificate (Notarized)<br/>
+--> Add: Alpha List with "Annex F" Certification (Notarized)<br/>
 --> BIR Template (RR 11-2018): [Annex F RR-2018.docx file](https://www.bir.gov.ph/images/bir_files/internal_communications_1/Full%20Text%20RR%202018/RR%20No.%2011-2018/Annex%20F%20RR%2011-2018.docx)<br/>
 --> Print: 3 sets of Annex F<br/>
---> Add: to Annex F, 3 sets of documentary steps @PHP30 each<br/>
+--> Add: to Annex F, 3 sets of documentary steps @PHP30 each set<br/>
 --> Use: BIR's Alphalist Data Entry and Validation Module
 
 ## Select Acronyms:
