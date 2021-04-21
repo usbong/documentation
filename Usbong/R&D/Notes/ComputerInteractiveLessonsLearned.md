@@ -157,7 +157,8 @@ TO-DO: -update: this<br/>
 --> verified: I as Hanzo can defeat Computer Jubei, albeit requires several attempts<br/>
 --> In addition, Hanzo does not kill Computer Jubei; We use 時間切れ (jikangire, Time Cut; Time has reached zero)<br/>
 --> observed: requires several movement actions, e.g. tumbling (double back command), jumping on walls<br/>
---> Jubei runs towards you with iku zo! (heto na'ko!), albeit does not always execute attack, i.e. dashing forward cut with rising cut<br/>
+--> Jubei runs towards you with 「いくぞ！(iku zo!; literally: pupunta/susugod na'ko!; heto na'ko!)」, <br/>
+--> albeit does not always execute attack, i.e. dashing forward cut with rising cut<br/>
 --> Bagama't Kompyuter ang ating katunggali, hango na rin ito sa pagiging katunggali ang developer na gumawa ng paliwanag at nagturo sa Kompyuter.
 ### 1.6.2.2) SNK Neo Geo Mini version
 --> verified: can finish all matches using only one (1) coin in 14:35:03,<br/>
