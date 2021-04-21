@@ -167,7 +167,7 @@ TO-DO: -update: this<br/>
 --> Beginning matches, e.g. first two (2) Computer Characters, are for verifying action control<br/>
 --> use: technique to defeat Jubei for all matches<br/>
 --> learn: 忍 (shinobi; literally: sword/knife mind;<br/>
---> to signify: 我慢 (gaman; literally: I-slow) and しんぼう (shinbou),<br/>
+--> to signify: 我慢 (gaman; literally: I-slow) and しんぼう (shinbou; pagbigkas: shimbou, gamit ang "m"),<br/>
 --> i.e. bear to execute patience<br/>
 --> This is due to person tends to not stick with technique<br/>
 --> when it appears technique not effective against opponent<br/>
