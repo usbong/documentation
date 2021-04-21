@@ -37,7 +37,7 @@
 --> 1.6.1) Super Mario Bros. sa piano, halintulad sa tumatalon, i.e. JUMP, ang pagtugtog.<br/>
 --> 1.6.2) Legend of Zelda sa piano, halintulad sa sumasakay ng kabayo; Maaalala ang sa Indiana Jones.<br/>
 --> 1.6.3) 日の丸の旗 (hi no maru no hata; bandila ng bilog na araw)：<br/>
---> Maaalala ang mga bata; at ang pagsulat ng pagbigkas<br/>
+--> Maaalala ang mga bata; at ang pagsulat ng pagbigkas.<br/>
 --> <b>Halimbawa:</b> 勢 （いきほひ ikihohi to be いきおいikioi now; signifies: energy/vitality,<br/>
 --> bagama't agad kong naaalala ang "impulse", hal: impulse buying, nitong kahulugan)
 
