@@ -2331,8 +2331,8 @@ glEnd();
     glBindTexture(GL_TEXTURE_2D, BAHAY_TEXTURE);
 	
 	
-
-glRotatef(fKahonRotation, 0.0f, 1.0f, 0.0f);
+//removed by Mike, 20210422
+//glRotatef(fKahonRotation, 0.0f, 1.0f, 0.0f);
 
 //added by Mike, 20210418
 //TO-DO: -reverify house roof bottom quad to use only half triangle has texture, et cetera 
@@ -2815,10 +2815,9 @@ glEnd();
 	glBindTexture(GL_TEXTURE_2D, 0);
 glDisable(GL_TEXTURE_2D);	
 	
-	
-glRotatef(-fKahonRotation, 0.0f, 1.0f, 0.0f);
-	
-	
+//removed by Mike, 20210422	
+//glRotatef(-fKahonRotation, 0.0f, 1.0f, 0.0f);
+		
 	
 	glTranslatef(-15.0f, 0.0f, -30.0f);		
 
