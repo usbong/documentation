@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210421
+ * @date updated: 20210422
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -1927,13 +1927,20 @@ void OpenGLCanvas::drawGridWithZAxis() {
     glDisable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, 0);
 	
+//added by Mike, 20210422	
+glPushMatrix();
+	
 	//added by Mike, 20210420
     glColor3f(1.0f, 1.0f, 1.0f); // white
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, MIKE_TEXTURE_A);		
+
 	glTranslatef(30.0f, 0.0f, 25.0f);
 	glRotatef(180, 1.0f, 0.0f, 0.0f);
-		
+
+	//added by Mike, 20210422
+    glScalef(1.5f, 1.5f, 1.0f);	
+	
 	//edited by Mike, 20210420
 	//note: 3 animation frames; .tga image file has 4 frames @128x256, i.e. width x height
 //	iCountTaoAnimationFrame=(iCountTaoAnimationFrame)%2;
@@ -1961,7 +1968,7 @@ void OpenGLCanvas::drawGridWithZAxis() {
     	glColor3f(1.0f, 1.0f, 1.0f); // white
 	}
 */
-	
+		
 //-----	
 glBegin(GL_TRIANGLES);	
 	//triangle#6 //back face left part
@@ -2034,11 +2041,20 @@ glBegin(GL_TRIANGLES);
 glEnd();
 //-----	
 */
+	//added by Mike, 20210422
+	glScalef(1.0f, 1.0f, 1.0f);	
+
 	glRotatef(-180, 1.0f, 0.0f, 0.0f);
 	glTranslatef(-30.0f, 0.0f, -25.0f);		
+
+/*	//removed by Mike, 20210422
+	//added by Mike, 20210422
+    glScaled(1.000000, 1.000000, 1.000000);	
+*/
 	
     glDisable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, 0);
+glPopMatrix(); //added by Mike, 20210422
 	
 	
 	//added by Mike, 20210409
