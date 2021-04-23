@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210422
+ * @date updated: 20210423
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -1852,14 +1852,17 @@ void OpenGLCanvas::drawGridWithZAxis() {
 	myLevel->draw_level(6.0f, 3.0f, 6.0f, tempText);    	
 */
 
+/* //removed by Mike, 20210423	
 	//added by Mike, 20210323
 	//TO-DO: -reverify: cause of square cube to be rectangular
 	//TO-DO: -reverify: texture rotation
 	glColor3f(1.0f, 1.0f, 1.0f); // white
 	glBindTexture( GL_TEXTURE_2D, LEVEL_TEXTURE );
-	sprintf(tempText,"M");	
+	//edited by Mike, 20210423
+//	sprintf(tempText,"M");	
+	sprintf(tempText,"G");	
 	myLevel->draw_level(fGridSquareWidth*1.0f, 0.0f, fGridSquareWidth*1.0f, tempText);    	
-
+*/
 
 	//added by Mike, 20210325
 	//TO-DO: -add: identification for object to draw by Level.cpp	
