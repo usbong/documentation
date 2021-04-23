@@ -911,15 +911,17 @@ void OpenGLCanvas::keyDown(int keyCode)
 {
 	myKeysDown[keyCode] = TRUE;	
 	
-	//added by Mike, 20201226
-	myRobotShip->keyDown(keyCode);
+	//added by Mike, 20201226; edited by Mike, 20210423
+//	myRobotShip->keyDown(keyCode);
+	myPilot->keyDown(keyCode);	
 }
 void OpenGLCanvas::keyUp(int keyCode)
 {
 	myKeysDown[keyCode] = FALSE;	
 
-	//added by Mike, 20201226
-	myRobotShip->keyUp(keyCode);
+	//added by Mike, 20201226; edited by Mike, 20210423
+//	myRobotShip->keyUp(keyCode);
+	myPilot->keyUp(keyCode);	
 }
 
 
@@ -1929,7 +1931,8 @@ void OpenGLCanvas::drawGridWithZAxis() {
 	//removed by Mike, 20201122
     glDisable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, 0);
-	
+
+/*	//removed by Mike, 20210423
 //added by Mike, 20210422	
 glPushMatrix();
 	
@@ -1949,11 +1952,6 @@ glPushMatrix();
 //	iCountTaoAnimationFrame=(iCountTaoAnimationFrame)%2;
 	iCountTaoAnimationFrame=(iCountTaoAnimationFrame)%3;
 	
-/*
-	iTaoAnimationFrameOffset=256*iCountTaoAnimationFrame;	
-	int iTaoAnimationFrameWidthMax=256;
-	iTaoAnimationFrameOffset=iTaoAnimationFrameOffset/iTaoAnimationFrameWidthMax;
-*/
 //	fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.5;
 	fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.25;
 	
@@ -1962,15 +1960,6 @@ glPushMatrix();
 	iCountTaoAnimationFrame=iCountTaoAnimationFrame+1;
 		
 	//printf("iTaoAnimationFrameOffset: %i",iTaoAnimationFrameOffset);
-	
-/*	
-	if (iCountTaoAnimationFrame==0) {
-    	glColor3f(1.0f, 0.0f, 0.0f); // red
-	}
-	else {
-    	glColor3f(1.0f, 1.0f, 1.0f); // white
-	}
-*/
 		
 //-----	
 glBegin(GL_TRIANGLES);	
@@ -2011,54 +2000,16 @@ glBegin(GL_TRIANGLES);
 	glVertex3f(1.000000,-1.000000,-1.000000); //C2	
 glEnd();
 	
-//-----		
-/*	
-//-----	
-glBegin(GL_TRIANGLES);	
-	//triangle#6 //back face left part
-	glNormal3f(0.0000,0.0000,-1.0000);
-	glTexCoord2f(0.0,0.0);	
-	glVertex3f(-1.000000,1.000000,-1.000000); //A1
-
-	glNormal3f(0.0000,0.0000,-1.0000);
-	glTexCoord2f(1.0,1.0);
-	glVertex3f(1.000000,-1.000000,-1.000000); //B1
-
-	glNormal3f(0.0000,0.0000,-1.0000);
-	glTexCoord2f(0.0,1.0);	
-	glVertex3f(-1.000000,-1.000000,-1.000000); //C1	
-	
-
-	//triangle#12 //back face right part		
-	glNormal3f(0.0000,0.0000,-1.0000);
-	glTexCoord2f(0.0,0.0);	
-	glVertex3f(-1.000000,1.000000,-1.000000); //A2
-
-	glNormal3f(0.0000,0.0000,-1.0000);
-	glTexCoord2f(1.0,0.0);
-	glVertex3f(1.000000,1.000000,-1.000000); //B2
-
-	glNormal3f(0.0000,0.0000,-1.0000);
-	glTexCoord2f(1.0,1.0);
-	glVertex3f(1.000000,-1.000000,-1.000000); //C2	
-glEnd();
-//-----	
-*/
 	//added by Mike, 20210422
 	glScalef(1.0f, 1.0f, 1.0f);	
 
 	glRotatef(-180, 1.0f, 0.0f, 0.0f);
 	glTranslatef(-30.0f, 0.0f, -25.0f);		
-
-/*	//removed by Mike, 20210422
-	//added by Mike, 20210422
-    glScaled(1.000000, 1.000000, 1.000000);	
-*/
 	
     glDisable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, 0);
 glPopMatrix(); //added by Mike, 20210422
-	
+*/	
 	
 
 
@@ -2885,6 +2836,9 @@ void OpenGLCanvas::update()
 		if (iKeyCount==iNumOfKeyTypes) {
 			//TO-DO: -update: this
           	myRobotShip->move(-1); //IDLE_MOVING_STATE			
+			
+			//added by Mike, 20210423
+          	myPilot->move(-1);			
 		}		
 
        	//added by Mike, 20210111; edited by Mike, 20210121
@@ -2915,6 +2869,9 @@ void OpenGLCanvas::update()
 /*			  myCanvasPosZ+=myCanvasStepZ;
 */
 
+			//added by Mike, 20210423
+          	myPilot->move(KEY_W);			
+			
 			//move forward
 			//Reference: https://community.khronos.org/t/moving-an-object-with-respect-to-the-camera/40968;
 			//last accessed: 20201026
@@ -2935,6 +2892,9 @@ void OpenGLCanvas::update()
     		//edited by Mike, 20201115; edited again by Mike, 20210128
             //myRobotShip->move(KEY_DOWN);
             myRobotShip->move(KEY_S);
+			
+			//added by Mike, 20210423
+          	myPilot->move(KEY_S);			
 			
 /*			//removed by Mike, 20201026
 			myCanvasPosZ-=myCanvasStepZ;
@@ -2962,6 +2922,10 @@ void OpenGLCanvas::update()
     		//edited by Mike, 20201115; edited again by Mike, 20210128
 //            myRobotShip->move(KEY_RIGHT);
             myRobotShip->move(KEY_D);
+
+			//added by Mike, 20210423
+          	myPilot->move(KEY_D);			
+			
 			
 /*			//removed by Mike, 20201026
 			myCanvasPosX+=-myCanvasStepX;
@@ -2996,7 +2960,10 @@ void OpenGLCanvas::update()
     		//edited by Mike, 20210129
 //            myRobotShip->move(KEY_LEFT);
             myRobotShip->move(KEY_A);
-
+			
+			//added by Mike, 20210423
+          	myPilot->move(KEY_A);			
+			
 			//removed by Mike, 20201026
 /////			myCanvasPosX+=myCanvasStepX;
 			

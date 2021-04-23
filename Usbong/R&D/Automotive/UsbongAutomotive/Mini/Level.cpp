@@ -412,9 +412,11 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 	
    //added by Mike, 20210309
    //TO-DO: -reverify: iMovementGridZ, etc value
+/* //removed by Mike, 20210423
    std::cout << "iMovementGridZ: " << iMovementGridZ << "\n";
    std::cout << "iMovementGridX: " << iMovementGridX << "\n";
-		
+*/
+	
    iCurrentLevelMapContainerOffsetZ += iMovementGridZ; 
    iCurrentLevelMapContainerOffsetX += iMovementGridX; 
    iCurrentLevelMapContainerOffsetY += iMovementGridY; 
@@ -477,11 +479,13 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 	 iCurrentLevelMapContainerOffsetMaxViewPortZ=MAX_INPUT_TEXT_PER_LINE-1;   
    } 
 
+/* //removed by Mike, 20210423	
    std::cout << "iCurrentLevelMapContainerOffsetMaxViewPortZ: " << iCurrentLevelMapContainerOffsetMaxViewPortZ << "\n";
 
 	//edited by Mike, 20210318
    std::cout << "fZ: " << fZ << "\n";
    std::cout << "fX: " << fX << "\n";
+*/
 	
 //	   std::cout << "DITO iRowCount: " << iRowCount << "\n";
 
@@ -521,9 +525,11 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
    } 
    else if (iCurrentLevelMapContainerOffsetMaxViewPortX>=MAX_INPUT_TEXT_PER_LINE) {
 	 iCurrentLevelMapContainerOffsetMaxViewPortX=MAX_INPUT_TEXT_PER_LINE-1;	   
-   } 		
-
+   }
+		
+/* //removed by Mike, 20210423	
    std::cout << "iCurrentLevelMapContainerOffsetX: " << iCurrentLevelMapContainerOffsetX << "\n";
+*/		
 		
 //   std::cout << "iCurrentLevelMapContainerOffsetMaxViewPortX: " << iCurrentLevelMapContainerOffsetMaxViewPortX << "\n";
 		
@@ -561,7 +567,7 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 				
 				//edited by Mike, 20210319
 //				fGridSquareWidth=3.2f;
-	
+				
 				draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareWidth*iRowCount, tempText);
 //computer draws this box
 //				draw_level(fGridSquareWidth*0, 0.0f, fGridSquareWidth*300, tempText);

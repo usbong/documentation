@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210420
+ * @date updated: 20210423
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -211,8 +211,67 @@ void Pilot::load_tga(char *filename)
     free(data);
 }
 
-//TO-DO: -update: this
+//added by Mike, 20210423
 void Pilot::setup()
+{
+	//removed by Mike, 20201010
+	//due to blank output
+    //glEnable(GL_DEPTH_TEST);
+
+    // select texture 1
+	glBindTexture(GL_TEXTURE_2D, MIKE_TEXTURE_A);
+	
+    /* create OpenGL texture out of targa file */
+	//edited by Mike, 20210420
+//    load_tga("textures/armor.tga");	
+    load_tga("textures/imageSpriteExampleMikeWithoutBG.tga");	
+	
+	// set texture parameters
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
+                    GL_LINEAR_MIPMAP_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+/*
+    // select texture 1
+	glBindTexture(GL_TEXTURE_2D, MIKE_TEXTURE_B);
+	
+    // create OpenGL texture out of targa file
+    load_tga("textures/armor.tga");	
+	
+	// set texture parameters
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
+                    GL_LINEAR_MIPMAP_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+			
+    // select texture 1
+	glBindTexture(GL_TEXTURE_2D, MIKE_TEXTURE_C);
+	
+    // create OpenGL texture out of targa file
+    load_tga("textures/armor.tga");	
+	
+	// set texture parameters
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
+                    GL_LINEAR_MIPMAP_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);	
+*/
+	
+    /* unselect texture myFontTextureObject */
+    glBindTexture(GL_TEXTURE_2D, 0);
+
+    /* setup alpha blending */
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glEnable(GL_BLEND);
+}
+
+
+//TO-DO: -update: this
+void Pilot::setupPrev()
 {
     GLuint i, j;
 	
@@ -511,12 +570,13 @@ Pilot::Pilot(float xPos, float yPos, float zPos, int windowWidth, int windowHeig
 	legStates[LEFT] = FORWARD_STATE;
 	legStates[RIGHT] = BACKWARD_STATE;
 
-
-	loadTexture(myBodyTexture, "bodyTexture.tga", &myBodyTextureObject);
+	//removed by Mike, 20210423
+/*	loadTexture(myBodyTexture, "bodyTexture.tga", &myBodyTextureObject);
 	loadTexture(myHeadTexture, "headTexture.tga", &myHeadTextureObject);	
-
-	//removed by Mike, 20201001
-//	setup();
+*/
+	
+	//removed by Mike, 20201001; added by Mike, 20210423
+	setup();
 	
     setCollidable(true);    
 }
@@ -4071,7 +4131,210 @@ void Pilot::drawPilot()
 //    glPopMatrix();	// pop back to original coordinate system
 }
 
-void Pilot::update(float dt)
+//added by Mike, 20210423
+void Pilot::drawPilotAsQuadWithTexture()
+{
+    glTranslatef(myXPos, myYPos, myZPos);
+
+/*	//removed by Mike, 20210423
+    if (currentFacingState==FACING_LEFT_AND_UP) {
+        glRotatef(45, 0.0f, 1.0f, 0.0f);    	
+	}
+	else if (currentFacingState==FACING_RIGHT_AND_UP) {
+        glRotatef(-45, 0.0f, 1.0f, 0.0f);    	
+	}
+	else if (currentFacingState==FACING_LEFT_AND_DOWN) {
+        glRotatef(135, 0.0f, 1.0f, 0.0f);    	
+	}
+	else if (currentFacingState==FACING_RIGHT_AND_DOWN) {
+        glRotatef(-135, 0.0f, 1.0f, 0.0f);    	
+	}
+    else if (currentFacingState==FACING_LEFT) 
+    {  
+        glRotatef(90, 0.0f, 1.0f, 0.0f);
+    } 
+    else if (currentFacingState==FACING_RIGHT) 
+    {
+        glTranslatef(0.0f, 0.0f, -myWidth/3); 
+        glRotatef(-90, 0.0f, 1.0f, 0.0f);
+    }
+    else if (currentFacingState==FACING_UP)
+    {
+        //glTranslatef(-myWidthX/3, 0.0f, 0.0f); 
+    }
+    else if (currentFacingState==FACING_DOWN)
+    {
+        glTranslatef(myWidth/3, 0.0f, 0.0f); 
+        glRotatef(180, 0.0f, 1.0f, 0.0f);
+    }
+*/
+	
+    switch (currentState)
+    {
+/*
+           case MOVING_STATE://DYING_STATE:
+                glColor3f(1.0f, 1.0f, 1.0f); //white
+                if (currentDeathFrame<5) {
+                    switch(currentDeathFrame)
+                    {
+                      case 0:
+                        drawMyPlane(myDeathAnimationImg1);
+                        break;
+                      case 1:
+                        drawMyPlane(myDeathAnimationImg2);
+                        break;
+                      case 2:
+                        drawMyPlane(myDeathAnimationImg3);
+                        break;
+                      case 3:
+                        drawMyPlane(myDeathAnimationImg4);
+                        break;
+                      case 4:
+                        drawMyPlane(myDeathAnimationImg5);
+                        //changeState(MOVING_STATE);
+                        break;
+                    }
+                }
+                currentDeathFrame=(currentDeathFrame+1)%4;
+                break;
+*/
+/* //removed by Mike, 20201014
+           case INITIALIZING_STATE:
+                if (invincibleCounter==10) {
+                  changeState(MOVING_STATE);
+                  setCollidable(true);
+                }
+                else invincibleCounter++;
+*/
+				
+            case MOVING_STATE:
+				switch(currentMovingState) {
+		            case IDLE_MOVING_STATE:		
+	//added by Mike, 20210420
+	//TO-DO: -add: this in key movement
+	//note: 3 animation frames; .tga image file has 4 frames @128x256, i.e. width x height
+	iCountTaoAnimationFrame=3;	
+	fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.25;	
+	iCountTaoAnimationFrame=iCountTaoAnimationFrame+1;		
+						
+						//FACING_UP...
+						drawPilotObject();
+						break;
+					case WALKING_MOVING_STATE:
+	//added by Mike, 20210420
+	//TO-DO: -add: this in key movement
+	//note: 3 animation frames; .tga image file has 4 frames @128x256, i.e. width x height
+	iCountTaoAnimationFrame=(iCountTaoAnimationFrame)%3;
+	
+//	fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.5;
+	fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.25;
+	
+//	printf("iCountTaoAnimationFrame: %i",iCountTaoAnimationFrame);
+	iCountTaoAnimationFrame=iCountTaoAnimationFrame+1;		
+	//printf("iTaoAnimationFrameOffset: %i",iTaoAnimationFrameOffset);
+												
+						drawPilotObject();
+						break;
+					case ATTACKING_MOVING_STATE:
+						break;
+				}
+                break;
+            case IN_TITLE_STATE:
+               break;
+
+    }    
+
+	//removed by Mike, 20201001
+//    glPopMatrix();	// pop back to original coordinate system
+}
+
+//added: by Mike, 20210423
+//TO-DO: -add: in PolygonPool
+void Pilot::drawPilotObject()
+{
+		
+//added by Mike, 20210422	
+glPushMatrix();
+	
+	//added by Mike, 20210420
+    glColor3f(1.0f, 1.0f, 1.0f); // white
+    glEnable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, MIKE_TEXTURE_A);		
+
+	glTranslatef(30.0f, 0.0f, 25.0f);
+	glRotatef(180, 1.0f, 0.0f, 0.0f);
+
+	//added by Mike, 20210422
+    glScalef(1.5f, 1.5f, 1.0f);	
+
+/*	//removed by Mike, 20210423	
+	//edited by Mike, 20210420
+	//note: 3 animation frames; .tga image file has 4 frames @128x256, i.e. width x height
+//	iCountTaoAnimationFrame=(iCountTaoAnimationFrame)%2;
+	iCountTaoAnimationFrame=(iCountTaoAnimationFrame)%3;
+	
+//	fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.5;
+	fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.25;
+	
+	printf("iCountTaoAnimationFrame: %i",iCountTaoAnimationFrame);
+
+	iCountTaoAnimationFrame=iCountTaoAnimationFrame+1;		
+	//printf("iTaoAnimationFrameOffset: %i",iTaoAnimationFrameOffset);
+*/	
+
+		
+//-----	
+glBegin(GL_TRIANGLES);	
+	//triangle#6 //back face left part
+	glNormal3f(0.0000,0.0000,-1.0000);
+	glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	
+	glVertex3f(-1.000000,1.000000,-1.000000); //A1
+
+	glNormal3f(0.0000,0.0000,-1.0000);
+	//edited by Mike, 20210420
+//	glTexCoord2f(1.0+iTaoAnimationFrameOffset,1.0);
+//	glTexCoord2f(0.5+fTaoAnimationFrameOffset,1.0);
+	glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0);
+	glVertex3f(1.000000,-1.000000,-1.000000); //B1
+
+	glNormal3f(0.0000,0.0000,-1.0000);
+	glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);	
+	glVertex3f(-1.000000,-1.000000,-1.000000); //C1	
+	
+
+	//triangle#12 //back face right part		
+	glNormal3f(0.0000,0.0000,-1.0000);
+	glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	
+	glVertex3f(-1.000000,1.000000,-1.000000); //A2
+
+	glNormal3f(0.0000,0.0000,-1.0000);
+	//edited by Mike, 20210420	
+//	glTexCoord2f(1.0+iTaoAnimationFrameOffset,0.0);
+//	glTexCoord2f(0.5+fTaoAnimationFrameOffset,0.0);
+	glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0);
+	glVertex3f(1.000000,1.000000,-1.000000); //B2
+
+	glNormal3f(0.0000,0.0000,-1.0000);
+	//edited by Mike, 20210420	
+//	glTexCoord2f(1.0+iTaoAnimationFrameOffset,1.0);
+//	glTexCoord2f(0.5+fTaoAnimationFrameOffset,1.0);
+	glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0);	
+	glVertex3f(1.000000,-1.000000,-1.000000); //C2	
+glEnd();
+	
+
+	//added by Mike, 20210422
+	glScalef(1.0f, 1.0f, 1.0f);	
+
+	glRotatef(-180, 1.0f, 0.0f, 0.0f);
+	glTranslatef(-30.0f, 0.0f, -25.0f);		
+
+    glDisable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, 0);
+glPopMatrix(); //added by Mike, 20210422	
+}
+
+void Pilot::updatePrev(float dt)
 {
     switch (currentState)
     {
@@ -4355,6 +4618,102 @@ void Pilot::update(float dt)
 */
 //                   isMovingForward=0; 
 //                }
+                break;
+            case IN_TITLE_STATE:                
+                  rotationAngle+=5;//rotationStep;
+                break;
+            default: //STANDING STATE
+              break;//do nothing    
+    }
+}
+
+//added by Mike, 20210423
+void Pilot::update(float dt)
+{
+    switch (currentState)
+    {
+           case INITIALIZING_STATE:
+           case MOVING_STATE:      
+				switch(currentMovingState) {
+		           case WALKING_MOVING_STATE:
+		                break;
+		            case ATTACKING_MOVING_STATE:
+		            	if (bIsExecutingPunch) {
+		            		if (iPunchAnimationCount<MAX_PUNCHING_ANIMATION_COUNT) {
+								if ((iPunchAnimationCountDelay)%2==0) {
+									iPunchAnimationCount+=1;
+									iPunchAnimationCountDelay=0;
+								}
+								iPunchAnimationCountDelay+=1;
+							}
+							//added by Mike, 20210123
+							//+added: no continuous punch via hold punch button
+							else {
+								//edited by Mike, 20210123; edited again by Mike, 20210124
+								if (iPunchAnimationCountDelay<0) { //<5
+								}
+								else {
+									//edited by Mike, 20210123
+		    						if (myKeysDown[KEY_U]==FALSE) {  
+										bIsExecutingPunch=false;
+										iPunchAnimationCount=0;
+										iPunchAnimationCountDelay=0;
+
+										//added by Mike, 20210124
+								   		armAngles[RIGHT]=0.0f;
+										armAngles[LEFT]=0.0f;
+									} 
+								}
+								iPunchAnimationCountDelay+=1;
+							}
+						}
+						
+						if (bIsExecutingDefend) {
+    						if (myKeysDown[KEY_H]==FALSE) {  
+								bIsExecutingDefend=false;
+
+								//added by Mike, 20210124
+						   		armAngles[RIGHT]=0.0f;
+								armAngles[LEFT]=0.0f;
+							} 
+						}						
+		            	break;
+		                
+		            default: //STANDING STATE		            
+		              break;//do nothing    
+				}
+
+				if (myKeysDown[KEY_D]==FALSE) {
+					if (iInputWaitCountArray[KEY_D]<MAX_WAIT_COUNT) {
+						iInputWaitCountArray[KEY_D]+=1;
+					}
+				}
+				if (myKeysDown[KEY_A]==FALSE) {
+					if (iInputWaitCountArray[KEY_A]<MAX_WAIT_COUNT) {
+						iInputWaitCountArray[KEY_A]+=1;
+					}
+				}
+				if (myKeysDown[KEY_W]==FALSE) {
+					if (iInputWaitCountArray[KEY_W]<MAX_WAIT_COUNT) {
+						iInputWaitCountArray[KEY_W]+=1;
+					}
+				}
+				if (myKeysDown[KEY_S]==FALSE) {
+					if (iInputWaitCountArray[KEY_S]<MAX_WAIT_COUNT) {
+						iInputWaitCountArray[KEY_S]+=1;
+					}
+				}
+
+           		rotationAngle=0; //TO-DO: -update: this
+
+				//Note: Use these with update to OpenGLCanvas
+           		//wrap the world 
+           		if (myXPos <= 0.0f) myXPos = myWindowWidth/100-myWidth/8; //if left side
+           		else if (myXPos >= myWindowWidth/100) myXPos = 0.0f+myWidth/8; //if right side
+
+           		if (myZPos >= myWindowHeight/100) myZPos = 0.0f+myHeight/8; //if bottom side
+           		else if (myZPos <= 0.0f) myZPos = myWindowHeight/100-myHeight/8; //if top side
+           		           		
                 break;
             case IN_TITLE_STATE:                
                   rotationAngle+=5;//rotationStep;

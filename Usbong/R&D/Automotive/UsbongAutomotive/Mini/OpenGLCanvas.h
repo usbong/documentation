@@ -69,7 +69,8 @@
 
 //added by Mike, 20210420
 //TO-DO: -update: this
-#define MIKE_TEXTURE_A 7 
+//TO-DO: -add: texture definitions in PolygolUtils
+#define MIKE_TEXTURE_A 7 //added in Pilot.h
 #define MIKE_TEXTURE_B 8 
 #define MIKE_TEXTURE_C 9 
 

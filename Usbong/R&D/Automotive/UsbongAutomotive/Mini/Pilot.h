@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210219
+ * @date updated: 20210423
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -44,6 +44,10 @@
 //added by Mike, 20210129
 //+reverified: with Windows Machine; 5 with Linux Machine
 //#define MAX_WAIT_COUNT 5 //4 //added by Mike, 20210126; edited by Mike, 20210128
+
+//added by Mike, 20210423
+//TO-DO: -add: texture definitions in PolygolUtils
+#define MIKE_TEXTURE_A 7 
 
 #ifdef _WIN32
 	#define MAX_WAIT_COUNT 5 //Windows Machine
@@ -125,6 +129,10 @@ private:
     float myWidthZ;
     float myHeightY;
 */    
+	//added by Mike, 20210423
+	int iCountTaoAnimationFrame;
+	float fTaoAnimationFrameOffset;
+		
     OpenGLCanvas *myOpenGLCanvas;
 
     //float boundary;
@@ -211,6 +219,9 @@ private:
     //draw texture
 	//added by Mike, 20201130
     bool loadTexture(CTargaImage *myTexture, const char *filename, unsigned int *myTextureObject);
+
+	//edited by Mike, 20210423
+	void setupPrev();
     void setup();
 
 	// draws a unit cube
@@ -324,9 +335,15 @@ public:
     
     //added by Mike, 20201213
     virtual void draw() {
+		//edited by Mike, 20210423
     	drawPilot();
+//		drawPilotAsQuadWithTexture();
     }
-  
+
+	//added by Mike, 20210423
+	void drawPilotAsQuadWithTexture();
+	void drawPilotObject();
+
 	// draws the entire robot
 	//void drawRobot(float xPos, float yPos, float zPos);
     void drawPilot();
@@ -335,7 +352,9 @@ public:
 	//TO-DO: -add: in ModelPool.cpp
 	void drawModelPilot();
         
-	// updates the robot data
+	// updates the Pilot data
+	void updatePrev(float dt);
+	//added by Mike, 20210423
 	void update(float dt);
 	
 	// changes the robot's state
