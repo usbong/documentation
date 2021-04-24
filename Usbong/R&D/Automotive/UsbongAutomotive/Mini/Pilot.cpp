@@ -4138,6 +4138,7 @@ void Pilot::drawPilotAsQuadWithTexture()
 	
 //	drawPilotObject();
 
+	
 /*	//removed by Mike, 20210423
     if (currentFacingState==FACING_LEFT_AND_UP) {
         glRotatef(45, 0.0f, 1.0f, 0.0f);    	
@@ -4286,46 +4287,96 @@ glPushMatrix();
 	//printf("iTaoAnimationFrameOffset: %i",iTaoAnimationFrameOffset);
 */	
 
+
+	//added by Mike, 20210424
+/*    if (currentFacingState==FACING_LEFT) 
+    {  
+    } 
+    else */if (currentFacingState==FACING_RIGHT) {    
+		//added by Mike, 20210424
+		//notes: use folding paper to assist in quickly identifying location, e.g. texture coordinates 
+		//set vertex positions clock-wise
 		
-//-----	
-glBegin(GL_TRIANGLES);	
-	//triangle#6 //back face left part
-	glNormal3f(0.0000,0.0000,-1.0000);
-	glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	
-	glVertex3f(-1.000000,1.000000,-1.000000); //A1
+//      glRotatef(45, 0.0f, 1.0f, 0.0f); //slanted to wall facing left
+		glBegin(GL_TRIANGLES);	
+			//triangle#6 //back face left part
+			glNormal3f(0.0000,0.0000,-1.0000);
+			//edited by Mike, 20210424
+//			glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	//A1; face left
+			glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0); //B2		
+			glVertex3f(-1.000000,1.000000,-1.000000); //A1
 
-	glNormal3f(0.0000,0.0000,-1.0000);
-	//edited by Mike, 20210420
-//	glTexCoord2f(1.0+iTaoAnimationFrameOffset,1.0);
-//	glTexCoord2f(0.5+fTaoAnimationFrameOffset,1.0);
-	glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0);
-	glVertex3f(1.000000,-1.000000,-1.000000); //B1
+			glNormal3f(0.0000,0.0000,-1.0000);
+			//edited by Mike, 20210424		
+//			glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0); //B1; face left
+			glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);	//C2
+			glVertex3f(1.000000,-1.000000,-1.000000); //B1
 
-	glNormal3f(0.0000,0.0000,-1.0000);
-	glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);	
-	glVertex3f(-1.000000,-1.000000,-1.000000); //C1	
-	
+			glNormal3f(0.0000,0.0000,-1.0000);
+			//edited by Mike, 20210424				
+//			glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);	//C1; face left
+			glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0); //B1 
+			glVertex3f(-1.000000,-1.000000,-1.000000); //C1	
 
-	//triangle#12 //back face right part		
-	glNormal3f(0.0000,0.0000,-1.0000);
-	glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	
-	glVertex3f(-1.000000,1.000000,-1.000000); //A2
+			//triangle#12 //back face right part		
+			glNormal3f(0.0000,0.0000,-1.0000);
+			//edited by Mike, 20210424
+//			glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	//A2; face lefT
+			glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0); //B2		
+			glVertex3f(-1.000000,1.000000,-1.000000); //A2
 
-	glNormal3f(0.0000,0.0000,-1.0000);
-	//edited by Mike, 20210420	
-//	glTexCoord2f(1.0+iTaoAnimationFrameOffset,0.0);
-//	glTexCoord2f(0.5+fTaoAnimationFrameOffset,0.0);
-	glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0);
-	glVertex3f(1.000000,1.000000,-1.000000); //B2
+			glNormal3f(0.0000,0.0000,-1.0000);
+			//edited by Mike, 20210424
+//			glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0); //B2; face left
+			glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	//A1
+			glVertex3f(1.000000,1.000000,-1.000000); //B2
 
-	glNormal3f(0.0000,0.0000,-1.0000);
-	//edited by Mike, 20210420	
-//	glTexCoord2f(1.0+iTaoAnimationFrameOffset,1.0);
-//	glTexCoord2f(0.5+fTaoAnimationFrameOffset,1.0);
-	glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0);	
-	glVertex3f(1.000000,-1.000000,-1.000000); //C2	
-glEnd();
-	
+			glNormal3f(0.0000,0.0000,-1.0000);
+			//edited by Mike, 20210424
+//			glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0); //C2; face left
+			glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);	//C1	
+			glVertex3f(1.000000,-1.000000,-1.000000); //C2	
+		glEnd();
+	}
+	else {	
+		glBegin(GL_TRIANGLES);	
+			//triangle#6 //back face left part
+			glNormal3f(0.0000,0.0000,-1.0000);
+			glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	
+			glVertex3f(-1.000000,1.000000,-1.000000); //A1
+
+			glNormal3f(0.0000,0.0000,-1.0000);
+			//edited by Mike, 20210420
+		//	glTexCoord2f(1.0+iTaoAnimationFrameOffset,1.0);
+		//	glTexCoord2f(0.5+fTaoAnimationFrameOffset,1.0);
+			glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0);
+			glVertex3f(1.000000,-1.000000,-1.000000); //B1
+
+			glNormal3f(0.0000,0.0000,-1.0000);
+			glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);	
+			glVertex3f(-1.000000,-1.000000,-1.000000); //C1	
+
+
+			//triangle#12 //back face right part		
+			glNormal3f(0.0000,0.0000,-1.0000);
+			glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	
+			glVertex3f(-1.000000,1.000000,-1.000000); //A2
+
+			glNormal3f(0.0000,0.0000,-1.0000);
+			//edited by Mike, 20210420	
+		//	glTexCoord2f(1.0+iTaoAnimationFrameOffset,0.0);
+		//	glTexCoord2f(0.5+fTaoAnimationFrameOffset,0.0);
+			glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0);
+			glVertex3f(1.000000,1.000000,-1.000000); //B2
+
+			glNormal3f(0.0000,0.0000,-1.0000);
+			//edited by Mike, 20210420	
+		//	glTexCoord2f(1.0+iTaoAnimationFrameOffset,1.0);
+		//	glTexCoord2f(0.5+fTaoAnimationFrameOffset,1.0);
+			glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0);	
+			glVertex3f(1.000000,-1.000000,-1.000000); //C2	
+		glEnd();
+	}	
 
 	//added by Mike, 20210422
 	glScalef(1.0f, 1.0f, 1.0f);	
