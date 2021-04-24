@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210321
+ * @date updated: 20210424
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -581,7 +581,8 @@ void RobotShip::draw()
 void RobotShip::drawRobotShip()
 {
     glTranslatef(myXPos, myYPos, myZPos);	
-	drawShipBody(0.0f,0.0f,0.0f);	
+	//removed by Mike, 20210424
+//	drawShipBody(0.0f,0.0f,0.0f);	
 }
 
 //TO-DO: -use: drawRobotShip() instructions for human pilot

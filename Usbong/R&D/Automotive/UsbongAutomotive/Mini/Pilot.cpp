@@ -4135,6 +4135,8 @@ void Pilot::drawPilot()
 void Pilot::drawPilotAsQuadWithTexture()
 {
     glTranslatef(myXPos, myYPos, myZPos);
+	
+//	drawPilotObject();
 
 /*	//removed by Mike, 20210423
     if (currentFacingState==FACING_LEFT_AND_UP) {
@@ -4261,11 +4263,13 @@ glPushMatrix();
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, MIKE_TEXTURE_A);		
 
-	glTranslatef(30.0f, 0.0f, 25.0f);
+//	glTranslatef(30.0f, 0.0f, 25.0f); //removed by Mike, 20210424
 	glRotatef(180, 1.0f, 0.0f, 0.0f);
 
-	//added by Mike, 20210422
-    glScalef(1.5f, 1.5f, 1.0f);	
+	//added by Mike, 20210422; edited by Mike, 20210424
+	//TO-DO: -reverify: quad size and texture size
+//    glScalef(1.5f, 1.5f, 1.0f);	
+    glScalef(1.2f, 2.0f, 1.0f);	
 
 /*	//removed by Mike, 20210423	
 	//edited by Mike, 20210420
@@ -4327,7 +4331,7 @@ glEnd();
 	glScalef(1.0f, 1.0f, 1.0f);	
 
 	glRotatef(-180, 1.0f, 0.0f, 0.0f);
-	glTranslatef(-30.0f, 0.0f, -25.0f);		
+//	glTranslatef(-30.0f, 0.0f, -25.0f); //removed by Mike, 20210424
 
     glDisable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, 0);
@@ -4545,6 +4549,7 @@ void Pilot::updatePrev(float dt)
                     else thrust=0;
 */                                        
 
+/* //removed by Mike, 20210424			
 				//Note: Use these with update to OpenGLCanvas
            		//wrap the world 
            		//edited by Mike, 20201116
@@ -4556,60 +4561,8 @@ void Pilot::updatePrev(float dt)
            		//edited by Mike, 20201116
 //           		else if (myZPos <= 0.0f) myZPos = 20-myHeight/8; //if top side
            		else if (myZPos <= 0.0f) myZPos = myWindowHeight/100-myHeight/8; //if top side
-           		           		
+*/           		           		
 
-
-           		//edited by Mike, 20201001
-/*           		
-           		if (myXPos <= -25.0f) myXPos = 25.0f;
-           		else if (myXPos > 25.0f) myXPos = -25.0f; 
-           		if (myYPos <= -17.0f) myYPos = 19.0f;
-           		else if (myYPos > 19.0f) myYPos = -17.0f;
-*/
-/*
-           		if (myXPos <= -1.0f) myXPos = 1.0f;
-           		else if (myXPos > 1.0f) myXPos = -1.0f; 
-           		if (myYPos <= -1.0f) myYPos = 1.0f;
-           		else if (myYPos > 1.0f) myYPos = -1.0f;
-*/
-				//note: add ship width and height
-/*
-           		if (myXPos+myWidth/2 <= -1.0f) myXPos = 1.0f-myWidth/2; //if left side
-           		else if (myXPos+myWidth/2 >= 1.0f) myXPos = -1.0f+myWidth/2; //if right side
-           		if (myYPos+myHeight/2 <= -1.0f) myYPos = 1.0f+myHeight/2; //if bottom side
-           		else if (myYPos+myHeight/2 >= 1.0f) myYPos = -1.0f+myHeight/2; //if top side
-*/
-				//top-left anchor/origin/reference point
-/*           	//TO-DO: -update: this	
-				if (myXPos+myWidth/2 <= -1.0f) myXPos = 1.0f-myWidth/2; //if left side
-           		else if (myXPos+myWidth/2 >= 1.0f) myXPos = -1.0f+myWidth/2; //if right side
-*/           	
-
-/*				//edited by Mike, 20201001	
-           		if (myYPos+myHeight/2 >= 1.0f) myYPos = 0.0f+myHeight/2; //if bottom side
-           		else if (myYPos+myHeight/2 <= 0.0f) myYPos = 1.0f-myHeight/2; //if top side
-*/
-/*
-				//add velocity
-           		if (myYPos+yVel >= 1.0f) myYPos = 0.0f+myHeight/3; //if bottom side
-           		else if (myYPos+yVel <= 0.0f) myYPos = 1.0f-myHeight/3; //if top side
-*/
-
-				//edited by Mike, 20201015
-/*
-           		if (myXPos <= 0.0f) myXPos = 1.0f-myWidth/8; //if left side
-           		else if (myXPos >= 1.0f) myXPos = 0.0f+myWidth/8; //if right side
-           		if (myYPos >= 1.0f) myYPos = 0.0f+myHeight/8; //if bottom side
-           		else if (myYPos <= 0.0f) myYPos = 1.0f-myHeight/8; //if top side
-*/
-/*				//removed by Mike, 20201023
-				//TO-DO: -add: 0.1f*iColumnCountMax
-           		if (myXPos <= 0.0f) myXPos = 0.1f*20-myWidth/8; //if left side
-           		else if (myXPos >= 0.1f*20) myXPos = 0.0f+myWidth/8; //if right side
-				//TO-DO: -add: 0.1f*iRowCountMax
-           		if (myYPos >= 0.1f*20) myYPos = 0.0f+myHeight/8; //if bottom side
-           		else if (myYPos <= 0.0f) myYPos = 0.1f*20-myHeight/8; //if top side
-*/
 
 /*
           char str[700];                                       
@@ -4706,6 +4659,7 @@ void Pilot::update(float dt)
 
            		rotationAngle=0; //TO-DO: -update: this
 
+/* //removed by Mike, 20210424						
 				//Note: Use these with update to OpenGLCanvas
            		//wrap the world 
            		if (myXPos <= 0.0f) myXPos = myWindowWidth/100-myWidth/8; //if left side
@@ -4713,7 +4667,7 @@ void Pilot::update(float dt)
 
            		if (myZPos >= myWindowHeight/100) myZPos = 0.0f+myHeight/8; //if bottom side
            		else if (myZPos <= 0.0f) myZPos = myWindowHeight/100-myHeight/8; //if top side
-           		           		
+*/           		           		
                 break;
             case IN_TITLE_STATE:                
                   rotationAngle+=5;//rotationStep;

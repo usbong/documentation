@@ -153,7 +153,18 @@ public:
     
 	//added by Mike, 20201217
     virtual void draw();	
-	
+
+	//added by Mike, 20210424
+    virtual void setXPos(float fX) {
+		myXPos=fX;
+	}
+    virtual void setZPos(float fZ) {
+		myZPos=fZ;
+	}
+    virtual void setYPos(float fY) {
+		myYPos=fY;
+	}
+
     float getDistance(float x1, float y1, float z1, float x2, float y2, float z2);
     
     bool checkCollision(MyDynamicObject* mdo1, MyDynamicObject* mdo2);

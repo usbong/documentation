@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210423
+ * @date updated: 20210424
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -1458,8 +1458,14 @@ void OpenGLCanvas::render()
 /*	myCanvasPosX = myRobotShip->getX()-myWindowWidth/100/2; //-3.2 : 4.2; CanvasPosX : robotShipX
 	myCanvasPosZ = myRobotShip->getZ()-myWindowHeight/100/2; //-3.2 : 4.2; CanvasPosZ : robotShipZ
 */		
+	//edited by Mike, 20210424		
 	myCanvasPosX = -myRobotShip->getX(); //-3.2 : 4.2; CanvasPosX : robotShipX
 	myCanvasPosZ = -myRobotShip->getZ(); //-3.2 : 4.2; CanvasPosZ : robotShipZ
+
+	myPilot->setXPos(myRobotShip->getX());
+	//edited by Mike, 20210424
+//	myPilot->setZPos(myRobotShip->getZ());
+	myPilot->setZPos(myRobotShip->getZ()-1.5f); //put farther from camera view
 		
 /*		
 			//note: position calibrate; robotShipX : CanvasPosX
@@ -2768,7 +2774,7 @@ void OpenGLCanvas::update()
         }
 */
 
-    	//added by Mike, 20210206
+    	//added by Mike, 20210206; removed by Mike, 20210424
     	myPilot->update(1); //dt
     	
     	//added by Mike, 20201001
