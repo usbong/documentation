@@ -17,7 +17,7 @@ Free Documentation License".
   @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
   @author: SYSON, MICHAEL B.
   @date created: 20201119
-  @last updated: 20210326
+  @last updated: 20210425
 
   Notes:
   1) Execute Commands in sequence:
@@ -39,10 +39,14 @@ Free Documentation License".
 	
 	#include <string.h>
 
-  Reference: 
+  References: 
   1) https://www.linuxquestions.org/linux/answers/Programming/BSD_Sockets_programming_in_C_with_examples; 
   last accessed: 20201119; answer by: By nhydra, 2006-11-11T08:44 
+  
+  2) http://www.opengl-tutorial.org/beginners-tutorials/tutorial-5-a-textured-cube/;
+  last accessed: 20210425
 */
+
 
 #include "network.h"
 
@@ -299,7 +303,9 @@ int main(){
 	//edited by Mike, 20210326
 //	FILE *file = inputReadTextFile("inputImageSample.bmp");
 //	FILE *file = inputReadImageFile("inputImageSample.png");
-	FILE *file = inputReadImageFile("inputImageSample.bmp");
+	//edited by Mike, 20210425
+//	FILE *file = inputReadImageFile("inputImageSample.bmp");
+	FILE *file = inputReadImageFile("imageSample.bmp");
 			
 	//edited by Mike, 20210323
 	//send_data (sock, "Some data to be sent");

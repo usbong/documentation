@@ -17,7 +17,7 @@ Free Documentation License".
   @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
   @author: SYSON, MICHAEL B.
   @date created: 20201119
-  @last updated: 20210325
+  @last updated: 20210425
 
   Notes:
   1) Execute Commands in sequence:
@@ -46,6 +46,9 @@ Free Documentation License".
   Recommended Reading:
   1) https://www.php.net/manual/en/function.fopen.php;
   last accessed: 20210324
+  
+  2) http://www.opengl-tutorial.org/beginners-tutorials/tutorial-5-a-textured-cube/;
+  last accessed: 20210425  
 */
 
 #include "network.h"
@@ -165,8 +168,11 @@ void handle_client (int client_socket){
 //	write("outputImageSample.png", cImageMapContainer[0]);
 //	fwrite("outputImageSample.png", cImageMapContainer[0]);
 //	write("outputHalimbawa.txt", cImageMapContainer[0]);
-	//edited by Mike, 20210326
+
+	//edited by Mike, 20210326; edited by Mike, 20210425
 	write("outputImageSample.bmp", cImageMapContainer[0]);
+//	fwrite(cImageMapContainer[0], 1, iTotalMessageSize, "outputImageSample.bmp");	
+	
 //	write("outputImageSample.png", cImageMapContainer[0]);
 
 	
