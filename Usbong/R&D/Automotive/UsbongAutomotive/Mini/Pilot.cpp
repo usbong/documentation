@@ -4292,7 +4292,12 @@ glPushMatrix();
 /*    if (currentFacingState==FACING_LEFT) 
     {  
     } 
-    else */if (currentFacingState==FACING_RIGHT) {    
+    else */
+//edited by Mike, 20210425
+/*	if (currentFacingState==FACING_RIGHT) {    
+*/
+//TO-DO: -update: this
+	if ((currentFacingState==FACING_RIGHT) || (currentFacingState==FACING_RIGHT_AND_UP) || (currentFacingState==FACING_RIGHT_AND_DOWN)) {    
 		//added by Mike, 20210424
 		//notes: use folding paper to assist in quickly identifying location, e.g. texture coordinates 
 		//set vertex positions clock-wise
@@ -5127,7 +5132,9 @@ void Pilot::move(int key)
 	      if (bIsFiringBeam) {	      	
 		  }
 		  else {
-      		currentFacingState=FACING_UP;		  	
+			  	//removed by Mike, 20210425
+			   //TO-DO: -add: this
+//      		currentFacingState=FACING_UP;		  	
 		  }
 		  
 		  //added by Mike, 20201226
@@ -5163,7 +5170,9 @@ void Pilot::move(int key)
 	      if (bIsFiringBeam) {	      	
 		  }
 		  else {
-          	currentFacingState=FACING_DOWN;
+			//removed by Mike, 20210425
+		    //TO-DO: -add: this			  
+          	//currentFacingState=FACING_DOWN;
 		  }
 
 		  //added by Mike, 20201226
