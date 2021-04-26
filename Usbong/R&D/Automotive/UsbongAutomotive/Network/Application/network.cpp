@@ -17,7 +17,7 @@ Free Documentation License".
   @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
   @author: SYSON, MICHAEL B.
   @date created: 20201119
-  @last updated: 20210425
+  @last updated: 20210426
 
   Notes:
   1) Execute Commands in sequence:
@@ -118,14 +118,23 @@ char * clean_data( char * data ){
 //int send_data(int socket, const char * data){
 //edited by Mike, 20210425
 //int send_data(int socket, const char *data, FILE *file){
-int send_data(int socket, char *data){
+//edited by Mike, 20210426
+//int send_data(int socket, char *data){
+int send_data(int socket, unsigned char *data){
 //int send_data(int socket, unsigned char *data, FILE *file){
 	int sent_bytes, all_sent_bytes;
 	int err_status;
 	int sendstrlen;
 
-	sendstrlen = strlen ( data );
+	//edited by Mike, 20210426
+//	sendstrlen = strlen ( data );
+	sendstrlen = strlen ( (char *)data );
+	
 	all_sent_bytes = 0;
+	
+	//added by Mike, 20210426
+	printf("sendstrlen: %d\n",sendstrlen);
+	printf("data: %s\n",data);
 
 	//edited by Mike, 20210326
 	sent_bytes = send ( socket, data, sendstrlen, 0 );

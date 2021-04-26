@@ -1,0 +1,298 @@
+/*
+Copyright (c) 2006 by Svetoslav P. Chukov.
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.2
+or any later version published by the Free Software Foundation;
+with no Invariant Sections, no Front-Cover Texts, and no Back-Cover
+Texts. A copy of the license is included in the section entitled "GNU
+Free Documentation License".
+*/
+
+/*
+  Copyright 2020~2021 USBONG SOCIAL SYSTEMS, INC. (USBONG)
+  Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You ' may obtain a copy of the License at
+  http://www.apache.org/licenses/LICENSE-2.0
+  Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, ' WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing ' permissions and limitations under the License.
+  
+  @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
+  @author: SYSON, MICHAEL B.
+  @date created: 20201119
+  @last updated: 20210426
+
+  Notes:
+  1) Execute Commands in sequence:
+  1.1) ./server_halimbawa
+  1.2) ./client_halimbawa
+  
+  2) Execute Compile Commands:
+  2.1) Server example: g++ network.cpp server.cpp -o server_halimbawa
+  2.2) Client example: g++ network.cpp client.cpp -o client_halimbawa
+
+  2.Reminder) "gcc is the GCC compiler-driver for C programs, g++ is the one for C++ programs."
+  --> https://stackoverflow.com/questions/27390078/gcc-compiling-c-code-undefined-reference-to-operator-newunsigned-long-lon;
+  //last accessed: 20210425
+  --> answered by: Deduplicator, 20141209T2244
+  --> edited by: Matteo Italia, 20180607T1729
+  
+  3) Add the following "include" files in your .h files
+  	#include <netinet/in.h>
+	#include <netdb.h>
+	#include <sys/socket.h>
+	#include <arpa/inet.h>
+
+	#include <stdlib.h>
+	#include <stdio.h>
+	
+	#include <string.h>
+
+  Reference: 
+  1) https://www.linuxquestions.org/linux/answers/Programming/BSD_Sockets_programming_in_C_with_examples; 
+  last accessed: 20201119; answer by: By nhydra, 2006-11-11T08:44 
+  
+  Recommended Reading:
+  1) https://www.php.net/manual/en/function.fopen.php;
+  last accessed: 20210324
+  
+  2) http://www.opengl-tutorial.org/beginners-tutorials/tutorial-5-a-textured-cube/;
+  last accessed: 20210425  
+*/
+
+#include "network.h"
+
+//added by Mike, 20210324
+int isFileMessageDone=FALSE;
+int iCount=0;
+//added by Mike, 20210325
+int iTotalMessageSize=0;
+
+//added by Mike, 20210324; edited by Mike, 20210326
+//void write(char *outputFilename, char *cOutputTextLine) {
+//void writeOutputImageFile(char *outputFilename, unsigned char *cOutputTextLine) {
+void writeOutputImageFile(char *outputFilename, char *cOutputTextLine) {
+
+	FILE *file;
+	
+	//note: if concatenated string exceeds size, "stack smashing detected"; terminated; Aborted (core dumped)
+	//I prefer to set a size, instead of dynamically allocate due to increasing likelihood of memory leaks
+	//where memory leaks = not deallocated storage in memory, albeit not used by software application
+	//identifying not deallocated storage in memory becomes more difficult with increasing use
+	char output[MAX_INPUT_TEXT_PER_LINE]; //max size
+	
+	strcpy(output, "output/");
+	strcat(output, outputFilename); //already includes .png, .txt, et cetera
+	
+	//edited by Mike, 20210324	
+//	file = fopen(output, "w"); //.png file
+	file = fopen(output, "wb"); //.png file
+
+	//Reference: https://stackoverflow.com/questions/27630855/fwrite-function-in-c;
+	//last accessed: 20210324
+	//answered by: R Sahu, 20141224T0304
+	//edited by: paxdiablo, 20141224T0309
+		printf("\n");
+		printf("\n");
+		printf("dito: %s",cOutputTextLine);
+		printf("\n");
+	
+	
+//	size_t num = fwrite(array, sizeof(int), arraySize, file);
+	int cOutputTextLineSize = sizeof(cOutputTextLine);	
+	
+//	printf("cOutputTextLineSize: %i",cOutputTextLineSize); 
+//	printf("size of char: %li",sizeof(char)); 
+
+	//edited by Mike, 20210325
+	//TO-DO: -reverify: output size
+	//TO-DO: -reverify: using .txt file, instead of .png file for input and output
+//	size_t num = fwrite(cOutputTextLine, sizeof(int), cOutputTextLineSize, file);
+//	size_t num = fwrite(cOutputTextLine, sizeof(char), BUFFSIZE*cOutputTextLineSize, file);
+//	size_t num = fwrite(cOutputTextLine, cOutputTextLineSize, cOutputTextLineSize*iTotalMessageSize, file);
+//	size_t num = fwrite(cOutputTextLine, cOutputTextLineSize, 3584, file);
+//	size_t num = fwrite(cOutputTextLine, sizeof(char), iTotalMessageSize, file);
+	size_t num = fwrite(cOutputTextLine, 1, iTotalMessageSize, file);
+	
+	//added by Mike, 20210325
+	//outputs: 
+	//num=16266
+	//iTotalMessageSize=16266
+	
+	printf("\nnum: %zu",num);
+	printf("\niTotalMessageSize: %i",iTotalMessageSize);
+	
+//	if ( num != cOutputTextLineSize*iTotalMessageSize )
+//	if ( num != sizeof(char)*ciTotalMessageSize )
+	if ( num != iTotalMessageSize )
+	{
+		//error
+		printf("Error: num != cOutputTextLineSize*iTotalMessageSize");
+	}
+	
+	//added by Mike, 20210324
+	fclose(file);	
+}
+
+int accept_connection(int server_socket){
+	int client_socket; /* Socket descriptor for client */
+	struct sockaddr_in client_address; /* Client address */
+	unsigned int client_length; /* Length of client address data structure */
+
+	/* Set the size of the in-out parameter */
+	client_length = sizeof(client_address);
+
+	/* Wait for a client to connect */
+	if ((client_socket = accept(server_socket, (struct sockaddr *) &client_address,
+	&client_length)) < 0)
+	printf("accept() failed");
+
+	/* client_socket is connected to a client! */
+	printf("Handling client %s\n", inet_ntoa(client_address.sin_addr));
+
+	return client_socket;
+}
+
+//added by Mike, 20210426
+void handle_client (int client_socket){
+	//edited by Mike, 20210324
+//	char buffer [BUFFSIZE]; /* Buffer for incoming data */
+	char buffer [BUFFSIZE]; /* Buffer for incoming data */
+	
+/*	//removed by Mike, 20210324; 
+	//segmenation fault error, buffer only 100*100, i.e. 10,000
+	char buffer [MAX_INPUT_LINE_ROW*BUFFSIZE]; //Buffer for incoming data
+*/
+	
+	int msg_size; /* Size of received message */
+	int bytes, all_bytes;
+	
+	//added by Mike, 20210426
+	char *cImageMapContainerDataOutput;
+
+	do {
+		//added by Mike, 20210325
+		bytes = 0;		
+//		strcpy(buffer, clean_data(buffer));
+		//we execute zero-initialize to char array container
+		//due to copied string may be 
+		//shorter than the previous one, et cetera
+		memset(buffer, '\0', BUFFSIZE);
+		strcpy(buffer, "");	
+		
+		alarm (60);
+		//edited by Mike, 20210324
+		msg_size = read (client_socket, buffer, BUFFSIZE);
+		
+/*		//removed by Mike, 20210324; 
+		//segmenation fault error, buffer only 100*100, i.e. 10,000		
+		msg_size = read (client_socket, buffer, MAX_INPUT_LINE_ROW*BUFFSIZE);
+*/		
+		alarm (0);
+		
+		if ( msg_size <= 0 ){
+//			printf ( " %i ", msg_size );
+			printf ( "End of data\n" );
+		}
+		else {
+			//added by Mike, 20210324
+			printf ("Count: %i; ", iCount);
+			printf ("Message Size: %i; ", msg_size);
+			printf ("Data received: %s", buffer);
+
+			iTotalMessageSize=iTotalMessageSize+msg_size;
+			
+			//TO-DO: -reverify: received data due multiple iCount data in one packet
+			//iCount not increased due to msg_size > 0
+			//edited by Mike, 20210325
+			//strcpy(cImageMapContainer[iCount],buffer);	
+			//edited by Mike, 20210426
+//			strcat(cImageMapContainer[iCount],buffer);
+			strcat(cImageMapContainerDataOutput,buffer);
+
+			printf("\n");
+		}		
+	} while ( msg_size > 0 );
+	
+	//added by Mike, 20210324; removed by Mike, 20210324
+	//clean_data(buffer);
+
+/* //removed by Mike, 20210325
+	//added by Mike, 20210324
+	//if buffer is ""
+	if (strcmp(buffer,"")==0) {
+		
+		printf ("Data received: %s", cImageMapContainer[0]);
+		
+		isFileMessageDone=TRUE;
+		return;
+	}
+*/
+	
+/* //removed by Mike, 20210324	
+	printf ("Data received: %s", buffer);
+	printf("\n"); //added by Mike, 20210324
+*/	
+	
+	//added by Mike, 20210324
+	//write(inputFilename, char *cInputTextLine);
+	//TO-DO: -update: write instructions after verifying all data received
+	//write("outputImageSample.png", buffer);
+
+	printf("\n"); //added by Mike, 20210324
+	//edited by Mike, 20210426
+//	printf ("All data received: %s", cImageMapContainer[0]);
+	printf ("All data received: %s", cImageMapContainerDataOutput);
+		
+	//added by Mike, 20210325
+	printf("\n");
+	printf ("SERVER iTotalMessageSize: %i", iTotalMessageSize);
+	
+	//edited by Mike, 20210325; edited by Mike, 2021326
+//	write("outputImageSample.png", cImageMapContainer[0]);
+//	fwrite("outputImageSample.png", cImageMapContainer[0]);
+//	write("outputHalimbawa.txt", cImageMapContainer[0]);
+
+	//edited by Mike, 20210326; edited by Mike, 20210425
+	//edited by Mike, 20210426
+//	write("outputImageSample.bmp", cImageMapContainer[0]);
+	//edited by Mike, 20210426
+//	write("outputImageSample.bmp", cImageMapContainerDataOutput);
+	writeOutputImageFile("outputImageSample.bmp", cImageMapContainerDataOutput);
+			
+//	fwrite(cImageMapContainer[0], 1, iTotalMessageSize, "outputImageSample.bmp");		
+//	write("outputImageSample.png", cImageMapContainer[0]);
+
+	
+	bytes = 0;
+		
+	strcpy(buffer, "");	
+	
+	isFileMessageDone=TRUE;
+}
+
+int main(){
+	int clnt_sock;
+	int sock = make_socket(ADRESS_PORT, SERVER_SOCKET, "none");
+	
+	//edited by Mike, 20210324
+/*	
+	clnt_sock = accept_connection (sock);
+	handle_client(clnt_sock);
+*/
+	clnt_sock = accept_connection(sock);
+
+	//added by Mike, 20210325; removed by Mike, 20210426
+	//strcpy(cImageMapContainer[0],"");		
+	
+	//edited by Mike, 20210324
+//	while (1) {
+	while (!isFileMessageDone) {
+		handle_client(clnt_sock);
+		iCount=iCount+1;
+	}		
+	
+	close_socket(sock);
+	
+	//added by Mike, 20210324
+	return 0;
+}
+
+

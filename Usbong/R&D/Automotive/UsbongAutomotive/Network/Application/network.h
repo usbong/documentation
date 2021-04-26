@@ -17,7 +17,7 @@ Free Documentation License".
   @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
   @author: SYSON, MICHAEL B.
   @date created: 20201119
-  @last updated: 20210425
+  @last updated: 20210426
 
   Notes:
   1) Execute Commands in sequence:
@@ -100,4 +100,6 @@ void close_socket (int socket);
 char * clean_data( char * data );
 //int send_data(int socket, unsigned char *data, FILE *file);
 //int send_data(int socket, const char *data, FILE *file);
-int send_data(int socket, char *data);
+//edited by Mike, 20210426
+//int send_data(int socket, char *data);
+int send_data(int socket, unsigned char *data);

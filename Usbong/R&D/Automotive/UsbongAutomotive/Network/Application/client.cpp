@@ -17,7 +17,7 @@ Free Documentation License".
   @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
   @author: SYSON, MICHAEL B.
   @date created: 20201119
-  @last updated: 20210425
+  @last updated: 20210426
 
   Notes:
   1) Execute Commands in sequence:
@@ -31,7 +31,7 @@ Free Documentation License".
   2.Reminder) "gcc is the GCC compiler-driver for C programs, g++ is the one for C++ programs."
   --> https://stackoverflow.com/questions/27390078/gcc-compiling-c-code-undefined-reference-to-operator-newunsigned-long-lon;
   //last accessed: 20210425
-  --> answered by: Deduplicator, 20141209T2244 Dec 9 '14 at 22:44
+  --> answered by: Deduplicator, 20141209T2244
   --> edited by: Matteo Italia, 20180607T1729
 
   3) Add the following "include" files in your .h files
@@ -148,7 +148,9 @@ FILE* inputReadTextFile(char *inputFilename) {
 //last accessed: 20210326
 //edited by Mike, 20210425
 //FILE* inputReadImageFile(char *inputFilename) {
-char* inputReadImageFile(char *inputFilename) {
+//edited by Mike, 20210426
+//char* inputReadImageFile(char *inputFilename) {
+unsigned char* inputReadImageFile(char *inputFilename) {
 	
 	int c;
 	//edited by Mike, 20210326
@@ -232,16 +234,30 @@ char* inputReadImageFile(char *inputFilename) {
 	//edited by Mike, 20210425
 //	data = new unsigned char [imageSize];
 	
-	//added by Mike, 20210425
-	char * cImageMapContainerData;			
+	//added by Mike, 20210425; edited by Mike, 20210426
+//	char * cImageMapContainerData;			
+	unsigned char * cImageMapContainerData;			
 	
 	//edited by Mike, 20210425
 //	cImageMapContainerData = new unsigned char [imageSize];
-	cImageMapContainerData = new char [imageSize];
+	//edited by Mike, 20210426	
+//	cImageMapContainerData = new char [imageSize];
+	cImageMapContainerData = new unsigned char [imageSize];
+	
+	//added by Mike, 20210426
+//	fseek(file, 0, SEEK_END);
 	
 	// Read the actual data from the file into the buffer
-	fread(cImageMapContainerData,1,imageSize,file);
+	int returnedStatus = fread(cImageMapContainerData,1,imageSize,file);
+//	fread(cImageMapContainerData,1,54,file);	
 
+	//added by Mike, 20210426
+	//TO-DO: -reverify: cause of empty value for cImageMapContainerData
+	printf(">> imageSize: %d\n",imageSize);
+	printf(">> cImageMapContainerData: %s\n",cImageMapContainerData);
+	printf(">> returnedStatus: %d\n",returnedStatus);
+		
+		
 	//Everything is in memory now, the file can be closed
 	fclose(file);	
 //-----		
@@ -269,7 +285,9 @@ int main(){
 //	FILE *file = inputReadImageFile("inputImageSample.bmp");
 	//edited by Mike, 20210425
 //	FILE *file = inputReadImageFile("imageSample.bmp");
-	char *cImageMapContainerDataOutput = inputReadImageFile("imageSample.bmp");
+	//edited by Mike, 20210426
+//	char *cImageMapContainerDataOutput = inputReadImageFile("imageSample.bmp");
+	unsigned char *cImageMapContainerDataOutput = inputReadImageFile("imageSample.bmp");
 			
 	//edited by Mike, 20210323
 	//send_data (sock, "Some data to be sent");
@@ -286,6 +304,10 @@ int main(){
 		iTotalMessageSize = iTotalMessageSize + send_data(sock, cImageMapContainer[iCount], file);					
 	}
 */	
+	
+	//added by Mike, 20210426
+	printf("cImageMapContainerDataOutput: %s\n",cImageMapContainerDataOutput);
+	
 	iTotalMessageSize = iTotalMessageSize + send_data(sock, cImageMapContainerDataOutput);					
 
 	
