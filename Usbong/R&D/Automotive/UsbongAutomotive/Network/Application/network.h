@@ -102,4 +102,5 @@ char * clean_data( char * data );
 //int send_data(int socket, const char *data, FILE *file);
 //edited by Mike, 20210426
 //int send_data(int socket, char *data);
+//int send_data(int socket, unsigned char *data, unsigned int dataSize);
 int send_data(int socket, unsigned char *data);

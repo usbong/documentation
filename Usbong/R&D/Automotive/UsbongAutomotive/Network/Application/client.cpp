@@ -246,18 +246,34 @@ unsigned char* inputReadImageFile(char *inputFilename) {
 	
 	//added by Mike, 20210426
 //	fseek(file, 0, SEEK_END);
-	
+//	strcpy((char *)cImageMapContainerData,"hallo");	
+//	printf(">> DITO: cImageMapContainerData: %s\n",cImageMapContainerData);
+		
 	// Read the actual data from the file into the buffer
-	int returnedStatus = fread(cImageMapContainerData,1,imageSize,file);
+	int returnedStatus = fread((char *)cImageMapContainerData,1,imageSize,file);
 //	fread(cImageMapContainerData,1,54,file);	
 
 	//added by Mike, 20210426
-	//TO-DO: -reverify: cause of empty value for cImageMapContainerData
 	printf(">> imageSize: %d\n",imageSize);
-	printf(">> cImageMapContainerData: %s\n",cImageMapContainerData);
+	//removed by Mike, 20210426
+//	printf(">> cImageMapContainerData: %s\n",cImageMapContainerData);
+	
 	printf(">> returnedStatus: %d\n",returnedStatus);
 		
-		
+/*	
+//Reference: https://stackoverflow.com/questions/40813492/fread-into-buffer-is-blank-despite-non-empty-file;
+//answered by: Iharob Al Asimi, 20161125T2339
+//note: we do not use printf and %s with binary
+//update: 256 to actual size
+for (size_t i = 0 ; i < 256 ; ++i) {
+	//print hex value
+    fprintf(stdout, "0x%02x ", cImageMapContainerData[i]);
+    if ((i + 1) % 8 == 0) {
+        fputc('\n', stdout);
+    }
+}
+*/
+	
 	//Everything is in memory now, the file can be closed
 	fclose(file);	
 //-----		
@@ -304,10 +320,8 @@ int main(){
 		iTotalMessageSize = iTotalMessageSize + send_data(sock, cImageMapContainer[iCount], file);					
 	}
 */	
-	
-	//added by Mike, 20210426
-	printf("cImageMapContainerDataOutput: %s\n",cImageMapContainerDataOutput);
-	
+	//edited by Mike, 20210426
+//	iTotalMessageSize = iTotalMessageSize + send_data(sock, cImageMapContainerDataOutput);					
 	iTotalMessageSize = iTotalMessageSize + send_data(sock, cImageMapContainerDataOutput);					
 
 	

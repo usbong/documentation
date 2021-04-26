@@ -25,9 +25,15 @@ Free Documentation License".
   1.2) ./client_halimbawa
   
   2) Execute Compile Commands:
-  2.1) Server example: gcc network.c server.c -o server_halimbawa
-  2.2) Client example: gcc network.c client.c -o client_halimbawa
+  2.1) Server example: g++ network.cpp server.cpp -o server_halimbawa
+  2.2) Client example: g++ network.cpp client.cpp -o client_halimbawa
 
+  2.Reminder) "gcc is the GCC compiler-driver for C programs, g++ is the one for C++ programs."
+  --> https://stackoverflow.com/questions/27390078/gcc-compiling-c-code-undefined-reference-to-operator-newunsigned-long-lon;
+  //last accessed: 20210425
+  --> answered by: Deduplicator, 20141209T2244
+  --> edited by: Matteo Italia, 20180607T1729
+  
   3) Add the following "include" files in your .h files
   	#include <netinet/in.h>
 	#include <netdb.h>
@@ -121,21 +127,98 @@ char * clean_data( char * data ){
 //edited by Mike, 20210426
 //int send_data(int socket, char *data){
 int send_data(int socket, unsigned char *data){
+//int send_data(int socket, unsigned char *data, unsigned int dataSize){
 //int send_data(int socket, unsigned char *data, FILE *file){
 	int sent_bytes, all_sent_bytes;
 	int err_status;
 	int sendstrlen;
 
 	//edited by Mike, 20210426
+	//note: binary data
 //	sendstrlen = strlen ( data );
-	sendstrlen = strlen ( (char *)data );
-	
+	//sendstrlen = strlen ( (char *)data );
+		
 	all_sent_bytes = 0;
 	
 	//added by Mike, 20210426
-	printf("sendstrlen: %d\n",sendstrlen);
+	//note: binary data
+/*	printf("sendstrlen: %d\n",sendstrlen);
 	printf("data: %s\n",data);
+*/
+	
+	//added by Mike, 20210426
+	//Reference: http://www.opengl-tutorial.org/beginners-tutorials/tutorial-5-a-textured-cube/;
+	//last accessed: 20210425
+	// Data read from the header of the BMP file
+	unsigned char header[54]; // Each BMP file begins by a 54-bytes header
+	unsigned int dataPos;     // Position in the file where the actual data begins
+	unsigned int width, height;
+	//edited by Mike, 20210425
+	unsigned int imageSize;   // = width*height*3
 
+	printf("-----\n");
+	printf("@network.cpp\n");
+	printf("-----\n");
+
+for (size_t i = 0 ; i < 54 ; ++i) {
+	//print hex value
+    fprintf(stdout, "0x%02x ", data[i]);
+	header[i]=data[i];
+	
+    if ((i + 1) % 8 == 0) {
+        fputc('\n', stdout);
+    }
+}		
+
+//TO-DO: -reverify: this with output in client.cpp due to data[0] !='B'
+	
+//printf("\n>>>> %d\n",strlen((char*)data));	
+//printf("\n>>>> %d\n",size_t(header));	
+printf("\n>>>> 0x%02x\n",data[0]);	
+	
+//	if ( fread(header, 1, 54, file)!=54 ){ // If not 54 bytes read : problem
+	if ( size_t(header)!=54 ){ // If not 54 bytes read : problem	
+		printf("Not a correct BMP file!\n");
+//		return FALSE;
+	}
+	else {
+		printf("OK! Correct BMP file!\n");
+	}
+	
+	if ( header[0]!='B' || header[1]!='M' ){
+		printf("Not a correct BMP file based on Header!\n");
+//		return 0;
+	}	
+	else {
+		printf("OK! Correct BMP file based on Header!\n");
+	}
+	
+	dataPos    = *(int*)&(header[0x0A]);
+	imageSize  = *(int*)&(header[0x22]);
+	width      = *(int*)&(header[0x12]);
+	height     = *(int*)&(header[0x16]);
+
+	// Some BMP files are misformatted, guess missing information
+	if (imageSize==0) { imageSize=width*height*3;}// 3 : one byte for each Red, Green and Blue component
+	if (dataPos==0) {dataPos=54;} // The BMP header is done that way	
+	
+	printf("imageSize: %d\n",imageSize);	
+	
+	sendstrlen = imageSize;
+	
+//Reference: https://stackoverflow.com/questions/40813492/fread-into-buffer-is-blank-despite-non-empty-file;
+//answered by: Iharob Al Asimi, 20161125T2339
+//note: we do not use printf and %s with binary
+//edited by Mike, 20210426
+//for (size_t i = 0 ; i < 256 ; ++i) {
+for (size_t i = 54 ; i < 256 ; ++i) {	
+	//print hex value
+    fprintf(stdout, "0x%02x ", data[i]);
+    if ((i + 1) % 8 == 0) {
+        fputc('\n', stdout);
+    }
+}	
+	
 	//edited by Mike, 20210326
 	sent_bytes = send ( socket, data, sendstrlen, 0 );
 /*	
