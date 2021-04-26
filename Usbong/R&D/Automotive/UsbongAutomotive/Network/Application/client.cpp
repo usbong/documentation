@@ -245,7 +245,9 @@ unsigned char* inputReadImageFile(char *inputFilename) {
 	cImageMapContainerData = new unsigned char [imageSize];
 	
 	//added by Mike, 20210426
-//	fseek(file, 0, SEEK_END);
+	fseek(file, 0, SEEK_END);
+	fseek(file, 0, SEEK_SET);
+	
 //	strcpy((char *)cImageMapContainerData,"hallo");	
 //	printf(">> DITO: cImageMapContainerData: %s\n",cImageMapContainerData);
 		
@@ -259,20 +261,34 @@ unsigned char* inputReadImageFile(char *inputFilename) {
 //	printf(">> cImageMapContainerData: %s\n",cImageMapContainerData);
 	
 	printf(">> returnedStatus: %d\n",returnedStatus);
-		
-/*	
+
 //Reference: https://stackoverflow.com/questions/40813492/fread-into-buffer-is-blank-despite-non-empty-file;
 //answered by: Iharob Al Asimi, 20161125T2339
 //note: we do not use printf and %s with binary
 //update: 256 to actual size
-for (size_t i = 0 ; i < 256 ; ++i) {
+//header	
+printf("header\n");	
+//for (size_t i = 0 ; i < 256 ; ++i) {
+for (size_t i = 0 ; i < 54 ; ++i) {
+	//print hex value
+    fprintf(stdout, "0x%02x ", header[i]);
+    if ((i + 1) % 8 == 0) {
+        fputc('\n', stdout);
+    }
+}	
+
+printf("\ndata\n");
+	
+//data
+for (size_t i = 54 ; i < 256 ; ++i) {
 	//print hex value
     fprintf(stdout, "0x%02x ", cImageMapContainerData[i]);
     if ((i + 1) % 8 == 0) {
         fputc('\n', stdout);
     }
 }
-*/
+
+	
 	
 	//Everything is in memory now, the file can be closed
 	fclose(file);	

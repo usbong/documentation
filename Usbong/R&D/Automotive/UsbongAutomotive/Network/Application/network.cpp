@@ -159,11 +159,14 @@ int send_data(int socket, unsigned char *data){
 	printf("-----\n");
 	printf("@network.cpp\n");
 	printf("-----\n");
+//header	
+printf("header\n");	
 
 for (size_t i = 0 ; i < 54 ; ++i) {
+	header[i]=data[i];
+
 	//print hex value
     fprintf(stdout, "0x%02x ", data[i]);
-	header[i]=data[i];
 	
     if ((i + 1) % 8 == 0) {
         fputc('\n', stdout);
@@ -174,10 +177,14 @@ for (size_t i = 0 ; i < 54 ; ++i) {
 	
 //printf("\n>>>> %d\n",strlen((char*)data));	
 //printf("\n>>>> %d\n",size_t(header));	
-printf("\n>>>> 0x%02x\n",data[0]);	
+printf("\n>>>> 0x%02x\n",data[0]);
+	
+	printf("size: %i",sizeof(header));
 	
 //	if ( fread(header, 1, 54, file)!=54 ){ // If not 54 bytes read : problem
-	if ( size_t(header)!=54 ){ // If not 54 bytes read : problem	
+//	if ( size_t(header)!=54 ){ // If not 54 bytes read : problem	
+	//note: small letter "o" in "sizeof"
+	if ( sizeof(header)!=54 ){ // If not 54 bytes read : problem			
 		printf("Not a correct BMP file!\n");
 //		return FALSE;
 	}
