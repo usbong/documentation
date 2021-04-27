@@ -17,7 +17,7 @@ Free Documentation License".
   @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
   @author: SYSON, MICHAEL B.
   @date created: 20201119
-  @last updated: 20210426
+  @last updated: 20210427
 
   Notes:
   1) Execute Commands in sequence:
@@ -65,7 +65,13 @@ Free Documentation License".
 //#define BUFFSIZE 21
 //edited by Mike, 20210324
 #define MAX_INPUT_TEXT_PER_LINE 10241//100
-#define BUFFSIZE MAX_INPUT_TEXT_PER_LINE
+//edited by Mike, 20210427
+//#define BUFFSIZE MAX_INPUT_TEXT_PER_LINE
+//TO-DO: -remove this
+#define BUFFSIZE 54
+
+#define BUFFER_SIZE 54
+#define HEADER_BUFFER_SIZE 54
 
 #define SERVER_SOCKET 1
 #define CLIENT_SOCKET 0
