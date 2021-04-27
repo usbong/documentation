@@ -72,8 +72,9 @@ Breathe slowly; Exhale slowly
             WHEREAS, it is a right of every human being to have a peaceful environment and to have a good night's sleep.<br/>
 <br/>
  </b>
+ 
 #### Additional Note:
- 1.1) <img src="https://github.com/usbong/documentation/blob/master/Usbong/company/HR/Usbong%20Education%20Training%20Courses/Training%20Centre:%20Security%20Defense%20Force/res/noiseIncidentReport.jpg" width="60%"><br/>
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/company/HR/Usbong%20Education%20Training%20Courses/Training%20Centre:%20Security%20Defense%20Force/res/noiseIncidentReport.jpg" width="60%"><br/>
 --> Isinalin mula nihongo sa Filipino ni SYSON, MICHAEL B.<br/>
 --> 「おとなりの家から　ドタバタと」<br/>
 --> Mula sa bahay ng kapitbahay "DOTABATA" na<br/>
