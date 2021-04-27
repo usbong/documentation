@@ -17,7 +17,7 @@ Free Documentation License".
   @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
   @author: SYSON, MICHAEL B.
   @date created: 20201119
-  @last updated: 20210426
+  @last updated: 20210427
 
   Notes:
   1) Execute Commands in sequence:
@@ -359,7 +359,7 @@ int main(){
 	//file size (input): 25612B
 	//file size (output): 16266B
 	//iTotalMessageSize output: 16266 = with SERVER's iTotalMessageSize
-	printf ("CLIENT iTotalMessageSize: %i", iTotalMessageSize);
+	printf ("CLIENT iTotalMessageSize: %i\n", iTotalMessageSize);
 	
 	close_socket(sock);
 }

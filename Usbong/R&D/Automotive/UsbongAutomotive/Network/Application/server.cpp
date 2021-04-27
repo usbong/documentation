@@ -57,6 +57,8 @@ Free Documentation License".
   last accessed: 20210425  
 */
 
+//TO-DO: -execute code refactoring, i.e. delete excess instructions, et cetera
+
 #include "network.h"
 
 //added by Mike, 20210324
@@ -295,7 +297,8 @@ void handle_client (int client_socket){
 
 	//added by Mike, 20210427
 	int iByteCount=0;
-	
+
+	printf("Header\n");
 	printf("Reading received byte...\n");
 	
 	do {
@@ -346,18 +349,68 @@ void handle_client (int client_socket){
 			
 			//printf("sizeof headerBuffer: %i\n",sizeof(headerBuffer));
 
+			unsigned int imageSize;   // = width*height*3
+
 			//edited by Mike, 20210427
+			//init cImageMapContainerDataOutput 
+			if (iByteCount==0) {
+				unsigned char buffer[54]; // Each BMP file begins by a 54-bytes header
+				unsigned int dataPos;     // Position in the file where the actual data begins
+				unsigned int width, height;
+//				unsigned int imageSize;   // = width*height*3
+				
+				dataPos    = *(int*)&(buffer[0x0A]);
+				imageSize  = *(int*)&(buffer[0x22]);
+				width      = *(int*)&(buffer[0x12]);
+				height     = *(int*)&(buffer[0x16]);				
+				// Some BMP files are misformatted, guess missing information
+				if (imageSize==0) { imageSize=width*height*3;}// 3 : one byte for each Red, Green and Blue component			
+				
+				cImageMapContainerDataOutput = new unsigned char [imageSize];					
+			}			
+			
 //			cImageMapContainerDataOutput=headerBuffer;		
 			//cImageMapContainerDataOutput[iByteCount]=buffer[iByteCount];
-			cImageMapContainerDataOutput=buffer;		
+//			cImageMapContainerDataOutput=buffer;		
+//			strcat(cImageMapContainerDataOutput,buffer);
+			int iSizeOfBuffer=sizeof(buffer);
+			printf("iSizeOfBuffer: %i\n",iSizeOfBuffer);
+			printf("iByteCount: %i\n",iByteCount);
+			size_t iBufferCount=0;
+			for (iBufferCount = 0; iBufferCount < iSizeOfBuffer; iBufferCount++) {
+//				printf("buffer count i: %i; 0x%02x\n",i,buffer[i]);
+				
+				if ((iByteCount+iBufferCount)<imageSize) {				
+					cImageMapContainerDataOutput[iByteCount+iBufferCount]=buffer[iBufferCount];
+
+					fprintf(stdout, "0x%02x ", buffer[iBufferCount]);
+
+					if ((iBufferCount + 1) % 8 == 0) {
+						fputc('\n', stdout);
+					}				
+				}
+				else {
+					break;
+				}
+			}	
+			iByteCount=iByteCount+iBufferCount;//iSizeOfBuffer;
 			
+			printf("\n>>iByteCount: %i\n",iByteCount);
+			
+			
+//			break;
+			
+/*	//removed by Mike, 20210427		
 	//print hex value
 			if (iByteCount<54) {
     			fprintf(stdout, "0x%02x ", cImageMapContainerDataOutput[iByteCount]);
+				printf("iByteCount: %i",iByteCount);				
 				break;
 			}
 				
 iByteCount=iByteCount+1;
+*/
+			
 /*			
 for (size_t i = 0 ; i < 54 ; ++i) {
 	cImageMapContainerDataOutput[i]=buffer[i];
@@ -375,10 +428,9 @@ for (size_t i = 0 ; i < 54 ; ++i) {
 /*	printf ("All data received: %s", cImageMapContainerDataOutput);
 */
 	
-fprintf(stdout, "DITO 0x%02x ", cImageMapContainerDataOutput[0]);
+fprintf(stdout, "DITO 0x%02x \n", cImageMapContainerDataOutput[0]);
+fprintf(stdout, "sizeof received data: %i\n", sizeof(cImageMapContainerDataOutput));
 
-//added by Mike, 20210427		
-//TO-DO: -add: store data in container (use imageSize)
 	
 	//added by Mike, 20210427
 	//----------	
@@ -391,7 +443,8 @@ fprintf(stdout, "DITO 0x%02x ", cImageMapContainerDataOutput[0]);
 	unsigned int width, height;
 	//edited by Mike, 20210425
 	unsigned int imageSize;   // = width*height*3
-
+	
+	
 	printf("-----\n");
 	printf("@server.cpp\n");
 	printf("-----\n");
@@ -420,7 +473,7 @@ for (int i = 0 ; i < 54 ; ++i) {
 printf("\n>>>> 0x%02x\n",cImageMapContainerDataOutput[0]);
 	
 	
-	printf("size: %i\n",sizeof(header));
+	printf("header size: %i\n",sizeof(header));
 	
 //	if ( fread(header, 1, 54, file)!=54 ){ // If not 54 bytes read : problem
 //	if ( size_t(header)!=54 ){ // If not 54 bytes read : problem	
@@ -454,19 +507,34 @@ printf("\n>>>> 0x%02x\n",cImageMapContainerDataOutput[0]);
 
 	//removed by Mike, 20210427
 //	sendstrlen = imageSize;
+
 	
 //Reference: https://stackoverflow.com/questions/40813492/fread-into-buffer-is-blank-despite-non-empty-file;
 //answered by: Iharob Al Asimi, 20161125T2339
 //note: we do not use printf and %s with binary
-//edited by Mike, 20210426
+
+//edited by Mike, 20210427
+/*	
 //for (size_t i = 0 ; i < 256 ; ++i) {
 for (size_t i = 54 ; i < 256 ; ++i) {	
 	//print hex value
     fprintf(stdout, "0x%02x ", cImageMapContainerDataOutput[i]);
     if ((i + 1) % 8 == 0) {
-        fputc('\n', stdout);
     }
 }	
+*/
+
+printf(">>Message Body");
+for (size_t i = 0 ; i < imageSize ; ++i) {	
+	//print hex value
+    fprintf(stdout, "0x%02x ", cImageMapContainerDataOutput[i]);
+    if ((i + 1) % 8 == 0) {
+        fputc('\n', stdout);
+    }	
+}	
+
+	
+	
 	
 	//----------	
 	

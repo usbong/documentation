@@ -179,7 +179,7 @@ for (size_t i = 0 ; i < 54 ; ++i) {
 //printf("\n>>>> %d\n",size_t(header));	
 printf("\n>>>> 0x%02x\n",data[0]);
 	
-	printf("size: %i",sizeof(header));
+	printf("size: %i\n",sizeof(header));
 	
 //	if ( fread(header, 1, 54, file)!=54 ){ // If not 54 bytes read : problem
 //	if ( size_t(header)!=54 ){ // If not 54 bytes read : problem	
@@ -227,15 +227,16 @@ for (size_t i = 54 ; i < 256 ; ++i) {
 }	
 
 	//added by Mike, 20210427
+/*	//removed by Mike, 20210427	
 	//-----
 	//header
 	sent_bytes = send ( socket, header, 54, 0 );
 	all_sent_bytes = all_sent_bytes + sent_bytes;
 	//-----
-	
+*/	
 	//edited by Mike, 20210326
 	//-----
-	//data
+	//data, including header
 //	sent_bytes = send ( socket, data, sendstrlen, 0 );	
 	sent_bytes = send ( socket, data, imageSize, 0 );	
 	all_sent_bytes = all_sent_bytes + sent_bytes;
