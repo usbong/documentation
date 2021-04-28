@@ -351,6 +351,10 @@ void handle_client (int client_socket){
 
 			unsigned int imageSize;   // = width*height*3
 
+			//added by Mike, 20210428
+			//TO-DO: -reverify: input imageSample.bmp's image size: 78,538Bytes; output image size: 78,400Bytes
+			//note: sent data only 78,400Bytes
+			
 			//edited by Mike, 20210427
 			//init cImageMapContainerDataOutput 
 			if (iByteCount==0) {
@@ -380,18 +384,41 @@ void handle_client (int client_socket){
 			for (iBufferCount = 0; iBufferCount < iSizeOfBuffer; iBufferCount++) {
 //				printf("buffer count i: %i; 0x%02x\n",i,buffer[i]);
 				
-				if ((iByteCount+iBufferCount)<imageSize) {				
-					cImageMapContainerDataOutput[iByteCount+iBufferCount]=buffer[iBufferCount];
+				//edited by Mike, 20210428
+				int iTempImageMapContainerDataOutputPos=iByteCount+iBufferCount;
+				
+				int iImageMapContainerDataOutputPos=iTempImageMapContainerDataOutputPos;
+				
+				if (iTempImageMapContainerDataOutputPos>=imageSize) {				
+					iImageMapContainerDataOutputPos=iByteCount+(iTempImageMapContainerDataOutputPos-imageSize);
+				}
+				printf("iImageMapContainerDataOutputPos: %i",iImageMapContainerDataOutputPos);
+				
+/*				
+				//if negative due 
+				if ((iImageMapContainerDataOutputPos<0) {									
+					break;
+				}
+*/					
+/*		
+				if ((iByteCount+iBufferCount)<imageSize) {									
+*/		
+//					cImageMapContainerDataOutput[iByteCount+iBufferCount]=buffer[iBufferCount];
+					cImageMapContainerDataOutput[iImageMapContainerDataOutputPos]=buffer[iBufferCount];
 
+/* //removed by Mike, 20210428				
 					fprintf(stdout, "0x%02x ", buffer[iBufferCount]);
 
 					if ((iBufferCount + 1) % 8 == 0) {
 						fputc('\n', stdout);
 					}				
-				}
+*/				
+				
+/*				}
 				else {
 					break;
 				}
+*/		
 			}	
 			iByteCount=iByteCount+iBufferCount;//iSizeOfBuffer;
 			
@@ -523,7 +550,9 @@ for (size_t i = 54 ; i < 256 ; ++i) {
     }
 }	
 */
-
+	
+	
+/* //removed by Mike, 20210428				
 printf(">>Message Body");
 for (size_t i = 0 ; i < imageSize ; ++i) {	
 	//print hex value
@@ -532,7 +561,7 @@ for (size_t i = 0 ; i < imageSize ; ++i) {
         fputc('\n', stdout);
     }	
 }	
-
+*/
 	
 	
 	

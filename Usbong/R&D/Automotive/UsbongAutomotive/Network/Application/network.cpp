@@ -17,7 +17,7 @@ Free Documentation License".
   @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
   @author: SYSON, MICHAEL B.
   @date created: 20201119
-  @last updated: 20210427
+  @last updated: 20210428
 
   Notes:
   1) Execute Commands in sequence:
@@ -216,9 +216,11 @@ printf("\n>>>> 0x%02x\n",data[0]);
 //Reference: https://stackoverflow.com/questions/40813492/fread-into-buffer-is-blank-despite-non-empty-file;
 //answered by: Iharob Al Asimi, 20161125T2339
 //note: we do not use printf and %s with binary
-//edited by Mike, 20210426
+//edited by Mike, 20210428
 //for (size_t i = 0 ; i < 256 ; ++i) {
-for (size_t i = 54 ; i < 256 ; ++i) {	
+//for (size_t i = 54 ; i < 256 ; ++i) {	
+for (size_t i = 54 ; i < imageSize ; ++i) {
+	
 	//print hex value
     fprintf(stdout, "0x%02x ", data[i]);
     if ((i + 1) % 8 == 0) {

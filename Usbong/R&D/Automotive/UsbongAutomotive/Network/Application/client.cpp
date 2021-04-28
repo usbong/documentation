@@ -17,7 +17,7 @@ Free Documentation License".
   @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
   @author: SYSON, MICHAEL B.
   @date created: 20201119
-  @last updated: 20210427
+  @last updated: 20210428
 
   Notes:
   1) Execute Commands in sequence:
@@ -280,7 +280,10 @@ for (size_t i = 0 ; i < 54 ; ++i) {
 printf("\ndata\n");
 	
 //data
-for (size_t i = 54 ; i < 256 ; ++i) {
+//edited by Mike, 20210428
+//for (size_t i = 54 ; i < 256 ; ++i) {
+for (size_t i = 54 ; i < imageSize ; ++i) {
+	
 	//print hex value
     fprintf(stdout, "0x%02x ", cImageMapContainerData[i]);
     if ((i + 1) % 8 == 0) {
