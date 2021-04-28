@@ -78,12 +78,12 @@ Breathe slowly; Exhale slowly
 <img src="https://github.com/usbong/documentation/blob/master/Usbong/company/HR/Usbong%20Education%20Training%20Courses/Training%20Centre:%20Security%20Defense%20Force/res/noiseIncidentReport.jpg" width="60%"><br/>
 --> Isinalin mula nihongo sa Filipino ni SYSON, MICHAEL B.<br/>
 --> 「おとなりの家から　ドタバタと」<br/>
---> Mula sa bahay ng kapitbahay "DOTABATA" na<br/>
+--> Mula sa bahay ng kapitbahay may "DOTABATA" na<br/>
 --> 「うるさい　物音が」<br/>
 --> maingay na tunog ng bagay<br/>
 --> 「きこえるようになったのよ」<br/>
 --> ang maaari nang marinig!<br/>
-
+--> <b>Sunod na Aksyon:</b> Siyasatin
 
 2) Fujitsu Group Total Life. (2008). Information Magazine: プラスワン（Plus 1） (No. 74, Summer 2008). Japan: Fujitsu Health Insurance Group et al.<br/>
 --> 「お悩み12：どこでも誰でも簡単にできるストレス解消法」<br/>
