@@ -74,6 +74,7 @@ Breathe slowly; Exhale slowly
  </b>
  
 #### Additional Note:
+1.1) マリオストーリー（Mario Story; Nintendo 64 version）
 <img src="https://github.com/usbong/documentation/blob/master/Usbong/company/HR/Usbong%20Education%20Training%20Courses/Training%20Centre:%20Security%20Defense%20Force/res/noiseIncidentReport.jpg" width="60%"><br/>
 --> Isinalin mula nihongo sa Filipino ni SYSON, MICHAEL B.<br/>
 --> 「おとなりの家から　ドタバタと」<br/>
@@ -82,6 +83,7 @@ Breathe slowly; Exhale slowly
 --> maingay na tunog ng bagay<br/>
 --> 「きこえるようになったのよ」<br/>
 --> ang maaari nang marinig!<br/>
+
 
 2) Fujitsu Group Total Life. (2008). Information Magazine: プラスワン（Plus 1） (No. 74, Summer 2008). Japan: Fujitsu Health Insurance Group et al.<br/>
 --> 「お悩み12：どこでも誰でも簡単にできるストレス解消法」<br/>
