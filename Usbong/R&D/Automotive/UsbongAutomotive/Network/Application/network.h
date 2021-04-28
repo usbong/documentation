@@ -38,6 +38,16 @@ Free Documentation License".
 	#include <stdio.h>
 	
 	#include <string.h>
+	
+	4) Set "ADDRESS_IP" value to be the computer to connect to from this computer;
+	--> Reminder: with local computer, i.e. "127.0.0.1", value is equal with the sender and receiver computers.
+	--> where: sender = client; receiver = server
+	--> Examples: 
+	--> Receiving computer's IP Address: 192.168.1.110
+	--> Sending computer's IP Address: 192.168.1.50
+	--> We send image file to receiving computer.
+	--> We as Client send image file to receiving computer, i.e. Server, at address 192.168.1.110.
+	--> Additional Note: We update the receiving computer "ADDRESS_IP" to be the sender's IP address.
 
   Reference: 
   1) https://www.linuxquestions.org/linux/answers/Programming/BSD_Sockets_programming_in_C_with_examples; 
@@ -64,6 +74,10 @@ Free Documentation License".
 #define ADRESS_IP "127.0.0.1"
 */
 #define ADDRESS_PORT 10203
+
+//added by Mike, 20210428
+//We as Client send image file to receiving computer, i.e. Server, at address 192.168.1.110.
+//Additional Note: We update the receiving computer "ADDRESS_IP" to be the sender's IP address.
 #define ADDRESS_IP "192.168.1.110"
 
 #define MAXPENDING 5
