@@ -306,7 +306,10 @@ for (size_t i = 54 ; i < imageSize ; ++i) {
 int main(){
 	//edited by Mike, 20201119
 	//int sock = make_socket(ADRESS_PORT, CLIENT_SOCKET, "10.35.43.41");
-	int sock = make_socket(ADRESS_PORT, CLIENT_SOCKET, "127.0.0.1");
+	//edited by Mike, 20210428
+//	int sock = make_socket(ADRESS_PORT, CLIENT_SOCKET, "127.0.0.1");
+	int sock = make_socket(ADDRESS_PORT, CLIENT_SOCKET, ADDRESS_IP);
+	
 	int iTotalMessageSize = 0; //added by Mike, 20210325
 	
 	//edited by Mike, 20210325

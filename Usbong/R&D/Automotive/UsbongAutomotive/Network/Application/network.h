@@ -58,8 +58,14 @@ Free Documentation License".
 //added by Mike, 20210425
 #include <unistd.h> //used in cpp
 
+//edited by Mike, 20210428
+/*
 #define ADRESS_PORT 10203
 #define ADRESS_IP "127.0.0.1"
+*/
+#define ADDRESS_PORT 10203
+#define ADDRESS_IP "192.168.1.110"
+
 #define MAXPENDING 5
 //edited by Mike, 20210324
 //#define BUFFSIZE 21

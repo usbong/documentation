@@ -17,7 +17,7 @@ Free Documentation License".
   @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
   @author: SYSON, MICHAEL B.
   @date created: 20201119
-  @last updated: 20210427
+  @last updated: 20210428
 
   Notes:
   1) Execute Commands in sequence:
@@ -600,7 +600,9 @@ for (size_t i = 0 ; i < imageSize ; ++i) {
 
 int main(){
 	int clnt_sock;
-	int sock = make_socket(ADRESS_PORT, SERVER_SOCKET, "none");
+	//edited by Mike, 20210428
+//	int sock = make_socket(ADRESS_PORT, SERVER_SOCKET, "none");
+	int sock = make_socket(ADDRESS_PORT, SERVER_SOCKET, "none");
 	
 	//edited by Mike, 20210324
 /*	
