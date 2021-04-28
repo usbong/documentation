@@ -73,7 +73,7 @@ Breathe slowly; Exhale slowly
 <br/>
  </b>
  
-#### Additional Note:
+#### Additional Notes:
 1.1) マリオストーリー（Mario Story; Nintendo 64 version）<br/>
 --> <b>Aksyon:</b> Gawan ng Report ang Insidente sa Law Enforcement upang siyasatin.<br/>
 <img src="https://github.com/usbong/documentation/blob/master/Usbong/company/HR/Usbong%20Education%20Training%20Courses/Training%20Centre:%20Security%20Defense%20Force/res/noiseIncidentReport.jpg" width="60%"><br/>
@@ -84,6 +84,16 @@ Breathe slowly; Exhale slowly
 --> maingay na tunog ng bagay<br/>
 --> 「きこえるようになったのよ」<br/>
 --> ang maaari nang marinig!<br/>
+--> <b>Paalala:</b> Mayroon ding wave mula sa electric light, dagdag pa sa sound wave.<br/>
+--> Ingay rin ito kapag labag sa batas, e.g. labis.<br/>
+
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/company/HR/Usbong%20Education%20Training%20Courses/Training%20Centre:%20Security%20Defense%20Force/res/electricLightWaveNoise.jpg" width="60%"><br/>
+
+--> Nakatagong Libingan sa Disierto<br/>
+--> Maaalala ang sa Aladdin ng Disney.<br/>
+--> Matingkad kapag kinuhanan ng Litrato.<br/>
+--> Sa kaliwa, may Puso sa kahon.<br/>
+
 
 2) Fujitsu Group Total Life. (2008). Information Magazine: プラスワン（Plus 1） (No. 74, Summer 2008). Japan: Fujitsu Health Insurance Group et al.<br/>
 --> 「お悩み12：どこでも誰でも簡単にできるストレス解消法」<br/>
