@@ -262,6 +262,7 @@ unsigned char* inputReadImageFile(char *inputFilename) {
 	
 	printf(">> returnedStatus: %d\n",returnedStatus);
 
+/* //removed by Mike, 20210428	
 //Reference: https://stackoverflow.com/questions/40813492/fread-into-buffer-is-blank-despite-non-empty-file;
 //answered by: Iharob Al Asimi, 20161125T2339
 //note: we do not use printf and %s with binary
@@ -290,7 +291,7 @@ for (size_t i = 54 ; i < imageSize ; ++i) {
         fputc('\n', stdout);
     }
 }
-
+*/
 	
 	
 	//Everything is in memory now, the file can be closed
@@ -358,7 +359,9 @@ int main(){
 	}	
 	send_data(sock, cDataToSend);
 */
-	//TO-DO: -reverify: cause output .png image file is less than input .png image file
+	//edited by Mike, 20210428
+	//output .png image file is less than input .png image file
+	//reminder: compression technique is used with .png files
 	//file size (input): 25612B
 	//file size (output): 16266B
 	//iTotalMessageSize output: 16266 = with SERVER's iTotalMessageSize

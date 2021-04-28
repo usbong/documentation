@@ -358,19 +358,26 @@ void handle_client (int client_socket){
 			//edited by Mike, 20210427
 			//init cImageMapContainerDataOutput 
 			if (iByteCount==0) {
-				unsigned char buffer[54]; // Each BMP file begins by a 54-bytes header
+				//removed by Mike, 20210428
+//				unsigned char buffer[54]; // Each BMP file begins by a 54-bytes header
 				unsigned int dataPos;     // Position in the file where the actual data begins
 				unsigned int width, height;
 //				unsigned int imageSize;   // = width*height*3
 				
 				dataPos    = *(int*)&(buffer[0x0A]);
 				imageSize  = *(int*)&(buffer[0x22]);
+
+								printf("imageSize: %i\n",imageSize);
+
 				width      = *(int*)&(buffer[0x12]);
 				height     = *(int*)&(buffer[0x16]);				
 				// Some BMP files are misformatted, guess missing information
 				if (imageSize==0) { imageSize=width*height*3;}// 3 : one byte for each Red, Green and Blue component			
 				
 				cImageMapContainerDataOutput = new unsigned char [imageSize];					
+				
+				printf(">>imageSize: %i\n",imageSize);
+				
 			}			
 			
 //			cImageMapContainerDataOutput=headerBuffer;		
@@ -378,8 +385,12 @@ void handle_client (int client_socket){
 //			cImageMapContainerDataOutput=buffer;		
 //			strcat(cImageMapContainerDataOutput,buffer);
 			int iSizeOfBuffer=sizeof(buffer);
+/*		//removed by Mike, 20210428
 			printf("iSizeOfBuffer: %i\n",iSizeOfBuffer);
 			printf("iByteCount: %i\n",iByteCount);
+//			printf("imageSize: %i\n",imageSize);
+*/
+			
 			size_t iBufferCount=0;
 			for (iBufferCount = 0; iBufferCount < iSizeOfBuffer; iBufferCount++) {
 //				printf("buffer count i: %i; 0x%02x\n",i,buffer[i]);
@@ -392,7 +403,7 @@ void handle_client (int client_socket){
 				if (iTempImageMapContainerDataOutputPos>=imageSize) {				
 					iImageMapContainerDataOutputPos=iByteCount+(iTempImageMapContainerDataOutputPos-imageSize);
 				}
-				printf("iImageMapContainerDataOutputPos: %i",iImageMapContainerDataOutputPos);
+//				printf("iImageMapContainerDataOutputPos: %i",iImageMapContainerDataOutputPos);
 				
 /*				
 				//if negative due 
@@ -422,8 +433,9 @@ void handle_client (int client_socket){
 			}	
 			iByteCount=iByteCount+iBufferCount;//iSizeOfBuffer;
 			
-			printf("\n>>iByteCount: %i\n",iByteCount);
-			
+/*	//removed by Mike, 20210428
+printf("\n>>iByteCount: %i\n",iByteCount);
+*/			
 			
 //			break;
 			
@@ -492,8 +504,6 @@ for (int i = 0 ; i < 54 ; ++i) {
 }		
 	
 	
-
-//TO-DO: -reverify: this with output in client.cpp due to data[0] !='B'
 	
 //printf("\n>>>> %d\n",strlen((char*)data));	
 //printf("\n>>>> %d\n",size_t(header));	
