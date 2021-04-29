@@ -17,7 +17,7 @@ Free Documentation License".
   @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
   @author: SYSON, MICHAEL B.
   @date created: 20201119
-  @last updated: 20210428
+  @last updated: 20210429
 
   Notes:
   1) Execute Commands in sequence:
@@ -25,8 +25,8 @@ Free Documentation License".
   1.2) ./client_halimbawa
   
   2) Execute Compile Commands:
-  2.1) Server example: gcc network.c server.c -o server_halimbawa
-  2.2) Client example: gcc network.c client.c -o client_halimbawa
+  2.1) Server example: g++ network.cpp server.cpp -o server_halimbawa
+  2.2) Client example: g++ network.cpp client.cpp -o client_halimbawa
 
   3) Add the following "include" files in your .h files
   	#include <netinet/in.h>
@@ -78,7 +78,9 @@ Free Documentation License".
 //added by Mike, 20210428
 //We as Client send image file to receiving computer, i.e. Server, at address 192.168.1.110.
 //Additional Note: We update the receiving computer "ADDRESS_IP" to be the sender's IP address.
-#define ADDRESS_IP "192.168.1.110"
+//edited by Mike, 20210429
+//#define ADDRESS_IP "192.168.1.110"
+#define ADDRESS_IP "127.0.0.1"
 
 #define MAXPENDING 5
 //edited by Mike, 20210324
