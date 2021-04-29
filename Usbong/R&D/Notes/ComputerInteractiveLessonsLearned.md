@@ -146,7 +146,7 @@ TO-DO: -update: this<br/>
 --> Hanzo (修羅(shura)；剣豪(kengou); middle level version)'s sword hilt (柄；つか; tsuka), murasaki (violet : poison/lason)<br/>
 --> 十兵衛(Jubei; ten soldiers clean; sampung sundalo malinis), 二刀 (nitou; 2 Swords/Knives)<br/>
 --> Hanzo attacks using combinations of weak and medium slashes to be quick are not effective against Jubei<br/>
---> Jubei's Swords' reach farther due to length.<br/>
+--> Jubei's Swords' reach farther due to length and technique.<br/>
 --> Jubei's strong slash higher damage than Hanzo's several combinations of weak and medium slashes<br/>
 --> Note: We use Hanzo's strong slash when opponent attacks, e.g. strong slash, that requires recovery time<br/>
 --> Execute Hanzo's bouncing fireball, Jubei executes jumping slash that can reach Hanzo; damage exchanged lower for Hanzo.<br/>
