@@ -11,7 +11,7 @@
 
 ## 1) Piano
 --> 1.1) Isanay ang lahat ng mga daliri na mapindot nang wasto ang mga piano key<br/>
---> <b>Mungkahi Aksyon:</b> Gamitin ito:<br/>
+--> <b>Mungkahing Aksyon:</b> Gamitin ito:<br/>
 --> [Suzuki Piano School - Volume 1 (New International Edition): Piano Part Print Replica Kindle Edition](https://www.amazon.com/Suzuki-Piano-School-International-Part-ebook/dp/B00ZV6L1I8/ref=tmm_kin_swatch_0?_encoding=UTF8&qid=&sr=)<br/>
 --> Kahit ang Volume 1 lang muna; Pagkatapos, subukan mo nang tugtugin ang mga nais mong tugtugin.<br/>
 --> <b>halimbawa:</b> Disney Hits Easy Piano (Music Sheet); If we hold on together (from "Land Before Time");<br/>
