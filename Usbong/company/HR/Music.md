@@ -32,11 +32,11 @@
 --> <b>Mungkahing Aksyon:</b> Pakinggan lamang ang bahagi na tinutugtog ng kaliwang kamay, atbp na nasa likod ng kumakanta.<br/>
 --> May Bass, Drums, atbp.<br/>
 --> <b>Halimbawa:</b> 「おやすみなさい」　ni AIKO　(ALBUM: 「秋　そばにいるよ」)<br/>
---> 1.6) Maaaring matuklasan ang nais ng gumawa ng tugtugin, sa pamamagitan ng pagtugtug nito.<br/>
+--> 1.6) Maaaring matuklasan ang nais ng gumawa ng tugtugin, sa pamamagitan ng pagtugtog nito.<br/>
 --> <b>Mga Halimbawa:</b><br/> 
 --> 1.6.1) Super Mario Bros. sa piano, halintulad sa tumatalon, i.e. JUMP, ang pagtugtog.<br/>
 --> 1.6.2) Legend of Zelda sa piano, halintulad sa sumasakay ng kabayo; Maaalala ang sa Indiana Jones.<br/>
---> 1.6.3) 日の丸の旗 (hi no maru no hata; bandila ng bilog na araw)：<br/>
+--> 1.6.3) 日の丸の旗 (hi no maru no hata; watawat ng bilog ng araw)：<br/>
 --> Maaalala ang mga bata; at ang pagsulat ng pagbigkas.<br/>
 --> <b>Halimbawa:</b> 勢 （いきほひ ikihohi to be いきおいikioi now; signifies: energy/vitality,<br/>
 --> bagama't agad kong naaalala ang "impulse", hal: impulse buying, nitong kahulugan)
