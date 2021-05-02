@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210423
+ * @date updated: 20210502
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -556,8 +556,9 @@ Pilot::Pilot(float xPos, float yPos, float zPos, int windowWidth, int windowHeig
 		iInputWaitCountArray[iCount]=0;
 	}
 	
-    //edited by Mike, 20201201	
-	currentFacingState=FACING_UP;
+    //edited by Mike, 20201201; edited by Mike, 20210502
+//	currentFacingState=FACING_UP;
+	currentFacingState=FACING_RIGHT;
 
 	armAngles[LEFT] = 0.0;
 	armAngles[RIGHT] = 0.0;
@@ -5111,6 +5112,7 @@ void Pilot::move(int key)
 	else if (bIsExecutingDefend) {
 	}	
 	else {    
+/*	//removed by Mike, 20210502		
           //added by Mike, 20201001; edited by Mike, 20201116
 //	      myYPos+=-stepY;
 	      myZPos+=-stepZ;
@@ -5125,6 +5127,7 @@ void Pilot::move(int key)
 	//			if ((bIsExecutingDashArray[KEY_W])) {
 					myZPos+=-stepZ;
 				}
+*/				
 	}
 	
 	      //added by Mike, 20201201; edited by Mike, 20201225
@@ -5137,8 +5140,9 @@ void Pilot::move(int key)
 //      		currentFacingState=FACING_UP;		  	
 		  }
 		  
-		  //added by Mike, 20201226
-   		  currentMovingState=WALKING_MOVING_STATE;
+		  //added by Mike, 20201226; edited by Mike, 20210502
+//   		  currentMovingState=WALKING_MOVING_STATE;
+		  currentMovingState=IDLE_MOVING_STATE;		    
           break;
           
 //     case KEY_DOWN:  //removed by Mike, 20210130
@@ -5155,6 +5159,7 @@ void Pilot::move(int key)
 	else if (bIsExecutingDefend) {
 	}
 	else {
+/* //removed by Mike, 20210502		
           //added by Mike, 20201001; edited by Mike, 20201116
 //	      myYPos+=stepY;
 	      myZPos+=stepZ;
@@ -5164,6 +5169,7 @@ void Pilot::move(int key)
 		if ((bIsExecutingDashArray[KEY_S])) {		
 	    	myZPos+=stepZ;
 		}
+*/				
 	}
 	      //added by Mike, 20201201; edited by Mike, 20201225
           //currentFacingState=FACING_DOWN;
@@ -5175,8 +5181,9 @@ void Pilot::move(int key)
           	//currentFacingState=FACING_DOWN;
 		  }
 
-		  //added by Mike, 20201226
-   		  currentMovingState=WALKING_MOVING_STATE;
+		  //added by Mike, 20201226; edited by Mike, 20210502
+//   		currentMovingState=WALKING_MOVING_STATE;
+			currentMovingState=IDLE_MOVING_STATE;		   
           break;      
 //     case KEY_LEFT: //removed by Mike, 20210130
      case KEY_A: //added by Mike, 20210128		   
@@ -5209,12 +5216,16 @@ void Pilot::move(int key)
           sprintf(str,"rotationAngle: %f",rotationAngle);
           MessageBox(NULL, str, "Welcome!", MB_OK);
 */
+		   
+		   
 	      //added by Mike, 20201201; edited by Mike, 20201225
           //currentFacingState=FACING_LEFT;
 	      if (bIsFiringBeam) {	      	
 		  }
 		  else {
-          	currentFacingState=FACING_LEFT;
+//removed by Mike, 20210502			  
+/*          	currentFacingState=FACING_LEFT;
+*/
 		  }
 
 		  //added by Mike, 20201226
@@ -5283,6 +5294,10 @@ void Pilot::move(int key)
 		bIsFiringBeam=false;
 	}   
 
+	//added by Mike, 20210502
+	//TO-DO: -add: FACING_LEFT based on opponent position, e.g. left of pilot
+
+	
 	//added by Mike, 20210104
 //	if (!bIsExecutingDefend) {	
 	if (!bIsFiringBeam) {
@@ -5290,14 +5305,16 @@ void Pilot::move(int key)
 		//TO-DO: -reverify: fire beam, move diagonal, move non-diagonal direction
 		//added by Mike, 20210201
 		if ((myKeysDown[KEY_A]) && (myKeysDown[KEY_W])) {
-	        currentFacingState=FACING_LEFT_AND_UP;
+			//removed by Mike, 20210502
+//	        currentFacingState=FACING_LEFT_AND_UP;
 		}
 		else if ((myKeysDown[KEY_D]) && (myKeysDown[KEY_W])) {
 	        currentFacingState=FACING_RIGHT_AND_UP;
 		}
 		//added by Mike, 20210202
 		else if ((myKeysDown[KEY_A]) && (myKeysDown[KEY_S])) {
-	        currentFacingState=FACING_LEFT_AND_DOWN;
+			//removed by Mike, 20210502			
+//	        currentFacingState=FACING_LEFT_AND_DOWN;
 		}
 		else if ((myKeysDown[KEY_D]) && (myKeysDown[KEY_S])) {
 	        currentFacingState=FACING_RIGHT_AND_DOWN;

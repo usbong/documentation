@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210425
+ * @date updated: 20210502
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -373,9 +373,19 @@ bool OpenGLCanvas::init()
 	//60*4=240; 240=maxViewPort
 	//we use excess auto-draw outside camera viewport to eliminate object noticeably appearing
 	//to be auto-drawn on screen while we move the camera viewport
+/*	//edited by Mike, 20210502	
 	iRowCountMax=60;
  	iColumnCountMax=60;
 	iHeightCountMax=60; //added by Mike, 20210208
+*/
+/*	
+	iRowCountMax=30;
+ 	iColumnCountMax=30;
+	iHeightCountMax=30; //added by Mike, 20210208
+*/
+	iRowCountMax=12;
+ 	iColumnCountMax=12;
+	iHeightCountMax=12; //added by Mike, 20210208
 
 /*	//edited by Mike, 20210320
 	fGridSquareWidth = myWindowWidth/iColumnCountMax/100.0;
@@ -1709,38 +1719,41 @@ void OpenGLCanvas::drawGridWithZAxis() {
 //	float fGridSquareHeight = myWindowHeight/iRow3CountMax/100.0;
 
 
-	//removed by Mike, 20201123
-/*
-	//TO-DO: -add: grid after drawing level 
-	//due to glClear(GL_COLOR_BUFFER_BIT); // Clear the color buffer
-	//edited by Mike, 20201120
-   // Draw a Green Line top-left origin; Quadrant 4, y-axis inverted; x and y positive
-   //rows   
-   	//edited by Mike, 20201002
- 	 for (int iRowCount=0; iRowCount<=iRowCountMax; iRowCount++) {
-   		// Draw a Green Line top-left origin
-   		glBegin(GL_LINES);
-      		glColor3f(0.0f, 1.0f, 0.0f); // Green
-			//added by Mike, 20201023
-			//floor face
-			//with Z-axis
-      		glVertex3f(0.0f, 0.0f, fGridSquareHeight*iRowCount);    // x, z
-      		glVertex3f(fGridSquareWidth*iRowCountMax, 0.0f, fGridSquareHeight*iRowCount);      		
-   		glEnd();   		   	  
-	 }
-   //columns
-   	//edited by Mike, 20201015   	
- 	 for (int iColumnCount=0; iColumnCount<=iColumnCountMax; iColumnCount++) {
-   		// Draw a Green Line top-left origin
-   		glBegin(GL_LINES);
-      		glColor3f(0.0f, 1.0f, 0.0f); // Green
-			//added by Mike, 20201022			
-			//with Z-axis
-      		glVertex3f(fGridSquareWidth*iColumnCount, 0.0f, 0.0f);    // y, z
-      		glVertex3f(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iColumnCountMax);
-   		glEnd();   		   	  
-	 }
-*/
+	//added by Mike, 20210502
+//	glTranslatef(-myWindowWidth/2, 0.0f, -myWindowHeight/2);
+//	glTranslatef(-fGridSquareWidth*iColumnCountMax/2, 0.0f, -fGridSquareHeight*iColumnCountMax/2);
+	glTranslatef(-fGridSquareWidth*(iRowCountMax-4), 0.0f, -fGridSquareHeight*(iColumnCountMax-1));
+	
+	   // Draw a Green Line
+	   //rows   
+	   for (int iRowCount=0; iRowCount<=iRowCountMax; iRowCount++) {
+		  // Draw a Green Line top-left origin
+		  glBegin(GL_LINES);
+//			  glColor3f(0.0f, 1.0f, 0.0f); // Green
+			  glColor3f(0.0f, 0.8f, 0.0f); // Green		   
+			  //floor face
+			  //with Z-axis
+			  glVertex3f(0.0f, 0.0f, fGridSquareHeight*iRowCount);    // x, z
+			  glVertex3f(fGridSquareWidth*iRowCountMax, 0.0f, fGridSquareHeight*iRowCount);      		
+		  glEnd();   		   	  
+	    }
+	
+	    //columns
+		 for (int iColumnCount=0; iColumnCount<=iColumnCountMax; iColumnCount++) {
+		   // Draw a Green Line top-left origin
+		   glBegin(GL_LINES);
+	//		  glColor3f(0.0f, 1.0f, 0.0f); // Green
+			  glColor3f(0.0f, 0.8f, 0.0f); // Green		   
+			 
+			  //with Z-axis
+			  glVertex3f(fGridSquareWidth*iColumnCount, 0.0f, 0.0f);    // y, z
+			  glVertex3f(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iColumnCountMax);
+		   glEnd();   		   	  
+		 }	
+//	glTranslatef(myWindowWidth/2, 0.0f, myWindowHeight/2);
+//	glTranslatef(fGridSquareWidth*iColumnCountMax/2, 0.0f, fGridSquareHeight*iColumnCountMax/2);
+	glTranslatef(fGridSquareWidth*(iRowCountMax-4), 0.0f, fGridSquareHeight*(iColumnCountMax-1));
+
 
   	//added by Mike, 20201118
   	//LEVEL TEXTURE
@@ -2869,22 +2882,24 @@ void OpenGLCanvas::update()
     		//added by Mike, 20201001
           	//myRobotShip->move(KEY_UP);
 
-          	//edited by Mike, 20201115
-          	myRobotShip->move(KEY_W);
+          	//edited by Mike, 20201115; removed by Mike, 20210502
+/*          	myRobotShip->move(KEY_W);
+*/
 			//removed by Mike, 20201026
 /*			  myCanvasPosZ+=myCanvasStepZ;
 */
 
 			//added by Mike, 20210423
           	myPilot->move(KEY_W);			
-			
+
+/*	//removed by Mike, 20210502			
 			//move forward
 			//Reference: https://community.khronos.org/t/moving-an-object-with-respect-to-the-camera/40968;
 			//last accessed: 20201026
 			//answer by: Bob, 200002
 			myCanvasPosZ-=sin(myCanvasLookAtAngle)*myCanvasStepZ;
 			myCanvasPosX-=cos(myCanvasLookAtAngle)*myCanvasStepX;
-
+*/
 
 			//removed by Mike, 20200929
 //			sound->play_sound_clip(thrust);
@@ -2897,21 +2912,20 @@ void OpenGLCanvas::update()
     	{
     		//edited by Mike, 20201115; edited again by Mike, 20210128
             //myRobotShip->move(KEY_DOWN);
-            myRobotShip->move(KEY_S);
+			//removed by Mike, 20210502
+//            myRobotShip->move(KEY_S);
 			
 			//added by Mike, 20210423
           	myPilot->move(KEY_S);			
-			
-/*			//removed by Mike, 20201026
-			myCanvasPosZ-=myCanvasStepZ;
-*/
+
+/*	//removed by Mike, 20210502			
 			//move backward
 			//Reference: https://community.khronos.org/t/moving-an-object-with-respect-to-the-camera/40968;
 			//last accessed: 20201026
 			//answer by: Bob, 200002
 			myCanvasPosZ+=sin(myCanvasLookAtAngle)*myCanvasStepZ;
 			myCanvasPosX+=cos(myCanvasLookAtAngle)*myCanvasStepX;
-
+*/
     	}
        	//edited by Mike, 20201013
     	//else if(myKeysDown[KEY_RIGHT] == TRUE)
