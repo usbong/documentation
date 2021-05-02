@@ -434,7 +434,12 @@ bool OpenGLCanvas::init()
 //	myPilot = new Pilot(0.0f,0.0f,0.0f,myWindowWidth,myWindowHeight);
 	myPilot = new Pilot(0.0f,0.0f,0.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
 	myPilot->setOpenGLCanvas(this);
-
+	
+	//added by Mike, 20210502
+	myPilotPlayer2 = new Pilot(0.0f,0.0f,0.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
+	myPilotPlayer2->setOpenGLCanvas(this);
+	myPilotPlayer2->setAsPlayer2();
+		
 	//added by Mike, 20201013; edited by Mike, 20201014
 //	for (i=0; i<MAX_BEAMS; i++) {
 	for (int i=0; i<MAX_BEAMS; i++) {
@@ -536,11 +541,15 @@ bool OpenGLCanvas::init()
     }
 */
 
-	//added by Mike, 20201213
+	//added by Mike, 20201213; edited by Mike, 20210502
 	//std::vector<MyDynamicObject*> v;	
-	vMyDynamicObjectContainer.push_back(myPilot);
 	vMyDynamicObjectContainer.push_back(myRobotShip);
-
+	
+	//added by Mike, 20210502
+	vMyDynamicObjectContainer.push_back(myPilot);
+	vMyDynamicObjectContainer.push_back(myPilotPlayer2);
+	
+	
 /*	//removed by Mike, 20210120
 	for (int i=0; i<MAX_BEAMS; i++) { //32
 		vMyDynamicObjectContainer.push_back(myBeam[i]);
@@ -1398,6 +1407,13 @@ void OpenGLCanvas::render()
 /*    glScalef(0.2f, 0.2f, 0.2f);
 */
 	//-----
+
+	//added by Mike, 20210502
+	//Fighter
+//	glScalef(0.2f, 0.2f, 0.2f);
+//  glTranslatef(0.0f, -1.0f, 0.0f); //TO-DO: -reverify: this
+//  glTranslatef(0.0f, 0.0f, -1.0f);
+
 		
 /*	//removed by Mike, 20210323
 //added by Mike, 20210311
@@ -1468,14 +1484,23 @@ void OpenGLCanvas::render()
 /*	myCanvasPosX = myRobotShip->getX()-myWindowWidth/100/2; //-3.2 : 4.2; CanvasPosX : robotShipX
 	myCanvasPosZ = myRobotShip->getZ()-myWindowHeight/100/2; //-3.2 : 4.2; CanvasPosZ : robotShipZ
 */		
-	//edited by Mike, 20210424		
-	myCanvasPosX = -myRobotShip->getX(); //-3.2 : 4.2; CanvasPosX : robotShipX
+	//edited by Mike, 20210424; edited by Mike, 20210502
+//	myCanvasPosX = -myRobotShip->getX(); //-3.2 : 4.2; CanvasPosX : robotShipX
 	myCanvasPosZ = -myRobotShip->getZ(); //-3.2 : 4.2; CanvasPosZ : robotShipZ
 
-	myPilot->setXPos(myRobotShip->getX());
+	myCanvasPosX = -myPilot->getX(); //-3.2 : 4.2; CanvasPosX : robotShipX
+
+	//edited by Mike, 20210502
+//	myPilot->setXPos(myRobotShip->getX());
+	myRobotShip->setXPos(myPilot->getX());
+		
 	//edited by Mike, 20210424
 //	myPilot->setZPos(myRobotShip->getZ());
 	myPilot->setZPos(myRobotShip->getZ()-1.5f); //put farther from camera view
+
+//added by Mike, 20210502		
+//	myPilotPlayer2->setXPos(myRobotShip->getX());
+	myPilotPlayer2->setZPos(myRobotShip->getZ()-1.5f); //put farther from camera view
 		
 /*		
 			//note: position calibrate; robotShipX : CanvasPosX
@@ -2036,8 +2061,9 @@ glPopMatrix(); //added by Mike, 20210422
 //added by Mike, 20210422
 glPushMatrix();
 		
-	//added by Mike, 20210416
-	glTranslatef(15.0f, 0.0f, 30.0f);		
+	//added by Mike, 20210416; edited by Mike, 20210502
+//	glTranslatef(15.0f, 0.0f, 30.0f);		
+	glTranslatef(32.0f, 0.0f, 0.0f);		
 	
 //added by Mike, 20210418
 /*    glDisable(GL_TEXTURE_2D);
@@ -2540,7 +2566,9 @@ glDisable(GL_TEXTURE_2D);
 	//added by Mike, 20210422
     glScalef(1.0f, 1.0f, 1.0f);	
 	
-	glTranslatef(-15.0f, 0.0f, -30.0f);		
+	//edited by Mike, 20210502
+//	glTranslatef(-15.0f, 0.0f, -30.0f);		
+	glTranslatef(-32.0f, 0.0f, 0.0f);		
 
 //edited by Mike, 20210416	
 //fKahonRotation+=10;
@@ -2789,7 +2817,11 @@ void OpenGLCanvas::update()
 
     	//added by Mike, 20210206; removed by Mike, 20210424
     	myPilot->update(1); //dt
-    	
+
+		//added by Mike, 20210502
+    	myPilotPlayer2->update(1); //dt
+
+		
     	//added by Mike, 20201001
     	myRobotShip->update(1); //dt
 

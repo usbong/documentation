@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210424
+ * @date updated: 20210502
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -210,6 +210,9 @@ private:
 	//int iInputWaitCount; //we use with dash
 	int iInputWaitCountArray[PILOT_MAX_DIRECTIONAL_KEY_DASH_COUNT]; //6
 
+	//added by Mike, 20210502
+	bool bIsPlayer2;
+
     GLint tricount;
     GLint isMovingForward;
 
@@ -319,6 +322,18 @@ public:
     void setCurrentFacingState(int iNewFacingState) {
     	currentFacingState = iNewFacingState;
 	}
+	
+	//added by Mike, 20210502
+	void setAsPlayer2() {
+		currentFacingState=FACING_LEFT;
+		bIsPlayer2=true;
+		
+		//note: position: 3,3; width, height; count starts at 0
+		myXPos=0.0f+myWidth*6;
+		//note: auto-set to be equal with player 1; player 1 Z-position based on Camera Eye		
+		//myZPos=0.0f+myHeight*3; 		
+	}
+	
 
     //added by Mike, 20210111
 //    bool getIsExcutingPunchDefense() {

@@ -498,7 +498,10 @@ Pilot::Pilot(float xPos, float yPos, float zPos, int windowWidth, int windowHeig
     myYPos=0+myHeight;//0.1f;
 */
 	//note: position: 3,3; width, height; count starts at 0
-    myXPos=0.0f+myWidth*3;
+	//edited by Mike, 20210502
+//    myXPos=0.0f+myWidth*3;
+    myXPos=0.0f-myWidth*10;
+	
     //edited by Mike, 2020116
 //    myYPos=0.0f+myHeight*3;
     myZPos=0.0f+myHeight*3;
@@ -575,6 +578,10 @@ Pilot::Pilot(float xPos, float yPos, float zPos, int windowWidth, int windowHeig
 /*	loadTexture(myBodyTexture, "bodyTexture.tga", &myBodyTextureObject);
 	loadTexture(myHeadTexture, "headTexture.tga", &myHeadTextureObject);	
 */
+	
+	//added by Mike, 20210502
+	//note: set this in OpenGLCanvas.cpp
+	bIsPlayer2=false;
 	
 	//removed by Mike, 20201001; added by Mike, 20210423
 	setup();

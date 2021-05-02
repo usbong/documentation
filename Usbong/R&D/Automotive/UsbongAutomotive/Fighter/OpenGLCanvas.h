@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200929
- * @date updated: 20210418
+ * @date updated: 20210502
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -96,8 +96,10 @@
 //edited by Mike, 20210120
 //#define MAX_DYNAMIC_OBJECT 50 //TO-DO: -update: this
 
-//edited by Mike, 20210206
-#define MAX_DYNAMIC_OBJECT 18 //remove beams x32
+//edited by Mike, 20210206; edited by Mike, 20210502
+//#define MAX_DYNAMIC_OBJECT 18 //remove beams x32
+#define MAX_DYNAMIC_OBJECT 19 //add pilotPlayer2
+
 //#define MAX_DYNAMIC_OBJECT 17 //remove beams x32
 
 #define MAX 1026 //buffer
@@ -145,7 +147,11 @@ class OpenGLCanvas
 		
 		//added by Mike, 20201207
     	Pilot *myPilot;
-		
+
+		//added by Mike, 20210502
+    	Pilot *myPilotPlayer2;
+
+
 		//added by Mike, 20201118
     	Level *myLevel;
 
