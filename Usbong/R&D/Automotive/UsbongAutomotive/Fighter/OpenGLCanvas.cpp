@@ -1308,6 +1308,7 @@ void OpenGLCanvas::render()
                    0.1, // near plane
                    100); // far plane
 */
+		
     gluPerspective(90.0, // field-of-view angle
                    4.0 / 4.0, // aspect ratio
                    0.1, // near plane
@@ -1359,9 +1360,22 @@ void OpenGLCanvas::render()
               myCanvasCenterPosX, myCanvasCenterPosY, myCanvasCenterPosZ, // look-at point
               0.0, 1.0, 0.0); // up-direction
 */
+	//added by Mike, 20210502	
+	//TO-DO: -update: stage's max distance to be shorter
+	//TO-DO: -add: gradual zoom in and out
+		
+//	myCanvasEyePosY=-1.0f;
+	myCanvasEyePosY=-0.5f;
+		
+/*	//edited by Mike, 20210502
     gluLookAt(myCanvasEyePosX, myCanvasEyePosY, myCanvasEyePosZ, // eye position 0.0, 0.0, 3.0
               myCanvasCenterPosX, myCanvasCenterPosY, myCanvasCenterPosZ, // look-at point
               0.0, 1.0, 0.0); // up-direction
+*/		
+    gluLookAt(myCanvasEyePosX, myCanvasEyePosY, myCanvasEyePosZ-3.0f, // eye position 0.0, 0.0, 3.0
+              myCanvasCenterPosX, myCanvasCenterPosY, myCanvasCenterPosZ, // look-at point
+              0.0, 1.0, 0.0); // up-direction
+		
 /*	//edited by Mike, 20210311
     gluLookAt(myCanvasEyePosX, myCanvasEyePosY, myCanvasEyePosZ*2, // eye position 0.0, 0.0, 3.0
               myCanvasCenterPosX, myCanvasCenterPosY, myCanvasCenterPosZ, // look-at point
@@ -1388,6 +1402,15 @@ void OpenGLCanvas::render()
 	//-----
 */
 
+	//added by Mike, 20210502
+	//Fighter
+//	glScalef(0.2f, 0.2f, 0.2f);
+//  glTranslatef(0.0f, -1.0f, 0.0f); //TO-DO: -reverify: this
+//  glTranslatef(0.0f, 0.0f, -1.0f);
+	//added by Mike, 20210502
+//	glTranslatef(0.0f, -4.0f, 0.0f);				
+		
+		
 	//added by Mike, 20210220
 	//3rd-person view
 	//without additional rotate and scale
@@ -1407,12 +1430,6 @@ void OpenGLCanvas::render()
 /*    glScalef(0.2f, 0.2f, 0.2f);
 */
 	//-----
-
-	//added by Mike, 20210502
-	//Fighter
-//	glScalef(0.2f, 0.2f, 0.2f);
-//  glTranslatef(0.0f, -1.0f, 0.0f); //TO-DO: -reverify: this
-//  glTranslatef(0.0f, 0.0f, -1.0f);
 
 		
 /*	//removed by Mike, 20210323
@@ -1436,6 +1453,12 @@ void OpenGLCanvas::render()
 	//edited by Mike, 20201023
 //    glTranslatef(-3.2f, 0.0f, -3.2f);
     glTranslatef(myCanvasPosX, myCanvasPosY, myCanvasPosZ);
+
+	//added by Mike, 20210502	
+	//Fighter
+//	glTranslatef(0.0f, -6.0f, 0.0f);
+//	glRotatef(-10, 1.0f, 0.0f, 0.0f);
+	glRotatef(-8, 1.0f, 0.0f, 0.0f);
   
     //added by Mike, 2020116; edited by Mike, 20201116
    	//wrap the world 
@@ -1484,12 +1507,29 @@ void OpenGLCanvas::render()
 /*	myCanvasPosX = myRobotShip->getX()-myWindowWidth/100/2; //-3.2 : 4.2; CanvasPosX : robotShipX
 	myCanvasPosZ = myRobotShip->getZ()-myWindowHeight/100/2; //-3.2 : 4.2; CanvasPosZ : robotShipZ
 */		
+			
 	//edited by Mike, 20210424; edited by Mike, 20210502
 //	myCanvasPosX = -myRobotShip->getX(); //-3.2 : 4.2; CanvasPosX : robotShipX
-	myCanvasPosZ = -myRobotShip->getZ(); //-3.2 : 4.2; CanvasPosZ : robotShipZ
+//	myCanvasPosZ = -myRobotShip->getZ(); //-3.2 : 4.2; CanvasPosZ : robotShipZ
+	myCanvasPosZ = -myPilot->getZ(); //-3.2 : 4.2; CanvasPosZ : robotShipZ
 
-	myCanvasPosX = -myPilot->getX(); //-3.2 : 4.2; CanvasPosX : robotShipX
+	//edited by Mike, 20210502
+	//myCanvasPosX = -myPilot->getX();
+	//get distance between player 1 and player 2
+	float fDistanceBetweenPlayer1And2 = sqrt((myPilot->getX()-myPilotPlayer2->getX())*(myPilot->getX()-myPilotPlayer2->getX()));
+	printf("fDistanceBetweenPlayer1And2: %f",fDistanceBetweenPlayer1And2);
+		
+	if (fDistanceBetweenPlayer1And2>=16.0f) {
+		glTranslatef(0.0f, 0.0f, -18.0f);		
+	}
+	else {
+		glTranslatef(0.0f, 0.0f, -12.0f);		
+	}
+		
+//	myCanvasPosX = -myPilot->getX()-myPilot->getWidth()*4;
+	myCanvasPosX = -myPilot->getX()-fDistanceBetweenPlayer1And2/4;
 
+		
 	//edited by Mike, 20210502
 //	myPilot->setXPos(myRobotShip->getX());
 	myRobotShip->setXPos(myPilot->getX());

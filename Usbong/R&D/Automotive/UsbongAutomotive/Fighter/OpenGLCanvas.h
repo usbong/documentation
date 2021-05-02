@@ -53,6 +53,9 @@
 //added by Mike, 20201213
 #include <vector>
 
+//added by Mike, 20210502
+#include <math.h>
+
 #define PI 3.14159
 #define TWO_PI PI*2.0
 #define HALF_PI PI/2.0
