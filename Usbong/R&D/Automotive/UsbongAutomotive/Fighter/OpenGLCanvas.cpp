@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210502
+ * @date updated: 20210503
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -1372,7 +1372,12 @@ void OpenGLCanvas::render()
               myCanvasCenterPosX, myCanvasCenterPosY, myCanvasCenterPosZ, // look-at point
               0.0, 1.0, 0.0); // up-direction
 */		
+/*	//edited by Mike, 20210503		
     gluLookAt(myCanvasEyePosX, myCanvasEyePosY, myCanvasEyePosZ-3.0f, // eye position 0.0, 0.0, 3.0
+              myCanvasCenterPosX, myCanvasCenterPosY, myCanvasCenterPosZ, // look-at point
+              0.0, 1.0, 0.0); // up-direction
+*/		
+    gluLookAt(myCanvasEyePosX, myCanvasEyePosY, myCanvasEyePosZ+3.0f, // eye position 0.0, 0.0, 3.0
               myCanvasCenterPosX, myCanvasCenterPosY, myCanvasCenterPosZ, // look-at point
               0.0, 1.0, 0.0); // up-direction
 		
@@ -1409,6 +1414,8 @@ void OpenGLCanvas::render()
 //  glTranslatef(0.0f, 0.0f, -1.0f);
 	//added by Mike, 20210502
 //	glTranslatef(0.0f, -4.0f, 0.0f);				
+//  	glTranslatef(0.0f, -4.0f, 10.0f);
+  	glTranslatef(0.0f, -6.0f, 10.0f);
 		
 		
 	//added by Mike, 20210220
@@ -1520,10 +1527,10 @@ void OpenGLCanvas::render()
 	printf("fDistanceBetweenPlayer1And2: %f",fDistanceBetweenPlayer1And2);
 		
 	if (fDistanceBetweenPlayer1And2>=16.0f) {
-		glTranslatef(0.0f, 0.0f, -18.0f);		
+		glTranslatef(0.0f, 0.0f, -12.0f);		
 	}
 	else {
-		glTranslatef(0.0f, 0.0f, -12.0f);		
+		glTranslatef(0.0f, 0.0f, -10.0f);		
 	}
 		
 //	myCanvasPosX = -myPilot->getX()-myPilot->getWidth()*4;
@@ -1536,11 +1543,15 @@ void OpenGLCanvas::render()
 		
 	//edited by Mike, 20210424
 //	myPilot->setZPos(myRobotShip->getZ());
-	myPilot->setZPos(myRobotShip->getZ()-1.5f); //put farther from camera view
+	//edited by Mike, 20210503
+//	myPilot->setZPos(myRobotShip->getZ()-1.5f); //put farther from camera eye
+	myPilot->setZPos(myRobotShip->getZ()+2.0f); //put nearer to camera eye
 
 //added by Mike, 20210502		
 //	myPilotPlayer2->setXPos(myRobotShip->getX());
-	myPilotPlayer2->setZPos(myRobotShip->getZ()-1.5f); //put farther from camera view
+	//edited by Mike, 20210503
+//	myPilotPlayer2->setZPos(myRobotShip->getZ()-1.5f); //put farther from camera eye
+	myPilotPlayer2->setZPos(myRobotShip->getZ()+2.0f); //put nearer to camera eye
 		
 /*		
 			//note: position calibrate; robotShipX : CanvasPosX
