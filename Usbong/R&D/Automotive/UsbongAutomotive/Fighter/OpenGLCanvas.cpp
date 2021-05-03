@@ -1525,16 +1525,33 @@ void OpenGLCanvas::render()
 	//get distance between player 1 and player 2
 	float fDistanceBetweenPlayer1And2 = sqrt((myPilot->getX()-myPilotPlayer2->getX())*(myPilot->getX()-myPilotPlayer2->getX()));
 	printf("fDistanceBetweenPlayer1And2: %f",fDistanceBetweenPlayer1And2);
-		
-	if (fDistanceBetweenPlayer1And2>=16.0f) {
+
+	//edited by Mike, 20210503
+/*		
+//	if (fDistanceBetweenPlayer1And2>=16.0f) {
+	if (fDistanceBetweenPlayer1And2>=8.0f) {		
 		glTranslatef(0.0f, 0.0f, -12.0f);		
 	}
 	else {
-		glTranslatef(0.0f, 0.0f, -10.0f);		
+//		glTranslatef(0.0f, 0.0f, -10.0f);				
+		glTranslatef(0.0f, 0.0f, -10.0f+(fDistanceBetweenPlayer1And2/8.0f));		
+	}
+*/	
+	if (fDistanceBetweenPlayer1And2>=16.0f) {
+		fDistanceBetweenPlayer1And2=16.0f;
 	}
 		
+//	glTranslatef(0.0f, 0.0f, -10.0f-(fDistanceBetweenPlayer1And2/8.0f));		
+//	glTranslatef(0.0f, 0.0f, -10.0f-(fDistanceBetweenPlayer1And2/12.0f));		
+//	glTranslatef(0.0f, 0.0f, -8.0f-(fDistanceBetweenPlayer1And2/12.0f));		
+	glTranslatef(0.0f, 0.0f, -12.0f-(fDistanceBetweenPlayer1And2/12.0f));		
+		
+	//added by Mike, 20210503
+	//anchor left; x-axis
+	//TO-DO: -add: auto-identify left most pilot, et cetera
 //	myCanvasPosX = -myPilot->getX()-myPilot->getWidth()*4;
-	myCanvasPosX = -myPilot->getX()-fDistanceBetweenPlayer1And2/4;
+//	myCanvasPosX = -myPilot->getX()-fDistanceBetweenPlayer1And2/4;
+	myCanvasPosX = -myPilot->getX()-fDistanceBetweenPlayer1And2/2; //3
 
 		
 	//edited by Mike, 20210502

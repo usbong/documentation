@@ -500,7 +500,9 @@ Pilot::Pilot(float xPos, float yPos, float zPos, int windowWidth, int windowHeig
 	//note: position: 3,3; width, height; count starts at 0
 	//edited by Mike, 20210502
 //    myXPos=0.0f+myWidth*3;
-    myXPos=0.0f-myWidth*10;
+	//edited by Mike, 20210503
+//    myXPos=0.0f-myWidth*10;
+    myXPos=0.0f-myWidth*9;
 	
     //edited by Mike, 2020116
 //    myYPos=0.0f+myHeight*3;
@@ -4631,7 +4633,6 @@ void Pilot::updatePrev(float dt)
            		else if (myZPos <= 0.0f) myZPos = myWindowHeight/100-myHeight/8; //if top side
 */           		           		
 
-
 /*
           char str[700];                                       
           sprintf(str,"myXPos: %f",myXPos);
@@ -4736,6 +4737,16 @@ void Pilot::update(float dt)
            		if (myZPos >= myWindowHeight/100) myZPos = 0.0f+myHeight/8; //if bottom side
            		else if (myZPos <= 0.0f) myZPos = myWindowHeight/100-myHeight/8; //if top side
 */           		           		
+			
+
+				//added by Mike, 20210503
+				//Note: Use these with update to OpenGLCanvas
+				//max world 
+			//TO-DO: -update: this
+/*			
+           		if (myXPos <= 15.0f) myXPos = 0-15.0f; //if left side
+           		else if (myXPos >= myWindowWidth/100) myXPos = 0.0f+myWidth/8; //if right side
+*/			
                 break;
             case IN_TITLE_STATE:                
                   rotationAngle+=5;//rotationStep;

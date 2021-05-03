@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210502
+ * @date updated: 20210503
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -329,7 +329,12 @@ public:
 		bIsPlayer2=true;
 		
 		//note: position: 3,3; width, height; count starts at 0
-		myXPos=0.0f+myWidth*6;
+		//edited by Mike, 20210503
+//		myXPos=0.0f+myWidth*6;
+//		myXPos=0.0f-myWidth*3;
+//		myXPos=0.0f-myWidth*2;
+		myXPos=0.0f-myWidth*2.5;
+		
 		//note: auto-set to be equal with player 1; player 1 Z-position based on Camera Eye		
 		//myZPos=0.0f+myHeight*3; 		
 	}
