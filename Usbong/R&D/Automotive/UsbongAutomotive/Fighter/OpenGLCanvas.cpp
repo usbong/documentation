@@ -1545,19 +1545,34 @@ void OpenGLCanvas::render()
 //	glTranslatef(0.0f, 0.0f, -10.0f-(fDistanceBetweenPlayer1And2/12.0f));		
 //	glTranslatef(0.0f, 0.0f, -8.0f-(fDistanceBetweenPlayer1And2/12.0f));		
 	//edited by Mike, 20210504
-//	glTranslatef(0.0f, 0.0f, -12.0f-(fDistanceBetweenPlayer1And2/12.0f));		
+//	glTranslatef(0.0f, 0.0f, -12.0f-(fDistanceBetweenPlayer1And2/12.0f));				
 	glTranslatef(0.0f, 0.0f-(fDistanceBetweenPlayer1And2/12.0f), -12.0f-(fDistanceBetweenPlayer1And2/12.0f));		
 		
 	//added by Mike, 20210503
 	//anchor left; x-axis
 	//TO-DO: -add: auto-identify left most pilot, et cetera
 //	myCanvasPosX = -myPilot->getX()-myPilot->getWidth()*4;
-//	myCanvasPosX = -myPilot->getX()-fDistanceBetweenPlayer1And2/4;
-	myCanvasPosX = -myPilot->getX()-fDistanceBetweenPlayer1And2/2; //3
+//	myCanvasPosX = -myPilot->getX()-fDistanceBetweenPlayer1And2/4;	
 
+	//edited by Mike, 20210504
+	myCanvasPosX = -myPilot->getX()-fDistanceBetweenPlayer1And2/2; //3
+		
+/* //removed by Mike, 20210504		
+	//added by Mike, 20210504	
+	myCanvasPosX = -myPilot->getX();
+	printf("myCanvasPosX: %f",myCanvasPosX);
+		
+	if ((myCanvasPosX) >= 21.0f) {
+//		myCanvasPosX=0.0f+21.0f-fDistanceBetweenPlayer1And2/2; //if left side
+	}
+	else {
+		myCanvasPosX -= fDistanceBetweenPlayer1And2/2;		
+	}
+*/		
 		
 	//edited by Mike, 20210502
 //	myPilot->setXPos(myRobotShip->getX());
+		
 	myRobotShip->setXPos(myPilot->getX());
 		
 	//edited by Mike, 20210424
@@ -1905,6 +1920,7 @@ void OpenGLCanvas::drawGridWithZAxis() {
 //	glTranslatef(-myWindowWidth/8, 0.0f, -myWindowHeight/8);
 	//updated: viewport to be 240, from 60
 //	glTranslatef(-myWindowWidth/6, 0.0f, -myWindowHeight/6);
+	
 	glTranslatef(-30, 0.0f, -30);
 
 	//myWindowWidth = 240
@@ -3053,13 +3069,15 @@ void OpenGLCanvas::update()
 			myCanvasPosX+=-myCanvasStepX;
 */
 
+			//removed by Mike, 20210504
+/*			
 			//move right
 			//Reference: https://community.khronos.org/t/moving-an-object-with-respect-to-the-camera/40968;
 			//last accessed: 20201026
 			//answer by: Bob, 200002
 			myCanvasPosZ-=cos(myCanvasLookAtAngle)*myCanvasStepZ;
 			myCanvasPosX+=sin(myCanvasLookAtAngle)*myCanvasStepX;
-
+*/
 			//removed by Mike, 20200929
 //			sound->play_sound_clip(thrust);
     	}
@@ -3081,6 +3099,7 @@ void OpenGLCanvas::update()
     		//edited by Mike, 20201115
     		//edited by Mike, 20210129
 //            myRobotShip->move(KEY_LEFT);
+			
             myRobotShip->move(KEY_A);
 			
 			//added by Mike, 20210423
@@ -3088,14 +3107,17 @@ void OpenGLCanvas::update()
 			
 			//removed by Mike, 20201026
 /////			myCanvasPosX+=myCanvasStepX;
-			
+
+			//removed by Mike, 20210504
+/*			
 			//move left
 			//Reference: https://community.khronos.org/t/moving-an-object-with-respect-to-the-camera/40968;
 			//last accessed: 20201026
 			//answer by: Bob, 200002
 			myCanvasPosZ+=cos(myCanvasLookAtAngle)*myCanvasStepZ;
 			myCanvasPosX-=sin(myCanvasLookAtAngle)*myCanvasStepX;
-
+*/
+	
 			//removed by Mike, 20200929
 //			sound->play_sound_clip(thrust);
     	}    	

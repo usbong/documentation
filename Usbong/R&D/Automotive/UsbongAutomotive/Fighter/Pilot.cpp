@@ -4746,16 +4746,19 @@ void Pilot::update(float dt)
            		if (myXPos <= 15.0f) myXPos = 0-15.0f; //if left side
            		else if (myXPos >= myWindowWidth/100) myXPos = 0.0f+myWidth/8; //if right side
 */			
+/*	//removed by Mike, 20210504
 			printf(">> myXPos: %f\n",myXPos);
 			printf(">> stepX: %f\n",stepX);
 				//TO-DO: -update: instructions to do not execute step if already at border
+*/				
 /*			
            		if ((myXPos-stepX) <= -20.70f) myXPos = 0.0f-21.0f+stepX; //+myWidth+stepX; //if left side
            		else if (myXPos >= myWindowWidth/100) myXPos = 0.0f+myWidth/8; //if right side
 */
+/*	//removed by Mike, 20210504			
            		if ((myXPos-stepX) <= -21.0f) myXPos = 0.0f-21.0f+stepX; //if left side
            		else if (myXPos+stepX >= 4.0f) myXPos = 0.0f+4.0f-stepX; //if right side
-
+*/
 				break;
             case IN_TITLE_STATE:                
                   rotationAngle+=5;//rotationStep;
@@ -5231,16 +5234,40 @@ void Pilot::move(int key)
 	//added by Mike, 20210121
 	else if (bIsExecutingDefend) {
 	}
-	else {
-          //added by Mike, 20201001            
-	      myXPos+=-stepX;
+	else {			
+//added by Mike, 20210504		   
+/*			printf(">> myXPos: %f\n",myXPos);
+			printf(">> stepX: %f\n",stepX);
+*/			
+		
+		//max world left border
+/*		//edited  by Mike, 20210504
+		  //added by Mike, 20201001            
+		  myXPos+=-stepX;
 
-		//added by Mike, 20210127; edited by Mike, 20210128
-//			if (bIsExecutingDash) {
-		if ((bIsExecutingDashArray[KEY_A])) {		
-			myXPos+=-stepX;
+			//added by Mike, 20210127; edited by Mike, 20210128
+	//			if (bIsExecutingDash) {
+			if ((bIsExecutingDashArray[KEY_A])) {		
+				myXPos+=-stepX;
+			}
+*/		
+		//do not execute step if already at border
+		if ((myXPos) <= -21.0f) {
 		}
+		else {
+				//added by Mike, 20201001            
+				myXPos+=-stepX;
+
+				//added by Mike, 20210127; edited by Mike, 20210128
+		//			if (bIsExecutingDash) {
+				if ((bIsExecutingDashArray[KEY_A])) {		
+					myXPos+=-stepX;
+				}
+		}
+			
 	}
+
+
 	
 /*          
           char str[700];                                       
@@ -5280,6 +5307,7 @@ void Pilot::move(int key)
 	else if (bIsExecutingDefend) {
 	}
 	else {
+/* //edited by Mike, 20210504		
           //added by Mike, 20201001            
 	      myXPos+=stepX;
 
@@ -5288,7 +5316,21 @@ void Pilot::move(int key)
 			if ((bIsExecutingDashArray[KEY_D])) {
 				myXPos+=stepX;
 			}
+*/
+//		printf("myXPos: %f",myXPos);
+		//do not execute step if already at border
+		if ((myXPos) >= 4.0f) {
+		}
+		else {
+	      	myXPos+=stepX;
+
+			if ((bIsExecutingDashArray[KEY_D])) {
+				myXPos+=stepX;
+			}
+		}		
 	}
+		   
+		   
 
 	      //added by Mike, 20201201; edited by Mike, 20201225
           //currentFacingState=FACING_RIGHT;
