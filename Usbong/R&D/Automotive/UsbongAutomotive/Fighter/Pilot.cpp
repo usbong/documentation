@@ -4742,12 +4742,21 @@ void Pilot::update(float dt)
 				//added by Mike, 20210503
 				//Note: Use these with update to OpenGLCanvas
 				//max world 
-			//TO-DO: -update: this
 /*			
            		if (myXPos <= 15.0f) myXPos = 0-15.0f; //if left side
            		else if (myXPos >= myWindowWidth/100) myXPos = 0.0f+myWidth/8; //if right side
 */			
-                break;
+			printf(">> myXPos: %f\n",myXPos);
+			printf(">> stepX: %f\n",stepX);
+				//TO-DO: -update: instructions to do not execute step if already at border
+/*			
+           		if ((myXPos-stepX) <= -20.70f) myXPos = 0.0f-21.0f+stepX; //+myWidth+stepX; //if left side
+           		else if (myXPos >= myWindowWidth/100) myXPos = 0.0f+myWidth/8; //if right side
+*/
+           		if ((myXPos-stepX) <= -21.0f) myXPos = 0.0f-21.0f+stepX; //if left side
+           		else if (myXPos+stepX >= 4.0f) myXPos = 0.0f+4.0f-stepX; //if right side
+
+				break;
             case IN_TITLE_STATE:                
                   rotationAngle+=5;//rotationStep;
                 break;

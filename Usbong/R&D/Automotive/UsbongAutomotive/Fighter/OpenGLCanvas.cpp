@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210503
+ * @date updated: 20210504
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -1544,7 +1544,9 @@ void OpenGLCanvas::render()
 //	glTranslatef(0.0f, 0.0f, -10.0f-(fDistanceBetweenPlayer1And2/8.0f));		
 //	glTranslatef(0.0f, 0.0f, -10.0f-(fDistanceBetweenPlayer1And2/12.0f));		
 //	glTranslatef(0.0f, 0.0f, -8.0f-(fDistanceBetweenPlayer1And2/12.0f));		
-	glTranslatef(0.0f, 0.0f, -12.0f-(fDistanceBetweenPlayer1And2/12.0f));		
+	//edited by Mike, 20210504
+//	glTranslatef(0.0f, 0.0f, -12.0f-(fDistanceBetweenPlayer1And2/12.0f));		
+	glTranslatef(0.0f, 0.0f-(fDistanceBetweenPlayer1And2/12.0f), -12.0f-(fDistanceBetweenPlayer1And2/12.0f));		
 		
 	//added by Mike, 20210503
 	//anchor left; x-axis
