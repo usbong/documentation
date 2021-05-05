@@ -121,6 +121,12 @@ private:
     float myYPos;
     float myZPos;
 */    
+
+	//added by Mike, 20210505
+    float myOpponentXPos;
+    float myOpponentYPos;
+    float myOpponentZPos;
+	
     float stepX;
     float stepY;
     float stepZ;
@@ -379,6 +385,8 @@ public:
 
 	//added by Mike, 20210505
 	void updateToFaceOpponent(float opponentPosX) {
+		myOpponentXPos=opponentPosX; //added by Mike, 20210505
+	
 		if (getX() < opponentPosX) {
 			currentFacingState=FACING_RIGHT;
 		}		

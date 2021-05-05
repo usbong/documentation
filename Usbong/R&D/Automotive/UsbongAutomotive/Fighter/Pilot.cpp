@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210503
+ * @date updated: 20210505
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -4185,6 +4185,65 @@ void Pilot::drawPilotAsQuadWithTexture()
         glRotatef(180, 0.0f, 1.0f, 0.0f);
     }
 */
+	
+	//added by Mike, 20210505			
+//	glScalef(2.0f, 2.0f, 2.0f);	
+//	glScalef(1.5f, 1.5f, 1.5f);	
+	glScalef(1.2f, 1.2f, 1.2f); //noticeable vertical movement; reverify scale to trans ratio	
+//	glScalef(1.3f, 1.3f, 1.3f);	//noticeable vertical movement	
+//	glScalef(1.4f, 1.4f, 1.4f);	
+	
+	//added by Mike, 20210505				
+	//note: scale: 2.0f; z-axis: -0.75f
+/*	glScalef(2.0f, 2.0f, 2.0f);	
+    glTranslatef(0.0f, 0.0f, -0.75f); 
+*/	
+/*	
+	glScalef(1.5f, 1.5f, 1.5f);	
+    glTranslatef(0.0f, 0.0f, -0.5625f); 
+*/
+	
+	float fDistanceBetweenPlayer1And2 = sqrt((getX()-myOpponentXPos)*(getX()-myOpponentXPos));
+	printf("fDistanceBetweenPlayer1And2: %f",fDistanceBetweenPlayer1And2);
+
+//	if (fDistanceBetweenPlayer1And2<10.0f) {
+//	if (fDistanceBetweenPlayer1And2<7.5f) {	
+//	if (fDistanceBetweenPlayer1And2<7.9f) {			
+		float fScale=1.0f+(1.0f-(fDistanceBetweenPlayer1And2/10.0f));
+	
+		if (fScale>2.0f) {
+			fScale=2.0f;
+		}
+/*		else if (fScale<1.5f) {
+			fScale=1.5f;
+		}
+*/		
+  //noticeable vertical movement		
+		else if (fScale<1.2f) {
+			fScale=1.2f;
+		}
+/*  //noticeable vertical movement		
+		else if (fScale<1.3f) {
+			fScale=1.3f;
+		}
+*/	
+/*		else if (fScale<1.4f) {
+			fScale=1.4f;
+		}
+*/	
+		//note: ratio: 1.0f : 0.375f; 2.0f : 0.75f
+		//where: 1.0f = scale
+		//0.375f = trans
+		float fTrans= fScale*0.375f;
+//		float fTrans= fScale*0.25f;
+		
+		printf("fScale: %f",fScale);		
+		
+		glScalef(fScale, fScale, fScale);			
+		glTranslatef(0.0f, 0.0f, -fTrans); //negative to move backward in z-axis
+//	}
+	
+	
 	
     switch (currentState)
     {
