@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210504
+ * @date updated: 20210505
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -1554,8 +1554,16 @@ void OpenGLCanvas::render()
 //	myCanvasPosX = -myPilot->getX()-myPilot->getWidth()*4;
 //	myCanvasPosX = -myPilot->getX()-fDistanceBetweenPlayer1And2/4;	
 
-	//edited by Mike, 20210504
-	myCanvasPosX = -myPilot->getX()-fDistanceBetweenPlayer1And2/2; //3
+	//edited by Mike, 20210504; edited again by Mike, 20210505
+//	myCanvasPosX = -myPilot->getX()-fDistanceBetweenPlayer1And2/2; //3
+	//identify which is at the left
+	if (myPilot->getX() < myPilotPlayer2->getX()) {
+		myCanvasPosX = -myPilot->getX()-fDistanceBetweenPlayer1And2/2;
+	}
+	else {
+		myCanvasPosX = -myPilotPlayer2->getX()-fDistanceBetweenPlayer1And2/2;		
+	}
+		
 		
 /* //removed by Mike, 20210504		
 	//added by Mike, 20210504	
@@ -1586,6 +1594,13 @@ void OpenGLCanvas::render()
 	//edited by Mike, 20210503
 //	myPilotPlayer2->setZPos(myRobotShip->getZ()-1.5f); //put farther from camera eye
 	myPilotPlayer2->setZPos(myRobotShip->getZ()+2.0f); //put nearer to camera eye
+		
+	//added by Mike, 20210505
+	//TO-DO: -reverify: output advantage to player1 due to computer verifies player1 first?
+	//TO-DO: -reverify: output if equal, advantage to player2?		
+	//auto-update facing left or right
+	myPilot->updateToFaceOpponent(myPilotPlayer2->getX());
+	myPilotPlayer2->updateToFaceOpponent(myPilot->getX());
 		
 /*		
 			//note: position calibrate; robotShipX : CanvasPosX

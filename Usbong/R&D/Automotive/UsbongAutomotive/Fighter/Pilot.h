@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210503
+ * @date updated: 20210505
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -376,7 +376,17 @@ public:
 	void updatePrev(float dt);
 	//added by Mike, 20210423
 	void update(float dt);
-	
+
+	//added by Mike, 20210505
+	void updateToFaceOpponent(float opponentPosX) {
+		if (getX() < opponentPosX) {
+			currentFacingState=FACING_RIGHT;
+		}		
+		else {
+			currentFacingState=FACING_LEFT;		
+		}
+	}
+
 	// changes the robot's state
 	void changeState(int s);
 	
