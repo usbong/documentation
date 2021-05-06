@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210505
+ * @date updated: 20210506
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -1427,7 +1427,12 @@ void OpenGLCanvas::render()
 	//Tron Bonne Mini Game: Cannonballs
 	//https://www.youtube.com/watch?v=P1S3Mt49qyg;
 	//last accessed: 20210323
-	glRotatef(30, 1.0f, 0.0f, 0.0f);
+	//edited by Mike, 20210506
+	//TO-DO: -reverify: this
+//	glRotatef(30, 1.0f, 0.0f, 0.0f);
+//	glRotatef(20, 1.0f, 0.0f, 0.0f);
+	//glRotatef(10, 1.0f, 0.0f, 0.0f);
+	glRotatef(15, 1.0f, 0.0f, 0.0f);
 		
 	//added by Mike, 20210220; edited by Mike, 20210220
 	//2D horizontal-scrolling, vertical-scrolling view
