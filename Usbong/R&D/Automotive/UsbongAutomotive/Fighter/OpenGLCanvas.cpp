@@ -1283,6 +1283,74 @@ void OpenGLCanvas::render()
 //	glDepthFunc(GL_ALWAYS);
 
 
+	//added by Mike, 20210505
+//-----------------------------------------------------------
+glPushMatrix();		
+		
+/*glTranslatef(0.0f, -8.0f, 10.0f);
+glRotatef(20, 1.0f, 0.0f, 0.0f);
+*/	
+//glTranslatef(myCanvasPosX, myCanvasPosY, myCanvasPosZ);
+
+/*		
+//Fighter
+glRotatef(-8, 1.0f, 0.0f, 0.0f);
+myCanvasPosZ = -myPilot->getZ(); //-3.2 : 4.2; CanvasPosZ : robotShipZ
+*/
+
+
+//-----		
+//added by Mike, 20210505		
+//TO-DO: -add: use output to auto-scale Pilots, et cetera
+//at present, with these instructions, only background objects move
+//bottom horizontal line of grid moves vertically a la beach, i.e. near umi 
+//however, Pilots do not move vertically in excess
+//likely due to after computation, irrational number, e.g. 10/3; where output does not end 
+
+/*	//removed by Mike, 20210505		
+//edited by Mike, 20210502
+//myCanvasPosX = -myPilot->getX();
+//get distance between player 1 and player 2
+float fDistanceBetweenPlayer1And2 = sqrt((myPilot->getX()-myPilotPlayer2->getX())*(myPilot->getX()-myPilotPlayer2->getX()));
+printf("fDistanceBetweenPlayer1And2: %f",fDistanceBetweenPlayer1And2);
+
+if (fDistanceBetweenPlayer1And2>=16.0f) {
+	fDistanceBetweenPlayer1And2=16.0f;
+}
+
+glTranslatef(0.0f, 0.0f-(fDistanceBetweenPlayer1And2/12.0f), -12.0f-(fDistanceBetweenPlayer1And2/12.0f));		
+*/
+//-----		
+		
+//	glTranslatef(0.0f, 0.0f-(fDistanceBetweenPlayer1And2/10.0f), -12.0f-(fDistanceBetweenPlayer1And2/12.0f));		
+/*		
+//identify which is at the left
+if (myPilot->getX() < myPilotPlayer2->getX()) {
+	myCanvasPosX = -myPilot->getX()-fDistanceBetweenPlayer1And2/2;
+}
+else {
+	myCanvasPosX = -myPilotPlayer2->getX()-fDistanceBetweenPlayer1And2/2;		
+}
+		
+glTranslatef(myCanvasPosX, myCanvasPosY, myCanvasPosZ);
+*/		
+myRobotShip->setXPos(myPilot->getX());		
+myPilot->setZPos(myRobotShip->getZ()+2.0f); //put nearer to camera eye
+
+myPilotPlayer2->setZPos(myRobotShip->getZ()+2.0f); //put nearer to camera eye
+		
+//added by Mike, 20210505
+//TO-DO: -reverify: output advantage to player1 due to computer verifies player1 first?
+//TO-DO: -reverify: output if equal, advantage to player2?		
+//auto-update facing left or right
+myPilot->updateToFaceOpponent(myPilotPlayer2->getX());
+myPilotPlayer2->updateToFaceOpponent(myPilot->getX());
+		
+glPopMatrix();		
+//-----------------------------------------------------------------		
+		
+		
+		
 	glMatrixMode(GL_PROJECTION);			// set projection matrix current matrix
 	glLoadIdentity();						// reset projection matrix
 
@@ -1407,6 +1475,7 @@ void OpenGLCanvas::render()
 	//-----
 */
 
+ //removed by Mike, 20210505		
 	//added by Mike, 20210502
 	//Fighter
 //	glScalef(0.2f, 0.2f, 0.2f);
@@ -1415,7 +1484,9 @@ void OpenGLCanvas::render()
 	//added by Mike, 20210502
 //	glTranslatef(0.0f, -4.0f, 0.0f);				
 //  	glTranslatef(0.0f, -4.0f, 10.0f);
-  	glTranslatef(0.0f, -6.0f, 10.0f);
+	//edited by Mike, 20210505
+//  	glTranslatef(0.0f, -6.0f, 10.0f);
+  	glTranslatef(0.0f, -8.0f, 10.0f);
 		
 		
 	//added by Mike, 20210220
@@ -1427,12 +1498,10 @@ void OpenGLCanvas::render()
 	//Tron Bonne Mini Game: Cannonballs
 	//https://www.youtube.com/watch?v=P1S3Mt49qyg;
 	//last accessed: 20210323
-	//edited by Mike, 20210506
-	//TO-DO: -reverify: this
+	//edited by Mike, 20210505
 //	glRotatef(30, 1.0f, 0.0f, 0.0f);
-//	glRotatef(20, 1.0f, 0.0f, 0.0f);
-	//glRotatef(10, 1.0f, 0.0f, 0.0f);
-	glRotatef(15, 1.0f, 0.0f, 0.0f);
+	glRotatef(20, 1.0f, 0.0f, 0.0f);
+		
 		
 	//added by Mike, 20210220; edited by Mike, 20210220
 	//2D horizontal-scrolling, vertical-scrolling view
@@ -1457,7 +1526,8 @@ void OpenGLCanvas::render()
  	//set to TOP-LEFT
 //	glTranslatef(-myWindowWidth/100/2, 0.0f, -myWindowHeight/100/2);
 
-		
+
+ //removed by Mike, 20210505		
 	//edited by Mike, 2021022
 //    glTranslatef(-1.0f, -1.0f, 0.0f);
 //    glTranslatef(-3.0f, -1.0f, 0.0f);
@@ -1471,7 +1541,8 @@ void OpenGLCanvas::render()
 //	glTranslatef(0.0f, -6.0f, 0.0f);
 //	glRotatef(-10, 1.0f, 0.0f, 0.0f);
 	glRotatef(-8, 1.0f, 0.0f, 0.0f);
-  
+
+		
     //added by Mike, 2020116; edited by Mike, 20201116
    	//wrap the world 
 /*
@@ -1519,7 +1590,8 @@ void OpenGLCanvas::render()
 /*	myCanvasPosX = myRobotShip->getX()-myWindowWidth/100/2; //-3.2 : 4.2; CanvasPosX : robotShipX
 	myCanvasPosZ = myRobotShip->getZ()-myWindowHeight/100/2; //-3.2 : 4.2; CanvasPosZ : robotShipZ
 */		
-			
+
+ //removed by Mike, 20210505		
 	//edited by Mike, 20210424; edited by Mike, 20210502
 //	myCanvasPosX = -myRobotShip->getX(); //-3.2 : 4.2; CanvasPosX : robotShipX
 //	myCanvasPosZ = -myRobotShip->getZ(); //-3.2 : 4.2; CanvasPosZ : robotShipZ
@@ -1531,17 +1603,6 @@ void OpenGLCanvas::render()
 	float fDistanceBetweenPlayer1And2 = sqrt((myPilot->getX()-myPilotPlayer2->getX())*(myPilot->getX()-myPilotPlayer2->getX()));
 	printf("fDistanceBetweenPlayer1And2: %f",fDistanceBetweenPlayer1And2);
 
-	//edited by Mike, 20210503
-/*		
-//	if (fDistanceBetweenPlayer1And2>=16.0f) {
-	if (fDistanceBetweenPlayer1And2>=8.0f) {		
-		glTranslatef(0.0f, 0.0f, -12.0f);		
-	}
-	else {
-//		glTranslatef(0.0f, 0.0f, -10.0f);				
-		glTranslatef(0.0f, 0.0f, -10.0f+(fDistanceBetweenPlayer1And2/8.0f));		
-	}
-*/	
 	if (fDistanceBetweenPlayer1And2>=16.0f) {
 		fDistanceBetweenPlayer1And2=16.0f;
 	}
@@ -1551,7 +1612,10 @@ void OpenGLCanvas::render()
 //	glTranslatef(0.0f, 0.0f, -8.0f-(fDistanceBetweenPlayer1And2/12.0f));		
 	//edited by Mike, 20210504
 //	glTranslatef(0.0f, 0.0f, -12.0f-(fDistanceBetweenPlayer1And2/12.0f));				
-	glTranslatef(0.0f, 0.0f-(fDistanceBetweenPlayer1And2/12.0f), -12.0f-(fDistanceBetweenPlayer1And2/12.0f));		
+	//edited by Mike, 20210505
+	//reduce excess vertical movement likely due to after computation, irrational number, e.g. 10/3, i.e. does not end 
+//	glTranslatef(0.0f, 0.0f-(fDistanceBetweenPlayer1And2/12.0f), -12.0f-(fDistanceBetweenPlayer1And2/12.0f));		
+	glTranslatef(0.0f, 0.0f-(fDistanceBetweenPlayer1And2/10.0f), -12.0f-(fDistanceBetweenPlayer1And2/12.0f));		
 		
 	//added by Mike, 20210503
 	//anchor left; x-axis
@@ -1586,6 +1650,7 @@ void OpenGLCanvas::render()
 	//edited by Mike, 20210502
 //	myPilot->setXPos(myRobotShip->getX());
 		
+/* //removed by Mike, 20210505		
 	myRobotShip->setXPos(myPilot->getX());
 		
 	//edited by Mike, 20210424
@@ -1606,6 +1671,7 @@ void OpenGLCanvas::render()
 	//auto-update facing left or right
 	myPilot->updateToFaceOpponent(myPilotPlayer2->getX());
 	myPilotPlayer2->updateToFaceOpponent(myPilot->getX());
+*/
 		
 /*		
 			//note: position calibrate; robotShipX : CanvasPosX

@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210505
+ * @date updated: 20210506
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -463,7 +463,13 @@ Pilot::Pilot(float xPos, float yPos, float zPos, int windowWidth, int windowHeig
     stepY=0.3;
     stepZ=0.3;
 */
-    stepX=0.3;
+	//edited by Mike, 20210505
+	//note: if set to 0.3; noticeable zoom-in, zoom-out cycling movement due to quick speed
+	//observed: Samurai Spirits IV's created world executes such camera eye movement
+	//that becomes noticeable with background zoom-in, zoom-out via cycling movement
+//    stepX=0.3;
+    stepX=0.2;
+	
     stepY=0.3;
     stepZ=0.3;
 
@@ -4209,11 +4215,20 @@ void Pilot::drawPilotAsQuadWithTexture()
 //	if (fDistanceBetweenPlayer1And2<10.0f) {
 //	if (fDistanceBetweenPlayer1And2<7.5f) {	
 //	if (fDistanceBetweenPlayer1And2<7.9f) {			
-		float fScale=1.0f+(1.0f-(fDistanceBetweenPlayer1And2/10.0f));
-	
+	//edited by Mike, 20210506
+//		float fScale=1.0f+(1.0f-(fDistanceBetweenPlayer1And2/10.0f));
+		float fScale=1.0f+(1.0f-(fDistanceBetweenPlayer1And2/20.0f));
+
+		//edited by Mike, 20210506
 		if (fScale>2.0f) {
 			fScale=2.0f;
 		}
+		
+/*	
+		if (fScale>1.6f) {
+			fScale=1.6f;
+		}
+*/	
 /*		else if (fScale<1.5f) {
 			fScale=1.5f;
 		}
