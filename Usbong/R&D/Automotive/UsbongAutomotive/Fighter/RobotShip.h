@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210304
+ * @date updated: 20210507
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -120,6 +120,12 @@ private:
     float myYPos;
     float myZPos;
 */    
+
+	//added by Mike, 20210507
+    float myOpponentXPos;
+    float myOpponentYPos;
+    float myOpponentZPos;
+
     float stepX;
     float stepY;
     float stepZ;
@@ -128,6 +134,10 @@ private:
     float myWidthZ;
     float myHeightY;
 */    
+	//added by Mike, 20210507
+	int iCountTaoAnimationFrame;
+	float fTaoAnimationFrameOffset;
+
     OpenGLCanvas *myOpenGLCanvas;
 
     //float boundary;
@@ -214,7 +224,11 @@ private:
     //draw texture
 	//added by Mike, 20201130
     bool loadTexture(CTargaImage *myTexture, const char *filename, unsigned int *myTextureObject);
+
+	//edited by Mike, 20210507
+	void setupPrev();
     void setup();
+
 
 	// draws a unit cube
 	//void drawCube(float xPos, float yPos, float zPos);
@@ -340,9 +354,15 @@ public:
 	
     //added by Mike, 20201213
     virtual void draw() {
-    	drawRobotShip();
+		//edited by Mike, 20210507
+//    	drawRobotShip();
+		drawRobotAsQuadWithTexture();
     }
   
+	//added by Mike, 20210507
+	void drawRobotAsQuadWithTexture();  
+	void drawRobotObject();
+	
 	// draws the entire robot
 	//void drawRobot(float xPos, float yPos, float zPos);
     void drawRobotShip();
@@ -358,6 +378,18 @@ public:
 	// updates the robot data
 	void update(float dt);
 	
+	//added by Mike, 20210507
+	void updateToFaceOpponent(float opponentPosX) {
+		myOpponentXPos=opponentPosX; //added by Mike, 20210505
+	
+		if (getX() < opponentPosX) {
+			currentFacingState=FACING_RIGHT;
+		}		
+		else {
+			currentFacingState=FACING_LEFT;		
+		}
+	}
+		
 	// changes the robot's state
 	void changeState(int s);
 	

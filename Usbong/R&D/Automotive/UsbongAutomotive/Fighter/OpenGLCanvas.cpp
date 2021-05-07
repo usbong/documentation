@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210506
+ * @date updated: 20210507
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -548,6 +548,7 @@ bool OpenGLCanvas::init()
 	//added by Mike, 20210502
 	vMyDynamicObjectContainer.push_back(myPilot);
 	vMyDynamicObjectContainer.push_back(myPilotPlayer2);
+
 	
 	
 /*	//removed by Mike, 20210120
@@ -587,7 +588,7 @@ bool OpenGLCanvas::init()
 
 	//added by Mike, 20210420
 	//TO-DO: -update: this
-	setupTaoTexture();
+//	setupTaoTexture(); //removed by Mike, 20210507
 	
 	return true;
 }
@@ -930,16 +931,20 @@ void OpenGLCanvas::keyDown(int keyCode)
 {
 	myKeysDown[keyCode] = TRUE;	
 	
-	//added by Mike, 20201226; edited by Mike, 20210423
-//	myRobotShip->keyDown(keyCode);
+	//added by Mike, 20201226; edited by Mike, 20210423;
+	//added by Mike, 20210507
+	myRobotShip->keyDown(keyCode);
+	
 	myPilot->keyDown(keyCode);	
 }
 void OpenGLCanvas::keyUp(int keyCode)
 {
 	myKeysDown[keyCode] = FALSE;	
 
-	//added by Mike, 20201226; edited by Mike, 20210423
-//	myRobotShip->keyUp(keyCode);
+	//added by Mike, 20201226; edited by Mike, 20210423;
+	//added by Mike, 20210507
+	myRobotShip->keyUp(keyCode);
+
 	myPilot->keyUp(keyCode);	
 }
 
@@ -1072,6 +1077,7 @@ void OpenGLCanvas::setupKahonTexture(int myKahonTextureObject)
 
 }
 
+/*  //removed by Mike, 20210507
 //added by Mike, 20210420
 //TO-DO: -update: this
 void OpenGLCanvas::setupTaoTexture()
@@ -1083,7 +1089,7 @@ void OpenGLCanvas::setupTaoTexture()
     // select texture 1
 	glBindTexture(GL_TEXTURE_2D, MIKE_TEXTURE_A);
 	
-    /* create OpenGL texture out of targa file */
+    // create OpenGL texture out of targa file
 	//edited by Mike, 20210420
 //    load_tga("textures/armor.tga");	
     load_tga("textures/imageSpriteExampleMikeWithoutBG.tga");	
@@ -1094,42 +1100,15 @@ void OpenGLCanvas::setupTaoTexture()
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
                     GL_LINEAR_MIPMAP_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
-/*
-    // select texture 1
-	glBindTexture(GL_TEXTURE_2D, MIKE_TEXTURE_B);
 	
-    // create OpenGL texture out of targa file
-    load_tga("textures/armor.tga");	
-	
-	// set texture parameters
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
-                    GL_LINEAR_MIPMAP_NEAREST);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-			
-    // select texture 1
-	glBindTexture(GL_TEXTURE_2D, MIKE_TEXTURE_C);
-	
-    // create OpenGL texture out of targa file
-    load_tga("textures/armor.tga");	
-	
-	// set texture parameters
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
-                    GL_LINEAR_MIPMAP_NEAREST);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);	
-*/
-	
-    /* unselect texture myFontTextureObject */
+    // unselect texture myFontTextureObject
     glBindTexture(GL_TEXTURE_2D, 0);
 
-    /* setup alpha blending */
+    // setup alpha blending
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glEnable(GL_BLEND);
 }
+*/
 
 void OpenGLCanvas::render()
 {     
@@ -1285,7 +1264,8 @@ void OpenGLCanvas::render()
 
 	//added by Mike, 20210505
 //-----------------------------------------------------------
-glPushMatrix();		
+//removed by Mike, 20210507		
+//glPushMatrix();		
 		
 /*glTranslatef(0.0f, -8.0f, 10.0f);
 glRotatef(20, 1.0f, 0.0f, 0.0f);
@@ -1334,10 +1314,28 @@ else {
 		
 glTranslatef(myCanvasPosX, myCanvasPosY, myCanvasPosZ);
 */		
+		
 myRobotShip->setXPos(myPilot->getX());		
-myPilot->setZPos(myRobotShip->getZ()+2.0f); //put nearer to camera eye
-
+//myRobotShip->setZPos(myPilot->getZ()-2.0f);		
+//myRobotShip->setZPos(myRobotShip->getZ()-2.0f);		
+//myRobotShip->setZPos(0.0f+2.0f);		
+		
+//edited by Mike, 20210507
+/*myPilot->setZPos(myRobotShip->getZ()+2.0f); //put nearer to camera eye
 myPilotPlayer2->setZPos(myRobotShip->getZ()+2.0f); //put nearer to camera eye
+*/
+		
+
+myPilot->setZPos(myRobotShip->getZ()+0.1f); //put nearer to camera eye
+myPilotPlayer2->setZPos(myRobotShip->getZ()+0.1f); //put nearer to camera eye
+
+		
+//myRobotShip->setZPos(-2.0f);		
+//printf("myRobotShip->getZ(): %f",myRobotShip->getZ());		
+		
+//added by Mike, 20210507		
+//TO-DO: -update: this
+myRobotShip->updateToFaceOpponent(myPilotPlayer2->getX());
 		
 //added by Mike, 20210505
 //TO-DO: -reverify: output advantage to player1 due to computer verifies player1 first?
@@ -1345,8 +1343,9 @@ myPilotPlayer2->setZPos(myRobotShip->getZ()+2.0f); //put nearer to camera eye
 //auto-update facing left or right
 myPilot->updateToFaceOpponent(myPilotPlayer2->getX());
 myPilotPlayer2->updateToFaceOpponent(myPilot->getX());
-		
-glPopMatrix();		
+	
+//removed by Mike, 20210507		
+//glPopMatrix();		
 //-----------------------------------------------------------------		
 		
 		
@@ -1759,7 +1758,8 @@ glPopMatrix();
 		//these are objects at the back of those that have lower z positions
 		//MyDynamicObject *myDynamicObjectContainerSorted[MAX_DYNAMIC_OBJECT];		
 		//std::vector<MyDynamicObject*> v;
-		std::sort(vMyDynamicObjectContainer.begin(), vMyDynamicObjectContainer.end(), sortByZPosition());
+ //removed by Mike, 20210507; TO-DO: -reverify: sortByZPosition(...)
+//		std::sort(vMyDynamicObjectContainer.begin(), vMyDynamicObjectContainer.end(), sortByZPosition());
 		
 		for (int i=0; i<MAX_DYNAMIC_OBJECT; i++) {			
     		glPushMatrix();

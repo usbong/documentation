@@ -14,7 +14,7 @@
  *
  * @author: Michael Syson
  * @date created: 20200926
- * @date updated: 20210424
+ * @date updated: 20210507
  *
  * References:
  * 1) Dev-C++ 5.11 auto-generated OpenGL example project
@@ -144,7 +144,9 @@ static int myWindowWidth=1024;//640; //320
 static int myWindowHeight=1024;//640; //320
 */
 static int myWindowWidth=640; //2048;//320
+//edited by Mike, 20210507
 static int myWindowHeight=640; //2048;//320
+//static int myWindowHeight=320; //2048;//320//640
 
 //added by Mike, 20201001
 OpenGLCanvas *myOpenGLCanvas = NULL;

@@ -4155,6 +4155,9 @@ void Pilot::drawPilot()
 void Pilot::drawPilotAsQuadWithTexture()
 {
     glTranslatef(myXPos, myYPos, myZPos);
+
+	//added by Mike, 20210507
+//	glTranslatef(0.0f, 0.0f, -2.0f); //negative to move backward in z-axis
 	
 //	drawPilotObject();
 
@@ -4194,8 +4197,14 @@ void Pilot::drawPilotAsQuadWithTexture()
 	
 	//added by Mike, 20210505			
 //	glScalef(2.0f, 2.0f, 2.0f);	
-//	glScalef(1.5f, 1.5f, 1.5f);	
+//	glScalef(1.5f, 1.5f, 1.5f);
+	
+	//edited by Mike, 20210507
+//	glScalef(1.2f, 1.2f, 1.2f); //noticeable vertical movement; reverify scale to trans ratio	
+//	glScalef(0.8f, 0.8f, 0.8f);
 	glScalef(1.2f, 1.2f, 1.2f); //noticeable vertical movement; reverify scale to trans ratio	
+	
+	
 //	glScalef(1.3f, 1.3f, 1.3f);	//noticeable vertical movement	
 //	glScalef(1.4f, 1.4f, 1.4f);	
 	

@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210424
+ * @date updated: 20210507
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -211,8 +211,66 @@ void RobotShip::load_tga(char *filename)
     free(data);
 }
 
-//TO-DO: -update: this
+//added by Mike, 20210507
 void RobotShip::setup()
+{
+	//removed by Mike, 20201010
+	//due to blank output
+    //glEnable(GL_DEPTH_TEST);
+
+    // select texture 1
+	glBindTexture(GL_TEXTURE_2D, ROBOT_TEXTURE_A);
+	
+    /* create OpenGL texture out of targa file */
+	//edited by Mike, 20210420
+//    load_tga("textures/armor.tga");	
+    load_tga("textures/imageSpriteExampleRobotWithoutBG.tga");	
+	
+	// set texture parameters
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
+                    GL_LINEAR_MIPMAP_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+/*
+    // select texture 1
+	glBindTexture(GL_TEXTURE_2D, MIKE_TEXTURE_B);
+	
+    // create OpenGL texture out of targa file
+    load_tga("textures/armor.tga");	
+	
+	// set texture parameters
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
+                    GL_LINEAR_MIPMAP_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+			
+    // select texture 1
+	glBindTexture(GL_TEXTURE_2D, MIKE_TEXTURE_C);
+	
+    // create OpenGL texture out of targa file
+    load_tga("textures/armor.tga");	
+	
+	// set texture parameters
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
+                    GL_LINEAR_MIPMAP_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);	
+*/
+	
+    /* unselect texture myFontTextureObject */
+    glBindTexture(GL_TEXTURE_2D, 0);
+
+    /* setup alpha blending */
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glEnable(GL_BLEND);
+}
+
+//TO-DO: -update: this
+void RobotShip::setupPrev()
 {
     GLuint i, j;
 	
@@ -472,6 +530,9 @@ RobotShip::RobotShip(float xPos, float yPos, float zPos, int windowWidth, int wi
     myXPos=0.0f+myWidth*0;
     myZPos=0.0f+myHeight*0;
 	
+	//added by Mike, 20210507
+//    myZPos=0.0f+myHeight*3;
+	
 	//added by Mike, 20201115
 	myWindowWidth=windowWidth;
 	myWindowHeight=windowHeight;
@@ -526,10 +587,11 @@ RobotShip::RobotShip(float xPos, float yPos, float zPos, int windowWidth, int wi
 		//added by Mike, 20210128
 		iInputWaitCountArray[iCount]=0;
 	}
+		
+    //edited by Mike, 20201201; edited by Mike, 20210507
+//	currentFacingState=FACING_UP;
+	currentFacingState=FACING_RIGHT;
 	
-    //edited by Mike, 20201201	
-	currentFacingState=FACING_UP;
-
 	armAngles[LEFT] = 0.0;
 	armAngles[RIGHT] = 0.0;
 	legAngles[LEFT] = 0.0;
@@ -545,8 +607,8 @@ RobotShip::RobotShip(float xPos, float yPos, float zPos, int windowWidth, int wi
 	loadTexture(myBodyTexture, "bodyTexture.tga", &myBodyTextureObject);
 	loadTexture(myHeadTexture, "headTexture.tga", &myHeadTextureObject);	
 
-	//removed by Mike, 20201001
-//	setup();
+	//removed by Mike, 20201001; added by Mike, 20210507
+	setup();
 	
     setCollidable(true);    
 }
@@ -577,6 +639,372 @@ void RobotShip::draw()
 	drawRobotShip();
 }
 */
+
+
+//added by Mike, 20210507
+void RobotShip::drawRobotAsQuadWithTexture()
+{	
+	glTranslatef(myXPos, myYPos, myZPos);
+
+	//added by Mike, 20210507
+	glTranslatef(0.0f, 0.0f, -2.0f); //negative to move backward in z-axis
+	
+//	drawPilotObject();
+
+	
+/*	//removed by Mike, 20210423
+    if (currentFacingState==FACING_LEFT_AND_UP) {
+        glRotatef(45, 0.0f, 1.0f, 0.0f);    	
+	}
+	else if (currentFacingState==FACING_RIGHT_AND_UP) {
+        glRotatef(-45, 0.0f, 1.0f, 0.0f);    	
+	}
+	else if (currentFacingState==FACING_LEFT_AND_DOWN) {
+        glRotatef(135, 0.0f, 1.0f, 0.0f);    	
+	}
+	else if (currentFacingState==FACING_RIGHT_AND_DOWN) {
+        glRotatef(-135, 0.0f, 1.0f, 0.0f);    	
+	}
+    else if (currentFacingState==FACING_LEFT) 
+    {  
+        glRotatef(90, 0.0f, 1.0f, 0.0f);
+    } 
+    else if (currentFacingState==FACING_RIGHT) 
+    {
+        glTranslatef(0.0f, 0.0f, -myWidth/3); 
+        glRotatef(-90, 0.0f, 1.0f, 0.0f);
+    }
+    else if (currentFacingState==FACING_UP)
+    {
+        //glTranslatef(-myWidthX/3, 0.0f, 0.0f); 
+    }
+    else if (currentFacingState==FACING_DOWN)
+    {
+        glTranslatef(myWidth/3, 0.0f, 0.0f); 
+        glRotatef(180, 0.0f, 1.0f, 0.0f);
+    }
+*/
+	
+	//added by Mike, 20210505			
+//	glScalef(2.0f, 2.0f, 2.0f);	
+//	glScalef(1.5f, 1.5f, 1.5f);
+	
+	//edited by Mike, 20210507
+//	glScalef(1.2f, 1.2f, 1.2f); //noticeable vertical movement; reverify scale to trans ratio	
+//	glScalef(1.2f, 1.2f, 1.0f); //noticeable vertical movement; reverify scale to trans ratio	
+	glScalef(1.2f, 2.0f, 1.0f); //noticeable vertical movement; reverify scale to trans ratio	
+	
+//	glScalef(1.3f, 1.3f, 1.3f);	//noticeable vertical movement	
+//	glScalef(1.4f, 1.4f, 1.4f);	
+	
+	//added by Mike, 20210505				
+	//note: scale: 2.0f; z-axis: -0.75f
+/*	glScalef(2.0f, 2.0f, 2.0f);	
+    glTranslatef(0.0f, 0.0f, -0.75f); 
+*/	
+/*	
+	glScalef(1.5f, 1.5f, 1.5f);	
+    glTranslatef(0.0f, 0.0f, -0.5625f); 
+*/
+	
+	float fDistanceBetweenPlayer1And2 = sqrt((getX()-myOpponentXPos)*(getX()-myOpponentXPos));
+	printf("fDistanceBetweenPlayer1And2: %f",fDistanceBetweenPlayer1And2);
+
+//	if (fDistanceBetweenPlayer1And2<10.0f) {
+//	if (fDistanceBetweenPlayer1And2<7.5f) {	
+//	if (fDistanceBetweenPlayer1And2<7.9f) {			
+	//edited by Mike, 20210506
+//		float fScale=1.0f+(1.0f-(fDistanceBetweenPlayer1And2/10.0f));
+		float fScale=1.0f+(1.0f-(fDistanceBetweenPlayer1And2/20.0f));
+
+		//edited by Mike, 20210506
+		if (fScale>2.0f) {
+			fScale=2.0f;
+		}
+		
+/*	
+		if (fScale>1.6f) {
+			fScale=1.6f;
+		}
+*/	
+/*		else if (fScale<1.5f) {
+			fScale=1.5f;
+		}
+*/		
+  //noticeable vertical movement		
+		else if (fScale<1.2f) {
+			fScale=1.2f;
+		}
+/*  //noticeable vertical movement		
+		else if (fScale<1.3f) {
+			fScale=1.3f;
+		}
+*/	
+/*		else if (fScale<1.4f) {
+			fScale=1.4f;
+		}
+*/	
+		//note: ratio: 1.0f : 0.375f; 2.0f : 0.75f
+		//where: 1.0f = scale
+		//0.375f = trans
+		float fTrans= fScale*0.375f;
+//		float fTrans= fScale*0.25f;
+		
+		printf("fScale: %f",fScale);		
+		
+		//edited by Mike, 20210507	
+//		glScalef(fScale, fScale, fScale);			
+		glScalef(fScale, fScale, 1.0f);			
+	
+		glTranslatef(0.0f, 0.0f, -fTrans); //negative to move backward in z-axis	
+	
+//	}
+	
+	
+	//added by Mike, 20210507
+	//set default value; otherwise not always 0
+	iCountTaoAnimationFrame=0;	
+	fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.5;
+	
+    switch (currentState)
+    {
+/*
+           case MOVING_STATE://DYING_STATE:
+                glColor3f(1.0f, 1.0f, 1.0f); //white
+                if (currentDeathFrame<5) {
+                    switch(currentDeathFrame)
+                    {
+                      case 0:
+                        drawMyPlane(myDeathAnimationImg1);
+                        break;
+                      case 1:
+                        drawMyPlane(myDeathAnimationImg2);
+                        break;
+                      case 2:
+                        drawMyPlane(myDeathAnimationImg3);
+                        break;
+                      case 3:
+                        drawMyPlane(myDeathAnimationImg4);
+                        break;
+                      case 4:
+                        drawMyPlane(myDeathAnimationImg5);
+                        //changeState(MOVING_STATE);
+                        break;
+                    }
+                }
+                currentDeathFrame=(currentDeathFrame+1)%4;
+                break;
+*/
+/* //removed by Mike, 20201014
+           case INITIALIZING_STATE:
+                if (invincibleCounter==10) {
+                  changeState(MOVING_STATE);
+                  setCollidable(true);
+                }
+                else invincibleCounter++;
+*/
+				
+            case MOVING_STATE:
+				switch(currentMovingState) {
+		            case IDLE_MOVING_STATE:		
+/*	//removed by Mike, 20210507						
+	//added by Mike, 20210420
+	//TO-DO: -add: this in key movement
+	//note: 3 animation frames; .tga image file has 4 frames @128x256, i.e. width x height
+	iCountTaoAnimationFrame=3;	
+	fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.25;	
+	iCountTaoAnimationFrame=iCountTaoAnimationFrame+1;		
+*/						
+						//FACING_UP...
+						//edited by Mike, 20210507
+						//drawPilotObject();
+						drawRobotObject();
+						break;
+					case WALKING_MOVING_STATE:
+/*	//removed by Mike, 20210507												
+	//added by Mike, 20210420
+	//TO-DO: -add: this in key movement
+	//note: 3 animation frames; .tga image file has 4 frames @128x256, i.e. width x height
+	iCountTaoAnimationFrame=(iCountTaoAnimationFrame)%3;
+	
+//	fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.5;
+	fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.25;
+	
+//	printf("iCountTaoAnimationFrame: %i",iCountTaoAnimationFrame);
+	iCountTaoAnimationFrame=iCountTaoAnimationFrame+1;		
+	//printf("iTaoAnimationFrameOffset: %i",iTaoAnimationFrameOffset);
+*/
+						//edited by Mike, 20210507
+						//drawPilotObject();
+						drawRobotObject();
+						break;
+					case ATTACKING_MOVING_STATE:
+						break;
+				}
+                break;
+            case IN_TITLE_STATE:
+               break;
+
+    }    
+
+	//removed by Mike, 20201001
+//    glPopMatrix();	// pop back to original coordinate system
+}
+
+
+//added: by Mike, 20210507
+//TO-DO: -add: in PolygonPool
+void RobotShip::drawRobotObject()
+{
+		
+//added by Mike, 20210422	
+glPushMatrix();
+	
+	//added by Mike, 20210420
+    glColor3f(1.0f, 1.0f, 1.0f); // white
+    glEnable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, ROBOT_TEXTURE_A);		
+
+    glScalef(2.0f, 4.0f, 1.0f);	
+//	glTranslatef(0.0f, 0.0f, -1.0f); //removed by Mike, 20210424
+	
+//	glTranslatef(30.0f, 0.0f, 25.0f); //removed by Mike, 20210424
+	glRotatef(180, 1.0f, 0.0f, 0.0f);
+
+	//added by Mike, 20210422; edited by Mike, 20210424
+	//TO-DO: -reverify: quad size and texture size
+//    glScalef(1.5f, 1.5f, 1.0f);	
+	//edited by Mike, 20210507
+//    glScalef(1.2f, 2.0f, 1.0f);	
+//    glScalef(2.0f, 4.0f, 1.0f);	
+
+	//added by Mike, 20210507	
+	//note: set RobotShip Z position value not here via glTranslate...
+//    glTranslatef(0.0f, 0.0f, -0.5f);	
+//    glTranslatef(0.0f, 0.0f, 3.0f);	
+//    glTranslatef(0.0f, 0.0f, 2.5f);	
+	
+/*	//removed by Mike, 20210423	
+	//edited by Mike, 20210420
+	//note: 3 animation frames; .tga image file has 4 frames @128x256, i.e. width x height
+//	iCountTaoAnimationFrame=(iCountTaoAnimationFrame)%2;
+	iCountTaoAnimationFrame=(iCountTaoAnimationFrame)%3;
+	
+//	fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.5;
+	fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.25;
+	
+	printf("iCountTaoAnimationFrame: %i",iCountTaoAnimationFrame);
+
+	iCountTaoAnimationFrame=iCountTaoAnimationFrame+1;		
+	//printf("iTaoAnimationFrameOffset: %i",iTaoAnimationFrameOffset);
+*/	
+
+
+	//added by Mike, 20210424
+/*    if (currentFacingState==FACING_LEFT) 
+    {  
+    } 
+    else */
+//edited by Mike, 20210425
+/*	if (currentFacingState==FACING_RIGHT) {    
+*/
+//TO-DO: -update: this
+	if ((currentFacingState==FACING_RIGHT) || (currentFacingState==FACING_RIGHT_AND_UP) || (currentFacingState==FACING_RIGHT_AND_DOWN)) {    
+		//added by Mike, 20210424
+		//notes: use folding paper to assist in quickly identifying location, e.g. texture coordinates 
+		//set vertex positions clock-wise
+		
+//      glRotatef(45, 0.0f, 1.0f, 0.0f); //slanted to wall facing left
+		glBegin(GL_TRIANGLES);	
+			//triangle#6 //back face left part
+			glNormal3f(0.0000,0.0000,-1.0000);
+			//edited by Mike, 20210424
+//			glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	//A1; face left
+			glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0); //B2		
+			glVertex3f(-1.000000,1.000000,-1.000000); //A1
+
+			glNormal3f(0.0000,0.0000,-1.0000);
+			//edited by Mike, 20210424		
+//			glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0); //B1; face left
+			glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);	//C2
+			glVertex3f(1.000000,-1.000000,-1.000000); //B1
+
+			glNormal3f(0.0000,0.0000,-1.0000);
+			//edited by Mike, 20210424				
+//			glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);	//C1; face left
+			glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0); //B1 
+			glVertex3f(-1.000000,-1.000000,-1.000000); //C1	
+
+			//triangle#12 //back face right part		
+			glNormal3f(0.0000,0.0000,-1.0000);
+			//edited by Mike, 20210424
+//			glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	//A2; face lefT
+			glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0); //B2		
+			glVertex3f(-1.000000,1.000000,-1.000000); //A2
+
+			glNormal3f(0.0000,0.0000,-1.0000);
+			//edited by Mike, 20210424
+//			glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0); //B2; face left
+			glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	//A1
+			glVertex3f(1.000000,1.000000,-1.000000); //B2
+
+			glNormal3f(0.0000,0.0000,-1.0000);
+			//edited by Mike, 20210424
+//			glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0); //C2; face left
+			glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);	//C1	
+			glVertex3f(1.000000,-1.000000,-1.000000); //C2	
+		glEnd();
+	}
+	else {	
+		glBegin(GL_TRIANGLES);	
+			//triangle#6 //back face left part
+			glNormal3f(0.0000,0.0000,-1.0000);
+			glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	
+			glVertex3f(-1.000000,1.000000,-1.000000); //A1
+
+			glNormal3f(0.0000,0.0000,-1.0000);
+			//edited by Mike, 20210420
+		//	glTexCoord2f(1.0+iTaoAnimationFrameOffset,1.0);
+		//	glTexCoord2f(0.5+fTaoAnimationFrameOffset,1.0);
+			glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0);
+			glVertex3f(1.000000,-1.000000,-1.000000); //B1
+
+			glNormal3f(0.0000,0.0000,-1.0000);
+			glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);	
+			glVertex3f(-1.000000,-1.000000,-1.000000); //C1	
+
+
+			//triangle#12 //back face right part		
+			glNormal3f(0.0000,0.0000,-1.0000);
+			glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	
+			glVertex3f(-1.000000,1.000000,-1.000000); //A2
+
+			glNormal3f(0.0000,0.0000,-1.0000);
+			//edited by Mike, 20210420	
+		//	glTexCoord2f(1.0+iTaoAnimationFrameOffset,0.0);
+		//	glTexCoord2f(0.5+fTaoAnimationFrameOffset,0.0);
+			glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0);
+			glVertex3f(1.000000,1.000000,-1.000000); //B2
+
+			glNormal3f(0.0000,0.0000,-1.0000);
+			//edited by Mike, 20210420	
+		//	glTexCoord2f(1.0+iTaoAnimationFrameOffset,1.0);
+		//	glTexCoord2f(0.5+fTaoAnimationFrameOffset,1.0);
+			glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0);	
+			glVertex3f(1.000000,-1.000000,-1.000000); //C2	
+		glEnd();
+	}	
+
+	//added by Mike, 20210422
+	glScalef(1.0f, 1.0f, 1.0f);	
+
+	glRotatef(-180, 1.0f, 0.0f, 0.0f);
+//	glTranslatef(-30.0f, 0.0f, -25.0f); //removed by Mike, 20210424
+
+    glDisable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, 0);
+glPopMatrix(); //added by Mike, 20210422	
+}
 
 void RobotShip::drawRobotShip()
 {
