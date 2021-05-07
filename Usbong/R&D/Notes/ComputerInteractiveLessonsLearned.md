@@ -102,27 +102,27 @@ TO-DO: -update: this<br/>
 --> 幻想 ("gensou"; illusion thought)<br/>
 --> 幻想水滸伝:解説書<br/>
 illusion thought water level story: solve tell book<br/>
---> 解放軍と帝国軍の戦いはカードゲームのように進行していきます。<br/>
+--> 「解放軍と帝国軍の戦いはカードゲームのように進行していきます。」<br/>
 Fight between Solve Release Army AND Empire Army advances like Card Game.<br/>
---> 攻撃の種類<br/>
+--> 「攻撃の種類」<br/>
 Attack Variations:<br/>
---> 突撃攻撃：突撃を仕掛ける。弓矢攻撃に強く、魔法攻撃に弱い。<br/>
+--> 突撃攻撃：「突撃を仕掛ける。弓矢攻撃に強く、魔法攻撃に弱い。」<br/>
 Pierce Hit Attack: Execute Pierce Hit. Strong against Bow Arrow Attack, Weak against Magic Rule Attack.<br/>
---> 弓矢攻撃：弓矢による攻撃。魔法攻撃に強く、突撃攻撃に弱い。<br/>
+--> 弓矢攻撃：「弓矢による攻撃。魔法攻撃に強く、突撃攻撃に弱い。」<br/>
 Bow Arrow Attack: Attack via Bow Arrow. Strong against Magic Rule Attack, Weak against Pierce Hit Attack.<br/>
---> 魔法攻撃：魔法による攻撃。突撃攻撃に強く、弓矢攻撃に弱い。<br/>
+--> 魔法攻撃：「魔法による攻撃。突撃攻撃に強く、弓矢攻撃に弱い。」<br/>
 Magic Rule Attack: Attack via Magic Rule. Strong against Pierce Hit Attack, Weak against Bow Arrow Attack.<br/>
 --> 特殊：<br/>
 Special:<br/>
---> １．軍師：数ターンの間、突撃の攻撃力を上げる。<br/>
+--> 「１．軍師：数ターンの間、突撃の攻撃力を上げる。」<br/>
 Army Master: For a number of turns, raise Pierce Hit's attack strength.  
---> ２．忍者：相手の次の策を調べる。<br/>
+--> 「２．忍者：相手の次の策を調べる。」<br/>
 Ninja, i.e. shinobi (shimbou) person: Investigate opponent's next strategy.<br/>
---> ３．竜騎士：竜による攻撃。弓矢の攻撃に弱い。<br/>
+--> 「３．竜騎士：竜による攻撃。弓矢の攻撃に弱い。」<br/>
 Dragon Knight Scholar: Attack via Dragons. Weak against Bow Arrow Attack.<br/>
---> ４．商人：敵を買収して寝返らせる。失敗するときもある。<br/>
+--> 「４．商人：敵を買収して寝返らせる。失敗するときもある。」<br/>
 Business Person: Buy Enemy, make their Unit return to rest. There exist times of failure.<br/>
---> ５．こそどろ：相手の次の策を調べる。失敗するときもある。<br/>
+--> 「５．こそどろ：相手の次の策を調べる。失敗するときもある。」<br/>
 kosodoro ("sneak-mud" to be magnanakaw) : Investigate opponent's next strategy. There exist times of failure.<br/>
 
 ## 1.4) SONY Computer Entertainment Europe and Guerrilla
