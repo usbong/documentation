@@ -1628,12 +1628,22 @@ myPilotPlayer2->updateToFaceOpponent(myPilot->getX());
 	//edited by Mike, 20210504; edited again by Mike, 20210505
 //	myCanvasPosX = -myPilot->getX()-fDistanceBetweenPlayer1And2/2; //3
 	//identify which is at the left
+/*  //edited by Mike, 20210509
 	if (myPilot->getX() < myPilotPlayer2->getX()) {
 		myCanvasPosX = -myPilot->getX()-fDistanceBetweenPlayer1And2/2;
 	}
 	else {
 		myCanvasPosX = -myPilotPlayer2->getX()-fDistanceBetweenPlayer1And2/2;		
 	}
+*/		
+	if (myPilot->getX() < myPilotPlayer2->getX()) {
+		myCanvasPosX = -myPilot->getX()-fDistanceBetweenPlayer1And2/2 - 0.75f;
+	}
+	else {
+		myCanvasPosX = -myPilotPlayer2->getX()-fDistanceBetweenPlayer1And2/2 - 0.75f;		
+	}
+
+		
 		
 		
 /* //removed by Mike, 20210504		
