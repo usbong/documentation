@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210507
+ * @date updated: 20210509
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -206,7 +206,10 @@ struct sortByZPosition {
     //bool operator()(MyDynamicObject &left, MyDynamicObject &right) { 
     bool operator()(MyDynamicObject *left, MyDynamicObject *right) { 
 //        return left.getZ() > right.getZ();
-        return left->getZ() > right->getZ();
+		//edited by Mike, 20210509
+		//note: higher negative, farther distance in z-axis
+//        return left->getZ() > right->getZ();
+        return left->getZ() < right->getZ();		
     }
 };
 
@@ -1759,7 +1762,8 @@ myPilotPlayer2->updateToFaceOpponent(myPilot->getX());
 		//MyDynamicObject *myDynamicObjectContainerSorted[MAX_DYNAMIC_OBJECT];		
 		//std::vector<MyDynamicObject*> v;
  //removed by Mike, 20210507; TO-DO: -reverify: sortByZPosition(...)
-//		std::sort(vMyDynamicObjectContainer.begin(), vMyDynamicObjectContainer.end(), sortByZPosition());
+		//added by Mike, 20210509
+		std::sort(vMyDynamicObjectContainer.begin(), vMyDynamicObjectContainer.end(), sortByZPosition());
 		
 		for (int i=0; i<MAX_DYNAMIC_OBJECT; i++) {			
     		glPushMatrix();
