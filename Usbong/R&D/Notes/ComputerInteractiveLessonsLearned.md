@@ -121,7 +121,7 @@ Ninja, i.e. shinobi (shimbou) person: Investigate opponent's next strategy.<br/>
 --> 「３．竜騎士：竜による攻撃。弓矢の攻撃に弱い。」<br/>
 Dragon Knight Scholar: Attack via Dragons. Weak against Bow Arrow Attack.<br/>
 --> 「４．商人：敵を買収して寝返らせる。失敗するときもある。」<br/>
-Business Person: Buy Enemy, make their Unit return to rest. There exist times of failure.<br/>
+Business Person: Buy Enemy, make their Unit return to rest, i.e. sleep. There exist times of failure.<br/>
 --> 「５．こそどろ：相手の次の策を調べる。失敗するときもある。」<br/>
 kosodoro ("sneak-mud" to be magnanakaw) : Investigate opponent's next strategy. There exist times of failure.<br/>
 
