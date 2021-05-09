@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210507
+ * @date updated: 20210509
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -760,11 +760,13 @@ void RobotShip::drawRobotAsQuadWithTexture()
 	
 //	}
 	
-	
+
+/*	//removed by Mike, 20210509
 	//added by Mike, 20210507
 	//set default value; otherwise not always 0
 	iCountTaoAnimationFrame=0;	
 	fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.5;
+*/
 	
     switch (currentState)
     {
@@ -815,6 +817,11 @@ void RobotShip::drawRobotAsQuadWithTexture()
 	fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.25;	
 	iCountTaoAnimationFrame=iCountTaoAnimationFrame+1;		
 */						
+						//added by Mike, 20210509						
+						//set default value; otherwise not always 0
+						iCountTaoAnimationFrame=0;	
+						fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.5;
+						
 						//FACING_UP...
 						//edited by Mike, 20210507
 						//drawPilotObject();
@@ -833,12 +840,87 @@ void RobotShip::drawRobotAsQuadWithTexture()
 //	printf("iCountTaoAnimationFrame: %i",iCountTaoAnimationFrame);
 	iCountTaoAnimationFrame=iCountTaoAnimationFrame+1;		
 	//printf("iTaoAnimationFrameOffset: %i",iTaoAnimationFrameOffset);
-*/
+*/						
+						//added by Mike, 20210509						
+						//set default value; otherwise not always 0
+						iCountTaoAnimationFrame=0;	
+						fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.5;
+						
 						//edited by Mike, 20210507
 						//drawPilotObject();
 						drawRobotObject();
 						break;
 					case ATTACKING_MOVING_STATE:
+						//added by Mike, 20210509						
+/*						
+						//set default value; otherwise not always 0
+						iCountTaoAnimationFrame=0;	
+						fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.5;
+*/
+						
+/* //edited by Mike, 20210509	
+						//note: 3 animation frames; .tga image file has 4 frames @128x256, i.e. width x height
+						iCountTaoAnimationFrame=(iCountTaoAnimationFrame)%3;
+
+						//fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.5;
+						fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.25;
+
+						//	printf("iCountTaoAnimationFrame: %i",iCountTaoAnimationFrame);
+						iCountTaoAnimationFrame=iCountTaoAnimationFrame+1;		
+						//printf("iTaoAnimationFrameOffset: %i",iTaoAnimationFrameOffset);						
+						
+						drawRobotObject();						
+*/						
+
+						if (bIsExecutingPunch) {
+							//note: 3 animation frames; .tga image file has 4 frames @128x256, i.e. width x height
+							if (iPunchAnimationCount==0) {//MAX_PUNCHING_ANIMATION_COUNT) {
+								iCountTaoAnimationFrame=2;	
+								fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.25;
+/*
+										glTranslatef(-0.2f, 0.4f, 0.3f);
+										glScalef(1.0f, 1.0f, 1.5f);
+											glTranslatef(-0.2f, 1.0f, 0.2f*iPunchAnimationCount);
+											glRotatef(90, 1.0f, 0.0f, 0.0f);
+												drawLowerArm(-0.3f, 0.0f, 0.0f); //left							
+											glRotatef(-90, 1.0f, 0.0f, 0.0f);
+											glTranslatef(0.2f, -1.0f, -0.2f*iPunchAnimationCount);
+										glScalef(1.0f, 1.0f, 1.0f);
+										glTranslatef(0.2f, -0.4f, -0.3f);												
+*/										
+							}
+							//In RobotShip.h, MAX_PUNCHING_ANIMATION_COUNT=3
+							else if (iPunchAnimationCount<MAX_PUNCHING_ANIMATION_COUNT) {
+								//edited by Mike, 20210509
+								//TO-DO: -verify: adding punch animation frames
+								//TO-DO: -verify: using animating robot parts
+								//iCountTaoAnimationFrame=iPunchAnimationCount;	
+								iCountTaoAnimationFrame=2;								
+								fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.25;								
+/*								
+								glScalef(1.0f, 1.0f, 1.5f);
+									glTranslatef(-0.2f, 1.0f, 0.2f*iPunchAnimationCount);
+									glRotatef(90, 1.0f, 0.0f, 0.0f);
+										drawLowerArm(-0.3f, 0.0f, 0.0f); //left							
+									glRotatef(-90, 1.0f, 0.0f, 0.0f);
+									glTranslatef(0.2f, -1.0f, -0.2f*iPunchAnimationCount);
+								glScalef(1.0f, 1.0f, 1.0f);
+*/								
+							}
+							else {
+								//edited by Mike, 20210509
+								iCountTaoAnimationFrame=0;								
+//								iCountTaoAnimationFrame=2;	
+								fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.25;								
+								
+/*								
+								glRotatef(90, 1.0f, 0.0f, 0.0f);											
+									drawLowerArm(-0.2f, 0.0f, 0.4f); //left							
+								glRotatef(-90, 1.0f, 0.0f, 0.0f);											
+*/								
+							}
+							drawRobotObject();								
+						}						
 						break;
 				}
                 break;
@@ -3654,10 +3736,16 @@ void RobotShip::update(float dt)
 		            //added by Mike, 20210121
 		            case ATTACKING_MOVING_STATE:
 		            	if (bIsExecutingPunch) {
+//							printf("iPunchAnimationCount: %i",iPunchAnimationCount);
+							
 		            		if (iPunchAnimationCount<MAX_PUNCHING_ANIMATION_COUNT) {
 								//edited by Mike, 20210122
 		            			//iPunchAnimationCount+=1;
+								//edited by Mike, 20210509
 								if ((iPunchAnimationCountDelay)%2==0) {
+//								if ((iPunchAnimationCountDelay)%10==0) {
+//								if ((iPunchAnimationCountDelay)%3==0) {
+									
 									iPunchAnimationCount+=1;
 									//added by Mike, 20210123
 									iPunchAnimationCountDelay=0;
