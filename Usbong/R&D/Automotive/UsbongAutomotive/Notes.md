@@ -1,7 +1,6 @@
 # Usbong Automotive: Notes
 
-<img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Automotive/UsbongAutomotive/res/UsbongAutomotiveV20210205T1703.gif" width="60%">
-
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Automotive/UsbongAutomotive/screenshots/UsbongAutomotiveV20210205T1703.gif" width="60%">
 ## 1) Linux Machine
 Execute Command (in Terminal Window): <b>./UsbongAutomotiveLinux</b><br/>
 --> <b>location:</b> "output" folder
@@ -72,23 +71,31 @@ last accessed: 20210216T0512<br/>
 answer by: MattS440, 20100118<br/>
 
 ## 3) Human Person
-3.1) upper arm;<br/>
-3.1.1) humerus<br/>
+### 3.1) Parts
+3.1.1) upper arm;<br/>
+3.1.1.1) humerus<br/>
 <br/>
 
-3.2) lower arm;<br/>
-3.2.1) radius<br/>
-3.2.2) ulna<br/>
+3.1.2) lower arm;<br/>
+3.1.2.1) radius<br/>
+3.1.2.2) ulna<br/>
 <br/>
 
-3.3) upper leg;<br/>
-3.3.1) femur<br/>
+3.1.3) upper leg;<br/>
+3.1.3.1) femur<br/>
 <br/>
 
-3.4) lower leg<br/>
-3.4.1) fibula<br/>
-3.4.2) tibia<br/>
+3.1.4) lower leg<br/>
+3.1.4.1) fibula<br/>
+3.1.4.2) tibia<br/>
 <br/>
 
-### Reference: 
+#### Reference: 
 1) https://www.mayoclinic.org/diseases-conditions/broken-arm/multimedia/arm-bones/img-20007018; last accessed: 20201229
+
+### 3.2) Action Technique
+3.2.1) Shotokan Karate<br/>
+--> https://www.youtube.com/user/shotokankataman/videos;<br/>
+--> last accessed: 20210509<br/>
+--> Heian Shodan - Shotokan Karate<br/>
+--> Peace Beginner Level<br/>
