@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200929
- * @date updated: 20210418
+ * @date updated: 20210507
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -53,6 +53,9 @@
 //added by Mike, 20201213
 #include <vector>
 
+//added by Mike, 20210502
+#include <math.h>
+
 #define PI 3.14159
 #define TWO_PI PI*2.0
 #define HALF_PI PI/2.0
@@ -69,9 +72,13 @@
 
 //added by Mike, 20210420
 //TO-DO: -update: this
-#define MIKE_TEXTURE_A 7 
+//TO-DO: -add: texture definitions in PolygolUtils
+#define MIKE_TEXTURE_A 7 //added in Pilot.h
 #define MIKE_TEXTURE_B 8 
 #define MIKE_TEXTURE_C 9 
+
+//added by Mike, 20210507
+#define ROBOT_TEXTURE_A 10
 
 #define MAX_ENEMY 2
 
@@ -95,8 +102,10 @@
 //edited by Mike, 20210120
 //#define MAX_DYNAMIC_OBJECT 50 //TO-DO: -update: this
 
-//edited by Mike, 20210206
-#define MAX_DYNAMIC_OBJECT 18 //remove beams x32
+//edited by Mike, 20210206; edited by Mike, 20210502
+//#define MAX_DYNAMIC_OBJECT 18 //remove beams x32
+#define MAX_DYNAMIC_OBJECT 19 //add pilotPlayer2
+
 //#define MAX_DYNAMIC_OBJECT 17 //remove beams x32
 
 #define MAX 1026 //buffer
@@ -144,7 +153,11 @@ class OpenGLCanvas
 		
 		//added by Mike, 20201207
     	Pilot *myPilot;
-		
+
+		//added by Mike, 20210502
+    	Pilot *myPilotPlayer2;
+
+
 		//added by Mike, 20201118
     	Level *myLevel;
 

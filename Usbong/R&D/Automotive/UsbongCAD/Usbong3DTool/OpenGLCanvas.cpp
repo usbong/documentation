@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210422
+ * @date updated: 20210510
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -206,7 +206,10 @@ struct sortByZPosition {
     //bool operator()(MyDynamicObject &left, MyDynamicObject &right) { 
     bool operator()(MyDynamicObject *left, MyDynamicObject *right) { 
 //        return left.getZ() > right.getZ();
-        return left->getZ() > right->getZ();
+		//edited by Mike, 20210509
+		//note: higher negative, farther distance in z-axis
+//        return left->getZ() > right->getZ();
+        return left->getZ() < right->getZ();		
     }
 };
 
@@ -373,9 +376,19 @@ bool OpenGLCanvas::init()
 	//60*4=240; 240=maxViewPort
 	//we use excess auto-draw outside camera viewport to eliminate object noticeably appearing
 	//to be auto-drawn on screen while we move the camera viewport
+/*	//edited by Mike, 20210502	
 	iRowCountMax=60;
  	iColumnCountMax=60;
 	iHeightCountMax=60; //added by Mike, 20210208
+*/
+/*	
+	iRowCountMax=30;
+ 	iColumnCountMax=30;
+	iHeightCountMax=30; //added by Mike, 20210208
+*/
+	iRowCountMax=12;
+ 	iColumnCountMax=12;
+	iHeightCountMax=12; //added by Mike, 20210208
 
 /*	//edited by Mike, 20210320
 	fGridSquareWidth = myWindowWidth/iColumnCountMax/100.0;
@@ -424,7 +437,12 @@ bool OpenGLCanvas::init()
 //	myPilot = new Pilot(0.0f,0.0f,0.0f,myWindowWidth,myWindowHeight);
 	myPilot = new Pilot(0.0f,0.0f,0.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
 	myPilot->setOpenGLCanvas(this);
-
+	
+	//added by Mike, 20210502
+	myPilotPlayer2 = new Pilot(0.0f,0.0f,0.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
+	myPilotPlayer2->setOpenGLCanvas(this);
+	myPilotPlayer2->setAsPlayer2();
+		
 	//added by Mike, 20201013; edited by Mike, 20201014
 //	for (i=0; i<MAX_BEAMS; i++) {
 	for (int i=0; i<MAX_BEAMS; i++) {
@@ -526,11 +544,16 @@ bool OpenGLCanvas::init()
     }
 */
 
-	//added by Mike, 20201213
+	//added by Mike, 20201213; edited by Mike, 20210502
 	//std::vector<MyDynamicObject*> v;	
-	vMyDynamicObjectContainer.push_back(myPilot);
 	vMyDynamicObjectContainer.push_back(myRobotShip);
+	
+	//added by Mike, 20210502
+	vMyDynamicObjectContainer.push_back(myPilot);
+	vMyDynamicObjectContainer.push_back(myPilotPlayer2);
 
+	
+	
 /*	//removed by Mike, 20210120
 	for (int i=0; i<MAX_BEAMS; i++) { //32
 		vMyDynamicObjectContainer.push_back(myBeam[i]);
@@ -568,7 +591,7 @@ bool OpenGLCanvas::init()
 
 	//added by Mike, 20210420
 	//TO-DO: -update: this
-	setupTaoTexture();
+//	setupTaoTexture(); //removed by Mike, 20210507
 	
 	return true;
 }
@@ -911,15 +934,21 @@ void OpenGLCanvas::keyDown(int keyCode)
 {
 	myKeysDown[keyCode] = TRUE;	
 	
-	//added by Mike, 20201226
+	//added by Mike, 20201226; edited by Mike, 20210423;
+	//added by Mike, 20210507
 	myRobotShip->keyDown(keyCode);
+	
+	myPilot->keyDown(keyCode);	
 }
 void OpenGLCanvas::keyUp(int keyCode)
 {
 	myKeysDown[keyCode] = FALSE;	
 
-	//added by Mike, 20201226
+	//added by Mike, 20201226; edited by Mike, 20210423;
+	//added by Mike, 20210507
 	myRobotShip->keyUp(keyCode);
+
+	myPilot->keyUp(keyCode);	
 }
 
 
@@ -1051,6 +1080,7 @@ void OpenGLCanvas::setupKahonTexture(int myKahonTextureObject)
 
 }
 
+/*  //removed by Mike, 20210507
 //added by Mike, 20210420
 //TO-DO: -update: this
 void OpenGLCanvas::setupTaoTexture()
@@ -1062,7 +1092,7 @@ void OpenGLCanvas::setupTaoTexture()
     // select texture 1
 	glBindTexture(GL_TEXTURE_2D, MIKE_TEXTURE_A);
 	
-    /* create OpenGL texture out of targa file */
+    // create OpenGL texture out of targa file
 	//edited by Mike, 20210420
 //    load_tga("textures/armor.tga");	
     load_tga("textures/imageSpriteExampleMikeWithoutBG.tga");	
@@ -1073,42 +1103,15 @@ void OpenGLCanvas::setupTaoTexture()
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
                     GL_LINEAR_MIPMAP_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
-/*
-    // select texture 1
-	glBindTexture(GL_TEXTURE_2D, MIKE_TEXTURE_B);
 	
-    // create OpenGL texture out of targa file
-    load_tga("textures/armor.tga");	
-	
-	// set texture parameters
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
-                    GL_LINEAR_MIPMAP_NEAREST);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-			
-    // select texture 1
-	glBindTexture(GL_TEXTURE_2D, MIKE_TEXTURE_C);
-	
-    // create OpenGL texture out of targa file
-    load_tga("textures/armor.tga");	
-	
-	// set texture parameters
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
-                    GL_LINEAR_MIPMAP_NEAREST);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);	
-*/
-	
-    /* unselect texture myFontTextureObject */
+    // unselect texture myFontTextureObject
     glBindTexture(GL_TEXTURE_2D, 0);
 
-    /* setup alpha blending */
+    // setup alpha blending
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glEnable(GL_BLEND);
 }
+*/
 
 void OpenGLCanvas::render()
 {     
@@ -1158,7 +1161,8 @@ void OpenGLCanvas::render()
 			glVertex2f(1.0, 1.0);
 			glEnd();
 		*/
-	
+
+/* //removed by Mike, 20210510	
 		glBegin(GL_QUADS);
 		//	glColor3f(0.0f,0.0f,0.0f); //black
 		//	glColor3f(1.0f,1.0f,1.0f); //white
@@ -1175,6 +1179,23 @@ void OpenGLCanvas::render()
 			//BOTTOM
 			//sky blue color; brighter
 			glColor3f(0.69f, 0.84f, 1.0f);
+			glVertex2f(-1.0,-1.0);
+			glVertex2f(1.0,-1.0);
+		glEnd();
+*/	
+		glBegin(GL_QUADS);
+			glColor3f(0.0f,0.0f,0.0f); //black
+//			glColor3f(1.0f,1.0f,1.0f); //white
+		
+			//TOP
+			//sky blue color; darker
+//			glColor3f(0.0f, 0.44f, 0.67f);
+			glVertex2f(1.0, 1.0);
+			glVertex2f(-1.0, 1.0);
+		
+			//BOTTOM
+			//sky blue color; brighter
+//			glColor3f(0.69f, 0.84f, 1.0f);
 			glVertex2f(-1.0,-1.0);
 			glVertex2f(1.0,-1.0);
 		glEnd();
@@ -1250,112 +1271,36 @@ void OpenGLCanvas::render()
 //https://www.khronos.org/opengl/wiki/Face_Culling; last accessed: 20201122
 //    glCullFace(GL_BACK);
 
-	//removed by Mike, 20201010
-	//TO-DO: -reverify: this
-	//due to blank output in Font texture
-//    glEnable(GL_DEPTH_TEST);
-	
-	//removed by Mike, 2020117
-//    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+/* //removed by Mike, 20210510		
+myRobotShip->setXPos(myPilot->getX());		
+		
+myPilot->setZPos(myRobotShip->getZ()+0.1f); //put nearer to camera eye
+myPilotPlayer2->setZPos(myRobotShip->getZ()+0.1f); //put nearer to camera eye
 
-	//added by Mike, 20201114
-//	glDepthFunc(GL_ALWAYS);
-
-
+myRobotShip->updateToFaceOpponent(myPilotPlayer2->getX());
+		
+//auto-update facing left or right
+myPilot->updateToFaceOpponent(myPilotPlayer2->getX());
+myPilotPlayer2->updateToFaceOpponent(myPilot->getX());
+*/
+			
 	glMatrixMode(GL_PROJECTION);			// set projection matrix current matrix
 	glLoadIdentity();						// reset projection matrix
-
-	//TO-DO: -reverify: these
-	// calculate aspect ratio of window
-	//gluPerspective(52.0f,(GLfloat)width/(GLfloat)height,1.0f,1000.0f);	
-/*    //edited by Mike, 20201022
-    gluPerspective(90.0, // field-of-view angle
-                   4.0 / 3.0, // aspect ratio
-                   1.0, // near plane
-                   100); // far plane
-*/
-
-/*	//edited by Mike, 20201114
-    gluPerspective(90.0, // field-of-view angle
-                   4.0 / 4.0, // aspect ratio
-                   0.1, // near plane
-                   100); // far plane
-*/
-/* //edited by Mike, 20210416		
-    gluPerspective(90.0, // field-of-view angle
-                   4.0 / 3.0, // aspect ratio
-                   0.1, // near plane
-                   100); // far plane
-*/
+		
     gluPerspective(90.0, // field-of-view angle
                    4.0 / 4.0, // aspect ratio
                    0.1, // near plane
                    100); // far plane
 		
-/* //removed by Mike, 20201118
-	//TO-DO: -reverify: these
-	glMatrixMode(GL_MODELVIEW);				// set modelview matrix
-	glLoadIdentity();						// reset modelview matrix
-*/
 
-/*
-    gluLookAt(0.0, 1.0, 3.0, // eye position 0.0, 0.0, 3.0
-              0.0, 0.0, 0.0, // look-at point
-              0.0, 1.0, 0.0); // up-direction
-*/
-/*
-    gluLookAt(0.0, 1.0, 3.0, // eye position 0.0, 0.0, 3.0
-              1.0, 0.0, 0.0, // look-at point
-              0.0, 1.0, 0.0); // up-direction
-*/
-/*	UFO Catcher View; Z as up
-    gluLookAt(0.0, 1.0, 3.0, // eye position 0.0, 0.0, 3.0
-              0.0, 0.0, 1.0, // look-at point
-              0.0, 0.0, 1.0); // up-direction
-*/
-/*	UFO Catcher View; Y as up
-	//reverify: robotship cube
-    gluLookAt(0.0, -1.0, 3.0, // eye position 0.0, 0.0, 3.0
-              0.0, 0.0, 1.0, // look-at point
-              0.0, 1.0, 0.0); // up-direction
-*/
+	myCanvasEyePosY=-0.5f;
 
-	//edited by Mike, 20201023
-/*
-    gluLookAt(0.0, 1.0, 3.0, // eye position 0.0, 0.0, 3.0
-              0.0, 0.0, 1.0, // look-at point
-              0.0, 1.0, 0.0); // up-direction
-*/
-
-/*	//edited by Mike, 20201025
-    gluLookAt(myCanvasEyePosX, 0.0, 3.0, // eye position 0.0, 0.0, 3.0
-              0.0, 0.0, 1.0, // look-at point
-              0.0, 1.0, 0.0); // up-direction
-//              1.0, 1.0, 0.0); // up-direction //floor head down
-*/
-/*	//edited by Mike, 20201115
-    gluLookAt(myCanvasEyePosX, myCanvasEyePosY, myCanvasEyePosZ, // eye position 0.0, 0.0, 3.0
+	gluLookAt(myCanvasEyePosX, myCanvasEyePosY, myCanvasEyePosZ+3.0f, // eye position 0.0, 0.0, 3.0
               myCanvasCenterPosX, myCanvasCenterPosY, myCanvasCenterPosZ, // look-at point
               0.0, 1.0, 0.0); // up-direction
-*/
-    gluLookAt(myCanvasEyePosX, myCanvasEyePosY, myCanvasEyePosZ, // eye position 0.0, 0.0, 3.0
-              myCanvasCenterPosX, myCanvasCenterPosY, myCanvasCenterPosZ, // look-at point
-              0.0, 1.0, 0.0); // up-direction
-/*	//edited by Mike, 20210311
-    gluLookAt(myCanvasEyePosX, myCanvasEyePosY, myCanvasEyePosZ*2, // eye position 0.0, 0.0, 3.0
-              myCanvasCenterPosX, myCanvasCenterPosY, myCanvasCenterPosZ, // look-at point
-              0.0, 1.0, 0.0); // up-direction
-*/		
 		
-/*
-    gluLookAt(0.0, 0.5, 3.0, // eye position 0.0, 0.0, 3.0
-              0.0, 0.0, 1.0, // look-at point
-              0.0, 1.0, 0.0); // up-direction
-*/
-	//--------------------------------------------------------
 
 	//note: reference point/origin at center; not top-left
-
 	//added by Mike, 20210220
 	//ISOMETRIC VIEW					  	
 	//-----
@@ -1367,6 +1312,19 @@ void OpenGLCanvas::render()
 	//-----
 */
 
+ //removed by Mike, 20210505		
+	//added by Mike, 20210502
+	//Fighter
+//	glScalef(0.2f, 0.2f, 0.2f);
+//  glTranslatef(0.0f, -1.0f, 0.0f); //TO-DO: -reverify: this
+//  glTranslatef(0.0f, 0.0f, -1.0f);
+	//added by Mike, 20210502
+//	glTranslatef(0.0f, -4.0f, 0.0f);				
+//  	glTranslatef(0.0f, -4.0f, 10.0f);
+	//edited by Mike, 20210505
+//  	glTranslatef(0.0f, -6.0f, 10.0f);
+  	glTranslatef(0.0f, -8.0f, 10.0f);
+				
 	//added by Mike, 20210220
 	//3rd-person view
 	//without additional rotate and scale
@@ -1376,7 +1334,10 @@ void OpenGLCanvas::render()
 	//Tron Bonne Mini Game: Cannonballs
 	//https://www.youtube.com/watch?v=P1S3Mt49qyg;
 	//last accessed: 20210323
-	glRotatef(30, 1.0f, 0.0f, 0.0f);
+	//edited by Mike, 20210505
+//	glRotatef(30, 1.0f, 0.0f, 0.0f);
+	glRotatef(20, 1.0f, 0.0f, 0.0f);
+		
 		
 	//added by Mike, 20210220; edited by Mike, 20210220
 	//2D horizontal-scrolling, vertical-scrolling view
@@ -1386,6 +1347,7 @@ void OpenGLCanvas::render()
 /*    glScalef(0.2f, 0.2f, 0.2f);
 */
 	//-----
+
 		
 /*	//removed by Mike, 20210323
 //added by Mike, 20210311
@@ -1394,100 +1356,33 @@ void OpenGLCanvas::render()
 	glScalef(0.2f, 0.2f, 0.2f);
 */
 		
-//    glTranslatef(-1.0f, -1.0f, 0.0f);
-
-	//added by Mike, 20210320
- 	//set to TOP-LEFT
-//	glTranslatef(-myWindowWidth/100/2, 0.0f, -myWindowHeight/100/2);
-
-		
-	//edited by Mike, 2021022
-//    glTranslatef(-1.0f, -1.0f, 0.0f);
-//    glTranslatef(-3.0f, -1.0f, 0.0f);
-//    glTranslatef(-3.2f, 0.0f, 0.0f);
-	//edited by Mike, 20201023
-//    glTranslatef(-3.2f, 0.0f, -3.2f);
+/* //removed by Mike, 20210510		
     glTranslatef(myCanvasPosX, myCanvasPosY, myCanvasPosZ);
-  
-    //added by Mike, 2020116; edited by Mike, 20201116
-   	//wrap the world 
-/*
-//           		if (myXPos <= 0.0f) myXPos = 20-myWidth/8; //if left side
-	if (myCanvasPosX <= 0.0f) myCanvasPosX = myWindowWidth/100;//-myWidth/8; //if left side
-	else if (myCanvasPosX >= myWindowWidth/100) myCanvasPosX = 0.0f;//+myWidth/8; //if right side
-	if (myCanvasPosZ >= myWindowHeight/100) myCanvasPosZ = 0.0f;//+myHeight/8; //if bottom side
-	//edited by Mike, 20201116
-//           		else if (myZPos <= 0.0f) myZPos = 20-myHeight/8; //if top side
-	else if (myCanvasPosZ <= 0.0f) myCanvasPosZ = myWindowHeight/100;//-myHeight/8; //if top side
-*/
-	//edited by Mike, 20201202
-/* //Windows Machine
-	//note: negative value
-	if (myRobotShip->getX() <= 0.0f) myCanvasPosX = 0.0f-myWindowWidth/100+myRobotShip->getWidth()/8;//-myWidth/8; //if left side
-	//edited by Mike, 20201202		
-	else if (myRobotShip->getX() >= myWindowWidth/100) myCanvasPosX = 0.0f+myRobotShip->getWidth()/8;//+myWidth/8; //if right side
-//	else if (myRobotShip->getX() >= 10) myCanvasPosX = 0.0f+myRobotShip->getWidth()/8;//+myWidth/8; //if right side
-	if (myRobotShip->getZ() >= myWindowHeight/100) myCanvasPosZ = 0.0f+myRobotShip->getHeight()/8; //if bottom side
-	//note: negative value
-	else if (myRobotShip->getZ() <= 0.0f) myCanvasPosZ = 0.0f-myWindowHeight/100+myRobotShip->getHeight()/8;//-myHeight/8; //if top side
-*/
-	//TO-DO: -reverify: with Windows Machine
-	//Linux Machine
-/*	printf("CanvasPosX: %f\n", myCanvasPosX);
-	printf("robotShipX: %f\n", myRobotShip->getX());
-	printf("CanvasPosZ: %f\n", myCanvasPosZ);
-	printf("robotShipZ: %f\n", myRobotShip->getZ());
-*/
-/*	//edited by Mike, 20201204		
-	//TO-DO: -fix: wrapping bottom and top sides
-	if (myCanvasPosX >= 0.0f) myCanvasPosX = 0.0f-20.0f+myRobotShip->getWidth()/8;//myWindowWidth;//-myWidth/8; //if left side
-	else if (myCanvasPosX-myRobotShip->getWidth()/8 <= -20.0f) myCanvasPosX = 0.0f+myRobotShip->getWidth()/8;//+myWidth/8; //if right side
-		
-	if (myCanvasPosZ-myRobotShip->getWidth()/8 <= -20.f) myCanvasPosZ = 0.0f+myRobotShip->getWidth()/8; //if bottom side
-	else if (myCanvasPosZ >= 0.0f) myCanvasPosZ = 0.0f-20.0f+myRobotShip->getWidth()/8;//-myHeight/8; //if top side
-*/
-	//set canvas camera position relative to MyRobotShip position 
-/* //edited by Mike, 20210320		
-	myCanvasPosX = -myRobotShip->getX()+1.0f; //-3.2 : 4.2; CanvasPosX : robotShipX
-	myCanvasPosZ = -myRobotShip->getZ()+1.0f; //-3.2 : 4.2; CanvasPosZ : robotShipZ
-*/
- 	//set to TOP-LEFT
- 	//inverted controller movement
-/*	myCanvasPosX = myRobotShip->getX()-myWindowWidth/100/2; //-3.2 : 4.2; CanvasPosX : robotShipX
-	myCanvasPosZ = myRobotShip->getZ()-myWindowHeight/100/2; //-3.2 : 4.2; CanvasPosZ : robotShipZ
-*/		
-	myCanvasPosX = -myRobotShip->getX(); //-3.2 : 4.2; CanvasPosX : robotShipX
-	myCanvasPosZ = -myRobotShip->getZ(); //-3.2 : 4.2; CanvasPosZ : robotShipZ
-		
-/*		
-			//note: position calibrate; robotShipX : CanvasPosX
-	//note: negative value; linux machine positive 20.0f, not 0.0f		
-	printf("myWindowWidth/100: %f\n", myWindowWidth/100.0f);
-	if (myRobotShip->getX() <= 0.0f) myCanvasPosX = 0.0f-myWindowWidth/100.0f+myRobotShip->getWidth()/8;//-myWidth/8; //if left side
-	else if (myRobotShip->getX() >= myWindowWidth/100.0f) myCanvasPosX = 0.0f+myRobotShip->getWidth()/8;//+myWidth/8; //if right side
-	if (myRobotShip->getZ() >= myWindowHeight/100.0f) myCanvasPosZ = 0.0f+myRobotShip->getHeight()/8; //if bottom side
-	//note: negative value
-	else if (myRobotShip->getZ() <= 0.0f) myCanvasPosZ = 0.0f-myWindowHeight/100+myRobotShip->getHeight()/8;//-myHeight/8; //if top side
-		*/
-		
-		
-    //added by Mike, 20201024
-//    glTranslatef(3.2f, 1.0f, 3.2f);    
-//    glTranslatef(0.0f, 0.0f, 3.2f);
-//    glTranslatef(3.2f, 0.0f, 6.4f);
-	//removed by Mike, 20201025
-//	glRotatef(myCanvasRotateAxisStepY, 0.0f, 1.0f, 0.0f);
-	//added by Mike, 20201026; removed by Mike, 20201026
-//	glRotatef(myCanvasLookAtAngle, 0.0f, 1.0f, 0.0f);
-    
 
-/*
-    	glMatrixMode(GL_PROJECTION);			// set projection matrix current matrix
-    	glLoadIdentity();						// reset projection matrix
-    	glMatrixMode(GL_MODELVIEW);				// set modelview matrix
-    	// load the identity matrix (clear to default position and orientation)
-    	glLoadIdentity();  
-*/
+	//added by Mike, 20210502	
+	//Fighter
+	glRotatef(-8, 1.0f, 0.0f, 0.0f);
+
+
+	myCanvasPosZ = -myPilot->getZ(); //-3.2 : 4.2; CanvasPosZ : robotShipZ
+
+	float fDistanceBetweenPlayer1And2 = sqrt((myPilot->getX()-myPilotPlayer2->getX())*(myPilot->getX()-myPilotPlayer2->getX()));
+//	printf("fDistanceBetweenPlayer1And2: %f",fDistanceBetweenPlayer1And2);
+
+	if (fDistanceBetweenPlayer1And2>=16.0f) {
+		fDistanceBetweenPlayer1And2=16.0f;
+	}
+		
+	//reduce excess vertical movement likely due to after computation, irrational number, e.g. 10/3, i.e. does not end 
+//	glTranslatef(0.0f, 0.0f-(fDistanceBetweenPlayer1And2/12.0f), -12.0f-(fDistanceBetweenPlayer1And2/12.0f));		
+	glTranslatef(0.0f, 0.0f-(fDistanceBetweenPlayer1And2/10.0f), -12.0f-(fDistanceBetweenPlayer1And2/12.0f));		
+		
+	if (myPilot->getX() < myPilotPlayer2->getX()) {
+		myCanvasPosX = -myPilot->getX()-fDistanceBetweenPlayer1And2/2 - 0.75f;
+	}
+	else {
+		myCanvasPosX = -myPilotPlayer2->getX()-fDistanceBetweenPlayer1And2/2 - 0.75f;		
+	}
 		
 		//added by Mike, 20201207
 		//TO-DO: -add: z-sort, i.e. auto-draw objects based on z position;
@@ -1496,36 +1391,6 @@ void OpenGLCanvas::render()
 
     	//added by Mike, 20200930
     	drawGridWithZAxis();
-
-/*	//edited by Mike, 20201213
-		//added by Mike, 20201001
-    	glPushMatrix();		
-    		//added by Mike, 202013; edited by Mike, 20201014
-//            for(i=0; i<MAX_BEAMS; i++) {
-            for(int i=0; i<MAX_BEAMS; i++) {
-              if (myBeam[i]->isActive()) {
-                myBeam[i]->draw();
-			  }
-            }
-        glPopMatrix();       
-		
-		//edited by Mike, 20201016
-    	glPushMatrix();
-            myRobotShip->drawRobotShip();			
-        glPopMatrix();       
-		//added by Mike, 20201207
-    	glPushMatrix();		        
-            myPilot->drawPilot();			
-        glPopMatrix();       
-		//edited by Mike, 20201016
-    	glPushMatrix();		                
-			//added by Mike, 20201016
-            for(int i=0; i<MAX_ASTEROID; i++) {
-              //if (myBeam[i]->isActive())
-                myAsteroid[i]->draw();
-            }
-    	glPopMatrix();		
-*/
 
 		//added by Mike, 20210120
 		//note: draw beam first to be below the rest during auto-draw
@@ -1536,15 +1401,14 @@ void OpenGLCanvas::render()
 			  }
             }
         glPopMatrix();       
-
-		//added by Mike, 20201213
-		//TO-DO: -reverify: this
 		
 		//z-sort, i.e. auto-draw objects based on z position;
 		//objects with higher z positions are auto-drawn first;
 		//these are objects at the back of those that have lower z positions
 		//MyDynamicObject *myDynamicObjectContainerSorted[MAX_DYNAMIC_OBJECT];		
 		//std::vector<MyDynamicObject*> v;
+ //removed by Mike, 20210507; TO-DO: -reverify: sortByZPosition(...)
+		//added by Mike, 20210509
 		std::sort(vMyDynamicObjectContainer.begin(), vMyDynamicObjectContainer.end(), sortByZPosition());
 		
 		for (int i=0; i<MAX_DYNAMIC_OBJECT; i++) {			
@@ -1552,114 +1416,10 @@ void OpenGLCanvas::render()
 				vMyDynamicObjectContainer[i]->draw();
     		glPopMatrix();
 		}
-		
-//vMyDynamicObjectContainer[0]->draw();
-//vMyDynamicObjectContainer[1]->draw();
-/*
-    for (int i=0; i<MAX_ASTEROID; i++)   
-    {
-		vMyDynamicObjectContainer[1]->draw();
-    }
-		
-	myDynamicObjectContainer[0]=myPilot;
-	myDynamicObjectContainer[1]=myRobotShip;
-	for (int i=0; i<MAX_BEAMS; i++) { //32
-		myDynamicObjectContainer[i+2]=myBeam[i];
-	}
-*/
-/*
-	for (int i=0; i<MAX_BEAMS; i++) { //32
-		vMyDynamicObjectContainer[i+2]->draw();
-	}
-	for (int i=0; i<MAX_ASTEROID; i++) { //16			
-		vMyDynamicObjectContainer[i+2+MAX_BEAMS]->draw();
-	}
-*/	
-		
-		//added by Mike, 20201011; removed by Mike, 20201207
-		//TO-DO: -update: this
-/*
-        currTextureBackground=gameBackground;
-        sprintf(tempText,"1P \n       %d", score);
-        draw_string(-200, 130, tempText);
-    
-    	sprintf(tempText,"HIGH-SCORE\n  %d",highScore);
-        draw_string(90, 130, tempText);
-    
-    	sprintf(tempText,"REST %d", rest);
-        draw_string(100, -150, tempText);
-        glDisable(GL_TEXTURE_2D);
-        glBindTexture(GL_TEXTURE_2D, 0);
-        //for the rest of the objects in the world
-    	glMatrixMode(GL_PROJECTION);			// set projection matrix current matrix
-    	glLoadIdentity();						// reset projection matrix
-        gluPerspective(90.0, // field-of-view angle
-                       4.0 / 3.0, // aspect ratio
-                       1.0, // near plane
-                       myWindowWidth); //or myWindowHeight will do, since they are equal
-                       //100); // far plane
-    
-    	glMatrixMode(GL_MODELVIEW);				// set modelview matrix
-    	// load the identity matrix (clear to default position and orientation)
-    	glLoadIdentity();  
-        //note: this is assuming that myWindowWidth and myWindowHeight are equal
-        gluLookAt(0.0, 5.0, myWindowWidth/2, // eye position 0.0, 0.0, 3.0
-                  0.0, 0.0, 0.0, // look-at point
-                  0.0, 1.0, 0.0); // up-direction
-*/
-
+*/		
 	}
 }
 
-//edited by Mike, 20201022
-/* //previous drawGridWithZAxis()
-//added by Mike, 20201020
-void OpenGLCanvas::drawGridWithZAxis() {
-//	//removed by Mike, 20201020
-//     //set TOP-LEFT origin/anchor/reference point; quadrant 4, y-axis inverted; x and y positive
-//	 glMatrixMode(GL_PROJECTION);
-//	 glLoadIdentity();
-	 //TO-DO: -add: Z plane grid
-	
-	 //draw grid
-	 //edited by Mike, 20201015 	 
- 	 //TO-DO: -update: iRowCountMax
-// 	 int iRowCountMax=10;
- 	 int iRowCountMax=20;
- 	 //TO-DO: -update: iColumnCountMax
-// 	 int iColumnCountMax=10;
- 	 int iColumnCountMax=20;
-   // Draw a Green Line top-left origin; Quadrant 4, y-axis inverted; x and y positive
-   //rows   
-   	//edited by Mike, 20201002
- 	 for (int iRowCount=0; iRowCount<=iRowCountMax; iRowCount++) {
-   		// Draw a Green Line top-left origin
-   		glBegin(GL_LINES);
-      		glColor3f(0.0f, 1.0f, 0.0f); // Green
-			//edited by Mike, 20201022
-      		glVertex2f(0.0f, 0.1f*iRowCount);    // x, y
-      		//edited by Mike, 20201015
-//      		glVertex2f(1.0f, 0.1f*iRowCount);
-      		glVertex2f(0.1f*iRowCountMax, 0.1f*iRowCount);
-      		
-   		glEnd();   		   	  
-	 }
-   //columns
-   	//edited by Mike, 20201015   	
- 	 for (int iColumnCount=0; iColumnCount<=iColumnCountMax; iColumnCount++) {
-   		// Draw a Green Line top-left origin
-   		glBegin(GL_LINES);
-      		glColor3f(0.0f, 1.0f, 0.0f); // Green
-      		glVertex2f(0.1f*iColumnCount, 0.0f);    // x, y
-      		//edited by Mike, 20201015
-//      		glVertex2f(0.1f*iColumnCount, 1.0f);
-      		glVertex2f(0.1f*iColumnCount, 0.1f*iColumnCountMax);
-   		glEnd();   		   	  
-	 }
-   
-   glFlush();  // Render now
-}
-*/
 //added by Mike, 20201020
 void OpenGLCanvas::drawGridWithZAxis() {
 /*	//removed by Mike, 20201020
@@ -1701,38 +1461,41 @@ void OpenGLCanvas::drawGridWithZAxis() {
 //	float fGridSquareHeight = myWindowHeight/iRow3CountMax/100.0;
 
 
-	//removed by Mike, 20201123
-/*
-	//TO-DO: -add: grid after drawing level 
-	//due to glClear(GL_COLOR_BUFFER_BIT); // Clear the color buffer
-	//edited by Mike, 20201120
-   // Draw a Green Line top-left origin; Quadrant 4, y-axis inverted; x and y positive
-   //rows   
-   	//edited by Mike, 20201002
- 	 for (int iRowCount=0; iRowCount<=iRowCountMax; iRowCount++) {
-   		// Draw a Green Line top-left origin
-   		glBegin(GL_LINES);
-      		glColor3f(0.0f, 1.0f, 0.0f); // Green
-			//added by Mike, 20201023
-			//floor face
-			//with Z-axis
-      		glVertex3f(0.0f, 0.0f, fGridSquareHeight*iRowCount);    // x, z
-      		glVertex3f(fGridSquareWidth*iRowCountMax, 0.0f, fGridSquareHeight*iRowCount);      		
-   		glEnd();   		   	  
-	 }
-   //columns
-   	//edited by Mike, 20201015   	
- 	 for (int iColumnCount=0; iColumnCount<=iColumnCountMax; iColumnCount++) {
-   		// Draw a Green Line top-left origin
-   		glBegin(GL_LINES);
-      		glColor3f(0.0f, 1.0f, 0.0f); // Green
-			//added by Mike, 20201022			
-			//with Z-axis
-      		glVertex3f(fGridSquareWidth*iColumnCount, 0.0f, 0.0f);    // y, z
-      		glVertex3f(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iColumnCountMax);
-   		glEnd();   		   	  
-	 }
-*/
+	//added by Mike, 20210502
+//	glTranslatef(-myWindowWidth/2, 0.0f, -myWindowHeight/2);
+//	glTranslatef(-fGridSquareWidth*iColumnCountMax/2, 0.0f, -fGridSquareHeight*iColumnCountMax/2);
+	glTranslatef(-fGridSquareWidth*(iRowCountMax-4), 0.0f, -fGridSquareHeight*(iColumnCountMax-1));
+	
+	   // Draw a Green Line
+	   //rows   
+	   for (int iRowCount=0; iRowCount<=iRowCountMax; iRowCount++) {
+		  // Draw a Green Line top-left origin
+		  glBegin(GL_LINES);
+//			  glColor3f(0.0f, 1.0f, 0.0f); // Green
+			  glColor3f(0.0f, 0.8f, 0.0f); // Green		   
+			  //floor face
+			  //with Z-axis
+			  glVertex3f(0.0f, 0.0f, fGridSquareHeight*iRowCount);    // x, z
+			  glVertex3f(fGridSquareWidth*iRowCountMax, 0.0f, fGridSquareHeight*iRowCount);      		
+		  glEnd();   		   	  
+	    }
+	
+	    //columns
+		 for (int iColumnCount=0; iColumnCount<=iColumnCountMax; iColumnCount++) {
+		   // Draw a Green Line top-left origin
+		   glBegin(GL_LINES);
+	//		  glColor3f(0.0f, 1.0f, 0.0f); // Green
+			  glColor3f(0.0f, 0.8f, 0.0f); // Green		   
+			 
+			  //with Z-axis
+			  glVertex3f(fGridSquareWidth*iColumnCount, 0.0f, 0.0f);    // y, z
+			  glVertex3f(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareHeight*iColumnCountMax);
+		   glEnd();   		   	  
+		 }	
+//	glTranslatef(myWindowWidth/2, 0.0f, myWindowHeight/2);
+//	glTranslatef(fGridSquareWidth*iColumnCountMax/2, 0.0f, fGridSquareHeight*iColumnCountMax/2);
+	glTranslatef(fGridSquareWidth*(iRowCountMax-4), 0.0f, fGridSquareHeight*(iColumnCountMax-1));
+
 
   	//added by Mike, 20201118
   	//LEVEL TEXTURE
@@ -1789,6 +1552,7 @@ void OpenGLCanvas::drawGridWithZAxis() {
 //	glTranslatef(-myWindowWidth/8, 0.0f, -myWindowHeight/8);
 	//updated: viewport to be 240, from 60
 //	glTranslatef(-myWindowWidth/6, 0.0f, -myWindowHeight/6);
+	
 	glTranslatef(-30, 0.0f, -30);
 
 	//myWindowWidth = 240
@@ -1852,14 +1616,17 @@ void OpenGLCanvas::drawGridWithZAxis() {
 	myLevel->draw_level(6.0f, 3.0f, 6.0f, tempText);    	
 */
 
+/* //removed by Mike, 20210423	
 	//added by Mike, 20210323
 	//TO-DO: -reverify: cause of square cube to be rectangular
 	//TO-DO: -reverify: texture rotation
 	glColor3f(1.0f, 1.0f, 1.0f); // white
 	glBindTexture( GL_TEXTURE_2D, LEVEL_TEXTURE );
-	sprintf(tempText,"M");	
+	//edited by Mike, 20210423
+//	sprintf(tempText,"M");	
+	sprintf(tempText,"G");	
 	myLevel->draw_level(fGridSquareWidth*1.0f, 0.0f, fGridSquareWidth*1.0f, tempText);    	
-
+*/
 
 	//added by Mike, 20210325
 	//TO-DO: -add: identification for object to draw by Level.cpp	
@@ -1926,7 +1693,8 @@ void OpenGLCanvas::drawGridWithZAxis() {
 	//removed by Mike, 20201122
     glDisable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, 0);
-	
+
+/*	//removed by Mike, 20210423
 //added by Mike, 20210422	
 glPushMatrix();
 	
@@ -1946,11 +1714,6 @@ glPushMatrix();
 //	iCountTaoAnimationFrame=(iCountTaoAnimationFrame)%2;
 	iCountTaoAnimationFrame=(iCountTaoAnimationFrame)%3;
 	
-/*
-	iTaoAnimationFrameOffset=256*iCountTaoAnimationFrame;	
-	int iTaoAnimationFrameWidthMax=256;
-	iTaoAnimationFrameOffset=iTaoAnimationFrameOffset/iTaoAnimationFrameWidthMax;
-*/
 //	fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.5;
 	fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.25;
 	
@@ -1959,15 +1722,6 @@ glPushMatrix();
 	iCountTaoAnimationFrame=iCountTaoAnimationFrame+1;
 		
 	//printf("iTaoAnimationFrameOffset: %i",iTaoAnimationFrameOffset);
-	
-/*	
-	if (iCountTaoAnimationFrame==0) {
-    	glColor3f(1.0f, 0.0f, 0.0f); // red
-	}
-	else {
-    	glColor3f(1.0f, 1.0f, 1.0f); // white
-	}
-*/
 		
 //-----	
 glBegin(GL_TRIANGLES);	
@@ -2008,54 +1762,16 @@ glBegin(GL_TRIANGLES);
 	glVertex3f(1.000000,-1.000000,-1.000000); //C2	
 glEnd();
 	
-//-----		
-/*	
-//-----	
-glBegin(GL_TRIANGLES);	
-	//triangle#6 //back face left part
-	glNormal3f(0.0000,0.0000,-1.0000);
-	glTexCoord2f(0.0,0.0);	
-	glVertex3f(-1.000000,1.000000,-1.000000); //A1
-
-	glNormal3f(0.0000,0.0000,-1.0000);
-	glTexCoord2f(1.0,1.0);
-	glVertex3f(1.000000,-1.000000,-1.000000); //B1
-
-	glNormal3f(0.0000,0.0000,-1.0000);
-	glTexCoord2f(0.0,1.0);	
-	glVertex3f(-1.000000,-1.000000,-1.000000); //C1	
-	
-
-	//triangle#12 //back face right part		
-	glNormal3f(0.0000,0.0000,-1.0000);
-	glTexCoord2f(0.0,0.0);	
-	glVertex3f(-1.000000,1.000000,-1.000000); //A2
-
-	glNormal3f(0.0000,0.0000,-1.0000);
-	glTexCoord2f(1.0,0.0);
-	glVertex3f(1.000000,1.000000,-1.000000); //B2
-
-	glNormal3f(0.0000,0.0000,-1.0000);
-	glTexCoord2f(1.0,1.0);
-	glVertex3f(1.000000,-1.000000,-1.000000); //C2	
-glEnd();
-//-----	
-*/
 	//added by Mike, 20210422
 	glScalef(1.0f, 1.0f, 1.0f);	
 
 	glRotatef(-180, 1.0f, 0.0f, 0.0f);
 	glTranslatef(-30.0f, 0.0f, -25.0f);		
-
-/*	//removed by Mike, 20210422
-	//added by Mike, 20210422
-    glScaled(1.000000, 1.000000, 1.000000);	
-*/
 	
     glDisable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, 0);
 glPopMatrix(); //added by Mike, 20210422
-	
+*/	
 	
 
 
@@ -2063,8 +1779,9 @@ glPopMatrix(); //added by Mike, 20210422
 //added by Mike, 20210422
 glPushMatrix();
 		
-	//added by Mike, 20210416
-	glTranslatef(15.0f, 0.0f, 30.0f);		
+	//added by Mike, 20210416; edited by Mike, 20210502
+//	glTranslatef(15.0f, 0.0f, 30.0f);		
+	glTranslatef(32.0f, 0.0f, 0.0f);		
 	
 //added by Mike, 20210418
 /*    glDisable(GL_TEXTURE_2D);
@@ -2567,7 +2284,9 @@ glDisable(GL_TEXTURE_2D);
 	//added by Mike, 20210422
     glScalef(1.0f, 1.0f, 1.0f);	
 	
-	glTranslatef(-15.0f, 0.0f, -30.0f);		
+	//edited by Mike, 20210502
+//	glTranslatef(-15.0f, 0.0f, -30.0f);		
+	glTranslatef(-32.0f, 0.0f, 0.0f);		
 
 //edited by Mike, 20210416	
 //fKahonRotation+=10;
@@ -2804,6 +2523,8 @@ void OpenGLCanvas::drawGrid() {
    glFlush();  // Render now
 }
 
+//added by Mike, 20210510
+//TO-DO: -update: this
 void OpenGLCanvas::update()
 {           
     if (currentState==GAME_SCREEN) {
@@ -2814,9 +2535,13 @@ void OpenGLCanvas::update()
         }
 */
 
-    	//added by Mike, 20210206
+    	//added by Mike, 20210206; removed by Mike, 20210424
     	myPilot->update(1); //dt
-    	
+
+		//added by Mike, 20210502
+    	myPilotPlayer2->update(1); //dt
+
+		
     	//added by Mike, 20201001
     	myRobotShip->update(1); //dt
 
@@ -2882,6 +2607,9 @@ void OpenGLCanvas::update()
 		if (iKeyCount==iNumOfKeyTypes) {
 			//TO-DO: -update: this
           	myRobotShip->move(-1); //IDLE_MOVING_STATE			
+			
+			//added by Mike, 20210423
+          	myPilot->move(-1);			
 		}		
 
        	//added by Mike, 20210111; edited by Mike, 20210121
@@ -2906,19 +2634,24 @@ void OpenGLCanvas::update()
     		//added by Mike, 20201001
           	//myRobotShip->move(KEY_UP);
 
-          	//edited by Mike, 20201115
-          	myRobotShip->move(KEY_W);
+          	//edited by Mike, 20201115; removed by Mike, 20210502
+/*          	myRobotShip->move(KEY_W);
+*/
 			//removed by Mike, 20201026
 /*			  myCanvasPosZ+=myCanvasStepZ;
 */
 
+			//added by Mike, 20210423
+          	myPilot->move(KEY_W);			
+
+/*	//removed by Mike, 20210502			
 			//move forward
 			//Reference: https://community.khronos.org/t/moving-an-object-with-respect-to-the-camera/40968;
 			//last accessed: 20201026
 			//answer by: Bob, 200002
 			myCanvasPosZ-=sin(myCanvasLookAtAngle)*myCanvasStepZ;
 			myCanvasPosX-=cos(myCanvasLookAtAngle)*myCanvasStepX;
-
+*/
 
 			//removed by Mike, 20200929
 //			sound->play_sound_clip(thrust);
@@ -2931,18 +2664,20 @@ void OpenGLCanvas::update()
     	{
     		//edited by Mike, 20201115; edited again by Mike, 20210128
             //myRobotShip->move(KEY_DOWN);
-            myRobotShip->move(KEY_S);
+			//removed by Mike, 20210502
+//            myRobotShip->move(KEY_S);
 			
-/*			//removed by Mike, 20201026
-			myCanvasPosZ-=myCanvasStepZ;
-*/
+			//added by Mike, 20210423
+          	myPilot->move(KEY_S);			
+
+/*	//removed by Mike, 20210502			
 			//move backward
 			//Reference: https://community.khronos.org/t/moving-an-object-with-respect-to-the-camera/40968;
 			//last accessed: 20201026
 			//answer by: Bob, 200002
 			myCanvasPosZ+=sin(myCanvasLookAtAngle)*myCanvasStepZ;
 			myCanvasPosX+=cos(myCanvasLookAtAngle)*myCanvasStepX;
-
+*/
     	}
        	//edited by Mike, 20201013
     	//else if(myKeysDown[KEY_RIGHT] == TRUE)
@@ -2959,18 +2694,24 @@ void OpenGLCanvas::update()
     		//edited by Mike, 20201115; edited again by Mike, 20210128
 //            myRobotShip->move(KEY_RIGHT);
             myRobotShip->move(KEY_D);
+
+			//added by Mike, 20210423
+          	myPilot->move(KEY_D);			
+			
 			
 /*			//removed by Mike, 20201026
 			myCanvasPosX+=-myCanvasStepX;
 */
 
+			//removed by Mike, 20210504
+/*			
 			//move right
 			//Reference: https://community.khronos.org/t/moving-an-object-with-respect-to-the-camera/40968;
 			//last accessed: 20201026
 			//answer by: Bob, 200002
 			myCanvasPosZ-=cos(myCanvasLookAtAngle)*myCanvasStepZ;
 			myCanvasPosX+=sin(myCanvasLookAtAngle)*myCanvasStepX;
-
+*/
 			//removed by Mike, 20200929
 //			sound->play_sound_clip(thrust);
     	}
@@ -2992,18 +2733,25 @@ void OpenGLCanvas::update()
     		//edited by Mike, 20201115
     		//edited by Mike, 20210129
 //            myRobotShip->move(KEY_LEFT);
+			
             myRobotShip->move(KEY_A);
-
+			
+			//added by Mike, 20210423
+          	myPilot->move(KEY_A);			
+			
 			//removed by Mike, 20201026
 /////			myCanvasPosX+=myCanvasStepX;
-			
+
+			//removed by Mike, 20210504
+/*			
 			//move left
 			//Reference: https://community.khronos.org/t/moving-an-object-with-respect-to-the-camera/40968;
 			//last accessed: 20201026
 			//answer by: Bob, 200002
 			myCanvasPosZ+=cos(myCanvasLookAtAngle)*myCanvasStepZ;
 			myCanvasPosX-=sin(myCanvasLookAtAngle)*myCanvasStepX;
-
+*/
+	
 			//removed by Mike, 20200929
 //			sound->play_sound_clip(thrust);
     	}    	

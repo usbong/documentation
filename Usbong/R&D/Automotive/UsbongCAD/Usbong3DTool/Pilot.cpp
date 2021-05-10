@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210420
+ * @date updated: 20210506
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -211,8 +211,67 @@ void Pilot::load_tga(char *filename)
     free(data);
 }
 
-//TO-DO: -update: this
+//added by Mike, 20210423
 void Pilot::setup()
+{
+	//removed by Mike, 20201010
+	//due to blank output
+    //glEnable(GL_DEPTH_TEST);
+
+    // select texture 1
+	glBindTexture(GL_TEXTURE_2D, MIKE_TEXTURE_A);
+	
+    /* create OpenGL texture out of targa file */
+	//edited by Mike, 20210420
+//    load_tga("textures/armor.tga");	
+    load_tga("textures/imageSpriteExampleMikeWithoutBG.tga");	
+	
+	// set texture parameters
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
+                    GL_LINEAR_MIPMAP_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+/*
+    // select texture 1
+	glBindTexture(GL_TEXTURE_2D, MIKE_TEXTURE_B);
+	
+    // create OpenGL texture out of targa file
+    load_tga("textures/armor.tga");	
+	
+	// set texture parameters
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
+                    GL_LINEAR_MIPMAP_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+			
+    // select texture 1
+	glBindTexture(GL_TEXTURE_2D, MIKE_TEXTURE_C);
+	
+    // create OpenGL texture out of targa file
+    load_tga("textures/armor.tga");	
+	
+	// set texture parameters
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
+                    GL_LINEAR_MIPMAP_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);	
+*/
+	
+    /* unselect texture myFontTextureObject */
+    glBindTexture(GL_TEXTURE_2D, 0);
+
+    /* setup alpha blending */
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glEnable(GL_BLEND);
+}
+
+
+//TO-DO: -update: this
+void Pilot::setupPrev()
 {
     GLuint i, j;
 	
@@ -404,7 +463,13 @@ Pilot::Pilot(float xPos, float yPos, float zPos, int windowWidth, int windowHeig
     stepY=0.3;
     stepZ=0.3;
 */
-    stepX=0.3;
+	//edited by Mike, 20210505
+	//note: if set to 0.3; noticeable zoom-in, zoom-out cycling movement due to quick speed
+	//observed: Samurai Spirits IV's created world executes such camera eye movement
+	//that becomes noticeable with background zoom-in, zoom-out via cycling movement
+//    stepX=0.3;
+    stepX=0.2;
+	
     stepY=0.3;
     stepZ=0.3;
 
@@ -439,11 +504,20 @@ Pilot::Pilot(float xPos, float yPos, float zPos, int windowWidth, int windowHeig
     myYPos=0+myHeight;//0.1f;
 */
 	//note: position: 3,3; width, height; count starts at 0
-    myXPos=0.0f+myWidth*3;
+	//edited by Mike, 20210502
+//    myXPos=0.0f+myWidth*3;
+	//edited by Mike, 20210503
+//    myXPos=0.0f-myWidth*10;
+    myXPos=0.0f-myWidth*9;
+	
     //edited by Mike, 2020116
 //    myYPos=0.0f+myHeight*3;
+
+	//added by Mike, 20210503
+	//myZPos updated again in another location
     myZPos=0.0f+myHeight*3;
 
+	
 	//added by Mike, 20201115
 	myWindowWidth=windowWidth;
 	myWindowHeight=windowHeight;
@@ -497,8 +571,9 @@ Pilot::Pilot(float xPos, float yPos, float zPos, int windowWidth, int windowHeig
 		iInputWaitCountArray[iCount]=0;
 	}
 	
-    //edited by Mike, 20201201	
-	currentFacingState=FACING_UP;
+    //edited by Mike, 20201201; edited by Mike, 20210502
+//	currentFacingState=FACING_UP;
+	currentFacingState=FACING_RIGHT;
 
 	armAngles[LEFT] = 0.0;
 	armAngles[RIGHT] = 0.0;
@@ -511,12 +586,17 @@ Pilot::Pilot(float xPos, float yPos, float zPos, int windowWidth, int windowHeig
 	legStates[LEFT] = FORWARD_STATE;
 	legStates[RIGHT] = BACKWARD_STATE;
 
-
-	loadTexture(myBodyTexture, "bodyTexture.tga", &myBodyTextureObject);
+	//removed by Mike, 20210423
+/*	loadTexture(myBodyTexture, "bodyTexture.tga", &myBodyTextureObject);
 	loadTexture(myHeadTexture, "headTexture.tga", &myHeadTextureObject);	
-
-	//removed by Mike, 20201001
-//	setup();
+*/
+	
+	//added by Mike, 20210502
+	//note: set this in OpenGLCanvas.cpp
+	bIsPlayer2=false;
+	
+	//removed by Mike, 20201001; added by Mike, 20210423
+	setup();
 	
     setCollidable(true);    
 }
@@ -4071,7 +4151,347 @@ void Pilot::drawPilot()
 //    glPopMatrix();	// pop back to original coordinate system
 }
 
-void Pilot::update(float dt)
+//added by Mike, 20210423
+void Pilot::drawPilotAsQuadWithTexture()
+{
+    glTranslatef(myXPos, myYPos, myZPos);
+
+	//added by Mike, 20210507
+//	glTranslatef(0.0f, 0.0f, -2.0f); //negative to move backward in z-axis
+	
+//	drawPilotObject();
+
+	
+/*	//removed by Mike, 20210423
+    if (currentFacingState==FACING_LEFT_AND_UP) {
+        glRotatef(45, 0.0f, 1.0f, 0.0f);    	
+	}
+	else if (currentFacingState==FACING_RIGHT_AND_UP) {
+        glRotatef(-45, 0.0f, 1.0f, 0.0f);    	
+	}
+	else if (currentFacingState==FACING_LEFT_AND_DOWN) {
+        glRotatef(135, 0.0f, 1.0f, 0.0f);    	
+	}
+	else if (currentFacingState==FACING_RIGHT_AND_DOWN) {
+        glRotatef(-135, 0.0f, 1.0f, 0.0f);    	
+	}
+    else if (currentFacingState==FACING_LEFT) 
+    {  
+        glRotatef(90, 0.0f, 1.0f, 0.0f);
+    } 
+    else if (currentFacingState==FACING_RIGHT) 
+    {
+        glTranslatef(0.0f, 0.0f, -myWidth/3); 
+        glRotatef(-90, 0.0f, 1.0f, 0.0f);
+    }
+    else if (currentFacingState==FACING_UP)
+    {
+        //glTranslatef(-myWidthX/3, 0.0f, 0.0f); 
+    }
+    else if (currentFacingState==FACING_DOWN)
+    {
+        glTranslatef(myWidth/3, 0.0f, 0.0f); 
+        glRotatef(180, 0.0f, 1.0f, 0.0f);
+    }
+*/
+	
+	//added by Mike, 20210505			
+//	glScalef(2.0f, 2.0f, 2.0f);	
+//	glScalef(1.5f, 1.5f, 1.5f);
+	
+	//edited by Mike, 20210507
+//	glScalef(1.2f, 1.2f, 1.2f); //noticeable vertical movement; reverify scale to trans ratio	
+//	glScalef(0.8f, 0.8f, 0.8f);
+	glScalef(1.2f, 1.2f, 1.2f); //noticeable vertical movement; reverify scale to trans ratio	
+	
+	
+//	glScalef(1.3f, 1.3f, 1.3f);	//noticeable vertical movement	
+//	glScalef(1.4f, 1.4f, 1.4f);	
+	
+	//added by Mike, 20210505				
+	//note: scale: 2.0f; z-axis: -0.75f
+/*	glScalef(2.0f, 2.0f, 2.0f);	
+    glTranslatef(0.0f, 0.0f, -0.75f); 
+*/	
+/*	
+	glScalef(1.5f, 1.5f, 1.5f);	
+    glTranslatef(0.0f, 0.0f, -0.5625f); 
+*/
+	
+	float fDistanceBetweenPlayer1And2 = sqrt((getX()-myOpponentXPos)*(getX()-myOpponentXPos));
+	printf("fDistanceBetweenPlayer1And2: %f",fDistanceBetweenPlayer1And2);
+
+//	if (fDistanceBetweenPlayer1And2<10.0f) {
+//	if (fDistanceBetweenPlayer1And2<7.5f) {	
+//	if (fDistanceBetweenPlayer1And2<7.9f) {			
+	//edited by Mike, 20210506
+//		float fScale=1.0f+(1.0f-(fDistanceBetweenPlayer1And2/10.0f));
+		float fScale=1.0f+(1.0f-(fDistanceBetweenPlayer1And2/20.0f));
+
+		//edited by Mike, 20210506
+		if (fScale>2.0f) {
+			fScale=2.0f;
+		}
+		
+/*	
+		if (fScale>1.6f) {
+			fScale=1.6f;
+		}
+*/	
+/*		else if (fScale<1.5f) {
+			fScale=1.5f;
+		}
+*/		
+  //noticeable vertical movement		
+		else if (fScale<1.2f) {
+			fScale=1.2f;
+		}
+/*  //noticeable vertical movement		
+		else if (fScale<1.3f) {
+			fScale=1.3f;
+		}
+*/	
+/*		else if (fScale<1.4f) {
+			fScale=1.4f;
+		}
+*/	
+		//note: ratio: 1.0f : 0.375f; 2.0f : 0.75f
+		//where: 1.0f = scale
+		//0.375f = trans
+		float fTrans= fScale*0.375f;
+//		float fTrans= fScale*0.25f;
+		
+		printf("fScale: %f",fScale);		
+		
+		glScalef(fScale, fScale, fScale);			
+		glTranslatef(0.0f, 0.0f, -fTrans); //negative to move backward in z-axis
+//	}
+	
+	
+	
+    switch (currentState)
+    {
+/*
+           case MOVING_STATE://DYING_STATE:
+                glColor3f(1.0f, 1.0f, 1.0f); //white
+                if (currentDeathFrame<5) {
+                    switch(currentDeathFrame)
+                    {
+                      case 0:
+                        drawMyPlane(myDeathAnimationImg1);
+                        break;
+                      case 1:
+                        drawMyPlane(myDeathAnimationImg2);
+                        break;
+                      case 2:
+                        drawMyPlane(myDeathAnimationImg3);
+                        break;
+                      case 3:
+                        drawMyPlane(myDeathAnimationImg4);
+                        break;
+                      case 4:
+                        drawMyPlane(myDeathAnimationImg5);
+                        //changeState(MOVING_STATE);
+                        break;
+                    }
+                }
+                currentDeathFrame=(currentDeathFrame+1)%4;
+                break;
+*/
+/* //removed by Mike, 20201014
+           case INITIALIZING_STATE:
+                if (invincibleCounter==10) {
+                  changeState(MOVING_STATE);
+                  setCollidable(true);
+                }
+                else invincibleCounter++;
+*/
+				
+            case MOVING_STATE:
+				switch(currentMovingState) {
+		            case IDLE_MOVING_STATE:		
+	//added by Mike, 20210420
+	//TO-DO: -add: this in key movement
+	//note: 3 animation frames; .tga image file has 4 frames @128x256, i.e. width x height
+	iCountTaoAnimationFrame=3;	
+	fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.25;	
+	iCountTaoAnimationFrame=iCountTaoAnimationFrame+1;		
+						
+						//FACING_UP...
+						drawPilotObject();
+						break;
+					case WALKING_MOVING_STATE:
+	//added by Mike, 20210420
+	//TO-DO: -add: this in key movement
+	//note: 3 animation frames; .tga image file has 4 frames @128x256, i.e. width x height
+	iCountTaoAnimationFrame=(iCountTaoAnimationFrame)%3;
+	
+//	fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.5;
+	fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.25;
+	
+//	printf("iCountTaoAnimationFrame: %i",iCountTaoAnimationFrame);
+	iCountTaoAnimationFrame=iCountTaoAnimationFrame+1;		
+	//printf("iTaoAnimationFrameOffset: %i",iTaoAnimationFrameOffset);
+												
+						drawPilotObject();
+						break;
+					case ATTACKING_MOVING_STATE:
+						break;
+				}
+                break;
+            case IN_TITLE_STATE:
+               break;
+
+    }    
+
+	//removed by Mike, 20201001
+//    glPopMatrix();	// pop back to original coordinate system
+}
+
+//added: by Mike, 20210423
+//TO-DO: -add: in PolygonPool
+void Pilot::drawPilotObject()
+{
+		
+//added by Mike, 20210422	
+glPushMatrix();
+	
+	//added by Mike, 20210420
+    glColor3f(1.0f, 1.0f, 1.0f); // white
+    glEnable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, MIKE_TEXTURE_A);		
+
+//	glTranslatef(30.0f, 0.0f, 25.0f); //removed by Mike, 20210424
+	glRotatef(180, 1.0f, 0.0f, 0.0f);
+
+	//added by Mike, 20210422; edited by Mike, 20210424
+	//TO-DO: -reverify: quad size and texture size
+//    glScalef(1.5f, 1.5f, 1.0f);	
+    glScalef(1.2f, 2.0f, 1.0f);	
+
+/*	//removed by Mike, 20210423	
+	//edited by Mike, 20210420
+	//note: 3 animation frames; .tga image file has 4 frames @128x256, i.e. width x height
+//	iCountTaoAnimationFrame=(iCountTaoAnimationFrame)%2;
+	iCountTaoAnimationFrame=(iCountTaoAnimationFrame)%3;
+	
+//	fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.5;
+	fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.25;
+	
+	printf("iCountTaoAnimationFrame: %i",iCountTaoAnimationFrame);
+
+	iCountTaoAnimationFrame=iCountTaoAnimationFrame+1;		
+	//printf("iTaoAnimationFrameOffset: %i",iTaoAnimationFrameOffset);
+*/	
+
+
+	//added by Mike, 20210424
+/*    if (currentFacingState==FACING_LEFT) 
+    {  
+    } 
+    else */
+//edited by Mike, 20210425
+/*	if (currentFacingState==FACING_RIGHT) {    
+*/
+//TO-DO: -update: this
+	if ((currentFacingState==FACING_RIGHT) || (currentFacingState==FACING_RIGHT_AND_UP) || (currentFacingState==FACING_RIGHT_AND_DOWN)) {    
+		//added by Mike, 20210424
+		//notes: use folding paper to assist in quickly identifying location, e.g. texture coordinates 
+		//set vertex positions clock-wise
+		
+//      glRotatef(45, 0.0f, 1.0f, 0.0f); //slanted to wall facing left
+		glBegin(GL_TRIANGLES);	
+			//triangle#6 //back face left part
+			glNormal3f(0.0000,0.0000,-1.0000);
+			//edited by Mike, 20210424
+//			glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	//A1; face left
+			glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0); //B2		
+			glVertex3f(-1.000000,1.000000,-1.000000); //A1
+
+			glNormal3f(0.0000,0.0000,-1.0000);
+			//edited by Mike, 20210424		
+//			glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0); //B1; face left
+			glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);	//C2
+			glVertex3f(1.000000,-1.000000,-1.000000); //B1
+
+			glNormal3f(0.0000,0.0000,-1.0000);
+			//edited by Mike, 20210424				
+//			glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);	//C1; face left
+			glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0); //B1 
+			glVertex3f(-1.000000,-1.000000,-1.000000); //C1	
+
+			//triangle#12 //back face right part		
+			glNormal3f(0.0000,0.0000,-1.0000);
+			//edited by Mike, 20210424
+//			glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	//A2; face lefT
+			glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0); //B2		
+			glVertex3f(-1.000000,1.000000,-1.000000); //A2
+
+			glNormal3f(0.0000,0.0000,-1.0000);
+			//edited by Mike, 20210424
+//			glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0); //B2; face left
+			glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	//A1
+			glVertex3f(1.000000,1.000000,-1.000000); //B2
+
+			glNormal3f(0.0000,0.0000,-1.0000);
+			//edited by Mike, 20210424
+//			glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0); //C2; face left
+			glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);	//C1	
+			glVertex3f(1.000000,-1.000000,-1.000000); //C2	
+		glEnd();
+	}
+	else {	
+		glBegin(GL_TRIANGLES);	
+			//triangle#6 //back face left part
+			glNormal3f(0.0000,0.0000,-1.0000);
+			glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	
+			glVertex3f(-1.000000,1.000000,-1.000000); //A1
+
+			glNormal3f(0.0000,0.0000,-1.0000);
+			//edited by Mike, 20210420
+		//	glTexCoord2f(1.0+iTaoAnimationFrameOffset,1.0);
+		//	glTexCoord2f(0.5+fTaoAnimationFrameOffset,1.0);
+			glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0);
+			glVertex3f(1.000000,-1.000000,-1.000000); //B1
+
+			glNormal3f(0.0000,0.0000,-1.0000);
+			glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);	
+			glVertex3f(-1.000000,-1.000000,-1.000000); //C1	
+
+
+			//triangle#12 //back face right part		
+			glNormal3f(0.0000,0.0000,-1.0000);
+			glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	
+			glVertex3f(-1.000000,1.000000,-1.000000); //A2
+
+			glNormal3f(0.0000,0.0000,-1.0000);
+			//edited by Mike, 20210420	
+		//	glTexCoord2f(1.0+iTaoAnimationFrameOffset,0.0);
+		//	glTexCoord2f(0.5+fTaoAnimationFrameOffset,0.0);
+			glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0);
+			glVertex3f(1.000000,1.000000,-1.000000); //B2
+
+			glNormal3f(0.0000,0.0000,-1.0000);
+			//edited by Mike, 20210420	
+		//	glTexCoord2f(1.0+iTaoAnimationFrameOffset,1.0);
+		//	glTexCoord2f(0.5+fTaoAnimationFrameOffset,1.0);
+			glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0);	
+			glVertex3f(1.000000,-1.000000,-1.000000); //C2	
+		glEnd();
+	}	
+
+	//added by Mike, 20210422
+	glScalef(1.0f, 1.0f, 1.0f);	
+
+	glRotatef(-180, 1.0f, 0.0f, 0.0f);
+//	glTranslatef(-30.0f, 0.0f, -25.0f); //removed by Mike, 20210424
+
+    glDisable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, 0);
+glPopMatrix(); //added by Mike, 20210422	
+}
+
+void Pilot::updatePrev(float dt)
 {
     switch (currentState)
     {
@@ -4282,6 +4702,7 @@ void Pilot::update(float dt)
                     else thrust=0;
 */                                        
 
+/* //removed by Mike, 20210424			
 				//Note: Use these with update to OpenGLCanvas
            		//wrap the world 
            		//edited by Mike, 20201116
@@ -4293,60 +4714,7 @@ void Pilot::update(float dt)
            		//edited by Mike, 20201116
 //           		else if (myZPos <= 0.0f) myZPos = 20-myHeight/8; //if top side
            		else if (myZPos <= 0.0f) myZPos = myWindowHeight/100-myHeight/8; //if top side
-           		           		
-
-
-           		//edited by Mike, 20201001
-/*           		
-           		if (myXPos <= -25.0f) myXPos = 25.0f;
-           		else if (myXPos > 25.0f) myXPos = -25.0f; 
-           		if (myYPos <= -17.0f) myYPos = 19.0f;
-           		else if (myYPos > 19.0f) myYPos = -17.0f;
-*/
-/*
-           		if (myXPos <= -1.0f) myXPos = 1.0f;
-           		else if (myXPos > 1.0f) myXPos = -1.0f; 
-           		if (myYPos <= -1.0f) myYPos = 1.0f;
-           		else if (myYPos > 1.0f) myYPos = -1.0f;
-*/
-				//note: add ship width and height
-/*
-           		if (myXPos+myWidth/2 <= -1.0f) myXPos = 1.0f-myWidth/2; //if left side
-           		else if (myXPos+myWidth/2 >= 1.0f) myXPos = -1.0f+myWidth/2; //if right side
-           		if (myYPos+myHeight/2 <= -1.0f) myYPos = 1.0f+myHeight/2; //if bottom side
-           		else if (myYPos+myHeight/2 >= 1.0f) myYPos = -1.0f+myHeight/2; //if top side
-*/
-				//top-left anchor/origin/reference point
-/*           	//TO-DO: -update: this	
-				if (myXPos+myWidth/2 <= -1.0f) myXPos = 1.0f-myWidth/2; //if left side
-           		else if (myXPos+myWidth/2 >= 1.0f) myXPos = -1.0f+myWidth/2; //if right side
-*/           	
-
-/*				//edited by Mike, 20201001	
-           		if (myYPos+myHeight/2 >= 1.0f) myYPos = 0.0f+myHeight/2; //if bottom side
-           		else if (myYPos+myHeight/2 <= 0.0f) myYPos = 1.0f-myHeight/2; //if top side
-*/
-/*
-				//add velocity
-           		if (myYPos+yVel >= 1.0f) myYPos = 0.0f+myHeight/3; //if bottom side
-           		else if (myYPos+yVel <= 0.0f) myYPos = 1.0f-myHeight/3; //if top side
-*/
-
-				//edited by Mike, 20201015
-/*
-           		if (myXPos <= 0.0f) myXPos = 1.0f-myWidth/8; //if left side
-           		else if (myXPos >= 1.0f) myXPos = 0.0f+myWidth/8; //if right side
-           		if (myYPos >= 1.0f) myYPos = 0.0f+myHeight/8; //if bottom side
-           		else if (myYPos <= 0.0f) myYPos = 1.0f-myHeight/8; //if top side
-*/
-/*				//removed by Mike, 20201023
-				//TO-DO: -add: 0.1f*iColumnCountMax
-           		if (myXPos <= 0.0f) myXPos = 0.1f*20-myWidth/8; //if left side
-           		else if (myXPos >= 0.1f*20) myXPos = 0.0f+myWidth/8; //if right side
-				//TO-DO: -add: 0.1f*iRowCountMax
-           		if (myYPos >= 0.1f*20) myYPos = 0.0f+myHeight/8; //if bottom side
-           		else if (myYPos <= 0.0f) myYPos = 0.1f*20-myHeight/8; //if top side
-*/
+*/           		           		
 
 /*
           char str[700];                                       
@@ -4356,6 +4724,125 @@ void Pilot::update(float dt)
 //                   isMovingForward=0; 
 //                }
                 break;
+            case IN_TITLE_STATE:                
+                  rotationAngle+=5;//rotationStep;
+                break;
+            default: //STANDING STATE
+              break;//do nothing    
+    }
+}
+
+//added by Mike, 20210423
+void Pilot::update(float dt)
+{
+    switch (currentState)
+    {
+           case INITIALIZING_STATE:
+           case MOVING_STATE:      
+				switch(currentMovingState) {
+		           case WALKING_MOVING_STATE:
+		                break;
+		            case ATTACKING_MOVING_STATE:
+		            	if (bIsExecutingPunch) {
+		            		if (iPunchAnimationCount<MAX_PUNCHING_ANIMATION_COUNT) {
+								if ((iPunchAnimationCountDelay)%2==0) {
+									iPunchAnimationCount+=1;
+									iPunchAnimationCountDelay=0;
+								}
+								iPunchAnimationCountDelay+=1;
+							}
+							//added by Mike, 20210123
+							//+added: no continuous punch via hold punch button
+							else {
+								//edited by Mike, 20210123; edited again by Mike, 20210124
+								if (iPunchAnimationCountDelay<0) { //<5
+								}
+								else {
+									//edited by Mike, 20210123
+		    						if (myKeysDown[KEY_U]==FALSE) {  
+										bIsExecutingPunch=false;
+										iPunchAnimationCount=0;
+										iPunchAnimationCountDelay=0;
+
+										//added by Mike, 20210124
+								   		armAngles[RIGHT]=0.0f;
+										armAngles[LEFT]=0.0f;
+									} 
+								}
+								iPunchAnimationCountDelay+=1;
+							}
+						}
+						
+						if (bIsExecutingDefend) {
+    						if (myKeysDown[KEY_H]==FALSE) {  
+								bIsExecutingDefend=false;
+
+								//added by Mike, 20210124
+						   		armAngles[RIGHT]=0.0f;
+								armAngles[LEFT]=0.0f;
+							} 
+						}						
+		            	break;
+		                
+		            default: //STANDING STATE		            
+		              break;//do nothing    
+				}
+
+				if (myKeysDown[KEY_D]==FALSE) {
+					if (iInputWaitCountArray[KEY_D]<MAX_WAIT_COUNT) {
+						iInputWaitCountArray[KEY_D]+=1;
+					}
+				}
+				if (myKeysDown[KEY_A]==FALSE) {
+					if (iInputWaitCountArray[KEY_A]<MAX_WAIT_COUNT) {
+						iInputWaitCountArray[KEY_A]+=1;
+					}
+				}
+				if (myKeysDown[KEY_W]==FALSE) {
+					if (iInputWaitCountArray[KEY_W]<MAX_WAIT_COUNT) {
+						iInputWaitCountArray[KEY_W]+=1;
+					}
+				}
+				if (myKeysDown[KEY_S]==FALSE) {
+					if (iInputWaitCountArray[KEY_S]<MAX_WAIT_COUNT) {
+						iInputWaitCountArray[KEY_S]+=1;
+					}
+				}
+
+           		rotationAngle=0; //TO-DO: -update: this
+
+/* //removed by Mike, 20210424						
+				//Note: Use these with update to OpenGLCanvas
+           		//wrap the world 
+           		if (myXPos <= 0.0f) myXPos = myWindowWidth/100-myWidth/8; //if left side
+           		else if (myXPos >= myWindowWidth/100) myXPos = 0.0f+myWidth/8; //if right side
+
+           		if (myZPos >= myWindowHeight/100) myZPos = 0.0f+myHeight/8; //if bottom side
+           		else if (myZPos <= 0.0f) myZPos = myWindowHeight/100-myHeight/8; //if top side
+*/           		           		
+			
+
+				//added by Mike, 20210503
+				//Note: Use these with update to OpenGLCanvas
+				//max world 
+/*			
+           		if (myXPos <= 15.0f) myXPos = 0-15.0f; //if left side
+           		else if (myXPos >= myWindowWidth/100) myXPos = 0.0f+myWidth/8; //if right side
+*/			
+/*	//removed by Mike, 20210504
+			printf(">> myXPos: %f\n",myXPos);
+			printf(">> stepX: %f\n",stepX);
+				//TO-DO: -update: instructions to do not execute step if already at border
+*/				
+/*			
+           		if ((myXPos-stepX) <= -20.70f) myXPos = 0.0f-21.0f+stepX; //+myWidth+stepX; //if left side
+           		else if (myXPos >= myWindowWidth/100) myXPos = 0.0f+myWidth/8; //if right side
+*/
+/*	//removed by Mike, 20210504			
+           		if ((myXPos-stepX) <= -21.0f) myXPos = 0.0f-21.0f+stepX; //if left side
+           		else if (myXPos+stepX >= 4.0f) myXPos = 0.0f+4.0f-stepX; //if right side
+*/
+				break;
             case IN_TITLE_STATE:                
                   rotationAngle+=5;//rotationStep;
                 break;
@@ -4742,6 +5229,7 @@ void Pilot::move(int key)
 	else if (bIsExecutingDefend) {
 	}	
 	else {    
+/*	//removed by Mike, 20210502		
           //added by Mike, 20201001; edited by Mike, 20201116
 //	      myYPos+=-stepY;
 	      myZPos+=-stepZ;
@@ -4756,6 +5244,7 @@ void Pilot::move(int key)
 	//			if ((bIsExecutingDashArray[KEY_W])) {
 					myZPos+=-stepZ;
 				}
+*/				
 	}
 	
 	      //added by Mike, 20201201; edited by Mike, 20201225
@@ -4763,11 +5252,14 @@ void Pilot::move(int key)
 	      if (bIsFiringBeam) {	      	
 		  }
 		  else {
-      		currentFacingState=FACING_UP;		  	
+			  	//removed by Mike, 20210425
+			   //TO-DO: -add: this
+//      		currentFacingState=FACING_UP;		  	
 		  }
 		  
-		  //added by Mike, 20201226
-   		  currentMovingState=WALKING_MOVING_STATE;
+		  //added by Mike, 20201226; edited by Mike, 20210502
+//   		  currentMovingState=WALKING_MOVING_STATE;
+		  currentMovingState=IDLE_MOVING_STATE;		    
           break;
           
 //     case KEY_DOWN:  //removed by Mike, 20210130
@@ -4784,6 +5276,7 @@ void Pilot::move(int key)
 	else if (bIsExecutingDefend) {
 	}
 	else {
+/* //removed by Mike, 20210502		
           //added by Mike, 20201001; edited by Mike, 20201116
 //	      myYPos+=stepY;
 	      myZPos+=stepZ;
@@ -4793,17 +5286,21 @@ void Pilot::move(int key)
 		if ((bIsExecutingDashArray[KEY_S])) {		
 	    	myZPos+=stepZ;
 		}
+*/				
 	}
 	      //added by Mike, 20201201; edited by Mike, 20201225
           //currentFacingState=FACING_DOWN;
 	      if (bIsFiringBeam) {	      	
 		  }
 		  else {
-          	currentFacingState=FACING_DOWN;
+			//removed by Mike, 20210425
+		    //TO-DO: -add: this			  
+          	//currentFacingState=FACING_DOWN;
 		  }
 
-		  //added by Mike, 20201226
-   		  currentMovingState=WALKING_MOVING_STATE;
+		  //added by Mike, 20201226; edited by Mike, 20210502
+//   		currentMovingState=WALKING_MOVING_STATE;
+			currentMovingState=IDLE_MOVING_STATE;		   
           break;      
 //     case KEY_LEFT: //removed by Mike, 20210130
      case KEY_A: //added by Mike, 20210128		   
@@ -4820,28 +5317,56 @@ void Pilot::move(int key)
 	//added by Mike, 20210121
 	else if (bIsExecutingDefend) {
 	}
-	else {
-          //added by Mike, 20201001            
-	      myXPos+=-stepX;
+	else {			
+//added by Mike, 20210504		   
+/*			printf(">> myXPos: %f\n",myXPos);
+			printf(">> stepX: %f\n",stepX);
+*/			
+		
+		//max world left border
+/*		//edited  by Mike, 20210504
+		  //added by Mike, 20201001            
+		  myXPos+=-stepX;
 
-		//added by Mike, 20210127; edited by Mike, 20210128
-//			if (bIsExecutingDash) {
-		if ((bIsExecutingDashArray[KEY_A])) {		
-			myXPos+=-stepX;
+			//added by Mike, 20210127; edited by Mike, 20210128
+	//			if (bIsExecutingDash) {
+			if ((bIsExecutingDashArray[KEY_A])) {		
+				myXPos+=-stepX;
+			}
+*/		
+		//do not execute step if already at border
+		if ((myXPos) <= -21.0f) {
 		}
+		else {
+				//added by Mike, 20201001            
+				myXPos+=-stepX;
+
+				//added by Mike, 20210127; edited by Mike, 20210128
+		//			if (bIsExecutingDash) {
+				if ((bIsExecutingDashArray[KEY_A])) {		
+					myXPos+=-stepX;
+				}
+		}
+			
 	}
+
+
 	
 /*          
           char str[700];                                       
           sprintf(str,"rotationAngle: %f",rotationAngle);
           MessageBox(NULL, str, "Welcome!", MB_OK);
 */
+		   
+		   
 	      //added by Mike, 20201201; edited by Mike, 20201225
           //currentFacingState=FACING_LEFT;
 	      if (bIsFiringBeam) {	      	
 		  }
 		  else {
-          	currentFacingState=FACING_LEFT;
+//removed by Mike, 20210502			  
+/*          	currentFacingState=FACING_LEFT;
+*/
 		  }
 
 		  //added by Mike, 20201226
@@ -4865,6 +5390,7 @@ void Pilot::move(int key)
 	else if (bIsExecutingDefend) {
 	}
 	else {
+/* //edited by Mike, 20210504		
           //added by Mike, 20201001            
 	      myXPos+=stepX;
 
@@ -4873,7 +5399,21 @@ void Pilot::move(int key)
 			if ((bIsExecutingDashArray[KEY_D])) {
 				myXPos+=stepX;
 			}
+*/
+//		printf("myXPos: %f",myXPos);
+		//do not execute step if already at border
+		if ((myXPos) >= 4.0f) {
+		}
+		else {
+	      	myXPos+=stepX;
+
+			if ((bIsExecutingDashArray[KEY_D])) {
+				myXPos+=stepX;
+			}
+		}		
 	}
+		   
+		   
 
 	      //added by Mike, 20201201; edited by Mike, 20201225
           //currentFacingState=FACING_RIGHT;
@@ -4910,6 +5450,10 @@ void Pilot::move(int key)
 		bIsFiringBeam=false;
 	}   
 
+	//added by Mike, 20210502
+	//TO-DO: -add: FACING_LEFT based on opponent position, e.g. left of pilot
+
+	
 	//added by Mike, 20210104
 //	if (!bIsExecutingDefend) {	
 	if (!bIsFiringBeam) {
@@ -4917,14 +5461,16 @@ void Pilot::move(int key)
 		//TO-DO: -reverify: fire beam, move diagonal, move non-diagonal direction
 		//added by Mike, 20210201
 		if ((myKeysDown[KEY_A]) && (myKeysDown[KEY_W])) {
-	        currentFacingState=FACING_LEFT_AND_UP;
+			//removed by Mike, 20210502
+//	        currentFacingState=FACING_LEFT_AND_UP;
 		}
 		else if ((myKeysDown[KEY_D]) && (myKeysDown[KEY_W])) {
 	        currentFacingState=FACING_RIGHT_AND_UP;
 		}
 		//added by Mike, 20210202
 		else if ((myKeysDown[KEY_A]) && (myKeysDown[KEY_S])) {
-	        currentFacingState=FACING_LEFT_AND_DOWN;
+			//removed by Mike, 20210502			
+//	        currentFacingState=FACING_LEFT_AND_DOWN;
 		}
 		else if ((myKeysDown[KEY_D]) && (myKeysDown[KEY_S])) {
 	        currentFacingState=FACING_RIGHT_AND_DOWN;

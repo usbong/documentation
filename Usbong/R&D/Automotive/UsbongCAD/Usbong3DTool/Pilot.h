@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210219
+ * @date updated: 20210505
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -44,6 +44,10 @@
 //added by Mike, 20210129
 //+reverified: with Windows Machine; 5 with Linux Machine
 //#define MAX_WAIT_COUNT 5 //4 //added by Mike, 20210126; edited by Mike, 20210128
+
+//added by Mike, 20210423
+//TO-DO: -add: texture definitions in PolygolUtils
+#define MIKE_TEXTURE_A 7 
 
 #ifdef _WIN32
 	#define MAX_WAIT_COUNT 5 //Windows Machine
@@ -117,6 +121,12 @@ private:
     float myYPos;
     float myZPos;
 */    
+
+	//added by Mike, 20210505
+    float myOpponentXPos;
+    float myOpponentYPos;
+    float myOpponentZPos;
+	
     float stepX;
     float stepY;
     float stepZ;
@@ -125,6 +135,10 @@ private:
     float myWidthZ;
     float myHeightY;
 */    
+	//added by Mike, 20210423
+	int iCountTaoAnimationFrame;
+	float fTaoAnimationFrameOffset;
+		
     OpenGLCanvas *myOpenGLCanvas;
 
     //float boundary;
@@ -202,6 +216,9 @@ private:
 	//int iInputWaitCount; //we use with dash
 	int iInputWaitCountArray[PILOT_MAX_DIRECTIONAL_KEY_DASH_COUNT]; //6
 
+	//added by Mike, 20210502
+	bool bIsPlayer2;
+
     GLint tricount;
     GLint isMovingForward;
 
@@ -211,6 +228,9 @@ private:
     //draw texture
 	//added by Mike, 20201130
     bool loadTexture(CTargaImage *myTexture, const char *filename, unsigned int *myTextureObject);
+
+	//edited by Mike, 20210423
+	void setupPrev();
     void setup();
 
 	// draws a unit cube
@@ -308,6 +328,23 @@ public:
     void setCurrentFacingState(int iNewFacingState) {
     	currentFacingState = iNewFacingState;
 	}
+	
+	//added by Mike, 20210502
+	void setAsPlayer2() {
+		currentFacingState=FACING_LEFT;
+		bIsPlayer2=true;
+		
+		//note: position: 3,3; width, height; count starts at 0
+		//edited by Mike, 20210503
+//		myXPos=0.0f+myWidth*6;
+//		myXPos=0.0f-myWidth*3;
+//		myXPos=0.0f-myWidth*2;
+		myXPos=0.0f-myWidth*2.5;
+		
+		//note: auto-set to be equal with player 1; player 1 Z-position based on Camera Eye		
+		//myZPos=0.0f+myHeight*3; 		
+	}
+	
 
     //added by Mike, 20210111
 //    bool getIsExcutingPunchDefense() {
@@ -324,9 +361,15 @@ public:
     
     //added by Mike, 20201213
     virtual void draw() {
-    	drawPilot();
+		//edited by Mike, 20210424
+//    	drawPilot();
+		drawPilotAsQuadWithTexture();
     }
-  
+
+	//added by Mike, 20210423
+	void drawPilotAsQuadWithTexture();
+	void drawPilotObject();
+
 	// draws the entire robot
 	//void drawRobot(float xPos, float yPos, float zPos);
     void drawPilot();
@@ -335,9 +378,23 @@ public:
 	//TO-DO: -add: in ModelPool.cpp
 	void drawModelPilot();
         
-	// updates the robot data
+	// updates the Pilot data
+	void updatePrev(float dt);
+	//added by Mike, 20210423
 	void update(float dt);
+
+	//added by Mike, 20210505
+	void updateToFaceOpponent(float opponentPosX) {
+		myOpponentXPos=opponentPosX; //added by Mike, 20210505
 	
+		if (getX() < opponentPosX) {
+			currentFacingState=FACING_RIGHT;
+		}		
+		else {
+			currentFacingState=FACING_LEFT;		
+		}
+	}
+
 	// changes the robot's state
 	void changeState(int s);
 	

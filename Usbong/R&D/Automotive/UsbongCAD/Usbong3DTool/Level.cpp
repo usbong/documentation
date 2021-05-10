@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201118
- * @date updated: 20210420
+ * @date updated: 20210422
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -53,6 +53,9 @@
 
 //added by Mike, 20210208
 #include "UsbongUtils.h"
+
+//added by Mike, 2020423
+//note: verify: 8x8 tiles as room
 
 /*****************************************************************************/
 
@@ -200,7 +203,11 @@ void Level::draw_char(GLfloat x, GLfloat y, GLfloat z, char c)
 	}
 */
 	//TO-DO: -update: set of instructions for Quad to Face Camera
+	//removed by Mike, 20210423
 	drawCubeWithBlockTextureQuadFacingCameraOnly(4.0f, tx, ty, tz, x,y,z);
+	
+	//added by Mike, 20210423; removed by Mike, 20210423
+//	drawCubeWithBlockTexture(4.0f, tx, ty, tz, x,y,z);	
 }
 
 //edited by Mike, 20201118
@@ -405,9 +412,11 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 	
    //added by Mike, 20210309
    //TO-DO: -reverify: iMovementGridZ, etc value
+/* //removed by Mike, 20210423
    std::cout << "iMovementGridZ: " << iMovementGridZ << "\n";
    std::cout << "iMovementGridX: " << iMovementGridX << "\n";
-		
+*/
+	
    iCurrentLevelMapContainerOffsetZ += iMovementGridZ; 
    iCurrentLevelMapContainerOffsetX += iMovementGridX; 
    iCurrentLevelMapContainerOffsetY += iMovementGridY; 
@@ -470,11 +479,13 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 	 iCurrentLevelMapContainerOffsetMaxViewPortZ=MAX_INPUT_TEXT_PER_LINE-1;   
    } 
 
+/* //removed by Mike, 20210423	
    std::cout << "iCurrentLevelMapContainerOffsetMaxViewPortZ: " << iCurrentLevelMapContainerOffsetMaxViewPortZ << "\n";
 
 	//edited by Mike, 20210318
    std::cout << "fZ: " << fZ << "\n";
    std::cout << "fX: " << fX << "\n";
+*/
 	
 //	   std::cout << "DITO iRowCount: " << iRowCount << "\n";
 
@@ -514,9 +525,11 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
    } 
    else if (iCurrentLevelMapContainerOffsetMaxViewPortX>=MAX_INPUT_TEXT_PER_LINE) {
 	 iCurrentLevelMapContainerOffsetMaxViewPortX=MAX_INPUT_TEXT_PER_LINE-1;	   
-   } 		
-
+   }
+		
+/* //removed by Mike, 20210423	
    std::cout << "iCurrentLevelMapContainerOffsetX: " << iCurrentLevelMapContainerOffsetX << "\n";
+*/		
 		
 //   std::cout << "iCurrentLevelMapContainerOffsetMaxViewPortX: " << iCurrentLevelMapContainerOffsetMaxViewPortX << "\n";
 		
@@ -542,17 +555,19 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 			    //Grass
 				sprintf(tempText,"G");
 			
-				//added by Mike, 20201124
-			    glColor3f(0.14f, 0.68f, 0.06f); // Green
+				//added by Mike, 20201124; edited by Mike, 20210423
+//			    glColor3f(0.14f, 0.68f, 0.06f); // Green
+			    glColor3f(1.0f, 1.0f, 1.0f); // white
 
 				//added by Mike, 20201124
 				//execute this when using solid colors
 				//for computer to not draw borders
-				glBindTexture( GL_TEXTURE_2D, 0 );
+				//removed by Mike, 20210423
+//				glBindTexture( GL_TEXTURE_2D, 0 );
 				
 				//edited by Mike, 20210319
 //				fGridSquareWidth=3.2f;
-	
+				
 				draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareWidth*iRowCount, tempText);
 //computer draws this box
 //				draw_level(fGridSquareWidth*0, 0.0f, fGridSquareWidth*300, tempText);
