@@ -170,6 +170,13 @@ enum Keys
 	iNumOfKeyTypes
 };
 
+//added by Mike, 20210510
+enum mouseActionIds
+{
+	MOUSE_LEFT_BUTTON = 0,
+	iNumOfMouseActionIdTypes
+};
+
 //added by Mike, 20210403
 typedef struct
 {
@@ -951,7 +958,15 @@ void OpenGLCanvas::keyUp(int keyCode)
 	myPilot->keyUp(keyCode);	
 }
 
-
+//added by Mike, 20210510
+void OpenGLCanvas::mouseActionDown(int iMouseActionId)
+{
+	myMouseActionDown[iMouseActionId] = TRUE;	
+}
+void OpenGLCanvas::mouseActionUp(int iMouseActionId)
+{
+	myMouseActionDown[iMouseActionId] = FALSE;	
+}
 
 //added by Mike, 20210403
 //TO-DO: -update: this

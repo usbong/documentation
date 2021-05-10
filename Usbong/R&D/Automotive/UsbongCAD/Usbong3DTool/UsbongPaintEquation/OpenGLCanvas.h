@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200929
- * @date updated: 20210507
+ * @date updated: 20210510
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -204,7 +204,10 @@ class OpenGLCanvas
 		//edited by Mike, 20210130
 //   		int myKeysDown[4];
    		int myKeysDown[10];
-		   	
+		
+		//added by Mike, 20210510
+   		int myMouseActionDown[1];
+
    		float rotationSpeed;
     
         int myRepaintCounter;
@@ -336,7 +339,11 @@ class OpenGLCanvas
 
    		void keyDown(int keyCode);
 	    void keyUp(int keyCode);
-		
+
+		//added by Mike, 20210510
+   		void mouseActionDown(int mouseActionId);
+	    void mouseActionUp(int mouseActionId);
+
     	//void Prepare(float dt);
     	void render();
     	void update();

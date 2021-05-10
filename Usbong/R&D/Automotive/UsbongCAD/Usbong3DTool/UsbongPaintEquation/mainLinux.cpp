@@ -151,42 +151,16 @@ static int myWindowHeight=640; //2048;//320
 //added by Mike, 20201001
 OpenGLCanvas *myOpenGLCanvas = NULL;
 
+//added by Mike, 20210510
+//note: keys and mouseActionIds equal with that in OpenGLCanvas.cpp
+
 //added by Mike, 20201121
 enum Keys
 {
-/*	//edited by Mike, 20210128
-	KEY_UP = 0,
-	KEY_DOWN,
-	KEY_RIGHT,
-	KEY_LEFT,
-	KEY_SPACE,
-	//edited by Mike, 20201013
-	KEY_ENTER,
-	//TO-DO: -verify: gamepad
-	KEY_A,
-	KEY_D,
-	KEY_W,
-	KEY_S,
-*/
-	//TO-DO: -verify: gamepad
-/*	//edited by Mike, 20210129
-	KEY_A = 0,
-	KEY_D,
-	KEY_W,
-	KEY_S,
-*/
 	KEY_W = 0,
 	KEY_S,
 	KEY_D,
 	KEY_A,
-/* //removed by Mike, 20210130
-	KEY_UP,
-	KEY_DOWN,
-	KEY_RIGHT,
-	KEY_LEFT,
-	KEY_SPACE,
-	KEY_ENTER,
-*/
 	KEY_J,
 	KEY_L,
 	KEY_I,
@@ -196,6 +170,13 @@ enum Keys
 	KEY_U,
 
 	iNumOfKeyTypes	
+};
+
+//added by Mike, 20210510
+enum mouseActionIds
+{
+	MOUSE_LEFT_BUTTON = 0,
+	iNumOfMouseActionIdTypes
 };
 
 //added by Mike, 20201001; edited by Mike, 20201210
@@ -579,7 +560,7 @@ void keyUp (unsigned char key, int x, int y)
        	       case 13: //ENTER
                     myOpenGLCanvas->keyUp(KEY_ENTER);
                     return;			
-*/					
+*/									
         }
         return;    			
 }
@@ -690,19 +671,29 @@ void specialKeyUp (int specialKey, int x, int y)
 }
 
 //added by Mike, 20210510
+//Reference: https://stackoverflow.com/questions/13296906/new-to-opengl-glutmousefunc;
+//last accessed; 20210510
+//question by: Aseel84, 20121108T2007; edited by: Ivanzinho, 20201221T1531
+//answer by: Xymostech, 20211108T2317
+//note: window's top-left origin
 void myMouseAction(int button, int state, int x, int y)
 {
-
-switch (button)
-{
-    case GLUT_LEFT_BUTTON:
-
-        if(state == GLUT_UP)
-        {
-			printf("mouse xPos: %i; yPos: %i\n",x,y);
-        	glutPostRedisplay();
-        }
-    break;
+	switch (button)
+	{
+		case GLUT_LEFT_BUTTON:
+			if (state == GLUT_DOWN)
+			{
+				printf("DOWN mouse xPos: %i; yPos: %i\n",x,y);
+				myOpenGLCanvas->mouseActionDown(MOUSE_LEFT_BUTTON);
+				glutPostRedisplay();
+			}
+			else if (state == GLUT_UP)
+			{
+				printf("UP mouse xPos: %i; yPos: %i\n",x,y);
+				myOpenGLCanvas->mouseActionUp(MOUSE_LEFT_BUTTON);
+				glutPostRedisplay();
+			}
+			break;
     }
 }
 
