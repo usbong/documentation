@@ -14,7 +14,7 @@
  *
  * @author: Michael Syson
  * @date created: 20200926
- * @date updated: 20210507
+ * @date updated: 20210510
  *
  * References:
  * 1) Dev-C++ 5.11 auto-generated OpenGL example project
@@ -689,6 +689,24 @@ void specialKeyUp (int specialKey, int x, int y)
         return;    
 }
 
+//added by Mike, 20210510
+void myMouseAction(int button, int state, int x, int y)
+{
+
+switch (button)
+{
+    case GLUT_LEFT_BUTTON:
+
+        if(state == GLUT_UP)
+        {
+			printf("mouse xPos: %i; yPos: %i\n",x,y);
+        	glutPostRedisplay();
+        }
+    break;
+    }
+}
+
+
 int main(int argc, char** argv) {
    glutInit(&argc, argv);                 // InglutReshapeWindowitialize GLUT
 //   glutInitDisplayMode (GLUT_DOUBLE | GLUT_RGB); //addded by Mike, 20201202
@@ -701,7 +719,7 @@ int main(int argc, char** argv) {
 
    //edited by Mike, 20201202
    //note: put this command after all the glutInit Window commands
-   glutCreateWindow("Usbong OpenGL Automotive"); // Create a window with the given title
+   glutCreateWindow("Usbong Paint Equation Tool"); // Create a window with the given title
 
 	  //added by Mike, 20201002
 	  //Linux Machine
@@ -726,6 +744,9 @@ int main(int argc, char** argv) {
 	 	glutSpecialFunc(specialKeyDown);
 	 	glutSpecialUpFunc(specialKeyUp);
 */	
+		//added by Mike, 20210510
+   		glutMouseFunc(myMouseAction);
+		
 		//added by Mike, 20210128
 		glutIgnoreKeyRepeat(1);
     		

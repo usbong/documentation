@@ -1184,8 +1184,8 @@ void OpenGLCanvas::render()
 		glEnd();
 */	
 		glBegin(GL_QUADS);
-			glColor3f(0.0f,0.0f,0.0f); //black
-//			glColor3f(1.0f,1.0f,1.0f); //white
+//			glColor3f(0.0f,0.0f,0.0f); //black
+			glColor3f(1.0f,1.0f,1.0f); //white
 		
 			//TOP
 			//sky blue color; darker
@@ -1241,13 +1241,14 @@ void OpenGLCanvas::render()
 	    glBindTexture(GL_TEXTURE_2D, 0);
 */
 
+/*	//removed by Mike, 20210510		
   	//added by Mike, 20201117
     //font 
-    /* select and enable texture FONT_TEXTURE */
+    // select and enable texture FONT_TEXTURE
 	//edited by Mike, 20201012
     glBindTexture(GL_TEXTURE_2D, FONT_TEXTURE);
     glEnable(GL_TEXTURE_2D);
-
+		
   	//TO-DO: -update: this
 	sprintf(tempText,"USBONG");
 	//TO-DO: -update: this to not add 0.1 in y-axis
@@ -1260,7 +1261,7 @@ void OpenGLCanvas::render()
 
     glDisable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, 0);
-
+*/
 
 	//added by Mike, 20201020
 	//note: we add these to enable complete drawing of 3D shape with z-axis
