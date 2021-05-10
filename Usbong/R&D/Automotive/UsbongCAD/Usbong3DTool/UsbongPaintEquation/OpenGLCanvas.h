@@ -331,7 +331,13 @@ class OpenGLCanvas
 		//added by Mike, 20201015
     	int myWindowWidth;
     	int myWindowHeight;
-
+		
+		//added by Mike, 20210510
+		int iStartPointX,
+			iStartPointY,
+			iEndPointX,
+			iEndPointY;
+		
         int currentState;
 
     	bool init();
@@ -341,8 +347,12 @@ class OpenGLCanvas
 	    void keyUp(int keyCode);
 
 		//added by Mike, 20210510
-   		void mouseActionDown(int mouseActionId);
+/*   		
+		void mouseActionDown(int mouseActionId);
 	    void mouseActionUp(int mouseActionId);
+*/		
+   		void mouseActionDown(int mouseActionId, int iXPos, int iYPos);
+	    void mouseActionUp(int mouseActionId, int iXPos, int iYPos);
 
     	//void Prepare(float dt);
     	void render();

@@ -684,13 +684,15 @@ void myMouseAction(int button, int state, int x, int y)
 			if (state == GLUT_DOWN)
 			{
 				printf("DOWN mouse xPos: %i; yPos: %i\n",x,y);
-				myOpenGLCanvas->mouseActionDown(MOUSE_LEFT_BUTTON);
+//				myOpenGLCanvas->mouseActionDown(MOUSE_LEFT_BUTTON);
+				myOpenGLCanvas->mouseActionDown(MOUSE_LEFT_BUTTON, x, y);				
 				glutPostRedisplay();
 			}
 			else if (state == GLUT_UP)
 			{
 				printf("UP mouse xPos: %i; yPos: %i\n",x,y);
-				myOpenGLCanvas->mouseActionUp(MOUSE_LEFT_BUTTON);
+//				myOpenGLCanvas->mouseActionUp(MOUSE_LEFT_BUTTON);
+				myOpenGLCanvas->mouseActionUp(MOUSE_LEFT_BUTTON, x, y);
 				glutPostRedisplay();
 			}
 			break;

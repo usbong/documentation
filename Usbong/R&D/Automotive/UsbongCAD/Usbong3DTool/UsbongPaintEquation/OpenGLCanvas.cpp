@@ -283,6 +283,12 @@ bool OpenGLCanvas::init()
 	myCanvasPosZ=-3.2f;//0.0f;
     myCanvasEyePosX=0.0f;
 	
+	//added by Mike, 20210510
+	iStartPointX=0;
+	iStartPointY=0;
+	iEndPointX=0;
+	iEndPointY=0;	
+	
 	//added by Mike, 20201204
 	//Linux Machine; Calibrate Canvas positions
 /*    myCanvasPosX-=5.598498;
@@ -959,13 +965,21 @@ void OpenGLCanvas::keyUp(int keyCode)
 }
 
 //added by Mike, 20210510
-void OpenGLCanvas::mouseActionDown(int iMouseActionId)
+//void OpenGLCanvas::mouseActionDown(int iMouseActionId)
+void OpenGLCanvas::mouseActionDown(int iMouseActionId, int iXPos, int iYPos)
 {
-	myMouseActionDown[iMouseActionId] = TRUE;	
+	myMouseActionDown[iMouseActionId] = TRUE;
+	
+	iStartPointX=iXPos;
+	iStartPointY=iYPos;	
 }
-void OpenGLCanvas::mouseActionUp(int iMouseActionId)
+//void OpenGLCanvas::mouseActionUp(int iMouseActionId)
+void OpenGLCanvas::mouseActionUp(int iMouseActionId, int iXPos, int iYPos)
 {
-	myMouseActionDown[iMouseActionId] = FALSE;	
+	myMouseActionDown[iMouseActionId] = FALSE;
+
+	iEndPointX=iXPos;
+	iEndPointY=iYPos;	
 }
 
 //added by Mike, 20210403
@@ -1215,7 +1229,26 @@ void OpenGLCanvas::render()
 			glVertex2f(1.0,-1.0);
 		glEnd();
 
+	//added by Mike, 20210510
+	glLineWidth((GLfloat)3);	
 
+	glBegin(GL_LINES);
+		glColor3f(0.0f,0.0f,0.0f); //black
+
+		glVertex2f(-1.0f, 1.0f);
+		glVertex2f(1.0f, -1.0f);
+	glEnd();	
+
+	//TO-DO: -update: this
+	if (myMouseActionDown[MOUSE_LEFT_BUTTON]==FALSE) {
+		glBegin(GL_LINES);
+			glColor3f(0.0f,0.0f,0.0f); //black
+
+			glVertex2f(iStartPointX, iStartPointY);
+			glVertex2f(iEndPointX, iEndPointY);
+		glEnd();	
+	}
+	
     //set TOP-LEFT origin/anchor/reference point; quadrant 4, y-axis inverted; x and y positive
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
