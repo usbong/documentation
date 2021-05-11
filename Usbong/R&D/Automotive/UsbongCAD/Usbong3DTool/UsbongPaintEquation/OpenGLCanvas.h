@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200929
- * @date updated: 20210510
+ * @date updated: 20210511
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -312,6 +312,10 @@ class OpenGLCanvas
 
 		//added by Mike, 20210412
 		void drawKahonWithTextureForVerification();
+
+		//added by Mike, 20210511
+		float autoConvertFromPixelToVertexPointX(int iPointX);
+		float autoConvertFromPixelToVertexPointY(int iPointY);
 
 /*
         //methods to generate bitmap texts

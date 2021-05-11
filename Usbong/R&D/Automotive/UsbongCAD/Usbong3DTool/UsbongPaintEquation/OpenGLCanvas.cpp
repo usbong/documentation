@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210510
+ * @date updated: 20210511
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -982,6 +982,51 @@ void OpenGLCanvas::mouseActionUp(int iMouseActionId, int iXPos, int iYPos)
 	iEndPointY=iYPos;	
 }
 
+//added by Mike, 20210511
+//note: vertex origin 0,0 at center
+float OpenGLCanvas::autoConvertFromPixelToVertexPointX(int iPointX)
+{
+	//max width and height: 640
+	//set in mainLinux.cpp
+	//TO-DO: -update: this
+	//square window
+	float fMaxWindowWidth=640.0f;
+	float fMaxWindowHeight=640.0f;	
+	float fHalfWindowWidth=fMaxWindowWidth/2;
+	float fHalfWindowHeight=fMaxWindowHeight/2;
+	
+	if (iPointX<=fHalfWindowWidth) {		
+		//note: pixel point origin at top-left
+		return (fHalfWindowWidth-iPointX)/fMaxWindowWidth*(-1); //note: use of parenthesis
+		
+	}
+	return iPointX/fMaxWindowWidth;	
+}
+
+//added by Mike, 20210511
+//note: vertex origin 0,0 at center
+float OpenGLCanvas::autoConvertFromPixelToVertexPointY(int iPointY)
+{
+	//max width and height: 640
+	//set in mainLinux.cpp
+	//TO-DO: -update: this
+	//square window
+	float fMaxWindowWidth=640.0f;
+	float fMaxWindowHeight=640.0f;	
+	float fHalfWindowWidth=fMaxWindowWidth/2;
+	float fHalfWindowHeight=fMaxWindowHeight/2;
+
+	//TO-DO: -reverify: this
+	//max 1.0f	
+	if (iPointY<=fHalfWindowHeight) {
+		//note: pixel point origin at top-left		
+		//note: pixel point uses inverted y-axis
+		return 0.25+(fHalfWindowHeight-iPointY)/fMaxWindowHeight; //note: use of parenthesis
+	}
+	return 0.25+iPointY/fMaxWindowHeight*(-1);
+}
+
+
 //added by Mike, 20210403
 //TO-DO: -update: this
 void OpenGLCanvas::load_tga(char *filename)
@@ -1244,8 +1289,21 @@ void OpenGLCanvas::render()
 		glBegin(GL_LINES);
 			glColor3f(0.0f,0.0f,0.0f); //black
 
-			glVertex2f(iStartPointX, iStartPointY);
+			//edited by Mike, 20210511
+/*			glVertex2f(iStartPointX, iStartPointY);
 			glVertex2f(iEndPointX, iEndPointY);
+*/			
+/*		
+			printf("iStartPointX: %i\n",iStartPointX);		
+			printf("pointX: %f\n",autoConvertFromPixelToVertexPointX(iStartPointX));
+			printf("iStartPointY: %i\n",iStartPointY);		
+			printf("pointY: %f\n",autoConvertFromPixelToVertexPointY(iStartPointY));
+*/
+			printf("Start X,Y: %f,%f\n",autoConvertFromPixelToVertexPointX(iStartPointX),autoConvertFromPixelToVertexPointY(iStartPointY));
+			printf("End X,Y: %f,%f\n",autoConvertFromPixelToVertexPointX(iEndPointX),autoConvertFromPixelToVertexPointY(iEndPointY));
+				
+			glVertex2f(autoConvertFromPixelToVertexPointX(iStartPointX), autoConvertFromPixelToVertexPointY(iStartPointY));
+			glVertex2f(autoConvertFromPixelToVertexPointX(iEndPointX), autoConvertFromPixelToVertexPointY(iEndPointY));
 		glEnd();	
 	}
 	
