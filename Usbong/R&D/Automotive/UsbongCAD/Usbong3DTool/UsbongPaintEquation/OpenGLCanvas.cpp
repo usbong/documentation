@@ -983,6 +983,7 @@ void OpenGLCanvas::mouseActionUp(int iMouseActionId, int iXPos, int iYPos)
 }
 
 //added by Mike, 20210511
+//TO-DO: -reverify: center draw line
 //note: vertex origin 0,0 at center
 float OpenGLCanvas::autoConvertFromPixelToVertexPointX(int iPointX)
 {
@@ -995,12 +996,16 @@ float OpenGLCanvas::autoConvertFromPixelToVertexPointX(int iPointX)
 	float fHalfWindowWidth=fMaxWindowWidth/2;
 	float fHalfWindowHeight=fMaxWindowHeight/2;
 	
-	if (iPointX<=fHalfWindowWidth) {		
+	if (iPointX<=fHalfWindowWidth) {				
 		//note: pixel point origin at top-left
-		return (fHalfWindowWidth-iPointX)/fMaxWindowWidth*(-1); //note: use of parenthesis
-		
+//		return -0.25+(fHalfWindowWidth-iPointX)/fMaxWindowWidth*(-1); //note: use of parenthesis
+//		return (fHalfWindowWidth-iPointX)/fMaxWindowWidth*(-1); //note: use of parenthesis				
+		return (fMaxWindowWidth-iPointX)/fMaxWindowWidth*(-1); //note: use of parenthesis				
+//		return (fMaxWindowWidth-iPointX)/fHalfWindowWidth*(-1); //note: use of parenthesis						
 	}
-	return iPointX/fMaxWindowWidth;	
+//	return -0.25+iPointX/fMaxWindowWidth;	
+	return iPointX/fMaxWindowWidth;		
+//	return (fMaxWindowWidth-iPointX)/fMaxWindowWidth;			
 }
 
 //added by Mike, 20210511
@@ -1021,9 +1026,14 @@ float OpenGLCanvas::autoConvertFromPixelToVertexPointY(int iPointY)
 	if (iPointY<=fHalfWindowHeight) {
 		//note: pixel point origin at top-left		
 		//note: pixel point uses inverted y-axis
-		return 0.25+(fHalfWindowHeight-iPointY)/fMaxWindowHeight; //note: use of parenthesis
+//		return 0.25+(fHalfWindowHeight-iPointY)/fMaxWindowHeight; //note: use of parenthesis
+//		return (fHalfWindowHeight-iPointY)/fMaxWindowHeight; //note: use of parenthesis		
+		return (fMaxWindowHeight-iPointY)/fMaxWindowHeight; //note: use of parenthesis				
+//		return (fMaxWindowHeight-iPointY)/fHalfWindowHeight; //note: use of parenthesis				
 	}
-	return 0.25+iPointY/fMaxWindowHeight*(-1);
+//	return 0.25+iPointY/fMaxWindowHeight*(-1);
+	return iPointY/fMaxWindowHeight*(-1);	
+//	return (fMaxWindowHeight-iPointY)/fMaxWindowHeight*(-1);		
 }
 
 
@@ -1299,6 +1309,7 @@ void OpenGLCanvas::render()
 			printf("iStartPointY: %i\n",iStartPointY);		
 			printf("pointY: %f\n",autoConvertFromPixelToVertexPointY(iStartPointY));
 */
+
 			printf("Start X,Y: %f,%f\n",autoConvertFromPixelToVertexPointX(iStartPointX),autoConvertFromPixelToVertexPointY(iStartPointY));
 			printf("End X,Y: %f,%f\n",autoConvertFromPixelToVertexPointX(iEndPointX),autoConvertFromPixelToVertexPointY(iEndPointY));
 				
@@ -1306,8 +1317,20 @@ void OpenGLCanvas::render()
 			glVertex2f(autoConvertFromPixelToVertexPointX(iEndPointX), autoConvertFromPixelToVertexPointY(iEndPointY));
 		glEnd();	
 	}
+
+	//added by Mike, 20210511	
+/*	
+	if (myMouseActionDown[MOUSE_LEFT_BUTTON]==FALSE) {		
+		//added by Mike, 20210511
+		//reset positions
+		iStartPointX=0;
+		iStartPointY=0;	
+		iEndPointX=0;
+		iEndPointY=0;		
+	}	
+*/
 	
-    //set TOP-LEFT origin/anchor/reference point; quadrant 4, y-axis inverted; x and y positive
+	//set TOP-LEFT origin/anchor/reference point; quadrant 4, y-axis inverted; x and y positive
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	//TOP-LEFT origin
