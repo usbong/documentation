@@ -474,6 +474,20 @@ TO-DO: -update: this<br/>
 --> Mas maiging gamitin ninyo ang lakas ng mga kaibigan ninyong bituin sa paghihilom ng sarili.<br/>
 --> May badge din na maaaring makapagbigay sa inyo ng kakayanang gumamit ng dalawang item, sa halip na isa lamang sa isang turn/palitan.<br/>
 --> May item na humihilom, e.g. super kinoko, at gumagawa ng atake, e.g. yuki snowman attack<br/>
+<br/>
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/company/HR/Usbong%20Education%20Training%20Courses/Training%20Centre:%20Security%20Defense%20Force/res/yuuki.jpg" width="70%">
+
+[こわいモノにも　たちむかうのが　本物の　ゆうきですよね]<br/>
+kowai mono nimo tachimukau no ga honmono no yuuki desuyone<br/>
+Tunay na tapang ang nakatayong harapin ang nakatatakot na bagay, 'di ba?<br/>
+
+#### Recommended Action:
+--> verify: 三上 真司 (Mikami, Shinji); CAPCOM バイオハザード BIOHAZARD Producer<br/>
+--> shares: the objective of creating a world system for us to experience being stuck there and approaching death. We have the option to choose to execute one of these two (1):<br/> 
+--> 1) wait to be killed by the virus, i.e. virus-infected zombie, or 2) fight before we die<br/>
+--> adds: that such experience is similar to the preference of select people to not drink Lager Beer. It is either we choose to experience it or not.<br/>
+--> <b>Reference:</b><br/> 
+--> 三並達也 (Ed). (1997). "BIO HAZARD: The True Story Behind BIO HAZARD". OSAKA: CAPCOM
 
 --> TO-DO: -update: this
 
