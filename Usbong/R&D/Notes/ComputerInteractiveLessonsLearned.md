@@ -434,6 +434,22 @@ TO-DO: -update: this<br/>
 --> scary due to expectation<br/>
 --> surprise to be funny due to not as expected<br/>
 
+### 1.9.1.1) item/badge
+--> note: effect = causes change, e.g. with object interaction in created world<br/>
+--> example: additional ice effect when attack hits (to supposedly cause additional damage to enemies classified to be fire type)<br/>
+--> change can also be auto-drawn object images, e.g. hammer<br/>
+
+#### 1.9.1.1.1) if effect clear to be effective, use
+--> examples: hammer to destroy blocks that obstruct path<br/>
+--> "mini jump" shoes to cause opponent size to be scaled and attack damage cut by half<br/>
+
+#### 1.9.1.1.2) if effect clear to be NOT effective, do NOT use
+--> example: "renzoku, i.e. continuous, jump" shoes to cause repeating jump stomp attacks, while timing is correct.<br/>
+--> I can only execute continuous 3 stomps (max), likely due to created world system.<br/>
+
+#### 1.9.1.1.3) if effect NOT yet clear, do NOT use
+--> example: additional sound to make timing easier<br/>
+
 --> TO-DO: -update: this
 
 ### 1.9.1.1) Save Point available for short bursts, instead of continuous for 1hr, 2hrs, et cetera
