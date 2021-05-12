@@ -452,10 +452,10 @@ TO-DO: -update: this<br/>
 
 --> TO-DO: -update: this
 
-### 1.9.1.1) Save Point available for short bursts, instead of continuous for 1hr, 2hrs, et cetera
+### 1.9.1.2) Save Point available for short bursts, instead of continuous for 1hr, 2hrs, et cetera
 --> Example: after 5mins; if you as Mario prefer to continue, it is again available after 15mins<br/>
 
-### 1.9.1.2) Answer to questions becomes simple due to system
+### 1.9.1.3) Answer to questions becomes simple due to system
 --> Example: kuriko, i.e. sister of your friend, kurio, has been wanting the photograph item; do you give it to her or not? YES/NO<br/>
 --> An answer of NO, i.e. variation, can occur if person's character is a joker, et cetera<br/>
 --> 字（じ；ji）, i.e. Text font, for conversations reminds me of my handwriting,<br/> 
