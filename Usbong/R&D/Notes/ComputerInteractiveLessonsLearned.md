@@ -434,32 +434,48 @@ TO-DO: -update: this<br/>
 --> scary due to expectation<br/>
 --> surprise to be funny due to not as expected<br/>
 
-### 1.9.1.1) item/badge
---> note: effect = causes change, e.g. with object interaction in created world<br/>
---> example: additional ice effect when attack hits (to supposedly cause additional damage to enemies classified to be fire type)<br/>
---> change can also be auto-drawn object images, e.g. hammer<br/>
-
-#### 1.9.1.1.1) if effect clear to be effective, use
---> examples: hammer to destroy blocks that obstruct path<br/>
---> "mini jump" shoes to cause opponent size to be scaled and attack damage cut by half<br/>
-
-#### 1.9.1.1.2) if effect clear to be NOT effective, do NOT use
---> example: "renzoku, i.e. continuous, jump" shoes to cause repeating jump stomp attacks, while timing is correct.<br/>
---> I can only execute continuous 3 stomps (max), likely due to created world system.<br/>
-
-#### 1.9.1.1.3) if effect NOT yet clear, do NOT use
---> example: additional sound to make timing easier<br/>
-
---> TO-DO: -update: this
-
-### 1.9.1.2) Save Point available for short bursts, instead of continuous for 1hr, 2hrs, et cetera
+### 1.9.1.1) Save Point available for short bursts, instead of continuous for 1hr, 2hrs, et cetera
 --> Example: after 5mins; if you as Mario prefer to continue, it is again available after 15mins<br/>
 
-### 1.9.1.3) Answer to questions becomes simple due to system
+### 1.9.1.2) Answer to questions becomes simple due to system
 --> Example: kuriko, i.e. sister of your friend, kurio, has been wanting the photograph item; do you give it to her or not? YES/NO<br/>
 --> An answer of NO, i.e. variation, can occur if person's character is a joker, et cetera<br/>
 --> 字（じ；ji）, i.e. Text font, for conversations reminds me of my handwriting,<br/> 
 --> albeit I already use another accepted writing for the hiragana そ（so）<br/>
+
+### 1.9.1.3) item/badge
+--> note: effect = causes change, e.g. with object interaction in created world<br/>
+--> example: additional ice effect when attack hits (to supposedly cause additional damage to enemies classified to be fire type)<br/>
+--> change can also be auto-drawn object images, e.g. hammer<br/>
+
+#### 1.9.1.3.1) if effect clear to be effective, use
+--> examples: hammer to destroy blocks that obstruct path<br/>
+--> "mini jump" shoes to cause opponent size to be scaled and attack damage cut by half<br/>
+
+#### 1.9.1.3.2) if effect clear to be NOT effective, do NOT use
+--> example: "renzoku, i.e. continuous, jump" shoes to cause repeating jump stomp attacks, while timing is correct.<br/>
+--> I can only execute continuous 3 stomps (max), likely due to created world system.<br/>
+
+#### 1.9.1.3.3) if effect NOT yet clear, do NOT use
+--> example: additional sound to make timing easier<br/>
+
+### 1.9.1.4) Bully Problem
+--> Paano magagapi ang bully, e.g. dambuhalang pagong na naniningil ng ゼニ (zeni), i.e. perang paghihirapan mong maipon, upang ika'y makaraan sa daan?<br/>
+--> Makipaglaban, habang inaalala ang mga gabay na ito:<br/>
+--> 1.9.1.4.1) Hindi epektibo na paliitin siya upang kalahati na lamang ang lakas ng kanyang atake.<br/>
+--> 1.9.1.4.2) Gumamit ng atake na pinawawalang-bisa ang kanyang depensa upang maging katumbas nito "0", i.e. wala; ぼうぎょをムシして、「０」となる<br/>
+--> 1.9.1.4.3) Hindi epektibo na palakasin pa ninyo ang inyong depensa.<br/>
+--> 1.9.1.4.4) Hindi epektibo na pahinain ninyo ang lakas ng kanyang atake, kasi mas maiging umatake na kayo; bagama't sinubukan ko ito ng isang beses sa simula.<br/>
+--> 1.9.1.4.5) Hindi epektibo na palakasin pa ninyo ang inyong atake, kasi mas maiging umatake na kayo; bagama't sinubukan ko ito ng isang beses sa simula.<br/>
+--> 1.9.1.4.6) Magbilang;<br/>
+--> Halimbawa: 70 ang health/lakas ng bully; Gamit ang pamamaraan, maaaring makagawa ang pangkat ninyo ng atake na 8, sa isang turn/palitan ng atake.<br/>
+--> Ilang palitan ang kakailanganin ninyo upang magapi ang bully?<br/>
+--> <b>Paalala:</b> Kailangan din ninyong hilumin ang inyong pangkat mula sa atake ng bully.<br/>
+--> Mas maiging gamitin ninyo ang lakas ng mga kaibigan ninyong bituin sa paghihilom ng sarili.<br/>
+--> May badge din na maaaring makapagbigay sa inyo ng kakayanang gumamit ng dalawang item, sa halip na isa lamang sa isang turn/palitan.<br/>
+--> May item na humihilom, e.g. super kinoko, at gumagawa ng atake, e.g. yuki snowman attack<br/>
+
+--> TO-DO: -update: this
 
 ### Recommended Actions: 
 --> verify: [ARCADE LAB](https://www.youtube.com/channel/UCy53rIJfxqI2S3qohAdfvvA): [ザ・シンプソンズ（KONAMI / 1991）](https://www.youtube.com/watch?v=_FfLmrNaudI&list=PLEB4zro_ieO0QLObEFmwpxdG4-MKA7MzI&index=2); ARCADE MACHINE<br/>
