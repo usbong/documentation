@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210511
+ * @date updated: 20210512
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -414,6 +414,9 @@ bool OpenGLCanvas::init()
 	fKahonRotation=0;
 	
     keyPressCounter=0;
+	
+	//added by Mike, 20210512
+	hasPressedMouseActionDown=false; //init here due to default value not "false"
     
     //added by Mike, 20200930
 	currentState = GAME_SCREEN; //TO-DO: -update: this
@@ -969,17 +972,50 @@ void OpenGLCanvas::keyUp(int keyCode)
 void OpenGLCanvas::mouseActionDown(int iMouseActionId, int iXPos, int iYPos)
 {
 	myMouseActionDown[iMouseActionId] = TRUE;
-	
+
 	iStartPointX=iXPos;
 	iStartPointY=iYPos;	
+	iEndPointX=iXPos;
+	iEndPointY=iYPos;		
+	
+/*	
+	printf("hasPressedMouseActionDown");
+	
+	if (!hasPressedMouseActionDown) {
+	printf(">>");
+
+		iStartPointX=iXPos;
+		iStartPointY=iYPos;	
+		
+		iEndPointX=iXPos;
+		iEndPointY=iYPos;		
+		
+		hasPressedMouseActionDown=true;
+	}
+	else {
+		iEndPointX=iXPos;
+		iEndPointY=iYPos;		
+	}	
+*/	
 }
 //void OpenGLCanvas::mouseActionUp(int iMouseActionId)
 void OpenGLCanvas::mouseActionUp(int iMouseActionId, int iXPos, int iYPos)
 {
 	myMouseActionDown[iMouseActionId] = FALSE;
+//	printf(">>");
+	
+	iEndPointX=iXPos;
+	iEndPointY=iYPos;		
+	
 
+/*
+	hasPressedMouseActionDown=false;		
+		
 	iEndPointX=iXPos;
 	iEndPointY=iYPos;	
+	
+	hasPressedMouseActionDown=false;
+*/	
 }
 
 //added by Mike, 20210511
@@ -1294,29 +1330,69 @@ void OpenGLCanvas::render()
 		glVertex2f(1.0f, -1.0f);
 	glEnd();	
 
+/*	
 	//TO-DO: -update: this
 	if (myMouseActionDown[MOUSE_LEFT_BUTTON]==FALSE) {
 		glBegin(GL_LINES);
 			glColor3f(0.0f,0.0f,0.0f); //black
 
 			//edited by Mike, 20210511
-/*			glVertex2f(iStartPointX, iStartPointY);
-			glVertex2f(iEndPointX, iEndPointY);
-*/			
-/*		
-			printf("iStartPointX: %i\n",iStartPointX);		
-			printf("pointX: %f\n",autoConvertFromPixelToVertexPointX(iStartPointX));
-			printf("iStartPointY: %i\n",iStartPointY);		
-			printf("pointY: %f\n",autoConvertFromPixelToVertexPointY(iStartPointY));
-*/
+////			glVertex2f(iStartPointX, iStartPointY);
+////			glVertex2f(iEndPointX, iEndPointY);
+		
+		
+////			printf("iStartPointX: %i\n",iStartPointX);		
+////			printf("pointX: %f\n",autoConvertFromPixelToVertexPointX(iStartPointX));
+////			printf("iStartPointY: %i\n",iStartPointY);		
+////			printf("pointY: %f\n",autoConvertFromPixelToVertexPointY(iStartPointY));
 
-			printf("Start X,Y: %f,%f\n",autoConvertFromPixelToVertexPointX(iStartPointX),autoConvertFromPixelToVertexPointY(iStartPointY));
-			printf("End X,Y: %f,%f\n",autoConvertFromPixelToVertexPointX(iEndPointX),autoConvertFromPixelToVertexPointY(iEndPointY));
+
+//			printf("Start X,Y: %f,%f\n",autoConvertFromPixelToVertexPointX(iStartPointX),autoConvertFromPixelToVertexPointY(iStartPointY));
+//			printf("End X,Y: %f,%f\n",autoConvertFromPixelToVertexPointX(iEndPointX),autoConvertFromPixelToVertexPointY(iEndPointY));
 				
 			glVertex2f(autoConvertFromPixelToVertexPointX(iStartPointX), autoConvertFromPixelToVertexPointY(iStartPointY));
 			glVertex2f(autoConvertFromPixelToVertexPointX(iEndPointX), autoConvertFromPixelToVertexPointY(iEndPointY));
 		glEnd();	
 	}
+	//added by Mike, 20210512
+	else {
+		glBegin(GL_LINES);
+			glColor3f(0.0f,0.0f,0.0f); //black
+
+//			printf("Start X,Y: %f,%f\n",autoConvertFromPixelToVertexPointX(iStartPointX),autoConvertFromPixelToVertexPointY(iStartPointY));
+//			printf("End X,Y: %f,%f\n",autoConvertFromPixelToVertexPointX(iEndPointX),autoConvertFromPixelToVertexPointY(iEndPointY));
+				
+			glVertex2f(autoConvertFromPixelToVertexPointX(iStartPointX), autoConvertFromPixelToVertexPointY(iStartPointY));
+//			glVertex2f(autoConvertFromPixelToVertexPointX(iStartPointX), autoConvertFromPixelToVertexPointY(iStartPointY));
+			glVertex2f(autoConvertFromPixelToVertexPointX(iEndPointX), autoConvertFromPixelToVertexPointY(iEndPointY));		
+		glEnd();	
+	}
+*/	
+	
+	
+	printf("myMouseActionDown[MOUSE_LEFT_BUTTON]: %i\n",myMouseActionDown[MOUSE_LEFT_BUTTON]);
+	
+	if (myMouseActionDown[MOUSE_LEFT_BUTTON]==FALSE) {
+		glBegin(GL_LINES);
+			glColor3f(0.0f,0.0f,0.0f); //black
+			glVertex2f(autoConvertFromPixelToVertexPointX(iStartPointX), autoConvertFromPixelToVertexPointY(iStartPointY));
+			glVertex2f(autoConvertFromPixelToVertexPointX(iEndPointX), autoConvertFromPixelToVertexPointY(iEndPointY));
+		glEnd();	
+	}
+	else {
+			printf("Start X,Y: %f,%f\n",autoConvertFromPixelToVertexPointX(iStartPointX),autoConvertFromPixelToVertexPointY(iStartPointY));
+			printf("End X,Y: %f,%f\n",autoConvertFromPixelToVertexPointX(iEndPointX),autoConvertFromPixelToVertexPointY(iEndPointY));
+		
+		
+		glBegin(GL_LINES);
+			glColor3f(0.0f,0.0f,0.0f); //black
+				
+			glVertex2f(autoConvertFromPixelToVertexPointX(iStartPointX), autoConvertFromPixelToVertexPointY(iStartPointY));
+//			glVertex2f(autoConvertFromPixelToVertexPointX(iStartPointX), autoConvertFromPixelToVertexPointY(iStartPointY));
+			glVertex2f(autoConvertFromPixelToVertexPointX(iEndPointX), autoConvertFromPixelToVertexPointY(iEndPointY));		
+		glEnd();	
+	}	
+	
 
 	//added by Mike, 20210511	
 /*	

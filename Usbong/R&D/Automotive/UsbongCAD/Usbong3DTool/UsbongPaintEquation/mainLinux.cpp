@@ -14,7 +14,7 @@
  *
  * @author: Michael Syson
  * @date created: 20200926
- * @date updated: 20210511
+ * @date updated: 20210512
  *
  * References:
  * 1) Dev-C++ 5.11 auto-generated OpenGL example project
@@ -678,21 +678,32 @@ void specialKeyUp (int specialKey, int x, int y)
 //note: window's top-left origin
 void myMouseAction(int button, int state, int x, int y)
 {
+	//added by Mike, 20210512
+	//TO-DO: -add: identify x and y positions using mouse hover
+
 	switch (button)
 	{
 		case GLUT_LEFT_BUTTON:
 			if (state == GLUT_DOWN)
 			{
-//				printf("DOWN mouse xPos: %i; yPos: %i\n",x,y);
+				printf("DOWN mouse xPos: %i; yPos: %i\n",x,y);
 //				myOpenGLCanvas->mouseActionDown(MOUSE_LEFT_BUTTON);
-				myOpenGLCanvas->mouseActionDown(MOUSE_LEFT_BUTTON, x, y);				
+				
+				myOpenGLCanvas->mouseActionDown(MOUSE_LEFT_BUTTON, x, y);	
+				
+//				myOpenGLCanvas->mouseActionUp(MOUSE_LEFT_BUTTON, x, y);				
+				
 				glutPostRedisplay();
 			}
 			else if (state == GLUT_UP)
 			{
-//				printf("UP mouse xPos: %i; yPos: %i\n",x,y);
+				printf("UP mouse xPos: %i; yPos: %i\n",x,y);
 //				myOpenGLCanvas->mouseActionUp(MOUSE_LEFT_BUTTON);
+
 				myOpenGLCanvas->mouseActionUp(MOUSE_LEFT_BUTTON, x, y);
+				
+//				myOpenGLCanvas->mouseActionDown(MOUSE_LEFT_BUTTON, x, y);
+				
 				glutPostRedisplay();
 			}
 			break;
