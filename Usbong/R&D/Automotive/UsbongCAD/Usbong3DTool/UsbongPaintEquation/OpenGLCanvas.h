@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200929
- * @date updated: 20210511
+ * @date updated: 20210512
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -278,6 +278,9 @@ class OpenGLCanvas
        	//unsigned int myFontTextureObject;
                
         unsigned int myFontListBase;	    
+		
+		//added by Mike, 20210512
+		bool hasPressedMouseActionDown;
 
 //removed by Mike, 20200930, due to Linux Machine
 //        HDC hDC;
