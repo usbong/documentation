@@ -486,6 +486,10 @@ Tunay na tapang ang nakatayong harapin ang nakatatakot na bagay, 'di ba?<br/>
 --> shares: the objective of creating a world system for us to experience being stuck there and approaching death. We have the option to choose to execute one of these two (2):<br/> 
 --> 1) wait to be killed by the virus, i.e. virus-infected zombie, or 2) fight before we die<br/>
 --> adds: that such experience is similar to the preference of select people to not drink Lager Beer. It is either we choose to experience it or not.<br/>
+<br/>
+--> <b>Additional Note:</b><br/>
+--> 1) We classify "Producer" to be "Unit Chief" due to if project fails, , i.e. expenses > income, Producer is accountable to pay financially for the failed project.<br/>
+<br/>
 --> <b>Reference:</b><br/> 
 --> 三並達也 (Ed). (1997). "BIO HAZARD: The True Story Behind BIO HAZARD". OSAKA: CAPCOM
 
