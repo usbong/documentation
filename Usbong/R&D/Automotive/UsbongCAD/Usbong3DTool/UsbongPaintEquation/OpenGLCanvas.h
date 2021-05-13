@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200929
- * @date updated: 20210512
+ * @date updated: 20210513
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -109,6 +109,8 @@
 //#define MAX_DYNAMIC_OBJECT 17 //remove beams x32
 
 #define MAX 1026 //buffer
+#define LINE_POINTS_SET 4 //added by Mike, 20210513
+
 
 #define TITLE_SCREEN 0
 #define CONTROLS_SCREEN 1
@@ -185,6 +187,16 @@ class OpenGLCanvas
         char buffer[MAX];
 
     	float rotationAngle;
+		
+		//added by Mike, 20210513
+		int stepHistoryList[MAX][LINE_POINTS_SET];
+		int stepHistoryListCount;
+/*	//note: LINE_POINTS_SET=4
+		stepHistoryList[stepHistoryListCount][0]=iStartPointX;
+		stepHistoryList[stepHistoryListCount][1]=iEndPointX;
+		stepHistoryList[stepHistoryListCount][2]=iStartPointY;
+		stepHistoryList[stepHistoryListCount][3]=iEndPointY;
+*/
 
 /*    	//removed by Mike, 20201015
     	int myWindowWidth;

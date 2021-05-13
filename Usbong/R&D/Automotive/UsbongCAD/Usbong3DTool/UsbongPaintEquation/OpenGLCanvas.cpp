@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210512
+ * @date updated: 20210513
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -30,11 +30,24 @@
  * 4) http://www.opengl-tutorial.org/beginners-tutorials/tutorial-8-basic-shading/;
  * last accessed: 20210330
  *
+ * 5) https://www.mathsisfun.com/algebra/line-equation-2points.html;
+ * last accessed: 20210513
+ * point-slope equation
+ * y − y1 = m(x − x1)
+ * m = (change in y) / (change in x)
+ * where m=slope
+ * add: verify if (iEndPointX - iStartPointX) = 0; example: vertical line
+ * if yes, output equation: x=iEndPointX 
+ * int m = (iEndPointY - iStartPointY) / (iEndPointX - iStartPointX); 
+ *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
  * Syson, M., Camacho, R., Gonzales, D., Del Rosario, R., Vidal, E., et al.
  *
  */
+
+//added by Mike, 20210513
+//TO-DO: -add: history list of line points, i.e. iStartPointX and iEndPointX, iStartPointY and iEndPointY 
  
 //TO-DO: -update: "Canvas" to "Engine"?
 //TO-DO: -update: this
@@ -609,6 +622,14 @@ bool OpenGLCanvas::init()
 	//TO-DO: -update: this
 //	setupTaoTexture(); //removed by Mike, 20210507
 	
+	//added by Mike, 20210513
+	for (int iCount=0; iCount<MAX; iCount++) { //1024
+		for (int iCountPoint=0; iCountPoint<LINE_POINTS_SET; iCountPoint++) { //1024		
+			stepHistoryList[iCount][iCountPoint]=0;
+		}
+	}	
+	stepHistoryListCount=0;
+	
 	return true;
 }
 
@@ -1006,8 +1027,34 @@ void OpenGLCanvas::mouseActionUp(int iMouseActionId, int iXPos, int iYPos)
 	
 	iEndPointX=iXPos;
 	iEndPointY=iYPos;		
-	
 
+	//added by Mike, 20210513
+	printf("actionUP Start X,Y: %f,%f\n",autoConvertFromPixelToVertexPointX(iStartPointX),autoConvertFromPixelToVertexPointY(iStartPointY));
+	printf("actionUP End X,Y: %f,%f\n",autoConvertFromPixelToVertexPointX(iEndPointX),autoConvertFromPixelToVertexPointY(iEndPointY));
+	
+	//Reference: https://www.mathsisfun.com/algebra/line-equation-2points.html;
+	//last accessed: 20210513
+	//point-slope equation
+	//y − y1 = m(x − x1)
+	//m = (change in y) / (change in x)
+	//where m=slope
+	//add: verify if (iEndPointX - iStartPointX) = 0; example: vertical line
+	//if yes, output equation: x=iEndPointX 
+	//int m = (iEndPointY - iStartPointY) / (iEndPointX - iStartPointX); 
+	
+	//added by Mike, 20210513
+	//note: pixel position; not vertex position
+	if (stepHistoryListCount<MAX) {
+		stepHistoryList[stepHistoryListCount][0]=iStartPointX;
+		stepHistoryList[stepHistoryListCount][1]=iStartPointY;
+		stepHistoryList[stepHistoryListCount][2]=iEndPointX;
+		stepHistoryList[stepHistoryListCount][3]=iEndPointY;
+
+		stepHistoryListCount=stepHistoryListCount+1;
+	}
+	//TO-DO: -add: notify Unit member that count has reached max
+	
+	
 /*
 	hasPressedMouseActionDown=false;		
 		
@@ -1406,26 +1453,43 @@ void OpenGLCanvas::render()
 */	
 	
 	
-	printf("myMouseActionDown[MOUSE_LEFT_BUTTON]: %i\n",myMouseActionDown[MOUSE_LEFT_BUTTON]);
+//	printf("myMouseActionDown[MOUSE_LEFT_BUTTON]: %i\n",myMouseActionDown[MOUSE_LEFT_BUTTON]);
 	
 	if (myMouseActionDown[MOUSE_LEFT_BUTTON]==FALSE) {
+/*		
 			printf("actionUP Start X,Y: %f,%f\n",autoConvertFromPixelToVertexPointX(iStartPointX),autoConvertFromPixelToVertexPointY(iStartPointY));
 			printf("actionUP End X,Y: %f,%f\n",autoConvertFromPixelToVertexPointX(iEndPointX),autoConvertFromPixelToVertexPointY(iEndPointY));
-		
-		
+*/		
+
+/* //edited by Mike, 20210513		
 		glBegin(GL_LINES);
 //			glColor3f(0.0f,0.0f,0.0f); //black
-			glColor3f(1.0f,0.0f,0.0f); //black
+			glColor3f(1.0f,0.0f,0.0f); //red
 		
 			glVertex2f(autoConvertFromPixelToVertexPointX(iStartPointX), autoConvertFromPixelToVertexPointY(iStartPointY));
 			glVertex2f(autoConvertFromPixelToVertexPointX(iEndPointX), autoConvertFromPixelToVertexPointY(iEndPointY));
 		glEnd();	
+*/		
+/*	//removed by Mike, 202105013				
+		glBegin(GL_LINES);
+			glColor3f(1.0f,0.0f,0.0f); //red
+
+			for (int iCount=0; iCount<stepHistoryListCount; iCount++)
+			{
+				glVertex2f(autoConvertFromPixelToVertexPointX(stepHistoryList[iCount][0]), autoConvertFromPixelToVertexPointY(stepHistoryList[iCount][1]));
+				glVertex2f(autoConvertFromPixelToVertexPointX(stepHistoryList[iCount][2]), autoConvertFromPixelToVertexPointY(stepHistoryList[iCount][3]));
+			}
+		glEnd();			
+*/		
 	}
 	else {
+/*		
 			printf("Start X,Y: %f,%f\n",autoConvertFromPixelToVertexPointX(iStartPointX),autoConvertFromPixelToVertexPointY(iStartPointY));
 			printf("End X,Y: %f,%f\n",autoConvertFromPixelToVertexPointX(iEndPointX),autoConvertFromPixelToVertexPointY(iEndPointY));
+*/		
 		
-		
+/*	//removed by Mike, 202105013		
+		//TO-DO: -reverify: if necessary
 		glBegin(GL_LINES);
 			glColor3f(0.0f,0.0f,0.0f); //black
 				
@@ -1433,8 +1497,19 @@ void OpenGLCanvas::render()
 //			glVertex2f(autoConvertFromPixelToVertexPointX(iStartPointX), autoConvertFromPixelToVertexPointY(iStartPointY));
 			glVertex2f(autoConvertFromPixelToVertexPointX(iEndPointX), autoConvertFromPixelToVertexPointY(iEndPointY));		
 		glEnd();	
+*/		
 	}	
-	
+
+	//added by Mike, 20210513
+	glBegin(GL_LINES);
+		glColor3f(1.0f,0.0f,0.0f); //red
+
+		for (int iCount=0; iCount<stepHistoryListCount; iCount++)
+		{
+			glVertex2f(autoConvertFromPixelToVertexPointX(stepHistoryList[iCount][0]), autoConvertFromPixelToVertexPointY(stepHistoryList[iCount][1]));
+			glVertex2f(autoConvertFromPixelToVertexPointX(stepHistoryList[iCount][2]), autoConvertFromPixelToVertexPointY(stepHistoryList[iCount][3]));
+		}
+	glEnd();			
 
 	//added by Mike, 20210511	
 /*	
