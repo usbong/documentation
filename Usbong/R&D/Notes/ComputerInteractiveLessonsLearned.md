@@ -462,7 +462,7 @@ TO-DO: -update: this<br/>
 ### 1.9.1.4) Bully Problem
 --> Tanong: Paano magagapi ang Bully, e.g. Dambuhalang Pagong na naniningil ng ゼニ (zeni), i.e. perang gugugulan ninyo ng oras na maipon, upang makaraan kayo sa daan?<br/>
 --> Paalala: May gumawa ng incident report sa inyong pangkat (classification: Law Enforcement) ukol sa Bully.<br/>
---> Si Charles (考古学者 (koukogakusha; lit: Mag-aaral ng Pinag-ninilayan ang Luma; Archeologist) na Pagong) ang gumawa ng incident report sa inyo.<br/>
+--> Si Charles (考古学者 (koukogakusha; lit: Mag-aaral ng Pinag-ninilayang Luma; Archeologist) na Pagong) ang gumawa ng incident report sa inyo.<br/>
 <br/>
 --> Sagot: Makipaglaban, habang inaalala ang mga gabay na ito:<br/>
 --> 1.9.1.4.1) Hindi epektibo na paliitin siya upang kalahati na lamang ang lakas ng kanyang atake.<br/>
