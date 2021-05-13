@@ -14,7 +14,7 @@
  *
  * @author: Michael Syson
  * @date created: 20200926
- * @date updated: 20210512
+ * @date updated: 20210513
  *
  * References:
  * 1) Dev-C++ 5.11 auto-generated OpenGL example project
@@ -168,7 +168,9 @@ enum Keys
 	//added by Mike, 20210123
 	KEY_H,
 	KEY_U,
-
+	//added by Mike, 20210513
+	KEY_Z,
+	
 	iNumOfKeyTypes	
 };
 
@@ -470,7 +472,14 @@ void keyDown (unsigned char key, int x, int y)
   	       case (int) 'u': //u key //Linux Machine
 		        myOpenGLCanvas->keyDown(KEY_U);
                 return;
+			
+		   //added by Mike, 20210513
+		   //TO-DO: -add: ctrl + z
+		   case (int) 'z': //z key //Linux Machine
+		        myOpenGLCanvas->keyDown(KEY_Z);
+                return;
 
+			
 			//removed by Mike, 20201001 
 /*			               
    	       case 13: //ENTER
@@ -556,6 +565,13 @@ void keyUp (unsigned char key, int x, int y)
   	       case (int) 'u': //u key //Linux Machine
 		        myOpenGLCanvas->keyUp(KEY_U);
                 return;
+			
+		   //added by Mike, 20210513
+		   //TO-DO: -add: ctrl + z
+		   case (int) 'z': //z key //Linux Machine
+		        myOpenGLCanvas->keyUp(KEY_Z);
+                return;			
+			
 /*	//removed by Mike, 20210130
        	       case 13: //ENTER
                     myOpenGLCanvas->keyUp(KEY_ENTER);

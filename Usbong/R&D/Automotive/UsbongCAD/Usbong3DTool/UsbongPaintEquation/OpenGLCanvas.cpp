@@ -179,6 +179,9 @@ enum Keys
 	KEY_H, //added by Mike, 20210111
 	KEY_U, //added by Mike, 20210121
 
+	//added by Mike, 20210513
+	KEY_Z,
+	
 	//added by Mike, 20201201
 	iNumOfKeyTypes
 };
@@ -986,6 +989,16 @@ void OpenGLCanvas::keyUp(int keyCode)
 	myRobotShip->keyUp(keyCode);
 
 	myPilot->keyUp(keyCode);	
+	
+	//added by Mike, 20210513
+	if (stepHistoryListCount>0) {
+		stepHistoryListCount=stepHistoryListCount-1;
+		
+		stepHistoryList[stepHistoryListCount][0]=0;
+		stepHistoryList[stepHistoryListCount][1]=0;
+		stepHistoryList[stepHistoryListCount][2]=0;
+		stepHistoryList[stepHistoryListCount][3]=0;
+	}			
 }
 
 //added by Mike, 20210510
