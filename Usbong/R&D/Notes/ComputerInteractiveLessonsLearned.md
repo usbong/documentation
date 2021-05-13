@@ -460,8 +460,10 @@ TO-DO: -update: this<br/>
 --> example: additional sound to make timing easier<br/>
 
 ### 1.9.1.4) Bully Problem
---> Paano magagapi ang bully, e.g. Dambuhalang Pagong na naniningil ng ゼニ (zeni), i.e. perang gugugulan ninyo ng oras na maipon, upang makaraan kayo sa daan?<br/>
---> Makipaglaban, habang inaalala ang mga gabay na ito:<br/>
+--> Tanong: Paano magagapi ang Bully, e.g. Dambuhalang Pagong na naniningil ng ゼニ (zeni), i.e. perang gugugulan ninyo ng oras na maipon, upang makaraan kayo sa daan?<br/>
+--> Paalala: May gumawa ng incident report sa inyong pangkat (classification: Law Enforcement) ukol sa Bully.<br/>
+<br/>
+--> Sagot: Makipaglaban, habang inaalala ang mga gabay na ito:<br/>
 --> 1.9.1.4.1) Hindi epektibo na paliitin siya upang kalahati na lamang ang lakas ng kanyang atake.<br/>
 --> 1.9.1.4.2) Gumamit ng atake na pinawawalang-bisa ang kanyang depensa upang maging katumbas nito "0", i.e. wala; ぼうぎょをムシして、「０」となる<br/>
 --> 1.9.1.4.3) Hindi epektibo na palakasin pa ninyo ang inyong depensa.<br/>
@@ -469,9 +471,9 @@ TO-DO: -update: this<br/>
 --> 1.9.1.4.5) Hindi epektibo na palakasin pa ninyo ang inyong atake, kasi mas maiging umatake na kayo; bagama't sinubukan ko rin ito ng isang beses sa simula.<br/>
 --> 1.9.1.4.6) Magbilang;<br/>
 --> Halimbawa: 70 ang health/lakas ng bully; Gamit ang pamamaraan, maaaring makagawa ang pangkat ninyo ng atake na 8, sa isang turn/palitan ng atake.<br/>
---> Ilang palitan ang kakailanganin ninyo upang magapi ang bully?<br/>
---> <b>Paalala:</b> Kailangan din ninyong hilumin ang inyong pangkat mula sa atake ng bully.<br/>
---> Mas maiging gamitin ninyo ang lakas ng mga kaibigan ninyong bituin sa paghihilom ng sarili.<br/>
+--> Ilang palitan ang kakailanganin ninyo upang magapi ang Bully?<br/>
+--> <b>Paalala:</b> Kailangan din ninyong hilumin ang inyong pangkat mula sa atake ng Bully.<br/>
+--> Mas maiging gamitin ninyo ang lakas ng mga kaibigan ninyong Bituin sa paghihilom ng sarili.<br/>
 --> May badge din na maaaring makapagbigay sa inyo ng kakayanang gumamit ng dalawang item, sa halip na isa lamang sa isang turn/palitan.<br/>
 --> May item na humihilom, e.g. super kinoko, at gumagawa ng atake, e.g. yuki snowman attack<br/>
 <br/>
