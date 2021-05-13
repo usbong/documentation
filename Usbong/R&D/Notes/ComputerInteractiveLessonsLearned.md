@@ -450,7 +450,7 @@ TO-DO: -update: this<br/>
 
 #### 1.9.1.3.1) if effect clear to be effective, use
 --> examples: hammer to destroy blocks that obstruct path<br/>
---> "mini jump" shoes to cause opponent size to be scaled and attack damage cut by half<br/>
+--> "mini step" shoes to cause opponent size to be scaled and attack damage cut by half<br/>
 
 #### 1.9.1.3.2) if effect clear to be NOT effective, do NOT use
 --> example: "renzoku, i.e. continuous, jump" shoes to cause repeating jump stomp attacks, while timing is correct.<br/>
@@ -460,13 +460,13 @@ TO-DO: -update: this<br/>
 --> example: additional sound to make timing easier<br/>
 
 ### 1.9.1.4) Bully Problem
---> Paano magagapi ang bully, e.g. dambuhalang pagong na naniningil ng ゼニ (zeni), i.e. perang paghihirapan mong maipon, upang ika'y makaraan sa daan?<br/>
+--> Paano magagapi ang bully, e.g. Dambuhalang Pagong na naniningil ng ゼニ (zeni), i.e. perang gugugulan ninyo ng oras na maipon, upang makaraan kayo sa daan?<br/>
 --> Makipaglaban, habang inaalala ang mga gabay na ito:<br/>
 --> 1.9.1.4.1) Hindi epektibo na paliitin siya upang kalahati na lamang ang lakas ng kanyang atake.<br/>
 --> 1.9.1.4.2) Gumamit ng atake na pinawawalang-bisa ang kanyang depensa upang maging katumbas nito "0", i.e. wala; ぼうぎょをムシして、「０」となる<br/>
 --> 1.9.1.4.3) Hindi epektibo na palakasin pa ninyo ang inyong depensa.<br/>
 --> 1.9.1.4.4) Hindi epektibo na pahinain ninyo ang lakas ng kanyang atake, kasi mas maiging umatake na kayo; bagama't sinubukan ko ito ng isang beses sa simula.<br/>
---> 1.9.1.4.5) Hindi epektibo na palakasin pa ninyo ang inyong atake, kasi mas maiging umatake na kayo; bagama't sinubukan ko ito ng isang beses sa simula.<br/>
+--> 1.9.1.4.5) Hindi epektibo na palakasin pa ninyo ang inyong atake, kasi mas maiging umatake na kayo; bagama't sinubukan ko rin ito ng isang beses sa simula.<br/>
 --> 1.9.1.4.6) Magbilang;<br/>
 --> Halimbawa: 70 ang health/lakas ng bully; Gamit ang pamamaraan, maaaring makagawa ang pangkat ninyo ng atake na 8, sa isang turn/palitan ng atake.<br/>
 --> Ilang palitan ang kakailanganin ninyo upang magapi ang bully?<br/>
