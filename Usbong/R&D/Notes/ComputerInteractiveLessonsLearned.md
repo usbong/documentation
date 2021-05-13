@@ -462,6 +462,7 @@ TO-DO: -update: this<br/>
 ### 1.9.1.4) Bully Problem
 --> Tanong: Paano magagapi ang Bully, e.g. Dambuhalang Pagong na naniningil ng ゼニ (zeni), i.e. perang gugugulan ninyo ng oras na maipon, upang makaraan kayo sa daan?<br/>
 --> Paalala: May gumawa ng incident report sa inyong pangkat (classification: Law Enforcement) ukol sa Bully.<br/>
+--> Si Charles (考古学者 (koukogakusha; lit: Mag-aaral ng Pinag-ninilayan ang Luma; Archeologist) na Pagong) ang gumawa ng incident report sa inyo.<br/>
 <br/>
 --> Sagot: Makipaglaban, habang inaalala ang mga gabay na ito:<br/>
 --> 1.9.1.4.1) Hindi epektibo na paliitin siya upang kalahati na lamang ang lakas ng kanyang atake.<br/>
@@ -482,6 +483,9 @@ TO-DO: -update: this<br/>
 [こわいモノにも　たちむかうのが　本物の　ゆうきですよね]<br/>
 kowai mono nimo tachimukau no ga honmono no yuuki desuyone<br/>
 Tunay na tapang ang nakatayong harapin ang nakatatakot na bagay, 'di ba?<br/>
+--> Ayon ito sa Nagbabantay na Kinoko na tinutukoy ang mga 化け物 (bakemono; lit: naibang bagay, e.g. Multo).<br/>
+--> Binabantayan niya ang gate sa Bayan ng Kinoko mula sa mga dumaraan galing o patungo sa Gubat ng Nawawala.<br/>
+--> Sibat ang hawak niyang sandata.<br/> 
 
 #### Recommended Action:
 --> verify: 三上 真司 (Mikami, Shinji); CAPCOM バイオハザード BIOHAZARD Producer<br/>
