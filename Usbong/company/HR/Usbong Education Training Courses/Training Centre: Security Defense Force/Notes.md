@@ -267,3 +267,13 @@ Dagdag na halimbawa ng mga panloloko mula sa grupo ng Teroristang Komunista at a
 <b>反り (REFLECT CUT)：</b>2.1cm<br/>
 <b>重量 (WEIGHT QUANTITY)：</b>1.5kg<br/>
 
+### Part 10: Halimbawang Ingay
+Patuloy na panlolokong ingay (at pisikal na pananakit) gamit ang wireless broadcasting technology ng mga budol-budol/manloloko/carnapper/cybercriminal/Teroristang Komunista<br/>
+--> [ingaySaGateMulaWirelessBroadcastingTechNgMgaTeroristangKomunista.m4a](https://github.com/usbong/documentation/blob/master/Usbong/company/HR/Usbong%20Education%20Training%20Courses/Training%20Centre:%20Security%20Defense%20Force/res/ingaySaGateMulaWirelessBroadcastingTechNgMgaTeroristangKomunista.m4a)<br/>
+--> @00:07 (MM:SS), kulang ba sa langis ang gate? Hindi.<br/>
+--> Bakit tumutunog ang gate nang gayan kapag binubuksan?<br/>
+--> Teroristang Komunista (gawa ng yabang): "Mafia", "Yakuza"<br/>
+--> Mungkahing Aksyon: Puksain ang mga Teroristang Komunista.<br/>
+--> Dagdag: Tao man o Hayop, e.g. bantay na aso sa bahay, pinapatay gamit ang wireless broadcasting technology na may epekto ng sa iligal na droga, e.g. taima, marijuana.<br/>
+--> Sanhi: Quick Money gawa ng pag-aasawa at pag-aanak nang kulang ang ninanakaw.<br/>
+--> Aksyon: Sulatan din ng incident report ang Tagapagpatupad ng Batas, i.e. Law Enforcement.<br/>
