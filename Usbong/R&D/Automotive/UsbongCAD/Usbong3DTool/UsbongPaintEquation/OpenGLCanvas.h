@@ -372,6 +372,9 @@ class OpenGLCanvas
 */		
    		void mouseActionDown(int mouseActionId, int iXPos, int iYPos);
 	    void mouseActionUp(int mouseActionId, int iXPos, int iYPos);
+		
+		//added by Mike, 20210514
+   		void mouseMotionActionDown(int mouseActionId, int iXPos, int iYPos);
 
     	//void Prepare(float dt);
     	void render();

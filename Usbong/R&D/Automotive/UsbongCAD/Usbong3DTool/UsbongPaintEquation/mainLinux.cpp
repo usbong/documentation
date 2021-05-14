@@ -14,7 +14,7 @@
  *
  * @author: Michael Syson
  * @date created: 20200926
- * @date updated: 20210513
+ * @date updated: 20210514
  *
  * References:
  * 1) Dev-C++ 5.11 auto-generated OpenGL example project
@@ -183,6 +183,9 @@ enum mouseActionIds
 
 //added by Mike, 20201001; edited by Mike, 20201210
 bool bMyPause;
+
+//added by Mike, 20210514
+int myMouseActionState;
 
 //Reference: https://www3.ntu.edu.sg/home/ehchua/programming/opengl/HowTo_OpenGL_C.html;
 //last accessed: 20200928
@@ -709,6 +712,9 @@ void myMouseAction(int button, int state, int x, int y)
 				
 //				myOpenGLCanvas->mouseActionUp(MOUSE_LEFT_BUTTON, x, y);				
 				
+				//added by Mike, 20210514
+				myMouseActionState=GLUT_DOWN;
+	
 				glutPostRedisplay();
 			}
 			else if (state == GLUT_UP)
@@ -726,6 +732,19 @@ void myMouseAction(int button, int state, int x, int y)
     }
 }
 
+//added by Mike, 20210514
+void myMouseMotionAction(int x, int y)
+{
+	//added by Mike, 20210512
+	//TO-DO: -add: identify x and y positions using mouse hover
+	
+	//added by Mike, 20210515
+	//Reference: https://stackoverflow.com/questions/15147515/get-x-position-at-start-of-motion-and-end-using-glutmotionfunc;
+	//last accessed: 20210514
+	if (myMouseActionState==GLUT_DOWN) {
+		myOpenGLCanvas->mouseMotionActionDown(MOUSE_LEFT_BUTTON, x, y);	
+	}
+}
 
 int main(int argc, char** argv) {
    glutInit(&argc, argv);                 // InglutReshapeWindowitialize GLUT
@@ -766,7 +785,16 @@ int main(int argc, char** argv) {
 */	
 		//added by Mike, 20210510
    		glutMouseFunc(myMouseAction);
-		
+	
+		//added by Mike, 20210514
+		//Reference: https://www.opengl.org/resources/libraries/glut/spec3/node51.html;
+		//last accessed: 20210514
+/*	
+		void glutMotionFunc(void (*func)(int x, int y));
+		void glutPassiveMotionFunc(void (*func)(int x, int y));		
+*/
+		glutMotionFunc(myMouseMotionAction);
+	
 		//added by Mike, 20210128
 		glutIgnoreKeyRepeat(1);
     		
