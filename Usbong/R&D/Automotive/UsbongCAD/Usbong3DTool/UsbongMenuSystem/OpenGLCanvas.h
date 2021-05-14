@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200929
- * @date updated: 20210513
+ * @date updated: 20210514
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -141,6 +141,9 @@ class RobotShip;
 //added by Mike, 20201207
 class Pilot;
 
+//added by Mike, 20210514
+class Button;
+
 //class Enemy; //removed by Mike, 20201013
 class Beam;
 class Asteroid;
@@ -159,6 +162,9 @@ class OpenGLCanvas
 		//added by Mike, 20210502
     	Pilot *myPilotPlayer2;
 
+		//added by Mike, 20210514
+		//TO-DO: -update: this
+		Button *myButton;
 
 		//added by Mike, 20201118
     	Level *myLevel;

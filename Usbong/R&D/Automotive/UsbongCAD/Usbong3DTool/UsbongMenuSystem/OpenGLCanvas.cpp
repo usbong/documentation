@@ -95,6 +95,10 @@
 //added by Mike, 20201207
 #include "Pilot.h"
 
+//added by Mike, 20210514
+//note: add this here in the .cpp file 
+#include "Button.h"
+
 //added by Mike, 20201010
 #include "Font.h"
 
@@ -474,6 +478,9 @@ bool OpenGLCanvas::init()
 	myPilotPlayer2 = new Pilot(0.0f,0.0f,0.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
 	myPilotPlayer2->setOpenGLCanvas(this);
 	myPilotPlayer2->setAsPlayer2();
+	
+	//added by Mike, 20210514
+	myButton = new Button(0.0f,0.0f,0.0f,myWindowWidth,myWindowHeight);
 		
 	//added by Mike, 20201013; edited by Mike, 20201014
 //	for (i=0; i<MAX_BEAMS; i++) {
@@ -1536,6 +1543,9 @@ void OpenGLCanvas::render()
 		}
 	glEnd();			
 
+	//added by Mike, 20210514
+	myButton->draw();
+	
 	//added by Mike, 20210511	
 /*	
 	if (myMouseActionDown[MOUSE_LEFT_BUTTON]==FALSE) {		
