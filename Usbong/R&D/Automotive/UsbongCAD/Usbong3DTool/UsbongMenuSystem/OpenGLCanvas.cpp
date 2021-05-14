@@ -1626,6 +1626,8 @@ void OpenGLCanvas::render()
 	//removed by Mike, 20201118; added by Mike, 20210416
 	//solves problem with quad face image texture merging
     glEnable(GL_CULL_FACE);
+		
+		
 //https://www.khronos.org/opengl/wiki/Face_Culling; last accessed: 20201122
 //    glCullFace(GL_BACK);
 

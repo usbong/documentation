@@ -448,20 +448,26 @@ Button::Button(float xPos, float yPos, float zPos, int windowWidth, int windowHe
 /*    myXPos=0.0f;
     myYPos=0+myHeight;//0.1f;
 */
+	//added by Mike, 20210514
+    myYPos=0.0f;
+	
 	//note: position: 3,3; width, height; count starts at 0
 	//edited by Mike, 20210502
 //    myXPos=0.0f+myWidth*3;
 	//edited by Mike, 20210503
 //    myXPos=0.0f-myWidth*10;
-    myXPos=0.0f-myWidth*9;
+	//edited by Mike, 20210514
+//    myXPos=0.0f-myWidth*9;
+    myXPos=0.0f;
 	
     //edited by Mike, 2020116
 //    myYPos=0.0f+myHeight*3;
 
 	//added by Mike, 20210503
 	//myZPos updated again in another location
-    myZPos=0.0f+myHeight*3;
-
+	//edited by Mike, 20210514
+//	myZPos=0.0f+myHeight*3;
+	myZPos=0.0f;
 	
 	//added by Mike, 20201115
 	myWindowWidth=windowWidth;
@@ -586,313 +592,72 @@ void Button::drawButtonAsQuadWithTexture()
 //TO-DO: update: this
 void Button::drawButtonObject()
 {
+/*	
+	glBegin(GL_LINES);
+		//edited by Mike, 20210514
+//		glColor3f(1.0f,0.0f,0.0f); //red
+		//sky blue color; brighter
+		glColor3f(0.69f, 0.84f, 1.0f);
 
-		glBegin(GL_LINES);
-			//edited by Mike, 20210514
-	//		glColor3f(1.0f,0.0f,0.0f); //red
-			//sky blue color; brighter
-			glColor3f(0.69f, 0.84f, 1.0f);
-
-			//diagonal line left to right
-			glVertex2f(-1.0f, 1.0f);
-			glVertex2f(1.0f, -1.0f);	
-		glEnd();	
-	
-//added by Mike, 20210422	
-glPushMatrix();
-
-	
-	//added by Mike, 20210420
-    glColor3f(1.0f, 1.0f, 1.0f); // white
-    glEnable(GL_TEXTURE_2D);
-    glBindTexture(GL_TEXTURE_2D, BUTTON_TEXTURE_A);		
-
-	fTaoAnimationFrameOffset=0;
-	
-	glBegin(GL_TRIANGLES);	
-		//triangle#6 //back face left part
-		glNormal3f(0.0000,0.0000,-1.0000);
-		//edited by Mike, 20210424
-//			glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	//A1; face left
-		glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0); //B2		
-		glVertex3f(-1.000000,1.000000,-1.000000); //A1
-
-		glNormal3f(0.0000,0.0000,-1.0000);
-		//edited by Mike, 20210424		
-//			glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0); //B1; face left
-		glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);	//C2
-		glVertex3f(1.000000,-1.000000,-1.000000); //B1
-
-		glNormal3f(0.0000,0.0000,-1.0000);
-		//edited by Mike, 20210424				
-//			glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);	//C1; face left
-		glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0); //B1 
-		glVertex3f(-1.000000,-1.000000,-1.000000); //C1	
-
-		//triangle#12 //back face right part		
-		glNormal3f(0.0000,0.0000,-1.0000);
-		//edited by Mike, 20210424
-//			glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	//A2; face lefT
-		glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0); //B2		
-		glVertex3f(-1.000000,1.000000,-1.000000); //A2
-
-		glNormal3f(0.0000,0.0000,-1.0000);
-		//edited by Mike, 20210424
-//			glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0); //B2; face left
-		glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	//A1
-		glVertex3f(1.000000,1.000000,-1.000000); //B2
-
-		glNormal3f(0.0000,0.0000,-1.0000);
-		//edited by Mike, 20210424
-//			glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0); //C2; face left
-		glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);	//C1	
-		glVertex3f(1.000000,-1.000000,-1.000000); //C2	
+		//diagonal line left to right
+		glVertex2f(-1.0f, 1.0f);
+		glVertex2f(1.0f, -1.0f);	
 	glEnd();
+*/	
+	
+	//added by Mike, 20210422	
+	glPushMatrix();
+		//added by Mike, 20210420
+		glColor3f(1.0f, 1.0f, 1.0f); // white
+//		glColor3f(1.0f, 0.0f, 0.0f); // red
+	
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, BUTTON_TEXTURE_A);		
 
-    glDisable(GL_TEXTURE_2D);
-    glBindTexture(GL_TEXTURE_2D, 0);
-glPopMatrix(); //added by Mike, 20210422	
-}
+		//edited by Mike, 20210515
+		fButtonAnimationFrameOffset=0;
+	
+		//TO-DO: -verify: scaled texture object if equal with pixel width and height size
+		//use autoConvertFromPixelToVertexPointX, et cetera if exact
+	
+		//window width and height; 640x640pixels
+		//whole texture image sheet 512x256pixels
+		//button size: 64x16pixels
+//		glScalef(0.25f, 0.4f, 1.0f);		
+		glScalef(0.20f, 0.4f, 1.0f);		
+	
+		glBegin(GL_TRIANGLES);
+			//counter-clockwise sequence to auto-draw front face
+			//triangle#6 //front face left part
+			glNormal3f(0.0000,0.0000,0.0000);
+			glTexCoord2f(0.0+fButtonAnimationFrameOffset,0.0);	//A1; face left
+			glVertex3f(-1.000000,1.000000,0.000000); //A1
 
-void Button::updatePrev(float dt)
-{
-    switch (currentState)
-    {
-           case INITIALIZING_STATE:
-           case MOVING_STATE:      
-				switch(currentMovingState) {
-		           case WALKING_MOVING_STATE:
-		           		//added by Mike, 20201227; edited by Mike, 20201229
-						//TO-DO: -reverify: that angles are correct in WALKING_STATE
-						//TO-DO: -reverify: sequence of upper and lower arms 
-						if ((armAngles[LEFT]==0) && (armAngles[RIGHT]==0)) {
-							armAngles[LEFT] = 8.3f;
-							armAngles[RIGHT] = -10.0f*3-5.0f;
-							legAngles[LEFT] = 0.0f;
-							legAngles[RIGHT] = 0.0f;		    
-							
-							//added by Mike, 20201229
-							armStates[0] == FORWARD_STATE;        
-							armStates[1] == BACKWARD_STATE;        
-						}
-		           		
-		           	
-		                //note: Code structure taken from Dave Astle and Kevin Hawkins's code 
-		                //("Beginning OpenGL Game Programming", Chapter 4)
-		                //-Mike, Dec. 21, 2006
-		            	// if leg is moving forward, increase angle, else decrease angle
-		            	for (char side = 0; side < 2; side++)
-		            	{
-		            		// arms
-/* 	//edited by Mike, 20201204							
-		            		if (armStates[side] == FORWARD_STATE)
-		            			armAngles[side] += 25.0f * dt;//20.0f * dt;
-		            		else
-		            			armAngles[side] -= 30.0f * dt;//20.0f * dt;
-*/
-		            		if (armStates[side] == FORWARD_STATE)
-		            			armAngles[side] += 8.3f * dt;//20.0f * dt;
-		            		else
-		            			armAngles[side] -= 10.0f * dt;//20.0f * dt;
-							
-		            		// change state if exceeding angles
-		            		if (armAngles[side] >= 25.0f) //15.0f
-		            			armStates[side] = BACKWARD_STATE;
-		            		else if (armAngles[side] <= -45.0f) //15.0f
-		            			armStates[side] = FORWARD_STATE;
-		            
-		            		// legs
-/*							//edited by Mike, 20201204
-							if (legStates[side] == FORWARD_STATE)
-		            			legAngles[side] += 15.0f * dt;
-		            		else
-		            			legAngles[side] -= 15.0f * dt;
-*/
-							if (legStates[side] == FORWARD_STATE)
-		            			legAngles[side] += 5.0f * dt;
-		            		else
-		            			legAngles[side] -= 5.0f * dt;
-							
-		            		// change state if exceeding angles
-		            		if (legAngles[side] >= 15.0f) //15.0f
-		            			legStates[side] = BACKWARD_STATE;
-		            		else if (legAngles[side] <= -15.0f)
-		            			legStates[side] = FORWARD_STATE;		
-		            	}                
-		                break;
+			glNormal3f(0.0000,0.0000,0.0000);
+			glTexCoord2f(0.0+fButtonAnimationFrameOffset,1.0);	//C1; face left
+			glVertex3f(-1.000000,-1.000000,0.000000); //C1	
 
-		            //added by Mike, 20210121
-		            case ATTACKING_MOVING_STATE:
-		            	if (bIsExecutingPunch) {
-		            		if (iPunchAnimationCount<MAX_PUNCHING_ANIMATION_COUNT) {
-								//edited by Mike, 20210122
-		            			//iPunchAnimationCount+=1;
-								if ((iPunchAnimationCountDelay)%2==0) {
-									iPunchAnimationCount+=1;
-									//added by Mike, 20210123
-									iPunchAnimationCountDelay=0;
-								}
-								iPunchAnimationCountDelay+=1;
-							}
-/*							else {
-								if (iPunchAnimationCountDelay<5) {
-									iPunchAnimationCountDelay+=1;
-								}
-							}
-*/
-							//added by Mike, 20210123
-							//+added: no continuous punch via hold punch button
-							else {
-								//edited by Mike, 20210123; edited again by Mike, 20210124
-								if (iPunchAnimationCountDelay<0) { //<5
-								}
-								else {
-									//edited by Mike, 20210123
-		    						if (myKeysDown[KEY_U]==FALSE) {  
-										bIsExecutingPunch=false;
-										iPunchAnimationCount=0;
-										iPunchAnimationCountDelay=0;
+			glNormal3f(0.0000,0.0000,0.0000);
+			glTexCoord2f(0.25+fButtonAnimationFrameOffset,1.0); //B1; face left
+			glVertex3f(1.000000,-1.000000,0.000000); //B1
 
-										//added by Mike, 20210124
-								   		armAngles[RIGHT]=0.0f;
-										armAngles[LEFT]=0.0f;
-									} 
-								}
-								iPunchAnimationCountDelay+=1;
-							}
-						}
-						
-						//added by Mike, 20210124
-						if (bIsExecutingDefend) {
-    						if (myKeysDown[KEY_H]==FALSE) {  
-								bIsExecutingDefend=false;
+			//triangle#12 //front face right part		
+			glNormal3f(0.0000,0.0000,0.0000);
+			glTexCoord2f(0.0+fButtonAnimationFrameOffset,0.0);	//A2; face lefT
+			glVertex3f(-1.000000,1.000000,0.000000); //A2
 
-								//added by Mike, 20210124
-						   		armAngles[RIGHT]=0.0f;
-								armAngles[LEFT]=0.0f;
-							} 
-						}						
-		            	break;
-		                
-		            default: //STANDING STATE		            
-		              break;//do nothing    
-				}
-
-/* //removed by Mike, 20210126				
-				//added by Mike, 20210126
-				if (myKeysDown[KEY_RIGHT]==FALSE) {
-					bIsDashReady=false;
-					bIsExecutingDash=false;				
-				}
-*/
-
-				//added by Mike, 20210126; edited by Mike, 20210128
-//				if (myKeysDown[KEY_RIGHT]==FALSE) {
-				if (myKeysDown[KEY_D]==FALSE) {
-//					if (iInputWaitCount<MAX_WAIT_COUNT) {
-					if (iInputWaitCountArray[KEY_D]<MAX_WAIT_COUNT) {
-//						iInputWaitCount+=1;
-						iInputWaitCountArray[KEY_D]+=1;
-					}
-				}
-				if (myKeysDown[KEY_A]==FALSE) {
-					if (iInputWaitCountArray[KEY_A]<MAX_WAIT_COUNT) {
-						iInputWaitCountArray[KEY_A]+=1;
-					}
-				}
-				if (myKeysDown[KEY_W]==FALSE) {
-					if (iInputWaitCountArray[KEY_W]<MAX_WAIT_COUNT) {
-						iInputWaitCountArray[KEY_W]+=1;
-					}
-				}
-				if (myKeysDown[KEY_S]==FALSE) {
-					if (iInputWaitCountArray[KEY_S]<MAX_WAIT_COUNT) {
-						iInputWaitCountArray[KEY_S]+=1;
-					}
-				}
-
-				
-				//TO-DO: -add: these
-           		//added by Mike, 20201001
-           		rotationAngle=0; //TO-DO: -update: this
-           		
-//                if (isMovingForward)
-//                { 
-  					//removed by Mike, 20201014
-                    /* rotationAngle in degrees, convert to radians */
-                    //im not yet sure why, but i have to deduct 90 to rotationAngle
-//                    rotationAngleRad = (rotationAngle) * 3.141593f / 180.0f;
-
-/*                  //removed by Mike, 20201001
-                    yAccel = (cos(rotationAngleRad)*thrust);
-                    xAccel = -(sin(rotationAngleRad)*thrust);
-*/
-
-/*
-                   rotationAngle+=1;
-                   char str[700];                                       
-                   sprintf(str,"xAccel: %f",xAccel);
-                   MessageBox(NULL, str, "Welcome!", MB_OK);
-*/
-
-/*
-					//added by Mike, 20201001                   
-					//TO-DO: -update: max acceleration
-                    if (yAccel>0.01f) {
-						thrust=0.01f;                    
-					}
-                    if (xAccel>0.01f) {
-						thrust=0.01f;                    
-					}
-*/
-
-/*					//removed by Mike, 20201001
-                    xVel=xAccel;
-                    yVel=yAccel;
-*/                    
-                    
-/*					//removed by Mike, 20201014                    
-                    if (xVel > maxXVel) xVel = maxXVel;
-                    else if (xVel < -maxXVel) xVel = -maxXVel;
-                    if (yVel > maxYVel) yVel = maxYVel;
-                    else if (yVel < -maxYVel) yVel = -maxYVel;
-                    myXPos+=xVel;
-                    myYPos+=yVel;
-                   
-				    //note: deaccelerate 
-                    if (thrust>0)
-                      thrust-=0.02f; //0.01f
-                    else thrust=0;
-*/                                        
-
-/* //removed by Mike, 20210424			
-				//Note: Use these with update to OpenGLCanvas
-           		//wrap the world 
-           		//edited by Mike, 20201116
-//           		if (myXPos <= 0.0f) myXPos = 20-myWidth/8; //if left side
-           		if (myXPos <= 0.0f) myXPos = myWindowWidth/100-myWidth/8; //if left side
-           		else if (myXPos >= myWindowWidth/100) myXPos = 0.0f+myWidth/8; //if right side
-
-           		if (myZPos >= myWindowHeight/100) myZPos = 0.0f+myHeight/8; //if bottom side
-           		//edited by Mike, 20201116
-//           		else if (myZPos <= 0.0f) myZPos = 20-myHeight/8; //if top side
-           		else if (myZPos <= 0.0f) myZPos = myWindowHeight/100-myHeight/8; //if top side
-*/           		           		
-
-/*
-          char str[700];                                       
-          sprintf(str,"myXPos: %f",myXPos);
-          MessageBox(NULL, str, "Welcome!", MB_OK);
-*/
-//                   isMovingForward=0; 
-//                }
-                break;
-            case IN_TITLE_STATE:                
-                  rotationAngle+=5;//rotationStep;
-                break;
-            default: //STANDING STATE
-              break;//do nothing    
-    }
+			glNormal3f(0.0000,0.0000,0.0000);
+			glTexCoord2f(0.25+fButtonAnimationFrameOffset,1.0); //C2; face left
+			glVertex3f(1.000000,-1.000000,0.000000); //C2	
+	
+			glNormal3f(0.0000,0.0000,0.0000);
+			glTexCoord2f(0.25+fButtonAnimationFrameOffset,0.0); //B2; face left
+			glVertex3f(1.000000,1.000000,0.000000); //B2
+		glEnd();
+	
+		glDisable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, 0);
+	glPopMatrix(); //added by Mike, 20210422
 }
 
 //added by Mike, 20210423

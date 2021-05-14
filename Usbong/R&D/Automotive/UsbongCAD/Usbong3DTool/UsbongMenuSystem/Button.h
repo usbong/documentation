@@ -113,7 +113,7 @@ private:
 */    
 	//added by Mike, 20210423
 	int iCountTaoAnimationFrame;
-	float fTaoAnimationFrameOffset;
+	float fButtonAnimationFrameOffset;
 		
     OpenGLCanvas *myOpenGLCanvas;
 
