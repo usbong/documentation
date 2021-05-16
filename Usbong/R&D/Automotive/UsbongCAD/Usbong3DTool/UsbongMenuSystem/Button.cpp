@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210514
+ * @date updated: 20210516
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -68,6 +68,9 @@
 #include "PolygonUtils.h"
 #include "ModelPool.h"
 */
+
+//added by Mike, 20210516
+#include "UsbongUtils.h"
 
 #include <string.h>
 
@@ -458,7 +461,8 @@ Button::Button(float xPos, float yPos, float zPos, int windowWidth, int windowHe
 //    myXPos=0.0f-myWidth*10;
 	//edited by Mike, 20210514
 //    myXPos=0.0f-myWidth*9;
-    myXPos=0.0f;
+//    myXPos=0.0f;
+    myXPos=320.0f;
 	
     //edited by Mike, 2020116
 //    myYPos=0.0f+myHeight*3;
@@ -473,6 +477,8 @@ Button::Button(float xPos, float yPos, float zPos, int windowWidth, int windowHe
 	myWindowWidth=windowWidth;
 	myWindowHeight=windowHeight;
 	
+	//added by Mike, 20210516
+	myUsbongUtils = new UsbongUtils();
 
 //    myWidthX=0.5;
 
@@ -582,14 +588,22 @@ void Button::draw()
 //added by Mike, 20210423
 void Button::drawButtonAsQuadWithTexture()
 {
-    glTranslatef(myXPos, myYPos, myZPos);
+	//edited by Mike, 20210516
+//    glTranslatef(myXPos, myYPos, myZPos);
+	//TO-DO: -add: myZPos
+//printf("autoConvert; myXPos: \n",myUsbongUtils->autoConvertFromPixelToVertexPointX(0));
+	
+	//note: myXPos is float; autoConvertFromPixelToVertexPointX(...) input is int
+	//auto-converted from float to int due to autoConvertFromPixelToVertexPointX(...) accepts int as parameter
+    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPos), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPos), myZPos);
 
 	drawButtonObject();	
 }
 
 //added: by Mike, 20210423
 //TO-DO: -add: in PolygonPool
-//TO-DO: update: this
+//added by Mike, 20210516
+//note: origin/anchor is TOP-LEFT
 void Button::drawButtonObject()
 {
 /*	
@@ -617,6 +631,10 @@ void Button::drawButtonObject()
 		//edited by Mike, 20210515
 		fButtonAnimationFrameOffset=0;
 	
+		//added by Mike, 20210516; removed to after glScale(...) by Mike, 20210516		
+		//due to instructions to auto-draw quad using triangles
+//		glTranslatef(0.2f, 0.2f, 0.0f);
+	
 		//TO-DO: -verify: scaled texture object if equal with pixel width and height size
 		//use autoConvertFromPixelToVertexPointX, et cetera if exact
 	
@@ -625,6 +643,11 @@ void Button::drawButtonObject()
 		//button size: 64x16pixels
 //		glScalef(0.25f, 0.4f, 1.0f);		
 		glScalef(0.20f, 0.4f, 1.0f);		
+
+		//added by Mike, 20210516
+		//due to instructions to auto-draw quad using triangles
+		glTranslatef(1.0f, 0.5f, 0.0f);
+
 	
 		glBegin(GL_TRIANGLES);
 			//counter-clockwise sequence to auto-draw front face

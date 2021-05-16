@@ -15,7 +15,8 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20210514
- * @date updated: 20210514
+ * @date updated: 20210516
+ * @website address: http://www.usbong.ph
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -79,6 +80,9 @@
 	#define PILOT_MAX_DIRECTIONAL_KEY_DASH_COUNT 4 //added by Mike, 20210128
 #endif
 
+//added by Mike, 20210516
+class UsbongUtils;
+
 //TO-DO: -update: this
 class Button: public MyDynamicObject
 {
@@ -116,7 +120,10 @@ private:
 	float fButtonAnimationFrameOffset;
 		
     OpenGLCanvas *myOpenGLCanvas;
-
+	
+	//added by Mike, 20210516
+	UsbongUtils *myUsbongUtils;
+	
     //float boundary;
 
 //    float rotationAngle;

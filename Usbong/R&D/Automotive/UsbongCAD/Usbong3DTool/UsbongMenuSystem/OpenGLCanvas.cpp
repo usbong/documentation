@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210514
+ * @date updated: 20210516
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -101,6 +101,9 @@
 
 //added by Mike, 20201010
 #include "Font.h"
+
+//added by Mike, 20210516
+#include "UsbongUtils.h"
 
 //added by Mike, 20201118
 #include "Level.h"
@@ -440,6 +443,9 @@ bool OpenGLCanvas::init()
     
     //added by Mike, 20200930
 	currentState = GAME_SCREEN; //TO-DO: -update: this
+	
+	//added by Mike, 20210516
+	myUsbongUtils = new UsbongUtils();
 
     //added by Mike, 20210211
     myLevel = new Level();    
@@ -1082,8 +1088,8 @@ void OpenGLCanvas::mouseActionUp(int iMouseActionId, int iXPos, int iYPos)
 	iEndPointY=iYPos;		
 
 	//added by Mike, 20210513
-	printf("actionUP Start X,Y: %f,%f\n",autoConvertFromPixelToVertexPointX(iStartPointX),autoConvertFromPixelToVertexPointY(iStartPointY));
-	printf("actionUP End X,Y: %f,%f\n",autoConvertFromPixelToVertexPointX(iEndPointX),autoConvertFromPixelToVertexPointY(iEndPointY));
+	printf("actionUP Start X,Y: %f,%f\n",myUsbongUtils->autoConvertFromPixelToVertexPointX(iStartPointX),myUsbongUtils->autoConvertFromPixelToVertexPointY(iStartPointY));
+	printf("actionUP End X,Y: %f,%f\n",myUsbongUtils->autoConvertFromPixelToVertexPointX(iEndPointX),myUsbongUtils->autoConvertFromPixelToVertexPointY(iEndPointY));
 	
 	//Reference: https://www.mathsisfun.com/algebra/line-equation-2points.html;
 	//last accessed: 20210513
@@ -1119,6 +1125,7 @@ void OpenGLCanvas::mouseActionUp(int iMouseActionId, int iXPos, int iYPos)
 */	
 }
 
+/* //removed by Mike, 20210516
 //added by Mike, 20210511
 //TO-DO: -reverify: center draw line
 //note: vertex origin 0,0 at center
@@ -1194,7 +1201,7 @@ float OpenGLCanvas::autoConvertFromPixelToVertexPointY(int iPointY)
 		return (iPointY-fHalfWindowHeight)/fHalfWindowHeight*(-1);				
 	}
 }
-
+*/
 
 //added by Mike, 20210403
 //TO-DO: -update: this
@@ -1447,11 +1454,10 @@ void OpenGLCanvas::render()
 	//added by Mike, 20210510
 	glLineWidth((GLfloat)3);	
 
-/*	//removed by Mike, 20210514
 //note: coordinate system guide/map
 	glBegin(GL_LINES);
 		glColor3f(0.0f,0.0f,0.0f); //black
-
+/*	//removed by Mike, 20210516
 		//diagonal line left to right
 		glVertex2f(-1.0f, 1.0f);
 		glVertex2f(1.0f, -1.0f);
@@ -1459,7 +1465,7 @@ void OpenGLCanvas::render()
 		//diagonal line right to left
 		glVertex2f(1.0f, 1.0f);
 		glVertex2f(-1.0f, -1.0f);
-	
+*/	
 		//vertical line at center
 		glVertex2f(0.0f, 1.0f);
 		glVertex2f(0.0f, -1.0f);
@@ -1468,7 +1474,7 @@ void OpenGLCanvas::render()
 		glVertex2f(-1.0f, 0.0f);
 		glVertex2f(1.0f, 0.0f);	
 	glEnd();	
-*/	
+	
 
 /*	
 	//TO-DO: -update: this
@@ -1522,8 +1528,8 @@ void OpenGLCanvas::render()
 				//glColor3f(0.0f,0.0f,0.0f); //black
 				glColor3f(0.6f,0.6f,0.6f); //bright black
 
-				glVertex2f(autoConvertFromPixelToVertexPointX(iStartPointX), autoConvertFromPixelToVertexPointY(iStartPointY));
-				glVertex2f(autoConvertFromPixelToVertexPointX(iEndPointX), autoConvertFromPixelToVertexPointY(iEndPointY));		
+				glVertex2f(myUsbongUtils->autoConvertFromPixelToVertexPointX(iStartPointX), myUsbongUtils->autoConvertFromPixelToVertexPointY(iStartPointY));
+				glVertex2f(myUsbongUtils->autoConvertFromPixelToVertexPointX(iEndPointX), myUsbongUtils->autoConvertFromPixelToVertexPointY(iEndPointY));		
 			glEnd();		
 		}
 	}	
@@ -1538,8 +1544,8 @@ void OpenGLCanvas::render()
 	
 		for (int iCount=0; iCount<stepHistoryListCount; iCount++)
 		{
-			glVertex2f(autoConvertFromPixelToVertexPointX(stepHistoryList[iCount][0]), autoConvertFromPixelToVertexPointY(stepHistoryList[iCount][1]));
-			glVertex2f(autoConvertFromPixelToVertexPointX(stepHistoryList[iCount][2]), autoConvertFromPixelToVertexPointY(stepHistoryList[iCount][3]));
+			glVertex2f(myUsbongUtils->autoConvertFromPixelToVertexPointX(stepHistoryList[iCount][0]), myUsbongUtils->autoConvertFromPixelToVertexPointY(stepHistoryList[iCount][1]));
+			glVertex2f(myUsbongUtils->autoConvertFromPixelToVertexPointX(stepHistoryList[iCount][2]), myUsbongUtils->autoConvertFromPixelToVertexPointY(stepHistoryList[iCount][3]));
 		}
 	glEnd();			
 

@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201210
- * @date updated: 20210208
+ * @date updated: 20210516
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -38,6 +38,7 @@ class UsbongUtils
 {
 private:		
 public:
+	UsbongUtils(); //added by Mike, 20210516	
 	~UsbongUtils(); //note: add "~" for constructor without any input parameter
 /*
 	Pilot(float xPos, float yPos, float zPos,int windowWidth,int windowHeight);
@@ -50,4 +51,7 @@ public:
 //char read(char *filename);
 // char[] read(char *filename);
 
+	//added by Mike, 202105016
+	float autoConvertFromPixelToVertexPointX(int iPointX);
+	float autoConvertFromPixelToVertexPointY(int iPointY);
 };

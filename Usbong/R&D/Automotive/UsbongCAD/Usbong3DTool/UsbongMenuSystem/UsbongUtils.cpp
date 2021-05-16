@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Usbong Social Systems, Inc.
+ * Copyright 2020~2021 USBONG SOCIAL SYSTEMS, INC.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,9 +12,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * @author: Michael Syson
+ * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
+ * @author: SYSON, MICHAEL B.
  * @date created: 20201210
- * @date updated: 20201213
+ * @date updated: 20210516
+ * @website address: http://www.usbong.ph 
  *
  * References:
  * 1) Dev-C++ 5.11 auto-generated OpenGL example project
@@ -107,6 +109,16 @@
 //added by Mike, 20201210
 #include "UsbongUtils.h"
 #include <string.h>
+
+//added by Mike, 20210516
+UsbongUtils::UsbongUtils()
+{
+}
+
+//added by Mike, 20210516
+UsbongUtils::~UsbongUtils()
+{
+}
 
 /*
 //Reference: https://stackoverflow.com/questions/3463426/in-c-how-should-i-read-a-text-file-and-print-all-strings;
@@ -224,3 +236,79 @@ while ((nread = fread(buf, 1, chunk, file)) > 0) {
     //as above
 }
 */
+
+//added by Mike, 20210516
+//TO-DO: -reverify: center draw line
+//note: vertex origin 0,0 at center
+float UsbongUtils::autoConvertFromPixelToVertexPointX(int iPointX)
+{
+	//max width and height: 640
+	//set in mainLinux.cpp
+	//TO-DO: -update: this
+	//square window
+	float fMaxWindowWidth=640.0f;
+	float fMaxWindowHeight=640.0f;	
+	float fHalfWindowWidth=fMaxWindowWidth/2;
+	float fHalfWindowHeight=fMaxWindowHeight/2;
+	
+	if (iPointX<fHalfWindowWidth) {				
+		//note: pixel point origin at top-left
+//		return -0.25+(fHalfWindowWidth-iPointX)/fMaxWindowWidth*(-1); //note: use of parenthesis
+//		return (fHalfWindowWidth-iPointX)/fMaxWindowWidth*(-1); //note: use of parenthesis				
+		//edited by Mike, 20210512
+//		return (fMaxWindowWidth-iPointX)/fMaxWindowWidth*(-1); //note: use of parenthesis				
+//		return (fMaxWindowWidth-iPointX)/fHalfWindowWidth*(-1); //note: use of parenthesis						
+		
+		return (fHalfWindowWidth-iPointX)/fHalfWindowWidth*(-1); //note: use of parenthesis						
+	}
+	else if (iPointX==0) {				
+		return 0; //note: use of parenthesis				
+	}
+	//edited by Mike, 20210512	
+	else {
+	//	return -0.25+iPointX/fMaxWindowWidth;	
+		//edited by Mike, 20210512
+//		return iPointX/fMaxWindowWidth;		
+		return (iPointX-fHalfWindowWidth)/fHalfWindowWidth;		
+	}
+	
+//	return (fMaxWindowWidth-iPointX)/fMaxWindowWidth;			
+}
+
+//added by Mike, 20210511
+//note: vertex origin 0,0 at center
+float UsbongUtils::autoConvertFromPixelToVertexPointY(int iPointY)
+{
+	//max width and height: 640
+	//set in mainLinux.cpp
+	//TO-DO: -update: this
+	//square window
+	float fMaxWindowWidth=640.0f;
+	float fMaxWindowHeight=640.0f;	
+	float fHalfWindowWidth=fMaxWindowWidth/2;
+	float fHalfWindowHeight=fMaxWindowHeight/2;
+
+	//TO-DO: -reverify: this
+	//max 1.0f	
+	if (iPointY<=fHalfWindowHeight) {
+		//note: pixel point origin at top-left		
+		//note: pixel point uses inverted y-axis
+//		return 0.25+(fHalfWindowHeight-iPointY)/fMaxWindowHeight; //note: use of parenthesis
+//		return (fHalfWindowHeight-iPointY)/fMaxWindowHeight; //note: use of parenthesis		
+		//edited by Mike, 20210512
+//		return (fMaxWindowHeight-iPointY)/fMaxWindowHeight; //note: use of parenthesis						
+		return (fHalfWindowHeight-iPointY)/fHalfWindowHeight; //note: use of parenthesis						
+	}
+	//edited by Mike, 20210512
+	else if (iPointY==0) {
+		return 0;
+	}
+	//edited by Mike, 20210512
+	else {
+	//	return 0.25+iPointY/fMaxWindowHeight*(-1);
+//		return iPointY/fMaxWindowHeight*(-1);	
+		//edited by Mike, 20210512
+//		return iPointY/fHalfWindowHeight*(-1);			
+		return (iPointY-fHalfWindowHeight)/fHalfWindowHeight*(-1);				
+	}
+}

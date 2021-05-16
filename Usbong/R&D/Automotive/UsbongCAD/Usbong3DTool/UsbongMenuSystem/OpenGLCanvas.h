@@ -15,7 +15,8 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200929
- * @date updated: 20210514
+ * @date updated: 20210516
+ * @website address: http://www.usbong.ph
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -148,6 +149,9 @@ class Button;
 class Beam;
 class Asteroid;
 
+//added by Mike, 20210516
+class UsbongUtils;
+
 class Level; //added by Mike, 20201118
 
 class OpenGLCanvas
@@ -165,6 +169,9 @@ class OpenGLCanvas
 		//added by Mike, 20210514
 		//TO-DO: -update: this
 		Button *myButton;
+		
+		//added by Mike, 20210516
+		UsbongUtils *myUsbongUtils;
 
 		//added by Mike, 20201118
     	Level *myLevel;
