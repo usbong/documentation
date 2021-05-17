@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210516
+ * @date updated: 20210517
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -438,10 +438,24 @@ Button::Button(float xPos, float yPos, float zPos, int windowWidth, int windowHe
 /*	myWidth=1.0f;
     myHeight=1.0f;
 */
+	//added by Mike, 20210517
+	//TO-DO: -update: this
 	myWidth=1.4f;
     myHeight=1.4f;
+	
+	//added by Mike, 20210517
+	//TO-DO: -add: auto-identify object width and height
+	myWidthAsPixel=128;
+    myHeightAsPixel=64;
+	//TO-DO: -update: this
+	//note: float xPos as parameter to int myXPosAsPixel not correct output	
+	myXPosAsPixel=320;//(int)xPos;
+	myYPosAsPixel=(int)yPos;
+	myZPosAsPixel=(int)zPos;
+	
+	printf(">>myXPosAsPixel: %i\n",myXPosAsPixel);
 
-    
+	    
 /*
     myWidth=0.5f;
     myHeight=0.5f;
@@ -451,6 +465,13 @@ Button::Button(float xPos, float yPos, float zPos, int windowWidth, int windowHe
 /*    myXPos=0.0f;
     myYPos=0+myHeight;//0.1f;
 */
+
+	myXPos=xPos;
+    myYPos=yPos;
+    myZPos=zPos;
+
+	
+/*	//edited by Mike, 20210517
 	//added by Mike, 20210514
     myYPos=0.0f;
 	
@@ -472,6 +493,7 @@ Button::Button(float xPos, float yPos, float zPos, int windowWidth, int windowHe
 	//edited by Mike, 20210514
 //	myZPos=0.0f+myHeight*3;
 	myZPos=0.0f;
+*/
 	
 	//added by Mike, 20201115
 	myWindowWidth=windowWidth;
@@ -592,11 +614,15 @@ void Button::drawButtonAsQuadWithTexture()
 //    glTranslatef(myXPos, myYPos, myZPos);
 	//TO-DO: -add: myZPos
 //printf("autoConvert; myXPos: \n",myUsbongUtils->autoConvertFromPixelToVertexPointX(0));
+printf("myXPosAsPixel: %i\n",myXPosAsPixel);
 	
 	//note: myXPos is float; autoConvertFromPixelToVertexPointX(...) input is int
 	//auto-converted from float to int due to autoConvertFromPixelToVertexPointX(...) accepts int as parameter
-    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPos), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPos), myZPos);
-
+	//edited by Mike, 20210517
+//    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPos), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPos), myZPos);
+//    glTranslatef(myXPosAsPixel, myYPosAsPixel, myZPosAsPixel);
+    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixel), myZPosAsPixel);
+	
 	drawButtonObject();	
 }
 

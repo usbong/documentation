@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Usbong Social Systems, Inc.
+ * Copyright 2020~2021 Usbong Social Systems, Inc.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20201226
+ * @date updated: 20210517
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -26,6 +26,9 @@
 
 #include "MyDynamicObject.h"
 #include <stdlib.h>
+
+//added by Mike, 20210517
+#include "UsbongUtils.h"
 
 //#include "Beam.h"
 
@@ -48,6 +51,17 @@
 
 
 #include <stdio.h>
+
+//added by Mike, 20210517
+MyDynamicObject::~MyDynamicObject()
+{
+}
+
+//added by Mike, 202105017
+void MyDynamicObject::setUsbongUtils(UsbongUtils* u)
+{
+     myUsbongUtils = u;
+}
 
 //added by Mike, 20201213
 void MyDynamicObject::draw() {
@@ -115,6 +129,7 @@ float MyDynamicObject::getHeight()
 {
    return myHeight;
 }
+
 
 float MyDynamicObject::getDistance(float x1, float y1, float z1, float x2, float y2, float z2)
 {
@@ -213,6 +228,41 @@ void MyDynamicObject::collideWith(MyDynamicObject* mdo)
         this->hitBy(mdo);
         mdo->hitBy(this);
     }
+}
+
+//added by Mike, 20210517
+//use with computer mouse, et cetera
+bool MyDynamicObject::collideWithPressedCoordPos(int pressedCoordPosX, int pressedCoordPosY)	
+{
+		printf("pressedCoordPosX: %i\n",pressedCoordPosX);
+		printf("getXAsPixel()+getWidthAsPixel(): %i\n",getXAsPixel()+getWidthAsPixel());
+	
+	
+	//intersecting rectangles
+/*	//edited to use pixel instead of vertex points by Mike, 20210517
+    if (pressedCoordPosX > myUsbongUtils->autoConvertFromPixelToVertexPointX(getX()+getWidth()) || //pressed coordinate position at right of object
+        pressedCoordPosX < myUsbongUtils->autoConvertFromPixelToVertexPointX(getX()) || //pressed coordinate position at left of object
+        pressedCoordPosY < myUsbongUtils->autoConvertFromPixelToVertexPointX(getY()) || //pressed coordinate position at top of object
+		pressedCoordPosY > myUsbongUtils->autoConvertFromPixelToVertexPointY(getY()+getHeight())) { //pressed coordinate position at right of object
+
+		printf("outside button\n");
+		
+		return false;
+	}	
+*/
+    if (pressedCoordPosX > getXAsPixel()+getWidthAsPixel() || //pressed coordinate position at right of object
+        pressedCoordPosX < getXAsPixel() || //pressed coordinate position at left of object
+        pressedCoordPosY < getYAsPixel() || //pressed coordinate position at top of object
+		pressedCoordPosY > getYAsPixel()+getHeightAsPixel()) { //pressed coordinate position at right of object
+
+		printf("outside button\n");
+		
+		return false;
+	}	
+	
+	printf("inside button\n");
+	
+	return true;
 }
 
 //added by Mike, 20201016

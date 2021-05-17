@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Usbong Social Systems, Inc.
+ * Copyright 2020~2021 Usbong Social Systems, Inc.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201013
- * @date updated: 20201225
+ * @date updated: 20210517
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -29,9 +29,10 @@
 //added by Mike, 20201116
 #include "PolygonUtils.h"
 
-
+/*	//removed by Mike, 20210517 to MyDynamicObject.h
 const int HIDDEN_STATE = 0,
           ACTIVE_STATE = 1;          
+*/
 
 class Beam: public MyDynamicObject
 {

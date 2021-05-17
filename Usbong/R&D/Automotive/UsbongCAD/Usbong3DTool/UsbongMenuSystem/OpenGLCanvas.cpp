@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210516
+ * @date updated: 20210517
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -267,7 +267,9 @@ OpenGLCanvas::~OpenGLCanvas()
 {
 }
 
-bool OpenGLCanvas::init()
+//edited by Mike, 20210517
+//bool OpenGLCanvas::init()
+bool OpenGLCanvas::init(int myWindowWidthAsPixel, int myWindowHeightAsPixel)	
 {	
 	//TO-DO: -receive: values from main.cpp
 	//edited by Mike, 20201115
@@ -451,15 +453,22 @@ bool OpenGLCanvas::init()
     myLevel = new Level();    
     myLevel->setupLevel(LEVEL_TEXTURE); //FONT_TEXTURE);
 
+	//added by Mike, 20210517
+	myWindowWidthAsPixel = myWindowWidth;
+	myWindowHeightAsPixel = myWindowHeight;
+	
     //added by Mike, 20210320; edited by Mike, 20210321
 /*	
 	myWindowWidth=myLevel->getMaxXAxisViewport()*fGridSquareWidth;
     myWindowHeight=myLevel->getMaxZAxisViewport()*fGridSquareHeight;
 */
+	//removed by Mike, 20210517
+/*	
+	//TO-DO: -update: this	
 	//getMaxXAxisViewport()... already the actual size
 	myWindowWidth=myLevel->getMaxXAxisViewport();
     myWindowHeight=myLevel->getMaxZAxisViewport();
-	
+*/	
 
 	//added by Mike, 20201001
 	//edited by Mike, 20201115
@@ -485,9 +494,16 @@ bool OpenGLCanvas::init()
 	myPilotPlayer2->setOpenGLCanvas(this);
 	myPilotPlayer2->setAsPlayer2();
 	
-	//added by Mike, 20210514
-	myButton = new Button(0.0f,0.0f,0.0f,myWindowWidth,myWindowHeight);
-		
+	//added by Mike, 20210514; edited by Mike, 20210517
+//	myButton = new Button(0.0f,0.0f,0.0f,myWindowWidth,myWindowHeight);
+//	myButton = new Button(0.0f,0.0f,0.0f,myWindowWidthAsPixel,myWindowHeightAsPixel);
+	//edited by Mike, 20210517
+	//note: float xPos as parameter to int myXPosAsPixel not correct output
+//	myButton = new Button(myWindowWidthAsPixel/2.0f,0.0f,0.0f,myWindowWidthAsPixel,myWindowHeightAsPixel);
+	myButton = new Button(0.0f,0.0f,0.0f,myWindowWidthAsPixel,myWindowHeightAsPixel);
+
+	myButton->setOpenGLCanvas(this);
+			
 	//added by Mike, 20201013; edited by Mike, 20201014
 //	for (i=0; i<MAX_BEAMS; i++) {
 	for (int i=0; i<MAX_BEAMS; i++) {
@@ -1058,6 +1074,18 @@ void OpenGLCanvas::mouseActionDown(int iMouseActionId, int iXPos, int iYPos)
 	iEndPointX=iXPos;
 	iEndPointY=iYPos;		
 	
+	//added by Mike, 20210517
+	if (myButton->isActive()) {
+//	printf("actionUP Start X,Y: %f,%f\n",myUsbongUtils->autoConvertFromPixelToVertexPointX(iStartPointX),myUsbongUtils->autoConvertFromPixelToVertexPointY(iStartPointY));			
+		
+	printf("actionUP Start X,Y: %f,%f\n",myUsbongUtils->autoConvertFromPixelToVertexPointX(iStartPointX),myUsbongUtils->autoConvertFromPixelToVertexPointY(iStartPointY));			
+	
+	//we use pixel instead of vertex points
+//	  myButton->collideWithPressedCoordPos(myUsbongUtils->autoConvertFromPixelToVertexPointX(iStartPointX),myUsbongUtils->autoConvertFromPixelToVertexPointY(iStartPointY));
+	  myButton->collideWithPressedCoordPos(iStartPointX,iStartPointY);		
+	}
+	
+	
 /*	
 	printf("hasPressedMouseActionDown");
 	
@@ -1531,7 +1559,7 @@ void OpenGLCanvas::render()
 				glVertex2f(myUsbongUtils->autoConvertFromPixelToVertexPointX(iStartPointX), myUsbongUtils->autoConvertFromPixelToVertexPointY(iStartPointY));
 				glVertex2f(myUsbongUtils->autoConvertFromPixelToVertexPointX(iEndPointX), myUsbongUtils->autoConvertFromPixelToVertexPointY(iEndPointY));		
 			glEnd();		
-		}
+		}		
 	}	
 
 	//added by Mike, 20210513
@@ -2910,7 +2938,15 @@ void OpenGLCanvas::update()
 		
     	//added by Mike, 20201001
     	myRobotShip->update(1); //dt
-
+		
+		//added by Mike, 20210517; removed by Mike, 202105017
+/*		
+        if (myButton->isActive()) {
+//	printf("actionUP Start X,Y: %f,%f\n",myUsbongUtils->autoConvertFromPixelToVertexPointX(iStartPointX),myUsbongUtils->autoConvertFromPixelToVertexPointY(iStartPointY));			
+          myButton->collideWithPressedCoordPos(myUsbongUtils->autoConvertFromPixelToVertexPointX(iStartPointX),myUsbongUtils->autoConvertFromPixelToVertexPointY(iStartPointY));
+		}
+*/		
+		
 		//added by Mike, 20210207
 		//TO-DO: -add: myRobotShip collide with Asteroid
 		//TO-DO: -add: myRobotShip's punch collide with Asteroid		

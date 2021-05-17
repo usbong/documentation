@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Usbong Social Systems, Inc.
+ * Copyright 2020~2021 Usbong Social Systems, Inc.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210507
+ * @date updated: 20210517
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -53,6 +53,9 @@
 //removed by Mike, 20201226
 //#include <stdio.h> //added by Mike, 20201226
 
+//added by Mike, 20210517; removed by Mike, 20210517
+//set @OpenGLCanvas.cpp
+//#include "UsbongUtils.h"
 
 //added by Mike, 20201207
 // constants for arm and leg movement states
@@ -77,6 +80,10 @@ const int MOVING_STATE = 1;
 const int IN_TITLE_STATE = 2;
 const int DYING_STATE = 3;
 
+//added by Mike, 20210517
+const int HIDDEN_STATE = 4,
+          ACTIVE_STATE = 5;          
+
 //added by Mike, 20201130
 #define FACING_UP 0
 #define FACING_DOWN 1
@@ -89,6 +96,9 @@ const int DYING_STATE = 3;
 #define FACING_LEFT_AND_DOWN 6
 #define FACING_RIGHT_AND_DOWN 7
 
+//added by Mike, 20210517
+class UsbongUtils;
+
 class MyDynamicObject
 {
 private:        
@@ -98,6 +108,8 @@ private:
     int maxSize;
     int i;
     bool isCollidable;
+	
+	UsbongUtils *myUsbongUtils; //added by Mike, 202105017
 
 public:
     float myXPos;
@@ -107,9 +119,21 @@ public:
     float myWidth;
     float myHeight;
 
+	//added by Mike, 20210517
+    int myXPosAsPixel;
+    int myYPosAsPixel;
+    int myZPosAsPixel;    
+    int myWidthAsPixel;
+    int myHeightAsPixel;
+	
+
 	//added by Mike, 20201115
     int myWindowWidth;
     int myWindowHeight;
+	
+	//added by Mike, 20210517
+	int currentState;
+	
 
 /*	//removed by Mike, 20201226
 	//added by Mike, 20201226
@@ -128,7 +152,22 @@ public:
 	//fGridSquareWidth = myWindowWidth/iColumnCountMax/100.0;
 	//fGridSquareHeight = myWindowHeight/iRowCountMax/100.0;
     MyDynamicObject(float xPos=0.0f, float yPos=0.0f, float zPos=0.0f, int windowWidth=0, int windowHeight=0 ): myXPos(xPos), myYPos(yPos), myZPos(zPos), myWindowWidth(windowWidth/100), myWindowHeight(windowHeight/100)
-    {}
+	{
+		currentState=ACTIVE_STATE;
+	}	
+
+	//added by Mike, 20210517
+	~MyDynamicObject();
+
+	//added by Mike, 20210517
+	bool isActive(){
+         if (currentState==ACTIVE_STATE)
+           return true;
+         else return false;
+    }
+
+	//added by Mike, 20210517
+	void setUsbongUtils(UsbongUtils* c);
 
     virtual void hitBy(MyDynamicObject* mdo);
         
@@ -147,10 +186,38 @@ public:
     virtual float getX()=0;
     virtual float getY()=0;
     virtual float getZ()=0;
-    
-    virtual float getWidth()=0;
+	virtual float getWidth()=0;
     virtual float getHeight()=0;
-    
+
+	//added by Mike, 20210517
+/*	
+    virtual int getXAsPixel()=0;
+    virtual int getYAsPixel()=0;
+    virtual int getZAsPixel()=0;
+	virtual int getWidthAsPixel()=0;
+    virtual int getHeightAsPixel()=0;
+*/
+	virtual int getXAsPixel()
+    {
+       return myXPosAsPixel;
+    }
+    virtual int getYAsPixel()
+    {
+       return myYPosAsPixel;
+    }
+    virtual int getZAsPixel()
+    {
+       return myZPosAsPixel;
+    }
+    virtual int getWidthAsPixel()
+    {
+       return myWidthAsPixel;
+    }
+    virtual int getHeightAsPixel()
+    {
+       return myHeightAsPixel;
+    }
+	
 	//added by Mike, 20201217
     virtual void draw();	
 
@@ -169,6 +236,9 @@ public:
     
     bool checkCollision(MyDynamicObject* mdo1, MyDynamicObject* mdo2);
     void collideWith(MyDynamicObject* mdo);
+	
+	//added by Mike, 20210517
+	bool collideWithPressedCoordPos(int pressedCoordPosX, int pressedCoordPosY);
 
 	//edited by Mike, 20210219
     //bool isIntersectingRect(MyDynamicObject* mdo1, MyDynamicObject* mdo2);

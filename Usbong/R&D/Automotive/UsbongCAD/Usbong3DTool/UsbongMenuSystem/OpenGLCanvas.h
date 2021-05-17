@@ -135,7 +135,6 @@
 #define FACING_LEFT_AND_DOWN 6
 #define FACING_RIGHT_AND_DOWN 7
 
-
 class MyDynamicObject; //added by Mike, 20201213
 
 class RobotShip;
@@ -172,7 +171,7 @@ class OpenGLCanvas
 		
 		//added by Mike, 20210516
 		UsbongUtils *myUsbongUtils;
-
+		
 		//added by Mike, 20201118
     	Level *myLevel;
 
@@ -192,7 +191,7 @@ class OpenGLCanvas
 		//MyDynamicObject *myDynamicObjectContainer[MAX_DYNAMIC_OBJECT];
 		//std::vector<MyDynamicObject> items;
 		std::vector<MyDynamicObject*> vMyDynamicObjectContainer;
-		
+				
        	char *infile;//= "Patches1.txt";		
         char *outfile;
        	FILE *in;
@@ -372,7 +371,10 @@ class OpenGLCanvas
 		
         int currentState;
 
-    	bool init();
+		//edited by Mike, 20210517
+//    	bool init();
+    	bool init(int myWindowWidthAsPixel, int myWindowHeightAsPixel);
+
     	bool shutdown();
 
    		void keyDown(int keyCode);
@@ -395,7 +397,7 @@ class OpenGLCanvas
     	
     	void addScore(int s);
     	void loseLife();
-    	void changeState(int s);
+    	void changeState(int s);		
 };
 
 #endif

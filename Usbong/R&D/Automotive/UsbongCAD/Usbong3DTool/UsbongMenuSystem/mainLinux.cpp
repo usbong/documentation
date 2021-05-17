@@ -14,7 +14,7 @@
  *
  * @author: Michael Syson
  * @date created: 20200926
- * @date updated: 20210514
+ * @date updated: 20210517
  *
  * References:
  * 1) Dev-C++ 5.11 auto-generated OpenGL example project
@@ -143,9 +143,9 @@ void DisableOpenGL (HWND hWnd, HDC hDC, HGLRC hRC);
 static int myWindowWidth=1024;//640; //320
 static int myWindowHeight=1024;//640; //320
 */
-static int myWindowWidth=640; //2048;//320
+static int myWindowWidthAsPixel=640; //2048;//320
 //edited by Mike, 20210507
-static int myWindowHeight=640; //2048;//320
+static int myWindowHeightAsPixel=640; //2048;//320
 //static int myWindowHeight=320; //2048;//320//640
 
 //added by Mike, 20201001
@@ -749,7 +749,7 @@ void myMouseMotionAction(int x, int y)
 int main(int argc, char** argv) {
    glutInit(&argc, argv);                 // InglutReshapeWindowitialize GLUT
 //   glutInitDisplayMode (GLUT_DOUBLE | GLUT_RGB); //addded by Mike, 20201202
-   glutInitWindowSize(myWindowWidth, myWindowHeight);   // Set the window's initial width & height
+   glutInitWindowSize(myWindowWidthAsPixel, myWindowHeightAsPixel);   // Set the window's initial width & height
 //   glutInitWindowSize(2048,2048);   // Set the window's initial width & height
 
 	//edited by Mike, 20201202
@@ -764,8 +764,12 @@ int main(int argc, char** argv) {
 	  //Linux Machine
 	  //note: to receive key presses
     myOpenGLCanvas = new OpenGLCanvas;
-    myOpenGLCanvas->init();
-
+	//edited by Mike, 20210517
+//    myOpenGLCanvas->init();
+	//pixel, instead of vertex points
+	//TO-DO: -add: i to be iMyWindowWidthAsPixel, et cetera
+    myOpenGLCanvas->init(myWindowWidthAsPixel,myWindowHeightAsPixel);
+	
 	 	//edited by Mike, 20200930
    	//glutDisplayFunc(display); // Register display callback handler for window re-paint	
 
