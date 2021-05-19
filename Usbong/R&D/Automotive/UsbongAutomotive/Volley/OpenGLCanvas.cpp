@@ -1689,8 +1689,10 @@ myPilotPlayer2->updateToFaceOpponent(myPilot->getX());
 
 	myCanvasEyePosY=-0.5f;
 
-	gluLookAt(myCanvasEyePosX, myCanvasEyePosY, myCanvasEyePosZ+3.0f, // eye position 0.0, 0.0, 3.0
-              myCanvasCenterPosX, myCanvasCenterPosY, myCanvasCenterPosZ, // look-at point
+	//edited by Mike, 20210519
+//	gluLookAt(myCanvasEyePosX, myCanvasEyePosY, myCanvasEyePosZ+3.0f, // eye position 0.0, 0.0, 3.0
+	gluLookAt(myCanvasEyePosX, myCanvasEyePosY, myCanvasEyePosZ+10.0f, // eye position
+			  myCanvasCenterPosX, myCanvasCenterPosY, myCanvasCenterPosZ, // look-at point
               0.0, 1.0, 0.0); // up-direction
 		
 
@@ -1717,8 +1719,16 @@ myPilotPlayer2->updateToFaceOpponent(myPilot->getX());
 //  	glTranslatef(0.0f, -4.0f, 10.0f);
 	//edited by Mike, 20210505
 //  	glTranslatef(0.0f, -6.0f, 10.0f);
-  	glTranslatef(0.0f, -8.0f, 10.0f);
-				
+	//removed by Mike, 20210519
+//  	glTranslatef(0.0f, -8.0f, 10.0f);
+
+	///added by Mike, 20210519
+	//Reference: http://www.starsign.co.jp/item_switch_Volley.html;
+	//last accessed: 20210519
+//	glTranslatef(8.0f, 0.0f, -10.0f);
+//	glTranslatef(8.0f, 2.0f, -6.0f);
+  	glTranslatef(8.0f, -8.0f, -2.0f);
+		
 	//added by Mike, 20210220
 	//3rd-person view
 	//without additional rotate and scale
@@ -1730,6 +1740,9 @@ myPilotPlayer2->updateToFaceOpponent(myPilot->getX());
 	//last accessed: 20210323
 	//edited by Mike, 20210505
 //	glRotatef(30, 1.0f, 0.0f, 0.0f);
+	glRotatef(20, 1.0f, 0.0f, 0.0f);
+
+	//added by Mike, 20210519
 	glRotatef(20, 1.0f, 0.0f, 0.0f);
 		
 		
