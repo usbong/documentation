@@ -72,11 +72,18 @@ TO-DO: -update: this<br/>
 
 ## 1.2) SEGA: SERVICE GAMES
 ### 1.2.1) Sonic 1
+--> Sega Genesis/Megadrive version<br/>
 --> Tunes remind me of existing songs, e.g. Lighthouse Family's "Lost in Space"<br/>
 --> Graphics no buffer<br/>
 --> Art design of beginning stages better than later stages; 5 stages, 3 acts<br/>
 --> You as Sonic move via stages and acts closer to Dr. Robotnic's headquarters, where he makes mechanical robots, even out of your animal friends<br/>
---> preference: Super Mario World<br/>
+--> <b>preference:</b> Super Mario World<br/>
+--> <b>preference:</b> Sonic the Hedgehog (GameGear version)<br/>
+--> verified: the GameGear version back when I was in Elementary School level<br/>
+--> thought: previously, it was too difficult to be unfinishable<br/>
+--> learned: I can finish all the stages after being shown that it can be done by another person (High School level)<br/> 
+--> This was during a field trip in a Philippine island, i.e. Marinduque.<br/>
+--> <b>Recommended Action:</b> verify: Shining Force Gaiden series, e.g. II (GameGear version)<br/>
 
 ## 1.3) KONAMI
 ### 1.3.1) Metal Gear Solid
