@@ -83,7 +83,9 @@ TO-DO: -update: this<br/>
 --> thought: previously, it was too difficult to be unfinishable<br/>
 --> learned: I can finish all the stages after being shown that it can be done by another person (High School level)<br/> 
 --> This was during a field trip in a Philippine island, i.e. Marinduque.<br/>
---> <b>Recommended Action:</b> verify: Shining Force Gaiden series, e.g. II (GameGear version)<br/>
+--> <b>Recommended Actions:</b><br/>
+--> verify: Shining Force Gaiden series, e.g. II (GameGear version)<br/>
+--> verify: Adventure Island series, e.g. II (Family Computer version), with the Dinosaur friends<br/>
 
 ## 1.3) KONAMI
 ### 1.3.1) Metal Gear Solid
