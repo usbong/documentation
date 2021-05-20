@@ -543,7 +543,7 @@ glCullFace(GL_BACK);
 	    glTranslatef(x, y, z);
 //	    glTranslatef(x, 0, z);
 
-		//TO-DO: -reverify: this if necessary
+/* //edited by Mike, 20210520	
 		//added by Mike, 20210520
 		//quad face instruction to auto-draw front of cube
    		glTranslatef(0.0f, 0.0f, -fSideLength);
@@ -558,15 +558,16 @@ glCullFace(GL_BACK);
 		//added due to inverted z-axis based on position of vertices 
 		glRotatef(180, 0.0f, 0.0f, 1.0f);
 
-		//removed by Mike, 20210323
-		//facing the camera
-		//added by Mike, 20201122
-		//added due to inverted x-axis based on position of vertices 
-//		glRotatef(180, 1.0f, 0.0f, 0.0f);
-
+		//removed by Mike, 20210520
+		//TO-DO: -add: auto-identify if quad tile should be standing
 		//added by Mike, 20210324
 		glRotatef(-90, 1.0f, 0.0f, 0.0f);
+*/
 
+		//added by Mike, 20210520
+		//quad tile as floor
+		glTranslatef(-fSideLength/2, 1.0f, -fSideLength*2.5); //where: fSideLength=4.0f 
+		glRotatef(180, 0.0f, 0.0f, 1.0f);
 		
 //		glScalef(0.99f, 0.99f, 0.99f);
 

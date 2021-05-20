@@ -1742,8 +1742,12 @@ myPilotPlayer2->updateToFaceOpponent(myPilot->getX());
 //	glRotatef(30, 1.0f, 0.0f, 0.0f);
 	glRotatef(20, 1.0f, 0.0f, 0.0f);
 
-	//added by Mike, 20210519
-	glRotatef(20, 1.0f, 0.0f, 0.0f);
+	//added by Mike, 20210519; edited by Mike, 20210520
+//	glRotatef(20, 1.0f, 0.0f, 0.0f);
+	//note: horizontal line of 2D pixel x and y-axes appear to be not exact 
+	//with axes of 3D vertex due to angle;
+	//This is with 3D vertex x, y, and z-axes
+	glRotatef(40, 1.0f, 0.0f, 0.0f);
 				
 	//added by Mike, 20210220; edited by Mike, 20210220
 	//2D horizontal-scrolling, vertical-scrolling view

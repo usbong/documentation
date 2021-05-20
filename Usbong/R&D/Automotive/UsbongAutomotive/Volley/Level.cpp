@@ -585,8 +585,7 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 				//removed by Mike, 20210423
 //				glBindTexture( GL_TEXTURE_2D, 0 );
 				
-				//edited by Mike, 20210319
-//				fGridSquareWidth=3.2f;
+
 /*				
 	std::cout << "iColumnCount: " << iColumnCount << "\n";
 	std::cout << "iRowCount: " << iRowCount << "\n";
@@ -607,7 +606,11 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 					draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareWidth*iRowCount, tempText);
 				glTranslatef(0.0f, -1.0f, 0.0f);				
 */
+
+				//added by Mike, 20210520
+				//note: standing quad tile
 				draw_level(fGridSquareWidth*iColumnCount, 1.0f, fGridSquareWidth*iRowCount, tempText);
+
 				
 //computer draws this box
 //				draw_level(fGridSquareWidth*0, 0.0f, fGridSquareWidth*300, tempText);				
