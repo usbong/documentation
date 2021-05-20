@@ -142,6 +142,13 @@ Inoue, Tatsuo. (1986). "Living Together Making Law――Justice as Conversation�
 --> This is even if it appears that we should have hit the targets.<br/>
 <img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Automotive/UsbongAutomotive/screenshots/UsbongAutomotiveUpdatedViewAngleGridStressSmoothAnimationV2V20210118T1519.png" width="60%">
 <img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Automotive/UsbongAutomotive/screenshots/UsbongAutomotiveDoubleWindowSizeAt4096NoticebleDelayInAutoDrawV20210114T1954.png" width="60%">
+<br/>
+--> After re-verification, this known visual problem is due to among others:<br/>
+--> Our view angle<br/>
+--> Example: The horizontal line of the Window's x-axis is equal in position with the green horizontal line of the 3-Dimensional grid (LEFT PHOTOGRAPH).<br/>
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Automotive/UsbongAutomotive/Volley/screenshots/usbongVolleyRotationAngleNotYetUpdatedV20210520T1545.jpg" width="40%">
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Automotive/UsbongAutomotive/Volley/screenshots/usbongVolleyRotationAngleUpdatedV20210520T1545.jpg.jpg" width="40%"><br/>
+--> After adding 40degrees to the rotation angle of the x-axis, the horizontal line of the Window's x-axis is now not equal in position with the green horizontal line of the 3-Dimensional grid (RIGHT PHOTOGRAPH).
 
 ### Part 4
 --> 4.1) Question: How to solve unable to open rusted padlock?<br/>
