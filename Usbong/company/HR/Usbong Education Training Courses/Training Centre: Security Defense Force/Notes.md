@@ -140,8 +140,8 @@ Inoue, Tatsuo. (1986). "Living Together Making Law――Justice as Conversation�
 --> 3.1.2) use oscillating, i.e. wave movement, with rapid firing of beams as projectiles to increase hits<br/>
 --> There is a known problem with what we see, such that we do not hit targets.<br/>
 --> This is even if it appears that we should have hit the targets.<br/>
-<img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Automotive/UsbongAutomotive/screenshots/UsbongAutomotiveUpdatedViewAngleGridStressSmoothAnimationV2V20210118T1519.png" width="60%">
-<img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Automotive/UsbongAutomotive/screenshots/UsbongAutomotiveDoubleWindowSizeAt4096NoticebleDelayInAutoDrawV20210114T1954.png" width="60%">
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Automotive/UsbongAutomotive/screenshots/UsbongAutomotiveUpdatedViewAngleGridStressSmoothAnimationV2V20210118T1519.png" width="40%">
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Automotive/UsbongAutomotive/screenshots/UsbongAutomotiveDoubleWindowSizeAt4096NoticebleDelayInAutoDrawV20210114T1954.png" width="45%">
 <br/>
 --> After re-verification, this known visual problem is due to among others:<br/>
 --> Our view angle<br/>
