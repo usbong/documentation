@@ -594,13 +594,13 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 				//added by Mike, 20210520
 				//TO-DO: -reverify: cause need to execute this when using drawLevelMapInViewPort(...)
 //				draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareWidth*iRowCount, tempText);				
-				//note: "glPushMatrix(); ..." causes additional delay to finish execution
-				//execution faster with "glTranslate()..." as opening and closing
+				//note: "glPushMatrix(); ... glPopMatrix();" execution time appears equal
+				//with "glTranslate()..." as opening and closing
 /*		
         glPushMatrix();
 				glTranslatef(0.0f, 1.0f, 0.0f);				
 				draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareWidth*iRowCount, tempText);
-        glPushMatrix();
+        glPopMatrix();
 */				
 /*				
 				glTranslatef(0.0f, 1.0f, 0.0f);				
