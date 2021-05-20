@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201118
- * @date updated: 20210322
+ * @date updated: 20210520
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -132,6 +132,10 @@ private:
 	int iCurrentLevelMapContainerOffsetX,
 		iCurrentLevelMapContainerOffsetY,
 		iCurrentLevelMapContainerOffsetZ;
+		
+	//added by Mike, 20210520
+	float fGridSquareWidth;
+	float fGridSquareHeight;
 
 	GLboolean test_pow2(GLushort i);
 	void load_tga(char *filename);

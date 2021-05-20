@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201118
- * @date updated: 20210422
+ * @date updated: 20210520
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -203,8 +203,9 @@ void Level::draw_char(GLfloat x, GLfloat y, GLfloat z, char c)
 	}
 */
 	//TO-DO: -update: set of instructions for Quad to Face Camera
-	//removed by Mike, 20210423
+	//edited by Mike, 20210520
 	drawCubeWithBlockTextureQuadFacingCameraOnly(4.0f, tx, ty, tz, x,y,z);
+//	drawCubeWithBlockTextureQuadFacingCameraOnly(4.0f, tx, ty, tz, x,0,z);
 	
 	//added by Mike, 20210423; removed by Mike, 20210423
 //	drawCubeWithBlockTexture(4.0f, tx, ty, tz, x,y,z);	
@@ -230,6 +231,12 @@ void Level::draw_level(GLfloat x, GLfloat y, GLfloat z, char *string)
 */        
 
         glPushMatrix();
+			//added by Mike, 20210520
+//			glTranslatef(0.0f, 1.0f, -1.0f);
+//			glTranslatef(-2.0f, 1.0f, -1.0f);
+			//removed by Mike, 20210520
+//			glTranslatef(-2.0f, 1.0f, -1.0f-fGridSquareWidth); //where: fGridSquareWidth=4.0f 
+				
         	//removed by Mike, 20201010
             //make font larger, added by Mike, Feb28,2007
 //            glScalef(2.0f, 2.0f, 2.0f);//1.5f, 1.5f, 1.5f);
@@ -239,7 +246,10 @@ void Level::draw_level(GLfloat x, GLfloat y, GLfloat z, char *string)
 //            draw_char(x, y, string[0]);
 				//edited by Mike, 20201120
 //            draw_char(x, z, y, string[0]);
+			//edited by Mike, 20210520
             draw_char(x, y, z, string[0]);
+//            draw_char(x, 0, z, string[0]);
+		
     	glPopMatrix();
 
         
@@ -301,8 +311,12 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 	float fGridSquareWidth = 1.0f;
 	float fGridSquareHeight = 1.0f;
 */
+/*	//edited by Mike, 20210520
 	float fGridSquareWidth = 4.0f;
 	float fGridSquareHeight = 4.0f;
+*/
+	fGridSquareWidth = 4.0f;
+	fGridSquareHeight = 4.0f;
 	
 	char tempText[50];
 	
@@ -379,11 +393,14 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 //     iMovementGridX -= MAX_X_AXIS_VIEWPORT/2; 	   
    }
 
-	
+
+/* //edited by Mike, 20210520	
    if (fStepMovemenGridY>=1) {
    	 iMovementGridY = iPrevY-iY;
 	 fStepMovemenGridY=0;
    }
+*/
+	iMovementGridY=0;
 
    //added by Mike, 20210318; removed by Mike, 20210318
 /*	
@@ -419,7 +436,10 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 	
    iCurrentLevelMapContainerOffsetZ += iMovementGridZ; 
    iCurrentLevelMapContainerOffsetX += iMovementGridX; 
-   iCurrentLevelMapContainerOffsetY += iMovementGridY; 
+	
+   //removed by Mike, 20210520
+   //iCurrentLevelMapContainerOffsetY += iMovementGridY; 
+   iCurrentLevelMapContainerOffsetY=0;
 	
 //   std::cout << "iCurrentLevelMapContainerOffsetZ: " << iCurrentLevelMapContainerOffsetZ << "\n";
 //   std::cout << "iCurrentLevelMapContainerOffsetX: " << iCurrentLevelMapContainerOffsetX << "\n";
@@ -567,10 +587,30 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 				
 				//edited by Mike, 20210319
 //				fGridSquareWidth=3.2f;
-				
+/*				
+	std::cout << "iColumnCount: " << iColumnCount << "\n";
+	std::cout << "iRowCount: " << iRowCount << "\n";
+*/				
+				//added by Mike, 20210520
+				//TO-DO: -reverify: cause need to execute this when using drawLevelMapInViewPort(...)
+//				draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareWidth*iRowCount, tempText);				
+				//note: "glPushMatrix(); ..." causes additional delay to finish execution
+				//execution faster with "glTranslate()..." as opening and closing
+/*		
+        glPushMatrix();
+				glTranslatef(0.0f, 1.0f, 0.0f);				
 				draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareWidth*iRowCount, tempText);
+        glPushMatrix();
+*/				
+/*				
+				glTranslatef(0.0f, 1.0f, 0.0f);				
+					draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareWidth*iRowCount, tempText);
+				glTranslatef(0.0f, -1.0f, 0.0f);				
+*/
+				draw_level(fGridSquareWidth*iColumnCount, 1.0f, fGridSquareWidth*iRowCount, tempText);
+				
 //computer draws this box
-//				draw_level(fGridSquareWidth*0, 0.0f, fGridSquareWidth*300, tempText);
+//				draw_level(fGridSquareWidth*0, 0.0f, fGridSquareWidth*300, tempText);				
 			}			
 		}
 	}

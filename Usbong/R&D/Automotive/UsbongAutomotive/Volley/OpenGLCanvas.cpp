@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210519
+ * @date updated: 20210520
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -1744,8 +1744,7 @@ myPilotPlayer2->updateToFaceOpponent(myPilot->getX());
 
 	//added by Mike, 20210519
 	glRotatef(20, 1.0f, 0.0f, 0.0f);
-		
-		
+				
 	//added by Mike, 20210220; edited by Mike, 20210220
 	//2D horizontal-scrolling, vertical-scrolling view
 	//note: Zelda Link's Awakening DX; Gameboy Color
@@ -1976,8 +1975,8 @@ void OpenGLCanvas::drawGridWithZAxis() {
 //	myLevel->drawLevelMapInViewPort(0,0,0,fGridSquareWidth*iRowCountMax,fGridSquareWidth*iColumnCountMax,fGridSquareWidth*iHeightCountMax);
 	myLevel->drawLevelMapInViewPort(myCanvasPosX,myCanvasPosY,myCanvasPosZ,fGridSquareWidth*iRowCountMax,fGridSquareWidth*iColumnCountMax,fGridSquareWidth*iHeightCountMax);
 
+/* //removed by Mike, 20210520
 //added by Mike, 20210311
-//note: computer does not draw this
 	sprintf(tempText,"G");
 
 	//added by Mike, 20201124
@@ -1988,8 +1987,10 @@ void OpenGLCanvas::drawGridWithZAxis() {
 	//for computer to not draw borders
 	glBindTexture( GL_TEXTURE_2D, 0 );
 
-	myLevel->draw_level(5.0f, 0.0f, -420.0f, tempText);    	
-
+	//edited by Mike, 20210520
+//	myLevel->draw_level(5.0f, 0.0f, -420.0f, tempText);    	
+	myLevel->draw_level(fGridSquareWidth*4, 0.0f, 0.0f, tempText);    	
+*/
 	
 /* //removed by Mike, 20210309	
 	//added by Mike, 20201124
@@ -2061,7 +2062,17 @@ void OpenGLCanvas::drawGridWithZAxis() {
 	
 	glBindTexture( GL_TEXTURE_2D, LEVEL_TEXTURE );
 	sprintf(tempText,"M");	
-	myLevel->draw_level(fGridSquareWidth*3.0f, 0.0f, fGridSquareWidth*3.0f, tempText);    	
+	
+//	glTranslatef(-3.5f, 0.0f, -3.2f);
+//	glTranslatef(-3.2f, 3.2f, -3.2f);
+//	glTranslatef(-3.2f, 3.2f, -3.2f);
+	
+	printf("fGridSquareWidth: %f\n",fGridSquareWidth);
+	
+//removed by Mike, 20210520	
+//	myLevel->draw_level(fGridSquareWidth*3.0f, 0.0f, fGridSquareWidth*3.0f, tempText);    	
+//	myLevel->draw_level(fGridSquareWidth*4.0f, -1.0f, fGridSquareWidth*11.0f, tempText);    	
+	myLevel->draw_level(fGridSquareWidth*4.0f, 0.0f, fGridSquareWidth*11.0f, tempText);    	
 
 	//removed by Mike, 20210402	
 //    glColor3f(0.325f, 0.325f, 0.325f); // gray

@@ -539,10 +539,19 @@ glCullFace(GL_BACK);
 
 		//TO-DO: -reverify: cause of excess cube translation when moving camera	
 //		glLineWidth(2.0f);
+		//edited by Mike, 20210520
 	    glTranslatef(x, y, z);
+//	    glTranslatef(x, 0, z);
 
 		//TO-DO: -reverify: this if necessary
+		//added by Mike, 20210520
+		//quad face instruction to auto-draw front of cube
    		glTranslatef(0.0f, 0.0f, -fSideLength);
+	
+		//added by Mike, 20210520
+//		glTranslatef(-2.0f, 1.0f, -1.0f-fSideLength); //where: fSideLength=4.0f 
+		glTranslatef(-2.0f, 0.0f, -1.0f-fSideLength); //where: fSideLength=4.0f 
+	
 
 		//due to top face not drawn
 		//TO-DO: -reverify: if we do not add top face 
