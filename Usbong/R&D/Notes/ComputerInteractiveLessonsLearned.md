@@ -521,10 +521,11 @@ Tunay na tapang ang nakatayong harapin ang nakatatakot na bagay, 'di ba?<br/>
 --> Halimbawa:<br/>
 --> Baretta (Pagong na may Pakpak; Hanap-buhay: Naghahatid ng mga Sulat)<br/>
 --> Maaari ka niyang buhatin upang makarating kayo sa pook na hindi mo bilang Mario magagamitan ng JUMP command.<br/>
---> Maaalala ang mga sa Suikoden, na kung saan may dinadagdag na tulong ang mga nakama ng inyong samahan.<br/>
---> Mga Halimbawa: Si "Stallion": Nagpapabilis ng inyong lakad; Si "Sergei": Nagdadagdag ng elevator.<br/>
+--> Maaalala ang mga sa Suikoden, na kung saan may idinadagdag na tulong ang mga nakama ng inyong samahan.<br/>
+--> Mga Halimbawa: Si "Stallion": Nagpapabilis ng inyong lakad;<br/> 
+--> Si "Sergei": Nagdadagdag ng elevator, kanyang likha sa daigdig ng Suikoden.<br/>
 --> Maaalala rin ang sa Legend of Zelda, e.g. DX Gameboy Color version,<br/> 
---> bagama't item, e.g. pluma/feather: magbibigay sa iyo bilang si Link ng kakayan na gumawa ng JUMP.<br/>
+--> bagama't item, e.g. pluma/feather: magbibigay sa iyo bilang si Link ng kakayanan na gumawa ng JUMP.<br/>
 
 #### 1.9.1.5.1) ランクアップ (rank up)
 --> Sa inyong paglalakbay, maaari ninyong pataasin ang rango ng iyong nakama.<br/>
@@ -536,9 +537,9 @@ Tunay na tapang ang nakatayong harapin ang nakatatakot na bagay, 'di ba?<br/>
 --> Hanap-buhay: Binabantayan ang mga batang Yosshi-)<br/>
 --> Magkakaroon ng Command na maaari ka niyang gawan ng tubig na depensa.<br/>
 --> Sa ultra rank, tubig na atake naman.<br/>
---> Maaalala sa pananalita ni Obuku, ang mga taga-shikoku island ng bansang Hapon.<br/>
---> Sa simula, mukhang pananalita ng mga taga-kansai, subalit may "ken" sa huli.<br/>
---> Ginagamit ito bilang kahulugan ng "kasi"; halimbawa: kawaii ken; i.e. kyut kasi<br/>
+--> Maaalala sa pananalita ni Obuku, ang mga taga-Shikoku island ng bansang Hapon.<br/>
+--> Sa simula, mukhang pananalita ng mga taga-Kansai, subalit may "ken" sa huli.<br/>
+--> Ginagamit ito bilang kahulugan ng "kasi"; halimbawa: かわいいけん(kawaii ken; "nakaaakit kasi")<br/>
 
 ## 2) Hardware
 ## 2.1) SONY PlayStation Portable (PSP)
