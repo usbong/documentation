@@ -607,11 +607,14 @@ bool OpenGLCanvas::init(int myWindowWidthAsPixel, int myWindowHeightAsPixel)
 
 	//added by Mike, 20201213; edited by Mike, 20210502
 	//std::vector<MyDynamicObject*> v;	
-	vMyDynamicObjectContainer.push_back(myRobotShip);
+	//removed by Mike, 20210521
+//	vMyDynamicObjectContainer.push_back(myRobotShip);
 	
 	//added by Mike, 20210502
 	vMyDynamicObjectContainer.push_back(myPilot);
-	vMyDynamicObjectContainer.push_back(myPilotPlayer2);
+
+	//removed by Mike, 20210521
+	//vMyDynamicObjectContainer.push_back(myPilotPlayer2);
 
 	
 	
@@ -620,10 +623,12 @@ bool OpenGLCanvas::init(int myWindowWidthAsPixel, int myWindowHeightAsPixel)
 		vMyDynamicObjectContainer.push_back(myBeam[i]);
 	}
 */
-
+	//removed by Mike, 20210521
+/*	
 	for (int i=0; i<MAX_ASTEROID; i++) { //16			
 		vMyDynamicObjectContainer.push_back(myAsteroid[i]);
 	}	
+*/
 	
 /*
 	myDynamicObjectContainer[0]=myPilot;
@@ -1758,8 +1763,12 @@ myPilotPlayer2->updateToFaceOpponent(myPilot->getX());
 */
 	//-----
 	
-	//added by Mike, 20210519
-	drawGridWithZAxis();
+		//added by Mike, 20210519
+		drawGridWithZAxis();
+
+	//added by Mike, 20210521; removed by Mike, 20210521
+//	glRotatef(-40, 1.0f, 0.0f, 0.0f);
+		
 		
 /*	//removed by Mike, 20210323
 //added by Mike, 20210311
@@ -1813,22 +1822,36 @@ myPilotPlayer2->updateToFaceOpponent(myPilot->getX());
 			  }
             }
         glPopMatrix();       
+*/
+	//added by Mike, 20210521
+	//close glRotate
+	glRotatef(-8, 1.0f, 0.0f, 0.0f);
 		
+		//added by Mike, 20210521
 		//z-sort, i.e. auto-draw objects based on z position;
 		//objects with higher z positions are auto-drawn first;
 		//these are objects at the back of those that have lower z positions
 		//MyDynamicObject *myDynamicObjectContainerSorted[MAX_DYNAMIC_OBJECT];		
 		//std::vector<MyDynamicObject*> v;
- //removed by Mike, 20210507; TO-DO: -reverify: sortByZPosition(...)
 		//added by Mike, 20210509
-		std::sort(vMyDynamicObjectContainer.begin(), vMyDynamicObjectContainer.end(), sortByZPosition());
-		
-		for (int i=0; i<MAX_DYNAMIC_OBJECT; i++) {			
-    		glPushMatrix();
-				vMyDynamicObjectContainer[i]->draw();
-    		glPopMatrix();
-		}
-*/		
+//		std::sort(vMyDynamicObjectContainer.begin(), vMyDynamicObjectContainer.end(), sortByZPosition());
+	
+		//TO-DO: -reverify: if we can delete open and close glTranslate, et cetera,
+		//which also exist in drawGridWithZAxis(...)
+//		glTranslatef(-fGridSquareWidth*(iRowCountMax-4), 0.0f, -fGridSquareHeight*(iColumnCountMax-1));		
+//		glTranslatef(-fGridSquareWidth*(iRowCountMax-6), 0.0f, -fGridSquareHeight*(iColumnCountMax+4));		
+		glTranslatef(-fGridSquareWidth*(iRowCountMax-5), 0.0f, -fGridSquareHeight*(iColumnCountMax+5));		
+
+		glTranslatef(-30, 0.0f, -30);		
+			for (int i=0; i<MAX_DYNAMIC_OBJECT; i++) {			
+				glPushMatrix();
+					vMyDynamicObjectContainer[i]->draw();
+				glPopMatrix();
+			}
+		glTranslatef(30, 0.0f, -30);
+//		glTranslatef(+fGridSquareWidth*(iRowCountMax-4), 0.0f, +fGridSquareHeight*(iColumnCountMax-1));				
+//		glTranslatef(+fGridSquareWidth*(iRowCountMax-6), 0.0f, +fGridSquareHeight*(iColumnCountMax+4));		
+		glTranslatef(+fGridSquareWidth*(iRowCountMax-5), 0.0f, +fGridSquareHeight*(iColumnCountMax+5));				
 	}
 }
 

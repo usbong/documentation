@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20210514
- * @date updated: 20210516
+ * @date updated: 20210521
  * @website address: http://www.usbong.ph
  *
  * Acknowledgments:
@@ -50,7 +50,9 @@
 //TO-DO: -add: texture definitions in PolygolUtils
 //edited by Mike, 20210514
 //#define MIKE_TEXTURE_A 7 
-#define BUTTON_TEXTURE_A 7
+//removed by Mike, 20210521
+//added in OpenGLCanvas.h
+//#define BUTTON_TEXTURE_A 7
 
 #ifdef _WIN32
 	#define MAX_WAIT_COUNT 5 //Windows Machine

@@ -81,6 +81,10 @@
 //added by Mike, 20210507
 #define ROBOT_TEXTURE_A 10
 
+//added by Mike, 20210521
+#define BUTTON_TEXTURE_A 11
+
+
 #define MAX_ENEMY 2
 
 //edited by Mike, 20201013
@@ -105,7 +109,9 @@
 
 //edited by Mike, 20210206; edited by Mike, 20210502
 //#define MAX_DYNAMIC_OBJECT 18 //remove beams x32
-#define MAX_DYNAMIC_OBJECT 19 //add pilotPlayer2
+//edited by Mike, 20210521
+//#define MAX_DYNAMIC_OBJECT 19 //add pilotPlayer2
+#define MAX_DYNAMIC_OBJECT 1 //pilotPlayer1 only
 
 //#define MAX_DYNAMIC_OBJECT 17 //remove beams x32
 

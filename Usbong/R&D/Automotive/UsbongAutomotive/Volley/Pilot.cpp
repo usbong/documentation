@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210506
+ * @date updated: 20210521
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -508,14 +508,20 @@ Pilot::Pilot(float xPos, float yPos, float zPos, int windowWidth, int windowHeig
 //    myXPos=0.0f+myWidth*3;
 	//edited by Mike, 20210503
 //    myXPos=0.0f-myWidth*10;
-    myXPos=0.0f-myWidth*9;
+	//edited by Mike, 20210521
+//    myXPos=0.0f-myWidth*9;
+	//edited by Mike, 20210521
+//	myXPos=0.0f;
+	myXPos=xPos;
 	
     //edited by Mike, 2020116
 //    myYPos=0.0f+myHeight*3;
 
 	//added by Mike, 20210503
 	//myZPos updated again in another location
-    myZPos=0.0f+myHeight*3;
+	//edited by Mike, 20210521	
+//    myZPos=0.0f+myHeight*3;
+    myZPos=0.0f;
 
 	
 	//added by Mike, 20201115
@@ -4155,118 +4161,37 @@ void Pilot::drawPilot()
 void Pilot::drawPilotAsQuadWithTexture()
 {
     glTranslatef(myXPos, myYPos, myZPos);
-
-	//added by Mike, 20210507
-//	glTranslatef(0.0f, 0.0f, -2.0f); //negative to move backward in z-axis
+//	printf(">> myXPos:%f, myYPos:%f, myZPos:%f;\n",myXPos,myYPos,myZPos);
 	
-//	drawPilotObject();
-
-	
-/*	//removed by Mike, 20210423
-    if (currentFacingState==FACING_LEFT_AND_UP) {
-        glRotatef(45, 0.0f, 1.0f, 0.0f);    	
-	}
-	else if (currentFacingState==FACING_RIGHT_AND_UP) {
-        glRotatef(-45, 0.0f, 1.0f, 0.0f);    	
-	}
-	else if (currentFacingState==FACING_LEFT_AND_DOWN) {
-        glRotatef(135, 0.0f, 1.0f, 0.0f);    	
-	}
-	else if (currentFacingState==FACING_RIGHT_AND_DOWN) {
-        glRotatef(-135, 0.0f, 1.0f, 0.0f);    	
-	}
-    else if (currentFacingState==FACING_LEFT) 
-    {  
-        glRotatef(90, 0.0f, 1.0f, 0.0f);
-    } 
-    else if (currentFacingState==FACING_RIGHT) 
-    {
-        glTranslatef(0.0f, 0.0f, -myWidth/3); 
-        glRotatef(-90, 0.0f, 1.0f, 0.0f);
-    }
-    else if (currentFacingState==FACING_UP)
-    {
-        //glTranslatef(-myWidthX/3, 0.0f, 0.0f); 
-    }
-    else if (currentFacingState==FACING_DOWN)
-    {
-        glTranslatef(myWidth/3, 0.0f, 0.0f); 
-        glRotatef(180, 0.0f, 1.0f, 0.0f);
-    }
-*/
-	
-	//added by Mike, 20210505			
-//	glScalef(2.0f, 2.0f, 2.0f);	
-//	glScalef(1.5f, 1.5f, 1.5f);
-	
-	//edited by Mike, 20210507
-//	glScalef(1.2f, 1.2f, 1.2f); //noticeable vertical movement; reverify scale to trans ratio	
-//	glScalef(0.8f, 0.8f, 0.8f);
+/* //removed by Mike, 20210521	
 	glScalef(1.2f, 1.2f, 1.2f); //noticeable vertical movement; reverify scale to trans ratio	
-	
-	
-//	glScalef(1.3f, 1.3f, 1.3f);	//noticeable vertical movement	
-//	glScalef(1.4f, 1.4f, 1.4f);	
-	
-	//added by Mike, 20210505				
-	//note: scale: 2.0f; z-axis: -0.75f
-/*	glScalef(2.0f, 2.0f, 2.0f);	
-    glTranslatef(0.0f, 0.0f, -0.75f); 
-*/	
-/*	
-	glScalef(1.5f, 1.5f, 1.5f);	
-    glTranslatef(0.0f, 0.0f, -0.5625f); 
-*/
 	
 	float fDistanceBetweenPlayer1And2 = sqrt((getX()-myOpponentXPos)*(getX()-myOpponentXPos));
 	printf("fDistanceBetweenPlayer1And2: %f",fDistanceBetweenPlayer1And2);
 
-//	if (fDistanceBetweenPlayer1And2<10.0f) {
-//	if (fDistanceBetweenPlayer1And2<7.5f) {	
-//	if (fDistanceBetweenPlayer1And2<7.9f) {			
-	//edited by Mike, 20210506
-//		float fScale=1.0f+(1.0f-(fDistanceBetweenPlayer1And2/10.0f));
-		float fScale=1.0f+(1.0f-(fDistanceBetweenPlayer1And2/20.0f));
+	float fScale=1.0f+(1.0f-(fDistanceBetweenPlayer1And2/20.0f));
 
-		//edited by Mike, 20210506
-		if (fScale>2.0f) {
-			fScale=2.0f;
-		}
+	//edited by Mike, 20210506
+	if (fScale>2.0f) {
+		fScale=2.0f;
+	}
 		
-/*	
-		if (fScale>1.6f) {
-			fScale=1.6f;
-		}
-*/	
-/*		else if (fScale<1.5f) {
-			fScale=1.5f;
-		}
-*/		
-  //noticeable vertical movement		
-		else if (fScale<1.2f) {
-			fScale=1.2f;
-		}
-/*  //noticeable vertical movement		
-		else if (fScale<1.3f) {
-			fScale=1.3f;
-		}
-*/	
-/*		else if (fScale<1.4f) {
-			fScale=1.4f;
-		}
-*/	
-		//note: ratio: 1.0f : 0.375f; 2.0f : 0.75f
-		//where: 1.0f = scale
-		//0.375f = trans
-		float fTrans= fScale*0.375f;
+  	//noticeable vertical movement		
+	else if (fScale<1.2f) {
+		fScale=1.2f;
+	}
+
+	//note: ratio: 1.0f : 0.375f; 2.0f : 0.75f
+	//where: 1.0f = scale
+	//0.375f = trans
+	float fTrans= fScale*0.375f;
 //		float fTrans= fScale*0.25f;
-		
-		printf("fScale: %f",fScale);		
-		
-		glScalef(fScale, fScale, fScale);			
-		glTranslatef(0.0f, 0.0f, -fTrans); //negative to move backward in z-axis
-//	}
-	
+
+	printf("fScale: %f",fScale);		
+
+	glScalef(fScale, fScale, fScale);			
+	glTranslatef(0.0f, 0.0f, -fTrans); //negative to move backward in z-axis
+*/	
 	
 	
     switch (currentState)
@@ -4362,12 +4287,14 @@ glPushMatrix();
     glBindTexture(GL_TEXTURE_2D, MIKE_TEXTURE_A);		
 
 //	glTranslatef(30.0f, 0.0f, 25.0f); //removed by Mike, 20210424
-	glRotatef(180, 1.0f, 0.0f, 0.0f);
+	glRotatef(180, 1.0f, 0.0f, 0.0f);					
 
 	//added by Mike, 20210422; edited by Mike, 20210424
 	//TO-DO: -reverify: quad size and texture size
 //    glScalef(1.5f, 1.5f, 1.0f);	
-    glScalef(1.2f, 2.0f, 1.0f);	
+	//edited by Mike, 20210521
+//  glScalef(1.2f, 2.0f, 1.0f);	
+    glScalef(5.0f, 5.0f, 1.0f);	
 
 /*	//removed by Mike, 20210423	
 	//edited by Mike, 20210420
@@ -4890,6 +4817,9 @@ void Pilot::setDashStateWithKeyDown(int keyCode) {
 	}
 }
 
+//added by Mike, 20210521
+//TO-DO: -reverify: dash for KEY's A and D
+
 //added by Mike, 20201226; edited by Mike, 20210128
 //void Pilot::autoVerifyDashStateWithKeyDown(int keyCode) {
 void Pilot::autoVerifyDashStateWithKeyDown() { //int keyCode) {
@@ -5228,8 +5158,9 @@ void Pilot::move(int key)
 	//added by Mike, 20210121
 	else if (bIsExecutingDefend) {
 	}	
-	else {    
-/*	//removed by Mike, 20210502		
+	else {
+//added by Mike, 20210521		
+//----------		
           //added by Mike, 20201001; edited by Mike, 20201116
 //	      myYPos+=-stepY;
 	      myZPos+=-stepZ;
@@ -5244,7 +5175,8 @@ void Pilot::move(int key)
 	//			if ((bIsExecutingDashArray[KEY_W])) {
 					myZPos+=-stepZ;
 				}
-*/				
+//added by Mike, 20210521		
+//----------		
 	}
 	
 	      //added by Mike, 20201201; edited by Mike, 20201225
@@ -5258,8 +5190,9 @@ void Pilot::move(int key)
 		  }
 		  
 		  //added by Mike, 20201226; edited by Mike, 20210502
-//   		  currentMovingState=WALKING_MOVING_STATE;
-		  currentMovingState=IDLE_MOVING_STATE;		    
+		  //edited by Mike, 20210521
+   		  currentMovingState=WALKING_MOVING_STATE;
+//		  currentMovingState=IDLE_MOVING_STATE;		    
           break;
           
 //     case KEY_DOWN:  //removed by Mike, 20210130
@@ -5276,7 +5209,8 @@ void Pilot::move(int key)
 	else if (bIsExecutingDefend) {
 	}
 	else {
-/* //removed by Mike, 20210502		
+//added by Mike, 20210521		
+//----------		
           //added by Mike, 20201001; edited by Mike, 20201116
 //	      myYPos+=stepY;
 	      myZPos+=stepZ;
@@ -5286,7 +5220,8 @@ void Pilot::move(int key)
 		if ((bIsExecutingDashArray[KEY_S])) {		
 	    	myZPos+=stepZ;
 		}
-*/				
+//added by Mike, 20210521		
+//----------		
 	}
 	      //added by Mike, 20201201; edited by Mike, 20201225
           //currentFacingState=FACING_DOWN;
@@ -5299,8 +5234,9 @@ void Pilot::move(int key)
 		  }
 
 		  //added by Mike, 20201226; edited by Mike, 20210502
-//   		currentMovingState=WALKING_MOVING_STATE;
-			currentMovingState=IDLE_MOVING_STATE;		   
+		  //edited by Mike, 20210521
+   		currentMovingState=WALKING_MOVING_STATE;
+//	currentMovingState=IDLE_MOVING_STATE;		   
           break;      
 //     case KEY_LEFT: //removed by Mike, 20210130
      case KEY_A: //added by Mike, 20210128		   
@@ -5334,6 +5270,9 @@ void Pilot::move(int key)
 				myXPos+=-stepX;
 			}
 */		
+		
+//edited by Mike, 20210521
+/*		
 		//do not execute step if already at border
 		if ((myXPos) <= -21.0f) {
 		}
@@ -5347,7 +5286,13 @@ void Pilot::move(int key)
 					myXPos+=-stepX;
 				}
 		}
-			
+*/			
+		myXPos+=-stepX;
+
+		if ((bIsExecutingDashArray[KEY_A])) {		
+			myXPos+=-stepX;
+		}
+		
 	}
 
 
@@ -5400,6 +5345,8 @@ void Pilot::move(int key)
 				myXPos+=stepX;
 			}
 */
+//edited by Mike, 20210521
+/*				
 //		printf("myXPos: %f",myXPos);
 		//do not execute step if already at border
 		if ((myXPos) >= 4.0f) {
@@ -5410,6 +5357,12 @@ void Pilot::move(int key)
 			if ((bIsExecutingDashArray[KEY_D])) {
 				myXPos+=stepX;
 			}
+		}	
+*/		
+		myXPos+=stepX;
+
+		if ((bIsExecutingDashArray[KEY_D])) {
+			myXPos+=stepX;
 		}		
 	}
 		   
