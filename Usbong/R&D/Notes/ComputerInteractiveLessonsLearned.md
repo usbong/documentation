@@ -475,7 +475,7 @@ TO-DO: -update: this<br/>
 <br/>
 --> Sagot: Makipaglaban, habang inaalala ang mga gabay na ito:<br/>
 --> 1.9.1.4.1) Hindi epektibo na paliitin siya upang kalahati na lamang ang lakas ng kanyang atake.<br/>
---> 1.9.1.4.2) Gumamit ng atake na pinawawalang-bisa ang kanyang depensa upang maging katumbas nito "0", i.e. wala; ぼうぎょをムシして、「０」となる<br/>
+--> 1.9.1.4.2) Gumamit ng atake na pinawawalang-bisa ang kanyang depensa upang maging katumbas nito "0", i.e. wala; 敵のぼうぎょ力をムシして、「０」となる<br/>
 --> 1.9.1.4.3) Hindi epektibo na palakasin pa ninyo ang inyong depensa.<br/>
 --> 1.9.1.4.4) Hindi epektibo na pahinain ninyo ang lakas ng kanyang atake, kasi mas maiging umatake na kayo; bagama't sinubukan ko ito ng isang beses sa simula.<br/>
 --> 1.9.1.4.5) Hindi epektibo na palakasin pa ninyo ang inyong atake, kasi mas maiging umatake na kayo; bagama't sinubukan ko rin ito ng isang beses sa simula.<br/>
@@ -515,6 +515,30 @@ Tunay na tapang ang nakatayong harapin ang nakatatakot na bagay, 'di ba?<br/>
 ### Recommended Actions: 
 --> verify: [ARCADE LAB](https://www.youtube.com/channel/UCy53rIJfxqI2S3qohAdfvvA): [ザ・シンプソンズ（KONAMI / 1991）](https://www.youtube.com/watch?v=_FfLmrNaudI&list=PLEB4zro_ieO0QLObEFmwpxdG4-MKA7MzI&index=2); ARCADE MACHINE<br/>
 --> verify: ＭＯＴＨＥＲ２ギーグの逆襲（NINTENDO / 1994）; Super Family Computer (SFC)
+
+### 1.9.1.5) なかま (nakama; team partners)
+--> Tumutulong upang makasulong ang inyong pangkat, gawa ng kanilang dagdag na kakayanan.<br/>
+--> Halimbawa:<br/>
+--> Baretta (Pagong na may Pakpak; Hanap-buhay: Naghahatid ng mga Sulat)<br/>
+--> Maaari ka niyang buhatin upang makarating kayo sa pook na hindi mo bilang Mario magagamitan ng JUMP command.<br/>
+--> Maaalala ang mga sa Suikoden, na kung saan may dinadagdag na tulong ang mga nakama ng inyong samahan.<br/>
+--> Mga Halimbawa: Si "Stallion": Nagpapabilis ng inyong lakad; Si "Sergei": Nagdadagdag ng elevator.<br/>
+--> Maaalala rin ang sa Legend of Zelda, e.g. DX Gameboy Color version,<br/> 
+--> bagama't item, e.g. pluma/feather: magbibigay sa iyo bilang si Link ng kakayan na gumawa ng JUMP.<br/>
+
+#### 1.9.1.5.1) ランクアップ (rank up)
+--> Sa inyong paglalakbay, maaari ninyong pataasin ang rango ng iyong nakama.<br/>
+--> Ito'y upang makatulong sila sa labanan.<br/>
+--> Paalala: Hindi sabay-sabay ang pagtaas ng rango; May sequence.<br/>
+--> Ibig sabihin, pipiliin mo bilang si Mario kung sino ang una mong tataasan ng rango.<br/>
+--> Kapag tumaas ang rango ng nakama, magkakaroon siya ng dagdag na Command.<br/>
+--> Halimbawa: Obuku (Isda sa Isla ng mga Yosshi- Dinosaur;<br/>
+--> Hanap-buhay: Binabantayan ang mga batang Yosshi-)<br/>
+--> Magkakaroon ng Command na maaari ka niyang gawan ng tubig na depensa.<br/>
+--> Sa ultra rank, tubig na atake naman.<br/>
+--> Maaalala sa pananalita ni Obuku, ang mga taga-shikoku island ng bansang Hapon.<br/>
+--> Sa simula, mukhang pananalita ng mga taga-kansai, subalit may "ken" sa huli.<br/>
+--> Ginagamit ito bilang kahulugan ng "kasi"; halimbawa: kawaii ken; i.e. kyut kasi<br/>
 
 ## 2) Hardware
 ## 2.1) SONY PlayStation Portable (PSP)
