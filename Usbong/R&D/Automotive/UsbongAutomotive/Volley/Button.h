@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20210514
- * @date updated: 20210521
+ * @date updated: 20210522
  * @website address: http://www.usbong.ph
  *
  * Acknowledgments:
@@ -62,6 +62,11 @@
 	#define MAX_WAIT_COUNT 5
 #endif
 
+//added by Mike, 20210522
+#if defined(__APPLE__)
+    #define MAX_WAIT_COUNT 5
+#endif
+
 //edited by Mike, 20210129
 //TO-DO: -add: robotship dash background movement animation
 //note: start at 0
@@ -80,6 +85,11 @@
 	//edited by Mike, 20210204; edited again by Mike, 20210219
 //	#define MAX_DIRECTIONAL_KEY_DASH_COUNT 6//4 //10 //added by Mike, 20210128
 	#define PILOT_MAX_DIRECTIONAL_KEY_DASH_COUNT 4 //added by Mike, 20210128
+#endif
+
+//added by Mike, 20210522
+#if defined(__APPLE__)
+    #define PILOT_MAX_DIRECTIONAL_KEY_DASH_COUNT 4
 #endif
 
 //added by Mike, 20210516

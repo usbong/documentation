@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201019
- * @date updated: 20210423
+ * @date updated: 20210522
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -30,10 +30,21 @@
 
 //#include <SDL.h>
 
-//edited by Mike, 20201019
-#include <GL/gl.h>
-#include <GL/glut.h> 
-#include <GL/glu.h>
+//edited by Mike, 20201209
+/*
+ #include <GL/gl.h>
+ #include <GL/glut.h>
+ #include <GL/glu.h>
+ */
+#if defined(__APPLE__)
+    #include <OpenGL/gl.h>
+    #include <OpenGL/glu.h>
+    #include <GLUT/glut.h>
+#else
+    #include <GL/gl.h>
+    #include <GL/glu.h>
+    #include <GL/glut.h>
+#endif
 
 //added by Mike, 20201114; removed by Mike, 20201114
 // disable implicit float-double casting

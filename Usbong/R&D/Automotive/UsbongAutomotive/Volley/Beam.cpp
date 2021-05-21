@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201013
- * @date updated: 20210322
+ * @date updated: 20210522
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -36,10 +36,23 @@
 #endif
 */
 
+//edited by Mike, 20201209
+/*
 #include <GL/gl.h>
 #include <GL/glut.h>
 #include <GL/glu.h>
- 
+*/
+#if defined(__APPLE__)
+    #include <OpenGL/gl.h>
+    #include <OpenGL/glu.h>
+    #include <GLUT/glut.h>
+#else
+    #include <GL/gl.h>
+    #include <GL/glu.h>
+    #include <GL/glut.h>
+#endif
+
+
 #include <stdio.h>
 #include <math.h>
 
