@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210520
+ * @date updated: 20210521
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -2078,6 +2078,14 @@ void OpenGLCanvas::drawGridWithZAxis() {
 //	myLevel->draw_level(fGridSquareWidth*4.0f, -1.0f, fGridSquareWidth*11.0f, tempText);    	
 	myLevel->draw_level(fGridSquareWidth*4.0f, 0.0f, fGridSquareWidth*11.0f, tempText);    	
 
+/* //removed by Mike, 20210521	
+	//added by Mike, 20210521	
+	sprintf(tempText,"H");	
+	//column, row 
+//	myLevel->draw_level(fGridSquareWidth*1.0f, 0.0f, fGridSquareWidth*5.0f, tempText);    	
+	myLevel->draw_level(fGridSquareWidth*3.0f, 0.0f, fGridSquareWidth*7.0f, tempText);    	
+
+*/	
 	//removed by Mike, 20210402	
 //    glColor3f(0.325f, 0.325f, 0.325f); // gray
 	

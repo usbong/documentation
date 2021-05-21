@@ -131,11 +131,14 @@ private:
 	//added by Mike, 20210309
 	int iCurrentLevelMapContainerOffsetX,
 		iCurrentLevelMapContainerOffsetY,
-		iCurrentLevelMapContainerOffsetZ;
+		iCurrentLevelMapContainerOffsetZ;	
 		
 	//added by Mike, 20210520
 	float fGridSquareWidth;
 	float fGridSquareHeight;
+	
+	//added by Mike, 20210521
+	int iLevelTextureObject;
 
 	GLboolean test_pow2(GLushort i);
 	void load_tga(char *filename);
@@ -163,6 +166,8 @@ public:
 	*/
 	//TO-DO: -update: this
 	void draw_char(GLfloat x, GLfloat y, GLfloat z, char c);
+	void draw_charPrev(GLfloat x, GLfloat y, GLfloat z, char c); //added by Mike, 20210521
+	
 	void draw_level(GLfloat x, GLfloat y, GLfloat z, char *string);	
 	
 	//added by Mike, 20210208

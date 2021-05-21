@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201118
- * @date updated: 20210520
+ * @date updated: 20210521
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -151,7 +151,7 @@ void Level::load_tga(char *filename)
 //note: 10x16 each font character/level texture
 //edited by Mike, 20201117
 //void draw_char(GLfloat x, GLfloat y, char c)
-void Level::draw_char(GLfloat x, GLfloat y, GLfloat z, char c)
+void Level::draw_charPrev(GLfloat x, GLfloat y, GLfloat z, char c)
 {
 	//edited by Mike, 20201117
 //    GLfloat tx, ty;
@@ -203,12 +203,61 @@ void Level::draw_char(GLfloat x, GLfloat y, GLfloat z, char c)
 	}
 */
 	//TO-DO: -update: set of instructions for Quad to Face Camera
-	//edited by Mike, 20210520
-	drawCubeWithBlockTextureQuadFacingCameraOnly(4.0f, tx, ty, tz, x,y,z);
+	//edited by Mike, 20210521
+//	drawCubeWithBlockTextureQuadFacingCameraOnly(4.0f, tx, ty, tz, x,y,z);
 //	drawCubeWithBlockTextureQuadFacingCameraOnly(4.0f, tx, ty, tz, x,0,z);
-	
+	drawCubeWithBlockTextureQuadFloor(4.0f, tx, ty, tz, x,y,z);
+		
 	//added by Mike, 20210423; removed by Mike, 20210423
 //	drawCubeWithBlockTexture(4.0f, tx, ty, tz, x,y,z);	
+}
+
+//added by Mike, 20210521
+//TO-DO: -update: this
+//note: 10x16 each font character/level texture
+//edited by Mike, 20201117
+//void draw_char(GLfloat x, GLfloat y, char c)
+void Level::draw_char(GLfloat x, GLfloat y, GLfloat z, char c)
+{
+	//edited by Mike, 20201117
+//    GLfloat tx, ty;
+    GLfloat tx, ty, tz;
+	
+	//added by Mike, 20210521
+/*	//removed by Mike, 20210521	
+	if (c == 'H') {
+		//note: 4.0f = grid square fSideLength
+//		drawCubeWithBlockTextureQuadFloorSpecial(4.0f, tx, ty, tz, x,y,z, c);
+		drawCubeWithBlockTextureQuadFloor(4.0f, tx, ty, tz, x,y,z);
+		
+	}
+	else {		
+*/	
+		// check if the character is valid
+		if (c < ' ' || c > '~')
+			return;
+
+		// subtract 32, since the first character in the font texture
+		// is the space (ascii value 32)
+		c = c - 32;
+
+		// determine texture coordinates; this assumes that each character
+		// in the font texture has a width-height ratio of 10:16 (see the
+		// font.tga file to understand what I mean)
+		tx = c % 12 * 0.078125f;
+		ty = 0.875f - (c / 12 * 0.125f);
+		//added by Mike, 20201117
+	//    tz = 0.875f - (c / 12 * 0.125f);
+
+		//TO-DO: -update: set of instructions for Quad to Face Camera
+		//edited by Mike, 20210521
+	//	drawCubeWithBlockTextureQuadFacingCameraOnly(4.0f, tx, ty, tz, x,y,z);
+	//	drawCubeWithBlockTextureQuadFacingCameraOnly(4.0f, tx, ty, tz, x,0,z);
+		drawCubeWithBlockTextureQuadFloor(4.0f, tx, ty, tz, x,y,z);
+	
+/*	//removed by Mike, 20210521	
+	}	
+*/	
 }
 
 //edited by Mike, 20201118
@@ -585,6 +634,8 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 				//removed by Mike, 20210423
 //				glBindTexture( GL_TEXTURE_2D, 0 );
 				
+				//added by Mike, 20210521
+				glBindTexture( GL_TEXTURE_2D, iLevelTextureObject );
 
 /*				
 	std::cout << "iColumnCount: " << iColumnCount << "\n";
@@ -608,13 +659,33 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 */
 
 				//added by Mike, 20210520
-				//note: standing quad tile
 				draw_level(fGridSquareWidth*iColumnCount, 1.0f, fGridSquareWidth*iRowCount, tempText);
 
 				
 //computer draws this box
 //				draw_level(fGridSquareWidth*0, 0.0f, fGridSquareWidth*300, tempText);				
-			}			
+			}	
+			//added by Mike, 20210521
+			else if (sCurrentLevelMapContainer[iRowCount][iColumnCount].compare("\"H\"") == 0) { //TRUE
+			    //Grass version 2
+				sprintf(tempText,"H");
+				
+/*				//removed by Mike, 20210521
+				//added by Mike, 20201124; edited by Mike, 20210423
+			    glColor3f(0.14f, 0.68f, 0.06f); // Green
+//			    glColor3f(1.0f, 1.0f, 1.0f); // white
+
+				//added by Mike, 20201124
+				//execute this when using solid colors
+				glBindTexture( GL_TEXTURE_2D, 0 );
+*/				
+				//added by Mike, 20210521
+				glBindTexture( GL_TEXTURE_2D, iLevelTextureObject );
+				
+				
+				draw_level(fGridSquareWidth*iColumnCount, 1.0f, fGridSquareWidth*iRowCount, tempText);
+			}				
+			
 		}
 	}
 
@@ -679,9 +750,10 @@ void Level::setupLevel(int myLevelTextureObject)
 	//due to blank output
     //glEnable(GL_DEPTH_TEST);
 	
-	//edited by Mike, 20201122
+	//edited by Mike, 20210521
     /* select texture 2 */
-    glBindTexture(GL_TEXTURE_2D, myLevelTextureObject);
+	iLevelTextureObject = myLevelTextureObject;
+    glBindTexture(GL_TEXTURE_2D, iLevelTextureObject);
 
     /* create OpenGL texture out of targa file */
     //TO-DO: -reverify: cube face using font texture
