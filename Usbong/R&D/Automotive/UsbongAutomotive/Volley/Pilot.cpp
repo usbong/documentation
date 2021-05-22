@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210522
+ * @date updated: 20210523
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -4299,7 +4299,7 @@ void Pilot::drawPilotObject()
 		glBindTexture(GL_TEXTURE_2D, MIKE_TEXTURE_A);		
 
 	//	glTranslatef(30.0f, 0.0f, 25.0f); //removed by Mike, 20210424
-		glRotatef(180, 1.0f, 0.0f, 0.0f);				
+		glRotatef(180, 1.0f, 0.0f, 0.0f);
 
 		//added by Mike, 20210522
 		//TO-DO: -reverify: cause of blurry image texture output
@@ -4310,7 +4310,10 @@ void Pilot::drawPilotObject()
 		//edited by Mike, 20210521
 	//  glScalef(1.2f, 2.0f, 1.0f);	
 		//edited by Mike, 20210522
-		glScalef(5.0f, 5.0f, 1.0f);	
+        //edited by Mike, 20210523
+    glScalef(5.0f, 5.0f, 1.0f);
+//        glScalef(10.0f, 10.0f, 1.0f);
+    
 	//    glScalef(10.f, 10.0f, 1.0f);	
 //		glScalef(20.0f, 20.0f, 1.0f);	
 
@@ -4339,11 +4342,16 @@ void Pilot::drawPilotObject()
 	/*	if (currentFacingState==FACING_RIGHT) {    
 	*/
 	//TO-DO: -update: this
-		if ((currentFacingState==FACING_RIGHT) || (currentFacingState==FACING_RIGHT_AND_UP) || (currentFacingState==FACING_RIGHT_AND_DOWN)) {    
+    
+    //added by Mike, 20210523
+    //TO-DO: -fix: problem with objects, e.g. Pilot, bend if position not at center
+    /* //edited by Mike, 20210523
+     //note: vertex coordinate positions to create quad using triangles not exact with input image file causes blurry output
+     //image textured quad scale size also causes blurry output if set to be too small
+    if ((currentFacingState==FACING_RIGHT) || (currentFacingState==FACING_RIGHT_AND_UP) || (currentFacingState==FACING_RIGHT_AND_DOWN)) {
 			//added by Mike, 20210424
 			//notes: use folding paper to assist in quickly identifying location, e.g. texture coordinates 
 			//set vertex positions clock-wise
-
 	//      glRotatef(45, 0.0f, 1.0f, 0.0f); //slanted to wall facing left
 			glBegin(GL_TRIANGLES);	
 				//triangle#6 //back face left part
@@ -4424,7 +4432,93 @@ void Pilot::drawPilotObject()
 				glVertex3f(1.000000,-1.000000,-1.000000); //C2	
 			glEnd();
 		}	
-
+*/
+    if ((currentFacingState==FACING_RIGHT) || (currentFacingState==FACING_RIGHT_AND_UP) || (currentFacingState==FACING_RIGHT_AND_DOWN)) {
+        //added by Mike, 20210424
+        //notes: use folding paper to assist in quickly identifying location, e.g. texture coordinates
+        //set vertex positions clock-wise
+        //      glRotatef(45, 0.0f, 1.0f, 0.0f); //slanted to wall facing left
+        glBegin(GL_TRIANGLES);
+        //triangle#6 //back face left part
+        glNormal3f(0.0000,0.0000,-1.0000);
+        //edited by Mike, 20210424
+        //			glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	//A1; face left
+        glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0); //B2
+        glVertex3f(-1.000000,3.000000,-1.000000); //A1
+        
+        glNormal3f(0.0000,0.0000,-1.0000);
+        //edited by Mike, 20210424
+        //			glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0); //B1; face left
+        glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);	//C2
+        glVertex3f(1.000000,-1.000000,-1.000000); //B1
+        
+        glNormal3f(0.0000,0.0000,-1.0000);
+        //edited by Mike, 20210424
+        //			glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);	//C1; face left
+        glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0); //B1
+        glVertex3f(-1.000000,-1.000000,-1.000000); //C1
+        
+        //triangle#12 //back face right part
+        glNormal3f(0.0000,0.0000,-1.0000);
+        //edited by Mike, 20210424
+        //			glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	//A2; face lefT
+        glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0); //B2
+        glVertex3f(-1.000000,3.000000,-1.000000); //A2
+        
+        glNormal3f(0.0000,0.0000,-1.0000);
+        //edited by Mike, 20210424
+        //			glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0); //B2; face left
+        glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	//A1
+        glVertex3f(1.000000,3.000000,-1.000000); //B2
+        
+        glNormal3f(0.0000,0.0000,-1.0000);
+        //edited by Mike, 20210424
+        //			glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0); //C2; face left
+        glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);	//C1
+        glVertex3f(1.000000,-1.000000,-1.000000); //C2
+        glEnd();
+    }
+    else {
+        glBegin(GL_TRIANGLES);
+        //triangle#6 //back face left part
+        glNormal3f(0.0000,0.0000,-1.0000);
+        glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);
+        glVertex3f(-1.000000,3.000000,-1.000000); //A1
+        
+        glNormal3f(0.0000,0.0000,-1.0000);
+        //edited by Mike, 20210420
+        //	glTexCoord2f(1.0+iTaoAnimationFrameOffset,1.0);
+        //	glTexCoord2f(0.5+fTaoAnimationFrameOffset,1.0);
+        glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0);
+        glVertex3f(1.000000,-1.000000,-1.000000); //B1
+        
+        glNormal3f(0.0000,0.0000,-1.0000);
+        glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);
+        glVertex3f(-1.000000,-1.000000,-1.000000); //C1
+        
+        
+        //triangle#12 //back face right part
+        glNormal3f(0.0000,0.0000,-1.0000);
+        glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);
+        glVertex3f(-1.000000,3.000000,-1.000000); //A2
+        
+        glNormal3f(0.0000,0.0000,-1.0000);
+        //edited by Mike, 20210420
+        //	glTexCoord2f(1.0+iTaoAnimationFrameOffset,0.0);
+        //	glTexCoord2f(0.5+fTaoAnimationFrameOffset,0.0);
+        glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0);
+        glVertex3f(1.000000,3.000000,-1.000000); //B2
+        
+        glNormal3f(0.0000,0.0000,-1.0000);
+        //edited by Mike, 20210420	
+        //	glTexCoord2f(1.0+iTaoAnimationFrameOffset,1.0);
+        //	glTexCoord2f(0.5+fTaoAnimationFrameOffset,1.0);
+        glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0);	
+        glVertex3f(1.000000,-1.000000,-1.000000); //C2	
+        glEnd();
+    }
+    
+    
 		//added by Mike, 20210422
 		glScalef(1.0f, 1.0f, 1.0f);	
 
