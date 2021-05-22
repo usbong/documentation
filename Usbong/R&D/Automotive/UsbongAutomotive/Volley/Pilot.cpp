@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210521
+ * @date updated: 20210522
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -467,12 +467,19 @@ Pilot::Pilot(float xPos, float yPos, float zPos, int windowWidth, int windowHeig
 	//note: if set to 0.3; noticeable zoom-in, zoom-out cycling movement due to quick speed
 	//observed: Samurai Spirits IV's created world executes such camera eye movement
 	//that becomes noticeable with background zoom-in, zoom-out via cycling movement
+	//edited by Mike, 20210522
+/*	
 //    stepX=0.3;
     stepX=0.2;
 	
     stepY=0.3;
     stepZ=0.3;
-
+*/
+    stepX=0.4;
+	
+    stepY=0.4;
+    stepZ=0.4;
+	
     invincibleCounter=0;
     currentDeathFrame=0;
 
@@ -4276,146 +4283,150 @@ void Pilot::drawPilotAsQuadWithTexture()
 //added: by Mike, 20210423
 //TO-DO: -add: in PolygonPool
 void Pilot::drawPilotObject()
-{
-		
-//added by Mike, 20210422	
-glPushMatrix();
+{	
+	//added by Mike, 20210422	
+	glPushMatrix();
+		//added by Mike, 20210420
+		glColor3f(1.0f, 1.0f, 1.0f); // white
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, MIKE_TEXTURE_A);		
+
+	//	glTranslatef(30.0f, 0.0f, 25.0f); //removed by Mike, 20210424
+		glRotatef(180, 1.0f, 0.0f, 0.0f);				
+
+		//added by Mike, 20210522
+		//TO-DO: -reverify: cause of blurry image texture output
 	
-	//added by Mike, 20210420
-    glColor3f(1.0f, 1.0f, 1.0f); // white
-    glEnable(GL_TEXTURE_2D);
-    glBindTexture(GL_TEXTURE_2D, MIKE_TEXTURE_A);		
+		//added by Mike, 20210422; edited by Mike, 20210424
+		//TO-DO: -reverify: quad size and texture size
+	//    glScalef(1.5f, 1.5f, 1.0f);	
+		//edited by Mike, 20210521
+	//  glScalef(1.2f, 2.0f, 1.0f);	
+		//edited by Mike, 20210522
+		glScalef(5.0f, 5.0f, 1.0f);	
+	//    glScalef(10.f, 10.0f, 1.0f);	
+//		glScalef(20.0f, 20.0f, 1.0f);	
 
-//	glTranslatef(30.0f, 0.0f, 25.0f); //removed by Mike, 20210424
-	glRotatef(180, 1.0f, 0.0f, 0.0f);					
+	/*	//removed by Mike, 20210423	
+		//edited by Mike, 20210420
+		//note: 3 animation frames; .tga image file has 4 frames @128x256, i.e. width x height
+	//	iCountTaoAnimationFrame=(iCountTaoAnimationFrame)%2;
+		iCountTaoAnimationFrame=(iCountTaoAnimationFrame)%3;
 
-	//added by Mike, 20210422; edited by Mike, 20210424
-	//TO-DO: -reverify: quad size and texture size
-//    glScalef(1.5f, 1.5f, 1.0f);	
-	//edited by Mike, 20210521
-//  glScalef(1.2f, 2.0f, 1.0f);	
-    glScalef(5.0f, 5.0f, 1.0f);	
+	//	fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.5;
+		fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.25;
 
-/*	//removed by Mike, 20210423	
-	//edited by Mike, 20210420
-	//note: 3 animation frames; .tga image file has 4 frames @128x256, i.e. width x height
-//	iCountTaoAnimationFrame=(iCountTaoAnimationFrame)%2;
-	iCountTaoAnimationFrame=(iCountTaoAnimationFrame)%3;
-	
-//	fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.5;
-	fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.25;
-	
-	printf("iCountTaoAnimationFrame: %i",iCountTaoAnimationFrame);
+		printf("iCountTaoAnimationFrame: %i",iCountTaoAnimationFrame);
 
-	iCountTaoAnimationFrame=iCountTaoAnimationFrame+1;		
-	//printf("iTaoAnimationFrameOffset: %i",iTaoAnimationFrameOffset);
-*/	
+		iCountTaoAnimationFrame=iCountTaoAnimationFrame+1;		
+		//printf("iTaoAnimationFrameOffset: %i",iTaoAnimationFrameOffset);
+	*/	
 
 
-	//added by Mike, 20210424
-/*    if (currentFacingState==FACING_LEFT) 
-    {  
-    } 
-    else */
-//edited by Mike, 20210425
-/*	if (currentFacingState==FACING_RIGHT) {    
-*/
-//TO-DO: -update: this
-	if ((currentFacingState==FACING_RIGHT) || (currentFacingState==FACING_RIGHT_AND_UP) || (currentFacingState==FACING_RIGHT_AND_DOWN)) {    
 		//added by Mike, 20210424
-		//notes: use folding paper to assist in quickly identifying location, e.g. texture coordinates 
-		//set vertex positions clock-wise
-		
-//      glRotatef(45, 0.0f, 1.0f, 0.0f); //slanted to wall facing left
-		glBegin(GL_TRIANGLES);	
-			//triangle#6 //back face left part
-			glNormal3f(0.0000,0.0000,-1.0000);
-			//edited by Mike, 20210424
-//			glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	//A1; face left
-			glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0); //B2		
-			glVertex3f(-1.000000,1.000000,-1.000000); //A1
+	/*    if (currentFacingState==FACING_LEFT) 
+		{  
+		} 
+		else */
+	//edited by Mike, 20210425
+	/*	if (currentFacingState==FACING_RIGHT) {    
+	*/
+	//TO-DO: -update: this
+		if ((currentFacingState==FACING_RIGHT) || (currentFacingState==FACING_RIGHT_AND_UP) || (currentFacingState==FACING_RIGHT_AND_DOWN)) {    
+			//added by Mike, 20210424
+			//notes: use folding paper to assist in quickly identifying location, e.g. texture coordinates 
+			//set vertex positions clock-wise
 
-			glNormal3f(0.0000,0.0000,-1.0000);
-			//edited by Mike, 20210424		
-//			glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0); //B1; face left
-			glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);	//C2
-			glVertex3f(1.000000,-1.000000,-1.000000); //B1
+	//      glRotatef(45, 0.0f, 1.0f, 0.0f); //slanted to wall facing left
+			glBegin(GL_TRIANGLES);	
+				//triangle#6 //back face left part
+				glNormal3f(0.0000,0.0000,-1.0000);
+				//edited by Mike, 20210424
+	//			glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	//A1; face left
+				glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0); //B2		
+				glVertex3f(-1.000000,1.000000,-1.000000); //A1
 
-			glNormal3f(0.0000,0.0000,-1.0000);
-			//edited by Mike, 20210424				
-//			glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);	//C1; face left
-			glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0); //B1 
-			glVertex3f(-1.000000,-1.000000,-1.000000); //C1	
+				glNormal3f(0.0000,0.0000,-1.0000);
+				//edited by Mike, 20210424		
+	//			glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0); //B1; face left
+				glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);	//C2
+				glVertex3f(1.000000,-1.000000,-1.000000); //B1
 
-			//triangle#12 //back face right part		
-			glNormal3f(0.0000,0.0000,-1.0000);
-			//edited by Mike, 20210424
-//			glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	//A2; face lefT
-			glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0); //B2		
-			glVertex3f(-1.000000,1.000000,-1.000000); //A2
+				glNormal3f(0.0000,0.0000,-1.0000);
+				//edited by Mike, 20210424				
+	//			glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);	//C1; face left
+				glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0); //B1 
+				glVertex3f(-1.000000,-1.000000,-1.000000); //C1	
 
-			glNormal3f(0.0000,0.0000,-1.0000);
-			//edited by Mike, 20210424
-//			glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0); //B2; face left
-			glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	//A1
-			glVertex3f(1.000000,1.000000,-1.000000); //B2
+				//triangle#12 //back face right part		
+				glNormal3f(0.0000,0.0000,-1.0000);
+				//edited by Mike, 20210424
+	//			glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	//A2; face lefT
+				glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0); //B2		
+				glVertex3f(-1.000000,1.000000,-1.000000); //A2
 
-			glNormal3f(0.0000,0.0000,-1.0000);
-			//edited by Mike, 20210424
-//			glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0); //C2; face left
-			glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);	//C1	
-			glVertex3f(1.000000,-1.000000,-1.000000); //C2	
-		glEnd();
-	}
-	else {	
-		glBegin(GL_TRIANGLES);	
-			//triangle#6 //back face left part
-			glNormal3f(0.0000,0.0000,-1.0000);
-			glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	
-			glVertex3f(-1.000000,1.000000,-1.000000); //A1
+				glNormal3f(0.0000,0.0000,-1.0000);
+				//edited by Mike, 20210424
+	//			glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0); //B2; face left
+				glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	//A1
+				glVertex3f(1.000000,1.000000,-1.000000); //B2
 
-			glNormal3f(0.0000,0.0000,-1.0000);
-			//edited by Mike, 20210420
-		//	glTexCoord2f(1.0+iTaoAnimationFrameOffset,1.0);
-		//	glTexCoord2f(0.5+fTaoAnimationFrameOffset,1.0);
-			glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0);
-			glVertex3f(1.000000,-1.000000,-1.000000); //B1
+				glNormal3f(0.0000,0.0000,-1.0000);
+				//edited by Mike, 20210424
+	//			glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0); //C2; face left
+				glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);	//C1	
+				glVertex3f(1.000000,-1.000000,-1.000000); //C2	
+			glEnd();
+		}
+		else {	
+			glBegin(GL_TRIANGLES);	
+				//triangle#6 //back face left part
+				glNormal3f(0.0000,0.0000,-1.0000);
+				glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	
+				glVertex3f(-1.000000,1.000000,-1.000000); //A1
 
-			glNormal3f(0.0000,0.0000,-1.0000);
-			glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);	
-			glVertex3f(-1.000000,-1.000000,-1.000000); //C1	
+				glNormal3f(0.0000,0.0000,-1.0000);
+				//edited by Mike, 20210420
+			//	glTexCoord2f(1.0+iTaoAnimationFrameOffset,1.0);
+			//	glTexCoord2f(0.5+fTaoAnimationFrameOffset,1.0);
+				glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0);
+				glVertex3f(1.000000,-1.000000,-1.000000); //B1
+
+				glNormal3f(0.0000,0.0000,-1.0000);
+				glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);	
+				glVertex3f(-1.000000,-1.000000,-1.000000); //C1	
 
 
-			//triangle#12 //back face right part		
-			glNormal3f(0.0000,0.0000,-1.0000);
-			glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	
-			glVertex3f(-1.000000,1.000000,-1.000000); //A2
+				//triangle#12 //back face right part		
+				glNormal3f(0.0000,0.0000,-1.0000);
+				glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	
+				glVertex3f(-1.000000,1.000000,-1.000000); //A2
 
-			glNormal3f(0.0000,0.0000,-1.0000);
-			//edited by Mike, 20210420	
-		//	glTexCoord2f(1.0+iTaoAnimationFrameOffset,0.0);
-		//	glTexCoord2f(0.5+fTaoAnimationFrameOffset,0.0);
-			glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0);
-			glVertex3f(1.000000,1.000000,-1.000000); //B2
+				glNormal3f(0.0000,0.0000,-1.0000);
+				//edited by Mike, 20210420	
+			//	glTexCoord2f(1.0+iTaoAnimationFrameOffset,0.0);
+			//	glTexCoord2f(0.5+fTaoAnimationFrameOffset,0.0);
+				glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0);
+				glVertex3f(1.000000,1.000000,-1.000000); //B2
 
-			glNormal3f(0.0000,0.0000,-1.0000);
-			//edited by Mike, 20210420	
-		//	glTexCoord2f(1.0+iTaoAnimationFrameOffset,1.0);
-		//	glTexCoord2f(0.5+fTaoAnimationFrameOffset,1.0);
-			glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0);	
-			glVertex3f(1.000000,-1.000000,-1.000000); //C2	
-		glEnd();
-	}	
+				glNormal3f(0.0000,0.0000,-1.0000);
+				//edited by Mike, 20210420	
+			//	glTexCoord2f(1.0+iTaoAnimationFrameOffset,1.0);
+			//	glTexCoord2f(0.5+fTaoAnimationFrameOffset,1.0);
+				glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0);	
+				glVertex3f(1.000000,-1.000000,-1.000000); //C2	
+			glEnd();
+		}	
 
-	//added by Mike, 20210422
-	glScalef(1.0f, 1.0f, 1.0f);	
+		//added by Mike, 20210422
+		glScalef(1.0f, 1.0f, 1.0f);	
 
-	glRotatef(-180, 1.0f, 0.0f, 0.0f);
-//	glTranslatef(-30.0f, 0.0f, -25.0f); //removed by Mike, 20210424
+		glRotatef(-180, 1.0f, 0.0f, 0.0f);
+	//	glTranslatef(-30.0f, 0.0f, -25.0f); //removed by Mike, 20210424
 
-    glDisable(GL_TEXTURE_2D);
-    glBindTexture(GL_TEXTURE_2D, 0);
-glPopMatrix(); //added by Mike, 20210422	
+		glDisable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, 0);
+	glPopMatrix(); //added by Mike, 20210422	
 }
 
 void Pilot::updatePrev(float dt)
@@ -5209,6 +5220,7 @@ void Pilot::move(int key)
 	else if (bIsExecutingDefend) {
 	}
 	else {
+				
 //added by Mike, 20210521		
 //----------		
           //added by Mike, 20201001; edited by Mike, 20201116
@@ -5217,7 +5229,7 @@ void Pilot::move(int key)
 
 		//added by Mike, 20210127; edited by Mike, 20210128
 //			if (bIsExecutingDash) {
-		if ((bIsExecutingDashArray[KEY_S])) {		
+		if ((bIsExecutingDashArray[KEY_S])) {				
 	    	myZPos+=stepZ;
 		}
 //added by Mike, 20210521		
@@ -5288,7 +5300,7 @@ void Pilot::move(int key)
 		}
 */			
 		myXPos+=-stepX;
-
+			
 		if ((bIsExecutingDashArray[KEY_A])) {		
 			myXPos+=-stepX;
 		}
