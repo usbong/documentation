@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210517
+ * @date updated: 20210522
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -1468,10 +1468,12 @@ void Button::hitBy(MyDynamicObject* mdo)
     reset();    
 }
 
+/*	//removed by Mike, 20210522	
 void Button::setOpenGLCanvas(OpenGLCanvas* c)
 {
      myOpenGLCanvas = c;
 }
+*/
 
 void Button::reset()
 {

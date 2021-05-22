@@ -422,6 +422,9 @@ void Pilot::drawModelPilot() {
 
 }
 
+//added by Mike, 20210522
+//TO-DO: -identify cause of incorrect position in grid for player2
+
 //edited by Mike, 20201001
 //Pilot::RobotShip(): MyDynamicObject(0,0,300)
 //edited by Mike, 20201115
@@ -497,9 +500,13 @@ Pilot::Pilot(float xPos, float yPos, float zPos, int windowWidth, int windowHeig
 /*	myWidth=1.0f;
     myHeight=1.0f;
 */
+	
+/* //edited by Mike, 20210522	
 	myWidth=1.4f;
     myHeight=1.4f;
-
+*/
+	myWidth=4.0f;
+    myHeight=4.0f;
     
 /*
     myWidth=0.5f;
@@ -5456,10 +5463,12 @@ void Pilot::hitBy(MyDynamicObject* mdo)
     reset();    
 }
 
+/*	//removed by Mike, 20210522
 void Pilot::setOpenGLCanvas(OpenGLCanvas* c)
 {
      myOpenGLCanvas = c;
 }
+*/
 
 void Pilot::reset()
 {

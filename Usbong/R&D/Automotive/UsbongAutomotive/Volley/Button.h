@@ -404,8 +404,10 @@ public:
 	//added by Mike, 20201226
 	void keyDown(int keyCode);	
 	void keyUp(int keyCode);	
-	
+
+/*	//removed by Mike, 20210522	
 	void setOpenGLCanvas(OpenGLCanvas* c);
+*/	
     virtual void hitBy(MyDynamicObject* mdo);
 
 	//added by Mike, 20201016

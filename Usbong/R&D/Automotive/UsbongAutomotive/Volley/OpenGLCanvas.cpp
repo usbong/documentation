@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210521
+ * @date updated: 20210522
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -478,20 +478,26 @@ bool OpenGLCanvas::init(int myWindowWidthAsPixel, int myWindowHeightAsPixel)
 	
 	//added by Mike, 20210321
 	//TO-DO: -update: these due to getMaxXAxisViewport()... already the actual size
-	
+
 //	printf("%d",myLevel->getMaxXAxisViewport());
 	myRobotShip = new RobotShip(0.0f,0.0f,0.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
-	myRobotShip->setOpenGLCanvas(this);
-
+	//edited by Mike, 20210522
+//	myRobotShip->setOpenGLCanvas(this);
+	myRobotShip->setOpenGLCanvas(this, fGridSquareWidth);
+		
 //TO-DO: -update: myPilot instructions, e.g. movement
 	//added by Mike, 20201207; edited by Mike, 20210219
 //	myPilot = new Pilot(0.0f,0.0f,0.0f,myWindowWidth,myWindowHeight);
 	myPilot = new Pilot(0.0f,0.0f,0.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
-	myPilot->setOpenGLCanvas(this);
+//edited by Mike, 20210522	
+	//myPilot->setOpenGLCanvas(this);
+	myPilot->setOpenGLCanvas(this, fGridSquareWidth);
 	
 	//added by Mike, 20210502
 	myPilotPlayer2 = new Pilot(0.0f,0.0f,0.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
-	myPilotPlayer2->setOpenGLCanvas(this);
+//edited by Mike, 20210522	
+//	myPilotPlayer2->setOpenGLCanvas(this);
+	myPilotPlayer2->setOpenGLCanvas(this, fGridSquareWidth);
 	myPilotPlayer2->setAsPlayer2();
 	
 	//added by Mike, 20210514; edited by Mike, 20210517
@@ -501,8 +507,9 @@ bool OpenGLCanvas::init(int myWindowWidthAsPixel, int myWindowHeightAsPixel)
 	//note: float xPos as parameter to int myXPosAsPixel not correct output
 //	myButton = new Button(myWindowWidthAsPixel/2.0f,0.0f,0.0f,myWindowWidthAsPixel,myWindowHeightAsPixel);
 	myButton = new Button(0.0f,0.0f,0.0f,myWindowWidthAsPixel,myWindowHeightAsPixel);
-
-	myButton->setOpenGLCanvas(this);
+//edited by Mike, 20210522	
+//	myButton->setOpenGLCanvas(this);
+	myButton->setOpenGLCanvas(this, fGridSquareWidth);
 			
 	//added by Mike, 20201013; edited by Mike, 20201014
 //	for (i=0; i<MAX_BEAMS; i++) {
@@ -512,6 +519,9 @@ bool OpenGLCanvas::init(int myWindowWidthAsPixel, int myWindowHeightAsPixel)
 		//edited by Mike, 20210219; edited by Mike, 20210321
 		myBeam[i] = new Beam(0.0f,0.0f,0.0f,myWindowWidth,myWindowHeight);
 //		myBeam[i] = new Beam(0.0f,0.0f,0.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
+
+		//added by Mike, 20210522
+		myBeam[i]->setOpenGLCanvas(this, fGridSquareWidth);		
 	}
 
 	//added by Mike, 20201016
@@ -612,9 +622,8 @@ bool OpenGLCanvas::init(int myWindowWidthAsPixel, int myWindowHeightAsPixel)
 	
 	//added by Mike, 20210502
 	vMyDynamicObjectContainer.push_back(myPilot);
-
-	//removed by Mike, 20210521
-	//vMyDynamicObjectContainer.push_back(myPilotPlayer2);
+	//added by Mike, 20210522
+	vMyDynamicObjectContainer.push_back(myPilotPlayer2);
 
 	
 	

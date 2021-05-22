@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200929
- * @date updated: 20210516
+ * @date updated: 20210522
  * @website address: http://www.usbong.ph
  *
  * Acknowledgments:
@@ -111,13 +111,15 @@
 //#define MAX_DYNAMIC_OBJECT 18 //remove beams x32
 //edited by Mike, 20210521
 //#define MAX_DYNAMIC_OBJECT 19 //add pilotPlayer2
-#define MAX_DYNAMIC_OBJECT 1 //pilotPlayer1 only
+
+//edited by Mike, 20210522
+//#define MAX_DYNAMIC_OBJECT 1 //pilotPlayer1 only
+#define MAX_DYNAMIC_OBJECT 2 //pilotPlayer1 and pilotPlayer2
 
 //#define MAX_DYNAMIC_OBJECT 17 //remove beams x32
 
 #define MAX 1026 //buffer
 #define LINE_POINTS_SET 4 //added by Mike, 20210513
-
 
 #define TITLE_SCREEN 0
 #define CONTROLS_SCREEN 1

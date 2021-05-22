@@ -147,8 +147,10 @@ private:
 	//added by Mike, 20210423
 	int iCountTaoAnimationFrame;
 	float fTaoAnimationFrameOffset;
-		
+
+/*	//removed by Mike, 20210522		
     OpenGLCanvas *myOpenGLCanvas;
+*/
 
     //float boundary;
 
@@ -342,16 +344,23 @@ public:
 	void setAsPlayer2() {
 		currentFacingState=FACING_LEFT;
 		bIsPlayer2=true;
-		
+			
 		//note: position: 3,3; width, height; count starts at 0
 		//edited by Mike, 20210503
 //		myXPos=0.0f+myWidth*6;
 //		myXPos=0.0f-myWidth*3;
 //		myXPos=0.0f-myWidth*2;
-		myXPos=0.0f-myWidth*2.5;
+		//edited by Mike, 20210522
+//		myXPos=0.0f-myWidth*2.5;
+		myXPos=0.0f+fGridSquareWidth*9;
 		
 		//note: auto-set to be equal with player 1; player 1 Z-position based on Camera Eye		
 		//myZPos=0.0f+myHeight*3; 		
+		//added by Mike, 20210522		
+		myZPos=0.0f+fGridSquareWidth*7;
+		
+//		printf("myXPos: %f; fGridSquareWidth: %f",myXPos, fGridSquareWidth);
+		
 	}
 	
 
@@ -413,7 +422,9 @@ public:
 	void keyDown(int keyCode);	
 	void keyUp(int keyCode);	
 	
-	void setOpenGLCanvas(OpenGLCanvas* c);
+	//removed by Mike, 20210522
+//	void setOpenGLCanvas(OpenGLCanvas* c);
+	
     virtual void hitBy(MyDynamicObject* mdo);
 
 	//added by Mike, 20201016

@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210517
+ * @date updated: 20210522
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -27,6 +27,9 @@
 
 #ifndef MYDYNAMICOBJECT_H
 #define MYDYNAMICOBJECT_H
+
+
+//#include "OpenGLCanvas.h"	//added by Mike, 20210522
 
 /*
 //edited by Mike, 20201226
@@ -99,6 +102,12 @@ const int HIDDEN_STATE = 4,
 //added by Mike, 20210517
 class UsbongUtils;
 
+//added by Mike, 20210522
+//note: add here the class, i.e. classification, filename; 
+//no need to use the "include" Command for the header file
+class OpenGLCanvas;
+
+
 class MyDynamicObject
 {
 private:        
@@ -109,7 +118,7 @@ private:
     int i;
     bool isCollidable;
 	
-	UsbongUtils *myUsbongUtils; //added by Mike, 202105017
+		UsbongUtils *myUsbongUtils; //added by Mike, 202105017
 
 public:
     float myXPos;
@@ -126,13 +135,17 @@ public:
     int myWidthAsPixel;
     int myHeightAsPixel;
 	
-
 	//added by Mike, 20201115
     int myWindowWidth;
     int myWindowHeight;
-	
-	//added by Mike, 20210517
-	int currentState;
+    
+    //added by Mike, 20210522
+    float fGridSquareWidth;
+    float fGridSquareHeight;
+		OpenGLCanvas *myOpenGLCanvas;
+    
+    //added by Mike, 20210517
+		int currentState;
 	
 
 /*	//removed by Mike, 20201226
@@ -254,6 +267,14 @@ public:
 		myKeysDown[keyCode] = FALSE;	
 	}
 */
+
+	//added by Mike, 20210522
+	virtual void setOpenGLCanvas(OpenGLCanvas* c, float fSideLengthInput) {
+		myOpenGLCanvas = c;
+		//TO-DO: -update: this
+		fGridSquareWidth = fSideLengthInput;
+		fGridSquareHeight = fSideLengthInput;		
+	};
     
     //added by Mike, 20201016
     virtual void destroy();
