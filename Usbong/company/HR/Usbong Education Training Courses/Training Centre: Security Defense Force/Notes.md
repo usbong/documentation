@@ -276,11 +276,20 @@ Dagdag na halimbawa ng mga panloloko mula sa grupo ng Teroristang Komunista at a
 
 ### Part 10: Halimbawang Ingay
 Patuloy na panlolokong ingay (at pisikal na pananakit) gamit ang wireless broadcasting technology ng mga budol-budol/manloloko/carnapper/cybercriminal/Teroristang Komunista<br/>
---> [ingaySaGateMulaWirelessBroadcastingTechNgMgaTeroristangKomunista.m4a](https://github.com/usbong/documentation/blob/master/Usbong/company/HR/Usbong%20Education%20Training%20Courses/Training%20Centre:%20Security%20Defense%20Force/res/ingaySaGateMulaWirelessBroadcastingTechNgMgaTeroristangKomunista.m4a)<br/>
+--> 10.1) [ingaySaGateMulaWirelessBroadcastingTechNgMgaTeroristangKomunista.m4a (20210514T2017)](https://github.com/usbong/documentation/blob/master/Usbong/company/HR/Usbong%20Education%20Training%20Courses/Training%20Centre:%20Security%20Defense%20Force/res/ingaySaGateMulaWirelessBroadcastingTechNgMgaTeroristangKomunista.m4a)<br/>
 --> @00:07 (MM:SS), kulang ba sa langis ang gate? Hindi.<br/>
---> Bakit tumutunog ang gate nang gayan kapag binubuksan?<br/>
+--> Bakit tumutunog ang gate nang ganyan kapag binubuksan?<br/>
 --> Teroristang Komunista (gawa ng yabang): "Mafia", "Yakuza"<br/>
 --> Mungkahing Aksyon: Puksain ang mga Teroristang Komunista.<br/>
 --> Dagdag: Tao man o Hayop, e.g. bantay na aso sa bahay, pinapatay gamit ang wireless broadcasting technology na may epekto ng sa iligal na droga, e.g. taima, marijuana.<br/>
+--> Sanhi: Quick Money gawa ng pag-aasawa at pag-aanak nang kulang ang ninanakaw.<br/>
+--> Aksyon: Sulatan din ng incident report ang Tagapagpatupad ng Batas, i.e. Law Enforcement.<br/>
+<br/>
+--> 10.2) [noteLabisNaIngayMulaSaWirelessBroadcastingTechNgMgaTeroristangKomunista.m4a (20210523T0914)](noteLabisNaIngayMulaSaWirelessBroadcastingTechNgMgaTeroristangKomunistaV20210523T0914)<br/>
+--> @00:19 (MM:SS), labis na gawa-gawang tunog mula sa sasakyan.<br/>
+--> @00:31 (MM:SS), dagdag na tunog ng tahol ng aso (gawa ng may nakita/narinig)<br/>
+--> @00:32 (MM:SS), sinasabayan ng panlolokong ingay ang nagsasalita upang magulo ang madirinig<br/>
+--> Paalala: Sa pagdudulot ng paghirap sa paghinga, may ugnayan ang mga ito: Ear, Nose, Throat (ENT)<br/>
+--> Mungkahing Aksyon: Puksain ang mga Teroristang Komunista.<br/>
 --> Sanhi: Quick Money gawa ng pag-aasawa at pag-aanak nang kulang ang ninanakaw.<br/>
 --> Aksyon: Sulatan din ng incident report ang Tagapagpatupad ng Batas, i.e. Law Enforcement.<br/>
