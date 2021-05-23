@@ -4303,6 +4303,8 @@ void Pilot::drawPilotObject()
 
 		//added by Mike, 20210522
 		//TO-DO: -reverify: cause of blurry image texture output
+		//added by Mike, 20210523
+		//TO-DO: -reverify: Pilot movement, e.g. horizontally, vertically, due to not exact with grid coordinate
 	
 		//added by Mike, 20210422; edited by Mike, 20210424
 		//TO-DO: -reverify: quad size and texture size
@@ -4311,8 +4313,9 @@ void Pilot::drawPilotObject()
 	//  glScalef(1.2f, 2.0f, 1.0f);	
 		//edited by Mike, 20210522
         //edited by Mike, 20210523
-    glScalef(5.0f, 5.0f, 1.0f);
+//    glScalef(5.0f, 5.0f, 1.0f);
 //        glScalef(10.0f, 10.0f, 1.0f);
+    glScalef(3.2f, 3.2f, 3.2f);
     
 	//    glScalef(10.f, 10.0f, 1.0f);	
 //		glScalef(20.0f, 20.0f, 1.0f);	

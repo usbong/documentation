@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210522
+ * @date updated: 20210523
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -353,6 +353,7 @@ bool OpenGLCanvas::init(int myWindowWidthAsPixel, int myWindowHeightAsPixel)
     myCanvasCenterPosY=0.0f;
     //edited by Mike, 20201026
     myCanvasCenterPosZ=1.0f;//1.0f;
+    
 /*
 	//added by Mike, 20201026
     myCanvasLookAtAngleRad = (myCanvasLookAtAngle) * 3.141593f / 180.0f;
@@ -1478,17 +1479,20 @@ void OpenGLCanvas::render()
 
 		glBegin(GL_QUADS);
 //			glColor3f(0.0f,0.0f,0.0f); //black
-			glColor3f(1.0f,1.0f,1.0f); //white
+//edited by Mike, 20210523
+//			glColor3f(1.0f,1.0f,1.0f); //white
 		
 			//TOP
+//added by Mike, 20210523			
 			//sky blue color; darker
-//			glColor3f(0.0f, 0.44f, 0.67f);
+			glColor3f(0.0f, 0.44f, 0.67f);
 			glVertex2f(1.0, 1.0);
 			glVertex2f(-1.0, 1.0);
 		
 			//BOTTOM
+//added by Mike, 20210523
 			//sky blue color; brighter
-//			glColor3f(0.69f, 0.84f, 1.0f);
+			glColor3f(0.69f, 0.84f, 1.0f);
 			glVertex2f(-1.0,-1.0);
 			glVertex2f(1.0,-1.0);
 		glEnd();
@@ -1610,6 +1614,8 @@ void OpenGLCanvas::render()
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	//TOP-LEFT origin
+	//added by Mike, 20210523	
+	//TO-DO: -reverify: this if necessary
 	glOrtho(0.0f, //left
         	1.0f, //right
         	1.0f, //bottom
@@ -1617,6 +1623,8 @@ void OpenGLCanvas::render()
         	0.0f, //zNear; minimum
         	1.0f //zFar; maximum
       	);
+
+
 
 /*	//removed by Mike, 20201117
     //font 
@@ -1694,22 +1702,45 @@ myPilotPlayer2->updateToFaceOpponent(myPilot->getX());
 			
 	glMatrixMode(GL_PROJECTION);			// set projection matrix current matrix
 	glLoadIdentity();						// reset projection matrix
-		
+
+/* //edited by Mike, 20210523
+	glOrtho(-1.0f, //left
+        	1.0f, //right
+        	-1.0f, //bottom
+        	1.0f, //top
+        	-1.0f, //zNear; minimum
+        	1000.0f //zFar; maximum
+      	);
+*/      	
+
+/*	//edited by Mike, 20210523		
     gluPerspective(90.0, // field-of-view angle
                    4.0 / 4.0, // aspect ratio
                    0.1, // near plane
                    100); // far plane
-		
+*/		
+	//note: Nintendo Switch Screen Dimensions 1280x720; 80x45; 16x9
+//                   16.0 / 9.0, // aspect ratio
+//    gluPerspective(120.0, // field-of-view angle
+    gluPerspective(90.0, // field-of-view angle
+                   4.0 / 4.0, // aspect ratio
+                   0.0, // near plane
+                   100.0); // far plane
 
 	myCanvasEyePosY=-0.5f;
-
+	
+/* //edited by Mike, 20210523
 	//edited by Mike, 20210519
 //	gluLookAt(myCanvasEyePosX, myCanvasEyePosY, myCanvasEyePosZ+3.0f, // eye position 0.0, 0.0, 3.0
 	gluLookAt(myCanvasEyePosX, myCanvasEyePosY, myCanvasEyePosZ+10.0f, // eye position
 			  myCanvasCenterPosX, myCanvasCenterPosY, myCanvasCenterPosZ, // look-at point
               0.0, 1.0, 0.0); // up-direction
-		
-
+*/		
+//	gluLookAt(myCanvasEyePosX, myCanvasEyePosY, myCanvasEyePosZ+3.0f, // eye position 0.0, 0.0, 3.0
+	gluLookAt(myCanvasEyePosX, myCanvasEyePosY, myCanvasEyePosZ+10.0f, // eye position
+			  myCanvasCenterPosX, myCanvasCenterPosY, myCanvasCenterPosZ, // look-at point
+              0.0, 1.0, 0.0); // up-direction
+              
 	//note: reference point/origin at center; not top-left
 	//added by Mike, 20210220
 	//ISOMETRIC VIEW					  	
@@ -1742,7 +1773,7 @@ myPilotPlayer2->updateToFaceOpponent(myPilot->getX());
 //	glTranslatef(8.0f, 0.0f, -10.0f);
 //	glTranslatef(8.0f, 2.0f, -6.0f);
   	glTranslatef(8.0f, -8.0f, -2.0f);
-		
+			
 	//added by Mike, 20210220
 	//3rd-person view
 	//without additional rotate and scale
