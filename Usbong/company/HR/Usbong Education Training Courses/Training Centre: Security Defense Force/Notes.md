@@ -285,8 +285,8 @@ Patuloy na panlolokong ingay (at pisikal na pananakit) gamit ang wireless broadc
 --> Sanhi: Quick Money gawa ng pag-aasawa at pag-aanak nang kulang ang ninanakaw.<br/>
 --> Aksyon: Sulatan din ng incident report ang Tagapagpatupad ng Batas, i.e. Law Enforcement.<br/>
 <br/>
---> 10.2) [noteLabisNaIngayMulaSaWirelessBroadcastingTechNgMgaTeroristangKomunista.m4a (20210523T0914)](noteLabisNaIngayMulaSaWirelessBroadcastingTechNgMgaTeroristangKomunistaV20210523T0914)<br/>
---> @00:19 (MM:SS), labis na gawa-gawang tunog mula sa sasakyan.<br/>
+--> 10.2) [noteLabisNaIngayMulaSaWirelessBroadcastingTechNgMgaTeroristangKomunista.m4a (20210523T0914)](https://github.com/usbong/documentation/blob/master/Usbong/company/HR/Usbong%20Education%20Training%20Courses/Training%20Centre:%20Security%20Defense%20Force/res/noteLabisNaIngayMulaSaWirelessBroadcastingTechNgMgaTeroristangKomunista.m4a)<br/>
+--> @00:19 (MM:SS), labis na gawa-gawang tunog mula sa sasakyan<br/>
 --> @00:31 (MM:SS), dagdag na tunog ng tahol ng aso (gawa ng may nakita/narinig)<br/>
 --> @00:32 (MM:SS), sinasabayan ng panlolokong ingay ang nagsasalita upang magulo ang madirinig<br/>
 --> Paalala: Sa pagdudulot ng paghirap sa paghinga, may ugnayan ang mga ito: Ear, Nose, Throat (ENT)<br/>
