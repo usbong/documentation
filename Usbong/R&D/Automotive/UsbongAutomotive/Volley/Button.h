@@ -133,8 +133,8 @@ private:
 		
     OpenGLCanvas *myOpenGLCanvas;
 	
-	//added by Mike, 20210516
-	UsbongUtils *myUsbongUtils;
+	//added by Mike, 20210516; removed to public classification by Mike, 20210523
+//	UsbongUtils *myUsbongUtils;
 	
     //float boundary;
 
@@ -270,6 +270,9 @@ public:
     Button(float xPos, float yPos, float zPos,int windowWidth,int windowHeight);
 
 	~Button();
+
+	//added by Mike, 20210523
+	UsbongUtils *myUsbongUtils;
 
 	//added by Mike, 20201226
 	//note: we classify this container as public;

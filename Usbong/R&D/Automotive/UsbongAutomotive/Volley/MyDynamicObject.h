@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210522
+ * @date updated: 20210523
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -118,7 +118,8 @@ private:
     int i;
     bool isCollidable;
 	
-		UsbongUtils *myUsbongUtils; //added by Mike, 202105017
+	//removed by Mike, 20210523
+//	UsbongUtils *myUsbongUtils; //added by Mike, 202105017
 
 public:
     float myXPos;
@@ -142,10 +143,13 @@ public:
     //added by Mike, 20210522
     float fGridSquareWidth;
     float fGridSquareHeight;
-		OpenGLCanvas *myOpenGLCanvas;
+	OpenGLCanvas *myOpenGLCanvas;
+    
+	//added by Mike, 202105023
+    UsbongUtils *myUsbongUtils;
     
     //added by Mike, 20210517
-		int currentState;
+	int currentState;
 	
 
 /*	//removed by Mike, 20201226

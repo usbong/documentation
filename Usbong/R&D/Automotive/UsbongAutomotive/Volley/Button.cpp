@@ -614,7 +614,7 @@ void Button::drawButtonAsQuadWithTexture()
 //    glTranslatef(myXPos, myYPos, myZPos);
 	//TO-DO: -add: myZPos
 //printf("autoConvert; myXPos: \n",myUsbongUtils->autoConvertFromPixelToVertexPointX(0));
-printf("myXPosAsPixel: %i\n",myXPosAsPixel);
+//printf("myXPosAsPixel: %i\n",myXPosAsPixel);
 	
 	//note: myXPos is float; autoConvertFromPixelToVertexPointX(...) input is int
 	//auto-converted from float to int due to autoConvertFromPixelToVertexPointX(...) accepts int as parameter

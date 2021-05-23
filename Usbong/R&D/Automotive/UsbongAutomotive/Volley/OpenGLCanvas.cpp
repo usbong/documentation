@@ -489,13 +489,21 @@ bool OpenGLCanvas::init(int myWindowWidthAsPixel, int myWindowHeightAsPixel)
 //TO-DO: -update: myPilot instructions, e.g. movement
 	//added by Mike, 20201207; edited by Mike, 20210219
 //	myPilot = new Pilot(0.0f,0.0f,0.0f,myWindowWidth,myWindowHeight);
-	myPilot = new Pilot(0.0f,0.0f,0.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
+	//edited by Mike, 20210523
+//	myPilot = new Pilot(0.0f,0.0f,0.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
+//	myPilot = new Pilot(fGridSquareWidth*5,fGridSquareHeight*5,0.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
+	//edited by Mike, 20210523
+//	myPilot = new Pilot(0.0f,0.0f,0.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
+	myPilot = new Pilot(0.0f,0.0f,320.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
+	
 //edited by Mike, 20210522	
 	//myPilot->setOpenGLCanvas(this);
 	myPilot->setOpenGLCanvas(this, fGridSquareWidth);
 	
-	//added by Mike, 20210502
-	myPilotPlayer2 = new Pilot(0.0f,0.0f,0.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
+	//added by Mike, 20210502; edited by Mike, 20210523
+//	myPilotPlayer2 = new Pilot(0.0f,0.0f,0.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
+	myPilotPlayer2 = new Pilot(320.0f,0.0f,320.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
+
 //edited by Mike, 20210522	
 //	myPilotPlayer2->setOpenGLCanvas(this);
 	myPilotPlayer2->setOpenGLCanvas(this, fGridSquareWidth);
@@ -1500,7 +1508,9 @@ void OpenGLCanvas::render()
 	//added by Mike, 20210510
 	glLineWidth((GLfloat)3);	
 
-//note: coordinate system guide/map
+//edited by Mike, 20210523
+//TO-DO: -add: vertical and horizontal lines in addition to those at center
+//note: coordinate system guide/map; pixel positions
 	glBegin(GL_LINES);
 		glColor3f(0.0f,0.0f,0.0f); //black
 /*	//removed by Mike, 20210516
@@ -1597,6 +1607,8 @@ void OpenGLCanvas::render()
 
 	//added by Mike, 20210514
 	myButton->draw();
+	
+
 	
 	//added by Mike, 20210511	
 /*	
@@ -1867,6 +1879,7 @@ myPilotPlayer2->updateToFaceOpponent(myPilot->getX());
 	//close glRotate
 	glRotatef(-8, 1.0f, 0.0f, 0.0f);
 		
+/* //removed by Mike, 20210523		
 		//added by Mike, 20210521
 		//z-sort, i.e. auto-draw objects based on z position;
 		//objects with higher z positions are auto-drawn first;
@@ -1891,7 +1904,30 @@ myPilotPlayer2->updateToFaceOpponent(myPilot->getX());
 		glTranslatef(30, 0.0f, -30);
 //		glTranslatef(+fGridSquareWidth*(iRowCountMax-4), 0.0f, +fGridSquareHeight*(iColumnCountMax-1));				
 //		glTranslatef(+fGridSquareWidth*(iRowCountMax-6), 0.0f, +fGridSquareHeight*(iColumnCountMax+4));		
-		glTranslatef(+fGridSquareWidth*(iRowCountMax-5), 0.0f, +fGridSquareHeight*(iColumnCountMax+5));				
+		glTranslatef(+fGridSquareWidth*(iRowCountMax-5), 0.0f, +fGridSquareHeight*(iColumnCountMax+5));			*/	
+		
+		//added by Mike, 20210523
+		glMatrixMode(GL_PROJECTION);
+		glLoadIdentity();
+		
+		glMatrixMode(GL_MODELVIEW);
+		glLoadIdentity();			
+
+		//added by Mike, 20210521
+		//z-sort, i.e. auto-draw objects based on z position;
+		//objects with higher z positions are auto-drawn first;
+		//these are objects at the back of those that have lower z positions
+		//MyDynamicObject *myDynamicObjectContainerSorted[MAX_DYNAMIC_OBJECT];		
+		//std::vector<MyDynamicObject*> v;
+		//added by Mike, 20210509
+//		std::sort(vMyDynamicObjectContainer.begin(), vMyDynamicObjectContainer.end(), sortByZPosition());
+	
+		for (int i=0; i<MAX_DYNAMIC_OBJECT; i++) {			
+			glPushMatrix();
+				vMyDynamicObjectContainer[i]->draw();
+			glPopMatrix();
+		}
+		
 	}
 }
 

@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210522
+ * @date updated: 20210523
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -112,6 +112,9 @@ const int DYING_STATE = 3;
 #define FACING_LEFT 2
 #define FACING_RIGHT 3
 */
+
+//added by Mike, 20210523
+class UsbongUtils;
 
 class Pilot: public MyDynamicObject
 {
@@ -286,6 +289,10 @@ public:
     Pilot(float xPos, float yPos, float zPos,int windowWidth,int windowHeight);
 
 	~Pilot();
+	
+	//added by Mike, 20210523
+	UsbongUtils *myUsbongUtils;
+
 
 	//added by Mike, 20201226
 	//note: we classify this container as public;
@@ -352,12 +359,16 @@ public:
 //		myXPos=0.0f-myWidth*2;
 		//edited by Mike, 20210522
 //		myXPos=0.0f-myWidth*2.5;
-		myXPos=0.0f+fGridSquareWidth*9;
+		//removed by Mike, 20210523
+		//set position as parameter in constructor
+//		myXPos=0.0f+fGridSquareWidth*9;
 		
 		//note: auto-set to be equal with player 1; player 1 Z-position based on Camera Eye		
 		//myZPos=0.0f+myHeight*3; 		
-		//added by Mike, 20210522		
-		myZPos=0.0f+fGridSquareWidth*7;
+		//added by Mike, 20210522	
+		//removed by Mike, 20210523	
+		//set position as parameter in constructor
+		//myZPos=0.0f+fGridSquareWidth*7;
 		
 //		printf("myXPos: %f; fGridSquareWidth: %f",myXPos, fGridSquareWidth);
 		
@@ -386,7 +397,8 @@ public:
 
 	//added by Mike, 20210423
 	void drawPilotAsQuadWithTexture();
-	void drawPilotObject();
+	void drawPilotObject(); //we use pixel auto-converted to vertex positions
+	void drawPilotObjectWith3DVertexPositions();//added by Mike, 20210523
 
 	// draws the entire robot
 	//void drawRobot(float xPos, float yPos, float zPos);
