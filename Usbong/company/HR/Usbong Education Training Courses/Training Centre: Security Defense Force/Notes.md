@@ -293,3 +293,25 @@ Patuloy na panlolokong ingay (at pisikal na pananakit) gamit ang wireless broadc
 --> Mungkahing Aksyon: Puksain ang mga Teroristang Komunista.<br/>
 --> Sanhi: Quick Money gawa ng pag-aasawa at pag-aanak nang kulang ang ninanakaw.<br/>
 --> Aksyon: Sulatan din ng incident report ang Tagapagpatupad ng Batas, i.e. Law Enforcement.<br/>
+
+### Part 11: Continued misuse of wireless broadcasting technology
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/company/HR/Usbong%20Education%20Training%20Courses/Training%20Centre:%20Security%20Defense%20Force/res/miniSpeakerRadioApproxSize6x6cm.jpg" width="60%"><br/>
+<br/>
+--> We note that a tower that transmits using antenna/antennae electric waves with sufficient signal strength to reach radio set devices are misused.<br/>
+--> This budol-budol/manloloko/carnapper/cybercriminal/Teroristang Komunista group transmitted such signal to my small wireless radio/speaker, while I was attempting to defend myself from their noise using static sound.<br/>
+--> Software/computers/machines do not intentionally cause us physical injuries.<br/> 
+--> The problem is with people classified to be Teroristang Komunista who <b>intentionally</b> misuse technology by causing us physical injuries to quickly get money.<br/>
+--> Mungkahing Aksyon: Puksain ang mga Teroristang Komunista.<br/>
+--> Sanhi: Quick Money gawa ng pag-aasawa at pag-aanak nang kulang ang ninanakaw.<br/>
+--> Aksyon: Sulatan din ng incident report ang Tagapagpatupad ng Batas, i.e. Law Enforcement.<br/>
+
+#### Additional Note:
+--> Even Television set devices receive panlolokong signal from this Teroristang Komunista group who misuse transmitter towers, et cetera.<br/>
+--> verified: broadcasted BS, i.e. panlolokong, content that replaces regular broadcasting on Channel 7 (GMA 7) by including Ninoy Aquino still alive and on the Senate.<br/>
+--> identified: members of this Teroristang Komunista group to include among others:<br/>
+--> Ryan Syson, the son of Dr. Pedro Syson's younger brother, "tai-ah", i.e. Ramon Syson and Linda Syson<br/>
+--> Both parents are also classified to be with this Teroristang Komunista group.<br/>
+--> verified: broadcasted panlolokong ingay to reach antennae of moving vehicles<br/>
+--> identified: Keith Haw, with Xavier High School (San Juan, Greenhills) classmate and basketball player, Tyrone Tang, to be with this Teroristang Komunista group.<br/>
+--> Mungkahing Aksyon: Puksain ang mga Teroristang Komunista.<br/>
+--> Aksyon: Sulatan din ng incident report ang Tagapagpatupad ng Batas, i.e. Law Enforcement.<br/>
