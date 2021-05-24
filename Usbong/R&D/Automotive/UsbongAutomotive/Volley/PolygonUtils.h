@@ -70,5 +70,9 @@ void drawCubeWithBlockTextureQuadFloor(float fSideLength, GLfloat tx, GLfloat ty
 //added by Mike, 20210524
 void drawCubeWithSolidBlockColorQuadFloor(float fSideLength, GLfloat tx, GLfloat ty, GLfloat tz, float x, float y, float z);
 
+//added by Mike, 20210524
+void drawCubeWithAutoDrawnPixelBlockColorQuadFloor(float fSideLength, float x, float y, float z);
+
+
 //added by Mike, 20210521
 void drawCubeWithBlockTextureQuadFloorSpecial(float fSideLength, GLfloat tx, GLfloat ty, GLfloat tz, float x, float y, float z, char c);

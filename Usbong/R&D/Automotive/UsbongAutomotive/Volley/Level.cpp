@@ -236,39 +236,52 @@ void Level::draw_char(GLfloat x, GLfloat y, GLfloat z, char c)
 		// check if the character is valid
 		if (c < ' ' || c > '~')
 			return;
-
-		// subtract 32, since the first character in the font texture
-		// is the space (ascii value 32)
-		c = c - 32;
-
-		// determine texture coordinates; this assumes that each character
-		// in the font texture has a width-height ratio of 10:16 (see the
-		// font.tga file to understand what I mean)
-		tx = c % 12 * 0.078125f;
-		ty = 0.875f - (c / 12 * 0.125f);
-		//added by Mike, 20201117
-	//    tz = 0.875f - (c / 12 * 0.125f);
-
-		//TO-DO: -update: set of instructions for Quad to Face Camera
-		//edited by Mike, 20210521
-	//	drawCubeWithBlockTextureQuadFacingCameraOnly(4.0f, tx, ty, tz, x,y,z);
-	//	drawCubeWithBlockTextureQuadFacingCameraOnly(4.0f, tx, ty, tz, x,0,z);
-	
-	//edited by Mike, 20210524
-//	drawCubeWithBlockTextureQuadFloor(4.0f, tx, ty, tz, x,y,z);
-
+			
 	printf("c: %c\n",c);
+		
+		//TO-DO: -update: this
+/* //edited by Mike, 20210524	
+		if (c=='S') { //S : Sand		
+			drawCubeWithAutoDrawnPixelBlockColorQuadFloor(4.0f, x,y,z);		
+		}
+		else {			
+*/		
 	
-/* //removed by Mike, 20210524
-	if (c=='-') { //c value for empty
-		drawCubeWithSolidBlockColorQuadFloor(4.0f, tx, ty, tz, x,y,z);
-	}
-	else {
-		drawCubeWithBlockTextureQuadFloor(4.0f, tx, ty, tz, x,y,z);
-	}	
-*/
-		drawCubeWithBlockTextureQuadFloor(4.0f, tx, ty, tz, x,y,z);
-
+			// subtract 32, since the first character in the font texture
+			// is the space (ascii value 32)
+			c = c - 32;
+	
+			// determine texture coordinates; this assumes that each character
+			// in the font texture has a width-height ratio of 10:16 (see the
+			// font.tga file to understand what I mean)
+			tx = c % 12 * 0.078125f;
+			ty = 0.875f - (c / 12 * 0.125f);
+			//added by Mike, 20201117
+		//    tz = 0.875f - (c / 12 * 0.125f);
+	
+			//TO-DO: -update: set of instructions for Quad to Face Camera
+			//edited by Mike, 20210521
+		//	drawCubeWithBlockTextureQuadFacingCameraOnly(4.0f, tx, ty, tz, x,y,z);
+		//	drawCubeWithBlockTextureQuadFacingCameraOnly(4.0f, tx, ty, tz, x,0,z);
+		
+		//edited by Mike, 20210524
+	//	drawCubeWithBlockTextureQuadFloor(4.0f, tx, ty, tz, x,y,z);
+	
+//		printf(">> c: %c\n",c);
+		
+	/* //removed by Mike, 20210524
+		if (c=='-') { //c value for empty
+			drawCubeWithSolidBlockColorQuadFloor(4.0f, tx, ty, tz, x,y,z);
+		}
+		else {
+			drawCubeWithBlockTextureQuadFloor(4.0f, tx, ty, tz, x,y,z);
+		}	
+	*/
+			drawCubeWithBlockTextureQuadFloor(4.0f, tx, ty, tz, x,y,z);
+			
+/* //edited by Mike, 20210524			
+		}
+*/		
 	
 /*	//removed by Mike, 20210521	
 	}	
@@ -298,7 +311,7 @@ void Level::draw_level(GLfloat x, GLfloat y, GLfloat z, char *string)
 			//added by Mike, 20210520
 //			glTranslatef(0.0f, 1.0f, -1.0f);
 //			glTranslatef(-2.0f, 1.0f, -1.0f);
-			//removed by Mike, 20210520
+			//removed by Mike, 20210520draw_char
 //			glTranslatef(-2.0f, 1.0f, -1.0f-fGridSquareWidth); //where: fGridSquareWidth=4.0f 
 				
         	//removed by Mike, 20201010
