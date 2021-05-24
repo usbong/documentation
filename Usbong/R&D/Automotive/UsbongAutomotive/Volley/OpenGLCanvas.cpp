@@ -2291,7 +2291,6 @@ void OpenGLCanvas::drawGridWithZAxis() {
 //	exit(0);
 	
 	
-	//removed by Mike, 20201122
     glDisable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, 0);
 

@@ -240,13 +240,11 @@ void Level::draw_char(GLfloat x, GLfloat y, GLfloat z, char c)
 	printf("c: %c\n",c);
 		
 		//TO-DO: -update: this
-/* //edited by Mike, 20210524	
+ //edited by Mike, 20210524	
 		if (c=='S') { //S : Sand		
 			drawCubeWithAutoDrawnPixelBlockColorQuadFloor(4.0f, x,y,z);		
 		}
-		else {			
-*/		
-	
+		else {						
 			// subtract 32, since the first character in the font texture
 			// is the space (ascii value 32)
 			c = c - 32;
@@ -277,11 +275,14 @@ void Level::draw_char(GLfloat x, GLfloat y, GLfloat z, char c)
 			drawCubeWithBlockTextureQuadFloor(4.0f, tx, ty, tz, x,y,z);
 		}	
 	*/
-			drawCubeWithBlockTextureQuadFloor(4.0f, tx, ty, tz, x,y,z);
-			
-/* //edited by Mike, 20210524			
-		}
-*/		
+			//added by Mike, 20210524
+			glBindTexture(GL_TEXTURE_2D, iLevelTextureObject);
+    		glEnable(GL_TEXTURE_2D);						
+				drawCubeWithBlockTextureQuadFloor(4.0f, tx, ty, tz, x,y,z);			
+    		//unselect texture myLevelTextureObject
+			glDisable(GL_TEXTURE_2D);
+    		glBindTexture(GL_TEXTURE_2D, 0);
+		}	
 	
 /*	//removed by Mike, 20210521	
 	}	

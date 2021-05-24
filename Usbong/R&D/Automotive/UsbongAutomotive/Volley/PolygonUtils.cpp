@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201019
- * @date updated: 20210522
+ * @date updated: 20210524
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -789,6 +789,7 @@ void drawCubeWithSolidBlockColorQuadFloor(float fSideLength, GLfloat tx, GLfloat
 
 
 //added by Mike, 20210524
+//TO-DO: -add: parameter to identify pixel pattern, e.g. for sand tiles 
 void drawCubeWithAutoDrawnPixelBlockColorQuadFloor(float fSideLength, float x, float y, float z)
 {
 		glPushMatrix();
@@ -805,13 +806,16 @@ void drawCubeWithAutoDrawnPixelBlockColorQuadFloor(float fSideLength, float x, f
 		
 			glDisable(GL_TEXTURE_2D);
 	//		glColor3f(0.0f, 1.0f, 0.0f); //green
-			glColor3f(1.0f, 1.0f, 1.0f); //white
+			//edited by Mike, 20210524
+//			glColor3f(1.0f, 1.0f, 1.0f); //white
+			glColor3f(0.948f, 0.941f, 0.878f); //white
 			
 			//TO-DO: -add: auto-draw pixel as dots for use with select tiles, e.g. sand
 			
 			glBegin(GL_QUADS);
 					float fBorderWidth = 0.05f;
-		
+						
+					//background quad
 	//	    	glTexCoord2f(tx, ty);
 					glVertex3f(0.0f+fBorderWidth, 0.0f, 0.0f+fBorderWidth);
 		
@@ -823,7 +827,65 @@ void drawCubeWithAutoDrawnPixelBlockColorQuadFloor(float fSideLength, float x, f
 		
 	//				glTexCoord2f(tx, ty + 0.125f);			
 					glVertex3f(0.0f+fBorderWidth, 0.0f, -fSideLength-fBorderWidth);
+					
+					
+				    //dots
+					glColor3f(0.0f,0.0f,0.0f); //black				   		
+					float fDotSideLength=fSideLength/10.0f;
+										
+					glVertex3f(0.0f+fBorderWidth, 0.0f, 0.0f+fBorderWidth);		
+					glVertex3f(-fDotSideLength-fBorderWidth, 0.0f, 0.0f+fBorderWidth);	
+					glVertex3f(-fDotSideLength-fBorderWidth, 0.0f, -fDotSideLength-fBorderWidth);
+					glVertex3f(0.0f+fBorderWidth, 0.0f, -fDotSideLength-fBorderWidth);
+					
+/* //removed by Mike, 20210524	
+//TO-DO: -update: this				
+					//add random dots
+					//TO-DO: -add: use rand()... in UsbongUtils
+					float fCountOffset=0.0f;
+					for (int iCount=0; iCount<40; iCount++) {
+						fCountOffset=0.1f*iCount;
+
+						glVertex3f(0.0f+fBorderWidth+fCountOffset, 0.0f, 0.0f+fBorderWidth+fCountOffset);		
+						glVertex3f(-fDotSideLength-fBorderWidth+fCountOffset, 0.0f, 0.0f+fBorderWidth+fCountOffset);	
+						glVertex3f(-fDotSideLength-fBorderWidth+fCountOffset, 0.0f, -fDotSideLength-fBorderWidth+fCountOffset);
+						glVertex3f(0.0f+fBorderWidth+fCountOffset, 0.0f, -fDotSideLength-fBorderWidth+fCountOffset);						
+					}	
+*/									
 			glEnd();	
+			
+/*			
+			//added by Mike, 20210524
+			//reset
+			//remove this to draw lines vertically in the y-axis
+			glRotatef(-180, 0.0f, 0.0f, 1.0f);
+			glTranslatef(fSideLength/2, 1.0f, fSideLength*2.5); //where: fSideLength=4.0f 
+			
+			glLineWidth((GLfloat)3);	
+			
+			glBegin(GL_LINES);
+					glColor3f(0.0f,0.0f,0.0f); //black
+//				//removed by Mike, 20210516
+//					//diagonal line left to right
+//					glVertex2f(-1.0f, 1.0f);
+//					glVertex2f(1.0f, -1.0f);
+			
+//					//diagonal line right to left
+//					glVertex2f(1.0f, 1.0f);
+//					glVertex2f(-1.0f, -1.0f);
+				
+					//vertical line at center
+					glVertex2f(0.0f, 0.0f);
+					glVertex2f(0.0f, 0.05f);
+				
+					//horizontal line at center
+					glVertex2f(0.0f, 0.0f);
+					glVertex2f(1.0f, 0.0f);	
+			glEnd();				
+*/		
+			
+			glColor3f(1.0f, 1.0f, 1.0f); //white
+			
 	glPopMatrix();
 }
 
