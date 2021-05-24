@@ -743,6 +743,49 @@ glCullFace(GL_BACK);
 	glPopMatrix();
 }
 
+//added by Mike, 20210524
+//note: Z-ordering/depth test: what is drawn last is drawn top
+//References:
+//1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
+//2) https://stackoverflow.com/questions/42695183/qt-opengl-textures-transparency-issues;
+//last accessed: 20201123
+//answer by: Swift - Friday Pie, 20170309T1432
+void drawCubeWithSolidBlockColorQuadFloor(float fSideLength, GLfloat tx, GLfloat ty, GLfloat tz, float x, float y, float z)
+{
+	glPushMatrix();
+		glTranslatef(x, y, z);
+	
+		//added by Mike, 20210520
+		//quad tile as floor
+		glTranslatef(-fSideLength/2, 1.0f, -fSideLength*2.5); //where: fSideLength=4.0f 
+		glRotatef(180, 0.0f, 0.0f, 1.0f);
+		
+	
+		//TO-DO: -reverify: this due to wireframe still drawn with cube
+		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+	
+		glDisable(GL_TEXTURE_2D);
+		glColor3f(0.0f, 1.0f, 0.0f); //green
+		
+		glBegin(GL_QUADS);
+				float fBorderWidth = 0.05f;
+	
+	    	glTexCoord2f(tx, ty);
+				glVertex3f(0.0f+fBorderWidth, 0.0f, 0.0f+fBorderWidth);
+	
+      	glTexCoord2f(tx + 0.078125f, ty);			
+				glVertex3f(-fSideLength-fBorderWidth, 0.0f, 0.0f+fBorderWidth);
+	
+      	glTexCoord2f(tx + 0.078125f, ty + 0.125f);
+				glVertex3f(-fSideLength-fBorderWidth, 0.0f, -fSideLength-fBorderWidth);
+	
+				glTexCoord2f(tx, ty + 0.125f);			
+				glVertex3f(0.0f+fBorderWidth, 0.0f, -fSideLength-fBorderWidth);
+		glEnd();	
+	glPopMatrix();
+}
+
+
 //added by Mike, 20210521
 void drawCubeWithBlockTextureQuadFacingCameraOnly(float fSideLength, GLfloat tx, GLfloat ty, GLfloat tz, float x, float y, float z)
 {

@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210523
+ * @date updated: 20210524
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -151,6 +151,9 @@ public:
     //added by Mike, 20210517
 	int currentState;
 	
+	//added by Mike, 20210524
+	int currentMovingState;
+	
 
 /*	//removed by Mike, 20201226
 	//added by Mike, 20201226
@@ -279,6 +282,16 @@ public:
 		fGridSquareWidth = fSideLengthInput;
 		fGridSquareHeight = fSideLengthInput;		
 	};
+	
+	//added by Mike, 20210524
+	virtual void setCurrentMovingState(int iMovingState) {
+		currentMovingState = iMovingState;
+	}
+
+	//added by Mike, 20210524
+	virtual void setToWalkingMovingState() {
+		currentMovingState = WALKING_MOVING_STATE;
+	}
     
     //added by Mike, 20201016
     virtual void destroy();

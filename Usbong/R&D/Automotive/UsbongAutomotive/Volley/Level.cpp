@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201118
- * @date updated: 20210521
+ * @date updated: 20210524
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -207,7 +207,7 @@ void Level::draw_charPrev(GLfloat x, GLfloat y, GLfloat z, char c)
 //	drawCubeWithBlockTextureQuadFacingCameraOnly(4.0f, tx, ty, tz, x,y,z);
 //	drawCubeWithBlockTextureQuadFacingCameraOnly(4.0f, tx, ty, tz, x,0,z);
 	drawCubeWithBlockTextureQuadFloor(4.0f, tx, ty, tz, x,y,z);
-		
+
 	//added by Mike, 20210423; removed by Mike, 20210423
 //	drawCubeWithBlockTexture(4.0f, tx, ty, tz, x,y,z);	
 }
@@ -253,7 +253,22 @@ void Level::draw_char(GLfloat x, GLfloat y, GLfloat z, char c)
 		//edited by Mike, 20210521
 	//	drawCubeWithBlockTextureQuadFacingCameraOnly(4.0f, tx, ty, tz, x,y,z);
 	//	drawCubeWithBlockTextureQuadFacingCameraOnly(4.0f, tx, ty, tz, x,0,z);
+	
+	//edited by Mike, 20210524
+//	drawCubeWithBlockTextureQuadFloor(4.0f, tx, ty, tz, x,y,z);
+
+	printf("c: %c\n",c);
+	
+/* //removed by Mike, 20210524
+	if (c=='-') { //c value for empty
+		drawCubeWithSolidBlockColorQuadFloor(4.0f, tx, ty, tz, x,y,z);
+	}
+	else {
 		drawCubeWithBlockTextureQuadFloor(4.0f, tx, ty, tz, x,y,z);
+	}	
+*/
+		drawCubeWithBlockTextureQuadFloor(4.0f, tx, ty, tz, x,y,z);
+
 	
 /*	//removed by Mike, 20210521	
 	}	
@@ -386,7 +401,7 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
   fStepMovemenGridX=(fStepMovemenGridX+0.3f)%1;
   fStepMovemenGridY=(fStepMovemenGridY+0.3f)%1;
 */
-/*	//removed by Mike, 20210318	
+/*	//removed by Mike, 20210318	draw_char
   fStepMovemenGridZ=(fStepMovemenGridZ+0.3f);
   fStepMovemenGridX=(fStepMovemenGridX+0.3f);
   fStepMovemenGridY=(fStepMovemenGridY+0.3f);
@@ -621,7 +636,7 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 //				  			  std::cout << "DITO" <<"\n";
 //				  printf("DITO");
 				
-			    //Grass
+			    //stone
 				sprintf(tempText,"G");
 			
 				//added by Mike, 20201124; edited by Mike, 20210423
@@ -667,7 +682,7 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 			}	
 			//added by Mike, 20210521
 			else if (sCurrentLevelMapContainer[iRowCount][iColumnCount].compare("\"H\"") == 0) { //TRUE
-			    //Grass version 2
+			    //sand
 				sprintf(tempText,"H");
 				
 /*				//removed by Mike, 20210521
@@ -684,7 +699,28 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 				
 				
 				draw_level(fGridSquareWidth*iColumnCount, 1.0f, fGridSquareWidth*iRowCount, tempText);
-			}				
+			}		
+//added by Mike, 20210524
+//note: -1 : empty 
+			else if (sCurrentLevelMapContainer[iRowCount][iColumnCount].compare("\"S\"") == 0) { //TRUE
+
+				sprintf(tempText,"S");
+				
+				//added by Mike, 20201124; edited by Mike, 20210423
+//			    glColor3f(0.14f, 0.68f, 0.06f); // Green
+			    glColor3f(1.0f, 1.0f, 1.0f); // white
+
+				//added by Mike, 20201124
+				//execute this when using solid colors
+				glBindTexture( GL_TEXTURE_2D, 0 );
+
+/* //removed by Mike, 20210524				
+//				glBindTexture( GL_TEXTURE_2D, iLevelTextureObject );
+*/
+								
+				draw_level(fGridSquareWidth*iColumnCount, 1.0f, fGridSquareWidth*iRowCount, tempText);
+			}						
+					
 			
 		}
 	}

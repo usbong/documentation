@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210523
+ * @date updated: 20210524
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -4196,11 +4196,12 @@ void Pilot::drawPilotAsQuadWithTexture()
 	myXPosAsPixel=(int)myXPos;	
 	myYPosAsPixel=(int)myZPos;
 
+/*	//removed by Mike, 20210524
 	//added by Mike, 20210523
 	//printf("myYPos: %f",myYPos);
 	printf("myXPosAsPixel: %i\n",myXPosAsPixel);
 	printf("myYPosAsPixel: %i\n",myYPosAsPixel);
-
+*/
 
 	//edited by Mike, 20210523
 //    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixel), myZPosAsPixel);

@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200929
- * @date updated: 20210522
+ * @date updated: 20210524
  * @website address: http://www.usbong.ph
  *
  * Acknowledgments:
@@ -84,6 +84,8 @@
 //added by Mike, 20210521
 #define BUTTON_TEXTURE_A 11
 
+//added by Mike, 20210524
+#define BALL_TEXTURE_A 12
 
 #define MAX_ENEMY 2
 
@@ -114,7 +116,9 @@
 
 //edited by Mike, 20210522
 //#define MAX_DYNAMIC_OBJECT 1 //pilotPlayer1 only
-#define MAX_DYNAMIC_OBJECT 2 //pilotPlayer1 and pilotPlayer2
+//edited by Mike, 20210524
+//#define MAX_DYNAMIC_OBJECT 2 //pilotPlayer1 and pilotPlayer2
+#define MAX_DYNAMIC_OBJECT 3 //pilotPlayer1, pilotPlayer2, and Ball
 
 //#define MAX_DYNAMIC_OBJECT 17 //remove beams x32
 
@@ -161,6 +165,8 @@ class UsbongUtils;
 
 class Level; //added by Mike, 20201118
 
+class Ball; //added by Mike, 20210524
+
 class OpenGLCanvas
 {
     private:
@@ -176,6 +182,10 @@ class OpenGLCanvas
 		//added by Mike, 20210514
 		//TO-DO: -update: this
 		Button *myButton;
+
+		//added by Mike, 20210524
+		Ball *myBall;
+
 		
 		//added by Mike, 20210516
 		UsbongUtils *myUsbongUtils;

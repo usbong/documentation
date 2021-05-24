@@ -99,6 +99,9 @@
 //note: add this here in the .cpp file 
 #include "Button.h"
 
+//added by Mike, 20210524
+#include "Ball.h"
+
 //added by Mike, 20201010
 #include "Font.h"
 
@@ -302,11 +305,11 @@ bool OpenGLCanvas::init(int myWindowWidthAsPixel, int myWindowHeightAsPixel)
     myWindowHeight=8192;imageSpriteExampleMike
 */
 
-    //added by Mike, 20201023
-    myCanvasPosX=-3.2f;//0.0f;
+  //added by Mike, 20201023
+  myCanvasPosX=-3.2f;//0.0f;
 	myCanvasPosY=-1.0f;//0.0f;
 	myCanvasPosZ=-3.2f;//0.0f;
-    myCanvasEyePosX=0.0f;
+  myCanvasEyePosX=0.0f;
 	
 	//added by Mike, 20210510
 	iStartPointX=0;
@@ -520,6 +523,10 @@ bool OpenGLCanvas::init(int myWindowWidthAsPixel, int myWindowHeightAsPixel)
 //	myButton->setOpenGLCanvas(this);
 	myButton->setOpenGLCanvas(this, fGridSquareWidth);
 			
+	//added by Mike, 20210524
+	myBall = new Ball(320.0f,320.0f,0.0f,myWindowWidthAsPixel,myWindowHeightAsPixel);
+	myBall->setOpenGLCanvas(this, fGridSquareWidth);	
+			
 	//added by Mike, 20201013; edited by Mike, 20201014
 //	for (i=0; i<MAX_BEAMS; i++) {
 	for (int i=0; i<MAX_BEAMS; i++) {
@@ -634,6 +641,8 @@ bool OpenGLCanvas::init(int myWindowWidthAsPixel, int myWindowHeightAsPixel)
 	//added by Mike, 20210522
 	vMyDynamicObjectContainer.push_back(myPilotPlayer2);
 
+	//added by Mike, 20210524
+	vMyDynamicObjectContainer.push_back(myBall);
 	
 	
 /*	//removed by Mike, 20210120
@@ -3127,15 +3136,26 @@ void OpenGLCanvas::update()
         }
 */
 
-    	//added by Mike, 20210206; removed by Mike, 20210424
+    	//added by Mike, 20210206
     	myPilot->update(1); //dt
 
-		//added by Mike, 20210502
+			//added by Mike, 20210524
+			//TO-DO: -update: this
+			myPilotPlayer2->setZPos(myPilot->getZ());
+			//note: use if tied back-to-back
+//			myPilotPlayer2->setXPos(myPilot->getX());	
+			myPilotPlayer2->setXPos(myPilot->getX()+320.0f); //note: 320.0f is half the Window width
+
+			//added by Mike, 20210502
     	myPilotPlayer2->update(1); //dt
 
 		
     	//added by Mike, 20201001
     	myRobotShip->update(1); //dt
+    	
+    	//added by Mike, 20210524
+    	myBall->update(1); //dt
+    	
 		
 		//added by Mike, 20210517; removed by Mike, 202105017
 /*		
@@ -3209,7 +3229,11 @@ void OpenGLCanvas::update()
           	myRobotShip->move(-1); //IDLE_MOVING_STATE			
 			
 			//added by Mike, 20210423
-          	myPilot->move(-1);			
+          	myPilot->move(-1);
+          	
+          	//added by Mike, 20210524
+          	//TO-DO: -update: this
+ 						myPilotPlayer2->move(-1);          	
 		}		
 
        	//added by Mike, 20210111; edited by Mike, 20210121
@@ -3242,7 +3266,12 @@ void OpenGLCanvas::update()
 */
 
 			//added by Mike, 20210423
-          	myPilot->move(KEY_W);			
+      myPilot->move(KEY_W);			
+
+			//added by Mike, 20210524          	
+//      myPilotPlayer2->move(KEY_W);
+ 			myPilotPlayer2->setToWalkingMovingState();
+          	
 
 /*	//removed by Mike, 20210502			
 			//move forward
@@ -3269,6 +3298,11 @@ void OpenGLCanvas::update()
 			
 			//added by Mike, 20210423
           	myPilot->move(KEY_S);			
+          	
+			//added by Mike, 20210524 	
+//      myPilotPlayer2->move(KEY_S);
+ 			myPilotPlayer2->setToWalkingMovingState();
+           	
 
 /*	//removed by Mike, 20210502			
 			//move backward
@@ -3297,7 +3331,11 @@ void OpenGLCanvas::update()
 
 			//added by Mike, 20210423
           	myPilot->move(KEY_D);			
-			
+          	
+			//added by Mike, 20210524          	
+      //myPilotPlayer2->move(KEY_D);		
+			myPilotPlayer2->setToWalkingMovingState();
+      	
 			
 /*			//removed by Mike, 20201026
 			myCanvasPosX+=-myCanvasStepX;
@@ -3338,7 +3376,11 @@ void OpenGLCanvas::update()
 			
 			//added by Mike, 20210423
           	myPilot->move(KEY_A);			
-			
+          	
+  			//added by Mike, 20210524      	
+//      	myPilotPlayer2->move(KEY_A);			 	       	
+				myPilotPlayer2->setToWalkingMovingState();
+				
 			//removed by Mike, 20201026
 /////			myCanvasPosX+=myCanvasStepX;
 

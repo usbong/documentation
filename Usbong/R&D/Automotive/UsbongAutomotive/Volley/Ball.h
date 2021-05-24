@@ -14,8 +14,9 @@
  *
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
- * @date created: 20200930
- * @date updated: 20210523
+ * @date created: 20210514
+ * @date updated: 20210522
+ * @website address: http://www.usbong.ph
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -47,7 +48,11 @@
 
 //added by Mike, 20210423
 //TO-DO: -add: texture definitions in PolygolUtils
-#define MIKE_TEXTURE_A 7 
+//edited by Mike, 20210514
+//#define MIKE_TEXTURE_A 7 
+//removed by Mike, 20210521
+//added in OpenGLCanvas.h
+//#define BUTTON_TEXTURE_A 7
 
 #ifdef _WIN32
 	#define MAX_WAIT_COUNT 5 //Windows Machine
@@ -87,36 +92,11 @@
     #define PILOT_MAX_DIRECTIONAL_KEY_DASH_COUNT 4
 #endif
 
-/* //edited by Mike, 20201207
-//added by Mike, 20201201
-// constants for arm and leg movement states
-const char BACKWARD_STATE = 0;
-const char FORWARD_STATE  = 1;
-// index constants for accessing arm and leg array data
-const char LEFT  = 0;
-const char RIGHT = 1;
-	//removed by Mike, 20201201
-//const int STANDING_STATE = 0;
-//const int WALKING_STATE = 1;
-//edited by Mike, 20201201
-#define IDLE_MOVING_STATE 0
-#define WALKING_MOVING_STATE 1
-const int INITIALIZING_STATE = 0;
-const int MOVING_STATE = 1;
-const int IN_TITLE_STATE = 2;
-const int DYING_STATE = 3;
-//added by Mike, 20201130
-//TO-DO: -add: diagonal
-#define FACING_UP 0
-#define FACING_DOWN 1
-#define FACING_LEFT 2
-#define FACING_RIGHT 3
-*/
-
-//added by Mike, 20210523
+//added by Mike, 20210516
 class UsbongUtils;
 
-class Pilot: public MyDynamicObject
+//TO-DO: -update: this
+class Ball: public MyDynamicObject
 {
 private:	
 	int currentState;
@@ -125,10 +105,8 @@ private:
 	SoundClip *zing;
 */
 	
-/* removed to MyDynamicObject.h by Mike, 20210524	
 	//added by Mike, 20201201
 	int currentMovingState;
-*/
 	
 /*
     float myXPos;
@@ -151,12 +129,13 @@ private:
 */    
 	//added by Mike, 20210423
 	int iCountTaoAnimationFrame;
-	float fTaoAnimationFrameOffset;
-
-/*	//removed by Mike, 20210522		
+	float fObjectAnimationFrameOffset; //TO-DO: -add: in dynamicObject
+		
     OpenGLCanvas *myOpenGLCanvas;
-*/
-
+	
+	//added by Mike, 20210516; removed to public classification by Mike, 20210523
+//	UsbongUtils *myUsbongUtils;
+	
     //float boundary;
 
 //    float rotationAngle;
@@ -288,13 +267,12 @@ private:
 public:
 	//edited by Mike, 20201115 
 	//RobotShip();
-    Pilot(float xPos, float yPos, float zPos,int windowWidth,int windowHeight);
+    Ball(float xPos, float yPos, float zPos,int windowWidth,int windowHeight);
 
-	~Pilot();
-	
+	~Ball();
+
 	//added by Mike, 20210523
 	UsbongUtils *myUsbongUtils;
-
 
 	//added by Mike, 20201226
 	//note: we classify this container as public;
@@ -353,27 +331,16 @@ public:
 	void setAsPlayer2() {
 		currentFacingState=FACING_LEFT;
 		bIsPlayer2=true;
-			
+		
 		//note: position: 3,3; width, height; count starts at 0
 		//edited by Mike, 20210503
 //		myXPos=0.0f+myWidth*6;
 //		myXPos=0.0f-myWidth*3;
 //		myXPos=0.0f-myWidth*2;
-		//edited by Mike, 20210522
-//		myXPos=0.0f-myWidth*2.5;
-		//removed by Mike, 20210523
-		//set position as parameter in constructor
-//		myXPos=0.0f+fGridSquareWidth*9;
+		myXPos=0.0f-myWidth*2.5;
 		
 		//note: auto-set to be equal with player 1; player 1 Z-position based on Camera Eye		
 		//myZPos=0.0f+myHeight*3; 		
-		//added by Mike, 20210522	
-		//removed by Mike, 20210523	
-		//set position as parameter in constructor
-		//myZPos=0.0f+fGridSquareWidth*7;
-		
-//		printf("myXPos: %f; fGridSquareWidth: %f",myXPos, fGridSquareWidth);
-		
 	}
 	
 
@@ -390,25 +357,30 @@ public:
     	return true;
 	}
     
-    //added by Mike, 20201213
     virtual void draw() {
 		//edited by Mike, 20210424
 //    	drawPilot();
-		drawPilotAsQuadWithTexture();
+//		drawPilotAsQuadWithTexture();
+			drawAsQuadWithTexture();
     }
 
+	void drawAsQuadWithTexture();
+	void drawObject();
+
+/*	//removed by Mike, 20210514
 	//added by Mike, 20210423
 	void drawPilotAsQuadWithTexture();
-	void drawPilotObject(); //we use pixel auto-converted to vertex positions
-	void drawPilotObjectWith3DVertexPositions();//added by Mike, 20210523
+	void drawPilotObject();
 
 	// draws the entire robot
 	//void drawRobot(float xPos, float yPos, float zPos);
     void drawPilot();
+
 //    void drawValkyrie();
 	//added by Mike, 20201001
 	//TO-DO: -add: in ModelPool.cpp
 	void drawModelPilot();
+*/	
         
 	// updates the Pilot data
 	void updatePrev(float dt);
@@ -435,10 +407,10 @@ public:
 	//added by Mike, 20201226
 	void keyDown(int keyCode);	
 	void keyUp(int keyCode);	
-	
-	//removed by Mike, 20210522
-//	void setOpenGLCanvas(OpenGLCanvas* c);
-	
+
+/*	//removed by Mike, 20210522	
+	void setOpenGLCanvas(OpenGLCanvas* c);
+*/	
     virtual void hitBy(MyDynamicObject* mdo);
 
 	//added by Mike, 20201016
