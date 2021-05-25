@@ -825,7 +825,10 @@ void drawCubeWithAutoDrawnPixelBlockColorQuadFloor(float fSideLength, float x, f
 			glBegin(GL_QUADS);
 				//removed by Mike, 20210525
 //					float fBorderWidth = 0.05f;
-						
+
+				//removed by Mike, 202105025
+				//due to quad with fSideLength/4 not visible
+/*						
 					//background quaddrawCubeWithAutoDrawnPixelBlockColorQuadFloor
 	//	    	glTexCoord2f(tx, ty);
 					glVertex3f(0.0f+fBorderWidth, 0.0f, 0.0f+fBorderWidth);
@@ -838,6 +841,8 @@ void drawCubeWithAutoDrawnPixelBlockColorQuadFloor(float fSideLength, float x, f
 		
 	//				glTexCoord2f(tx, ty + 0.125f);			
 					glVertex3f(0.0f+fBorderWidth, 0.0f, -fSideLength-fBorderWidth);
+*/					
+					
 					
 /* //removed by Mike, 20210525					
 				    //dots
@@ -926,19 +931,20 @@ std::cout << "fCountOffset: " << fCountOffset <<"\n";
 
 //std::cout << "endPointY: " << fSideLength/iRowCountMax*iRowCount <<"\n";				
  	
+/* 	
 	//rows   
  	for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
 // 	int iRowCount=0; 	
    		// Draw a Green Line top-left origin
    		glBegin(GL_LINES);
       		glColor3f(0.0f, 0.0f, 1.0f); // Blue
-/*
-       		glVertex2f(0.0f+fBorderWidth, 0.0f);    // x, y
-       		glVertex2f(fSideLength-fBorderWidth, 0.0f);    // x, y
-*/
+
+////       		glVertex2f(0.0f+fBorderWidth, 0.0f);    // x, y
+////       		glVertex2f(fSideLength-fBorderWidth, 0.0f);    // x, y
+
        		glVertex2f(0.0f+fBorderWidth, fSideLength/iRowCountMax*iRowCount*iNumberSign);    // x, y
        		glVertex2f(fSideLength-fBorderWidth, fSideLength/iRowCountMax*iRowCount*iNumberSign);    // x, y     		
-   		glEnd();   		   	  
+       	glEnd();   		   	  
 	 }
 	 
 	 //note: total draw lines: 9, due to 10th not visible anymore
@@ -955,15 +961,26 @@ std::cout << "fCountOffset: " << fCountOffset <<"\n";
       		
        		glVertex2f(fSideLength/iColumnCountMax*iColumnCount*iNumberSign, 0.0f+fBorderWidth); // x, y
        		glVertex2f(fSideLength/iColumnCountMax*iColumnCount*iNumberSign, fSideLength-fBorderWidth); // x, y      
-      glEnd();
+      	glEnd();
 	 }
-	 
+*/	 
 	
 	//reset to 12 from 10
 //	iColumnCountMax=12;
     
 		//added by Mike, 20210525
     glColor3f(1.0f, 0.0f, 0.0f); // Red
+      
+//std::cout << "fSideLength: " << fSideLength <<"\n";		    
+	
+	//added by Mike, 20210525
+	//add this due to auto-drawn quad's position, i.e. 4th quadrant
+//	glTranslatef(0.0f, fSideLength, 0.0f); //where: fSideLength=4.0f 
+ 	//add this due to auto-drawn quad's position, i.e. 3rd quadrant
+ 	//start at top-left
+	glTranslatef(fSideLength, fSideLength, 0.0f); //where: fSideLength=4.0f 
+ 
+        
 		glBegin(GL_QUADS);
 /*		
 					glVertex3f(0.0f+fBorderWidth, 0.0f+fBorderWidth, 0.0f);
@@ -972,11 +989,33 @@ std::cout << "fCountOffset: " << fCountOffset <<"\n";
 					glVertex3f(0.0f-fSideLength, 0.0f+fBorderWidth, 0.0f);				
 */
 
+/* //edited by Mike, 20210525
 					//clock-wise; 3rd quadrant; has visible output; TO-DO: reverify
 					glVertex3f(0.0f+fBorderWidth, 0.0f+fBorderWidth, 0.0f);
 					glVertex3f(0.0f+fBorderWidth, 0.0f-fSideLength, 0.0f);		
 					glVertex3f(0.0f-fSideLength, 0.0f-fSideLength, 0.0f);		
 					glVertex3f(0.0f-fSideLength, 0.0f+fBorderWidth, 0.0f);
+*/					
+					//clock-wise; 3rd quadrant; has visible output
+					//removed fBorderWidth
+/*					
+					glVertex3f(0.0f, 0.0f, 0.0f);
+					glVertex3f(0.0f, 0.0f-fSideLength, 0.0f);		
+					glVertex3f(0.0f-fSideLength, 0.0f-fSideLength, 0.0f);		
+					glVertex3f(0.0f-fSideLength, 0.0f, 0.0f);
+*/
+					glVertex3f(0.0f, 0.0f, 0.0f);
+					glVertex3f(0.0f, 0.0f-fSideLength/4.0f, 0.0f);		
+					glVertex3f(0.0f-fSideLength/4.0f, 0.0f-fSideLength/4.0f, 0.0f);		
+					glVertex3f(0.0f-fSideLength/4.0f, 0.0f, 0.0f);
+
+/*	//edited by Mike, 20210525
+					//clock-wise; 4th quadrant; has visible output
+					glVertex3f(0.0f+fBorderWidth, 0.0f+fBorderWidth, 0.0f);
+					glVertex3f(0.0f+fSideLength/4.0f, 0.0f+fBorderWidth, 0.0f);
+					glVertex3f(0.0f+fSideLength/4.0f, 0.0f-fSideLength/4.0f, 0.0f);		
+					glVertex3f(0.0f+fBorderWidth, 0.0f-fSideLength/4.0f, 0.0f);								
+*/
 					
 /*
 					//counter-clock-wise; 4th quadrant
