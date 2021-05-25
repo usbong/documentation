@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201019
- * @date updated: 20210524
+ * @date updated: 20210525
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -27,6 +27,13 @@
 
 #include "PolygonUtils.h"
 #include <math.h>
+
+//added by Mike, 20210525
+/*#include <stdio.h>
+#include <stdlib.h>
+*/
+#include <iostream>
+
 
 //#include <SDL.h>
 
@@ -811,11 +818,15 @@ void drawCubeWithAutoDrawnPixelBlockColorQuadFloor(float fSideLength, float x, f
 			glColor3f(0.948f, 0.941f, 0.878f); //white
 			
 			//TO-DO: -add: auto-draw pixel as dots for use with select tiles, e.g. sand
+				
+			//added by Mike, 20210525
+		  float fBorderWidth = 0.05f;
 			
 			glBegin(GL_QUADS);
-					float fBorderWidth = 0.05f;
+				//removed by Mike, 20210525
+//					float fBorderWidth = 0.05f;
 						
-					//background quad
+					//background quaddrawCubeWithAutoDrawnPixelBlockColorQuadFloor
 	//	    	glTexCoord2f(tx, ty);
 					glVertex3f(0.0f+fBorderWidth, 0.0f, 0.0f+fBorderWidth);
 		
@@ -828,7 +839,7 @@ void drawCubeWithAutoDrawnPixelBlockColorQuadFloor(float fSideLength, float x, f
 	//				glTexCoord2f(tx, ty + 0.125f);			
 					glVertex3f(0.0f+fBorderWidth, 0.0f, -fSideLength-fBorderWidth);
 					
-					
+/* //removed by Mike, 20210525					
 				    //dots
 					glColor3f(0.0f,0.0f,0.0f); //black				   		
 					float fDotSideLength=fSideLength/10.0f;
@@ -837,6 +848,7 @@ void drawCubeWithAutoDrawnPixelBlockColorQuadFloor(float fSideLength, float x, f
 					glVertex3f(-fDotSideLength-fBorderWidth, 0.0f, 0.0f+fBorderWidth);	
 					glVertex3f(-fDotSideLength-fBorderWidth, 0.0f, -fDotSideLength-fBorderWidth);
 					glVertex3f(0.0f+fBorderWidth, 0.0f, -fDotSideLength-fBorderWidth);
+*/
 					
 /* //removed by Mike, 20210524	
 //TO-DO: -update: this				
@@ -854,37 +866,161 @@ void drawCubeWithAutoDrawnPixelBlockColorQuadFloor(float fSideLength, float x, f
 */									
 			glEnd();	
 			
-/*			
-			//added by Mike, 20210524
+			
+			//added by Mike, 20210525			
 			//reset
 			//remove this to draw lines vertically in the y-axis
-			glRotatef(-180, 0.0f, 0.0f, 1.0f);
-			glTranslatef(fSideLength/2, 1.0f, fSideLength*2.5); //where: fSideLength=4.0f 
+//			glRotatef(-180, 0.0f, 0.0f, 1.0f);
+//			glTranslatef(fSideLength/2, 1.0f, fSideLength*2.5); //where: fSideLength=4.0f 
+						
 			
-			glLineWidth((GLfloat)3);	
-			
-			glBegin(GL_LINES);
-					glColor3f(0.0f,0.0f,0.0f); //black
-//				//removed by Mike, 20210516
-//					//diagonal line left to right
-//					glVertex2f(-1.0f, 1.0f);
-//					glVertex2f(1.0f, -1.0f);
-			
-//					//diagonal line right to left
-//					glVertex2f(1.0f, 1.0f);
-//					glVertex2f(-1.0f, -1.0f);
+/*
+		  //added by Mike, 20210525
+			//add random dots
+			//TO-DO: -add: use rand()... in UsbongUtils
+			float fCountOffset=0.0f;
+			for (int iCount=0; iCount<40; iCount++) {
+				fCountOffset=0.1f*iCount;
 				
-					//vertical line at center
-					glVertex2f(0.0f, 0.0f);
-					glVertex2f(0.0f, 0.05f);
+//				printf("fCountOffset: %f>>>",fCountOffset);
+					
+std::cout << "fCountOffset: " << fCountOffset <<"\n";				
 				
-					//horizontal line at center
-					glVertex2f(0.0f, 0.0f);
-					glVertex2f(1.0f, 0.0f);	
-			glEnd();				
-*/		
-			
-			glColor3f(1.0f, 1.0f, 1.0f); //white
+				glTranslatef(fCountOffset,0.0f,0.0f); //x,y,z
+		  		glBegin(GL_QUADS);
+							float fBorderWidth = 0.05f;
+				    		//dots
+							glColor3f(0.0f,0.0f,0.0f); //black				   		
+							float fDotSideLength=fSideLength/10.0f;
+												
+							glVertex3f(0.0f+fBorderWidth, 0.0f, 0.0f+fBorderWidth);		
+							glVertex3f(-fDotSideLength-fBorderWidth, 0.0f, 0.0f+fBorderWidth);	
+							glVertex3f(-fDotSideLength-fBorderWidth, 0.0f, -fDotSideLength-fBorderWidth);
+							glVertex3f(0.0f+fBorderWidth, 0.0f, -fDotSideLength-fBorderWidth);
+					glEnd();
+				glTranslatef(-fCountOffset,0.0f,0.0f); //x,y,z					
+		  }
+*/
+
+	//added by Mike, 20210525
+//notes: vertical and horizontal lines in addition to those at center
+//coordinate system guide/map; pixel positions
+
+	int iRowCountMax=10;
+	int iNumberSign=1;
+/* //set of instructions; can be rain; x and y-axes; where y-axis is vertical up, et cetera
+	//rows   
+ 	for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
+   		// Draw a Green Line top-left origin
+   		glBegin(GL_LINES);
+      		glColor3f(0.0f, 0.0f, 1.0f); // Blue
+
+       		glVertex2f(0.0f, -fSideLength/iRowCountMax*iRowCount*iNumberSign);    // x, y
+      		glVertex2f(0.0f, fSideLength/iRowCountMax*iRowCount*iNumberSign);     		
+   		glEnd();   		   	  
+	 }
+*/
+
+	glTranslatef(-fSideLength, 1.0f, 1.0f); //where: fSideLength=4.0f 
+	glRotatef(-90, 1.0f, 0.0f, 0.0f);
+
+//std::cout << "endPointY: " << fSideLength/iRowCountMax*iRowCount <<"\n";				
+ 	
+	//rows   
+ 	for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
+// 	int iRowCount=0; 	
+   		// Draw a Green Line top-left origin
+   		glBegin(GL_LINES);
+      		glColor3f(0.0f, 0.0f, 1.0f); // Blue
+/*
+       		glVertex2f(0.0f+fBorderWidth, 0.0f);    // x, y
+       		glVertex2f(fSideLength-fBorderWidth, 0.0f);    // x, y
+*/
+       		glVertex2f(0.0f+fBorderWidth, fSideLength/iRowCountMax*iRowCount*iNumberSign);    // x, y
+       		glVertex2f(fSideLength-fBorderWidth, fSideLength/iRowCountMax*iRowCount*iNumberSign);    // x, y     		
+   		glEnd();   		   	  
+	 }
+	 
+	 //note: total draw lines: 9, due to 10th not visible anymore
+	 //TO-DO: -update: this
+	 
+   //columns
+   int iColumnCountMax=10;
+	 iNumberSign=1;
+ 	 for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {
+   		// Draw a Green Line top-left origin
+   		glBegin(GL_LINES);
+//      		glColor3f(0.0f, 0.0f, 1.0f); // Blue      		
+      		glColor3f(0.0f, 1.0f, 0.0f); // Green
+      		
+       		glVertex2f(fSideLength/iColumnCountMax*iColumnCount*iNumberSign, 0.0f+fBorderWidth); // x, y
+       		glVertex2f(fSideLength/iColumnCountMax*iColumnCount*iNumberSign, fSideLength-fBorderWidth); // x, y      
+      glEnd();
+	 }
+	 
+	
+	//reset to 12 from 10
+//	iColumnCountMax=12;
+    
+		//added by Mike, 20210525
+    glColor3f(1.0f, 0.0f, 0.0f); // Red
+		glBegin(GL_QUADS);
+/*		
+					glVertex3f(0.0f+fBorderWidth, 0.0f+fBorderWidth, 0.0f);
+					glVertex3f(0.0f+fBorderWidth, 0.0f+fSideLength, 0.0f);
+					glVertex3f(0.0f-fSideLength, 0.0f+fSideLength, 0.0f);		
+					glVertex3f(0.0f-fSideLength, 0.0f+fBorderWidth, 0.0f);				
+*/
+
+					//clock-wise; 3rd quadrant; has visible output; TO-DO: reverify
+					glVertex3f(0.0f+fBorderWidth, 0.0f+fBorderWidth, 0.0f);
+					glVertex3f(0.0f+fBorderWidth, 0.0f-fSideLength, 0.0f);		
+					glVertex3f(0.0f-fSideLength, 0.0f-fSideLength, 0.0f);		
+					glVertex3f(0.0f-fSideLength, 0.0f+fBorderWidth, 0.0f);
+					
+/*
+					//counter-clock-wise; 4th quadrant
+					glVertex3f(0.0f+fBorderWidth, 0.0f+fBorderWidth, 0.0f);
+					glVertex3f(0.0f+fBorderWidth, 0.0f-fSideLength, 0.0f);				
+					glVertex3f(0.0f+fSideLength, 0.0f-fSideLength, 0.0f);		
+					glVertex3f(0.0f+fSideLength, 0.0f+fBorderWidth, 0.0f);
+*/
+
+/*
+					//clock-wise; 4th quadrant
+					glVertex3f(0.0f+fBorderWidth, 0.0f+fBorderWidth, 0.0f);
+					glVertex3f(0.0f+fSideLength, 0.0f+fBorderWidth, 0.0f);
+					glVertex3f(0.0f+fSideLength, 0.0f-fSideLength, 0.0f);		
+					glVertex3f(0.0f+fBorderWidth, 0.0f-fSideLength, 0.0f);				
+*/
+
+					//counter-clock-wise; 3rd quadrant
+/*					
+					glVertex3f(0.0f+fBorderWidth, 0.0f+fBorderWidth, 0.0f);
+					glVertex3f(0.0f-fSideLength, 0.0f+fBorderWidth, 0.0f);
+					glVertex3f(0.0f-fSideLength, 0.0f-fSideLength, 0.0f);		
+					glVertex3f(0.0f+fBorderWidth, 0.0f-fSideLength, 0.0f);				
+*/
+
+					//counter-clock-wise; 1st quadrant; blank output
+/*					
+					glVertex3f(0.0f+fBorderWidth, 0.0f+fBorderWidth, 0.0f);
+					glVertex3f(0.0f+fBorderWidth, 0.0f-fSideLength, 0.0f);
+					glVertex3f(0.0f+fSideLength, 0.0f-fSideLength, 0.0f);		
+					glVertex3f(0.0f+fSideLength, 0.0f+fBorderWidth, 0.0f);				
+*/
+									
+/*
+					//clock-wise; 1st quadrant
+					glVertex3f(0.0f+fBorderWidth, 0.0f+fBorderWidth, 0.0f);
+					glVertex3f(0.0f+fBorderWidth, 0.0f+fSideLength, 0.0f);
+					glVertex3f(0.0f-fSideLength, 0.0f+fSideLength, 0.0f);		
+					glVertex3f(0.0f-fSideLength, 0.0f+fBorderWidth, 0.0f);		
+*/							
+
+		glEnd();	
+
+		glColor3f(1.0f, 1.0f, 1.0f); //white
 			
 	glPopMatrix();
 }
