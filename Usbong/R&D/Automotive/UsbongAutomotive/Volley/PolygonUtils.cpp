@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201019
- * @date updated: 20210525
+ * @date updated: 20210526
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -826,23 +826,6 @@ void drawCubeWithAutoDrawnPixelBlockColorQuadFloor(float fSideLength, float x, f
 				//removed by Mike, 20210525
 //					float fBorderWidth = 0.05f;
 
-				//removed by Mike, 202105025
-				//due to quad with fSideLength/4 not visible
-/*						
-					//background quaddrawCubeWithAutoDrawnPixelBlockColorQuadFloor
-	//	    	glTexCoord2f(tx, ty);
-					glVertex3f(0.0f+fBorderWidth, 0.0f, 0.0f+fBorderWidth);
-		
-	//      	glTexCoord2f(tx + 0.078125f, ty);			
-					glVertex3f(-fSideLength-fBorderWidth, 0.0f, 0.0f+fBorderWidth);
-		
-	//      	glTexCoord2f(tx + 0.078125f, ty + 0.125f);
-					glVertex3f(-fSideLength-fBorderWidth, 0.0f, -fSideLength-fBorderWidth);
-		
-	//				glTexCoord2f(tx, ty + 0.125f);			
-					glVertex3f(0.0f+fBorderWidth, 0.0f, -fSideLength-fBorderWidth);
-*/					
-					
 					
 /* //removed by Mike, 20210525					
 				    //dots
@@ -968,8 +951,9 @@ std::cout << "fCountOffset: " << fCountOffset <<"\n";
 	//reset to 12 from 10
 //	iColumnCountMax=12;
     
-		//added by Mike, 20210525
-    glColor3f(1.0f, 0.0f, 0.0f); // Red
+		//added by Mike, 20210525; edited by Mike, 20210526
+//    glColor3f(1.0f, 0.0f, 0.0f); // Red
+    glColor3f(1.0f, 0.95f, 0.81f); // Beach Sand
       
 //std::cout << "fSideLength: " << fSideLength <<"\n";		    
 	
@@ -980,86 +964,67 @@ std::cout << "fCountOffset: " << fCountOffset <<"\n";
  	//start at top-left
 	glTranslatef(fSideLength, fSideLength, 0.0f); //where: fSideLength=4.0f 
  
-        
+ /*       
 		glBegin(GL_QUADS);
-/*		
-					glVertex3f(0.0f+fBorderWidth, 0.0f+fBorderWidth, 0.0f);
-					glVertex3f(0.0f+fBorderWidth, 0.0f+fSideLength, 0.0f);
-					glVertex3f(0.0f-fSideLength, 0.0f+fSideLength, 0.0f);		
-					glVertex3f(0.0f-fSideLength, 0.0f+fBorderWidth, 0.0f);				
-*/
-
-/* //edited by Mike, 20210525
-					//clock-wise; 3rd quadrant; has visible output; TO-DO: reverify
-					glVertex3f(0.0f+fBorderWidth, 0.0f+fBorderWidth, 0.0f);
-					glVertex3f(0.0f+fBorderWidth, 0.0f-fSideLength, 0.0f);		
-					glVertex3f(0.0f-fSideLength, 0.0f-fSideLength, 0.0f);		
-					glVertex3f(0.0f-fSideLength, 0.0f+fBorderWidth, 0.0f);
-*/					
 					//clock-wise; 3rd quadrant; has visible output
+					//note: we use with this glTranslatef(fSideLength, fSideLength, 0.0f);
+
 					//removed fBorderWidth
-/*					
-					glVertex3f(0.0f, 0.0f, 0.0f);
-					glVertex3f(0.0f, 0.0f-fSideLength, 0.0f);		
-					glVertex3f(0.0f-fSideLength, 0.0f-fSideLength, 0.0f);		
-					glVertex3f(0.0f-fSideLength, 0.0f, 0.0f);
-*/
+////					glVertex3f(0.0f, 0.0f, 0.0f);
+////					glVertex3f(0.0f, 0.0f-fSideLength, 0.0f);		
+////					glVertex3f(0.0f-fSideLength, 0.0f-fSideLength, 0.0f);		
+////					glVertex3f(0.0f-fSideLength, 0.0f, 0.0f);
+
 					glVertex3f(0.0f, 0.0f, 0.0f);
 					glVertex3f(0.0f, 0.0f-fSideLength/4.0f, 0.0f);		
 					glVertex3f(0.0f-fSideLength/4.0f, 0.0f-fSideLength/4.0f, 0.0f);		
 					glVertex3f(0.0f-fSideLength/4.0f, 0.0f, 0.0f);
-
-/*	//edited by Mike, 20210525
-					//clock-wise; 4th quadrant; has visible output
-					glVertex3f(0.0f+fBorderWidth, 0.0f+fBorderWidth, 0.0f);
-					glVertex3f(0.0f+fSideLength/4.0f, 0.0f+fBorderWidth, 0.0f);
-					glVertex3f(0.0f+fSideLength/4.0f, 0.0f-fSideLength/4.0f, 0.0f);		
-					glVertex3f(0.0f+fBorderWidth, 0.0f-fSideLength/4.0f, 0.0f);								
-*/
-					
-/*
-					//counter-clock-wise; 4th quadrant
-					glVertex3f(0.0f+fBorderWidth, 0.0f+fBorderWidth, 0.0f);
-					glVertex3f(0.0f+fBorderWidth, 0.0f-fSideLength, 0.0f);				
-					glVertex3f(0.0f+fSideLength, 0.0f-fSideLength, 0.0f);		
-					glVertex3f(0.0f+fSideLength, 0.0f+fBorderWidth, 0.0f);
-*/
-
-/*
-					//clock-wise; 4th quadrant
-					glVertex3f(0.0f+fBorderWidth, 0.0f+fBorderWidth, 0.0f);
-					glVertex3f(0.0f+fSideLength, 0.0f+fBorderWidth, 0.0f);
-					glVertex3f(0.0f+fSideLength, 0.0f-fSideLength, 0.0f);		
-					glVertex3f(0.0f+fBorderWidth, 0.0f-fSideLength, 0.0f);				
-*/
-
-					//counter-clock-wise; 3rd quadrant
-/*					
-					glVertex3f(0.0f+fBorderWidth, 0.0f+fBorderWidth, 0.0f);
-					glVertex3f(0.0f-fSideLength, 0.0f+fBorderWidth, 0.0f);
-					glVertex3f(0.0f-fSideLength, 0.0f-fSideLength, 0.0f);		
-					glVertex3f(0.0f+fBorderWidth, 0.0f-fSideLength, 0.0f);				
-*/
-
-					//counter-clock-wise; 1st quadrant; blank output
-/*					
-					glVertex3f(0.0f+fBorderWidth, 0.0f+fBorderWidth, 0.0f);
-					glVertex3f(0.0f+fBorderWidth, 0.0f-fSideLength, 0.0f);
-					glVertex3f(0.0f+fSideLength, 0.0f-fSideLength, 0.0f);		
-					glVertex3f(0.0f+fSideLength, 0.0f+fBorderWidth, 0.0f);				
-*/
-									
-/*
-					//clock-wise; 1st quadrant
-					glVertex3f(0.0f+fBorderWidth, 0.0f+fBorderWidth, 0.0f);
-					glVertex3f(0.0f+fBorderWidth, 0.0f+fSideLength, 0.0f);
-					glVertex3f(0.0f-fSideLength, 0.0f+fSideLength, 0.0f);		
-					glVertex3f(0.0f-fSideLength, 0.0f+fBorderWidth, 0.0f);		
-*/							
-
 		glEnd();	
+*/
+		float fSideLengthDivideByThisNumber = 4.0f;
+		float fSideLengthAsDividedQuad = fSideLength/fSideLengthDivideByThisNumber ;
+		
+		for (int iPixelRowCount=0; iPixelRowCount<fSideLengthDivideByThisNumber; iPixelRowCount++) {			
+			for (int iPixelColumnCount=0; iPixelColumnCount<fSideLengthDivideByThisNumber; iPixelColumnCount++) {
 
-		glColor3f(1.0f, 1.0f, 1.0f); //white
+					//pattern for alternating color of small quads
+					if (iPixelRowCount%2==0) {					
+						if (iPixelColumnCount%2==0) {
+    					glColor3f(1.0f, 1.0f, 1.0f); // Beach White Sand
+						
+						}
+						else {
+//    					glColor3f(1.0f, 1.0f, 0.92f); // Beach Sand					
+    					glColor3f(0.95f, 0.96f, 0.90f); // Beach Sand; darker
+						}					
+					}			
+					else {
+						if (iPixelColumnCount%2==1) { //set to 1
+    					glColor3f(1.0f, 1.0f, 1.0f); // Beach White Sand						
+						}
+						else {
+ //    					glColor3f(1.0f, 1.0f, 0.92f); // Beach Sand					
+    					glColor3f(0.95f, 0.96f, 0.90f); // Beach Sand; darker
+						}									
+					}
+						
+					glTranslatef(-fSideLengthAsDividedQuad*iPixelColumnCount, -fSideLengthAsDividedQuad*iPixelRowCount, 0.0f); //where: fSideLength=4.0f	
+						
+						//note: put glTranslate... outside glBegin...
+						glBegin(GL_QUADS);					  	
+							//clock-wise; 3rd quadrant; has visible output
+							//note: we use with this glTranslatef(fSideLength, fSideLength, 0.0f);
+							glVertex3f(0.0f, 0.0f, 0.0f);
+							glVertex3f(0.0f, 0.0f-fSideLengthAsDividedQuad, 0.0f);		
+							glVertex3f(0.0f-fSideLengthAsDividedQuad, 0.0f-fSideLengthAsDividedQuad, 0.0f);		
+						  glVertex3f(0.0f-fSideLengthAsDividedQuad, 0.0f, 0.0f);					
+	 					glEnd();	
+					
+					glTranslatef(fSideLengthAsDividedQuad*iPixelColumnCount, fSideLengthAsDividedQuad*iPixelRowCount, 0.0f); //where: fSideLength=4.0f
+			}
+		}				
+
+	 glColor3f(1.0f, 1.0f, 1.0f); //white
 			
 	glPopMatrix();
 }
