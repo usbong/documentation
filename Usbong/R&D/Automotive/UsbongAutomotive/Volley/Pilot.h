@@ -182,9 +182,11 @@ private:
                  myDeathAnimationImg5;
     int currentDeathFrame;
     
+/*	//removed by Mike, 20210527    
     //int previousFacingState;
 	//added by Mike, 20201201    
     int currentFacingState;    
+*/
 
 	//added by Mike, 20210111
     int iFiringBeamCount; 
@@ -352,7 +354,17 @@ public:
 	//added by Mike, 20210502
 	void setAsPlayer2() {
 		currentFacingState=FACING_LEFT;
+
 		bIsPlayer2=true;
+		
+/*		myXPosAsPixel=myXPosAsPixel-myWidthAsPixelMax-myWidthAsPixel;
+		myYPosAsPixel=myZPosAsPixel-myHeightAsPixelMax-myHeightAsPixel;
+*/		
+/*		myXPosAsPixel=myXPosAsPixel+myWidthAsPixelMax+myWidthAsPixel;
+		myYPosAsPixel=myYPosAsPixel+myHeightAsPixelMax+myHeightAsPixel;
+*/
+		
+//		myZPosAsPixel=0.0f;
 			
 		//note: position: 3,3; width, height; count starts at 0
 		//edited by Mike, 20210503

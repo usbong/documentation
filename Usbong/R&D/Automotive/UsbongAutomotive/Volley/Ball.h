@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20210514
- * @date updated: 20210522
+ * @date updated: 20210527
  * @website address: http://www.usbong.ph
  *
  * Acknowledgments:
@@ -107,7 +107,7 @@ private:
 	
 	//added by Mike, 20201201
 	int currentMovingState;
-	
+		
 /*
     float myXPos;
     float myYPos;
@@ -387,17 +387,6 @@ public:
 	//added by Mike, 20210423
 	void update(float dt);
 
-	//added by Mike, 20210505
-	void updateToFaceOpponent(float opponentPosX) {
-		myOpponentXPos=opponentPosX; //added by Mike, 20210505
-	
-		if (getX() < opponentPosX) {
-			currentFacingState=FACING_RIGHT;
-		}		
-		else {
-			currentFacingState=FACING_LEFT;		
-		}
-	}
 
 	// changes the robot's state
 	void changeState(int s);

@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20210524
- * @date updated: 20210524
+ * @date updated: 20210527
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -380,8 +380,13 @@ Ball::Ball(float xPos, float yPos, float zPos, int windowWidth, int windowHeight
     //edited by Mike, 20201001
 	//currentState=IN_TITLE_STATE;//MOVING_STATE;
 	currentState=MOVING_STATE;
-	//added by Mike, 20201201
-	currentMovingState=IDLE_MOVING_STATE;
+	//added by Mike, 20201201; edited by Mike, 20210527
+//	currentMovingState=IDLE_MOVING_STATE;
+	currentMovingState=WALKING_MOVING_STATE;
+	
+	//added by Mike, 20210527
+	bIsMovingDown=false;
+	
 
 //    myXPos=0.0;
 //    myYPos=0.0;
@@ -417,10 +422,14 @@ Ball::Ball(float xPos, float yPos, float zPos, int windowWidth, int windowHeight
 	//observed: Samurai Spirits IV's created world executes such camera eye movement
 	//that becomes noticeable with background zoom-in, zoom-out via cycling movement
 //    stepX=0.3;
-    stepX=0.2;
-	
+    stepX=0.2;	
     stepY=0.3;
     stepZ=0.3;
+
+		//added by Mike, 20210527
+		iStepXAsPixel=3;
+		iStepYAsPixel=3;
+		iStepZAsPixel=3;
 
     invincibleCounter=0;
     currentDeathFrame=0;
@@ -454,7 +463,7 @@ Ball::Ball(float xPos, float yPos, float zPos, int windowWidth, int windowHeight
 	myYPosAsPixel=(int)yPos;
 	myZPosAsPixel=(int)zPos;
 	
-	printf(">>myXPosAsPixel: %i\n",myXPosAsPixel);
+//	printf(">>myXPosAsPixel: %i\n",myXPosAsPixel);
 
 	    
 /*
@@ -646,7 +655,7 @@ void Ball::drawObject()
 	glEnd();
 */	
 	
-	//added by Mike, 20210422	
+	//added by Mike, 20210422	myZPos
 	glPushMatrix();
 		//added by Mike, 20210420
 		glColor3f(1.0f, 1.0f, 1.0f); // white
@@ -723,6 +732,37 @@ void Ball::update(float dt)
            case MOVING_STATE:      
 						switch(currentMovingState) {
 		           case WALKING_MOVING_STATE:
+		           				//added by Mike, 20210527
+/*		           				
+		           	      myYPosAsPixel+=-stepY;
+		           	      myXPosAsPixel+=-stepX;
+*/
+											//TO-DO: -add: velocity
+											
+printf("myYPosAsPixel: %i\n",myYPosAsPixel);
+											
+											//note: 0,0 origin/anchor at top-left
+											if (myYPosAsPixel<=160) {
+												bIsMovingDown=true;
+											}/*	//removed by Mike, 20210527
+											else if (myYPosAsPixel>=360) {
+												bIsMovingDown=false;
+											}*/
+				
+											if (bIsMovingDown) {
+		           	      	myYPosAsPixel+=iStepYAsPixel;
+											}
+											else {
+	           	      		myYPosAsPixel+=-iStepYAsPixel;
+											}								
+
+		           	      //myYPosAsPixel+=iStepYAsPixel;
+																					
+		           	      myXPosAsPixel+=-iStepXAsPixel;	
+
+printf(">> myYPosAsPixel: %i\n",myYPosAsPixel);
+
+		           	      
 		                break;
 		           case ATTACKING_MOVING_STATE:
 		            	break;
@@ -1356,8 +1396,6 @@ void Ball::move(int key)
 		}		
 	}
 		   
-		   
-
 	      //added by Mike, 20201201; edited by Mike, 20201225
           //currentFacingState=FACING_RIGHT;
 	      if (bIsFiringBeam) {	      	
@@ -1370,7 +1408,7 @@ void Ball::move(int key)
 		  //added by Mike, 20201226
    		  currentMovingState=WALKING_MOVING_STATE;
 		  break;
-		//added by Mike, 20201201
+		//added by Mike, 20201201bIsMovingDown=false;
 		default:
 		  currentMovingState=IDLE_MOVING_STATE;
 		  bIsFiringBeam=false; //added by Mike, 20201226
@@ -1422,16 +1460,24 @@ void Ball::move(int key)
 }
 void Ball::hitBy(MyDynamicObject* mdo)
 {
+		//edited by Mike, 20210527; removed by Mike, 20210527
+//		bIsMovingDown=false;
+		
+		updateDirection();
+
+		
+/*
      //changeState(DEATH_STATE);
      //setCollidable(false);
     myOpenGLCanvas->loseLife();
     
     //removed by Mike, 20201001
-/*
-	zing = sound->load_sound_clip(RESETSOUND);
-	sound->play_sound_clip(zing);	
-*/
+/////	zing = sound->load_sound_clip(RESETSOUND);
+////	sound->play_sound_clip(zing);	
+
     reset();    
+*/
+    
 }
 
 /*	//removed by Mike, 20210522	

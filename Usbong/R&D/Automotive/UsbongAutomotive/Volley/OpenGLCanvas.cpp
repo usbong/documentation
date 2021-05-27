@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210524
+ * @date updated: 20210527
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -1148,8 +1148,10 @@ void OpenGLCanvas::mouseActionUp(int iMouseActionId, int iXPos, int iYPos)
 	iEndPointY=iYPos;		
 
 	//added by Mike, 20210513
+/*	//removed by Mike, 20210527	
 	printf("actionUP Start X,Y: %f,%f\n",myUsbongUtils->autoConvertFromPixelToVertexPointX(iStartPointX),myUsbongUtils->autoConvertFromPixelToVertexPointY(iStartPointY));
 	printf("actionUP End X,Y: %f,%f\n",myUsbongUtils->autoConvertFromPixelToVertexPointX(iEndPointX),myUsbongUtils->autoConvertFromPixelToVertexPointY(iEndPointY));
+*/
 	
 	//Reference: https://www.mathsisfun.com/algebra/line-equation-2points.html;
 	//last accessed: 20210513
@@ -3138,12 +3140,30 @@ void OpenGLCanvas::update()
     	//added by Mike, 20210206
     	myPilot->update(1); //dt
 
-			//added by Mike, 20210524
+			//added by Mike, 20210524; edited by Mike, 20210527
 			//TO-DO: -update: this
-			myPilotPlayer2->setZPos(myPilot->getZ());
+//			myPilotPlayer2->setZPosAsPixel(myPilot->getZAsPixel());
+			myPilotPlayer2->setYPos(myPilot->getY());
+
+			//added by Mike, 20210527; TO-DO: -update: this
+			//note: we use z in vertex position; y in pixel position
+			myPilotPlayer2->setYPosAsPixel(myUsbongUtils->autoConvertFromPixelToVertexPointY(myPilot->getZ())); //note: 320 is half the Window width
+
+			
 			//note: use if tied back-to-back
 //			myPilotPlayer2->setXPos(myPilot->getX());	
-			myPilotPlayer2->setXPos(myPilot->getX()+320.0f); //note: 320.0f is half the Window width
+			//edited by Mike, 20210527
+//			myPilotPlayer2->setXPosAsPixel(myPilot->getXAsPixel()+320); //note: 320 is half the Window width
+			//edited by Mike, 20210527
+			myPilotPlayer2->setXPos(myPilot->getX()+320); //note: 320 is half the Window width
+//			myPilotPlayer2->setXPos(myPilot->getXAsPixel()+320); //note: 320 is half the Window width
+
+			//added by Mike, 20210527; TO-DO: -update: this
+			myPilotPlayer2->setXPosAsPixel(myUsbongUtils->autoConvertFromPixelToVertexPointX(myPilot->getX()+320)); //note: 320 is half the Window width
+
+   std::cout << "myPilotPlayer2; posX " << myUsbongUtils->autoConvertFromPixelToVertexPointX(myPilot->getX()+320) << "\n";
+   std::cout << "myBall; posX " << myUsbongUtils->autoConvertFromPixelToVertexPointX(myBall->getX()) << "\n";
+
 
 			//added by Mike, 20210502
     	myPilotPlayer2->update(1); //dt
@@ -3155,6 +3175,10 @@ void OpenGLCanvas::update()
     	//added by Mike, 20210524
     	myBall->update(1); //dt
     	
+    	//added by Mike, 20210527
+    	myBall->collideWith(myPilot); 	
+   		myBall->collideWith(myPilotPlayer2);
+
 		
 		//added by Mike, 20210517; removed by Mike, 202105017
 /*		

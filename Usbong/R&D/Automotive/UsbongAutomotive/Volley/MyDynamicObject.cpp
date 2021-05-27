@@ -222,11 +222,44 @@ void MyDynamicObject::collideWith(MyDynamicObject* mdo)
     }
        
 //    if (checkCollision(this, mdo))
-    if (isIntersectingRect(this, mdo))
+		//edited by Mike, 20210527
+//    if (isIntersectingRect(this, mdo))
+    if (isIntersectingRectAsPixel(this, mdo))
     {
         this->hitBy(mdo);
         mdo->hitBy(this);
     }
+}
+
+//added by Mike, 20210527
+bool MyDynamicObject::isIntersectingRectAsPixel(MyDynamicObject* mdo1, MyDynamicObject* mdo2)
+{     
+/*
+    char str[700];
+    sprintf(str,"here: %f",mdo1->getY());//myZPos
+    MessageBox(NULL, str, "Welcome!", MB_OK);
+*/
+/*	//edited by Mike, 20201117
+    if (mdo2->getY()+mdo2->getHeight() < mdo1->getY() || //is the bottom of mdo2 above the top of mdo1?
+        mdo2->getY() > mdo1->getY()+mdo1->getHeight() || //is the top of mdo2 below bottom of mdo1?
+        mdo2->getX()+mdo2->getWidth() < mdo1->getX()  || //is the right of mdo2 to the left of mdo1?
+        mdo2->getX() > mdo1->getX()+mdo1->getWidth()) //is the left of mdo2 to the right of mdo1?
+        return false;
+*/
+	//note: computer computation correct, albeit human person may think 
+	//based on observation in 3D (3-Dimensions) that beam should hit asteroid
+	//alternative collision detection technique 
+	//for computer to verify if not intersecting
+	//Reference: Jongko, J. et al (2004)
+
+    if (mdo2->getYAsPixel()+mdo2->getHeightAsPixel() < mdo1->getYAsPixel() || //is the bottom of mdo2 above the top of mdo1?
+        mdo2->getYAsPixel() > mdo1->getYAsPixel()+mdo1->getHeightAsPixel() || //is the top of mdo2 below bottom of mdo1?
+        mdo2->getXAsPixel()+mdo2->getWidthAsPixel() < mdo1->getXAsPixel()  || //is the right of mdo2 to the left of mdo1?
+        mdo2->getXAsPixel() > mdo1->getXAsPixel()+mdo1->getWidthAsPixel()) {//is the left of mdo2 to the right of mdo1?
+        return false;
+		}
+	
+    return true;
 }
 
 //added by Mike, 20210517

@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201118
- * @date updated: 20210525
+ * @date updated: 20210527
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -236,8 +236,9 @@ void Level::draw_char(GLfloat x, GLfloat y, GLfloat z, char c)
 		// check if the character is valid
 		if (c < ' ' || c > '~')
 			return;
-			
-	printf("c: %c\n",c);
+	
+//removed by Mike, 20210527		
+//	printf("c: %c\n",c);
 		
 		//TO-DO: -update: this
  //edited by Mike, 20210524	

@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210524
+ * @date updated: 20210527
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -515,14 +515,29 @@ Pilot::Pilot(float xPos, float yPos, float zPos, int windowWidth, int windowHeig
 	myWidth=4.0f;
     myHeight=4.0f;
     
-    //added by Mike, 20210523
+  //added by Mike, 20210523; edited by Mike, 20210527
+  //note: these are for size of whole image, i.e. not clipped to be only select parts
+/*	myWidthAsPixel=128; //64*2
+  myHeightAsPixel=64*4;
+*/  
+/*
 	myWidthAsPixel=128; //64*2
-    myHeightAsPixel=64*4;
+  myHeightAsPixel=192; //64*3
+*/
+
+	myWidthAsPixelMax=64*8;
+	myHeightAsPixelMax=64*4;
+	
+//note:	glScalef(0.2f/2, 0.4f/2, 1.0f);			
+	//added by Mike, 20210527
+	myWidthAsPixel=128*0.2/2;
+  myHeightAsPixel=192*0.4/2;
+
 
 	//added by Mike, 20210523
 	myXPos=xPos;
 	myYPos=0.0f;
-    myZPos=zPos;
+  myZPos=zPos;
     
 	//TO-DO: -update: this
 	//note: float xPos as parameter to int myXPosAsPixel not correct output	
@@ -787,7 +802,7 @@ void Pilot::drawPilot()
 				switch(currentMovingState) {
 		            case IDLE_MOVING_STATE:		
 		            
-					  	//added by Mike, 20201229
+					  	//added by Mike, 202myWidthAsPixel01229
 					  	//TO-DO: -reverify: that problem with not smooth movement of right arm
 					  	//after firing beam up z-axis, and walking down without firing
 				   		armAngles[RIGHT]=0.0f;
@@ -1985,7 +2000,7 @@ void Pilot::drawPilot()
 			            		drawHead(0.1f, 0.2f, 0.0f);		
 */
 /*	//removed by Mike, 20210201
-							   if (currentFacingState==FACING_DOWN) {
+							   if stepZAsPixel(currentFacingState==FACING_DOWN) {
 							   	  drawBody(0.1f, -0.15f, 0.0f);
 								  drawHead(0.1f, 0.2f, -0.1f);
 							   }
@@ -4192,10 +4207,10 @@ void Pilot::drawPilotAsQuadWithTexture()
     //glTranslatef(myXPos, myYPos, myZPos);
 //	printf(">> myXPos:%f, myYPos:%f, myZPos:%f;\n",myXPos,myYPos,myZPos);
 		
-	
+	//TO-DO: -update: this
 	myXPosAsPixel=(int)myXPos;	
 	myYPosAsPixel=(int)myZPos;
-
+	
 /*	//removed by Mike, 20210524
 	//added by Mike, 20210523
 	//printf("myYPos: %f",myYPos);
@@ -4364,7 +4379,7 @@ void Pilot::drawPilotObject()
 //		glScalef(0.20f, 0.4f, 1.0f);		
 //glScalef(3.2f, 3.2f, 3.2f);		
 		glScalef(0.2f/2, 0.4f/2, 1.0f);		
-
+		
 		//added by Mike, 20210516
 		//due to instructions to auto-draw quad using triangles
 		glTranslatef(1.0f, 0.5f, 0.0f);		
@@ -5257,7 +5272,7 @@ void Pilot::autoVerifyDashStateWithKeyUp(int keyCode) {
 		//edited by Mike, 20210128
 //		if (myKeysDown[KEY_RIGHT]==TRUE) {
 		if (myKeysDown[KEY_D]==TRUE) {
-			//edited by Mike, 20210129
+			//edited by Mike, 20210129myZPosAsPixel
 //			setDashStateWithKeyUp();
 			setDashStateWithKeyUp(KEY_D);
 		}
@@ -5317,7 +5332,7 @@ void Pilot::move(int key)
    
    //TO-DO: -add: bIsMovingLeft, etc, while facing up, etc
 
-   //added by Mike, 20201226; removed by Mike, 20201226
+   //added by Mike, 20201226; removed by Mike, 2myZPosAsPixel0201226
 //   myKeysDown[key] = TRUE;	
 
 	//removed by Mike, 20210203
@@ -5489,7 +5504,9 @@ void Pilot::move(int key)
 //----------		
           //added by Mike, 20201001; edited by Mike, 20201116
 //	      myYPos+=-stepY;
+					//edited by Mike, 20210527
 	      myZPos+=-stepZ;
+//	      myZPosAsPixel+=-iStepZAsPixel;
 
 			//added by Mike, 20210127; edited by Mike, 20210128
 //			if (bIsExecutingDash) {
@@ -5499,7 +5516,10 @@ void Pilot::move(int key)
 	
 	//			if ((bIsExecutingDashArray[KEY_UP]) || (bIsExecutingDashArray[KEY_W])) {			
 	//			if ((bIsExecutingDashArray[KEY_W])) {
-					myZPos+=-stepZ;
+					//edited by Mike, 20210527
+	      myZPos+=-stepZ;
+//	      	myZPosAsPixel+=-iStepZAsPixel;
+					
 				}
 //added by Mike, 20210521		
 //----------		
@@ -5538,14 +5558,18 @@ void Pilot::move(int key)
 				
 //added by Mike, 20210521		
 //----------		
-          //added by Mike, 20201001; edited by Mike, 20201116
+          //added by Mike, 20201001; edigetXAsPixelted by Mike, 20201116
 //	      myYPos+=stepY;
+				//edited by Mike, 20210527
 	      myZPos+=stepZ;
-
+//	      myZPosAsPixel+=iStepZAsPixel;
+	    	     
 		//added by Mike, 20210127; edited by Mike, 20210128
 //			if (bIsExecutingDash) {
 		if ((bIsExecutingDashArray[KEY_S])) {				
-	    	myZPos+=stepZ;
+				//edited by Mike, 20210527
+	      myZPos+=stepZ;
+//	      myZPosAsPixel+=iStepZAsPixel;
 		}
 //added by Mike, 20210521		
 //----------		
@@ -5614,10 +5638,15 @@ void Pilot::move(int key)
 				}
 		}
 */			
+				//edited by Mike, 20210527
 		myXPos+=-stepX;
+//	      myXPosAsPixel+=-iStepXAsPixel;
+		
 			
 		if ((bIsExecutingDashArray[KEY_A])) {		
-			myXPos+=-stepX;
+				//edited by Mike, 20210527
+		myXPos+=-stepX;
+//	      myXPosAsPixel+=-iStepXAsPixel;
 		}
 		
 	}
@@ -5646,7 +5675,7 @@ void Pilot::move(int key)
           break;      
 //     case KEY_RIGHT: //removed by Mike, 20210130
      case KEY_D: //added by Mike, 20210128
-		   //removed by Mike, 20201001
+		   //removed by Mike, 20201001getXAsPixel
 //          rotationAngle-=rotationStep;
 
 /*		//removed by Mike, 20201014
@@ -5686,10 +5715,15 @@ void Pilot::move(int key)
 			}
 		}	
 */		
+				//edited by Mike, 20210527
 		myXPos+=stepX;
+	//      myXPosAsPixel+=iStepXAsPixel;
+		
 
 		if ((bIsExecutingDashArray[KEY_D])) {
-			myXPos+=stepX;
+				//edited by Mike, 20210527
+		myXPos+=stepX;
+//	      myXPosAsPixel+=iStepXAsPixel;
 		}		
 	}
 		   
@@ -5758,17 +5792,22 @@ void Pilot::move(int key)
 	}
 }
 void Pilot::hitBy(MyDynamicObject* mdo)
-{
+{		
+		//TO-DO: -add: auto-identify if Ball object
+//		mdo->updateDirection();
+
+	//removed by Mike, 20210527
+/*
      //changeState(DEATH_STATE);
      //setCollidable(false);
     myOpenGLCanvas->loseLife();
     
     //removed by Mike, 20201001
-/*
-	zing = sound->load_sound_clip(RESETSOUND);
-	sound->play_sound_clip(zing);	
-*/
-    reset();    
+	////zing = sound->load_sound_clip(RESETSOUND);
+	////sound->play_sound_clip(zing);	
+
+    reset();
+*/        
 }
 
 /*	//removed by Mike, 20210522
