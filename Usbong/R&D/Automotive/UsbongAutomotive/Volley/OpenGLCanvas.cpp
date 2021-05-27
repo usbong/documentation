@@ -3159,10 +3159,13 @@ void OpenGLCanvas::update()
 //			myPilotPlayer2->setXPos(myPilot->getXAsPixel()+320); //note: 320 is half the Window width
 
 			//added by Mike, 20210527; TO-DO: -update: this
-			myPilotPlayer2->setXPosAsPixel(myUsbongUtils->autoConvertFromPixelToVertexPointX(myPilot->getX()+320)); //note: 320 is half the Window width
+//			myPilotPlayer2->setXPosAsPixel(myUsbongUtils->autoConvertFromPixelToVertexPointX(myPilot->getXAsPixel()+320)); //note: 320 is half the Window width
+			myPilotPlayer2->setXPosAsPixel(myUsbongUtils->autoConvertFromPixelToVertexPointX(myPilot->getXAsPixel())); //note: 320 is half the Window width
 
-   std::cout << "myPilotPlayer2; posX " << myUsbongUtils->autoConvertFromPixelToVertexPointX(myPilot->getX()+320) << "\n";
-   std::cout << "myBall; posX " << myUsbongUtils->autoConvertFromPixelToVertexPointX(myBall->getX()) << "\n";
+//   std::cout << "myPilotPlayer2; posX " << myUsbongUtils->autoConvertFromPixelToVertexPointX(myPilot->getXAsPixel()+320) << "\n";
+   std::cout << "myPilotPlayer2; posX " << myUsbongUtils->autoConvertFromPixelToVertexPointX(myPilot->getXAsPixel()) << "\n";
+
+   std::cout << "myBall; posX " << myUsbongUtils->autoConvertFromPixelToVertexPointX(myBall->getXAsPixel()) << "\n";
 
 
 			//added by Mike, 20210502

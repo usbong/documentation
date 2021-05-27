@@ -535,9 +535,15 @@ Pilot::Pilot(float xPos, float yPos, float zPos, int windowWidth, int windowHeig
 
 
 	//added by Mike, 20210523
+	//TO-DO: -update: this
+/*
 	myXPos=xPos;
 	myYPos=0.0f;
-  myZPos=zPos;
+  	myZPos=zPos;
+*/
+	myXPos=0.0f;
+	myYPos=0.0f;
+  	myZPos=0.0f;
     
 	//TO-DO: -update: this
 	//note: float xPos as parameter to int myXPosAsPixel not correct output	
