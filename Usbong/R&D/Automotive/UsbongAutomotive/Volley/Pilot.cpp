@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210527
+ * @date updated: 20210528
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -535,15 +535,15 @@ Pilot::Pilot(float xPos, float yPos, float zPos, int windowWidth, int windowHeig
 
 
 	//added by Mike, 20210523
-	//TO-DO: -update: this
-/*
+	//edited by Mike, 202105028
 	myXPos=xPos;
 	myYPos=0.0f;
   	myZPos=zPos;
-*/
+/*
 	myXPos=0.0f;
 	myYPos=0.0f;
   	myZPos=0.0f;
+*/
     
 	//TO-DO: -update: this
 	//note: float xPos as parameter to int myXPosAsPixel not correct output	

@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210527
+ * @date updated: 20210528
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -3140,6 +3140,7 @@ void OpenGLCanvas::update()
     	//added by Mike, 20210206
     	myPilot->update(1); //dt
 
+/*			//removed by Mike, 20210528
 			//added by Mike, 20210524; edited by Mike, 20210527
 			//TO-DO: -update: this
 //			myPilotPlayer2->setZPosAsPixel(myPilot->getZAsPixel());
@@ -3148,7 +3149,10 @@ void OpenGLCanvas::update()
 			//added by Mike, 20210527; TO-DO: -update: this
 			//note: we use z in vertex position; y in pixel position
 			myPilotPlayer2->setYPosAsPixel(myUsbongUtils->autoConvertFromPixelToVertexPointY(myPilot->getZ())); //note: 320 is half the Window width
-
+*/			
+			//added by Mike, 20210528
+			myPilotPlayer2->setZPos(myPilot->getZ());
+			myPilotPlayer2->setYPosAsPixel(myUsbongUtils->autoConvertFromPixelToVertexPointY(myPilot->getZ())); //note: 320 is half the Window width
 			
 			//note: use if tied back-to-back
 //			myPilotPlayer2->setXPos(myPilot->getX());	

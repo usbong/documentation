@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210527
+ * @date updated: 20210528
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -140,15 +140,21 @@ public:
     //added by Mike, 20210527
     //reminder: set in constructor
     int	myWidthAsPixelMax;
-		int myHeightAsPixelMax;
+	int myHeightAsPixelMax;
     
     //added by Mike, 20210527
 		int iStepXAsPixel;
 		int iStepYAsPixel;
 		int iStepZAsPixel;
 		
-		//added by Mike, 20210527		
-		bool bIsMovingDown;
+	//added by Mike, 20210528
+    float stepX;
+    float stepY;
+    float stepZ;
+		
+		
+	//added by Mike, 20210527		
+	bool bIsMovingDown;
 	
 	//added by Mike, 20201115
     int myWindowWidth;

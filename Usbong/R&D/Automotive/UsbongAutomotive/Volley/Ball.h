@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20210514
- * @date updated: 20210527
+ * @date updated: 20210528
  * @website address: http://www.usbong.ph
  *
  * Acknowledgments:
@@ -118,10 +118,13 @@ private:
     float myOpponentXPos;
     float myOpponentYPos;
     float myOpponentZPos;
-	
+
+/*	//removed by Mike, 20210528
     float stepX;
     float stepY;
     float stepZ;
+*/
+    
 /*    
     float myWidthX;
     float myWidthZ;
