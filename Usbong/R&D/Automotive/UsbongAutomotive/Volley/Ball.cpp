@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20210524
- * @date updated: 20210528
+ * @date updated: 20210529
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -854,7 +854,7 @@ void Ball::update(float dt)
 					if (!bIsMovingDown) {                  
 				    	//note: deaccelerate 
                     	if (thrust>0) {
-                      		thrust-=0.2f;//0.1f; //0.06f; //0.03f; //0.02f
+                            thrust-=0.3f;//0.2f;//0.1f; //0.06f; //0.03f; //0.02f
                     	}
                     	else {
                     		thrust=0;
@@ -864,6 +864,13 @@ void Ball::update(float dt)
                     else {
                     	  //accelerate
                       	thrust+=0.2f; //0.3f; //0.5f; //0.03f; //0.02f; //0.01f
+                        
+                        //added by Mike, 20210528
+                        if (thrust<thrustMax) {
+                        }
+                        else {
+                            thrust=thrustMax;
+                        }
                     }
                   
 	

@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210528
+ * @date updated: 20210529
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -1572,6 +1572,67 @@ void OpenGLCanvas::render()
 	}
 */	
 	
+    
+    /* //removed by Mike, 20210524
+     //added by Mike, 20210524
+     //notes: vertical and horizontal lines in addition to those at center
+     //coordinate system guide/map; pixel positions
+     iRowCountMax=10;
+     int iNumberSign=1;
+     //rows
+     for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
+   		// Draw a Green Line top-left origin
+   		glBegin(GL_LINES);
+     glColor3f(0.0f, 0.0f, 1.0f); // Blue
+     
+     glVertex2f(-1.0f, 2.0f/iRowCountMax*iRowCount*iNumberSign);    // x, y
+     //TO-DO: -add: auto-compute myWindowWidth
+     glVertex2f(1.0f, 2.0f/iRowCountMax*iRowCount*iNumberSign);
+   		glEnd();
+     }
+     iNumberSign=-1;
+     for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
+   		// Draw a Green Line top-left origin
+   		glBegin(GL_LINES);
+     glColor3f(0.0f, 0.0f, 1.0f); // Blue
+     
+     glVertex2f(-1.0f, 2.0f/iRowCountMax*iRowCount*iNumberSign);    // x, y
+     //TO-DO: -add: auto-compute myWindowWidth
+     glVertex2f(1.0f, 2.0f/iRowCountMax*iRowCount*iNumberSign);
+   		glEnd();
+     }
+     
+     //reset to 12 from 10
+     iRowCountMax=12;
+	 	  
+     //columns
+     iColumnCountMax=10;
+     iNumberSign=1;
+     for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {
+   		// Draw a Green Line top-left origin
+   		glBegin(GL_LINES);
+     glColor3f(0.0f, 0.0f, 1.0f); // Blue
+     glVertex2f(2.0f/iColumnCountMax*iColumnCount*iNumberSign, -1.0f);    // x, y
+     //TO-DO: -add: auto-compute myWindowHeight
+     glVertex2f(2.0f/iColumnCountMax*iColumnCount*iNumberSign, 1.0f);
+   		glEnd();
+     }
+     iNumberSign=-1;
+     for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {
+   		// Draw a Green Line top-left origin
+   		glBegin(GL_LINES);
+     glColor3f(0.0f, 0.0f, 1.0f); // Blue
+     glVertex2f(2.0f/iColumnCountMax*iColumnCount*iNumberSign, -1.0f);    // x, y
+     //TO-DO: -add: auto-compute myWindowHeight
+     glVertex2f(2.0f/iColumnCountMax*iColumnCount*iNumberSign, 1.0f);
+   		glEnd();
+     }
+     //reset to 12 from 10
+     iColumnCountMax=12;
+     */
+    
+    
+    
 	
 //	printf("myMouseActionDown[MOUSE_LEFT_BUTTON]: %i\n",myMouseActionDown[MOUSE_LEFT_BUTTON]);
 	
@@ -3090,8 +3151,10 @@ void OpenGLCanvas::update()
         
 //        if (myBall->getY()+myBall->getHeight() > 420.0f) {
 //        if (myBall->getY()+myBall->getHeight() > 640.0f) {
+        printf("myBall y and height: %f\n",myBall->getY()+myBall->getHeight());
+        
         if (myBall->getY()+myBall->getHeight() > 512.0f) {
-
+            printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>END!\n");
             myBall->setEnd();
         }
         
