@@ -523,8 +523,9 @@ bool OpenGLCanvas::init(int myWindowWidthAsPixel, int myWindowHeightAsPixel)
 //	myButton->setOpenGLCanvas(this);
 	myButton->setOpenGLCanvas(this, fGridSquareWidth);
 			
-	//added by Mike, 20210524
-	myBall = new Ball(320.0f,320.0f,0.0f,myWindowWidthAsPixel,myWindowHeightAsPixel);
+	//added by Mike, 20210524; edited by Mike, 20210528
+//	myBall = new Ball(320.0f,320.0f,0.0f,myWindowWidthAsPixel,myWindowHeightAsPixel);
+	myBall = new Ball(0.0f,320.0f,0.0f,myWindowWidthAsPixel,myWindowHeightAsPixel);
 	myBall->setOpenGLCanvas(this, fGridSquareWidth);	
 			
 	//added by Mike, 20201013; edited by Mike, 20201014
@@ -3139,43 +3140,15 @@ void OpenGLCanvas::update()
 
     	//added by Mike, 20210206
     	myPilot->update(1); //dt
-
-/*			//removed by Mike, 20210528
-			//added by Mike, 20210524; edited by Mike, 20210527
-			//TO-DO: -update: this
-//			myPilotPlayer2->setZPosAsPixel(myPilot->getZAsPixel());
-			myPilotPlayer2->setYPos(myPilot->getY());
-
-			//added by Mike, 20210527; TO-DO: -update: this
-			//note: we use z in vertex position; y in pixel position
-			myPilotPlayer2->setYPosAsPixel(myUsbongUtils->autoConvertFromPixelToVertexPointY(myPilot->getZ())); //note: 320 is half the Window width
-*/			
-			//added by Mike, 20210528
-			myPilotPlayer2->setZPos(myPilot->getZ());
-			myPilotPlayer2->setYPosAsPixel(myUsbongUtils->autoConvertFromPixelToVertexPointY(myPilot->getZ())); //note: 320 is half the Window width
 			
-			//note: use if tied back-to-back
-//			myPilotPlayer2->setXPos(myPilot->getX());	
-			//edited by Mike, 20210527
-//			myPilotPlayer2->setXPosAsPixel(myPilot->getXAsPixel()+320); //note: 320 is half the Window width
-			//edited by Mike, 20210527
-			myPilotPlayer2->setXPos(myPilot->getX()+320); //note: 320 is half the Window width
+			//added by Mike, 20210528
+			//note: we use z-axis for vertex position; this shall be auto-converted to as pixel in y-axis
+			myPilotPlayer2->setZPos(myPilot->getZ());
+			myPilotPlayer2->setXPos(myPilot->getX()+320);
 
-			//added by Mike, 20210527; TO-DO: -update: this
-//			myPilotPlayer2->setXPosAsPixel(myUsbongUtils->autoConvertFromPixelToVertexPointX(myPilot->getXAsPixel()+320)); //note: 320 is half the Window width
-			myPilotPlayer2->setXPosAsPixel(myUsbongUtils->autoConvertFromPixelToVertexPointX(myPilotPlayer2->getXAsPixel()+320)); //note: 320 is half the Window width
-
-
-/*
-//   std::cout << "myPilotPlayer2; posX " << myUsbongUtils->autoConvertFromPixelToVertexPointX(myPilot->getXAsPixel()+320) << "\n";
-   std::cout << "myPilotPlayer2; posX " << myUsbongUtils->autoConvertFromPixelToVertexPointX(myPilot->getXAsPixel()) << "\n";
-
-   std::cout << "myBall; posX " << myUsbongUtils->autoConvertFromPixelToVertexPointX(myBall->getXAsPixel()) << "\n";
-*/
 
 			//added by Mike, 20210502
     	myPilotPlayer2->update(1); //dt
-
 		
     	//added by Mike, 20201001
     	myRobotShip->update(1); //dt

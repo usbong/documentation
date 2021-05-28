@@ -524,9 +524,10 @@ Pilot::Pilot(float xPos, float yPos, float zPos, int windowWidth, int windowHeig
 	myWidthAsPixel=128; //64*2
   myHeightAsPixel=192; //64*3
 */
-
+/*	//removed by Mike, 20210528
 	myWidthAsPixelMax=64*8;
 	myHeightAsPixelMax=64*4;
+*/
 	
 //note:	glScalef(0.2f/2, 0.4f/2, 1.0f);			
 	//added by Mike, 20210527
@@ -544,11 +545,12 @@ Pilot::Pilot(float xPos, float yPos, float zPos, int windowWidth, int windowHeig
 	//edited by Mike, 202105028
 	myXPos=xPos;
 	myYPos=0.0f;
-  	myZPos=zPos;
+  myZPos=zPos;
+  	
 /*
 	myXPos=0.0f;
 	myYPos=0.0f;
-  	myZPos=0.0f;
+  myZPos=0.0f;
 */
     
 	//TO-DO: -update: this
@@ -4220,7 +4222,7 @@ void Pilot::drawPilotAsQuadWithTexture()
 //	printf(">> myXPos:%f, myYPos:%f, myZPos:%f;\n",myXPos,myYPos,myZPos);
 		
 	//TO-DO: -update: this
-	myXPosAsPixel=(int)myXPos;	
+	myXPosAsPixel=(int)myXPos;
 	myYPosAsPixel=(int)myZPos;
 	
 /*	//removed by Mike, 20210524
@@ -5570,7 +5572,7 @@ void Pilot::move(int key)
 				
 //added by Mike, 20210521		
 //----------		
-          //added by Mike, 20201001; edigetXAsPixelted by Mike, 20201116
+          //added by Mike, 20201001; edited by Mike, 20201116
 //	      myYPos+=stepY;
 				//edited by Mike, 20210527
 	      myZPos+=stepZ;

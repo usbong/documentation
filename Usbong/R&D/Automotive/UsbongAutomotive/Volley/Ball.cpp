@@ -384,9 +384,8 @@ Ball::Ball(float xPos, float yPos, float zPos, int windowWidth, int windowHeight
 //	currentMovingState=IDLE_MOVING_STATE;
 	currentMovingState=WALKING_MOVING_STATE;
 	
-	//added by Mike, 20210527
+	//added by Mike, 20210527; edited by Mike, 20210528
 	bIsMovingDown=false;
-	
 
 //    myXPos=0.0;
 //    myYPos=0.0;
@@ -432,9 +431,9 @@ Ball::Ball(float xPos, float yPos, float zPos, int windowWidth, int windowHeight
 		iStepYAsPixel=3;
 		iStepZAsPixel=3;
 */
-		iStepXAsPixel=4;
-		iStepYAsPixel=4;
-		iStepZAsPixel=4;
+		iStepXAsPixel=3*-1;
+		iStepYAsPixel=3;//*-1;
+		iStepZAsPixel=3;//*-1;
 
     invincibleCounter=0;
     currentDeathFrame=0;
@@ -456,15 +455,25 @@ Ball::Ball(float xPos, float yPos, float zPos, int windowWidth, int windowHeight
 	//added by Mike, 20210517
 	//TO-DO: -update: this
 	myWidth=1.4f;
-    myHeight=1.4f;
+  myHeight=1.4f;
 	
 	//added by Mike, 20210517
 	//TO-DO: -add: auto-identify object width and height
+/* //edited by Mike, 20210528	
 	myWidthAsPixel=128;
-    myHeightAsPixel=64;
+  myHeightAsPixel=64;
+*/
+//note: scale Commands in drawObject(...)
+//glScalef(0.20f, 0.4f, 1.0f);			
+//glScalef(0.5f, 0.5f, 1.0f);			
+	myWidthAsPixel=128*0.2/2;
+  myHeightAsPixel=64*0.4/2;
+    
 	//TO-DO: -update: this
 	//note: float xPos as parameter to int myXPosAsPixel not correct output	
-	myXPosAsPixel=320;//(int)xPos;
+	//edited by Mike, 20210528
+//	myXPosAsPixel=320;//(int)xPos;
+	myXPosAsPixel=(int)xPos;	
 	myYPosAsPixel=(int)yPos;
 	myZPosAsPixel=(int)zPos;
 	
@@ -747,7 +756,13 @@ void Ball::update(float dt)
 printf("myYPosAsPixel: %i\n",myYPosAsPixel);
 											
 											//note: 0,0 origin/anchor at top-left
-											if (myYPosAsPixel<=160) {
+											//edited by Mike, 20210528
+//											if (myYPosAsPixel<=160) {
+											//note: max in axis is connected with step x, y, z
+											//to create system
+											//TO-DO: -create: system to quickly update input values,
+											//e.g., max in axis, step x, y, and z
+											if (myYPosAsPixel<=100) {												
 												bIsMovingDown=true;
 											}/*	//removed by Mike, 20210527
 											else if (myYPosAsPixel>=360) {
@@ -765,9 +780,7 @@ printf("myYPosAsPixel: %i\n",myYPosAsPixel);
 																					
 		           	      myXPosAsPixel+=-iStepXAsPixel;	
 
-printf(">> myYPosAsPixel: %i\n",myYPosAsPixel);
-
-		           	      
+//printf(">> myYPosAsPixel: %i\n",myYPosAsPixel);
 		                break;
 		           case ATTACKING_MOVING_STATE:
 		            	break;
