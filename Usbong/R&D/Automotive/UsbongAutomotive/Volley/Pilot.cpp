@@ -534,6 +534,12 @@ Pilot::Pilot(float xPos, float yPos, float zPos, int windowWidth, int windowHeig
   myHeightAsPixel=192*0.4/2;
 
 
+/*	//removed by Mike, 20210528
+//added by Mike, 20210528
+	myWidthAsPixel=64;
+    myHeightAsPixel=64;
+*/
+    
 	//added by Mike, 20210523
 	//edited by Mike, 202105028
 	myXPos=xPos;

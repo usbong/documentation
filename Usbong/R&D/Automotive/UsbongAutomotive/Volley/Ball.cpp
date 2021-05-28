@@ -426,10 +426,15 @@ Ball::Ball(float xPos, float yPos, float zPos, int windowWidth, int windowHeight
     stepY=0.3;
     stepZ=0.3;
 
-		//added by Mike, 20210527
+		//added by Mike, 20210527; edited by Mike, 20210528
+/*		
 		iStepXAsPixel=3;
 		iStepYAsPixel=3;
 		iStepZAsPixel=3;
+*/
+		iStepXAsPixel=4;
+		iStepYAsPixel=4;
+		iStepZAsPixel=4;
 
     invincibleCounter=0;
     currentDeathFrame=0;
