@@ -386,6 +386,14 @@ Ball::Ball(float xPos, float yPos, float zPos, int windowWidth, int windowHeight
 	
 	//added by Mike, 20210527; edited by Mike, 20210528
 	bIsMovingDown=false;
+	
+	//added by Mike, 20210528
+	iDirectionXAxis=1; //init go to right side from left side
+	iDirectionYAxis=-1; //init go up
+	
+	//added by Mike, 20210528
+	thrustMax=4.0f;
+	thrust=1.0f;
 
 //    myXPos=0.0;
 //    myYPos=0.0;
@@ -431,7 +439,8 @@ Ball::Ball(float xPos, float yPos, float zPos, int windowWidth, int windowHeight
 		iStepYAsPixel=3;
 		iStepZAsPixel=3;
 */
-		iStepXAsPixel=3*-1;
+		//edited by Mike, 20210528
+		iStepXAsPixel=4*-1; //3*-1
 		iStepYAsPixel=3;//*-1;
 		iStepZAsPixel=3;//*-1;
 
@@ -530,8 +539,11 @@ Ball::Ball(float xPos, float yPos, float zPos, int windowWidth, int windowHeight
 
     rotationAngle=0.0f;//360.0f;//90.0;
     rotationStep=10.0;//1.0f;    
+/*	//removed by Mike, 20210528    
     thrust=0.0f;
     thrustMax=0.8f;
+*/
+    
     xVel;
     yVel;
     //edited by Mike, 20201001
@@ -753,7 +765,7 @@ void Ball::update(float dt)
 */
 											//TO-DO: -add: velocity
 											
-printf("myYPosAsPixel: %i\n",myYPosAsPixel);
+//printf("myYPosAsPixel: %i\n",myYPosAsPixel);
 											
 											//note: 0,0 origin/anchor at top-left
 											//edited by Mike, 20210528
@@ -762,12 +774,10 @@ printf("myYPosAsPixel: %i\n",myYPosAsPixel);
 											//to create system
 											//TO-DO: -create: system to quickly update input values,
 											//e.g., max in axis, step x, y, and z
+/* //edited by Mike, 20215028
 											if (myYPosAsPixel<=100) {												
 												bIsMovingDown=true;
-											}/*	//removed by Mike, 20210527
-											else if (myYPosAsPixel>=360) {
-												bIsMovingDown=false;
-											}*/
+											}
 				
 											if (bIsMovingDown) {
 		           	      	myYPosAsPixel+=iStepYAsPixel;
@@ -775,11 +785,85 @@ printf("myYPosAsPixel: %i\n",myYPosAsPixel);
 											else {
 	           	      		myYPosAsPixel+=-iStepYAsPixel;
 											}								
-
-		           	      //myYPosAsPixel+=iStepYAsPixel;
-																					
 		           	      myXPosAsPixel+=-iStepXAsPixel;	
+*/		           	      
+/*
+                    yAccel = (cos(rotationAngleRad)*thrust);
+                    xAccel = -(sin(rotationAngleRad)*thrust);
+*/
 
+                    //added by Mike, 20210528
+                    //gravity
+//										if (yAccel<0) { //going up; pull down
+										if (!bIsMovingDown) {
+											if (thrust<=0) {
+	/*										xAccel+=2.0f;
+												yAccel+=2.0f;
+	*/
+	//											thrust=4.0f;		
+																
+                    	  //accelerate
+                      	thrust+=0.03f;
+																					
+												iDirectionYAxis=1; //go down											
+												bIsMovingDown=true;
+										  }	
+										}
+										
+										
+                    xAccel = thrust;
+                    yAccel = thrust; //thrust*-1; //go up
+                   
+
+										
+/*										
+										//land
+										if (myYPos>320) {
+											yVel=0;
+										}
+										
+*/
+                    xVel=xAccel*iDirectionXAxis;
+                    yVel=yAccel*iDirectionYAxis;
+
+/*
+     								if (xVel > maxXVel) {
+     									xVel = maxXVel;
+     								}
+                    else if (xVel < -maxXVel) {
+                    	xVel = -maxXVel;
+                    }
+                    
+                    if (yVel > maxYVel) {
+                    	yVel = maxYVel;
+                    }
+                    else if (yVel < -maxYVel) {
+                    	yVel = -maxYVel;
+                    }           
+*/
+
+                    myXPos+=xVel;
+                    myYPos+=yVel;
+                    
+	           	      myXPosAsPixel+=xVel;
+	           	      myYPosAsPixel+=yVel;
+                  
+										if (!bIsMovingDown) {                  
+				    					//note: deaccelerate 
+                    	if (thrust>0) {
+                      	thrust-=0.03f; //0.02f; //0.01f
+                    	}
+                    	else {
+                    		thrust=0;
+                    	}				           	      
+                    }
+                    //move down
+                    else {
+                    	  //accelerate
+                      	thrust+=0.03f; //0.02f; //0.01f
+                    }
+                  
+	
 //printf(">> myYPosAsPixel: %i\n",myYPosAsPixel);
 		                break;
 		           case ATTACKING_MOVING_STATE:
@@ -1426,7 +1510,7 @@ void Ball::move(int key)
 		  //added by Mike, 20201226
    		  currentMovingState=WALKING_MOVING_STATE;
 		  break;
-		//added by Mike, 20201201bIsMovingDown=false;
+		//added by Mike, 20201201
 		default:
 		  currentMovingState=IDLE_MOVING_STATE;
 		  bIsFiringBeam=false; //added by Mike, 20201226
@@ -1480,9 +1564,19 @@ void Ball::hitBy(MyDynamicObject* mdo)
 {
 		//edited by Mike, 20210527; removed by Mike, 20210527
 //		bIsMovingDown=false;
-		
+	
 		updateDirection();
-
+		
+		//added by Mike, 20210528
+		//TO-DO: -add: charge via key held
+/*		
+    if (thrust<thrustMax) {
+//      thrust+=0.1f;      
+      thrust+=1.0f;
+		}
+*/
+      thrust=thrustMax;      
+				
 		
 /*
      //changeState(DEATH_STATE);

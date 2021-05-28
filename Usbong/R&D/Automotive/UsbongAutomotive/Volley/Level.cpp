@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201118
- * @date updated: 20210527
+ * @date updated: 20210528
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -1013,7 +1013,8 @@ void Level::read(char *inputFilename) {
 //			iCount=0;
 	//input text per line			
 //			printf("%i;\n",iCount);
-			printf("%i;",iCount);
+//			printf("%i;",iCount);
+			
 			iCount=iCount+1;
 						
 				//added by Mike, 20210208

@@ -216,11 +216,11 @@ void MyDynamicObject::collideWith(MyDynamicObject* mdo)
 		return;
 	}
 */
-    	printf(">>");
+//    	printf(">>");
 
     if ((!checkIsCollidable())||(!mdo->checkIsCollidable()))    
     {
-    	printf(">>>>>NOT COLLIDABLE");
+//    	printf(">>>>>NOT COLLIDABLE");
 
         return;
     }
@@ -230,7 +230,7 @@ void MyDynamicObject::collideWith(MyDynamicObject* mdo)
 //    if (isIntersectingRect(this, mdo))
     if (isIntersectingRectAsPixel(this, mdo))
     {
-    	printf(">>dito>>>>>>>>>>>>>>>>>>>>>>>.");
+//    	printf(">>dito>>>>>>>>>>>>>>>>>>>>>>>.");
     	
         this->hitBy(mdo);
         mdo->hitBy(this);

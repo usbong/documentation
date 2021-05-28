@@ -140,21 +140,35 @@ public:
     //added by Mike, 20210527
     //reminder: set in constructor
     int	myWidthAsPixelMax;
-	int myHeightAsPixelMax;
+		int myHeightAsPixelMax;
     
     //added by Mike, 20210527
 		int iStepXAsPixel;
 		int iStepYAsPixel;
 		int iStepZAsPixel;
 		
-	//added by Mike, 20210528
+		//added by Mike, 20210528
     float stepX;
     float stepY;
     float stepZ;
+				
+		//added by Mike, 20210527		
+		bool bIsMovingDown;
 		
-		
-	//added by Mike, 20210527		
-	bool bIsMovingDown;
+		//added by Mike, 20210528
+		int iDirectionXAxis;
+		int iDirectionYAxis;
+
+		//added by Mike, 20210528
+    float thrust;
+    float thrustMax;    
+    float xAccel;
+    float yAccel;
+    float xVel;
+    float yVel;    
+    float maxXVel;
+    float maxYVel;    
+				
 	
 	//added by Mike, 20201115
     int myWindowWidth;
@@ -313,7 +327,11 @@ public:
 			}
 */
 			
-			iStepXAsPixel=iStepXAsPixel*-1;			
+			//edited by Mike, 20210528		
+//			iStepXAsPixel=iStepXAsPixel*-1;		
+			iDirectionXAxis=iDirectionXAxis*-1;
+			iDirectionYAxis=iDirectionYAxis*-1;
+				
 			bIsMovingDown=false;
 
 			

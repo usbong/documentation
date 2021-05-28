@@ -2234,7 +2234,7 @@ void OpenGLCanvas::drawGridWithZAxis() {
 	else {
     	glColor3f(1.0f, 1.0f, 1.0f); // white
 	}
-	printf("iCountLevelM: %i\n",iCountLevelM);
+//	printf("iCountLevelM: %i\n",iCountLevelM);
 	
 	glBindTexture( GL_TEXTURE_2D, LEVEL_TEXTURE );
 	sprintf(tempText,"M");	
@@ -2243,7 +2243,7 @@ void OpenGLCanvas::drawGridWithZAxis() {
 //	glTranslatef(-3.2f, 3.2f, -3.2f);
 //	glTranslatef(-3.2f, 3.2f, -3.2f);
 	
-	printf("fGridSquareWidth: %f\n",fGridSquareWidth);
+//	printf("fGridSquareWidth: %f\n",fGridSquareWidth);
 	
 //removed by Mike, 20210520	
 //	myLevel->draw_level(fGridSquareWidth*3.0f, 0.0f, fGridSquareWidth*3.0f, tempText);    	

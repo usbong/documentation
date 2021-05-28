@@ -144,16 +144,17 @@ private:
 //    float rotationAngle;
     float rotationAngleRad;
     float rotationStep;
-    
+ 
+/*	//removed by Mike, 20210528    
     float thrust;
-    float thrustMax;
+    float thrustMax;    
     float xAccel;
     float yAccel;
     float xVel;
-    float yVel;
-    
+    float yVel;    
     float maxXVel;
     float maxYVel;    
+*/
     
     int invincibleCounter;
     
