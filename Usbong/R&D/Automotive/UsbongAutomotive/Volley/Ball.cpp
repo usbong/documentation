@@ -1617,13 +1617,37 @@ void Ball::setOpenGLCanvas(OpenGLCanvas* c)
 
 void Ball::reset()
 {
-     changeState(INITIALIZING_STATE);
-     myXPos=0;
-     myYPos=0;
+    //edited by Mike, 20210528
+    //changeState(INITIALIZING_STATE);
+    currentState=MOVING_STATE;
+    currentMovingState=WALKING_MOVING_STATE;
+    
+     myXPos=320.0f;
+     //edited by Mike, 20210528
+     //myYPos=320.0f;//0;
+     myYPos=240.0f;//0;
+
+     myZPos=0.0f;//0;
+    
+     myXPosAsPixel=(int)myXPos;
+     myYPosAsPixel=(int)myYPos;
+     myZPosAsPixel=(int)myZPos;
+    
      rotationAngle=0.0f;
      thrust=0.0f;
-     setCollidable(false);
-     invincibleCounter=0;
+    
+     //edited by Mike, 20210528
+     //setCollidable(false);
+    setCollidable(true);
+
+    invincibleCounter=0;
+    
+    //added by Mike, 20210528
+    bIsMovingDown=false;
+    iDirectionXAxis=1; //init go to right side from left side
+    iDirectionYAxis=-1; //init go up
+    thrustMax=10.0f; //5.0f;//4.0f;
+    thrust=1.0f;
 }
 int Ball::getState()
 {

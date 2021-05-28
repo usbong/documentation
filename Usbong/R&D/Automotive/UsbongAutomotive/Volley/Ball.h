@@ -346,6 +346,11 @@ public:
 		//note: auto-set to be equal with player 1; player 1 Z-position based on Camera Eye		
 		//myZPos=0.0f+myHeight*3; 		
 	}
+    
+    //added by Mike, 20210528
+    void setEnd() {
+        reset();
+    }
 	
 
     //added by Mike, 20210111
