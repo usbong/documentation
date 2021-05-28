@@ -392,7 +392,7 @@ Ball::Ball(float xPos, float yPos, float zPos, int windowWidth, int windowHeight
 	iDirectionYAxis=-1; //init go up
 	
 	//added by Mike, 20210528
-	thrustMax=4.0f;
+	thrustMax=10.0f; //5.0f;//4.0f;
 	thrust=1.0f;
 
 //    myXPos=0.0;
@@ -756,7 +756,7 @@ void Ball::update(float dt)
     {
            case INITIALIZING_STATE:
            case MOVING_STATE:      
-						switch(currentMovingState) {
+				switch(currentMovingState) {
 		           case WALKING_MOVING_STATE:
 		           				//added by Mike, 20210527
 /*		           				
@@ -803,7 +803,7 @@ void Ball::update(float dt)
 	//											thrust=4.0f;		
 																
                     	  //accelerate
-                      	thrust+=0.03f;
+                      	thrust+=0.3f;//0.5f;//0.1f;//0.06f;
 																					
 												iDirectionYAxis=1; //go down											
 												bIsMovingDown=true;
@@ -823,7 +823,10 @@ void Ball::update(float dt)
 										}
 										
 */
-                    xVel=xAccel*iDirectionXAxis;
+					//edited by Mike, 20210528
+//                    xVel=xAccel*iDirectionXAxis;
+                    xVel=iDirectionXAxis*4.0f;//*2.0f;
+
                     yVel=yAccel*iDirectionYAxis;
 
 /*
@@ -848,10 +851,10 @@ void Ball::update(float dt)
 	           	      myXPosAsPixel+=xVel;
 	           	      myYPosAsPixel+=yVel;
                   
-										if (!bIsMovingDown) {                  
-				    					//note: deaccelerate 
+					if (!bIsMovingDown) {                  
+				    	//note: deaccelerate 
                     	if (thrust>0) {
-                      	thrust-=0.03f; //0.02f; //0.01f
+                      		thrust-=0.2f;//0.1f; //0.06f; //0.03f; //0.02f
                     	}
                     	else {
                     		thrust=0;
@@ -860,7 +863,7 @@ void Ball::update(float dt)
                     //move down
                     else {
                     	  //accelerate
-                      	thrust+=0.03f; //0.02f; //0.01f
+                      	thrust+=0.2f; //0.3f; //0.5f; //0.03f; //0.02f; //0.01f
                     }
                   
 	
@@ -868,7 +871,20 @@ void Ball::update(float dt)
 		                break;
 		           case ATTACKING_MOVING_STATE:
 		            	break;
-		                
+				   case IDLE_MOVING_STATE:
+				   printf("dito");
+				   		xVel=0;		
+				   		myXPos+=xVel;	
+/*	//TO-DO: -add: this				               	
+				   		//note: deaccelerate 
+                    	if (thrust>0) {
+                      		thrust-=0.2f;//0.1f; //0.06f; //0.03f; //0.02f
+                    	}
+                    	else {
+                    		thrust=0;
+                    	}		
+*/                    	
+		          		break;      
 		            default: //STANDING STATE		            
 		              break;//do nothing    
 				}
@@ -1575,7 +1591,7 @@ void Ball::hitBy(MyDynamicObject* mdo)
       thrust+=1.0f;
 		}
 */
-      thrust=thrustMax;      
+      thrust=thrustMax; //thrustMax*2.0f;
 				
 		
 /*

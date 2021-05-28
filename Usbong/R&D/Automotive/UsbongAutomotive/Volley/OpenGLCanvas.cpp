@@ -3159,7 +3159,29 @@ void OpenGLCanvas::update()
     	//added by Mike, 20210527
     	myBall->collideWith(myPilot); 	
    		myBall->collideWith(myPilotPlayer2);
+		
+		//added by Mike, 20210528
+		//use these instructions to be football
+/*		
+		if (myBall->getY() > myPilot->getY()+myPilot->getHeight()) {
+			myBall->setThrust(0.0f);
+		}
+*/
+		//TO-DO: -update: this
+/*		//add +1.0f
+		if (myBall->getY()+myBall->getHeight()+1.0f > myPilot->getZ()+myPilot->getHeight()) {
+			myBall->setCurrentMovingState(IDLE_MOVING_STATE);
+			myBall->setThrust(0.0f);
+		}
 
+		if (myBall->getY()+myBall->getHeight()+1.0f > myPilotPlayer2->getZ()+myPilotPlayer2->getHeight()) {
+			myBall->setCurrentMovingState(IDLE_MOVING_STATE);
+			myBall->setThrust(0.0f);
+		}
+*/
+		if (myBall->getY()+myBall->getHeight() > 420.0f) {		
+			myBall->setThrust(0.0f);			
+		}
 		
 		//added by Mike, 20210517; removed by Mike, 202105017
 /*		

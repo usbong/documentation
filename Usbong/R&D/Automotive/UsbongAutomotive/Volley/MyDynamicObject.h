@@ -338,6 +338,10 @@ public:
 //			printf(">>myXPos: %i",myXPosAsPixel);
 		}
 
+	//added by Mike, 20210528
+	virtual void setThrust(float fInputThrust) {	
+		thrust=fInputThrust;
+	}
 
 	//added by Mike, 20201226
 /*	//removed by Mike, 20201226
