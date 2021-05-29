@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210524
+ * @date updated: 20210529
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -272,7 +272,8 @@ OpenGLCanvas::~OpenGLCanvas()
 
 //edited by Mike, 20210517
 //bool OpenGLCanvas::init()
-bool OpenGLCanvas::init(int myWindowWidthAsPixel, int myWindowHeightAsPixel)	
+//edited by Mike, 20210529
+bool OpenGLCanvas::init(int myWindowWidthAsPixelInput, int myWindowHeightAsPixelInput)	
 {	
 	//TO-DO: -receive: values from main.cpp
 	//edited by Mike, 20201115
@@ -457,9 +458,12 @@ bool OpenGLCanvas::init(int myWindowWidthAsPixel, int myWindowHeightAsPixel)
     myLevel = new Level();    
     myLevel->setupLevel(LEVEL_TEXTURE); //FONT_TEXTURE);
 
-	//added by Mike, 20210517
-	myWindowWidthAsPixel = myWindowWidth;
+	//added by Mike, 20210517; edited by Mike, 20210529
+/*	myWindowWidthAsPixel = myWindowWidth;
 	myWindowHeightAsPixel = myWindowHeight;
+*/	
+	myWindowWidthAsPixel = myWindowWidthAsPixelInput;
+	myWindowHeightAsPixel = myWindowHeightAsPixelInput;
 	
     //added by Mike, 20210320; edited by Mike, 20210321
 /*	
@@ -512,6 +516,7 @@ bool OpenGLCanvas::init(int myWindowWidthAsPixel, int myWindowHeightAsPixel)
 	myPilotPlayer2->setOpenGLCanvas(this, fGridSquareWidth);
 	myPilotPlayer2->setAsPlayer2();
 	
+/* //removed by	Mike, 20210529
 	//added by Mike, 20210514; edited by Mike, 20210517
 //	myButton = new Button(0.0f,0.0f,0.0f,myWindowWidth,myWindowHeight);
 //	myButton = new Button(0.0f,0.0f,0.0f,myWindowWidthAsPixel,myWindowHeightAsPixel);
@@ -522,10 +527,16 @@ bool OpenGLCanvas::init(int myWindowWidthAsPixel, int myWindowHeightAsPixel)
 //edited by Mike, 20210522	
 //	myButton->setOpenGLCanvas(this);
 	myButton->setOpenGLCanvas(this, fGridSquareWidth);
+*/
 			
+	//added by Mike, 20210529
+	iMyButtonAsPixelQuadContainerCount=0;
+
+/*	//removed by Mike, 20210529			
 	//added by Mike, 20210524
 	myBall = new Ball(320.0f,320.0f,0.0f,myWindowWidthAsPixel,myWindowHeightAsPixel);
 	myBall->setOpenGLCanvas(this, fGridSquareWidth);	
+*/	
 			
 	//added by Mike, 20201013; edited by Mike, 20201014
 //	for (i=0; i<MAX_BEAMS; i++) {
@@ -636,6 +647,7 @@ bool OpenGLCanvas::init(int myWindowWidthAsPixel, int myWindowHeightAsPixel)
 	//removed by Mike, 20210521
 //	vMyDynamicObjectContainer.push_back(myRobotShip);
 	
+/*	//removed by Mike, 20210529	
 	//added by Mike, 20210502
 	vMyDynamicObjectContainer.push_back(myPilot);
 	//added by Mike, 20210522
@@ -643,6 +655,7 @@ bool OpenGLCanvas::init(int myWindowWidthAsPixel, int myWindowHeightAsPixel)
 
 	//added by Mike, 20210524
 	vMyDynamicObjectContainer.push_back(myBall);
+*/
 	
 	
 /*	//removed by Mike, 20210120
@@ -1106,6 +1119,7 @@ void OpenGLCanvas::mouseActionDown(int iMouseActionId, int iXPos, int iYPos)
 	iEndPointX=iXPos;
 	iEndPointY=iYPos;		
 	
+/* //removed by Mike, 20210529	
 	//added by Mike, 20210517
 	if (myButton->isActive()) {
 //	printf("actionUP Start X,Y: %f,%f\n",myUsbongUtils->autoConvertFromPixelToVertexPointX(iStartPointX),myUsbongUtils->autoConvertFromPixelToVertexPointY(iStartPointY));			
@@ -1116,7 +1130,7 @@ void OpenGLCanvas::mouseActionDown(int iMouseActionId, int iXPos, int iYPos)
 //	  myButton->collideWithPressedCoordPos(myUsbongUtils->autoConvertFromPixelToVertexPointX(iStartPointX),myUsbongUtils->autoConvertFromPixelToVertexPointY(iStartPointY));
 	  myButton->collideWithPressedCoordPos(iStartPointX,iStartPointY);		
 	}
-	
+*/	
 	
 /*	
 	printf("hasPressedMouseActionDown");
@@ -1423,7 +1437,399 @@ void OpenGLCanvas::setupTaoTexture()
 }
 */
 
+//added by Mike, 20210528
 void OpenGLCanvas::render()
+{     
+	//added by Mike, 20201023
+	//note: this is to be print-ready in newsletter
+	//we use recycled paper
+	//edited by Mike, 2020116
+	//edited by Mike, 20201122
+//   glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Set background color to black and opaque
+//   glClearColor(1.0f, 1.0f, 1.0f, 0.0f); // Set background color to white and not opaque
+	//removed by Mike, 20201122
+	//sky blue
+//   glClearColor(0.69f, 0.84f, 1.0f, 0.0f); // Set background color to white and not opaque
+	//edited by Mike, 20201122
+    glClearColor(1.0f, 1.0f, 1.0f, 0.0f); // Set background color to white and not opaque
+
+	//added by Mike, 20201012
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);    
+    //removed by Mike, 20201015
+//    glViewport(0, 0, myWindowWidth, myWindowHeight);		// reset the viewport to new 
+
+	//added by Mike, 20201207
+	//Reference: https://www.khronos.org/opengl/wiki/Depth_Test;
+	//last accessed: 20201206
+	//TO-DO: -verify: this
+	//TO-DO: -add: Z-sort, i.e. sort objects by Z-axis when computer auto-draws
+	glEnable(GL_DEPTH_TEST);
+	glDepthFunc(GL_ALWAYS);
+
+	//Reference: https://community.khronos.org/t/gradient-background/54348/2;
+	//last accessed: 20201122
+	//answer by: NiCo1, 2008-03
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+		/* //horizontal
+		glBegin(GL_QUADS);
+			//red color
+			glColor3f(1.0,0.0,0.0);
+			glVertex2f(-1.0, 1.0);
+			glVertex2f(-1.0,-1.0);
+			//blue color
+			glColor3f(0.0,0.0,1.0);
+			glVertex2f(1.0,-1.0);
+			glVertex2f(1.0, 1.0);
+			glEnd();
+		*/
+
+/* //removed by Mike, 20210510	
+		glBegin(GL_QUADS);
+		//	glColor3f(0.0f,0.0f,0.0f); //black
+		//	glColor3f(1.0f,1.0f,1.0f); //white
+		
+			//TOP
+			//sky blue color; darker
+		//	glColor3f(0.51f, 0.73f, 0.98f);
+		//	glColor3f(0.08f, 0.51f, 1.00f);
+		//	glColor3f(0.0f, 0.32f, 0.67f);
+			glColor3f(0.0f, 0.44f, 0.67f);
+			glVertex2f(1.0, 1.0);
+			glVertex2f(-1.0, 1.0);
+		
+			//BOTTOM
+			//sky blue color; brighter
+			glColor3f(0.69f, 0.84f, 1.0f);
+			glVertex2f(-1.0,-1.0);
+			glVertex2f(1.0,-1.0);
+		glEnd();
+*/	
+
+		glBegin(GL_QUADS);
+//			glColor3f(0.0f,0.0f,0.0f); //black
+//edited by Mike, 20210523
+//			glColor3f(1.0f,1.0f,1.0f); //white
+		
+			//TOP
+//added by Mike, 20210523			
+			//sky blue color; darker
+			glColor3f(0.0f, 0.44f, 0.67f);
+			glVertex2f(1.0, 1.0);
+			glVertex2f(-1.0, 1.0);
+		
+			//BOTTOM
+//added by Mike, 20210523
+			//sky blue color; brighter
+			glColor3f(0.69f, 0.84f, 1.0f);
+			glVertex2f(-1.0,-1.0);
+			glVertex2f(1.0,-1.0);
+		glEnd();
+	
+	//added by Mike, 20210510
+	glLineWidth((GLfloat)3);	
+
+//edited by Mike, 20210523
+//note: coordinate system guide/map; pixel positions
+	glBegin(GL_LINES);
+		glColor3f(0.0f,0.0f,0.0f); //black
+/*	//removed by Mike, 20210516
+		//diagonal line left to right
+		glVertex2f(-1.0f, 1.0f);
+		glVertex2f(1.0f, -1.0f);
+
+		//diagonal line right to left
+		glVertex2f(1.0f, 1.0f);
+		glVertex2f(-1.0f, -1.0f);
+*/	
+		//vertical line at center
+		glVertex2f(0.0f, 1.0f);
+		glVertex2f(0.0f, -1.0f);
+	
+		//horizontal line at center
+		glVertex2f(-1.0f, 0.0f);
+		glVertex2f(1.0f, 0.0f);	
+	glEnd();	
+	
+
+	//added by Mike, 20210524
+//notes: vertical and horizontal lines in addition to those at center
+//coordinate system guide/map; pixel positions
+
+	iRowCountMax=10;
+	int iNumberSign=1;
+	//rows   
+ 	for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
+   		// Draw a Green Line top-left origin
+   		glBegin(GL_LINES);
+      		//glColor3f(0.0f, 0.0f, 1.0f); // Blue
+//      		glColor3f(0.0f, 1.0f, 0.0f); // Green
+      		glColor3f(0.2f, 0.2f, 0.2f); // dark gray
+ 
+       		glVertex2f(-1.0f, 2.0f/iRowCountMax*iRowCount*iNumberSign);    // x, y
+      		//TO-DO: -add: auto-compute myWindowWidth
+      		glVertex2f(1.0f, 2.0f/iRowCountMax*iRowCount*iNumberSign);     		
+   		glEnd();   		   	  
+	 }
+	 iNumberSign=-1;
+ 	 for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
+   		// Draw a Green Line top-left origin
+   		glBegin(GL_LINES);
+      		//glColor3f(0.0f, 0.0f, 1.0f); // Blue
+//      		glColor3f(0.0f, 1.0f, 0.0f); // Green
+      		glColor3f(0.2f, 0.2f, 0.2f); // dark gray
+ 
+       		glVertex2f(-1.0f, 2.0f/iRowCountMax*iRowCount*iNumberSign);    // x, y
+      		//TO-DO: -add: auto-compute myWindowWidth
+      		glVertex2f(1.0f, 2.0f/iRowCountMax*iRowCount*iNumberSign);	
+   		glEnd();   		   	  
+	 }
+	
+	//reset to 12 from 10
+	iRowCountMax=12;
+	 	  
+   //columns
+   iColumnCountMax=10;
+	 iNumberSign=1;
+ 	 for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {
+   		// Draw a Green Line top-left origin
+   		glBegin(GL_LINES);
+      		//glColor3f(0.0f, 0.0f, 1.0f); // Blue
+//      		glColor3f(0.0f, 1.0f, 0.0f); // Green
+      		glColor3f(0.2f, 0.2f, 0.2f); // dark gray
+
+      		glVertex2f(2.0f/iColumnCountMax*iColumnCount*iNumberSign, -1.0f);    // x, y
+      		//TO-DO: -add: auto-compute myWindowHeight
+      		glVertex2f(2.0f/iColumnCountMax*iColumnCount*iNumberSign, 1.0f);
+   		glEnd();   		   	  
+	 }
+ 	iNumberSign=-1;
+ 	 for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {
+   		// Draw a Green Line top-left origin
+   		glBegin(GL_LINES);
+      		//glColor3f(0.0f, 0.0f, 1.0f); // Blue
+//      		glColor3f(0.0f, 1.0f, 0.0f); // Green
+      		glColor3f(0.2f, 0.2f, 0.2f); // dark gray
+     		
+
+      		glVertex2f(2.0f/iColumnCountMax*iColumnCount*iNumberSign, -1.0f);    // x, y
+      		//TO-DO: -add: auto-compute myWindowHeight
+      		glVertex2f(2.0f/iColumnCountMax*iColumnCount*iNumberSign, 1.0f);
+   		glEnd();   		   	  
+	 }
+
+	//reset to 12 from 10
+	iColumnCountMax=12;
+
+	
+	
+//	printf("myMouseActionDown[MOUSE_LEFT_BUTTON]: %i\n",myMouseActionDown[MOUSE_LEFT_BUTTON]);
+	
+	if (myMouseActionDown[MOUSE_LEFT_BUTTON]==FALSE) {
+	}
+	else {
+		//added by Mike, 20210514
+		//note: greater than 0, due to blank start is @zero
+		if ((stepHistoryListCount>0) && (stepHistoryListCount<MAX)) {		
+			glBegin(GL_LINES);
+				//glColor3f(0.0f,0.0f,0.0f); //black
+				glColor3f(0.6f,0.6f,0.6f); //bright black
+
+				glVertex2f(myUsbongUtils->autoConvertFromPixelToVertexPointX(iStartPointX), myUsbongUtils->autoConvertFromPixelToVertexPointY(iStartPointY));
+				glVertex2f(myUsbongUtils->autoConvertFromPixelToVertexPointX(iEndPointX), myUsbongUtils->autoConvertFromPixelToVertexPointY(iEndPointY));		
+			glEnd();		
+		}		
+
+/*
+		//added by Mike, 20210529
+//		int iCurrentMyButtonAsPixelQuadContainerSize = myButtonAsPixelQuadContainer.size();
+		if (iMyButtonAsPixelQuadContainerCount<MAX_BUTTON_AS_PIXEL_QUAD) {
+		
+printf(">> iStartPointX:%i; iStartPointY:%i\n", iStartPointX, iStartPointY);
+printf(">> autoConvertFromPixelToVertexPointX:%f; autoConvertFromPixelToVertexPointY:%f\n", myUsbongUtils->autoConvertFromPixelToVertexPointX(iStartPointX), myUsbongUtils->autoConvertFromPixelToVertexPointX(iStartPointY));
+					
+//			Button *myButtonAsPixelQuad = new Button(			
+			myButtonAsPixelQuadContainer[iMyButtonAsPixelQuadContainerCount] = new Button(			
+									myUsbongUtils->autoConvertFromPixelToVertexPointX(iStartPointX),
+									myUsbongUtils->autoConvertFromPixelToVertexPointY(iStartPointY),										
+	//								iStartPointX,
+	//								iStartPointY,								
+									0.0f,
+									myWindowWidthAsPixel,myWindowHeightAsPixel);
+			myButtonAsPixelQuadContainer[iMyButtonAsPixelQuadContainerCount]->setOpenGLCanvas(this, fGridSquareWidth);
+			
+			vMyDynamicObjectContainer.push_back(myButtonAsPixelQuadContainer[iMyButtonAsPixelQuadContainerCount]);			
+			iMyButtonAsPixelQuadContainerCount=iMyButtonAsPixelQuadContainerCount+1;			
+		}
+*/
+
+		
+	}	
+
+	//added by Mike, 20210513
+	glBegin(GL_LINES);
+		//edited by Mike, 20210514
+//		glColor3f(1.0f,0.0f,0.0f); //red
+		//sky blue color; brighter
+//		glColor3f(0.69f, 0.84f, 1.0f);
+		glColor3f(0.0f,0.0f,0.0f); //black
+	
+		for (int iCount=0; iCount<stepHistoryListCount; iCount++)
+		{
+			glVertex2f(myUsbongUtils->autoConvertFromPixelToVertexPointX(stepHistoryList[iCount][0]), myUsbongUtils->autoConvertFromPixelToVertexPointY(stepHistoryList[iCount][1]));
+			glVertex2f(myUsbongUtils->autoConvertFromPixelToVertexPointX(stepHistoryList[iCount][2]), myUsbongUtils->autoConvertFromPixelToVertexPointY(stepHistoryList[iCount][3]));
+		}
+	glEnd();			
+
+	//added by Mike, 20210514; removed by Mike, 20210529
+//	myButton->draw();
+	
+	
+	//added by Mike, 20210529
+//		std::sort(vMyDynamicObjectContainer.begin(), vMyDynamicObjectContainer.end(), sortByZPosition());
+//iVMyDynamicObjectContainerSize=vMyDynamicObjectContainer.size();
+
+//printf("iVMyDynamicObjectContainerSize: %i", iVMyDynamicObjectContainerSize);
+
+	for (int i=0; i<MAX_DYNAMIC_OBJECT; i++) {			
+//	for (int i=0; i<iVMyDynamicObjectContainerSize; i++) {			
+		glPushMatrix();
+//			vMyDynamicObjectContainer[i]->draw();
+		glPopMatrix();
+	}	
+
+
+/* //removed by Mike, 20210529						
+	//set TOP-LEFT origin/anchor/reference point; quadrant 4, y-axis inverted; x and y positive
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	//TOP-LEFT origin
+	//added by Mike, 20210523	
+	//TO-DO: -reverify: this if necessary
+	glOrtho(0.0f, //left
+        	1.0f, //right
+        	1.0f, //bottom
+        	0.0f, //top
+        	0.0f, //zNear; minimum
+        	1.0f //zFar; maximum
+      	);
+*/
+
+
+/*	//removed by Mike, 20201117
+    //font 
+    // select and enable texture FONT_TEXTURE
+	//edited by Mike, 20201012
+    glBindTexture(GL_TEXTURE_2D, FONT_TEXTURE);
+    glEnable(GL_TEXTURE_2D);
+*/		
+    if (currentState==TITLE_SCREEN) {                                    
+    }
+    else if (currentState==CONTROLS_SCREEN) {
+    }
+    else if (currentState==GAMEOVER_SCREEN) {
+    }
+    else if (currentState==HIGHSCORE_SCREEN) {
+    }
+    else if (currentState==GAME_SCREEN) {
+/* //removed by Mike, 20201117
+//TO-DO: -update: this
+		sprintf(tempText,"USBONG");
+		//TO-DO: -update: this to not add 0.1 in y-axis
+//	    draw_string(0, 0, tempText);    	
+		//edited by Mike, 2020117
+//	    draw_string(0, 0.1, tempText);    	
+	    draw_string(0, 0.1, tempText);    	
+	    glDisable(GL_TEXTURE_2D);
+	    glBindTexture(GL_TEXTURE_2D, 0);
+*/
+
+/*	//removed by Mike, 20210510		
+  	//added by Mike, 20201117
+    //font 
+    // select and enable texture FONT_TEXTURE
+	//edited by Mike, 20201012
+    glBindTexture(GL_TEXTURE_2D, FONT_TEXTURE);
+    glEnable(GL_TEXTURE_2D);
+		
+  	//TO-DO: -update: this
+	sprintf(tempText,"USBONG");
+	//TO-DO: -update: this to not add 0.1 in y-axis
+//	    draw_string(0, 0, tempText);    	
+	//edited by Mike, 2020117
+//	    draw_string(0, 0.1, tempText);    
+	//edited by Mike, 20210416	
+//    draw_string(0.0f, 0.1f, 0.0f, tempText);    	
+    draw_string(0.0f, 0.12f, 0.0f, tempText);    	
+
+    glDisable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, 0);
+*/
+
+/* //removed by Mike, 20210529					
+	//added by Mike, 20201020
+	//note: we add these to enable complete drawing of 3D shape with z-axis
+	//--------------------------------------------------------
+	//removed by Mike, 20201118; added by Mike, 20210416
+	//solves problem with quad face image texture merging
+    glEnable(GL_CULL_FACE);
+		
+		
+//https://www.khronos.org/opengl/wiki/Face_Culling; last accessed: 20201122
+//    glCullFace(GL_BACK);
+*/
+
+/* //removed by Mike, 20210529					
+	glMatrixMode(GL_PROJECTION);			// set projection matrix current matrix
+	glLoadIdentity();						// reset projection matrix
+
+	//note: Nintendo Switch Screen Dimensions 1280x720; 80x45; 16x9
+//                   16.0 / 9.0, // aspect ratio
+//    gluPerspective(120.0, // field-of-view angle
+    gluPerspective(90.0, // field-of-view angle
+                   4.0 / 4.0, // aspect ratio
+                   0.0, // near plane
+                   100.0); // far plane
+
+	myCanvasEyePosY=-0.5f;
+	
+	gluLookAt(myCanvasEyePosX, myCanvasEyePosY, myCanvasEyePosZ+10.0f, // eye position
+			  myCanvasCenterPosX, myCanvasCenterPosY, myCanvasCenterPosZ, // look-at point
+              0.0, 1.0, 0.0); // up-direction
+*/               		
+		
+/* //removed by Mike, 20210529		
+		//added by Mike, 20210523
+		glMatrixMode(GL_PROJECTION);
+		glLoadIdentity();
+		
+		glMatrixMode(GL_MODELVIEW);
+		glLoadIdentity();			
+
+		//added by Mike, 20210521
+		//z-sort, i.e. auto-draw objects based on z position;
+		//objects with higher z positions are auto-drawn first;
+		//these are objects at the back of those that have lower z positions
+		//MyDynamicObject *myDynamicObjectContainerSorted[MAX_DYNAMIC_OBJECT];		
+		//std::vector<MyDynamicObject*> v;
+		//added by Mike, 20210509
+//		std::sort(vMyDynamicObjectContainer.begin(), vMyDynamicObjectContainer.end(), sortByZPosition());
+	
+		for (int i=0; i<MAX_DYNAMIC_OBJECT; i++) {			
+			glPushMatrix();
+				vMyDynamicObjectContainer[i]->draw();
+			glPopMatrix();
+		}
+*/		
+	}
+}
+
+
+//edited by Mike, 20210529
+void OpenGLCanvas::renderPrev()
 {     
 	//added by Mike, 20201023
 	//note: this is to be print-ready in newsletter
@@ -1675,9 +2081,10 @@ void OpenGLCanvas::render()
 		}
 	glEnd();			
 
+/*	//removed by Mike, 20210529
 	//added by Mike, 20210514
 	myButton->draw();
-	
+*/	
 
 	
 	//added by Mike, 20210511	

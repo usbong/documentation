@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200929
- * @date updated: 20210524
+ * @date updated: 20210529
  * @website address: http://www.usbong.ph
  *
  * Acknowledgments:
@@ -56,6 +56,10 @@
 
 //added by Mike, 20210502
 #include <math.h>
+
+//added by Mike, 20210529
+#include <string>
+
 
 #define PI 3.14159
 #define TWO_PI PI*2.0
@@ -116,9 +120,9 @@
 
 //edited by Mike, 20210522
 //#define MAX_DYNAMIC_OBJECT 1 //pilotPlayer1 only
-//edited by Mike, 20210524
-//#define MAX_DYNAMIC_OBJECT 2 //pilotPlayer1 and pilotPlayer2
-#define MAX_DYNAMIC_OBJECT 3 //pilotPlayer1, pilotPlayer2, and Ball
+//edited by Mike, 20210524; edited by Mike, 20210529
+#define MAX_DYNAMIC_OBJECT 2 //pilotPlayer1 and pilotPlayer2
+//#define MAX_DYNAMIC_OBJECT 3 //pilotPlayer1, pilotPlayer2, and Ball
 
 //#define MAX_DYNAMIC_OBJECT 17 //remove beams x32
 
@@ -146,6 +150,15 @@
 #define FACING_RIGHT_AND_UP 5
 #define FACING_LEFT_AND_DOWN 6
 #define FACING_RIGHT_AND_DOWN 7
+
+//added by Mike, 20210529
+//TO-DO: -update: this to auto-scale canvas size
+#define MAX_X_AXIS_CANVAS 10
+#define MAX_Y_AXIS_CANVAS 10
+#define MAX_Z_AXIS_CANVAS 10
+
+//added by Mike, 20210529
+#define MAX_BUTTON_AS_PIXEL_QUAD MAX_X_AXIS_CANVAS*MAX_Y_AXIS_CANVAS
 
 class MyDynamicObject; //added by Mike, 20201213
 
@@ -181,11 +194,11 @@ class OpenGLCanvas
 
 		//added by Mike, 20210514
 		//TO-DO: -update: this
-		Button *myButton;
+		//removed by Mike, 20210529
+//		Button *myButton;
 
 		//added by Mike, 20210524
 		Ball *myBall;
-
 		
 		//added by Mike, 20210516
 		UsbongUtils *myUsbongUtils;
@@ -203,12 +216,20 @@ class OpenGLCanvas
         Asteroid *myAsteroid[MAX_ASTEROID];
 //        Asteroid *myAsteroid;
 
+        //added by Mike, 20210529
+        Button *myButtonAsPixelQuadContainer[MAX_BUTTON_AS_PIXEL_QUAD];
+        int iMyButtonAsPixelQuadContainerCount;
+
+
 		//added by Mike, 20201213
 		//TO-DO: -add: level tile boxes, e.g. parts of tree
 		//TO-DO: -update: MAX_DYNAMIC_OBJECT value
 		//MyDynamicObject *myDynamicObjectContainer[MAX_DYNAMIC_OBJECT];
 		//std::vector<MyDynamicObject> items;
 		std::vector<MyDynamicObject*> vMyDynamicObjectContainer;
+				
+		//added by Mike, 20210529
+		int iVMyDynamicObjectContainerSize;
 				
        	char *infile;//= "Patches1.txt";		
         char *outfile;
@@ -387,11 +408,22 @@ class OpenGLCanvas
 			iEndPointX,
 			iEndPointY;
 		
-        int currentState;
+    int currentState;
+    
+    //added by Mike, 20210529
+		int myWindowWidthAsPixel,
+			  myWindowHeightAsPixel;
+        
+    //added by Mike, 20210529  
+    //TO-DO: -add: auto-update max size 
+		//row, column
+//		std::string sCurrentPixelPatternCanvasContainer[MAX_Z_AXIS_MAP][MAX_X_AXIS_MAP];         	
+		//PixelPattern
+		std::string sCurrentCanvasContainer[MAX_Y_AXIS_CANVAS][MAX_X_AXIS_CANVAS];         	
 
 		//edited by Mike, 20210517
 //    	bool init();
-    	bool init(int myWindowWidthAsPixel, int myWindowHeightAsPixel);
+    	bool init(int myWindowWidthAsPixelInput, int myWindowHeightAsPixelInput);
 
     	bool shutdown();
 
@@ -411,6 +443,8 @@ class OpenGLCanvas
 
     	//void Prepare(float dt);
     	void render();
+    	void renderPrev(); //added by Mike, 20210529
+    	
     	void update();
     	
     	void addScore(int s);

@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210522
+ * @date updated: 20210529
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -449,9 +449,22 @@ Button::Button(float xPos, float yPos, float zPos, int windowWidth, int windowHe
     myHeightAsPixel=64;
 	//TO-DO: -update: this
 	//note: float xPos as parameter to int myXPosAsPixel not correct output	
+/*	//edited by Mike, 20210529
 	myXPosAsPixel=320;//(int)xPos;
 	myYPosAsPixel=(int)yPos;
 	myZPosAsPixel=(int)zPos;
+*/
+	
+	//added by Mike, 20210529
+	myUsbongUtils = new UsbongUtils();	
+/*	
+	myXPosAsPixel=myUsbongUtils->autoConvertFromPixelToVertexPointX(xPos);
+	myYPosAsPixel=myUsbongUtils->autoConvertFromPixelToVertexPointX(yPos);
+	myZPosAsPixel=myUsbongUtils->autoConvertFromPixelToVertexPointX(zPos);
+*/	
+	myXPosAsPixel=xPos;
+	myYPosAsPixel=yPos;
+	myZPosAsPixel=zPos;
 	
 	printf(">>myXPosAsPixel: %i\n",myXPosAsPixel);
 
@@ -499,8 +512,10 @@ Button::Button(float xPos, float yPos, float zPos, int windowWidth, int windowHe
 	myWindowWidth=windowWidth;
 	myWindowHeight=windowHeight;
 	
+/*	//removed by Mike, 20210529	
 	//added by Mike, 20210516
 	myUsbongUtils = new UsbongUtils();
+*/
 
 //    myWidthX=0.5;
 
@@ -621,7 +636,11 @@ void Button::drawButtonAsQuadWithTexture()
 	//edited by Mike, 20210517
 //    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPos), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPos), myZPos);
 //    glTranslatef(myXPosAsPixel, myYPosAsPixel, myZPosAsPixel);
+
+/*	//removed by Mike, 20210529
     glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixel), myZPosAsPixel);
+*/	
+    glTranslatef(myXPosAsPixel, myYPosAsPixel, myZPosAsPixel);
 	
 	drawButtonObject();	
 }
