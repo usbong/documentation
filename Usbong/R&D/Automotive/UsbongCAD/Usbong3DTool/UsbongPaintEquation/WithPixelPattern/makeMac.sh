@@ -11,7 +11,7 @@
 # @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
 # @author: SYSON, MICHAEL B.
 # @date created: 20200930
-# @last updated: 20210522
+# @last updated: 20210529
 # @website address: http://www.usbong.ph
 #
 # References:
@@ -38,6 +38,7 @@ g++ -c CTargaImage.cpp
 g++ -c Pilot.cpp
 g++ -c UsbongUtils.cpp
 g++ -c Button.cpp
+#g++ -c Ball.cpp
 
 #g++ -o mainOutput main.o OpenGLCanvas.o -lGL -lGLU -lglut
 # edited by Mike, 20210126
@@ -47,7 +48,9 @@ g++ -c Button.cpp
 #g++ -o ./output/UsbongVolleyLinux mainLinux.o OpenGLCanvas.o MyDynamicObject.o RobotShip.o Font.o Beam.o Asteroid.o Level.o PolygonUtils.o CTargaImage.o Pilot.o UsbongUtils.o Button.o -lGL -lGLU -lglut
 
 #macOS Machine
-g++ -framework OpenGL -framework GLUT -o ./output/UsbongVolleyLinux mainLinux.o OpenGLCanvas.o MyDynamicObject.o RobotShip.o Font.o Beam.o Asteroid.o Level.o PolygonUtils.o CTargaImage.o Pilot.o UsbongUtils.o Button.o
+#g++ -framework OpenGL -framework GLUT -o ./output/UsbongPixelPatternMac mainLinux.o OpenGLCanvas.o MyDynamicObject.o RobotShip.o Font.o Beam.o Asteroid.o Level.o PolygonUtils.o CTargaImage.o Pilot.o UsbongUtils.o Button.o Ball.o
+
+g++ -framework OpenGL -framework GLUT -o ./output/UsbongPixelPatternMac mainLinux.o OpenGLCanvas.o MyDynamicObject.o RobotShip.o Font.o Beam.o Asteroid.o Level.o PolygonUtils.o CTargaImage.o Pilot.o UsbongUtils.o Button.o
 
 #added by Mike, 20210220; removed by Mike, 20210521
 #cp -r ./*.o ./objectFilesLinux/

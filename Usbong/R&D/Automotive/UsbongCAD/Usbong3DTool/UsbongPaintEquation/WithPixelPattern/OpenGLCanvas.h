@@ -121,8 +121,10 @@
 //edited by Mike, 20210522
 //#define MAX_DYNAMIC_OBJECT 1 //pilotPlayer1 only
 //edited by Mike, 20210524; edited by Mike, 20210529
-#define MAX_DYNAMIC_OBJECT 2 //pilotPlayer1 and pilotPlayer2
+//#define MAX_DYNAMIC_OBJECT 2 //pilotPlayer1 and pilotPlayer2
 //#define MAX_DYNAMIC_OBJECT 3 //pilotPlayer1, pilotPlayer2, and Ball
+//edited by Mike, 20210529
+#define MAX_DYNAMIC_OBJECT 0
 
 //#define MAX_DYNAMIC_OBJECT 17 //remove beams x32
 
@@ -195,7 +197,7 @@ class OpenGLCanvas
 		//added by Mike, 20210514
 		//TO-DO: -update: this
 		//removed by Mike, 20210529
-//		Button *myButton;
+		Button *myButton;
 
 		//added by Mike, 20210524
 		Ball *myBall;
@@ -419,7 +421,7 @@ class OpenGLCanvas
 		//row, column
 //		std::string sCurrentPixelPatternCanvasContainer[MAX_Z_AXIS_MAP][MAX_X_AXIS_MAP];         	
 		//PixelPattern
-		std::string sCurrentCanvasContainer[MAX_Y_AXIS_CANVAS][MAX_X_AXIS_CANVAS];         	
+		std::string sCurrentCanvasContainer[MAX_Y_AXIS_CANVAS][MAX_X_AXIS_CANVAS];
 
 		//edited by Mike, 20210517
 //    	bool init();
@@ -444,7 +446,8 @@ class OpenGLCanvas
     	//void Prepare(float dt);
     	void render();
     	void renderPrev(); //added by Mike, 20210529
-    	
+        void renderBuggy(); //added by Mike, 20210529
+    
     	void update();
     	
     	void addScore(int s);
