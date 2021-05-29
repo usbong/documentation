@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210529
+ * @date updated: 20210530
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -526,6 +526,10 @@ bool OpenGLCanvas::init(int myWindowWidthAsPixel, int myWindowHeightAsPixel)
     myBall->setOpenGLCanvas(this, fGridSquareWidth);
 */
     
+    //added by Mike, 20210530
+    iMyButtonAsPixelQuadContainerCount=0;
+
+    
 	//added by Mike, 20201013; edited by Mike, 20201014
 //	for (i=0; i<MAX_BEAMS; i++) {
 	for (int i=0; i<MAX_BEAMS; i++) {
@@ -634,12 +638,14 @@ bool OpenGLCanvas::init(int myWindowWidthAsPixel, int myWindowHeightAsPixel)
 	//std::vector<MyDynamicObject*> v;	
 	//removed by Mike, 20210521
 //	vMyDynamicObjectContainer.push_back(myRobotShip);
-	
+
+/*  //removed by Mike, 20210529
 	//added by Mike, 20210502
 	vMyDynamicObjectContainer.push_back(myPilot);
 	//added by Mike, 20210522
 	vMyDynamicObjectContainer.push_back(myPilotPlayer2);
-
+*/
+    
     //added by Mike, 20210528; removed by Mike, 20210529
 //    vMyDynamicObjectContainer.push_back(myBall);
 	
@@ -1625,28 +1631,36 @@ void OpenGLCanvas::render()
             glEnd();
         }
         
-        /*
+        
          //added by Mike, 20210529
          //		int iCurrentMyButtonAsPixelQuadContainerSize = myButtonAsPixelQuadContainer.size();
          if (iMyButtonAsPixelQuadContainerCount<MAX_BUTTON_AS_PIXEL_QUAD) {
          
          printf(">> iStartPointX:%i; iStartPointY:%i\n", iStartPointX, iStartPointY);
-         printf(">> autoConvertFromPixelToVertexPointX:%f; autoConvertFromPixelToVertexPointY:%f\n", myUsbongUtils->autoConvertFromPixelToVertexPointX(iStartPointX), myUsbongUtils->autoConvertFromPixelToVertexPointX(iStartPointY));
-         
-         //			Button *myButtonAsPixelQuad = new Button(
+         printf(">> autoConvertFromPixelToVertexPointX:%f; autoConvertFromPixelToVertexPointY:%f\n", myUsbongUtils->autoConvertFromPixelToVertexPointX(iStartPointX), myUsbongUtils->autoConvertFromPixelToVertexPointX(iStartPointY)*-1);
+            
+             //TO-DO: -reverify: cause for need to add *-1 in Y axis
+/*
          myButtonAsPixelQuadContainer[iMyButtonAsPixelQuadContainerCount] = new Button(
 									myUsbongUtils->autoConvertFromPixelToVertexPointX(iStartPointX),
-									myUsbongUtils->autoConvertFromPixelToVertexPointY(iStartPointY),
-         //								iStartPointX,
-         //								iStartPointY,
+									myUsbongUtils->autoConvertFromPixelToVertexPointY(iStartPointY)*-1,
 									0.0f,
 									myWindowWidthAsPixel,myWindowHeightAsPixel);
-         myButtonAsPixelQuadContainer[iMyButtonAsPixelQuadContainerCount]->setOpenGLCanvas(this, fGridSquareWidth);
+
+             //								iStartPointX,
+             //								iStartPointY,
+*/
+             myButtonAsPixelQuadContainer[iMyButtonAsPixelQuadContainerCount] = new Button(iStartPointX,
+                                                                                          iStartPointY,
+                                                                                           0.0f,                                                                                           myWindowWidthAsPixel,myWindowHeightAsPixel);
+             
+             myButtonAsPixelQuadContainer[iMyButtonAsPixelQuadContainerCount]->setOpenGLCanvas(this, fGridSquareWidth);
          
-         vMyDynamicObjectContainer.push_back(myButtonAsPixelQuadContainer[iMyButtonAsPixelQuadContainerCount]);
-         iMyButtonAsPixelQuadContainerCount=iMyButtonAsPixelQuadContainerCount+1;
+             vMyDynamicObjectContainer.push_back(myButtonAsPixelQuadContainer[iMyButtonAsPixelQuadContainerCount]);
+         
+             iMyButtonAsPixelQuadContainerCount=iMyButtonAsPixelQuadContainerCount+1;
          }
-         */
+        
         
         
     }
@@ -1672,17 +1686,17 @@ void OpenGLCanvas::render()
     
     //added by Mike, 20210529
     //		std::sort(vMyDynamicObjectContainer.begin(), vMyDynamicObjectContainer.end(), sortByZPosition());
-    //iVMyDynamicObjectContainerSize=vMyDynamicObjectContainer.size();
+    iVMyDynamicObjectContainerSize=vMyDynamicObjectContainer.size();
     
     //printf("iVMyDynamicObjectContainerSize: %i", iVMyDynamicObjectContainerSize);
-    /*
-     for (int i=0; i<MAX_DYNAMIC_OBJECT; i++) {
-     //	for (int i=0; i<iVMyDynamicObjectContainerSize; i++) {
-     glPushMatrix();
-     //			vMyDynamicObjectContainer[i]->draw();
-     glPopMatrix();
+    
+     //for (int i=0; i<MAX_DYNAMIC_OBJECT; i++) {
+     for (int i=0; i<iVMyDynamicObjectContainerSize; i++) {
+         glPushMatrix();
+            vMyDynamicObjectContainer[i]->draw();
+         glPopMatrix();
      }
-     */
+    
     
     /* //removed by Mike, 20210529
      //set TOP-LEFT origin/anchor/reference point; quadrant 4, y-axis inverted; x and y positive

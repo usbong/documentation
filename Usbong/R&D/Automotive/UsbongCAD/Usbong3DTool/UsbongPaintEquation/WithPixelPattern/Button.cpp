@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210529
+ * @date updated: 20210530
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -456,17 +456,23 @@ Button::Button(float xPos, float yPos, float zPos, int windowWidth, int windowHe
 */
 	
 	//added by Mike, 20210529
-	myUsbongUtils = new UsbongUtils();	
-/*	
-	myXPosAsPixel=myUsbongUtils->autoConvertFromPixelToVertexPointX(xPos);
+	myUsbongUtils = new UsbongUtils();
+    
+//TO-DO: -add: hungarian notation to identify if container type is integer, float, et cetera
+/*
+    myXPosAsPixel=myUsbongUtils->autoConvertFromPixelToVertexPointX(xPos);
 	myYPosAsPixel=myUsbongUtils->autoConvertFromPixelToVertexPointX(yPos);
 	myZPosAsPixel=myUsbongUtils->autoConvertFromPixelToVertexPointX(zPos);
-*/	
+*/
+
 	myXPosAsPixel=xPos;
 	myYPosAsPixel=yPos;
 	myZPosAsPixel=zPos;
-	
+
+    printf(">>xPos: %f\n",xPos);
 	printf(">>myXPosAsPixel: %i\n",myXPosAsPixel);
+    printf(">>yPos: %f\n",yPos);
+    printf(">>myYPosAsPixel: %i\n",myYPosAsPixel);
 
 	    
 /*
@@ -637,11 +643,14 @@ void Button::drawButtonAsQuadWithTexture()
 //    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPos), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPos), myZPos);
 //    glTranslatef(myXPosAsPixel, myYPosAsPixel, myZPosAsPixel);
 
-/*	//removed by Mike, 20210529
     glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixel), myZPosAsPixel);
-*/	
+/*
     glTranslatef(myXPosAsPixel, myYPosAsPixel, myZPosAsPixel);
-	
+*/
+    
+    //added by Mike, 20210530
+    //TO-DO: -update: object coordinate position due to not at its center position
+    
 	drawButtonObject();	
 }
 
