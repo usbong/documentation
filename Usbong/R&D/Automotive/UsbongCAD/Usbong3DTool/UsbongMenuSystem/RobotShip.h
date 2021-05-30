@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210507
+ * @date updated: 20210522
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -53,6 +53,11 @@
 	#define MAX_WAIT_COUNT 5
 #endif
 
+//added by Mike, 20210522
+#if defined(__APPLE__)
+    #define MAX_WAIT_COUNT 5
+#endif
+
 //edited by Mike, 20210129
 //TO-DO: -add: robotship dash background movement animation
 //note: start at 0
@@ -76,6 +81,10 @@
 	#define MAX_DIRECTIONAL_KEY_DASH_COUNT 4 //added by Mike, 20210128
 #endif
 
+//added by Mike, 20210522
+#if defined(__APPLE__)
+    #define MAX_DIRECTIONAL_KEY_DASH_COUNT 4
+#endif
 
 /* //edited by Mike, 20201207
 //added by Mike, 20201201
@@ -399,7 +408,9 @@ public:
 	void keyDown(int keyCode);	
 	void keyUp(int keyCode);	
 	
+/*	//removed by Mike, 20210522
 	void setOpenGLCanvas(OpenGLCanvas* c);
+*/	
     virtual void hitBy(MyDynamicObject* mdo);
 
 	//added by Mike, 20201016

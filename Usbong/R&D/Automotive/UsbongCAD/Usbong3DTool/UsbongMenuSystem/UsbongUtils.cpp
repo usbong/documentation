@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B.
  * @date created: 20201210
- * @date updated: 20210516
+ * @date updated: 20210524
  * @website address: http://www.usbong.ph 
  *
  * References:
@@ -110,10 +110,12 @@
 #include "UsbongUtils.h"
 #include <string.h>
 
+/* //removed by Mike, 20210524
 //added by Mike, 20210516
 UsbongUtils::UsbongUtils()
 {
 }
+*/
 
 //added by Mike, 20210516
 UsbongUtils::~UsbongUtils()

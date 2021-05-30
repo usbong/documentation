@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210517
+ * @date updated: 20210530
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -98,6 +98,9 @@
 //added by Mike, 20210514
 //note: add this here in the .cpp file 
 #include "Button.h"
+
+//added by Mike, 20210528; removed by Mike, 20210529
+//#include "Ball.h"
 
 //added by Mike, 20201010
 #include "Font.h"
@@ -478,20 +481,31 @@ bool OpenGLCanvas::init(int myWindowWidthAsPixel, int myWindowHeightAsPixel)
 	
 	//added by Mike, 20210321
 	//TO-DO: -update: these due to getMaxXAxisViewport()... already the actual size
-	
+
 //	printf("%d",myLevel->getMaxXAxisViewport());
 	myRobotShip = new RobotShip(0.0f,0.0f,0.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
-	myRobotShip->setOpenGLCanvas(this);
-
+	//edited by Mike, 20210522
+//	myRobotShip->setOpenGLCanvas(this);
+	myRobotShip->setOpenGLCanvas(this, fGridSquareWidth);
+		
 //TO-DO: -update: myPilot instructions, e.g. movement
 	//added by Mike, 20201207; edited by Mike, 20210219
 //	myPilot = new Pilot(0.0f,0.0f,0.0f,myWindowWidth,myWindowHeight);
-	myPilot = new Pilot(0.0f,0.0f,0.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
-	myPilot->setOpenGLCanvas(this);
+    //edited by Mike, 20210528
+    //	myPilot = new Pilot(0.0f,0.0f,0.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
+    myPilot = new Pilot(0.0f,0.0f,320.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
+    
+//edited by Mike, 20210522	
+	//myPilot->setOpenGLCanvas(this);
+	myPilot->setOpenGLCanvas(this, fGridSquareWidth);
 	
-	//added by Mike, 20210502
-	myPilotPlayer2 = new Pilot(0.0f,0.0f,0.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
-	myPilotPlayer2->setOpenGLCanvas(this);
+    //added by Mike, 20210502; edited by Mike, 20210528
+    //	myPilotPlayer2 = new Pilot(0.0f,0.0f,0.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
+    myPilotPlayer2 = new Pilot(320.0f,0.0f,320.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
+    
+    //edited by Mike, 20210522
+//	myPilotPlayer2->setOpenGLCanvas(this);
+	myPilotPlayer2->setOpenGLCanvas(this, fGridSquareWidth);
 	myPilotPlayer2->setAsPlayer2();
 	
 	//added by Mike, 20210514; edited by Mike, 20210517
@@ -501,9 +515,21 @@ bool OpenGLCanvas::init(int myWindowWidthAsPixel, int myWindowHeightAsPixel)
 	//note: float xPos as parameter to int myXPosAsPixel not correct output
 //	myButton = new Button(myWindowWidthAsPixel/2.0f,0.0f,0.0f,myWindowWidthAsPixel,myWindowHeightAsPixel);
 	myButton = new Button(0.0f,0.0f,0.0f,myWindowWidthAsPixel,myWindowHeightAsPixel);
+//edited by Mike, 20210522	
+//	myButton->setOpenGLCanvas(this);
+	myButton->setOpenGLCanvas(this, fGridSquareWidth);
+	
+/* //removed by Mike, 20210529
+    //added by Mike, 20210524; edited by Mike, 20210528
+    //	myBall = new Ball(320.0f,320.0f,0.0f,myWindowWidthAsPixel,myWindowHeightAsPixel);
+    myBall = new Ball(0.0f,320.0f,0.0f,myWindowWidthAsPixel,myWindowHeightAsPixel);
+    myBall->setOpenGLCanvas(this, fGridSquareWidth);
+*/
+    
+    //added by Mike, 20210530
+    iMyButtonAsPixelQuadContainerCount=0;
 
-	myButton->setOpenGLCanvas(this);
-			
+    
 	//added by Mike, 20201013; edited by Mike, 20201014
 //	for (i=0; i<MAX_BEAMS; i++) {
 	for (int i=0; i<MAX_BEAMS; i++) {
@@ -512,6 +538,9 @@ bool OpenGLCanvas::init(int myWindowWidthAsPixel, int myWindowHeightAsPixel)
 		//edited by Mike, 20210219; edited by Mike, 20210321
 		myBeam[i] = new Beam(0.0f,0.0f,0.0f,myWindowWidth,myWindowHeight);
 //		myBeam[i] = new Beam(0.0f,0.0f,0.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
+
+		//added by Mike, 20210522
+		myBeam[i]->setOpenGLCanvas(this, fGridSquareWidth);		
 	}
 
 	//added by Mike, 20201016
@@ -607,23 +636,30 @@ bool OpenGLCanvas::init(int myWindowWidthAsPixel, int myWindowHeightAsPixel)
 
 	//added by Mike, 20201213; edited by Mike, 20210502
 	//std::vector<MyDynamicObject*> v;	
-	vMyDynamicObjectContainer.push_back(myRobotShip);
-	
+	//removed by Mike, 20210521
+//	vMyDynamicObjectContainer.push_back(myRobotShip);
+
+/*  //removed by Mike, 20210529
 	//added by Mike, 20210502
 	vMyDynamicObjectContainer.push_back(myPilot);
+	//added by Mike, 20210522
 	vMyDynamicObjectContainer.push_back(myPilotPlayer2);
-
-	
+*/
+    
+    //added by Mike, 20210528; removed by Mike, 20210529
+//    vMyDynamicObjectContainer.push_back(myBall);
 	
 /*	//removed by Mike, 20210120
 	for (int i=0; i<MAX_BEAMS; i++) { //32
 		vMyDynamicObjectContainer.push_back(myBeam[i]);
 	}
 */
-
+	//removed by Mike, 20210521
+/*	
 	for (int i=0; i<MAX_ASTEROID; i++) { //16			
 		vMyDynamicObjectContainer.push_back(myAsteroid[i]);
 	}	
+*/
 	
 /*
 	myDynamicObjectContainer[0]=myPilot;
@@ -1391,7 +1427,404 @@ void OpenGLCanvas::setupTaoTexture()
 }
 */
 
+//added by Mike, 20210528
 void OpenGLCanvas::render()
+{
+    //added by Mike, 20201023
+    //note: this is to be print-ready in newsletter
+    //we use recycled paper
+    //edited by Mike, 2020116
+    //edited by Mike, 20201122
+    //   glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Set background color to black and opaque
+    //   glClearColor(1.0f, 1.0f, 1.0f, 0.0f); // Set background color to white and not opaque
+    //removed by Mike, 20201122
+    //sky blue
+    //   glClearColor(0.69f, 0.84f, 1.0f, 0.0f); // Set background color to white and not opaque
+    //edited by Mike, 20201122
+    glClearColor(1.0f, 1.0f, 1.0f, 0.0f); // Set background color to white and not opaque
+    
+    //added by Mike, 20201012
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    //removed by Mike, 20201015
+    //    glViewport(0, 0, myWindowWidth, myWindowHeight);		// reset the viewport to new
+    
+    //added by Mike, 20201207
+    //Reference: https://www.khronos.org/opengl/wiki/Depth_Test;
+    //last accessed: 20201206
+    //TO-DO: -verify: this
+    //TO-DO: -add: Z-sort, i.e. sort objects by Z-axis when computer auto-draws
+    glEnable(GL_DEPTH_TEST);
+    glDepthFunc(GL_ALWAYS);
+    
+    //Reference: https://community.khronos.org/t/gradient-background/54348/2;
+    //last accessed: 20201122
+    //answer by: NiCo1, 2008-03
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity();
+    /* //horizontal
+     glBegin(GL_QUADS);
+     //red color
+     glColor3f(1.0,0.0,0.0);
+     glVertex2f(-1.0, 1.0);
+     glVertex2f(-1.0,-1.0);
+     //blue color
+     glColor3f(0.0,0.0,1.0);
+     glVertex2f(1.0,-1.0);
+     glVertex2f(1.0, 1.0);
+     glEnd();
+     */
+    
+    /* //removed by Mike, 20210510
+     glBegin(GL_QUADS);
+     //	glColor3f(0.0f,0.0f,0.0f); //black
+     //	glColor3f(1.0f,1.0f,1.0f); //white
+     
+     //TOP
+     //sky blue color; darker
+     //	glColor3f(0.51f, 0.73f, 0.98f);
+     //	glColor3f(0.08f, 0.51f, 1.00f);
+     //	glColor3f(0.0f, 0.32f, 0.67f);
+     glColor3f(0.0f, 0.44f, 0.67f);
+     glVertex2f(1.0, 1.0);
+     glVertex2f(-1.0, 1.0);
+     
+     //BOTTOM
+     //sky blue color; brighter
+     glColor3f(0.69f, 0.84f, 1.0f);
+     glVertex2f(-1.0,-1.0);
+     glVertex2f(1.0,-1.0);
+     glEnd();
+     */
+    
+    glBegin(GL_QUADS);
+    //			glColor3f(0.0f,0.0f,0.0f); //black
+    //edited by Mike, 20210523
+    //			glColor3f(1.0f,1.0f,1.0f); //white
+    
+    //TOP
+    //added by Mike, 20210523
+    //sky blue color; darker
+    glColor3f(0.0f, 0.44f, 0.67f);
+    glVertex2f(1.0, 1.0);
+    glVertex2f(-1.0, 1.0);
+    
+    //BOTTOM
+    //added by Mike, 20210523
+    //sky blue color; brighter
+    glColor3f(0.69f, 0.84f, 1.0f);
+    glVertex2f(-1.0,-1.0);
+    glVertex2f(1.0,-1.0);
+    glEnd();
+    
+    //added by Mike, 20210510
+    glLineWidth((GLfloat)3);
+    
+    //edited by Mike, 20210523
+    //note: coordinate system guide/map; pixel positions
+    glBegin(GL_LINES);
+    glColor3f(0.0f,0.0f,0.0f); //black
+    /*	//removed by Mike, 20210516
+     //diagonal line left to right
+     glVertex2f(-1.0f, 1.0f);
+     glVertex2f(1.0f, -1.0f);
+     
+     //diagonal line right to left
+     glVertex2f(1.0f, 1.0f);
+     glVertex2f(-1.0f, -1.0f);
+     */
+    //vertical line at center
+    glVertex2f(0.0f, 1.0f);
+    glVertex2f(0.0f, -1.0f);
+    
+    //horizontal line at center
+    glVertex2f(-1.0f, 0.0f);
+    glVertex2f(1.0f, 0.0f);
+    glEnd();
+    
+    
+    //added by Mike, 20210524
+    //notes: vertical and horizontal lines in addition to those at center
+    //coordinate system guide/map; pixel positions
+     iRowCountMax=10;
+     int iNumberSign=1;
+     //rows
+     for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
+   		// Draw a Green Line top-left origin
+   		glBegin(GL_LINES);
+     //glColor3f(0.0f, 0.0f, 1.0f); // Blue
+     //      		glColor3f(0.0f, 1.0f, 0.0f); // Green
+     glColor3f(0.2f, 0.2f, 0.2f); // dark gray
+     
+     glVertex2f(-1.0f, 2.0f/iRowCountMax*iRowCount*iNumberSign);    // x, y
+     //TO-DO: -add: auto-compute myWindowWidth
+     glVertex2f(1.0f, 2.0f/iRowCountMax*iRowCount*iNumberSign);
+   		glEnd();
+     }
+     iNumberSign=-1;
+     for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
+   		// Draw a Green Line top-left origin
+   		glBegin(GL_LINES);
+     //glColor3f(0.0f, 0.0f, 1.0f); // Blue
+     //      		glColor3f(0.0f, 1.0f, 0.0f); // Green
+     glColor3f(0.2f, 0.2f, 0.2f); // dark gray
+     
+     glVertex2f(-1.0f, 2.0f/iRowCountMax*iRowCount*iNumberSign);    // x, y
+     //TO-DO: -add: auto-compute myWindowWidth
+     glVertex2f(1.0f, 2.0f/iRowCountMax*iRowCount*iNumberSign);
+   		glEnd();
+     }
+     
+     //reset to 12 from 10
+     iRowCountMax=12;
+	 	  
+     //columns
+     iColumnCountMax=10;
+     iNumberSign=1;
+     for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {
+   		// Draw a Green Line top-left origin
+   		glBegin(GL_LINES);
+     //glColor3f(0.0f, 0.0f, 1.0f); // Blue
+     //      		glColor3f(0.0f, 1.0f, 0.0f); // Green
+     glColor3f(0.2f, 0.2f, 0.2f); // dark gray
+     
+     glVertex2f(2.0f/iColumnCountMax*iColumnCount*iNumberSign, -1.0f);    // x, y
+     //TO-DO: -add: auto-compute myWindowHeight
+     glVertex2f(2.0f/iColumnCountMax*iColumnCount*iNumberSign, 1.0f);
+   		glEnd();
+     }
+     iNumberSign=-1;
+     for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {
+   		// Draw a Green Line top-left origin
+   		glBegin(GL_LINES);
+     //glColor3f(0.0f, 0.0f, 1.0f); // Blue
+     //      		glColor3f(0.0f, 1.0f, 0.0f); // Green
+     glColor3f(0.2f, 0.2f, 0.2f); // dark gray
+     
+     
+     glVertex2f(2.0f/iColumnCountMax*iColumnCount*iNumberSign, -1.0f);    // x, y
+     //TO-DO: -add: auto-compute myWindowHeight
+     glVertex2f(2.0f/iColumnCountMax*iColumnCount*iNumberSign, 1.0f);
+   		glEnd();
+     }
+     
+     //reset to 12 from 10
+     iColumnCountMax=12;
+    
+    
+    //	printf("myMouseActionDown[MOUSE_LEFT_BUTTON]: %i\n",myMouseActionDown[MOUSE_LEFT_BUTTON]);
+    
+    if (myMouseActionDown[MOUSE_LEFT_BUTTON]==FALSE) {
+    }
+    else {
+        //added by Mike, 20210514
+        //note: greater than 0, due to blank start is @zero
+        if ((stepHistoryListCount>0) && (stepHistoryListCount<MAX)) {
+            glBegin(GL_LINES);
+            //glColor3f(0.0f,0.0f,0.0f); //black
+            glColor3f(0.6f,0.6f,0.6f); //bright black
+            
+            glVertex2f(myUsbongUtils->autoConvertFromPixelToVertexPointX(iStartPointX), myUsbongUtils->autoConvertFromPixelToVertexPointY(iStartPointY));
+            glVertex2f(myUsbongUtils->autoConvertFromPixelToVertexPointX(iEndPointX), myUsbongUtils->autoConvertFromPixelToVertexPointY(iEndPointY));
+            glEnd();
+        }
+        
+        
+         //added by Mike, 20210529
+         //		int iCurrentMyButtonAsPixelQuadContainerSize = myButtonAsPixelQuadContainer.size();
+         if (iMyButtonAsPixelQuadContainerCount<MAX_BUTTON_AS_PIXEL_QUAD) {
+         
+         printf(">> iStartPointX:%i; iStartPointY:%i\n", iStartPointX, iStartPointY);
+         printf(">> autoConvertFromPixelToVertexPointX:%f; autoConvertFromPixelToVertexPointY:%f\n", myUsbongUtils->autoConvertFromPixelToVertexPointX(iStartPointX), myUsbongUtils->autoConvertFromPixelToVertexPointX(iStartPointY)*-1);
+            
+             //TO-DO: -reverify: cause for need to add *-1 in Y axis
+/*
+         myButtonAsPixelQuadContainer[iMyButtonAsPixelQuadContainerCount] = new Button(
+									myUsbongUtils->autoConvertFromPixelToVertexPointX(iStartPointX),
+									myUsbongUtils->autoConvertFromPixelToVertexPointY(iStartPointY)*-1,
+									0.0f,
+									myWindowWidthAsPixel,myWindowHeightAsPixel);
+
+             //								iStartPointX,
+             //								iStartPointY,
+*/
+             myButtonAsPixelQuadContainer[iMyButtonAsPixelQuadContainerCount] = new Button(iStartPointX,
+                                                                                          iStartPointY,
+                                                                                           0.0f,                                                                                           myWindowWidthAsPixel,myWindowHeightAsPixel);
+             
+             myButtonAsPixelQuadContainer[iMyButtonAsPixelQuadContainerCount]->setOpenGLCanvas(this, fGridSquareWidth);
+         
+             vMyDynamicObjectContainer.push_back(myButtonAsPixelQuadContainer[iMyButtonAsPixelQuadContainerCount]);
+         
+             iMyButtonAsPixelQuadContainerCount=iMyButtonAsPixelQuadContainerCount+1;
+         }
+        
+        
+        
+    }
+    
+    //added by Mike, 20210513
+    glBegin(GL_LINES);
+    //edited by Mike, 20210514
+    //		glColor3f(1.0f,0.0f,0.0f); //red
+    //sky blue color; brighter
+    //		glColor3f(0.69f, 0.84f, 1.0f);
+    glColor3f(0.0f,0.0f,0.0f); //black
+    
+    for (int iCount=0; iCount<stepHistoryListCount; iCount++)
+    {
+        glVertex2f(myUsbongUtils->autoConvertFromPixelToVertexPointX(stepHistoryList[iCount][0]), myUsbongUtils->autoConvertFromPixelToVertexPointY(stepHistoryList[iCount][1]));
+        glVertex2f(myUsbongUtils->autoConvertFromPixelToVertexPointX(stepHistoryList[iCount][2]), myUsbongUtils->autoConvertFromPixelToVertexPointY(stepHistoryList[iCount][3]));
+    }
+    glEnd();
+    
+    //added by Mike, 20210514; removed by Mike, 20210529
+    //	myButton->draw();
+    
+    
+    //added by Mike, 20210529
+    //		std::sort(vMyDynamicObjectContainer.begin(), vMyDynamicObjectContainer.end(), sortByZPosition());
+    iVMyDynamicObjectContainerSize=vMyDynamicObjectContainer.size();
+    
+    //printf("iVMyDynamicObjectContainerSize: %i", iVMyDynamicObjectContainerSize);
+    
+     //for (int i=0; i<MAX_DYNAMIC_OBJECT; i++) {
+     for (int i=0; i<iVMyDynamicObjectContainerSize; i++) {
+         glPushMatrix();
+            vMyDynamicObjectContainer[i]->draw();
+         glPopMatrix();
+     }
+    
+    
+    /* //removed by Mike, 20210529
+     //set TOP-LEFT origin/anchor/reference point; quadrant 4, y-axis inverted; x and y positive
+     glMatrixMode(GL_PROJECTION);
+     glLoadIdentity();
+     //TOP-LEFT origin
+     //added by Mike, 20210523
+     //TO-DO: -reverify: this if necessary
+     glOrtho(0.0f, //left
+     1.0f, //right
+     1.0f, //bottom
+     0.0f, //top
+     0.0f, //zNear; minimum
+     1.0f //zFar; maximum
+     );
+     */
+    
+    
+    /*	//removed by Mike, 20201117
+     //font
+     // select and enable texture FONT_TEXTURE
+     //edited by Mike, 20201012
+     glBindTexture(GL_TEXTURE_2D, FONT_TEXTURE);
+     glEnable(GL_TEXTURE_2D);
+     */
+    if (currentState==TITLE_SCREEN) {
+    }
+    else if (currentState==CONTROLS_SCREEN) {
+    }
+    else if (currentState==GAMEOVER_SCREEN) {
+    }
+    else if (currentState==HIGHSCORE_SCREEN) {
+    }
+    else if (currentState==GAME_SCREEN) {
+        /* //removed by Mike, 20201117
+         //TO-DO: -update: this
+         sprintf(tempText,"USBONG");
+         //TO-DO: -update: this to not add 0.1 in y-axis
+         //	    draw_string(0, 0, tempText);
+         //edited by Mike, 2020117
+         //	    draw_string(0, 0.1, tempText);
+         draw_string(0, 0.1, tempText);
+         glDisable(GL_TEXTURE_2D);
+         glBindTexture(GL_TEXTURE_2D, 0);
+         */
+        
+        /*	//removed by Mike, 20210510
+         //added by Mike, 20201117
+         //font
+         // select and enable texture FONT_TEXTURE
+         //edited by Mike, 20201012
+         glBindTexture(GL_TEXTURE_2D, FONT_TEXTURE);
+         glEnable(GL_TEXTURE_2D);
+         
+         //TO-DO: -update: this
+         sprintf(tempText,"USBONG");
+         //TO-DO: -update: this to not add 0.1 in y-axis
+         //	    draw_string(0, 0, tempText);
+         //edited by Mike, 2020117
+         //	    draw_string(0, 0.1, tempText);
+         //edited by Mike, 20210416
+         //    draw_string(0.0f, 0.1f, 0.0f, tempText);
+         draw_string(0.0f, 0.12f, 0.0f, tempText);
+         
+         glDisable(GL_TEXTURE_2D);
+         glBindTexture(GL_TEXTURE_2D, 0);
+         */
+        
+        /* //removed by Mike, 20210529
+         //added by Mike, 20201020
+         //note: we add these to enable complete drawing of 3D shape with z-axis
+         //--------------------------------------------------------
+         //removed by Mike, 20201118; added by Mike, 20210416
+         //solves problem with quad face image texture merging
+         glEnable(GL_CULL_FACE);
+         
+         
+         //https://www.khronos.org/opengl/wiki/Face_Culling; last accessed: 20201122
+         //    glCullFace(GL_BACK);
+         */
+        
+        /* //removed by Mike, 20210529
+         glMatrixMode(GL_PROJECTION);			// set projection matrix current matrix
+         glLoadIdentity();						// reset projection matrix
+         
+         //note: Nintendo Switch Screen Dimensions 1280x720; 80x45; 16x9
+         //                   16.0 / 9.0, // aspect ratio
+         //    gluPerspective(120.0, // field-of-view angle
+         gluPerspective(90.0, // field-of-view angle
+         4.0 / 4.0, // aspect ratio
+         0.0, // near plane
+         100.0); // far plane
+         
+         myCanvasEyePosY=-0.5f;
+         
+         gluLookAt(myCanvasEyePosX, myCanvasEyePosY, myCanvasEyePosZ+10.0f, // eye position
+         myCanvasCenterPosX, myCanvasCenterPosY, myCanvasCenterPosZ, // look-at point
+         0.0, 1.0, 0.0); // up-direction
+         */               		
+        
+        /* //removed by Mike, 20210529		
+         //added by Mike, 20210523
+         glMatrixMode(GL_PROJECTION);
+         glLoadIdentity();
+         
+         glMatrixMode(GL_MODELVIEW);
+         glLoadIdentity();			
+         
+         //added by Mike, 20210521
+         //z-sort, i.e. auto-draw objects based on z position;
+         //objects with higher z positions are auto-drawn first;
+         //these are objects at the back of those that have lower z positions
+         //MyDynamicObject *myDynamicObjectContainerSorted[MAX_DYNAMIC_OBJECT];		
+         //std::vector<MyDynamicObject*> v;
+         //added by Mike, 20210509
+         //		std::sort(vMyDynamicObjectContainer.begin(), vMyDynamicObjectContainer.end(), sortByZPosition());
+         
+         for (int i=0; i<MAX_DYNAMIC_OBJECT; i++) {			
+         glPushMatrix();
+         vMyDynamicObjectContainer[i]->draw();
+         glPopMatrix();
+         }
+         */		
+    }
+}
+
+
+void OpenGLCanvas::renderPrev()
 {     
 	//added by Mike, 20201023
 	//note: this is to be print-ready in newsletter
@@ -1543,6 +1976,67 @@ void OpenGLCanvas::render()
 	}
 */	
 	
+    
+    /* //removed by Mike, 20210524
+     //added by Mike, 20210524
+     //notes: vertical and horizontal lines in addition to those at center
+     //coordinate system guide/map; pixel positions
+     iRowCountMax=10;
+     int iNumberSign=1;
+     //rows
+     for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
+   		// Draw a Green Line top-left origin
+   		glBegin(GL_LINES);
+     glColor3f(0.0f, 0.0f, 1.0f); // Blue
+     
+     glVertex2f(-1.0f, 2.0f/iRowCountMax*iRowCount*iNumberSign);    // x, y
+     //TO-DO: -add: auto-compute myWindowWidth
+     glVertex2f(1.0f, 2.0f/iRowCountMax*iRowCount*iNumberSign);
+   		glEnd();
+     }
+     iNumberSign=-1;
+     for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
+   		// Draw a Green Line top-left origin
+   		glBegin(GL_LINES);
+     glColor3f(0.0f, 0.0f, 1.0f); // Blue
+     
+     glVertex2f(-1.0f, 2.0f/iRowCountMax*iRowCount*iNumberSign);    // x, y
+     //TO-DO: -add: auto-compute myWindowWidth
+     glVertex2f(1.0f, 2.0f/iRowCountMax*iRowCount*iNumberSign);
+   		glEnd();
+     }
+     
+     //reset to 12 from 10
+     iRowCountMax=12;
+	 	  
+     //columns
+     iColumnCountMax=10;
+     iNumberSign=1;
+     for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {
+   		// Draw a Green Line top-left origin
+   		glBegin(GL_LINES);
+     glColor3f(0.0f, 0.0f, 1.0f); // Blue
+     glVertex2f(2.0f/iColumnCountMax*iColumnCount*iNumberSign, -1.0f);    // x, y
+     //TO-DO: -add: auto-compute myWindowHeight
+     glVertex2f(2.0f/iColumnCountMax*iColumnCount*iNumberSign, 1.0f);
+   		glEnd();
+     }
+     iNumberSign=-1;
+     for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {
+   		// Draw a Green Line top-left origin
+   		glBegin(GL_LINES);
+     glColor3f(0.0f, 0.0f, 1.0f); // Blue
+     glVertex2f(2.0f/iColumnCountMax*iColumnCount*iNumberSign, -1.0f);    // x, y
+     //TO-DO: -add: auto-compute myWindowHeight
+     glVertex2f(2.0f/iColumnCountMax*iColumnCount*iNumberSign, 1.0f);
+   		glEnd();
+     }
+     //reset to 12 from 10
+     iColumnCountMax=12;
+     */
+    
+    
+    
 	
 //	printf("myMouseActionDown[MOUSE_LEFT_BUTTON]: %i\n",myMouseActionDown[MOUSE_LEFT_BUTTON]);
 	
@@ -1689,8 +2183,10 @@ myPilotPlayer2->updateToFaceOpponent(myPilot->getX());
 
 	myCanvasEyePosY=-0.5f;
 
-	gluLookAt(myCanvasEyePosX, myCanvasEyePosY, myCanvasEyePosZ+3.0f, // eye position 0.0, 0.0, 3.0
-              myCanvasCenterPosX, myCanvasCenterPosY, myCanvasCenterPosZ, // look-at point
+	//edited by Mike, 20210519
+//	gluLookAt(myCanvasEyePosX, myCanvasEyePosY, myCanvasEyePosZ+3.0f, // eye position 0.0, 0.0, 3.0
+	gluLookAt(myCanvasEyePosX, myCanvasEyePosY, myCanvasEyePosZ+10.0f, // eye position
+			  myCanvasCenterPosX, myCanvasCenterPosY, myCanvasCenterPosZ, // look-at point
               0.0, 1.0, 0.0); // up-direction
 		
 
@@ -1717,8 +2213,16 @@ myPilotPlayer2->updateToFaceOpponent(myPilot->getX());
 //  	glTranslatef(0.0f, -4.0f, 10.0f);
 	//edited by Mike, 20210505
 //  	glTranslatef(0.0f, -6.0f, 10.0f);
-  	glTranslatef(0.0f, -8.0f, 10.0f);
-				
+	//removed by Mike, 20210519
+//  	glTranslatef(0.0f, -8.0f, 10.0f);
+
+	///added by Mike, 20210519
+	//Reference: http://www.starsign.co.jp/item_switch_Volley.html;
+	//last accessed: 20210519
+//	glTranslatef(8.0f, 0.0f, -10.0f);
+//	glTranslatef(8.0f, 2.0f, -6.0f);
+  	glTranslatef(8.0f, -8.0f, -2.0f);
+		
 	//added by Mike, 20210220
 	//3rd-person view
 	//without additional rotate and scale
@@ -1731,8 +2235,14 @@ myPilotPlayer2->updateToFaceOpponent(myPilot->getX());
 	//edited by Mike, 20210505
 //	glRotatef(30, 1.0f, 0.0f, 0.0f);
 	glRotatef(20, 1.0f, 0.0f, 0.0f);
-		
-		
+
+	//added by Mike, 20210519; edited by Mike, 20210520
+//	glRotatef(20, 1.0f, 0.0f, 0.0f);
+	//note: horizontal line of 2D pixel x and y-axes appear to be not exact 
+	//with axes of 3D vertex due to angle;
+	//This is with 3D vertex x, y, and z-axes
+	glRotatef(40, 1.0f, 0.0f, 0.0f);
+				
 	//added by Mike, 20210220; edited by Mike, 20210220
 	//2D horizontal-scrolling, vertical-scrolling view
 	//note: Zelda Link's Awakening DX; Gameboy Color
@@ -1741,7 +2251,13 @@ myPilotPlayer2->updateToFaceOpponent(myPilot->getX());
 /*    glScalef(0.2f, 0.2f, 0.2f);
 */
 	//-----
+	
+		//added by Mike, 20210519
+		drawGridWithZAxis();
 
+	//added by Mike, 20210521; removed by Mike, 20210521
+//	glRotatef(-40, 1.0f, 0.0f, 0.0f);
+		
 		
 /*	//removed by Mike, 20210323
 //added by Mike, 20210311
@@ -1750,8 +2266,8 @@ myPilotPlayer2->updateToFaceOpponent(myPilot->getX());
 	glScalef(0.2f, 0.2f, 0.2f);
 */
 		
-/* //removed by Mike, 20210510		
-    glTranslatef(myCanvasPosX, myCanvasPosY, myCanvasPosZ);
+ //removed by Mike, 20210510		
+/*    glTranslatef(myCanvasPosX, myCanvasPosY, myCanvasPosZ);
 
 	//added by Mike, 20210502	
 	//Fighter
@@ -1795,22 +2311,65 @@ myPilotPlayer2->updateToFaceOpponent(myPilot->getX());
 			  }
             }
         glPopMatrix();       
+*/
+	//added by Mike, 20210521
+	//close glRotate
+	glRotatef(-8, 1.0f, 0.0f, 0.0f);
 		
+		//added by Mike, 20210521
 		//z-sort, i.e. auto-draw objects based on z position;
 		//objects with higher z positions are auto-drawn first;
 		//these are objects at the back of those that have lower z positions
 		//MyDynamicObject *myDynamicObjectContainerSorted[MAX_DYNAMIC_OBJECT];		
 		//std::vector<MyDynamicObject*> v;
- //removed by Mike, 20210507; TO-DO: -reverify: sortByZPosition(...)
 		//added by Mike, 20210509
-		std::sort(vMyDynamicObjectContainer.begin(), vMyDynamicObjectContainer.end(), sortByZPosition());
-		
-		for (int i=0; i<MAX_DYNAMIC_OBJECT; i++) {			
-    		glPushMatrix();
-				vMyDynamicObjectContainer[i]->draw();
-    		glPopMatrix();
-		}
-*/		
+//		std::sort(vMyDynamicObjectContainer.begin(), vMyDynamicObjectContainer.end(), sortByZPosition());
+	
+        //added by Mike, 20210528
+        int iVMyDynamicObjectContainerSize = vMyDynamicObjectContainer.size();
+/*  //removed by Mike, 20210528
+		//TO-DO: -reverify: if we can delete open and close glTranslate, et cetera,
+		//which also exist in drawGridWithZAxis(...)
+//		glTranslatef(-fGridSquareWidth*(iRowCountMax-4), 0.0f, -fGridSquareHeight*(iColumnCountMax-1));		
+//		glTranslatef(-fGridSquareWidth*(iRowCountMax-6), 0.0f, -fGridSquareHeight*(iColumnCountMax+4));		
+		glTranslatef(-fGridSquareWidth*(iRowCountMax-5), 0.0f, -fGridSquareHeight*(iColumnCountMax+5));
+		glTranslatef(-30, 0.0f, -30);
+            //edited by Mike, 20210528
+//			for (int i=0; i<MAX_DYNAMIC_OBJECT; i++) {
+			for (int i=0; i<iVMyDynamicObjectContainerSize; i++) {
+                glPushMatrix();
+					vMyDynamicObjectContainer[i]->draw();
+				glPopMatrix();
+			}
+		glTranslatef(30, 0.0f, -30);
+//		glTranslatef(+fGridSquareWidth*(iRowCountMax-4), 0.0f, +fGridSquareHeight*(iColumnCountMax-1));				
+//		glTranslatef(+fGridSquareWidth*(iRowCountMax-6), 0.0f, +fGridSquareHeight*(iColumnCountMax+4));		
+		glTranslatef(+fGridSquareWidth*(iRowCountMax-5), 0.0f, +fGridSquareHeight*(iColumnCountMax+5));				
+*/
+        //added by Mike, 20210528
+        glMatrixMode(GL_PROJECTION);
+        glLoadIdentity();
+        
+        glMatrixMode(GL_MODELVIEW);
+        glLoadIdentity();
+        
+        //added by Mike, 20210521
+        //z-sort, i.e. auto-draw objects based on z position;
+        //objects with higher z positions are auto-drawn first;
+        //these are objects at the back of those that have lower z positions
+        //MyDynamicObject *myDynamicObjectContainerSorted[MAX_DYNAMIC_OBJECT];
+        //std::vector<MyDynamicObject*> v;
+        //added by Mike, 20210509
+        //		std::sort(vMyDynamicObjectContainer.begin(), vMyDynamicObjectContainer.end(), sortByZPosition());
+        
+        //edited by Mike, 20210528
+//        for (int i=0; i<MAX_DYNAMIC_OBJECT; i++) {
+        for (int i=0; i<iVMyDynamicObjectContainerSize; i++) {
+            glPushMatrix();
+                vMyDynamicObjectContainer[i]->draw();
+            glPopMatrix();
+        }
+ 
 	}
 }
 
@@ -1961,8 +2520,8 @@ void OpenGLCanvas::drawGridWithZAxis() {
 //	myLevel->drawLevelMapInViewPort(0,0,0,fGridSquareWidth*iRowCountMax,fGridSquareWidth*iColumnCountMax,fGridSquareWidth*iHeightCountMax);
 	myLevel->drawLevelMapInViewPort(myCanvasPosX,myCanvasPosY,myCanvasPosZ,fGridSquareWidth*iRowCountMax,fGridSquareWidth*iColumnCountMax,fGridSquareWidth*iHeightCountMax);
 
+/* //removed by Mike, 20210520
 //added by Mike, 20210311
-//note: computer does not draw this
 	sprintf(tempText,"G");
 
 	//added by Mike, 20201124
@@ -1973,8 +2532,10 @@ void OpenGLCanvas::drawGridWithZAxis() {
 	//for computer to not draw borders
 	glBindTexture( GL_TEXTURE_2D, 0 );
 
-	myLevel->draw_level(5.0f, 0.0f, -420.0f, tempText);    	
-
+	//edited by Mike, 20210520
+//	myLevel->draw_level(5.0f, 0.0f, -420.0f, tempText);    	
+	myLevel->draw_level(fGridSquareWidth*4, 0.0f, 0.0f, tempText);    	
+*/
 	
 /* //removed by Mike, 20210309	
 	//added by Mike, 20201124
@@ -2046,8 +2607,26 @@ void OpenGLCanvas::drawGridWithZAxis() {
 	
 	glBindTexture( GL_TEXTURE_2D, LEVEL_TEXTURE );
 	sprintf(tempText,"M");	
-	myLevel->draw_level(fGridSquareWidth*3.0f, 0.0f, fGridSquareWidth*3.0f, tempText);    	
+	
+//	glTranslatef(-3.5f, 0.0f, -3.2f);
+//	glTranslatef(-3.2f, 3.2f, -3.2f);
+//	glTranslatef(-3.2f, 3.2f, -3.2f);
+	
+	printf("fGridSquareWidth: %f\n",fGridSquareWidth);
+	
+//removed by Mike, 20210520	
+//	myLevel->draw_level(fGridSquareWidth*3.0f, 0.0f, fGridSquareWidth*3.0f, tempText);    	
+//	myLevel->draw_level(fGridSquareWidth*4.0f, -1.0f, fGridSquareWidth*11.0f, tempText);    	
+	myLevel->draw_level(fGridSquareWidth*4.0f, 0.0f, fGridSquareWidth*11.0f, tempText);    	
 
+/* //removed by Mike, 20210521	
+	//added by Mike, 20210521	
+	sprintf(tempText,"H");	
+	//column, row 
+//	myLevel->draw_level(fGridSquareWidth*1.0f, 0.0f, fGridSquareWidth*5.0f, tempText);    	
+	myLevel->draw_level(fGridSquareWidth*3.0f, 0.0f, fGridSquareWidth*7.0f, tempText);    	
+
+*/	
 	//removed by Mike, 20210402	
 //    glColor3f(0.325f, 0.325f, 0.325f); // gray
 	
@@ -2932,13 +3511,61 @@ void OpenGLCanvas::update()
     	//added by Mike, 20210206; removed by Mike, 20210424
     	myPilot->update(1); //dt
 
+        
+        //added by Mike, 20210528
+        //note: we use z-axis for vertex position; this shall be auto-converted to as pixel in y-axis
+        myPilotPlayer2->setZPos(myPilot->getZ());
+        myPilotPlayer2->setXPos(myPilot->getX()+320);
+        
+        
+        
 		//added by Mike, 20210502
     	myPilotPlayer2->update(1); //dt
 
 		
     	//added by Mike, 20201001
     	myRobotShip->update(1); //dt
-		
+
+        //added by Mike, 20210524; removed by Mike, 20210529
+//        myBall->update(1); //dt
+
+/*  //removed by Mike, 20210529
+        //added by Mike, 20210527
+        myBall->collideWith(myPilot);
+        myBall->collideWith(myPilotPlayer2);
+*/
+ 
+        //added by Mike, 20210528
+        //use these instructions to be football
+        /*
+         if (myBall->getY() > myPilot->getY()+myPilot->getHeight()) {
+         myBall->setThrust(0.0f);
+         }
+         */
+        //TO-DO: -update: this
+        /*		//add +1.0f
+         if (myBall->getY()+myBall->getHeight()+1.0f > myPilot->getZ()+myPilot->getHeight()) {
+         myBall->setCurrentMovingState(IDLE_MOVING_STATE);
+         myBall->setThrust(0.0f);
+         }
+         
+         if (myBall->getY()+myBall->getHeight()+1.0f > myPilotPlayer2->getZ()+myPilotPlayer2->getHeight()) {
+         myBall->setCurrentMovingState(IDLE_MOVING_STATE);
+         myBall->setThrust(0.0f);
+         }
+         */
+
+/* //removed by Mike, 20210529
+//        if (myBall->getY()+myBall->getHeight() > 420.0f) {
+//        if (myBall->getY()+myBall->getHeight() > 640.0f) {
+        printf("myBall y and height: %f\n",myBall->getY()+myBall->getHeight());
+        
+        if (myBall->getY()+myBall->getHeight() > 512.0f) {
+            printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>END!\n");
+            myBall->setEnd();
+        }
+*/
+        
 		//added by Mike, 20210517; removed by Mike, 202105017
 /*		
         if (myButton->isActive()) {
@@ -3011,7 +3638,11 @@ void OpenGLCanvas::update()
           	myRobotShip->move(-1); //IDLE_MOVING_STATE			
 			
 			//added by Mike, 20210423
-          	myPilot->move(-1);			
+          	myPilot->move(-1);
+            
+            //added by Mike, 20210524
+            //TO-DO: -update: this
+            myPilotPlayer2->move(-1);
 		}		
 
        	//added by Mike, 20210111; edited by Mike, 20210121
@@ -3044,7 +3675,11 @@ void OpenGLCanvas::update()
 */
 
 			//added by Mike, 20210423
-          	myPilot->move(KEY_W);			
+          	myPilot->move(KEY_W);
+            
+            //added by Mike, 20210524
+            //      myPilotPlayer2->move(KEY_W);
+            myPilotPlayer2->setToWalkingMovingState();
 
 /*	//removed by Mike, 20210502			
 			//move forward
@@ -3070,7 +3705,11 @@ void OpenGLCanvas::update()
 //            myRobotShip->move(KEY_S);
 			
 			//added by Mike, 20210423
-          	myPilot->move(KEY_S);			
+          	myPilot->move(KEY_S);
+            
+            //added by Mike, 20210524
+            //      myPilotPlayer2->move(KEY_W);
+            myPilotPlayer2->setToWalkingMovingState();
 
 /*	//removed by Mike, 20210502			
 			//move backward
@@ -3100,7 +3739,10 @@ void OpenGLCanvas::update()
 			//added by Mike, 20210423
           	myPilot->move(KEY_D);			
 			
-			
+            //added by Mike, 20210524
+            //      myPilotPlayer2->move(KEY_W);
+            myPilotPlayer2->setToWalkingMovingState();
+            
 /*			//removed by Mike, 20201026
 			myCanvasPosX+=-myCanvasStepX;
 */
@@ -3141,6 +3783,10 @@ void OpenGLCanvas::update()
 			//added by Mike, 20210423
           	myPilot->move(KEY_A);			
 			
+            //added by Mike, 20210524
+            //      myPilotPlayer2->move(KEY_W);
+            myPilotPlayer2->setToWalkingMovingState();
+            
 			//removed by Mike, 20201026
 /////			myCanvasPosX+=myCanvasStepX;
 

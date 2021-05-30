@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201118
- * @date updated: 20210422
+ * @date updated: 20210525
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -151,7 +151,7 @@ void Level::load_tga(char *filename)
 //note: 10x16 each font character/level texture
 //edited by Mike, 20201117
 //void draw_char(GLfloat x, GLfloat y, char c)
-void Level::draw_char(GLfloat x, GLfloat y, GLfloat z, char c)
+void Level::draw_charPrev(GLfloat x, GLfloat y, GLfloat z, char c)
 {
 	//edited by Mike, 20201117
 //    GLfloat tx, ty;
@@ -203,11 +203,90 @@ void Level::draw_char(GLfloat x, GLfloat y, GLfloat z, char c)
 	}
 */
 	//TO-DO: -update: set of instructions for Quad to Face Camera
-	//removed by Mike, 20210423
-	drawCubeWithBlockTextureQuadFacingCameraOnly(4.0f, tx, ty, tz, x,y,z);
-	
+	//edited by Mike, 20210521
+//	drawCubeWithBlockTextureQuadFacingCameraOnly(4.0f, tx, ty, tz, x,y,z);
+//	drawCubeWithBlockTextureQuadFacingCameraOnly(4.0f, tx, ty, tz, x,0,z);
+	drawCubeWithBlockTextureQuadFloor(4.0f, tx, ty, tz, x,y,z);
+
 	//added by Mike, 20210423; removed by Mike, 20210423
 //	drawCubeWithBlockTexture(4.0f, tx, ty, tz, x,y,z);	
+}
+
+//added by Mike, 20210521
+//TO-DO: -update: this
+//note: 10x16 each font character/level texture
+//edited by Mike, 20201117
+//void draw_char(GLfloat x, GLfloat y, char c)
+void Level::draw_char(GLfloat x, GLfloat y, GLfloat z, char c)
+{
+	//edited by Mike, 20201117
+//    GLfloat tx, ty;
+    GLfloat tx, ty, tz;
+	
+	//added by Mike, 20210521
+/*	//removed by Mike, 20210521	
+	if (c == 'H') {
+		//note: 4.0f = grid square fSideLength
+//		drawCubeWithBlockTextureQuadFloorSpecial(4.0f, tx, ty, tz, x,y,z, c);
+		drawCubeWithBlockTextureQuadFloor(4.0f, tx, ty, tz, x,y,z);
+		
+	}
+	else {		
+*/	
+		// check if the character is valid
+		if (c < ' ' || c > '~')
+			return;
+			
+	printf("c: %c\n",c);
+		
+		//TO-DO: -update: this
+ //edited by Mike, 20210524	
+		if (c=='S') { //S : Sand		
+			drawCubeWithAutoDrawnPixelBlockColorQuadFloor(4.0f, x,y,z);		
+		}
+		else {						
+			// subtract 32, since the first character in the font texture
+			// is the space (ascii value 32)
+			c = c - 32;
+	
+			// determine texture coordinates; this assumes that each character
+			// in the font texture has a width-height ratio of 10:16 (see the
+			// font.tga file to understand what I mean)
+			tx = c % 12 * 0.078125f;
+			ty = 0.875f - (c / 12 * 0.125f);
+			//added by Mike, 20201117
+		//    tz = 0.875f - (c / 12 * 0.125f);
+	
+			//TO-DO: -update: set of instructions for Quad to Face Camera
+			//edited by Mike, 20210521
+		//	drawCubeWithBlockTextureQuadFacingCameraOnly(4.0f, tx, ty, tz, x,y,z);
+		//	drawCubeWithBlockTextureQuadFacingCameraOnly(4.0f, tx, ty, tz, x,0,z);
+		
+		//edited by Mike, 20210524
+	//	drawCubeWithBlockTextureQuadFloor(4.0f, tx, ty, tz, x,y,z);
+	
+//		printf(">> c: %c\n",c);
+		
+	/* //removed by Mike, 20210524
+		if (c=='-') { //c value for empty
+			drawCubeWithSolidBlockColorQuadFloor(4.0f, tx, ty, tz, x,y,z);
+		}
+		else {
+			drawCubeWithBlockTextureQuadFloor(4.0f, tx, ty, tz, x,y,z);
+		}	
+	*/
+			//added by Mike, 20210524
+			glBindTexture(GL_TEXTURE_2D, iLevelTextureObject);
+    		glEnable(GL_TEXTURE_2D);						
+				drawCubeWithBlockTextureQuadFloor(4.0f, tx, ty, tz, x,y,z);			
+    		//unselect texture myLevelTextureObject
+			glDisable(GL_TEXTURE_2D);
+    		glBindTexture(GL_TEXTURE_2D, 0);
+		}	
+	
+/*	//removed by Mike, 20210521	
+	}	
+*/	
 }
 
 //edited by Mike, 20201118
@@ -230,6 +309,12 @@ void Level::draw_level(GLfloat x, GLfloat y, GLfloat z, char *string)
 */        
 
         glPushMatrix();
+			//added by Mike, 20210520
+//			glTranslatef(0.0f, 1.0f, -1.0f);
+//			glTranslatef(-2.0f, 1.0f, -1.0f);
+			//removed by Mike, 20210520draw_char
+//			glTranslatef(-2.0f, 1.0f, -1.0f-fGridSquareWidth); //where: fGridSquareWidth=4.0f 
+				
         	//removed by Mike, 20201010
             //make font larger, added by Mike, Feb28,2007
 //            glScalef(2.0f, 2.0f, 2.0f);//1.5f, 1.5f, 1.5f);
@@ -239,7 +324,10 @@ void Level::draw_level(GLfloat x, GLfloat y, GLfloat z, char *string)
 //            draw_char(x, y, string[0]);
 				//edited by Mike, 20201120
 //            draw_char(x, z, y, string[0]);
+			//edited by Mike, 20210520
             draw_char(x, y, z, string[0]);
+//            draw_char(x, 0, z, string[0]);
+		
     	glPopMatrix();
 
         
@@ -301,8 +389,12 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 	float fGridSquareWidth = 1.0f;
 	float fGridSquareHeight = 1.0f;
 */
+/*	//edited by Mike, 20210520
 	float fGridSquareWidth = 4.0f;
 	float fGridSquareHeight = 4.0f;
+*/
+	fGridSquareWidth = 4.0f;
+	fGridSquareHeight = 4.0f;
 	
 	char tempText[50];
 	
@@ -323,7 +415,7 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
   fStepMovemenGridX=(fStepMovemenGridX+0.3f)%1;
   fStepMovemenGridY=(fStepMovemenGridY+0.3f)%1;
 */
-/*	//removed by Mike, 20210318	
+/*	//removed by Mike, 20210318	draw_char
   fStepMovemenGridZ=(fStepMovemenGridZ+0.3f);
   fStepMovemenGridX=(fStepMovemenGridX+0.3f);
   fStepMovemenGridY=(fStepMovemenGridY+0.3f);
@@ -379,11 +471,14 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 //     iMovementGridX -= MAX_X_AXIS_VIEWPORT/2; 	   
    }
 
-	
+
+/* //edited by Mike, 20210520	
    if (fStepMovemenGridY>=1) {
    	 iMovementGridY = iPrevY-iY;
 	 fStepMovemenGridY=0;
    }
+*/
+	iMovementGridY=0;
 
    //added by Mike, 20210318; removed by Mike, 20210318
 /*	
@@ -419,7 +514,10 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 	
    iCurrentLevelMapContainerOffsetZ += iMovementGridZ; 
    iCurrentLevelMapContainerOffsetX += iMovementGridX; 
-   iCurrentLevelMapContainerOffsetY += iMovementGridY; 
+	
+   //removed by Mike, 20210520
+   //iCurrentLevelMapContainerOffsetY += iMovementGridY; 
+   iCurrentLevelMapContainerOffsetY=0;
 	
 //   std::cout << "iCurrentLevelMapContainerOffsetZ: " << iCurrentLevelMapContainerOffsetZ << "\n";
 //   std::cout << "iCurrentLevelMapContainerOffsetX: " << iCurrentLevelMapContainerOffsetX << "\n";
@@ -552,7 +650,7 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 //				  			  std::cout << "DITO" <<"\n";
 //				  printf("DITO");
 				
-			    //Grass
+			    //stone
 				sprintf(tempText,"G");
 			
 				//added by Mike, 20201124; edited by Mike, 20210423
@@ -565,13 +663,79 @@ void Level::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat f
 				//removed by Mike, 20210423
 //				glBindTexture( GL_TEXTURE_2D, 0 );
 				
-				//edited by Mike, 20210319
-//				fGridSquareWidth=3.2f;
-				
+				//added by Mike, 20210521
+				glBindTexture( GL_TEXTURE_2D, iLevelTextureObject );
+
+/*				
+	std::cout << "iColumnCount: " << iColumnCount << "\n";
+	std::cout << "iRowCount: " << iRowCount << "\n";
+*/				
+				//added by Mike, 20210520
+				//TO-DO: -reverify: cause need to execute this when using drawLevelMapInViewPort(...)
+//				draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareWidth*iRowCount, tempText);				
+				//note: "glPushMatrix(); ... glPopMatrix();" execution time appears equal
+				//with "glTranslate()..." as opening and closing
+/*		
+        glPushMatrix();
+				glTranslatef(0.0f, 1.0f, 0.0f);				
 				draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareWidth*iRowCount, tempText);
+        glPopMatrix();
+*/				
+/*				
+				glTranslatef(0.0f, 1.0f, 0.0f);				
+					draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareWidth*iRowCount, tempText);
+				glTranslatef(0.0f, -1.0f, 0.0f);				
+*/
+
+				//added by Mike, 20210520
+				draw_level(fGridSquareWidth*iColumnCount, 1.0f, fGridSquareWidth*iRowCount, tempText);
+
+				
 //computer draws this box
-//				draw_level(fGridSquareWidth*0, 0.0f, fGridSquareWidth*300, tempText);
-			}			
+//				draw_level(fGridSquareWidth*0, 0.0f, fGridSquareWidth*300, tempText);				
+			}	
+			//added by Mike, 20210521
+			else if (sCurrentLevelMapContainer[iRowCount][iColumnCount].compare("\"H\"") == 0) { //TRUE
+			    //sand
+				sprintf(tempText,"H");
+				
+/*				//removed by Mike, 20210521
+				//added by Mike, 20201124; edited by Mike, 20210423
+			    glColor3f(0.14f, 0.68f, 0.06f); // Green
+//			    glColor3f(1.0f, 1.0f, 1.0f); // white
+
+				//added by Mike, 20201124
+				//execute this when using solid colors
+				glBindTexture( GL_TEXTURE_2D, 0 );
+*/				
+				//added by Mike, 20210521
+				glBindTexture( GL_TEXTURE_2D, iLevelTextureObject );
+				
+				
+				draw_level(fGridSquareWidth*iColumnCount, 1.0f, fGridSquareWidth*iRowCount, tempText);
+			}		
+//added by Mike, 20210524
+//note: -1 : empty 
+			else if (sCurrentLevelMapContainer[iRowCount][iColumnCount].compare("\"S\"") == 0) { //TRUE
+
+				sprintf(tempText,"S");
+				
+				//added by Mike, 20201124; edited by Mike, 20210423
+//			    glColor3f(0.14f, 0.68f, 0.06f); // Green
+			    glColor3f(1.0f, 1.0f, 1.0f); // white
+
+				//added by Mike, 20201124
+				//execute this when using solid colors
+				glBindTexture( GL_TEXTURE_2D, 0 );
+
+/* //removed by Mike, 20210524				
+//				glBindTexture( GL_TEXTURE_2D, iLevelTextureObject );
+*/
+								
+				draw_level(fGridSquareWidth*iColumnCount, 1.0f, fGridSquareWidth*iRowCount, tempText);
+			}						
+					
+			
 		}
 	}
 
@@ -636,9 +800,10 @@ void Level::setupLevel(int myLevelTextureObject)
 	//due to blank output
     //glEnable(GL_DEPTH_TEST);
 	
-	//edited by Mike, 20201122
+	//edited by Mike, 20210521
     /* select texture 2 */
-    glBindTexture(GL_TEXTURE_2D, myLevelTextureObject);
+	iLevelTextureObject = myLevelTextureObject;
+    glBindTexture(GL_TEXTURE_2D, iLevelTextureObject);
 
     /* create OpenGL texture out of targa file */
     //TO-DO: -reverify: cube face using font texture

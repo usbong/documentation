@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201210
- * @date updated: 20210516
+ * @date updated: 20210524
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -33,12 +33,21 @@
 //added by Mike, 20201019
 #include "PolygonUtils.h"
 */
+
+//added by Mike, 20210524
+#include <time.h>
+#include <stdlib.h>
 	
 class UsbongUtils
 {
 private:		
 public:
-	UsbongUtils(); //added by Mike, 20210516	
+	//edited by Mike, 20210524
+	//UsbongUtils(); //added by Mike, 20210516	
+	UsbongUtils() {
+		srand(time(NULL));   //init
+	}
+		
 	~UsbongUtils(); //note: add "~" for constructor without any input parameter
 /*
 	Pilot(float xPos, float yPos, float zPos,int windowWidth,int windowHeight);
@@ -54,4 +63,8 @@ public:
 	//added by Mike, 202105016
 	float autoConvertFromPixelToVertexPointX(int iPointX);
 	float autoConvertFromPixelToVertexPointY(int iPointY);
+	
+	int getRandWithMax(int iMaxRandNumber){
+		return rand()%iMaxRandNumber;
+	};
 };

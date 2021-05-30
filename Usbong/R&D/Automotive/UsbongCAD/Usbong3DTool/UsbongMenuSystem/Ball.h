@@ -96,7 +96,7 @@
 class UsbongUtils;
 
 //TO-DO: -update: this
-class Button: public MyDynamicObject
+class Ball: public MyDynamicObject
 {
 private:	
 	int currentState;
@@ -129,7 +129,7 @@ private:
 */    
 	//added by Mike, 20210423
 	int iCountTaoAnimationFrame;
-	float fButtonAnimationFrameOffset;
+	float fObjectAnimationFrameOffset; //TO-DO: -add: in dynamicObject
 		
     OpenGLCanvas *myOpenGLCanvas;
 	
@@ -267,9 +267,9 @@ private:
 public:
 	//edited by Mike, 20201115 
 	//RobotShip();
-    Button(float xPos, float yPos, float zPos,int windowWidth,int windowHeight);
+    Ball(float xPos, float yPos, float zPos,int windowWidth,int windowHeight);
 
-	~Button();
+	~Ball();
 
 	//added by Mike, 20210523
 	UsbongUtils *myUsbongUtils;
@@ -361,11 +361,11 @@ public:
 		//edited by Mike, 20210424
 //    	drawPilot();
 //		drawPilotAsQuadWithTexture();
-		drawButtonAsQuadWithTexture();
+			drawAsQuadWithTexture();
     }
 
-	void drawButtonAsQuadWithTexture();
-	void drawButtonObject();
+	void drawAsQuadWithTexture();
+	void drawObject();
 
 /*	//removed by Mike, 20210514
 	//added by Mike, 20210423

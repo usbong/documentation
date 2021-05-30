@@ -14,8 +14,8 @@
  *
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
- * @date created: 20200930
- * @date updated: 20210530
+ * @date created: 20210524
+ * @date updated: 20210524
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -63,7 +63,7 @@
 //#include <GL/glut.h>
 #endif
 
-#include "Button.h"
+#include "Ball.h"
 /* //TO-DO: -add: these
 #include "PolygonUtils.h"
 #include "ModelPool.h"
@@ -156,7 +156,7 @@ typedef struct
 } TARGA_HEADER;
 
 //TO-DO: -put: in MyDynamicObject
-GLboolean Button::test_pow2(GLushort i)
+GLboolean Ball::test_pow2(GLushort i)
 {
     while (i % 2 == 0)
         i /= 2;
@@ -168,7 +168,7 @@ GLboolean Button::test_pow2(GLushort i)
 
 //TO-DO: -put: in MyDynamicObject
 //Note: [Warning] deprecated conversion from string constant to 'char*' [-Wwrite-strings]
-void Button::load_tga(char *filename)
+void Ball::load_tga(char *filename)
 {
     TARGA_HEADER targa;
     FILE *file;
@@ -215,20 +215,21 @@ void Button::load_tga(char *filename)
 }
 
 //added by Mike, 20210423
-void Button::setup()
+void Ball::setup()
 {
 	//removed by Mike, 20201010
 	//due to blank output
     //glEnable(GL_DEPTH_TEST);
 
     // select texture 1
-	glBindTexture(GL_TEXTURE_2D, BUTTON_TEXTURE_A);
+	glBindTexture(GL_TEXTURE_2D, BALL_TEXTURE_A);
 	
     /* create OpenGL texture out of targa file */
 	//edited by Mike, 20210420
 //    load_tga("textures/armor.tga");	
 //    load_tga("textures/imageSpriteExampleMikeWithoutBG.tga");	
-    load_tga("textures/buttonExample.tga");
+//    load_tga("textures/ballExample.tga");
+    load_tga("textures/ballExample.tga");
 	
 	// set texture parameters
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
@@ -275,7 +276,7 @@ void Button::setup()
 
 
 //TO-DO: -update: this
-void Button::setupPrev()
+void Ball::setupPrev()
 {
     GLuint i, j;
 	
@@ -371,10 +372,10 @@ void Button::setupPrev()
 }
 
 //edited by Mike, 20201001
-//Button::RobotShip(): MyDynamicObject(0,0,300)
+//Ball::RobotShip(): MyDynamicObject(0,0,300)
 //edited by Mike, 20201115
-//Button::RobotShip(): MyDynamicObject(0,0,0)
-Button::Button(float xPos, float yPos, float zPos, int windowWidth, int windowHeight): MyDynamicObject(xPos,yPos,0.0f, windowWidth, windowHeight)
+//Ball::RobotShip(): MyDynamicObject(0,0,0)
+Ball::Ball(float xPos, float yPos, float zPos, int windowWidth, int windowHeight): MyDynamicObject(xPos,yPos,0.0f, windowWidth, windowHeight)
 { 
     //edited by Mike, 20201001
 	//currentState=IN_TITLE_STATE;//MOVING_STATE;
@@ -449,30 +450,11 @@ Button::Button(float xPos, float yPos, float zPos, int windowWidth, int windowHe
     myHeightAsPixel=64;
 	//TO-DO: -update: this
 	//note: float xPos as parameter to int myXPosAsPixel not correct output	
-/*	//edited by Mike, 20210529
 	myXPosAsPixel=320;//(int)xPos;
 	myYPosAsPixel=(int)yPos;
 	myZPosAsPixel=(int)zPos;
-*/
 	
-	//added by Mike, 20210529
-	myUsbongUtils = new UsbongUtils();
-    
-//TO-DO: -add: hungarian notation to identify if container type is integer, float, et cetera
-/*
-    myXPosAsPixel=myUsbongUtils->autoConvertFromPixelToVertexPointX(xPos);
-	myYPosAsPixel=myUsbongUtils->autoConvertFromPixelToVertexPointX(yPos);
-	myZPosAsPixel=myUsbongUtils->autoConvertFromPixelToVertexPointX(zPos);
-*/
-
-	myXPosAsPixel=xPos;
-	myYPosAsPixel=yPos;
-	myZPosAsPixel=zPos;
-
-    printf(">>xPos: %f\n",xPos);
 	printf(">>myXPosAsPixel: %i\n",myXPosAsPixel);
-    printf(">>yPos: %f\n",yPos);
-    printf(">>myYPosAsPixel: %i\n",myYPosAsPixel);
 
 	    
 /*
@@ -518,10 +500,8 @@ Button::Button(float xPos, float yPos, float zPos, int windowWidth, int windowHe
 	myWindowWidth=windowWidth;
 	myWindowHeight=windowHeight;
 	
-/*	//removed by Mike, 20210529	
 	//added by Mike, 20210516
 	myUsbongUtils = new UsbongUtils();
-*/
 
 //    myWidthX=0.5;
 
@@ -601,13 +581,13 @@ Button::Button(float xPos, float yPos, float zPos, int windowWidth, int windowHe
     setCollidable(true);    
 }
 
-Button::~Button()
+Ball::~Ball()
 {
 }
 
 //added by Mike, 20210130
 //TO-DO: -reverify: this
-float* Button::getXYZPos()
+float* Ball::getXYZPos()
 {
       //float myXYZ[3];
       float* myXYZ;
@@ -622,14 +602,14 @@ float* Button::getXYZPos()
 
 /* //removed by Mike, 20201217
 //added by Mike, 20201213
-void Button::draw()
+void Ball::draw()
 {
 	drawRobotShip();
 }
 */
 
 //added by Mike, 20210423
-void Button::drawButtonAsQuadWithTexture()
+void Ball::drawAsQuadWithTexture()
 {
 	//edited by Mike, 20210516
 //    glTranslatef(myXPos, myYPos, myZPos);
@@ -642,23 +622,16 @@ void Button::drawButtonAsQuadWithTexture()
 	//edited by Mike, 20210517
 //    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPos), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPos), myZPos);
 //    glTranslatef(myXPosAsPixel, myYPosAsPixel, myZPosAsPixel);
-
     glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixel), myZPosAsPixel);
-/*
-    glTranslatef(myXPosAsPixel, myYPosAsPixel, myZPosAsPixel);
-*/
-    
-    //added by Mike, 20210530
-    //TO-DO: -update: object coordinate position due to not at its center position
-    
-	drawButtonObject();	
+	
+	drawObject();	
 }
 
 //added: by Mike, 20210423
 //TO-DO: -add: in PolygonPool
 //added by Mike, 20210516
 //note: origin/anchor is TOP-LEFT
-void Button::drawButtonObject()
+void Ball::drawObject()
 {
 /*	
 	glBegin(GL_LINES);
@@ -680,10 +653,10 @@ void Button::drawButtonObject()
 //		glColor3f(1.0f, 0.0f, 0.0f); // red
 	
 		glEnable(GL_TEXTURE_2D);
-		glBindTexture(GL_TEXTURE_2D, BUTTON_TEXTURE_A);		
+		glBindTexture(GL_TEXTURE_2D, BALL_TEXTURE_A);		
 
 		//edited by Mike, 20210515
-		fButtonAnimationFrameOffset=0;
+		fObjectAnimationFrameOffset=0;
 	
 		//added by Mike, 20210516; removed to after glScale(...) by Mike, 20210516		
 		//due to instructions to auto-draw quad using triangles
@@ -696,8 +669,12 @@ void Button::drawButtonObject()
 		//whole texture image sheet 512x256pixels
 		//button size: 64x16pixels
 //		glScalef(0.25f, 0.4f, 1.0f);		
-		glScalef(0.20f, 0.4f, 1.0f);		
+		glScalef(0.20f, 0.4f, 1.0f);	
+		
+		//added by Mike, 20210524
+		glScalef(0.5f, 0.5f, 1.0f);	
 
+		
 		//added by Mike, 20210516
 		//due to instructions to auto-draw quad using triangles
 		glTranslatef(1.0f, 0.5f, 0.0f);
@@ -707,28 +684,28 @@ void Button::drawButtonObject()
 			//counter-clockwise sequence to auto-draw front face
 			//triangle#6 //front face left part
 			glNormal3f(0.0000,0.0000,0.0000);
-			glTexCoord2f(0.0+fButtonAnimationFrameOffset,0.0);	//A1; face left
+			glTexCoord2f(0.0+fObjectAnimationFrameOffset,0.0);	//A1; face left
 			glVertex3f(-1.000000,1.000000,0.000000); //A1
 
 			glNormal3f(0.0000,0.0000,0.0000);
-			glTexCoord2f(0.0+fButtonAnimationFrameOffset,1.0);	//C1; face left
+			glTexCoord2f(0.0+fObjectAnimationFrameOffset,1.0);	//C1; face left
 			glVertex3f(-1.000000,-1.000000,0.000000); //C1	
 
 			glNormal3f(0.0000,0.0000,0.0000);
-			glTexCoord2f(0.25+fButtonAnimationFrameOffset,1.0); //B1; face left
+			glTexCoord2f(0.25+fObjectAnimationFrameOffset,1.0); //B1; face left
 			glVertex3f(1.000000,-1.000000,0.000000); //B1
 
 			//triangle#12 //front face right part		
 			glNormal3f(0.0000,0.0000,0.0000);
-			glTexCoord2f(0.0+fButtonAnimationFrameOffset,0.0);	//A2; face lefT
+			glTexCoord2f(0.0+fObjectAnimationFrameOffset,0.0);	//A2; face lefT
 			glVertex3f(-1.000000,1.000000,0.000000); //A2
 
 			glNormal3f(0.0000,0.0000,0.0000);
-			glTexCoord2f(0.25+fButtonAnimationFrameOffset,1.0); //C2; face left
+			glTexCoord2f(0.25+fObjectAnimationFrameOffset,1.0); //C2; face left
 			glVertex3f(1.000000,-1.000000,0.000000); //C2	
 	
 			glNormal3f(0.0000,0.0000,0.0000);
-			glTexCoord2f(0.25+fButtonAnimationFrameOffset,0.0); //B2; face left
+			glTexCoord2f(0.25+fObjectAnimationFrameOffset,0.0); //B2; face left
 			glVertex3f(1.000000,1.000000,0.000000); //B2
 		glEnd();
 	
@@ -738,55 +715,16 @@ void Button::drawButtonObject()
 }
 
 //added by Mike, 20210423
-void Button::update(float dt)
+void Ball::update(float dt)
 {
     switch (currentState)
     {
            case INITIALIZING_STATE:
            case MOVING_STATE:      
-				switch(currentMovingState) {
+						switch(currentMovingState) {
 		           case WALKING_MOVING_STATE:
 		                break;
-		            case ATTACKING_MOVING_STATE:
-		            	if (bIsExecutingPunch) {
-		            		if (iPunchAnimationCount<MAX_PUNCHING_ANIMATION_COUNT) {
-								if ((iPunchAnimationCountDelay)%2==0) {
-									iPunchAnimationCount+=1;
-									iPunchAnimationCountDelay=0;
-								}
-								iPunchAnimationCountDelay+=1;
-							}
-							//added by Mike, 20210123
-							//+added: no continuous punch via hold punch button
-							else {
-								//edited by Mike, 20210123; edited again by Mike, 20210124
-								if (iPunchAnimationCountDelay<0) { //<5
-								}
-								else {
-									//edited by Mike, 20210123
-		    						if (myKeysDown[KEY_U]==FALSE) {  
-										bIsExecutingPunch=false;
-										iPunchAnimationCount=0;
-										iPunchAnimationCountDelay=0;
-
-										//added by Mike, 20210124
-								   		armAngles[RIGHT]=0.0f;
-										armAngles[LEFT]=0.0f;
-									} 
-								}
-								iPunchAnimationCountDelay+=1;
-							}
-						}
-						
-						if (bIsExecutingDefend) {
-    						if (myKeysDown[KEY_H]==FALSE) {  
-								bIsExecutingDefend=false;
-
-								//added by Mike, 20210124
-						   		armAngles[RIGHT]=0.0f;
-								armAngles[LEFT]=0.0f;
-							} 
-						}						
+		           case ATTACKING_MOVING_STATE:
 		            	break;
 		                
 		            default: //STANDING STATE		            
@@ -856,13 +794,13 @@ void Button::update(float dt)
     }
 }
 
-void Button::changeState(int s)
+void Ball::changeState(int s)
 {
   currentState=s;                  
 }
 
 //added by Mike, 20201226
-void Button::keyDown(int keyCode) {
+void Ball::keyDown(int keyCode) {
 	myKeysDown[keyCode] = TRUE;
 
 	//added by Mike, 20210127; edited by Mike, 20210128
@@ -870,8 +808,8 @@ void Button::keyDown(int keyCode) {
 }
 
 //added by Mike, 20201227; edited by Mike, 20210128
-//void Button::setDashStateWithKeyDown() {
-void Button::setDashStateWithKeyDown(int keyCode) {
+//void Ball::setDashStateWithKeyDown() {
+void Ball::setDashStateWithKeyDown(int keyCode) {
 	if (bIsDashReady==true) {
 /*		//edited by Mike, 20210128
 		if (iInputWaitCount<MAX_WAIT_COUNT) {
@@ -896,8 +834,8 @@ void Button::setDashStateWithKeyDown(int keyCode) {
 }
 
 //added by Mike, 20201226; edited by Mike, 20210128
-//void Button::autoVerifyDashStateWithKeyDown(int keyCode) {
-void Button::autoVerifyDashStateWithKeyDown() { //int keyCode) {
+//void Ball::autoVerifyDashStateWithKeyDown(int keyCode) {
+void Ball::autoVerifyDashStateWithKeyDown() { //int keyCode) {
 	//edited by Mike, 20210128
 	//if (myKeysDown[KEY_RIGHT]==TRUE) {
 	//edited by Mike, 20210130
@@ -918,7 +856,7 @@ void Button::autoVerifyDashStateWithKeyDown() { //int keyCode) {
 	}
 }
 
-void Button::keyUp(int keyCode) {
+void Ball::keyUp(int keyCode) {
 	//added by Mike, 20210127
 	autoVerifyDashStateWithKeyUp(keyCode);
 
@@ -927,7 +865,7 @@ void Button::keyUp(int keyCode) {
 
 //added by Mike, 20210127; edited by Mike, 20210126
 /*
-void Button::setDashStateWithKeyUp() {
+void Ball::setDashStateWithKeyUp() {
 	if (bIsExecutingDash) {
 		//edited by Mike, 20210128
 //		bIsExecutingDash=false;
@@ -944,8 +882,8 @@ void Button::setDashStateWithKeyUp() {
 }
 */
 //added by Mike, 20210127; edited by Mike, 20210129
-//void Button::setDashStateWithKeyUp() {
-void Button::setDashStateWithKeyUp(int keyCode) {
+//void Ball::setDashStateWithKeyUp() {
+void Ball::setDashStateWithKeyUp(int keyCode) {
 	//edited by Mike, 20210128
 	bool bIsExecutingDash=false;
 
@@ -997,7 +935,7 @@ void Button::setDashStateWithKeyUp(int keyCode) {
 }
 
 //added by Mike, 20210127
-void Button::autoVerifyDashStateWithKeyUp(int keyCode) {
+void Ball::autoVerifyDashStateWithKeyUp(int keyCode) {
 	//added by Mike, 20210126; edited by Mike, 20210128
 //	if (keyCode==KEY_RIGHT) {
 	//edited by Mike, 20210130
@@ -1051,7 +989,7 @@ void Button::autoVerifyDashStateWithKeyUp(int keyCode) {
 }
 
 
-void Button::move(int key)
+void Ball::move(int key)
 {
    //Note: Unit member as Pilot has to release hold of directional keys,
    //so that RobotShip faces in the correct direction;
@@ -1482,7 +1420,7 @@ void Button::move(int key)
 		}
 	}
 }
-void Button::hitBy(MyDynamicObject* mdo)
+void Ball::hitBy(MyDynamicObject* mdo)
 {
      //changeState(DEATH_STATE);
      //setCollidable(false);
@@ -1497,13 +1435,13 @@ void Button::hitBy(MyDynamicObject* mdo)
 }
 
 /*	//removed by Mike, 20210522	
-void Button::setOpenGLCanvas(OpenGLCanvas* c)
+void Ball::setOpenGLCanvas(OpenGLCanvas* c)
 {
      myOpenGLCanvas = c;
 }
 */
 
-void Button::reset()
+void Ball::reset()
 {
      changeState(INITIALIZING_STATE);
      myXPos=0;
@@ -1513,13 +1451,13 @@ void Button::reset()
      setCollidable(false);
      invincibleCounter=0;
 }
-int Button::getState()
+int Ball::getState()
 {
     return currentState;
 }
 
 //added by Mike, 20201016
-void Button::destroy()
+void Ball::destroy()
 {
 /*	
 	for(int i = 0; i < MAX_EXPLOSION_PARTICLES; ++i) {
@@ -1532,7 +1470,7 @@ void Button::destroy()
 //added by Mike, 20201130
 //TO-DO: -add: in PolygonUtils
 //--------------------------------------------
-bool Button::loadTexture(CTargaImage *myTexture, const char *filename, unsigned int *myTextureObject)
+bool Ball::loadTexture(CTargaImage *myTexture, const char *filename, unsigned int *myTextureObject)
 {
     //note: Code taken from Dave Astle and Kevin Hawkins's code 
     //("Beginning OpenGL Game Programming", Chapter 7)
@@ -1564,7 +1502,7 @@ bool Button::loadTexture(CTargaImage *myTexture, const char *filename, unsigned 
 	return true;
 }
 
-void Button::drawTriangledCube(float xPos, float yPos, float zPos)
+void Ball::drawTriangledCube(float xPos, float yPos, float zPos)
 {
 	glPushMatrix();
 		glTranslatef(xPos, yPos, zPos);
@@ -1640,7 +1578,7 @@ void Button::drawTriangledCube(float xPos, float yPos, float zPos)
 	glPopMatrix();     
 }
 
-void Button::drawUpperArm(float xPos, float yPos, float zPos)
+void Ball::drawUpperArm(float xPos, float yPos, float zPos)
 {
 	glPushMatrix();
 		//glColor3f(1.0f, 0.0f, 0.0f);	// red
@@ -1651,7 +1589,7 @@ void Button::drawUpperArm(float xPos, float yPos, float zPos)
 	glPopMatrix();
 }
 
-void Button::drawLowerArm(float xPos, float yPos, float zPos)
+void Ball::drawLowerArm(float xPos, float yPos, float zPos)
 {
 	glPushMatrix();
 		//glColor3f(0.5f, 0.0f, 0.0f);	// dark red
@@ -1664,7 +1602,7 @@ void Button::drawLowerArm(float xPos, float yPos, float zPos)
 }
 
 /*	//removed by Mike, 20201130
-void Button::drawAntenna(float xPos, float yPos, float zPos)
+void Ball::drawAntenna(float xPos, float yPos, float zPos)
 {
 		glColor3f(0.2f, 0.2f, 0.2f);	// dark gray
         //left side
@@ -1684,7 +1622,7 @@ void Button::drawAntenna(float xPos, float yPos, float zPos)
 }
 */
 
-void Button::drawHead(float xPos, float yPos, float zPos)
+void Ball::drawHead(float xPos, float yPos, float zPos)
 {
 	glPushMatrix();
 		glTranslatef(xPos, yPos, zPos);
@@ -1722,7 +1660,7 @@ void Button::drawHead(float xPos, float yPos, float zPos)
     glBindTexture(GL_TEXTURE_2D, 0);
 }
 
-void Button::drawBody(float xPos, float yPos, float zPos)
+void Ball::drawBody(float xPos, float yPos, float zPos)
 {
 	glPushMatrix();
 		//glColor3f(0.0f, 0.0f, 1.0f);	// blue
@@ -1759,7 +1697,7 @@ void Button::drawBody(float xPos, float yPos, float zPos)
     glBindTexture(GL_TEXTURE_2D, 0);
 }
 
-void Button::drawUpperLeg(float xPos, float yPos, float zPos)
+void Ball::drawUpperLeg(float xPos, float yPos, float zPos)
 {
 	glPushMatrix();
 		glTranslatef(xPos, yPos, zPos);
@@ -1772,7 +1710,7 @@ void Button::drawUpperLeg(float xPos, float yPos, float zPos)
 	glPopMatrix();
 }
 
-void Button::drawLowerLeg(float xPos, float yPos, float zPos)
+void Ball::drawLowerLeg(float xPos, float yPos, float zPos)
 {
 	glPushMatrix();
 		glTranslatef(xPos, yPos, zPos);
@@ -1792,7 +1730,7 @@ void Button::drawLowerLeg(float xPos, float yPos, float zPos)
 	glPopMatrix();
 }
 
-void Button::drawFoot(float xPos, float yPos, float zPos)
+void Ball::drawFoot(float xPos, float yPos, float zPos)
 {
 	glPushMatrix();
 		//glColor3f(1.0f, 1.0f, 1.0f);
@@ -1807,7 +1745,7 @@ void Button::drawFoot(float xPos, float yPos, float zPos)
 
 //added by Mike, 20210107
 //TO-DO: -update: this
-void Button::drawWeapon(float xPos, float yPos, float zPos)
+void Ball::drawWeapon(float xPos, float yPos, float zPos)
 {
 	glPushMatrix();
 		glTranslatef(xPos, yPos, zPos);
