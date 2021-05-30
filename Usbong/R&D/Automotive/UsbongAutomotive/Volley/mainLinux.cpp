@@ -14,7 +14,7 @@
  *
  * @author: Michael Syson
  * @date created: 20200926
- * @date updated: 20210517
+ * @date updated: 20210530
  *
  * References:
  * 1) Dev-C++ 5.11 auto-generated OpenGL example project
@@ -758,7 +758,9 @@ int main(int argc, char** argv) {
 
    //edited by Mike, 20201202
    //note: put this command after all the glutInit Window commands
-   glutCreateWindow("Usbong Paint Equation Tool"); // Create a window with the given title
+   //edited by Mike, 20210530
+//   glutCreateWindow("Usbong Paint Equation Tool"); // Create a window with the given title
+   glutCreateWindow("Usbong Volley"); // Create a window with the given title
 
 	  //added by Mike, 20201002
 	  //Linux Machine

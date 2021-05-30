@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200929
- * @date updated: 20210528
+ * @date updated: 20210530
  * @website address: http://www.usbong.ph
  *
  * Acknowledgments:
@@ -175,9 +175,11 @@ class OpenGLCanvas
 		
 		//added by Mike, 20201207
     	Pilot *myPilot;
+        Pilot *myPilotPartner; //added by Mike, 20210530
 
 		//added by Mike, 20210502
     	Pilot *myPilotPlayer2;
+        Pilot *myPilotPlayer2Partner; //added by Mike, 20210530
 
 		//added by Mike, 20210514
 		//TO-DO: -update: this

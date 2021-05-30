@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20210524
- * @date updated: 20210529
+ * @date updated: 20210530
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -394,12 +394,23 @@ Ball::Ball(float xPos, float yPos, float zPos, int windowWidth, int windowHeight
 	//added by Mike, 20210528
 	thrustMax=10.0f; //5.0f;//4.0f;
 	thrust=1.0f;
+    
+    //added by Mike, 20210530
+    //-----
+    for (int iCountBallTrail=0; iCountBallTrail<MAX_BALL_TRAIL; iCountBallTrail++) {
+        myXPosAsPixelBallTrailContainer[iCountBallTrail] = myXPosAsPixel;
+    }
+    for (int iCountBallTrail=0; iCountBallTrail<MAX_BALL_TRAIL; iCountBallTrail++) {
+        myYPosAsPixelBallTrailContainer[iCountBallTrail+1] = myYPosAsPixel;
+    }
+    //-----
+    
 
 //    myXPos=0.0;
 //    myYPos=0.0;
     //myYPos=300.0;
 //    myZPos=300.0;
-/*    
+/*
     stepX=0.01;
     stepY=0.01;
     stepZ=0.01;
@@ -659,7 +670,18 @@ void Ball::drawAsQuadWithTexture()
 //    glTranslatef(myXPosAsPixel, myYPosAsPixel, myZPosAsPixel);
     glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixel), myZPosAsPixel);
 	
-	drawObject();	
+	drawObject();
+    
+    //added by Mike, 20210530; removed by Mike, 20210530
+/*  //TO-DO: -update: this
+    //-----
+    for (int iCountBallTrail=0; iCountBallTrail<MAX_BALL_TRAIL; iCountBallTrail++) {
+        glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixelBallTrailContainer[iCountBallTrail]), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixelBallTrailContainer[iCountBallTrail]), myZPosAsPixel);
+        
+        drawObject();
+    }
+    //-----
+*/
 }
 
 //added: by Mike, 20210423
@@ -847,10 +869,59 @@ void Ball::update(float dt)
 
                     myXPos+=xVel;
                     myYPos+=yVel;
-                    
+                        
+                        //added by Mike, 20210530; removed by Mike, 20210530
+/*
+                        //note: sword/gyro slash output
+//-----
+                        for (int iCountBallTrail=0; iCountBallTrail<MAX_BALL_TRAIL; iCountBallTrail++) {
+                            
+                            //shift positions in container; put newest 1st
+                            for (iCountBallTrail=0; iCountBallTrail<MAX_BALL_TRAIL-1; iCountBallTrail++) {
+                                myXPosAsPixelBallTrailContainer[iCountBallTrail+1] = myXPosAsPixelBallTrailContainer[iCountBallTrail];
+                            }
+                            myXPosAsPixelBallTrailContainer[0] = myXPosAsPixel;
+                        }
+
+                        for (int iCountBallTrail=0; iCountBallTrail<MAX_BALL_TRAIL; iCountBallTrail++) {
+                            
+                            //shift positions in container; put newest 1st
+                            for (iCountBallTrail=0; iCountBallTrail<MAX_BALL_TRAIL-1; iCountBallTrail++) {
+                                myYPosAsPixelBallTrailContainer[iCountBallTrail+1] = myYPosAsPixelBallTrailContainer[iCountBallTrail];
+                            }
+                            myYPosAsPixelBallTrailContainer[0] = myYPosAsPixel;
+                        }
+                        
+//-----
+*/
+                        
 	           	      myXPosAsPixel+=xVel;
 	           	      myYPosAsPixel+=yVel;
-                  
+
+//added by Mike 20210530
+//TO-DO: -update: this
+/*
+                        //-----
+                        for (int iCountBallTrail=0; iCountBallTrail<MAX_BALL_TRAIL; iCountBallTrail++) {
+                            
+                            //shift positions in container; put newest 1st
+                            for (iCountBallTrail=0; iCountBallTrail<MAX_BALL_TRAIL-1; iCountBallTrail++) {
+                                myXPosAsPixelBallTrailContainer[iCountBallTrail+1] = myXPosAsPixelBallTrailContainer[iCountBallTrail];
+                            }
+                            myXPosAsPixelBallTrailContainer[0] = myXPosAsPixel;
+                        }
+                        
+                        for (int iCountBallTrail=0; iCountBallTrail<MAX_BALL_TRAIL; iCountBallTrail++) {
+                            
+                            //shift positions in container; put newest 1st
+                            for (iCountBallTrail=0; iCountBallTrail<MAX_BALL_TRAIL-1; iCountBallTrail++) {
+                                myYPosAsPixelBallTrailContainer[iCountBallTrail+1] = myYPosAsPixelBallTrailContainer[iCountBallTrail];
+                            }
+                            myYPosAsPixelBallTrailContainer[0] = myYPosAsPixel;
+                        }
+                        //-----
+*/
+                        
 					if (!bIsMovingDown) {                  
 				    	//note: deaccelerate 
                     	if (thrust>0) {
@@ -1587,7 +1658,8 @@ void Ball::hitBy(MyDynamicObject* mdo)
 {
 		//edited by Mike, 20210527; removed by Mike, 20210527
 //		bIsMovingDown=false;
-	
+    
+        //TO-DO: -add: identify which Pilot Player hit the ball
 		updateDirection();
 		
 		//added by Mike, 20210528
@@ -1598,7 +1670,9 @@ void Ball::hitBy(MyDynamicObject* mdo)
       thrust+=1.0f;
 		}
 */
+      //edited by Mike, 20210530
       thrust=thrustMax; //thrustMax*2.0f;
+//    thrust=thrustMax*2.0f;
 				
 		
 /*

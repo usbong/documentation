@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20210514
- * @date updated: 20210528
+ * @date updated: 20210530
  * @website address: http://www.usbong.ph
  *
  * Acknowledgments:
@@ -92,6 +92,9 @@
     #define PILOT_MAX_DIRECTIONAL_KEY_DASH_COUNT 4
 #endif
 
+//added by Mike, 20210530
+#define MAX_BALL_TRAIL 5
+
 //added by Mike, 20210516
 class UsbongUtils;
 
@@ -112,7 +115,12 @@ private:
     float myXPos;
     float myYPos;
     float myZPos;
-*/    
+*/
+    
+    //added by Mike, 20210530
+    //TO-DO: -add: shadow
+    int myXPosAsPixelBallTrailContainer[MAX_BALL_TRAIL];
+    int myYPosAsPixelBallTrailContainer[MAX_BALL_TRAIL];
 
 	//added by Mike, 20210505
     float myOpponentXPos;

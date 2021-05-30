@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210529
+ * @date updated: 20210530
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -498,16 +498,27 @@ bool OpenGLCanvas::init(int myWindowWidthAsPixel, int myWindowHeightAsPixel)
 //edited by Mike, 20210522	
 	//myPilot->setOpenGLCanvas(this);
 	myPilot->setOpenGLCanvas(this, fGridSquareWidth);
-	
+
+    //added by Mike, 20210530
+    myPilotPartner = new Pilot(100.0f,0.0f,200.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
+    myPilotPartner->setOpenGLCanvas(this, fGridSquareWidth);
+    
+    
     //added by Mike, 20210502; edited by Mike, 20210528
     //	myPilotPlayer2 = new Pilot(0.0f,0.0f,0.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
-    myPilotPlayer2 = new Pilot(320.0f,0.0f,320.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
+    myPilotPlayer2 = new Pilot(360.0f,0.0f,320.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
     
     //edited by Mike, 20210522
 //	myPilotPlayer2->setOpenGLCanvas(this);
 	myPilotPlayer2->setOpenGLCanvas(this, fGridSquareWidth);
 	myPilotPlayer2->setAsPlayer2();
-	
+
+    //added by Mike, 20210530
+    myPilotPlayer2Partner = new Pilot(360.0f,0.0f,200.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
+    myPilotPlayer2Partner->setOpenGLCanvas(this, fGridSquareWidth);
+    myPilotPlayer2Partner->setAsPlayer2();
+
+    
 	//added by Mike, 20210514; edited by Mike, 20210517
 //	myButton = new Button(0.0f,0.0f,0.0f,myWindowWidth,myWindowHeight);
 //	myButton = new Button(0.0f,0.0f,0.0f,myWindowWidthAsPixel,myWindowHeightAsPixel);
@@ -639,6 +650,11 @@ bool OpenGLCanvas::init(int myWindowWidthAsPixel, int myWindowHeightAsPixel)
 	//added by Mike, 20210522
 	vMyDynamicObjectContainer.push_back(myPilotPlayer2);
 
+    //added by Mike, 20210530
+    vMyDynamicObjectContainer.push_back(myPilotPartner);
+    vMyDynamicObjectContainer.push_back(myPilotPlayer2Partner);
+
+    
     //added by Mike, 20210528
     vMyDynamicObjectContainer.push_back(myBall);
 	
@@ -1469,7 +1485,6 @@ void OpenGLCanvas::render()
 			glEnd();
 		*/
 
-/* //removed by Mike, 20210510	
 		glBegin(GL_QUADS);
 		//	glColor3f(0.0f,0.0f,0.0f); //black
 		//	glColor3f(1.0f,1.0f,1.0f); //white
@@ -1489,8 +1504,9 @@ void OpenGLCanvas::render()
 			glVertex2f(-1.0,-1.0);
 			glVertex2f(1.0,-1.0);
 		glEnd();
-*/	
 
+    
+/*  //removed by Mike, 20210530
 		glBegin(GL_QUADS);
 //			glColor3f(0.0f,0.0f,0.0f); //black
 			glColor3f(1.0f,1.0f,1.0f); //white
@@ -1507,6 +1523,7 @@ void OpenGLCanvas::render()
 			glVertex2f(-1.0,-1.0);
 			glVertex2f(1.0,-1.0);
 		glEnd();
+*/
 	
 	//added by Mike, 20210510
 	glLineWidth((GLfloat)3);	
@@ -3104,20 +3121,26 @@ void OpenGLCanvas::update()
         }
 */
 
-    	//added by Mike, 20210206; removed by Mike, 20210424
+    	//added by Mike, 20210206
     	myPilot->update(1); //dt
+        myPilotPartner->update(1); //added by Mike, 20210530
 
-        
+        //added by Mike, 20210530
+        myPilotPartner->setXPos(myPilot->getX()+100.0f);
+        myPilotPartner->setZPos(myPilot->getZ()-100.0f);
+
         //added by Mike, 20210528
         //note: we use z-axis for vertex position; this shall be auto-converted to as pixel in y-axis
         myPilotPlayer2->setZPos(myPilot->getZ());
-        myPilotPlayer2->setXPos(myPilot->getX()+320);
-        
-        
+        myPilotPlayer2->setXPos(myPilot->getX()+320.0f);
+
+        //added by Mike, 20210530
+        myPilotPlayer2Partner->setZPos(myPilotPlayer2->getZ()-100.0f);
+        myPilotPlayer2Partner->setXPos(myPilotPlayer2->getX());
         
 		//added by Mike, 20210502
     	myPilotPlayer2->update(1); //dt
-
+        myPilotPlayer2Partner->update(1); //added by Mike, 20210530
 		
     	//added by Mike, 20201001
     	myRobotShip->update(1); //dt
@@ -3128,6 +3151,9 @@ void OpenGLCanvas::update()
         //added by Mike, 20210527
         myBall->collideWith(myPilot);
         myBall->collideWith(myPilotPlayer2);
+        //added by Mike, 20210530
+        myBall->collideWith(myPilotPartner);
+        myBall->collideWith(myPilotPlayer2Partner);
         
         //added by Mike, 20210528
         //use these instructions to be football
@@ -3153,7 +3179,9 @@ void OpenGLCanvas::update()
 //        if (myBall->getY()+myBall->getHeight() > 640.0f) {
         printf("myBall y and height: %f\n",myBall->getY()+myBall->getHeight());
         
-        if (myBall->getY()+myBall->getHeight() > 512.0f) {
+        //edited by Mike, 20210530
+//        if (myBall->getY()+myBall->getHeight() > 512.0f) {
+        if (myBall->getY()+myBall->getHeight() > 640.0f) {
             printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>END!\n");
             myBall->setEnd();
         }
@@ -3236,6 +3264,10 @@ void OpenGLCanvas::update()
             //added by Mike, 20210524
             //TO-DO: -update: this
             myPilotPlayer2->move(-1);
+            
+            //added by Mike, 20210530
+            myPilotPartner->move(-1);
+            myPilotPlayer2Partner->move(-1);
 		}		
 
        	//added by Mike, 20210111; edited by Mike, 20210121
@@ -3273,6 +3305,11 @@ void OpenGLCanvas::update()
             //added by Mike, 20210524
             //      myPilotPlayer2->move(KEY_W);
             myPilotPlayer2->setToWalkingMovingState();
+            
+            //added by Mike, 20210530
+            myPilotPartner->setToWalkingMovingState();
+            myPilotPlayer2Partner->setToWalkingMovingState();
+            
 
 /*	//removed by Mike, 20210502			
 			//move forward
@@ -3303,6 +3340,11 @@ void OpenGLCanvas::update()
             //added by Mike, 20210524
             //      myPilotPlayer2->move(KEY_W);
             myPilotPlayer2->setToWalkingMovingState();
+            
+            //added by Mike, 20210530
+            myPilotPartner->setToWalkingMovingState();
+            myPilotPlayer2Partner->setToWalkingMovingState();
+            
 
 /*	//removed by Mike, 20210502			
 			//move backward
@@ -3335,6 +3377,11 @@ void OpenGLCanvas::update()
             //added by Mike, 20210524
             //      myPilotPlayer2->move(KEY_W);
             myPilotPlayer2->setToWalkingMovingState();
+            
+            //added by Mike, 20210530
+            myPilotPartner->setToWalkingMovingState();
+            myPilotPlayer2Partner->setToWalkingMovingState();
+            
             
 /*			//removed by Mike, 20201026
 			myCanvasPosX+=-myCanvasStepX;
@@ -3379,6 +3426,11 @@ void OpenGLCanvas::update()
             //added by Mike, 20210524
             //      myPilotPlayer2->move(KEY_W);
             myPilotPlayer2->setToWalkingMovingState();
+            
+            //added by Mike, 20210530
+            myPilotPartner->setToWalkingMovingState();
+            myPilotPlayer2Partner->setToWalkingMovingState();
+            
             
 			//removed by Mike, 20201026
 /////			myCanvasPosX+=myCanvasStepX;
