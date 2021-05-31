@@ -901,7 +901,7 @@ void Ball::update(float dt)
 	           	      myYPosAsPixel+=yVel;
 
 //added by Mike 20210530; edited by Mike, 20210531
-//TO-DO: -update: this
+/*
                         //-----
 												for (int iCountBallTrail=0; iCountBallTrail<MAX_BALL_TRAIL; iCountBallTrail++) {
                         	myXPosAsPixelBallTrailContainerTemp[iCountBallTrail] = myXPosAsPixelBallTrailContainer[iCountBallTrail];
@@ -921,6 +921,22 @@ void Ball::update(float dt)
                             myYPosAsPixelBallTrailContainer[iCountBallTrail] = myYPosAsPixelBallTrailContainerTemp[iCountBallTrail-1];
                         	}
                           myYPosAsPixelBallTrailContainer[0] = myYPosAsPixel;                                              
+                        //-----
+*/                        
+                        //-----
+/*                        
+												for (int iCountBallTrail=0; iCountBallTrail<MAX_BALL_TRAIL; iCountBallTrail++) {
+                        	myXPosAsPixelBallTrailContainerTemp[iCountBallTrail] = myXPosAsPixelBallTrailContainer[iCountBallTrail];
+                        }
+*/                        
+												for (int iCountBallTrail=0; iCountBallTrail<MAX_BALL_TRAIL; iCountBallTrail++) {
+                            myXPosAsPixelBallTrailContainer[iCountBallTrail] = myXPosAsPixel+myXPosAsPixel*iCountBallTrail/MAX_BALL_TRAIL;
+                        }
+
+												//--                        
+												for (int iCountBallTrail=0; iCountBallTrail<MAX_BALL_TRAIL; iCountBallTrail++) {
+                        	myYPosAsPixelBallTrailContainerTemp[iCountBallTrail] = myYPosAsPixelBallTrailContainer[iCountBallTrail];
+                        }                        
                         //-----
                         
 					if (!bIsMovingDown) {                  
