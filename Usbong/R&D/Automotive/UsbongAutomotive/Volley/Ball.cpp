@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20210524
- * @date updated: 20210531
+ * @date updated: 20210601
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -395,6 +395,7 @@ Ball::Ball(float xPos, float yPos, float zPos, int windowWidth, int windowHeight
 	thrustMax=10.0f; //5.0f;//4.0f;
 	thrust=1.0f;
     
+/*     //removed by Mike, 20210601
     //added by Mike, 20210530
     //-----
     for (int iCountBallTrail=0; iCountBallTrail<MAX_BALL_TRAIL; iCountBallTrail++) {
@@ -406,6 +407,16 @@ Ball::Ball(float xPos, float yPos, float zPos, int windowWidth, int windowHeight
         myYPosAsPixelBallTrailContainerTemp[iCountBallTrail] = 0;//myYPosAsPixel;
     }
     //-----
+*/
+    //added by Mike, 20210601
+    for (int iCountBallTrail=0; iCountBallTrail<MAX_BALL_TRAIL; iCountBallTrail++) {
+        fAddXVelBallTrailContainer[iCountBallTrail] = 0.0f;
+        
+    }
+    for (int iCountBallTrail=0; iCountBallTrail<MAX_BALL_TRAIL; iCountBallTrail++) {
+        fAddYVelBallTrailContainer[iCountBallTrail] = 0.0f;
+    }
+    
     
 
 //    myXPos=0.0;
@@ -670,10 +681,17 @@ void Ball::drawAsQuadWithTexture()
 	//edited by Mike, 20210517
 //    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPos), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPos), myZPos);
 //    glTranslatef(myXPosAsPixel, myYPosAsPixel, myZPosAsPixel);
-    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixel), myZPosAsPixel);
-	
-	drawObject();
 
+/*  //removed by Mike, 20210601
+    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixel), myZPosAsPixel);
+    
+    //added by Mike, 20210601
+    glColor3f(1.0f, 1.0f, 1.0f); // white
+    
+	drawObject();
+*/
+    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixel), myZPosAsPixel);
+ 
  /*
     glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixelBallTrailContainer[0]), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixelBallTrailContainer[0]), myZPosAsPixel);
     
@@ -683,16 +701,38 @@ void Ball::drawAsQuadWithTexture()
 
     //added by Mike, 20210530; removed by Mike, 20210530
     //-----
-    for (int iCountBallTrail=0; iCountBallTrail<MAX_BALL_TRAIL; iCountBallTrail++) {
+    //start at 1, instead of 0 due to 0 is the head ball
+    for (int iCountBallTrail=1; iCountBallTrail<MAX_BALL_TRAIL; iCountBallTrail++) {
 //    for (int iCountBallTrail=MAX_BALL_TRAIL-1; iCountBallTrail>=0; iCountBallTrail--) {
         
 //        printf("dito %i: %f\n",iCountBallTrail, fAddXVelBallTrailContainer[iCountBallTrail]);
         //note: glTranslate Command; not set position
         glTranslatef(fAddXVelBallTrailContainer[iCountBallTrail], fAddYVelBallTrailContainer[iCountBallTrail], 0.0f);
+
+//        glColor3f(1.0f, 0.0f, 0.0f); // red
+//        glColor3f(1.0f, 0.0f, 0.0f); // red
+        glColor3f(1.0f, 0.3f, 0.0f); // orange
+
+        //TO-DO: add BALL_TEXTURE_B
+        glEnable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, BALL_TEXTURE_A);
         
         drawObject();
     }
     //-----
+    //execute glTranslate to make head ball auto-drawn at top
+    for (int iCountBallTrail=0; iCountBallTrail<MAX_BALL_TRAIL; iCountBallTrail++) {
+        //note: glTranslate Command; not set position
+        glTranslatef(-fAddXVelBallTrailContainer[iCountBallTrail], -fAddYVelBallTrailContainer[iCountBallTrail], 0.0f);
+    }
+    
+    //added by Mike, 20210601
+    glColor3f(1.0f, 1.0f, 1.0f); // white
+    glEnable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, BALL_TEXTURE_A);
+    
+    
+    drawObject();
 }
 
 //added: by Mike, 20210423
@@ -716,13 +756,14 @@ void Ball::drawObject()
 	
 	//added by Mike, 20210422	myZPos
 	glPushMatrix();
-		//added by Mike, 20210420
-		glColor3f(1.0f, 1.0f, 1.0f); // white
+		//added by Mike, 20210420; removed by Mike, 20210601
+/*		glColor3f(1.0f, 1.0f, 1.0f); // white
 //		glColor3f(1.0f, 0.0f, 0.0f); // red
 	
 		glEnable(GL_TEXTURE_2D);
 		glBindTexture(GL_TEXTURE_2D, BALL_TEXTURE_A);		
-
+*/
+    
 		//edited by Mike, 20210515
 		fObjectAnimationFrameOffset=0;
 	
@@ -861,8 +902,8 @@ void Ball::update(float dt)
                     xVel=iDirectionXAxis*4.0f;//*2.0f;
 
 										//edited by Mike, 20210531
-//                    yVel=yAccel*iDirectionYAxis;
-                    yVel=0.0f;
+                    yVel=yAccel*iDirectionYAxis;
+//                    yVel=0.0f;
 
 /*
      								if (xVel > maxXVel) {
@@ -950,13 +991,13 @@ void Ball::update(float dt)
 //                            printf("myXPosAsPixel %i: %i\n",iCountBallTrail,myXPosAsPixel);
                             
 //                            myXPosAsPixelBallTrailContainer[iCountBallTrail] = myXPosAsPixel;
-                            fAddXVelBallTrailContainer[iCountBallTrail] = xVel/100.0f*iCountBallTrail/2.0f*-1; //xVel/2;
+                            fAddXVelBallTrailContainer[iCountBallTrail] = xVel/100.0f*iCountBallTrail/5.0f*-1;
 
                         }
 
 												//--
                         for (int iCountBallTrail=0; iCountBallTrail<MAX_BALL_TRAIL; iCountBallTrail++) {
-                            fAddYVelBallTrailContainer[iCountBallTrail] = 0.0f; //xVel/2.0f*iCountBallTrail;
+                            fAddYVelBallTrailContainer[iCountBallTrail] = yVel/100.0f*iCountBallTrail/5.0f;//*-1;
                         }                        
 
                         //-----
@@ -1712,12 +1753,23 @@ void Ball::hitBy(MyDynamicObject* mdo)
       thrust=thrustMax; //thrustMax*2.0f;
 //    thrust=thrustMax*2.0f;
 				
-		
+/*  //removed by Mike, 20210601
+    //added by Mike, 20210601
+    for (int iCountBallTrail=0; iCountBallTrail<MAX_BALL_TRAIL; iCountBallTrail++) {
+        fAddXVelBallTrailContainer[iCountBallTrail] = 0.0f;
+        
+    }
+    for (int iCountBallTrail=0; iCountBallTrail<MAX_BALL_TRAIL; iCountBallTrail++) {
+        fAddYVelBallTrailContainer[iCountBallTrail] = 0.0f;
+    }
+*/
+    
+    
 /*
      //changeState(DEATH_STATE);
      //setCollidable(false);
     myOpenGLCanvas->loseLife();
-    
+ 
     //removed by Mike, 20201001
 /////	zing = sound->load_sound_clip(RESETSOUND);
 ////	sound->play_sound_clip(zing);	
