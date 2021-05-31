@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20210524
- * @date updated: 20210530
+ * @date updated: 20210531
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -398,10 +398,12 @@ Ball::Ball(float xPos, float yPos, float zPos, int windowWidth, int windowHeight
     //added by Mike, 20210530
     //-----
     for (int iCountBallTrail=0; iCountBallTrail<MAX_BALL_TRAIL; iCountBallTrail++) {
-        myXPosAsPixelBallTrailContainer[iCountBallTrail] = myXPosAsPixel;
+        myXPosAsPixelBallTrailContainer[iCountBallTrail] = 0;//myXPosAsPixel;
+        myXPosAsPixelBallTrailContainerTemp[iCountBallTrail] = 0;//myXPosAsPixel;
     }
     for (int iCountBallTrail=0; iCountBallTrail<MAX_BALL_TRAIL; iCountBallTrail++) {
-        myYPosAsPixelBallTrailContainer[iCountBallTrail+1] = myYPosAsPixel;
+        myYPosAsPixelBallTrailContainer[iCountBallTrail] = 0;//myYPosAsPixel;
+        myYPosAsPixelBallTrailContainerTemp[iCountBallTrail] = 0;//myYPosAsPixel;
     }
     //-----
     
@@ -673,7 +675,6 @@ void Ball::drawAsQuadWithTexture()
 	drawObject();
     
     //added by Mike, 20210530; removed by Mike, 20210530
-/*  //TO-DO: -update: this
     //-----
     for (int iCountBallTrail=0; iCountBallTrail<MAX_BALL_TRAIL; iCountBallTrail++) {
         glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixelBallTrailContainer[iCountBallTrail]), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixelBallTrailContainer[iCountBallTrail]), myZPosAsPixel);
@@ -681,7 +682,6 @@ void Ball::drawAsQuadWithTexture()
         drawObject();
     }
     //-----
-*/
 }
 
 //added: by Mike, 20210423
@@ -849,7 +849,9 @@ void Ball::update(float dt)
 //                    xVel=xAccel*iDirectionXAxis;
                     xVel=iDirectionXAxis*4.0f;//*2.0f;
 
-                    yVel=yAccel*iDirectionYAxis;
+										//edited by Mike, 20210531
+//                    yVel=yAccel*iDirectionYAxis;
+                    yVel=0.0f;
 
 /*
      								if (xVel > maxXVel) {
@@ -898,29 +900,28 @@ void Ball::update(float dt)
 	           	      myXPosAsPixel+=xVel;
 	           	      myYPosAsPixel+=yVel;
 
-//added by Mike 20210530
+//added by Mike 20210530; edited by Mike, 20210531
 //TO-DO: -update: this
-/*
                         //-----
-                        for (int iCountBallTrail=0; iCountBallTrail<MAX_BALL_TRAIL; iCountBallTrail++) {
-                            
-                            //shift positions in container; put newest 1st
-                            for (iCountBallTrail=0; iCountBallTrail<MAX_BALL_TRAIL-1; iCountBallTrail++) {
-                                myXPosAsPixelBallTrailContainer[iCountBallTrail+1] = myXPosAsPixelBallTrailContainer[iCountBallTrail];
-                            }
-                            myXPosAsPixelBallTrailContainer[0] = myXPosAsPixel;
+												for (int iCountBallTrail=0; iCountBallTrail<MAX_BALL_TRAIL; iCountBallTrail++) {
+                        	myXPosAsPixelBallTrailContainerTemp[iCountBallTrail] = myXPosAsPixelBallTrailContainer[iCountBallTrail];
                         }
                         
-                        for (int iCountBallTrail=0; iCountBallTrail<MAX_BALL_TRAIL; iCountBallTrail++) {
-                            
-                            //shift positions in container; put newest 1st
-                            for (iCountBallTrail=0; iCountBallTrail<MAX_BALL_TRAIL-1; iCountBallTrail++) {
-                                myYPosAsPixelBallTrailContainer[iCountBallTrail+1] = myYPosAsPixelBallTrailContainer[iCountBallTrail];
-                            }
-                            myYPosAsPixelBallTrailContainer[0] = myYPosAsPixel;
+												for (int iCountBallTrail=1; iCountBallTrail<MAX_BALL_TRAIL; iCountBallTrail++) {
+                            myXPosAsPixelBallTrailContainer[iCountBallTrail] = myXPosAsPixelBallTrailContainerTemp[iCountBallTrail-1];
                         }
+                        myXPosAsPixelBallTrailContainer[0] = myXPosAsPixel;                        
+
+												//--                        
+												for (int iCountBallTrail=0; iCountBallTrail<MAX_BALL_TRAIL; iCountBallTrail++) {
+                        	myYPosAsPixelBallTrailContainerTemp[iCountBallTrail] = myYPosAsPixelBallTrailContainer[iCountBallTrail];
+                        }
+                        
+ 												for (int iCountBallTrail=1; iCountBallTrail<MAX_BALL_TRAIL; iCountBallTrail++) {
+                            myYPosAsPixelBallTrailContainer[iCountBallTrail] = myYPosAsPixelBallTrailContainerTemp[iCountBallTrail-1];
+                        	}
+                          myYPosAsPixelBallTrailContainer[0] = myYPosAsPixel;                                              
                         //-----
-*/
                         
 					if (!bIsMovingDown) {                  
 				    	//note: deaccelerate 
@@ -950,7 +951,6 @@ void Ball::update(float dt)
 		           case ATTACKING_MOVING_STATE:
 		            	break;
 				   case IDLE_MOVING_STATE:
-				   printf("dito");
 				   		xVel=0;		
 				   		myXPos+=xVel;	
 /*	//TO-DO: -add: this				               	

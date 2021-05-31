@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20210514
- * @date updated: 20210530
+ * @date updated: 20210531
  * @website address: http://www.usbong.ph
  *
  * Acknowledgments:
@@ -121,6 +121,10 @@ private:
     //TO-DO: -add: shadow
     int myXPosAsPixelBallTrailContainer[MAX_BALL_TRAIL];
     int myYPosAsPixelBallTrailContainer[MAX_BALL_TRAIL];
+		//added by Mike, 20210531
+    int myXPosAsPixelBallTrailContainerTemp[MAX_BALL_TRAIL];
+    int myYPosAsPixelBallTrailContainerTemp[MAX_BALL_TRAIL];
+
 
 	//added by Mike, 20210505
     float myOpponentXPos;
