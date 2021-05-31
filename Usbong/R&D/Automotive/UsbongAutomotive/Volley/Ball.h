@@ -125,7 +125,10 @@ private:
     int myXPosAsPixelBallTrailContainerTemp[MAX_BALL_TRAIL];
     int myYPosAsPixelBallTrailContainerTemp[MAX_BALL_TRAIL];
 
-
+    //added by Mike, 20210531
+    float fAddXVelBallTrailContainer[MAX_BALL_TRAIL];
+    float fAddYVelBallTrailContainer[MAX_BALL_TRAIL];
+    
 	//added by Mike, 20210505
     float myOpponentXPos;
     float myOpponentYPos;

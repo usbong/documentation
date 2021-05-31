@@ -673,11 +673,22 @@ void Ball::drawAsQuadWithTexture()
     glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixel), myZPosAsPixel);
 	
 	drawObject();
+
+ /*
+    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixelBallTrailContainer[0]), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixelBallTrailContainer[0]), myZPosAsPixel);
     
+    drawObject();
+*/
+    
+
     //added by Mike, 20210530; removed by Mike, 20210530
     //-----
     for (int iCountBallTrail=0; iCountBallTrail<MAX_BALL_TRAIL; iCountBallTrail++) {
-        glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixelBallTrailContainer[iCountBallTrail]), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixelBallTrailContainer[iCountBallTrail]), myZPosAsPixel);
+//    for (int iCountBallTrail=MAX_BALL_TRAIL-1; iCountBallTrail>=0; iCountBallTrail--) {
+        
+//        printf("dito %i: %f\n",iCountBallTrail, fAddXVelBallTrailContainer[iCountBallTrail]);
+        //note: glTranslate Command; not set position
+        glTranslatef(fAddXVelBallTrailContainer[iCountBallTrail], fAddYVelBallTrailContainer[iCountBallTrail], 0.0f);
         
         drawObject();
     }
@@ -929,14 +940,25 @@ void Ball::update(float dt)
                         	myXPosAsPixelBallTrailContainerTemp[iCountBallTrail] = myXPosAsPixelBallTrailContainer[iCountBallTrail];
                         }
 */                        
-												for (int iCountBallTrail=0; iCountBallTrail<MAX_BALL_TRAIL; iCountBallTrail++) {
-                            myXPosAsPixelBallTrailContainer[iCountBallTrail] = myXPosAsPixel+myXPosAsPixel*iCountBallTrail/MAX_BALL_TRAIL;
+                        for (int iCountBallTrail=0; iCountBallTrail<MAX_BALL_TRAIL; iCountBallTrail++) {
+                            //myXPosAsPixelBallTrailContainer[iCountBallTrail] = myXPosAsPixel+iCountBallTrail*0.01f*-1;
+//                            [iCountBallTrail] = myXPosAsPixel;//+iCountBallTrail*0.01f*-1;
+                            
+                            //myXPosAsPixelBallTrailContainer[iCountBallTrail] = myXPosAsPixel-xVel;//+iCountBallTrail*0.01f*-1;
+                            //myXPosAsPixelBallTrailContainer[iCountBallTrail] = (myXPosAsPixel-iCountBallTrail/2);//*-1;//+iCountBallTrail*0.01f*-1;
+
+//                            printf("myXPosAsPixel %i: %i\n",iCountBallTrail,myXPosAsPixel);
+                            
+//                            myXPosAsPixelBallTrailContainer[iCountBallTrail] = myXPosAsPixel;
+                            fAddXVelBallTrailContainer[iCountBallTrail] = xVel/100.0f*iCountBallTrail/2.0f*-1; //xVel/2;
+
                         }
 
-												//--                        
-												for (int iCountBallTrail=0; iCountBallTrail<MAX_BALL_TRAIL; iCountBallTrail++) {
-                        	myYPosAsPixelBallTrailContainerTemp[iCountBallTrail] = myYPosAsPixelBallTrailContainer[iCountBallTrail];
+												//--
+                        for (int iCountBallTrail=0; iCountBallTrail<MAX_BALL_TRAIL; iCountBallTrail++) {
+                            fAddYVelBallTrailContainer[iCountBallTrail] = 0.0f; //xVel/2.0f*iCountBallTrail;
                         }                        
+
                         //-----
                         
 					if (!bIsMovingDown) {                  
