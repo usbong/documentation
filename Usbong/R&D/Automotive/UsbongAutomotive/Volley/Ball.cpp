@@ -711,7 +711,10 @@ void Ball::drawAsQuadWithTexture()
 
 //        glColor3f(1.0f, 0.0f, 0.0f); // red
 //        glColor3f(1.0f, 0.0f, 0.0f); // red
-        glColor3f(1.0f, 0.3f, 0.0f); // orange
+        //edited by Mike, 20210601
+        //glColor3f(1.0f, 0.3f, 0.0f); // orange
+//        glColor4f(1.0f, 0.3f, 0.0f, 0.5f); // orange
+        glColor4f(1.0f, 0.3f, 0.0f, 0.2f*(MAX_BALL_TRAIL-iCountBallTrail)); // orange
 
         //TO-DO: add BALL_TEXTURE_B
         glEnable(GL_TEXTURE_2D);
