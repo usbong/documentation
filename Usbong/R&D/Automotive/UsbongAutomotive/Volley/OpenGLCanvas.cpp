@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210530
+ * @date updated: 20210601
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -93,7 +93,7 @@
 #include "RobotShip.h"
 
 //added by Mike, 20201207
-#include "Pilot.h"
+//#include "Pilot.h" //removed by Mike, 20210601
 
 //added by Mike, 20210514
 //note: add this here in the .cpp file 
@@ -494,14 +494,13 @@ bool OpenGLCanvas::init(int myWindowWidthAsPixel, int myWindowHeightAsPixel)
     //edited by Mike, 20210528
     //	myPilot = new Pilot(0.0f,0.0f,0.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
     myPilot = new Pilot(0.0f,0.0f,320.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
-    
-//edited by Mike, 20210522	
-	//myPilot->setOpenGLCanvas(this);
 	myPilot->setOpenGLCanvas(this, fGridSquareWidth);
+	myPilot->setAsPlayer1(); //added by Mike, 20210601
 
     //added by Mike, 20210530
     myPilotPartner = new Pilot(100.0f,0.0f,200.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
     myPilotPartner->setOpenGLCanvas(this, fGridSquareWidth);
+	myPilotPartner->setAsPlayer1Partner(); //added by Mike, 20210601
     
     
     //added by Mike, 20210502; edited by Mike, 20210528
@@ -516,7 +515,7 @@ bool OpenGLCanvas::init(int myWindowWidthAsPixel, int myWindowHeightAsPixel)
     //added by Mike, 20210530
     myPilotPlayer2Partner = new Pilot(360.0f,0.0f,200.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
     myPilotPlayer2Partner->setOpenGLCanvas(this, fGridSquareWidth);
-    myPilotPlayer2Partner->setAsPlayer2();
+    myPilotPlayer2Partner->setAsPlayer2Partner(); //edited by Mike, 20210601
 
     
 	//added by Mike, 20210514; edited by Mike, 20210517

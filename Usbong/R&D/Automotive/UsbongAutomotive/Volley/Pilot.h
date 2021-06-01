@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210527
+ * @date updated: 20210601
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -234,8 +234,12 @@ private:
 	//int iInputWaitCount; //we use with dash
 	int iInputWaitCountArray[PILOT_MAX_DIRECTIONAL_KEY_DASH_COUNT]; //6
 
-	//added by Mike, 20210502
-	bool bIsPlayer2;
+	//added by Mike, 20210502; edited by Mike, 20210601
+	bool bIsPlayer1,
+			 bIsPlayer1Partner,
+			 bIsPlayer2,
+			 bIsPlayer2Partner;
+	
 
     GLint tricount;
     GLint isMovingForward;
@@ -296,8 +300,7 @@ public:
 	
 	//added by Mike, 20210523
 	UsbongUtils *myUsbongUtils;
-
-
+	
 	//added by Mike, 20201226
 	//note: we classify this container as public;
 	//otherwise; computer notifies us of error when we update value inside container
@@ -387,7 +390,41 @@ public:
 //		printf("myXPos: %f; fGridSquareWidth: %f",myXPos, fGridSquareWidth);
 		
 	}
+
+	//added by Mike, 20210601
+	void setAsPlayer2Partner() {
+		currentFacingState=FACING_LEFT;
+		bIsPlayer2Partner=true;
+	}	
+
+	//added by Mike, 20210601
+	void setAsPlayer1() {
+		currentFacingState=FACING_RIGHT;
+		bIsPlayer1=true;
+	}	
+
+	//added by Mike, 20210601
+	void setAsPlayer1Partner() {
+		currentFacingState=FACING_RIGHT;
+		bIsPlayer1Partner=true;
+	}	
+
+	bool getIsPlayer1() {
+		return bIsPlayer1;
+	}
 	
+	bool getIsPlayer1Partner() {
+		return bIsPlayer1Partner;
+	}
+
+	bool getIsPlayer2() {
+		return bIsPlayer2;
+	}
+	
+	bool getIsPlayer2Partner() {
+		return bIsPlayer2Partner;
+	}
+
 
     //added by Mike, 20210111
 //    bool getIsExcutingPunchDefense() {

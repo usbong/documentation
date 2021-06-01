@@ -417,8 +417,15 @@ Ball::Ball(float xPos, float yPos, float zPos, int windowWidth, int windowHeight
         fAddYVelBallTrailContainer[iCountBallTrail] = 0.0f;
     }
     
-    
-
+    //added by Mike, 20210601
+		iPlayer1BallHitCount=0;
+		iPlayer1PartnerBallHitCount=0;
+		iPlayer2BallHitCount=0;
+		iPlayer2PartnerBallHitCount=0;
+    	
+		//added by Mike, 20210601
+		bIsSetForPartnerSpikeAttack=false;
+		
 //    myXPos=0.0;
 //    myYPos=0.0;
     //myYPos=300.0;
@@ -497,7 +504,7 @@ Ball::Ball(float xPos, float yPos, float zPos, int windowWidth, int windowHeight
   myHeightAsPixel=64;
 */
 //note: scale Commands in drawObject(...)
-//glScalef(0.20f, 0.4f, 1.0f);			
+//glScalef(0.20f, 0.4f, 1.0f);			bIsPlayer1
 //glScalef(0.5f, 0.5f, 1.0f);			
 	myWidthAsPixel=128*0.2/2;
   myHeightAsPixel=64*0.4/2;
@@ -530,7 +537,7 @@ Ball::Ball(float xPos, float yPos, float zPos, int windowWidth, int windowHeight
 	
 /*	//edited by Mike, 20210517
 	//added by Mike, 20210514
-    myYPos=0.0f;
+    myYPos=0.0f;bIsPlayer1
 	
 	//note: position: 3,3; width, height; count starts at 0
 	//edited by Mike, 20210502
@@ -596,7 +603,7 @@ Ball::Ball(float xPos, float yPos, float zPos, int windowWidth, int windowHeight
 	bIsDashReady=false;
 	//edited by Mike, 20210128
 //	iInputWaitCount=0;
-	
+
 	//added by Mike, 20210202
 	for (int iCount=0; iCount<iNumOfKeyTypes; iCount++) {
 		myKeysDown[iCount]=false;
@@ -888,7 +895,27 @@ void Ball::update(float dt)
 										}
 										
 										
-                    xAccel = thrust;
+										//TO-DO: -update: this
+                    //xAccel = thrust;
+                    if (bIsSetForPartnerSpikeAttack) {
+										
+										//added by Mike, 20210601
+										//TO-DO: -reverify: cause xVel not set to zero
+										//note: computer correctly identifies if to enter this set of instructions
+
+//                    printf(">>>>>>>>>>>>hallo");
+                    	xAccel = 0.0f;
+                    	iDirectionXAxis = iDirectionXAxis*-1;            
+                    	bIsSetForPartnerSpikeAttack=false;
+                    	
+//                    	xVel=0.0f;                  	
+                    }
+                    else {
+                    	xAccel = 4.0f;//thrust;      
+                    	
+//                    	xVel=iDirectionXAxis*xAccel;//*2.0f;            
+                    }
+                    
                     yAccel = thrust; //thrust*-1; //go up
                    
 
@@ -902,7 +929,12 @@ void Ball::update(float dt)
 */
 					//edited by Mike, 20210528
 //                    xVel=xAccel*iDirectionXAxis;
-                    xVel=iDirectionXAxis*4.0f;//*2.0f;
+										//edited by Mike, 20210601
+//                    xVel=iDirectionXAxis*4.0f;//*2.0f;
+//
+                    xVel=iDirectionXAxis*xAccel;//*2.0f;
+                    
+//                    xVel=iDirectionXAxis*1.0f;
 
 										//edited by Mike, 20210531
                     yVel=yAccel*iDirectionYAxis;
@@ -994,6 +1026,7 @@ void Ball::update(float dt)
 //                            printf("myXPosAsPixel %i: %i\n",iCountBallTrail,myXPosAsPixel);
                             
 //                            myXPosAsPixelBallTrailContainer[iCountBallTrail] = myXPosAsPixel;
+ 
                             fAddXVelBallTrailContainer[iCountBallTrail] = xVel/100.0f*iCountBallTrail/5.0f*-1;
 
                         }
@@ -1736,12 +1769,78 @@ void Ball::move(int key)
 		}
 	}
 }
+
 void Ball::hitBy(MyDynamicObject* mdo)
 {
 		//edited by Mike, 20210527; removed by Mike, 20210527
 //		bIsMovingDown=false;
+
+		//added by Mike, 20210601
+		if (!bIsMovingDown) {
+		  return;
+		}
     
-        //TO-DO: -add: identify which Pilot Player hit the ball
+    //identify which Pilot Player hit the ball
+    //added by Mike, 20210601
+    if (dynamic_cast<Pilot*>(mdo)->getIsPlayer1()) {
+    	if (iPlayer1BallHitCount>1) {
+    		setEnd();
+    		return;
+    	}
+    	else {
+				iPlayer1BallHitCount++;    	
+    	}    	
+    }
+
+    if (dynamic_cast<Pilot*>(mdo)->getIsPlayer1Partner()) {
+    	if (iPlayer1PartnerBallHitCount>1) {
+    		setEnd();
+    		return;
+    	}
+    	else {
+				iPlayer1PartnerBallHitCount++;    	
+    	}    	
+    }
+
+    if (dynamic_cast<Pilot*>(mdo)->getIsPlayer2()) {
+    	if (iPlayer2BallHitCount>1) {
+    		setEnd();
+    		return;
+    	}
+    	else {
+				iPlayer2BallHitCount++;    	
+    	}
+    }    
+       
+    if (dynamic_cast<Pilot*>(mdo)->getIsPlayer2Partner()) {
+    	if (iPlayer2PartnerBallHitCount>1) {
+    		setEnd();
+    		return;
+    	}
+    	else {
+				iPlayer2PartnerBallHitCount++;    	
+    	}
+    }    
+    
+    if ((iPlayer1BallHitCount+iPlayer1PartnerBallHitCount) > 2) {
+			setEnd();
+			return;    
+    }
+   
+    if ((iPlayer2BallHitCount+iPlayer2PartnerBallHitCount) > 2) {
+			setEnd();
+			return;    
+    }
+    
+    bIsSetForPartnerSpikeAttack=false;
+    
+    //TO-DO: -add: verify button pressed
+    if (dynamic_cast<Pilot*>(mdo)->getIsPlayer1()) { //player 1 default position bottom left side
+    	//set for spike attack
+    	//player1 partner
+    	bIsSetForPartnerSpikeAttack=true;
+		}
+        
 		updateDirection();
 		
 		//added by Mike, 20210528
@@ -1822,6 +1921,12 @@ void Ball::reset()
     iDirectionYAxis=-1; //init go up
     thrustMax=10.0f; //5.0f;//4.0f;
     thrust=1.0f;
+    
+    //added by Mike, 20210601
+    iPlayer1BallHitCount=0;
+		iPlayer1PartnerBallHitCount=0;
+		iPlayer2BallHitCount=0;
+		iPlayer2PartnerBallHitCount=0;    
 }
 int Ball::getState()
 {

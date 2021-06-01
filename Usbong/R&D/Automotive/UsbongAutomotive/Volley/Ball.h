@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20210514
- * @date updated: 20210531
+ * @date updated: 20210601
  * @website address: http://www.usbong.ph
  *
  * Acknowledgments:
@@ -30,7 +30,16 @@
 #include "CTargaImage.h"
 
 #include "OpenGLCanvas.h"
-#include "MyDynamicObject.h"
+
+//edited by Mike, 20210601
+
+//note: we use Pilot.h, subclass of MyDynamicObject
+//with this Command: dynamic_cast<Pilot*>(mdo)->getIsPlayer1()
+//Reference: https://www.daniweb.com/programming/software-development/threads/242639/casting-to-a-subclass
+//last accessed: 20210601
+//answer by: Narue, 2009
+//#include "MyDynamicObject.h" //removed by Mike, 20210601
+#include "Pilot.h"
 
 //added by Mike, 20201019
 #include "PolygonUtils.h"
@@ -232,6 +241,15 @@ private:
 
 	//added by Mike, 20210502
 	bool bIsPlayer2;
+	
+	//added by Mike, 20210601
+	int iPlayer1BallHitCount;
+	int iPlayer1PartnerBallHitCount;
+	int iPlayer2BallHitCount;
+	int iPlayer2PartnerBallHitCount;
+
+	//added by Mike, 20210601
+	bool bIsSetForPartnerSpikeAttack;	
 
     GLint tricount;
     GLint isMovingForward;
@@ -419,7 +437,7 @@ public:
 	
 	//added by Mike, 20201226
 	void keyDown(int keyCode);	
-	void keyUp(int keyCode);	
+	void keyUp(int keyCode);
 
 /*	//removed by Mike, 20210522	
 	void setOpenGLCanvas(OpenGLCanvas* c);

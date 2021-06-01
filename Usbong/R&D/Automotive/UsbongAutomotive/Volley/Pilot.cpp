@@ -439,6 +439,7 @@ Pilot::Pilot(float xPos, float yPos, float zPos, int windowWidth, int windowHeig
 	currentState=MOVING_STATE;
 	//added by Mike, 20201201
 	currentMovingState=IDLE_MOVING_STATE;
+	
 
 //    myXPos=0.0;
 //    myYPos=0.0;
@@ -654,9 +655,13 @@ Pilot::Pilot(float xPos, float yPos, float zPos, int windowWidth, int windowHeig
 	loadTexture(myHeadTexture, "headTexture.tga", &myHeadTextureObject);	
 */
 	
-	//added by Mike, 20210502
-	//note: set this in OpenGLCanvas.cpp
+	//added by Mike, 20210502; edited by Mike, 20210601
+	//note: set this in OpenGLCanvas.cpp	
+	bIsPlayer1=false;
+	bIsPlayer1Partner=false;
 	bIsPlayer2=false;
+	bIsPlayer2Partner=false;	
+	
 	
 	//removed by Mike, 20201001; added by Mike, 20210423
 	setup();
