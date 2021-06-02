@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210602
+ * @date updated: 20210603
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -509,7 +509,9 @@ bool OpenGLCanvas::init(int myWindowWidthAsPixel, int myWindowHeightAsPixel)
     
     //added by Mike, 20210502; edited by Mike, 20210528
     //	myPilotPlayer2 = new Pilot(0.0f,0.0f,0.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
-    myPilotPlayer2 = new Pilot(360.0f,0.0f,320.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
+    //edited by Mike, 20210603
+//    myPilotPlayer2 = new Pilot(360.0f,0.0f,320.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
+    myPilotPlayer2 = new Pilot(320.0f+100.0f,0.0f,320.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
     
     //edited by Mike, 20210522
 //	myPilotPlayer2->setOpenGLCanvas(this);
@@ -3142,11 +3144,14 @@ void OpenGLCanvas::update()
         //added by Mike, 20210528
         //note: we use z-axis for vertex position; this shall be auto-converted to as pixel in y-axis
         myPilotPlayer2->setZPos(myPilot->getZ());
-        myPilotPlayer2->setXPos(myPilot->getX()+320.0f);
+        //edited by Mike, 20210603
+//        myPilotPlayer2->setXPos(myPilot->getX()+320.0f);
+        myPilotPlayer2->setXPos(myPilot->getX()+320.0f+100.0f);
 
-        //added by Mike, 20210530
+        //added by Mike, 20210530; edited by Mike, 20210603
         myPilotPlayer2Partner->setZPos(myPilotPlayer2->getZ()-100.0f);
-        myPilotPlayer2Partner->setXPos(myPilotPlayer2->getX());
+//        myPilotPlayer2Partner->setXPos(myPilotPlayer2->getX());
+        myPilotPlayer2Partner->setXPos(myPilotPlayer2->getX()-100.0f);
         
 		//added by Mike, 20210502
     	myPilotPlayer2->update(1); //dt

@@ -137,6 +137,9 @@ enum Keys
 	KEY_H, //added by Mike, 20210111
 	KEY_U, //added by Mike, 20210121
 
+    //added by Mike, 20210603
+    KEY_Z,
+    
 	//added by Mike, 20201226
 	iNumOfKeyTypes
 };
@@ -425,6 +428,9 @@ Ball::Ball(float xPos, float yPos, float zPos, int windowWidth, int windowHeight
     	
 		//added by Mike, 20210601
 		bIsSetForPartnerSpikeAttack=false;
+    
+        //added by Mike, 20210603
+        bIsSpikeAttack=false;
 		
 //    myXPos=0.0;
 //    myYPos=0.0;
@@ -919,13 +925,6 @@ void Ball::update(float dt)
 										//TO-DO: -update: this
                     //xAccel = thrust;
                     if (bIsSetForPartnerSpikeAttack) {
-										
-										//added by Mike, 20210601
-										//TO-DO: -reverify: cause xVel not set to zero
-										//note: computer correctly identifies if to enter this set of instructions
-
-//                    printf(">>>>>>>>>>>>hallo");
-                        
                         //edited by Mike, 20210602
                     	xAccel = 1.0f; //0.0f
                         //added by Mike, 20210602
@@ -934,10 +933,28 @@ void Ball::update(float dt)
 */
 //                    	iDirectionXAxis = iDirectionXAxis*-1;
                         
+                        //edited by Mike, 20210603
                         iDirectionXAxis = iDirectionXAxis;
-                        //bIsSetForPartnerSpikeAttack=false; //removed by Mike, 20210602
+//                        iDirectionXAxis=iDirectionXAxis*-1;
+                        
+//                        bIsSetForPartnerSpikeAttack=false; //removed by Mike, 20210602
                     	
 //                    	xVel=0.0f;                  	
+                    }
+                    //added by Mike, 20210603
+                    //note: football kick to the bottom stone tile
+                    else if (bIsSpikeAttack) {
+                        xAccel = 4.0f;
+                        yAccel = 1.0f;
+                        
+                        //edited by Mike, 20210603
+                        iDirectionXAxis = iDirectionXAxis;
+//                        iDirectionXAxis=iDirectionXAxis*-1;
+                        
+                        iDirectionYAxis=1; //go down
+                        bIsMovingDown=true;
+                        
+//                        bIsSpikeAttack=false; //removed by Mike, 20210603
                     }
                     else {
                     	xAccel = 4.0f;//thrust;      
@@ -1902,11 +1919,19 @@ void Ball::hitBy(MyDynamicObject* mdo)
     if (bIsSetForPartnerSpikeAttack==true) {
     		//update only direction in x-axis
         iDirectionXAxis=iDirectionXAxis*-1;
-        
-        //TO-DO: -add: bIsSpikeAttack=true;
     }
-    
     bIsSetForPartnerSpikeAttack=false;
+
+    //TO-DO: -reverify: cause why bIsSpikeAttack not executed when KEY_K is pressed; unlike bIsSetForPartnerSpikeAttack with KEY_J 
+    //TO-DO: -add: execute this if bIsSetForPartnerSpikeAttack == true
+    //added by Mike, 20210603
+    if (bIsSpikeAttack==true) {
+        //TO-DO: -add: auto-update based on directional key pressed
+        //update only direction in x-axis
+        iDirectionXAxis=iDirectionXAxis*-1;
+    }
+    bIsSpikeAttack=false;
+
     
 /*  //edited by Mike, 20210602
     //TO-DO: -add: verify button pressed
@@ -1917,19 +1942,33 @@ void Ball::hitBy(MyDynamicObject* mdo)
     }
 */
     
+/*  //removed by Mike, 20210603
+    //added by Mike, 20210603
+    bIsSetForPartnerSpikeAttack=false;
+    bIsSpikeAttack=false;
+*/
+    
     if ((dynamic_cast<Pilot*>(mdo)->getIsPlayer1())
     || (dynamic_cast<Pilot*>(mdo)->getIsPlayer1Partner())
     || (dynamic_cast<Pilot*>(mdo)->getIsPlayer2())
     || (dynamic_cast<Pilot*>(mdo)->getIsPlayer2Partner()))
     {
+        //TO-DO: -add: auto-update based on directional key pressed
         if (myKeysDown[KEY_J]) {
             //set for spike attack
             bIsSetForPartnerSpikeAttack=true;
+//            iDirectionXAxis=iDirectionXAxis*-1;
+        }
+        else if (myKeysDown[KEY_K]) {
+            //spike attack
+            bIsSpikeAttack=true;
+//            iDirectionXAxis=iDirectionXAxis*-1;
         }
     }
     
     myKeysDown[KEY_J]=false;
-        
+    myKeysDown[KEY_K]=false;
+
 		//added by Mike, 20210602
     if ((dynamic_cast<Pilot*>(mdo)->getIsPlayer1())
      || (dynamic_cast<Pilot*>(mdo)->getIsPlayer1Partner())) {
@@ -2033,7 +2072,10 @@ void Ball::reset()
 		iPlayer2PartnerBallHitCount=0;    
 		
 		//added by Mike, 20210602
-		bIsSetForPartnerSpikeAttack=false;		
+		bIsSetForPartnerSpikeAttack=false;
+    
+        //added by Mike, 20210603
+        bIsSpikeAttack=false;
 }
 
 int Ball::getState()

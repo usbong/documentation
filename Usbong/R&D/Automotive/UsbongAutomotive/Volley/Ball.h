@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20210514
- * @date updated: 20210601
+ * @date updated: 20210603
  * @website address: http://www.usbong.ph
  *
  * Acknowledgments:
@@ -250,6 +250,8 @@ private:
 
 	//added by Mike, 20210601
 	bool bIsSetForPartnerSpikeAttack;	
+    //added by Mike, 20210603
+    bool bIsSpikeAttack;
 
     GLint tricount;
     GLint isMovingForward;
