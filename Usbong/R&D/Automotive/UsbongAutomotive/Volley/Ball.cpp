@@ -1799,6 +1799,9 @@ void Ball::move(int key)
 	}
 }
 
+//Reference: https://en.wikipedia.org/wiki/Dead_or_Alive_Xtreme_Beach_Volleyball;
+//last accessed: 20210602
+//Gameplay: Button Controls Action
 void Ball::hitBy(MyDynamicObject* mdo)
 {
 		//edited by Mike, 20210527; removed by Mike, 20210527
@@ -1854,19 +1857,25 @@ void Ball::hitBy(MyDynamicObject* mdo)
     //added by Mike, 20210602
     //TO-DO: -update: this
     
-    if ((iPlayer1BallHitCount+iPlayer1PartnerBallHitCount) > 2) {
+   	//edited by Mike, 20210602    
+    if ((iPlayer1BallHitCount+iPlayer1PartnerBallHitCount) > 3) { //2
 			setEnd();
 			return;    
     }
    
-    if ((iPlayer2BallHitCount+iPlayer2PartnerBallHitCount) > 2) {
+   	//edited by Mike, 20210602
+    if ((iPlayer2BallHitCount+iPlayer2PartnerBallHitCount) > 3) { //2
 			setEnd();
 			return;    
     }
     
     //added by Mike, 20210602
+    //TO-DO: update: to bIsSetForSpikeAttack
     if (bIsSetForPartnerSpikeAttack==true) {
-        updateDirection();
+    		//update only direction in x-axis
+        iDirectionXAxis=iDirectionXAxis*-1;
+        
+        //TO-DO: -add: bIsSpikeAttack=true;
     }
     
     bIsSetForPartnerSpikeAttack=false;
@@ -1876,6 +1885,21 @@ void Ball::hitBy(MyDynamicObject* mdo)
     	//set for spike attack
     	//player1 partner
     	bIsSetForPartnerSpikeAttack=true;
+    }
+        
+		//added by Mike, 20210602
+    if ((dynamic_cast<Pilot*>(mdo)->getIsPlayer1())
+     || (dynamic_cast<Pilot*>(mdo)->getIsPlayer1Partner())) {
+
+			iPlayer2BallHitCount=0;
+			iPlayer2PartnerBallHitCount=0;
+    }
+
+    if ((dynamic_cast<Pilot*>(mdo)->getIsPlayer2())
+     || (dynamic_cast<Pilot*>(mdo)->getIsPlayer2Partner())) {
+
+			iPlayer1BallHitCount=0;
+			iPlayer1PartnerBallHitCount=0;
     }
         
     updateDirection();
@@ -1964,7 +1988,11 @@ void Ball::reset()
 		iPlayer1PartnerBallHitCount=0;
 		iPlayer2BallHitCount=0;
 		iPlayer2PartnerBallHitCount=0;    
+		
+		//added by Mike, 20210602
+		bIsSetForPartnerSpikeAttack=false;		
 }
+
 int Ball::getState()
 {
     return currentState;

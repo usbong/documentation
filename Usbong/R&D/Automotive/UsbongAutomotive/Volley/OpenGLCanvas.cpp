@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210601
+ * @date updated: 20210602
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -3147,11 +3147,11 @@ void OpenGLCanvas::update()
         //added by Mike, 20210524
         myBall->update(1); //dt
         
-        //added by Mike, 20210527
+        //added by Mike, 20210527; edited by Mike, 20210602
         myBall->collideWith(myPilot);
-        myBall->collideWith(myPilotPlayer2);
-        //added by Mike, 20210530
         myBall->collideWith(myPilotPartner);
+
+        myBall->collideWith(myPilotPlayer2);
         myBall->collideWith(myPilotPlayer2Partner);
         
         //added by Mike, 20210528
