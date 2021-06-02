@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20210524
- * @date updated: 20210601
+ * @date updated: 20210602
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -697,52 +697,73 @@ void Ball::drawAsQuadWithTexture()
     
 	drawObject();
 */
-    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixel), myZPosAsPixel);
- 
- /*
-    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixelBallTrailContainer[0]), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixelBallTrailContainer[0]), myZPosAsPixel);
-    
-    drawObject();
-*/
-    
+/* //removed by Mike, 20210602
+    //added by Mike, 20210602
+    if (bIsSetForPartnerSpikeAttack) {
+        glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixel), myZPosAsPixel);
 
-    //added by Mike, 20210530; removed by Mike, 20210530
-    //-----
-    //start at 1, instead of 0 due to 0 is the head ball
-    for (int iCountBallTrail=1; iCountBallTrail<MAX_BALL_TRAIL; iCountBallTrail++) {
-//    for (int iCountBallTrail=MAX_BALL_TRAIL-1; iCountBallTrail>=0; iCountBallTrail--) {
+        //note: causes sky background to flash in white
         
-//        printf("dito %i: %f\n",iCountBallTrail, fAddXVelBallTrailContainer[iCountBallTrail]);
-        //note: glTranslate Command; not set position
-        glTranslatef(fAddXVelBallTrailContainer[iCountBallTrail], fAddYVelBallTrailContainer[iCountBallTrail], 0.0f);
-
-//        glColor3f(1.0f, 0.0f, 0.0f); // red
-//        glColor3f(1.0f, 0.0f, 0.0f); // red
-        //edited by Mike, 20210601
-        //glColor3f(1.0f, 0.3f, 0.0f); // orange
-//        glColor4f(1.0f, 0.3f, 0.0f, 0.5f); // orange
-        glColor4f(1.0f, 0.3f, 0.0f, 0.2f*(MAX_BALL_TRAIL-iCountBallTrail)); // orange
-
-        //TO-DO: add BALL_TEXTURE_B
+        //added by Mike, 20210601
+        glColor3f(1.0f, 1.0f, 1.0f); // white
         glEnable(GL_TEXTURE_2D);
         glBindTexture(GL_TEXTURE_2D, BALL_TEXTURE_A);
         
         drawObject();
+        
+//        bIsSetForPartnerSpikeAttack=false;
     }
-    //-----
-    //execute glTranslate to make head ball auto-drawn at top
-    for (int iCountBallTrail=0; iCountBallTrail<MAX_BALL_TRAIL; iCountBallTrail++) {
-        //note: glTranslate Command; not set position
-        glTranslatef(-fAddXVelBallTrailContainer[iCountBallTrail], -fAddYVelBallTrailContainer[iCountBallTrail], 0.0f);
+    else {
+*/
+        glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixel), myZPosAsPixel);
+        
+        /*
+         glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixelBallTrailContainer[0]), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixelBallTrailContainer[0]), myZPosAsPixel);
+         
+         drawObject();
+         */
+        
+        
+        //added by Mike, 20210530; removed by Mike, 20210530
+        //-----
+        //start at 1, instead of 0 due to 0 is the head ball
+        for (int iCountBallTrail=1; iCountBallTrail<MAX_BALL_TRAIL; iCountBallTrail++) {
+            //    for (int iCountBallTrail=MAX_BALL_TRAIL-1; iCountBallTrail>=0; iCountBallTrail--) {
+            
+            //        printf("dito %i: %f\n",iCountBallTrail, fAddXVelBallTrailContainer[iCountBallTrail]);
+            //note: glTranslate Command; not set position
+            glTranslatef(fAddXVelBallTrailContainer[iCountBallTrail], fAddYVelBallTrailContainer[iCountBallTrail], 0.0f);
+            
+            //        glColor3f(1.0f, 0.0f, 0.0f); // red
+            //        glColor3f(1.0f, 0.0f, 0.0f); // red
+            //edited by Mike, 20210601
+            //glColor3f(1.0f, 0.3f, 0.0f); // orange
+            //        glColor4f(1.0f, 0.3f, 0.0f, 0.5f); // orange
+            glColor4f(1.0f, 0.3f, 0.0f, 0.2f*(MAX_BALL_TRAIL-iCountBallTrail)); // orange
+            
+            //TO-DO: add BALL_TEXTURE_B
+            glEnable(GL_TEXTURE_2D);
+            glBindTexture(GL_TEXTURE_2D, BALL_TEXTURE_A);
+            
+            drawObject();
+        }
+        //-----
+        //execute glTranslate to make head ball auto-drawn at top
+        for (int iCountBallTrail=0; iCountBallTrail<MAX_BALL_TRAIL; iCountBallTrail++) {
+            //note: glTranslate Command; not set position
+            glTranslatef(-fAddXVelBallTrailContainer[iCountBallTrail], -fAddYVelBallTrailContainer[iCountBallTrail], 0.0f);
+        }
+        
+        //added by Mike, 20210601
+        glColor3f(1.0f, 1.0f, 1.0f); // white
+        glEnable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, BALL_TEXTURE_A);
+    
+        drawObject();
+    
+/*  //removed by Mike, 20210602
     }
-    
-    //added by Mike, 20210601
-    glColor3f(1.0f, 1.0f, 1.0f); // white
-    glEnable(GL_TEXTURE_2D);
-    glBindTexture(GL_TEXTURE_2D, BALL_TEXTURE_A);
-    
-    
-    drawObject();
+*/
 }
 
 //added: by Mike, 20210423
@@ -904,9 +925,17 @@ void Ball::update(float dt)
 										//note: computer correctly identifies if to enter this set of instructions
 
 //                    printf(">>>>>>>>>>>>hallo");
-                    	xAccel = 0.0f;
-                    	iDirectionXAxis = iDirectionXAxis*-1;            
-                    	bIsSetForPartnerSpikeAttack=false;
+                        
+                        //edited by Mike, 20210602
+                    	xAccel = 1.0f; //0.0f
+                        //added by Mike, 20210602
+/*                        myXPos = 0;
+                        myXPosAsPixel = 0;
+*/
+//                    	iDirectionXAxis = iDirectionXAxis*-1;
+                        
+                        iDirectionXAxis = iDirectionXAxis;
+                        //bIsSetForPartnerSpikeAttack=false; //removed by Mike, 20210602
                     	
 //                    	xVel=0.0f;                  	
                     }
@@ -1822,6 +1851,9 @@ void Ball::hitBy(MyDynamicObject* mdo)
     	}
     }    
     
+    //added by Mike, 20210602
+    //TO-DO: -update: this
+    
     if ((iPlayer1BallHitCount+iPlayer1PartnerBallHitCount) > 2) {
 			setEnd();
 			return;    
@@ -1832,6 +1864,11 @@ void Ball::hitBy(MyDynamicObject* mdo)
 			return;    
     }
     
+    //added by Mike, 20210602
+    if (bIsSetForPartnerSpikeAttack==true) {
+        updateDirection();
+    }
+    
     bIsSetForPartnerSpikeAttack=false;
     
     //TO-DO: -add: verify button pressed
@@ -1839,9 +1876,9 @@ void Ball::hitBy(MyDynamicObject* mdo)
     	//set for spike attack
     	//player1 partner
     	bIsSetForPartnerSpikeAttack=true;
-		}
+    }
         
-		updateDirection();
+    updateDirection();
 		
 		//added by Mike, 20210528
 		//TO-DO: -add: charge via key held
