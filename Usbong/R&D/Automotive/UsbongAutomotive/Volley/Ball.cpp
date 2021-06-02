@@ -969,6 +969,14 @@ void Ball::update(float dt)
                     yVel=yAccel*iDirectionYAxis;
 //                    yVel=0.0f;
 
+//TO-DO: -add: auto-draw rectangle collision detection box
+/* //removed by Mike, 20210602
+										//added by Mike, 20210602
+										if (yVel>=0.0f) {
+											bIsMovingDown=true;
+										}
+*/
+
 /*
      								if (xVel > maxXVel) {
      									xVel = maxXVel;
