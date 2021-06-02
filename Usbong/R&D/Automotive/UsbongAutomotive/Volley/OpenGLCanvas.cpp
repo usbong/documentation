@@ -503,6 +503,10 @@ bool OpenGLCanvas::init(int myWindowWidthAsPixel, int myWindowHeightAsPixel)
 	myPilotPartner->setAsPlayer1Partner(); //added by Mike, 20210601
     
     
+    //added by Mike, 20210602
+    //TO-DO: -update: player 1 positions
+    //TO-DO: -update: player 2 positions
+    
     //added by Mike, 20210502; edited by Mike, 20210528
     //	myPilotPlayer2 = new Pilot(0.0f,0.0f,0.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
     myPilotPlayer2 = new Pilot(360.0f,0.0f,320.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
@@ -1053,6 +1057,9 @@ void OpenGLCanvas::keyDown(int keyCode)
 	
 	myPilot->keyDown(keyCode);	
 	
+    //added by Mike, 20210602
+    myBall->keyDown(keyCode);
+    
 	
 	//edited by Mike, 20210514
 	if (keyCode==KEY_Z) {
@@ -1082,7 +1089,11 @@ void OpenGLCanvas::keyUp(int keyCode)
 	myRobotShip->keyUp(keyCode);
 
 	myPilot->keyUp(keyCode);	
-	
+
+    //added by Mike, 20210602
+    myBall->keyUp(keyCode);
+
+    
 	//removed by Mike, 20210514
 /*	
 	//added by Mike, 20210513
@@ -3669,6 +3680,9 @@ void OpenGLCanvas::update()
 			//edited by Mike, 20201013
 			static int i = 0;
 			
+            
+            //added by Mike, 20210602; removed by Mike, 20210602
+//            myBall->move(KEY_J);
 			
 			//added by Mike, 20210112
 			if (!myRobotShip->getIsExecuteWithWeaponReady()) {

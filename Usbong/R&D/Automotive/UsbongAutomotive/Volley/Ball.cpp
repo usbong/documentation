@@ -1545,6 +1545,26 @@ void Ball::move(int key)
 		  }			
           break;
 
+        //TO-DO: -add: spike attack
+    //removed by Mike, 20210602
+/*
+       //added by Mike, 20210602
+       case KEY_J:
+           //removed by Mike, 20210602
+           //pulls ball down even without colliding with Pilot;
+           //drop ball
+           //bIsSetForPartnerSpikeAttack=true;
+           myKeysDown[KEY_J]=true;
+           break;
+       case -KEY_J:
+           //removed by Mike, 20210602
+           //pulls ball down even without colliding with Pilot;
+           //drop ball
+           //bIsSetForPartnerSpikeAttack=true;
+           myKeysDown[KEY_J]=false;
+           break;
+*/
+           
 //	 case KEY_UP: //removed by Mike, 20210130
      case KEY_W:
           //isMovingForward=1;
@@ -1888,12 +1908,27 @@ void Ball::hitBy(MyDynamicObject* mdo)
     
     bIsSetForPartnerSpikeAttack=false;
     
+/*  //edited by Mike, 20210602
     //TO-DO: -add: verify button pressed
     if (dynamic_cast<Pilot*>(mdo)->getIsPlayer1()) { //player 1 default position bottom left side
     	//set for spike attack
     	//player1 partner
     	bIsSetForPartnerSpikeAttack=true;
     }
+*/
+    
+    if ((dynamic_cast<Pilot*>(mdo)->getIsPlayer1())
+    || (dynamic_cast<Pilot*>(mdo)->getIsPlayer1Partner())
+    || (dynamic_cast<Pilot*>(mdo)->getIsPlayer2())
+    || (dynamic_cast<Pilot*>(mdo)->getIsPlayer2Partner()))
+    {
+        if (myKeysDown[KEY_J]) {
+            //set for spike attack
+            bIsSetForPartnerSpikeAttack=true;
+        }
+    }
+    
+    myKeysDown[KEY_J]=false;
         
 		//added by Mike, 20210602
     if ((dynamic_cast<Pilot*>(mdo)->getIsPlayer1())
