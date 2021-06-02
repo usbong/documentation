@@ -3180,7 +3180,10 @@ void OpenGLCanvas::update()
         
         //edited by Mike, 20210530
 //        if (myBall->getY()+myBall->getHeight() > 512.0f) {
-        if (myBall->getY()+myBall->getHeight() > 640.0f) {
+				//edited by Mike, 20210602
+//        if (myBall->getY()+myBall->getHeight() > 640.0f) {
+//        if (myBall->getYAsPixel()+myBall->getHeightAsPixel() > 320.0f) {
+        if (myBall->getYAsPixel()+myBall->getHeightAsPixel() > 512.0f) {
             printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>END!\n");
             myBall->setEnd();
         }
