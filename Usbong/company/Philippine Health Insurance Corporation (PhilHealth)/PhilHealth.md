@@ -11,6 +11,9 @@ Citystate Centre, 709 Shaw Blvd.,</br>
 ### Email Address
 actioncenter@philhealth.gov.ph
 
+## PhilHealth Premium Payment Slip
+https://www.philhealth.gov.ph/downloads/employer/ppps.pdf; last accessed: 20210604
+
 ## Notes:
 "PhilHealth’s direction is towards conducting all business transactions electronically. Soon there will be no more paper-based transactions."</br>
 <b>Reference:</b> https://www.philhealth.gov.ph/partners/csp/faqs.html; last accessed: 20190113
