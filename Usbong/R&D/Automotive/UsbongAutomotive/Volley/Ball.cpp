@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20210524
- * @date updated: 20210602
+ * @date updated: 20210603
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -1922,13 +1922,20 @@ void Ball::hitBy(MyDynamicObject* mdo)
     }
     bIsSetForPartnerSpikeAttack=false;
 
-    //TO-DO: -reverify: cause why bIsSpikeAttack not executed when KEY_K is pressed; unlike bIsSetForPartnerSpikeAttack with KEY_J 
+    //TO-DO: -reverify: cause why bIsSpikeAttack not executed when KEY_K is pressed; unlike bIsSetForPartnerSpikeAttack with KEY_J
     //TO-DO: -add: execute this if bIsSetForPartnerSpikeAttack == true
     //added by Mike, 20210603
     if (bIsSpikeAttack==true) {
         //TO-DO: -add: auto-update based on directional key pressed
         //update only direction in x-axis
-        iDirectionXAxis=iDirectionXAxis*-1;
+        //edited by Mike, 20210603
+       iDirectionXAxis=iDirectionXAxis*-1;
+        
+/*  //note: causes curving ball, with commented out parts in myKeysDown[KEY_K]
+        bIsMovingDown=true;
+        iDirectionXAxis=iDirectionXAxis;//*-1;
+        iDirectionYAxis=iDirectionXAxis*-1;
+*/
     }
     bIsSpikeAttack=false;
 
@@ -1958,12 +1965,29 @@ void Ball::hitBy(MyDynamicObject* mdo)
             //set for spike attack
             bIsSetForPartnerSpikeAttack=true;
 //            iDirectionXAxis=iDirectionXAxis*-1;
+            //added by Mike, 20210603; removed by Mike, 20210603
+//            updateDirection();
         }
+        
         else if (myKeysDown[KEY_K]) {
             //spike attack
             bIsSpikeAttack=true;
-//            iDirectionXAxis=iDirectionXAxis*-1;
+
+/*
+            //added by Mike, 20210603
+            //--
+            bIsMovingDown=true;
+            iDirectionXAxis=iDirectionXAxis*-1;
+            iDirectionYAxis=iDirectionXAxis*-1;
+            //--
+*/
         }
+/*
+        //added by Mike, 20210603
+        else {
+            updateDirection();
+        }
+*/
     }
     
     myKeysDown[KEY_J]=false;
@@ -1983,7 +2007,8 @@ void Ball::hitBy(MyDynamicObject* mdo)
 			iPlayer1BallHitCount=0;
 			iPlayer1PartnerBallHitCount=0;
     }
-        
+ 
+    //removed by Mike, 20210603
     updateDirection();
 		
 		//added by Mike, 20210528

@@ -3263,6 +3263,8 @@ void OpenGLCanvas::update()
        	//TO-DO: -update: this
        	//TO-DO: -verify: gamepad
 		
+        //TO-DO: -verify: key movement PLUS action KEY_J, KEY_K Command causes Pilot walking movement
+        
 		//added by Mike, 20201202
        	//verify if no keys are pressed down
        	int iKeyCount;
@@ -3286,6 +3288,9 @@ void OpenGLCanvas::update()
             //added by Mike, 20210530
             myPilotPartner->move(-1);
             myPilotPlayer2Partner->move(-1);
+            
+            //added by Mike, 20210603; removed by Mike, 20210603
+//            myBall->move(-1);
 		}		
 
        	//added by Mike, 20210111; edited by Mike, 20210121

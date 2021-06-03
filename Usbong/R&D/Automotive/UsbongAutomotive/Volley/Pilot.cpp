@@ -137,6 +137,9 @@ enum Keys
 	KEY_H, //added by Mike, 20210111
 	KEY_U, //added by Mike, 20210121
 
+    //added by Mike, 20210603
+    KEY_Z,
+    
 	//added by Mike, 20201226
 	iNumOfKeyTypes
 };
@@ -4340,7 +4343,13 @@ void Pilot::drawPilotAsQuadWithTexture()
 						drawPilotObject();
 						break;
 					case ATTACKING_MOVING_STATE:
-						break;
+                        //note: 3 animation frames; .tga image file has 4 frames @128x256, i.e. width x height
+                        iCountTaoAnimationFrame=3;
+                        fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.25;
+                        iCountTaoAnimationFrame=iCountTaoAnimationFrame+1;		
+                        
+                        drawPilotObject(); //added by Mike, 20210603
+                        break;
 				}
                 break;
             case IN_TITLE_STATE:
