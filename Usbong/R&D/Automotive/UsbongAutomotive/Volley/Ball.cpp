@@ -394,6 +394,9 @@ Ball::Ball(float xPos, float yPos, float zPos, int windowWidth, int windowHeight
 	iDirectionXAxis=1; //init go to right side from left side
 	iDirectionYAxis=-1; //init go up
 	
+	//added by Mike, 20210603
+	iLastHitByPlayerId=-1;//PILOT_PLAYER_TWO_ID;
+	
 	//added by Mike, 20210528
 	thrustMax=10.0f; //5.0f;//4.0f;
 	thrust=1.0f;
@@ -1461,12 +1464,12 @@ void Ball::move(int key)
 		   //edited by Mike, 20210202
           for (int iCount=0; iCount<PILOT_MAX_DIRECTIONAL_KEY_DASH_COUNT; iCount++) {
 //          for (int iCount=0; iCount<4; iCount++) {
-			  if (myKeysDown[iCount]==TRUE) {
-          		bHasPressedADirectionalKey=true;
-   		    	break;
-			}
-		  }
-		  
+			  		if (myKeysDown[iCount]==TRUE) {
+          				bHasPressedADirectionalKey=true;
+   		    			break;
+						}
+		  		}
+		  		  		
 		  if (!bHasPressedADirectionalKey) {
 		  	currentMovingState=ATTACKING_MOVING_STATE;		   		  	
 		  }          
@@ -1852,6 +1855,40 @@ void Ball::hitBy(MyDynamicObject* mdo)
 		//edited by Mike, 20210527; removed by Mike, 20210527
 //		bIsMovingDown=false;
 
+		//added by Mike, 20210603
+    if (dynamic_cast<Pilot*>(mdo)->getIsPlayer1()) {
+    	if (iLastHitByPlayerId==PILOT_PLAYER_ID) {
+    		return;
+    	}
+    	else {
+    		iLastHitByPlayerId=PILOT_PLAYER_ID;
+    	}
+    }
+    if (dynamic_cast<Pilot*>(mdo)->getIsPlayer1Partner()) {
+    	if (iLastHitByPlayerId==PILOT_PLAYER_PARTNER_ID) {
+    		return;
+    	}
+    	else {
+    		iLastHitByPlayerId=PILOT_PLAYER_PARTNER_ID;
+    	}
+    }
+    if (dynamic_cast<Pilot*>(mdo)->getIsPlayer2()) {
+    	if (iLastHitByPlayerId==PILOT_PLAYER_TWO_ID) {
+    		return;
+    	}
+    	else {
+    		iLastHitByPlayerId=PILOT_PLAYER_TWO_ID;
+    	}
+    }
+    if (dynamic_cast<Pilot*>(mdo)->getIsPlayer2Partner()) {
+    	if (iLastHitByPlayerId==PILOT_PLAYER_TWO_PARTNER_ID) {
+    		return;
+    	}
+    	else {
+    		iLastHitByPlayerId=PILOT_PLAYER_TWO_PARTNER_ID;
+    	}
+    }    
+
 		//added by Mike, 20210601
 		if (!bIsMovingDown) {
 		  return;
@@ -1920,9 +1957,12 @@ void Ball::hitBy(MyDynamicObject* mdo)
     		//update only direction in x-axis
         iDirectionXAxis=iDirectionXAxis*-1;
     }
-    bIsSetForPartnerSpikeAttack=false;
+    //removed by Mike, 20210603
+//    bIsSetForPartnerSpikeAttack=false;
 
-    //TO-DO: -reverify: cause why bIsSpikeAttack not executed when KEY_K is pressed; unlike bIsSetForPartnerSpikeAttack with KEY_J
+    //reverified: cause why bIsSpikeAttack not executed when KEY_K is pressed; unlike bIsSetForPartnerSpikeAttack with KEY_J
+    //due to multiple hits with the same Pilot Player
+    
     //TO-DO: -add: execute this if bIsSetForPartnerSpikeAttack == true
     //added by Mike, 20210603
     if (bIsSpikeAttack==true) {
@@ -1937,7 +1977,8 @@ void Ball::hitBy(MyDynamicObject* mdo)
         iDirectionYAxis=iDirectionXAxis*-1;
 */
     }
-    bIsSpikeAttack=false;
+    //removed by Mike, 20210603    
+//    bIsSpikeAttack=false;
 
     
 /*  //edited by Mike, 20210602
@@ -1960,7 +2001,16 @@ void Ball::hitBy(MyDynamicObject* mdo)
     || (dynamic_cast<Pilot*>(mdo)->getIsPlayer2())
     || (dynamic_cast<Pilot*>(mdo)->getIsPlayer2Partner()))
     {
+    
         //TO-DO: -add: auto-update based on directional key pressed
+        //can cause reusable wave motion; viewed as combination of moving top of ball and to the side
+/*        if (myKeysDown[KEY_J]) {
+            //set for spike attack
+            bIsSetForPartnerSpikeAttack=true;
+//            iDirectionXAxis=iDirectionXAxis*-1;
+    					updateDirection();
+        }
+*/        
         if (myKeysDown[KEY_J]) {
             //set for spike attack
             bIsSetForPartnerSpikeAttack=true;
@@ -1968,11 +2018,15 @@ void Ball::hitBy(MyDynamicObject* mdo)
             //added by Mike, 20210603; removed by Mike, 20210603
 //            updateDirection();
         }
-        
-        else if (myKeysDown[KEY_K]) {
+        //added by Mike, 20210603
+        else {
+        	bIsSetForPartnerSpikeAttack=false;
+//    updateDirection(); //removed by Mike, 20210603        	
+        }
+                
+        if (myKeysDown[KEY_K]) {
             //spike attack
             bIsSpikeAttack=true;
-
 /*
             //added by Mike, 20210603
             //--
@@ -1982,6 +2036,10 @@ void Ball::hitBy(MyDynamicObject* mdo)
             //--
 */
         }
+        //added by Mike, 20210603
+        else {
+        	bIsSpikeAttack=false;
+        }
 /*
         //added by Mike, 20210603
         else {
@@ -1990,9 +2048,10 @@ void Ball::hitBy(MyDynamicObject* mdo)
 */
     }
     
+/*   //removed by Mike, 20210603 
     myKeysDown[KEY_J]=false;
     myKeysDown[KEY_K]=false;
-
+*/
 		//added by Mike, 20210602
     if ((dynamic_cast<Pilot*>(mdo)->getIsPlayer1())
      || (dynamic_cast<Pilot*>(mdo)->getIsPlayer1Partner())) {
@@ -2022,18 +2081,7 @@ void Ball::hitBy(MyDynamicObject* mdo)
       //edited by Mike, 20210530
       thrust=thrustMax; //thrustMax*2.0f;
 //    thrust=thrustMax*2.0f;
-				
-/*  //removed by Mike, 20210601
-    //added by Mike, 20210601
-    for (int iCountBallTrail=0; iCountBallTrail<MAX_BALL_TRAIL; iCountBallTrail++) {
-        fAddXVelBallTrailContainer[iCountBallTrail] = 0.0f;
-        
-    }
-    for (int iCountBallTrail=0; iCountBallTrail<MAX_BALL_TRAIL; iCountBallTrail++) {
-        fAddYVelBallTrailContainer[iCountBallTrail] = 0.0f;
-    }
-*/
-    
+				   
     
 /*
      //changeState(DEATH_STATE);
@@ -2099,8 +2147,9 @@ void Ball::reset()
 		//added by Mike, 20210602
 		bIsSetForPartnerSpikeAttack=false;
     
-        //added by Mike, 20210603
-        bIsSpikeAttack=false;
+    //added by Mike, 20210603
+    bIsSpikeAttack=false;
+		iLastHitByPlayerId=-1;        
 }
 
 int Ball::getState()

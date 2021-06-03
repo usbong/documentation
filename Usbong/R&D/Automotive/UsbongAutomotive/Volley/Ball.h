@@ -104,6 +104,13 @@
 //added by Mike, 20210530
 #define MAX_BALL_TRAIL 5
 
+//added by Mike, 20210603
+#define MAX_PLAYER_COUNT  4
+#define PILOT_PLAYER_ID 0
+#define PILOT_PLAYER_PARTNER_ID 1
+#define PILOT_PLAYER_TWO_ID 2
+#define PILOT_PLAYER_TWO_PARTNER_ID 3
+
 //added by Mike, 20210516
 class UsbongUtils;
 
@@ -249,9 +256,12 @@ private:
 	int iPlayer2PartnerBallHitCount;
 
 	//added by Mike, 20210601
-	bool bIsSetForPartnerSpikeAttack;	
-    //added by Mike, 20210603
-    bool bIsSpikeAttack;
+	bool bIsSetForPartnerSpikeAttack;	  
+  //added by Mike, 20210603
+  bool bIsSpikeAttack;
+
+	//added by Mike, 20210603
+	int iLastHitByPlayerId; //pilot
 
     GLint tricount;
     GLint isMovingForward;
