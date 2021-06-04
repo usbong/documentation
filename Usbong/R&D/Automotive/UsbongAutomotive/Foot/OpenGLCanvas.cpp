@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210603
+ * @date updated: 20210605
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -1057,8 +1057,14 @@ void OpenGLCanvas::keyDown(int keyCode)
 	//added by Mike, 20210507
 	myRobotShip->keyDown(keyCode);
 	
-	myPilot->keyDown(keyCode);	
-	
+	myPilot->keyDown(keyCode);
+    //added by Mike, 20210604; removed by Mike, 20210604
+/*    //note: myPilot as Unit Chief
+    myPilotPartner->keyDown(keyCode); //added by Mike, 20210604
+    myPilotPlayer2->keyDown(keyCode); //added by Mike, 20210604
+    myPilotPlayer2Partner->keyDown(keyCode); //added by Mike, 20210604
+*/
+    
     //added by Mike, 20210602
     myBall->keyDown(keyCode);
     
@@ -1090,7 +1096,14 @@ void OpenGLCanvas::keyUp(int keyCode)
 	//added by Mike, 20210507
 	myRobotShip->keyUp(keyCode);
 
-	myPilot->keyUp(keyCode);	
+	myPilot->keyUp(keyCode);
+    //added by Mike, 20210604; removed by Mike, 20210604
+    //note: myPilot as Unit Chief
+/*
+    myPilotPartner->keyUp(keyCode); //added by Mike, 20210604
+    myPilotPlayer2->keyUp(keyCode); //added by Mike, 20210604
+    myPilotPlayer2Partner->keyUp(keyCode); //added by Mike, 20210604
+*/
 
     //added by Mike, 20210602
     myBall->keyUp(keyCode);
@@ -3137,26 +3150,104 @@ void OpenGLCanvas::update()
     	myPilot->update(1); //dt
         myPilotPartner->update(1); //added by Mike, 20210530
 
-        //added by Mike, 20210530
+        /* //edited by Mike, 20210604
+         //added by Mike, 20210530
+         myPilotPartner->setXPos(myPilot->getX()+100.0f);
+         myPilotPartner->setZPos(myPilot->getZ()-100.0f);
+         
+         //added by Mike, 20210528
+         //note: we use z-axis for vertex position; this shall be auto-converted to as pixel in y-axis
+         myPilotPlayer2->setZPos(myPilot->getZ());
+         //edited by Mike, 20210603
+         //        myPilotPlayer2->setXPos(myPilot->getX()+320.0f);
+         myPilotPlayer2->setXPos(myPilot->getX()+320.0f+100.0f);
+         
+         //added by Mike, 20210530; edited by Mike, 20210603
+         myPilotPlayer2Partner->setZPos(myPilotPlayer2->getZ()-100.0f);
+         //        myPilotPlayer2Partner->setXPos(myPilotPlayer2->getX());
+         myPilotPlayer2Partner->setXPos(myPilotPlayer2->getX()-100.0f);
+         
+         //added by Mike, 20210502
+         myPilotPlayer2->update(1); //dt
+         myPilotPlayer2Partner->update(1); //added by Mike, 20210530
+         */
+        
+        //added by Mike, 20210604
+/*
+        if (myPilotPartner->getX() < myPilot->getX()+100.0f) {
+            myPilotPartner->setXPos(myPilotPartner->getX()+1.0f);
+        }
+        else {
+            myPilotPartner->setXPos(myPilotPartner->getX()-1.0f);
+        }
+*/
+        //added by Mike, 20210604
+        //TO-DO: -fix: set to idle state when current position is equal to end position
+        //TO-DO: -add: max end position
+        //TO-DO: -add: identify if executing dash Command
+        //TO-DO: -add: charge, i.e. tame
+        
+        //added by Mike, 20210605
+        //TO-DO: -reverify: myPilotPartner computer instructions to set idle state
+        
         myPilotPartner->setXPos(myPilot->getX()+100.0f);
-        myPilotPartner->setZPos(myPilot->getZ()-100.0f);
+//        myPilotPartner->setZPos(myPilot->getZ()-100.0f);
 
+        if (myPilotPartner->getZ() < myPilot->getZ()-100.0f) {
+            myPilotPartner->setZPos(myPilotPartner->getZ()+1.0f);
+        }
+        //        else {
+        if (myPilotPartner->getZ() > myPilot->getZ()-100.0f) {
+            myPilotPartner->setZPos(myPilotPartner->getZ()-1.0f);
+        }
+        else {
+            myPilotPartner->move(-1); //setCurrentMovingState=IDLE_MOVING_STATE;
+        }
+        
+        
         //added by Mike, 20210528
         //note: we use z-axis for vertex position; this shall be auto-converted to as pixel in y-axis
-        myPilotPlayer2->setZPos(myPilot->getZ());
+        //edited by Mike, 20210604
+        //myPilotPlayer2->setZPos(myPilot->getZ());
+        if (myPilotPlayer2->getZ() < myPilot->getZ()) {
+            //edited by Mike, 20210605
+            myPilotPlayer2->setZPos(myPilotPlayer2->getZ()+1.0f);
+//            myPilotPlayer2->move(KEY_S);
+        }
+//        else {
+        else if (myPilotPlayer2->getZ() > myPilot->getZ()) {
+            //edited by Mike, 20210605
+            myPilotPlayer2->setZPos(myPilotPlayer2->getZ()-1.0f);
+//            myPilotPlayer2->move(KEY_W);
+        }
+        else {
+            myPilotPlayer2->move(-1); //setCurrentMovingState=IDLE_MOVING_STATE;
+        }
         //edited by Mike, 20210603
-//        myPilotPlayer2->setXPos(myPilot->getX()+320.0f);
+        //        myPilotPlayer2->setXPos(myPilot->getX()+320.0f);
         myPilotPlayer2->setXPos(myPilot->getX()+320.0f+100.0f);
-
-        //added by Mike, 20210530; edited by Mike, 20210603
-        myPilotPlayer2Partner->setZPos(myPilotPlayer2->getZ()-100.0f);
-//        myPilotPlayer2Partner->setXPos(myPilotPlayer2->getX());
+        
+        //added by Mike, 20210530; edited by Mike, 20210604
+//        myPilotPlayer2Partner->setZPos(myPilotPlayer2->getZ()-100.0f);
+        if (myPilotPlayer2Partner->getZ() < myPilotPlayer2->getZ()-100.0f) {
+            myPilotPlayer2Partner->setZPos(myPilotPlayer2Partner->getZ()+1.0f);
+        }
+        //        else {
+        else if (myPilotPlayer2Partner->getZ() > myPilotPlayer2->getZ()-100.0f) {
+            myPilotPlayer2Partner->setZPos(myPilotPlayer2Partner->getZ()-1.0f);
+        }
+        else {
+            myPilotPlayer2Partner->move(-1); //setCurrentMovingState=IDLE_MOVING_STATE;
+        }
+        
+        //        myPilotPlayer2Partner->setXPos(myPilotPlayer2->getX());
         myPilotPlayer2Partner->setXPos(myPilotPlayer2->getX()-100.0f);
         
-		//added by Mike, 20210502
-    	myPilotPlayer2->update(1); //dt
+        
+        
+        //added by Mike, 20210502
+        myPilotPlayer2->update(1); //dt
         myPilotPlayer2Partner->update(1); //added by Mike, 20210530
-		
     	//added by Mike, 20201001
     	myRobotShip->update(1); //dt
 
@@ -3281,13 +3372,12 @@ void OpenGLCanvas::update()
 			//added by Mike, 20210423
           	myPilot->move(-1);
             
-            //added by Mike, 20210524
-            //TO-DO: -update: this
+            //added by Mike, 20210524; removed by Mike, 20210605
+/*            //TO-DO: -update: this
             myPilotPlayer2->move(-1);
-            
-            //added by Mike, 20210530
             myPilotPartner->move(-1);
             myPilotPlayer2Partner->move(-1);
+*/
             
             //added by Mike, 20210603; removed by Mike, 20210603
 //            myBall->move(-1);

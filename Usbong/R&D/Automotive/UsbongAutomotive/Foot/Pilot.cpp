@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210604
+ * @date updated: 20210605
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -490,9 +490,15 @@ Pilot::Pilot(float xPos, float yPos, float zPos, int windowWidth, int windowHeig
     stepY=0.4;
     stepZ=0.4;
 */
-    stepX=0.4*4;	
+    /* //edited by Mike, 20210605
+    stepX=0.4*4;
     stepY=0.4*4;
     stepZ=0.4*4;
+*/
+    //note: we use integer with myXPos, et cetera
+    stepX=0.5*4;
+    stepY=0.5*4;
+    stepZ=0.5*4;
 	
     invincibleCounter=0;
     currentDeathFrame=0;
@@ -5532,8 +5538,15 @@ void Pilot::move(int key)
 //----------		
           //added by Mike, 20201001; edited by Mike, 20201116
 //	      myYPos+=-stepY;
-					//edited by Mike, 20210527
-	      myZPos+=-stepZ;
+					//edited by Mike, 20210527; edited by Mike, 20210605
+//	      myZPos+=-stepZ;
+        if (getIsPlayer1()) { //Player1: Unit Chief
+            myZPos+=-stepZ;
+        }
+        else {
+            myZPos+=-stepZ/2;
+        }
+        
 //	      myZPosAsPixel+=-iStepZAsPixel;
 
 			//added by Mike, 20210127; edited by Mike, 20210128
@@ -5590,10 +5603,19 @@ void Pilot::move(int key)
 //----------		
           //added by Mike, 20201001; edited by Mike, 20201116
 //	      myYPos+=stepY;
-				//edited by Mike, 20210527
-	      myZPos+=stepZ;
-//	      myZPosAsPixel+=iStepZAsPixel;
-	    	     
+        
+        //edited by Mike, 20210527; edited by Mike, 20210605
+        //	      myZPos+=-stepZ;
+        //	      myZPosAsPixel+=iStepZAsPixel;
+        if (getIsPlayer1()) { //Player1: Unit Chief
+            myZPos+=stepZ;
+        }
+        else {
+            myZPos+=stepZ/2;
+        }
+        
+        
+        
 		//added by Mike, 20210127; edited by Mike, 20210128
 //			if (bIsExecutingDash) {
 		if ((bIsExecutingDashArray[KEY_S])) {				
@@ -5779,9 +5801,9 @@ void Pilot::move(int key)
 		default:
           //edited by Mike, 20210604
 		  //currentMovingState=IDLE_MOVING_STATE;
-           if (getIsPlayer1()) { //note: Player1 as Unit Chief
+//           if (getIsPlayer1()) { //note: Player1 as Unit Chief
              currentMovingState=IDLE_MOVING_STATE;
-           }
+//           }
            
 		  bIsFiringBeam=false; //added by Mike, 20201226
 		  //removed by Mike, 20210123
