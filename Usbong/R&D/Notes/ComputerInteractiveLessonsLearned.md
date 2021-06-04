@@ -427,7 +427,7 @@ TO-DO: -update: this<br/>
 
 ## 1.9) NINTENDO
 ## 1.9.1) INTELLIGENT SYSTEMS + NINTENDO
-## 1.9.1.1) マリオ ストーリー (Mario Story; Japanese version)
+## 1.9.1.1) マリオ ストーリー (Mario Story; Japanese version; Year 2000)
 --> create/update computer interactive systems to be the following:<br/>
 --> note: Computer Interactive Systems Company : Usbong Social Systems Inc : <br/>
 --> Intelligent Systems + Nintendo<br/>
@@ -542,28 +542,29 @@ Tunay na tapang ang nakatayong harapin ang nakatatakot na bagay, 'di ba?<br/>
 --> Sa simula, mukhang pananalita ng mga taga-Kansai, subalit may "ken" sa huli.<br/>
 --> Ginagamit ito bilang kahulugan ng "kasi"; halimbawa: かわいいけん(kawaii ken; "nakaaakit kasi")<br/>
 
-## 1.9.2) CAMELOT + NINTENDO
+## 1.9.2) CAMELOT (SOFTWARE PLANNING) + NINTENDO
 ## 1.9.2.1) マリオテニス６４："FOR ALL PLAYERS HOPING TO TOUCH THE TRUE ENTERTAINMENT" 
---> (Mario Tennis 64; Japanese version; Year 2000)<br/>
---> verified: I as Mario (classification: ALL-AROUND) can defeat Donkey Kong (classification: POWER) with Computer Difficulty Level set to STRONG, i.e. second highest Difficulty Level, and Camera set to NORMAL<br/>
---> Highest Difficulty Level: saikyou, i.e. THE MOST STRONG/STRONGEST<br/>
+--> Mario Tennis 64; Japanese version; Year 2000<br/>
+--> verified: I as Mario (classification: ALL-AROUND) can defeat Donkey Kong (classification: POWER) with Computer Difficulty Level set to つよい (tsuyoi; STRONG) i.e. second highest Difficulty Level, and Camera set to NORMAL<br/>
+--> Highest Difficulty Level: さいきょう (saikyou), i.e. THE MOST STRONG; STRONGEST<br/>
+--> Court Setting: HARD
 --> Camera NORMAL: There is interchange of TOP and BOTTOM positions<br/>
---> This is albeit win is classified to be "girigiri", i.e. won, but almost lost<br/>
---> technique to defeat Donkey Kong: Use POWER attacks, i.e. when hitting the ball using the racket, before collision, press both B and A Buttons to charge; If sufficiently charged, e.g. with charged for 2 seconds, the Ball is caused to have a trailing pink color and return becomes difficult due to speed and way angle<br/>
+--> This is albeit win is classified to be ギリギリ(girigiri), i.e. won, but almost lost<br/>
+--> technique to defeat Donkey Kong: Use POWER attacks, i.e. when hitting the ball using the racket, before collision, press both B and A Buttons to charge; If sufficiently charged, e.g. with charged for 2 seconds, and I press both B and A Buttons again, the Ball is caused to have a trailing pink color and return becomes difficult due to speed and way angle<br/>
 --> <b>Count Results:</b><br/> 
 --> Donkey Kong's Service Ace > Mario's<br/>
---> Service Ace: Service is not hit to be returned by Opponent<br/>
+--> サービス エース (Service Ace): Service is not hit to be returned by Opponent<br/>
 --> Execution: Donkey Kong's service uses POWER attack with target location can be set to be left or right;<br/>
 --> If I as Mario incorrectly chooses where the target is, I do not hit to return the ball<br/>
 --> Mario's Smash Ace > Donkey Kong's<br/>
---> Smash Ace: Smash is not hit to be returned by Opponent<br/>
+--> スマッシュ エース (Smash Ace): Smash is not hit to be returned by Opponent<br/>
 --> Execution: Mario serves using POWER Attack; it is returned by Opponent; I use another POWER Attack to a direction opposite of Opponent to finish.<br/>
 --> Reminder: If charge time not sufficient, attack can still be not hit to be returned by Opponent.<br/>
 ### Additional Notes:
 --> 1.9.2.1.1) Camera Settings:<br/>
---> Camera #2: set Camera to follow the back of Human Player; when changing positions, Human Player is still at the bottom.<br/>
+--> Camera Front Up: set Camera to follow the back of Human Player; when changing positions, Human Player is still at the bottom.<br/>
 --> Camera Dynamic: set Camera to be lower in height to be reminded of Virtual Boy Mario Tennis<br/>
---> If we move to the max bottom part, we can observed the bottom middle Turtle to hide inside its shell to not be hit by an incoming Ball.<br/>
+--> In select courts, if we move to the max bottom part, we can observed the bottom middle Turtle to hide inside its shell to not be hit by an incoming Ball.<br/>
 
 ## 2) Hardware
 ## 2.1) SONY PlayStation Portable (PSP)
@@ -574,7 +575,7 @@ Tunay na tapang ang nakatayong harapin ang nakatatakot na bagay, 'di ba?<br/>
 --> <b>Additional Notes:</b><br/>
 --> 2.1.1) The thin metal near sensor button will bend due to the added masking tape when the lid is closed.<br/> 
 --> 2.1.2) verified: with pre-used PSP (Model 2001)<br/>
---> 2.1.3) Changing UMD game causes problem to re-occur to be fixed again<br/>
+--> 2.1.3) Changing UMD game causes problem to re-occur to be fixed again.<br/>
 <br/>
 --> <b>Reference:</b><br/>
 --> https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1052217060;<br/>
