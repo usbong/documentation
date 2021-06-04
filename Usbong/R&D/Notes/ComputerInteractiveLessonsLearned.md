@@ -490,7 +490,7 @@ TO-DO: -update: this<br/>
 <br/>
 <img src="https://github.com/usbong/documentation/blob/master/Usbong/company/HR/Usbong%20Education%20Training%20Courses/Training%20Centre:%20Security%20Defense%20Force/res/yuuki.jpg" width="70%">
 
-[こわいモノにも　たちむかうのが　本物の　ゆうきですよね]<br/>
+「こわいモノにも　たちむかうのが　本物の　ゆうきですよね」<br/>
 kowai mono nimo tachimukau no ga honmono no yuuki desuyone<br/>
 Tunay na tapang ang nakatayong harapin ang nakatatakot na bagay, 'di ba?<br/>
 --> Ayon ito sa Nagbabantay na Kinoko na tinutukoy ang mga 化け物 (bakemono; lit: naibang bagay, e.g. Multo).<br/>
@@ -547,7 +547,7 @@ Tunay na tapang ang nakatayong harapin ang nakatatakot na bagay, 'di ba?<br/>
 --> Mario Tennis 64; Japanese version; Year 2000<br/>
 --> verified: I as Mario (classification: ALL-AROUND) can defeat Donkey Kong (classification: POWER) with Computer Difficulty Level set to つよい (tsuyoi; STRONG) i.e. second highest Difficulty Level, and Camera set to NORMAL<br/>
 --> Highest Difficulty Level: さいきょう (saikyou), i.e. THE MOST STRONG; STRONGEST<br/>
---> Court Setting: HARD
+--> Court Setting: HARD<br/>
 --> Camera NORMAL: There is interchange of TOP and BOTTOM positions<br/>
 --> This is albeit win is classified to be ギリギリ(girigiri), i.e. won, but almost lost<br/>
 --> technique to defeat Donkey Kong: Use POWER attacks, i.e. when hitting the ball using the racket, before collision, press both B and A Buttons to charge; If sufficiently charged, e.g. with charged for 2 seconds, and I press both B and A Buttons again, the Ball is caused to have a trailing pink color and return becomes difficult due to speed and way angle<br/>
