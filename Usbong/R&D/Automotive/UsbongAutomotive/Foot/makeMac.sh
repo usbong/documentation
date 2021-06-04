@@ -11,7 +11,7 @@
 # @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
 # @author: SYSON, MICHAEL B.
 # @date created: 20200930
-# @last updated: 20210527
+# @last updated: 20210604
 # @website address: http://www.usbong.ph
 #
 # References:
@@ -48,7 +48,7 @@ g++ -c Ball.cpp
 #g++ -o ./output/UsbongVolleyLinux mainLinux.o OpenGLCanvas.o MyDynamicObject.o RobotShip.o Font.o Beam.o Asteroid.o Level.o PolygonUtils.o CTargaImage.o Pilot.o UsbongUtils.o Button.o -lGL -lGLU -lglut
 
 #macOS Machine
-g++ -framework OpenGL -framework GLUT -o ./output/UsbongVolleyMac mainLinux.o OpenGLCanvas.o MyDynamicObject.o RobotShip.o Font.o Beam.o Asteroid.o Level.o PolygonUtils.o CTargaImage.o Pilot.o UsbongUtils.o Button.o Ball.o
+g++ -framework OpenGL -framework GLUT -o ./output/UsbongFootMac mainLinux.o OpenGLCanvas.o MyDynamicObject.o RobotShip.o Font.o Beam.o Asteroid.o Level.o PolygonUtils.o CTargaImage.o Pilot.o UsbongUtils.o Button.o Ball.o
 
 #added by Mike, 20210220; removed by Mike, 20210521
 #cp -r ./*.o ./objectFilesLinux/

@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210528
+ * @date updated: 20210604
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -281,13 +281,22 @@ public:
 	//added by Mike, 20210424
     virtual void setXPos(float fX) {
 			myXPos=fX;
-		}
+        //added by Mike, 20210604
+        setCurrentMovingState(WALKING_MOVING_STATE);
+        currentState=MOVING_STATE;
+    }
     virtual void setZPos(float fZ) {
 			myZPos=fZ;
+            //added by Mike, 20210604
+        setCurrentMovingState(WALKING_MOVING_STATE);
+        currentState=MOVING_STATE;
 		}
     virtual void setYPos(float fY) {
 			myYPos=fY;
-		}
+        //added by Mike, 20210604
+        setCurrentMovingState(WALKING_MOVING_STATE);
+        currentState=MOVING_STATE;
+    }
 
 
 	//added by Mike, 20210424

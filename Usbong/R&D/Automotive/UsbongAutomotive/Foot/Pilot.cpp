@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210603
+ * @date updated: 20210604
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -4316,7 +4316,7 @@ void Pilot::drawPilotAsQuadWithTexture()
 				
             case MOVING_STATE:
 				switch(currentMovingState) {
-		            case IDLE_MOVING_STATE:		
+		            case IDLE_MOVING_STATE:
 	//added by Mike, 20210420
 	//TO-DO: -add: this in key movement
 	//note: 3 animation frames; .tga image file has 4 frames @128x256, i.e. width x height
@@ -5544,8 +5544,10 @@ void Pilot::move(int key)
 	
 	//			if ((bIsExecutingDashArray[KEY_UP]) || (bIsExecutingDashArray[KEY_W])) {			
 	//			if ((bIsExecutingDashArray[KEY_W])) {
-					//edited by Mike, 20210527
-	      myZPos+=-stepZ;
+					//edited by Mike, 20210604
+//	      myZPos+=-stepZ;
+                    myZPos+=-stepZ*2;
+                    
 //	      	myZPosAsPixel+=-iStepZAsPixel;
 					
 				}
@@ -5595,8 +5597,10 @@ void Pilot::move(int key)
 		//added by Mike, 20210127; edited by Mike, 20210128
 //			if (bIsExecutingDash) {
 		if ((bIsExecutingDashArray[KEY_S])) {				
-				//edited by Mike, 20210527
-	      myZPos+=stepZ;
+				//edited by Mike, 20210527; edited by Mike, 20210604
+//	      myZPos+=stepZ;
+            myZPos+=stepZ*2;
+            
 //	      myZPosAsPixel+=iStepZAsPixel;
 		}
 //added by Mike, 20210521		
@@ -5666,8 +5670,9 @@ void Pilot::move(int key)
 				}
 		}
 */			
-				//edited by Mike, 20210527
-		myXPos+=-stepX;
+				//edited by Mike, 20210604
+//		myXPos+=-stepX;
+        myXPos+=-stepX*2;
 //	      myXPosAsPixel+=-iStepXAsPixel;
 		
 			
@@ -5743,9 +5748,10 @@ void Pilot::move(int key)
 			}
 		}	
 */		
-				//edited by Mike, 20210527
-		myXPos+=stepX;
-	//      myXPosAsPixel+=iStepXAsPixel;
+        //edited by Mike, 20210604
+//		myXPos+=stepX;
+        myXPos+=stepX*2;
+        //      myXPosAsPixel+=iStepXAsPixel;
 		
 
 		if ((bIsExecutingDashArray[KEY_D])) {
@@ -5771,7 +5777,12 @@ void Pilot::move(int key)
 		  break;
 		//added by Mike, 20201201
 		default:
-		  currentMovingState=IDLE_MOVING_STATE;
+          //edited by Mike, 20210604
+		  //currentMovingState=IDLE_MOVING_STATE;
+           if (getIsPlayer1()) { //note: Player1 as Unit Chief
+             currentMovingState=IDLE_MOVING_STATE;
+           }
+           
 		  bIsFiringBeam=false; //added by Mike, 20201226
 		  //removed by Mike, 20210123
 		  //bIsExecutingPunch=false; //added by Mike, 20210111
