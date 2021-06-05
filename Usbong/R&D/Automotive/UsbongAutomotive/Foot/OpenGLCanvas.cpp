@@ -3208,15 +3208,19 @@ void OpenGLCanvas::update()
                 
         //edited by Mike, 20210605
 //        printf("myPilotPartner->getX: %f>>",myPilotPartner->getX());
+        myPilotPartner->setXPos(myPilot->getX()+100.0f);
+
         if (myPilotPartner->getX() < 0.0f) {
         	myPilotPartner->setXPos(0.0f);
         }
         else if (myPilotPartner->getX()+myPilotPartner->getWidthAsPixel() > 580.0f) { //max movement with set window width
         	myPilotPartner->setXPos(580.0f-myPilotPartner->getWidthAsPixel());
         }        
+/*	//removed by Mike, 20210605        
         else {
         	myPilotPartner->setXPos(myPilot->getX()+100.0f);
         }
+*/
 
         printf("myPilotPlayer2->getX: %f>>",myPilotPlayer2->getX());        
         myPilotPlayer2->setXPos(myPilot->getX()+320.0f+100.0f);        	
