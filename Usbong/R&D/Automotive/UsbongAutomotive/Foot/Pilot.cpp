@@ -554,7 +554,7 @@ Pilot::Pilot(float xPos, float yPos, float zPos, int windowWidth, int windowHeig
 	//added by Mike, 20210523
 	//edited by Mike, 202105028
 	myXPos=xPos;
-	myYPos=0.0f;
+    myYPos=0.0f;
     myZPos=zPos;
   	
 /*

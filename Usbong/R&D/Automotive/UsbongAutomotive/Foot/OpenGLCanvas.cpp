@@ -497,8 +497,8 @@ bool OpenGLCanvas::init(int myWindowWidthAsPixel, int myWindowHeightAsPixel)
 	myPilot->setOpenGLCanvas(this, fGridSquareWidth);
 	myPilot->setAsPlayer1(); //added by Mike, 20210601
 
-    //added by Mike, 20210530
-    myPilotPartner = new Pilot(100.0f,0.0f,200.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
+    //added by Mike, 20210530; edited by Mike, 20210605
+    myPilotPartner = new Pilot(100.0f,0.0f,220.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
     myPilotPartner->setOpenGLCanvas(this, fGridSquareWidth);
 	myPilotPartner->setAsPlayer1Partner(); //added by Mike, 20210601
     
@@ -518,8 +518,8 @@ bool OpenGLCanvas::init(int myWindowWidthAsPixel, int myWindowHeightAsPixel)
 	myPilotPlayer2->setOpenGLCanvas(this, fGridSquareWidth);
 	myPilotPlayer2->setAsPlayer2();
 
-    //added by Mike, 20210530
-    myPilotPlayer2Partner = new Pilot(360.0f,0.0f,200.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
+    //added by Mike, 20210530; edited by Mike, 20210605
+    myPilotPlayer2Partner = new Pilot(360.0f,0.0f,220.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
     myPilotPlayer2Partner->setOpenGLCanvas(this, fGridSquareWidth);
     myPilotPlayer2Partner->setAsPlayer2Partner(); //edited by Mike, 20210601
 
@@ -3181,14 +3181,11 @@ void OpenGLCanvas::update()
             myPilotPartner->setXPos(myPilotPartner->getX()-1.0f);
         }
 */
-        //added by Mike, 20210604
-        //TO-DO: -fix: set to idle state when current position is equal to end position
-        //TO-DO: -add: max end position
-        //TO-DO: -add: identify if executing dash Command
-        //TO-DO: -add: charge, i.e. tame
-        
         //added by Mike, 20210605
-        //TO-DO: -reverify: myPilotPartner computer instructions to set idle state
+        //TO-DO: -add: max end position
+        //TO-DO: -add: identify if executing Dash Command
+        //TO-DO: -add: charge, i.e. tame
+        //TO-DO: -add: identify if executing Kick Command, i.e. using "K" key
         
         myPilotPartner->setXPos(myPilot->getX()+100.0f);
 //        myPilotPartner->setZPos(myPilot->getZ()-100.0f);
@@ -3196,8 +3193,9 @@ void OpenGLCanvas::update()
         if (myPilotPartner->getZ() < myPilot->getZ()-100.0f) {
             myPilotPartner->setZPos(myPilotPartner->getZ()+1.0f);
         }
+        //edited by Mike, 20210605
         //        else {
-        if (myPilotPartner->getZ() > myPilot->getZ()-100.0f) {
+        else if (myPilotPartner->getZ() > myPilot->getZ()-100.0f) {
             myPilotPartner->setZPos(myPilotPartner->getZ()-1.0f);
         }
         else {
@@ -3209,6 +3207,7 @@ void OpenGLCanvas::update()
         //note: we use z-axis for vertex position; this shall be auto-converted to as pixel in y-axis
         //edited by Mike, 20210604
         //myPilotPlayer2->setZPos(myPilot->getZ());
+
         if (myPilotPlayer2->getZ() < myPilot->getZ()) {
             //edited by Mike, 20210605
             myPilotPlayer2->setZPos(myPilotPlayer2->getZ()+1.0f);

@@ -281,21 +281,27 @@ public:
 	//added by Mike, 20210424
     virtual void setXPos(float fX) {
 			myXPos=fX;
-        //added by Mike, 20210604
+        //added by Mike, 20210604; removed by Mike, 20210605
+/*
         setCurrentMovingState(WALKING_MOVING_STATE);
         currentState=MOVING_STATE;
+*/
     }
     virtual void setZPos(float fZ) {
 			myZPos=fZ;
-            //added by Mike, 20210604
-        setCurrentMovingState(WALKING_MOVING_STATE);
-        currentState=MOVING_STATE;
+        //added by Mike, 20210604; removed by Mike, 20210605
+/*
+         setCurrentMovingState(WALKING_MOVING_STATE);
+         currentState=MOVING_STATE;
+         */
 		}
     virtual void setYPos(float fY) {
 			myYPos=fY;
-        //added by Mike, 20210604
-        setCurrentMovingState(WALKING_MOVING_STATE);
-        currentState=MOVING_STATE;
+        //added by Mike, 20210604; removed by Mike, 20210605
+/*
+         setCurrentMovingState(WALKING_MOVING_STATE);
+         currentState=MOVING_STATE;
+         */
     }
 
 
