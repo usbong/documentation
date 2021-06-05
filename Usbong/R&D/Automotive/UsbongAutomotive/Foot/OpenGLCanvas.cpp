@@ -3194,6 +3194,7 @@ void OpenGLCanvas::update()
         
         //added by Mike, 20210605
         //note: horizontal scroll
+        //computer artificial intelligence to be assistive 
 //----------        
 //        printf("myPilot->getX: %f>>",myPilot->getX());
         if (myPilot->getX() < 0.0f) {
@@ -3209,7 +3210,14 @@ void OpenGLCanvas::update()
         //edited by Mike, 20210605
 //        printf("myPilotPartner->getX: %f>>",myPilotPartner->getX());
         myPilotPartner->setXPos(myPilot->getX()+100.0f);
-
+/*	//TO-DO: -update: this
+				if (myPilot->getX() < 0.0f) {				
+        	myPilotPartner->setXPos(myPilotPartner->getX()-1.0f);			
+				}
+				else {
+        	myPilotPartner->setXPos(myPilot->getX()+100.0f);			
+				}
+*/
         if (myPilotPartner->getX() < 0.0f) {
         	myPilotPartner->setXPos(0.0f);
         }
