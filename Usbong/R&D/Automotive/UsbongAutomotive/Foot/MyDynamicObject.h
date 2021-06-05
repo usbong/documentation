@@ -275,6 +275,20 @@ public:
        return myHeightAsPixel;
     }
 	
+		//added by Mike, 20210605
+		virtual int getStepX()
+    {
+       return stepX;
+    }
+    virtual int getStepY()
+    {
+       return stepY;
+    }
+    virtual int getStepZ()
+    {
+       return stepZ;
+    }
+    	
 	//added by Mike, 20201217
     virtual void draw();	
 

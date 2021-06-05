@@ -3185,11 +3185,64 @@ void OpenGLCanvas::update()
         //TO-DO: -add: max end position
         //TO-DO: -add: identify if executing Dash Command
         //TO-DO: -add: charge, i.e. tame
-        //TO-DO: -add: identify if executing Kick Command, i.e. using "K" key
+        //TO-DO: -add: identify if executing Kick Attack Command, i.e. using "K" key        
+        //TO-DO: -add: auto-face to ball position
+        //TO-DO: -fix: myPilotPartner goes out of the max window width
+        //TO-DO: -fix: myPilotPlayer2 does not move forward to the left most side
+        //TO-DO: -fix: myPilotPlayer2Partner does not move forward to the left most side
         
-        myPilotPartner->setXPos(myPilot->getX()+100.0f);
-//        myPilotPartner->setZPos(myPilot->getZ()-100.0f);
+        
+        //added by Mike, 20210605
+        //note: horizontal scroll
+//----------        
+//        printf("myPilot->getX: %f>>",myPilot->getX());
+        if (myPilot->getX() < 0.0f) {
+        	myPilot->setXPos(0.0f);
+        }
+//        else if (myPilot->getX()+myPilot->getStepX() > 600.0f) { //max movement with set window width
+//        else if (myPilot->getX()+myPilot->getWidthAsPixel()+myPilot->getStepX() > 600.0f) { //max movement with set window width
+        else if (myPilot->getX()+myPilot->getWidthAsPixel() > 580.0f) { //max movement with set 
+//        	myPilot->setXPos(600.0f-myPilot->getStepX());
+        	myPilot->setXPos(580.0f-myPilot->getWidthAsPixel());
+        }        
+                
+        //edited by Mike, 20210605
+//        printf("myPilotPartner->getX: %f>>",myPilotPartner->getX());
+        if (myPilotPartner->getX() < 0.0f) {
+        	myPilotPartner->setXPos(0.0f);
+        }
+        else if (myPilotPartner->getX()+myPilotPartner->getWidthAsPixel() > 580.0f) { //max movement with set window width
+        	myPilotPartner->setXPos(580.0f-myPilotPartner->getWidthAsPixel());
+        }        
+        else {
+        	myPilotPartner->setXPos(myPilot->getX()+100.0f);
+        }
 
+        printf("myPilotPlayer2->getX: %f>>",myPilotPlayer2->getX());        
+        myPilotPlayer2->setXPos(myPilot->getX()+320.0f+100.0f);        	
+        
+        if (myPilotPlayer2->getX() < 0.0f) {
+        	myPilotPlayer2->setXPos(0.0f);
+        }
+        else if (myPilotPlayer2->getX()+myPilotPlayer2->getWidthAsPixel() > 580.0f) { //max movement with set window width
+        	myPilotPlayer2->setXPos(580.0f-myPilotPlayer2->getWidthAsPixel());
+        }        
+/*        else {
+        	myPilotPlayer2->setXPos(myPilot->getX()+320.0f+100.0f);        	
+        }
+*/
+        if (myPilotPlayer2Partner->getX() < 0.0f) {
+        	myPilotPlayer2Partner->setXPos(0.0f);
+        }
+        else if (myPilotPlayer2Partner->getX() > 580.0f) { //max movement with set window width
+        	myPilotPlayer2Partner->setXPos(580.0f);
+        }        
+        else {
+        	myPilotPlayer2Partner->setXPos(myPilotPlayer2->getX()-100.0f); //+100.0f
+        }        
+//----------
+        
+//        myPilotPartner->setZPos(myPilot->getZ()-100.0f);
         if (myPilotPartner->getZ() < myPilot->getZ()-100.0f) {
             myPilotPartner->setZPos(myPilotPartner->getZ()+1.0f);
         }
@@ -3207,7 +3260,6 @@ void OpenGLCanvas::update()
         //note: we use z-axis for vertex position; this shall be auto-converted to as pixel in y-axis
         //edited by Mike, 20210604
         //myPilotPlayer2->setZPos(myPilot->getZ());
-
         if (myPilotPlayer2->getZ() < myPilot->getZ()) {
             //edited by Mike, 20210605
             myPilotPlayer2->setZPos(myPilotPlayer2->getZ()+1.0f);
@@ -3224,7 +3276,8 @@ void OpenGLCanvas::update()
         }
         //edited by Mike, 20210603
         //        myPilotPlayer2->setXPos(myPilot->getX()+320.0f);
-        myPilotPlayer2->setXPos(myPilot->getX()+320.0f+100.0f);
+        //removed by Mike, 20210605
+//        myPilotPlayer2->setXPos(myPilot->getX()+320.0f+100.0f);
         
         //added by Mike, 20210530; edited by Mike, 20210604
 //        myPilotPlayer2Partner->setZPos(myPilotPlayer2->getZ()-100.0f);
@@ -3240,10 +3293,10 @@ void OpenGLCanvas::update()
         }
         
         //        myPilotPlayer2Partner->setXPos(myPilotPlayer2->getX());
-        myPilotPlayer2Partner->setXPos(myPilotPlayer2->getX()-100.0f);
+        //removed by Mike, 20210605        
+//        myPilotPlayer2Partner->setXPos(myPilotPlayer2->getX()-100.0f);
         
-        
-        
+                
         //added by Mike, 20210502
         myPilotPlayer2->update(1); //dt
         myPilotPlayer2Partner->update(1); //added by Mike, 20210530
