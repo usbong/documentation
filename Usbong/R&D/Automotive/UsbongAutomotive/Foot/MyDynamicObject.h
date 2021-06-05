@@ -3,9 +3,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *     http://www.apache.org/licenses/LICENSE-2.0
- *     
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,12 +13,12 @@
  * limitations under the License.
  *
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
- * @author: SYSON, MICHAEL B. 
+ * @author: SYSON, MICHAEL B.
  * @date created: 20200930
- * @date updated: 20210604
+ * @date updated: 20210606
  *
  * Acknowledgments:
- * 1) "Bulalakaw Wars" Team (2007): 
+ * 1) "Bulalakaw Wars" Team (2007):
  * Syson, M., Camacho, R., Gonzales, D., Del Rosario, R., Vidal, E., et al.
  *
  */
@@ -32,10 +32,10 @@
 //#include "OpenGLCanvas.h"	//added by Mike, 20210522
 
 /*
-//edited by Mike, 20201226
-//#include <Math.h> //Windows Machine
-#include <math.h> //Linux Machine
-*/
+ //edited by Mike, 20201226
+ //#include <Math.h> //Windows Machine
+ #include <math.h> //Linux Machine
+ */
 //TO-DO: -reverify: this
 #include <math.h> //Windows and Linux Machines
 
@@ -44,13 +44,13 @@
 //answer by: Jeegar Patel, 20151208T0940
 //auto-identify if Windows Machine
 #ifdef _WIN32
-	#include <windows.h> //Windows Machine
+#include <windows.h> //Windows Machine
 #endif
 /*
-#ifdef linux
-    printf("In Linux");
-#endif
-*/
+ #ifdef linux
+ printf("In Linux");
+ #endif
+ */
 
 #include <stdlib.h>
 //removed by Mike, 20201226
@@ -69,7 +69,7 @@ const char FORWARD_STATE  = 1;
 const char LEFT  = 0;
 const char RIGHT = 1;
 
-	//removed by Mike, 20201201
+//removed by Mike, 20201201
 //const int STANDING_STATE = 0;
 //const int WALKING_STATE = 1;
 
@@ -85,7 +85,7 @@ const int DYING_STATE = 3;
 
 //added by Mike, 20210517
 const int HIDDEN_STATE = 4,
-          ACTIVE_STATE = 5;          
+ACTIVE_STATE = 5;
 
 //added by Mike, 20201130
 #define FACING_UP 0
@@ -103,24 +103,24 @@ const int HIDDEN_STATE = 4,
 class UsbongUtils;
 
 //added by Mike, 20210522
-//note: add here the class, i.e. classification, filename; 
+//note: add here the class, i.e. classification, filename;
 //no need to use the "include" Command for the header file
 class OpenGLCanvas;
 
 
 class MyDynamicObject
 {
-private:        
-	//TO-DO: -add: collisionBoxes
+private:
+    //TO-DO: -add: collisionBoxes
     float **collisionSpheres;
     int csSize; //to allow multiple spheres
     int maxSize;
     int i;
     bool isCollidable;
-	
-	//removed by Mike, 20210523
-//	UsbongUtils *myUsbongUtils; //added by Mike, 202105017
-
+    
+    //removed by Mike, 20210523
+    //	UsbongUtils *myUsbongUtils; //added by Mike, 202105017
+    
 public:
     float myXPos;
     float myYPos;
@@ -128,278 +128,278 @@ public:
     
     float myWidth;
     float myHeight;
-
-	//added by Mike, 20210517
-		//TO-DO: -update: this to identify as integer
+    
+    //added by Mike, 20210517
+    //TO-DO: -update: this to identify as integer
     int myXPosAsPixel;
     int myYPosAsPixel;
-    int myZPosAsPixel;    
+    int myZPosAsPixel;
     int myWidthAsPixel;
     int myHeightAsPixel;
     
     //added by Mike, 20210527
     //reminder: set in constructor
     int	myWidthAsPixelMax;
-		int myHeightAsPixelMax;
+    int myHeightAsPixelMax;
     
     //added by Mike, 20210527
-		int iStepXAsPixel;
-		int iStepYAsPixel;
-		int iStepZAsPixel;
-		
-		//added by Mike, 20210528
+    int iStepXAsPixel;
+    int iStepYAsPixel;
+    int iStepZAsPixel;
+    
+    //added by Mike, 20210528
     float stepX;
     float stepY;
     float stepZ;
 				
-		//added by Mike, 20210527		
-		bool bIsMovingDown;
-		
-		//added by Mike, 20210528
-		int iDirectionXAxis;
-		int iDirectionYAxis;
-
-		//added by Mike, 20210528
+    //added by Mike, 20210527
+    bool bIsMovingDown;
+    
+    //added by Mike, 20210528
+    int iDirectionXAxis;
+    int iDirectionYAxis;
+    
+    //added by Mike, 20210528
     float thrust;
-    float thrustMax;    
+    float thrustMax;
     float xAccel;
     float yAccel;
     float xVel;
-    float yVel;    
+    float yVel;
     float maxXVel;
-    float maxYVel;    
+    float maxYVel;
 				
-	
-	//added by Mike, 20201115
+    
+    //added by Mike, 20201115
     int myWindowWidth;
     int myWindowHeight;
     
     //added by Mike, 20210522
     float fGridSquareWidth;
     float fGridSquareHeight;
-	OpenGLCanvas *myOpenGLCanvas;
+    OpenGLCanvas *myOpenGLCanvas;
     
-	//added by Mike, 202105023
+    //added by Mike, 202105023
     UsbongUtils *myUsbongUtils;
     
     //added by Mike, 20210517
-	int currentState;
-	
-	//added by Mike, 20210524
-	int currentMovingState;
-	
-	//added by Mike, 20210527
-  int currentFacingState;    	
-	
-
-/*	//removed by Mike, 20201226
-	//added by Mike, 20201226
-   	int myKeysDown[4]; //TO-DO: -update: this to include diagonal directional movement
-*/
-
-	//edited by Mike, 20201113
-//    MyDynamicObject(float xPos = 0.0f, float yPos = 0.0f, float zPos= 300.0f ): myXPos(xPos), myYPos(yPos), myZPos(zPos) 
-	//edited by Mike, 20201115
-/*    MyDynamicObject(float xPos = 0.0f, float yPos = 0.0f, float zPos= 0.0f ): myXPos(xPos), myYPos(yPos), myZPos(zPos) 
-    //{myXPos=0.0f; myYPos=0.0f; myZPos=300.0f;}
-    {}
-*/
-	//TO-DO: -update: to use grid as window Width and window Height instead of windowWidth/100 and windowHeight/100
-	//Note: 
-	//fGridSquareWidth = myWindowWidth/iColumnCountMax/100.0;
-	//fGridSquareHeight = myWindowHeight/iRowCountMax/100.0;
+    int currentState;
+    
+    //added by Mike, 20210524
+    int currentMovingState;
+    
+    //added by Mike, 20210527
+    int currentFacingState;
+    
+    
+    /*	//removed by Mike, 20201226
+     //added by Mike, 20201226
+     int myKeysDown[4]; //TO-DO: -update: this to include diagonal directional movement
+     */
+    
+    //edited by Mike, 20201113
+    //    MyDynamicObject(float xPos = 0.0f, float yPos = 0.0f, float zPos= 300.0f ): myXPos(xPos), myYPos(yPos), myZPos(zPos)
+    //edited by Mike, 20201115
+    /*    MyDynamicObject(float xPos = 0.0f, float yPos = 0.0f, float zPos= 0.0f ): myXPos(xPos), myYPos(yPos), myZPos(zPos)
+     //{myXPos=0.0f; myYPos=0.0f; myZPos=300.0f;}
+     {}
+     */
+    //TO-DO: -update: to use grid as window Width and window Height instead of windowWidth/100 and windowHeight/100
+    //Note:
+    //fGridSquareWidth = myWindowWidth/iColumnCountMax/100.0;
+    //fGridSquareHeight = myWindowHeight/iRowCountMax/100.0;
     MyDynamicObject(float xPos=0.0f, float yPos=0.0f, float zPos=0.0f, int windowWidth=0, int windowHeight=0 ): myXPos(xPos), myYPos(yPos), myZPos(zPos), myWindowWidth(windowWidth/100), myWindowHeight(windowHeight/100)
-	{
-		currentState=ACTIVE_STATE;
-	}	
-
-	//added by Mike, 20210517
-	~MyDynamicObject();
-
-	//added by Mike, 20210517
-	bool isActive(){
-         if (currentState==ACTIVE_STATE)
-           return true;
-         else return false;
+    {
+        currentState=ACTIVE_STATE;
     }
-
-	//added by Mike, 20210517
-	void setUsbongUtils(UsbongUtils* c);
-
+    
+    //added by Mike, 20210517
+    ~MyDynamicObject();
+    
+    //added by Mike, 20210517
+    bool isActive(){
+        if (currentState==ACTIVE_STATE)
+            return true;
+        else return false;
+    }
+    
+    //added by Mike, 20210517
+    void setUsbongUtils(UsbongUtils* c);
+    
     virtual void hitBy(MyDynamicObject* mdo);
-        
+    
     //collision stuff
     bool checkIsCollidable();
     void setCollidable(bool c);
-
+    
     void initializeCollisionSpheres(int ms);
     
     void addSphere(float dx, float dy, float dz, float r);
-	
-	float** getCollisionSpheres();
-
+    
+    float** getCollisionSpheres();
+    
     int getNumSpheres();
     
     virtual float getX()=0;
     virtual float getY()=0;
     virtual float getZ()=0;
-	virtual float getWidth()=0;
+    virtual float getWidth()=0;
     virtual float getHeight()=0;
-
-	//added by Mike, 20210517
-/*	
-    virtual int getXAsPixel()=0;
-    virtual int getYAsPixel()=0;
-    virtual int getZAsPixel()=0;
-	virtual int getWidthAsPixel()=0;
-    virtual int getHeightAsPixel()=0;
-*/
-	virtual int getXAsPixel()
+    
+    //added by Mike, 20210517
+    /*
+     virtual int getXAsPixel()=0;
+     virtual int getYAsPixel()=0;
+     virtual int getZAsPixel()=0;
+     virtual int getWidthAsPixel()=0;
+     virtual int getHeightAsPixel()=0;
+     */
+    virtual int getXAsPixel()
     {
-       return myXPosAsPixel;
+        return myXPosAsPixel;
     }
     virtual int getYAsPixel()
     {
-       return myYPosAsPixel;
+        return myYPosAsPixel;
     }
     virtual int getZAsPixel()
     {
-       return myZPosAsPixel;
+        return myZPosAsPixel;
     }
     virtual int getWidthAsPixel()
     {
-       return myWidthAsPixel;
+        return myWidthAsPixel;
     }
     virtual int getHeightAsPixel()
     {
-       return myHeightAsPixel;
+        return myHeightAsPixel;
     }
-	
-		//added by Mike, 20210605
-		virtual int getStepX()
+    
+    //added by Mike, 20210605
+    virtual int getStepX()
     {
-       return stepX;
+        return stepX;
     }
     virtual int getStepY()
     {
-       return stepY;
+        return stepY;
     }
     virtual int getStepZ()
     {
-       return stepZ;
+        return stepZ;
     }
-    	
-	//added by Mike, 20201217
-    virtual void draw();	
-
-	//added by Mike, 20210424
+    
+    //added by Mike, 20201217
+    virtual void draw();
+    
+    //added by Mike, 20210424
     virtual void setXPos(float fX) {
-			myXPos=fX;
+        myXPos=fX;
         //added by Mike, 20210604; removed by Mike, 20210605
-/*
-        setCurrentMovingState(WALKING_MOVING_STATE);
-        currentState=MOVING_STATE;
-*/
+        /*
+         setCurrentMovingState(WALKING_MOVING_STATE);
+         currentState=MOVING_STATE;
+         */
     }
     virtual void setZPos(float fZ) {
-			myZPos=fZ;
+        myZPos=fZ;
         //added by Mike, 20210604; removed by Mike, 20210605
-/*
-         setCurrentMovingState(WALKING_MOVING_STATE);
-         currentState=MOVING_STATE;
-         */
-		}
-    virtual void setYPos(float fY) {
-			myYPos=fY;
-        //added by Mike, 20210604; removed by Mike, 20210605
-/*
+        /*
          setCurrentMovingState(WALKING_MOVING_STATE);
          currentState=MOVING_STATE;
          */
     }
-
-
-	//added by Mike, 20210424
+    virtual void setYPos(float fY) {
+        myYPos=fY;
+        //added by Mike, 20210604; removed by Mike, 20210605
+        /*
+         setCurrentMovingState(WALKING_MOVING_STATE);
+         currentState=MOVING_STATE;
+         */
+    }
+    
+    
+    //added by Mike, 20210424
     virtual void setXPosAsPixel(int iX) {
-		myXPosAsPixel=iX;
-	}
+        myXPosAsPixel=iX;
+    }
     virtual void setZPosAsPixel(int iZ) {
-		myZPosAsPixel=iZ;
-	}
+        myZPosAsPixel=iZ;
+    }
     virtual void setYPosAsPixel(int iY) {
-		myYPosAsPixel=iY;
-	}
-
+        myYPosAsPixel=iY;
+    }
+    
     float getDistance(float x1, float y1, float z1, float x2, float y2, float z2);
     
     bool checkCollision(MyDynamicObject* mdo1, MyDynamicObject* mdo2);
     void collideWith(MyDynamicObject* mdo);
-	
-	//added by Mike, 20210517
-	bool collideWithPressedCoordPos(int pressedCoordPosX, int pressedCoordPosY);
-
-	//edited by Mike, 20210219
+    
+    //added by Mike, 20210517
+    bool collideWithPressedCoordPos(int pressedCoordPosX, int pressedCoordPosY);
+    
+    //edited by Mike, 20210219
     //bool isIntersectingRect(MyDynamicObject* mdo1, MyDynamicObject* mdo2);
     virtual bool isIntersectingRect(MyDynamicObject* mdo1, MyDynamicObject* mdo2);
-		
-		//added by Mike, 20210527
+    
+    //added by Mike, 20210527
     virtual bool isIntersectingRectAsPixel(MyDynamicObject* mdo1, MyDynamicObject* mdo2);
-		
-		//added by Mike, 20210527
-		virtual void updateDirection() {	
-/*	//removed by Mike, 20210527; TO-DO: -add: this		
-			if (currentFacingState==FACING_RIGHT) {
-				currentFacingState=FACING_LEFT;
-			}
-			else {
-				currentFacingState=FACING_RIGHT;
-			}
-*/
-			
-			//edited by Mike, 20210528		
-//			iStepXAsPixel=iStepXAsPixel*-1;		
-			iDirectionXAxis=iDirectionXAxis*-1;
-			iDirectionYAxis=iDirectionYAxis*-1;
-				
-			bIsMovingDown=false;
-
-			
-//			printf(">>myXPos: %i",myXPosAsPixel);
-		}
-
-	//added by Mike, 20210528
-	virtual void setThrust(float fInputThrust) {	
-		thrust=fInputThrust;
-	}
-
-	//added by Mike, 20201226
-/*	//removed by Mike, 20201226
-	void keyDown(int keyCode) {
-		myKeysDown[keyCode] = TRUE;
-	}
-	
-    void keyUp(int keyCode) {
-		myKeysDown[keyCode] = FALSE;	
-	}
-*/
-
-	//added by Mike, 20210522
-	virtual void setOpenGLCanvas(OpenGLCanvas* c, float fSideLengthInput) {
-		myOpenGLCanvas = c;
-		//TO-DO: -update: this
-		fGridSquareWidth = fSideLengthInput;
-		fGridSquareHeight = fSideLengthInput;		
-	};
-	
-	//added by Mike, 20210524
-	virtual void setCurrentMovingState(int iMovingState) {
-		currentMovingState = iMovingState;
-	}
-
-	//added by Mike, 20210524
-	virtual void setToWalkingMovingState() {
-		currentMovingState = WALKING_MOVING_STATE;
-	}
+    
+    //added by Mike, 20210527
+    virtual void updateDirection() {
+        /*	//removed by Mike, 20210527; TO-DO: -add: this
+         if (currentFacingState==FACING_RIGHT) {
+         currentFacingState=FACING_LEFT;
+         }
+         else {
+         currentFacingState=FACING_RIGHT;
+         }
+         */
+        
+        //edited by Mike, 20210528
+        //			iStepXAsPixel=iStepXAsPixel*-1;
+        iDirectionXAxis=iDirectionXAxis*-1;
+        iDirectionYAxis=iDirectionYAxis*-1;
+        
+        bIsMovingDown=false;
+        
+        
+        //			printf(">>myXPos: %i",myXPosAsPixel);
+    }
+    
+    //added by Mike, 20210528
+    virtual void setThrust(float fInputThrust) {
+        thrust=fInputThrust;
+    }
+    
+    //added by Mike, 20201226
+    /*	//removed by Mike, 20201226
+     void keyDown(int keyCode) {
+     myKeysDown[keyCode] = TRUE;
+     }
+     
+     void keyUp(int keyCode) {
+     myKeysDown[keyCode] = FALSE;
+     }
+     */
+    
+    //added by Mike, 20210522
+    virtual void setOpenGLCanvas(OpenGLCanvas* c, float fSideLengthInput) {
+        myOpenGLCanvas = c;
+        //TO-DO: -update: this
+        fGridSquareWidth = fSideLengthInput;
+        fGridSquareHeight = fSideLengthInput;		
+    };
+    
+    //added by Mike, 20210524
+    virtual void setCurrentMovingState(int iMovingState) {
+        currentMovingState = iMovingState;
+    }
+    
+    //added by Mike, 20210524
+    virtual void setToWalkingMovingState() {
+        currentMovingState = WALKING_MOVING_STATE;
+    }
     
     //added by Mike, 20201016
     virtual void destroy();
