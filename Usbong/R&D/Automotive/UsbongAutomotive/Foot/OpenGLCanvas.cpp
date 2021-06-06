@@ -493,12 +493,17 @@ bool OpenGLCanvas::init(int myWindowWidthAsPixel, int myWindowHeightAsPixel)
     //	myPilot = new Pilot(0.0f,0.0f,0.0f,myWindowWidth,myWindowHeight);
     //edited by Mike, 20210528
     //	myPilot = new Pilot(0.0f,0.0f,0.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
-    myPilot = new Pilot(0.0f,0.0f,320.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
+    //edited by Mike, 20210606
+//    myPilot = new Pilot(0.0f,0.0f,320.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
+//    myPilot = new Pilot(0.0f,0.0f,220.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
+        myPilot = new Pilot(0.0f,0.0f,270.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
     myPilot->setOpenGLCanvas(this, fGridSquareWidth);
     myPilot->setAsPlayer1(); //added by Mike, 20210601
     
     //added by Mike, 20210530; edited by Mike, 20210605
-    myPilotPartner = new Pilot(100.0f,0.0f,220.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
+    //edited by Mike, 20210606
+//    myPilotPartner = new Pilot(100.0f,0.0f,220.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
+    myPilotPartner = new Pilot(100.0f,0.0f,170.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
     myPilotPartner->setOpenGLCanvas(this, fGridSquareWidth);
     myPilotPartner->setAsPlayer1Partner(); //added by Mike, 20210601
     
@@ -511,15 +516,19 @@ bool OpenGLCanvas::init(int myWindowWidthAsPixel, int myWindowHeightAsPixel)
     //	myPilotPlayer2 = new Pilot(0.0f,0.0f,0.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
     //edited by Mike, 20210603
     //    myPilotPlayer2 = new Pilot(360.0f,0.0f,320.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
-    myPilotPlayer2 = new Pilot(320.0f+100.0f,0.0f,320.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
-    
+    //edited by Mike, 20210606
+//    myPilotPlayer2 = new Pilot(320.0f+100.0f,0.0f,320.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
+    myPilotPlayer2 = new Pilot(320.0f+100.0f,0.0f,270.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
     //edited by Mike, 20210522
     //	myPilotPlayer2->setOpenGLCanvas(this);
     myPilotPlayer2->setOpenGLCanvas(this, fGridSquareWidth);
     myPilotPlayer2->setAsPlayer2();
     
     //added by Mike, 20210530; edited by Mike, 20210605
-    myPilotPlayer2Partner = new Pilot(360.0f,0.0f,220.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
+    //edited by Mike, 20210606
+//    myPilotPlayer2Partner = new Pilot(360.0f,0.0f,220.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
+    myPilotPlayer2Partner = new Pilot(360.0f,0.0f,170.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
+
     myPilotPlayer2Partner->setOpenGLCanvas(this, fGridSquareWidth);
     myPilotPlayer2Partner->setAsPlayer2Partner(); //edited by Mike, 20210601
     
@@ -3068,6 +3077,9 @@ void OpenGLCanvas::update()
          }
          */
         
+        //added by Mike, 20210606
+        //TO-DO: -add: goal defender, e.g. animal as nature?
+        
         //added by Mike, 20210206
         myPilot->update(1); //dt
         myPilotPartner->update(1); //added by Mike, 20210530
@@ -3109,12 +3121,15 @@ void OpenGLCanvas::update()
         //TO-DO: -add: identify if executing Kick Attack Command, i.e. using "K" key
         //TO-DO: -reverify: add flipping sequence when auto-facing to ball position
         //TO-DO: -update: start ball position during reset
+        
+        //TO-DO: -add: bounce ball up vertically if hit bottom part that is not goal tile
 
         //TO-DO: -put: set of instructions in a function method
         
         //added by Mike, 20210606
         //TO-DO: -update: this
         float fMaxWindowWidthForPilot=580.0f;
+        float fMaxWindowHeightForPilot=560.0f; //added by Mike, 20210606
         
         //added by Mike, 20210605
         //note: horizontal scroll
@@ -3134,6 +3149,17 @@ void OpenGLCanvas::update()
             //myPilot->setXPos(fMaxWindowWidthForPilot-myPilot->getWidthAsPixel());
             myPilot->setXPos(fMaxWindowWidthForPilot/2-myPilot->getWidthAsPixel());
         }
+        
+        //added by Mike, 20210606
+        if (myPilot->getZ()+myPilot->getHeightAsPixel() > fMaxWindowHeightForPilot) { //max movement with set
+            myPilot->setZPos(fMaxWindowHeightForPilot-myPilot->getHeightAsPixel());
+        }
+
+        //added by Mike, 20210606
+        if (myPilot->getZ() < fMaxWindowHeightForPilot/2-myPilot->getHeightAsPixel()) { //max movement with set
+            myPilot->setZPos(fMaxWindowHeightForPilot/2-myPilot->getHeightAsPixel());
+        }
+        
         
         //edited by Mike, 20210605
         //        printf("myPilotPartner->getX: %f>>",myPilotPartner->getX());
@@ -3306,6 +3332,8 @@ void OpenGLCanvas::update()
         //added by Mike, 20210606; edited by Mike, 20210606
 //        myPilotPlayer2->setCurrentFacingState(FACING_LEFT);
         //auto-face to ball position
+        //edited by Mike, 20210606
+/*
         if (myPilot->getX() < myBall->getX()) {
             myPilot->setCurrentFacingState(FACING_RIGHT);
         }
@@ -3332,6 +3360,34 @@ void OpenGLCanvas::update()
         }
         else {
             myPilotPlayer2Partner->setCurrentFacingState(FACING_LEFT);
+        }
+*/
+        if (myPilot->getX()+myPilot->getWidthAsPixel() >= myBall->getX()) {
+            myPilot->setCurrentFacingState(FACING_LEFT);
+        }
+        else {
+            myPilot->setCurrentFacingState(FACING_RIGHT);
+        }
+        
+        if (myPilotPartner->getX()+myPilot->getWidthAsPixel() >= myBall->getX()) {
+            myPilotPartner->setCurrentFacingState(FACING_LEFT);
+        }
+        else {
+            myPilotPartner->setCurrentFacingState(FACING_RIGHT);
+        }
+        
+        if (myPilotPlayer2->getX()+myPilot->getWidthAsPixel() >= myBall->getX()) {
+            myPilotPlayer2->setCurrentFacingState(FACING_LEFT);
+        }
+        else {
+            myPilotPlayer2->setCurrentFacingState(FACING_RIGHT);
+        }
+        
+        if (myPilotPlayer2Partner->getX()+myPilot->getWidthAsPixel() >= myBall->getX()) {
+            myPilotPlayer2Partner->setCurrentFacingState(FACING_LEFT);
+        }
+        else {
+            myPilotPlayer2Partner->setCurrentFacingState(FACING_RIGHT);
         }
         
         //added by Mike, 20210502
@@ -3379,8 +3435,12 @@ void OpenGLCanvas::update()
         //edited by Mike, 20210602
         //        if (myBall->getY()+myBall->getHeight() > 640.0f) {
         //        if (myBall->getYAsPixel()+myBall->getHeightAsPixel() > 320.0f) {
-        if (myBall->getYAsPixel()+myBall->getHeightAsPixel() > 512.0f) {
+        //edited by Mike, 20210606
+//        if (myBall->getYAsPixel()+myBall->getHeightAsPixel() > 512.0f) {
+        if (myBall->getYAsPixel()+myBall->getHeightAsPixel() > 560.0f) {
             printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>END!\n");
+            //added by Mike, 20210606
+            //TO-DO: -update: this instructions in this function after successful goal
             myBall->setEnd();
         }
         

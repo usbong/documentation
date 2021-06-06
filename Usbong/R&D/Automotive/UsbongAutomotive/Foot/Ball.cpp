@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20210524
- * @date updated: 20210603
+ * @date updated: 20210606
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -2133,7 +2133,11 @@ void Ball::reset()
     
     //added by Mike, 20210528
     bIsMovingDown=false;
+    
+    //edited by Mike, 20210606
     iDirectionXAxis=1; //init go to right side from left side
+//    iDirectionXAxis=-1; //init go to right side from left side
+
     iDirectionYAxis=-1; //init go up
     thrustMax=10.0f; //5.0f;//4.0f;
     thrust=1.0f;
@@ -2144,8 +2148,9 @@ void Ball::reset()
 		iPlayer2BallHitCount=0;
 		iPlayer2PartnerBallHitCount=0;    
 		
-		//added by Mike, 20210602
-		bIsSetForPartnerSpikeAttack=false;
+		//added by Mike, 20210602; edited by Mike, 20210606
+//    bIsSetForPartnerSpikeAttack=true;//false;
+    bIsSetForPartnerSpikeAttack=false;
     
     //added by Mike, 20210603
     bIsSpikeAttack=false;
