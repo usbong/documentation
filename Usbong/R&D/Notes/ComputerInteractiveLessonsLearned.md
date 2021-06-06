@@ -511,7 +511,20 @@ Tunay na tapang ang nakatayong harapin ang nakatatakot na bagay, 'di ba?<br/>
 --> <b>Reference:</b><br/> 
 --> 三並達也 (Ed). (1997). "BIO HAZARD: The True Story Behind BIO HAZARD". OSAKA: CAPCOM
 
---> TO-DO: -update: this
+### Recommended Reading:
+--> Winston Groom's "Forrest Gump"<br/>
+--> Life Story: Look up at the stars at night, with the whole sky laid out there, sometimes. Remember it all.<br/>
+--> "...An then, all of a sudden, I'm forty, fifty, sixty years ole, you know?"<br/>
+--> The villiage idiot's role in history and literature:<br/>
+--> "...idiots was not jus useless people, but was put here for a purpose... an the purpose is to make people laugh. At least that is somethin."<br/>
+--> 人を楽しませる？<br/>
+--> <b>Paalala:</b> Mag-ingat na gawing haligi ng buhay ang isang sistema na sa huli pala mali. Isa ito sa mga nagdudulot ng pagkasawi ng ilang tao.<br/>
+<br/>
+<b>Mga Halimbawa:</b><br/>
+1) Hindi niya matanggap na kapag patay na ang isang tao, patay na talaga siya. Hindi pupunta ang yumao sa isang lugar, e.g. langit, kung saan makapag-uusap pa kayo, atbp.<br/>
+
+2) Hindi niya matanggap na hindi mapupuksa ang mga Teroristang Komunista kung hindi ka gagawa ng aksyon, bago ka patayin sa debate, e.g. aapakan mo ba ang ipis o hindi?<br/>
+<br/>
 
 ### Recommended Actions: 
 --> verify: [ARCADE LAB](https://www.youtube.com/channel/UCy53rIJfxqI2S3qohAdfvvA): [ザ・シンプソンズ（KONAMI / 1991）](https://www.youtube.com/watch?v=_FfLmrNaudI&list=PLEB4zro_ieO0QLObEFmwpxdG4-MKA7MzI&index=2); ARCADE MACHINE<br/>
