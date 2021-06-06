@@ -3104,17 +3104,17 @@ void OpenGLCanvas::update()
          }
          */
         //added by Mike, 20210605; edited by Mike, 20210606
-        //TO-DO: -add: max end position
         //TO-DO: -add: identify if executing Dash Command
         //TO-DO: -add: charge, i.e. tame
         //TO-DO: -add: identify if executing Kick Attack Command, i.e. using "K" key
-        //TO-DO: -add: auto-face to ball position
-        //TO-DO: -fix: myPilotPartner goes out of the max window width
-        //TO-DO: -fix: myPilotPlayer2Partner does not move forward to the left most side
-        //note: myPilot and myPilotPlayer2 distance becomes shorter when myPilotPlayer2 moves to the left most side; and both move to the right side
-        //TO-DO: -update: myPilot and myPilotPlayer2 distance does NOT become shorter when myPilot moves to the right most side; and both move to the left side
+        //TO-DO: -reverify: add flipping sequence when auto-facing to ball position
+        //TO-DO: -update: start ball position during reset
 
         //TO-DO: -put: set of instructions in a function method
+        
+        //added by Mike, 20210606
+        //TO-DO: -update: this
+        float fMaxWindowWidthForPilot=580.0f;
         
         //added by Mike, 20210605
         //note: horizontal scroll
@@ -3126,9 +3126,13 @@ void OpenGLCanvas::update()
         }
         //        else if (myPilot->getX()+myPilot->getStepX() > 600.0f) { //max movement with set window width
         //        else if (myPilot->getX()+myPilot->getWidthAsPixel()+myPilot->getStepX() > 600.0f) { //max movement with set window width
-        else if (myPilot->getX()+myPilot->getWidthAsPixel() > 580.0f) { //max movement with set
+        //edited by Mike, 20210606
+//        else if (myPilot->getX()+myPilot->getWidthAsPixel() > fMaxWindowWidthForPilot) { //max movement with set
+        else if (myPilot->getX()+myPilot->getWidthAsPixel() > fMaxWindowWidthForPilot/2) { //max movement with set
             //        	myPilot->setXPos(600.0f-myPilot->getStepX());
-            myPilot->setXPos(580.0f-myPilot->getWidthAsPixel());
+            //edited by Mike, 20210606
+            //myPilot->setXPos(fMaxWindowWidthForPilot-myPilot->getWidthAsPixel());
+            myPilot->setXPos(fMaxWindowWidthForPilot/2-myPilot->getWidthAsPixel());
         }
         
         //edited by Mike, 20210605
@@ -3147,9 +3151,11 @@ void OpenGLCanvas::update()
         if (myPilotPartner->getX() < 0.0f) {
             myPilotPartner->setXPos(0.0f);
         }
-        else if (myPilotPartner->getX()+myPilotPartner->getWidthAsPixel() > 580.0f) { //max movement with set window width
-            myPilotPartner->setXPos(580.0f-myPilotPartner->getWidthAsPixel());
+        /* //removed by Mike, 20210606
+        else if (myPilotPartner->getX()+myPilotPartner->getWidthAsPixel() > fMaxWindowWidthForPilot) { //max movement with set window width
+            myPilotPartner->setXPos(fMaxWindowWidthForPilot-myPilotPartner->getWidthAsPixel());
         }
+*/
         	//added by Mike, 20210606
          else {
         	myPilotPartner->setXPos(myPilot->getX()+100.0f);
@@ -3163,37 +3169,72 @@ void OpenGLCanvas::update()
 //        if (myPilot->getX() <= 0.0f) {
             myPilotPlayer2->setXPos(0.0f);
         }
-        else if (myPilotPlayer2->getX()+myPilotPlayer2->getWidthAsPixel() > 580.0f) { //max movement with set window width
+        else if (myPilotPlayer2->getX()+myPilotPlayer2->getWidthAsPixel() > fMaxWindowWidthForPilot) { //max movement with set window width
 //        else if (myPilot->getX()+myPilot->getWidthAsPixel() >= 580.0f) {
-            myPilotPlayer2->setXPos(580.0f-myPilotPlayer2->getWidthAsPixel());
+            //TO-DO: -reverify: cause of delay when moving to the left by pressing KEY_A
+            myPilotPlayer2->setXPos(fMaxWindowWidthForPilot-myPilotPlayer2->getWidthAsPixel());
         }
         else {
             //edited by Mike, 20210606
 //            myPilotPlayer2->setXPos(myPilot->getX()+320.0f+100.0f);
             if (myPilot->getX() <= 0.0f) {
-                if (myKeysDown[KEY_A]) {
-                    //TO-DO: -reverify: getStepX() output incorrect
-//                    myPilotPlayer2->setXPos(myPilotPlayer2->getX() - myPilotPlayer2->getStepX());
-//                    myPilotPlayer2->setXPos(myPilotPlayer2->getX() - 2.0f);
-                    myPilotPlayer2->move(KEY_A);
+                //edited by Mike, 20210606
+                if (myPilotPlayer2->getX() < myPilot->getX()+320.0f) {//+100.0f) {
+                }
+                else {
+                    if (myKeysDown[KEY_A]) {
+                        myPilotPlayer2->move(KEY_A);
+                    }
                 }
             }
+            //added by Mike, 20210606
+            //note: 320.0f+100.0f distance between myPilot and myPilotPlayer2
+////            else if (myPilot->getX() < myPilotPlayer2->getX()){//-320.0f-100.0f) {
+////                if (myKeysDown[KEY_A]) {
+////                    myPilotPlayer2->move(KEY_A);
+////                }
+////            }
             else {
                 //edited by Mike, 20210606
 //                myPilotPlayer2->setXPos(myPilot->getX()+320.0f+100.0f);
-
-                if (myPilotPlayer2->getX() < myPilot->getX()+320.0f+100.0f) {
+/*
+                if (myPilotPlayer2->getX() > myPilot->getX()) {//+320.0f+100.0f) {//+100.0f) {
                     if (myKeysDown[KEY_D]) {
-//                        myPilotPlayer2->setXPos(myPilotPlayer2->getX() + 2.0f);
+                        myPilotPlayer2->move(KEY_D);
+                    }
+                }
+
+                //edited by Mike, 20210606
+                //TO-DO: -reverify: this
+                else*/
+/*
+                if (myPilotPlayer2->getX() < myPilot->getX()+320.0f) {//+100.0f) {//+100.0f) {
+//                if (myPilotPlayer2->getX() < 320.0f+100.0f) {
+                    if (myKeysDown[KEY_D]) {
                         myPilotPlayer2->move(KEY_D);
                     }
                 }
                 else {
+                    myPilotPlayer2->setXPos(myPilot->getX()+320.0f);//+100.0f);
+                }
+*/
+                if (myPilotPlayer2->getX() < myPilot->getX()+320.0f+100.0f) {//+100.0f) {
+                    //                if (myPilotPlayer2->getX() < 320.0f+100.0f) {
+                    if (myKeysDown[KEY_D]) {
+                        myPilotPlayer2->move(KEY_D);
+                    }
+                    else if (myKeysDown[KEY_A]) {
+                        myPilotPlayer2->move(KEY_A);
+                    }
+
+                }
+                else {
+                    //edited by Mike, 20210606
                     myPilotPlayer2->setXPos(myPilot->getX()+320.0f+100.0f);
                 }
             }
+            //myPilotPlayer2->setXPos(myPilot->getX()+320.0f+100.0f);
         }
-        
 
 //--
         
@@ -3262,6 +3303,36 @@ void OpenGLCanvas::update()
         //removed by Mike, 20210605
         //        myPilotPlayer2Partner->setXPos(myPilotPlayer2->getX()-100.0f);
         
+        //added by Mike, 20210606; edited by Mike, 20210606
+//        myPilotPlayer2->setCurrentFacingState(FACING_LEFT);
+        //auto-face to ball position
+        if (myPilot->getX() < myBall->getX()) {
+            myPilot->setCurrentFacingState(FACING_RIGHT);
+        }
+        else {
+            myPilot->setCurrentFacingState(FACING_LEFT);
+        }
+
+        if (myPilotPartner->getX() < myBall->getX()) {
+            myPilotPartner->setCurrentFacingState(FACING_RIGHT);
+        }
+        else {
+            myPilotPartner->setCurrentFacingState(FACING_LEFT);
+        }
+
+        if (myPilotPlayer2->getX() < myBall->getX()) {
+            myPilotPlayer2->setCurrentFacingState(FACING_RIGHT);
+        }
+        else {
+            myPilotPlayer2->setCurrentFacingState(FACING_LEFT);
+        }
+        
+        if (myPilotPlayer2Partner->getX() < myBall->getX()) {
+            myPilotPlayer2Partner->setCurrentFacingState(FACING_RIGHT);
+        }
+        else {
+            myPilotPlayer2Partner->setCurrentFacingState(FACING_LEFT);
+        }
         
         //added by Mike, 20210502
         myPilotPlayer2->update(1); //dt
