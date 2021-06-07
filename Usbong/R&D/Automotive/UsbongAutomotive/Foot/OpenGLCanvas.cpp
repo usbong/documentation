@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B.
  * @date created: 20200926
- * @date updated: 20210607
+ * @date updated: 20210608
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -3138,7 +3138,9 @@ void OpenGLCanvas::update()
         float fMaxWindowWidthForPilot=580.0f;
         float fMaxWindowHeightForPilot=560.0f; //added by Mike, 20210606
 
-
+        //added by Mike, 20210608
+        //TO-DO: -verify: set to reset if outside Window, instead of bounceFromWindowWall
+        
         //added by Mike, 20210607
         //TO-DO: -add: arrow up to identify x-axis position when ball is already outside window
         if ((myBall->getX() < 0.0f) ||
