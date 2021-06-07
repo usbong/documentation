@@ -2157,6 +2157,67 @@ void Ball::reset()
 		iLastHitByPlayerId=-1;        
 }
 
+//added by Mike, 20210606
+void Ball::bounceFromWindowWall()
+{
+    //edited by Mike, 20210528
+    //changeState(INITIALIZING_STATE);
+    currentState=MOVING_STATE;
+    currentMovingState=WALKING_MOVING_STATE;
+    
+/*    
+     myXPos=320.0f;
+     //edited by Mike, 20210528
+     //myYPos=320.0f;//0;
+     myYPos=240.0f;//0;
+     myZPos=0.0f;//0;
+    
+     myXPosAsPixel=(int)myXPos;
+     myYPosAsPixel=(int)myYPos;
+     myZPosAsPixel=(int)myZPos;
+*/
+    
+     rotationAngle=0.0f;
+     thrust=0.0f;
+    
+     //edited by Mike, 20210528
+     //setCollidable(false);
+    setCollidable(true);
+
+    invincibleCounter=0;
+    
+    //added by Mike, 20210528
+    bIsMovingDown=false;
+    
+/*    
+    //edited by Mike, 20210606
+    iDirectionXAxis=1; //init go to right side from left side
+//    iDirectionXAxis=-1; //init go to right side from left side
+
+    iDirectionYAxis=-1; //init go up
+    thrustMax=10.0f; //5.0f;//4.0f;
+    thrust=1.0f;
+*/
+  
+   updateDirection();
+   //set Ball to always go up
+   iDirectionYAxis=-1; //added by Mike, 20210606
+    
+    //added by Mike, 20210601
+    iPlayer1BallHitCount=0;
+		iPlayer1PartnerBallHitCount=0;
+		iPlayer2BallHitCount=0;
+		iPlayer2PartnerBallHitCount=0;    
+		
+		//added by Mike, 20210602; edited by Mike, 20210606
+//    bIsSetForPartnerSpikeAttack=true;//false;
+    bIsSetForPartnerSpikeAttack=false;
+    
+    //added by Mike, 20210603
+    bIsSpikeAttack=false;
+		iLastHitByPlayerId=-1;        
+}
+
 int Ball::getState()
 {
     return currentState;

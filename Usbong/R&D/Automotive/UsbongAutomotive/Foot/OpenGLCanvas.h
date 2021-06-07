@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200929
- * @date updated: 20210530
+ * @date updated: 20210606
  * @website address: http://www.usbong.ph
  *
  * Acknowledgments:
@@ -382,7 +382,15 @@ class OpenGLCanvas
 		//added by Mike, 20201015
     	int myWindowWidth;
     	int myWindowHeight;
-		
+
+		//declared as static, i.e. final, container with value in mainLinux.cpp
+		//added by Mike, 20210606
+		int myWindowWidthAsPixel;
+		int myWindowHeightAsPixel;
+	
+/*		int myWindowWidthAsPixelOpenGLCanvas;
+		int myWindowHeightAsPixelOpenGLCanvas;
+*/		
 		//added by Mike, 20210510
 		int iStartPointX,
 			iStartPointY,
@@ -393,7 +401,7 @@ class OpenGLCanvas
 
 		//edited by Mike, 20210517
 //    	bool init();
-    	bool init(int myWindowWidthAsPixel, int myWindowHeightAsPixel);
+    	bool init(int myWindowWidthAsPixelInput, int myWindowHeightAsPixelInput);
 
     	bool shutdown();
 

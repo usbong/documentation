@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B.
  * @date created: 20200926
- * @date updated: 20210606
+ * @date updated: 20210607
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -272,7 +272,9 @@ OpenGLCanvas::~OpenGLCanvas()
 
 //edited by Mike, 20210517
 //bool OpenGLCanvas::init()
-bool OpenGLCanvas::init(int myWindowWidthAsPixel, int myWindowHeightAsPixel)
+//edited by Mike, 202106062
+//bool OpenGLCanvas::init(int myWindowWidthAsPixel, int myWindowHeightAsPixel)
+bool OpenGLCanvas::init(int myWindowWidthAsPixelInput, int myWindowHeightAsPixelInput)
 {
     //TO-DO: -receive: values from main.cpp
     //edited by Mike, 20201115
@@ -456,9 +458,13 @@ bool OpenGLCanvas::init(int myWindowWidthAsPixel, int myWindowHeightAsPixel)
     myLevel = new Level();
     myLevel->setupLevel(LEVEL_TEXTURE); //FONT_TEXTURE);
     
-    //added by Mike, 20210517
-    myWindowWidthAsPixel = myWindowWidth;
+    //added by Mike, 20210517; edited by Mike, 20210606
+/*    myWindowWidthAsPixel = myWindowWidth;
     myWindowHeightAsPixel = myWindowHeight;
+*/
+    myWindowWidthAsPixel = myWindowWidthAsPixelInput;
+    myWindowHeightAsPixel = myWindowHeightAsPixelInput;
+
     
     //added by Mike, 20210320; edited by Mike, 20210321
     /*
@@ -3125,11 +3131,38 @@ void OpenGLCanvas::update()
         //TO-DO: -add: bounce ball up vertically if hit bottom part that is not goal tile
 
         //TO-DO: -put: set of instructions in a function method
+                
         
         //added by Mike, 20210606
         //TO-DO: -update: this
         float fMaxWindowWidthForPilot=580.0f;
         float fMaxWindowHeightForPilot=560.0f; //added by Mike, 20210606
+
+
+        //added by Mike, 20210607
+        //TO-DO: -add: arrow up to identify x-axis position when ball is already outside window
+        if ((myBall->getX() < 0.0f) ||
+        	  (myBall->getX()+myBall->getWidthAsPixel()  > fMaxWindowWidthForPilot)) {
+
+//        	myBall->updateDirection();
+        	myBall->bounceFromWindowWall();
+        	
+        	myBall->setThrust(12.0f);
+        }
+
+				//TO-DO: -add: reset, if myBall->getZ() < 0.0f
+//        if ((myBall->getY() < 0.0f) ||
+				//NOT fMaxWindowWidthForPilot
+//				printf("myWindowHeightAsPixel: %i",myWindowHeightAsPixel);
+					//note: myWindowHeightAsPixel=640
+//        if (myBall->getYAsPixel()+myBall->getHeightAsPixel() > myWindowHeightAsPixel) {        
+				//TO-DO: -add: animal as defender
+        if (myBall->getYAsPixel()+myBall->getHeightAsPixel() > 600) {        
+//        	myBall->updateDirection();
+        	myBall->bounceFromWindowWall();        	
+        	myBall->setThrust(16.0f);
+        }
+
         
         //added by Mike, 20210605
         //note: horizontal scroll
@@ -3437,13 +3470,15 @@ void OpenGLCanvas::update()
         //        if (myBall->getYAsPixel()+myBall->getHeightAsPixel() > 320.0f) {
         //edited by Mike, 20210606
 //        if (myBall->getYAsPixel()+myBall->getHeightAsPixel() > 512.0f) {
+//removed by Mike, 20210606
+/*	//update: this to identify if myBall hits Tile, e.g. "G"
         if (myBall->getYAsPixel()+myBall->getHeightAsPixel() > 560.0f) {
             printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>END!\n");
             //added by Mike, 20210606
             //TO-DO: -update: this instructions in this function after successful goal
             myBall->setEnd();
         }
-        
+*/        
         
         //added by Mike, 20210517; removed by Mike, 202105017
         /*

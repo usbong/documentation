@@ -397,7 +397,9 @@ public:
         reset();
     }
 	
-
+		//added by Mike, 20210606
+		void bounceFromWindowWall();
+		
     //added by Mike, 20210111
 //    bool getIsExcutingPunchDefense() {
     bool getIsExecuteWithWeaponReady() {
