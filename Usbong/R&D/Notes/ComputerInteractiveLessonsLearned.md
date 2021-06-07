@@ -477,13 +477,18 @@ TO-DO: -update: this<br/>
 --> Sagot: Makipaglaban, habang inaalala ang mga gabay na ito:<br/>
 --> 1.9.1.1.4.1) Hindi epektibo na paliitin siya upang kalahati na lamang ang lakas ng kanyang atake.<br/>
 --> 1.9.1.1.4.2) Gumamit ng atake na pinawawalang-bisa ang kanyang depensa upang maging katumbas nito "0", i.e. wala; 敵のぼうぎょ力をムシして、「０」となる<br/>
+--> Halimbawa: Kuryenteng Atake ni Akarin (Sanggol na Araw)<br/>
+--> Paalala: Kailangang madikitan ni Akarin ang Bully;<br/> 
+--> Sa ating daigdig, natuklasan na ang paraan upang padaluyin ang kuryente sa hangin, i.e. dempa (electric wave)<br/>
 --> 1.9.1.1.4.3) Hindi epektibo na palakasin pa ninyo ang inyong depensa.<br/>
 --> 1.9.1.1.4.4) Hindi epektibo na pahinain ninyo ang lakas ng kanyang atake, kasi mas maiging umatake na kayo; bagama't sinubukan ko ito ng isang beses sa simula.<br/>
 --> 1.9.1.1.4.5) Hindi epektibo na palakasin pa ninyo ang inyong atake, kasi mas maiging umatake na kayo; bagama't sinubukan ko rin ito ng isang beses sa simula.<br/>
 --> 1.9.1.1.4.6) Magbilang;<br/>
 --> Halimbawa: 70 ang health/lakas ng bully; Gamit ang pamamaraan, maaaring makagawa ang pangkat ninyo ng atake na 8, sa isang turn/palitan ng atake.<br/>
 --> Ilang palitan ang kakailanganin ninyo upang magapi ang Bully?<br/>
---> <b>Paalala:</b> Kailangan din ninyong hilumin ang inyong pangkat mula sa atake ng Bully.<br/>
+--> <b>Mga Paalala:</b><br/> 
+--> Maaaring bahagyang mabawasan, e.g. -1, ang pinsala ng atake ng Bully kung sa kanyang turn, wasto ninyong magagamit ang Guard Command kapag umatake siya.<br/>
+--> Kailangan din ninyong hilumin ang inyong pangkat mula sa atake ng Bully.<br/>
 --> Mas maiging gamitin ninyo ang lakas ng mga kaibigan ninyong Bituin sa paghihilom ng sarili.<br/>
 --> May badge din na maaaring makapagbigay sa inyo ng kakayanang gumamit ng dalawang item, sa halip na isa lamang sa isang turn/palitan.<br/>
 --> May item na humihilom, e.g. super kinoko, at gumagawa ng atake, e.g. yuki snowman attack<br/>
@@ -518,7 +523,7 @@ Tunay na tapang ang nakatayong harapin ang nakatatakot na bagay, 'di ba?<br/>
 --> The villiage idiot's role in history and literature:<br/>
 --> "...idiots was not jus useless people, but was put here for a purpose... an the purpose is to make people laugh. At least that is somethin."<br/>
 --> 人を楽しませる？<br/>
---> <b>Paalala:</b> Mag-ingat na gawing haligi ng buhay ang isang sistema na sa huli pala mali. Isa ito sa mga nagdudulot ng pagkasawi ng ilang tao.<br/>
+--> <b>Paalala:</b> Mag-ingat na gawing haligi ng buhay ang isang sistema na sa huli pala mali, i.e. baliktad. Isa ito sa mga nagdudulot ng pagkasawi ng ilang tao.<br/>
 <br/>
 <b>Mga Halimbawa:</b><br/>
 1) Hindi niya matanggap na kapag patay na ang isang tao, patay na talaga siya. Hindi pupunta ang yumao sa isang lugar, e.g. langit, kung saan makapag-uusap pa kayo, atbp.<br/>
