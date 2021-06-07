@@ -484,7 +484,7 @@ TO-DO: -update: this<br/>
 --> 1.9.1.1.4.4) Hindi epektibo na pahinain ninyo ang lakas ng kanyang atake, kasi mas maiging umatake na kayo; bagama't sinubukan ko ito ng isang beses sa simula.<br/>
 --> 1.9.1.1.4.5) Hindi epektibo na palakasin pa ninyo ang inyong atake, kasi mas maiging umatake na kayo; bagama't sinubukan ko rin ito ng isang beses sa simula.<br/>
 --> 1.9.1.1.4.6) Magbilang;<br/>
---> Halimbawa: 70 ang health/lakas ng bully; Gamit ang pamamaraan, maaaring makagawa ang pangkat ninyo ng atake na 8, sa isang turn/palitan ng atake.<br/>
+--> Halimbawa: 70 ang health/lakas ng Bully; Gamit ang pamamaraan, maaaring makagawa ang pangkat ninyo ng atake na 8, sa isang turn/palitan ng atake.<br/>
 --> Ilang palitan ang kakailanganin ninyo upang magapi ang Bully?<br/>
 --> <b>Mga Paalala:</b><br/> 
 --> Maaaring bahagyang mabawasan, e.g. -1, ang pinsala ng atake ng Bully kung sa kanyang turn, wasto ninyong magagamit ang Guard Command kapag umatake siya.<br/>
@@ -560,6 +560,17 @@ Tunay na tapang ang nakatayong harapin ang nakatatakot na bagay, 'di ba?<br/>
 --> Sa simula, mukhang pananalita ng mga taga-Kansai, subalit may "ken" sa huli.<br/>
 --> Ginagamit ito bilang kahulugan ng "kasi"; halimbawa: かわいいけん(kawaii ken; "nakaaakit kasi")<br/>
 
+### 1.9.1.1.6) Rival Notes
+--> Kuppa, i.e. Bowser, classifies Mario as Rival<br/>
+--> Reminder#1: Badge Items are not anymore changeable during Battle<br/>
+--> Reminder#2: Nakama can be changed during Battle, but without the corresponding Assistive Badge, costs 1 Turn.<br/>
+--> observation: Without <b>information</b> regarding opponent, e.g. Rival, we expect defeat in the 1st Battle.<br/>
+--> Cause#1: Select Badge Items are not effective against select opponents<br/>
+--> Example: Hammer Badge Item to execute Ultra Earthquake attack on all ground, i.e. non-flying, opoonents<br/>
+--> In addition, its attack damage to Rival lower, albeit cost (as counted via Flower Power (FP)) high<br/>
+--> Cause#2: Select Nakama, e.g. Pinki- (Kaibigang Babaeng Pampasabog), are effective for select Battles<br/>
+--> Paalala: May kakayanang hindi pumunaw si Pinki- gawa ng kanyang pagsabog na atake.<br/>
+
 ## 1.9.2) CAMELOT (SOFTWARE PLANNING) + NINTENDO
 ## 1.9.2.1) マリオテニス６４："FOR ALL PLAYERS HOPING TO TOUCH THE TRUE ENTERTAINMENT" 
 --> Mario Tennis 64; Japanese version; Year 2000<br/>
@@ -573,7 +584,7 @@ Tunay na tapang ang nakatayong harapin ang nakatatakot na bagay, 'di ba?<br/>
 --> Donkey Kong's Service Ace > Mario's<br/>
 --> サービス エース (Service Ace): Service is not hit to be returned by Opponent<br/>
 --> Execution: Donkey Kong's service uses POWER attack with target location can be set to be left or right;<br/>
---> If I as Mario incorrectly chooses where the target is, I do not hit to return the ball<br/>
+--> If I as Mario incorrectly choose where the target is, I do not hit to return the ball<br/>
 --> Mario's Smash Ace > Donkey Kong's<br/>
 --> スマッシュ エース (Smash Ace): Smash is not hit to be returned by Opponent<br/>
 --> Execution: Mario serves using POWER Attack; it is returned by Opponent; I use another POWER Attack to a direction opposite of Opponent to finish.<br/>
