@@ -5,7 +5,7 @@ Operating System (OS): Linux, macOS, Unix-like Systems
 Example: sudo git clone https://github.com/usbong/documentation.git
 
 ## 2) Verify: Local Repository 
---> If not updated, download files identified to have been updated.<br/>
+--> If not updated, download only the files auto-identified to have been updated.<br/>
 Example: sudo git pull https://github.com/usbong/documentation.git
 
 ## 3) Update: Local Files
