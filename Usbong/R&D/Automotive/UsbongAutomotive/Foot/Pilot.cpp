@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210605
+ * @date updated: 20210608
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -4447,6 +4447,157 @@ void Pilot::drawPilotObject()
 			glVertex3f(1.000000,1.000000,0.000000); //B2
 		glEnd();
 */		
+
+		//added by Mike, 20210608
+		//TO-DO: -reverify: texture coordinate position in y-axis
+	
+if ((currentFacingState==FACING_RIGHT) || (currentFacingState==FACING_RIGHT_AND_UP) || (currentFacingState==FACING_RIGHT_AND_DOWN)) {
+        //added by Mike, 20210424
+        //notes: use folding paper to assist in quickly identifying location, e.g. texture coordinates
+        //set vertex positions clock-wise
+        //      glRotatef(45, 0.0f, 1.0f, 0.0f); //slanted to wall facing left
+        glBegin(GL_TRIANGLES);
+        //triangle#6 //back face left part
+        glNormal3f(0.0000,0.0000,-1.0000);
+        //edited by Mike, 20210608
+//        glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0); //B2
+        glTexCoord2f((0.25+fTaoAnimationFrameOffset)/2,0.0); //B2        
+//        glVertex3f(-1.000000,4.000000,-1.000000); //A1
+        glVertex3f(-1.000000,1.000000,-1.000000); //A1
+        
+        glNormal3f(0.0000,0.0000,-1.0000);
+        //edited by Mike, 20210608
+//        glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);	//C2
+        glTexCoord2f((0.0+fTaoAnimationFrameOffset)/2,0.25);	//C2
+        glVertex3f(1.000000,-1.000000,-1.000000); //B1
+        
+        glNormal3f(0.0000,0.0000,-1.0000);
+        //edited by Mike, 20210608
+//        glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0); //B1
+        glTexCoord2f((0.25+fTaoAnimationFrameOffset)/2,0.25); //B1
+        glVertex3f(-1.000000,-1.000000,-1.000000); //C1
+        
+        //triangle#12 //back face right part
+        glNormal3f(0.0000,0.0000,-1.0000);
+        //edited by Mike, 20210608
+//        glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0); //B2
+        glTexCoord2f((0.25+fTaoAnimationFrameOffset)/2,0.0); //B2
+//        glVertex3f(-1.000000,4.000000,-1.000000); //A2
+        glVertex3f(-1.000000,1.000000,-1.000000); //A2
+        
+        glNormal3f(0.0000,0.0000,-1.0000);
+        //edited by Mike, 20210608
+//        glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	//A1
+        glTexCoord2f((0.0+fTaoAnimationFrameOffset)/2,0.0);	//A1
+//        glVertex3f(1.000000,4.000000,-1.000000); //B2
+        glVertex3f(1.000000,1.000000,-1.000000); //B2
+        
+        glNormal3f(0.0000,0.0000,-1.0000);
+        //edited by Mike, 20210608
+//        glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);	//C1
+        glTexCoord2f((0.0+fTaoAnimationFrameOffset)/2,0.25);	//C1
+        glVertex3f(1.000000,-1.000000,-1.000000); //C2
+        glEnd();
+    }
+    else {
+        glBegin(GL_TRIANGLES);
+        //triangle#6 //back face left part
+        glNormal3f(0.0000,0.0000,-1.0000);
+        //edited by Mike, 20210608
+//        glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);
+        glTexCoord2f((0.0+fTaoAnimationFrameOffset)/2,0.0);        
+//        glVertex3f(-1.000000,4.000000,-1.000000); //A1
+        glVertex3f(-1.000000,1.000000,-1.000000); //A1
+        
+        glNormal3f(0.0000,0.0000,-1.0000);
+        //edited by Mike, 20210420
+        //	glTexCoord2f(1.0+iTaoAnimationFrameOffset,1.0);
+        //	glTexCoord2f(0.5+fTaoAnimationFrameOffset,1.0);
+        //edited by Mike, 20210608
+//        glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0);
+        glTexCoord2f((0.25+fTaoAnimationFrameOffset)/2,0.25);
+        glVertex3f(1.000000,-1.000000,-1.000000); //B1
+        
+        glNormal3f(0.0000,0.0000,-1.0000);
+        //edited by Mike, 20210608
+//        glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);
+        glTexCoord2f((0.0+fTaoAnimationFrameOffset)/2,0.25);
+        glVertex3f(-1.000000,-1.000000,-1.000000); //C1
+        
+        
+        //triangle#12 //back face right part
+        glNormal3f(0.0000,0.0000,-1.0000);
+        //edited by Mike, 20210608
+//        glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);
+        glTexCoord2f((0.0+fTaoAnimationFrameOffset)/2,0.0);
+//        glVertex3f(-1.000000,4.000000,-1.000000); //A2
+        glVertex3f(-1.000000,1.000000,-1.000000); //A2
+        
+        glNormal3f(0.0000,0.0000,-1.0000);
+        //edited by Mike, 20210420
+        //	glTexCoord2f(1.0+iTaoAnimationFrameOffset,0.0);
+        //	glTexCoord2f(0.5+fTaoAnimationFrameOffset,0.0);
+        //edited by Mike, 20210608
+//        glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0);
+        glTexCoord2f((0.25+fTaoAnimationFrameOffset)/2,0.0);
+//        glVertex3f(1.000000,4.000000,-1.000000); //B2
+        glVertex3f(1.000000,1.000000,-1.000000); //B2
+        
+        glNormal3f(0.0000,0.0000,-1.0000);
+        //edited by Mike, 20210420	
+        //	glTexCoord2f(1.0+iTaoAnimationFrameOffset,1.0);
+        //	glTexCoord2f(0.5+fTaoAnimationFrameOffset,1.0);
+        //edited by Mike, 20210608
+//        glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0);	
+        glTexCoord2f((0.25+fTaoAnimationFrameOffset)/2,0.25);	
+        glVertex3f(1.000000,-1.000000,-1.000000); //C2	
+        glEnd();
+    }
+    	
+	
+		glDisable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, 0);
+	glPopMatrix(); //added by Mike, 20210422
+}
+
+
+/* //removed by Mike, 20210608
+void Pilot::drawPilotObjectPrevLargeTexture() 
+{	
+	//added by Mike, 20210422	
+	glPushMatrix();
+		//added by Mike, 20210420
+		glColor3f(1.0f, 1.0f, 1.0f); // white
+//		glColor3f(1.0f, 0.0f, 0.0f); // red
+	
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, MIKE_TEXTURE_A);		
+		
+		//added by Mike, 20210523
+		glRotatef(180, 1.0f, 0.0f, 0.0f);
+		
+		//edited by Mike, 20210515
+//		fButtonAnimationFrameOffset=0;
+	
+		//added by Mike, 20210516; removed to after glScale(...) by Mike, 20210516		
+		//due to instructions to auto-draw quad using triangles
+//		glTranslatef(0.2f, 0.2f, 0.0f);
+	
+		//TO-DO: -verify: scaled texture object if equal with pixel width and height size
+		//use autoConvertFromPixelToVertexPointX, et cetera if exact
+		
+		//window width and height; 640x640pixels
+		//whole texture image sheet 512x256pixels
+		//button size: 64x16pixels
+//		glScalef(0.25f, 0.4f, 1.0f);		
+		//edited by Mike, 20210523
+//		glScalef(0.20f, 0.4f, 1.0f);		
+//glScalef(3.2f, 3.2f, 3.2f);		
+		glScalef(0.2f/2, 0.4f/2, 1.0f);		
+		
+		//added by Mike, 20210516
+		//due to instructions to auto-draw quad using triangles
+		glTranslatef(1.0f, 0.5f, 0.0f);		
 	
 if ((currentFacingState==FACING_RIGHT) || (currentFacingState==FACING_RIGHT_AND_UP) || (currentFacingState==FACING_RIGHT_AND_DOWN)) {
         //added by Mike, 20210424
@@ -4478,6 +4629,7 @@ if ((currentFacingState==FACING_RIGHT) || (currentFacingState==FACING_RIGHT_AND_
         glNormal3f(0.0000,0.0000,-1.0000);
         //edited by Mike, 20210424
         //			glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	//A2; face lefT
+
         glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0); //B2
 //        glVertex3f(-1.000000,4.000000,-1.000000); //A2
         glVertex3f(-1.000000,1.000000,-1.000000); //A2
@@ -4544,6 +4696,7 @@ if ((currentFacingState==FACING_RIGHT) || (currentFacingState==FACING_RIGHT_AND_
 		glBindTexture(GL_TEXTURE_2D, 0);
 	glPopMatrix(); //added by Mike, 20210422
 }
+*/
 
 //added: by Mike, 20210423
 //TO-DO: -add: in PolygonPool
