@@ -20,10 +20,10 @@ Example: xed OpenGLCanvas.cpp
 Example: sudo git add OpenGLCanvas.cpp
 
 ### 4.2) Commit the list to upload, with added note to identify
-sudo git commit -m "added: verify set to reset when outside window"
+Example: sudo git commit -m "added: verify set to reset when outside window"
 
 ### 4.3) Push the list to upload to Repository on the Network
-sudo git push https://github.com/usbong/documentation.git
+Example: sudo git push https://github.com/usbong/documentation.git
 
 #### Additional Notes:
 #### 4.3.1) Update username and email address of author
