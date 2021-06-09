@@ -1,18 +1,37 @@
 # Training Centre: Security Defense Force
 ## Introduction to Self-Defense
 ### Part 1
-1.1) Tanggapin na likas sa tao ang pakikipaglaban.<br/>
+#### 1.1) Tanggapin na likas sa tao ang pakikipaglaban.
 --> Magbasa ng kasaysayan mula sa mga sulatin/aklat, e.g. sa Bibliya, Qur'an.<br/>
 --> Unawin ang mga ito kahit gamit muna ang computer manual mula sa bansang Hapon:<br/> 
 --> Front Mission: Gun Hazard, Dragon Quest VI<br/>
 <br/>
 
-1.2) Sa labanan, tiyakin na ikaw ang mabubuhay.<br/>
+#### 1.2) Sa labanan, tiyakin na ikaw ang mabubuhay.
+--> Ayon sa kasaysayan, ginawa rin ito ng Pinuno ng Gresiya.<br/>
+--> Noong mga panahong iyon, nahati sa dalawang pangkat ang Gresiya:<br/>
+--> Isa ang mga Spartan, i.e. pangkat na nakikipaglaban dahil naniniwala sila na ang pinakamahalagang bagay sa daigdig: glorified death, i.e. mamatay nang lumalaban<br/>
+--> Isa naman ang mga Athenian, i.e. pangkat na kabaliktaran ng mga Spartan<br/>
+--> Sa daloy ng istorya, nahalal bilang Pinuno ang Athenian.<br/>
+--> Dagdag pa rito, may malakas na daing ang pangkat ng mga Spartan na salakayin ang Italia, na kung saan kakailanganin nilang tumawid ng dagat mula Gresiya.<br/>
+--> Mula sa kanilang nakalap na impormasyon, matindi ang depensa ng mga taga-Italia.<br/>
+--> Tiyak mapupuksa silang lahat kapag sumalakay sila.<br/>
+--> Gayunpaman, upang mapagbigyan ang daing ng mga Spartan, gumawa siya ng COMMAND na salakayin ang Italia.<br/>
+--> Subalit, pagdaong ng kanilang mga barko, natuklasan ng mga Spartan na nawawala ang kanilang Pinuno.<br/>
+--> Natuklasan na lamang nila na iniwan na sila nito.<br/>
+--> Mababalitaan na napuksa ang mga Spartan gawa ng depensa ng Italia, dagdag pa sa gutom at uhaw na kanilang naranasan.<br/>
+<br/>
+--> <b>Paalala:</b> Mag-iingat ang mga may pakay na gumawa rin ng ganito, sapagkat ikasasawi niya ito sa panahong matuklasan ng mga kanyang pinagloloko ang kanyang pamamaraan.<br/>
+--> Mababasa sa kasaysayan na nahuhuli at namamatay rin ang gumagawa ng mga sistema upang ipag-away ang mga pangkat.<br/>
+--> Ibig sabihin, hindi ito ang pinakaepektibong paraan upang mabuhay nang walang hanggan.<br/>
+<br/>
+--> <b>Mungkahing Aksyon:</b><br/> 
+--> tuklasin: Federigo da Montefeltro, Italianong mamumuno na mahilig magbasa. Dahil sa taglay niyang kakayanan, napasusunod niya ang Santo Papa ng Roma at ang mga bansa sa Europa. Gayunpaman, mamatay din siya pagkatapos matuklasan ang kanyang pamamaraan ng paggawa ng sistema upang ipag-away ang mga ito.<br/>
 <br/>
 
-1.3) Mas maiging paniwalaan na kapag patay ka na, talagang patay ka na, i.e. hindi ka pupunta sa isang lugar na kung saan ika'y magiging mas maligaya.<br/>
-<br/>
-<b>1.4) Mungkahing mga Aksyon:</b><br/>
+#### 1.3) Mas maiging paniwalaan na kapag patay ka na, talagang patay ka na, i.e. hindi ka pupunta sa isang lugar na kung saan ika'y magiging mas maligaya.
+
+#### 1.4) Mungkahing mga Aksyon:
 1.4.1) Puksain ang mga budol-budol/manloloko/carnapper/cybercriminal/communist terrorist group na gumagamit ng wireless broadcasting technology upang gumawa ng mga panlolokong ingay at pisikal na pananakit.<br/>
 --> <b>Halimbawa ng Panloloko:</b><br/>
 --> May nakikita kang mga larawan/imahe o may naririnig kang mga bulung-bulong ukol sa mga yumaong kilala o mga anghel/demonyo na sinusundo ka na.<br/>
