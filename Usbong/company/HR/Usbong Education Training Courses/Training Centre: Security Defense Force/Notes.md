@@ -320,7 +320,7 @@ Patuloy na panlolokong ingay (at pisikal na pananakit) gamit ang wireless broadc
 --> Tanong: Paano magagapi ang Bully, e.g. Dambuhalang Pagong na naniningil ng ゼニ (zeni), i.e. perang gugugulan ninyo ng oras na maipon, upang makaraan kayo sa daan?<br/>
 
 #### <b>Mga Paalala:</b>
---> 12.1) Tao man o Hayop, e.g. bantay na aso sa bahay, pinapatay gamit ang wireless broadcasting technology na may epekto ng sa iligal na droga, e.g. taima, marijuana.<br/>
+--> 12.1) Tao man o Hayop, e.g. bantay na aso sa bahay, pinapatay ng mga Teroristang Komunista gamit ang wireless broadcasting technology na may epekto ng sa iligal na droga, e.g. taima, marijuana.<br/>
 --> Sanhi: Quick Money gawa ng pag-aasawa at pag-aanak nang kulang ang ninanakaw.<br/>
 --> Aksyon: Sulatan din ng incident report ang Tagapagpatupad ng Batas, i.e. Law Enforcement.<br/>
 
