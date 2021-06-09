@@ -367,6 +367,7 @@ Patuloy na panlolokong ingay (at pisikal na pananakit) gamit ang wireless broadc
 --> Example: Walking for 2 hours without stop, with problematic cushion in inner part of shoes, causes feet to have callos.<br/>
 --> Pain equal to burning.<br/>
 --> 13.2.3) Wash hands.<br/>
+--> Keep palm of hands wet.<br/>
 --> 13.2.4) Put Iodized salt on palm of both hands.<br/>
 --> 13.2.5) Put cooked rice on one palm of hand.<br/>
 --> 13.2.6) Use another palm to cup hand.<br/>
