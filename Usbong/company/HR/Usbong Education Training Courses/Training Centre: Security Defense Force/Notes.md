@@ -356,7 +356,10 @@ Patuloy na panlolokong ingay (at pisikal na pananakit) gamit ang wireless broadc
 #### 13.2) Iodized Salt
 --> Iodized salt has taste of the sea.<br/>
 --> observed: McDonalds french potato fries use increased Iodized salt<br/>
---> With onigiri (riceball; lit: grasped hand), we use Iodized salt, if nori (dried seaweed) not available.<br/>
+--> McDonalds french potato fries classification: snack, not food as meal for morning, noon, and evening<br/>
+--> reminder: excess = doku, i.e. lason<br/>
+--> Recommended Action: In its stead, Eat onigiri (riceball; lit: grasped hand)<br/>
+--> With onigiri, we use Iodized salt, if nori (dried seaweed) not available.<br/>
 --> onigiri technique:<br/>
 --> 13.2.1) After cooking rice, let rice cool first; otherwise, hands shall be burnt<br/>
 --> 13.2.2) Add Iodized salt on rice inside the rice cooker.<br/>
