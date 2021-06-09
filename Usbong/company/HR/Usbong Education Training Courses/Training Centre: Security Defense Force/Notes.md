@@ -315,3 +315,28 @@ Patuloy na panlolokong ingay (at pisikal na pananakit) gamit ang wireless broadc
 --> identified: Keith Haw, with Xavier High School (San Juan, Greenhills) classmate and basketball player, Tyrone Tang, to be with this Teroristang Komunista group.<br/>
 --> Mungkahing Aksyon: Puksain ang mga Teroristang Komunista.<br/>
 --> Aksyon: Sulatan din ng incident report ang Tagapagpatupad ng Batas, i.e. Law Enforcement.<br/>
+
+### Part 12: Bully Problem
+--> Tanong: Paano magagapi ang Bully, e.g. Dambuhalang Pagong na naniningil ng ゼニ (zeni), i.e. perang gugugulan ninyo ng oras na maipon, upang makaraan kayo sa daan?<br/>
+
+--> <b>Paalala:</b> Mag-ingat na gawing haligi ng buhay ang isang sistema na sa huli pala mali, i.e. baliktad. Isa ito sa mga nagdudulot ng pagkasawi ng ilang tao.<br/>
+--> <b>Mga Halimbawa:</b><br/>
+--> 12.1) Hindi niya matanggap na kapag patay na ang isang tao, patay na talaga siya. Hindi pupunta ang yumao sa isang lugar, e.g. langit, kung saan makapag-uusap pa kayo, atbp.<br/>
+--> 12.2) Hindi niya matanggap na hindi mapupuksa ang mga Teroristang Komunista kung hindi ka gagawa ng aksyon, bago ka patayin sa debate, e.g. aapakan mo ba ang ipis o hindi?<br/>
+
+### Part 13: Energy and Health: Food
+—> reminder: With かぼちゃ (kabocha, i.e. kalabasa), we need sharp knife.<br/>
+—> With knife, cut outward, not toward self.<br/>
+—> Use correct knife length.<br/>
+—> Example: With Tuna fish, cut using short knife, e.g. blade length < 15cm<br/>
+—> reminder: regular ruler length 30cm<br/>
+—> Tuna fish’s inner part soft, in contrast to outer part<br/>
+—> Unless double-edged knife, top part of knife blade is not sharp.<br/>
+—> Press it with palm of hand to cut hard food object, e.g. kalabasa.<br/>
+—> Flat part of knife blade is not sharp.<br/>
+—> Press it with palm of hand to crush にんにく (ninniku, i.e. bawang) to quickly remove outer part classified to be its cover.<br/>
+—> With にんじん (ninjin, i.e. carrot), we can quickly cut it in chunks by using knife to make diagonal slices from the carrot’s tip part, where its root is located, not the top part<br/>
+—> After verification, cooking kabocha and ninjin with water, kikkoman soy sauce, sugar, using electric stove, can cause kare- taste.<br/>
+—> reminder: With kabocha and ninjin, we use wooden chopstick to pierce the chunks.<br/>
+—> If difficult to pierce due to not yet soft, add time to cook.<br/>
+
