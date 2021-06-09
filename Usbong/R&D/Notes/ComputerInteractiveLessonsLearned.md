@@ -574,7 +574,7 @@ Tunay na tapang ang nakatayong harapin ang nakatatakot na bagay, 'di ba?<br/>
 --> Example: Hammer Badge Item to execute Ultra Earthquake attack on all ground, i.e. non-flying, opoonents<br/>
 --> In addition, its attack damage to Rival lower, albeit cost (as counted via Flower Power (FP)) high<br/>
 --> Cause#2: Select Nakama, e.g. Pinki- (Kaibigang Babaeng Pampasabog), are effective for select Battles<br/>
---> Paalala: May kakayanang hindi pumunaw si Pinki- gawa ng kanyang pagsabog na atake.<br/>
+--> Paalala: May kakayanang hindi pumunaw si Pinki- kapag binigyan mo siya ng COMMAND na gawin niya ang pagsabog na atake<br/>
 
 ## 1.9.2) CAMELOT (SOFTWARE PLANNING) + NINTENDO
 ## 1.9.2.1) マリオテニス６４："FOR ALL PLAYERS HOPING TO TOUCH THE TRUE ENTERTAINMENT" 
