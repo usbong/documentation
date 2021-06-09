@@ -351,16 +351,16 @@ Patuloy na panlolokong ingay (at pisikal na pananakit) gamit ang wireless broadc
 --> observed: jump/skip rope executed continuously x800 daily, not effective to reduce body weight<br/>
 --> Contiuous daily walking effective.<br/>
 --> Use jump/skip rope exercise to verify if with physical health status, e.g. current body weight, can execute action.<br/>
---> Recommended Action: verify: physical therapy exercises
+--> <b>Recommended Action:</b> verify: physical therapy exercises
 
 #### 13.2) Iodized Salt
 --> Iodized salt has taste of the sea.<br/>
 --> observed: McDonalds french potato fries use increased Iodized salt<br/>
 --> McDonalds french potato fries classification: snack, not food as meal for morning, noon, and evening<br/>
 --> reminder: excess = doku, i.e. lason<br/>
---> Recommended Action: In its stead, Eat onigiri (riceball; lit: grasped hand)<br/>
+--> <b>Recommended Action:</b> In its stead, eat onigiri (riceball; lit: grasped hand)<br/>
 --> With onigiri, we use Iodized salt, if nori (dried seaweed) not available.<br/>
---> onigiri technique:<br/>
+--> <b>onigiri technique:</b><br/>
 --> 13.2.1) After cooking rice, let rice cool first; otherwise, hands shall be burnt<br/>
 --> 13.2.2) Add Iodized salt on rice inside the rice cooker.<br/>
 --> reminder: select pain relievers classified to be anti-inflammatory cause us to not experience burn<br/>
