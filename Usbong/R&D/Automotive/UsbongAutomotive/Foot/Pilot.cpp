@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210608
+ * @date updated: 20210609
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -4451,6 +4451,10 @@ void Pilot::drawPilotObject()
 		//added by Mike, 20210608
 		//TO-DO: -reverify: texture coordinate position in y-axis
 	
+	printf(">>fTaoAnimationFrameOffset: %f",fTaoAnimationFrameOffset);
+	//TO-DO: -add: use 0.125 with texture coordinate position
+	//0.125
+	
 if ((currentFacingState==FACING_RIGHT) || (currentFacingState==FACING_RIGHT_AND_UP) || (currentFacingState==FACING_RIGHT_AND_DOWN)) {
         //added by Mike, 20210424
         //notes: use folding paper to assist in quickly identifying location, e.g. texture coordinates
@@ -4461,41 +4465,44 @@ if ((currentFacingState==FACING_RIGHT) || (currentFacingState==FACING_RIGHT_AND_
         glNormal3f(0.0000,0.0000,-1.0000);
         //edited by Mike, 20210608
 //        glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0); //B2
-        glTexCoord2f((0.25+fTaoAnimationFrameOffset)/2,0.0); //B2        
+				//edited by Mike, 20210609
+//        glTexCoord2f((0.25+fTaoAnimationFrameOffset)/2,0.0); //B2        
+        glTexCoord2f(fTaoAnimationFrameOffset,0.0); //B2        
+        
 //        glVertex3f(-1.000000,4.000000,-1.000000); //A1
         glVertex3f(-1.000000,1.000000,-1.000000); //A1
         
         glNormal3f(0.0000,0.0000,-1.0000);
         //edited by Mike, 20210608
 //        glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);	//C2
-        glTexCoord2f((0.0+fTaoAnimationFrameOffset)/2,0.25);	//C2
+        glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.25);	//C2
         glVertex3f(1.000000,-1.000000,-1.000000); //B1
         
         glNormal3f(0.0000,0.0000,-1.0000);
         //edited by Mike, 20210608
 //        glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0); //B1
-        glTexCoord2f((0.25+fTaoAnimationFrameOffset)/2,0.25); //B1
+        glTexCoord2f(fTaoAnimationFrameOffset,0.25); //B1
         glVertex3f(-1.000000,-1.000000,-1.000000); //C1
         
         //triangle#12 //back face right part
         glNormal3f(0.0000,0.0000,-1.0000);
         //edited by Mike, 20210608
 //        glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0); //B2
-        glTexCoord2f((0.25+fTaoAnimationFrameOffset)/2,0.0); //B2
+        glTexCoord2f(fTaoAnimationFrameOffset,0.0); //B2
 //        glVertex3f(-1.000000,4.000000,-1.000000); //A2
         glVertex3f(-1.000000,1.000000,-1.000000); //A2
         
         glNormal3f(0.0000,0.0000,-1.0000);
         //edited by Mike, 20210608
 //        glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	//A1
-        glTexCoord2f((0.0+fTaoAnimationFrameOffset)/2,0.0);	//A1
+        glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	//A1
 //        glVertex3f(1.000000,4.000000,-1.000000); //B2
         glVertex3f(1.000000,1.000000,-1.000000); //B2
         
         glNormal3f(0.0000,0.0000,-1.0000);
         //edited by Mike, 20210608
 //        glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);	//C1
-        glTexCoord2f((0.0+fTaoAnimationFrameOffset)/2,0.25);	//C1
+        glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.25);	//C1
         glVertex3f(1.000000,-1.000000,-1.000000); //C2
         glEnd();
     }
@@ -4505,7 +4512,7 @@ if ((currentFacingState==FACING_RIGHT) || (currentFacingState==FACING_RIGHT_AND_
         glNormal3f(0.0000,0.0000,-1.0000);
         //edited by Mike, 20210608
 //        glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);
-        glTexCoord2f((0.0+fTaoAnimationFrameOffset)/2,0.0);        
+        glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);        
 //        glVertex3f(-1.000000,4.000000,-1.000000); //A1
         glVertex3f(-1.000000,1.000000,-1.000000); //A1
         
@@ -4515,13 +4522,13 @@ if ((currentFacingState==FACING_RIGHT) || (currentFacingState==FACING_RIGHT_AND_
         //	glTexCoord2f(0.5+fTaoAnimationFrameOffset,1.0);
         //edited by Mike, 20210608
 //        glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0);
-        glTexCoord2f((0.25+fTaoAnimationFrameOffset)/2,0.25);
+        glTexCoord2f(fTaoAnimationFrameOffset,0.25);
         glVertex3f(1.000000,-1.000000,-1.000000); //B1
         
         glNormal3f(0.0000,0.0000,-1.0000);
         //edited by Mike, 20210608
 //        glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);
-        glTexCoord2f((0.0+fTaoAnimationFrameOffset)/2,0.25);
+        glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.25);
         glVertex3f(-1.000000,-1.000000,-1.000000); //C1
         
         
@@ -4529,7 +4536,7 @@ if ((currentFacingState==FACING_RIGHT) || (currentFacingState==FACING_RIGHT_AND_
         glNormal3f(0.0000,0.0000,-1.0000);
         //edited by Mike, 20210608
 //        glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);
-        glTexCoord2f((0.0+fTaoAnimationFrameOffset)/2,0.0);
+        glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);
 //        glVertex3f(-1.000000,4.000000,-1.000000); //A2
         glVertex3f(-1.000000,1.000000,-1.000000); //A2
         
@@ -4539,7 +4546,7 @@ if ((currentFacingState==FACING_RIGHT) || (currentFacingState==FACING_RIGHT_AND_
         //	glTexCoord2f(0.5+fTaoAnimationFrameOffset,0.0);
         //edited by Mike, 20210608
 //        glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0);
-        glTexCoord2f((0.25+fTaoAnimationFrameOffset)/2,0.0);
+        glTexCoord2f(fTaoAnimationFrameOffset,0.0);
 //        glVertex3f(1.000000,4.000000,-1.000000); //B2
         glVertex3f(1.000000,1.000000,-1.000000); //B2
         
@@ -4549,7 +4556,7 @@ if ((currentFacingState==FACING_RIGHT) || (currentFacingState==FACING_RIGHT_AND_
         //	glTexCoord2f(0.5+fTaoAnimationFrameOffset,1.0);
         //edited by Mike, 20210608
 //        glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0);	
-        glTexCoord2f((0.25+fTaoAnimationFrameOffset)/2,0.25);	
+        glTexCoord2f(fTaoAnimationFrameOffset,0.25);	
         glVertex3f(1.000000,-1.000000,-1.000000); //C2	
         glEnd();
     }
