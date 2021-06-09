@@ -376,7 +376,7 @@ Patuloy na panlolokong ingay (at pisikal na pananakit) gamit ang wireless broadc
 --> Increased food consumption, increased walking time;<br/>
 --> Example: Continuous walking of 40mins;<br/>
 --> observed: jump/skip rope executed continuously x800 daily, not effective to reduce body weight<br/>
---> Contiuous daily walking effective.<br/>
+--> Continuous daily walking effective.<br/>
 --> Use jump/skip rope exercise to verify if with physical health status, e.g. current body weight, can execute action.<br/>
 --> <b>Recommended Action:</b> verify: physical therapy exercises
 
