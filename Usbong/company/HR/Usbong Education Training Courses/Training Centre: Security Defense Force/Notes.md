@@ -319,10 +319,15 @@ Patuloy na panlolokong ingay (at pisikal na pananakit) gamit ang wireless broadc
 ### Part 12: Bully Problem
 --> Tanong: Paano magagapi ang Bully, e.g. Dambuhalang Pagong na naniningil ng ゼニ (zeni), i.e. perang gugugulan ninyo ng oras na maipon, upang makaraan kayo sa daan?<br/>
 
---> <b>Paalala:</b> Mag-ingat na gawing haligi ng buhay ang isang sistema na sa huli pala mali, i.e. baliktad. Isa ito sa mga nagdudulot ng pagkasawi ng ilang tao.<br/>
+#### <b>Mga Paalala:</b>
+--> 12.1) Tao man o Hayop, e.g. bantay na aso sa bahay, pinapatay gamit ang wireless broadcasting technology na may epekto ng sa iligal na droga, e.g. taima, marijuana.<br/>
+--> Sanhi: Quick Money gawa ng pag-aasawa at pag-aanak nang kulang ang ninanakaw.<br/>
+--> Aksyon: Sulatan din ng incident report ang Tagapagpatupad ng Batas, i.e. Law Enforcement.<br/>
+
+--> 12.2) Mag-ingat na gawing haligi ng buhay ang isang sistema na sa huli pala mali, i.e. baliktad. Isa ito sa mga nagdudulot ng pagkasawi ng ilang tao.<br/>
 --> <b>Mga Halimbawa:</b><br/>
---> 12.1) Hindi niya matanggap na kapag patay na ang isang tao, patay na talaga siya. Hindi pupunta ang yumao sa isang lugar, e.g. langit, kung saan makapag-uusap pa kayo, atbp.<br/>
---> 12.2) Hindi niya matanggap na hindi mapupuksa ang mga Teroristang Komunista kung hindi ka gagawa ng aksyon, bago ka patayin sa debate, e.g. aapakan mo ba ang ipis o hindi?<br/>
+--> 12.2.1) Hindi niya matanggap na kapag patay na ang isang tao, patay na talaga siya. Hindi pupunta ang yumao sa isang lugar, e.g. langit, kung saan makapag-uusap pa kayo, atbp.<br/>
+--> 12.2.2) Hindi niya matanggap na hindi mapupuksa ang mga Teroristang Komunista kung hindi ka gagawa ng aksyon, bago ka patayin sa debate, e.g. aapakan mo ba ang ipis o hindi?<br/>
 
 ### Part 13: Energy and Health: Food
 #### 13.1) Sharp Knife
