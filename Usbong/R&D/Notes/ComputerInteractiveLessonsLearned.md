@@ -571,6 +571,8 @@ Tunay na tapang ang nakatayong harapin ang nakatatakot na bagay, 'di ba?<br/>
 --> Reminder#2: Nakama can be changed during Battle, but without the corresponding Assistive Badge, costs 1 Turn.<br/>
 --> observation: Without <b>information</b> regarding opponent, e.g. Rival, we expect defeat in the 1st Battle.<br/>
 --> Example: Health Strength Status, e.g. how many hits can opponent take? <br/>
+--> Reminder: incident report = <b>information</b><br/>
+<br/>
 --> Cause#1: Select Badge Items are not effective against select opponents<br/>
 --> Example: Hammer Badge Item to execute Ultra Earthquake attack on all ground, i.e. non-flying, opoonents<br/>
 --> In addition, its attack damage to Rival lower, albeit cost (as counted via Flower Power (FP)) high<br/>
