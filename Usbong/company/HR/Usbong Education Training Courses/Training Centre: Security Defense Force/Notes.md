@@ -323,6 +323,7 @@ Patuloy na panlolokong ingay (at pisikal na pananakit) gamit ang wireless broadc
 --> 12.1) Tao man o Hayop, e.g. bantay na aso sa bahay, pinapatay ng mga Teroristang Komunista gamit ang wireless broadcasting technology na may epekto ng sa iligal na droga, e.g. taima, marijuana.<br/>
 --> Sanhi: Quick Money gawa ng pag-aasawa at pag-aanak nang kulang ang ninanakaw.<br/>
 --> Aksyon: Sulatan din ng incident report ang Tagapagpatupad ng Batas, i.e. Law Enforcement.<br/>
+--> Reminder: incident report = <b>information</b><br/>
 
 --> 12.2) Mag-ingat na gawing haligi ng buhay ang isang sistema na sa huli pala mali, i.e. baliktad. Isa ito sa mga nagdudulot ng pagkasawi ng ilang tao.<br/>
 --> <b>Mga Halimbawa:</b><br/>
