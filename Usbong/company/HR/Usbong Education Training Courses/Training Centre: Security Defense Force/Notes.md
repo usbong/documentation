@@ -324,6 +324,8 @@ Patuloy na panlolokong ingay (at pisikal na pananakit) gamit ang wireless broadc
 --> Sanhi: Quick Money gawa ng pag-aasawa at pag-aanak nang kulang ang ninanakaw.<br/>
 --> Aksyon: Sulatan din ng incident report ang Tagapagpatupad ng Batas, i.e. Law Enforcement.<br/>
 --> Reminder: incident report = <b>information</b><br/>
+--> observation: Without <b>information</b> regarding opponent, we expect defeat in the 1st Battle.<br/>
+--> Example: Health Strength Status, e.g. how many hits can opponent take? <br/>
 
 --> 12.2) Mag-ingat na gawing haligi ng buhay ang isang sistema na sa huli pala mali, i.e. baliktad. Isa ito sa mga nagdudulot ng pagkasawi ng ilang tao.<br/>
 --> <b>Mga Halimbawa:</b><br/>
