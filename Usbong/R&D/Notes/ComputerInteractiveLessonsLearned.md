@@ -453,6 +453,11 @@ TO-DO: -update: this<br/>
 --> 字（じ；ji）, i.e. Text font, for conversations reminds me of my handwriting,<br/> 
 --> albeit I already use another accepted writing for the hiragana そ（so）<br/>
 
+#### Recommended Action:
+--> verify: in Genki Textbook, Japanese alphabets handwriting<br/>
+--> http://genki.japantimes.co.jp/about_en/about04_en/detail01_en;<br/>
+--> last accessed: 20210609
+
 ### 1.9.1.1.3) item/badge
 --> note: effect = causes change, e.g. with object interaction in created world<br/>
 --> example: additional ice effect when attack hits (to supposedly cause additional damage to enemies classified to be fire type)<br/>
