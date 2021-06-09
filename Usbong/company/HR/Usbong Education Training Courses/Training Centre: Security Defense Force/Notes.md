@@ -348,8 +348,8 @@ Patuloy na panlolokong ingay (at pisikal na pananakit) gamit ang wireless broadc
 --> reminder: burn, i.e. sunugin, body fat via continuous walking 20mins daily;<br/>
 --> Increased food consumption, increased walking time;<br/>
 --> Example: Continuous walking of 40mins;<br/>
---> observed: jump/skip rope executed continuously x800, not effective to reduce body weight<br/>
---> Contiuous walking effective.<br/>
+--> observed: jump/skip rope executed continuously x800 daily, not effective to reduce body weight<br/>
+--> Contiuous daily walking effective.<br/>
 --> Use jump/skip rope exercise to verify if with physical health status, e.g. current body weight, can execute action.<br/>
 --> Recommended Action: verify: physical therapy exercises
 
