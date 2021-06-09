@@ -325,23 +325,42 @@ Patuloy na panlolokong ingay (at pisikal na pananakit) gamit ang wireless broadc
 --> 12.2) Hindi niya matanggap na hindi mapupuksa ang mga Teroristang Komunista kung hindi ka gagawa ng aksyon, bago ka patayin sa debate, e.g. aapakan mo ba ang ipis o hindi?<br/>
 
 ### Part 13: Energy and Health: Food
-—> reminder: With かぼちゃ (kabocha, i.e. kalabasa), we need sharp knife.<br/>
-—> With knife, cut outward, not toward self.<br/>
-—> Use correct knife length.<br/>
-—> Example: With select parts of Tuna fish, cut using short knife, e.g. blade length < 15cm<br/>
-—> This is to increase knife maneuverability.<br/>
-—> reminder: regular ruler length 30cm<br/>
-—> Tuna fish’s inner part soft, in contrast to outer part<br/>
-—> Unless double-edged knife, top part of knife blade is not sharp.<br/>
-—> Press it with palm of hand to cut hard food object, e.g. kalabasa.<br/>
-—> Flat part of knife blade is not sharp.<br/>
-—> Press it with palm of hand to crush にんにく (ninniku, i.e. bawang) to quickly remove outer part classified to be its cover.<br/>
-—> With にんじん (ninjin, i.e. carrot), we can quickly cut it in chunks by using knife to make diagonal slices from the carrot’s tip part, where its root is located, not the top part<br/>
-—> After verification, cooking kabocha and ninjin with water, kikkoman soy sauce, sugar, using electric stove, can cause kare- taste.<br/>
-—> If kikkoman soy sauce not available, use in its stead iodized salt.<br/>
-—> <b>additional note:</b> kikkoman soy sauce include soy milk with nutrition that exists in fresh milk.<br/>
-—> However, nutrition quantity sufficient to not cause human person, e.g. classified to be Senior Citizens, to have increased body fat.<br/>
-—> This is in contrast to daily full cups/glasses of fresh milk, appropriate for growing and physically active children.<br/> 
-—> reminder: With kabocha and ninjin, we use wooden chopstick to pierce the chunks.<br/>
-—> If difficult to pierce due to not yet soft, add time to cook.<br/>
+#### 13.1) Sharp Knife
+--> Reminder: With かぼちゃ (kabocha, i.e. kalabasa), we need sharp knife.<br/>
+--> With knife, cut outward, not toward self.<br/>
+--> Use correct knife length.<br/>
+--> Example: With select parts of Tuna fish, cut using short knife, e.g. blade length < 15cm<br/>
+--> This is to increase knife maneuverability.<br/>
+--> reminder: regular ruler length 30cm<br/>
+--> Tuna fish’s inner part soft, in contrast to outer part<br/>
+--> Unless double-edged knife, top part of knife blade is not sharp.<br/>
+--> Press it with palm of hand to cut hard food object, e.g. kalabasa.<br/>
+--> Flat part of knife blade is not sharp.<br/>
+--> Press it with palm of hand to crush にんにく (ninniku, i.e. bawang) to quickly remove outer part classified to be its cover.<br/>
+--> With にんじん (ninjin, i.e. carrot), we can quickly cut it in chunks by using knife to make diagonal slices from the carrot’s tip part, where its root is located, not the top part<br/>
+--> After verification, cooking kabocha and ninjin with water, kikkoman soy sauce, sugar, using electric stove, can cause kare- taste.<br/>
+--> If kikkoman soy sauce not available, use in its stead Iodized salt.<br/>
+--> <b>Additional Note:</b> kikkoman soy sauce includes soy milk with nutrition that exists in fresh milk.<br/>
+--> However, nutrition quantity sufficient to not cause human person, e.g. classified to be Senior Citizens, to have increased body fat.<br/>
+--> This is in contrast to daily full cups/glasses of fresh milk, appropriate for growing and physically active children.<br/> 
+--> reminder: With kabocha and ninjin, we use wooden chopstick to pierce the chunks.<br/>
+--> If difficult to pierce due to not yet soft, add time to cook.<br/>
+
+#### 13.2) Iodized Salt
+--> Iodized salt has taste of the sea.<br/>
+--> observed: McDonalds french potato fries use increased Iodized salt<br/>
+--> With onigiri (riceball; lit: grasped hand), we use Iodized salt, if nori (dried seaweed) not available.<br/>
+--> onigiri technique:<br/>
+--> 13.2.1) After cooking rice, let rice cool first; otherwise, hands shall be burnt<br/>
+--> 13.2.2) Add Iodized salt on rice inside the rice cooker.<br/>
+--> reminder: select pain relievers classified to be anti-inflammatory cause us to not experience burn<br/>
+--> Example: Walking for 2 hours without stop, with problematic cushion in inner part of shoes, causes feet to have callos.<br/>
+--> Pain equal to burning.<br/>
+--> 13.2.3) Wash hands.<br/>
+--> 13.2.4) Put Iodized salt on palm of both hands.<br/>
+--> 13.2.5) Put cooked rice on one palm of hand.<br/>
+--> 13.2.6) Use another palm to cup hand.<br/>
+--> 13.2.7) Use both palms of hands to make rice into ball shape.<br/>
+--> <b>Additional Note:</b> Ball shape can become triangle shape based on palm hands technique.<br/>
+--> 13.2.8) Put finished rice ball inside plastic bag, e.g. ziploc bag.<br/>
 
