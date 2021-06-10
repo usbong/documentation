@@ -4330,8 +4330,8 @@ void Pilot::drawPilotAsQuadWithTexture()
                         //edited by Mike, 20210609
 //                        fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.125; //0.25;
                         fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.25;
-
-                        iCountTaoAnimationFrame=iCountTaoAnimationFrame+1;
+                        	//removed by Mike, 20210610
+//                        iCountTaoAnimationFrame=iCountTaoAnimationFrame+1;
 						
 						//FACING_UP...
 						drawPilotObject();
@@ -4421,17 +4421,18 @@ void Pilot::drawPilotObject()
 //		glScalef(0.20f, 0.4f, 1.0f);		
 //glScalef(3.2f, 3.2f, 3.2f);
 
-    //edited by Mike, 20210609
-//		glScalef(0.2f/2, 0.4f/2, 1.0f);
-//removed by Mike, 20210610
-    glScalef(0.2f, 0.4f, 1.0f);
+		//added by Mike, 20210610
+		//TO-DO: -reverify: collision detection instructions
+
+    //edited by Mike, 20210610
+		glScalef(0.2f/2, 0.4f/2, 1.0f);
+//    glScalef(0.2f, 0.4f, 1.0f);
 		
 		//added by Mike, 20210516
 		//due to instructions to auto-draw quad using triangles
-		//removed by Mike, 20210605
-		//note: causes update to texture coordinates position
-//		glTranslatef(1.0f, 0.5f, 0.0f);		
-		
+		//removed by Mike, 20210610
+//		glTranslatef(1.0f, 0.5f, 0.0f);	
+			
 /*		
 		glBegin(GL_TRIANGLES);
 			//counter-clockwise sequence to auto-draw front face
@@ -4466,19 +4467,24 @@ void Pilot::drawPilotObject()
 		//added by Mike, 20210608
 		//TO-DO: -reverify: texture coordinate position in y-axis
 	
-	printf(">>fTaoAnimationFrameOffset: %f",fTaoAnimationFrameOffset);
-	//TO-DO: -add: use 0.125 with texture coordinate position
-	//0.125
+//	printf(">>fTaoAnimationFrameOffset: %f",fTaoAnimationFrameOffset);
 	
     //added by Mike, 20210609
     //TO-DO: -reverify: facing right walking
-    
-    fTaoAnimationFrameOffset=0;    
+/*    
+    fTaoAnimationFrameOffset=0;
     currentFacingState=FACING_LEFT;
+*/
+/*
+		iCountTaoAnimationFrame=3;
+    fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.25;
+*/
     
     //note: use right-side of folded paper to identify texture coordinate positions
     //counter clock-wise
 if ((currentFacingState==FACING_RIGHT) || (currentFacingState==FACING_RIGHT_AND_UP) || (currentFacingState==FACING_RIGHT_AND_DOWN)) {
+		//edited by Mike, 20210610
+/*
         //added by Mike, 20210424
         //notes: use folding paper to assist in quickly identifying location, e.g. texture coordinates
         //set vertex positions clock-wise
@@ -4558,6 +4564,35 @@ if ((currentFacingState==FACING_RIGHT) || (currentFacingState==FACING_RIGHT_AND_
 //    glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.5f);	//C1
     glVertex3f(1.000000,-1.000000,-1.000000); //C2
         glEnd();
+*/        
+
+				//edited by Mike, 20210610
+        float fX=-1.0f;
+        float fY=1.0f;
+        	      
+				// Each set of 4 vertices form a quad        	      
+        glBegin(GL_QUADS);              
+//        			glTexCoord2f(tx, ty);
+//            	glTexCoord2f(0.0f+fTaoAnimationFrameOffset, 0.0f);
+            	glTexCoord2f(0.25+fTaoAnimationFrameOffset, 0.5f);            	
+        			glVertex3f(fX, fY, 0.0f);
+
+//        			glTexCoord2f(tx + 0.078125f, ty);
+//            	glTexCoord2f(0.25+fTaoAnimationFrameOffset, 0.0f);
+            	glTexCoord2f(0.0f+fTaoAnimationFrameOffset, 0.5f);
+      				glVertex3f(fX+2.0f, fY, 0.0f);      
+
+//        			glTexCoord2f(tx + 0.078125f, ty + 0.125f);
+//            	glTexCoord2f(0.25+fTaoAnimationFrameOffset, 1.0f); //0.5f);
+           	glTexCoord2f(0.0f+fTaoAnimationFrameOffset, 1.0f); //0.5f);
+      				glVertex3f(fX+2.0f, fY-2.0f, 0.0f);              
+
+//							glTexCoord2f(tx, ty + 0.125f);
+//            	glTexCoord2f(0.0f+fTaoAnimationFrameOffset, 1.0f); //0.5f);
+            	glTexCoord2f(0.25+fTaoAnimationFrameOffset, 1.0f); //0.5f);
+      				glVertex3f(fX, fY-2.0f, 0.0f);      
+   			glEnd();         
+        
     }
     else {
         //TO-DO: -reverify: cause why 1.0f in y-axis for texture coordinates
@@ -4568,51 +4603,76 @@ if ((currentFacingState==FACING_RIGHT) || (currentFacingState==FACING_RIGHT_AND_
         float fY=1.0f;
         
 //        glColor3f(1.0f,0.0f,0.0f);
-	glColor3f(1.0f, 1.0f, 1.0f); //set to default, i.e. white
-        
-/*        
+  
+/* //edited by Mike, 20210610        
         // Each set of 4 vertices form a quad
         glBegin(GL_QUADS);
             glTexCoord2f(0.0f+fTaoAnimationFrameOffset, 0.0f);
             glVertex3f(fX, fY, 0.0f);
         
-            glTexCoord2f(0.25+fTaoAnimationFrameOffset, 0.0f);
-//            glTexCoord2f(1.0f+fTaoAnimationFrameOffset, 0.0f);
-//            glTexCoord2f(0.125f+fTaoAnimationFrameOffset, 0.0f);
+            glTexCoord2f(0.125+fTaoAnimationFrameOffset, 0.0f);
             glVertex3f(fX+2.0f, fY, 0.0f);
 
-            glTexCoord2f(0.25+fTaoAnimationFrameOffset, 0.25f);
-//            glTexCoord2f(1.0f+fTaoAnimationFrameOffset, 1.0f);
-//            glTexCoord2f(0.125f+fTaoAnimationFrameOffset, 0.125f);
+            glTexCoord2f(0.125+fTaoAnimationFrameOffset, 1.0f);
             glVertex3f(fX+2.0f, fY-2.0f, 0.0f);
 
-            glTexCoord2f(0.0f+fTaoAnimationFrameOffset, 0.25f);
-//            glTexCoord2f(0.0f+fTaoAnimationFrameOffset, 1.0f);
-//            glTexCoord2f(0.0f+fTaoAnimationFrameOffset, 0.25f);
+            glTexCoord2f(0.0f+fTaoAnimationFrameOffset, 1.0f);
             glVertex3f(fX, fY-2.0f, 0.0f);
         glEnd();
-*/        
-				//TO-DO: -update: this
-
         
+*/      
+  
         glBegin(GL_QUADS);              // Each set of 4 vertices form a quad
 //        			glTexCoord2f(tx, ty);
-            	glTexCoord2f(0.0f+fTaoAnimationFrameOffset, 0.0f);
+//            	glTexCoord2f(0.0f+fTaoAnimationFrameOffset, 0.0f);
+//            	glTexCoord2f(0.0f+fTaoAnimationFrameOffset, 1.0f);
+            	glTexCoord2f(0.0f+fTaoAnimationFrameOffset, 0.5f);
         			glVertex3f(fX, fY, 0.0f);
 
 //        			glTexCoord2f(tx + 0.078125f, ty);
-            	glTexCoord2f(0.25+fTaoAnimationFrameOffset, 0.0f);
+//            	glTexCoord2f(0.25+fTaoAnimationFrameOffset, 0.0f);
+//            	glTexCoord2f(0.25+fTaoAnimationFrameOffset, 1.0f);
+            	glTexCoord2f(0.25+fTaoAnimationFrameOffset, 0.5f);
       				glVertex3f(fX+2.0f, fY, 0.0f);      
 
 //        			glTexCoord2f(tx + 0.078125f, ty + 0.125f);
-            	glTexCoord2f(0.25+fTaoAnimationFrameOffset, 0.5f); //0.5f);
+//            	glTexCoord2f(0.25+fTaoAnimationFrameOffset, 0.5f); //1.0f); //0.5f);
+            	glTexCoord2f(0.25+fTaoAnimationFrameOffset, 1.0f); //1.0f); //0.5f);
       				glVertex3f(fX+2.0f, fY-2.0f, 0.0f);              
 
 //							glTexCoord2f(tx, ty + 0.125f);
-            	glTexCoord2f(0.0f+fTaoAnimationFrameOffset, 0.5f); //0.5f);
+//            	glTexCoord2f(0.0f+fTaoAnimationFrameOffset, 0.5f); //1.0f); //0.5f);
+            	glTexCoord2f(0.0f+fTaoAnimationFrameOffset, 1.0f); //1.0f); //0.5f);
       				glVertex3f(fX, fY-2.0f, 0.0f);      
    			glEnd(); 
-        
+
+/*
+				//TO-DO: -reverify: cause of correct auto-drawn output with using the y-axis coordinate positions
+        glBegin(GL_QUADS);              // Each set of 4 vertices form a quad
+//        			glTexCoord2f(tx, ty);
+//            	glTexCoord2f(0.0f+fTaoAnimationFrameOffset, 0.0f);
+//            	glTexCoord2f(0.0f+fTaoAnimationFrameOffset, 1.0f);
+            	glTexCoord2f(0.0f+fTaoAnimationFrameOffset, 0.5f);
+        			glVertex3f(fX, fY, 0.0f);
+
+//        			glTexCoord2f(tx + 0.078125f, ty);
+//            	glTexCoord2f(0.25+fTaoAnimationFrameOffset, 0.0f);
+//            	glTexCoord2f(0.25+fTaoAnimationFrameOffset, 1.0f);
+            	glTexCoord2f(0.25+fTaoAnimationFrameOffset, 0.5f);
+      				glVertex3f(fX+2.0f, fY, 0.0f);      
+
+//        			glTexCoord2f(tx + 0.078125f, ty + 0.125f);
+//            	glTexCoord2f(0.25+fTaoAnimationFrameOffset, 0.5f); //1.0f); //0.5f);
+            	glTexCoord2f(0.25+fTaoAnimationFrameOffset, 1.0f); //1.0f); //0.5f);
+      				glVertex3f(fX+2.0f, fY-2.0f, 0.0f);              
+
+//							glTexCoord2f(tx, ty + 0.125f);
+//            	glTexCoord2f(0.0f+fTaoAnimationFrameOffset, 0.5f); //1.0f); //0.5f);
+            	glTexCoord2f(0.0f+fTaoAnimationFrameOffset, 1.0f); //1.0f); //0.5f);
+      				glVertex3f(fX, fY-2.0f, 0.0f);      
+   			glEnd(); 
+*/
+
         
 /*
         glBegin(GL_TRIANGLES);
