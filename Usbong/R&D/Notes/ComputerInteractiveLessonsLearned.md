@@ -417,15 +417,15 @@ TO-DO: -update: this<br/>
 
 3) 勇者鬥惡龍 (yongzhe dou elong; Brave Person Fight Evil Dragon;<br/>
 --> ドラゴンクエスト; dragon quest)<br/>
---> Chinese version
-
-#### Additional Notes:
+--> Chinese version<br/>
+--> <b>Additional Notes:</b><br/>
 --> Windows 7: Region and Language<br/>
 --> Keyboards and Languages: Change Keyboards<br/>
+--> Add: Chinese (Simplified, PRC)<br/>
 --> Add: Chinese (Traditional) - New Phonetic<br/>
 --> Properties -> Keyboard: HanYu Pinyin<br/>
---> Add: Chinese (Simplified, PRC)<br/>
 
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Notes/res/ChineseTraditionalTaiwanLanguageSetting.png" width="90%">
 
 ## 1.8) USBONG
 ## 1.8.1) Press Print Screen button to capture photograph
