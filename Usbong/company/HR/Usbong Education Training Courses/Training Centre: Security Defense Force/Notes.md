@@ -387,6 +387,9 @@ Patuloy na panlolokong ingay (at pisikal na pananakit) gamit ang wireless broadc
 --> reminder: excess = doku, i.e. lason<br/>
 --> <b>Recommended Action:</b> In its stead, eat onigiri (riceball; lit: grasped hand)<br/>
 --> With onigiri, we use Iodized salt, if nori (dried seaweed) not available.<br/>
+
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/company/HR/Usbong%20Education%20Training%20Courses/Training%20Centre:%20Security%20Defense%20Force/res/energyHealthFoodOnigiriV20210610T0849.jpg" width="40%">
+
 --> <b>onigiri technique:</b><br/>
 --> 13.2.1) After cooking rice, let rice cool first; otherwise, hands shall be burnt<br/>
 --> 13.2.2) Add Iodized salt on rice inside the rice cooker.<br/>
