@@ -419,21 +419,25 @@ TO-DO: -update: this<br/>
 --> ドラゴンクエスト; dragon quest)<br/>
 --> Chinese version<br/>
 --> umiikot;<br/>
---> Kapag labis na malakas ang halimaw, e.g. kaya kang mapupuksa agad, maghanap ng ibang daan.<br/>
+--> Kapag labis na malakas ang halimaw, e.g. kaya kang mapuksa agad, maghanap ng ibang daan.<br/>
 --> Gumamit ng 逃跑 (taopao; takas-takbo, i.e. pagtakas) kung kailangan.<br/>
 --> Habang pataas nang pataas ang iyong nibel, madaragdagan ang iyong kakayanan,<br/> 
 --> e.g. hoimi (panghilom), raliho- (ラリホー; pampatulog ng halimaw).<br/>
 --> <b>Paalala:</b> Mga gawa-gawang salita ito.<br/>
 --> Sa bawat pagpuksa ng halimaw, madaragdagan ang iyong salapi.<br/>
 --> Aakma ang nakukuha mong salapi sa iyong nibel.<br/>
---> Kung panay mahihinang halimaw ang iyong ginagapi, i.e. 打倒 (dadao, hit taob), kaunti lang na salapi ang iyong makukuha.<br/>
+--> Kung panay mahihinang halimaw ang iyong ginagapi, i.e. 打倒 (dadao, hampas-taob), kaunti lang na salapi ang iyong makukuha.<br/>
 --> Ginagamit ang salapi sa pambili ng kalasag, sandata, atbp.<br/>
 --> Kailangan ng palakas nang palakas na kalasag, atbp upang makapaglakbay nang mas malayo.<br/>
 --> <b>Paalala:</b> Kailangan mong magapi ang Dragon upang mailigtas ang Prinsesa.<br/>
 --> 慣れ (nare; sanayan);<br/>
---> halimbawa: Mukhang hindi kasing ayos sa simula ang guhit ng mga mamamayan, atbp;<br/>
+--> halimbawa: Mukhang hindi maayos sa simula ang guhit ng mga mamamayan, atbp;<br/>
 --> Sa bawat pagdalaw mo sa daigdig ng Dragon Quest, masasanay ka rin; hindi naman ganoong kalubha.<br/> 
 --> preference: Umaakma ang guhit ayon sa suot na gamit, e.g. kalasag, atbp.<br/>
+--> <b>Recommended Reading:</b><br/>
+--> ファミリー コンピュータ ドラゴン クエスト 取扱説明書<br/>
+--> Family Computer Dragon Quest Usage Explanation Book<br/>
+--> https://www.nintendo.co.jp/clvj/manuals/pdf/CLV-P-HBBBJ.pdf; last accessed: 20210611<br/>
 --> <b>Additional Notes:</b><br/>
 --> Windows 7: Region and Language<br/>
 --> Keyboards and Languages: Change Keyboards<br/>
