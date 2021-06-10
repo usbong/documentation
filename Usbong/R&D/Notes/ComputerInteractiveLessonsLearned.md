@@ -415,6 +415,17 @@ TO-DO: -update: this<br/>
 --> <b>Additional Note:</b><br/>
 --> Mas nais ko ang kanyang istorya/salaysay, kaysa sa kanyang pagguhit.<br/>
 
+3) 勇者鬥惡龍 (yongzhe dou elong; Brave Person Fight Evil Dragon; ドラゴンクエスト; dragon quest)<br/>
+--> Chinese version<br/>
+
+#### Additional Notes:
+--> Windows 7: Region and Language<br/>
+--> Keyboards and Languages: Change Keyboards<br/>
+--> Add: Chinese (Traditional) - New Phonetic<br/>
+--> Properties -> Keyboard: HanYu Pinyin<br/>
+--> Add: Chinese (Simplified, PRC)<br/>
+
+
 ## 1.8) USBONG
 ## 1.8.1) Press Print Screen button to capture photograph
 --> Alternating Red and Yellow Boxes;<br/>
