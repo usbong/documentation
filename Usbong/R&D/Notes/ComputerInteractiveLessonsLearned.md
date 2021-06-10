@@ -422,7 +422,7 @@ TO-DO: -update: this<br/>
 --> Kapag labis na malakas ang halimaw, e.g. kaya kang mapuksa agad, maghanap ng ibang daan.<br/>
 --> Gumamit ng 逃跑 (taopao; takas-takbo, i.e. pagtakas) kung kailangan.<br/>
 --> Habang pataas nang pataas ang iyong nibel, madaragdagan ang iyong kakayanan,<br/> 
---> e.g. hoimi (panghilom), raliho- (ラリホー; pampatulog ng halimaw).<br/>
+--> e.g. 霍伊米 (huoyimi; ホイミ; hoimi, i.e. panghilom), 拉里霍 (lalihuo; ラリホー; raliho-, i.e. pampatulog ng halimaw).<br/>
 --> <b>Paalala:</b> Mga gawa-gawang salita ito.<br/>
 --> Sa bawat pagpuksa ng halimaw, madaragdagan ang iyong salapi.<br/>
 --> Aakma ang nakukuha mong salapi sa iyong nibel.<br/>
@@ -436,7 +436,7 @@ TO-DO: -update: this<br/>
 --> preference: Umaakma ang guhit ayon sa suot na gamit, e.g. kalasag, atbp.<br/>
 --> <b>Recommended Reading:</b><br/>
 --> ファミリー コンピュータ ドラゴン クエスト 取扱説明書<br/>
---> Family Computer Dragon Quest Usage Explanation Book<br/>
+--> Family Computer Dragon Quest Handling Speak Clear Book<br/>
 --> https://www.nintendo.co.jp/clvj/manuals/pdf/CLV-P-HBBBJ.pdf; last accessed: 20210611<br/>
 --> <b>Additional Notes:</b><br/>
 --> Windows 7: Region and Language<br/>
