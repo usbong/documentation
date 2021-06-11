@@ -430,6 +430,12 @@ TO-DO: -update: this<br/>
 --> Ginagamit ang salapi sa pambili ng kalasag, sandata, atbp.<br/>
 --> Kailangan ng palakas nang palakas na kalasag, atbp upang makapaglakbay nang mas malayo.<br/>
 --> <b>Paalala:</b> Kailangan mong magapi ang Dragon upang mailigtas ang Prinsesa.<br/>
+--> Maaalala ang ドラゴン クエストV: 天空の花嫁 (Dragon Quest V: Heaven Empty’s Flower Wife)<br/>
+--> Bagama’t sa halip na 40+ oras, sa loob ng 10 oras ako naghahagilap.<br/>
+--> Sa DQV, pagkalipas ng 40+ oras, isinantabi ko na.<br/>
+--> Dagdag sa PlayStation 2, Japanese version ng DQV:<br/> 
+--> Maaalala ang maiging pagkagawa ng Zombie mula 2-Dimensional (2D) papuntang 3-Dimensional (3D) object.<br/>
+--> Maaalala ang paglipas ng panahon gawa ng himig, istorya, atbp.<br/>
 --> 慣れ (nare; sanayan);<br/>
 --> halimbawa: Mukhang hindi maayos sa simula ang guhit ng mga mamamayan, atbp;<br/>
 --> Sa bawat pagdalaw mo sa daigdig ng Dragon Quest, masasanay ka rin; hindi naman ganoong kalubha.<br/> 
