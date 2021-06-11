@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210610
+ * @date updated: 20210611
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -540,10 +540,14 @@ Pilot::Pilot(float xPos, float yPos, float zPos, int windowWidth, int windowHeig
 */
 	
 //note:	glScalef(0.2f/2, 0.4f/2, 1.0f);			
-	//added by Mike, 20210527
-	myWidthAsPixel=128*0.2/2;
+	//added by Mike, 20210527; edited by Mike, 20210611
+/*	myWidthAsPixel=128*0.2/2;
     myHeightAsPixel=192*0.4/2;
-
+*/
+    myWidthAsPixel=64;
+    myHeightAsPixel=64;
+    
+    
 
 /*	//removed by Mike, 20210528
 //added by Mike, 20210528
@@ -4424,14 +4428,9 @@ void Pilot::drawPilotObject()
 		//added by Mike, 20210610
 		//TO-DO: -reverify: collision detection instructions
 
-    //edited by Mike, 20210610
+        //edited by Mike, 20210611
 		glScalef(0.2f/2, 0.4f/2, 1.0f);
-//    glScalef(0.2f, 0.4f, 1.0f);
-		
-		//added by Mike, 20210516
-		//due to instructions to auto-draw quad using triangles
-		//removed by Mike, 20210610
-//		glTranslatef(1.0f, 0.5f, 0.0f);	
+		glTranslatef(1.0f, 0.5f, 0.0f); //add this to calibrate collision detection box
 			
 /*		
 		glBegin(GL_TRIANGLES);
