@@ -443,6 +443,8 @@ Pilot::Pilot(float xPos, float yPos, float zPos, int windowWidth, int windowHeig
 	//added by Mike, 20201201
 	currentMovingState=IDLE_MOVING_STATE;
 	
+	//added by Mike, 20210611
+	fTaoAnimationFrameOffsetYAxis=0.0f;
 
 //    myXPos=0.0;
 //    myYPos=0.0;
@@ -4263,7 +4265,7 @@ void Pilot::drawPilotAsQuadWithTexture()
 
 	float fScale=1.0f+(1.0f-(fDistanceBetweenPlayer1And2/20.0f));
 
-	//edited by Mike, 20210506
+	//edited by Mike, 20210506IN_TITLE_STATE
 	if (fScale>2.0f) {
 		fScale=2.0f;
 	}
@@ -4325,55 +4327,66 @@ void Pilot::drawPilotAsQuadWithTexture()
 */
 				
             case MOVING_STATE:
-				switch(currentMovingState) {
-		            case IDLE_MOVING_STATE:
-	//added by Mike, 20210420
-	//TO-DO: -add: this in key movement
-	//note: 3 animation frames; .tga image file has 4 frames @128x256, i.e. width x height
-	iCountTaoAnimationFrame=3;
-                        //edited by Mike, 20210609
-//                        fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.125; //0.25;
-                        fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.25;
-                        	//removed by Mike, 20210610
-//                        iCountTaoAnimationFrame=iCountTaoAnimationFrame+1;
-						
-						//FACING_UP...
-						drawPilotObject();
-						break;
-					case WALKING_MOVING_STATE:
-	//added by Mike, 20210420
-	//TO-DO: -add: this in key movement
-	//note: 3 animation frames; .tga image file has 4 frames @128x256, i.e. width x height
-	iCountTaoAnimationFrame=(iCountTaoAnimationFrame)%3;
-	
-//	fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.5;
-                        //edited by Mike, 20210609
-//                        fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.125; //0.25;
-                        fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.25;
-                       
-	
-//	printf("iCountTaoAnimationFrame: %i",iCountTaoAnimationFrame);
-	iCountTaoAnimationFrame=iCountTaoAnimationFrame+1;		
-	//printf("iTaoAnimationFrameOffset: %i",iTaoAnimationFrameOffset);
+							switch(currentMovingState) {
+		            		 case IDLE_MOVING_STATE:
+							//added by Mike, 20210420
+							//TO-DO: -add: this in key movement
+							//note: 3 animation frames; .tga image file has 4 frames @128x256, i.e. width x height
+							iCountTaoAnimationFrame=3;
+                        						//edited by Mike, 20210609
+						//                        fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.125; //0.25;
+                        						fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.25;
+                        							//removed by Mike, 20210610
+						//                        iCountTaoAnimationFrame=iCountTaoAnimationFrame+1;
 												
-						drawPilotObject();
-						break;
-					case ATTACKING_MOVING_STATE:
-                        //note: 3 animation frames; .tga image file has 4 frames @128x256, i.e. width x height
-                        iCountTaoAnimationFrame=3;
-                        //edited by Mike, 20210609
-//                        fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.125; //0.25;
-                        fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.25;
-                        iCountTaoAnimationFrame=iCountTaoAnimationFrame+1;
-                        
-                        drawPilotObject(); //added by Mike, 20210603
-                        break;
-				}
-                break;
-            case IN_TITLE_STATE:
-               break;
-
-    }    
+												//added by Mike, 20210611
+												//TO-DO: -add: identify which Unit Member hit the Ball
+												//TO-DO: -add: image with kick
+												
+              					fTaoAnimationFrameOffsetYAxis=0.75f; //added by Mike, 20210611
+												
+												//FACING_UP...
+												drawPilotObject();
+												break;
+											case WALKING_MOVING_STATE:
+							//added by Mike, 20210420
+							//TO-DO: -add: this in key movement
+							//note: 3 animation frames; .tga image file has 4 frames @128x256, i.e. width x height
+							iCountTaoAnimationFrame=(iCountTaoAnimationFrame)%3;
+							
+						//	fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.5;
+                        						//edited by Mike, 20210609
+						//                        fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.125; //0.25;
+                        						fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.25;
+                       						
+							
+						//	printf("iCountTaoAnimationFrame: %i",iCountTaoAnimationFrame);
+							iCountTaoAnimationFrame=iCountTaoAnimationFrame+1;		
+							//printf("iTaoAnimationFrameOffset: %i",iTaoAnimationFrameOffset);
+																		
+              					fTaoAnimationFrameOffsetYAxis=0.75f; //added by Mike, 20210611
+																		
+												drawPilotObject();
+												break;
+												
+												case ATTACKING_MOVING_STATE:
+												
+printf(">>>>>>>>>>>>>>> ATTACK DITO");												
+              							//note: 3 animation frames; .tga image file has 4 frames @128x256, i.e. width x height
+              							iCountTaoAnimationFrame=0;
+              							fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.25;
+              							fTaoAnimationFrameOffsetYAxis=0.25f; //added by Mike, 20210611
+              							
+							/*											//removed by Mike, 20210611
+              							iCountTaoAnimationFrame=iCountTaoAnimationFrame+1;
+							*/                       
+              							drawPilotObject(); //added by Mike, 20210603
+              							break;
+													}
+                							break;
+            						case IN_TITLE_STATE:
+               						break;						
+    						}    
 
 	//removed by Mike, 20201001
 //    glPopMatrix();	// pop back to original coordinate system
@@ -4429,7 +4442,8 @@ void Pilot::drawPilotObject()
 		//TO-DO: -reverify: collision detection instructions
 
         //edited by Mike, 20210611
-		glScalef(0.2f/2, 0.4f/2, 1.0f);
+//		glScalef(0.2f/2, 0.4f/2, 1.0f);
+		glScalef(0.2f/2, 0.4f/4, 1.0f);		
 		glTranslatef(1.0f, 0.5f, 0.0f); //add this to calibrate collision detection box
 			
 /*		
@@ -4478,7 +4492,15 @@ void Pilot::drawPilotObject()
 		iCountTaoAnimationFrame=3;
     fTaoAnimationFrameOffset=iCountTaoAnimationFrame*0.25;
 */
-    
+
+/*	//removed by Mike, 20210611
+    fTaoAnimationFrameOffset=0.0f;
+    currentFacingState=FACING_LEFT;    
+    fTaoAnimationFrameOffsetYAxis=0.25f;
+*/
+		//added by Mike, 20210611
+		//note: using quad instructions, texture coordinates origin at bottom-left
+
     //note: use right-side of folded paper to identify texture coordinate positions
     //counter clock-wise
 if ((currentFacingState==FACING_RIGHT) || (currentFacingState==FACING_RIGHT_AND_UP) || (currentFacingState==FACING_RIGHT_AND_DOWN)) {
@@ -4573,30 +4595,36 @@ if ((currentFacingState==FACING_RIGHT) || (currentFacingState==FACING_RIGHT_AND_
         glBegin(GL_QUADS);              
 //        			glTexCoord2f(tx, ty);
 //            	glTexCoord2f(0.0f+fTaoAnimationFrameOffset, 0.0f);
-            	glTexCoord2f(0.25+fTaoAnimationFrameOffset, 0.5f);            	
+							//edited by Mike, 20210611
+//            	glTexCoord2f(0.25+fTaoAnimationFrameOffset, 0.5f);   
+            	glTexCoord2f(0.25f+fTaoAnimationFrameOffset, fTaoAnimationFrameOffsetYAxis);               	
         			glVertex3f(fX, fY, 0.0f);
 
 //        			glTexCoord2f(tx + 0.078125f, ty);
 //            	glTexCoord2f(0.25+fTaoAnimationFrameOffset, 0.0f);
-            	glTexCoord2f(0.0f+fTaoAnimationFrameOffset, 0.5f);
+							//edited by Mike, 20210611
+//            	glTexCoord2f(0.0f+fTaoAnimationFrameOffset, 0.5f);
+            	glTexCoord2f(0.0f+fTaoAnimationFrameOffset, fTaoAnimationFrameOffsetYAxis);               	
       				glVertex3f(fX+2.0f, fY, 0.0f);      
 
 //        			glTexCoord2f(tx + 0.078125f, ty + 0.125f);
 //            	glTexCoord2f(0.25+fTaoAnimationFrameOffset, 1.0f); //0.5f);
-           	glTexCoord2f(0.0f+fTaoAnimationFrameOffset, 1.0f); //0.5f);
+							//edited by Mike, 20210611
+//           	glTexCoord2f(0.0f+fTaoAnimationFrameOffset, 1.0f); //0.5f);           	
+           	glTexCoord2f(0.0f+fTaoAnimationFrameOffset, fTaoAnimationFrameOffsetYAxis+0.25f); //0.5f);           	
+
       				glVertex3f(fX+2.0f, fY-2.0f, 0.0f);              
 
 //							glTexCoord2f(tx, ty + 0.125f);
 //            	glTexCoord2f(0.0f+fTaoAnimationFrameOffset, 1.0f); //0.5f);
-            	glTexCoord2f(0.25+fTaoAnimationFrameOffset, 1.0f); //0.5f);
+							//edited by Mike, 20210611
+//            	glTexCoord2f(0.25+fTaoAnimationFrameOffset, 1.0f); //0.5f);
+            	glTexCoord2f(0.25+fTaoAnimationFrameOffset, fTaoAnimationFrameOffsetYAxis+0.25f); //0.5f);
       				glVertex3f(fX, fY-2.0f, 0.0f);      
    			glEnd();         
         
     }
-    else {
-        //TO-DO: -reverify: cause why 1.0f in y-axis for texture coordinates
-        //if we use 0.5f, et cetera not auto-drawn
-        
+    else {        
         //edited by Mike, 20210610
         float fX=-1.0f;
         float fY=1.0f;
@@ -4625,23 +4653,31 @@ if ((currentFacingState==FACING_RIGHT) || (currentFacingState==FACING_RIGHT_AND_
 //        			glTexCoord2f(tx, ty);
 //            	glTexCoord2f(0.0f+fTaoAnimationFrameOffset, 0.0f);
 //            	glTexCoord2f(0.0f+fTaoAnimationFrameOffset, 1.0f);
-            	glTexCoord2f(0.0f+fTaoAnimationFrameOffset, 0.5f);
+							//edited by Mike, 20210611
+//            	glTexCoord2f(0.0f+fTaoAnimationFrameOffset, 0.5f);
+            	glTexCoord2f(0.0f+fTaoAnimationFrameOffset, fTaoAnimationFrameOffsetYAxis);               	            
         			glVertex3f(fX, fY, 0.0f);
 
 //        			glTexCoord2f(tx + 0.078125f, ty);
 //            	glTexCoord2f(0.25+fTaoAnimationFrameOffset, 0.0f);
 //            	glTexCoord2f(0.25+fTaoAnimationFrameOffset, 1.0f);
-            	glTexCoord2f(0.25+fTaoAnimationFrameOffset, 0.5f);
+							//edited by Mike, 20210611
+//            	glTexCoord2f(0.25+fTaoAnimationFrameOffset, 0.5f);
+            	glTexCoord2f(0.25f+fTaoAnimationFrameOffset, fTaoAnimationFrameOffsetYAxis);               	            
       				glVertex3f(fX+2.0f, fY, 0.0f);      
 
 //        			glTexCoord2f(tx + 0.078125f, ty + 0.125f);
 //            	glTexCoord2f(0.25+fTaoAnimationFrameOffset, 0.5f); //1.0f); //0.5f);
-            	glTexCoord2f(0.25+fTaoAnimationFrameOffset, 1.0f); //1.0f); //0.5f);
+							//edited by Mike, 20210611
+//            	glTexCoord2f(0.25+fTaoAnimationFrameOffset, 1.0f); //1.0f); //0.5f);
+            	glTexCoord2f(0.25f+fTaoAnimationFrameOffset, fTaoAnimationFrameOffsetYAxis+0.25f);          	
       				glVertex3f(fX+2.0f, fY-2.0f, 0.0f);              
 
 //							glTexCoord2f(tx, ty + 0.125f);
 //            	glTexCoord2f(0.0f+fTaoAnimationFrameOffset, 0.5f); //1.0f); //0.5f);
-            	glTexCoord2f(0.0f+fTaoAnimationFrameOffset, 1.0f); //1.0f); //0.5f);
+							//edited by Mike, 20210611
+//            	glTexCoord2f(0.0f+fTaoAnimationFrameOffset, 1.0f); //1.0f); //0.5f);
+            	glTexCoord2f(0.0f+fTaoAnimationFrameOffset, fTaoAnimationFrameOffsetYAxis+0.25f);          	
       				glVertex3f(fX, fY-2.0f, 0.0f);      
    			glEnd(); 
 
@@ -4712,7 +4748,7 @@ if ((currentFacingState==FACING_RIGHT) || (currentFacingState==FACING_RIGHT_AND_
 //        glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);
         glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);
 //        glVertex3f(-1.000000,4.000000,-1.000000); //A2
-        glVertex3f(-1.000000,1.000000,-1.000000); //A2
+        glVertex3f(-1.000000,1.000000,-1.000000); //A2fTaoAnimationFrameOffsetYAxis
         
         glNormal3f(0.0000,0.0000,-1.0000);
         //edited by Mike, 20210420
@@ -6137,6 +6173,12 @@ void Pilot::move(int key)
 		  //added by Mike, 20201226
    		  currentMovingState=WALKING_MOVING_STATE;
 		  break;
+		  
+		  //added by Mike, 20210611
+			case KEY_K:
+   		  currentMovingState=ATTACKING_MOVING_STATE;
+				break;
+					  			
 		//added by Mike, 20201201
 		default:
           //edited by Mike, 20210604
@@ -6194,7 +6236,12 @@ void Pilot::move(int key)
 }
 void Pilot::hitBy(MyDynamicObject* mdo)
 {		
-		//TO-DO: -add: auto-identify if Ball object
+/*	//removed by Mike, 20210611
+		//auto-identify if Ball object
+    if (dynamic_cast<Ball*>(mdo)->getIsBall()) {    	
+		}
+*/
+    
 //		mdo->updateDirection();
 
 	//removed by Mike, 20210527
