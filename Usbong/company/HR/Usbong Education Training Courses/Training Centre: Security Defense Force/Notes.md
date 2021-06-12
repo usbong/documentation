@@ -405,3 +405,18 @@ Patuloy na panlolokong ingay (at pisikal na pananakit) gamit ang wireless broadc
 --> <b>Additional Note:</b> Ball shape can become triangle shape based on palm hands technique.<br/>
 --> 13.2.8) Put finished rice ball inside plastic bag, e.g. ziploc bag.<br/>
 
+### Part 14: Energy and Health: Electricity
+--> Computer Sound<br/>
+
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/company/HR/Usbong%20Education%20Training%20Courses/Training%20Centre:%20Security%20Defense%20Force/res/noSoundWindowsMachineV20210612T0853.png" width="20%">
+
+--> To increase security defense against noise pollution, we set the Computer Sound to OFF.<br/>
+--> observed: volume increases to be noise pollution when excess electricity enters machines, e.g. radio.<br/>
+--> Reminder: machines, e.g. radio, computer, are connected to the network wired/wireless<br/>
+--> Electricity enters machines via among others:<br/>
+--> Electricity as wired enters via the electrical consent outlet.<br/>
+--> Electricity as wired enters via the Local Area Network (LAN) RJ-45 cable.<br/>
+--> Electricity as wireless electric wave enters via antenna/antennae.<br/>
+--> With Computer/Television Monitors, brightness level increases to be excess.<br/>
+--> Reminder: Machines consume electricity to execute tasks.<br/>
+--> Insufficient electricity causes machine problems.
