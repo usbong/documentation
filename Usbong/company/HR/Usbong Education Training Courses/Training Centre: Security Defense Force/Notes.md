@@ -420,4 +420,7 @@ Patuloy na panlolokong ingay (at pisikal na pananakit) gamit ang wireless broadc
 --> With Computer/Television Monitors, brightness level increases to be excess.<br/>
 --> Reminder: Machines consume electricity to execute tasks.<br/>
 --> Increased tasks cause increased electricity consumption.<br/>
---> Insufficient electricity causes machine problems.
+--> Insufficient electricity causes machine problems.<br/>
+--> Increased electricity consumption causes increased heat.<br/>
+--> verified: cellular telephone connected to SMART network to cause head pain wirelessly<br/>
+--> Reminder: Network Towers are misused by the Teroristang Komunista to cause physical injury.
