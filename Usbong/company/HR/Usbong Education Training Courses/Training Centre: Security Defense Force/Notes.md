@@ -412,7 +412,7 @@ Patuloy na panlolokong ingay (at pisikal na pananakit) gamit ang wireless broadc
 
 --> To increase security defense against noise pollution, we set the Computer Sound to OFF.<br/>
 --> observed: volume increases to be noise pollution when excess electricity enters machines, e.g. radio.<br/>
---> Reminder: machines, e.g. radio, computer, are connected to the network wired/wireless<br/>
+--> Reminder: machines, e.g. radio, computer, telephone, are connected to the network wired/wireless<br/>
 --> Electricity enters machines via among others:<br/>
 --> Electricity as wired enters via the electrical consent outlet.<br/>
 --> Electricity as wired enters via the Local Area Network (LAN) RJ-45 cable.<br/>
