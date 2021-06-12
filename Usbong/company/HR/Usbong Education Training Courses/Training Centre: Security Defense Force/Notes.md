@@ -412,20 +412,20 @@ Patuloy na panlolokong ingay (at pisikal na pananakit) gamit ang wireless broadc
 
 --> To increase security defense against noise pollution, we set the Computer Sound to OFF.<br/>
 --> observed: volume increases to be noise pollution when excess electricity enters machines, e.g. radio.<br/>
---> Reminder: machines, e.g. radio, computer, telephone, are connected to the network wired/wireless<br/>
+--> <b>Reminder:</b> machines, e.g. radio, computer, telephone, are connected to the network wired/wireless<br/>
 --> Electricity enters machines via among others:<br/>
 --> Electricity as wired enters via the electrical consent outlet.<br/>
 --> Electricity as wired enters via the Local Area Network (LAN) RJ-45 cable.<br/>
 --> Electricity as wireless electric wave enters via antenna/antennae.<br/>
 --> With Computer/Television Monitors, brightness level increases to be excess.<br/>
---> Reminder: Machines consume electricity to execute tasks.<br/>
+--> <b>Reminder:</b> Machines consume electricity to execute tasks.<br/>
 --> Increased tasks cause increased electricity consumption.<br/>
 --> Insufficient electricity causes machine problems, e.g. tasks are not executed correctly.<br/>
 --> Increased electricity consumption causes increased heat.<br/>
 --> verified: cellular telephone connected to SMART network to cause head pain wirelessly<br/>
 --> Wireless pain distance is < 1 meter.<br/>
 --> cellular telephone: National Telecommunications Commission (NTC)-certified Nokia feature phone, i.e. non-Android.<br/>
---> Additional Note: This is despite I was not speaking with another person using the cellular telephone.<br/>
---> Reminder: Heart Pacemaker devices are caused to not function correctly by cellular telephones that wireless transmit and receive data whose size is usable for calls.<br/>
---> Reminder: Network Towers are misused by the Teroristang Komunista to cause physical injury.
+--> <b>Additional Note:</b> This is despite I was not speaking with another person using the cellular telephone.<br/>
+--> <b>Reminder:</b> Heart Pacemaker devices are caused to not function correctly by cellular telephones that wireless transmit and receive data whose size is usable for calls.<br/>
+--> <b>Reminder:</b> Network Towers are misused by the Teroristang Komunista to cause physical injury.
 
