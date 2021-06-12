@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210611
+ * @date updated: 20210612
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -6176,7 +6176,8 @@ void Pilot::move(int key)
 		  
 		  //added by Mike, 20210611
 			case KEY_K:
-   		  currentMovingState=ATTACKING_MOVING_STATE;
+				//removed to hitBy(...) by Mike, 20210612
+   		  //currentMovingState=ATTACKING_MOVING_STATE;
 				break;
 					  			
 		//added by Mike, 20201201
@@ -6241,6 +6242,8 @@ void Pilot::hitBy(MyDynamicObject* mdo)
     if (dynamic_cast<Ball*>(mdo)->getIsBall()) {    	
 		}
 */
+		currentMovingState=ATTACKING_MOVING_STATE;
+
     
 //		mdo->updateDirection();
 
