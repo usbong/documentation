@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210612
+ * @date updated: 20210613
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -545,7 +545,7 @@ Pilot::Pilot(float xPos, float yPos, float zPos, int windowWidth, int windowHeig
 	//added by Mike, 20210527; edited by Mike, 20210611
 /*	myWidthAsPixel=128*0.2/2;
     myHeightAsPixel=192*0.4/2;
-*/
+*/    
     myWidthAsPixel=64;
     myHeightAsPixel=64;
     
@@ -623,7 +623,12 @@ Pilot::Pilot(float xPos, float yPos, float zPos, int windowWidth, int windowHeig
 	iPunchAnimationCountDelay=0;
 	//added by Mike, 20210123
 	iPunchAnimationCount=0;
-	
+
+    //added by Mike, 202105613
+    iKickAnimationCountDelay=0;
+    iKickAnimationCount=0;
+
+    
     //init default values
     //previousFacingState=FACING_UP;
     //currentFacingState=FACING_UP;
@@ -5419,8 +5424,48 @@ void Pilot::update(float dt)
            case MOVING_STATE:      
 				switch(currentMovingState) {
 		           case WALKING_MOVING_STATE:
+                        //added by Mike, 20210613
+                        bIsExecutingKick=false;
+                        iKickAnimationCount=0;
+                        iKickAnimationCountDelay=0;
 		                break;
 		            case ATTACKING_MOVING_STATE:
+                        //added by Mike, 20210613
+                        if (bIsExecutingKick) {
+                            if (iKickAnimationCount<MAX_KICKING_ANIMATION_COUNT) {
+                                if ((iKickAnimationCountDelay)%2==0) {
+                                    iKickAnimationCount+=1;
+                                    iKickAnimationCountDelay=0;
+                                }
+                                iKickAnimationCountDelay+=1;
+                            }
+                            //added by Mike, 20210613
+                            //+added: no continuous kick via hold kick button
+                            else {
+                                if (iKickAnimationCountDelay<0) { //<5
+                                }
+                                else {
+                        //added by Mike, 20210613
+                        //TO-DO: -fix: no need to release pressed KEY_K
+                                    
+                        //removed by Mike, 20210613
+//                                    if (myKeysDown[KEY_K]==FALSE) {
+                                        bIsExecutingKick=false;
+                                        iKickAnimationCount=0;
+                                        iKickAnimationCountDelay=0;
+/*  //removed by Mike, 20210613
+                                        armAngles[RIGHT]=0.0f;
+                                        armAngles[LEFT]=0.0f;
+*/
+                                    
+//removed by Mike, 20210613
+//                                    }
+                                }
+                                iKickAnimationCountDelay+=1;
+                            }
+                        }
+                        
+                        
 		            	if (bIsExecutingPunch) {
 		            		if (iPunchAnimationCount<MAX_PUNCHING_ANIMATION_COUNT) {
 								if ((iPunchAnimationCountDelay)%2==0) {
@@ -5908,9 +5953,12 @@ void Pilot::move(int key)
 	}
 	//added by Mike, 20210121
 	else if (bIsExecutingDefend) {
-	}	
+	}
+    //added by Mike, 20210613
+    else if (bIsExecutingKick) {
+    }
 	else {
-//added by Mike, 20210521		
+//added by Mike, 20210521
 //----------		
           //added by Mike, 20201001; edited by Mike, 20201116
 //	      myYPos+=-stepY;
@@ -5955,8 +6003,14 @@ void Pilot::move(int key)
 		  }
 		  
 		  //added by Mike, 20201226; edited by Mike, 20210502
-		  //edited by Mike, 20210521
-   		  currentMovingState=WALKING_MOVING_STATE;
+		  //edited by Mike, 20210613
+          currentMovingState=WALKING_MOVING_STATE;
+/*  //removed by Mike, 20210613
+          if (bIsExecutingKick) {
+            currentMovingState=ATTACKING_MOVING_STATE;
+          }
+*/
+           
 //		  currentMovingState=IDLE_MOVING_STATE;		    
           break;
           
@@ -5973,6 +6027,9 @@ void Pilot::move(int key)
 	//added by Mike, 20210121
 	else if (bIsExecutingDefend) {
 	}
+    //added by Mike, 20210613
+    else if (bIsExecutingKick) {
+    }
 	else {
 				
 //added by Mike, 20210521		
@@ -6015,9 +6072,14 @@ void Pilot::move(int key)
 		  }
 
 		  //added by Mike, 20201226; edited by Mike, 20210502
-		  //edited by Mike, 20210521
-   		currentMovingState=WALKING_MOVING_STATE;
-//	currentMovingState=IDLE_MOVING_STATE;		   
+           //edited by Mike, 20210613
+           currentMovingState=WALKING_MOVING_STATE;
+/* //removed by Mike, 20210613
+           if (bIsExecutingKick) {
+               currentMovingState=ATTACKING_MOVING_STATE;
+           }
+*/
+//	currentMovingState=IDLE_MOVING_STATE;
           break;      
 //     case KEY_LEFT: //removed by Mike, 20210130
      case KEY_A: //added by Mike, 20210128		   
@@ -6034,7 +6096,10 @@ void Pilot::move(int key)
 	//added by Mike, 20210121
 	else if (bIsExecutingDefend) {
 	}
-	else {			
+    //added by Mike, 20210613
+    else if (bIsExecutingKick) {
+    }
+	else {
 //added by Mike, 20210504		   
 /*			printf(">> myXPos: %f\n",myXPos);
 			printf(">> stepX: %f\n",stepX);
@@ -6101,9 +6166,14 @@ void Pilot::move(int key)
 */
 		  }
 
-		  //added by Mike, 20201226
-   		  currentMovingState=WALKING_MOVING_STATE;
-          break;      
+           //edited by Mike, 20210613
+           currentMovingState=WALKING_MOVING_STATE;
+/* //removed by Mike, 20210613
+           if (bIsExecutingKick) {
+               currentMovingState=ATTACKING_MOVING_STATE;
+           }
+*/
+          break;
 //     case KEY_RIGHT: //removed by Mike, 20210130
      case KEY_D: //added by Mike, 20210128
 		   //removed by Mike, 20201001getXAsPixel
@@ -6121,6 +6191,9 @@ void Pilot::move(int key)
 	//added by Mike, 20210121
 	else if (bIsExecutingDefend) {
 	}
+    //added by Mike, 20210613
+    else if (bIsExecutingKick) {
+    }
 	else {
 /* //edited by Mike, 20210504		
           //added by Mike, 20201001            
@@ -6169,16 +6242,48 @@ void Pilot::move(int key)
           	currentFacingState=FACING_RIGHT;
 		  }
 		  
-
-		  //added by Mike, 20201226
-   		  currentMovingState=WALKING_MOVING_STATE;
+           //edited by Mike, 20210613
+           currentMovingState=WALKING_MOVING_STATE;
+/*  //removed by Mike, 20210613
+           if (bIsExecutingKick) {
+               currentMovingState=ATTACKING_MOVING_STATE;
+           }
+*/
 		  break;
 		  
 		  //added by Mike, 20210611
 			case KEY_K:
-				//removed to hitBy(...) by Mike, 20210612
-   		  //currentMovingState=ATTACKING_MOVING_STATE;
-				break;
+                //added by Mike, 20210613
+                if ((iKickAnimationCount==0)){// or (iPunchAnimationCount>=MAX_PUNCH_ANIMATION_COUNT)) {
+                    bIsExecutingKick=true;
+                }
+           
+           bHasPressedADirectionalKey=false;
+           
+           //based on enum Keys
+           for (int iCount=0; iCount<PILOT_MAX_DIRECTIONAL_KEY_DASH_COUNT; iCount++) {
+               if (myKeysDown[iCount]==TRUE) {
+                   bHasPressedADirectionalKey=true;
+                   break;
+               }
+           }
+           
+           //removed to hitBy(...) by Mike, 20210612
+           currentMovingState=ATTACKING_MOVING_STATE;
+           break;
+           //added by Mike, 20210613
+       case -KEY_K:
+           //TO-DO: -reverify: arm angles after release of kick button and then press move down
+           if (currentMovingState==WALKING_MOVING_STATE) {
+           }
+           else if (currentMovingState==ATTACKING_MOVING_STATE) {
+           }
+           else {
+               currentMovingState=IDLE_MOVING_STATE;
+           }			
+           break;
+           
+           
 					  			
 		//added by Mike, 20201201
 		default:
@@ -6196,6 +6301,12 @@ void Pilot::move(int key)
 		  break;		  		  
    }
 
+    //added by Mike, 20210613
+    if (bIsExecutingKick) {
+        currentMovingState=ATTACKING_MOVING_STATE;
+    }
+
+    
 	//added by Mike, 20210111
 	if (bIsExecutingPunch) {
 		currentMovingState=ATTACKING_MOVING_STATE;
@@ -6211,7 +6322,7 @@ void Pilot::move(int key)
 	//added by Mike, 20210502
 	//TO-DO: -add: FACING_LEFT based on opponent position, e.g. left of pilot
 
-	
+/* //removed by Mike, 20210613
 	//added by Mike, 20210104
 //	if (!bIsExecutingDefend) {	
 	if (!bIsFiringBeam) {
@@ -6234,6 +6345,8 @@ void Pilot::move(int key)
 	        currentFacingState=FACING_RIGHT_AND_DOWN;
 		}
 	}
+*/
+    
 }
 void Pilot::hitBy(MyDynamicObject* mdo)
 {		
@@ -6242,6 +6355,8 @@ void Pilot::hitBy(MyDynamicObject* mdo)
     if (dynamic_cast<Ball*>(mdo)->getIsBall()) {    	
 		}
 */
+        //added by Mike, 20210613
+        bIsExecutingKick=true;
 		currentMovingState=ATTACKING_MOVING_STATE;
 
     

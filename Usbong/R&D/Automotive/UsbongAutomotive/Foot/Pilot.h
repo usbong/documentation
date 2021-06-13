@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210604
+ * @date updated: 20210613
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -40,6 +40,9 @@
 
 //added by Mike, 20210122; edited by Mike, 20210123
 #define MAX_PUNCHING_ANIMATION_COUNT 2
+
+//added by Mike, 20210613
+#define MAX_KICKING_ANIMATION_COUNT 2
 
 //added by Mike, 20210129
 //+reverified: with Windows Machine; 5 with Linux Machine
@@ -152,6 +155,7 @@ private:
 	//added by Mike, 20210423
 	int iCountTaoAnimationFrame;
 	float fTaoAnimationFrameOffset;
+    float fTaoAnimationFrameOffsetYAxis; //added by Mike, 20210613
 
 /*	//removed by Mike, 20210522		
     OpenGLCanvas *myOpenGLCanvas;
@@ -194,7 +198,11 @@ private:
 	//added by Mike, 20210122
 	int iPunchAnimationCount,
 		iPunchAnimationCountDelay;
-
+    
+    //added by Mike, 20210613
+    int iKickAnimationCount,
+       iKickAnimationCountDelay;
+    
 	//added by Mike, 20201130
     CTargaImage *myBodyTexture;
    	unsigned int myBodyTextureObject;
@@ -219,6 +227,9 @@ private:
 		 //removed by Mike, 20210128
 //		 bIsExecutingDash, //added by Mike, 20210126
 		 bIsDashReady; //added by Mike, 20210126
+    
+    //added by Mike, 20210613
+    bool bIsExecutingKick;
 
 	//added by Mike, 20210128
 	//note: exceed size limit at value 7 due to compiler;

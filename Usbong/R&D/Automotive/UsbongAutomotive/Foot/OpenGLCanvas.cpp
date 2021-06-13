@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B.
  * @date created: 20200926
- * @date updated: 20210608
+ * @date updated: 20210613
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -3089,6 +3089,11 @@ void OpenGLCanvas::update()
         //added by Mike, 20210206
         myPilot->update(1); //dt
         myPilotPartner->update(1); //added by Mike, 20210530
+
+        //added by Mike, 20210613
+        myPilotPlayer2->update(1);
+        myPilotPlayer2Partner->update(1);
+
         
         /* //edited by Mike, 20210604
          //added by Mike, 20210530
@@ -3143,6 +3148,7 @@ void OpenGLCanvas::update()
         
         //added by Mike, 20210607
         //TO-DO: -add: arrow up to identify x-axis position when ball is already outside window
+/* //edited by Mike, 20210613
         if ((myBall->getX() < 0.0f) ||
         	  (myBall->getX()+myBall->getWidthAsPixel()  > fMaxWindowWidthForPilot)) {
 
@@ -3150,6 +3156,14 @@ void OpenGLCanvas::update()
         	myBall->bounceFromWindowWall();
         	
         	myBall->setThrust(12.0f);
+        }
+*/
+        if ((myBall->getX() < 0.0f) ||
+            (myBall->getX()+myBall->getWidthAsPixel()  > fMaxWindowWidthForPilot)) {
+            myBall->reset();
+            
+            //added by Mike, 20210613
+            //TO-DO: -add: transition pause
         }
 
 				//TO-DO: -add: reset, if myBall->getZ() < 0.0f

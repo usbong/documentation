@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20210524
- * @date updated: 20210606
+ * @date updated: 20210613
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -1854,7 +1854,12 @@ void Ball::hitBy(MyDynamicObject* mdo)
 {
 		//edited by Mike, 20210527; removed by Mike, 20210527
 //		bIsMovingDown=false;
+    
+    //added by Mike, 20210613
+    //TO-DO: -add: notify Pilot to execute KICK ATTACK animation;
+    //observed Ball moves in correct direction after KEY_K attack
 
+    
 		//added by Mike, 20210603
     if (dynamic_cast<Pilot*>(mdo)->getIsPlayer1()) {
     	if (iLastHitByPlayerId==PILOT_PLAYER_ID) {
@@ -1939,7 +1944,8 @@ void Ball::hitBy(MyDynamicObject* mdo)
     //added by Mike, 20210602
     //TO-DO: -update: this
     
-   	//edited by Mike, 20210602    
+/*  //removed by Mike, 20210613
+    //edited by Mike, 20210602
     if ((iPlayer1BallHitCount+iPlayer1PartnerBallHitCount) > 3) { //2
 			setEnd();
 			return;    
@@ -1950,6 +1956,7 @@ void Ball::hitBy(MyDynamicObject* mdo)
 			setEnd();
 			return;    
     }
+*/
     
     //added by Mike, 20210602
     //TO-DO: update: to bIsSetForSpikeAttack
