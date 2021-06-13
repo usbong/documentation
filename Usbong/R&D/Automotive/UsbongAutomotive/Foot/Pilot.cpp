@@ -545,7 +545,7 @@ Pilot::Pilot(float xPos, float yPos, float zPos, int windowWidth, int windowHeig
 	//added by Mike, 20210527; edited by Mike, 20210611
 /*	myWidthAsPixel=128*0.2/2;
     myHeightAsPixel=192*0.4/2;
-*/    
+*/
     myWidthAsPixel=64;
     myHeightAsPixel=64;
     
@@ -624,10 +624,10 @@ Pilot::Pilot(float xPos, float yPos, float zPos, int windowWidth, int windowHeig
 	//added by Mike, 20210123
 	iPunchAnimationCount=0;
 
-    //added by Mike, 202105613
-    iKickAnimationCountDelay=0;
+    //added by Mike, 20210613
+    bIsExecutingKick=false;
     iKickAnimationCount=0;
-
+    iKickAnimationCountDelay=0;
     
     //init default values
     //previousFacingState=FACING_UP;
@@ -6355,10 +6355,27 @@ void Pilot::hitBy(MyDynamicObject* mdo)
     if (dynamic_cast<Ball*>(mdo)->getIsBall()) {    	
 		}
 */
-        //added by Mike, 20210613
+        //added by Mike, 20210613; edited by Mike, 20210613
+/*
         bIsExecutingKick=true;
-		currentMovingState=ATTACKING_MOVING_STATE;
-
+        currentMovingState=ATTACKING_MOVING_STATE;
+        iKickAnimationCount=0;
+*/
+        
+    //edited by Mike, 20210613
+//    move(KEY_K);
+    if (!mdo->getIsMovingDown()) {
+        move(KEY_K);
+    }
+    
+        //added by Mike, 20210613
+        if (myKeysDown[KEY_D]==TRUE) {
+            currentFacingState=FACING_RIGHT;
+        }
+        else if (myKeysDown[KEY_A]==TRUE) {
+            currentFacingState=FACING_LEFT;
+        }
+    
     
 //		mdo->updateDirection();
 
@@ -6392,6 +6409,11 @@ void Pilot::reset()
      thrust=0.0f;
      setCollidable(false);
      invincibleCounter=0;
+    
+    //added by Mike, 20210613
+    bIsExecutingKick=false;
+    iKickAnimationCount=0;
+    iKickAnimationCountDelay=0;
 }
 int Pilot::getState()
 {

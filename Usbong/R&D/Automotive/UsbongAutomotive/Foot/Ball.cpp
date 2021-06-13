@@ -1852,14 +1852,20 @@ void Ball::move(int key)
 //Gameplay: Button Controls Action
 void Ball::hitBy(MyDynamicObject* mdo)
 {
+    
+    //TO-DO: -add: animation notification during spike attack
+
+    
 		//edited by Mike, 20210527; removed by Mike, 20210527
 //		bIsMovingDown=false;
     
     //added by Mike, 20210613
-    //TO-DO: -add: notify Pilot to execute KICK ATTACK animation;
+    //TO-DO: -verify: notify Pilot to execute KICK ATTACK animation;
     //observed Ball moves in correct direction after KEY_K attack
-
-    
+//    dynamic_cast<Pilot*>(mdo)->keyDown(KEY_K);
+    //removed by Mike, 20210613
+/*    dynamic_cast<Pilot*>(mdo)->move(KEY_K);
+*/
 		//added by Mike, 20210603
     if (dynamic_cast<Pilot*>(mdo)->getIsPlayer1()) {
     	if (iLastHitByPlayerId==PILOT_PLAYER_ID) {
@@ -1867,6 +1873,8 @@ void Ball::hitBy(MyDynamicObject* mdo)
     	}
     	else {
     		iLastHitByPlayerId=PILOT_PLAYER_ID;
+            //added by Mike, 20210613
+//            dynamic_cast<Pilot*>(mdo)->move(KEY_K);
     	}
     }
     if (dynamic_cast<Pilot*>(mdo)->getIsPlayer1Partner()) {
@@ -1875,6 +1883,8 @@ void Ball::hitBy(MyDynamicObject* mdo)
     	}
     	else {
     		iLastHitByPlayerId=PILOT_PLAYER_PARTNER_ID;
+            //added by Mike, 20210613
+//            dynamic_cast<Pilot*>(mdo)->move(KEY_K);
     	}
     }
     if (dynamic_cast<Pilot*>(mdo)->getIsPlayer2()) {
@@ -1883,6 +1893,8 @@ void Ball::hitBy(MyDynamicObject* mdo)
     	}
     	else {
     		iLastHitByPlayerId=PILOT_PLAYER_TWO_ID;
+            //added by Mike, 20210613
+//            dynamic_cast<Pilot*>(mdo)->move(KEY_K);
     	}
     }
     if (dynamic_cast<Pilot*>(mdo)->getIsPlayer2Partner()) {
@@ -1891,13 +1903,19 @@ void Ball::hitBy(MyDynamicObject* mdo)
     	}
     	else {
     		iLastHitByPlayerId=PILOT_PLAYER_TWO_PARTNER_ID;
+            //added by Mike, 20210613
+//            dynamic_cast<Pilot*>(mdo)->move(KEY_K);
     	}
     }    
+ 
 
 		//added by Mike, 20210601
 		if (!bIsMovingDown) {
 		  return;
 		}
+    
+    //added by Mike, 20210613
+    dynamic_cast<Pilot*>(mdo)->move(KEY_K);
     
     //identify which Pilot Player hit the ball
     //added by Mike, 20210601

@@ -450,6 +450,15 @@ public:
     	return true;
 	}
     
+    //added by Mike, 20210613
+    virtual void setToWalkingMovingState() {
+        //edited by Mike, 20210613
+        //        if (currentMovingState!=ATTACKING_MOVING_STATE) {
+        if (!bIsExecutingKick) {
+            currentMovingState = WALKING_MOVING_STATE;
+        }
+    }
+    
     //added by Mike, 20201213
     virtual void draw() {
 		//edited by Mike, 20210424

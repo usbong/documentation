@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B.
  * @date created: 20200930
- * @date updated: 20210606
+ * @date updated: 20210613
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007):
@@ -289,6 +289,11 @@ public:
         return stepZ;
     }
     
+    //added by Mike, 20210613
+    virtual bool getIsMovingDown() {
+        return bIsMovingDown;
+    }
+    
     //added by Mike, 20201217
     virtual void draw();
     
@@ -398,7 +403,13 @@ public:
     
     //added by Mike, 20210524
     virtual void setToWalkingMovingState() {
-        currentMovingState = WALKING_MOVING_STATE;
+/*  //removed to sub-class, i.e. Pilot.cpp, by Mike, 20210613
+        //edited by Mike, 20210613
+//        if (currentMovingState!=ATTACKING_MOVING_STATE) {
+        if (currentMovingState!=ATTACKING_MOVING_STATE) {
+            currentMovingState = WALKING_MOVING_STATE;
+        }
+*/
     }
     
     //added by Mike, 20201016
