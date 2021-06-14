@@ -2,7 +2,7 @@
 
 # Usbong Automotive: Image Processing Automation
 # Usbong Computer Aided Design (CAD): 3D Tool 
-# Usbong Volley
+# Usbong Text System
 #
 # C++ Computer Language and OpenGL
 #
@@ -11,8 +11,7 @@
 # @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
 # @author: SYSON, MICHAEL B.
 # @date created: 20200930
-# @last updated: 20210605
-# @website address: http://www.usbong.ph
+# @last updated: 20210614
 #
 # Reference:
 # 1) https://www3.ntu.edu.sg/home/ehchua/programming/cpp/gcc_make.html;
@@ -37,11 +36,12 @@ g++ -c Pilot.cpp
 g++ -c UsbongUtils.cpp
 g++ -c Button.cpp
 g++ -c Ball.cpp
+g++ -c Text.cpp
 
 #g++ -o mainOutput main.o OpenGLCanvas.o -lGL -lGLU -lglut
 # edited by Mike, 20210126
 # g++ -o ./output/mainOutputLinux mainLinux.o OpenGLCanvas.o MyDynamicObject.o RobotShip.o Font.o Beam.o Asteroid.o Level.o PolygonUtils.o CTargaImage.o Pilot.o UsbongUtils.o -lGL -lGLU -lglut
-g++ -o ./output/UsbongFootLinux mainLinux.o OpenGLCanvas.o MyDynamicObject.o RobotShip.o Font.o Beam.o Asteroid.o Level.o PolygonUtils.o CTargaImage.o Pilot.o UsbongUtils.o Button.o Ball.o -lGL -lGLU -lglut
+g++ -o ./output/UsbongTextLinux mainLinux.o OpenGLCanvas.o MyDynamicObject.o RobotShip.o Font.o Beam.o Asteroid.o Level.o PolygonUtils.o CTargaImage.o Pilot.o UsbongUtils.o Button.o Ball.o Text.o -lGL -lGLU -lglut
 
 #added by Mike, 20210220
 cp -r ./*.o ./objectFilesLinux/
