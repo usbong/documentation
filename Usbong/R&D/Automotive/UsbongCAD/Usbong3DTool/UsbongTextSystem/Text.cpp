@@ -586,6 +586,10 @@ Text::Text(float xPos, float yPos, float zPos, int windowWidth, int windowHeight
 	
   setCollidable(true);
     
+  //added by Mike, 20210614
+  //added: function to be reusable
+//  myUsbongUtils->read("inputHalimbawa.txt");
+	readInputText("inputHalimbawa.txt");
   
   //added by Mike, 20210614
   setupFont(FONT_TEXTURE);    
@@ -1858,6 +1862,132 @@ void Text::drawWeapon(float xPos, float yPos, float zPos)
         drawTriangledCube(0.0f, 0.0f, 0.0f);
 */        
 	glPopMatrix();
+}
+
+
+//added by Mike, 20210614
+void Text::readInputText(char *inputFilename) {
+	int c;
+	FILE *file;
+	
+	//TO-DO: update: this		
+//	char** iCurrentLevelMapContainer = new char[100][100];	
+	int iRowCount=0;
+	int iColumnCount=0;
+
+	//TO-DO: -update: this
+/*	int MAX_TEXT_CHAR_ROW=2;
+		int MAX_TEXT_CHAR_COLUMN=8;
+*/	
+	
+	for (iRowCount=0; iRowCount<MAX_TEXT_CHAR_ROW; iRowCount++) {	
+		for (iColumnCount=0; iColumnCount<MAX_TEXT_CHAR_COLUMN; iColumnCount++) {		
+	 			sCurrentTextContainer[iRowCount][iColumnCount]=(char*)"-1";//'G';
+		}
+	}
+	
+	iRowCount=0;
+	iColumnCount=0;
+				
+	//noted by Mike, 20201210
+	//note: if concatenated string exceeds size, "stack smashing detected"; terminated; Aborted (core dumped)
+	//I prefer to set a size, instead of dynamically allocate due to increasing likelihood of memory leaks
+	//where memory leaks = not deallocated storage in memory, albeit not used by software application
+	//identifying not deallocated storage in memory becomes more difficult with increasing use
+	char input[MAX_TEXT_CHAR_COLUMN]; //max size
+	char inputTextLine[MAX_TEXT_CHAR_COLUMN]; //max size
+	char tempInputTextLine[MAX_TEXT_CHAR_COLUMN]; //max size
+	
+	strcpy(input, "input/");
+	strcat(input, inputFilename); //already includes .txt
+//	strcat(input,".txt");
+	
+//	printf("dito: %s",input);
+
+//	file = fopen("input/"+inputFilename, "r"); //.txt file
+//	file = fopen("input/inputHalimbawa.txt", "r"); //.txt file
+	file = fopen(input, "r"); //.txt file
+
+	//TO-DO: -reverify: tile positions
+	int iCount=0;
+	
+	if (file) {
+		//edited by Mike, 20210210
+//		while ((c = getc(file)) != EOF) {
+		while (fgets (input, MAX_TEXT_CHAR_COLUMN, file)) { /* read each line of input */			
+//	putchar(c);
+			
+/*	//removed by Mike, 20210210
+			char sRow[2] = {(char)c};
+*/			
+			//delimited using new line
+/*			char *chRow = strtok(sRow, "\n");
+*/
+			sscanf (input, "%s", inputTextLine);
+         
+			
+//			iCount=0;
+	//input text per line			
+//			printf("%i;\n",iCount);
+//			printf("%i;",iCount);
+			
+			iCount=iCount+1;
+						
+				//added by Mike, 20210208
+				iColumnCount=0;
+	
+				//removed by Mike, 20210210
+/*				
+	//			char s[2] = {0};
+	//			*s = c;
+				//edited by Mike, 20210209
+//				char s[2] = {c};
+//				char s[2] = {itoa(c)};
+				char s[2] = {(char)c};
+				
+				//delimited using comma
+				char *ch = strtok(s, ",");
+*/					
+			strcpy(tempInputTextLine,inputTextLine);
+	
+			//note: add "-1" for empty
+			//otherwise, comma as column is skipped
+			char *ch = strtok(tempInputTextLine, ",");
+				
+			while (ch != NULL) {	
+//				printf("%i,",iColumnCount);
+					
+				//TO-DO: use String, instead of char
+				//TO-DO: -reverify: output due to "G" not put in container
+//				sCurrentLevelMapContainer[iRowCount][iColumnCount]=&ch;
+				sCurrentTextContainer[iRowCount][iColumnCount]=ch;
+
+/*	//edited by Mike, 20210211		
+				printf("%s:",ch);
+				printf("%i,",iColumnCount);
+*/
+				printf("%i:",iColumnCount);
+				printf("%s,",ch);
+				
+				iColumnCount=iColumnCount+1;
+				  ch = strtok(NULL, ",");
+			}			
+
+			//edited by Mike, 20210311
+//			if (iRowCount<100) {
+			//edited by Mike, 20210321
+//			if (iRowCount<160) {	
+			if (iRowCount<MAX_TEXT_CHAR_ROW) {				
+				iRowCount=iRowCount+1;
+			}
+			else {
+				iRowCount=0;
+			}
+			
+			printf("\n");			
+		}
+		fclose(file);
+	}	
 }
 
 //--------------------------------------------

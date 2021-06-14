@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201210
- * @date updated: 20210524
+ * @date updated: 20210614
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -53,8 +53,10 @@ public:
 	Pilot(float xPos, float yPos, float zPos,int windowWidth,int windowHeight);
 	~Pilot();
 */	
-	//edited by Mike, 20210208
-    void read(char *filename);
+	//edited by Mike, 20210614
+//    void read(char *filename);    
+    char* read(char *filename);
+    
 //    FILE read(char *filename);
 // char* read(char *filename);
 //char read(char *filename);

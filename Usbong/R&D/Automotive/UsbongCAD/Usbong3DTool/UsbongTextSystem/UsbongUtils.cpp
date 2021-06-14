@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B.
  * @date created: 20201210
- * @date updated: 20210524
+ * @date updated: 20210614
  * @website address: http://www.usbong.ph 
  *
  * References:
@@ -176,11 +176,13 @@ char[] UsbongUtils::read(char *inputFilename) {
 }
 */
 
+
 //Reference: https://stackoverflow.com/questions/3463426/in-c-how-should-i-read-a-text-file-and-print-all-strings;
 //last accessed: 20201209
 //answer by: Alok Singhal, 20100812T0003
-//edited by Mike, 20210208
-void UsbongUtils::read(char *inputFilename) {
+//edited by Mike, 20210614
+//void UsbongUtils::read(char *inputFilename) {
+char* UsbongUtils::read(char *inputFilename) {
 	int c;
 	FILE *file;
 	
@@ -209,6 +211,7 @@ void UsbongUtils::read(char *inputFilename) {
 		fclose(file);
 	}	
 }
+
 
 
 /*

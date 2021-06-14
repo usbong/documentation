@@ -35,12 +35,20 @@
 //added by Mike, 20201019
 #include "PolygonUtils.h"
 
+//added by Mike, 20210614
+#include <string>
+
 //added by Mike, 20201226
 #define TRUE 1
 #define FALSE 0
 
 //added by Mike, 20210122; edited by Mike, 20210123
 #define MAX_PUNCHING_ANIMATION_COUNT 2
+
+//added by Mike, 20210614
+#define MAX_TEXT_CHAR_ROW 2
+//TO-DO: -update: this
+#define MAX_TEXT_CHAR_COLUMN 8 //note: 8 with comma to be end of line
 
 //added by Mike, 20210129
 //+reverified: with Windows Machine; 5 with Linux Machine
@@ -207,12 +215,15 @@ private:
 	//bool* bIsExecutingDashArray = new bool[6];//PILOT_MAX_DIRECTIONAL_KEY_DASH_COUNT];
 	bool bIsExecutingDashArray[PILOT_MAX_DIRECTIONAL_KEY_DASH_COUNT]; //6
 
-	//added by Mike, 20210126; edited by Mike, 20210128
 	//int iInputWaitCount; //we use with dash
 	int iInputWaitCountArray[PILOT_MAX_DIRECTIONAL_KEY_DASH_COUNT]; //6
 
 	//added by Mike, 20210502
 	bool bIsPlayer2;
+
+	//added by Mike, 20210614
+	std::string sCurrentTextContainer[MAX_TEXT_CHAR_COLUMN][MAX_TEXT_CHAR_ROW]; //TO-DO: -add: auto-update max size 
+
 
     GLint tricount;
     GLint isMovingForward;
@@ -356,6 +367,9 @@ public:
 		}
     	return true;
 	}
+	
+	//added by Mike, 20210614
+	void readInputText(char *inputFilename);
     
     virtual void draw() {
 		//edited by Mike, 20210424
