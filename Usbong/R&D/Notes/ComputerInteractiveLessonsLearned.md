@@ -455,6 +455,12 @@ TO-DO: -update: this<br/>
 --> Mula sa kasaysayan, naging dalubhasa, i.e. Master, ang mga Hapon sa paggawa ng mga daigdig.<br/>
 --> Hango ito sa mga aklat ng literatura, i.e. 文学 (bungaku),<br/> 
 --> na may dagdag na interactivity gamit ang Super Family Computer.<br/>
+
+--> <b>Recommended Action:</b><br/>
+--> verify: Ang Alamat ng Agimat: Anim na Perlas<br/>
+--> The Legend of Amulet: 6 Pearls<br/>
+--> JAVA 2 Micro Edition version<br/>
+
 --> <b>Additional Notes:</b><br/>
 --> Windows 7: Region and Language<br/>
 --> Keyboards and Languages: Change Keyboards<br/>
