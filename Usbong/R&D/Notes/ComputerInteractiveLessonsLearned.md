@@ -444,6 +444,17 @@ TO-DO: -update: this<br/>
 --> ファミリー コンピュータ ドラゴン クエスト 取扱説明書<br/>
 --> Family Computer Dragon Quest Handling Speak Clear Book<br/>
 --> https://www.nintendo.co.jp/clvj/manuals/pdf/CLV-P-HBBBJ.pdf; last accessed: 20210611<br/>
+
+--> <b>Recommended Reference:</b><br/>
+--> ファミリー コンピュータ ドラゴン クエスト イラスト<br/>
+--> Family Computer Dragon Quest Illustration<br/>
+--> http://www.dragonquest.jp/roto/s/; last accessed: 20210614<br/>
+--> Umaakit ang guhit upang tuklasin ang daigdig ng Dragon Quest.<br/>
+--> Maaalala ang sa クロノ トリガー (Chrono Trigger), na kung saan naroon sina:<br/>
+--> Chrono, Robo, at Kaeru (FROG).<br/>
+--> Mula sa kasaysayan, naging dalubhasa, i.e. Master, ang mga Hapon sa paggawa ng mga daigdig.<br/>
+--> Hango ito sa mga aklat ng literatura, i.e. 文学 (bungaku),<br/> 
+--> na may dagdag na interactivity gamit ang Super Family Computer.<br/>
 --> <b>Additional Notes:</b><br/>
 --> Windows 7: Region and Language<br/>
 --> Keyboards and Languages: Change Keyboards<br/>
