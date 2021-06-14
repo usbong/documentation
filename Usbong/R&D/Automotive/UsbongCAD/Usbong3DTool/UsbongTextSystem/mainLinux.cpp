@@ -748,7 +748,9 @@ void myMouseMotionAction(int x, int y)
 
 int main(int argc, char** argv) {
    glutInit(&argc, argv);                 // InglutReshapeWindowitialize GLUT
-//   glutInitDisplayMode (GLUT_DOUBLE | GLUT_RGB); //addded by Mike, 20201202
+//   glutInitDisplayMode (GLUT_DOUBLE | GLUT_RGB); //added by Mike, 20201202
+		//glutInitDisplayMode(GLUT_RGBA|GLUT_DEPTH|GL_DOUBLE);
+
    glutInitWindowSize(myWindowWidthAsPixel, myWindowHeightAsPixel);   // Set the window's initial width & height
 //   glutInitWindowSize(2048,2048);   // Set the window's initial width & height
 
@@ -766,6 +768,13 @@ int main(int argc, char** argv) {
 //   glutCreateWindow("Usbong Foot"); // Create a window with the given title
 		 //TO-DO: -remove: window title
 	   glutCreateWindow("Usbong Text System"); // Create a window with the given title
+
+	 //added by Mike, 20210614
+	 //note: execute after glutCreateWindow(...)
+	 //can use the F11 keyboard button to switch from Full Screen to set Window Size
+	 //TO-DO: -fix: coordinate system of mouse key down and up positions 
+//	 glutFullScreen(); //removes Window Title Bar
+
 
 	  //added by Mike, 20201002
 	  //Linux Machine
