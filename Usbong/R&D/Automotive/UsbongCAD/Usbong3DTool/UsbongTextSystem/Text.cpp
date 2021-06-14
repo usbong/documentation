@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210613
+ * @date updated: 20210614
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -71,6 +71,9 @@
 
 //added by Mike, 20210613
 #include "Text.h"
+
+//added by Mike, 20210614
+#include "Font.h"
 
 //added by Mike, 20210516
 #include "UsbongUtils.h"
@@ -581,7 +584,11 @@ Text::Text(float xPos, float yPos, float zPos, int windowWidth, int windowHeight
 	//removed by Mike, 20201001; added by Mike, 20210423
 	setup();
 	
-    setCollidable(true);    
+  setCollidable(true);
+    
+  
+  //added by Mike, 20210614
+  setupFont(FONT_TEXTURE);    
 }
 
 Text::~Text()
@@ -625,6 +632,10 @@ void Text::drawButtonAsQuadWithTexture()
 	//edited by Mike, 20210517
 //    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPos), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPos), myZPos);
 //    glTranslatef(myXPosAsPixel, myYPosAsPixel, myZPosAsPixel);
+
+//added by Mike, 20210614
+//note; add glPushMatrix() and glPopMatrix()
+glPushMatrix();
     glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixel), myZPosAsPixel);
 	
         glScalef(2.0f,2.0f,1.0f);
@@ -635,6 +646,44 @@ void Text::drawButtonAsQuadWithTexture()
     
     //added by Mike, 20210613
     glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel), -myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixel), -myZPosAsPixel);
+glPopMatrix();
+
+    //added by Mike, 20210614
+    //set TOP-LEFT origin/anchor/reference point; quadrant 4, y-axis inverted; x and y positive
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    
+    //TOP-LEFT origin
+    glOrtho(0.0f, //left
+            1.0f, //right
+            1.0f, //bottom
+            0.0f, //top
+            0.0f, //zNear; minimum
+            1.0f //zFar; maximum
+            );        
+
+     //font
+     // select and enable texture FONT_TEXTURE
+     glBindTexture(GL_TEXTURE_2D, FONT_TEXTURE);
+     glEnable(GL_TEXTURE_2D);    
+    
+     //draw text using Font texture    
+     char tempText[50];
+        
+		 sprintf(tempText,"USBONG");
+
+
+     glScalef(0.5f,0.5f,1.0f);
+		 		//note: origin/anchor @bottom-left
+				//draw_string(0.0f, 0.5f, 0.0f, tempText);    	
+				//note: positions due to scaled by half, i.e. 0.5f
+	   		draw_string(0.1f, 1.2f, 0.0f, tempText);    	
+//	   		draw_string(0.1f, 1.2f, -1.0f, tempText);    	
+     glScalef(1.0f,1.0f,1.0f);
+	
+	
+	   glDisable(GL_TEXTURE_2D);
+	   glBindTexture(GL_TEXTURE_2D, 0);        
 }
 
 //added: by Mike, 20210423

@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20210613
- * @date updated: 20210613
+ * @date updated: 20210614
  * @website address: http://www.usbong.ph
  *
  * Acknowledgments:
@@ -132,7 +132,7 @@ private:
 	float fButtonAnimationFrameOffset;
 		
     OpenGLCanvas *myOpenGLCanvas;
-	
+    	
 	//added by Mike, 20210516; removed to public classification by Mike, 20210523
 //	UsbongUtils *myUsbongUtils;
 	

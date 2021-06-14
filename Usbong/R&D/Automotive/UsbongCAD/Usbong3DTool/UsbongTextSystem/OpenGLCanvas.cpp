@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B.
  * @date created: 20200926
- * @date updated: 20210613
+ * @date updated: 20210614
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -1722,6 +1722,23 @@ void OpenGLCanvas::render()
     //note: draw instructions due to glTranslatef(...) not closed
     myButton->draw();
     
+    //added by Mike, 20210614
+    //TO-DO: -reverify: instructions to not need to execute this set
+/*    
+//--    
+    //set TOP-LEFT origin/anchor/reference point; quadrant 4, y-axis inverted; x and y positive
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    //TOP-LEFT origin
+    glOrtho(0.0f, //left
+            1.0f, //right
+            1.0f, //bottom
+            0.0f, //top
+            0.0f, //zNear; minimum
+            1.0f //zFar; maximum
+            );    
+//--    
+*/
     //added by Mike, 20210613
     myText->draw();
     
