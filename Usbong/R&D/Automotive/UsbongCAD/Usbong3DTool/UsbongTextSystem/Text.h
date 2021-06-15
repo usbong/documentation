@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20210613
- * @date updated: 20210614
+ * @date updated: 20210615
  * @website address: http://www.usbong.ph
  *
  * Acknowledgments:
@@ -47,8 +47,9 @@
 
 //added by Mike, 20210614
 #define MAX_TEXT_CHAR_ROW 2
-//TO-DO: -update: this
-#define MAX_TEXT_CHAR_COLUMN 8 //note: 8 with comma to be end of line
+//edited by Mike, 20210615
+//#define MAX_TEXT_CHAR_COLUMN 8 //note: 8 with comma to be end of line
+#define MAX_TEXT_CHAR_COLUMN 16 //note: 8 with comma to be end of line
 
 //added by Mike, 20210129
 //+reverified: with Windows Machine; 5 with Linux Machine
@@ -375,11 +376,14 @@ public:
 		//edited by Mike, 20210424
 //    	drawPilot();
 //		drawPilotAsQuadWithTexture();
-		drawButtonAsQuadWithTexture();
+			//edited by Mike, 20210615
+			drawTextBackgroundAsQuadWithTexture();
     }
 
-	void drawButtonAsQuadWithTexture();
-	void drawButtonObject();
+  //edited by Mike, 20210615
+	void drawTextBackgroundAsQuadWithTexturePrev();
+	void drawTextBackgroundAsQuadWithTexture();
+	void drawTextBackgroundObject();
 
 /*	//removed by Mike, 20210514
 	//added by Mike, 20210423

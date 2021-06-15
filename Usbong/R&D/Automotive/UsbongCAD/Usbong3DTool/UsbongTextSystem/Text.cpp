@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210614
+ * @date updated: 20210615
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -623,7 +623,7 @@ void Text::draw()
 */
 
 //added by Mike, 20210423
-void Text::drawButtonAsQuadWithTexture()
+void Text::drawTextBackgroundAsQuadWithTexturePrev()
 {
 	//edited by Mike, 20210516
 //    glTranslatef(myXPos, myYPos, myZPos);
@@ -645,7 +645,7 @@ glPushMatrix();
         glScalef(2.0f,2.0f,1.0f);
 //        glScalef(2.5f,5.0f,1.0f);
             //TO-DO: -update: draw instructions
-            drawButtonObject();
+            drawTextBackgroundObject();
         glScalef(1.0f,1.0f,1.0f);
     
     //added by Mike, 20210613
@@ -670,18 +670,17 @@ glPopMatrix();
      // select and enable texture FONT_TEXTURE
      glBindTexture(GL_TEXTURE_2D, FONT_TEXTURE);
      glEnable(GL_TEXTURE_2D);    
-    
-     //draw text using Font texture    
-     char tempText[50];
-        
-		 sprintf(tempText,"USBONG");
 
+     //draw text using Font texture    
+     char tempText[50];        
+		 sprintf(tempText,"USBONG");
 
      glScalef(0.5f,0.5f,1.0f);
 		 		//note: origin/anchor @bottom-left
 				//draw_string(0.0f, 0.5f, 0.0f, tempText);    	
 				//note: positions due to scaled by half, i.e. 0.5f
 	   		draw_string(0.1f, 1.2f, 0.0f, tempText);    	
+	   		
 //	   		draw_string(0.1f, 1.2f, -1.0f, tempText);    	
      glScalef(1.0f,1.0f,1.0f);
 	
@@ -690,11 +689,107 @@ glPopMatrix();
 	   glBindTexture(GL_TEXTURE_2D, 0);        
 }
 
+//added by Mike, 20210615
+void Text::drawTextBackgroundAsQuadWithTexture()
+{
+//added by Mike, 20210614
+//note; add glPushMatrix() and glPopMatrix()
+glPushMatrix();
+    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixel), myZPosAsPixel);
+	
+        glScalef(2.0f,2.0f,1.0f);
+//        glScalef(2.5f,5.0f,1.0f);
+            //TO-DO: -update: draw instructions
+            drawTextBackgroundObject();
+        glScalef(1.0f,1.0f,1.0f);
+    
+    //added by Mike, 20210613
+    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel), -myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixel), -myZPosAsPixel);
+glPopMatrix();
+
+    //added by Mike, 20210614
+    //set TOP-LEFT origin/anchor/reference point; quadrant 4, y-axis inverted; x and y positive
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    
+    //TOP-LEFT origin
+    glOrtho(0.0f, //left
+            1.0f, //right
+            1.0f, //bottom
+            0.0f, //top
+            0.0f, //zNear; minimum
+            1.0f //zFar; maximum
+            );        
+
+     //font
+     // select and enable texture FONT_TEXTURE
+     glBindTexture(GL_TEXTURE_2D, FONT_TEXTURE);
+     glEnable(GL_TEXTURE_2D);    
+
+ //edited by Mike, 20210615    
+     //draw text using Font texture    
+
+     char tempText[50];        
+//		 sprintf(tempText,"USBONG");
+//		 sprintf(tempText,sCurrentTextContainer[0]);
+		 //edited by Mike, 20210615
+//		 sprintf(tempText,sCurrentTextContainer[0][0].c_str());    	
+
+	   	glScalef(0.5f,0.5f,1.0f);
+
+
+			for (int iRowCount=0; iRowCount<MAX_TEXT_CHAR_ROW; iRowCount++) {
+		 		sprintf(tempText,"");    	
+
+				for (int iColumnCount=0; iColumnCount<MAX_TEXT_CHAR_COLUMN; iColumnCount++) {
+		 				//strcat(tempText,sCurrentTextContainer[iRowCount][iColumnCount].c_str());    							
+						//TO-DO: -update: this
+						if (sCurrentTextContainer[iRowCount][iColumnCount]=="-1") {
+		 					strcat(tempText,"\n");
+		 					break;
+		 				}
+		 				strcat(tempText,sCurrentTextContainer[iRowCount][iColumnCount].c_str());    							
+				}				
+
+				
+				printf(">>>%s",tempText);
+				
+//				glPushMatrix();				
+//	   			glScalef(0.5f,0.5f,1.0f);
+		 					//note: origin/anchor @bottom-left
+							//draw_string(0.0f, 0.5f, 0.0f, tempText);    	
+							//note: positions due to scaled by half, i.e. 0.5f
+ 							//edited by Mike, 20210615				
+	//	   				draw_string(0.1f, 1.2f, 0.0f, tempText);    	
+			//	   		draw_string(0.1f, 1.2f, 0.0f, sCurrentTextContainer[0][0].c_str());  
+							//TO-DO: -add: remaining Font Characters, e.g. small letters, digits
+							//TO-DO: -update: font character position in texture image file
+//	   					draw_string(0.1f, 1.2f, 0.0f, tempText);    	
+	   					draw_string(0.05f, 1.2f, 0.0f, tempText);    	
+	   					
+	   					
+			//	   		draw_string(0.1f, 1.2f, -1.0f, tempText);    	
+//     			glScalef(1.0f,1.0f,1.0f);
+//				glPopMatrix();
+     			
+     		//added by Mike, 20210615
+     		//new line
+     		//TO-DO: -update: this
+     		glTranslatef(0.0f,0.1f,0.0f);
+		
+			}
+				
+     glScalef(1.0f,1.2f,1.0f);
+				
+	   glDisable(GL_TEXTURE_2D);
+	   glBindTexture(GL_TEXTURE_2D, 0);        
+}
+
 //added: by Mike, 20210423
 //TO-DO: -add: in PolygonPool
 //added by Mike, 20210516
 //note: origin/anchor is TOP-LEFT
-void Text::drawButtonObject()
+void Text::drawTextBackgroundObject()
 {
 /*	
 	glBegin(GL_LINES);
