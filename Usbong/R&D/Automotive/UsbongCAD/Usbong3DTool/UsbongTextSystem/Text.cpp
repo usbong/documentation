@@ -1973,14 +1973,14 @@ void Text::readInputText(char *inputFilename) {
 	//TO-DO: -update: this
 /*	int MAX_TEXT_CHAR_ROW=2;
 		int MAX_TEXT_CHAR_COLUMN=8;
-*/	
-	
-	for (iRowCount=0; iRowCount<MAX_TEXT_CHAR_ROW; iRowCount++) {	
+*/
+    
+	for (iRowCount=0; iRowCount<MAX_TEXT_CHAR_ROW; iRowCount++) {
 		for (iColumnCount=0; iColumnCount<MAX_TEXT_CHAR_COLUMN; iColumnCount++) {		
 	 			sCurrentTextContainer[iRowCount][iColumnCount]=(char*)"-1";//'G';
 		}
 	}
-	
+    
 	iRowCount=0;
 	iColumnCount=0;
 				
@@ -1989,8 +1989,12 @@ void Text::readInputText(char *inputFilename) {
 	//I prefer to set a size, instead of dynamically allocate due to increasing likelihood of memory leaks
 	//where memory leaks = not deallocated storage in memory, albeit not used by software application
 	//identifying not deallocated storage in memory becomes more difficult with increasing use
-	char input[MAX_TEXT_CHAR_COLUMN]; //max size
-	char inputTextLine[MAX_TEXT_CHAR_COLUMN]; //max size
+    //edited by Mike, 20210615
+//	char input[MAX_TEXT_CHAR_COLUMN]; //max size
+    //TO-DO: -update: this; if total size of the input filename > total size of container, in macOS abort trap 6 error
+    char input[100]; //max size in Char of input filename
+
+    char inputTextLine[MAX_TEXT_CHAR_COLUMN]; //max size
 	char tempInputTextLine[MAX_TEXT_CHAR_COLUMN]; //max size
 	
 	strcpy(input, "input/");
@@ -2005,6 +2009,8 @@ void Text::readInputText(char *inputFilename) {
 
 	//TO-DO: -reverify: tile positions
 	int iCount=0;
+
+    strcpy(tempInputTextLine,""); //added by Mike, 20210615
 	
 	if (file) {
 		//edited by Mike, 20210210
@@ -2045,9 +2051,14 @@ void Text::readInputText(char *inputFilename) {
 */					
 			strcpy(tempInputTextLine,inputTextLine);
 	
+//            printf(">>> inputTextLine: %s\n",inputTextLine);
+ 
 			//note: add "-1" for empty
 			//otherwise, comma as column is skipped
+            //edited by Mike, 20210615
 			char *ch = strtok(tempInputTextLine, ",");
+//            char *ch = strtok(tempInputTextLine, "\n");
+//            char *ch = strtok(tempInputTextLine, "\n");
 				
 			while (ch != NULL) {	
 //				printf("%i,",iColumnCount);
@@ -2057,17 +2068,20 @@ void Text::readInputText(char *inputFilename) {
 //				sCurrentLevelMapContainer[iRowCount][iColumnCount]=&ch;
 				sCurrentTextContainer[iRowCount][iColumnCount]=ch;
 
-/*	//edited by Mike, 20210211		
-				printf("%s:",ch);
-				printf("%i,",iColumnCount);
-*/
 				printf("%i:",iColumnCount);
 				printf("%s,",ch);
 				
 				iColumnCount=iColumnCount+1;
+                
+                //edited by Mike, 20210615
 				  ch = strtok(NULL, ",");
-			}			
+//                ch = strtok(NULL, "\n");
 
+            }
+ 
+            iColumnCount=iColumnCount+1;
+            
+        
 			//edited by Mike, 20210311
 //			if (iRowCount<100) {
 			//edited by Mike, 20210321
@@ -2078,11 +2092,14 @@ void Text::readInputText(char *inputFilename) {
 			else {
 				iRowCount=0;
 			}
-			
+            
 			printf("\n");			
 		}
 		fclose(file);
-	}	
+        
+        //added by Mike, 20210615
+//        free(tempInputTextLine);
+	}
 }
 
 //--------------------------------------------
