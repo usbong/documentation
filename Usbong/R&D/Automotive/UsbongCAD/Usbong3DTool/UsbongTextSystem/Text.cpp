@@ -531,6 +531,9 @@ Text::Text(float xPos, float yPos, float zPos, int windowWidth, int windowHeight
 	//added by Mike, 20210123
 	iPunchAnimationCount=0;
 	
+	//added by Mike, 20210616
+	iTextCurrentMaxColumnCount=0;
+	
     //init default values
     //previousFacingState=FACING_UP;
     //currentFacingState=FACING_UP;
@@ -580,7 +583,7 @@ Text::Text(float xPos, float yPos, float zPos, int windowWidth, int windowHeight
 	//added by Mike, 20210502
 	//note: set this in OpenGLCanvas.cpp
 	bIsPlayer2=false;
-	
+		
 	//removed by Mike, 20201001; added by Mike, 20210423
 	setup();
 	
@@ -741,46 +744,67 @@ glPopMatrix();
 
 	   	glScalef(0.5f,0.5f,1.0f);
 
-
+			//TO-DO: -reverify: row sequence
+			
 			for (int iRowCount=0; iRowCount<MAX_TEXT_CHAR_ROW; iRowCount++) {
-		 		sprintf(tempText,"");    	
+														
+				strcpy(tempText, "");								
+								
+	//				for (int iColumnCount=0; iColumnCount<MAX_TEXT_CHAR_COLUMN; iColumnCount++) {
+					for (int iColumnCount=0; iColumnCount<iTextCurrentMaxColumnCount; iColumnCount++) {
+					
+		 					//strcat(tempText,sCurrentTextContainer[iRowCount][iColumnCount].c_str());    							
+							//TO-DO: -update: this
+							if (sCurrentTextContainer[iRowCount][iColumnCount]=="-1") {
+		 						strcat(tempText,"\n");
+		 						break;
+		 					}
+		 							 					
+							//TO-DO: -reverify: sCurrentTextContainer[iRowCount][iColumnCount]
+									 							 					
+		 					strcat(tempText,sCurrentTextContainer[iRowCount][iColumnCount].c_str());
+		 					
+//		 					printf(">>tempText,sCurrentTextContainer[iRowCount][iColumnCount].c_str():%s ",tempText,sCurrentTextContainer[iRowCount][iColumnCount].c_str());
+		 					
+					}
+					
+//					printf(">>>%s",tempText);				
+	
+					//TO-DO: -add: remaining Font Characters, e.g. small letters, digits
+					//TO-DO: -update: font character position in texture image file
+	//	   					draw_string(0.1f, 1.2f, 0.0f, tempText);    	
+	   			draw_string(0.05f, 1.2f, 0.0f, tempText);    	
+	   			
+    	
+     			//added by Mike, 20210615
+     			//new line
+     			//TO-DO: -update: this
+     			glTranslatef(0.0f,0.1f,0.0f);
 
-				for (int iColumnCount=0; iColumnCount<MAX_TEXT_CHAR_COLUMN; iColumnCount++) {
-		 				//strcat(tempText,sCurrentTextContainer[iRowCount][iColumnCount].c_str());    							
-						//TO-DO: -update: this
-						if (sCurrentTextContainer[iRowCount][iColumnCount]=="-1") {
-		 					strcat(tempText,"\n");
-		 					break;
-		 				}
-		 				strcat(tempText,sCurrentTextContainer[iRowCount][iColumnCount].c_str());    							
-				}				
 
-				
-				printf(">>>%s",tempText);
-				
-//				glPushMatrix();				
-//	   			glScalef(0.5f,0.5f,1.0f);
-		 					//note: origin/anchor @bottom-left
-							//draw_string(0.0f, 0.5f, 0.0f, tempText);    	
-							//note: positions due to scaled by half, i.e. 0.5f
- 							//edited by Mike, 20210615				
-	//	   				draw_string(0.1f, 1.2f, 0.0f, tempText);    	
-			//	   		draw_string(0.1f, 1.2f, 0.0f, sCurrentTextContainer[0][0].c_str());  
-							//TO-DO: -add: remaining Font Characters, e.g. small letters, digits
-							//TO-DO: -update: font character position in texture image file
-//	   					draw_string(0.1f, 1.2f, 0.0f, tempText);    	
-	   					draw_string(0.05f, 1.2f, 0.0f, tempText);    	
-	   					
-	   					
-			//	   		draw_string(0.1f, 1.2f, -1.0f, tempText);    	
-//     			glScalef(1.0f,1.0f,1.0f);
-//				glPopMatrix();
-     			
-     		//added by Mike, 20210615
-     		//new line
-     		//TO-DO: -update: this
-     		glTranslatef(0.0f,0.1f,0.0f);
-		
+		 			//added by Mike, 20210616
+//     			iTextCurrentMaxColumnCount++;
+		 			
+//					if ((iTextAnimationCountDelay)%2==0) {
+					if ((iTextAnimationCountDelay)>=10) {	//TO-DO: -update: MAX delay
+//							iTextAnimationCount+=1;
+							iTextAnimationCountDelay=0;
+							
+							printf(">>iTextCurrentMaxColumnCount: %i",iTextCurrentMaxColumnCount);
+							
+     					iTextCurrentMaxColumnCount++;								
+					}
+					iTextAnimationCountDelay+=1;
+					
+							//added by Mike, 20210616
+							if (iTextCurrentMaxColumnCount>MAX_TEXT_CHAR_COLUMN) {
+								iTextCurrentMaxColumnCount=MAX_TEXT_CHAR_COLUMN;
+								iTextCurrentMaxColumnCount=0; //new line/row
+							}
+													
+     		
+//     		}
+			
 			}
 				
      glScalef(1.0f,1.2f,1.0f);
