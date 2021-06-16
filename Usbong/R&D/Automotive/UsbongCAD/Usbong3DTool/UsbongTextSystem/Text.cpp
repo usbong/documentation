@@ -494,7 +494,6 @@ Text::Text(float xPos, float yPos, float zPos, int windowWidth, int windowHeight
 	
     //edited by Mike, 2020116
 //    myYPos=0.0f+myHeight*3;
-
 	//added by Mike, 20210503
 	//myZPos updated again in another location
 	//edited by Mike, 20210514
@@ -745,30 +744,49 @@ glPopMatrix();
 	   	glScalef(0.5f,0.5f,1.0f);
 
 			//TO-DO: -reverify: row sequence
-			
+			//edited by Mike, 20210616		
 			for (int iRowCount=0; iRowCount<MAX_TEXT_CHAR_ROW; iRowCount++) {
+//			for (int iRowCount=MAX_TEXT_CHAR_ROW-1; iRowCount>=0; iRowCount--) {
 														
 				strcpy(tempText, "");								
-								
+						
+					//TO-DO: -update: this
+		
 	//				for (int iColumnCount=0; iColumnCount<MAX_TEXT_CHAR_COLUMN; iColumnCount++) {
 					for (int iColumnCount=0; iColumnCount<iTextCurrentMaxColumnCount; iColumnCount++) {
 					
-		 					//strcat(tempText,sCurrentTextContainer[iRowCount][iColumnCount].c_str());    							
-							//TO-DO: -update: this
+		 					//strcat(tempText,sCurrentTextContainer[iRowCount][iColumnCount].c_str());
+/*							//TO-DO: -update: this
 							if (sCurrentTextContainer[iRowCount][iColumnCount]=="-1") {
 		 						strcat(tempText,"\n");
 		 						break;
 		 					}
-		 							 					
+*/
+		 					
+		 							 							 					
 							//TO-DO: -reverify: sCurrentTextContainer[iRowCount][iColumnCount]
-									 							 					
-		 					strcat(tempText,sCurrentTextContainer[iRowCount][iColumnCount].c_str());
+/*									 							 					
+		 					strcat(tempText,sCurrentTextContainer[iRowCount][iColumnCount].c_str());		 			 					printf(">>>>iColumnCount: %i; tempText: %s\n",iColumnCount, tempText);
+*/
+
+//		 					tempText[iColumnCount]=sCurrentTextContainer[iRowCount][iColumnCount];
+		 					
+//		 					printf(">>sCurrentTextContainer[iRowCount][iColumnCount]:%c \n",sCurrentTextContainer[iRowCount][iColumnCount]);
+		 					
+//		 					printf(">>>>iColumnCount: %i; tempText: %s\n",iColumnCount, tempText);
 		 					
 //		 					printf(">>tempText,sCurrentTextContainer[iRowCount][iColumnCount].c_str():%s ",tempText,sCurrentTextContainer[iRowCount][iColumnCount].c_str());
 		 					
+/*
+				printf("sCurrentTextContainer[%i]: %s\n",iColumnCount, sCurrentTextContainer[iRowCount][iColumnCount].c_str());
+	 					strcat(tempText,sCurrentTextContainer[iRowCount][iColumnCount].c_str());
+*/
+		 					
 					}
 					
-//					printf(">>>%s",tempText);				
+				
+					
+//					printf(">>>>>%s\n",tempText);				
 	
 					//TO-DO: -add: remaining Font Characters, e.g. small letters, digits
 					//TO-DO: -update: font character position in texture image file
@@ -790,7 +808,7 @@ glPopMatrix();
 //							iTextAnimationCount+=1;
 							iTextAnimationCountDelay=0;
 							
-							printf(">>iTextCurrentMaxColumnCount: %i",iTextCurrentMaxColumnCount);
+							printf(">>iTextCurrentMaxColumnCount: %i\n",iTextCurrentMaxColumnCount);
 							
      					iTextCurrentMaxColumnCount++;								
 					}
@@ -799,7 +817,7 @@ glPopMatrix();
 							//added by Mike, 20210616
 							if (iTextCurrentMaxColumnCount>MAX_TEXT_CHAR_COLUMN) {
 								iTextCurrentMaxColumnCount=MAX_TEXT_CHAR_COLUMN;
-								iTextCurrentMaxColumnCount=0; //new line/row
+//								iTextCurrentMaxColumnCount=0; //new line/row
 							}
 													
      		
@@ -825,7 +843,6 @@ void Text::drawTextBackgroundObject()
 //		glColor3f(1.0f,0.0f,0.0f); //red
 		//sky blue color; brighter
 		glColor3f(0.69f, 0.84f, 1.0f);
-
 		//diagonal line left to right
 		glVertex2f(-1.0f, 1.0f);
 		glVertex2f(1.0f, -1.0f);	
@@ -980,7 +997,6 @@ void Text::update(float dt)
            		//wrap the world 
            		if (myXPos <= 0.0f) myXPos = myWindowWidth/100-myWidth/8; //if left side
            		else if (myXPos >= myWindowWidth/100) myXPos = 0.0f+myWidth/8; //if right side
-
            		if (myZPos >= myWindowHeight/100) myZPos = 0.0f+myHeight/8; //if bottom side
            		else if (myZPos <= 0.0f) myZPos = myWindowHeight/100-myHeight/8; //if top side
 */           		           		
@@ -1093,7 +1109,6 @@ void Text::setDashStateWithKeyUp() {
 		for (int iCount=0; iCount<PILOT_MAX_DIRECTIONAL_KEY_DASH_COUNT; iCount++) {
 			bIsExecutingDashArray[iCount]=false;			
 		}
-
 		bIsDashReady=false;			
 	}
 	else {
@@ -1397,7 +1412,6 @@ void Text::move(int key)
           //added by Mike, 20201001; edited by Mike, 20201116
 //	      myYPos+=-stepY;
 	      myZPos+=-stepZ;
-
 			//added by Mike, 20210127; edited by Mike, 20210128
 //			if (bIsExecutingDash) {
 				//edited by Mike, 20210130
@@ -1444,7 +1458,6 @@ void Text::move(int key)
           //added by Mike, 20201001; edited by Mike, 20201116
 //	      myYPos+=stepY;
 	      myZPos+=stepZ;
-
 		//added by Mike, 20210127; edited by Mike, 20210128
 //			if (bIsExecutingDash) {
 		if ((bIsExecutingDashArray[KEY_S])) {		
@@ -1491,7 +1504,6 @@ void Text::move(int key)
 /*		//edited  by Mike, 20210504
 		  //added by Mike, 20201001            
 		  myXPos+=-stepX;
-
 			//added by Mike, 20210127; edited by Mike, 20210128
 	//			if (bIsExecutingDash) {
 			if ((bIsExecutingDashArray[KEY_A])) {		
@@ -1557,7 +1569,6 @@ void Text::move(int key)
 /* //edited by Mike, 20210504		
           //added by Mike, 20201001            
 	      myXPos+=stepX;
-
 		//added by Mike, 20210126; edited by Mike, 20210128
 //			if (bIsExecutingDash) {
 			if ((bIsExecutingDashArray[KEY_D])) {
@@ -2095,7 +2106,9 @@ void Text::readInputText(char *inputFilename) {
 			strcpy(tempInputTextLine,inputTextLine);
 	
             printf(">>> inputTextLine: %s\n",inputTextLine);
- 
+
+
+/* 	//edited by Mike, 20210616
 			//note: add "-1" for empty
 			//otherwise, comma as column is skipped
             //edited by Mike, 20210615
@@ -2120,6 +2133,13 @@ void Text::readInputText(char *inputFilename) {
                 ch = strtok(NULL, "\n");
 
             }
+*/
+			for (int iCharCount=0; iCharCount<strlen(tempInputTextLine); iCharCount++) {
+				sCurrentTextContainer[iRowCount][iColumnCount]=tempInputTextLine[iCharCount];
+				
+				printf("tempInputTextLine[%i]: %c",iCharCount, tempInputTextLine[iCharCount]);
+			}
+
  
             iColumnCount=iColumnCount+1;
             

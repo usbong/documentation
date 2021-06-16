@@ -182,6 +182,11 @@ private:
 	//added by Mike, 20210122
 	int iPunchAnimationCount,
 		iPunchAnimationCountDelay;
+		
+	//added by Mike, 20210616
+	int iTextAnimationCount,
+		iTextAnimationCountDelay,
+		iTextCurrentMaxColumnCount;		
 
 	//added by Mike, 20201130
     CTargaImage *myBodyTexture;
