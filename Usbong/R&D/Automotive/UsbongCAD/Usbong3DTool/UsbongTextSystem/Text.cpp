@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210615
+ * @date updated: 20210616
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -696,9 +696,13 @@ void Text::drawTextBackgroundAsQuadWithTexture()
 //note; add glPushMatrix() and glPopMatrix()
 glPushMatrix();
     glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixel), myZPosAsPixel);
-	
-        glScalef(2.0f,2.0f,1.0f);
+
 //        glScalef(2.5f,5.0f,1.0f);
+					//edited by Mike, 20210616	
+//        glScalef(2.0f,2.0f,1.0f);
+//        glScalef(2.5f,4.0f,1.0f);
+        glScalef(5.0f,4.0f,1.0f);
+
             //TO-DO: -update: draw instructions
             drawTextBackgroundObject();
         glScalef(1.0f,1.0f,1.0f);
@@ -2015,7 +2019,10 @@ void Text::readInputText(char *inputFilename) {
 	if (file) {
 		//edited by Mike, 20210210
 //		while ((c = getc(file)) != EOF) {
-		while (fgets (input, MAX_TEXT_CHAR_COLUMN, file)) { /* read each line of input */			
+//edited by Mike, 20210516
+//		while (fgets (input, MAX_TEXT_CHAR_COLUMN, file)) { /* read each line of input */			
+		while (fgets (inputTextLine, MAX_TEXT_CHAR_COLUMN, file)) { /* read each line of input */			
+
 //	putchar(c);
 			
 /*	//removed by Mike, 20210210
@@ -2024,7 +2031,9 @@ void Text::readInputText(char *inputFilename) {
 			//delimited using new line
 /*			char *chRow = strtok(sRow, "\n");
 */
-			sscanf (input, "%s", inputTextLine);
+
+//            printf(">>> input: %s\n",input);          
+//			sscanf (input, "%s", inputTextLine);
          
 			
 //			iCount=0;
@@ -2049,16 +2058,25 @@ void Text::readInputText(char *inputFilename) {
 				//delimited using comma
 				char *ch = strtok(s, ",");
 */					
+			//edited by Mike, 20210616
+			//TO-DO: -verify: add tool for computer to notify Unit member if max characters per row already exceeded
+			//at present, 19 characters including space
+			//TO-DO: -add: auto-put excess characters in next row
+			//TO-DO: -fix: text background image texture file after scale up			
+			//TO-DO: -add: remaining Font characters
+			//TO-DO: -update: Font characters to use handwritting
+			//TO-DO: -reverify: max rows due to text length long in Filipino language
+			//TO-DO: -add: auto-write text per character
+			//TO-DO: -add: auto-pause for text with several rows						
 			strcpy(tempInputTextLine,inputTextLine);
 	
-//            printf(">>> inputTextLine: %s\n",inputTextLine);
+            printf(">>> inputTextLine: %s\n",inputTextLine);
  
 			//note: add "-1" for empty
 			//otherwise, comma as column is skipped
             //edited by Mike, 20210615
-			char *ch = strtok(tempInputTextLine, ",");
-//            char *ch = strtok(tempInputTextLine, "\n");
-//            char *ch = strtok(tempInputTextLine, "\n");
+//			char *ch = strtok(tempInputTextLine, ",");
+            char *ch = strtok(tempInputTextLine, "\n");
 				
 			while (ch != NULL) {	
 //				printf("%i,",iColumnCount);
@@ -2068,14 +2086,14 @@ void Text::readInputText(char *inputFilename) {
 //				sCurrentLevelMapContainer[iRowCount][iColumnCount]=&ch;
 				sCurrentTextContainer[iRowCount][iColumnCount]=ch;
 
-				printf("%i:",iColumnCount);
-				printf("%s,",ch);
+//				printf("%i:",iColumnCount);
+//				printf("%s,",ch);
 				
 				iColumnCount=iColumnCount+1;
                 
                 //edited by Mike, 20210615
-				  ch = strtok(NULL, ",");
-//                ch = strtok(NULL, "\n");
+//				  ch = strtok(NULL, ",");
+                ch = strtok(NULL, "\n");
 
             }
  

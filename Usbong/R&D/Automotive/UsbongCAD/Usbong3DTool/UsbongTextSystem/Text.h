@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20210613
- * @date updated: 20210615
+ * @date updated: 20210616
  * @website address: http://www.usbong.ph
  *
  * Acknowledgments:
@@ -45,11 +45,13 @@
 //added by Mike, 20210122; edited by Mike, 20210123
 #define MAX_PUNCHING_ANIMATION_COUNT 2
 
-//added by Mike, 20210614
-#define MAX_TEXT_CHAR_ROW 2
+//added by Mike, 20210614; edited by Mike, 20210616
+//#define MAX_TEXT_CHAR_ROW 2
+#define MAX_TEXT_CHAR_ROW 3
 //edited by Mike, 20210615
 //#define MAX_TEXT_CHAR_COLUMN 8 //note: 8 with comma to be end of line
-#define MAX_TEXT_CHAR_COLUMN 16 //note: 8 with comma to be end of line
+//#define MAX_TEXT_CHAR_COLUMN 16 //note: 8 with comma to be end of line
+#define MAX_TEXT_CHAR_COLUMN 42 //note: 8 with comma to be end of line
 
 //added by Mike, 20210129
 //+reverified: with Windows Machine; 5 with Linux Machine
