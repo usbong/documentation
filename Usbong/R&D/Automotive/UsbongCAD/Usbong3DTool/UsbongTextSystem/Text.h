@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20210613
- * @date updated: 20210616
+ * @date updated: 20210617
  * @website address: http://www.usbong.ph
  *
  * Acknowledgments:
@@ -229,10 +229,13 @@ private:
 	//added by Mike, 20210502
 	bool bIsPlayer2;
 
-	//added by Mike, 20210614
-	std::string sCurrentTextContainer[MAX_TEXT_CHAR_COLUMN][MAX_TEXT_CHAR_ROW]; //TO-DO: -add: auto-update max size 
-
-
+	//added by Mike, 20210614; edited by Mike 20210616
+	//std::string sCurrentTextContainer[MAX_TEXT_CHAR_COLUMN][MAX_TEXT_CHAR_ROW]; //TO-DO: -add: auto-update max size
+    char cCurrentTextContainer[MAX_TEXT_CHAR_COLUMN][MAX_TEXT_CHAR_ROW];
+    //added by Mike, 20210616
+    int iTextCurrentMaxRowCount;
+    
+    
     GLint tricount;
     GLint isMovingForward;
 
@@ -389,7 +392,8 @@ public:
 
   //edited by Mike, 20210615
 	void drawTextBackgroundAsQuadWithTexturePrev();
-	void drawTextBackgroundAsQuadWithTexture();
+    void drawTextBackgroundAsQuadWithTextureBuggy(); //added by Mike, 20210617
+    void drawTextBackgroundAsQuadWithTexture();
 	void drawTextBackgroundObject();
 
 /*	//removed by Mike, 20210514

@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210616
+ * @date updated: 20210617
  *
  * Reference: 
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -532,6 +532,8 @@ Text::Text(float xPos, float yPos, float zPos, int windowWidth, int windowHeight
 	
 	//added by Mike, 20210616
 	iTextCurrentMaxColumnCount=0;
+    //added by Mike, 20210617
+    iTextCurrentMaxRowCount=0;
 	
     //init default values
     //previousFacingState=FACING_UP;
@@ -692,7 +694,7 @@ glPopMatrix();
 }
 
 //added by Mike, 20210615
-void Text::drawTextBackgroundAsQuadWithTexture()
+void Text::drawTextBackgroundAsQuadWithTextureBuggy()
 {
 //added by Mike, 20210614
 //note; add glPushMatrix() and glPopMatrix()
@@ -752,6 +754,8 @@ glPopMatrix();
 						
 					//TO-DO: -update: this
 		
+                printf("iTextCurrentMaxColumnCount: %i\n",iTextCurrentMaxColumnCount);
+                
 	//				for (int iColumnCount=0; iColumnCount<MAX_TEXT_CHAR_COLUMN; iColumnCount++) {
 					for (int iColumnCount=0; iColumnCount<iTextCurrentMaxColumnCount; iColumnCount++) {
 					
@@ -762,8 +766,6 @@ glPopMatrix();
 		 						break;
 		 					}
 */
-		 					
-		 							 							 					
 							//TO-DO: -reverify: sCurrentTextContainer[iRowCount][iColumnCount]
 /*									 							 					
 		 					strcat(tempText,sCurrentTextContainer[iRowCount][iColumnCount].c_str());		 			 					printf(">>>>iColumnCount: %i; tempText: %s\n",iColumnCount, tempText);
@@ -781,10 +783,14 @@ glPopMatrix();
 				printf("sCurrentTextContainer[%i]: %s\n",iColumnCount, sCurrentTextContainer[iRowCount][iColumnCount].c_str());
 	 					strcat(tempText,sCurrentTextContainer[iRowCount][iColumnCount].c_str());
 */
-		 					
+
+                        tempText[iColumnCount]=cCurrentTextContainer[iRowCount][iColumnCount];
+                        
+//                        printf(">> cCurrentTextContainer[iRowCount][iColumnCount]: %c\n",cCurrentTextContainer[iRowCount][iColumnCount]);
+                        printf(">> tempText[iColumnCount]: %c\n",tempText[iColumnCount]);
 					}
 					
-				
+				tempText[sizeof(tempText)-1]='\n';
 					
 //					printf(">>>>>%s\n",tempText);				
 	
@@ -804,7 +810,7 @@ glPopMatrix();
 //     			iTextCurrentMaxColumnCount++;
 		 			
 //					if ((iTextAnimationCountDelay)%2==0) {
-					if ((iTextAnimationCountDelay)>=10) {	//TO-DO: -update: MAX delay
+					if ((iTextAnimationCountDelay>=10) || (iTextAnimationCountDelay<=0)){	//TO-DO: -update: MAX delay
 //							iTextAnimationCount+=1;
 							iTextAnimationCountDelay=0;
 							
@@ -816,7 +822,8 @@ glPopMatrix();
 					
 							//added by Mike, 20210616
 							if (iTextCurrentMaxColumnCount>MAX_TEXT_CHAR_COLUMN) {
-								iTextCurrentMaxColumnCount=MAX_TEXT_CHAR_COLUMN;
+//								iTextCurrentMaxColumnCount=MAX_TEXT_CHAR_COLUMN;
+                                //removed by Mike, 20210616
 //								iTextCurrentMaxColumnCount=0; //new line/row
 							}
 													
@@ -830,6 +837,140 @@ glPopMatrix();
 	   glDisable(GL_TEXTURE_2D);
 	   glBindTexture(GL_TEXTURE_2D, 0);        
 }
+
+
+//added by Mike, 20210617
+void Text::drawTextBackgroundAsQuadWithTexture()
+{
+    //added by Mike, 20210614
+    //note; add glPushMatrix() and glPopMatrix()
+    glPushMatrix();
+    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixel), myZPosAsPixel);
+    
+    //        glScalef(2.5f,5.0f,1.0f);
+    //edited by Mike, 20210616
+    //        glScalef(2.0f,2.0f,1.0f);
+    //        glScalef(2.5f,4.0f,1.0f);
+    glScalef(5.0f,4.0f,1.0f);
+    
+    //TO-DO: -update: draw instructions
+    drawTextBackgroundObject();
+    glScalef(1.0f,1.0f,1.0f);
+    
+    //added by Mike, 20210613
+    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel), -myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixel), -myZPosAsPixel);
+    glPopMatrix();
+    
+    //added by Mike, 20210614
+    //set TOP-LEFT origin/anchor/reference point; quadrant 4, y-axis inverted; x and y positive
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    
+    //TOP-LEFT origin
+    glOrtho(0.0f, //left
+            1.0f, //right
+            1.0f, //bottom
+            0.0f, //top
+            0.0f, //zNear; minimum
+            1.0f //zFar; maximum
+            );
+    
+    //font
+    // select and enable texture FONT_TEXTURE
+    glBindTexture(GL_TEXTURE_2D, FONT_TEXTURE);
+    glEnable(GL_TEXTURE_2D);
+    
+    //edited by Mike, 20210615
+    //draw text using Font texture
+    
+    char tempText[50];
+    //		 sprintf(tempText,"USBONG");
+    //		 sprintf(tempText,sCurrentTextContainer[0]);
+    //edited by Mike, 20210615
+    //		 sprintf(tempText,sCurrentTextContainer[0][0].c_str());
+    
+    glScalef(0.5f,0.5f,1.0f);
+    
+ 
+//    MAX_TEXT_CHAR_ROW
+//    int iTextCurrentMaxRowCount = strlen(cCurrentTextContainer);
+//    printf("iTextCurrentMaxRowCount: %i\n",iTextCurrentMaxRowCount);
+    
+    //TO-DO: -reverify: row sequence
+    //edited by Mike, 20210616
+//    for (int iRowCount=0; iRowCount<MAX_TEXT_CHAR_ROW; iRowCount++) {
+        //			for (int iRowCount=MAX_TEXT_CHAR_ROW-1; iRowCount>=0; iRowCount--) {
+    for (int iRowCount=0; iRowCount<iTextCurrentMaxRowCount; iRowCount++) {
+        strcpy(tempText, "");
+        
+        //TO-DO: -update: this
+        //added by Mike, 20210617
+        //TO-DO: -reverify: clear tempText container due to previously used storage in computer memory causes excess text characters to appear
+        //note: select excess text characters NOT in cCurrentTextContainer
+        //added by computer in memory storage for use in another set of instructions
+        strcpy(tempText,"");
+        
+        
+/*        printf("iTextCurrentMaxColumnCount: %i\n",iTextCurrentMaxColumnCount);
+*/
+//        				for (int iColumnCount=0; iColumnCount<MAX_TEXT_CHAR_COLUMN; iColumnCount++) {
+        for (int iColumnCount=0; iColumnCount<iTextCurrentMaxColumnCount; iColumnCount++) {
+            tempText[iColumnCount]=cCurrentTextContainer[iRowCount][iColumnCount];
+            
+            
+            //printf("cCurrentTextContainer[%i][%i]: %c",iRowCount, iColumnCount, cCurrentTextContainer[iRowCount][iColumnCount]);
+            //printf(">> tempText[iColumnCount]: %c\n",tempText[iColumnCount]);
+        }
+        
+        //					printf(">>>>>%s\n",tempText);
+        
+        //TO-DO: -add: remaining Font Characters, e.g. small letters, digits
+        //TO-DO: -update: font character position in texture image file
+        //	   					draw_string(0.1f, 1.2f, 0.0f, tempText);
+        draw_string(0.05f, 1.2f, 0.0f, tempText);
+        
+        
+     			//added by Mike, 20210615
+     			//new line
+     			//TO-DO: -update: this
+//     			glTranslatef(0.0f,0.1f+0.1f*iRowCount,0.0f);
+//     			glTranslatef(0.0f,0.1f*iRowCount,0.0f);
+    glTranslatef(0.0f,0.1f,0.0f);
+    
+        
+        //added by Mike, 20210616
+        //     			iTextCurrentMaxColumnCount++;
+        
+        //					if ((iTextAnimationCountDelay)%2==0) {
+        if ((iTextAnimationCountDelay>=10) || (iTextAnimationCountDelay<=0)){	//TO-DO: -update: MAX delay
+            //							iTextAnimationCount+=1;
+            iTextAnimationCountDelay=0;
+            
+            iTextCurrentMaxColumnCount++;
+            
+//            printf(">>iTextCurrentMaxColumnCount: %i\n",iTextCurrentMaxColumnCount);
+
+        }
+        iTextAnimationCountDelay+=1;
+        
+        //added by Mike, 20210616
+        if (iTextCurrentMaxColumnCount>MAX_TEXT_CHAR_COLUMN) {
+            //								iTextCurrentMaxColumnCount=MAX_TEXT_CHAR_COLUMN;
+            //removed by Mike, 20210616
+            //								iTextCurrentMaxColumnCount=0; //new line/row
+        }
+        
+        
+        //     		}
+        
+    }
+				
+    glScalef(1.0f,1.2f,1.0f);
+				
+	   glDisable(GL_TEXTURE_2D);
+	   glBindTexture(GL_TEXTURE_2D, 0);        
+}
+
 
 //added: by Mike, 20210423
 //TO-DO: -add: in PolygonPool
@@ -2015,9 +2156,13 @@ void Text::readInputText(char *inputFilename) {
 */
     
 	for (iRowCount=0; iRowCount<MAX_TEXT_CHAR_ROW; iRowCount++) {
-		for (iColumnCount=0; iColumnCount<MAX_TEXT_CHAR_COLUMN; iColumnCount++) {		
-	 			sCurrentTextContainer[iRowCount][iColumnCount]=(char*)"-1";//'G';
-		}
+		for (iColumnCount=0; iColumnCount<MAX_TEXT_CHAR_COLUMN; iColumnCount++) {
+            //edited by Mike, 20210616
+            //sCurrentTextContainer[iRowCount][iColumnCount]=(char*)"-1";//'G';
+            //edited by Mike, 20210617
+//            cCurrentTextContainer[iRowCount][iColumnCount]='\n';
+            cCurrentTextContainer[iRowCount][iColumnCount]='\0';
+        }
 	}
     
 	iRowCount=0;
@@ -2133,17 +2278,26 @@ void Text::readInputText(char *inputFilename) {
                 ch = strtok(NULL, "\n");
 
             }
+ 
 */
+            
+            //added by Mike, 20210617
+/*            if (cCurrentTextContainer[iRowCount][iCharCount]=='\0') {
+                break;
+            }
+*/
+            
 			for (int iCharCount=0; iCharCount<strlen(tempInputTextLine); iCharCount++) {
-				sCurrentTextContainer[iRowCount][iColumnCount]=tempInputTextLine[iCharCount];
+				cCurrentTextContainer[iRowCount][iCharCount]=tempInputTextLine[iCharCount];
 				
-				printf("tempInputTextLine[%i]: %c",iCharCount, tempInputTextLine[iCharCount]);
+				/*printf("cCurrentTextContainer[%i][%i]: %c",iRowCount, iCharCount, tempInputTextLine[iCharCount]);
+                 */
 			}
 
  
             iColumnCount=iColumnCount+1;
             
-        
+            //removed by Mike, 20210617
 			//edited by Mike, 20210311
 //			if (iRowCount<100) {
 			//edited by Mike, 20210321
@@ -2154,6 +2308,8 @@ void Text::readInputText(char *inputFilename) {
 			else {
 				iRowCount=0;
 			}
+            
+            iTextCurrentMaxRowCount=iTextCurrentMaxRowCount+1;
             
 			printf("\n");			
 		}
