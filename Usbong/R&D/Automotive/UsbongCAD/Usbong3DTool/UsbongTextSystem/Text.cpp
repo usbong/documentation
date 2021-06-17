@@ -897,6 +897,8 @@ void Text::drawTextBackgroundAsQuadWithTexture()
 //    printf("iTextCurrentMaxRowCount: %i\n",iTextCurrentMaxRowCount);
     
     //TO-DO: -reverify: row sequence
+    //TO-DO: -fix: multiple rows output
+    
     //edited by Mike, 20210616
 //    for (int iRowCount=0; iRowCount<MAX_TEXT_CHAR_ROW; iRowCount++) {
         //			for (int iRowCount=MAX_TEXT_CHAR_ROW-1; iRowCount>=0; iRowCount--) {
@@ -904,12 +906,19 @@ void Text::drawTextBackgroundAsQuadWithTexture()
         strcpy(tempText, "");
         
         //TO-DO: -update: this
+
         //added by Mike, 20210617
-        //TO-DO: -reverify: clear tempText container due to previously used storage in computer memory causes excess text characters to appear
+        //TO-DO: -reverify: pattern used by computer to add in memory storage;
+        //example: pattern based on clock time
+        //TO-DO: -reuse: incident; re-verify: if used to auto-generate monsters in select computer game dungeons
+        //edited by Mike, 20210617
+        //clear tempText container not all cleared due to previously used storage in computer memory causes excess text characters to appear
         //note: select excess text characters NOT in cCurrentTextContainer
         //added by computer in memory storage for use in another set of instructions
-        strcpy(tempText,"");
-        
+        //strcpy(tempText,"");
+        for (int iColumnCount=0; iColumnCount<MAX_TEXT_CHAR_COLUMN; iColumnCount++) {
+            tempText[iColumnCount]='\0'; //verified: in macOS, with Japanese keyboard ro-maji input, "¥0", backspace is "¥"
+        }
         
 /*        printf("iTextCurrentMaxColumnCount: %i\n",iTextCurrentMaxColumnCount);
 */
@@ -932,17 +941,19 @@ void Text::drawTextBackgroundAsQuadWithTexture()
         
      			//added by Mike, 20210615
      			//new line
-     			//TO-DO: -update: this
-//     			glTranslatef(0.0f,0.1f+0.1f*iRowCount,0.0f);
+     			//edited by Mike, 20210617
+     			glTranslatef(0.0f,0.1f+0.1f*iRowCount,0.0f);
 //     			glTranslatef(0.0f,0.1f*iRowCount,0.0f);
-    glTranslatef(0.0f,0.1f,0.0f);
+//    glTranslatef(0.0f,0.1f,0.0f);
     
         
         //added by Mike, 20210616
         //     			iTextCurrentMaxColumnCount++;
         
         //					if ((iTextAnimationCountDelay)%2==0) {
-        if ((iTextAnimationCountDelay>=10) || (iTextAnimationCountDelay<=0)){	//TO-DO: -update: MAX delay
+        //edited by Mike, 20210617
+        //if ((iTextAnimationCountDelay>=10) || (iTextAnimationCountDelay<=0)){	//TO-DO: -update: MAX delay
+        if ((iTextAnimationCountDelay>=5) || (iTextAnimationCountDelay<=0)){	//TO-DO: -update: MAX delay
             //							iTextAnimationCount+=1;
             iTextAnimationCountDelay=0;
             
