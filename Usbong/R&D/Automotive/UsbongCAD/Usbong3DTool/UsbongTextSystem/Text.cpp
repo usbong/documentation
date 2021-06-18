@@ -920,22 +920,29 @@ void Text::drawTextBackgroundAsQuadWithTexture()
                     }
                                         
                     //added by Mike, 20210618
-                    if (iRowCount>=MAX_TEXT_CHAR_ROW) {
-                    		iRowCountPageNumber++;
-												iTextCurrentMaxRowCount=1;											
-												iRowCount=-1; //note: we add 1 near the closing of the for loop		 											
-                    }                	                    
+										//if has reached end of rows, no need to execute this
+										//TO-DO: -add: auto-identify if at MAX row
+                    if (cCurrentTextContainer[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW+1][0]=='\0') {
+                    		break;
+                    }
+                    else {
+                    	if (iRowCount>=MAX_TEXT_CHAR_ROW) {
+                    			iRowCountPageNumber++;
+													iTextCurrentMaxRowCount=1;											
+													iRowCount=-1; //note: we add 1 near the closing of the for loop		 											
+                    	}                	                    	
+                    }
                 }              
                 
                 //edited by Mike, 20210618
 								//re-set isAtMaxTextCharRow to FALSE after button press
                 	if ((iRowCount+1)>=MAX_TEXT_CHAR_ROW) {
                 			iRowCount=3;
-                			iRowCountPageNumber=0;
+//                			iRowCountPageNumber=0; //removed by Mike, 20210618
                   		iTextCurrentMaxRowCount=4;                  	
                   		isAtMaxTextCharRow=true;											
                 	}
-									
+																
 //printf("iTextCurrentMaxRowCount: %i\n",iTextCurrentMaxRowCount);
 
             //added by Mike, 20210617
@@ -2186,12 +2193,20 @@ void Text::readInputText(char *inputFilename) {
             //sCurrentTextContainer[iRowCount][iColumnCount]=(char*)"-1";//'G';
             //edited by Mike, 20210617
             //            cCurrentTextContainer[iRowCount][iColumnCount]='\n';
-            cCurrentTextContainer[iRowCount][iColumnCount]='\0';
+//            cCurrentTextContainer[iRowCount][iColumnCount]='\0';
             
             //added by Mike, 20210617      
             iCurrentMaxColumnCountPerRowContainer[iRowCount]=1;
         }
     }
+
+  	//added by Mike, 20210618  
+    for (iRowCount=0; iRowCount<MAX_TEXT_CHAR_ROW_RAM; iRowCount++) {
+        for (iColumnCount=0; iColumnCount<MAX_TEXT_CHAR_COLUMN; iColumnCount++) {
+            cCurrentTextContainer[iRowCount][iColumnCount]='\0';
+        }
+    }
+
     
     
 /*  
