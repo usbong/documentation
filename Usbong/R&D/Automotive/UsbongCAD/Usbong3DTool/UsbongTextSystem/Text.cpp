@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B.
  * @date created: 20200930
- * @date updated: 20210617
+ * @date updated: 20210618
  *
  * Reference:
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -961,7 +961,8 @@ void Text::drawTextBackgroundAsQuadWithTexture()
         if (iRowCount==(iTextCurrentMaxRowCount-1)) {
             iCurrentMaxColumnCountPerRowContainer[iRowCount]++;
             
-            //added by Mike, 20210617
+            //added by Mike, 20210617; edited by Mike 20210618
+            //TO-DO: -add: auto-write next set of rows over MAX, e.g. 4 rows per textbox
             if (iCurrentMaxColumnCountPerRowContainer[iRowCount]>=MAX_TEXT_CHAR_COLUMN) {
                 iCurrentMaxColumnCountPerRowContainer[iRowCount]=MAX_TEXT_CHAR_COLUMN;
             }

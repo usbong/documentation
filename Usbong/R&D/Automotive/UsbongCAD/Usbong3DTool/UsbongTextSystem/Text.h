@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20210613
- * @date updated: 20210617
+ * @date updated: 20210618
  * @website address: http://www.usbong.ph
  *
  * Acknowledgments:
@@ -47,7 +47,9 @@
 
 //added by Mike, 20210614; edited by Mike, 20210616
 //#define MAX_TEXT_CHAR_ROW 2
-#define MAX_TEXT_CHAR_ROW 3
+//edited by Mike, 20210618
+//#define MAX_TEXT_CHAR_ROW 3
+#define MAX_TEXT_CHAR_ROW 4 //TO-DO: -auto-identify if over MAX; execute pause write action
 //edited by Mike, 20210615
 //#define MAX_TEXT_CHAR_COLUMN 8 //note: 8 with comma to be end of line
 //#define MAX_TEXT_CHAR_COLUMN 16 //note: 8 with comma to be end of line
@@ -231,10 +233,12 @@ private:
 
 	//added by Mike, 20210614; edited by Mike 20210616
 	//std::string sCurrentTextContainer[MAX_TEXT_CHAR_COLUMN][MAX_TEXT_CHAR_ROW]; //TO-DO: -add: auto-update max size
-    char cCurrentTextContainer[MAX_TEXT_CHAR_COLUMN][MAX_TEXT_CHAR_ROW];
+    char cCurrentTextContainer[MAX_TEXT_CHAR_ROW][MAX_TEXT_CHAR_COLUMN];
     //added by Mike, 20210616
     int iTextCurrentMaxRowCount;
-    
+    //added by Mike, 20210617
+    int iCurrentMaxColumnCountPerRowContainer[MAX_TEXT_CHAR_ROW];
+
     
     GLint tricount;
     GLint isMovingForward;
