@@ -46,7 +46,7 @@
 #define MAX_PUNCHING_ANIMATION_COUNT 2
 
 //added by Mike, 20210614; edited by Mike, 20210616
-//#define MAX_TEXT_CHAR_ROW 2
+//#define MAX_TEXT_CHAR_ROW 2idrawPressNextSymbolCount
 //edited by Mike, 20210618
 //#define MAX_TEXT_CHAR_ROW 3
 //edited by Mike, 20210618
@@ -251,7 +251,8 @@ private:
 
 		//added by Mike, 20210618
 		int iRowCountPageNumber; //start at zero
-
+		bool isAtMaxTextCharRow;
+		int idrawPressNextSymbolCount;
     
     GLint tricount;
     GLint isMovingForward;
@@ -302,6 +303,9 @@ private:
 	//edited by Mike, 20210129
 //	void setDashStateWithKeyUp();
 	void setDashStateWithKeyUp(int keyCode);
+
+	//added by Mike, 20210618
+	void drawPressNextSymbol();
 
 public:
 	//edited by Mike, 20201115 

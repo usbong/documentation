@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B.
  * @date created: 20200926
- * @date updated: 20210614
+ * @date updated: 20210618
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -1568,16 +1568,18 @@ void OpenGLCanvas::render()
     glLineWidth((GLfloat)3);
     
     //note: coordinate system guide/map
+/*	//removed by Mike, 20210618
     glBegin(GL_LINES);
     glColor3f(0.0f,0.0f,0.0f); //black
-    /*	//removed by Mike, 20210516
-     //diagonal line left to right
-     glVertex2f(-1.0f, 1.0f);
-     glVertex2f(1.0f, -1.0f);
-     //diagonal line right to left
-     glVertex2f(1.0f, 1.0f);
-     glVertex2f(-1.0f, -1.0f);
-     */
+     
+     ////removed by Mike, 20210516
+     ////diagonal line left to right
+     //glVertex2f(-1.0f, 1.0f);
+     //glVertex2f(1.0f, -1.0f);
+     ////diagonal line right to left
+     //glVertex2f(1.0f, 1.0f);
+     //glVertex2f(-1.0f, -1.0f);
+     
     //vertical line at center
     glVertex2f(0.0f, 1.0f);
     glVertex2f(0.0f, -1.0f);
@@ -1586,7 +1588,7 @@ void OpenGLCanvas::render()
     glVertex2f(-1.0f, 0.0f);
     glVertex2f(1.0f, 0.0f);
     glEnd();
-    
+*/    
     
     /*
      //TO-DO: -update: this
@@ -1720,7 +1722,8 @@ void OpenGLCanvas::render()
     
     //added by Mike, 20210514; edited by Mike, 20210613
     //note: draw instructions due to glTranslatef(...) not closed
-    myButton->draw();
+    //removed by Mike, 20210618
+//    myButton->draw();
     
     //added by Mike, 20210614
     //TO-DO: -reverify: instructions to not need to execute this set

@@ -460,7 +460,7 @@ Text::Text(float xPos, float yPos, float zPos, int windowWidth, int windowHeight
     myYPosAsPixel=(int)yPos;
     myZPosAsPixel=(int)zPos;
     
-    printf(">>myXPosAsPixel: %i\n",myXPosAsPixel);
+//    printf(">>myXPosAsPixel: %i\n",myXPosAsPixel);
     
     
     /*
@@ -585,6 +585,10 @@ Text::Text(float xPos, float yPos, float zPos, int windowWidth, int windowHeight
     //note: set this in OpenGLCanvas.cpp
     bIsPlayer2=false;
     
+    //added by Mike, 20210618
+    isAtMaxTextCharRow=false;
+    idrawPressNextSymbolCount=0;
+    
     //removed by Mike, 20201001; added by Mike, 20210423
     setup();
     
@@ -693,151 +697,40 @@ void Text::drawTextBackgroundAsQuadWithTexturePrev()
 	   glBindTexture(GL_TEXTURE_2D, 0);
 }
 
-//added by Mike, 20210615
-void Text::drawTextBackgroundAsQuadWithTextureBuggy()
+//added by Mike, 20210617
+void Text::drawPressNextSymbol()
 {
-    //added by Mike, 20210614
-    //note; add glPushMatrix() and glPopMatrix()
-    glPushMatrix();
-    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixel), myZPosAsPixel);
-    
-    //        glScalef(2.5f,5.0f,1.0f);
-    //edited by Mike, 20210616
-    //        glScalef(2.0f,2.0f,1.0f);
-    //        glScalef(2.5f,4.0f,1.0f);
-    glScalef(5.0f,4.0f,1.0f);
-    
-    //TO-DO: -update: draw instructions
-    drawTextBackgroundObject();
-    glScalef(1.0f,1.0f,1.0f);
-    
-    //added by Mike, 20210613
-    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel), -myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixel), -myZPosAsPixel);
-    glPopMatrix();
-    
-    //added by Mike, 20210614
-    //set TOP-LEFT origin/anchor/reference point; quadrant 4, y-axis inverted; x and y positive
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    
-    //TOP-LEFT origin
-    glOrtho(0.0f, //left
-            1.0f, //right
-            1.0f, //bottom
-            0.0f, //top
-            0.0f, //zNear; minimum
-            1.0f //zFar; maximum
-            );
-    
-    //font
-    // select and enable texture FONT_TEXTURE
-    glBindTexture(GL_TEXTURE_2D, FONT_TEXTURE);
-    glEnable(GL_TEXTURE_2D);
-    
-    //edited by Mike, 20210615
-    //draw text using Font texture
-    
-    char tempText[50];
-    //		 sprintf(tempText,"USBONG");
-    //		 sprintf(tempText,sCurrentTextContainer[0]);
-    //edited by Mike, 20210615
-    //		 sprintf(tempText,sCurrentTextContainer[0][0].c_str());
-    
-    glScalef(0.5f,0.5f,1.0f);
-    
-    //TO-DO: -reverify: row sequence
-    //edited by Mike, 20210616
-    for (int iRowCount=0; iRowCount<MAX_TEXT_CHAR_ROW; iRowCount++) {
-        //			for (int iRowCount=MAX_TEXT_CHAR_ROW-1; iRowCount>=0; iRowCount--) {
-        
-        strcpy(tempText, "");
-        
-        //TO-DO: -update: this
-        
-        printf("iTextCurrentMaxColumnCount: %i\n",iTextCurrentMaxColumnCount);
-        
-        //				for (int iColumnCount=0; iColumnCount<MAX_TEXT_CHAR_COLUMN; iColumnCount++) {
-        for (int iColumnCount=0; iColumnCount<iTextCurrentMaxColumnCount; iColumnCount++) {
-            
-            //strcat(tempText,sCurrentTextContainer[iRowCount][iColumnCount].c_str());
-            /*							//TO-DO: -update: this
-             if (sCurrentTextContainer[iRowCount][iColumnCount]=="-1") {
-             strcat(tempText,"\n");
-             break;
-             }
-             */
-            //TO-DO: -reverify: sCurrentTextContainer[iRowCount][iColumnCount]
-            /*
-             strcat(tempText,sCurrentTextContainer[iRowCount][iColumnCount].c_str());		 			 					printf(">>>>iColumnCount: %i; tempText: %s\n",iColumnCount, tempText);
-             */
-            
-            //		 					tempText[iColumnCount]=sCurrentTextContainer[iRowCount][iColumnCount];
-            
-            //		 					printf(">>sCurrentTextContainer[iRowCount][iColumnCount]:%c \n",sCurrentTextContainer[iRowCount][iColumnCount]);
-            
-            //		 					printf(">>>>iColumnCount: %i; tempText: %s\n",iColumnCount, tempText);
-            
-            //		 					printf(">>tempText,sCurrentTextContainer[iRowCount][iColumnCount].c_str():%s ",tempText,sCurrentTextContainer[iRowCount][iColumnCount].c_str());
-            
-            /*
-             printf("sCurrentTextContainer[%i]: %s\n",iColumnCount, sCurrentTextContainer[iRowCount][iColumnCount].c_str());
-             strcat(tempText,sCurrentTextContainer[iRowCount][iColumnCount].c_str());
-             */
-            
-            tempText[iColumnCount]=cCurrentTextContainer[iRowCount][iColumnCount];
-            
-            //                        printf(">> cCurrentTextContainer[iRowCount][iColumnCount]: %c\n",cCurrentTextContainer[iRowCount][iColumnCount]);
-            printf(">> tempText[iColumnCount]: %c\n",tempText[iColumnCount]);
-        }
-        
-        tempText[sizeof(tempText)-1]='\n';
-        
-        //					printf(">>>>>%s\n",tempText);
-        
-        //TO-DO: -add: remaining Font Characters, e.g. small letters, digits
-        //TO-DO: -update: font character position in texture image file
-        //	   					draw_string(0.1f, 1.2f, 0.0f, tempText);
-        draw_string(0.05f, 1.2f, 0.0f, tempText);
-        
-        
-     			//added by Mike, 20210615
-     			//new line
-     			//TO-DO: -update: this
-     			glTranslatef(0.0f,0.1f,0.0f);
-        
-        
-        //added by Mike, 20210616
-        //     			iTextCurrentMaxColumnCount++;
-        
-        //					if ((iTextAnimationCountDelay)%2==0) {
-        if ((iTextAnimationCountDelay>=10) || (iTextAnimationCountDelay<=0)){	//TO-DO: -update: MAX delay
-            //							iTextAnimationCount+=1;
-            iTextAnimationCountDelay=0;
-            
-            printf(">>iTextCurrentMaxColumnCount: %i\n",iTextCurrentMaxColumnCount);
-            
-            iTextCurrentMaxColumnCount++;
-        }
-        iTextAnimationCountDelay+=1;
-        
-        //added by Mike, 20210616
-        if (iTextCurrentMaxColumnCount>MAX_TEXT_CHAR_COLUMN) {
-            //								iTextCurrentMaxColumnCount=MAX_TEXT_CHAR_COLUMN;
-            //removed by Mike, 20210616
-            //								iTextCurrentMaxColumnCount=0; //new line/row
-        }
-        
-        
-        //     		}
-        
-    }
-				
-    glScalef(1.0f,1.2f,1.0f);
-				
-	   glDisable(GL_TEXTURE_2D);
-	   glBindTexture(GL_TEXTURE_2D, 0);
-}
+//	  glScalef(0.20f, 0.4f, 1.0f);    
+//    glTranslatef(1.0f, 0.5f, 0.0f);
 
+    glDisable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, 0);
+    
+    glPushMatrix();
+
+//    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(320), myUsbongUtils->autoConvertFromPixelToVertexPointY(320), 0.0f); //-myZPosAsPixel);
+		
+		//note: 640x640; window width x height
+    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(320), myUsbongUtils->autoConvertFromPixelToVertexPointY(555), 0.0f); //-myZPosAsPixel);
+
+//			glTranslatef(0.8f*0.08f,0.0f,0.0f); //set anchor/origin @top-left
+
+			glRotatef(45.0f, 0.0f, 0.0f, 1.0f);        
+	  	glScalef(0.08f, 0.08f, 1.0f);    			
+
+			glColor3f(1.0f,0.0f,0.0f); //red
+
+      	
+    	glBegin(GL_TRIANGLES);
+    		//counter-clockwise sequence to auto-draw front face    		
+    		//front face left part; triangle at 3rd quadrant; angle: right 
+      	glVertex3f(-1.000000,1.000000,0.000000); //A1    	
+    		glVertex3f(-1.000000,-1.000000,0.000000); //C1   	
+    		glVertex3f(1.000000,-1.000000,0.000000); //B1
+			glEnd();
+			
+	  glPopMatrix(); 
+}
 
 //added by Mike, 20210617
 void Text::drawTextBackgroundAsQuadWithTexture()
@@ -856,10 +749,19 @@ void Text::drawTextBackgroundAsQuadWithTexture()
     //TO-DO: -update: draw instructions
     drawTextBackgroundObject();
     glScalef(1.0f,1.0f,1.0f);
-    
+        
     //added by Mike, 20210613
     glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel), -myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixel), -myZPosAsPixel);
     glPopMatrix();
+    
+    //TO-DO: -add: button press input to set isAtMaxTextCharRow=false
+
+	  if (isAtMaxTextCharRow) {	   
+			if ((idrawPressNextSymbolCount)%2==0) {
+    		drawPressNextSymbol();
+    	}
+			idrawPressNextSymbolCount=idrawPressNextSymbolCount+1;
+		}	
     
     //added by Mike, 20210614
     //set TOP-LEFT origin/anchor/reference point; quadrant 4, y-axis inverted; x and y positive
@@ -874,12 +776,12 @@ void Text::drawTextBackgroundAsQuadWithTexture()
             0.0f, //zNear; minimum
             1.0f //zFar; maximum
             );
-    
+        
     //font
     // select and enable texture FONT_TEXTURE
     glBindTexture(GL_TEXTURE_2D, FONT_TEXTURE);
     glEnable(GL_TEXTURE_2D);
-    
+        
     //edited by Mike, 20210615
     //draw text using Font texture
     
@@ -939,13 +841,11 @@ void Text::drawTextBackgroundAsQuadWithTexture()
 						//note: MAX_TEXT_CHAR_ROW=4
             tempText[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW][iColumnCount]=cCurrentTextContainer[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW][iColumnCount];
 
-            printf("cCurrentTextContainer[%i][%i]: %c\n",iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW, iColumnCount, cCurrentTextContainer[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW][iColumnCount]);
+//            printf("cCurrentTextContainer[%i][%i]: %c\n",iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW, iColumnCount, cCurrentTextContainer[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW][iColumnCount]);
         }
 
-        		printf(">>>>>iRowCount: %i\n",iRowCount);
-
-        
-        		printf(">>>>>%s\n",tempText[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW]);
+//        		printf(">>>>>iRowCount: %i\n",iRowCount);
+//        		printf(">>>>>%s\n",tempText[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW]);
         
         //TO-DO: -add: remaining Font Characters, e.g. small letters, digits
         //TO-DO: -update: font character position in texture image file
@@ -967,22 +867,23 @@ void Text::drawTextBackgroundAsQuadWithTexture()
         //							iTextAnimationCount+=1;
         iTextAnimationCountDelay=0;
 
-            printf(">>>>iRowCount: %i; iTextCurrentMaxRowCount: %i\n",iRowCount, iTextCurrentMaxRowCount);
+//            printf(">>>>iRowCount: %i; iTextCurrentMaxRowCount: %i\n",iRowCount, iTextCurrentMaxRowCount);
 
 
 //        iTextCurrentMaxColumnCount++;
 				//edited by Mike, 20210618; removed by Mike, 20210618
         if ((iRowCount)==(iTextCurrentMaxRowCount-1)) {
 //        if ((iRowCount)==(iTextCurrentMaxRowCount)) {
-            printf(">\n");
+//            printf(">\n");
 
 	            iCurrentMaxColumnCountPerRowContainer[iRowCount]++;
             
-            printf(">>>>>>>>>>>>>>>>>>>>>>>> DITO\n");
-            
+//            printf(">>>>>>>>>>>>>>>>>>>>>>>> DITO\n");
+
             //added by Mike, 20210617
             if (iCurrentMaxColumnCountPerRowContainer[iRowCount]>=MAX_TEXT_CHAR_COLUMN) {
                 iCurrentMaxColumnCountPerRowContainer[iRowCount]=MAX_TEXT_CHAR_COLUMN;
+
             }
 					//edited by Mike, 20210618
 /*            else {
@@ -1007,30 +908,41 @@ void Text::drawTextBackgroundAsQuadWithTexture()
                     iTextCurrentMaxRowCount=3;
                 }
 */
-                //TO-DO: -add: instructions to auto-identiiTextCurrentMaxRowCountfy end row by removing empty rows after reading input file
+//                    iTextCurrentMaxRowCount=4;
+                    
+                              //TO-DO: -add: instructions to auto-identify end row by removing empty rows after reading input file
                 //if next row is already empty
+                //row, column
                 if (cCurrentTextContainer[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW][iCurrentMaxColumnCountPerRowContainer[iTextCurrentMaxRowCount]]=='\0') {
                     iTextCurrentMaxRowCount=iTextCurrentMaxRowCount;                                        
                 }
-                else {
+                else {                
                     if ((iRowCount)==(iTextCurrentMaxRowCount-1)) {
                         iTextCurrentMaxRowCount++;                       
                     }
                                         
                     //added by Mike, 20210618
                     if (iRowCount>=MAX_TEXT_CHAR_ROW) {
-                    	iRowCountPageNumber++;
-//                    	iTextCurrentMaxRowCount=1;	
-											//iCurrentMaxColumnCountPerRowContainer[iRowCount]        
-
+                    		iRowCountPageNumber++;
 												iTextCurrentMaxRowCount=1;											
-//											iRowCount=(iRowCount)%MAX_TEXT_CHAR_ROW;		
-// 											iRowCount=iRowCount-1; 
-												iRowCount=-1; //note: we add 1 near the closing of the for loop		
-                    }
-                }
+												iRowCount=-1; //note: we add 1 near the closing of the for loop		 											
+                    }                	                    
+                }              
                 
-printf("iTextCurrentMaxRowCount: %i\n",iTextCurrentMaxRowCount);
+								//TO-DO: -add: execute this after button press                                
+                if ((iRowCount+1)>=MAX_TEXT_CHAR_ROW) {
+                	iRowCount=3;
+                	iRowCountPageNumber=0;
+                  iTextCurrentMaxRowCount=4;
+                  
+                  //TO-DO: -add: set to false if button pressed
+                  isAtMaxTextCharRow=true;
+                }
+                else {
+//                	isAtMaxTextCharRow=false;
+                }
+
+//printf("iTextCurrentMaxRowCount: %i\n",iTextCurrentMaxRowCount);
 
             //added by Mike, 20210617
             //TO-DO: fix: next row only iTextCurrentMaxColumnCount=1
@@ -1041,7 +953,7 @@ printf("iTextCurrentMaxRowCount: %i\n",iTextCurrentMaxRowCount);
             break;
         }
         
-        printf(">>\n");
+//        printf(">>\n");
         
         /*	//removed by Mike, 20210617
          
@@ -1061,6 +973,12 @@ printf("iTextCurrentMaxRowCount: %i\n",iTextCurrentMaxRowCount);
 				
 	   glDisable(GL_TEXTURE_2D);
 	   glBindTexture(GL_TEXTURE_2D, 0);
+	   
+/*	   //added by Mike, 20210618; removed by Mike, 20210618
+	   if (isAtMaxTextCharRow) {	   
+	     drawPressNextSymbol();
+	   }
+*/	   
 }
 
 
