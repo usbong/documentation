@@ -72,6 +72,7 @@
 //added by Mike, 20210613
 #include "Text.h"
 
+
 //added by Mike, 20210614
 #include "Font.h"
 
@@ -754,8 +755,6 @@ void Text::drawTextBackgroundAsQuadWithTexture()
     glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel), -myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixel), -myZPosAsPixel);
     glPopMatrix();
     
-    //TO-DO: -add: button press input to set isAtMaxTextCharRow=false
-
 	  if (isAtMaxTextCharRow) {	   
 			if ((idrawPressNextSymbolCount)%2==0) {
     		drawPressNextSymbol();
@@ -883,7 +882,6 @@ void Text::drawTextBackgroundAsQuadWithTexture()
             //added by Mike, 20210617
             if (iCurrentMaxColumnCountPerRowContainer[iRowCount]>=MAX_TEXT_CHAR_COLUMN) {
                 iCurrentMaxColumnCountPerRowContainer[iRowCount]=MAX_TEXT_CHAR_COLUMN;
-
             }
 					//edited by Mike, 20210618
 /*            else {
@@ -929,19 +927,15 @@ void Text::drawTextBackgroundAsQuadWithTexture()
                     }                	                    
                 }              
                 
-								//TO-DO: -add: execute this after button press                                
-                if ((iRowCount+1)>=MAX_TEXT_CHAR_ROW) {
-                	iRowCount=3;
-                	iRowCountPageNumber=0;
-                  iTextCurrentMaxRowCount=4;
-                  
-                  //TO-DO: -add: set to false if button pressed
-                  isAtMaxTextCharRow=true;
-                }
-                else {
-//                	isAtMaxTextCharRow=false;
-                }
-
+                //edited by Mike, 20210618
+								//re-set isAtMaxTextCharRow to FALSE after button press
+                	if ((iRowCount+1)>=MAX_TEXT_CHAR_ROW) {
+                			iRowCount=3;
+                			iRowCountPageNumber=0;
+                  		iTextCurrentMaxRowCount=4;                  	
+                  		isAtMaxTextCharRow=true;											
+                	}
+									
 //printf("iTextCurrentMaxRowCount: %i\n",iTextCurrentMaxRowCount);
 
             //added by Mike, 20210617
@@ -1190,9 +1184,26 @@ void Text::changeState(int s)
 //added by Mike, 20201226
 void Text::keyDown(int keyCode) {
     myKeysDown[keyCode] = TRUE;
+
+  	//added by Mike, 20210619
+  	//TO-DO: -reverify: output of over 6 rows in input file
+    if (myKeysDown[KEY_K]==TRUE) {
+    	if (isAtMaxTextCharRow) {
+    		isAtMaxTextCharRow=false;
+
+        iRowCountPageNumber++;
+				iTextCurrentMaxRowCount=1;				
+				
+				//next row; reminder: MAX_TEXT_CHAR_ROW=4
+				for(int iCount=0; iCount<MAX_TEXT_CHAR_ROW; iCount++) {
+					iCurrentMaxColumnCountPerRowContainer[iCount]=1;
+				}			        
+			}
+    }
     
+  	//removed by Mike, 20210619  
     //added by Mike, 20210127; edited by Mike, 20210128
-    autoVerifyDashStateWithKeyDown();//keyCode);
+//    autoVerifyDashStateWithKeyDown();//keyCode);
 }
 
 //added by Mike, 20201227; edited by Mike, 20210128

@@ -1089,6 +1089,8 @@ void OpenGLCanvas::keyDown(int keyCode)
     //added by Mike, 20210602
     myBall->keyDown(keyCode);
     
+    //added by Mike, 20210618
+    myText->keyDown(keyCode);
     
     //edited by Mike, 20210514
     if (keyCode==KEY_Z) {
@@ -1129,6 +1131,9 @@ void OpenGLCanvas::keyUp(int keyCode)
     //added by Mike, 20210602
     myBall->keyUp(keyCode);
     
+    //added by Mike, 20210618
+    myText->keyUp(keyCode);
+
     
     //removed by Mike, 20210514
     /*
