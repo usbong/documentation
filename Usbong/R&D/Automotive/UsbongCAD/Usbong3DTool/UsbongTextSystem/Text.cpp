@@ -886,8 +886,11 @@ void Text::drawTextBackgroundAsQuadWithTexture()
     //edited by Mike, 20210617
     //char tempText[50];
     //row, column
-    char tempText[MAX_TEXT_CHAR_ROW][MAX_TEXT_CHAR_COLUMN];
+    //edited by Mike, 20210618
+//    char tempText[MAX_TEXT_CHAR_ROW][MAX_TEXT_CHAR_COLUMN];
+    char tempText[MAX_TEXT_CHAR_ROW_RAM][MAX_TEXT_CHAR_COLUMN];
     
+
     
     //		 sprintf(tempText,"USBONG");
     //		 sprintf(tempText,sCurrentTextContainer[0]);
@@ -900,7 +903,9 @@ void Text::drawTextBackgroundAsQuadWithTexture()
 //    printf("iTextCurrentMaxRowCount: %i\n",iTextCurrentMaxRowCount);
     
     int iRowCount;
-    for (iRowCount=0; iRowCount<iTextCurrentMaxRowCount; iRowCount++) {
+    //edited by Mike, 20210618
+//    for (iRowCount=0; iRowCount<iTextCurrentMaxRowCount; iRowCount++) {
+    for (iRowCount=0; iRowCount<iTextCurrentMaxRowCount;) {   
         //removed by Mike, 20210617
         //        strcpy(tempText, "");
         
@@ -916,7 +921,9 @@ void Text::drawTextBackgroundAsQuadWithTexture()
         //note: select excess text characters NOT in cCurrentTextContainer
         //added by computer in memory storage for use in another set of instructions
         //strcpy(tempText,"");
-        for (int iRowCountToSetDefault=0; iRowCountToSetDefault<MAX_TEXT_CHAR_ROW; iRowCountToSetDefault++) {
+        //edited by Mike, 20210618
+//        for (int iRowCountToSetDefault=0; iRowCountToSetDefault<MAX_TEXT_CHAR_ROW; iRowCountToSetDefault++) {
+        for (int iRowCountToSetDefault=0; iRowCountToSetDefault<MAX_TEXT_CHAR_ROW_RAM; iRowCountToSetDefault++) {       
             for (int iColumnCount=0; iColumnCount<MAX_TEXT_CHAR_COLUMN; iColumnCount++) {
                 tempText[iRowCountToSetDefault][iColumnCount]='\0'; //verified: in macOS, with Japanese keyboard ro-maji input, "¥0", backspace is "¥"
             }
@@ -927,21 +934,24 @@ void Text::drawTextBackgroundAsQuadWithTexture()
         //edited by Mike, 20210617
 //        for (int iColumnCount=0; iColumnCount<iTextCurrentMaxColumnCount; iColumnCount++) {
         for (int iColumnCount=0; iColumnCount<iCurrentMaxColumnCountPerRowContainer[iRowCount]; iColumnCount++) {
-        
-            tempText[iRowCount][iColumnCount]=cCurrentTextContainer[iRowCount][iColumnCount];
-            
-            
-//            printf("cCurrentTextContainer[%i][%i]: %c\n",iRowCount, iColumnCount, cCurrentTextContainer[iRowCount][iColumnCount]);
+						//edited by Mike, 20210618        
+//            tempText[iRowCount][iColumnCount]=cCurrentTextContainer[iRowCount][iColumnCount];
+						//note: MAX_TEXT_CHAR_ROW=4
+            tempText[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW][iColumnCount]=cCurrentTextContainer[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW][iColumnCount];
+
+            printf("cCurrentTextContainer[%i][%i]: %c\n",iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW, iColumnCount, cCurrentTextContainer[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW][iColumnCount]);
         }
+
+        		printf(">>>>>iRowCount: %i\n",iRowCount);
+
         
-        //		printf(">>>>>%s\n",tempText[iRowCount]);
+        		printf(">>>>>%s\n",tempText[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW]);
         
         //TO-DO: -add: remaining Font Characters, e.g. small letters, digits
         //TO-DO: -update: font character position in texture image file
         //	   					draw_string(0.1f, 1.2f, 0.0f, tempText);
-        draw_string(0.05f, 1.2f, 0.0f, tempText[iRowCount]);
-        
-        
+        draw_string(0.05f, 1.2f, 0.0f, tempText[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW]);
+                
      			//added by Mike, 20210615
      			//new line
      			//edited by Mike, 20210617
@@ -956,16 +966,29 @@ void Text::drawTextBackgroundAsQuadWithTexture()
          */
         //							iTextAnimationCount+=1;
         iTextAnimationCountDelay=0;
-        
+
+            printf(">>>>iRowCount: %i; iTextCurrentMaxRowCount: %i\n",iRowCount, iTextCurrentMaxRowCount);
+
+
 //        iTextCurrentMaxColumnCount++;
-        if (iRowCount==(iTextCurrentMaxRowCount-1)) {
-            iCurrentMaxColumnCountPerRowContainer[iRowCount]++;
+				//edited by Mike, 20210618; removed by Mike, 20210618
+        if ((iRowCount)==(iTextCurrentMaxRowCount-1)) {
+//        if ((iRowCount)==(iTextCurrentMaxRowCount)) {
+            printf(">\n");
+
+	            iCurrentMaxColumnCountPerRowContainer[iRowCount]++;
             
-            //added by Mike, 20210617; edited by Mike 20210618
-            //TO-DO: -add: auto-write next set of rows over MAX, e.g. 4 rows per textbox
+            printf(">>>>>>>>>>>>>>>>>>>>>>>> DITO\n");
+            
+            //added by Mike, 20210617
             if (iCurrentMaxColumnCountPerRowContainer[iRowCount]>=MAX_TEXT_CHAR_COLUMN) {
                 iCurrentMaxColumnCountPerRowContainer[iRowCount]=MAX_TEXT_CHAR_COLUMN;
             }
+					//edited by Mike, 20210618
+/*            else {
+            	iCurrentMaxColumnCountPerRowContainer[iRowCount]++;
+            }
+*/            
         }
         
         //added by Mike, 20210617
@@ -973,31 +996,41 @@ void Text::drawTextBackgroundAsQuadWithTexture()
         //identify if all characters in row done
 //        printf(">>cCurrentTextContainer[iRowCount][iCurrentMaxColumnCountPerRowContainer[iRowCount]]: %c\n",cCurrentTextContainer[iRowCount][iCurrentMaxColumnCountPerRowContainer[iRowCount]]);
         
+  					//edited by Mike, 20210618      
+//            if (cCurrentTextContainer[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW][iCurrentMaxColumnCountPerRowContainer[iRowCount]]=='\n') {//'\n'){ //new line; "\0" empty character
+            if (cCurrentTextContainer[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW][iCurrentMaxColumnCountPerRowContainer[iRowCount]-1]=='\n') {//'\n'){ //new line; "\0" empty character
         
-            if (cCurrentTextContainer[iRowCount][iCurrentMaxColumnCountPerRowContainer[iRowCount]]=='\n') {//'\n'){ //new line; "\0" empty character
-        
-//                printf("iTextCurrentMaxRowCount-1: %i\n",iTextCurrentMaxRowCount-1);
-//                printf("iRowCount: %i\n",iRowCount);
-                
-
-                
+                printf("iTextCurrentMaxRowCount-1: %i\n",iTextCurrentMaxRowCount-1);
+                printf("iRowCount: %i\n",iRowCount);
+                                
 /*                if (iTextCurrentMaxRowCount>=3) {
                     iTextCurrentMaxRowCount=3;
                 }
 */
-                //TO-DO: -add: instructions to auto-identify end row by removing empty rows after reading input file
-                
+                //TO-DO: -add: instructions to auto-identiiTextCurrentMaxRowCountfy end row by removing empty rows after reading input file
                 //if next row is already empty
-                if (cCurrentTextContainer[iRowCount][iCurrentMaxColumnCountPerRowContainer[iTextCurrentMaxRowCount]]=='\0') {
-                    iTextCurrentMaxRowCount=iTextCurrentMaxRowCount;
+                if (cCurrentTextContainer[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW][iCurrentMaxColumnCountPerRowContainer[iTextCurrentMaxRowCount]]=='\0') {
+                    iTextCurrentMaxRowCount=iTextCurrentMaxRowCount;                                        
                 }
                 else {
                     if ((iRowCount)==(iTextCurrentMaxRowCount-1)) {
-                        iTextCurrentMaxRowCount++;
+                        iTextCurrentMaxRowCount++;                       
+                    }
+                                        
+                    //added by Mike, 20210618
+                    if (iRowCount>=MAX_TEXT_CHAR_ROW) {
+                    	iRowCountPageNumber++;
+//                    	iTextCurrentMaxRowCount=1;	
+											//iCurrentMaxColumnCountPerRowContainer[iRowCount]        
+
+												iTextCurrentMaxRowCount=1;											
+//											iRowCount=(iRowCount)%MAX_TEXT_CHAR_ROW;		
+// 											iRowCount=iRowCount-1; 
+												iRowCount=-1; //note: we add 1 near the closing of the for loop		
                     }
                 }
                 
-                
+printf("iTextCurrentMaxRowCount: %i\n",iTextCurrentMaxRowCount);
 
             //added by Mike, 20210617
             //TO-DO: fix: next row only iTextCurrentMaxColumnCount=1
@@ -1016,6 +1049,8 @@ void Text::drawTextBackgroundAsQuadWithTexture()
          */
         iTextAnimationCountDelay+=1;
         
+        //added by Mike, 20210618
+ 				iRowCount=iRowCount+1;    
         
         
         //     		}
@@ -2213,8 +2248,10 @@ void Text::readInputText(char *inputFilename) {
     /*	int MAX_TEXT_CHAR_ROW=2;
      int MAX_TEXT_CHAR_COLUMN=8;
      */
-    
+  
+  	//edited by Mike, 20210618  
     for (iRowCount=0; iRowCount<MAX_TEXT_CHAR_ROW; iRowCount++) {
+//    for (iRowCount=0; iRowCount<MAX_TEXT_CHAR_ROW_RAM; iRowCount++) {
         for (iColumnCount=0; iColumnCount<MAX_TEXT_CHAR_COLUMN; iColumnCount++) {
             //edited by Mike, 20210616
             //sCurrentTextContainer[iRowCount][iColumnCount]=(char*)"-1";//'G';
@@ -2222,17 +2259,29 @@ void Text::readInputText(char *inputFilename) {
             //            cCurrentTextContainer[iRowCount][iColumnCount]='\n';
             cCurrentTextContainer[iRowCount][iColumnCount]='\0';
             
-            //added by Mike, 20210617
+            //added by Mike, 20210617      
             iCurrentMaxColumnCountPerRowContainer[iRowCount]=1;
         }
     }
     
+    
+/*  
+  	//added by Mike, 20210618  
+    for (iRowCount=0; iRowCount<MAX_TEXT_CHAR_ROW_RAM; iRowCount++) {
+        for (iColumnCount=0; iColumnCount<MAX_TEXT_CHAR_COLUMN; iColumnCount++) {
+            iCurrentMaxColumnCountPerRowContainer[iRowCount]=1;
+        }
+    }
+*/        
     
     iRowCount=0;
     iColumnCount=0;
     
     //added by Mike, 20210617
     iTextCurrentMaxRowCount=1;
+		
+		//added by Mike, 20210618
+		iRowCountPageNumber=0; //start at zero
 
 				
     //noted by Mike, 20201210
@@ -2247,6 +2296,9 @@ void Text::readInputText(char *inputFilename) {
     
     char inputTextLine[MAX_TEXT_CHAR_COLUMN]; //max size
     char tempInputTextLine[MAX_TEXT_CHAR_COLUMN]; //max size
+    
+    //added by Mike, 20210618
+    //TO-DO: -add: auto-notify Unit member if input over max
     
     strcpy(input, "input/");
     strcat(input, inputFilename); //already includes .txt
@@ -2281,7 +2333,6 @@ void Text::readInputText(char *inputFilename) {
             
             //            printf(">>> input: %s\n",input);          
             //			sscanf (input, "%s", inputTextLine);
-            
             
             //			iCount=0;
             //input text per line			
@@ -2329,7 +2380,7 @@ void Text::readInputText(char *inputFilename) {
              
              while (ch != NULL) {	
              //				printf("%i,",iColumnCount);
-             
+             MAX_TEXT_CHAR_ROW_RAM
              //TO-DO: use String, instead of char
              //TO-DO: -reverify: output due to "G" not put in container
              //				sCurrentLevelMapContainer[iRowCount][iColumnCount]=&ch;
@@ -2373,8 +2424,12 @@ void Text::readInputText(char *inputFilename) {
             //			if (iRowCount<100) {
             //edited by Mike, 20210321
             //			if (iRowCount<160) {	
-            if (iRowCount<MAX_TEXT_CHAR_ROW) {				
+            //edited by Mike, 20210618
+//            if (iRowCount<MAX_TEXT_CHAR_ROW) {				
+            if (iRowCount<MAX_TEXT_CHAR_ROW_RAM) {				
                 iRowCount=iRowCount+1;
+                
+            		//TO-DO: -notify: Unit member if over MAX_TEXT_CHAR_ROW_RAM
             }
             else {
                 iRowCount=0;

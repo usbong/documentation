@@ -49,7 +49,13 @@
 //#define MAX_TEXT_CHAR_ROW 2
 //edited by Mike, 20210618
 //#define MAX_TEXT_CHAR_ROW 3
+//edited by Mike, 20210618
+//per textbox
 #define MAX_TEXT_CHAR_ROW 4 //TO-DO: -auto-identify if over MAX; execute pause write action
+//note: MAX rows in Random Access Memory (RAM) storage
+//reminder: "Random" need not be so, due to existing pattern; albeit "RAM" is still used
+#define MAX_TEXT_CHAR_ROW_RAM 100 //TO-DO: -auto-identify if over MAX; execute pause write action
+
 //edited by Mike, 20210615
 //#define MAX_TEXT_CHAR_COLUMN 8 //note: 8 with comma to be end of line
 //#define MAX_TEXT_CHAR_COLUMN 16 //note: 8 with comma to be end of line
@@ -233,11 +239,18 @@ private:
 
 	//added by Mike, 20210614; edited by Mike 20210616
 	//std::string sCurrentTextContainer[MAX_TEXT_CHAR_COLUMN][MAX_TEXT_CHAR_ROW]; //TO-DO: -add: auto-update max size
-    char cCurrentTextContainer[MAX_TEXT_CHAR_ROW][MAX_TEXT_CHAR_COLUMN];
+		//edited by Mike, 20210618
+//    char cCurrentTextContainer[MAX_TEXT_CHAR_ROW][MAX_TEXT_CHAR_COLUMN];
+    char cCurrentTextContainer[MAX_TEXT_CHAR_ROW_RAM][MAX_TEXT_CHAR_COLUMN];
+    
     //added by Mike, 20210616
     int iTextCurrentMaxRowCount;
-    //added by Mike, 20210617
+    //added by Mike, 20210617; edited by Mike, 20210619
     int iCurrentMaxColumnCountPerRowContainer[MAX_TEXT_CHAR_ROW];
+//    int iCurrentMaxColumnCountPerRowContainer[MAX_TEXT_CHAR_ROW_RAM];
+
+		//added by Mike, 20210618
+		int iRowCountPageNumber; //start at zero
 
     
     GLint tricount;
@@ -383,7 +396,7 @@ public:
     	return true;
 	}
 	
-	//added by Mike, 20210614
+	//added by Mike, 20210614MAX_TEXT_CHAR_ROW
 	void readInputText(char *inputFilename);
     
     virtual void draw() {
@@ -404,11 +417,9 @@ public:
 	//added by Mike, 20210423
 	void drawPilotAsQuadWithTexture();
 	void drawPilotObject();
-
 	// draws the entire robot
 	//void drawRobot(float xPos, float yPos, float zPos);
     void drawPilot();
-
 //    void drawValkyrie();
 	//added by Mike, 20201001
 	//TO-DO: -add: in ModelPool.cpp
