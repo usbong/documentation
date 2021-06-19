@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B.
  * @date created: 20200930
- * @date updated: 20210618
+ * @date updated: 20210619
  *
  * Reference:
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -895,10 +895,23 @@ void Text::drawTextBackgroundAsQuadWithTexture()
         //identify if all characters in row done
 //        printf(">>cCurrentTextContainer[iRowCount][iCurrentMaxColumnCountPerRowContainer[iRowCount]]: %c\n",cCurrentTextContainer[iRowCount][iCurrentMaxColumnCountPerRowContainer[iRowCount]]);
         
+        //added by Mike, 20210619
+/*        if ((iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW) >= MAX_TEXT_CHAR_ROW_RAM) {
+            cCurrentTextContainer[MAX_TEXT_CHAR_ROW][iCurrentMaxColumnCountPerRowContainer[iRowCount]-1]=
+            break;
+        }
+*/
   					//edited by Mike, 20210618      
 //            if (cCurrentTextContainer[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW][iCurrentMaxColumnCountPerRowContainer[iRowCount]]=='\n') {//'\n'){ //new line; "\0" empty character
-            if (cCurrentTextContainer[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW][iCurrentMaxColumnCountPerRowContainer[iRowCount]-1]=='\n') {//'\n'){ //new line; "\0" empty character
         
+        //edited by Mike, 20210619
+        //TO-DO: -verify: in macOS, cause of "\n" NOT identified
+//            if (cCurrentTextContainer[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW][iCurrentMaxColumnCountPerRowContainer[iRowCount]-1]=='\n') {//'\n'){ //new line; "\0" empty character
+                if (cCurrentTextContainer[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW][iCurrentMaxColumnCountPerRowContainer[iRowCount]]=='\0') {//'\n'){ //new line; "\0" empty character
+        
+/*        if ((cCurrentTextContainer[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW][iCurrentMaxColumnCountPerRowContainer[iRowCount]]=='\0') ||
+            (cCurrentTextContainer[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW][iCurrentMaxColumnCountPerRowContainer[iRowCount]]=='\n')) {//'\n'){ //new line; "\0" empty character
+  */
                 printf("iTextCurrentMaxRowCount-1: %i\n",iTextCurrentMaxRowCount-1);
                 printf("iRowCount: %i\n",iRowCount);
                                 
@@ -908,39 +921,54 @@ void Text::drawTextBackgroundAsQuadWithTexture()
 */
 //                    iTextCurrentMaxRowCount=4;
                     
-                              //TO-DO: -add: instructions to auto-identify end row by removing empty rows after reading input file
-                //if next row is already empty
-                //row, column
-                if (cCurrentTextContainer[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW][iCurrentMaxColumnCountPerRowContainer[iTextCurrentMaxRowCount]]=='\0') {
-                    iTextCurrentMaxRowCount=iTextCurrentMaxRowCount;                                        
+
+                //TO-DO: -add: auto-identify if at MAX row
+/*
+            if ((iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW) >= MAX_TEXT_CHAR_ROW_RAM) {
+//                    break;
                 }
-                else {                
-                    if ((iRowCount)==(iTextCurrentMaxRowCount-1)) {
-                        iTextCurrentMaxRowCount++;                       
-                    }
-                                        
-                    //added by Mike, 20210618
-										//if has reached end of rows, no need to execute this
-										//TO-DO: -add: auto-identify if at MAX row
-                    if (cCurrentTextContainer[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW+1][0]=='\0') {
-                    		break;
+                else {
+*/
+                    //TO-DO: -add: instructions to auto-identify end row by removing empty rows after reading input file
+                    //if next row is already empty
+                    //row, column
+                    if (cCurrentTextContainer[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW][iCurrentMaxColumnCountPerRowContainer[iTextCurrentMaxRowCount]]=='\0') {
+                        iTextCurrentMaxRowCount=iTextCurrentMaxRowCount;
                     }
                     else {
-                    	if (iRowCount>=MAX_TEXT_CHAR_ROW) {
+                        if ((iRowCount)==(iTextCurrentMaxRowCount-1)) {
+                            iTextCurrentMaxRowCount++;
+                        }
+                                        
+                        //added by Mike, 20210618
+										//if has reached end of rows, no need to execute this
+                        else if (cCurrentTextContainer[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW+1][0]=='\0') {
+                    		break;
+                        }
+                        else {
+                            if (iRowCount>=MAX_TEXT_CHAR_ROW) {
                     			iRowCountPageNumber++;
-													iTextCurrentMaxRowCount=1;											
-													iRowCount=-1; //note: we add 1 near the closing of the for loop		 											
-                    	}                	                    	
+													iTextCurrentMaxRowCount=1;
+													iRowCount=-1; //note: we add 1 near the closing of the for loop
+                            }
+                        }
                     }
-                }              
-                
+            
+/*                }
+*/
+            printf(">>>>>>>>>> iRowCount: %i\n",iRowCount);
                 //edited by Mike, 20210618
 								//re-set isAtMaxTextCharRow to FALSE after button press
+            //edited by Mike, 20210619
                 	if ((iRowCount+1)>=MAX_TEXT_CHAR_ROW) {
-                			iRowCount=3;
+//                    if ((iRowCount+2)>=MAX_TEXT_CHAR_ROW) {
+
+                        iRowCount=3;
 //                			iRowCountPageNumber=0; //removed by Mike, 20210618
                   		iTextCurrentMaxRowCount=4;                  	
-                  		isAtMaxTextCharRow=true;											
+                  		isAtMaxTextCharRow=true;
+                        
+                        printf(">>>DITO\n");
                 	}
 																
 //printf("iTextCurrentMaxRowCount: %i\n",iTextCurrentMaxRowCount);
@@ -951,7 +979,8 @@ void Text::drawTextBackgroundAsQuadWithTexture()
             
         }
         else {
-            break;
+            //removed by Mike, 20210619
+           break;
         }
         
 //        printf(">>\n");
