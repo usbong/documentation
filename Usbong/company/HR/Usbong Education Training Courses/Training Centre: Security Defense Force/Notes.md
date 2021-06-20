@@ -423,7 +423,7 @@ Patuloy na panlolokong ingay (at pisikal na pananakit) gamit ang wireless broadc
 --> Insufficient electricity causes machine problems, e.g. tasks are not executed correctly.<br/>
 --> Increased electricity consumption causes increased heat.<br/>
 --> 14.1) verified: cellular telephone connected to SMART network to cause head pain wirelessly<br/>
---> Wireless pain distance is < 1 meter.<br/>
+--> Wireless pain distance reached: < 1 meter.<br/>
 --> cellular telephone: National Telecommunications Commission (NTC)-certified Nokia feature phone, i.e. non-Android.<br/>
 --> <b>Additional Note:</b> This is despite cellular telephone not used in speaking with another person<br/>
 --> Cellular telephone in Idle state.<br/>
@@ -436,5 +436,22 @@ Patuloy na panlolokong ingay (at pisikal na pananakit) gamit ang wireless broadc
 --> <b>Example Country:</b> Switzerland<br/>
 --> verified: Android telephone registered with GLOBE network<br/>
 --> identified: Android telephone to be Dr. SYSON, PEDRO's<br/>
---> <b>Classification:</b> International Criminal Activity<br/>
---> <b>Recommended Action:</b> Destroy the budol-budol/manloloko/carnapper/cybercriminal/communist terrorist group who use wireless broadcasting technology to cause noise pollution and physical injury.<br/>
+--> Wireless attack distance reached: 4 meters<br/>
+--> verified: attack hit me, i.e. SYSON, MICHAEL, causing breathing and speaking difficulty during my Oral Presentation (Year 2014)<br/>
+--> <b>Presentation Details:</b> "Usbong: Electronic Health: Using Information and Communication Technologies (ICT) to enhance the Directly Observed Treatment Short-course (DOTS) Compliance Assessment Tool (DCAT) of the Philippine Plan to Control Tuberculosis"<br/>
+--> <b>Attack Classification:</b> International Criminal Activity<br/>
+--> <b>Recommended Action:</b> Destroy the budol-budol/manloloko/carnapper/cybercriminal/communist terrorist group who continues to misuse wireless broadcasting technology to cause noise pollution and physical injury.<br/>
+
+### Part 15: EXPENSES > INCOME PATTERN
+--> Attacks by the budol-budol/manloloko/carnapper/cybercriminal/communist terrorist group continue to be a regular pattern.<br/>
+--> <b>Cause:</b> Quick Money due to EXPENSES > INCOME PATTERN<br/>
+--> <b>Action:</b> harrassment; extortion using wireless broadcasting technology as weapon by causing noise pollution and physical injury<br/>
+--> verified: ignoring noise pollution leads to physical injury<br/>
+--> <b>Reminder:</b> Manloloko is 化け物 (bakemono; naibang bagay)<br/>
+--> <b>Solution:</b> Alles klar (All clear)<br/>
+--> Lahat malinaw; Malabo ang mga Manloloko na patuloy na gumagawa ng panlolokong ingay at pisikal na pananakit.<br/>
+--> Therefore, no need for negotiation.<br/>
+--> <b>Mungkahing Aksyon:</b> Puksain ang mga Teroristang Komunista.<br/>
+--> <b>Reminder:</b> When system not cleared, excess Manloloko characters appear due to containers still have previous data.<br/>
+--> where: data is classified to be money<br/>
+--> In select systems, Garbage Collectors were added to auto-clear previously used containers.
