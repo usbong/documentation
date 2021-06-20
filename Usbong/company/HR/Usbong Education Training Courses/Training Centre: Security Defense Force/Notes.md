@@ -425,8 +425,9 @@ Patuloy na panlolokong ingay (at pisikal na pananakit) gamit ang wireless broadc
 --> 14.1) verified: cellular telephone connected to SMART network to cause head pain wirelessly<br/>
 --> Wireless pain distance is < 1 meter.<br/>
 --> cellular telephone: National Telecommunications Commission (NTC)-certified Nokia feature phone, i.e. non-Android.<br/>
---> <b>Additional Note:</b> This is despite I was not speaking with another person using the cellular telephone.<br/>
+--> <b>Additional Note:</b> This is despite cellular telephone not used in speaking with another person<br/>
 --> Cellular telephone in Idle state.<br/>
+--> identified: cellular telephone to be mine, i.e. SYSON, MICHAEL's<br/>
 --> <b>Reminder:</b> Heart Pacemaker devices are caused to not function correctly by cellular telephones that wirelessly transmit and receive data whose size is usable for calls.<br/>
 --> <b>Reminder:</b> Network Towers are misused by the Teroristang Komunista to cause physical injury.<br/>
 --> 14.2) verified: Android telephone connected to GLOBE network to cause breathing problems, e.g. hirap huminga.<br/>
