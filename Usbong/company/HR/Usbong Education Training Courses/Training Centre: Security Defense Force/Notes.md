@@ -422,10 +422,17 @@ Patuloy na panlolokong ingay (at pisikal na pananakit) gamit ang wireless broadc
 --> Increased tasks cause increased electricity consumption.<br/>
 --> Insufficient electricity causes machine problems, e.g. tasks are not executed correctly.<br/>
 --> Increased electricity consumption causes increased heat.<br/>
---> verified: cellular telephone connected to SMART network to cause head pain wirelessly<br/>
+--> 14.1) verified: cellular telephone connected to SMART network to cause head pain wirelessly<br/>
 --> Wireless pain distance is < 1 meter.<br/>
 --> cellular telephone: National Telecommunications Commission (NTC)-certified Nokia feature phone, i.e. non-Android.<br/>
 --> <b>Additional Note:</b> This is despite I was not speaking with another person using the cellular telephone.<br/>
+--> Cellular telephone in Idle state.<br/>
 --> <b>Reminder:</b> Heart Pacemaker devices are caused to not function correctly by cellular telephones that wirelessly transmit and receive data whose size is usable for calls.<br/>
---> <b>Reminder:</b> Network Towers are misused by the Teroristang Komunista to cause physical injury.
-
+--> <b>Reminder:</b> Network Towers are misused by the Teroristang Komunista to cause physical injury.<br/>
+--> 14.2) verified: Android telephone connected to GLOBE network to cause breathing problems, e.g. hirap huminga.<br/>
+--> <b>Reminder:</b> There exists Ear, Nose, and Throat (ENT) connection.<br/>
+--> <b>Additional Note:</b> Android telephone brought to another country can still cause such problems.<br/>
+--> <b>Example Country:</b> Switzerland<br/>
+--> verified: Android telephone registered with GLOBE network<br/>
+--> <b>Classification:</b> International Criminal Activity<br/>
+--> <b>Recommended Action:</b> Destroy the budol-budol/manloloko/carnapper/cybercriminal/communist terrorist group who use wireless broadcasting technology to cause noise pollution and physical injury.<br/>
