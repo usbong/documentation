@@ -434,5 +434,6 @@ Patuloy na panlolokong ingay (at pisikal na pananakit) gamit ang wireless broadc
 --> <b>Additional Note:</b> Android telephone brought to another country can still cause such problems.<br/>
 --> <b>Example Country:</b> Switzerland<br/>
 --> verified: Android telephone registered with GLOBE network<br/>
+--> identified: Android telephone to be Dr. SYSON, PEDRO's<br/>
 --> <b>Classification:</b> International Criminal Activity<br/>
 --> <b>Recommended Action:</b> Destroy the budol-budol/manloloko/carnapper/cybercriminal/communist terrorist group who use wireless broadcasting technology to cause noise pollution and physical injury.<br/>
