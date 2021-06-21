@@ -261,7 +261,7 @@ Dagdag na halimbawa ng mga panloloko mula sa grupo ng Teroristang Komunista at a
 --> Hanggang pinaka-itaas na palapag sa silid ng Lola, umaabot ang panlolokong ingay ng mga ito.<br/>
 --> Gumagawa iyan ng mga sakit na nagdudulot ng paglala ng karamdaman, lalo na kapag hindi ka aakma sa nais ng kanilang grupo.<br/>
 --> <b>Dahilan:</b> quick money<br/>
---> <b>Aksyon:</b> harrassment; extortion<br/>
+--> <b>Aksyon:</b> harassment; extortion<br/>
 
 2) Hindi ipinagdiriwang ang kaarawan kasama ang mga kamag-anak, kung hindi ika-unang taon pagkatapos ipanganak.<br/>
 --> Ito'y upang hindi gumasta nang malaki taun-taon.<br/>
@@ -281,7 +281,7 @@ Dagdag na halimbawa ng mga panloloko mula sa grupo ng Teroristang Komunista at a
 --> YES! Gagawan kita ng sakit.<br/>
 --> NO! Palulubhain ko pa.<br/>
 --> <b>Dahilan:</b> quick money<br/>
---> <b>Aksyon:</b> harrassment; extortion<br/>
+--> <b>Aksyon:</b> harassment; extortion<br/>
 
 #### Additional Note:
 1) Halintulad ang mga panloloko sa gawa-gawang paliwanag na hindi mo mauunawan ang isang bagay sapagkat hindi ka Indian; hindi mo kailanman matututunan ito, kahit anong aral mo.<br/>
@@ -445,7 +445,7 @@ Patuloy na panlolokong ingay (at pisikal na pananakit) gamit ang wireless broadc
 ### Part 15: EXPENSES > INCOME PATTERN
 --> Attacks by the budol-budol/manloloko/carnapper/cybercriminal/communist terrorist group continue to be a regular pattern.<br/>
 --> <b>Cause:</b> Quick Money due to EXPENSES > INCOME PATTERN<br/>
---> <b>Action:</b> harrassment; extortion using wireless broadcasting technology as weapon by causing noise pollution and physical injury<br/>
+--> <b>Action:</b> harassment; extortion using wireless broadcasting technology as weapon by causing noise pollution and physical injury<br/>
 --> verified: ignoring noise pollution leads to physical injury<br/>
 --> <b>Reminder:</b> Manloloko is 化け物 (bakemono; naibang bagay)<br/>
 --> <b>Solution:</b> Alles klar (All clear)<br/>
