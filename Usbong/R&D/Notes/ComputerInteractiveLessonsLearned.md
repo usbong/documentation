@@ -70,6 +70,45 @@ TO-DO: -update: this<br/>
 --> Additional team members empower me to verify select Characters whom I have yet to learn.<br/>
 --> Examples: Yamazaki, Vice, Terry Bogard<br/>
 
+### 1.1.6) Street Fighter III: 3rd Strike
+--> set difficulty level to highest<br/>
+--> Only select Fighters, e.g. Ryuu, Ken, Chun-li, Gouki/Akuma, from previous Street Fighter series are in the list;<br/>
+--> Yet, COMMANDS to execute actions with new Fighters do not need additional learning time.<br/>
+--> Example: Oro with tame, i.e. charge, back + forward Punch attack<br/>
+--> Output: Energy Ball Projectile Attack<br/>
+--> Oro represents Brazil, Amazon?<br/>
+--> With Oro, Strong Kicks combined with Energy Ball Attacks can finish matches before Bonus Stage #1, i.e. Sports Utility Vehicle (SUV) Stage.<br/>
+--> However, technique becomes ineffective due to next Fighters, e.g. Chun-li, attack faster.<br/>
+--> Therefore, increase use of Medium Kicks, instead of Strong Kicks.<br/>
+--> Medium Kicks: "A" Button (default) in Nintendo Switch Lite.<br/>
+--> Hugo represents Germany, albeit previously thought to be France.<br/>
+--> Can continue to use Oro's technique due to big and slow; <br/>
+--> however, Hugo can cause heavy damage after reaching opponent to execute grab attack.<br/>
+--> Oro's lost arm changes from left to right based on position; flipped image in horizontal axis.<br/>
+--> Gouki/Akuma uses attack combinations with/without SUPER attack.<br/>
+--> Attack combinations remind me of Street Fighter Zero series;<br/>
+--> His Image, of Street Fighter II series<br/>
+--> Attacks and Recovery Time after Attacks faster than Oro's Strong Attacks<br/>
+--> Parries down + Kick Attack;<br/>
+--> Update Oro's technique with back + "A" Button, i.e. Medium Kicks<br/>
+--> <b>Reminder:</b> Energy Ball Attacks move using an angle<br/>
+--> This is based on pressed button, i.e. weak, medium, or strong Punch<br/>
+--> Pressing two Punch buttons causes Energy Ball to be homing to opponent;<br/>
+--> although slow in movement, Computer Fighter does not guard, but receives damage.<br/>
+--> Use of Oro's SUPER attack, i.e. YAGYOU-DAMA ((down + forward) x2 + Punch), difficult to execute<br/>
+--> Causes thumb to have callos<br/>
+--> With Final Boss, Gill, Fighters continue even with zero remaining pixel in health bar;<br/>
+--> Due to Computer as Judge does not yet identify Fighter to be lost<br/>
+--> Gill uses SUPER, Resurrection, to Win match even if Time has reached zero.<br/>
+--> where: Resurrection = auto-set health bar to full if damaged received causes health bar to be zero<br/>
+--> Update Oro's technique to use down + Strong kick due to Gill stands to receive damage<br/>
+--> Use Time has reached Zero to Win, instead of to damage health bar to be zero<br/>
+--> Gill and Stage; Italy, Greece, America, Michelangelo Buonarroti?<br/>
+--> <b>Additional Notes:</b><br/>
+--> played: Street Fighter III: 3rd Strike at Arcade Game Centers<br/>
+--> did not finish by beating Final Boss, Gill;<br/>
+--> due to lost to Human Opponents who challenge with stronger Fighters
+
 ## 1.2) SEGA: SERVICE GAMES
 ### 1.2.1) Sonic 1
 --> Sega Genesis/Megadrive Mini version<br/>
