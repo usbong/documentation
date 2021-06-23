@@ -14,7 +14,7 @@
  *
  * @author: Michael Syson
  * @date created: 20200926
- * @date updated: 20210614
+ * @date updated: 20210623
  *
  * References:
  * 1) Dev-C++ 5.11 auto-generated OpenGL example project
@@ -751,7 +751,12 @@ int main(int argc, char** argv) {
 //   glutInitDisplayMode (GLUT_DOUBLE | GLUT_RGB); //added by Mike, 20201202
 		//glutInitDisplayMode(GLUT_RGBA|GLUT_DEPTH|GL_DOUBLE);
 
-   glutInitWindowSize(myWindowWidthAsPixel, myWindowHeightAsPixel);   // Set the window's initial width & height
+		//edited by Mike, 20210623
+//   glutInitWindowSize(myWindowWidthAsPixel, myWindowHeightAsPixel);   // Set the window's initial width & height
+   glutInitWindowSize(GLUT_SCREEN_WIDTH, GLUT_SCREEN_HEIGHT);   // Set the window's initial width & height
+   
+
+   
 //   glutInitWindowSize(2048,2048);   // Set the window's initial width & height
 
 	//edited by Mike, 20201202
@@ -772,19 +777,24 @@ int main(int argc, char** argv) {
 	 //added by Mike, 20210614
 	 //note: execute after glutCreateWindow(...)
 	 //can use the F11 keyboard button to switch from Full Screen to set Window Size
+
+		//edited by Mike, 20210623
 	 //TO-DO: -fix: coordinate system of mouse key down and up positions 
-//	 glutFullScreen(); //removes Window Title Bar
+	 glutFullScreen(); //removes Window Title Bar
 
 
 	  //added by Mike, 20201002
 	  //Linux Machine
 	  //note: to receive key presses
     myOpenGLCanvas = new OpenGLCanvas;
+
 	//edited by Mike, 20210517
 //    myOpenGLCanvas->init();
 	//pixel, instead of vertex points
 	//TO-DO: -add: i to be iMyWindowWidthAsPixel, et cetera
-    myOpenGLCanvas->init(myWindowWidthAsPixel,myWindowHeightAsPixel);
+		//edited by Mike, 20210623
+//    myOpenGLCanvas->init(myWindowWidthAsPixel,myWindowHeightAsPixel);
+    myOpenGLCanvas->init(GLUT_SCREEN_WIDTH,GLUT_SCREEN_HEIGHT);
 	
 	 	//edited by Mike, 20200930
    	//glutDisplayFunc(display); // Register display callback handler for window re-paint	
