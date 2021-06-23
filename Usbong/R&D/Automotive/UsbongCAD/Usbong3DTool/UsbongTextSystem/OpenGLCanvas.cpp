@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B.
  * @date created: 20200926
- * @date updated: 20210618
+ * @date updated: 20210623
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -77,11 +77,11 @@
 #if defined(__APPLE__)
 #include <OpenGL/gl.h>
 #include <OpenGL/glu.h>
-//#include <GLUT/glut.h>
+#include <GLUT/glut.h> //added by Mike, 20210623
 #else
 #include <GL/gl.h>
 #include <GL/glu.h>
-//#include <GL/glut.h>
+#include <GL/glut.h> //added by Mike, 20210623
 #endif
 
 #include <stdio.h>
@@ -277,7 +277,9 @@ OpenGLCanvas::~OpenGLCanvas()
 //bool OpenGLCanvas::init()
 //edited by Mike, 202106062
 //bool OpenGLCanvas::init(int myWindowWidthAsPixel, int myWindowHeightAsPixel)
-bool OpenGLCanvas::init(int myWindowWidthAsPixelInput, int myWindowHeightAsPixelInput)
+//edited by Mike, 20210623
+//bool OpenGLCanvas::init(int myWindowWidthAsPixelInput, int myWindowHeightAsPixelInput)
+bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsPixelInput)
 {
     //TO-DO: -receive: values from main.cpp
     //edited by Mike, 20201115
@@ -456,6 +458,10 @@ bool OpenGLCanvas::init(int myWindowWidthAsPixelInput, int myWindowHeightAsPixel
     
     //added by Mike, 20210516
     myUsbongUtils = new UsbongUtils();
+    
+    printf("myWindowWidthAsPixelInput: %f; myWindowHeightAsPixelInput: %f",myWindowWidthAsPixelInput,myWindowHeightAsPixelInput);
+    
+    myUsbongUtils->setWindowWidthHeight(myWindowWidthAsPixelInput, myWindowHeightAsPixelInput); //added by Mike, 20210623
     
     //added by Mike, 20210211
     myLevel = new Level();
@@ -1514,8 +1520,19 @@ void OpenGLCanvas::render()
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     
+/*  //
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
+*/
+  
+/*
+//    float w = glutGet( GLUT_SCREEN_WIDTH );
+//    float h = glutGet( GLUT_SCREEN_HEIGHT );
+    float w = glutGet( GLUT_WINDOW_WIDTH );
+    float h = glutGet( GLUT_WINDOW_HEIGHT );
+    glOrtho(0, w, h, 0, -1, 1);
+*/
+ 
     /* //horizontal
      glBegin(GL_QUADS);
      //red color

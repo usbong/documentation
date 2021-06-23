@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200929
- * @date updated: 20210613
+ * @date updated: 20210623
  * @website address: http://www.usbong.ph
  *
  * Acknowledgments:
@@ -410,7 +410,8 @@ class OpenGLCanvas
 
 		//edited by Mike, 20210517
 //    	bool init();
-    	bool init(int myWindowWidthAsPixelInput, int myWindowHeightAsPixelInput);
+//    	bool init(int myWindowWidthAsPixelInput, int myWindowHeightAsPixelInput);
+    bool init(float myWindowWidthAsPixelInput, float myWindowHeightAsPixelInput);
 
     	bool shutdown();
 

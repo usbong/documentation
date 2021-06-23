@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201210
- * @date updated: 20210614
+ * @date updated: 20210623
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007): 
@@ -40,20 +40,35 @@
 	
 class UsbongUtils
 {
-private:		
+private:
+    //added by Mike, 20210623
+    float fMaxWindowWidth;
+    float fMaxWindowHeight;
+    
 public:
 	//edited by Mike, 20210524
 	//UsbongUtils(); //added by Mike, 20210516	
 	UsbongUtils() {
 		srand(time(NULL));   //init
+        
+        //added by Mike, 20210623
+        fMaxWindowWidth=640.0f;
+        fMaxWindowHeight=640.0f;
 	}
 		
 	~UsbongUtils(); //note: add "~" for constructor without any input parameter
+    
 /*
 	Pilot(float xPos, float yPos, float zPos,int windowWidth,int windowHeight);
 	~Pilot();
-*/	
-	//edited by Mike, 20210614
+*/
+    
+    //added by Mike, 20210623
+    //TO-DO: -update: this
+//    void setWindowWidthHeight(int myWindowWidthAsPixelInput, int myWindowHeightAsPixelInput);
+    void setWindowWidthHeight(float myWindowWidthAsPixelInput, float myWindowHeightAsPixelInput);
+
+    //edited by Mike, 20210614
 //    void read(char *filename);    
     char* read(char *filename);
     

@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B.
  * @date created: 20201210
- * @date updated: 20210614
+ * @date updated: 20210623
  * @website address: http://www.usbong.ph 
  *
  * References:
@@ -120,6 +120,13 @@ UsbongUtils::UsbongUtils()
 //added by Mike, 20210516
 UsbongUtils::~UsbongUtils()
 {
+}
+
+//added by Mike, 20210623
+void UsbongUtils::setWindowWidthHeight(float myWindowWidthAsPixelInput, float myWindowHeightAsPixelInput)
+{
+    fMaxWindowWidth=myWindowWidthAsPixelInput;
+    fMaxWindowHeight=myWindowHeightAsPixelInput;
 }
 
 /*
@@ -251,9 +258,11 @@ float UsbongUtils::autoConvertFromPixelToVertexPointX(int iPointX)
 	//set in mainLinux.cpp
 	//TO-DO: -update: this
 	//square window
+/* //removed by Mike, 20210623
 	float fMaxWindowWidth=640.0f;
 	float fMaxWindowHeight=640.0f;	
-	float fHalfWindowWidth=fMaxWindowWidth/2;
+*/
+    float fHalfWindowWidth=fMaxWindowWidth/2;
 	float fHalfWindowHeight=fMaxWindowHeight/2;
 	
 	if (iPointX<fHalfWindowWidth) {				
@@ -288,8 +297,10 @@ float UsbongUtils::autoConvertFromPixelToVertexPointY(int iPointY)
 	//set in mainLinux.cpp
 	//TO-DO: -update: this
 	//square window
+/*  //removed by Mike, 20210623
 	float fMaxWindowWidth=640.0f;
-	float fMaxWindowHeight=640.0f;	
+	float fMaxWindowHeight=640.0f;
+*/
 	float fHalfWindowWidth=fMaxWindowWidth/2;
 	float fHalfWindowHeight=fMaxWindowHeight/2;
 
