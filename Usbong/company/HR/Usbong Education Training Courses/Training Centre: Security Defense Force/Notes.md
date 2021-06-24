@@ -455,3 +455,74 @@ Patuloy na panlolokong ingay (at pisikal na pananakit) gamit ang wireless broadc
 --> <b>Reminder:</b> When system not cleared, excess Manloloko characters appear due to containers still have previous data.<br/>
 --> where: data is classified to be money<br/>
 --> In select systems, Garbage Collectors were added to auto-clear previously used containers.
+
+### Part 16: Gumawa ng Daigdig (World System)
+--> Gawin ang mga bagay na maayos mong nagagawa.<br/>
+--> <b>Mungkahing mga Babasahin:</b><br/>
+--> <b>16.1) Winston Groom's "Forrest Gump"</b><br/>
+--> Life Story: Look up at the stars at night, with the whole sky laid out there, sometimes. Remember it all.<br/>
+--> "...An then, all of a sudden, I'm forty, fifty, sixty years ole, you know?"<br/>
+--> The villiage idiot's role in history and literature:<br/>
+--> "...idiots was not jus useless people, but was put here for a purpose... an the purpose is to make people laugh. At least that is somethin."<br/>
+--> 人を楽しませる？<br/>
+--> <b>Paalala:</b> Mag-ingat na gawing haligi ng buhay ang isang sistema na sa huli pala mali, i.e. baliktad. Isa ito sa mga nagdudulot ng pagkasawi ng ilang tao.<br/>
+--> <b>Mga Halimbawa:</b><br/>
+--> Hindi niya matanggap na kapag patay na ang isang tao, patay na talaga siya. Hindi pupunta ang yumao sa isang lugar, e.g. langit, kung saan makapag-uusap pa kayo, atbp.<br/>
+--> Hindi niya matanggap na hindi mapupuksa ang mga Teroristang Komunista kung hindi ka gagawa ng aksyon, bago ka patayin sa debate, e.g. aapakan mo ba ang ipis o hindi?<br/>
+<br/>
+--> <b>16.2) Micromégas ni Voltaire</b><br/>
+--> Mababasa rin ang salin nito sa Ingles dito: http://www.gutenberg.org/cache/epub/30123/pg30123.txt;<br/>
+--> last accessed: 20210401<br/>
+<br/>
+--> <b>16.3) Kia Asamiya's Batman: Child of Dreams</b><br/>
+--> https://www.dccomics.com/graphic-novels/batman-child-of-dreams<br/>
+--> last accessed: 20210402<br/>
+--> Pupunta si Batman sa Tokyo, Japan upang malutas ang problema/suliranin ukol sa dumaraming namamatay sa iligal na droga, i.e. ipinagbabawal na gamot, na maaaring magpatupad ng anumang nais ng iinom nito, bagama't pagkatapos ng isang araw, mamamatay.<br/>
+--> <b>Additional Note:</b><br/>
+--> Mas nais ko ang kanyang istorya/salaysay, kaysa sa kanyang pagguhit.<br/>
+<br/>
+--> <b>16.4) 勇者鬥惡龍 (yongzhe dou elong; Brave Person Fight Evil Dragon;</b><br/>
+--> <b>ドラゴンクエスト; dragon quest)</b><br/>
+--> Chinese version<br/>
+--> umiikot; Kapag labis na malakas ang halimaw, e.g. kaya kang mapuksa agad, maghanap ng ibang daan.<br/>
+--> Gumamit ng 逃跑 (taopao; takas-takbo, i.e. pagtakas) kung kailangan.<br/>
+--> Habang pataas nang pataas ang iyong nibel, madaragdagan ang iyong kakayanan,<br/>
+--> e.g. 霍伊米 (huoyimi; ホイミ; hoimi, i.e. panghilom), 拉里霍 (lalihuo; ラリホー; raliho-, i.e. pampatulog ng halimaw).<br/>
+--> Paalala: Mga gawa-gawang salita ito.<br/>
+--> Sa bawat pagpuksa ng halimaw, madaragdagan ang iyong salapi.<br/>
+--> Aakma ang nakukuha mong salapi sa iyong nibel.<br/>
+--> Kung panay mahihinang halimaw ang iyong ginagapi, i.e. 打倒 (dadao, hampas-taob), kaunti lang na salapi ang iyong makukuha.<br/>
+--> Ginagamit ang salapi sa pambili ng kalasag, sandata, atbp.<br/>
+--> Kailangan ng palakas nang palakas na kalasag, atbp upang makapaglakbay nang mas malayo.<br/>
+--> Paalala: Kailangan mong magapi ang Dragon upang mailigtas ang Prinsesa.<br/>
+--> Maaalala ang ドラゴン クエストV: 天空の花嫁 (Dragon Quest V: Heaven Empty’s Flower Wife)<br/>
+--> Bagama’t sa halip na 40+ oras, sa loob ng 10 oras ako naghahagilap.<br/>
+--> Sa DQV, pagkalipas ng 40+ oras, isinantabi ko na.<br/>
+--> Dagdag sa PlayStation 2, Japanese version ng DQV:<br/>
+--> Maaalala ang maiging pagkagawa ng Zombie mula 2-Dimensional (2D) papuntang 3-Dimensional (3D) object.<br/>
+--> Maaalala ang paglipas ng panahon gawa ng himig, salaysay, atbp.<br/>
+--> 慣れ (nare; sanayan);<br/>
+--> halimbawa: Mukhang hindi maayos sa simula ang guhit ng mga mamamayan, atbp;<br/>
+--> Sa bawat pagdalaw mo sa daigdig ng Dragon Quest, masasanay ka rin; hindi naman ganoong kalubha.<br/>
+--> preference: Umaakma ang guhit ayon sa suot na gamit, e.g. kalasag, atbp.<br/>
+<br/>
+--> <b>16.4.1) Recommended Reading:</b><br/>
+--> ファミリー コンピュータ ドラゴン クエスト 取扱説明書<br/>
+--> Family Computer Dragon Quest Handling Speak Clear Book<br/>
+--> https://www.nintendo.co.jp/clvj/manuals/pdf/CLV-P-HBBBJ.pdf; last accessed: 20210611<br/>
+<br/>
+--> <b>16.4.2) Recommended Reference:</b><br/>
+--> ファミリー コンピュータ ドラゴン クエスト イラスト<br/>
+--> Family Computer Dragon Quest Illustration<br/>
+--> http://www.dragonquest.jp/roto/s/; last accessed: 20210614<br/>
+--> Umaakit ang guhit upang tuklasin ang daigdig ng Dragon Quest.<br/>
+--> Maaalala ang sa クロノ トリガー (Chrono Trigger), na kung saan naroon sina:<br/>
+--> Chrono, Robo, at Kaeru (FROG).<br/>
+--> Mula sa kasaysayan, naging dalubhasa, i.e. Master, ang mga Hapon sa paggawa ng mga daigdig.<br/>
+--> Hango ito sa mga aklat ng literatura, i.e. 文学 (bungaku),<br/>
+--> na may dagdag na interactivity gamit ang Super Family Computer.<br/>
+<br/>
+--> <b>16.4.3) Recommended Action:</b><br/>
+--> verify: Ang Alamat ng Agimat: Anim na Perlas<br/>
+--> The Legend of Amulet: 6 Pearls<br/>
+--> JAVA 2 Micro Edition version<br/>
