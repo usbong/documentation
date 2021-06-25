@@ -148,7 +148,8 @@ TO-DO: -update: this<br/>
 
 ### 1.3.2) 幻想水滸伝 GENSO SUIKODEN
 --> 幻想 ("gensou"; illusion thought)<br/>
---> 幻想水滸伝:解説書<br/>
+--> Year 1995 1996 KONAMI; PlayStation the Best version; executed on PlayStation3 Machine<br/>
+#### 1.3.2.1) 幻想水滸伝:解説書<br/>
 illusion thought water level story: solve tell book<br/>
 --> 「解放軍と帝国軍の戦いはカードゲームのように進行していきます。」<br/>
 Fight between Solve Release Army AND Empire Army advances like Card Game.<br/>
@@ -172,6 +173,13 @@ Dragon Knight Scholar: Attack via Dragons. Weak against Bow Arrow Attack.<br/>
 Business Person: Buy Enemy, make their Unit return to rest, i.e. sleep. There exist times of failure.<br/>
 --> 「５．こそどろ：相手の次の策を調べる。失敗するときもある。」<br/>
 kosodoro ("sneak-mud" to be magnanakaw) : Investigate opponent's next strategy. There exist times of failure.<br/>
+
+#### 1.3.2.2) 流れ (nagare; daloy (ng salaysay)) <br/>
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Notes/res/suikoden/konoSakiYo.jpg" width="60%">
+
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Notes/res/suikoden/unmei.jpg" width="60%">
+
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Notes/res/suikoden/bagu.jpg" width="60%">
 
 ## 1.4) SONY Computer Entertainment Europe and Guerrilla
 ### 1.4.1) KillZone 2
