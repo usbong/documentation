@@ -517,7 +517,10 @@ Patuloy na panlolokong ingay (at pisikal na pananakit) gamit ang wireless broadc
 --> http://www.dragonquest.jp/roto/s/; last accessed: 20210614<br/>
 --> Umaakit ang guhit upang tuklasin ang daigdig ng Dragon Quest.<br/>
 --> Maaalala ang sa クロノ トリガー (Chrono Trigger), na kung saan naroon sina:<br/>
---> Chrono, Robo, at Kaeru (FROG).<br/>
+--> Robo, Chrono, at Kaeru (FROG).<br/>
+
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Notes/res/kuronotoriga-/kuronoToriga-Irasuto.jpg" width="60%"><br/>
+
 --> Mula sa kasaysayan, naging dalubhasa, i.e. Master, ang mga Hapon sa paggawa ng mga daigdig.<br/>
 --> Hango ito sa mga aklat ng literatura, i.e. 文学 (bungaku),<br/>
 --> na may dagdag na interactivity gamit ang Super Family Computer.<br/>
