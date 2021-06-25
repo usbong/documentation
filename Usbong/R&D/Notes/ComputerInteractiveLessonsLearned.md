@@ -175,11 +175,50 @@ Business Person: Buy Enemy, make their Unit return to rest, i.e. sleep. There ex
 kosodoro ("sneak-mud" to be magnanakaw) : Investigate opponent's next strategy. There exist times of failure.<br/>
 
 #### 1.3.2.2) 流れ (nagare; daloy (ng salaysay)) <br/>
+Kapangyarihang may kinalaman sa 星見の結果 (bituin nakita; pinagtali kinahinatnan nito)<br/>
+1) Daloy ng salaysay<br/>
+--> May naisulat; Isinaaayos ito; Hayaan ang naisulat na; Alam;<br/>
+
+2) Maligaya ang matuklasan ang sagot sa suliranin.<br/>
+--> May sagot; Alam ng gumawa ng Daigdig;<br/>
+--> Suliranan: Nawawala; Hindi malaman kung saan tutungo.<br/>
+
+Kapag kinausap ang isang tagapag-alaga ng Castillo, ito ang kanyang ipaaalam sa inyo:<br/>
+<br/>
 <img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Notes/res/suikoden/konoSakiYo.jpg" width="60%">
-
+<br/>
+<b>"hoy, makinig! Ang maliit na bahay ng mga hayop<br/>
+nalagyan ng putik. Masaklap.<br/>
+ha, ang maliit na bahay ng mga hayop?<br/> 
+Sa harap nito!"<br/></b>
+<br/>
+--> Ngunit aling "harap" ba ito?<br/>
+--> Kapag pumunta sa "harap", patungong paibaba, wala.<br/>
+--> Patungong paitaas, ang Castillo.<br/>
+--> Patungong pakaliwa ng inyong pangkat, wala.<br/>
+--> Nasa patungong pakanan.<br/>
+--> Dadag pa: Ayon sa nakasulat sa talaan, 2"11, i.e. lumipas ang 2 oras at 11 minutos na kaming naghahagilap.<br/>
+--> Mula sa pagsisiyasat, may kinalaman ito sa pagpapahinga nang makalipas na ang 30minutos.<br/> 
+--> Pagbalik sa daigdig ng Suikoden, maaalala ang kachiku koya, i.e. maliit na bahay ng mga hayop.<br/>
+<br/>
 <img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Notes/res/suikoden/unmei.jpg" width="60%">
-
+<br/>
+<b>Huwag kaligtaan!<br/>
+Kunin ang piniling bagay na maiisip mong wasto.<br/>
+Naunawaan mo ha!</b><br/>
+<br/>
 <img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Notes/res/suikoden/bagu.jpg" width="60%">
+<br/>
+PA-N (pangalan ng iyong kaibigan)<br/>
+<b>"Ingay!"</b><br/> 
+--> Isinulat ayon sa pagsasalita.<br/>
+--> Maaalala ang pananalita ni KUREIZU nang imungkahi ni PA-N na umuwi na tayo.<br/>
+--> Si KUREIZU ang magpapaalala sa inyo ng kailangang gawin at ang pook:<br/>
+--> Matatagpuan ang Isla sa Hilagang-Silangan (kita higashi).<br/> 
+--> Lilinawin pa ito ni KUREIZU sa inyo upang matiyak na alam na ninyo kung nasaan ang Isla.<br/>
+--> Kapag hindi pa rin ninyo mahanap, si KUREIZU ang magpapaalam sa inyo nito:<br/>
+--> Nasa loob ng Castillo ang kachiku koya, i.e. maliit na bahay ng mga hayop.<br/>
+--> Hagilapin ninyo raw kung nasaan iyon.<br/>
 
 ## 1.4) SONY Computer Entertainment Europe and Guerrilla
 ### 1.4.1) KillZone 2
