@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20210613
- * @date updated: 20210618
+ * @date updated: 20210625
  * @website address: http://www.usbong.ph
  *
  * Acknowledgments:
@@ -310,7 +310,9 @@ private:
 public:
 	//edited by Mike, 20201115 
 	//RobotShip();
-    Text(float xPos, float yPos, float zPos,int windowWidth,int windowHeight);
+	//edited by Mike, 20210625
+//    Text(float xPos, float yPos, float zPos,int windowWidth,int windowHeight);
+    Text(float xPos, float yPos, float zPos, float windowWidth, float windowHeight);
 
 	~Text();
 

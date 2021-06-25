@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200929
- * @date updated: 20210623
+ * @date updated: 20210625
  * @website address: http://www.usbong.ph
  *
  * Acknowledgments:
@@ -389,13 +389,23 @@ class OpenGLCanvas
         SoundClip *beam, *valkyrie, *explosion, *zing, *thrust, *rotate, *bonus, *title;
 */        
 		//added by Mike, 20201015
+/* //edited by Mike, 20210625		
     	int myWindowWidth;
     	int myWindowHeight;
+*/
+    	float myWindowWidth;
+    	float myWindowHeight;
 
 		//declared as static, i.e. final, container with value in mainLinux.cpp
 		//added by Mike, 20210606
+/* //edited by Mike, 20210625		
 		int myWindowWidthAsPixel;
 		int myWindowHeightAsPixel;
+*/
+		float myWindowWidthAsPixel;
+		float myWindowHeightAsPixel;
+
+	
 	
 /*		int myWindowWidthAsPixelOpenGLCanvas;
 		int myWindowHeightAsPixelOpenGLCanvas;

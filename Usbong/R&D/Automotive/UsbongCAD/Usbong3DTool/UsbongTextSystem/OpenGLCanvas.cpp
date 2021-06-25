@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B.
  * @date created: 20200926
- * @date updated: 20210623
+ * @date updated: 20210625
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -455,13 +455,33 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
     
     //added by Mike, 20200930
     currentState = GAME_SCREEN; //TO-DO: -update: this
+
+	  //added by Mike, 20210625
+		//TO-DO: -reverify: this; draw instructions, e.g. in Text.cpp, 
+		//auto-scales due to using vertex positions; not pixel positions;
+		//even without Window Width and Height values
+    myWindowWidthAsPixel = myWindowWidthAsPixelInput;
+    myWindowHeightAsPixel = myWindowHeightAsPixelInput;
+
+		if (myWindowWidthAsPixel!=myWindowHeightAsPixel) {
+    	myWindowWidthAsPixel = myWindowHeightAsPixelInput; //myWindowWidthAsPixelInput;
+    	myWindowHeightAsPixel = myWindowHeightAsPixelInput;
+
+/*    	
+    	printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> USBONG");
+    	printf("myWindowWidthAsPixelInput: %f; myWindowHeightAsPixelInput: %f\n",myWindowWidthAsPixelInput,myWindowHeightAsPixelInput);
+    	printf("myWindowWidthAsPixel: %f; myWindowHeightAsPixel: %f\n",myWindowWidthAsPixel,myWindowHeightAsPixel);
+*/    	
+		}
     
     //added by Mike, 20210516
     myUsbongUtils = new UsbongUtils();
-    
-    printf("myWindowWidthAsPixelInput: %f; myWindowHeightAsPixelInput: %f",myWindowWidthAsPixelInput,myWindowHeightAsPixelInput);
-    
+
+    //edited by Mike, 20210625    
+/*    printf("myWindowWidthAsPixelInput: %f; myWindowHeightAsPixelInput: %f",myWindowWidthAsPixelInput,myWindowHeightAsPixelInput);  
     myUsbongUtils->setWindowWidthHeight(myWindowWidthAsPixelInput, myWindowHeightAsPixelInput); //added by Mike, 20210623
+*/
+    myUsbongUtils->setWindowWidthHeight(myWindowWidthAsPixel, myWindowHeightAsPixel);
     
     //added by Mike, 20210211
     myLevel = new Level();
@@ -471,9 +491,10 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
 /*    myWindowWidthAsPixel = myWindowWidth;
     myWindowHeightAsPixel = myWindowHeight;
 */
+/* //edited by Mike, 20210625
     myWindowWidthAsPixel = myWindowWidthAsPixelInput;
     myWindowHeightAsPixel = myWindowHeightAsPixelInput;
-
+*/
     
     //added by Mike, 20210320; edited by Mike, 20210321
     /*
@@ -558,7 +579,7 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
     //edited by Mike, 20210522
     //	myButton->setOpenGLCanvas(this);
     myButton->setOpenGLCanvas(this, fGridSquareWidth);
-    
+        
     myText = new Text(0.0f,320.0f,0.0f,myWindowWidthAsPixel,myWindowHeightAsPixel);
     myText->setOpenGLCanvas(this, fGridSquareWidth);
 

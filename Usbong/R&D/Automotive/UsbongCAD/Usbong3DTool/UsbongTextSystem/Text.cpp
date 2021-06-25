@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B.
  * @date created: 20200930
- * @date updated: 20210619
+ * @date updated: 20210625
  *
  * Reference:
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -381,7 +381,9 @@ void Text::setupPrev()
 //Text::RobotShip(): MyDynamicObject(0,0,300)
 //edited by Mike, 20201115
 //Text::RobotShip(): MyDynamicObject(0,0,0)
-Text::Text(float xPos, float yPos, float zPos, int windowWidth, int windowHeight): MyDynamicObject(xPos,yPos,0.0f, windowWidth, windowHeight)
+//edited by Mike, 20210625
+//Text::Text(float xPos, float yPos, float zPos, int windowWidth, int windowHeight): MyDynamicObject(xPos,yPos,0.0f, windowWidth, windowHeight)
+Text::Text(float xPos, float yPos, float zPos, float windowWidth, float windowHeight): MyDynamicObject(xPos,yPos,0.0f, windowWidth, windowHeight)
 {
     //edited by Mike, 20201001
     //currentState=IN_TITLE_STATE;//MOVING_STATE;

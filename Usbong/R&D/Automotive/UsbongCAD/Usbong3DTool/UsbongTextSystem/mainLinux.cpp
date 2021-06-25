@@ -14,7 +14,7 @@
  *
  * @author: Michael Syson
  * @date created: 20200926
- * @date updated: 20210623
+ * @date updated: 20210625
  *
  * References:
  * 1) Dev-C++ 5.11 auto-generated OpenGL example project
@@ -795,6 +795,8 @@ int main(int argc, char** argv) {
     //edited by Mike, 20210623
     //    myOpenGLCanvas->init(myWindowWidthAsPixel,myWindowHeightAsPixel);
     myOpenGLCanvas->init(glutGet(GLUT_SCREEN_WIDTH), glutGet(GLUT_SCREEN_HEIGHT));
+//    myOpenGLCanvas->init(768.0f, 768.0f);
+        
 //    myOpenGLCanvas->init(GLUT_WINDOW_WIDTH,GLUT_WINDOW_HEIGHT);
 //    myOpenGLCanvas->init(GLUT_INIT_WINDOW_WIDTH,GLUT_INIT_WINDOW_HEIGHT);
     
