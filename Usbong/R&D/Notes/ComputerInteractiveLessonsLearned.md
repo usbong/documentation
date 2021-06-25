@@ -201,6 +201,8 @@ Sa harap nito!"<br/></b>
 --> Mula sa pagsisiyasat, may kinalaman ito sa pagpapahinga nang makalipas na ang 30minutos.<br/> 
 --> Pagbalik sa daigdig ng Suikoden, maaalala ang kachiku koya, i.e. maliit na bahay ng mga hayop.<br/>
 <br/>
+<b>Paalala:</b> Nasa kachiku koya ang Dragon Knight na gagabay sa sasakyan ninyong Dragon upang makapunta sa Isla. Naroon naman sa Isla si LEKKNA-T, na nagtataglay ng kapangyarihang may kinalaman sa 星見の結果 (bituin nakita; pinagtali kinahinatnan nito).<br/>
+<br/>
 <img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Notes/res/suikoden/unmei.jpg" width="60%">
 <br/>
 <b>Huwag kaligtaan!<br/>
