@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B.
  * @date created: 20200930
- * @date updated: 20210613
+ * @date updated: 20210626
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007):
@@ -174,6 +174,10 @@ public:
     int myWindowWidth;
     int myWindowHeight;
     
+    //added by Mike, 20210626
+		float fMyWindowWidthAsPixelRatioToHeightPixel;
+		int iMyWindowWidthAsPixelOffset;
+
     //added by Mike, 20210522
     float fGridSquareWidth;
     float fGridSquareHeight;

@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200929
- * @date updated: 20210625
+ * @date updated: 20210626
  * @website address: http://www.usbong.ph
  *
  * Acknowledgments:
@@ -405,8 +405,9 @@ class OpenGLCanvas
 		float myWindowWidthAsPixel;
 		float myWindowHeightAsPixel;
 
-	
-	
+		//added by Mike, 20210626
+		float fMyWindowWidthAsPixelRatioToHeightPixel;
+		
 /*		int myWindowWidthAsPixelOpenGLCanvas;
 		int myWindowHeightAsPixelOpenGLCanvas;
 */		

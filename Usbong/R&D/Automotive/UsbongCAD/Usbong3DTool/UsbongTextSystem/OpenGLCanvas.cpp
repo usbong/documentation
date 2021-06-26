@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B.
  * @date created: 20200926
- * @date updated: 20210625
+ * @date updated: 20210626
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -463,9 +463,15 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
     myWindowWidthAsPixel = myWindowWidthAsPixelInput;
     myWindowHeightAsPixel = myWindowHeightAsPixelInput;
 
+		//added by Mike, 20210626
+		fMyWindowWidthAsPixelRatioToHeightPixel=1.0f;
+
 		if (myWindowWidthAsPixel!=myWindowHeightAsPixel) {
+			//added by Mike, 20210626
+			fMyWindowWidthAsPixelRatioToHeightPixel=myWindowHeightAsPixelInput/myWindowWidthAsPixel;
+				
     	myWindowWidthAsPixel = myWindowHeightAsPixelInput; //myWindowWidthAsPixelInput;
-    	myWindowHeightAsPixel = myWindowHeightAsPixelInput;
+//    	myWindowHeightAsPixel = myWindowHeightAsPixelInput;
 
 /*    	
     	printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> USBONG");
@@ -579,8 +585,10 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
     //edited by Mike, 20210522
     //	myButton->setOpenGLCanvas(this);
     myButton->setOpenGLCanvas(this, fGridSquareWidth);
-        
-    myText = new Text(0.0f,320.0f,0.0f,myWindowWidthAsPixel,myWindowHeightAsPixel);
+
+		//edited by Mike, 20210626
+//    myText = new Text(0.0f,320.0f,0.0f,myWindowWidthAsPixel,myWindowHeightAsPixel);
+    myText = new Text(0.0f,320.0f,0.0f,myWindowWidthAsPixelInput,myWindowHeightAsPixelInput);
     myText->setOpenGLCanvas(this, fGridSquareWidth);
 
     
@@ -1545,6 +1553,11 @@ void OpenGLCanvas::render()
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
 */
+
+    //added by Mike, 20210626
+    //auto-scale to Window Width to Height
+    glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
+
   
 /*
 //    float w = glutGet( GLUT_SCREEN_WIDTH );
