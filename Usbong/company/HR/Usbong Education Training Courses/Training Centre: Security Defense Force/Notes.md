@@ -458,6 +458,7 @@ Patuloy na panlolokong ingay (at pisikal na pananakit) gamit ang wireless broadc
 
 ### Part 16: Gumawa ng Daigdig (World System)
 --> Gawin ang mga bagay na maayos mong nagagawa.<br/>
+<br/>
 --> <b>Mungkahing mga Babasahin:</b><br/>
 --> <b>16.1) Winston Groom's "Forrest Gump"</b><br/>
 --> Life Story: Look up at the stars at night, with the whole sky laid out there, sometimes. Remember it all.<br/>
@@ -529,3 +530,22 @@ Patuloy na panlolokong ingay (at pisikal na pananakit) gamit ang wireless broadc
 --> verify: Ang Alamat ng Agimat: Anim na Perlas<br/>
 --> The Legend of Amulet: 6 Pearls<br/>
 --> JAVA 2 Micro Edition version<br/>
+
+### Part 17: 流れ (nagare; daloy (ng salaysay)) 
+--> Kapangyarihang may kinalaman sa 星見の結果 (bituin nakita; pinagtali kinahinatnan nito)<br/>
+
+#### 17.1) Daloy ng salaysay<br/>
+--> May naisulat; Isinaaayos ito; Hayaan ang naisulat na; Alam;<br/>
+
+#### 17.2) Maligaya ang matuklasan ang sagot sa suliranin.<br/>
+--> May sagot; Alam ng gumawa ng Daigdig;<br/>
+--> <b>Suliranan:</b> Nawawala; Hindi malaman kung saan tutungo.<br/>
+<br/>
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Notes/res/suikoden/unmei.jpg" width="60%">
+<br/>
+<b>
+Huwag kaligtaan!<br/>
+Kunin ang piniling bagay na maiisip mong wasto.<br/>
+Naunawaan mo ha!<br/>
+</b>
+
