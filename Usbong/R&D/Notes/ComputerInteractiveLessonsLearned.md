@@ -176,10 +176,10 @@ kosodoro ("sneak-mud" to be magnanakaw) : Investigate opponent's next strategy. 
 
 #### 1.3.2.2) 流れ (nagare; daloy (ng salaysay)) <br/>
 Kapangyarihang may kinalaman sa 星見の結果 (bituin nakita; pinagtali kinahinatnan nito)<br/>
-1) Daloy ng salaysay<br/>
+##### 1.3.2.2.1) Daloy ng salaysay<br/>
 --> May naisulat; Isinaaayos ito; Hayaan ang naisulat na; Alam;<br/>
 
-2) Maligaya ang matuklasan ang sagot sa suliranin.<br/>
+##### 1.3.2.2.2) Maligaya ang matuklasan ang sagot sa suliranin.<br/>
 --> May sagot; Alam ng gumawa ng Daigdig;<br/>
 --> Suliranan: Nawawala; Hindi malaman kung saan tutungo.<br/>
 
@@ -221,6 +221,21 @@ PA-N (pangalan ng iyong kaibigan)<br/>
 --> Kapag hindi pa rin ninyo mahanap, si KUREIZU ang magpapaalam sa inyo nito:<br/>
 --> Nasa loob ng Castillo ang kachiku koya, i.e. maliit na bahay ng mga hayop.<br/>
 --> Hagilapin ninyo raw kung nasaan iyon.<br/>
+
+##### 1.3.2.2.3) Paraan upang matiyak ang mga bagay-bagay<br/>
+--> Tingnan gamit ang sariling mga mata,<br/> 
+--> mag-isip gamit ang sariling utak,<br/> 
+--> mag-pasiya gamit ang sariling puso.<br/>
+--> <b>Paalala:</b> Ito'y sa halip na gawin lamang batayan ang mga sabi-sabi.<br/>
+--> <b>Halimbawa:</b> Kage -> Odessa;<br/>
+--> identified: Odessa<br/>
+--> brings message from Odessa's friend, Mo-su<br/>
+--> <b>Tanong:</b> How to identify if TRUE, i.e. correct?<br/>
+--> hato, i.e. pigeon, brings message from Mo-su<br/>
+--> hato ill to need かんびょう (kanbyou; 看病; "look ill")?<br/>
+--> Kage's answer: Mo-su does not take care of hato<br/>
+--> i.e. Hindi nag-aalaga ng Hato si Mo-su.<br/>
+--> Correct. Identified to be TRUE.
 
 ## 1.4) SONY Computer Entertainment Europe and Guerrilla
 ### 1.4.1) KillZone 2
