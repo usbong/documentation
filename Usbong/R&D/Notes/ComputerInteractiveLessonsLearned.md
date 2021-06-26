@@ -223,19 +223,28 @@ PA-N (pangalan ng iyong kaibigan)<br/>
 --> Hagilapin ninyo raw kung nasaan iyon.<br/>
 
 ##### 1.3.2.2.3) Paraan upang matiyak ang mga bagay-bagay<br/>
---> Tingnan gamit ang sariling mga mata,<br/> 
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Notes/res/suikoden/paalala.jpg" width="60%">
+<br/>
+--> Subalit, alalahanin,<br/>
+--> bumalik ka man sa Empire, <b>tingnan gamit ang sariling mga mata,<br/> 
 --> mag-isip gamit ang sariling utak,<br/> 
---> mag-pasiya gamit ang sariling puso.<br/>
+--> mag-pasiya gamit ang sariling puso</b><br/>
+<br/>
 --> <b>Paalala:</b> Ito'y sa halip na gawin lamang batayan ang mga sabi-sabi.<br/>
+<br/>
 --> <b>Halimbawa:</b> Kage -> Odessa;<br/>
 --> identified: Odessa<br/>
 --> brings message from Odessa's friend, Mo-su<br/>
 --> <b>Tanong:</b> How to identify if TRUE, i.e. correct?<br/>
---> hato, i.e. pigeon, brings message from Mo-su<br/>
---> hato ill to need かんびょう (kanbyou; 看病; "look ill")?<br/>
---> Kage's answer: Mo-su does not take care of hato<br/>
+--> Hato, i.e. pigeon, brings message from Mo-su<br/>
+--> Hato ill to need かんびょう (kanbyou; 看病; "look ill")?<br/>
+--> Kage's answer: Mo-su does not take care of Hato<br/>
 --> i.e. Hindi nag-aalaga ng Hato si Mo-su.<br/>
---> Correct. Identified to be TRUE.
+--> Correct. Identified to be TRUE.<br/>
+<br/>
+--> Ayon sa daloy ng salaysay, mamamasdan na ang papasamang pagbabago ng Empire pagkatapos nitong makamit ang sagisag nito na mabuti.<br/>
+--> Mamamasdan ito sa mga gawain ng kanyang mga tauhan sa mataas at mababang rango.<br/> 
+--> Mamamasdan din ito sa daing ng mga mamamayan ng mga bayan na kabilang sa Empire.<br/>
 
 ## 1.4) SONY Computer Entertainment Europe and Guerrilla
 ### 1.4.1) KillZone 2
