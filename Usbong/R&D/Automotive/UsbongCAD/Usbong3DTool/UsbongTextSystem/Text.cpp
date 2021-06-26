@@ -518,11 +518,14 @@ Text::Text(float xPos, float yPos, float zPos, float windowWidth, float windowHe
 			fMyWindowWidthAsPixelRatioToHeightPixel= 0.56222; //myWindowHeight/myWindowWidth*1.0f;
 			//note: width value > height value
 			//TO-DO: -add: auto-update
-			iMyWindowWidthAsPixelOffset=myWindowWidth-myWindowHeight;
+			//height: 768; width: 1366
+			iMyWindowWidthAsPixelOffset=(myWindowWidth-myWindowHeight)/2;
+//			iMyWindowWidthAsPixelOffset=(myWindowWidth-myWindowHeight);
 			
 			printf(">>>DITO: %f",fMyWindowWidthAsPixelRatioToHeightPixel);
 			printf(">>>DITO: myWindowHeight: %i",myWindowHeight);
 			printf(">>>DITO: myWindowWidth: %i",myWindowWidth);
+			printf(">>>DITO: iMyWindowWidthAsPixelOffset: %i",iMyWindowWidthAsPixelOffset);
 			
     	myWindowWidth = myWindowHeight; //myWindowWidthAsPixelInput;
 //    	myWindowHeightAsPixel = myWindowHeightAsPixelInput;
@@ -802,14 +805,20 @@ void Text::drawTextBackgroundAsQuadWithTexture()
             0.0f, //zNear; minimum
             1.0f //zFar; maximum
             );
-    
+
     //added by Mike, 20210626
     //TO-DO: -reverify: this
-//    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset), 0.0f, 0.0f);
-        
+    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset), 0.0f, 0.0f);
+
+    //due to scaled values
+//    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myWindowWidth*fMyWindowWidthAsPixelRatioToHeightPixel), 0.0f, 0.0f);  
+//    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myWindowWidth/2), 0.0f, 0.0f);  
+//    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myWindowWidth*fMyWindowWidthAsPixelRatioToHeightPixel+myWindowWidth/2), 0.0f, 0.0f);  
+       
     //auto-scale to Window Width to Height
     glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);    
-    
+    glScalef(0.5f,0.5f,1.0f); //added by Mike, 20210626
+       
     //font
     // select and enable texture FONT_TEXTURE
     glBindTexture(GL_TEXTURE_2D, FONT_TEXTURE);
@@ -831,8 +840,9 @@ void Text::drawTextBackgroundAsQuadWithTexture()
     //		 sprintf(tempText,sCurrentTextContainer[0]);
     //edited by Mike, 20210615
     //		 sprintf(tempText,sCurrentTextContainer[0][0].c_str());
-    
-    glScalef(0.5f,0.5f,1.0f);
+  
+  	//removed by Mike, 20210626  
+//    glScalef(0.5f,0.5f,1.0f);
     
     
     //    printf("iTextCurrentMaxRowCount: %i\n",iTextCurrentMaxRowCount);
