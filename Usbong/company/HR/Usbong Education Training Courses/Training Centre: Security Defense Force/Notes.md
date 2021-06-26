@@ -548,4 +548,6 @@ Huwag kaligtaan!<br/>
 Kunin ang piniling bagay na maiisip mong wasto.<br/>
 Naunawaan mo ha!<br/>
 </b>
-
+##### Reference: 幻想水滸伝 GENSO SUIKODEN
+--> 幻想 ("gensou"; illusion thought)<br/>
+--> Year 1995 1996 KONAMI; PlayStation the Best version; executed on PlayStation3 Machine
