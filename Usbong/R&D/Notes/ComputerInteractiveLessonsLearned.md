@@ -228,7 +228,7 @@ PA-N (pangalan ng iyong kaibigan)<br/>
 --> Subalit, alalahanin,<br/>
 --> bumalik ka man sa Empire, <b>tingnan gamit ang sariling mga mata,<br/> 
 --> mag-isip gamit ang sariling utak,<br/> 
---> mag-pasiya gamit ang sariling puso</b><br/>
+--> magpasiya gamit ang sariling puso</b><br/>
 <br/>
 --> <b>Paalala:</b> Ito'y sa halip na gawin lamang batayan ang mga sabi-sabi.<br/>
 <br/>
