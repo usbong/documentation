@@ -552,8 +552,8 @@ Naunawaan mo ha!<br/>
 #### 17.3) Paraan upang matiyak ang mga bagay-bagay
 <img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Notes/res/suikoden/paalala.jpg" width="60%">
 <br/>
---> Subalit, alalahanin,<br/>
---> bumalik ka man sa Empire, <b>tingnan gamit ang sariling mga mata,<br/>
+--> Subalit, alalahanin.<br/>
+--> Bumalik ka man sa Empire, <b>tingnan gamit ang sariling mga mata,<br/>
 --> mag-isip gamit ang sariling utak,<br/>
 --> magpasiya gamit ang sariling puso</b><br/>
 <br/>
