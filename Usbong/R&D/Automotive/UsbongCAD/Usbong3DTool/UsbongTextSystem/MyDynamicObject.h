@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B.
  * @date created: 20200930
- * @date updated: 20210626
+ * @date updated: 20210627
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007):
@@ -175,9 +175,9 @@ public:
     int myWindowHeight;
     
     //added by Mike, 20210626
-		float fMyWindowWidthAsPixelRatioToHeightPixel;
-		int iMyWindowWidthAsPixelOffset;
-
+    float fMyWindowWidthAsPixelRatioToHeightPixel;
+    int iMyWindowWidthAsPixelOffset;
+    
     //added by Mike, 20210522
     float fGridSquareWidth;
     float fGridSquareHeight;
@@ -397,7 +397,7 @@ public:
         myOpenGLCanvas = c;
         //TO-DO: -update: this
         fGridSquareWidth = fSideLengthInput;
-        fGridSquareHeight = fSideLengthInput;		
+        fGridSquareHeight = fSideLengthInput;
     };
     
     //added by Mike, 20210524
@@ -407,13 +407,13 @@ public:
     
     //added by Mike, 20210524
     virtual void setToWalkingMovingState() {
-/*  //removed to sub-class, i.e. Pilot.cpp, by Mike, 20210613
-        //edited by Mike, 20210613
-//        if (currentMovingState!=ATTACKING_MOVING_STATE) {
-        if (currentMovingState!=ATTACKING_MOVING_STATE) {
-            currentMovingState = WALKING_MOVING_STATE;
-        }
-*/
+        /*  //removed to sub-class, i.e. Pilot.cpp, by Mike, 20210613
+         //edited by Mike, 20210613
+         //        if (currentMovingState!=ATTACKING_MOVING_STATE) {
+         if (currentMovingState!=ATTACKING_MOVING_STATE) {
+         currentMovingState = WALKING_MOVING_STATE;
+         }
+         */
     }
     
     //added by Mike, 20201016

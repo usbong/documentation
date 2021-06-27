@@ -15,7 +15,7 @@
  * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
  * @author: SYSON, MICHAEL B.
  * @date created: 20200930
- * @date updated: 20210626
+ * @date updated: 20210627
  *
  * Reference:
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -503,33 +503,33 @@ Text::Text(float xPos, float yPos, float zPos, float windowWidth, float windowHe
      //	myZPos=0.0f+myHeight*3;
      myZPos=0.0f;
      */
-
+    
     //added by Mike, 20201115
     myWindowWidth=windowWidth;
     myWindowHeight=windowHeight;
     
-		//added by Mike, 20210626
-		fMyWindowWidthAsPixelRatioToHeightPixel=1.0f;
-		iMyWindowWidthAsPixelOffset=0;
-
-		if (myWindowWidth!=myWindowHeight) {
-			//added by Mike, 20210626
-			//TO-DO: -reverify: cause of zero value with myWindowHeight/myWindowWidth*1.0f;
-			fMyWindowWidthAsPixelRatioToHeightPixel= 0.56222; //myWindowHeight/myWindowWidth*1.0f;
-			//note: width value > height value
-			//TO-DO: -add: auto-update
-			//height: 768; width: 1366
-			iMyWindowWidthAsPixelOffset=(myWindowWidth-myWindowHeight)/2;
-//			iMyWindowWidthAsPixelOffset=(myWindowWidth-myWindowHeight);
-			
-			printf(">>>DITO: %f",fMyWindowWidthAsPixelRatioToHeightPixel);
-			printf(">>>DITO: myWindowHeight: %i",myWindowHeight);
-			printf(">>>DITO: myWindowWidth: %i",myWindowWidth);
-			printf(">>>DITO: iMyWindowWidthAsPixelOffset: %i",iMyWindowWidthAsPixelOffset);
-			
-    	myWindowWidth = myWindowHeight; //myWindowWidthAsPixelInput;
-//    	myWindowHeightAsPixel = myWindowHeightAsPixelInput;
-		}    
+    //added by Mike, 20210626
+    fMyWindowWidthAsPixelRatioToHeightPixel=1.0f;
+    iMyWindowWidthAsPixelOffset=0;
+    
+    if (myWindowWidth!=myWindowHeight) {
+        //added by Mike, 20210626
+        //TO-DO: -reverify: cause of zero value with myWindowHeight/myWindowWidth*1.0f;
+        fMyWindowWidthAsPixelRatioToHeightPixel= 0.56222; //myWindowHeight/myWindowWidth*1.0f;
+        //note: width value > height value
+        //TO-DO: -add: auto-update
+        //height: 768; width: 1366
+        iMyWindowWidthAsPixelOffset=(myWindowWidth-myWindowHeight)/2;
+        //			iMyWindowWidthAsPixelOffset=(myWindowWidth-myWindowHeight);
+        
+        printf(">>>DITO: %f",fMyWindowWidthAsPixelRatioToHeightPixel);
+        printf(">>>DITO: myWindowHeight: %i",myWindowHeight);
+        printf(">>>DITO: myWindowWidth: %i",myWindowWidth);
+        printf(">>>DITO: iMyWindowWidthAsPixelOffset: %i",iMyWindowWidthAsPixelOffset);
+        
+        myWindowWidth = myWindowHeight; //myWindowWidthAsPixelInput;
+        //    	myWindowHeightAsPixel = myWindowHeightAsPixelInput;
+    }
     
     
     //added by Mike, 20210516
@@ -671,7 +671,7 @@ void Text::drawTextBackgroundAsQuadWithTexturePrev()
     //edited by Mike, 20210517
     //    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPos), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPos), myZPos);
     //    glTranslatef(myXPosAsPixel, myYPosAsPixel, myZPosAsPixel);
-        
+    
     //added by Mike, 20210614
     //note; add glPushMatrix() and glPopMatrix()
     glPushMatrix();
@@ -764,18 +764,22 @@ void Text::drawPressNextSymbol()
 //added by Mike, 20210617
 void Text::drawTextBackgroundAsQuadWithTexture()
 {
-
+    
     //added by Mike, 20210614
     //note; add glPushMatrix() and glPopMatrix()
     glPushMatrix();
-        
+    
     glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixel), myZPosAsPixel);
     
     //        glScalef(2.5f,5.0f,1.0f);
     //edited by Mike, 20210616
     //        glScalef(2.0f,2.0f,1.0f);
     //        glScalef(2.5f,4.0f,1.0f);
-    glScalef(5.0f,4.0f,1.0f);
+    //edited by Mike, 20210627
+//    glScalef(5.0f,4.0f,1.0f);
+    glScalef(5.0f,2.5f,1.0f);
+    glTranslatef(0.0f, -0.1f, 0.0f);
+    
     
     //TO-DO: -update: draw instructions
     drawTextBackgroundObject();
@@ -805,20 +809,25 @@ void Text::drawTextBackgroundAsQuadWithTexture()
             0.0f, //zNear; minimum
             1.0f //zFar; maximum
             );
-
+    
     //added by Mike, 20210626
     //TO-DO: -reverify: this
     glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset), 0.0f, 0.0f);
-
+    
     //due to scaled values
-//    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myWindowWidth*fMyWindowWidthAsPixelRatioToHeightPixel), 0.0f, 0.0f);  
-//    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myWindowWidth/2), 0.0f, 0.0f);  
-//    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myWindowWidth*fMyWindowWidthAsPixelRatioToHeightPixel+myWindowWidth/2), 0.0f, 0.0f);  
-       
+    //    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myWindowWidth*fMyWindowWidthAsPixelRatioToHeightPixel), 0.0f, 0.0f);
+    //    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myWindowWidth/2), 0.0f, 0.0f);
+    //    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myWindowWidth*fMyWindowWidthAsPixelRatioToHeightPixel+myWindowWidth/2), 0.0f, 0.0f);
+    
     //auto-scale to Window Width to Height
-    glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);    
-    glScalef(0.5f,0.5f,1.0f); //added by Mike, 20210626
-       
+    glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
+    //edited by Mike, 20210626s
+//    glScalef(0.5f,0.5f,1.0f);
+//    glScalef(0.25f,0.25f,1.0f);
+    glScalef(0.3f,0.3f,1.0f);
+    //added by Mike, 20210626
+    glTranslatef(-0.3f, fMyWindowWidthAsPixelRatioToHeightPixel+0.3f+0.3f, 0.0f);
+    
     //font
     // select and enable texture FONT_TEXTURE
     glBindTexture(GL_TEXTURE_2D, FONT_TEXTURE);
@@ -840,9 +849,9 @@ void Text::drawTextBackgroundAsQuadWithTexture()
     //		 sprintf(tempText,sCurrentTextContainer[0]);
     //edited by Mike, 20210615
     //		 sprintf(tempText,sCurrentTextContainer[0][0].c_str());
-  
-  	//removed by Mike, 20210626  
-//    glScalef(0.5f,0.5f,1.0f);
+    
+    //removed by Mike, 20210626
+    //    glScalef(0.5f,0.5f,1.0f);
     
     
     //    printf("iTextCurrentMaxRowCount: %i\n",iTextCurrentMaxRowCount);
@@ -2426,7 +2435,7 @@ void Text::readInputText(char *inputFilename) {
             //removed by Mike, 20210617
             //            iTextCurrentMaxRowCount=iTextCurrentMaxRowCount+1;
             
-            printf("\n");			
+            printf("\n");
         }
         fclose(file);
         

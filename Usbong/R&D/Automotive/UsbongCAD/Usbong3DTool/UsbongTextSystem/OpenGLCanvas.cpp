@@ -455,38 +455,38 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
     
     //added by Mike, 20200930
     currentState = GAME_SCREEN; //TO-DO: -update: this
-
-	  //added by Mike, 20210625
-		//TO-DO: -reverify: this; draw instructions, e.g. in Text.cpp, 
-		//auto-scales due to using vertex positions; not pixel positions;
-		//even without Window Width and Height values
+    
+    //added by Mike, 20210625
+    //TO-DO: -reverify: this; draw instructions, e.g. in Text.cpp,
+    //auto-scales due to using vertex positions; not pixel positions;
+    //even without Window Width and Height values
     myWindowWidthAsPixel = myWindowWidthAsPixelInput;
     myWindowHeightAsPixel = myWindowHeightAsPixelInput;
-
-		//added by Mike, 20210626
-		fMyWindowWidthAsPixelRatioToHeightPixel=1.0f;
-
-		if (myWindowWidthAsPixel!=myWindowHeightAsPixel) {
-			//added by Mike, 20210626
-			fMyWindowWidthAsPixelRatioToHeightPixel=myWindowHeightAsPixelInput/myWindowWidthAsPixel;
-				
-    	myWindowWidthAsPixel = myWindowHeightAsPixelInput; //myWindowWidthAsPixelInput;
-//    	myWindowHeightAsPixel = myWindowHeightAsPixelInput;
-
-/*    	
-    	printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> USBONG");
-    	printf("myWindowWidthAsPixelInput: %f; myWindowHeightAsPixelInput: %f\n",myWindowWidthAsPixelInput,myWindowHeightAsPixelInput);
-    	printf("myWindowWidthAsPixel: %f; myWindowHeightAsPixel: %f\n",myWindowWidthAsPixel,myWindowHeightAsPixel);
-*/    	
-		}
+    
+    //added by Mike, 20210626
+    fMyWindowWidthAsPixelRatioToHeightPixel=1.0f;
+    
+    if (myWindowWidthAsPixel!=myWindowHeightAsPixel) {
+        //added by Mike, 20210626
+        fMyWindowWidthAsPixelRatioToHeightPixel=myWindowHeightAsPixelInput/myWindowWidthAsPixel;
+        
+        myWindowWidthAsPixel = myWindowHeightAsPixelInput; //myWindowWidthAsPixelInput;
+        //    	myWindowHeightAsPixel = myWindowHeightAsPixelInput;
+        
+        /*
+         printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> USBONG");
+         printf("myWindowWidthAsPixelInput: %f; myWindowHeightAsPixelInput: %f\n",myWindowWidthAsPixelInput,myWindowHeightAsPixelInput);
+         printf("myWindowWidthAsPixel: %f; myWindowHeightAsPixel: %f\n",myWindowWidthAsPixel,myWindowHeightAsPixel);
+         */
+    }
     
     //added by Mike, 20210516
     myUsbongUtils = new UsbongUtils();
-
-    //edited by Mike, 20210625    
-/*    printf("myWindowWidthAsPixelInput: %f; myWindowHeightAsPixelInput: %f",myWindowWidthAsPixelInput,myWindowHeightAsPixelInput);  
-    myUsbongUtils->setWindowWidthHeight(myWindowWidthAsPixelInput, myWindowHeightAsPixelInput); //added by Mike, 20210623
-*/
+    
+    //edited by Mike, 20210625
+    /*    printf("myWindowWidthAsPixelInput: %f; myWindowHeightAsPixelInput: %f",myWindowWidthAsPixelInput,myWindowHeightAsPixelInput);
+     myUsbongUtils->setWindowWidthHeight(myWindowWidthAsPixelInput, myWindowHeightAsPixelInput); //added by Mike, 20210623
+     */
     myUsbongUtils->setWindowWidthHeight(myWindowWidthAsPixel, myWindowHeightAsPixel);
     
     //added by Mike, 20210211
@@ -494,13 +494,13 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
     myLevel->setupLevel(LEVEL_TEXTURE); //FONT_TEXTURE);
     
     //added by Mike, 20210517; edited by Mike, 20210606
-/*    myWindowWidthAsPixel = myWindowWidth;
-    myWindowHeightAsPixel = myWindowHeight;
-*/
-/* //edited by Mike, 20210625
-    myWindowWidthAsPixel = myWindowWidthAsPixelInput;
-    myWindowHeightAsPixel = myWindowHeightAsPixelInput;
-*/
+    /*    myWindowWidthAsPixel = myWindowWidth;
+     myWindowHeightAsPixel = myWindowHeight;
+     */
+    /* //edited by Mike, 20210625
+     myWindowWidthAsPixel = myWindowWidthAsPixelInput;
+     myWindowHeightAsPixel = myWindowHeightAsPixelInput;
+     */
     
     //added by Mike, 20210320; edited by Mike, 20210321
     /*
@@ -536,15 +536,15 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
     //edited by Mike, 20210528
     //	myPilot = new Pilot(0.0f,0.0f,0.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
     //edited by Mike, 20210606
-//    myPilot = new Pilot(0.0f,0.0f,320.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
-//    myPilot = new Pilot(0.0f,0.0f,220.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
-        myPilot = new Pilot(0.0f,0.0f,270.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
+    //    myPilot = new Pilot(0.0f,0.0f,320.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
+    //    myPilot = new Pilot(0.0f,0.0f,220.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
+    myPilot = new Pilot(0.0f,0.0f,270.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
     myPilot->setOpenGLCanvas(this, fGridSquareWidth);
     myPilot->setAsPlayer1(); //added by Mike, 20210601
     
     //added by Mike, 20210530; edited by Mike, 20210605
     //edited by Mike, 20210606
-//    myPilotPartner = new Pilot(100.0f,0.0f,220.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
+    //    myPilotPartner = new Pilot(100.0f,0.0f,220.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
     myPilotPartner = new Pilot(100.0f,0.0f,170.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
     myPilotPartner->setOpenGLCanvas(this, fGridSquareWidth);
     myPilotPartner->setAsPlayer1Partner(); //added by Mike, 20210601
@@ -559,7 +559,7 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
     //edited by Mike, 20210603
     //    myPilotPlayer2 = new Pilot(360.0f,0.0f,320.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
     //edited by Mike, 20210606
-//    myPilotPlayer2 = new Pilot(320.0f+100.0f,0.0f,320.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
+    //    myPilotPlayer2 = new Pilot(320.0f+100.0f,0.0f,320.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
     myPilotPlayer2 = new Pilot(320.0f+100.0f,0.0f,270.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
     //edited by Mike, 20210522
     //	myPilotPlayer2->setOpenGLCanvas(this);
@@ -568,9 +568,9 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
     
     //added by Mike, 20210530; edited by Mike, 20210605
     //edited by Mike, 20210606
-//    myPilotPlayer2Partner = new Pilot(360.0f,0.0f,220.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
+    //    myPilotPlayer2Partner = new Pilot(360.0f,0.0f,220.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
     myPilotPlayer2Partner = new Pilot(360.0f,0.0f,170.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
-
+    
     myPilotPlayer2Partner->setOpenGLCanvas(this, fGridSquareWidth);
     myPilotPlayer2Partner->setAsPlayer2Partner(); //edited by Mike, 20210601
     
@@ -585,12 +585,12 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
     //edited by Mike, 20210522
     //	myButton->setOpenGLCanvas(this);
     myButton->setOpenGLCanvas(this, fGridSquareWidth);
-
-		//edited by Mike, 20210626
-//    myText = new Text(0.0f,320.0f,0.0f,myWindowWidthAsPixel,myWindowHeightAsPixel);
+    
+    //edited by Mike, 20210626
+    //    myText = new Text(0.0f,320.0f,0.0f,myWindowWidthAsPixel,myWindowHeightAsPixel);
     myText = new Text(0.0f,320.0f,0.0f,myWindowWidthAsPixelInput,myWindowHeightAsPixelInput);
     myText->setOpenGLCanvas(this, fGridSquareWidth);
-
+    
     
     //added by Mike, 20210524; edited by Mike, 20210528
     //	myBall = new Ball(320.0f,320.0f,0.0f,myWindowWidthAsPixel,myWindowHeightAsPixel);
@@ -1168,7 +1168,7 @@ void OpenGLCanvas::keyUp(int keyCode)
     
     //added by Mike, 20210618
     myText->keyUp(keyCode);
-
+    
     
     //removed by Mike, 20210514
     /*
@@ -1549,24 +1549,51 @@ void OpenGLCanvas::render()
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     
-/*  //
-    glMatrixMode(GL_MODELVIEW);
-    glLoadIdentity();
-*/
+    /*  //
+     glMatrixMode(GL_MODELVIEW);
+     glLoadIdentity();
+     */
+    
+    //added by Mike, 20210627
+    //paint the outer margins if window not square, i.e. width and height not equal
+//-----
+    glBegin(GL_QUADS);
+    	glColor3f(0.0f,0.0f,0.0f); //black
+    //	glColor3f(1.0f,1.0f,1.0f); //white
 
+    //TOP
+/*    //sky blue color; darker
+    //	glColor3f(0.51f, 0.73f, 0.98f);
+    //	glColor3f(0.08f, 0.51f, 1.00f);
+    //	glColor3f(0.0f, 0.32f, 0.67f);
+    glColor3f(0.0f, 0.44f, 0.67f);
+*/
+    glVertex2f(1.0, 1.0);
+    glVertex2f(-1.0, 1.0);
+    
+    //BOTTOM
+/*
+    //sky blue color; brighter
+    glColor3f(0.69f, 0.84f, 1.0f);
+*/
+    glVertex2f(-1.0,-1.0);
+    glVertex2f(1.0,-1.0);
+    glEnd();
+//-----
+    
     //added by Mike, 20210626
     //auto-scale to Window Width to Height
     glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
-
-  
-/*
-//    float w = glutGet( GLUT_SCREEN_WIDTH );
-//    float h = glutGet( GLUT_SCREEN_HEIGHT );
-    float w = glutGet( GLUT_WINDOW_WIDTH );
-    float h = glutGet( GLUT_WINDOW_HEIGHT );
-    glOrtho(0, w, h, 0, -1, 1);
-*/
- 
+    
+    
+    /*
+     //    float w = glutGet( GLUT_SCREEN_WIDTH );
+     //    float h = glutGet( GLUT_SCREEN_HEIGHT );
+     float w = glutGet( GLUT_WINDOW_WIDTH );
+     float h = glutGet( GLUT_WINDOW_HEIGHT );
+     glOrtho(0, w, h, 0, -1, 1);
+     */
+    
     /* //horizontal
      glBegin(GL_QUADS);
      //red color
@@ -1624,9 +1651,9 @@ void OpenGLCanvas::render()
     glLineWidth((GLfloat)3);
     
     //note: coordinate system guide/map
-/*	//removed by Mike, 20210618
-    glBegin(GL_LINES);
-    glColor3f(0.0f,0.0f,0.0f); //black
+    /*	//removed by Mike, 20210618
+     glBegin(GL_LINES);
+     glColor3f(0.0f,0.0f,0.0f); //black
      
      ////removed by Mike, 20210516
      ////diagonal line left to right
@@ -1636,15 +1663,15 @@ void OpenGLCanvas::render()
      //glVertex2f(1.0f, 1.0f);
      //glVertex2f(-1.0f, -1.0f);
      
-    //vertical line at center
-    glVertex2f(0.0f, 1.0f);
-    glVertex2f(0.0f, -1.0f);
-    
-    //horizontal line at center
-    glVertex2f(-1.0f, 0.0f);
-    glVertex2f(1.0f, 0.0f);
-    glEnd();
-*/    
+     //vertical line at center
+     glVertex2f(0.0f, 1.0f);
+     glVertex2f(0.0f, -1.0f);
+     
+     //horizontal line at center
+     glVertex2f(-1.0f, 0.0f);
+     glVertex2f(1.0f, 0.0f);
+     glEnd();
+     */
     
     /*
      //TO-DO: -update: this
@@ -1779,25 +1806,25 @@ void OpenGLCanvas::render()
     //added by Mike, 20210514; edited by Mike, 20210613
     //note: draw instructions due to glTranslatef(...) not closed
     //removed by Mike, 20210618
-//    myButton->draw();
+    //    myButton->draw();
     
     //added by Mike, 20210614
     //TO-DO: -reverify: instructions to not need to execute this set
-/*    
-//--    
-    //set TOP-LEFT origin/anchor/reference point; quadrant 4, y-axis inverted; x and y positive
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    //TOP-LEFT origin
-    glOrtho(0.0f, //left
-            1.0f, //right
-            1.0f, //bottom
-            0.0f, //top
-            0.0f, //zNear; minimum
-            1.0f //zFar; maximum
-            );    
-//--    
-*/
+    /*
+     //--
+     //set TOP-LEFT origin/anchor/reference point; quadrant 4, y-axis inverted; x and y positive
+     glMatrixMode(GL_PROJECTION);
+     glLoadIdentity();
+     //TOP-LEFT origin
+     glOrtho(0.0f, //left
+     1.0f, //right
+     1.0f, //bottom
+     0.0f, //top
+     0.0f, //zNear; minimum
+     1.0f //zFar; maximum
+     );
+     //--
+     */
     //added by Mike, 20210613
     myText->draw();
     
@@ -1978,49 +2005,49 @@ void OpenGLCanvas::render()
          */
         //-----
         
-/* //removed by Mike, 20210613
-        //added by Mike, 20210519
-        drawGridWithZAxis();
-        
-        //added by Mike, 20210521
-        //close glRotate
-        glRotatef(-8, 1.0f, 0.0f, 0.0f);
-        
-        //added by Mike, 20210521
-        //z-sort, i.e. auto-draw objects based on z position;
-        //objects with higher z positions are auto-drawn first;
-        //these are objects at the back of those that have lower z positions
-        //MyDynamicObject *myDynamicObjectContainerSorted[MAX_DYNAMIC_OBJECT];
-        //std::vector<MyDynamicObject*> v;
-        //added by Mike, 20210509
-        //		std::sort(vMyDynamicObjectContainer.begin(), vMyDynamicObjectContainer.end(), sortByZPosition());
-        
-        //added by Mike, 20210528
-        int iVMyDynamicObjectContainerSize = vMyDynamicObjectContainer.size();
-        //added by Mike, 20210528
-        glMatrixMode(GL_PROJECTION);
-        glLoadIdentity();
-        
-        glMatrixMode(GL_MODELVIEW);
-        glLoadIdentity();
-        
-        //added by Mike, 20210521
-        //z-sort, i.e. auto-draw objects based on z position;
-        //objects with higher z positions are auto-drawn first;
-        //these are objects at the back of those that have lower z positions
-        //MyDynamicObject *myDynamicObjectContainerSorted[MAX_DYNAMIC_OBJECT];
-        //std::vector<MyDynamicObject*> v;
-        //added by Mike, 20210509
-        //		std::sort(vMyDynamicObjectContainer.begin(), vMyDynamicObjectContainer.end(), sortByZPosition());
-        
-        //edited by Mike, 20210528
-        //        for (int i=0; i<MAX_DYNAMIC_OBJECT; i++) {
-        for (int i=0; i<iVMyDynamicObjectContainerSize; i++) {
-            glPushMatrix();
-            vMyDynamicObjectContainer[i]->draw();
-            glPopMatrix();
-        }
-*/
+        /* //removed by Mike, 20210613
+         //added by Mike, 20210519
+         drawGridWithZAxis();
+         
+         //added by Mike, 20210521
+         //close glRotate
+         glRotatef(-8, 1.0f, 0.0f, 0.0f);
+         
+         //added by Mike, 20210521
+         //z-sort, i.e. auto-draw objects based on z position;
+         //objects with higher z positions are auto-drawn first;
+         //these are objects at the back of those that have lower z positions
+         //MyDynamicObject *myDynamicObjectContainerSorted[MAX_DYNAMIC_OBJECT];
+         //std::vector<MyDynamicObject*> v;
+         //added by Mike, 20210509
+         //		std::sort(vMyDynamicObjectContainer.begin(), vMyDynamicObjectContainer.end(), sortByZPosition());
+         
+         //added by Mike, 20210528
+         int iVMyDynamicObjectContainerSize = vMyDynamicObjectContainer.size();
+         //added by Mike, 20210528
+         glMatrixMode(GL_PROJECTION);
+         glLoadIdentity();
+         
+         glMatrixMode(GL_MODELVIEW);
+         glLoadIdentity();
+         
+         //added by Mike, 20210521
+         //z-sort, i.e. auto-draw objects based on z position;
+         //objects with higher z positions are auto-drawn first;
+         //these are objects at the back of those that have lower z positions
+         //MyDynamicObject *myDynamicObjectContainerSorted[MAX_DYNAMIC_OBJECT];
+         //std::vector<MyDynamicObject*> v;
+         //added by Mike, 20210509
+         //		std::sort(vMyDynamicObjectContainer.begin(), vMyDynamicObjectContainer.end(), sortByZPosition());
+         
+         //edited by Mike, 20210528
+         //        for (int i=0; i<MAX_DYNAMIC_OBJECT; i++) {
+         for (int i=0; i<iVMyDynamicObjectContainerSize; i++) {
+         glPushMatrix();
+         vMyDynamicObjectContainer[i]->draw();
+         glPopMatrix();
+         }
+         */
     }
 }
 
@@ -3108,11 +3135,11 @@ void OpenGLCanvas::update()
         //added by Mike, 20210206
         myPilot->update(1); //dt
         myPilotPartner->update(1); //added by Mike, 20210530
-
+        
         //added by Mike, 20210613
         myPilotPlayer2->update(1);
         myPilotPlayer2Partner->update(1);
-
+        
         
         /* //edited by Mike, 20210604
          //added by Mike, 20210530
@@ -3153,30 +3180,29 @@ void OpenGLCanvas::update()
         //TO-DO: -update: start ball position during reset
         
         //TO-DO: -add: bounce ball up vertically if hit bottom part that is not goal tile
-
+        
         //TO-DO: -put: set of instructions in a function method
-                
+        
         
         //added by Mike, 20210606
         //TO-DO: -update: this
         float fMaxWindowWidthForPilot=580.0f;
         float fMaxWindowHeightForPilot=560.0f; //added by Mike, 20210606
-
+        
         //added by Mike, 20210608
         //TO-DO: -verify: set to reset if outside Window, instead of bounceFromWindowWall
         
         //added by Mike, 20210607
         //TO-DO: -add: arrow up to identify x-axis position when ball is already outside window
-/* //edited by Mike, 20210613
-        if ((myBall->getX() < 0.0f) ||
-        	  (myBall->getX()+myBall->getWidthAsPixel()  > fMaxWindowWidthForPilot)) {
-
-//        	myBall->updateDirection();
+        /* //edited by Mike, 20210613
+         if ((myBall->getX() < 0.0f) ||
+         (myBall->getX()+myBall->getWidthAsPixel()  > fMaxWindowWidthForPilot)) {
+         //        	myBall->updateDirection();
         	myBall->bounceFromWindowWall();
         	
         	myBall->setThrust(12.0f);
-        }
-*/
+         }
+         */
         if ((myBall->getX() < 0.0f) ||
             (myBall->getX()+myBall->getWidthAsPixel()  > fMaxWindowWidthForPilot)) {
             myBall->reset();
@@ -3184,20 +3210,20 @@ void OpenGLCanvas::update()
             //added by Mike, 20210613
             //TO-DO: -add: transition pause
         }
-
-				//TO-DO: -add: reset, if myBall->getZ() < 0.0f
-//        if ((myBall->getY() < 0.0f) ||
-				//NOT fMaxWindowWidthForPilot
-//				printf("myWindowHeightAsPixel: %i",myWindowHeightAsPixel);
-					//note: myWindowHeightAsPixel=640
-//        if (myBall->getYAsPixel()+myBall->getHeightAsPixel() > myWindowHeightAsPixel) {        
-				//TO-DO: -add: animal as defender
-        if (myBall->getYAsPixel()+myBall->getHeightAsPixel() > 600) {        
-//        	myBall->updateDirection();
-        	myBall->bounceFromWindowWall();        	
-        	myBall->setThrust(16.0f);
+        
+        //TO-DO: -add: reset, if myBall->getZ() < 0.0f
+        //        if ((myBall->getY() < 0.0f) ||
+        //NOT fMaxWindowWidthForPilot
+        //				printf("myWindowHeightAsPixel: %i",myWindowHeightAsPixel);
+        //note: myWindowHeightAsPixel=640
+        //        if (myBall->getYAsPixel()+myBall->getHeightAsPixel() > myWindowHeightAsPixel) {
+        //TO-DO: -add: animal as defender
+        if (myBall->getYAsPixel()+myBall->getHeightAsPixel() > 600) {
+            //        	myBall->updateDirection();
+            myBall->bounceFromWindowWall();
+            myBall->setThrust(16.0f);
         }
-
+        
         
         //added by Mike, 20210605
         //note: horizontal scroll
@@ -3210,7 +3236,7 @@ void OpenGLCanvas::update()
         //        else if (myPilot->getX()+myPilot->getStepX() > 600.0f) { //max movement with set window width
         //        else if (myPilot->getX()+myPilot->getWidthAsPixel()+myPilot->getStepX() > 600.0f) { //max movement with set window width
         //edited by Mike, 20210606
-//        else if (myPilot->getX()+myPilot->getWidthAsPixel() > fMaxWindowWidthForPilot) { //max movement with set
+        //        else if (myPilot->getX()+myPilot->getWidthAsPixel() > fMaxWindowWidthForPilot) { //max movement with set
         else if (myPilot->getX()+myPilot->getWidthAsPixel() > fMaxWindowWidthForPilot/2) { //max movement with set
             //        	myPilot->setXPos(600.0f-myPilot->getStepX());
             //edited by Mike, 20210606
@@ -3222,7 +3248,7 @@ void OpenGLCanvas::update()
         if (myPilot->getZ()+myPilot->getHeightAsPixel() > fMaxWindowHeightForPilot) { //max movement with set
             myPilot->setZPos(fMaxWindowHeightForPilot-myPilot->getHeightAsPixel());
         }
-
+        
         //added by Mike, 20210606
         if (myPilot->getZ() < fMaxWindowHeightForPilot/2-myPilot->getHeightAsPixel()) { //max movement with set
             myPilot->setZPos(fMaxWindowHeightForPilot/2-myPilot->getHeightAsPixel());
@@ -3246,31 +3272,31 @@ void OpenGLCanvas::update()
             myPilotPartner->setXPos(0.0f);
         }
         /* //removed by Mike, 20210606
-        else if (myPilotPartner->getX()+myPilotPartner->getWidthAsPixel() > fMaxWindowWidthForPilot) { //max movement with set window width
-            myPilotPartner->setXPos(fMaxWindowWidthForPilot-myPilotPartner->getWidthAsPixel());
-        }
-*/
-        	//added by Mike, 20210606
-         else {
-        	myPilotPartner->setXPos(myPilot->getX()+100.0f);
+         else if (myPilotPartner->getX()+myPilotPartner->getWidthAsPixel() > fMaxWindowWidthForPilot) { //max movement with set window width
+         myPilotPartner->setXPos(fMaxWindowWidthForPilot-myPilotPartner->getWidthAsPixel());
          }
+         */
+        //added by Mike, 20210606
+        else {
+            myPilotPartner->setXPos(myPilot->getX()+100.0f);
+        }
         
         
-//        printf("myPilotPlayer2->getX: %f>>",myPilotPlayer2->getX());
+        //        printf("myPilotPlayer2->getX: %f>>",myPilotPlayer2->getX());
         //myPilotPlayer2->setXPos(myPilot->getX()+320.0f+100.0f);
         
         if (myPilotPlayer2->getX() < 0.0f) {
-//        if (myPilot->getX() <= 0.0f) {
+            //        if (myPilot->getX() <= 0.0f) {
             myPilotPlayer2->setXPos(0.0f);
         }
         else if (myPilotPlayer2->getX()+myPilotPlayer2->getWidthAsPixel() > fMaxWindowWidthForPilot) { //max movement with set window width
-//        else if (myPilot->getX()+myPilot->getWidthAsPixel() >= 580.0f) {
+            //        else if (myPilot->getX()+myPilot->getWidthAsPixel() >= 580.0f) {
             //TO-DO: -reverify: cause of delay when moving to the left by pressing KEY_A
             myPilotPlayer2->setXPos(fMaxWindowWidthForPilot-myPilotPlayer2->getWidthAsPixel());
         }
         else {
             //edited by Mike, 20210606
-//            myPilotPlayer2->setXPos(myPilot->getX()+320.0f+100.0f);
+            //            myPilotPlayer2->setXPos(myPilot->getX()+320.0f+100.0f);
             if (myPilot->getX() <= 0.0f) {
                 //edited by Mike, 20210606
                 if (myPilotPlayer2->getX() < myPilot->getX()+320.0f) {//+100.0f) {
@@ -3283,35 +3309,34 @@ void OpenGLCanvas::update()
             }
             //added by Mike, 20210606
             //note: 320.0f+100.0f distance between myPilot and myPilotPlayer2
-////            else if (myPilot->getX() < myPilotPlayer2->getX()){//-320.0f-100.0f) {
-////                if (myKeysDown[KEY_A]) {
-////                    myPilotPlayer2->move(KEY_A);
-////                }
-////            }
+            ////            else if (myPilot->getX() < myPilotPlayer2->getX()){//-320.0f-100.0f) {
+            ////                if (myKeysDown[KEY_A]) {
+            ////                    myPilotPlayer2->move(KEY_A);
+            ////                }
+            ////            }
             else {
                 //edited by Mike, 20210606
-//                myPilotPlayer2->setXPos(myPilot->getX()+320.0f+100.0f);
-/*
-                if (myPilotPlayer2->getX() > myPilot->getX()) {//+320.0f+100.0f) {//+100.0f) {
-                    if (myKeysDown[KEY_D]) {
-                        myPilotPlayer2->move(KEY_D);
-                    }
-                }
-
-                //edited by Mike, 20210606
-                //TO-DO: -reverify: this
-                else*/
-/*
-                if (myPilotPlayer2->getX() < myPilot->getX()+320.0f) {//+100.0f) {//+100.0f) {
-//                if (myPilotPlayer2->getX() < 320.0f+100.0f) {
-                    if (myKeysDown[KEY_D]) {
-                        myPilotPlayer2->move(KEY_D);
-                    }
-                }
-                else {
-                    myPilotPlayer2->setXPos(myPilot->getX()+320.0f);//+100.0f);
-                }
-*/
+                //                myPilotPlayer2->setXPos(myPilot->getX()+320.0f+100.0f);
+                /*
+                 if (myPilotPlayer2->getX() > myPilot->getX()) {//+320.0f+100.0f) {//+100.0f) {
+                 if (myKeysDown[KEY_D]) {
+                 myPilotPlayer2->move(KEY_D);
+                 }
+                 }
+                 //edited by Mike, 20210606
+                 //TO-DO: -reverify: this
+                 else*/
+                /*
+                 if (myPilotPlayer2->getX() < myPilot->getX()+320.0f) {//+100.0f) {//+100.0f) {
+                 //                if (myPilotPlayer2->getX() < 320.0f+100.0f) {
+                 if (myKeysDown[KEY_D]) {
+                 myPilotPlayer2->move(KEY_D);
+                 }
+                 }
+                 else {
+                 myPilotPlayer2->setXPos(myPilot->getX()+320.0f);//+100.0f);
+                 }
+                 */
                 if (myPilotPlayer2->getX() < myPilot->getX()+320.0f+100.0f) {//+100.0f) {
                     //                if (myPilotPlayer2->getX() < 320.0f+100.0f) {
                     if (myKeysDown[KEY_D]) {
@@ -3320,7 +3345,7 @@ void OpenGLCanvas::update()
                     else if (myKeysDown[KEY_A]) {
                         myPilotPlayer2->move(KEY_A);
                     }
-
+                    
                 }
                 else {
                     //edited by Mike, 20210606
@@ -3329,8 +3354,8 @@ void OpenGLCanvas::update()
             }
             //myPilotPlayer2->setXPos(myPilot->getX()+320.0f+100.0f);
         }
-
-//--
+        
+        //--
         
         if (myPilotPlayer2Partner->getX() < 0.0f) {
             myPilotPlayer2Partner->setXPos(0.0f);
@@ -3398,38 +3423,36 @@ void OpenGLCanvas::update()
         //        myPilotPlayer2Partner->setXPos(myPilotPlayer2->getX()-100.0f);
         
         //added by Mike, 20210606; edited by Mike, 20210606
-//        myPilotPlayer2->setCurrentFacingState(FACING_LEFT);
+        //        myPilotPlayer2->setCurrentFacingState(FACING_LEFT);
         //auto-face to ball position
         //edited by Mike, 20210606
-/*
-        if (myPilot->getX() < myBall->getX()) {
-            myPilot->setCurrentFacingState(FACING_RIGHT);
-        }
-        else {
-            myPilot->setCurrentFacingState(FACING_LEFT);
-        }
-
-        if (myPilotPartner->getX() < myBall->getX()) {
-            myPilotPartner->setCurrentFacingState(FACING_RIGHT);
-        }
-        else {
-            myPilotPartner->setCurrentFacingState(FACING_LEFT);
-        }
-
-        if (myPilotPlayer2->getX() < myBall->getX()) {
-            myPilotPlayer2->setCurrentFacingState(FACING_RIGHT);
-        }
-        else {
-            myPilotPlayer2->setCurrentFacingState(FACING_LEFT);
-        }
-        
-        if (myPilotPlayer2Partner->getX() < myBall->getX()) {
-            myPilotPlayer2Partner->setCurrentFacingState(FACING_RIGHT);
-        }
-        else {
-            myPilotPlayer2Partner->setCurrentFacingState(FACING_LEFT);
-        }
-*/
+        /*
+         if (myPilot->getX() < myBall->getX()) {
+         myPilot->setCurrentFacingState(FACING_RIGHT);
+         }
+         else {
+         myPilot->setCurrentFacingState(FACING_LEFT);
+         }
+         if (myPilotPartner->getX() < myBall->getX()) {
+         myPilotPartner->setCurrentFacingState(FACING_RIGHT);
+         }
+         else {
+         myPilotPartner->setCurrentFacingState(FACING_LEFT);
+         }
+         if (myPilotPlayer2->getX() < myBall->getX()) {
+         myPilotPlayer2->setCurrentFacingState(FACING_RIGHT);
+         }
+         else {
+         myPilotPlayer2->setCurrentFacingState(FACING_LEFT);
+         }
+         
+         if (myPilotPlayer2Partner->getX() < myBall->getX()) {
+         myPilotPlayer2Partner->setCurrentFacingState(FACING_RIGHT);
+         }
+         else {
+         myPilotPlayer2Partner->setCurrentFacingState(FACING_LEFT);
+         }
+         */
         if (myPilot->getX()+myPilot->getWidthAsPixel() >= myBall->getX()) {
             myPilot->setCurrentFacingState(FACING_LEFT);
         }
@@ -3497,7 +3520,7 @@ void OpenGLCanvas::update()
         //        if (myBall->getY()+myBall->getHeight() > 420.0f) {
         //        if (myBall->getY()+myBall->getHeight() > 640.0f) {
         //removed by Mike, 20210613
-//        printf("myBall y and height: %f\n",myBall->getY()+myBall->getHeight());
+        //        printf("myBall y and height: %f\n",myBall->getY()+myBall->getHeight());
         
         //edited by Mike, 20210530
         //        if (myBall->getY()+myBall->getHeight() > 512.0f) {
@@ -3505,16 +3528,16 @@ void OpenGLCanvas::update()
         //        if (myBall->getY()+myBall->getHeight() > 640.0f) {
         //        if (myBall->getYAsPixel()+myBall->getHeightAsPixel() > 320.0f) {
         //edited by Mike, 20210606
-//        if (myBall->getYAsPixel()+myBall->getHeightAsPixel() > 512.0f) {
-//removed by Mike, 20210606
-/*	//update: this to identify if myBall hits Tile, e.g. "G"
-        if (myBall->getYAsPixel()+myBall->getHeightAsPixel() > 560.0f) {
-            printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>END!\n");
-            //added by Mike, 20210606
-            //TO-DO: -update: this instructions in this function after successful goal
-            myBall->setEnd();
-        }
-*/        
+        //        if (myBall->getYAsPixel()+myBall->getHeightAsPixel() > 512.0f) {
+        //removed by Mike, 20210606
+        /*	//update: this to identify if myBall hits Tile, e.g. "G"
+         if (myBall->getYAsPixel()+myBall->getHeightAsPixel() > 560.0f) {
+         printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>END!\n");
+         //added by Mike, 20210606
+         //TO-DO: -update: this instructions in this function after successful goal
+         myBall->setEnd();
+         }
+         */
         
         //added by Mike, 20210517; removed by Mike, 202105017
         /*
@@ -4081,13 +4104,13 @@ void OpenGLCanvas::update()
                         myBeam[i]->move(rotationAngle+4, beamPosXyz);
                     }
                     else {
-                        myBeam[i]->move(rotationAngle, beamPosXyz);					
+                        myBeam[i]->move(rotationAngle, beamPosXyz);
                     }
                     
                     //		        sound->play_sound_clip(beam);
                     return;
                 }
-            }			
+            }
         }
         
         //edited by Mike, 20201015
@@ -4120,20 +4143,20 @@ void OpenGLCanvas::update()
                     //edited by Mike, 20201225
                     //              myBeam[i]->move(rotationAngle, myRobotShip->getXYZPos());
                     //note: when held, beam particles move in waves
-                    //note: move beams based on direction where robot faces 
+                    //note: move beams based on direction where robot faces
                     if (i%2==0) {
                         //                	myBeam[i]->move(rotationAngle+4, myRobotShip->getXYZPos());
                         myBeam[i]->move(rotationAngle+4, beamPosXyz);
                     }
                     else {
-                        //                	myBeam[i]->move(rotationAngle, myRobotShip->getXYZPos());					
-                        myBeam[i]->move(rotationAngle, beamPosXyz);					
+                        //                	myBeam[i]->move(rotationAngle, myRobotShip->getXYZPos());
+                        myBeam[i]->move(rotationAngle, beamPosXyz);
                     }
                     
                     //		        sound->play_sound_clip(beam);
                     return;
                 }
-            }			
+            }
         }
         
         //edited by Mike, 20201015
@@ -4173,14 +4196,14 @@ void OpenGLCanvas::update()
                     //edited by Mike, 20201225
                     //              myBeam[i]->move(rotationAngle, myRobotShip->getXYZPos());
                     //note: when held, beam particles move in waves
-                    //note: move beams based on direction where robot faces 
+                    //note: move beams based on direction where robot faces
                     if (i%2==0) {
                         //                	myBeam[i]->move(rotationAngle+4, myRobotShip->getXYZPos());
                         myBeam[i]->move(rotationAngle+4, beamPosXyz);
                     }
                     else {
-                        //                	myBeam[i]->move(rotationAngle, myRobotShip->getXYZPos());					
-                        myBeam[i]->move(rotationAngle, beamPosXyz);					
+                        //                	myBeam[i]->move(rotationAngle, myRobotShip->getXYZPos());
+                        myBeam[i]->move(rotationAngle, beamPosXyz);
                     }
                     
                     //		        sound->play_sound_clip(beam);
@@ -4203,12 +4226,12 @@ void OpenGLCanvas::update()
     }
     else if (currentState==GAMEOVER_SCREEN)
     {
-        /*		//removed by Mike, 20200929		 
+        /*		//removed by Mike, 20200929
          if(myKeysDown[KEY_SPACE] == TRUE)
          {
          gameReset();
          }
-         */		
+         */
     }
 }
 
@@ -4220,7 +4243,7 @@ void OpenGLCanvas::gameReset(){
      rest=MAX_LIFE;
      resetDynamicObjects();
      changeState(GAME_SCREEN);
-     */	
+     */
 }
 
 void OpenGLCanvas::resetDynamicObjects(){
@@ -4229,20 +4252,20 @@ void OpenGLCanvas::resetDynamicObjects(){
      myAsteroid[1]->reset(-15,15); //TOP LEFT
      myAsteroid[2]->reset(-15,-15); //BOTTOM LEFT
      myAsteroid[3]->reset(15,-15); //BOTTOM RIGHT
-     for (i=4; i<12; i++) {   
+     for (i=4; i<12; i++) {
      myAsteroid[i]->changeState(CHILD_STATUS);
      myAsteroid[i]->setCollidable(false);
      }
-     for (i=12; i<MAX_ASTEROID; i++) {   
+     for (i=12; i<MAX_ASTEROID; i++) {
      myAsteroid[i]->changeState(GRANDCHILD_STATUS);
      myAsteroid[i]->setCollidable(false);
      }
-     //for (i=0; i<MAX_ASTEROID; i++)   
+     //for (i=0; i<MAX_ASTEROID; i++)
      numOfAsteroidsLeft=MAX_ASTEROID;
      
      for (i=0; i<MAX_BEAMS; i++)
      myBeam[i]->changeState(HIDDEN_STATE);
-     */  
+     */
 }
 
 void OpenGLCanvas::addScore(int s)
@@ -4256,7 +4279,7 @@ void OpenGLCanvas::addScore(int s)
      scoreBeforeBonus-=REQUIRED_POINTS_FOR_BONUS;
      }
      numOfAsteroidsLeft--;
-     */	 
+     */
 }
 void OpenGLCanvas::loseLife()
 {
@@ -4272,18 +4295,18 @@ void OpenGLCanvas::loseLife()
      fclose(out);
      changeState(HIGHSCORE_SCREEN);
      sound->play_sound_clip(title);
-     }     
+     }
      else changeState(GAMEOVER_SCREEN);
      }
      */
 }
 void OpenGLCanvas::changeState(int s)
 {
-    currentState=s;                  
+    currentState=s;
 }
 
 //added by Mike, 20210412
-void OpenGLCanvas::drawKahonWithTextureForVerification() {	
+void OpenGLCanvas::drawKahonWithTextureForVerification() {
     glColor3f(1.0f, 1.0f, 1.0f); // white
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, KAHON_TEXTURE);
@@ -4292,7 +4315,7 @@ void OpenGLCanvas::drawKahonWithTextureForVerification() {
     //added by Mike, 20210408
     //TO-DO: -reverify: http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-9-vbo-indexing/
     //displayed output using 3D object from Blender3D (version 2.82)
-    //set with 2 triangles to create quad not yet identified 
+    //set with 2 triangles to create quad not yet identified
     
     //output from Blender3D  2.82
     
@@ -4302,7 +4325,7 @@ void OpenGLCanvas::drawKahonWithTextureForVerification() {
     
     //added by Mike, 20210409
     //note: texture coordinates anchor bottom-left
-    //ship controls to fire beams, inverted x and z-axes 
+    //ship controls to fire beams, inverted x and z-axes
     
     //added by Mike, 20210410
     //cube's bottom face; image texture, i.e. imageSpriteExampleMikeWithoutBG.tga
@@ -4342,23 +4365,23 @@ void OpenGLCanvas::drawKahonWithTextureForVerification() {
      glTexCoord2f(0.375000,0.000000);
      glVertex3f(-1.000000,-1.000000,1.000000);
      */
-    //triangle#4 //bottom face left part	
+    //triangle#4 //bottom face left part
     glNormal3f(0.0000,-1.0000,0.0000);
     //edited by Mike, 20210410
     //	glTexCoord2f(0.375000,0.500000);
-    glTexCoord2f(0.0,0.0);		
+    glTexCoord2f(0.0,0.0);
     glVertex3f(1.000000,-1.000000,-1.000000);
     
     glNormal3f(0.0000,-1.0000,0.0000);
-    //edited by Mike, 20210410	
+    //edited by Mike, 20210410
     //	glTexCoord2f(0.125000,0.750000);
-    glTexCoord2f(1.0,1.0);	
+    glTexCoord2f(1.0,1.0);
     glVertex3f(-1.000000,-1.000000,1.000000);
     
     glNormal3f(0.0000,-1.0000,0.0000);
-    //edited by Mike, 20210410	
+    //edited by Mike, 20210410
     //	glTexCoord2f(0.125000,0.500000);
-    glTexCoord2f(0.0,1.0);	
+    glTexCoord2f(0.0,1.0);
     glVertex3f(-1.000000,-1.000000,-1.000000);
     /*
      //triangle#5 //right face bottom part
@@ -4377,19 +4400,19 @@ void OpenGLCanvas::drawKahonWithTextureForVerification() {
      //now anchor top-left
      //clockwise
      glNormal3f(0.0000,0.0000,-1.0000);
-     //edited by Mike, 20210409	
+     //edited by Mike, 20210409
      //	glTexCoord2f(0.625000,0.250000);
-     glTexCoord2f(0.0,0.0);	
+     glTexCoord2f(0.0,0.0);
      glVertex3f(-1.000000,1.000000,-1.000000); //A1
      glNormal3f(0.0000,0.0000,-1.0000);
-     //edited by Mike, 20210409	
+     //edited by Mike, 20210409
      //	glTexCoord2f(0.375000,0.500000);
      glTexCoord2f(1.0,1.0);
      glVertex3f(1.000000,-1.000000,-1.000000); //B1
      glNormal3f(0.0000,0.0000,-1.0000);
-     //edited by Mike, 20210409	
+     //edited by Mike, 20210409
      //	glTexCoord2f(0.375000,0.250000);
-     glTexCoord2f(0.0,1.0);	
+     glTexCoord2f(0.0,1.0);
      glVertex3f(-1.000000,-1.000000,-1.000000); //C1
      //triangle#7 //top face left part
      glNormal3f(0.0000,1.0000,0.0000);
@@ -4421,24 +4444,24 @@ void OpenGLCanvas::drawKahonWithTextureForVerification() {
      glNormal3f(-1.0000,0.0000,0.0000);
      glTexCoord2f(0.375000,0.250000);
      glVertex3f(-1.000000,-1.000000,-1.000000);
-     */		
+     */
     //triangle#10 //bottom face right part
     glNormal3f(0.0000,-1.0000,0.0000);
-    //edited by Mike, 20210410		
+    //edited by Mike, 20210410
     //	glTexCoord2f(0.375000,0.500000);
-    glTexCoord2f(0.0,0.0);		
+    glTexCoord2f(0.0,0.0);
     glVertex3f(1.000000,-1.000000,-1.000000);
     
     glNormal3f(0.0000,-1.0000,0.0000);
-    //edited by Mike, 20210410		
+    //edited by Mike, 20210410
     //	glTexCoord2f(0.375000,0.750000);
-    glTexCoord2f(1.0,0.0);	
+    glTexCoord2f(1.0,0.0);
     glVertex3f(1.000000,-1.000000,1.000000);
     
     glNormal3f(0.0000,-1.0000,0.0000);
-    //edited by Mike, 20210410		
+    //edited by Mike, 20210410
     //	glTexCoord2f(0.125000,0.750000);
-    glTexCoord2f(1.0,1.0);	
+    glTexCoord2f(1.0,1.0);
     glVertex3f(-1.000000,-1.000000,1.000000);
     
     /*
@@ -4453,14 +4476,14 @@ void OpenGLCanvas::drawKahonWithTextureForVerification() {
      glTexCoord2f(0.375000,0.750000);
      glVertex3f(1.000000,-1.000000,1.000000);
      */
-    /*	
-     //triangle#12 //back face right part	
+    /*
+     //triangle#12 //back face right part
      //blender output texture coordinates; origin/anchor bottom-left; counter-clockwise
      //note: glRotatef(180, 1.0f, 0.0f, 0.0f);
      //now anchor top-left
      //clockwise
      glNormal3f(0.0000,0.0000,-1.0000);
-     //edited by Mike, 20210409		
+     //edited by Mike, 20210409
      //	glTexCoord2f(0.625000,0.250000);
      glTexCoord2f(0.0,0.0);	
      glVertex3f(-1.000000,1.000000,-1.000000); //A2
