@@ -576,3 +576,9 @@ Naunawaan mo ha!<br/>
 ##### Reference: 幻想水滸伝 GENSO SUIKODEN
 --> 幻想 ("gensou"; illusion thought)<br/>
 --> Year 1995 1996 KONAMI; PlayStation the Best version; executed on PlayStation3 Machine
+
+### Part 18: 見習い (minarai; masdan, matuto, gawing atin)
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Automotive/UsbongCAD/Usbong3DTool/UsbongTextSystem/screenshots/usbongTextSystemPaalalaV20210626T1040.jpg" width="60%">
+<br/>
+--> Usbong Computer Aided Design (CAD): Text System<br/>
+
