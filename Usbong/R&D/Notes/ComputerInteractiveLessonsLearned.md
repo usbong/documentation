@@ -246,6 +246,26 @@ PA-N (pangalan ng iyong kaibigan)<br/>
 --> Mamamasdan ito sa mga gawain ng kanyang mga tauhan sa mataas at mababang rango.<br/> 
 --> Mamamasdan din ito sa daing ng mga mamamayan ng mga bayan na kabilang sa Empire.<br/>
 
+##### 1.3.2.2.4) Paraan sa pakikipaglaban
+--> ドラゴン ゾンビ ( dragon zombie )<br/>
+--> 自分の代わりに仲間を癒す。<br/>
+--> jibun no kawari ni nakama wo iyasu.<br/>
+--> Sa halip na ang sarili, hilumin ang mga partner sa pangkat.<br/>
+--> Hilumin ang isa't isa.<br/>
+<br/>
+--> いざになると、たとえば仲間が倒れそうになる等、おくすりが一個残っていても、、仲間を癒す。<br/>
+--> izani naruto, tatoeba nakama ga taoresouninarunado, okusuri ga ikko nokotteitemo, nakama wo iyasu.<br/>
+--> Kapag gipit na, e.g. tutumba na ang partner, kahit isa na lang ang natitira mong gamot, hilumin mo siya.<br/>
+<br/>
+--> 自分で癒せない。<br/>
+--> jibunde iyasenai<br/>
+--> Huwag hayaang hilumin niya ang sarili.<br/>
+<br/>
+--> <b>Paalala:</b> Bawat tauhan sa pangkat, may bilang ng mga gamit na maaaring dalhin.<br/>
+--> Maaaring magsama hanggang 6 na tao + ikaw + daigdig.<br/>
+--> May dagdag na tao mula 4 gawa ng daloy ng salaysay.<br/>
+--> <b>halimbawa:</b> May know-how ukol sa bangka na gagamitin upang makarating at makalabas ng Castillo sa lawa.<br/>
+
 ## 1.4) SONY Computer Entertainment Europe and Guerrilla
 ### 1.4.1) KillZone 2
 --> Choose role as Ingeniero (Engineer); Elite mode; less death count of being killed<br/>
