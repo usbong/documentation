@@ -257,7 +257,7 @@ PA-N (pangalan ng iyong kaibigan)<br/>
 --> Sa halip na ang sarili, hilumin ang mga partner sa pangkat.<br/>
 --> Hilumin ang isa't isa.<br/>
 
-##### 1.3.2.2.4.2) いざになると、たとえば仲間が倒れそうになった状態、おくすりが一個残っていても、、仲間を癒すこと。<br/>
+##### 1.3.2.2.4.2) いざになると、たとえば仲間が倒れそうになった状態、おくすりが一個残っていても、仲間を癒すこと。<br/>
 --> izani naruto, tatoeba nakama ga taoresouninatta joutai, okusuri ga ikko nokotteitemo, nakama wo iyasu koto.<br/>
 --> Kapag gipit na, e.g. tutumba na ang partner, kahit isa na lang ang natitira mong gamot, hilumin mo siya.<br/>
 
