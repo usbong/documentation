@@ -518,9 +518,9 @@ Text::Text(float xPos, float yPos, float zPos, float windowWidth, float windowHe
         //add *1.0f, to be myWindowHeight/(myWindowWidth*1.0f);
         //NOT myWindowHeight/myWindowWidth*1.0f;
         //edited by Mike, 20210628
-//        fMyWindowWidthAsPixelRatioToHeightPixel= 0.56222;
+        //        fMyWindowWidthAsPixelRatioToHeightPixel= 0.56222;
         fMyWindowWidthAsPixelRatioToHeightPixel= myWindowHeight/(myWindowWidth*1.0f);
-
+        
         //note: width value > height value
         //TO-DO: -add: auto-update
         //height: 768; width: 1366
@@ -782,7 +782,7 @@ void Text::drawTextBackgroundAsQuadWithTexture()
     //        glScalef(2.0f,2.0f,1.0f);
     //        glScalef(2.5f,4.0f,1.0f);
     //edited by Mike, 20210627
-//    glScalef(5.0f,4.0f,1.0f);
+    //    glScalef(5.0f,4.0f,1.0f);
     glScalef(5.0f,2.5f,1.0f);
     glTranslatef(0.0f, -0.1f, 0.0f);
     
@@ -816,26 +816,33 @@ void Text::drawTextBackgroundAsQuadWithTexture()
             1.0f //zFar; maximum
             );
     
-    //added by Mike, 20210626
-    //TO-DO: -reverify: this
-    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset), 0.0f, 0.0f);
+    //added by Mike, 20210626; removed by Mike, 20210628
+    //TO-DO: -reverify: this action
+//    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset), 0.0f, 0.0f);
     
     //auto-scale to Window Width to Height
     glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
-    //edited by Mike, 20210626
-//    glScalef(0.5f,0.5f,1.0f);
-		//edited by Mike, 20210628
-//    glScalef(0.3f,0.3f,1.0f);
-/*	//edited by Mike, 20210628
-    glScalef(0.25f,0.25f,1.0f);
+ 
+    //added by Mike, 20210628
+    //TO-DO: -reverify: instructions due to OK in macOS
+    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset)*fMyWindowWidthAsPixelRatioToHeightPixel, 0.0f, 0.0f);
     
-    //added by Mike, 20210626; removed by Mike, 20210628
-//    glTranslatef(-0.3f, fMyWindowWidthAsPixelRatioToHeightPixel+0.3f+0.3f, 0.0f);
-    glTranslatef(0.1f, 1.25f, 0.0f); //note: y-axis; inverted; +value goes down
-*/    
-    glScalef(0.26f,0.26f,1.0f);    
-    glTranslatef(0.1f, 1.22f, 0.0f); //note: y-axis; inverted; +value goes down
-
+    //edited by Mike, 20210626
+    //    glScalef(0.5f,0.5f,1.0f);
+    //edited by Mike, 20210628
+    //    glScalef(0.3f,0.3f,1.0f);
+    /*	//edited by Mike, 20210628
+     glScalef(0.25f,0.25f,1.0f);
+     
+     //added by Mike, 20210626; removed by Mike, 20210628
+     //    glTranslatef(-0.3f, fMyWindowWidthAsPixelRatioToHeightPixel+0.3f+0.3f, 0.0f);
+     glTranslatef(0.1f, 1.25f, 0.0f); //note: y-axis; inverted; +value goes down
+     */
+    glScalef(0.26f,0.26f,1.0f);
+    //edited by Mike, 20210628
+//    glTranslatef(0.1f, 1.22f, 0.0f); //note: y-axis; inverted; +value goes down
+    glTranslatef(0.26f, 1.1f, 0.0f); //note: y-axis; inverted; +value goes down
+    
     //font
     // select and enable texture FONT_TEXTURE
     glBindTexture(GL_TEXTURE_2D, FONT_TEXTURE);
