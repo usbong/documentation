@@ -122,11 +122,14 @@ UsbongUtils::~UsbongUtils()
 {
 }
 
-//added by Mike, 20210623
+//added by Mike, 20210623; edited by Mike, 20210628
+//void UsbongUtils::setWindowWidthHeight(float myWindowWidthAsPixelInput, float myWindowHeightAsPixelInput, float myWindowWidthAsPixelRatioToHeightPixelInput)
 void UsbongUtils::setWindowWidthHeight(float myWindowWidthAsPixelInput, float myWindowHeightAsPixelInput)
 {
     fMaxWindowWidth=myWindowWidthAsPixelInput;
     fMaxWindowHeight=myWindowHeightAsPixelInput;
+    
+//    fMyWindowWidthAsPixelRatioToHeightPixel=myWindowWidthAsPixelRatioToHeightPixelInput;
 }
 
 /*
