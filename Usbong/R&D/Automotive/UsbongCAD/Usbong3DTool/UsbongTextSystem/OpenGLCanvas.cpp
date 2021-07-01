@@ -1,5 +1,5 @@
 /*
- * Copyright 2020~2021 Usbong Social Systems, Inc.
+ * Copyright 2020~2021 SYSON, MICHAEL B.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,10 +12,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
+ * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20200926
- * @date updated: 20210626
+ * @date updated: 20210701
+ * @website address: http://www.usbong.ph
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -46,8 +47,13 @@
  *
  */
 
-//added by Mike, 20210513
-//TO-DO: -add: history list of line points, i.e. iStartPointX and iEndPointX, iStartPointY and iEndPointY
+//added by Mike, 20210701
+//note: reminded: of text system in select computer games, e.g. Dragon Quest,
+//during compile execution on Command Prompt, Terminal Window
+//where: compile output = executable file
+//note: text system technique reusable in tile-based map system
+//know-how of column and row technique in Maparaang Pagbibilang vital
+
 
 //TO-DO: -update: "Canvas" to "Engine"?
 //TO-DO: -update: this
@@ -76,6 +82,38 @@
 //added by Mike, 20201121
 #if defined(__APPLE__)
 #include <OpenGL/gl.h>
+
+//added by Mike, 20210625
+    //TO-DO: -reverify: this; draw instructions, e.g. in Text.cpp,
+    //auto-scales due to using vertex positions; not pixel positions;
+    //even without Window Width and Height values
+    myWindowWidthAsPixel = myWindowWidthAsPixelInput;
+    myWindowHeightAsPixel = myWindowHeightAsPixelInput;
+    
+    //added by Mike, 20210701
+    fMyWindowWidthAsPixelRatioToHeightPixel=1.0f;
+    iMyWindowWidthAsPixelOffset=0;
+    
+    if (myWindowWidthAsPixel!=myWindowHeightAsPixel) {
+        //added by Mike, 20210626; edited by Mike, 20210701
+//        fMyWindowWidthAsPixelRatioToHeightPixel=myWindowHeightAsPixelInput/myWindowWidthAsPixel;        
+        fMyWindowWidthAsPixelRatioToHeightPixel= myWindowHeightAsPixel/(myWindowWidthAsPixel*1.0f);
+
+        //note: width value > height value
+        //TO-DO: -add: auto-update
+        //height: 768; width: 1366
+        iMyWindowWidthAsPixelOffset=(myWindowWidthAsPixel-myWindowHeightAsPixel)/2;        
+        
+        
+        myWindowWidthAsPixel = myWindowHeightAsPixelInput; //myWindowWidthAsPixelInput;
+        //    	myWindowHeightAsPixel = myWindowHeightAsPixelInput;
+        
+        /*
+         printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> USBONG");
+         printf("myWindowWidthAsPixelInput: %f; myWindowHeightAsPixelInput: %f\n",myWindowWidthAsPixelInput,myWindowHeightAsPixelInput);
+         printf("myWindowWidthAsPixel: %f; myWindowHeightAsPixel: %f\n",myWindowWidthAsPixel,myWindowHeightAsPixel);
+         */
+    }
 #include <OpenGL/glu.h>
 #include <GLUT/glut.h> //added by Mike, 20210623
 #else
@@ -766,7 +804,10 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
             stepHistoryList[iCount][iCountPoint]=0;
         }
     }
-    stepHistoryListCount=0;
+    
+    //edited by Mike, 20210701
+//    stepHistoryListCount=0;
+    stepHistoryListCount=1;
     
     return true;
 }
@@ -1709,8 +1750,9 @@ void OpenGLCanvas::render()
      */
     
     
-    /* //removed by Mike, 20210524
-     //added by Mike, 20210524
+//added by Mike, 20210701
+glPushMatrix();     
+  //added by Mike, 20210524
      //notes: vertical and horizontal lines in addition to those at center
      //coordinate system guide/map; pixel positions
      iRowCountMax=10;
@@ -1719,22 +1761,36 @@ void OpenGLCanvas::render()
      for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
    		// Draw a Green Line top-left origin
    		glBegin(GL_LINES);
-     glColor3f(0.0f, 0.0f, 1.0f); // Blue
-     
+//     glColor3f(0.0f, 0.0f, 1.0f); // Blue
+     glColor3f(0.0f, 1.0f, 0.0f); // Green
+
+/*   //edited by Mike, 20210701     
      glVertex2f(-1.0f, 2.0f/iRowCountMax*iRowCount*iNumberSign);    // x, y
      //TO-DO: -add: auto-compute myWindowWidth
      glVertex2f(1.0f, 2.0f/iRowCountMax*iRowCount*iNumberSign);
+*/
+     	glVertex2f(-1.0f*2, 2.0f/iRowCountMax*iRowCount*iNumberSign);    // x, y
+     	//TO-DO: -add: auto-compute myWindowWidth
+     	glVertex2f(1.0f*2, 2.0f/iRowCountMax*iRowCount*iNumberSign);
+     	
    		glEnd();
      }
      iNumberSign=-1;
      for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
    		// Draw a Green Line top-left origin
    		glBegin(GL_LINES);
-     glColor3f(0.0f, 0.0f, 1.0f); // Blue
-     
+//     glColor3f(0.0f, 0.0f, 1.0f); // Blue
+     glColor3f(0.0f, 1.0f, 0.0f); // Green
+
+/*   //edited by Mike, 20210701
      glVertex2f(-1.0f, 2.0f/iRowCountMax*iRowCount*iNumberSign);    // x, y
      //TO-DO: -add: auto-compute myWindowWidth
      glVertex2f(1.0f, 2.0f/iRowCountMax*iRowCount*iNumberSign);
+*/     
+     glVertex2f(-1.0f*2, 2.0f/iRowCountMax*iRowCount*iNumberSign);    // x, y
+     //TO-DO: -add: auto-compute myWindowWidth
+     glVertex2f(1.0f*2, 2.0f/iRowCountMax*iRowCount*iNumberSign);
+
    		glEnd();
      }
      
@@ -1765,43 +1821,53 @@ void OpenGLCanvas::render()
      }
      //reset to 12 from 10
      iColumnCountMax=12;
-     */
-    
-    
-    
-    
-    //	printf("myMouseActionDown[MOUSE_LEFT_BUTTON]: %i\n",myMouseActionDown[MOUSE_LEFT_BUTTON]);
-    
-    if (myMouseActionDown[MOUSE_LEFT_BUTTON]==FALSE) {
-    }
-    else {
-        //added by Mike, 20210514
-        //note: greater than 0, due to blank start is @zero
-        if ((stepHistoryListCount>0) && (stepHistoryListCount<MAX)) {
-            glBegin(GL_LINES);
-            //glColor3f(0.0f,0.0f,0.0f); //black
-            glColor3f(0.6f,0.6f,0.6f); //bright black
-            
-            glVertex2f(myUsbongUtils->autoConvertFromPixelToVertexPointX(iStartPointX), myUsbongUtils->autoConvertFromPixelToVertexPointY(iStartPointY));
-            glVertex2f(myUsbongUtils->autoConvertFromPixelToVertexPointX(iEndPointX), myUsbongUtils->autoConvertFromPixelToVertexPointY(iEndPointY));
-            glEnd();
-        }
-    }
-    
-    //added by Mike, 20210513
-    glBegin(GL_LINES);
-    //edited by Mike, 20210514
-    //		glColor3f(1.0f,0.0f,0.0f); //red
-    //sky blue color; brighter
-    //		glColor3f(0.69f, 0.84f, 1.0f);
-    glColor3f(0.0f,0.0f,0.0f); //black
-    
-    for (int iCount=0; iCount<stepHistoryListCount; iCount++)
-    {
-        glVertex2f(myUsbongUtils->autoConvertFromPixelToVertexPointX(stepHistoryList[iCount][0]), myUsbongUtils->autoConvertFromPixelToVertexPointY(stepHistoryList[iCount][1]));
-        glVertex2f(myUsbongUtils->autoConvertFromPixelToVertexPointX(stepHistoryList[iCount][2]), myUsbongUtils->autoConvertFromPixelToVertexPointY(stepHistoryList[iCount][3]));
-    }
-    glEnd();
+
+//added by Mike, 20210701
+glPopMatrix();     
+     
+//    glScalef(1.0f,1.0f,1.0f);
+     
+    //added by Mike, 20210701
+    glPushMatrix();
+	//    glTranslatef(-1.0f-2.0f/iRowCountMax*iRowCount, 0.0f, 0.0f);
+//    	glTranslatef(-1.0f+2.0f/iRowCountMax*1, 0.0f, 0.0f);
+			//TO-DO: -reverify: cause of +0.05f
+    	glTranslatef(-1.0f+2.0f/iRowCountMax*1+0.05f, 0.0f, 0.0f);
+            	
+    	//	printf("myMouseActionDown[MOUSE_LEFT_BUTTON]: %i\n",myMouseActionDown[MOUSE_LEFT_BUTTON]);
+    	
+    	if (myMouseActionDown[MOUSE_LEFT_BUTTON]==FALSE) {
+    	}
+    	else {
+        	//added by Mike, 20210514
+        	//note: greater than 0, due to blank start is @zero
+        	if ((stepHistoryListCount>0) && (stepHistoryListCount<MAX)) {
+            	glBegin(GL_LINES);
+            	//glColor3f(0.0f,0.0f,0.0f); //black
+            	glColor3f(0.6f,0.6f,0.6f); //bright black
+            	
+            	glVertex2f(myUsbongUtils->autoConvertFromPixelToVertexPointX(iStartPointX), myUsbongUtils->autoConvertFromPixelToVertexPointY(iStartPointY));
+            	glVertex2f(myUsbongUtils->autoConvertFromPixelToVertexPointX(iEndPointX), myUsbongUtils->autoConvertFromPixelToVertexPointY(iEndPointY));
+            	glEnd();
+        	}
+    	}
+    	
+    	//added by Mike, 20210513
+    	glBegin(GL_LINES);
+    	//edited by Mike, 20210514
+    	//		glColor3f(1.0f,0.0f,0.0f); //red
+    	//sky blue color; brighter
+    	//		glColor3f(0.69f, 0.84f, 1.0f);
+    	glColor3f(0.0f,0.0f,0.0f); //black
+    	
+    	for (int iCount=0; iCount<stepHistoryListCount; iCount++)
+    	{
+        	glVertex2f(myUsbongUtils->autoConvertFromPixelToVertexPointX(stepHistoryList[iCount][0]), myUsbongUtils->autoConvertFromPixelToVertexPointY(stepHistoryList[iCount][1]));
+        	glVertex2f(myUsbongUtils->autoConvertFromPixelToVertexPointX(stepHistoryList[iCount][2]), myUsbongUtils->autoConvertFromPixelToVertexPointY(stepHistoryList[iCount][3]));
+    	}
+    	glEnd();
+    	
+    glPopMatrix();
     
     //added by Mike, 20210514; edited by Mike, 20210613
     //note: draw instructions due to glTranslatef(...) not closed
