@@ -82,38 +82,6 @@
 //added by Mike, 20201121
 #if defined(__APPLE__)
 #include <OpenGL/gl.h>
-
-//added by Mike, 20210625
-    //TO-DO: -reverify: this; draw instructions, e.g. in Text.cpp,
-    //auto-scales due to using vertex positions; not pixel positions;
-    //even without Window Width and Height values
-    myWindowWidthAsPixel = myWindowWidthAsPixelInput;
-    myWindowHeightAsPixel = myWindowHeightAsPixelInput;
-    
-    //added by Mike, 20210701
-    fMyWindowWidthAsPixelRatioToHeightPixel=1.0f;
-    iMyWindowWidthAsPixelOffset=0;
-    
-    if (myWindowWidthAsPixel!=myWindowHeightAsPixel) {
-        //added by Mike, 20210626; edited by Mike, 20210701
-//        fMyWindowWidthAsPixelRatioToHeightPixel=myWindowHeightAsPixelInput/myWindowWidthAsPixel;        
-        fMyWindowWidthAsPixelRatioToHeightPixel= myWindowHeightAsPixel/(myWindowWidthAsPixel*1.0f);
-
-        //note: width value > height value
-        //TO-DO: -add: auto-update
-        //height: 768; width: 1366
-        iMyWindowWidthAsPixelOffset=(myWindowWidthAsPixel-myWindowHeightAsPixel)/2;        
-        
-        
-        myWindowWidthAsPixel = myWindowHeightAsPixelInput; //myWindowWidthAsPixelInput;
-        //    	myWindowHeightAsPixel = myWindowHeightAsPixelInput;
-        
-        /*
-         printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> USBONG");
-         printf("myWindowWidthAsPixelInput: %f; myWindowHeightAsPixelInput: %f\n",myWindowWidthAsPixelInput,myWindowHeightAsPixelInput);
-         printf("myWindowWidthAsPixel: %f; myWindowHeightAsPixel: %f\n",myWindowWidthAsPixel,myWindowHeightAsPixel);
-         */
-    }
 #include <OpenGL/glu.h>
 #include <GLUT/glut.h> //added by Mike, 20210623
 #else
@@ -503,10 +471,19 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
     
     //added by Mike, 20210626
     fMyWindowWidthAsPixelRatioToHeightPixel=1.0f;
+    iMyWindowWidthAsPixelOffset=0; //added by Mike, 20210701
+    
     
     if (myWindowWidthAsPixel!=myWindowHeightAsPixel) {
         //added by Mike, 20210626
         fMyWindowWidthAsPixelRatioToHeightPixel=myWindowHeightAsPixelInput/myWindowWidthAsPixel;
+        
+        //added by Mike, 20210701
+        //note: width value > height value
+        //TO-DO: -add: auto-update
+        //height: 768; width: 1366
+        iMyWindowWidthAsPixelOffset=(myWindowWidthAsPixel-myWindowHeightAsPixel)/2;
+
         
         myWindowWidthAsPixel = myWindowHeightAsPixelInput; //myWindowWidthAsPixelInput;
         //    	myWindowHeightAsPixel = myWindowHeightAsPixelInput;
@@ -1795,10 +1772,16 @@ glPushMatrix();
      }
      
      //reset to 12 from 10
-     iRowCountMax=12;
-	 	  
+    //removed by Mike, 20210701
+//     iRowCountMax=12;
+
+     //added by Mike, 20210701
+     int iLeftMarginColumnCount=-1;
+    
      //columns
      iColumnCountMax=10;
+    
+     //right part
      iNumberSign=1;
      for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {
    		// Draw a Green Line top-left origin
@@ -1809,8 +1792,10 @@ glPushMatrix();
      glVertex2f(2.0f/iColumnCountMax*iColumnCount*iNumberSign, 1.0f);
    		glEnd();
      }
+    
+    //left part
      iNumberSign=-1;
-     for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {
+    for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {
    		// Draw a Green Line top-left origin
    		glBegin(GL_LINES);
      glColor3f(0.0f, 0.0f, 1.0f); // Blue
@@ -1818,22 +1803,54 @@ glPushMatrix();
      //TO-DO: -add: auto-compute myWindowHeight
      glVertex2f(2.0f/iColumnCountMax*iColumnCount*iNumberSign, 1.0f);
    		glEnd();
+        
+        
+        //added by Mike, 20210701
+        //identify column count of left margin
+//        if (2.0f/iColumnCountMax*iColumnCount >= myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset-iMyWindowWidthAsPixelOffset)) {
+/*
+        printf(">>> myWindowWidthAsPixel/2.0f/iColumnCountMax*iColumnCount: %f\n",myWindowWidthAsPixel/2.0f/iColumnCountMax*iColumnCount);
+        printf(">>> iMyWindowWidthAsPixelOffset: %i\n",iMyWindowWidthAsPixelOffset);
+*/
+        //note: column as clock's set of 5mins
+        if (iLeftMarginColumnCount==-1) {
+            if (myWindowWidthAsPixel/2.0f/iColumnCountMax*iColumnCount >= iMyWindowWidthAsPixelOffset) {
+                iLeftMarginColumnCount=(iColumnCount)/2; //reverify cause of /2
+            }
+        }
      }
      //reset to 12 from 10
-     iColumnCountMax=12;
+    //removed by Mike, 20210701
+//     iColumnCountMax=12;
 
 //added by Mike, 20210701
 glPopMatrix();     
      
 //    glScalef(1.0f,1.0f,1.0f);
-     
+    
     //added by Mike, 20210701
     glPushMatrix();
+/*
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+*/
+    //added by Mike, 20210701
+    //glScalef(1.0f,1.0f,1.0f); //    glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
+
+    
 	//    glTranslatef(-1.0f-2.0f/iRowCountMax*iRowCount, 0.0f, 0.0f);
 //    	glTranslatef(-1.0f+2.0f/iRowCountMax*1, 0.0f, 0.0f);
-			//TO-DO: -reverify: cause of +0.05f
-    	glTranslatef(-1.0f+2.0f/iRowCountMax*1+0.05f, 0.0f, 0.0f);
-            	
+
+    //edited by Mike, 20210701
+    printf(">>>>>iLeftMarginColumnCount: %i>>>>>",iLeftMarginColumnCount);
+    //TO-DO: -reverify: with Linux Machine, et cetera
+    
+    //*3 based on column count of left margin
+//    glTranslatef(-2.0f/iColumnCountMax*3, 0.0f, 0.0f);
+//    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset), 0.0f, 0.0f);
+//    glTranslatef(-2.0f/iColumnCountMax*iLeftMarginColumnCount, 0.0f, 0.0f);
+    glTranslatef(-2.0f/iColumnCountMax*iLeftMarginColumnCount, 0.0f, 0.0f);
+
     	//	printf("myMouseActionDown[MOUSE_LEFT_BUTTON]: %i\n",myMouseActionDown[MOUSE_LEFT_BUTTON]);
     	
     	if (myMouseActionDown[MOUSE_LEFT_BUTTON]==FALSE) {
