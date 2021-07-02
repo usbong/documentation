@@ -1,5 +1,5 @@
 /*
- * Copyright 2020~2021 Usbong Social Systems, Inc.
+ * Copyright 2020~2021 SYSON, MICHAEL B.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,10 +12,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
+ * @company: USBONG
  * @author: SYSON, MICHAEL B.
- * @date created: 20200930
- * @date updated: 20210628
+ * @date created: 20200926
+ * @date updated: 20210702
+ * @website address: http://www.usbong.ph
  *
  * Reference:
  * 1) Astle, D. and Hawkin, K. (2004). "Beginning OpenGL game programming". USA: Thomson Course Technology
@@ -819,29 +820,37 @@ void Text::drawTextBackgroundAsQuadWithTexture()
     //added by Mike, 20210626; removed by Mike, 20210628
     //TO-DO: -reverify: this action
 //    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset), 0.0f, 0.0f);
-    
+  	
+  	//removed by Mike, 20210702  
     //auto-scale to Window Width to Height
-    glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
+//    glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
  
     //added by Mike, 20210628
-    //TO-DO: -reverify: instructions due to OK in macOS
-    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset)*fMyWindowWidthAsPixelRatioToHeightPixel, 0.0f, 0.0f);
+    //TO-DO: -reverify: instructions in macOS due to OK in Linux machine
+
+		//note: adds to development time;
+		//1) identifying correct positions due to there exist pixel and vertex positions
+		//2) identifying axis origin from where to add
+		//3) identifying object anchor to which steps are added
+		//identified delays shall add computation time during movement in galaxy
+		//speed-up via machine tool, e.g. RobotShip, assists Human Pilot
+				
+  	//edited by Mike, 20210702 	
+		//added +0.02f in x-axis as margin so text not too near left border of text background image
+		//y-axis add from window's top
+    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset)+0.02f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
+
+
+    //auto-scale to Window Width to Height
+    glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
+    
     
     //edited by Mike, 20210626
-    //    glScalef(0.5f,0.5f,1.0f);
-    //edited by Mike, 20210628
-    //    glScalef(0.3f,0.3f,1.0f);
-    /*	//edited by Mike, 20210628
-     glScalef(0.25f,0.25f,1.0f);
-     
-     //added by Mike, 20210626; removed by Mike, 20210628
-     //    glTranslatef(-0.3f, fMyWindowWidthAsPixelRatioToHeightPixel+0.3f+0.3f, 0.0f);
-     glTranslatef(0.1f, 1.25f, 0.0f); //note: y-axis; inverted; +value goes down
-     */
     glScalef(0.26f,0.26f,1.0f);
-    //edited by Mike, 20210628
-//    glTranslatef(0.1f, 1.22f, 0.0f); //note: y-axis; inverted; +value goes down
-    glTranslatef(0.26f, 1.1f, 0.0f); //note: y-axis; inverted; +value goes down
+
+    //removed by Mike, 20210702
+//    glTranslatef(0.26f, 1.1f, 0.0f); //note: y-axis; inverted; +value goes down
+
     
     //font
     // select and enable texture FONT_TEXTURE
@@ -856,9 +865,7 @@ void Text::drawTextBackgroundAsQuadWithTexture()
     //row, column
     //edited by Mike, 20210618
     //    char tempText[MAX_TEXT_CHAR_ROW][MAX_TEXT_CHAR_COLUMN];
-    char tempText[MAX_TEXT_CHAR_ROW_RAM][MAX_TEXT_CHAR_COLUMN];
-    
-    
+    char tempText[MAX_TEXT_CHAR_ROW_RAM][MAX_TEXT_CHAR_COLUMN];   
     
     //		 sprintf(tempText,"USBONG");
     //		 sprintf(tempText,sCurrentTextContainer[0]);

@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20200926
- * @date updated: 20210701
+ * @date updated: 20210702
  * @website address: http://www.usbong.ph
  *
  * References:
@@ -1665,8 +1665,10 @@ void OpenGLCanvas::render()
      glEnd();
      */
     
-    //added by Mike, 20210510
-    glLineWidth((GLfloat)3);
+    //added by Mike, 20210510; edited by Mike, 20210702
+    //TO-DO: -reverify: this due to exact in macOS, but not exact in Linux machine
+//    glLineWidth((GLfloat)3);
+    glLineWidth((GLfloat)4);
     
     //note: coordinate system guide/map
     /*	//removed by Mike, 20210618
@@ -1849,7 +1851,12 @@ glPopMatrix();
 //    glTranslatef(-2.0f/iColumnCountMax*3, 0.0f, 0.0f);
 //    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset), 0.0f, 0.0f);
 //    glTranslatef(-2.0f/iColumnCountMax*iLeftMarginColumnCount, 0.0f, 0.0f);
-    glTranslatef(-2.0f/iColumnCountMax*iLeftMarginColumnCount, 0.0f, 0.0f);
+
+    //TO-DO: -reverify: this due to exact in macOS, but not exact in Linux machine
+    //edited by Mike, 20210702
+//    glTranslatef(-2.0f/iColumnCountMax*iLeftMarginColumnCount, 0.0f, 0.0f);
+    glTranslatef(-2.0f/iColumnCountMax*iLeftMarginColumnCount+0.02, 0.0f, 0.0f);
+
 
     	//	printf("myMouseActionDown[MOUSE_LEFT_BUTTON]: %i\n",myMouseActionDown[MOUSE_LEFT_BUTTON]);
     	
