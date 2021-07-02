@@ -1734,7 +1734,7 @@ void OpenGLCanvas::render()
      }
      */
     
-    
+
 //added by Mike, 20210701
 glPushMatrix();     
   //added by Mike, 20210524
@@ -1742,42 +1742,30 @@ glPushMatrix();
      //coordinate system guide/map; pixel positions
      iRowCountMax=10;
      int iNumberSign=1;
+/* //removed by Mike, 20210702         
      //rows
      for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
    		// Draw a Green Line top-left origin
    		glBegin(GL_LINES);
-//     glColor3f(0.0f, 0.0f, 1.0f); // Blue
-     glColor3f(0.0f, 1.0f, 0.0f); // Green
-
-/*   //edited by Mike, 20210701     
-     glVertex2f(-1.0f, 2.0f/iRowCountMax*iRowCount*iNumberSign);    // x, y
-     //TO-DO: -add: auto-compute myWindowWidth
-     glVertex2f(1.0f, 2.0f/iRowCountMax*iRowCount*iNumberSign);
-*/
-     	glVertex2f(-1.0f*2, 2.0f/iRowCountMax*iRowCount*iNumberSign);    // x, y
-     	//TO-DO: -add: auto-compute myWindowWidth
-     	glVertex2f(1.0f*2, 2.0f/iRowCountMax*iRowCount*iNumberSign);
-     	
+	//     glColor3f(0.0f, 0.0f, 1.0f); // Blue
+     		glColor3f(0.0f, 1.0f, 0.0f); // Green
+	
+     		glVertex2f(-1.0f*2, 2.0f/iRowCountMax*iRowCount*iNumberSign);    // x, y
+     		glVertex2f(1.0f*2, 2.0f/iRowCountMax*iRowCount*iNumberSign);     		
    		glEnd();
      }
      iNumberSign=-1;
      for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
    		// Draw a Green Line top-left origin
    		glBegin(GL_LINES);
-//     glColor3f(0.0f, 0.0f, 1.0f); // Blue
-     glColor3f(0.0f, 1.0f, 0.0f); // Green
-
-/*   //edited by Mike, 20210701
-     glVertex2f(-1.0f, 2.0f/iRowCountMax*iRowCount*iNumberSign);    // x, y
-     //TO-DO: -add: auto-compute myWindowWidth
-     glVertex2f(1.0f, 2.0f/iRowCountMax*iRowCount*iNumberSign);
-*/     
-     glVertex2f(-1.0f*2, 2.0f/iRowCountMax*iRowCount*iNumberSign);    // x, y
-     //TO-DO: -add: auto-compute myWindowWidth
-     glVertex2f(1.0f*2, 2.0f/iRowCountMax*iRowCount*iNumberSign);
-
+		//     glColor3f(0.0f, 0.0f, 1.0f); // Blue
+     		glColor3f(0.0f, 1.0f, 0.0f); // Green
+     		glVertex2f(-1.0f*2, 2.0f/iRowCountMax*iRowCount*iNumberSign);    // x, y
+     		//TO-DO: -add: auto-compute myWindowWidth
+     		glVertex2f(1.0f*2, 2.0f/iRowCountMax*iRowCount*iNumberSign);		
    		glEnd();
      }
+*/
      
      //reset to 12 from 10
     //removed by Mike, 20210701
@@ -1788,38 +1776,38 @@ glPushMatrix();
     
      //columns
      iColumnCountMax=10;
-    
+
+/* //removed by Mike, 20210702    
      //right part
      iNumberSign=1;
      for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {
    		// Draw a Green Line top-left origin
    		glBegin(GL_LINES);
-     glColor3f(0.0f, 0.0f, 1.0f); // Blue
-     glVertex2f(2.0f/iColumnCountMax*iColumnCount*iNumberSign, -1.0f);    // x, y
-     //TO-DO: -add: auto-compute myWindowHeight
-     glVertex2f(2.0f/iColumnCountMax*iColumnCount*iNumberSign, 1.0f);
+     		glColor3f(0.0f, 0.0f, 1.0f); // Blue
+     		glVertex2f(2.0f/iColumnCountMax*iColumnCount*iNumberSign, -1.0f);    // x, y
+     		//TO-DO: -add: auto-compute myWindowHeight
+     		glVertex2f(2.0f/iColumnCountMax*iColumnCount*iNumberSign, 1.0f);
    		glEnd();
      }
+*/
     
     //left part
      iNumberSign=-1;
     for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {
+/* //removed by Mike, 20210702        
    		// Draw a Green Line top-left origin
    		glBegin(GL_LINES);
-     glColor3f(0.0f, 0.0f, 1.0f); // Blue
-     glVertex2f(2.0f/iColumnCountMax*iColumnCount*iNumberSign, -1.0f);    // x, y
-     //TO-DO: -add: auto-compute myWindowHeight
-     glVertex2f(2.0f/iColumnCountMax*iColumnCount*iNumberSign, 1.0f);
+     		glColor3f(0.0f, 0.0f, 1.0f); // Blue
+     		glVertex2f(2.0f/iColumnCountMax*iColumnCount*iNumberSign, -1.0f);    // x, y
+     		//TO-DO: -add: auto-compute myWindowHeight
+     		glVertex2f(2.0f/iColumnCountMax*iColumnCount*iNumberSign, 1.0f);
    		glEnd();
-        
-        
+*/                
         //added by Mike, 20210701
         //identify column count of left margin
-//        if (2.0f/iColumnCountMax*iColumnCount >= myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset-iMyWindowWidthAsPixelOffset)) {
-/*
-        printf(">>> myWindowWidthAsPixel/2.0f/iColumnCountMax*iColumnCount: %f\n",myWindowWidthAsPixel/2.0f/iColumnCountMax*iColumnCount);
-        printf(">>> iMyWindowWidthAsPixelOffset: %i\n",iMyWindowWidthAsPixelOffset);
-*/
+////        printf(">>> myWindowWidthAsPixel/2.0f/iColumnCountMax*iColumnCount: %f\n",myWindowWidthAsPixel/2.0f/iColumnCountMax*iColumnCount);
+////        printf(">>> iMyWindowWidthAsPixelOffset: %i\n",iMyWindowWidthAsPixelOffset);
+
         //note: column as clock's set of 5mins
         if (iLeftMarginColumnCount==-1) {
             if (myWindowWidthAsPixel/2.0f/iColumnCountMax*iColumnCount >= iMyWindowWidthAsPixelOffset) {
@@ -1833,6 +1821,8 @@ glPushMatrix();
 
 //added by Mike, 20210701
 glPopMatrix();     
+
+
      
 //    glScalef(1.0f,1.0f,1.0f);
     
@@ -1850,13 +1840,7 @@ glPopMatrix();
 //    	glTranslatef(-1.0f+2.0f/iRowCountMax*1, 0.0f, 0.0f);
 
     //edited by Mike, 20210701
-    printf(">>>>>iLeftMarginColumnCount: %i>>>>>",iLeftMarginColumnCount);
-    //TO-DO: -reverify: with Linux Machine, et cetera
-    
-    //*3 based on column count of left margin
-//    glTranslatef(-2.0f/iColumnCountMax*3, 0.0f, 0.0f);
-//    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset), 0.0f, 0.0f);
-//    glTranslatef(-2.0f/iColumnCountMax*iLeftMarginColumnCount, 0.0f, 0.0f);
+////    printf(">>>>>iLeftMarginColumnCount: %i>>>>>",iLeftMarginColumnCount);
 
     //TO-DO: -reverify: this due to exact in macOS, but not exact in Linux machine
     //edited by Mike, 20210702
@@ -1895,9 +1879,9 @@ glPopMatrix();
         	glVertex2f(myUsbongUtils->autoConvertFromPixelToVertexPointX(stepHistoryList[iCount][0]), myUsbongUtils->autoConvertFromPixelToVertexPointY(stepHistoryList[iCount][1]));
         	glVertex2f(myUsbongUtils->autoConvertFromPixelToVertexPointX(stepHistoryList[iCount][2]), myUsbongUtils->autoConvertFromPixelToVertexPointY(stepHistoryList[iCount][3]));
     	}
-    	glEnd();
-    	
+    	glEnd();    	
     glPopMatrix();
+    
     
     //added by Mike, 20210514; edited by Mike, 20210613
     //note: draw instructions due to glTranslatef(...) not closed

@@ -744,15 +744,24 @@ void Text::drawPressNextSymbol()
     
     glPushMatrix();
     
-    //    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(320), myUsbongUtils->autoConvertFromPixelToVertexPointY(320), 0.0f); //-myZPosAsPixel);
-    
     //note: 640x640; window width x height
-    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(320), myUsbongUtils->autoConvertFromPixelToVertexPointY(555), 0.0f); //-myZPosAsPixel);
+    //edited by Mike, 20210702
+//    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(320), myUsbongUtils->autoConvertFromPixelToVertexPointY(555), 0.0f); //-myZPosAsPixel);
+
+		//y-axis origin from bottom
+		//add 0.06f as bottom padding
+//    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myWindowWidth/2), myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.80f)+0.1f, 0.0f);
+    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myWindowWidth/2), myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.80f)+0.06f, 0.0f);
     
-    //			glTranslatef(0.8f*0.08f,0.0f,0.0f); //set anchor/origin @top-left
-    
+       
     glRotatef(45.0f, 0.0f, 0.0f, 1.0f);
-	  	glScalef(0.08f, 0.08f, 1.0f);
+
+		//edited by Mike, 20210702    
+//	  glScalef(0.08f, 0.08f, 1.0f);
+	  glScalef(0.06f, 0.06f, 1.0f);
+		  
+    //auto-scale to Window Width to Height
+//    glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,fMyWindowWidthAsPixelRatioToHeightPixel,1.0f);	  
     
     glColor3f(1.0f,0.0f,0.0f); //red
     
