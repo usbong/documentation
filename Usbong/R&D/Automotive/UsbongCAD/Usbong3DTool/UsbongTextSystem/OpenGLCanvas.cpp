@@ -1148,7 +1148,9 @@ void OpenGLCanvas::keyDown(int keyCode)
     //edited by Mike, 20210514
     if (keyCode==KEY_Z) {
         //added by Mike, 20210513
-        if (stepHistoryListCount>0) {
+        //edited by Mike, 20210702
+//        if (stepHistoryListCount>0) {
+        if (stepHistoryListCount>1) {
             stepHistoryListCount=stepHistoryListCount-1;
             
             stepHistoryList[stepHistoryListCount][0]=0;
@@ -1161,6 +1163,10 @@ void OpenGLCanvas::keyDown(int keyCode)
             iStartPointY=0;
             iEndPointX=0;
             iEndPointY=0;
+        }
+    		//added by Mike, 20210702        
+        else {
+    			stepHistoryListCount=1;
         }
     }
 }
