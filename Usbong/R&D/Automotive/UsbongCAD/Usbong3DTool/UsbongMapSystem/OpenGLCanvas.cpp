@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20200926
- * @date updated: 20210702
+ * @date updated: 20210703
  * @website address: http://www.usbong.ph
  *
  * References:
@@ -113,6 +113,9 @@
 
 //added by Mike, 20201010
 #include "Font.h"
+
+//added by Mike, 20210703
+#include "Level2D.h"
 
 //added by Mike, 20210516
 #include "UsbongUtils.h"
@@ -440,16 +443,22 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
      iColumnCountMax=30;
      iHeightCountMax=30; //added by Mike, 20210208
      */
+     
+/*	//removed by Mike, 20210703
     iRowCountMax=12;
     iColumnCountMax=12;
     iHeightCountMax=12; //added by Mike, 20210208
+*/
     
     /*	//edited by Mike, 20210320
      fGridSquareWidth = myWindowWidth/iColumnCountMax/100.0;
      fGridSquareHeight = myWindowHeight/iRowCountMax/100.0;
      */
+     
+/*    //removed by Mike, 20210703
     fGridSquareWidth = 4.0f;
     fGridSquareHeight = 4.0f;
+*/
     
     //added by Mike, 20210416
     fKahonRotation=0;
@@ -469,6 +478,17 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
     myWindowWidthAsPixel = myWindowWidthAsPixelInput;
     myWindowHeightAsPixel = myWindowHeightAsPixelInput;
     
+    //added by Mike, 20210702
+    iRowCountMax=10;
+    iColumnCountMax=10;
+    iHeightCountMax=10; //added by Mike, 20210208
+    
+    fGridSquareWidth = myWindowWidthAsPixel/iColumnCountMax; //example: 136.60
+    fGridSquareHeight = myWindowHeightAsPixel/iRowCountMax; //example: 76.80
+    
+    printf("fGridSquareWidth: %f\n",fGridSquareWidth);
+    printf("fGridSquareHeight: %f\n",fGridSquareHeight);
+    
     //added by Mike, 20210626
     fMyWindowWidthAsPixelRatioToHeightPixel=1.0f;
     iMyWindowWidthAsPixelOffset=0; //added by Mike, 20210701
@@ -482,9 +502,7 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
         //note: width value > height value
         //TO-DO: -add: auto-update
         //height: 768; width: 1366
-        iMyWindowWidthAsPixelOffset=(myWindowWidthAsPixel-myWindowHeightAsPixel)/2;
-
-        
+        iMyWindowWidthAsPixelOffset=(myWindowWidthAsPixel-myWindowHeightAsPixel)/2;       
         myWindowWidthAsPixel = myWindowHeightAsPixelInput; //myWindowWidthAsPixelInput;
         //    	myWindowHeightAsPixel = myWindowHeightAsPixelInput;
         
@@ -606,6 +624,10 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
     myText = new Text(0.0f,320.0f,0.0f,myWindowWidthAsPixelInput,myWindowHeightAsPixelInput);
     myText->setOpenGLCanvas(this, fGridSquareWidth);
     
+    //added by Mike, 20210703
+    myLevel2D = new Level2D(0.0f,320.0f,0.0f,myWindowWidthAsPixelInput,myWindowHeightAsPixelInput);
+    myLevel2D->setOpenGLCanvas(this, fGridSquareWidth);
+    myLevel2D->setupLevel(LEVEL_TEXTURE);    
     
     //added by Mike, 20210524; edited by Mike, 20210528
     //	myBall = new Ball(320.0f,320.0f,0.0f,myWindowWidthAsPixel,myWindowHeightAsPixel);
@@ -761,12 +783,10 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
     //added by Mike, 20201011
     setupFont(FONT_TEXTURE);
     
-    /* //removed by Mike, 20210211
-     //added by Mike, 20201118
-     myLevel = new Level();
-     myLevel->setupLevel(LEVEL_TEXTURE); //FONT_TEXTURE);
-     */
-    
+    //added by Mike, 20210703
+    myLevel = new Level();
+    myLevel->setupLevel(LEVEL_TEXTURE); //FONT_TEXTURE);
+  
     //added by Mike, 20210403; edited by Mike, 20210418
     //	setupKahonTexture(KAHON_TEXTURE);
     setupKahonTexture(BAHAY_TEXTURE);
@@ -1582,8 +1602,8 @@ void OpenGLCanvas::render()
     //paint the outer margins if window not square, i.e. width and height not equal
 //-----
     glBegin(GL_QUADS);
-    	glColor3f(0.0f,0.0f,0.0f); //black
-    //	glColor3f(1.0f,1.0f,1.0f); //white
+//    	glColor3f(0.0f,0.0f,0.0f); //black
+    	glColor3f(1.0f,1.0f,1.0f); //white
 
     //TOP
 /*    //sky blue color; darker
@@ -1605,9 +1625,9 @@ void OpenGLCanvas::render()
     glEnd();
 //-----
     
-    //added by Mike, 20210626
+    //added by Mike, 20210626; removed by Mike, 20210703
     //auto-scale to Window Width to Height
-    glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
+//    glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
     
     
     /*
@@ -1631,25 +1651,28 @@ void OpenGLCanvas::render()
      glEnd();
      */
     
+/*   //removed by Mike, 20210703; sky square window
     glBegin(GL_QUADS);
-    //	glColor3f(0.0f,0.0f,0.0f); //black
-    //	glColor3f(1.0f,1.0f,1.0f); //white
-    
-    //TOP
-    //sky blue color; darker
-    //	glColor3f(0.51f, 0.73f, 0.98f);
-    //	glColor3f(0.08f, 0.51f, 1.00f);
-    //	glColor3f(0.0f, 0.32f, 0.67f);
-    glColor3f(0.0f, 0.44f, 0.67f);
-    glVertex2f(1.0, 1.0);
-    glVertex2f(-1.0, 1.0);
-    
-    //BOTTOM
-    //sky blue color; brighter
-    glColor3f(0.69f, 0.84f, 1.0f);
-    glVertex2f(-1.0,-1.0);
-    glVertex2f(1.0,-1.0);
+    	//	glColor3f(0.0f,0.0f,0.0f); //black
+    	glColor3f(1.0f,1.0f,1.0f); //white
+    	
+    	//TOP
+    	//sky blue color; darker
+//removed by Mike, 20210703    	 
+//    	glColor3f(0.0f, 0.44f, 0.67f);
+
+    	glVertex2f(1.0, 1.0);
+    	glVertex2f(-1.0, 1.0);
+    	
+    	//BOTTOM
+    	//sky blue color; brighter
+//removed by Mike, 20210703    	 
+//    	glColor3f(0.69f, 0.84f, 1.0f);
+
+    	glVertex2f(-1.0,-1.0);
+    	glVertex2f(1.0,-1.0);
     glEnd();
+*/
     
     
     /*  //removed by Mike, 20210530
@@ -1699,41 +1722,10 @@ void OpenGLCanvas::render()
      glEnd();
      */
     
-    /*
-     //TO-DO: -update: this
-     if (myMouseActionDown[MOUSE_LEFT_BUTTON]==FALSE) {
-     glBegin(GL_LINES);
-     glColor3f(0.0f,0.0f,0.0f); //black
-     //edited by Mike, 20210511
-     ////			glVertex2f(iStartPointX, iStartPointY);
-     ////			glVertex2f(iEndPointX, iEndPointY);
-     
-     
-     ////			printf("iStartPointX: %i\n",iStartPointX);
-     ////			printf("pointX: %f\n",autoConvertFromPixelToVertexPointX(iStartPointX));
-     ////			printf("iStartPointY: %i\n",iStartPointY);
-     ////			printf("pointY: %f\n",autoConvertFromPixelToVertexPointY(iStartPointY));
-     //			printf("Start X,Y: %f,%f\n",autoConvertFromPixelToVertexPointX(iStartPointX),autoConvertFromPixelToVertexPointY(iStartPointY));
-     //			printf("End X,Y: %f,%f\n",autoConvertFromPixelToVertexPointX(iEndPointX),autoConvertFromPixelToVertexPointY(iEndPointY));
-     
-     glVertex2f(autoConvertFromPixelToVertexPointX(iStartPointX), autoConvertFromPixelToVertexPointY(iStartPointY));
-     glVertex2f(autoConvertFromPixelToVertexPointX(iEndPointX), autoConvertFromPixelToVertexPointY(iEndPointY));
-     glEnd();
-     }
-     //added by Mike, 20210512
-     else {
-     glBegin(GL_LINES);
-     glColor3f(0.0f,0.0f,0.0f); //black
-     //			printf("Start X,Y: %f,%f\n",autoConvertFromPixelToVertexPointX(iStartPointX),autoConvertFromPixelToVertexPointY(iStartPointY));
-     //			printf("End X,Y: %f,%f\n",autoConvertFromPixelToVertexPointX(iEndPointX),autoConvertFromPixelToVertexPointY(iEndPointY));
-     
-     glVertex2f(autoConvertFromPixelToVertexPointX(iStartPointX), autoConvertFromPixelToVertexPointY(iStartPointY));
-     //			glVertex2f(autoConvertFromPixelToVertexPointX(iStartPointX), autoConvertFromPixelToVertexPointY(iStartPointY));
-     glVertex2f(autoConvertFromPixelToVertexPointX(iEndPointX), autoConvertFromPixelToVertexPointY(iEndPointY));
-     glEnd();
-     }
-     */
-    
+    //added by Mike, 20210703
+    //auto-scale to Window Width to Height
+    glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
+   
 
 //added by Mike, 20210701
 glPushMatrix();     
@@ -1823,10 +1815,9 @@ glPushMatrix();
     //removed by Mike, 20210701
 //     iColumnCountMax=12;
 
+
 //added by Mike, 20210701
 glPopMatrix();     
-
-
      
 //    glScalef(1.0f,1.0f,1.0f);
     
@@ -1886,7 +1877,6 @@ glPopMatrix();
     	glEnd();    	
     glPopMatrix();
     
-    
     //added by Mike, 20210514; edited by Mike, 20210613
     //note: draw instructions due to glTranslatef(...) not closed
     //removed by Mike, 20210618
@@ -1909,6 +1899,15 @@ glPopMatrix();
      );
      //--
      */
+
+//-----              
+/* 	glBindTexture( GL_TEXTURE_2D, LEVEL_TEXTURE );
+    sprintf(tempText,"G");        
+    myLevel->draw_level(fGridSquareWidth*4.0f, fGridSquareWidth*4.0f, 0.0f, tempText);
+*/
+    myLevel2D->draw();
+//-----         
+     
     //added by Mike, 20210613
     myText->draw();
     
