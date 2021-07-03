@@ -271,6 +271,10 @@ private:
     void setupPrev();
     void setup();
         
+		//added by Mike, 20210703
+		void drawString(GLfloat x, GLfloat y, GLfloat z, char *string);
+		void drawChar(GLfloat x, GLfloat y, GLfloat z, char c);       
+        
     // draws a unit cube
     //void drawCube(float xPos, float yPos, float zPos);
     

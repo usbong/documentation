@@ -74,8 +74,8 @@
 #include "Level2D.h"
 
 
-//added by Mike, 20210614
-#include "Font.h"
+//added by Mike, 20210614; removed by Mike, 20210703
+//#include "Font.h"
 
 //added by Mike, 20210516
 #include "UsbongUtils.h"
@@ -790,7 +790,7 @@ void Level2D::drawTextBackgroundAsQuadWithTexture()
         //added by computer in memory storage for use in another set of instructions
         //strcpy(tempText,"");
         //edited by Mike, 20210618
-        //        for (int iRowCountToSetDefault=0; iRowCountToSetDefault<MAX_TEXT_CHAR_ROW; iRowCountToSetDefault++) {draw_string
+        //        for (int iRowCountToSetDefault=0; iRowCountToSetDefault<MAX_TEXT_CHAR_ROW; iRowCountToSetDefault++) {
         for (int iRowCountToSetDefault=0; iRowCountToSetDefault<MAX_TEXT_CHAR_ROW_RAM; iRowCountToSetDefault++) {
             for (int iColumnCount=0; iColumnCount<MAX_TEXT_CHAR_COLUMN; iColumnCount++) {
                 tempText[iRowCountToSetDefault][iColumnCount]='\0'; //verified: in macOS, with Japanese keyboard ro-maji input, "¥0", backspace is "¥"
@@ -816,7 +816,7 @@ void Level2D::drawTextBackgroundAsQuadWithTexture()
         //TO-DO: -add: remaining Font Characters, e.g. small letters, digits
         //TO-DO: -update: font character position in texture image file
         //	   					draw_string(0.1f, 1.2f, 0.0f, tempText);
-        draw_string(0.05f, 1.2f, 0.0f, tempText[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW]);
+        drawString(0.05f, 1.2f, 0.0f, tempText[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW]);
         
      			//added by Mike, 20210615
      			//new line
@@ -950,8 +950,45 @@ void Level2D::drawTextBackgroundAsQuadWithTexture()
 }
 
 //added by Mike, 20210703
+void Level2D::drawString(GLfloat x, GLfloat y, GLfloat z, char *string)
+{
+
+    GLfloat origX=x;
+    while (string[0] != 0)
+    {
+
+		//TO-DO: -update: this
+        //added by Mike, Feb14,2007
+		if (string[0]=='\n') {
+			y -= 0.1f;//15.0f;
+			x=origX-0.1f;//-10.0f;			
+    	}
+        
+
+        glPushMatrix();
+        	//removed by Mike, 20201010
+            //make font larger, added by Mike, Feb28,2007
+//            glScalef(2.0f, 2.0f, 2.0f);//1.5f, 1.5f, 1.5f);
+//            glScalef(0.5f, 0.5f, 0.5f);
+				//edited by Mike, 2020117
+//            draw_char(x, y, string[0]);
+            drawChar(x, y, z, string[0]);
+    	glPopMatrix();
+
+        
+        /* advance 10 pixels after each character */
+//TO-DO: -update: this
+//        x += 10.0f;
+        x += 0.1f;
+
+        /* go to the next character in the string */
+        string++;
+    }
+}
+
+//added by Mike, 20210703
 //TO-DO: -update: tile width and height
-void Level2D::draw_char(GLfloat x, GLfloat y, GLfloat z, char c)
+void Level2D::drawChar(GLfloat x, GLfloat y, GLfloat z, char c)
 {
 	//edited by Mike, 20201117
 //    GLfloat tx, ty;
@@ -1052,8 +1089,10 @@ void Level2D::drawTileAsQuadWithTexture(GLfloat x, GLfloat y, GLfloat z, char c)
     //added by Mike, 20201117
 //    tz = 0.875f - (c / 12 * 0.125f);
 
-	glColor3f(1.0f, 1.0f, 1.0f); //set to default, i.e. white
-    //glColor3f(0.0f, 0.0f, 0.0f); //set to default, i.e. black
+	//glColor3f(1.0f, 1.0f, 1.0f); //set to default, i.e. white
+  glColor3f(0.0f, 0.0f, 0.0f); //set to default, i.e. black
+	
+	printf("c: %c\n",c);
 	
 	glBegin(GL_QUADS);              // Each set of 4 vertices form a quad
         glTexCoord2f(tx, ty);
@@ -1236,7 +1275,7 @@ void Level2D::drawLevelWithTexture()
         //TO-DO: -add: remaining Font Characters, e.g. small letters, digits
         //TO-DO: -update: font character position in texture image file
         //	   					draw_string(0.1f, 1.2f, 0.0f, tempText);
-        draw_string(0.05f, 1.2f, 0.0f, tempText[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW]);
+        drawString(0.05f, 1.2f, 0.0f, tempText[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW]);
         
      			//added by Mike, 20210615
      			//new line

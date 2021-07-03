@@ -1908,8 +1908,8 @@ glPopMatrix();
     myLevel2D->draw();
 //-----         
      
-    //added by Mike, 20210613
-    myText->draw();
+    //added by Mike, 20210613; removed by Mike, 20210703
+//    myText->draw();
     
     
     //added by Mike, 20210511
