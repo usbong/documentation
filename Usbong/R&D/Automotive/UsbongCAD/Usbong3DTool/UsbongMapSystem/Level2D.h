@@ -419,7 +419,7 @@ public:
         //edited by Mike, 20210615
         //drawTextBackgroundAsQuadWithTexture();
         
-        drawTileAsQuadWithTexture();
+        drawLevelWithTexture();
     }
     
     //edited by Mike, 20210615
@@ -429,8 +429,9 @@ public:
     void drawTextBackgroundObject();
     
     //added by Mike, 20210703
-    void drawTileAsQuadWithTexture();
-    
+    void drawTileAsQuadWithTexture(GLfloat x, GLfloat y, GLfloat z, char c);
+    void drawLevelWithTexture();
+        
     /*	//removed by Mike, 20210514
      //added by Mike, 20210423
      void drawPilotAsQuadWithTexture();

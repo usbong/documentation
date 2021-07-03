@@ -958,7 +958,7 @@ void Level2D::draw_char(GLfloat x, GLfloat y, GLfloat z, char c)
     GLfloat tx, ty, tz;
 	
 	//added by Mike, 20210521
-/*	//removed by Mike, 20210521	
+/*	//removed by Mike, 20210521	drawCubeWithBlockTextureQuadFloor
 	if (c == 'H') {
 		//note: 4.0f = grid square fSideLength
 //		drawCubeWithBlockTextureQuadFloorSpecial(4.0f, tx, ty, tz, x,y,z, c);
@@ -1015,7 +1015,9 @@ void Level2D::draw_char(GLfloat x, GLfloat y, GLfloat z, char c)
     		glEnable(GL_TEXTURE_2D);						
     		//edited by Mike, 20210703
 //				drawCubeWithBlockTextureQuadFloor(4.0f, tx, ty, tz, x,y,z);			
-				drawCubeWithBlockTextureQuadFloor(0.0f, tx, ty, tz, x,y,z);			
+				//edited by Mike, 20210703
+//				drawCubeWithBlockTextureQuadFloor(0.0f, tx, ty, tz, x,y,z);					
+				drawTileAsQuadWithTexture(x,y,z, c);		
 				
     		//unselect texture myLevelTextureObject
 			glDisable(GL_TEXTURE_2D);
@@ -1028,9 +1030,51 @@ void Level2D::draw_char(GLfloat x, GLfloat y, GLfloat z, char c)
 }
 
 //added by Mike, 20210703
-//TO-DO: -update: this
-void Level2D::drawTileAsQuadWithTexture()
+void Level2D::drawTileAsQuadWithTexture(GLfloat x, GLfloat y, GLfloat z, char c)
 {
+	//edited by Mike, 20201117
+//    GLfloat tx, ty;
+    GLfloat tx, ty, tz;
+
+    /* check if the character is valid */
+    if (c < ' ' || c > '~')
+        return;
+
+    /* subtract 32, since the first character in the font texture
+     * is the space (ascii value 32) */
+    c = c - 32;
+
+    /* determine texture coordinates; this assumes that each character
+     * in the font texture has a width-height ratio of 10:16 (see the
+     * font.tga file to understand what I mean) */
+    tx = c % 12 * 0.078125f;
+    ty = 0.875f - (c / 12 * 0.125f);
+    //added by Mike, 20201117
+//    tz = 0.875f - (c / 12 * 0.125f);
+
+	glColor3f(1.0f, 1.0f, 1.0f); //set to default, i.e. white
+    //glColor3f(0.0f, 0.0f, 0.0f); //set to default, i.e. black
+	
+	glBegin(GL_QUADS);              // Each set of 4 vertices form a quad
+        glTexCoord2f(tx, ty);
+        glVertex3f(x, y, 0.0f);
+        
+        glTexCoord2f(tx + 0.078125f, ty);
+      	glVertex3f(x+0.1f, y, 0.0f);      
+
+        glTexCoord2f(tx + 0.078125f, ty + 0.125f);
+      	glVertex3f(x+0.1f, y-0.1f, 0.0f);              
+
+				glTexCoord2f(tx, ty + 0.125f);
+      	glVertex3f(x, y-0.1f, 0.0f);      
+   glEnd();    
+}
+
+//added by Mike, 20210703
+//TO-DO: -update: this
+void Level2D::drawLevelWithTexture()
+{
+
 /* //removed by Mike, 20210703    
     //added by Mike, 20210614
     //note; add glPushMatrix() and glPopMatrix()
