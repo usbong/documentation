@@ -797,11 +797,50 @@ Tunay na tapang ang nakatayong harapin ang nakatatakot na bagay, 'di ba?<br/>
 --> スマッシュ エース (Smash Ace): Smash is not hit to be returned by Opponent<br/>
 --> Execution: Mario serves using POWER Attack; it is returned by Opponent; I use another POWER Attack to a direction opposite of Opponent to finish.<br/>
 --> Reminder: If charge time not sufficient, attack can still be not hit to be returned by Opponent.<br/>
+
 ### Additional Notes:
 --> 1.9.2.1.1) Camera Settings:<br/>
 --> Camera Front Up: set Camera to follow the back of Human Player; when changing positions, Human Player is still at the bottom.<br/>
 --> Camera Dynamic: set Camera to be lower in height to be reminded of Virtual Boy Mario Tennis<br/>
 --> In select courts, if we move to the max bottom part, we can observed the bottom middle Turtle to hide inside its shell to not be hit by an incoming Ball.<br/>
+<br/>
+### さいきょう (saikyou), i.e. THE MOST STRONG; STRONGEST
+--> Set difficulty level to さいきょう (saikyou)<br/>
+--> Court Setting: HARD<br/>
+--> update: camera setting to dynamic, i.e. Virtual Boy view<br/>
+### PATTERN
+#### Donkey Kong's Serve Ace<br/>
+<br/>
+TO-DO: -reverify: these<br/>
+<br/>
+--> <b>pattern#1:</b> if fault, shall serve in the right direction<br/>
+--> If Service Ace, shall serve in the opposite direction
+<br/>
+--> <b>pattern#2:</b> if fault, shall serve in the left direction<br/>
+--> If Service Ace, shall serve in the same direction<br/>
+
+#### Mario's Smash Ace<br/>
+--> <b>technique pattern#1:</b> in second strongest Computer Donkey Kong CAN earn Points<br/>
+--> Serve using Power Attack, then hit in the opposite direction<br/>
+--> This is even if hit not classified to be Power Attack due to insufficient CHARGE time.<br/>
+<br/>
+TO-DO: -reverify: this<br/>
+<br/>
+--> <b>technique pattern#2:</b><br/>
+--> if #1 not effective, use multiple slow balls to cause Donkey Kong to move closer to the NET<br/>
+--> move close to the NET and execute high ball to earn Points<br/>
+<br/>
+
+### Entertainment as Surprise
+--> example#1: to win point due to technique newly classified to be effective<br/>
+--> example#2: to lose point due to pattern variation <br/>
+--> e.g. via slow ball instead of expected power smash<br/>
+
+#### Additional Notes:<br/>
+--> continuous lose pattern; NOT surprise; NOT entertainment<br/>
+--> Information = surprise, if NEW<br/>
+<br/>
+--> <b>Recommended Reading:</b> Shannon Information and Surprise<br/>
 
 ## 2) Hardware
 ## 2.1) SONY PlayStation Portable (PSP)
