@@ -279,9 +279,9 @@ PA-N (pangalan ng iyong kaibigan)<br/>
 <img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Notes/res/dragon.jpg" width="30%">
 <br/>
 
-#### 1.3.2.3) リーダー (ri-da-; leader)」
+#### 1.3.2.3) 「リーダー (ri-da-; leader)」
 --> 解放軍（kaihou gun; liberation army）<br/>
---> partners gravitate toward leader; leader needs assistance due to insufficient information<br/>
+--> partners gravitate, i.e. pulled to stick, toward leader; leader needs assistance due to insufficient information<br/>
 --> halimbawa: 軍師（gunshi; Army Master), Masshu joins to offer assistance as advisor<br/>
 --> 選択肢があっても、仲間がやりたいということをやれせる。<br/>
 --> sentakushi ga attemo, nakama ga yaritai to iu koto wo yareseru.<br/>
@@ -313,8 +313,7 @@ PA-N (pangalan ng iyong kaibigan)<br/>
 --> learned: from Dwarf Chief that it is already sufficient proof<br/>
 --> observed: pocchi, i.e. currency, of money has increased to 40,000 (approx) due to received after defeating monsters inside vault<br/>
 --> reminder: treasure, i.e. 焦魔鏡 (shuu-ma-kyou; focused magic mirror)'s technical schematic/diagram;<br/>
---> stolen from Dwarf people;<br/>
---> misused by Empire as weapon;<br/>
+--> stolen from Dwarf people; misused by Empire as weapon;<br/>
 --> Empire as Magnanakaw's information insufficient regarding its weakness,<br/>
 --> i.e. use of 風火砲 (fuu-ka-hou; wind fire cannon)<br/>
 
