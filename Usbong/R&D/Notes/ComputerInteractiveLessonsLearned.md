@@ -809,7 +809,7 @@ Tunay na tapang ang nakatayong harapin ang nakatatakot na bagay, 'di ba?<br/>
 --> Court Setting: HARD<br/>
 --> update: camera setting to dynamic, i.e. Virtual Boy view<br/>
 ### PATTERN
-#### PATTERN: Donkey Kong's Serve Ace<br/>
+#### PATTERN: Donkey Kong's Service Ace<br/>
 <br/>
 TO-DO: -reverify: these<br/>
 <br/>
