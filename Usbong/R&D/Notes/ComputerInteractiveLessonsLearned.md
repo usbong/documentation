@@ -809,7 +809,7 @@ Tunay na tapang ang nakatayong harapin ang nakatatakot na bagay, 'di ba?<br/>
 --> Court Setting: HARD<br/>
 --> update: camera setting to dynamic, i.e. Virtual Boy view<br/>
 ### PATTERN
-#### Donkey Kong's Serve Ace<br/>
+#### PATTERN: Donkey Kong's Serve Ace<br/>
 <br/>
 TO-DO: -reverify: these<br/>
 <br/>
@@ -819,10 +819,11 @@ TO-DO: -reverify: these<br/>
 --> <b>pattern#2:</b> if fault, shall serve in the left direction<br/>
 --> If Service Ace, shall serve in the same direction<br/>
 
-#### Mario's Smash Ace<br/>
---> <b>technique pattern#1:</b> in second strongest Computer Donkey Kong CAN earn Points<br/>
+#### PATTERN: Mario's Smash Ace<br/>
+--> <b>technique pattern#1:</b><br/>
 --> Serve using Power Attack, then hit in the opposite direction<br/>
 --> This is even if hit not classified to be Power Attack due to insufficient CHARGE time.<br/>
+--> CAN earn Points against SECOND STRONGEST and the MOST STRONG<br/>
 <br/>
 TO-DO: -reverify: this<br/>
 <br/>
@@ -834,13 +835,14 @@ TO-DO: -reverify: this<br/>
 ### Entertainment as Surprise
 --> example#1: to win point due to technique newly classified to be effective<br/>
 --> example#2: to lose point due to pattern variation <br/>
---> e.g. via slow ball instead of expected power smash<br/>
+--> e.g. attack via slow ball instead of expected power smash<br/>
 
 #### Additional Notes:<br/>
 --> continuous lose pattern; NOT surprise; NOT entertainment<br/>
 --> Information = surprise, if NEW<br/>
-<br/>
 --> <b>Recommended Reading:</b> Shannon Information and Surprise<br/>
+--> CAN delay GAME OVER by executing Tennis rally drill with Donkey Kong<br/>
+--> NOT WIN, NOT LOSE, until consumed available resources, e.g. Electricity, Food<br/>
 
 ## 2) Hardware
 ## 2.1) SONY PlayStation Portable (PSP)
