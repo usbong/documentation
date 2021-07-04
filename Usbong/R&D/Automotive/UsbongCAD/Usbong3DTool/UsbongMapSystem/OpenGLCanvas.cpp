@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20200926
- * @date updated: 20210703
+ * @date updated: 20210704
  * @website address: http://www.usbong.ph
  *
  * References:
@@ -623,11 +623,11 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
     //    myText = new Text(0.0f,320.0f,0.0f,myWindowWidthAsPixel,myWindowHeightAsPixel);
     myText = new Text(0.0f,320.0f,0.0f,myWindowWidthAsPixelInput,myWindowHeightAsPixelInput);
     myText->setOpenGLCanvas(this, fGridSquareWidth);
-    
+  
     //added by Mike, 20210703
     myLevel2D = new Level2D(0.0f,320.0f,0.0f,myWindowWidthAsPixelInput,myWindowHeightAsPixelInput);
     myLevel2D->setOpenGLCanvas(this, fGridSquareWidth);
-    myLevel2D->setupLevel(LEVEL_TEXTURE);    
+    myLevel2D->setupLevel(LEVEL_2D_TEXTURE);
     
     //added by Mike, 20210524; edited by Mike, 20210528
     //	myBall = new Ball(320.0f,320.0f,0.0f,myWindowWidthAsPixel,myWindowHeightAsPixel);
@@ -1837,10 +1837,11 @@ glPopMatrix();
     //edited by Mike, 20210701
 ////    printf(">>>>>iLeftMarginColumnCount: %i>>>>>",iLeftMarginColumnCount);
 
-    //TO-DO: -reverify: this due to exact in macOS, but not exact in Linux machine
-    //edited by Mike, 20210702
-//    glTranslatef(-2.0f/iColumnCountMax*iLeftMarginColumnCount, 0.0f, 0.0f);
-    glTranslatef(-2.0f/iColumnCountMax*iLeftMarginColumnCount+0.02, 0.0f, 0.0f);
+    //edited by Mike, 20210704
+//    glTranslatef(-2.0f/iColumnCountMax*iLeftMarginColumnCount+0.02, 0.0f, 0.0f);
+    //note: no +0.02 in macOS
+    //TO-DO: -reverify: in Linux OS
+    glTranslatef(-2.0f/iColumnCountMax*iLeftMarginColumnCount, 0.0f, 0.0f);
 
 
     	//	printf("myMouseActionDown[MOUSE_LEFT_BUTTON]: %i\n",myMouseActionDown[MOUSE_LEFT_BUTTON]);
@@ -1905,10 +1906,13 @@ glPopMatrix();
     sprintf(tempText,"G");        
     myLevel->draw_level(fGridSquareWidth*4.0f, fGridSquareWidth*4.0f, 0.0f, tempText);
 */
+    //TO-DO: -update: this
     myLevel2D->draw();
 //-----         
      
     //added by Mike, 20210613; removed by Mike, 20210703
+    //added by Mike, 20210704
+    //note: OK output
 //    myText->draw();
     
     

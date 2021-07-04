@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20200929
- * @date updated: 20210703
+ * @date updated: 20210704
  * @website address: http://www.usbong.ph
  *
  * Acknowledgments:
@@ -88,6 +88,8 @@
 
 //added by Mike, 20210524; edited by Mike, 20210613
 #define BALL_TEXTURE_A 13
+
+#define LEVEL_2D_TEXTURE 14 //added by Mike, 20210704
 
 #define MAX_ENEMY 2
 
