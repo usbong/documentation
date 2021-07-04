@@ -279,6 +279,45 @@ PA-N (pangalan ng iyong kaibigan)<br/>
 <img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Notes/res/dragon.jpg" width="30%">
 <br/>
 
+#### 1.3.2.3) リーダー (ri-da-; leader)」
+--> 解放軍（kaihou gun; liberation army）<br/>
+--> partners gravitate toward leader; leader needs assistance due to insufficient information<br/>
+--> halimbawa: 軍師（gunshi; Army Master), Masshu joins to offer assistance as advisor<br/>
+--> 選択肢があっても、仲間がやりたいということをやれせる。<br/>
+--> sentakushi ga attemo, nakama ga yaritai to iu koto wo yareseru.<br/>
+--> Bagama't may pagpipilian, hinahayan ang nais gawin ng partner.<br/>
+-->　しないと、話の流れは進めない。<br/>
+--> shinai to, hanashi no nagare ha susumenai.<br/>
+--> Kung hindi gagawin ito, hindi uusad ang daloy ng salaysay.<br/>
+
+##### 1.3.2.3.1) Mga halimbawa: 
+--> 1.3.2.3.1.1) decision of guardian to protect leader in exchange of own life<br/>
+--> 1.3.2.3.1.2) decision of leader to pause after death of guardian, instead continuing with story<br/>
+--> 軍師（gunshi; Army Master), Masshu, disagrees with pausing; recommends to continue with attack preparations<br/>
+--> restart at save point before death of guardian<br/>
+--> 前と同じ選択肢をえらんで、そのまま、進む.<br/>
+--> mae to onaji sentakushi wo erande, sono mama, susumu.<br/>
+--> Piliin ang pinili noong nakaraan, hayaan iyon, umusad. <br/>
+--> observations (due to did not exist previously): <br/>
+--> received: item しのびふく(shinobi fuku; bear to execute patience + cloth) from defeated magician monster<br/>
+--> leader pauses beside the remaining cape and axe of guardian who was eaten by monster that was released by 将軍 (shougun)<br/>
+--> 1.3.2.3.1.3) decision of party, i.e. team/Unit, member, ビクトール(bikuto-ru; Victor) to not kill shougun<br/>
+--> due to stopped by another Unit member, フリック (furikku; Flick);<br/> 
+--> leader’s decision, not sufficient<br/>
+
+##### 1.3.2.3.2) Mga Dagdag:
+--> 1.3.2.3.2.1) level up not emphasized; emphasis on adding partners to liberation army<br/>
+--> 1.3.2.3.2.2) きんこう (kinkou; vault containing treasures of Dwarf people)<br/>
+--> requested: by Dwarf Chief to break the vault’s security system as proof that it can be done<br/>
+--> observed: reached vault’s center, but not certain if already sufficient as proof due to appeared to not find treasures, et cetera<br/>
+--> learned: from Dwarf Chief that it is already sufficient proof<br/>
+--> observed: pocchi, i.e. currency, of money has increased to 40,000 (approx) due to received after defeating monsters inside vault<br/>
+--> reminder: treasure, i.e. 焦魔鏡 (shuu-ma-kyou; focused magic mirror)'s technical schematic/diagram;<br/>
+--> stolen from Dwarf people;<br/>
+--> misused by Empire as weapon;<br/>
+--> Empire as Magnanakaw's information insufficient regarding its weakness,<br/>
+--> i.e. use of 風火砲 (fuu-ka-hou; wind fire cannon)<br/>
+
 ## 1.4) SONY Computer Entertainment Europe and Guerrilla
 ### 1.4.1) KillZone 2
 --> Choose role as Ingeniero (Engineer); Elite mode; less death count of being killed<br/>
