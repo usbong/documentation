@@ -844,11 +844,17 @@ void Text::drawTextBackgroundAsQuadWithTexture()
 		//identified delays shall add computation time during movement in galaxy
 		//speed-up via machine tool, e.g. RobotShip, assists Human Pilot
 				
-  	//edited by Mike, 20210702 	
+  	//edited by Mike, 20210704
 		//added +0.02f in x-axis as margin so text not too near left border of text background image
 		//y-axis add from window's top
-    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset)+0.02f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
+//    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset)+0.02f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
 
+    //note: output: 0.4f; window origin left 0.0f; right max 1.0f
+//    printf(">>>>> myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset): %f",myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset));
+
+    //TO-DO: -reverify: in Linux OS
+    //add to vertex position x-axis: 0.2f
+    glTranslatef(0.2f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
 
     //auto-scale to Window Width to Height
     glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
