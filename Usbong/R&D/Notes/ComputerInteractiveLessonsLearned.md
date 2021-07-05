@@ -320,6 +320,40 @@ PA-N (pangalan ng iyong kaibigan)<br/>
 --> Empire as Magnanakaw's information insufficient regarding its weakness,<br/>
 --> i.e. use of 風火砲 (fuu-ka-hou; wind fire cannon)<br/>
 
+#### 1.3.2.4) パーンPA-AN (pangalan ng iyong kaibigan)
+--> pa ichi n?; where n : en; en = circle; complete; <br/>
+--> example: えんがあったら・・・<br/>
+--> en ga attara...<br/>
+--> Kung magkikita tayo muli...<br/>
+--> 目が閉じてない絵<br/>
+--> me ga tojitenai e<br/>
+--> Hindi nakasara ang mata na guhit<br/>
+
+<br/>
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Notes/res/suikoden/bagu.jpg" width="60%">
+<br/>
+
+--> 「テオさま」との戦い・・・<br/>
+--> 「teoSAMA」 to no tatakai...<br/>
+--> Pakikipaglaban kay "teoSAMA"; where: SAMA = ginagalang na ginoo<br/>
+--> <b>Reminder:</b> テオteo is leader's father<br/>
+--> ストリートファイターのリュウを思い出す。<br/>
+--> sutori-to faita- no RYUU wo omoidasu.<br/>
+--> Maaalala si RYUU ng Street Fighter.<br/>
+--> コンピュータ・ブランかとの戦い、<br/>
+--> kompyu-ta・buranka to no tatakai,<br/>
+--> Pakikipaglaban kay kompyuter BLANKA,<br/>
+--> 残りの時間と体力ゲージを見て、<br/>
+--> nokori no jikan to tairyokuge-ji wo mite, <br/>
+--> tingnan ang natitirang oras at gauge ng lakas ng pangangatawan,<br/>
+--> 計算してから、先に攻撃をする。<br/>
+--> keisanshitekara, saki ni kougeki wo suru.<br/>
+--> pagkatapos gawin ang pagbibilang (計算keisan; sukat + plano/nais), <br/>
+--> unahang gumawa ng salakay (攻撃kougeki; pagsugod na tama).<br/>
+--> 結果は負けだ。<br/>
+--> kekka ha makeda.<br/>
+--> kinahinatnan (結果kekka; pinagtaling bunga), talo.<br/>
+
 ## 1.4) SONY Computer Entertainment Europe and Guerrilla
 ### 1.4.1) KillZone 2
 --> Choose role as Ingeniero (Engineer); Elite mode; less death count of being killed<br/>
