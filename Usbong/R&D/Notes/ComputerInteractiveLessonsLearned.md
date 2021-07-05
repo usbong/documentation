@@ -264,9 +264,12 @@ PA-N (pangalan ng iyong kaibigan)<br/>
 ##### 1.3.2.2.4.3) 自分で癒せないこと。<br/>
 --> jibunde iyasenai koto.<br/>
 --> Huwag hayaang hilumin niya ang sarili.<br/>
-<br/>
+--> <b>Paalala:</b> Batayan din ang bilis sa sequence, i.e. pagkasunod-sunod ng mga tauhan at halimaw sa labanan.<br/>
+--> Ibig sabihin, maaaring hindi ng mabagal na partner mahilum ang kanyang sarili bago siya salakayin ng halimaw.<br/>
+--> Ito'y bagama't hindi mo napansin ito bago kayo nakarating sa pook na ito.<br/>
 --> <b>Mungkahing Aksyon:</b> Unawain Nash Equilibrium<br/>
 <br/>
+
 --> <b>Paalala:</b> Bawat tauhan sa pangkat, may bilang ng mga gamit na maaaring dalhin.<br/>
 --> Maaaring magsama hanggang 6 na tao + ikaw + daigdig.<br/>
 --> May dagdag na tao mula 4 gawa ng daloy ng salaysay.<br/>
@@ -281,14 +284,14 @@ PA-N (pangalan ng iyong kaibigan)<br/>
 
 #### 1.3.2.3) 「リーダー (ri-da-; leader)」
 --> 解放軍（kaihou gun; liberation army）<br/>
---> partners gravitate, i.e. pulled to stick, toward leader; leader needs assistance due to insufficient information<br/>
+--> partners gravitate, i.e. pulled to stick, toward leader; leader needs assistance due to has insufficient information<br/>
 --> halimbawa: 軍師（gunshi; Army Master), Masshu joins to offer assistance as advisor<br/>
 --> 選択肢があっても、仲間がやりたいということをやれせる。<br/>
 --> sentakushi ga attemo, nakama ga yaritai to iu koto wo yareseru.<br/>
 --> Bagama't may pagpipilian, hinahayan ang nais gawin ng partner.<br/>
 -->　しないと、話の流れは進めない。<br/>
 --> shinai to, hanashi no nagare ha susumenai.<br/>
---> Kung hindi gagawin ito, hindi uusad ang daloy ng salaysay.<br/>
+--> Kung hindi gagawin ito, hindi makauusad ang daloy ng salaysay.<br/>
 
 ##### 1.3.2.3.1) Mga halimbawa: 
 --> 1.3.2.3.1.1) decision of guardian to protect leader in exchange of own life<br/>
@@ -307,12 +310,12 @@ PA-N (pangalan ng iyong kaibigan)<br/>
 
 ##### 1.3.2.3.2) Mga Dagdag:
 --> 1.3.2.3.2.1) level up not emphasized; emphasis on adding partners to liberation army<br/>
---> 1.3.2.3.2.2) きんこう (kinkou; vault containing treasures of Dwarf people)<br/>
+--> 1.3.2.3.2.2) きんこう (kinkou; gold storage,i.e. vault containing treasures of Dwarf people)<br/>
 --> requested: by Dwarf Chief to break the vault’s security system as proof that it can be done<br/>
 --> observed: reached vault’s center, but not certain if already sufficient as proof due to appeared to not find treasures, et cetera<br/>
 --> learned: from Dwarf Chief that it is already sufficient proof<br/>
 --> observed: pocchi, i.e. currency, of money has increased to 40,000 (approx) due to received after defeating monsters inside vault<br/>
---> reminder: treasure, i.e. 焦魔鏡 (shuu-ma-kyou; focused magic mirror)'s technical schematic/diagram;<br/>
+--> reminder: treasure, e.g. 焦魔鏡 (shuu-ma-kyou; focused magic mirror)'s technical schematic/diagram;<br/>
 --> stolen from Dwarf people; misused by Empire as weapon;<br/>
 --> Empire as Magnanakaw's information insufficient regarding its weakness,<br/>
 --> i.e. use of 風火砲 (fuu-ka-hou; wind fire cannon)<br/>
