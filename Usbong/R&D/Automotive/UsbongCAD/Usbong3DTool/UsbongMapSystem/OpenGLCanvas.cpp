@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20200926
- * @date updated: 20210704
+ * @date updated: 20210705
  * @website address: http://www.usbong.ph
  *
  * References:
@@ -1842,7 +1842,13 @@ glPopMatrix();
     //note: no +0.02 in macOS
     //TO-DO: -reverify: in Linux OS
     glTranslatef(-2.0f/iColumnCountMax*iLeftMarginColumnCount, 0.0f, 0.0f);
-
+		
+		//added by Mike, 20210705
+		#if defined(__APPLE__)
+		#else
+    	glTranslatef(+0.02f, 0.0f, 0.0f);
+		#endif
+		
 
     	//	printf("myMouseActionDown[MOUSE_LEFT_BUTTON]: %i\n",myMouseActionDown[MOUSE_LEFT_BUTTON]);
     	
@@ -1913,7 +1919,7 @@ glPopMatrix();
     //added by Mike, 20210613; removed by Mike, 20210703
     //added by Mike, 20210704
     //note: OK output
-//    myText->draw();
+    //myText->draw();
     
     
     //added by Mike, 20210511
