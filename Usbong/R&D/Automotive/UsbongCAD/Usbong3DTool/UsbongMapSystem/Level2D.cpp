@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20200926
- * @date updated: 20210703
+ * @date updated: 20210705
  * @website address: http://www.usbong.ph
  *
  * Reference:
@@ -535,8 +535,11 @@ Level2D::Level2D(float xPos, float yPos, float zPos, float windowWidth, float wi
     
     //added: function to be reusable
 //    readInputText("inputHalimbawa.txt");
-    readInputText("inputLevel1.csv");    
-    setupLevel(LEVEL_TEXTURE);
+		//edited by Mike, 20210705
+//    readInputText("inputLevel1.csv");    
+    read("inputLevel1.csv");    
+    
+    setupLevel(LEVEL_2D_TEXTURE);
 }
 
 Level2D::~Level2D()
@@ -807,7 +810,7 @@ void Level2D::drawTextBackgroundAsQuadWithTexture()
             //note: MAX_TEXT_CHAR_ROW=4
             tempText[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW][iColumnCount]=cCurrentTextContainer[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW][iColumnCount];
             
-            //            printf("cCurrentTextContainer[%i][%i]: %c\n",iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW, iColumnCount, cCurrentTextContainer[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW][iColumnCount]);
+                        printf("cCurrentTextContainer[%i][%i]: %c\n",iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW, iColumnCount, cCurrentTextContainer[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW][iColumnCount]);
         }
         
         //        		printf(">>>>>iRowCount: %i\n",iRowCount);
@@ -1109,6 +1112,410 @@ void Level2D::drawTileAsQuadWithTexture(GLfloat x, GLfloat y, GLfloat z, char c)
    glEnd();    
 }
 
+
+//added by Mike, 20210705
+//TO-DO: -update: this
+//TO-DO: -add: read input .txt file
+//TO-DO: -add: water tiles; pilot in water, no firing; RobotShip in water, firing OK; 
+//note: palaka
+//added by Mike, 20210321
+//note: fXSize... not yet used
+void Level2D::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat fXSize, GLfloat fYSize, GLfloat fZSize) {
+/* //removed by Mike, 20210321
+	int myWindowWidth=6144;
+    int myWindowHeight=6144;
+	
+	int iRowCountMax=30;
+ 	int iColumnCountMax=30;
+ 	int iHeightCountMax=30; //added by Mike, 20210208
+*/
+	
+/* //edited by Mike, 20210310
+	int iRowCountMax=MAX_Z_AXIS_VIEWPORT; //60
+ 	int iColumnCountMax=MAX_X_AXIS_VIEWPORT; //60
+ 	int iHeightCountMax=60; //added by Mike, 20210208
+*/	
+	
+/*
+	int iRowCountMax=MAX_Z_AXIS_VIEWPORT;
+ 	int iColumnCountMax=MAX_Z_AXIS_VIEWPORT;
+ 	int iHeightCountMax=MAX_Z_AXIS_VIEWPORT;
+*/
+/*	//edited by Mike, 20210311
+	float fGridSquareWidth = myWindowWidth/iColumnCountMax/100.0;
+	float fGridSquareHeight = myWindowHeight/iRowCountMax/100.0;
+/*
+	float fGridSquareWidth = 0.3f;
+	float fGridSquareHeight = 0.3f;
+*/
+/*
+	float fGridSquareWidth = 3.0f;
+	float fGridSquareHeight = 3.0f;
+*/
+/*
+	float fGridSquareWidth = fZSize;
+	float fGridSquareHeight = fXSize;
+*/
+/*
+	float fGridSquareWidth = 1.0f;
+	float fGridSquareHeight = 1.0f;
+*/
+/*	//edited by Mike, 20210520
+	float fGridSquareWidth = 4.0f;
+	float fGridSquareHeight = 4.0f;
+*/
+	fGridSquareWidth = 4.0f;
+	fGridSquareHeight = 4.0f;
+	
+	char tempText[50];
+	
+	//TO-DO: -reverify: viewPort scrolling movement
+/*
+	fZ=fZ-1;
+	fX=fX-1;
+	fY=fY-1;
+*/	
+	//added by Mike, 20210305; added again by Mike, 20210308
+	int iX=fX;
+	int iY=fY;
+	int iZ=fZ;
+	
+   //RobotShip Step: 0.3f
+/*	
+  fStepMovemenGridZ=(fStepMovemenGridZ+0.3f)%1;
+  fStepMovemenGridX=(fStepMovemenGridX+0.3f)%1;
+  fStepMovemenGridY=(fStepMovemenGridY+0.3f)%1;
+*/
+/*	//removed by Mike, 20210318	draw_char
+  fStepMovemenGridZ=(fStepMovemenGridZ+0.3f);
+  fStepMovemenGridX=(fStepMovemenGridX+0.3f);
+  fStepMovemenGridY=(fStepMovemenGridY+0.3f);
+*/
+	
+/*	//edited by Mike, 20210310
+   int iMovementGridZ = iPrevZ-iZ;
+   int iMovementGridX = iPrevX-iX;
+   int iMovementGridY = iPrevY-iY;
+*/
+   int iMovementGridZ=0;
+   int iMovementGridX=0;
+   int iMovementGridY=0;
+	
+   if (fStepMovemenGridZ>=1) {
+   	 //added by Mike, 20210311
+	 //note: actual fZ position and fGridSquareWidth*rowCount position
+	 //TO-DO: -reverify: this
+   	 iMovementGridZ = iPrevZ-iZ;
+   	 
+	 fStepMovemenGridZ=0;
+   }
+
+   //added by Mike, 20210318
+   //TO-DO: -update: this to synchronize actual position with double array container
+   iMovementGridX = iPrevX-iX;
+   //x-axis
+   //note: canvasStepX=3.2f 
+   if (iMovementGridX < 0) { //moved backward
+     fStepMovemenGridX=(fStepMovemenGridX-3.2f);
+   }
+   else if (iMovementGridX == 0) { //no movement in X-axis
+   }	
+   else {
+     fStepMovemenGridX=(fStepMovemenGridX+3.2f);
+   }	
+   iMovementGridX = 0;
+
+   if (fStepMovemenGridX>=3.2f) {
+//   if (fStepMovemenGridX>=fGridSquareWidth) {
+	 iMovementGridX = iPrevX-iX;
+	 fStepMovemenGridX=0;
+
+     //added by Mike, 20210319
+//     iMovementGridX -= MAX_X_AXIS_VIEWPORT/2; 
+   }
+//   else if (fStepMovemenGridX<=-fGridSquareWidth) {
+   else if (fStepMovemenGridX<=-3.2f) {
+	   iMovementGridX = iPrevX-iX; //(iPrevX-iX)*(-1);
+	 fStepMovemenGridX=0;
+	   
+     //added by Mike, 20210319
+//     iMovementGridX -= MAX_X_AXIS_VIEWPORT/2; 	   
+   }
+
+
+/* //edited by Mike, 20210520	
+   if (fStepMovemenGridY>=1) {
+   	 iMovementGridY = iPrevY-iY;
+	 fStepMovemenGridY=0;
+   }
+*/
+	iMovementGridY=0;
+
+   //added by Mike, 20210318; removed by Mike, 20210318
+/*	
+   if (iMovementGridZ < 0) { //moved forward
+     std::cout << "forward" << "\n";
+//			  std::cout << "iMovementGridZ" << iMovementGridZ <<"\n";	   
+   }
+   else if (iMovementGridZ == 0) { //no movement in Z-axis
+     std::cout << "no movement" << "\n";	   
+   }	
+   else {
+     std::cout << "backward" << "\n";	   
+//	 iMovementGridZ=iMovementGridZ*-1; //get absolute value, i.e. positive number	   
+   }	
+	
+   //x-axis
+   if (iMovementGridX < 0) { //moved backward
+     iMovementGridX=iMovementGridX*-1;
+   }
+   else if (iMovementGridX == 0) { //no movement in Z-axis
+   }	
+   else {
+     iMovementGridX=iMovementGridX*1;
+   }	
+*/
+	
+   //added by Mike, 20210309
+   //TO-DO: -reverify: iMovementGridZ, etc value
+/* //removed by Mike, 20210423
+   std::cout << "iMovementGridZ: " << iMovementGridZ << "\n";
+   std::cout << "iMovementGridX: " << iMovementGridX << "\n";
+*/
+	
+   iCurrentLevelMapContainerOffsetZ += iMovementGridZ; 
+   iCurrentLevelMapContainerOffsetX += iMovementGridX; 
+	
+   //removed by Mike, 20210520
+   //iCurrentLevelMapContainerOffsetY += iMovementGridY; 
+   iCurrentLevelMapContainerOffsetY=0;
+	
+//   std::cout << "iCurrentLevelMapContainerOffsetZ: " << iCurrentLevelMapContainerOffsetZ << "\n";
+//   std::cout << "iCurrentLevelMapContainerOffsetX: " << iCurrentLevelMapContainerOffsetX << "\n";
+
+
+//  int iRowCount=iCurrentLevelMapContainerOffsetZ-1;
+  int iRowCount=iCurrentLevelMapContainerOffsetZ;	
+  int iCurrentLevelMapContainerOffsetMaxViewPortZ=iRowCount+MAX_Z_AXIS_VIEWPORT;
+		
+   if (iCurrentLevelMapContainerOffsetZ<0) {
+	 iRowCount=0;   	   
+	 iCurrentLevelMapContainerOffsetZ=0; //added by Mike, 20210318	   
+   } 
+   else if (iCurrentLevelMapContainerOffsetZ>=MAX_INPUT_TEXT_PER_LINE) {
+//     iCurrentLevelMapContainerOffsetZ=MAX_INPUT_TEXT_PER_LINE-1;
+	 iRowCount=MAX_INPUT_TEXT_PER_LINE-1;   
+   } 
+
+	
+   //example#1: iPrevZ=-3; iZ=-2;
+   //-3 - (-2) = -1
+   //-1 < 0, moved forward	
+	
+   //example#2: iPrevZ=-3; iZ=-2;
+   //-3 - (-2) = -1
+   //-1 < 0, moved forward	
+/* //removed by Mike, 20210318	
+//   if ((iPrevZ-iZ) < 0) { //moved forward
+   if (iMovementGridZ < 0) { //moved forward
+     std::cout << "forward" << "\n";
+//			  std::cout << "iMovementGridZ" << iMovementGridZ <<"\n";	   
+   }
+   else if (iMovementGridZ == 0) { //no movement in Z-axis
+     std::cout << "no movement" << "\n";	   
+   }	
+   //example: iPrevZ=-2; iZ=-3;
+	//-2 - (-3) = 1
+	//1 > 0, moved backward		
+   else {
+     std::cout << "backward" << "\n";	   
+//	 iMovementGridZ=iMovementGridZ*-1; //get absolute value, i.e. positive number	   
+   }
+*/	
+	
+/*	//TO-DO: -reverify: this
+   if (iMovementGridZ<0) { //if negative value
+   	iMovementGridZ=iMovementGridZ*-1; //get absolute value, i.e. positive number
+   }
+*/
+		
+   if (iCurrentLevelMapContainerOffsetMaxViewPortZ<0) {
+//     iCurrentLevelMapContainerOffsetZ=0;
+	 iCurrentLevelMapContainerOffsetMaxViewPortZ=0;   	   
+   } 
+   else if (iCurrentLevelMapContainerOffsetMaxViewPortZ>=MAX_INPUT_TEXT_PER_LINE) {
+//     iCurrentLevelMapContainerOffsetZ=MAX_INPUT_TEXT_PER_LINE-1;
+	 iCurrentLevelMapContainerOffsetMaxViewPortZ=MAX_INPUT_TEXT_PER_LINE-1;   
+   } 
+
+/* //removed by Mike, 20210423	
+   std::cout << "iCurrentLevelMapContainerOffsetMaxViewPortZ: " << iCurrentLevelMapContainerOffsetMaxViewPortZ << "\n";
+
+	//edited by Mike, 20210318
+   std::cout << "fZ: " << fZ << "\n";
+   std::cout << "fX: " << fX << "\n";
+*/
+	
+//	   std::cout << "DITO iRowCount: " << iRowCount << "\n";
+
+		
+	//edited by Mike, 20210310
+//	for (int iRowCount=0+iCurrentLevelMapContainerOffsetZ; iRowCount<iCurrentLevelMapContainerOffsetMaxViewPortZ; iRowCount++) {		
+//edited by Mike, 20210311
+	for (;iRowCount<iCurrentLevelMapContainerOffsetMaxViewPortZ; iRowCount++) {		
+/*	//removed by Mike, 20210311	
+	iRowCount=0;
+	for (;iRowCount<160; iRowCount++) {		
+*/
+
+//	for (int iRowCount=0; iRowCount<MAX_INPUT_TEXT_PER_LINE; iRowCount++) {		
+	
+
+//     		  std::cout << "iRowCount" << iRowCount <<"\n";
+		
+		//added by Mike, 202103010
+//  int iColumnCount=iCurrentLevelMapContainerOffsetX-1;	
+   //edited by Mike, 20210319
+   int iColumnCount=iCurrentLevelMapContainerOffsetX;
+   int iCurrentLevelMapContainerOffsetMaxViewPortX=iColumnCount+MAX_X_AXIS_VIEWPORT;
+		
+   //edited by Mike, 20210318		
+   if ((iColumnCount<0) or (iCurrentLevelMapContainerOffsetX<0)) {
+	 iColumnCount=0;   
+//	 iCurrentLevelMapContainerOffsetX=0; //added by Mike, 20210318
+   } 
+   else if (iCurrentLevelMapContainerOffsetX>=MAX_INPUT_TEXT_PER_LINE) {
+	 iColumnCount=MAX_INPUT_TEXT_PER_LINE-1;
+	 iCurrentLevelMapContainerOffsetX=MAX_INPUT_TEXT_PER_LINE-1; //added by Mike, 20210319
+   } 	
+		
+   if (iCurrentLevelMapContainerOffsetMaxViewPortX<0) {
+	 iCurrentLevelMapContainerOffsetMaxViewPortX=0;   
+   } 
+   else if (iCurrentLevelMapContainerOffsetMaxViewPortX>=MAX_INPUT_TEXT_PER_LINE) {
+	 iCurrentLevelMapContainerOffsetMaxViewPortX=MAX_INPUT_TEXT_PER_LINE-1;	   
+   }
+		
+/* //removed by Mike, 20210423	
+   std::cout << "iCurrentLevelMapContainerOffsetX: " << iCurrentLevelMapContainerOffsetX << "\n";
+*/		
+		
+//   std::cout << "iCurrentLevelMapContainerOffsetMaxViewPortX: " << iCurrentLevelMapContainerOffsetMaxViewPortX << "\n";
+		
+		
+//edited by Mike, 20210310		
+//		for (int iColumnCount=0+iCurrentLevelMapContainerOffsetX; iColumnCount<(iCurrentLevelMapContainerOffsetX+MAX_INPUT_TEXT_PER_LINE); iColumnCount++) {
+	//edited by Mike, 20210310
+//		for (int iColumnCount=0+iCurrentLevelMapContainerOffsetX; iColumnCount<iCurrentLevelMapContainerOffsetMaxViewPortX; iColumnCount++) {
+//edited by Mike, 20210311
+		for (;iColumnCount<iCurrentLevelMapContainerOffsetMaxViewPortX; iColumnCount++) {
+
+//			std::cout << "LOOB iRowCount" << iRowCount <<"\n";
+
+//			std::cout << "iRowCount:" << iRowCount << "iColumnCount:" << iColumnCount << "\n";
+
+			if (sCurrentLevelMapContainer[iRowCount][iColumnCount].compare("\"G\"") == 0) { //TRUE
+			//start at 0 in double array container 
+//		    if (sCurrentLevelMapContainer[99][10].compare("\"G\"") == 0) { //TRUE
+//			
+//				  			  std::cout << "DITO" <<"\n";
+//				  printf("DITO");
+				
+			    //stone
+				sprintf(tempText,"G");
+			
+				//added by Mike, 20201124; edited by Mike, 20210423
+//			    glColor3f(0.14f, 0.68f, 0.06f); // Green
+			    glColor3f(1.0f, 1.0f, 1.0f); // white
+
+				//added by Mike, 20201124
+				//execute this when using solid colors
+				//for computer to not draw borders
+				//removed by Mike, 20210423
+//				glBindTexture( GL_TEXTURE_2D, 0 );
+				
+				//added by Mike, 20210521
+				glBindTexture( GL_TEXTURE_2D, iLevelTextureObject );
+
+/*				
+	std::cout << "iColumnCount: " << iColumnCount << "\n";
+	std::cout << "iRowCount: " << iRowCount << "\n";
+*/				
+				//added by Mike, 20210520
+				//TO-DO: -reverify: cause need to execute this when using drawLevelMapInViewPort(...)
+//				draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareWidth*iRowCount, tempText);				
+				//note: "glPushMatrix(); ... glPopMatrix();" execution time appears equal
+				//with "glTranslate()..." as opening and closing
+/*		
+        glPushMatrix();
+				glTranslatef(0.0f, 1.0f, 0.0f);				
+				draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareWidth*iRowCount, tempText);
+        glPopMatrix();
+*/				
+/*				
+				glTranslatef(0.0f, 1.0f, 0.0f);				
+					draw_level(fGridSquareWidth*iColumnCount, 0.0f, fGridSquareWidth*iRowCount, tempText);
+				glTranslatef(0.0f, -1.0f, 0.0f);				
+*/
+
+				//added by Mike, 20210520
+				draw_level(fGridSquareWidth*iColumnCount, 1.0f, fGridSquareWidth*iRowCount, tempText);
+
+				
+//computer draws this box
+//				draw_level(fGridSquareWidth*0, 0.0f, fGridSquareWidth*300, tempText);				
+			}	
+			//added by Mike, 20210521
+			else if (sCurrentLevelMapContainer[iRowCount][iColumnCount].compare("\"H\"") == 0) { //TRUE
+			    //sand
+				sprintf(tempText,"H");
+				
+/*				//removed by Mike, 20210521
+				//added by Mike, 20201124; edited by Mike, 20210423
+			    glColor3f(0.14f, 0.68f, 0.06f); // Green
+//			    glColor3f(1.0f, 1.0f, 1.0f); // white
+
+				//added by Mike, 20201124
+				//execute this when using solid colors
+				glBindTexture( GL_TEXTURE_2D, 0 );
+*/				
+				//added by Mike, 20210521
+				glBindTexture( GL_TEXTURE_2D, iLevelTextureObject );
+				
+				
+				draw_level(fGridSquareWidth*iColumnCount, 1.0f, fGridSquareWidth*iRowCount, tempText);
+			}		
+//added by Mike, 20210524
+//note: -1 : empty 
+			else if (sCurrentLevelMapContainer[iRowCount][iColumnCount].compare("\"S\"") == 0) { //TRUE
+
+				sprintf(tempText,"S");
+				
+				//added by Mike, 20201124; edited by Mike, 20210423
+//			    glColor3f(0.14f, 0.68f, 0.06f); // Green
+			    glColor3f(1.0f, 1.0f, 1.0f); // white
+
+				//added by Mike, 20201124
+				//execute this when using solid colors
+				glBindTexture( GL_TEXTURE_2D, 0 );
+
+/* //removed by Mike, 20210524				
+//				glBindTexture( GL_TEXTURE_2D, iLevelTextureObject );
+*/
+								
+				draw_level(fGridSquareWidth*iColumnCount, 1.0f, fGridSquareWidth*iRowCount, tempText);
+			}						
+					
+			
+		}
+	}
+
+	//added by Mike, 20210306; edited by Mike, 20210308	
+	iPrevX=iX;
+	iPrevY=iY;
+	iPrevZ=iZ;
+}
+
 //added by Mike, 20210703
 //TO-DO: -update: this
 void Level2D::drawLevelWithTexture()
@@ -1258,6 +1665,8 @@ void Level2D::drawLevelWithTexture()
         
         /*        printf("iTextCurrentMaxColumnCount: %i\n",iTextCurrentMaxColumnCount);
          */
+
+/*	//edited by Mike, 20210705
         //edited by Mike, 20210617
         //        for (int iColumnCount=0; iColumnCount<iTextCurrentMaxColumnCount; iColumnCount++) {
         for (int iColumnCount=0; iColumnCount<iCurrentMaxColumnCountPerRowContainer[iRowCount]; iColumnCount++) {
@@ -1265,9 +1674,18 @@ void Level2D::drawLevelWithTexture()
             //            tempText[iRowCount][iColumnCount]=cCurrentTextContainer[iRowCount][iColumnCount];
             //note: MAX_TEXT_CHAR_ROW=4
             tempText[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW][iColumnCount]=cCurrentTextContainer[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW][iColumnCount];
-            
             //            printf("cCurrentTextContainer[%i][%i]: %c\n",iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW, iColumnCount, cCurrentTextContainer[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW][iColumnCount]);
         }
+*/					
+        
+        //added by Mike, 20210705
+				if (tempText[iRowCount][iColumnCount].compare("\"G\"") == 0) { //TRUE
+//				  			  std::cout << "DITO" <<"\n";
+				
+			  	//stone
+					sprintf(tempText,"G");
+				}
+				        	
         
         //        		printf(">>>>>iRowCount: %i\n",iRowCount);
         //        		printf(">>>>>%s\n",tempText[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW]);
@@ -2594,9 +3012,11 @@ void Level2D::drawWeapon(float xPos, float yPos, float zPos)
 }
 
 
+/* //edited by Mike, 20210705
 //added by Mike, 20210614
 //note: error occurs if excess rows > 1
 //TO-DO: -fix: this
+//note: per char, instead of per String
 void Level2D::readInputText(char *inputFilename) {
     int c;
     FILE *file;
@@ -2606,11 +3026,7 @@ void Level2D::readInputText(char *inputFilename) {
     int iRowCount=0;
     int iColumnCount=0;
     
-    //TO-DO: -update: this
-    /*	int MAX_TEXT_CHAR_ROW=2;
-     int MAX_TEXT_CHAR_COLUMN=8;
-     */
-    
+
     //edited by Mike, 20210618
     for (iRowCount=0; iRowCount<MAX_TEXT_CHAR_ROW; iRowCount++) {
         //    for (iRowCount=0; iRowCount<MAX_TEXT_CHAR_ROW_RAM; iRowCount++) {
@@ -2632,17 +3048,6 @@ void Level2D::readInputText(char *inputFilename) {
             cCurrentTextContainer[iRowCount][iColumnCount]='\0';
         }
     }
-    
-    
-    
-    /*
-     //added by Mike, 20210618
-     for (iRowCount=0; iRowCount<MAX_TEXT_CHAR_ROW_RAM; iRowCount++) {
-     for (iColumnCount=0; iColumnCount<MAX_TEXT_CHAR_COLUMN; iColumnCount++) {
-     iCurrentMaxColumnCountPerRowContainer[iRowCount]=1;
-     }
-     }
-     */
     
     iRowCount=0;
     iColumnCount=0;
@@ -2689,17 +3094,10 @@ void Level2D::readInputText(char *inputFilename) {
         //edited by Mike, 20210210
         //		while ((c = getc(file)) != EOF) {
         //edited by Mike, 20210516
-        //		while (fgets (input, MAX_TEXT_CHAR_COLUMN, file)) { /* read each line of input */
-        while (fgets (inputTextLine, MAX_TEXT_CHAR_COLUMN, file)) { /* read each line of input */
+        //		while (fgets (input, MAX_TEXT_CHAR_COLUMN, file)) { // read each line of input
+        while (fgets (inputTextLine, MAX_TEXT_CHAR_COLUMN, file)) { // read each line of input
             
             //	putchar(c);
-            
-            /*	//removed by Mike, 20210210
-             char sRow[2] = {(char)c};
-             */
-            //delimited using new line
-            /*			char *chRow = strtok(sRow, "\n");
-             */
             
             //            printf(">>> input: %s\n",input);
             //			sscanf (input, "%s", inputTextLine);
@@ -2714,18 +3112,7 @@ void Level2D::readInputText(char *inputFilename) {
             //added by Mike, 20210208
             iColumnCount=0;
             
-            //removed by Mike, 20210210
-            /*
-             //			char s[2] = {0};
-             //			*s = c;
-             //edited by Mike, 20210209
-             //				char s[2] = {c};
-             //				char s[2] = {itoa(c)};
-             char s[2] = {(char)c};
-             
-             //delimited using comma
-             char *ch = strtok(s, ",");
-             */
+           
             //edited by Mike, 20210616
             //TO-DO: -verify: add tool for computer to notify Unit member if max characters per row already exceeded
             //at present, 19 characters including space
@@ -2739,40 +3126,7 @@ void Level2D::readInputText(char *inputFilename) {
             strcpy(tempInputTextLine,inputTextLine);
             
             printf(">>> inputTextLine: %s\n",inputTextLine);
-            
-            
-            /* 	//edited by Mike, 20210616
-             //note: add "-1" for empty
-             //otherwise, comma as column is skipped
-             //edited by Mike, 20210615
-             //			char *ch = strtok(tempInputTextLine, ",");
-             char *ch = strtok(tempInputTextLine, "\n");
-             
-             while (ch != NULL) {
-             //				printf("%i,",iColumnCount);
-             MAX_TEXT_CHAR_ROW_RAM
-             //TO-DO: use String, instead of char
-             //TO-DO: -reverify: output due to "G" not put in container
-             //				sCurrentLevelMapContainer[iRowCount][iColumnCount]=&ch;
-             sCurrentTextContainer[iRowCount][iColumnCount]=ch;
-             //				printf("%i:",iColumnCount);
-             //				printf("%s,",ch);
-             
-             iColumnCount=iColumnCount+1;
-             
-             //edited by Mike, 20210615
-             //				  ch = strtok(NULL, ",");
-             ch = strtok(NULL, "\n");
-             }
-             
-             */
-            
-            //added by Mike, 20210617
-            /*            if (cCurrentTextContainer[iRowCount][iCharCount]=='\0') {
-             break;
-             }
-             */
-            
+                        
             //added by Mike, 20210617
             //TO-DO: -add: trim to input text line
             
@@ -2815,6 +3169,152 @@ void Level2D::readInputText(char *inputFilename) {
         //added by Mike, 20210615
         //        free(tempInputTextLine);
     }
+}
+*/
+
+//added by Mike, 20210208
+void Level::read(char *inputFilename) {
+	int c;
+	FILE *file;
+	
+	//TO-DO: update: this		
+//	char** iCurrentLevelMapContainer = new char[100][100];	
+	int iRowCount=0;
+	int iColumnCount=0;
+
+
+/*	//edited by Mike, 20210305
+	for (iRowCount=0; iRowCount<MAX_Z_AXIS_VIEWPORT; iRowCount++) {	
+		for (iColumnCount=0; iColumnCount<MAX_X_AXIS_VIEWPORT; iColumnCount++) {		
+	 		sCurrentLevelMapContainer[iRowCount][iColumnCount]=(char*)"-1";//'G';
+		}
+	}
+*/
+//edited by Mike, 20210310
+/*	
+	for (iRowCount=0; iRowCount<100; iRowCount++) {	
+		for (iColumnCount=0; iColumnCount<100; iColumnCount++) {		
+	 		sCurrentLevelMapContainer[iRowCount][iColumnCount]=(char*)"-1";//'G';
+		}
+	}
+*/
+/*	//edited by Mike, 20210321
+	//add +60 to be 160; where 60 : viewport max
+	for (iRowCount=0; iRowCount<160; iRowCount++) {	
+		for (iColumnCount=0; iColumnCount<160; iColumnCount++) {		
+	 		sCurrentLevelMapContainer[iRowCount][iColumnCount]=(char*)"-1";//'G';
+		}
+	}
+*/
+	
+	for (iRowCount=0; iRowCount<MAX_Z_AXIS_MAP; iRowCount++) {	
+		for (iColumnCount=0; iColumnCount<MAX_X_AXIS_MAP; iColumnCount++) {		
+	 		sCurrentLevelMapContainer[iRowCount][iColumnCount]=(char*)"-1";//'G';
+		}
+	}
+	
+	iRowCount=0;
+	iColumnCount=0;
+				
+	//noted by Mike, 20201210
+	//note: if concatenated string exceeds size, "stack smashing detected"; terminated; Aborted (core dumped)
+	//I prefer to set a size, instead of dynamically allocate due to increasing likelihood of memory leaks
+	//where memory leaks = not deallocated storage in memory, albeit not used by software application
+	//identifying not deallocated storage in memory becomes more difficult with increasing use
+	char input[MAX_INPUT_TEXT_PER_LINE]; //max size
+	char inputTextLine[MAX_INPUT_TEXT_PER_LINE]; //max size
+	char tempInputTextLine[MAX_INPUT_TEXT_PER_LINE]; //max size
+	
+	strcpy(input, "input/");
+	strcat(input, inputFilename); //already includes .txt
+//	strcat(input,".txt");
+	
+//	printf("dito: %s",input);
+
+//	file = fopen("input/"+inputFilename, "r"); //.txt file
+//	file = fopen("input/inputHalimbawa.txt", "r"); //.txt file
+	file = fopen(input, "r"); //.txt file
+
+	//TO-DO: -reverify: tile positions
+	int iCount=0;
+	
+	if (file) {
+		//edited by Mike, 20210210
+//		while ((c = getc(file)) != EOF) {
+		while (fgets (input, MAX_INPUT_TEXT_PER_LINE, file)) { /* read each line of input */			
+//	putchar(c);
+			
+/*	//removed by Mike, 20210210
+			char sRow[2] = {(char)c};
+*/			
+			//delimited using new line
+/*			char *chRow = strtok(sRow, "\n");
+*/
+			sscanf (input, "%s", inputTextLine);
+         
+			
+//			iCount=0;
+	//input text per line			
+//			printf("%i;\n",iCount);
+//			printf("%i;",iCount);
+			
+			iCount=iCount+1;
+						
+				//added by Mike, 20210208
+				iColumnCount=0;
+	
+				//removed by Mike, 20210210
+/*				
+	//			char s[2] = {0};
+	//			*s = c;
+				//edited by Mike, 20210209
+//				char s[2] = {c};
+//				char s[2] = {itoa(c)};
+				char s[2] = {(char)c};
+				
+				//delimited using comma
+				char *ch = strtok(s, ",");
+*/					
+			strcpy(tempInputTextLine,inputTextLine);
+	
+			//note: add "-1" for empty
+			//otherwise, comma as column is skipped
+			char *ch = strtok(tempInputTextLine, ",");
+				
+			while (ch != NULL) {	
+//				printf("%i,",iColumnCount);
+					
+				//TO-DO: use String, instead of char
+				//TO-DO: -reverify: output due to "G" not put in container
+//				sCurrentLevelMapContainer[iRowCount][iColumnCount]=&ch;
+				sCurrentLevelMapContainer[iRowCount][iColumnCount]=ch;
+
+/*	//edited by Mike, 20210211		
+				printf("%s:",ch);
+				printf("%i,",iColumnCount);
+*/
+				printf("%i:",iColumnCount);
+				printf("%s,",ch);
+				
+				iColumnCount=iColumnCount+1;
+				  ch = strtok(NULL, ",");
+			}			
+
+			//edited by Mike, 20210311
+//			if (iRowCount<100) {
+			//edited by Mike, 20210321
+//			if (iRowCount<160) {	
+			if (iRowCount<MAX_X_AXIS_MAP) {				
+				iRowCount=iRowCount+1;
+			}
+			else {
+				iRowCount=0;
+			}
+			
+			printf("\n");			
+		}
+		fclose(file);
+	}	
 }
 
 //--------------------------------------------

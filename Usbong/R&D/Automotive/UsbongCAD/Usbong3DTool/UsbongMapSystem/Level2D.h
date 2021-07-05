@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20210613
- * @date updated: 20210703
+ * @date updated: 20210705
  * @website address: http://www.usbong.ph
  *
  * Acknowledgments:
@@ -152,6 +152,11 @@ private:
     
     OpenGLCanvas *myOpenGLCanvas;
     
+		//row, column
+		//y-axis, instead of z-axis
+		std::string sCurrentLevelMapContainer[MAX_Y_AXIS_MAP][MAX_X_AXIS_MAP]; //TO-DO: -add: auto-update max size 
+    
+    
     //added by Mike, 20210516; removed to public classification by Mike, 20210523
     //	UsbongUtils *myUsbongUtils;
     
@@ -270,7 +275,7 @@ private:
     //edited by Mike, 20210423
     void setupPrev();
     void setup();
-        
+        sCurrentLevelMapContainer
 		//added by Mike, 20210703
 		void drawString(GLfloat x, GLfloat y, GLfloat z, char *string);
 		void drawChar(GLfloat x, GLfloat y, GLfloat z, char c);       
@@ -407,7 +412,7 @@ public:
             return false;
         }
         //edited by Mike, 20210121
-        else if (bIsExecutingDefend) {
+        else if (bIsExecutingDefend) {sCurrentLevelMapContainer
             return false;
         }
         return true;
@@ -435,6 +440,9 @@ public:
     //added by Mike, 20210703
     void drawTileAsQuadWithTexture(GLfloat x, GLfloat y, GLfloat z, char c);
     void drawLevelWithTexture();
+    
+    //added by Mike, 20210705
+    void drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat fXSize, GLfloat fYSize, GLfloat fZSize);
         
     /*	//removed by Mike, 20210514
      //added by Mike, 20210423
