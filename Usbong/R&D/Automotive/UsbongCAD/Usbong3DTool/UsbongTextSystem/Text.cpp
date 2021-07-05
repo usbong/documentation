@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20200926
- * @date updated: 20210702
+ * @date updated: 20210705
  * @website address: http://www.usbong.ph
  *
  * Reference:
@@ -811,7 +811,7 @@ void Text::drawTextBackgroundAsQuadWithTexture()
         }
         idrawPressNextSymbolCount=idrawPressNextSymbolCount+1;
     }
-    
+      
     //added by Mike, 20210614
     //set TOP-LEFT origin/anchor/reference point; quadrant 4, y-axis inverted; x and y positive
     glMatrixMode(GL_PROJECTION);
@@ -849,17 +849,23 @@ void Text::drawTextBackgroundAsQuadWithTexture()
 		//y-axis add from window's top
 //    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset)+0.02f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
 
-    //note: output: 0.4f; window origin left 0.0f; right max 1.0f
-//    printf(">>>>> myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset): %f",myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset));
-
+    //edited by Mike, 20210705
+    //note: output (macOS): 0.4f; window origin left 0.0f; right max 1.0f
+    //note: output (LinuxOS): -0.221354f; window origin left 0.0f; right max 1.0f
+    //output (LinuxOS); iMyWindowWidthAsPixelOffset: 299
+/*    printf(">>>>> myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset): %f\n",myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset));
+    printf(">>>>> iMyWindowWidthAsPixelOffset: %i\n",iMyWindowWidthAsPixelOffset);
+*/
     //TO-DO: -reverify: in Linux OS
     //add to vertex position x-axis: 0.2f
-    glTranslatef(0.2f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
+    //edited by Mike, 20210705
+//    glTranslatef(0.2f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
+//    glTranslatef(0.221354f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
+    glTranslatef(0.24f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
 
     //auto-scale to Window Width to Height
     glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
-    
-    
+        
     //edited by Mike, 20210626
     glScalef(0.26f,0.26f,1.0f);
 
