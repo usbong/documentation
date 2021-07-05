@@ -310,7 +310,7 @@ PA-N (pangalan ng iyong kaibigan)<br/>
 
 ##### 1.3.2.3.2) Mga Dagdag:
 --> 1.3.2.3.2.1) level up not emphasized; emphasis on adding partners to liberation army<br/>
---> 1.3.2.3.2.2) きんこう (kinkou; gold storage,i.e. vault containing treasures of Dwarf people)<br/>
+--> 1.3.2.3.2.2) きんこう (kinkou; gold storage, i.e. vault containing treasures of Dwarf people)<br/>
 --> requested: by Dwarf Chief to break the vault’s security system as proof that it can be done<br/>
 --> observed: reached vault’s center, but not certain if already sufficient as proof due to appeared to not find treasures, et cetera<br/>
 --> learned: from Dwarf Chief that it is already sufficient proof<br/>
@@ -849,6 +849,9 @@ Tunay na tapang ang nakatayong harapin ang nakatatakot na bagay, 'di ba?<br/>
 --> Set difficulty level to さいきょう (saikyou)<br/>
 --> Court Setting: HARD<br/>
 --> update: camera setting to dynamic, i.e. Virtual Boy view<br/>
+
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Notes/res/marioTennis64/tennisArtificialIntelligence.jpg" width="60%">
+
 ### PATTERN
 #### PATTERN: Donkey Kong's Service Ace<br/>
 <br/>
@@ -881,7 +884,7 @@ TO-DO: -reverify: this<br/>
 #### Additional Notes:<br/>
 --> continuous lose pattern; NOT surprise; NOT entertainment<br/>
 --> Information = surprise, if NEW<br/>
---> <b>Recommended Reading:</b> Shannon Information and Surprise<br/>
+--> <b>Recommended Reading:</b> Shannon Information and Surprise; Learn due to Surprise<br/>
 --> CAN delay GAME OVER by executing Tennis rally drill with Donkey Kong<br/>
 --> NOT WIN, NOT LOSE, until consumed available resources, e.g. Electricity, Food<br/>
 
