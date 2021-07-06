@@ -26,6 +26,14 @@
  * Syson, M., Camacho, R., Gonzales, D., Del Rosario, R., Vidal, E., et al.
  *
  */
+
+//added by Mike, 20210706 
+//TO-DO: -delete: excess instructions
+//due to set of instructions has become unclear; 
+//updating instructions adds to development time
+//2D map system difficulty level,
+//needs increased skill level of Unit member as Computer Instructions writer
+
 //added by Mike, 20210130
 //reverify: Robotship does not execute correctly
 //when down and left buttons are pressed while firing beam down
@@ -47,6 +55,11 @@
 
 #include <stdio.h>
 #include <math.h>
+
+//added by Mike, 20210705
+#include <stdlib.h>
+#include <string.h>
+#include <iostream>
 
 /*	//removed by Mike, 20201121
  #include <gl/gl.h>
@@ -71,10 +84,11 @@
  */
 
 //added by Mike, 20210613
-#include "Text.h"
+#include "Level2D.h"
 
-//added by Mike, 20210614
-#include "Font.h"
+
+//added by Mike, 20210614; removed by Mike, 20210703
+//#include "Font.h"
 
 //added by Mike, 20210516
 #include "UsbongUtils.h"
@@ -163,7 +177,7 @@ typedef struct
 } TARGA_HEADER;
 
 //TO-DO: -put: in MyDynamicObject
-GLboolean Text::test_pow2(GLushort i)
+GLboolean Level2D::test_pow2(GLushort i)
 {
     while (i % 2 == 0)
         i /= 2;
@@ -175,7 +189,7 @@ GLboolean Text::test_pow2(GLushort i)
 
 //TO-DO: -put: in MyDynamicObject
 //Note: [Warning] deprecated conversion from string constant to 'char*' [-Wwrite-strings]
-void Text::load_tga(char *filename)
+void Level2D::load_tga(char *filename)
 {
     TARGA_HEADER targa;
     FILE *file;
@@ -222,7 +236,7 @@ void Text::load_tga(char *filename)
 }
 
 //added by Mike, 20210423
-void Text::setup()
+void Level2D::setup()
 {
     //removed by Mike, 20201010
     //due to blank output
@@ -235,7 +249,9 @@ void Text::setup()
     //edited by Mike, 20210420
     //    load_tga("textures/armor.tga");
     //    load_tga("textures/imageSpriteExampleMikeWithoutBG.tga");
-    load_tga("textures/textExample.tga");
+    //edited by Mike, 20210703
+//    load_tga("textures/textExample.tga");
+    load_tga("textures/level.tga");
     
     // set texture parameters
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
@@ -280,110 +296,13 @@ void Text::setup()
     glEnable(GL_BLEND);
 }
 
-
-//TO-DO: -update: this
-void Text::setupPrev()
-{
-    GLuint i, j;
-    
-    /* select and enable texture 1 */
-    glBindTexture(GL_TEXTURE_2D, 1);
-    
-    /* create OpenGL texture out of targa file */
-    load_tga("textures/body/halimbawa.body.tga");
-    
-    /* set texture parameters */
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
-                    GL_LINEAR_MIPMAP_NEAREST);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    
-    //.../home/unit_member/Documents/USBONG/R&D/With C++ Computer Language and OpenGL/UsbongAutomotive/Linux
-    
-    /* select and enable texture 5 */
-    glBindTexture(GL_TEXTURE_2D, 5);
-    
-    /* create OpenGL texture out of targa file */
-    load_tga("textures/cockpit/halimbawa.cockpit.tga");
-    
-    /* set texture parameters */
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
-                    GL_LINEAR_MIPMAP_NEAREST);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    
-    //...
-    
-    /* select and enable texture 8 */
-    glBindTexture(GL_TEXTURE_2D, 8);
-    
-    /* create OpenGL texture out of targa file */
-    load_tga("textures/wings/halimbawa.wings.tga");
-    
-    /*
-     //EXPLOSION/ DEATH ANIMATION
-	    // retrieve "unused" texture object
-     glGenTextures(1, &myDeathAnimationImg1);
-     glBindTexture(GL_TEXTURE_2D, myDeathAnimationImg1);
-     load_tga("textures/explosion/explosion1.tga");
-     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
-     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
-     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
-     GL_LINEAR_MIPMAP_NEAREST);
-     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	    // retrieve "unused" texture object
-     glGenTextures(1, &myDeathAnimationImg2);
-     glBindTexture(GL_TEXTURE_2D, myDeathAnimationImg2);
-     load_tga("textures/explosion/explosion2.tga");
-     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
-     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
-     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
-     GL_LINEAR_MIPMAP_NEAREST);
-     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-     glGenTextures(1, &myDeathAnimationImg3);
-     glBindTexture(GL_TEXTURE_2D, myDeathAnimationImg3);
-     load_tga("textures/explosion/explosion3.tga");
-     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
-     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
-     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
-     GL_LINEAR_MIPMAP_NEAREST);
-     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	    // retrieve "unused" texture object
-     glGenTextures(1, &myDeathAnimationImg4);
-     glBindTexture(GL_TEXTURE_2D, myDeathAnimationImg4);
-     load_tga("textures/explosion/explosion4.tga");
-	    // retrieve "unused" texture object
-     glGenTextures(1, &myDeathAnimationImg5);
-     glBindTexture(GL_TEXTURE_2D, myDeathAnimationImg5);
-     load_tga("textures/explosion/explosion5.tga");
-     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
-     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
-     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
-     GL_LINEAR_MIPMAP_NEAREST);
-     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
-     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
-     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
-     GL_LINEAR_MIPMAP_NEAREST);
-     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-     */
-    /* unselect and disable texture 1 */
-    glBindTexture(GL_TEXTURE_2D, 0);
-    
-    /* setup alpha blending */
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    glEnable(GL_BLEND);
-}
-
 //edited by Mike, 20201001
-//Text::RobotShip(): MyDynamicObject(0,0,300)
+//Level2D::RobotShip(): MyDynamicObject(0,0,300)
 //edited by Mike, 20201115
-//Text::RobotShip(): MyDynamicObject(0,0,0)
+//Level2D::RobotShip(): MyDynamicObject(0,0,0)
 //edited by Mike, 20210625
-//Text::Text(float xPos, float yPos, float zPos, int windowWidth, int windowHeight): MyDynamicObject(xPos,yPos,0.0f, windowWidth, windowHeight)
-Text::Text(float xPos, float yPos, float zPos, float windowWidth, float windowHeight): MyDynamicObject(xPos,yPos,0.0f, windowWidth, windowHeight)
+//Level2D::Text(float xPos, float yPos, float zPos, int windowWidth, int windowHeight): MyDynamicObject(xPos,yPos,0.0f, windowWidth, windowHeight)
+Level2D::Level2D(float xPos, float yPos, float zPos, float windowWidth, float windowHeight): MyDynamicObject(xPos,yPos,0.0f, windowWidth, windowHeight)
 {
     //edited by Mike, 20201001
     //currentState=IN_TITLE_STATE;//MOVING_STATE;
@@ -627,22 +546,72 @@ Text::Text(float xPos, float yPos, float zPos, float windowWidth, float windowHe
     
     setCollidable(true);
     
-    //added by Mike, 20210614
     //added: function to be reusable
-    //  myUsbongUtils->read("inputHalimbawa.txt");
-    readInputText("inputHalimbawa.txt");
+//    readInputText("inputHalimbawa.txt");
+		//edited by Mike, 20210705
+//    readInputText("inputLevel1.csv");    
+    read("inputLevel1.csv");    
     
-    //added by Mike, 20210614
-    setupFont(FONT_TEXTURE);
+    setupLevel(LEVEL_2D_TEXTURE);
 }
 
-Text::~Text()
+Level2D::~Level2D()
 {
+}
+
+void Level2D::setupLevel(int myLevelTextureObject)
+{
+	//removed by Mike, 20201010
+	//due to blank output
+    //glEnable(GL_DEPTH_TEST);
+
+		iLevelTextureObject = myLevelTextureObject;
+    
+    /* select texture 1 */
+    glBindTexture(GL_TEXTURE_2D, iLevelTextureObject);    
+
+    /* create OpenGL texture out of targa file */
+	//edited by Mike, 20210420
+    load_tga("textures/level.tga");
+//    load_tga("textures/concrete.tga");
+    
+	/* set texture parameters */
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
+                    GL_LINEAR_MIPMAP_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+    /* unselect texture myFontTextureObject */
+    glBindTexture(GL_TEXTURE_2D, 0);
+
+    /* setup alpha blending */
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glEnable(GL_BLEND);
+
+    /* set background color to bluish /* set texture parameters */
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
+                    GL_LINEAR_MIPMAP_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+    /* unselect texture myFontTextureObject */
+    glBindTexture(GL_TEXTURE_2D, 0);
+
+    /* setup alpha blending */
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glEnable(GL_BLEND);
+
+	//removed by Mike, 20201012
+    /* set background color to bluish to demonstrate font transparency */
+//    glClearColor(0.0f, 0.0f, 0.25f, 1.0f); /* to demonstrate font transparency */
+
 }
 
 //added by Mike, 20210130
 //TO-DO: -reverify: this
-float* Text::getXYZPos()
+float* Level2D::getXYZPos()
 {
     //float myXYZ[3];
     float* myXYZ;
@@ -657,83 +626,14 @@ float* Text::getXYZPos()
 
 /* //removed by Mike, 20201217
  //added by Mike, 20201213
- void Text::draw()
+ void Level2D::draw()
  {
 	drawRobotShip();
  }
  */
 
-//added by Mike, 20210423
-void Text::drawTextBackgroundAsQuadWithTexturePrev()
-{
-    //edited by Mike, 20210516
-    //    glTranslatef(myXPos, myYPos, myZPos);
-    //TO-DO: -add: myZPos
-    //printf("autoConvert; myXPos: \n",myUsbongUtils->autoConvertFromPixelToVertexPointX(0));
-    //printf("myXPosAsPixel: %i\n",myXPosAsPixel);
-    
-    //note: myXPos is float; autoConvertFromPixelToVertexPointX(...) input is int
-    //auto-converted from float to int due to autoConvertFromPixelToVertexPointX(...) accepts int as parameter
-    //edited by Mike, 20210517
-    //    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPos), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPos), myZPos);
-    //    glTranslatef(myXPosAsPixel, myYPosAsPixel, myZPosAsPixel);
-    
-    //added by Mike, 20210614
-    //note; add glPushMatrix() and glPopMatrix()
-    glPushMatrix();
-    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixel), myZPosAsPixel);
-    
-    glScalef(2.0f,2.0f,1.0f);
-    
-    
-    //        glScalef(2.5f,5.0f,1.0f);
-    //TO-DO: -update: draw instructions
-    drawTextBackgroundObject();
-    glScalef(1.0f,1.0f,1.0f);
-    
-    //added by Mike, 20210613
-    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel), -myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixel), -myZPosAsPixel);
-    glPopMatrix();
-    
-    //added by Mike, 20210614
-    //set TOP-LEFT origin/anchor/reference point; quadrant 4, y-axis inverted; x and y positive
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    
-    //TOP-LEFT origin
-    glOrtho(0.0f, //left
-            1.0f, //right
-            1.0f, //bottom
-            0.0f, //top
-            0.0f, //zNear; minimum
-            1.0f //zFar; maximum
-            );
-    
-    //font
-    // select and enable texture FONT_TEXTURE
-    glBindTexture(GL_TEXTURE_2D, FONT_TEXTURE);
-    glEnable(GL_TEXTURE_2D);
-    
-    //draw text using Font texture
-    char tempText[50];
-    sprintf(tempText,"USBONG");
-    
-    glScalef(0.5f,0.5f,1.0f);
-    //note: origin/anchor @bottom-left
-				//draw_string(0.0f, 0.5f, 0.0f, tempText);
-				//note: positions due to scaled by half, i.e. 0.5f
-    draw_string(0.1f, 1.2f, 0.0f, tempText);
-    
-    //	   		draw_string(0.1f, 1.2f, -1.0f, tempText);
-    glScalef(1.0f,1.0f,1.0f);
-    
-    
-	   glDisable(GL_TEXTURE_2D);
-	   glBindTexture(GL_TEXTURE_2D, 0);
-}
-
 //added by Mike, 20210617
-void Text::drawPressNextSymbol()
+void Level2D::drawPressNextSymbol()
 {
     //	  glScalef(0.20f, 0.4f, 1.0f);
     //    glTranslatef(1.0f, 0.5f, 0.0f);
@@ -745,7 +645,7 @@ void Text::drawPressNextSymbol()
     
     //note: 640x640; window width x height
     //edited by Mike, 20210702
-//    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(320), myUsbongUtils->autoConvertFromPixelToVertexPointY(555), 0.0f); //-myZPosAsPixel);
+//    glTranslatef(myUsbongUtils->autoConvertFromPixelTodrawTileAsQuadWithTextureVertexPointX(320), myUsbongUtils->autoConvertFromPixelToVertexPointY(555), 0.0f); //-myZPosAsPixel);
 
 		//y-axis origin from bottom
 		//add 0.06f as bottom padding
@@ -777,7 +677,7 @@ void Text::drawPressNextSymbol()
 }
 
 //added by Mike, 20210617
-void Text::drawTextBackgroundAsQuadWithTexture()
+void Level2D::drawTextBackgroundAsQuadWithTexture()
 {
     
     //added by Mike, 20210614
@@ -798,7 +698,6 @@ void Text::drawTextBackgroundAsQuadWithTexture()
     
     //TO-DO: -update: draw instructions
     drawTextBackgroundObject();
-    
     glScalef(1.0f,1.0f,1.0f);
     
     //added by Mike, 20210613
@@ -844,43 +743,12 @@ void Text::drawTextBackgroundAsQuadWithTexture()
 		//identified delays shall add computation time during movement in galaxy
 		//speed-up via machine tool, e.g. RobotShip, assists Human Pilot
 				
-		//added by Mike, 20210706
-		//note: reminded: difficulty in Math, i.e. Maparaang Pagbibilang,
-		//due to no quick feedback; example: no quick output using select inputs
-		//computer as machine tool assists in speed-up of output
-				
-		//edited by Mike, 20210704
-    //added +0.02f in x-axis as margin so text not too near left border of text background image
-    //y-axis add from window's top
-    //    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset)+0.02f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
-    
-    //edited by Mike, 20210705
-    //note: output (macOS): -0.4f; window origin left 0.0f; right max 1.0f
-    //note: output (LinuxOS): -0.221354f; window origin left 0.0f; right max 1.0f
-    printf(">>>>> myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset): %f\n",myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset));
+  	//edited by Mike, 20210702 	
+		//added +0.02f in x-axis as margin so text not too near left border of text background image
+		//y-axis add from window's top
+    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset)+0.02f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
 
-    //output (macOS); iMyWindowWidthAsPixelOffset: 240
-    //output (LinuxOS); iMyWindowWidthAsPixelOffset: 299
-    printf(">>>>> iMyWindowWidthAsPixelOffset: %i\n",iMyWindowWidthAsPixelOffset);
 
-//    printf(">>>>> myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel): %f\n",myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel));
-    
-    //TO-DO: -reverify: in Linux OS
-    //add to vertex position x-axis: 0.2f
-    //edited by Mike, 20210705
-    //    glTranslatef(0.2f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f); //macOS
-    //    glTranslatef(0.24f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f); //LinuxOS
-
-//    glTranslatef(0.221354f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
-//    glTranslatef(1.0f*0.20f+0.04f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
-//    glTranslatef(0.4f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
-    
-    //note: used in x-axis input computation, relationship to value of iMyWindowWidthAsPixelOffset
-    //edited by Mike, 20210706
-    //TO-DO: -reverify: in macOS;
-//    glTranslatef(iMyWindowWidthAsPixelOffset/1000.0f-0.05f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
-    glTranslatef(iMyWindowWidthAsPixelOffset/1000.0f-0.055f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
-    
     //auto-scale to Window Width to Height
     glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
     
@@ -938,7 +806,7 @@ void Text::drawTextBackgroundAsQuadWithTexture()
         //added by computer in memory storage for use in another set of instructions
         //strcpy(tempText,"");
         //edited by Mike, 20210618
-        //        for (int iRowCountToSetDefault=0; iRowCountToSetDefault<MAX_TEXT_CHAR_ROW; iRowCountToSetDefault++) {draw_string
+        //        for (int iRowCountToSetDefault=0; iRowCountToSetDefault<MAX_TEXT_CHAR_ROW; iRowCountToSetDefault++) {
         for (int iRowCountToSetDefault=0; iRowCountToSetDefault<MAX_TEXT_CHAR_ROW_RAM; iRowCountToSetDefault++) {
             for (int iColumnCount=0; iColumnCount<MAX_TEXT_CHAR_COLUMN; iColumnCount++) {
                 tempText[iRowCountToSetDefault][iColumnCount]='\0'; //verified: in macOS, with Japanese keyboard ro-maji input, "¥0", backspace is "¥"
@@ -955,7 +823,7 @@ void Text::drawTextBackgroundAsQuadWithTexture()
             //note: MAX_TEXT_CHAR_ROW=4
             tempText[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW][iColumnCount]=cCurrentTextContainer[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW][iColumnCount];
             
-            //            printf("cCurrentTextContainer[%i][%i]: %c\n",iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW, iColumnCount, cCurrentTextContainer[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW][iColumnCount]);
+                        printf("cCurrentTextContainer[%i][%i]: %c\n",iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW, iColumnCount, cCurrentTextContainer[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW][iColumnCount]);
         }
         
         //        		printf(">>>>>iRowCount: %i\n",iRowCount);
@@ -964,7 +832,734 @@ void Text::drawTextBackgroundAsQuadWithTexture()
         //TO-DO: -add: remaining Font Characters, e.g. small letters, digits
         //TO-DO: -update: font character position in texture image file
         //	   					draw_string(0.1f, 1.2f, 0.0f, tempText);
-        draw_string(0.05f, 1.2f, 0.0f, tempText[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW]);
+        drawString(0.05f, 1.2f, 0.0f, tempText[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW]);
+        
+     			//added by Mike, 20210615
+     			//new line
+     			//edited by Mike, 20210617
+        //     			glTranslatef(0.0f,0.1f+0.1f*iRowCount,0.0f);
+     			glTranslatef(0.0f,0.1f+0.05f,0.0f);
+        
+        //edited by Mike, 20210617
+        //if ((iTextAnimationCountDelay>=10) || (iTextAnimationCountDelay<=0)){	//TO-DO: -update: MAX delay
+        
+        /*	//removed by Mike, 20210617
+         if ((iTextAnimationCountDelay>=5) || (iTextAnimationCountDelay<=0)){	//TO-DO: -update: MAX delay
+         */
+        //							iTextAnimationCount+=1;
+        iTextAnimationCountDelay=0;
+        
+        //            printf(">>>>iRowCount: %i; iTextCurrentMaxRowCount: %i\n",iRowCount, iTextCurrentMaxRowCount);
+        
+        
+        //        iTextCurrentMaxColumnCount++;
+        //edited by Mike, 20210618; removed by Mike, 20210618
+        if ((iRowCount)==(iTextCurrentMaxRowCount-1)) {
+            //        if ((iRowCount)==(iTextCurrentMaxRowCount)) {
+            //            printf(">\n");
+            
+            iCurrentMaxColumnCountPerRowContainer[iRowCount]++;
+            
+            //            printf(">>>>>>>>>>>>>>>>>>>>>>>> DITO\n");
+            
+            //added by Mike, 20210617
+            if (iCurrentMaxColumnCountPerRowContainer[iRowCount]>=MAX_TEXT_CHAR_COLUMN) {
+                iCurrentMaxColumnCountPerRowContainer[iRowCount]=MAX_TEXT_CHAR_COLUMN;
+            }
+            //edited by Mike, 20210618
+            /*            else {
+            	iCurrentMaxColumnCountPerRowContainer[iRowCount]++;
+             }
+             */
+        }
+        
+        //added by Mike, 20210617
+        //new line/row
+        //identify if all characters in row done
+        //        printf(">>cCurrentTextContainer[iRowCount][iCurrentMaxColumnCountPerRowContainer[iRowCount]]: %c\n",cCurrentTextContainer[iRowCount][iCurrentMaxColumnCountPerRowContainer[iRowCount]]);
+        
+        //edited by Mike, 20210618
+        //            if (cCurrentTextContainer[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW][iCurrentMaxColumnCountPerRowContainer[iRowCount]]=='\n') {//'\n'){ //new line; "\0" empty character
+        if (cCurrentTextContainer[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW][iCurrentMaxColumnCountPerRowContainer[iRowCount]-1]=='\n') {//'\n'){ //new line; "\0" empty character
+            
+            printf("iTextCurrentMaxRowCount-1: %i\n",iTextCurrentMaxRowCount-1);
+            printf("iRowCount: %i\n",iRowCount);
+            
+            /*                if (iTextCurrentMaxRowCount>=3) {
+             iTextCurrentMaxRowCount=3;
+             }
+             */
+            //                    iTextCurrentMaxRowCount=4;
+            
+            //TO-DO: -add: instructions to auto-identify end row by removing empty rows after reading input file
+            //if next row is already empty
+            //row, column
+            if (cCurrentTextContainer[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW][iCurrentMaxColumnCountPerRowContainer[iTextCurrentMaxRowCount]]=='\0') {
+                iTextCurrentMaxRowCount=iTextCurrentMaxRowCount;
+            }
+            else {
+                if ((iRowCount)==(iTextCurrentMaxRowCount-1)) {
+                    iTextCurrentMaxRowCount++;
+                }
+                
+                //added by Mike, 20210618
+                //if has reached end of rows, no need to execute this
+                //TO-DO: -add: auto-identify if at MAX row
+                if (cCurrentTextContainer[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW+1][0]=='\0') {
+                    break;
+                }
+                else {
+                    if (iRowCount>=MAX_TEXT_CHAR_ROW) {
+                        iRowCountPageNumber++;
+                        iTextCurrentMaxRowCount=1;
+                        iRowCount=-1; //note: we add 1 near the closing of the for loop
+                    }
+                }
+            }
+            
+            //edited by Mike, 20210618
+            //re-set isAtMaxTextCharRow to FALSE after button press
+            if ((iRowCount+1)>=MAX_TEXT_CHAR_ROW) {
+                iRowCount=3;
+                //                			iRowCountPageNumber=0; //removed by Mike, 20210618
+                iTextCurrentMaxRowCount=4;
+                isAtMaxTextCharRow=true;
+            }
+            
+            //printf("iTextCurrentMaxRowCount: %i\n",iTextCurrentMaxRowCount);
+            
+            //added by Mike, 20210617
+            //TO-DO: fix: next row only iTextCurrentMaxColumnCount=1
+            
+            
+        }
+        else {
+            break;
+        }
+        
+        //        printf(">>\n");
+        
+        /*	//removed by Mike, 20210617
+         
+         }
+         */
+        iTextAnimationCountDelay+=1;
+        
+        //added by Mike, 20210618
+        iRowCount=iRowCount+1;
+        
+        
+        //     		}
+        
+    }
+				
+    glScalef(1.0f,1.2f,1.0f);
+				
+	   glDisable(GL_TEXTURE_2D);
+	   glBindTexture(GL_TEXTURE_2D, 0);
+	   
+    /*	   //added by Mike, 20210618; removed by Mike, 20210618
+     if (isAtMaxTextCharRow) {
+     drawPressNextSymbol();
+     }
+     */
+}
+
+//added by Mike, 20210703
+void Level2D::drawString(GLfloat x, GLfloat y, GLfloat z, char *string)
+{
+
+    GLfloat origX=x;
+    while (string[0] != 0)
+    {
+
+		//TO-DO: -update: this
+        //added by Mike, Feb14,2007
+		if (string[0]=='\n') {
+			y -= 0.1f;//15.0f;
+			x=origX-0.1f;//-10.0f;			
+    	}
+        
+
+        glPushMatrix();
+        	//removed by Mike, 20201010
+            //make font larger, added by Mike, Feb28,2007
+//            glScalef(2.0f, 2.0f, 2.0f);//1.5f, 1.5f, 1.5f);
+//            glScalef(0.5f, 0.5f, 0.5f);
+				//edited by Mike, 2020117
+//            draw_char(x, y, string[0]);
+            drawChar(x, y, z, string[0]);
+    	glPopMatrix();
+
+        
+        /* advance 10 pixels after each character */
+//TO-DO: -update: this
+//        x += 10.0f;
+        x += 0.1f;
+
+        /* go to the next character in the string */
+        string++;
+    }
+}
+
+//added by Mike, 20210703
+//TO-DO: -update: tile width and height
+void Level2D::drawChar(GLfloat x, GLfloat y, GLfloat z, char c)
+{
+	//edited by Mike, 20201117
+//    GLfloat tx, ty;
+    GLfloat tx, ty, tz;
+	
+	//added by Mike, 20210521
+/*	//removed by Mike, 20210521	drawCubeWithBlockTextureQuadFloor
+	if (c == 'H') {
+		//note: 4.0f = grid square fSideLength
+//		drawCubeWithBlockTextureQuadFloorSpecial(4.0f, tx, ty, tz, x,y,z, c);
+		drawCubeWithBlockTextureQuadFloor(4.0f, tx, ty, tz, x,y,z);
+		
+	}
+	else {		
+*/	
+		// check if the character is valid
+		if (c < ' ' || c > '~')
+			return;
+	
+//removed by Mike, 20210527		
+//	printf("c: %c\n",c);
+		
+		//TO-DO: -update: this
+ //edited by Mike, 20210524	
+		if (c=='S') { //S : Sand		
+			drawCubeWithAutoDrawnPixelBlockColorQuadFloor(4.0f, x,y,z);		
+		}
+		else {						
+			// subtract 32, since the first character in the font texture
+			// is the space (ascii value 32)
+			c = c - 32;
+	
+			// determine texture coordinates; this assumes that each character
+			// in the font texture has a width-height ratio of 10:16 (see the
+			// font.tga file to understand what I mean)
+			tx = c % 12 * 0.078125f;
+			ty = 0.875f - (c / 12 * 0.125f);
+			//added by Mike, 20201117
+		//    tz = 0.875f - (c / 12 * 0.125f);
+	
+			//TO-DO: -update: set of instructions for Quad to Face Camera
+			//edited by Mike, 20210521
+		//	drawCubeWithBlockTextureQuadFacingCameraOnly(4.0f, tx, ty, tz, x,y,z);
+		//	drawCubeWithBlockTextureQuadFacingCameraOnly(4.0f, tx, ty, tz, x,0,z);
+		
+		//edited by Mike, 20210524
+	//	drawCubeWithBlockTextureQuadFloor(4.0f, tx, ty, tz, x,y,z);
+	
+//		printf(">> c: %c\n",c);
+		
+	/* //removed by Mike, 20210524
+		if (c=='-') { //c value for empty
+			drawCubeWithSolidBlockColorQuadFloor(4.0f, tx, ty, tz, x,y,z);
+		}
+		else {
+			drawCubeWithBlockTextureQuadFloor(4.0f, tx, ty, tz, x,y,z);
+		}	
+	*/
+			//added by Mike, 20210524
+			glBindTexture(GL_TEXTURE_2D, iLevelTextureObject);
+    		glEnable(GL_TEXTURE_2D);						
+    		//edited by Mike, 20210703
+//				drawCubeWithBlockTextureQuadFloor(4.0f, tx, ty, tz, x,y,z);			
+				//edited by Mike, 20210703
+//				drawCubeWithBlockTextureQuadFloor(0.0f, tx, ty, tz, x,y,z);					
+				drawTileAsQuadWithTexture(x,y,z, c);		
+				
+    		//unselect texture myLevelTextureObject
+			glDisable(GL_TEXTURE_2D);
+    		glBindTexture(GL_TEXTURE_2D, 0);
+		}	
+	
+/*	//removed by Mike, 20210521	
+	}	
+*/	
+}
+
+//added by Mike, 20210703
+void Level2D::drawTileAsQuadWithTexture(GLfloat x, GLfloat y, GLfloat z, char c)
+{
+	//edited by Mike, 20201117
+//    GLfloat tx, ty;
+    GLfloat tx, ty, tz;
+
+    /* check if the character is valid */
+    if (c < ' ' || c > '~')
+        return;
+
+    /* subtract 32, since the first character in the font texture
+     * is the space (ascii value 32) */
+    c = c - 32;
+
+    /* determine texture coordinates; this assumes that each character
+     * in the font texture has a width-height ratio of 10:16 (see the
+     * font.tga file to understand what I mean) */
+    tx = c % 12 * 0.078125f;
+    ty = 0.875f - (c / 12 * 0.125f);
+    //added by Mike, 20201117
+//    tz = 0.875f - (c / 12 * 0.125f);
+
+	//glColor3f(1.0f, 1.0f, 1.0f); //set to default, i.e. white
+  glColor3f(0.0f, 0.0f, 0.0f); //set to default, i.e. black
+	
+	printf("c: %c\n",c);
+	
+	glBegin(GL_QUADS);              // Each set of 4 vertices form a quad
+        glTexCoord2f(tx, ty);
+        glVertex3f(x, y, 0.0f);
+        
+        glTexCoord2f(tx + 0.078125f, ty);
+      	glVertex3f(x+0.1f, y, 0.0f);      
+
+        glTexCoord2f(tx + 0.078125f, ty + 0.125f);
+      	glVertex3f(x+0.1f, y-0.1f, 0.0f);              
+
+				glTexCoord2f(tx, ty + 0.125f);
+      	glVertex3f(x, y-0.1f, 0.0f);      
+   glEnd();    
+}
+
+
+//added by Mike, 20210705
+//TO-DO: -update: this
+//TO-DO: -add: read input .txt file
+//TO-DO: -add: water tiles; pilot in water, no firing; RobotShip in water, firing OK; 
+//note: palaka
+//added by Mike, 20210321
+//note: fXSize... not yet used
+void Level2D::drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat fXSize, GLfloat fYSize, GLfloat fZSize) {
+
+	//TO-DO: -add: auto-this
+	fGridSquareWidth = 4.0f;
+	fGridSquareHeight = 4.0f;
+	
+	char tempLevelMap[50];
+	
+/* //removed by Mike, 20210706; TO-DO: -add: this set	
+	//added by Mike, 20210305; added again by Mike, 20210308
+	int iX=fX;
+	int iY=fY;
+	int iZ=fZ;
+	
+   int iMovementGridZ=0;
+   int iMovementGridX=0;
+   int iMovementGridY=0;
+	
+   if (fStepMovemenGridZ>=1) {
+   	 //added by Mike, 20210311
+	 //note: actual fZ position and fGridSquareWidth*rowCount position
+	 //TO-DO: -reverify: this
+   	 iMovementGridZ = iPrevZ-iZ;
+   	 
+	 fStepMovemenGridZ=0;
+   }
+
+   //added by Mike, 20210318
+   //TO-DO: -update: this to synchronize actual position with double array container
+   iMovementGridX = iPrevX-iX;
+   //x-axis
+   //note: canvasStepX=3.2f 
+   if (iMovementGridX < 0) { //moved backward
+     fStepMovemenGridX=(fStepMovemenGridX-3.2f);
+   }
+   else if (iMovementGridX == 0) { //no movement in X-axis
+   }	
+   else {
+     fStepMovemenGridX=(fStepMovemenGridX+3.2f);
+   }	
+   iMovementGridX = 0;
+
+   if (fStepMovemenGridX>=3.2f) {
+//   if (fStepMovemenGridX>=fGridSquareWidth) {
+	 iMovementGridX = iPrevX-iX;
+	 	fStepMovemenGridX=0;
+   }
+   else if (fStepMovemenGridX<=-3.2f) {
+	   iMovementGridX = iPrevX-iX;
+	 	 fStepMovemenGridX=0;
+   }
+
+	 iMovementGridY=0;
+
+   iCurrentLevelMapContainerOffsetZ += iMovementGridZ; 
+   iCurrentLevelMapContainerOffsetX += iMovementGridX; 
+	
+   iCurrentLevelMapContainerOffsetY=0;
+*/
+	
+//   std::cout << "iCurrentLevelMapContainerOffsetZ: " << iCurrentLevelMapContainerOffsetZ << "\n";
+//   std::cout << "iCurrentLevelMapContainerOffsetX: " << iCurrentLevelMapContainerOffsetX << "\n";
+
+  int iRowCount=0;	
+  int iCurrentLevelMapContainerOffsetMaxViewPortY=iRowCount+MAX_Y_AXIS_VIEWPORT;
+
+/* //removed by Mike, 20210706; TO-DO: -add: this set		
+  int iRowCount=iCurrentLevelMapContainerOffsetZ;	
+  int iCurrentLevelMapContainerOffsetMaxViewPortZ=iRowCount+MAX_Z_AXIS_VIEWPORT;
+		
+   if (iCurrentLevelMapContainerOffsetZ<0) {
+	 	iRowCount=0;   	   
+	 	iCurrentLevelMapContainerOffsetZ=0; //added by Mike, 20210318	   
+   } 
+   else if (iCurrentLevelMapContainerOffsetZ>=MAX_INPUT_TEXT_PER_LINE) {
+	 	iRowCount=MAX_INPUT_TEXT_PER_LINE-1;   
+   } 
+		
+   if (iCurrentLevelMapContainerOffsetMaxViewPortZ<0) {
+	 	iCurrentLevelMapContainerOffsetMaxViewPortZ=0;   	   
+   } 
+   else if (iCurrentLevelMapContainerOffsetMaxViewPortZ>=MAX_INPUT_TEXT_PER_LINE) {
+	 	iCurrentLevelMapContainerOffsetMaxViewPortZ=MAX_INPUT_TEXT_PER_LINE-1;   
+   } 
+*/
+
+	//edited by Mike, 20210311
+	for (;iRowCount<iCurrentLevelMapContainerOffsetMaxViewPortY; iRowCount++) {		
+//   	int iColumnCount=iCurrentLevelMapContainerOffsetX;
+   	int iColumnCount=0;   	
+   	int iCurrentLevelMapContainerOffsetMaxViewPortX=iColumnCount+MAX_X_AXIS_VIEWPORT;
+
+/* //removed by Mike, 20210706; TO-DO: -add: this set	
+   	//edited by Mike, 20210318		
+   	if ((iColumnCount<0) or (iCurrentLevelMapContainerOffsetX<0)) {
+	 		iColumnCount=0;   
+   	} 
+   	else if (iCurrentLevelMapContainerOffsetX>=MAX_INPUT_TEXT_PER_LINE) {
+	 		iColumnCount=MAX_INPUT_TEXT_PER_LINE-1;
+	 		iCurrentLevelMapContainerOffsetX=MAX_INPUT_TEXT_PER_LINE-1; //added by Mike, 20210319
+   	} 	
+			
+   	if (iCurrentLevelMapContainerOffsetMaxViewPortX<0) {
+	 		iCurrentLevelMapContainerOffsetMaxViewPortX=0;   
+   	} 
+   	else if (iCurrentLevelMapContainerOffsetMaxViewPortX>=MAX_INPUT_TEXT_PER_LINE) {
+	 		iCurrentLevelMapContainerOffsetMaxViewPortX=MAX_INPUT_TEXT_PER_LINE-1;	   
+   	}
+*/
+   	
+		for (;iColumnCount<iCurrentLevelMapContainerOffsetMaxViewPortX; iColumnCount++) {
+
+//			std::cout << "LOOB iRowCount" << iRowCount <<"\n";
+//			std::cout << "iRowCount:" << iRowCount << "iColumnCount:" << iColumnCount << "\n";
+
+				if (sCurrentLevelMapContainer[iRowCount][iColumnCount].compare("\"G\"") == 0) { //TRUE
+				//start at 0 in double array container 
+			    	//stone
+					sprintf(tempLevelMap,"G");
+				
+					//added by Mike, 20201124; edited by Mike, 20210423
+	//			    glColor3f(0.14f, 0.68f, 0.06f); // Green
+			    	glColor3f(1.0f, 1.0f, 1.0f); // white
+	
+					//added by Mike, 20201124
+					//execute this when using solid colors
+					//for computer to not draw borders
+					//removed by Mike, 20210423
+	//				glBindTexture( GL_TEXTURE_2D, 0 );
+					
+					//added by Mike, 20210521
+					glBindTexture( GL_TEXTURE_2D, iLevelTextureObject );
+	
+	/*				
+		std::cout << "iColumnCount: " << iColumnCount << "\n";
+		std::cout << "iRowCount: " << iRowCount << "\n";
+	*/				
+					//added by Mike, 20210520
+					//TO-DO: -add: this
+					//drawLevel(fGridSquareWidth*iColumnCount, 1.0f, fGridSquareWidth*iRowCount, tempText);
+					drawLevel2D(fGridSquareWidth*iColumnCount, 1.0f, fGridSquareWidth*iRowCount, tempText);
+					
+	//computer draws this box
+	//				draw_level(fGridSquareWidth*0, 0.0f, fGridSquareWidth*300, tempText);				
+				}	
+				//added by Mike, 20210521
+				else if (sCurrentLevelMapContainer[iRowCount][iColumnCount].compare("\"H\"") == 0) { //TRUE
+			    	//sand
+					sprintf(tempLevelMap,"H");
+					
+	/*				//removed by Mike, 20210521
+					//added by Mike, 20201124; edited by Mike, 20210423
+			    	glColor3f(0.14f, 0.68f, 0.06f); // Green
+	//			    glColor3f(1.0f, 1.0f, 1.0f); // white
+	
+					//added by Mike, 20201124
+					//execute this when using solid colors
+					glBindTexture( GL_TEXTURE_2D, 0 );
+	*/				
+					//added by Mike, 20210521
+					glBindTexture( GL_TEXTURE_2D, iLevelTextureObject );
+					
+					//TO-DO: -add: this
+					//drawLevel(fGridSquareWidth*iColumnCount, 1.0f, fGridSquareWidth*iRowCount, tempText);
+				}		
+	//added by Mike, 20210524
+	//note: -1 : empty 
+				else if (sCurrentLevelMapContainer[iRowCount][iColumnCount].compare("\"S\"") == 0) { //TRUE
+	
+					sprintf(tempLevelMap,"S");
+					
+					//added by Mike, 20201124; edited by Mike, 20210423
+	//			    glColor3f(0.14f, 0.68f, 0.06f); // Green
+			    	glColor3f(1.0f, 1.0f, 1.0f); // white
+	
+					//added by Mike, 20201124
+					//execute this when using solid colors
+					glBindTexture( GL_TEXTURE_2D, 0 );
+					
+					//TO-DO: -add: this							
+//					drawLevel(fGridSquareWidth*iColumnCount, 1.0f, fGridSquareWidth*iRowCount, tempText);
+				}											
+			}
+		}
+
+/*
+	//added by Mike, 20210306; edited by Mike, 20210308	
+	iPrevX=iX;
+	iPrevY=iY;
+	iPrevZ=iZ;
+*/	
+}
+
+
+//edited by Mike, 20201118
+//void draw_string(GLfloat x, GLfloat y, char *string)
+//void draw_string(GLfloat x, GLfloat y, GLfloat z, char *string)
+void Level::drawLevel2D(GLfloat x, GLfloat y, GLfloat z, char *string)
+{
+
+    GLfloat origX=x;
+    while (string[0] != 0)
+    {
+
+/*		//removed by Mike, 20201119
+		//TO-DO: -update: this
+        //added by Mike, Feb14,2007
+		if (string[0]=='\n') {
+			y -= 0.1f;//15.0f;
+			x=origX-0.1f;//-10.0f;			
+    	}
+*/        
+
+        glPushMatrix();
+			//added by Mike, 20210520
+//			glTranslatef(0.0f, 1.0f, -1.0f);
+//			glTranslatef(-2.0f, 1.0f, -1.0f);
+			//removed by Mike, 20210520draw_char
+//			glTranslatef(-2.0f, 1.0f, -1.0f-fGridSquareWidth); //where: fGridSquareWidth=4.0f 
+				
+        	//removed by Mike, 20201010
+            //make font larger, added by Mike, Feb28,2007
+//            glScalef(2.0f, 2.0f, 2.0f);//1.5f, 1.5f, 1.5f);
+
+//            glScalef(0.5f, 0.5f, 0.5f);
+				//edited by Mike, 2020117
+//            draw_char(x, y, string[0]);
+				//edited by Mike, 20201120
+//            draw_char(x, z, y, string[0]);
+			//edited by Mike, 20210520
+            draw_char(x, y, z, string[0]);
+//            draw_char(x, 0, z, string[0]);
+		
+    	glPopMatrix();
+
+        
+        // advance 10 pixels after each character
+//TO-DO: -update: this
+//        x += 10.0f;
+
+		//removed by Mike, 20201119
+//        x += 0.1f;
+
+        // go to the next character in the string
+        string++;
+    }    
+}
+
+//added by Mike, 20210703
+//TO-DO: -update: this
+void Level2D::drawLevelWithTexture()
+{
+
+/* //removed by Mike, 20210703    
+    //added by Mike, 20210614
+    //note; add glPushMatrix() and glPopMatrix()
+    glPushMatrix();
+    
+    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixel), myZPosAsPixel);
+    
+    //        glScalef(2.5f,5.0f,1.0f);
+    //edited by Mike, 20210616
+    //        glScalef(2.0f,2.0f,1.0f);
+    //        glScalef(2.5f,4.0f,1.0f);
+    //edited by Mike, 20210627
+    //    glScalef(5.0f,4.0f,1.0f);
+    glScalef(5.0f,2.5f,1.0f);
+    glTranslatef(0.0f, -0.1f, 0.0f);
+    
+    
+    //TO-DO: -update: draw instructions
+    drawTextBackgroundObject();
+    
+    glScalef(1.0f,1.0f,1.0f);
+    
+    //added by Mike, 20210613
+    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel), -myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixel), -myZPosAsPixel);
+    glPopMatrix();
+*/    
+
+/*	//removed by Mike, 20210703    
+    if (isAtMaxTextCharRow) {
+        if ((idrawPressNextSymbolCount)%2==0) {
+            drawPressNextSymbol();
+        }
+        idrawPressNextSymbolCount=idrawPressNextSymbolCount+1;
+    }
+*/
+    
+    //added by Mike, 20210614
+    //set TOP-LEFT origin/anchor/reference point; quadrant 4, y-axis inverted; x and y positive
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    
+    //TOP-LEFT origin
+    glOrtho(0.0f, //left
+            1.0f, //right
+            1.0f, //bottom
+            0.0f, //top
+            0.0f, //zNear; minimum
+            1.0f //zFar; maximum
+            );
+    
+    //added by Mike, 20210626; removed by Mike, 20210628
+    //TO-DO: -reverify: this action
+//    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset), 0.0f, 0.0f);
+  	
+  	//removed by Mike, 20210702  
+    //auto-scale to Window Width to Height
+//    glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
+ 
+    //added by Mike, 20210628
+    //TO-DO: -reverify: instructions in macOS due to OK in Linux machine
+
+		//note: adds to development time;
+		//1) identifying correct positions due to there exist pixel and vertex positions
+		//2) identifying axis origin from where to add
+		//3) identifying object anchor to which steps are added
+		//identified delays shall add computation time during movement in galaxy
+		//speed-up via machine tool, e.g. RobotShip, assists Human Pilot
+				
+  	//edited by Mike, 20210702 	
+		//added +0.02f in x-axis as margin so text not too near left border of text background image
+		//y-axis add from window's top
+    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset)+0.02f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
+
+
+/* //removed by Mike, 20210703
+    //auto-scale to Window Width to Height
+    glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
+    
+    
+    //edited by Mike, 20210626
+    glScalef(0.26f,0.26f,1.0f);
+*/
+
+    //removed by Mike, 20210702
+//    glTranslatef(0.26f, 1.1f, 0.0f); //note: y-axis; inverted; +value goes down
+
+    
+    //font
+    // select and enable texture FONT_TEXTURE
+    //edited by Mike, 20210703
+//    glBindTexture(GL_TEXTURE_2D, FONT_TEXTURE);
+    glBindTexture(GL_TEXTURE_2D, iLevelTextureObject);    
+    glEnable(GL_TEXTURE_2D);
+        
+    //edited by Mike, 20210615
+    //draw text using Font texture
+    
+    //edited by Mike, 20210617
+    //char tempText[50];
+    //row, column
+    //edited by Mike, 20210618
+    //    char tempText[MAX_TEXT_CHAR_ROW][MAX_TEXT_CHAR_COLUMN];
+    char tempText[MAX_TEXT_CHAR_ROW_RAM][MAX_TEXT_CHAR_COLUMN];   
+    
+    //		 sprintf(tempText,"USBONG");
+    //		 sprintf(tempText,sCurrentTextContainer[0]);
+    //edited by Mike, 20210615
+    //		 sprintf(tempText,sCurrentTextContainer[0][0].c_str());
+    
+    //removed by Mike, 20210626
+    //    glScalef(0.5f,0.5f,1.0f);
+    
+    
+    //    printf("iTextCurrentMaxRowCount: %i\n",iTextCurrentMaxRowCount);
+    
+    int iRowCount;
+    //edited by Mike, 20210618
+    //    for (iRowCount=0; iRowCount<iTextCurrentMaxRowCount; iRowCount++) {
+    for (iRowCount=0; iRowCount<iTextCurrentMaxRowCount;) {
+        //removed by Mike, 20210617
+        //        strcpy(tempText, "");
+        
+        printf("iRowCount: %i\n",iRowCount);
+        
+        
+        //added by Mike, 20210617
+        //TO-DO: -reverify: pattern used by computer to add in memory storage;
+        //example: pattern based on clock time
+        //TO-DO: -reuse: incident; re-verify: if used to auto-generate monsters in select computer game dungeons
+        //edited by Mike, 20210617
+        //clear tempText container not all cleared due to previously used storage in computer memory causes excess text characters to appear
+        //note: select excess text characters NOT in cCurrentTextContainer
+        //added by computer in memory storage for use in another set of instructions
+        //strcpy(tempText,"");
+        //edited by Mike, 20210618
+        //        for (int iRowCountToSetDefault=0; iRowCountToSetDefault<MAX_TEXT_CHAR_ROW; iRowCountToSetDefault++) {draw_string
+        for (int iRowCountToSetDefault=0; iRowCountToSetDefault<MAX_TEXT_CHAR_ROW_RAM; iRowCountToSetDefault++) {
+            for (int iColumnCount=0; iColumnCount<MAX_TEXT_CHAR_COLUMN; iColumnCount++) {
+                tempText[iRowCountToSetDefault][iColumnCount]='\0'; //verified: in macOS, with Japanese keyboard ro-maji input, "¥0", backspace is "¥"
+            }
+        }
+        
+        /*        printf("iTextCurrentMaxColumnCount: %i\n",iTextCurrentMaxColumnCount);
+         */
+
+        for (int iColumnCount=0; iColumnCount<iCurrentMaxColumnCountPerRowContainer[iRowCount]; iColumnCount++) {
+/*	//edited by Mike, 20210705
+        //edited by Mike, 20210617
+        //        for (int iColumnCount=0; iColumnCount<iTextCurrentMaxColumnCount; iColumnCount++) {
+        for (int iColumnCount=0; iColumnCount<iCurrentMaxColumnCountPerRowContainer[iRowCount]; iColumnCount++) {
+            //edited by Mike, 20210618
+            //            tempText[iRowCount][iColumnCount]=cCurrentTextContainer[iRowCount][iColumnCount];
+            //note: MAX_TEXT_CHAR_ROW=4
+            tempText[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW][iColumnCount]=cCurrentTextContainer[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW][iColumnCount];
+            //            printf("cCurrentTextContainer[%i][%i]: %c\n",iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW, iColumnCount, cCurrentTextContainer[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW][iColumnCount]);
+        }
+*/					
+        
+        //added by Mike, 20210705
+				if (tempText[iRowCount][iColumnCount].compare("\"G\"") == 0) { //TRUE
+//				  			  std::cout << "DITO" <<"\n";
+				
+			  	//stone
+					sprintf(tempText,"G");
+				}
+				        	
+        
+        //        		printf(">>>>>iRowCount: %i\n",iRowCount);
+        //        		printf(">>>>>%s\n",tempText[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW]);
+        
+        //TO-DO: -add: remaining Font Characters, e.g. small letters, digits
+        //TO-DO: -update: font character position in texture image file
+        //	   					draw_string(0.1f, 1.2f, 0.0f, tempText);
+        drawString(0.05f, 1.2f, 0.0f, tempText[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW]);
         
      			//added by Mike, 20210615
      			//new line
@@ -1102,7 +1697,7 @@ void Text::drawTextBackgroundAsQuadWithTexture()
 //TO-DO: -add: in PolygonPool
 //added by Mike, 20210516
 //note: origin/anchor is TOP-LEFT
-void Text::drawTextBackgroundObject()
+void Level2D::drawTextBackgroundObject()
 {
     /*
      glBegin(GL_LINES);
@@ -1181,7 +1776,7 @@ void Text::drawTextBackgroundObject()
 }
 
 //added by Mike, 20210423
-void Text::update(float dt)
+void Level2D::update(float dt)
 {
     switch (currentState)
     {
@@ -1298,13 +1893,13 @@ void Text::update(float dt)
     }
 }
 
-void Text::changeState(int s)
+void Level2D::changeState(int s)
 {
     currentState=s;
 }
 
 //added by Mike, 20201226
-void Text::keyDown(int keyCode) {
+void Level2D::keyDown(int keyCode) {
     myKeysDown[keyCode] = TRUE;
     
     //added by Mike, 20210619
@@ -1329,8 +1924,8 @@ void Text::keyDown(int keyCode) {
 }
 
 //added by Mike, 20201227; edited by Mike, 20210128
-//void Text::setDashStateWithKeyDown() {
-void Text::setDashStateWithKeyDown(int keyCode) {
+//void Level2D::setDashStateWithKeyDown() {
+void Level2D::setDashStateWithKeyDown(int keyCode) {
     if (bIsDashReady==true) {
         /*		//edited by Mike, 20210128
          if (iInputWaitCount<MAX_WAIT_COUNT) {
@@ -1355,8 +1950,8 @@ void Text::setDashStateWithKeyDown(int keyCode) {
 }
 
 //added by Mike, 20201226; edited by Mike, 20210128
-//void Text::autoVerifyDashStateWithKeyDown(int keyCode) {
-void Text::autoVerifyDashStateWithKeyDown() { //int keyCode) {
+//void Level2D::autoVerifyDashStateWithKeyDown(int keyCode) {
+void Level2D::autoVerifyDashStateWithKeyDown() { //int keyCode) {
     //edited by Mike, 20210128
     //if (myKeysDown[KEY_RIGHT]==TRUE) {
     //edited by Mike, 20210130
@@ -1377,7 +1972,7 @@ void Text::autoVerifyDashStateWithKeyDown() { //int keyCode) {
     }
 }
 
-void Text::keyUp(int keyCode) {
+void Level2D::keyUp(int keyCode) {
     //added by Mike, 20210127
     autoVerifyDashStateWithKeyUp(keyCode);
     
@@ -1386,7 +1981,7 @@ void Text::keyUp(int keyCode) {
 
 //added by Mike, 20210127; edited by Mike, 20210126
 /*
- void Text::setDashStateWithKeyUp() {
+ void Level2D::setDashStateWithKeyUp() {
 	if (bIsExecutingDash) {
  //edited by Mike, 20210128
  //		bIsExecutingDash=false;
@@ -1402,8 +1997,8 @@ void Text::keyUp(int keyCode) {
  }
  */
 //added by Mike, 20210127; edited by Mike, 20210129
-//void Text::setDashStateWithKeyUp() {
-void Text::setDashStateWithKeyUp(int keyCode) {
+//void Level2D::setDashStateWithKeyUp() {
+void Level2D::setDashStateWithKeyUp(int keyCode) {
     //edited by Mike, 20210128
     bool bIsExecutingDash=false;
     
@@ -1455,7 +2050,7 @@ void Text::setDashStateWithKeyUp(int keyCode) {
 }
 
 //added by Mike, 20210127
-void Text::autoVerifyDashStateWithKeyUp(int keyCode) {
+void Level2D::autoVerifyDashStateWithKeyUp(int keyCode) {
     //added by Mike, 20210126; edited by Mike, 20210128
     //	if (keyCode==KEY_RIGHT) {
     //edited by Mike, 20210130
@@ -1509,7 +2104,7 @@ void Text::autoVerifyDashStateWithKeyUp(int keyCode) {
 }
 
 
-void Text::move(int key)
+void Level2D::move(int key)
 {
     //Note: Unit member as Pilot has to release hold of directional keys,
     //so that RobotShip faces in the correct direction;
@@ -1936,7 +2531,7 @@ void Text::move(int key)
         }
     }
 }
-void Text::hitBy(MyDynamicObject* mdo)
+void Level2D::hitBy(MyDynamicObject* mdo)
 {
     //changeState(DEATH_STATE);
     //setCollidable(false);
@@ -1951,13 +2546,13 @@ void Text::hitBy(MyDynamicObject* mdo)
 }
 
 /*	//removed by Mike, 20210522
- void Text::setOpenGLCanvas(OpenGLCanvas* c)
+ void Level2D::setOpenGLCanvas(OpenGLCanvas* c)
  {
  myOpenGLCanvas = c;
  }
  */
 
-void Text::reset()
+void Level2D::reset()
 {
     changeState(INITIALIZING_STATE);
     myXPos=0;
@@ -1967,13 +2562,13 @@ void Text::reset()
     setCollidable(false);
     invincibleCounter=0;
 }
-int Text::getState()
+int Level2D::getState()
 {
     return currentState;
 }
 
 //added by Mike, 20201016
-void Text::destroy()
+void Level2D::destroy()
 {
     /*
      for(int i = 0; i < MAX_EXPLOSION_PARTICLES; ++i) {
@@ -1986,7 +2581,7 @@ void Text::destroy()
 //added by Mike, 20201130
 //TO-DO: -add: in PolygonUtils
 //--------------------------------------------
-bool Text::loadTexture(CTargaImage *myTexture, const char *filename, unsigned int *myTextureObject)
+bool Level2D::loadTexture(CTargaImage *myTexture, const char *filename, unsigned int *myTextureObject)
 {
     //note: Code taken from Dave Astle and Kevin Hawkins's code
     //("Beginning OpenGL Game Programming", Chapter 7)
@@ -2018,7 +2613,7 @@ bool Text::loadTexture(CTargaImage *myTexture, const char *filename, unsigned in
     return true;
 }
 
-void Text::drawTriangledCube(float xPos, float yPos, float zPos)
+void Level2D::drawTriangledCube(float xPos, float yPos, float zPos)
 {
     glPushMatrix();
     glTranslatef(xPos, yPos, zPos);
@@ -2094,7 +2689,7 @@ void Text::drawTriangledCube(float xPos, float yPos, float zPos)
     glPopMatrix();
 }
 
-void Text::drawUpperArm(float xPos, float yPos, float zPos)
+void Level2D::drawUpperArm(float xPos, float yPos, float zPos)
 {
     glPushMatrix();
     //glColor3f(1.0f, 0.0f, 0.0f);	// red
@@ -2105,7 +2700,7 @@ void Text::drawUpperArm(float xPos, float yPos, float zPos)
     glPopMatrix();
 }
 
-void Text::drawLowerArm(float xPos, float yPos, float zPos)
+void Level2D::drawLowerArm(float xPos, float yPos, float zPos)
 {
     glPushMatrix();
     //glColor3f(0.5f, 0.0f, 0.0f);	// dark red
@@ -2118,7 +2713,7 @@ void Text::drawLowerArm(float xPos, float yPos, float zPos)
 }
 
 /*	//removed by Mike, 20201130
- void Text::drawAntenna(float xPos, float yPos, float zPos)
+ void Level2D::drawAntenna(float xPos, float yPos, float zPos)
  {
  glColor3f(0.2f, 0.2f, 0.2f);	// dark gray
  //left side
@@ -2138,7 +2733,7 @@ void Text::drawLowerArm(float xPos, float yPos, float zPos)
  }
  */
 
-void Text::drawHead(float xPos, float yPos, float zPos)
+void Level2D::drawHead(float xPos, float yPos, float zPos)
 {
     glPushMatrix();
     glTranslatef(xPos, yPos, zPos);
@@ -2176,7 +2771,7 @@ void Text::drawHead(float xPos, float yPos, float zPos)
     glBindTexture(GL_TEXTURE_2D, 0);
 }
 
-void Text::drawBody(float xPos, float yPos, float zPos)
+void Level2D::drawBody(float xPos, float yPos, float zPos)
 {
     glPushMatrix();
     //glColor3f(0.0f, 0.0f, 1.0f);	// blue
@@ -2213,7 +2808,7 @@ void Text::drawBody(float xPos, float yPos, float zPos)
     glBindTexture(GL_TEXTURE_2D, 0);
 }
 
-void Text::drawUpperLeg(float xPos, float yPos, float zPos)
+void Level2D::drawUpperLeg(float xPos, float yPos, float zPos)
 {
     glPushMatrix();
     glTranslatef(xPos, yPos, zPos);
@@ -2226,7 +2821,7 @@ void Text::drawUpperLeg(float xPos, float yPos, float zPos)
     glPopMatrix();
 }
 
-void Text::drawLowerLeg(float xPos, float yPos, float zPos)
+void Level2D::drawLowerLeg(float xPos, float yPos, float zPos)
 {
     glPushMatrix();
     glTranslatef(xPos, yPos, zPos);
@@ -2246,7 +2841,7 @@ void Text::drawLowerLeg(float xPos, float yPos, float zPos)
     glPopMatrix();
 }
 
-void Text::drawFoot(float xPos, float yPos, float zPos)
+void Level2D::drawFoot(float xPos, float yPos, float zPos)
 {
     glPushMatrix();
     //glColor3f(1.0f, 1.0f, 1.0f);
@@ -2261,7 +2856,7 @@ void Text::drawFoot(float xPos, float yPos, float zPos)
 
 //added by Mike, 20210107
 //TO-DO: -update: this
-void Text::drawWeapon(float xPos, float yPos, float zPos)
+void Level2D::drawWeapon(float xPos, float yPos, float zPos)
 {
     glPushMatrix();
     glTranslatef(xPos, yPos, zPos);
@@ -2283,10 +2878,12 @@ void Text::drawWeapon(float xPos, float yPos, float zPos)
 }
 
 
+/* //edited by Mike, 20210705
 //added by Mike, 20210614
 //note: error occurs if excess rows > 1
 //TO-DO: -fix: this
-void Text::readInputText(char *inputFilename) {
+//note: per char, instead of per String
+void Level2D::readInputText(char *inputFilename) {
     int c;
     FILE *file;
     
@@ -2295,11 +2892,7 @@ void Text::readInputText(char *inputFilename) {
     int iRowCount=0;
     int iColumnCount=0;
     
-    //TO-DO: -update: this
-    /*	int MAX_TEXT_CHAR_ROW=2;
-     int MAX_TEXT_CHAR_COLUMN=8;
-     */
-    
+
     //edited by Mike, 20210618
     for (iRowCount=0; iRowCount<MAX_TEXT_CHAR_ROW; iRowCount++) {
         //    for (iRowCount=0; iRowCount<MAX_TEXT_CHAR_ROW_RAM; iRowCount++) {
@@ -2321,17 +2914,6 @@ void Text::readInputText(char *inputFilename) {
             cCurrentTextContainer[iRowCount][iColumnCount]='\0';
         }
     }
-    
-    
-    
-    /*
-     //added by Mike, 20210618
-     for (iRowCount=0; iRowCount<MAX_TEXT_CHAR_ROW_RAM; iRowCount++) {
-     for (iColumnCount=0; iColumnCount<MAX_TEXT_CHAR_COLUMN; iColumnCount++) {
-     iCurrentMaxColumnCountPerRowContainer[iRowCount]=1;
-     }
-     }
-     */
     
     iRowCount=0;
     iColumnCount=0;
@@ -2378,17 +2960,10 @@ void Text::readInputText(char *inputFilename) {
         //edited by Mike, 20210210
         //		while ((c = getc(file)) != EOF) {
         //edited by Mike, 20210516
-        //		while (fgets (input, MAX_TEXT_CHAR_COLUMN, file)) { /* read each line of input */
-        while (fgets (inputTextLine, MAX_TEXT_CHAR_COLUMN, file)) { /* read each line of input */
+        //		while (fgets (input, MAX_TEXT_CHAR_COLUMN, file)) { // read each line of input
+        while (fgets (inputTextLine, MAX_TEXT_CHAR_COLUMN, file)) { // read each line of input
             
             //	putchar(c);
-            
-            /*	//removed by Mike, 20210210
-             char sRow[2] = {(char)c};
-             */
-            //delimited using new line
-            /*			char *chRow = strtok(sRow, "\n");
-             */
             
             //            printf(">>> input: %s\n",input);
             //			sscanf (input, "%s", inputTextLine);
@@ -2403,18 +2978,7 @@ void Text::readInputText(char *inputFilename) {
             //added by Mike, 20210208
             iColumnCount=0;
             
-            //removed by Mike, 20210210
-            /*
-             //			char s[2] = {0};
-             //			*s = c;
-             //edited by Mike, 20210209
-             //				char s[2] = {c};
-             //				char s[2] = {itoa(c)};
-             char s[2] = {(char)c};
-             
-             //delimited using comma
-             char *ch = strtok(s, ",");
-             */
+           
             //edited by Mike, 20210616
             //TO-DO: -verify: add tool for computer to notify Unit member if max characters per row already exceeded
             //at present, 19 characters including space
@@ -2428,40 +2992,7 @@ void Text::readInputText(char *inputFilename) {
             strcpy(tempInputTextLine,inputTextLine);
             
             printf(">>> inputTextLine: %s\n",inputTextLine);
-            
-            
-            /* 	//edited by Mike, 20210616
-             //note: add "-1" for empty
-             //otherwise, comma as column is skipped
-             //edited by Mike, 20210615
-             //			char *ch = strtok(tempInputTextLine, ",");
-             char *ch = strtok(tempInputTextLine, "\n");
-             
-             while (ch != NULL) {
-             //				printf("%i,",iColumnCount);
-             MAX_TEXT_CHAR_ROW_RAM
-             //TO-DO: use String, instead of char
-             //TO-DO: -reverify: output due to "G" not put in container
-             //				sCurrentLevelMapContainer[iRowCount][iColumnCount]=&ch;
-             sCurrentTextContainer[iRowCount][iColumnCount]=ch;
-             //				printf("%i:",iColumnCount);
-             //				printf("%s,",ch);
-             
-             iColumnCount=iColumnCount+1;
-             
-             //edited by Mike, 20210615
-             //				  ch = strtok(NULL, ",");
-             ch = strtok(NULL, "\n");
-             }
-             
-             */
-            
-            //added by Mike, 20210617
-            /*            if (cCurrentTextContainer[iRowCount][iCharCount]=='\0') {
-             break;
-             }
-             */
-            
+                        
             //added by Mike, 20210617
             //TO-DO: -add: trim to input text line
             
@@ -2504,6 +3035,152 @@ void Text::readInputText(char *inputFilename) {
         //added by Mike, 20210615
         //        free(tempInputTextLine);
     }
+}
+*/
+
+//added by Mike, 20210208
+void Level::read(char *inputFilename) {
+	int c;
+	FILE *file;
+	
+	//TO-DO: update: this		
+//	char** iCurrentLevelMapContainer = new char[100][100];	
+	int iRowCount=0;
+	int iColumnCount=0;
+
+
+/*	//edited by Mike, 20210305
+	for (iRowCount=0; iRowCount<MAX_Z_AXIS_VIEWPORT; iRowCount++) {	
+		for (iColumnCount=0; iColumnCount<MAX_X_AXIS_VIEWPORT; iColumnCount++) {		
+	 		sCurrentLevelMapContainer[iRowCount][iColumnCount]=(char*)"-1";//'G';
+		}
+	}
+*/
+//edited by Mike, 20210310
+/*	
+	for (iRowCount=0; iRowCount<100; iRowCount++) {	
+		for (iColumnCount=0; iColumnCount<100; iColumnCount++) {		
+	 		sCurrentLevelMapContainer[iRowCount][iColumnCount]=(char*)"-1";//'G';
+		}
+	}
+*/
+/*	//edited by Mike, 20210321
+	//add +60 to be 160; where 60 : viewport max
+	for (iRowCount=0; iRowCount<160; iRowCount++) {	
+		for (iColumnCount=0; iColumnCount<160; iColumnCount++) {		
+	 		sCurrentLevelMapContainer[iRowCount][iColumnCount]=(char*)"-1";//'G';
+		}
+	}
+*/
+	
+	for (iRowCount=0; iRowCount<MAX_Z_AXIS_MAP; iRowCount++) {	
+		for (iColumnCount=0; iColumnCount<MAX_X_AXIS_MAP; iColumnCount++) {		
+	 		sCurrentLevelMapContainer[iRowCount][iColumnCount]=(char*)"-1";//'G';
+		}
+	}
+	
+	iRowCount=0;
+	iColumnCount=0;
+				
+	//noted by Mike, 20201210
+	//note: if concatenated string exceeds size, "stack smashing detected"; terminated; Aborted (core dumped)
+	//I prefer to set a size, instead of dynamically allocate due to increasing likelihood of memory leaks
+	//where memory leaks = not deallocated storage in memory, albeit not used by software application
+	//identifying not deallocated storage in memory becomes more difficult with increasing use
+	char input[MAX_INPUT_TEXT_PER_LINE]; //max size
+	char inputTextLine[MAX_INPUT_TEXT_PER_LINE]; //max size
+	char tempInputTextLine[MAX_INPUT_TEXT_PER_LINE]; //max size
+	
+	strcpy(input, "input/");
+	strcat(input, inputFilename); //already includes .txt
+//	strcat(input,".txt");
+	
+//	printf("dito: %s",input);
+
+//	file = fopen("input/"+inputFilename, "r"); //.txt file
+//	file = fopen("input/inputHalimbawa.txt", "r"); //.txt file
+	file = fopen(input, "r"); //.txt file
+
+	//TO-DO: -reverify: tile positions
+	int iCount=0;
+	
+	if (file) {
+		//edited by Mike, 20210210
+//		while ((c = getc(file)) != EOF) {
+		while (fgets (input, MAX_INPUT_TEXT_PER_LINE, file)) { /* read each line of input */			
+//	putchar(c);
+			
+/*	//removed by Mike, 20210210
+			char sRow[2] = {(char)c};
+*/			
+			//delimited using new line
+/*			char *chRow = strtok(sRow, "\n");
+*/
+			sscanf (input, "%s", inputTextLine);
+         
+			
+//			iCount=0;
+	//input text per line			
+//			printf("%i;\n",iCount);
+//			printf("%i;",iCount);
+			
+			iCount=iCount+1;
+						
+				//added by Mike, 20210208
+				iColumnCount=0;
+	
+				//removed by Mike, 20210210
+/*				
+	//			char s[2] = {0};
+	//			*s = c;
+				//edited by Mike, 20210209
+//				char s[2] = {c};
+//				char s[2] = {itoa(c)};
+				char s[2] = {(char)c};
+				
+				//delimited using comma
+				char *ch = strtok(s, ",");
+*/					
+			strcpy(tempInputTextLine,inputTextLine);
+	
+			//note: add "-1" for empty
+			//otherwise, comma as column is skipped
+			char *ch = strtok(tempInputTextLine, ",");
+				
+			while (ch != NULL) {	
+//				printf("%i,",iColumnCount);
+					
+				//TO-DO: use String, instead of char
+				//TO-DO: -reverify: output due to "G" not put in container
+//				sCurrentLevelMapContainer[iRowCount][iColumnCount]=&ch;
+				sCurrentLevelMapContainer[iRowCount][iColumnCount]=ch;
+
+/*	//edited by Mike, 20210211		
+				printf("%s:",ch);
+				printf("%i,",iColumnCount);
+*/
+				printf("%i:",iColumnCount);
+				printf("%s,",ch);
+				
+				iColumnCount=iColumnCount+1;
+				  ch = strtok(NULL, ",");
+			}			
+
+			//edited by Mike, 20210311
+//			if (iRowCount<100) {
+			//edited by Mike, 20210321
+//			if (iRowCount<160) {	
+			if (iRowCount<MAX_X_AXIS_MAP) {				
+				iRowCount=iRowCount+1;
+			}
+			else {
+				iRowCount=0;
+			}
+			
+			printf("\n");			
+		}
+		fclose(file);
+	}	
 }
 
 //--------------------------------------------

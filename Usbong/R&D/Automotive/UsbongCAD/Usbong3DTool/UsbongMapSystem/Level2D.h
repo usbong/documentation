@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20210613
- * @date updated: 20210705
+ * @date updated: 20210706
  * @website address: http://www.usbong.ph
  *
  * Acknowledgments:
@@ -25,6 +25,9 @@
  */
 
 //TO-DO: -update: this
+
+//added by Mike, 20210706
+#include <stdlib.h>
 
 //added by Mike, 20201130
 #include "CTargaImage.h"
@@ -72,6 +75,19 @@
 //removed by Mike, 20210521
 //added in OpenGLCanvas.h
 //#define BUTTON_TEXTURE_A 7
+
+//added by Mike, 20210706
+//240/4=60 columns and rows per viewport
+//reverify: to be excess due to size of fGridSquareWidth
+#define MAX_X_AXIS_VIEWPORT 240
+#define MAX_Y_AXIS_VIEWPORT 240
+#define MAX_Z_AXIS_VIEWPORT 240
+
+//TO-DO: -add: increase map size to be more than viewport
+#define MAX_X_AXIS_MAP 240
+#define MAX_Y_AXIS_MAP 240
+#define MAX_Z_AXIS_MAP 240
+
 
 #ifdef _WIN32
 #define MAX_WAIT_COUNT 5 //Windows Machine
@@ -275,7 +291,6 @@ private:
     //edited by Mike, 20210423
     void setupPrev();
     void setup();
-        sCurrentLevelMapContainer
 		//added by Mike, 20210703
 		void drawString(GLfloat x, GLfloat y, GLfloat z, char *string);
 		void drawChar(GLfloat x, GLfloat y, GLfloat z, char c);       
@@ -412,14 +427,15 @@ public:
             return false;
         }
         //edited by Mike, 20210121
-        else if (bIsExecutingDefend) {sCurrentLevelMapContainer
+        else if (bIsExecutingDefend) {
             return false;
         }
         return true;
     }
     
     //added by Mike, 20210614MAX_TEXT_CHAR_ROW
-    void readInputText(char *inputFilename);
+    void readInputText(char *inputFilename);    	
+		void read(char *inputFilename); ////added by Mike, 20210706
     
     virtual void draw() {
         //edited by Mike, 20210424
@@ -443,6 +459,10 @@ public:
     
     //added by Mike, 20210705
     void drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat fXSize, GLfloat fYSize, GLfloat fZSize);
+
+		//added by Mike, 20210706
+		void drawLevel(GLfloat x, GLfloat y, GLfloat z, char *string);	
+
         
     /*	//removed by Mike, 20210514
      //added by Mike, 20210423
