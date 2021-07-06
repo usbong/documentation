@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20200926
- * @date updated: 20210705
+ * @date updated: 20210706
  * @website address: http://www.usbong.ph
  *
  * Reference:
@@ -843,7 +843,12 @@ void Text::drawTextBackgroundAsQuadWithTexture()
     //3) identifying object anchor to which steps are added
     //identified delays shall add computation time during movement in galaxy
     //speed-up via machine tool, e.g. RobotShip, assists Human Pilot
-				
+		
+		//added by Mike, 20210706
+		//note: reminded: difficulty in Math, i.e. Maparaang Pagbibilang,
+		//due to no quick feedback; example: no quick output using select inputs
+		//computer as machine tool assists in speed-up of output
+		
     //edited by Mike, 20210704
     //added +0.02f in x-axis as margin so text not too near left border of text background image
     //y-axis add from window's top
@@ -871,8 +876,10 @@ void Text::drawTextBackgroundAsQuadWithTexture()
 //    glTranslatef(0.4f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
     
     //note: used in x-axis input computation, relationship to value of iMyWindowWidthAsPixelOffset
-    //TO-DO: -reverify: in LinuxOS;
-    glTranslatef(iMyWindowWidthAsPixelOffset/1000.0f-0.04f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
+    //edited by Mike, 20210706
+    //TO-DO: -reverify: in macOS;
+//    glTranslatef(iMyWindowWidthAsPixelOffset/1000.0f-0.05f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
+    glTranslatef(iMyWindowWidthAsPixelOffset/1000.0f-0.055f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
     
     //auto-scale to Window Width to Height
     glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
