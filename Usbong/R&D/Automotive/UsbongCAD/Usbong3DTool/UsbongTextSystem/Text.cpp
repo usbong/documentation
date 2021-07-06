@@ -750,8 +750,11 @@ void Text::drawPressNextSymbol()
     
     //y-axis origin from bottom
     //add 0.06f as bottom padding
+    //edited by Mike, 20210706
     //    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myWindowWidth/2), myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.80f)+0.1f, 0.0f);
-    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myWindowWidth/2), myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.80f)+0.06f, 0.0f);
+//    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myWindowWidth/2), myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.80f)+0.06f, 0.0f);
+    //TO-DO: -reverify: in LinuxOS machine
+    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myWindowWidth/2), myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.75f), 0.0f);
     
     
     glRotatef(45.0f, 0.0f, 0.0f, 1.0f);
@@ -843,12 +846,12 @@ void Text::drawTextBackgroundAsQuadWithTexture()
     //3) identifying object anchor to which steps are added
     //identified delays shall add computation time during movement in galaxy
     //speed-up via machine tool, e.g. RobotShip, assists Human Pilot
-		
-		//added by Mike, 20210706
-		//note: reminded: difficulty in Math, i.e. Maparaang Pagbibilang,
-		//due to no quick feedback; example: no quick output using select inputs
-		//computer as machine tool assists in speed-up of output
-		
+    
+    //added by Mike, 20210706
+    //note: reminded: difficulty in Math, i.e. Maparaang Pagbibilang,
+    //due to no quick feedback; example: no quick output using select inputs
+    //computer as machine tool assists in speed-up of output
+    
     //edited by Mike, 20210704
     //added +0.02f in x-axis as margin so text not too near left border of text background image
     //y-axis add from window's top
@@ -858,30 +861,36 @@ void Text::drawTextBackgroundAsQuadWithTexture()
     //note: output (macOS): -0.4f; window origin left 0.0f; right max 1.0f
     //note: output (LinuxOS): -0.221354f; window origin left 0.0f; right max 1.0f
     printf(">>>>> myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset): %f\n",myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset));
-
+    
     //output (macOS); iMyWindowWidthAsPixelOffset: 240
     //output (LinuxOS); iMyWindowWidthAsPixelOffset: 299
     printf(">>>>> iMyWindowWidthAsPixelOffset: %i\n",iMyWindowWidthAsPixelOffset);
-
-//    printf(">>>>> myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel): %f\n",myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel));
+    
+    //    printf(">>>>> myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel): %f\n",myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel));
     
     //TO-DO: -reverify: in Linux OS
     //add to vertex position x-axis: 0.2f
     //edited by Mike, 20210705
     //    glTranslatef(0.2f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f); //macOS
     //    glTranslatef(0.24f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f); //LinuxOS
-
-//    glTranslatef(0.221354f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
-//    glTranslatef(1.0f*0.20f+0.04f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
-//    glTranslatef(0.4f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
+    
+    //    glTranslatef(0.221354f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
+    //    glTranslatef(1.0f*0.20f+0.04f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
+    //    glTranslatef(0.4f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
     
     //note: used in x-axis input computation, relationship to value of iMyWindowWidthAsPixelOffset
     //edited by Mike, 20210706
     //TO-DO: -reverify: in macOS;
-//    glTranslatef(iMyWindowWidthAsPixelOffset/1000.0f-0.05f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
-    glTranslatef(iMyWindowWidthAsPixelOffset/1000.0f-0.055f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
+    //    glTranslatef(iMyWindowWidthAsPixelOffset/1000.0f-0.05f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
+    //edited by Mike, 20210706
+//    glTranslatef(iMyWindowWidthAsPixelOffset/1000.0f-0.055f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
+//    glTranslatef(iMyWindowWidthAsPixelOffset/1000.0f-0.04f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
     
-    //auto-scale to Window Width to Height
+    //TO-DO: -reverify: in LinuxOS;
+    //reminder: we use auto-scale Window Width to Height
+    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.6f), -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
+
+    //auto-scale Window Width to Height
     glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
     
     //edited by Mike, 20210626
