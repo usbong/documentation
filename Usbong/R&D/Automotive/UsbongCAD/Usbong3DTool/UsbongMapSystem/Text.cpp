@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20200926
- * @date updated: 20210706
+ * @date updated: 20210707
  * @website address: http://www.usbong.ph
  *
  * Reference:
@@ -72,6 +72,7 @@
 
 //added by Mike, 20210613
 #include "Text.h"
+
 
 //added by Mike, 20210614
 #include "Font.h"
@@ -745,22 +746,25 @@ void Text::drawPressNextSymbol()
     
     //note: 640x640; window width x height
     //edited by Mike, 20210702
-//    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(320), myUsbongUtils->autoConvertFromPixelToVertexPointY(555), 0.0f); //-myZPosAsPixel);
-
-		//y-axis origin from bottom
-		//add 0.06f as bottom padding
-//    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myWindowWidth/2), myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.80f)+0.1f, 0.0f);
-    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myWindowWidth/2), myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.80f)+0.06f, 0.0f);
+    //    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(320), myUsbongUtils->autoConvertFromPixelToVertexPointY(555), 0.0f); //-myZPosAsPixel);
     
-       
+    //y-axis origin from bottom
+    //add 0.06f as bottom padding
+    //edited by Mike, 20210706
+    //    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myWindowWidth/2), myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.80f)+0.1f, 0.0f);
+//    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myWindowWidth/2), myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.80f)+0.06f, 0.0f);
+    //TO-DO: -reverify: in LinuxOS machine
+    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myWindowWidth/2), myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.75f), 0.0f);
+    
+    
     glRotatef(45.0f, 0.0f, 0.0f, 1.0f);
-
-		//edited by Mike, 20210702    
-//	  glScalef(0.08f, 0.08f, 1.0f);
-	  glScalef(0.06f, 0.06f, 1.0f);
+    
+    //edited by Mike, 20210702
+    //	  glScalef(0.08f, 0.08f, 1.0f);
+    glScalef(0.06f, 0.06f, 1.0f);
 		  
     //auto-scale to Window Width to Height
-//    glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,fMyWindowWidthAsPixelRatioToHeightPixel,1.0f);	  
+    //    glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,fMyWindowWidthAsPixelRatioToHeightPixel,1.0f);
     
     glColor3f(1.0f,0.0f,0.0f); //red
     
@@ -797,8 +801,8 @@ void Text::drawTextBackgroundAsQuadWithTexture()
     
     
     //TO-DO: -update: draw instructions
+    //TO-DO: -fix: no background texture image
     drawTextBackgroundObject();
-    
     glScalef(1.0f,1.0f,1.0f);
     
     //added by Mike, 20210613
@@ -828,28 +832,28 @@ void Text::drawTextBackgroundAsQuadWithTexture()
     
     //added by Mike, 20210626; removed by Mike, 20210628
     //TO-DO: -reverify: this action
-//    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset), 0.0f, 0.0f);
-  	
-  	//removed by Mike, 20210702  
+    //    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset), 0.0f, 0.0f);
+    
+    //removed by Mike, 20210702
     //auto-scale to Window Width to Height
-//    glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
- 
+    //    glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
+    
     //added by Mike, 20210628
     //TO-DO: -reverify: instructions in macOS due to OK in Linux machine
-
-		//note: adds to development time;
-		//1) identifying correct positions due to there exist pixel and vertex positions
-		//2) identifying axis origin from where to add
-		//3) identifying object anchor to which steps are added
-		//identified delays shall add computation time during movement in galaxy
-		//speed-up via machine tool, e.g. RobotShip, assists Human Pilot
-				
-		//added by Mike, 20210706
-		//note: reminded: difficulty in Math, i.e. Maparaang Pagbibilang,
-		//due to no quick feedback; example: no quick output using select inputs
-		//computer as machine tool assists in speed-up of output
-				
-		//edited by Mike, 20210704
+    
+    //note: adds to development time;
+    //1) identifying correct positions due to there exist pixel and vertex positions
+    //2) identifying axis origin from where to add
+    //3) identifying object anchor to which steps are added
+    //identified delays shall add computation time during movement in galaxy
+    //speed-up via machine tool, e.g. RobotShip, assists Human Pilot
+    
+    //added by Mike, 20210706
+    //note: reminded: difficulty in Math, i.e. Maparaang Pagbibilang,
+    //due to no quick feedback; example: no quick output using select inputs
+    //computer as machine tool assists in speed-up of output
+    
+    //edited by Mike, 20210704
     //added +0.02f in x-axis as margin so text not too near left border of text background image
     //y-axis add from window's top
     //    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset)+0.02f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
@@ -858,40 +862,60 @@ void Text::drawTextBackgroundAsQuadWithTexture()
     //note: output (macOS): -0.4f; window origin left 0.0f; right max 1.0f
     //note: output (LinuxOS): -0.221354f; window origin left 0.0f; right max 1.0f
     printf(">>>>> myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset): %f\n",myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset));
-
+    
     //output (macOS); iMyWindowWidthAsPixelOffset: 240
     //output (LinuxOS); iMyWindowWidthAsPixelOffset: 299
     printf(">>>>> iMyWindowWidthAsPixelOffset: %i\n",iMyWindowWidthAsPixelOffset);
-
-//    printf(">>>>> myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel): %f\n",myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel));
+    
+    //    printf(">>>>> myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel): %f\n",myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel));
     
     //TO-DO: -reverify: in Linux OS
     //add to vertex position x-axis: 0.2f
     //edited by Mike, 20210705
     //    glTranslatef(0.2f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f); //macOS
     //    glTranslatef(0.24f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f); //LinuxOS
-
-//    glTranslatef(0.221354f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
-//    glTranslatef(1.0f*0.20f+0.04f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
-//    glTranslatef(0.4f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
+    
+    //    glTranslatef(0.221354f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
+    //    glTranslatef(1.0f*0.20f+0.04f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
+    //    glTranslatef(0.4f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
     
     //note: used in x-axis input computation, relationship to value of iMyWindowWidthAsPixelOffset
     //edited by Mike, 20210706
     //TO-DO: -reverify: in macOS;
-//    glTranslatef(iMyWindowWidthAsPixelOffset/1000.0f-0.05f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
-    glTranslatef(iMyWindowWidthAsPixelOffset/1000.0f-0.055f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
+    //    glTranslatef(iMyWindowWidthAsPixelOffset/1000.0f-0.05f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
+    //edited by Mike, 20210706
+//    glTranslatef(iMyWindowWidthAsPixelOffset/1000.0f-0.055f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
+//    glTranslatef(iMyWindowWidthAsPixelOffset/1000.0f-0.04f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
     
-    //auto-scale to Window Width to Height
+    //TO-DO: -reverify: in LinuxOS;
+    //TO-DO: -reverify: in macOS;
+    
+    //note: adds to development time, variation in Window Width and Height
+    //machine manufacturer auto-verifies if correct display output 
+    //using own machine's Window Width and Height inputs
+    //Is Microsoft's strategy?
+    //at present, USBONG verifies display output using available manufactured machines
+        
+    //reminder: we use auto-scale Window Width to Height
+    //edited by Mike, 20210706
+//    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.6f), -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
+//    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.62f), -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
+		//note: 0.2f : macOS
+		float fMyWindowWidthAsVertexOffset=(0.2f+myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset))*(-1);
+
+		printf(">>>>>>>>>> fMyWindowWidthAsVertexOffset: %f\n",fMyWindowWidthAsVertexOffset);
+
+    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*(0.6f+fMyWindowWidthAsVertexOffset)), -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
+
+    //auto-scale Window Width to Height
     glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
-    
     
     //edited by Mike, 20210626
     glScalef(0.26f,0.26f,1.0f);
-
-    //removed by Mike, 20210702
-//    glTranslatef(0.26f, 1.1f, 0.0f); //note: y-axis; inverted; +value goes down
-
     
+    //removed by Mike, 20210702
+    //    glTranslatef(0.26f, 1.1f, 0.0f); //note: y-axis; inverted; +value goes down
+        
     //font
     // select and enable texture FONT_TEXTURE
     glBindTexture(GL_TEXTURE_2D, FONT_TEXTURE);
@@ -905,7 +929,7 @@ void Text::drawTextBackgroundAsQuadWithTexture()
     //row, column
     //edited by Mike, 20210618
     //    char tempText[MAX_TEXT_CHAR_ROW][MAX_TEXT_CHAR_COLUMN];
-    char tempText[MAX_TEXT_CHAR_ROW_RAM][MAX_TEXT_CHAR_COLUMN];   
+    char tempText[MAX_TEXT_CHAR_ROW_RAM][MAX_TEXT_CHAR_COLUMN];
     
     //		 sprintf(tempText,"USBONG");
     //		 sprintf(tempText,sCurrentTextContainer[0]);
@@ -1124,7 +1148,7 @@ void Text::drawTextBackgroundObject()
     
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, TEXT_TEXTURE_A);
-    
+        
     //edited by Mike, 20210515
     fButtonAnimationFrameOffset=0;
     

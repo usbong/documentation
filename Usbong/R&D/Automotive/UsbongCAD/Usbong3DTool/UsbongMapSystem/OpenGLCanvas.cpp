@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20200926
- * @date updated: 20210706
+ * @date updated: 20210707
  * @website address: http://www.usbong.ph
  *
  * References:
@@ -1919,7 +1919,7 @@ glPopMatrix();
     //added by Mike, 20210613; removed by Mike, 20210703
     //added by Mike, 20210704
     //note: OK output
-    //myText->draw();
+    myText->draw();
     
     
     //added by Mike, 20210511
