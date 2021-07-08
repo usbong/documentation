@@ -456,6 +456,7 @@ public:
     //added by Mike, 20210703
     void drawTileAsQuadWithTexture(GLfloat x, GLfloat y, GLfloat z, char c);
     void drawLevelWithTexture();
+    void drawLevelWithTexturePrev(); //added by Mike, 20210708
     
     //added by Mike, 20210705
     void drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat fXSize, GLfloat fYSize, GLfloat fZSize);

@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20200926
- * @date updated: 20210707
+ * @date updated: 20210708
  * @website address: http://www.usbong.ph
  *
  * Reference:
@@ -634,30 +634,40 @@ void Level2D::drawPressNextSymbol()
     //edited by Mike, 20210702
 //    glTranslatef(myUsbongUtils->autoConvertFromPixelTodrawTileAsQuadWithTextureVertexPointX(320), myUsbongUtils->autoConvertFromPixelToVertexPointY(555), 0.0f); //-myZPosAsPixel);
 
+/* //removed by Mike, 20210708
 		//y-axis origin from bottom
 		//add 0.06f as bottom padding
 //    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myWindowWidth/2), myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.80f)+0.1f, 0.0f);
     glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myWindowWidth/2), myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.80f)+0.06f, 0.0f);
-    
+*/    
+
+		//added by Mike, 20210708
+		//TO-DO: -update: this
+		//set object anchor to top-left
+
+		//added by Mike, 20210708
+		#if defined(__APPLE__)
+		#else
+    	glTranslatef(+0.02f, 0.0f, 0.0f);
+		#endif
+
+//    glTranslatef(-1.0f/2, -1.0f/2, 0.0f);
+//    glTranslatef(1.0f, 0.0f, 0.0f);
+    glTranslatef(0.06f, 0.0f, 0.0f);
        
     glRotatef(45.0f, 0.0f, 0.0f, 1.0f);
 
 		//edited by Mike, 20210702    
-//	  glScalef(0.08f, 0.08f, 1.0f);
 	  glScalef(0.06f, 0.06f, 1.0f);
-		  
-    //auto-scale to Window Width to Height
-//    glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,fMyWindowWidthAsPixelRatioToHeightPixel,1.0f);	  
-    
+		             
     glColor3f(1.0f,0.0f,0.0f); //red
-    
-    
+        
     glBegin(GL_TRIANGLES);
-    //counter-clockwise sequence to auto-draw front face
-    //front face left part; triangle at 3rd quadrant; angle: right
-    glVertex3f(-1.000000,1.000000,0.000000); //A1
-    glVertex3f(-1.000000,-1.000000,0.000000); //C1
-    glVertex3f(1.000000,-1.000000,0.000000); //B1
+    	//counter-clockwise sequence to auto-draw front face
+    	//front face left part; triangle at 3rd quadrant; angle: right
+    	glVertex3f(-1.000000,1.000000,0.000000); //A1
+    	glVertex3f(-1.000000,-1.000000,0.000000); //C1
+    	glVertex3f(1.000000,-1.000000,0.000000); //B1
     glEnd();
     
     glPopMatrix();
@@ -1112,9 +1122,50 @@ void Level2D::drawTileAsQuadWithTexture(GLfloat x, GLfloat y, GLfloat z, char c)
    glEnd();    
 }
 
+//added by Mike, 20210708
+void Level2D::drawLevelWithTexture()
+{	
+/*
+    glPushMatrix();
+    
+    int iColumnCountMax=10;
+    int iLeftMarginColumnCount=0;
+
+    //note: no +0.02 in macOS
+    //TO-DO: -reverify: in Linux OS
+    glTranslatef(-2.0f/iColumnCountMax*iLeftMarginColumnCount, 0.0f, 0.0f);
+		
+		//added by Mike, 20210705
+		#if defined(__APPLE__)
+		#else
+    	glTranslatef(+0.02f, 0.0f, 0.0f);
+		#endif
+		    
+    
+    
+    	glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(100), -myUsbongUtils->autoConvertFromPixelToVertexPointY(100), 0.0f);
+				drawPressNextSymbol();
+    	glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(100), -myUsbongUtils->autoConvertFromPixelToVertexPointY(100), 0.0f);				
+    glPopMatrix();			
+
+    //-myUsbongUtils->autoConvertFromPixelToVertexPointY(100)
+    	glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(myWindowWidth/2), 0.0f, 0.0f);
+
+*/    
+
+    glPushMatrix();
+    
+    printf(">>>myUsbongUtils->autoConvertFromPixelToVertexPointX(0): %f\n",myUsbongUtils->autoConvertFromPixelToVertexPointX(0));
+    
+    	glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(0), myUsbongUtils->autoConvertFromPixelToVertexPointY(0), 0.0f);
+    
+    	drawPressNextSymbol();
+    glPopMatrix();
+}
+
 //added by Mike, 20210703
 //TO-DO: -update: this
-void Level2D::drawLevelWithTexture()
+void Level2D::drawLevelWithTexturePrev()
 {
 
 /* //removed by Mike, 20210703    

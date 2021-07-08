@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20200926
- * @date updated: 20210707
+ * @date updated: 20210708
  * @website address: http://www.usbong.ph
  *
  * References:
@@ -493,7 +493,10 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
     fMyWindowWidthAsPixelRatioToHeightPixel=1.0f;
     iMyWindowWidthAsPixelOffset=0; //added by Mike, 20210701
     
-    
+ //added by Mike, 20210708    
+//note: add no auto-scale Window, but use increased max column count
+ 
+    //note: auto-scale Width to Height to make Square Window    
     if (myWindowWidthAsPixel!=myWindowHeightAsPixel) {
         //added by Mike, 20210626
         fMyWindowWidthAsPixelRatioToHeightPixel=myWindowHeightAsPixelInput/myWindowWidthAsPixel;
@@ -506,20 +509,13 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
         myWindowWidthAsPixel = myWindowHeightAsPixelInput; //myWindowWidthAsPixelInput;
         //    	myWindowHeightAsPixel = myWindowHeightAsPixelInput;
         
-        /*
-         printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> USBONG");
-         printf("myWindowWidthAsPixelInput: %f; myWindowHeightAsPixelInput: %f\n",myWindowWidthAsPixelInput,myWindowHeightAsPixelInput);
-         printf("myWindowWidthAsPixel: %f; myWindowHeightAsPixel: %f\n",myWindowWidthAsPixel,myWindowHeightAsPixel);
-         */
+////         printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> USBONG");
+////         printf("myWindowWidthAsPixelInput: %f; myWindowHeightAsPixelInput: %f\n",myWindowWidthAsPixelInput,myWindowHeightAsPixelInput);
+////         printf("myWindowWidthAsPixel: %f; myWindowHeightAsPixel: %f\n",myWindowWidthAsPixel,myWindowHeightAsPixel);
     }
     
     //added by Mike, 20210516
     myUsbongUtils = new UsbongUtils();
-    
-    //edited by Mike, 20210625
-    /*    printf("myWindowWidthAsPixelInput: %f; myWindowHeightAsPixelInput: %f",myWindowWidthAsPixelInput,myWindowHeightAsPixelInput);
-     myUsbongUtils->setWindowWidthHeight(myWindowWidthAsPixelInput, myWindowHeightAsPixelInput); //added by Mike, 20210623
-     */
     myUsbongUtils->setWindowWidthHeight(myWindowWidthAsPixel, myWindowHeightAsPixel);
     
     //added by Mike, 20210211
@@ -624,8 +620,9 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
     myText = new Text(0.0f,320.0f,0.0f,myWindowWidthAsPixelInput,myWindowHeightAsPixelInput);
     myText->setOpenGLCanvas(this, fGridSquareWidth);
   
-    //added by Mike, 20210703
-    myLevel2D = new Level2D(0.0f,320.0f,0.0f,myWindowWidthAsPixelInput,myWindowHeightAsPixelInput);
+    //added by Mike, 20210703; edited by Mike, 20210708
+//    myLevel2D = new Level2D(0.0f,320.0f,0.0f,myWindowWidthAsPixelInput,myWindowHeightAsPixelInput);
+    myLevel2D = new Level2D(0.0f,0.0f,0.0f,myWindowWidthAsPixelInput,myWindowHeightAsPixelInput);
     myLevel2D->setOpenGLCanvas(this, fGridSquareWidth);
     myLevel2D->setupLevel(LEVEL_2D_TEXTURE);
     
@@ -1837,18 +1834,21 @@ glPopMatrix();
     //edited by Mike, 20210701
 ////    printf(">>>>>iLeftMarginColumnCount: %i>>>>>",iLeftMarginColumnCount);
 
+
     //edited by Mike, 20210704
 //    glTranslatef(-2.0f/iColumnCountMax*iLeftMarginColumnCount+0.02, 0.0f, 0.0f);
     //note: no +0.02 in macOS
     //TO-DO: -reverify: in Linux OS
-    glTranslatef(-2.0f/iColumnCountMax*iLeftMarginColumnCount, 0.0f, 0.0f);
+/*    glTranslatef(-2.0f/iColumnCountMax*iLeftMarginColumnCount, 0.0f, 0.0f);
+*/
 		
 		//added by Mike, 20210705
 		#if defined(__APPLE__)
 		#else
     	glTranslatef(+0.02f, 0.0f, 0.0f);
 		#endif
-		
+
+    glTranslatef(-2.0f/iColumnCountMax*iLeftMarginColumnCount, 0.0f, 0.0f);
 
     	//	printf("myMouseActionDown[MOUSE_LEFT_BUTTON]: %i\n",myMouseActionDown[MOUSE_LEFT_BUTTON]);
     	
@@ -1919,7 +1919,7 @@ glPopMatrix();
     //added by Mike, 20210613; removed by Mike, 20210703
     //added by Mike, 20210704
     //note: OK output
-    myText->draw();
+//    myText->draw();
     
     
     //added by Mike, 20210511
