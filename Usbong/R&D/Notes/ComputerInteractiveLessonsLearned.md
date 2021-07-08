@@ -109,6 +109,34 @@ TO-DO: -update: this<br/>
 --> did not finish by beating Final Boss, Gill;<br/>
 --> due to lost to Human Opponents who challenge with stronger Fighters
 
+### 1.1.7) Street Fighter Zero
+--> PlayStation version; executed on PlayStation3 machine<br/>
+--> set difficult level to 6 stars; where 8 is highest<br/>
+--> set speed to "SPEEDY", "T2"; fastest<br/>
+--> In match, Winning state can quickly become you LOSE<br/>
+--> you "LOO", instead of you "LOSE"; samurai spirits' SHOU（勝）, instead of SHOUBU（勝負）?<br/>
+--> Select Fighters difficult to finish All matches<br/>
+--> Adon, Ryuu, Sagat... ends up with Chun-Li<br/>
+--> パズルのように解ける仕組みがあり、人を引っ張る？<br/>
+--> pazuru no youni tokeru shikumi ga ari, hito wo hipparu?<br/>
+--> Tulad sa puzzle, may maaaring malutas na mekanismo/sistema, humihila nang malayo ng tao?<br/>
+--> Rockman?<br/>
+--> ボタンを連続に押すと、コンピュータとの交わす結果、負け。<br/>
+--> botan wo renzokuni osuto, konpyu-ta to no kawasu kekka, make.<br/>
+--> Kapag tuluy-tuloy pinindot ang button, kinahihinatnan (kekka; pinagsamang bunga) ng palitan kasama ang kompyuter, talo. <br/>
+--> "NOW LOADING...."がなかったら、次々にやる？<br/>
+--> "NOW LOADING...."ga nakattara, tsugitsugini yaru?<br/>
+--> Kung walang "NOW LOADING....", tuluy-tuloy ang gawa?<br/>
+--> "NOW LOADING..."；　試合の休息； 息(iki; hinga)ができるところ<br/>
+--> "NOW LOADING..."；　shiai no kyuusoku； ikiga dekiru tokoro<br/>
+--> "NOW LOADING..."；　paligsahan (shiai; pagsubok+pinagsama), pahinga (kyuusoku; katawan+hinga);<br/>
+--> Pook kung saan maaaring gumawa ng paghinga.<br/>
+--> 試合中にも、budol-budol/manloloko/carnapper/cybercriminal/communist terroristグループがジャマになる息の問題などをする。<br/>
+--> shiaichuunimo, budol-budol/manloloko/carnapper/cybercriminal/communist terrorist group ga jama ni naru iki no mondai nado wo suru.<br/>
+--> Kahit sa loob ng paligsahan, gumagawa ng nakasasagabal na suliranin sa paghinga, atbp ang mga budol-budol/manloloko/carnapper/cybercriminal/communist terrorist group.<br/>
+--> <b>Paalala:</b> May ugnayan ang mga ito: Ear, Nose, Throat (ENT)<br/>
+--> <b>Sanhi:</b> Quick Money.<br/>
+
 ## 1.2) SEGA: SERVICE GAMES
 ### 1.2.1) Sonic 1
 --> Sega Genesis/Megadrive Mini version<br/>
