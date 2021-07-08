@@ -493,8 +493,6 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
     fMyWindowWidthAsPixelRatioToHeightPixel=1.0f;
     iMyWindowWidthAsPixelOffset=0; //added by Mike, 20210701
   
-  
-/* //removed by Mike, 20210708    
  //added by Mike, 20210708    
 //note: add no auto-scale Window, but use increased max column count
  
@@ -515,7 +513,6 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
 ////         printf("myWindowWidthAsPixelInput: %f; myWindowHeightAsPixelInput: %f\n",myWindowWidthAsPixelInput,myWindowHeightAsPixelInput);
 ////         printf("myWindowWidthAsPixel: %f; myWindowHeightAsPixel: %f\n",myWindowWidthAsPixel,myWindowHeightAsPixel);
     }
-*/
     
     //added by Mike, 20210516
     myUsbongUtils = new UsbongUtils();
@@ -1773,10 +1770,10 @@ glPushMatrix();
      int iLeftMarginColumnCount=-1;
      
      //edited by Mike, 20210708
-     //TO-DO: -add: auto-update value due to Window Width not equal with Window Height 
+     //TO-DO: -add: auto-update value    
      //columns
-//     iColumnCountMax=10;
-     iColumnCountMax=18;
+     iColumnCountMax=10;
+//     iColumnCountMax=18;
 
      //right part
      iNumberSign=1;
@@ -1851,13 +1848,11 @@ glPopMatrix();
 /*    glTranslatef(-2.0f/iColumnCountMax*iLeftMarginColumnCount, 0.0f, 0.0f);
 */
 		
-/*	//removed by Mike, 20210708; add this when using auto-scale Window Width to Height		
 		//added by Mike, 20210705
 		#if defined(__APPLE__)
 		#else
     	glTranslatef(+0.02f, 0.0f, 0.0f);
 		#endif
-*/
 
     glTranslatef(-2.0f/iColumnCountMax*iLeftMarginColumnCount, 0.0f, 0.0f);
 

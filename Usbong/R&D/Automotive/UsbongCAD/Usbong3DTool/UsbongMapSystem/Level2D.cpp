@@ -641,27 +641,51 @@ void Level2D::drawPressNextSymbol()
     glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myWindowWidth/2), myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.80f)+0.06f, 0.0f);
 */    
 
+/*
 		//added by Mike, 20210708
-		//TO-DO: -update: this
+		//TO-DO: -reverify: with another Machine Window
 		//set object anchor to top-left
-
 		//added by Mike, 20210708
 		#if defined(__APPLE__)
 		#else
     	glTranslatef(+0.02f, 0.0f, 0.0f);
 		#endif
 
+
 //    glTranslatef(-1.0f/2, -1.0f/2, 0.0f);
 //    glTranslatef(1.0f, 0.0f, 0.0f);
     glTranslatef(0.06f, 0.0f, 0.0f);
-       
-    glRotatef(45.0f, 0.0f, 0.0f, 1.0f);
+    glTranslatef(0.55f, 0.0f, 0.0f);
+*/
+		//TO-DO: -add: auto-compute translate value, e.g. 0.04f
+    glTranslatef(0.04f, 0.0f, 0.0f);
 
-		//edited by Mike, 20210702    
+  	//edited by Mike, 20210708     
+    glRotatef(45.0f, 0.0f, 0.0f, 1.0f);
+//    glRotatef(90.0f, 0.0f, 0.0f, 1.0f);
+
+		//edited by Mike, 20210702; edited by Mike, 20210708
 	  glScalef(0.06f, 0.06f, 1.0f);
+//	  glScalef(0.06f, 0.06f*0.55f, 1.0f);
+//	  glScalef(0.06f*0.55f, 0.06f*0.55f, 1.0f);
+
+		//iRowCountMax: 18; iColumnCountMax: 10;
+		//10/18=0.55...; 
+		
+		//note: we can identify patterns in the instructions to execute
+		//3D techniques, e.g. scale; via the Open Graphics Library (OpenGL)
+		//note: multiple scale Commands = multiplication Commands
+	  //example variation#1:
+	  //glScalef(0.06f, 0.06f, 1.0f);
+	  //glScalef(0.55f, 0.55f, 1.0f);		
+		//example variation#2; 0.06f*0.55f
+	  //glScalef(0.06f*0.55f, 0.06f*0.55f, 1.0f);
+
+	  glScalef(0.55f, 0.55f, 1.0f);
+//	  glScalef(0.055f, 0.055f, 1.0f);
 		             
     glColor3f(1.0f,0.0f,0.0f); //red
-        
+
     glBegin(GL_TRIANGLES);
     	//counter-clockwise sequence to auto-draw front face
     	//front face left part; triangle at 3rd quadrant; angle: right
@@ -669,6 +693,21 @@ void Level2D::drawPressNextSymbol()
     	glVertex3f(-1.000000,-1.000000,0.000000); //C1
     	glVertex3f(1.000000,-1.000000,0.000000); //B1
     glEnd();
+
+/*
+		//note: use of 3D techniques, e.g. translate, rotate, scale,
+		//adds to development time, due to display output verification;
+		//fast computers speed-up development time
+		
+		//added by Mike, 20210708        
+    glBegin(GL_TRIANGLES);
+    	//counter-clockwise sequence to auto-draw front face
+    	//front face left part; triangle at 3rd quadrant; angle: right
+    	glVertex3f(0.000000,1.000000,0.000000); //A1
+    	glVertex3f(-2.000000,-1.000000,0.000000); //C1
+    	glVertex3f(1.000000,-1.000000,0.000000); //B1
+    glEnd();
+*/    
     
     glPopMatrix();
 }
@@ -1153,9 +1192,8 @@ void Level2D::drawLevelWithTexture()
 
 */    
 
-    glPushMatrix();
-    
-    printf(">>>myUsbongUtils->autoConvertFromPixelToVertexPointX(0): %f\n",myUsbongUtils->autoConvertFromPixelToVertexPointX(0));
+    glPushMatrix();    
+//    printf(">>>myUsbongUtils->autoConvertFromPixelToVertexPointX(0): %f\n",myUsbongUtils->autoConvertFromPixelToVertexPointX(0));
     
     	glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(0), myUsbongUtils->autoConvertFromPixelToVertexPointY(0), 0.0f);
     
