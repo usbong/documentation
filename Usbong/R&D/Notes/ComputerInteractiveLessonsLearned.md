@@ -113,8 +113,8 @@ TO-DO: -update: this<br/>
 --> PlayStation version; executed on PlayStation3 machine<br/>
 --> set difficult level to 6 stars; where 8 is highest<br/>
 --> set speed to "SPEEDY", "T2"; fastest<br/>
---> In match, Winning state can quickly become you LOSE<br/>
---> you "LOO", instead of you "LOSE"; samurai spirits' SHOU（勝）, instead of SHOUBU（勝負）?<br/>
+--> In match, WINNING state can quickly become you LOSE<br/>
+--> you "LOO", instead of you "LOSE"; Samurai Spirits' SHOU（勝）, instead of SHOUBU（勝負）?<br/>
 --> Select Fighters difficult to finish All matches<br/>
 --> Adon, Ryuu, Sagat... ends up with Chun-Li<br/>
 --> パズルのように解ける仕組みがあり、人を引っ張る？<br/>
@@ -123,7 +123,28 @@ TO-DO: -update: this<br/>
 --> Rockman?<br/>
 --> ボタンを連続に押すと、コンピュータとの交わす結果、負け。<br/>
 --> botan wo renzokuni osuto, konpyu-ta to no kawasu kekka, make.<br/>
---> Kapag tuluy-tuloy pinindot ang button, kinahihinatnan (kekka; pinagsamang bunga) ng palitan kasama ang kompyuter, talo. <br/>
+--> Kapag tuluy-tuloy pinindot ang button, kinahinatnan (kekka; pinagtaling bunga) ng palitan kasama ang kompyuter, talo. <br/>
+<br/>
+--> Maaalala ang laban kasama si Ryuu.<br/>
+--> Tumama ang kanyang SUPER (Level3) 波動拳 (hadouken; alon galaw kamao) na nagdulot ng mga kalahating bawas sa gauge, i.e. sukat ng lakas ng pangangatawan, ni Chun-Li.<br/>
+--> Mababawi naman niya ito gamit ang SUPER (Level1) 千裂脚 (senretsukyaku; isang libo + bali + paa) ni Chun-Li nang magbato ulit ng hadouken si Ryuu.<br/>
+--> Gawa ng malapit na sukat ng layo, pansamantalang hindi tatamaan si Chun-Li ng hadouken.<br/>
+--> Parehong tig-isang tamaan na lang ang dalawa batay sa sukat ng lakas ng pangangatawan. <br/>
+--> Magbabato muli si Ryuu ng hadouken; hahabulin nito si Chun-Li pakanan.<br/>
+--> <b>Paalala:</b> Maaaring iusog ang kasalukuyang pinakakanang bahagi ng Window.<br/>
+--> Pagtalon ni Chun-Li papunta kay Ryuu upang sipain gamit ang MEDIUM KICK,<br/>
+--> gagamitin ni Ryuu ang 昇竜拳(shouryuuken; umaakyat dragon kamao) na ikatatalo ni Chun-Li sa labanang ito.<br/>
+--> <b>Paalala:</b> Ito ang itinurong paliwanag ng developer sa kompyuter ukol sa wastong paraan ng pakikipaglaban ni Ryuu.<br/>
+--> Sa ikalawang laban ng isang set, nakagugulat ang bilis ng lumilipad na palayo ni Ryuu gamit ang 竜巻旋風脚 (tatsumaki senpuukyaku; dragon binalot ikot hangin paa).<br/>
+--> May mahina rin siyang suntok patalon na ginagawa upang nakagugulat na magapi ang karaniwaang tumatama na 天昇脚(tenshoukyaku; langit umaakyat paa) ni Chun-Li.<br/>
+--> Larawan ni Ryuu, nakangiti;<br/>
+--> Larawan ni Chun-Li, 憧れ（akogare; paghanga gawa ng hindi pa niya nakakamit)<br/>
+--> Pagkatapos ng laban, ipaalam sa'yo ni Ryuu:<br/>
+--> 「修行がたりない！<br/>
+--> "'di sapat ang ensayo (shugyou; ayusin + gawa/galaw)<br/>
+-->　．．　．．　お前も、おれも！」<br/>
+--> .. .. ikaw rin, ako rin!"<br/>
+<br/>
 --> "NOW LOADING...."がなかったら、次々にやる？<br/>
 --> "NOW LOADING...."ga nakattara, tsugitsugini yaru?<br/>
 --> Kung walang "NOW LOADING....", tuluy-tuloy ang gawa?<br/>
