@@ -139,6 +139,9 @@ TO-DO: -update: this<br/>
 --> May mahina rin siyang suntok patalon na ginagawa upang nakagugulat na magapi ang karaniwaang tumatama na 天昇脚(tenshoukyaku; langit umaakyat paa) ni Chun-Li.<br/>
 --> Larawan ni Ryuu, nakangiti;<br/>
 --> Larawan ni Chun-Li, 憧れ（akogare; paghanga gawa ng hindi pa niya nakakamit)<br/>
+<br/>
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Notes/res/sutori-toFaita-/streetFighterZeroAkogare.jpg" width="60%">
+<br/>
 --> Pagkatapos ng laban, ipaalam sa'yo ni Ryuu:<br/>
 --> 「修行がたりない！<br/>
 --> "'di sapat ang ensayo (shugyou; ayusin + gawa/galaw)<br/>
