@@ -578,7 +578,13 @@ Naunawaan mo ha!<br/>
 --> Year 1995 1996 KONAMI; PlayStation the Best version; executed on PlayStation3 Machine
 
 ### Part 18: 見習い (minarai; masdan, matuto, gawing atin)
-<img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Automotive/UsbongCAD/Usbong3DTool/UsbongTextSystem/screenshots/usbongTextSystemPaalalaV20210627T1113.jpg" width="60%">
-<br/>
 --> Usbong Computer Aided Design (CAD): Text System<br/>
+<br/>
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Automotive/UsbongCAD/Usbong3DTool/UsbongTextSystem/screenshots/usbongTextSystemPaalalaV20210627T1113.jpg" width="60%"><br/>
+<br/>
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Automotive/UsbongCAD/Usbong3DTool/UsbongMapSystem/screenshots/usbongMapSystemGraphRowColumnV20210708T0955.jpg" width="60%">
+<br/>
 
+
+### Part 19: Religion
+Sagot: N/A
