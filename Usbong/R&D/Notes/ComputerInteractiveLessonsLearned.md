@@ -950,6 +950,51 @@ TO-DO: -reverify: this<br/>
 --> CAN delay GAME OVER by executing Tennis rally drill with Donkey Kong<br/>
 --> NOT WIN, NOT LOSE, until consumed available resources, e.g. Electricity, Food<br/>
 
+## 1.9.3) NINTENDO
+## 1.9.3.1) Super Mario Odyssey
+--> Naging udyok sa aking pagsusulat nito nang makarating ako sa Lago Kutur (Lawang Kutur).<br/>
+
+### 1.9.3.1.1) Los recuerdos; Mga alaala:
+#### 1.9.3.1.1.1) Soltitlán; Reino de las Arenas (Kahariaan ng mga Bato, i.e. Buhangin)
+--> Mamamayan; Kalansay; Bungo
+
+#### 1.9.3.1.1.2) Jardín de Vapor (Halamanan ng Hanging Tubig); Reino Arbolado (Kaharian ng Gubat)
+--> Tugtugin sa likod mula sa Bass, abtp.
+
+#### 1.9.3.1.1.3) Lago Kutur (Lawang Kutur); Reino del lago (Kahariaan ng Lawa)
+--> Maaaring mahuli ang Isda upang magkaroon pansamantala ng kakayahan nito.<br/>
+--> Sa tulong ito ng kaibigan mong sombrero, Cappy.<br/>
+--> Ipakikita rin sa daigig ng Lawa kung paano ang wastong paggamit ng paglangoy bilang Isda.<br/>
+--> i.e. y-axis; may boton upang umangkat, may boton upang bumaba<br/>
+--> Maaalala ang sarap ng paglangoy sa pampubliko man o hindi na e.g. dagat, swimming pool<br/>
+
+### 1.9.3.1.2) Mga Paalala:
+#### 1.9.3.1.2.1) Matagal simulan muli kapag pinalitan ang bala.
+--> halimbawa: 5minutos, sa halip na 1segundo.<br/>
+
+#### 1.9.3.1.2.2) Matagal simulan muli kapag pinindot ang reset, 
+gawa ng nais agad na makalabas ng Reino. 
+
+#### 1.9.3.1.2.3) Matagal kapag pinindot ang paglaktaw ng pambungad na animation ng set,
+--> gawa ng nais agad na simulan. 
+
+#### 1.9.3.1.3) Ukol sa Camera
+--> Hindi ko pa matuklasan paano gawing invertido, i.e. baliktad, upang galawin ang y-axis ng camera.<br/>
+--> Mas maigi ba ang Super Mario Galaxy 2 ukol sa binuong set na daigdig?<br/>
+--> Mga Halimbawa (Super Mario Galaxy 2):<br/>
+--> Set kung saan hinahabol ng gumugulong na Bato si Luigi.<br/>
+--> Indiana Jones? Funny due to not as expected?<br/>
+--> Set kung saan kailangang hindi madiin ang paggalaw ng stick.<br/>
+--> Ito'y upang maayos na dumulas si Mario sa makitid na daan.<br/>
+--> Maaalala ang sa palabas na "Apollo 13".<br/>
+--> Halimbawa (Sa Super Mario 64): <br/>
+--> Set ng Padulas ng Karera kasama ang Nanay na Penguin sa set ng Larawan ng Nieve sa Super Mario 64.<br/>
+--> Halimbawa (Sa Super Mario Odyssey):<br/>
+--> Set ng Super Mario Bros. sa loob ng set ng mga Reino.<br/>
+
+#### 1.9.3.1.4) Sanggunian:
+https://mario.fandom.com/es/wiki/Super_Mario_Odyssey; last accessed: 20210709
+
 ## 2) Hardware
 ## 2.1) SONY PlayStation Portable (PSP)
 --> <b>Problem:</b> When playing Universal Media Disc (UMD) game, PSP keeps on displaying 「ゲームを終了しますか。 (Do you end the game?)」<br/>
