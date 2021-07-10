@@ -362,8 +362,8 @@ PA-N (pangalan ng iyong kaibigan)<br/>
 --> observations (due to did not exist previously): <br/>
 --> received: item しのびふく(shinobi fuku; bear to execute patience + cloth) from defeated magician monster<br/>
 --> leader pauses beside the remaining cape and axe of guardian<br/>
---> who was eaten by monster that was released by 将軍 (shougun; will (execute in future) + army),<br/>
---> ミルイヒ・オッペンハイマー (miruihi・oppenhaima-)<br/>
+--> who was eaten by monster that was released by 将軍 (shougun;<br/> 
+--> will (execute in future) + army), whose name: ミルイヒ・オッペンハイマー (miruihi・oppenhaima-)<br/>
 --> 1.3.2.3.1.3) decision of party, i.e. team/Unit, member, ビクトール(bikuto-ru; Victor) to not kill shougun<br/>
 --> due to stopped by another Unit member, フリック (furikku; Flick);<br/> 
 --> leader’s decision, not sufficient<br/>
