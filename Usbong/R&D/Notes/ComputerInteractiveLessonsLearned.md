@@ -110,7 +110,7 @@ TO-DO: -update: this<br/>
 --> due to lost to Human Opponents who challenge with stronger Fighters
 
 ### 1.1.7) Street Fighter Zero
---> PlayStation version; executed on PlayStation3 machine<br/>
+--> PlayStation version (Year 1995); executed on PlayStation3 machine<br/>
 --> set difficult level to 6 stars; where 8 is highest<br/>
 --> set speed to "SPEEDY", "T2"; fastest<br/>
 --> In match, WINNING state can quickly become you LOSE<br/>
@@ -142,11 +142,17 @@ TO-DO: -update: this<br/>
 <br/>
 <img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Notes/res/sutori-toFaita-/streetFighterZeroAkogare.jpg" width="60%">
 <br/>
---> Pagkatapos ng laban, ipaalam sa'yo ni Ryuu:<br/>
---> 「修行がたりない！<br/>
+--> Pagkatapos ng laban, ipaaalam sa'yo ni Ryuu:<br/>
+--> 「修行がたりない<br/>
 --> "'di sapat ang ensayo (shugyou; ayusin + gawa/galaw)<br/>
--->　．．　．．　お前も、おれも！」<br/>
+-->　.. ..　おまえも、おれも！」<br/>
 --> .. .. ikaw rin, ako rin!"<br/>
+<br/>
+--> <b>Dagdag pa ito:</b><br/>
+--> 「勝負は一瞬の差だった<br/>
+--> "Ang panalo・talo (shoubu; win・lose), isang saglit na pagitan lang!<br/>
+-->　.. ..　さあ、立ってくれ！」<br/>
+--> .. .. Sige, tumayo ka para sa'kin!"<br/>
 <br/>
 --> "NOW LOADING...."がなかったら、次々にやる？<br/>
 --> "NOW LOADING...."ga nakattara, tsugitsugini yaru?<br/>
