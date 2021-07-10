@@ -361,7 +361,9 @@ PA-N (pangalan ng iyong kaibigan)<br/>
 --> Piliin ang pinili noong nakaraan, hayaan iyon, umusad. <br/>
 --> observations (due to did not exist previously): <br/>
 --> received: item しのびふく(shinobi fuku; bear to execute patience + cloth) from defeated magician monster<br/>
---> leader pauses beside the remaining cape and axe of guardian who was eaten by monster that was released by 将軍 (shougun)<br/>
+--> leader pauses beside the remaining cape and axe of guardian<br/>
+--> who was eaten by monster that was released by 将軍 (shougun; will (execute in future) + army),<br/>
+--> ミルイヒ・オッペンハイマー (miruihi・oppenhaima-)<br/>
 --> 1.3.2.3.1.3) decision of party, i.e. team/Unit, member, ビクトール(bikuto-ru; Victor) to not kill shougun<br/>
 --> due to stopped by another Unit member, フリック (furikku; Flick);<br/> 
 --> leader’s decision, not sufficient<br/>
@@ -394,7 +396,8 @@ PA-N (pangalan ng iyong kaibigan)<br/>
 --> 「テオさま」との戦い・・・<br/>
 --> 「teoSAMA」 to no tatakai...<br/>
 --> Pakikipaglaban kay "teoSAMA"; where: SAMA = ginagalang na ginoo<br/>
---> <b>Reminder:</b> テオteo is leader's father<br/>
+--> <b>Reminder:</b> テオteo is leader's father,<br/> 
+--> another 将軍 (shougun; will (execute in future) + army) of Empire<br/>
 --> ストリートファイターのリュウを思い出す。<br/>
 --> sutori-to faita- no RYUU wo omoidasu.<br/>
 --> Maaalala si RYUU ng Street Fighter.<br/>
