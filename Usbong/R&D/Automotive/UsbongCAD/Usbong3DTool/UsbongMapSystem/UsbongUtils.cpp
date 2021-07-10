@@ -1,5 +1,5 @@
 /*
- * Copyright 2020~2021 USBONG SOCIAL SYSTEMS, INC.
+ * Copyright 2020~2021 SYSON, MICHAEL B.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,10 +12,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
+ * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20201210
- * @date updated: 20210704
+ * @date updated: 20210710
  * @website address: http://www.usbong.ph
  *
  * References:

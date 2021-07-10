@@ -478,10 +478,15 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
     myWindowWidthAsPixel = myWindowWidthAsPixelInput;
     myWindowHeightAsPixel = myWindowHeightAsPixelInput;
     
+/*	//edited by Mike, 20210710 
     //added by Mike, 20210702
     iRowCountMax=10;
     iColumnCountMax=10;
     iHeightCountMax=10; //added by Mike, 20210208
+*/
+    iRowCountMax=10;
+    iColumnCountMax=18;
+    iHeightCountMax=10;   
     
     fGridSquareWidth = myWindowWidthAsPixel/iColumnCountMax; //example: 136.60
     fGridSquareHeight = myWindowHeightAsPixel/iRowCountMax; //example: 76.80
@@ -510,7 +515,7 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
         iMyWindowWidthAsPixelOffset=(myWindowWidthAsPixel-myWindowHeightAsPixel)/2;       
         myWindowWidthAsPixel = myWindowHeightAsPixelInput; //myWindowWidthAsPixelInput;
         //    	myWindowHeightAsPixel = myWindowHeightAsPixelInput;
-        
+        drawPressNextSymbol
 ////         printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> USBONG");
 ////         printf("myWindowWidthAsPixelInput: %f; myWindowHeightAsPixelInput: %f\n",myWindowWidthAsPixelInput,myWindowHeightAsPixelInput);
 ////         printf("myWindowWidthAsPixel: %f; myWindowHeightAsPixel: %f\n",myWindowWidthAsPixel,myWindowHeightAsPixel);
@@ -560,7 +565,9 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
     myRobotShip = new RobotShip(0.0f,0.0f,0.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
     //edited by Mike, 20210522
     //	myRobotShip->setOpenGLCanvas(this);
-    myRobotShip->setOpenGLCanvas(this, fGridSquareWidth);
+    //edited by Mike, 20210710
+//    myRobotShip->setOpenGLCanvas(this, fGridSquareWidth);
+    myRobotShip->setOpenGLCanvas(this, fGridSquareWidth, fGridSquareHeight); 
     
     //TO-DO: -update: myPilot instructions, e.g. movement
     //added by Mike, 20201207; edited by Mike, 20210219
@@ -571,14 +578,20 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
     //    myPilot = new Pilot(0.0f,0.0f,320.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
     //    myPilot = new Pilot(0.0f,0.0f,220.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
     myPilot = new Pilot(0.0f,0.0f,270.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
-    myPilot->setOpenGLCanvas(this, fGridSquareWidth);
+    //edited by Mike, 20210710
+//    myPilot->setOpenGLCanvas(this, fGridSquareWidth);.
+    myPilot->setOpenGLCanvas(this, fGridSquareWidth, fGridSquareHeight); 
+    
     myPilot->setAsPlayer1(); //added by Mike, 20210601
     
     //added by Mike, 20210530; edited by Mike, 20210605
     //edited by Mike, 20210606
     //    myPilotPartner = new Pilot(100.0f,0.0f,220.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
     myPilotPartner = new Pilot(100.0f,0.0f,170.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
-    myPilotPartner->setOpenGLCanvas(this, fGridSquareWidth);
+    //edited by Mike, 20210710
+//    myPilotPartner->setOpenGLCanvas(this, fGridSquareWidth);
+    myPilotPartner->setOpenGLCanvas(this, fGridSquareWidth, fGridSquareHeight); 
+    
     myPilotPartner->setAsPlayer1Partner(); //added by Mike, 20210601
     
     
@@ -595,7 +608,10 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
     myPilotPlayer2 = new Pilot(320.0f+100.0f,0.0f,270.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
     //edited by Mike, 20210522
     //	myPilotPlayer2->setOpenGLCanvas(this);
-    myPilotPlayer2->setOpenGLCanvas(this, fGridSquareWidth);
+    //edited by Mike, 20210710
+//    myPilotPlayer2->setOpenGLCanvas(this, fGridSquareWidth);
+    myPilotPlayer2->setOpenGLCanvas(this, fGridSquareWidth, fGridSquareHeight); 
+
     myPilotPlayer2->setAsPlayer2();
     
     //added by Mike, 20210530; edited by Mike, 20210605
@@ -603,7 +619,10 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
     //    myPilotPlayer2Partner = new Pilot(360.0f,0.0f,220.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
     myPilotPlayer2Partner = new Pilot(360.0f,0.0f,170.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
     
-    myPilotPlayer2Partner->setOpenGLCanvas(this, fGridSquareWidth);
+    //edited by Mike, 20210710
+    //note: width and height not equal due to Window
+    //to cause square tile to NOT be square
+    myPilotPlayer2Partner->setOpenGLCanvas(this, fGridSquareWidth, fGridSquareHeight); 
     myPilotPlayer2Partner->setAsPlayer2Partner(); //edited by Mike, 20210601
     
     
@@ -616,23 +635,35 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
     myButton = new Button(0.0f,0.0f,0.0f,myWindowWidthAsPixel,myWindowHeightAsPixel);
     //edited by Mike, 20210522
     //	myButton->setOpenGLCanvas(this);
-    myButton->setOpenGLCanvas(this, fGridSquareWidth);
+    //edited by Mike, 20210710
+    //myButton->setOpenGLCanvas(this, fGridSquareWidth);
+    myButton->setOpenGLCanvas(this, fGridSquareWidth, fGridSquareHeight); 
     
     //edited by Mike, 20210626
     //    myText = new Text(0.0f,320.0f,0.0f,myWindowWidthAsPixel,myWindowHeightAsPixel);
     myText = new Text(0.0f,320.0f,0.0f,myWindowWidthAsPixelInput,myWindowHeightAsPixelInput);
-    myText->setOpenGLCanvas(this, fGridSquareWidth);
+    //edited by Mike, 20210710
+//    myText->setOpenGLCanvas(this, fGridSquareWidth);
+    myText->setOpenGLCanvas(this, fGridSquareWidth, fGridSquareHeight); 
+  
   
     //added by Mike, 20210703; edited by Mike, 20210708
 //    myLevel2D = new Level2D(0.0f,320.0f,0.0f,myWindowWidthAsPixelInput,myWindowHeightAsPixelInput);
     myLevel2D = new Level2D(0.0f,0.0f,0.0f,myWindowWidthAsPixelInput,myWindowHeightAsPixelInput);
-    myLevel2D->setOpenGLCanvas(this, fGridSquareWidth);
+    
+    //note: width and height not equal due to Window
+    //to cause square tile to NOT be square
+    //myLevel2D->setOpenGLCanvas(this, fGridSquareWidth);
+    myLevel2D->setOpenGLCanvas(this, fGridSquareWidth, fGridSquareHeight); 
     myLevel2D->setupLevel(LEVEL_2D_TEXTURE);
     
     //added by Mike, 20210524; edited by Mike, 20210528
     //	myBall = new Ball(320.0f,320.0f,0.0f,myWindowWidthAsPixel,myWindowHeightAsPixel);
     myBall = new Ball(0.0f,320.0f,0.0f,myWindowWidthAsPixel,myWindowHeightAsPixel);
-    myBall->setOpenGLCanvas(this, fGridSquareWidth);
+    //edited by Mike, 20210710
+    //myBall->setOpenGLCanvas(this, fGridSquareWidth);
+    myBall->setOpenGLCanvas(this, fGridSquareWidth, fGridSquareHeight); 
+    
     
     //added by Mike, 20201013; edited by Mike, 20201014
     //	for (i=0; i<MAX_BEAMS; i++) {
@@ -643,8 +674,9 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
         myBeam[i] = new Beam(0.0f,0.0f,0.0f,myWindowWidth,myWindowHeight);
         //		myBeam[i] = new Beam(0.0f,0.0f,0.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
         
-        //added by Mike, 20210522
-        myBeam[i]->setOpenGLCanvas(this, fGridSquareWidth);
+        //added by Mike, 20210522; edited by Mike, 20210710
+        //myBeam[i]->setOpenGLCanvas(this, fGridSquareWidth);
+    		myBeam[i]->setOpenGLCanvas(this, fGridSquareWidth, fGridSquareHeight); 
     }
     
     //added by Mike, 20201016
@@ -1924,6 +1956,13 @@ glPopMatrix();
     myLevel->draw_level(fGridSquareWidth*4.0f, fGridSquareWidth*4.0f, 0.0f, tempText);
 */
     //TO-DO: -update: this
+    
+    //added by Mike, 20210703
+    //auto-scale to Window Width to Height
+    //glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
+    //reset to 1.0f
+//    glScalef(1.0f,1.0f,1.0f);
+    
     myLevel2D->draw();
 //-----         
      

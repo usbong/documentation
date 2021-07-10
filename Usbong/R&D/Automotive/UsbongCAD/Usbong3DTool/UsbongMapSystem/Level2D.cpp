@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20200926
- * @date updated: 20210708
+ * @date updated: 20210710
  * @website address: http://www.usbong.ph
  *
  * Reference:
@@ -646,7 +646,12 @@ void Level2D::drawPressNextSymbol()
 		//TO-DO: -reverify: with another Machine Window
 		//set object anchor to top-left
 		//added by Mike, 20210708
-		#if defined(__APPLE__)
+		#if defined(__APPLE__)		//note: *2; where 2 = rowCount
+		//note: +0.01 in y-axis due to thickness of grid line; TO-DO: -reverify: this using another machine
+//    glTranslatef((0.033f+0.006f)*2, 0.0f-0.01f, 0.0f);
+//    glTranslatef(0.0f+0.006f, 0.0f-0.01f, 0.0f);
+//    glTranslatef((-0.01f), 0.0f-0.01f, 0.0f);
+
 		#else
     	glTranslatef(+0.02f, 0.0f, 0.0f);
 		#endif
@@ -658,7 +663,13 @@ void Level2D::drawPressNextSymbol()
     glTranslatef(0.55f, 0.0f, 0.0f);
 */
 		//TO-DO: -add: auto-compute translate value, e.g. 0.04f
-    glTranslatef(0.04f, 0.0f, 0.0f);
+//    glTranslatef(0.04f, 0.0f, 0.0f);
+		//note: 0.033f = 0.06f*0.55f; //due to scale Commands
+		//note: +0.006 in x-axis due to thickness of grid line; TO-DO: -reverify: this using another machine
+		//note: *2; where 2 = rowCount
+		//note: there exists thickness of grid line
+//    glTranslatef(-0.06f*0.55f*3, 0.0f, 0.0f);
+
 
   	//edited by Mike, 20210708     
     glRotatef(45.0f, 0.0f, 0.0f, 1.0f);
@@ -1161,6 +1172,58 @@ void Level2D::drawTileAsQuadWithTexture(GLfloat x, GLfloat y, GLfloat z, char c)
    glEnd();    
 }
 
+//added by Mike, 20210710
+//void Level2D::drawTileAsQuadWithoutTexture(GLfloat x, GLfloat y, GLfloat z, char c)
+void Level2D::drawTileAsQuadWithoutTexture()
+{
+    glDisable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, 0);
+    
+    glPushMatrix();
+	
+		//glColor3f(1.0f, 1.0f, 1.0f); //set to default, i.e. white
+	//  glColor3f(0.0f, 0.0f, 0.0f); //set to default, i.e. black
+  	glColor3f(1.0f, 0.0f, 0.0f); //red
+  	
+  	//TO-DO: -add: tile with auto-drawn pattern; without using image texture object
+  	printf (">>>>>>>>>>>>>>>>>>>>>>>>>>>> HALLO");
+		
+		//note: vertex position sequence to be auto-drawn
+		//counter-clockwise sequence to auto-draw front face
+/*		
+		glBegin(GL_QUADS); // Each set of 4 vertices form a quad
+	//        glTexCoord2f(tx, ty);
+        	glVertex3f(0.0f, 0.0f, 0.0f);
+        	
+	//        glTexCoord2f(tx + 0.078125f, ty);
+      		glVertex3f(0.0f+0.1f, 0.0f, 0.0f);      
+	
+	//        glTexCoord2f(tx + 0.078125f, ty + 0.125f);
+      		glVertex3f(0.0f+0.1f, 0.0f-0.1f, 0.0f);              
+	
+	//				glTexCoord2f(tx, ty + 0.125f);
+      		glVertex3f(0.0f, 0.0f-0.1f, 0.0f);      
+   	glEnd();    
+*/
+		//TO-DO: -update: this
+		//note: 3rd quadrant
+		glBegin(GL_QUADS); // Each set of 4 vertices form a quad
+	//        glTexCoord2f(tx, ty);
+        	glVertex3f(0.0f, 0.0f, 0.0f);
+        	
+	//        glTexCoord2f(tx + 0.078125f, ty);
+      		glVertex3f(0.0f-0.1f, 0.0f, 0.0f);      
+	
+	//        glTexCoord2f(tx + 0.078125f, ty + 0.125f);
+      		glVertex3f(0.0f-0.1f, 0.0f-0.1f, 0.0f);              
+	
+	//				glTexCoord2f(tx, ty + 0.125f);
+      		glVertex3f(0.0f, 0.0f-0.1f, 0.0f);      
+   	glEnd();    
+  
+  glPopMatrix();
+}
+
 //added by Mike, 20210708
 void Level2D::drawLevelWithTexture()
 {	
@@ -1192,6 +1255,7 @@ void Level2D::drawLevelWithTexture()
 
 */    
 
+/*//edited by Mike, 20210709
     glPushMatrix();    
 //    printf(">>>myUsbongUtils->autoConvertFromPixelToVertexPointX(0): %f\n",myUsbongUtils->autoConvertFromPixelToVertexPointX(0));
     
@@ -1199,6 +1263,20 @@ void Level2D::drawLevelWithTexture()
     
     	drawPressNextSymbol();
     glPopMatrix();
+*/    
+		
+    glPushMatrix();    
+//    printf(">>>myUsbongUtils->autoConvertFromPixelToVertexPointX(0): %f\n",myUsbongUtils->autoConvertFromPixelToVertexPointX(0));
+    
+//fGridSquareWidth    
+    
+    	glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(0+fGridSquareWidth*3.0f), myUsbongUtils->autoConvertFromPixelToVertexPointY(0+fGridSquareHeight*2.0f), 0.0f);
+    
+    	//edited by Mike, 20210710
+    	//drawPressNextSymbol();
+    	drawTileAsQuadWithoutTexture();
+    glPopMatrix();
+    
 }
 
 //added by Mike, 20210703

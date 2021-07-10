@@ -1,5 +1,5 @@
 /*
- * Copyright 2020~2021 Usbong Social Systems, Inc.
+ * Copyright 2020~2021 SYSON, MICHAEL B.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,10 +12,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
+ * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20200930
- * @date updated: 20210706
+ * @date updated: 20210710
+ * @website address: http://www.usbong.ph
  *
  * Acknowledgments:
  * 1) "Bulalakaw Wars" Team (2007):
@@ -392,12 +393,13 @@ public:
      }
      */
     
-    //added by Mike, 20210522
-    virtual void setOpenGLCanvas(OpenGLCanvas* c, float fSideLengthInput) {
+    //added by Mike, 20210522; edited by Mike, 20210710
+//    virtual void setOpenGLCanvas(OpenGLCanvas* c, float fSideLengthInput) {
+    virtual void setOpenGLCanvas(OpenGLCanvas* c, float fSideLengthWidthInput, float fSideLengthHeightInput) {
         myOpenGLCanvas = c;
         //TO-DO: -update: this
-        fGridSquareWidth = fSideLengthInput;
-        fGridSquareHeight = fSideLengthInput;
+        fGridSquareWidth = fSideLengthWidthInput;
+        fGridSquareHeight = fSideLengthHeightInput;
     };
     
     //added by Mike, 20210524

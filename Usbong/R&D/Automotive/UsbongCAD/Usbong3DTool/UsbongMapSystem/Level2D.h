@@ -333,6 +333,9 @@ private:
     
     //added by Mike, 20210618
     void drawPressNextSymbol();
+
+    //added by Mike, 20210710
+    void drawTileAsQuadWithoutTexture();
     
 public:
     //edited by Mike, 20201115
