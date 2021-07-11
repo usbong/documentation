@@ -125,7 +125,21 @@ TO-DO: -update: this<br/>
 --> botan wo renzokuni osuto, konpyu-ta to no kawasu kekka, make.<br/>
 --> Kapag tuluy-tuloy pinindot ang button, kinahinatnan (kekka; pinagtaling bunga) ng palitan kasama ang kompyuter, talo. <br/>
 <br/>
---> Maaalala ang laban kasama si Ryuu.<br/>
+--> Maaalala ang laban kasama si Rose (Italiano) sa HAITI.<br/>
+--> Sa dalawang laban ng isang set, isang tama na lang si Rose.<br/>
+--> Agad niyang mababawi ang mga ito upang ikapanalo ang buong set.<br/>
+--> Pagkatapos siyasatin, sanhi ang paggawa ni Chun-li ng 天昇脚(tenshoukyaku; langit umaakyat paa).<br/>
+--> Hindi nito tinatamaan ang may talong salakay ni Rose.<br/>
+--> Upang malampasan ito, kailangang sumalakay si Chun-li sa halip na hintayin si Rose na tumalon.<br/>
+--> Gamitin din ang pagtalon na salakay at pagbaba, gamitin ang combination sequence, i.e. pagkasunud-sunod ng pinaghalong Mahinang Sipa, Katamtamang Sipa, at Malakas na Sipa.<br/>
+--> Maaala si Morrigan ng Dark Stalkers, et cetera?<br/>
+--> Gamitin din ang pagsugod upang gawin ang 投げ(nage; ibato)<br/>
+--> ROSEから「Don't stop」って？<br/>
+--> Mula kay ROSE "Don't stop (Huwag huminto)" raw?<br/>
+--> Mamamasdan na umuurong palikod si Rose, kapag sinugod;<br/>
+--> bagama't hindi mo siya maibabato kung huminto ka agad.<br/>
+<br/>
+--> Maaalala ang laban kasama si Ryuu (Hapon).<br/>
 --> Tumama ang kanyang SUPER (Level3) 波動拳 (hadouken; alon galaw kamao) na nagdulot ng mga kalahating bawas sa gauge, i.e. sukat ng lakas ng pangangatawan, ni Chun-Li.<br/>
 --> Mababawi naman niya ito gamit ang SUPER (Level1) 千裂脚 (senretsukyaku; isang libo + bali + paa) ni Chun-Li nang magbato ulit ng hadouken si Ryuu.<br/>
 --> Gawa ng malapit na sukat ng layo, pansamantalang hindi tatamaan si Chun-Li ng hadouken.<br/>
@@ -144,7 +158,7 @@ TO-DO: -update: this<br/>
 <br/>
 --> Pagkatapos ng laban, ipaaalam sa'yo ni Ryuu:<br/>
 --> 「修行がたりない<br/>
---> "'di sapat ang ensayo (shugyou; ayusin + gawa/galaw)<br/>
+--> "'di sapat ang ensayo/pagsasanay (shugyou; ayusin + gawa/galaw)<br/>
 -->　.. ..　おまえも、おれも！」<br/>
 --> .. .. ikaw rin, ako rin!"<br/>
 <br/>
@@ -152,7 +166,7 @@ TO-DO: -update: this<br/>
 --> 「勝負は一瞬の差だった<br/>
 --> "Ang panalo・talo (shoubu; win・lose), isang saglit na pagitan lang!<br/>
 -->　.. ..　さあ、立ってくれ！」<br/>
---> .. .. Sige, tumayo ka para sa'kin!"<br/>
+--> .. .. Sige/Ituloy, tumayo ka para sa'kin!"<br/>
 <br/>
 --> "NOW LOADING...."がなかったら、次々にやる？<br/>
 --> "NOW LOADING...."ga nakattara, tsugitsugini yaru?<br/>
