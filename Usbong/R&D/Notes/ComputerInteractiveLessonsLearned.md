@@ -167,6 +167,22 @@ TO-DO: -update: this<br/>
 --> "Ang panalo・talo (shoubu; win・lose), isang saglit na pagitan lang!<br/>
 -->　.. ..　さあ、立ってくれ！」<br/>
 --> .. .. Sige/Ituloy, tumayo ka para sa'kin!"<br/>
+
+--> <b>Paraan upang magapi si Ryuu:</b><br/>
+--> <b>Paalala:</b> May kani-kaniyang paraan upang mabilis na magapi ang mga katunggali.<br/>
+--> Sukatin ang pinakamalapit na layo ni Ryuu kay Chun-li upang gumawa siya ng hadouken.<br/>
+--> Kung wala pang charge upang gumawa ng SUPER, gamitin ang pagtalon na salakay upang sipain si Ryuu.<br/>
+--> Talong may Katamtamang Sipa; Pagbaba, gamitin ulit ang Katamtamang Sipa.<br/>
+--> Maaari ring gamitin ang Malakas na Suntok o Sipa sa ibaba.<br/>
+--> <b>Paalala:</b> Gumagamit si Ryuu ng SUPER 真空竜巻旋風脚 (shinkuu tatsumaki senpuukyaku;<br/> 
+--> tunay wala dragon binalot ikot hangin paa) upang tamaan si Chun-li<br/>
+--> kapag ginamit mo ang kanyang Mahinang Sipa.<br/>
+--> <b>Paalala:</b> May kakayanan si Ryuu na gamitin ang 投げ(nage) upang ibato si Chun-li,<br/>
+--> bagama't katatanggap pa lamang niya ng tama mula sa talong sipa.<br/>
+--> Gamitin ang SUPER 千裂脚 (senretsukyaku; isang libo + bali + paa) ni Chun-li,<br/> 
+--> gawa ng pansamantalang hindi siya tinatamaan ng hadouken nito.<br/>
+<br/>
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Notes/res/sutori-toFaita-/streetFighterZeroDiscAkogare.jpg" width="60%">
 <br/>
 --> "NOW LOADING...."がなかったら、次々にやる？<br/>
 --> "NOW LOADING...."ga nakattara, tsugitsugini yaru?<br/>
