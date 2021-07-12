@@ -48,6 +48,9 @@
 //added by Mike, 20210122; edited by Mike, 20210123
 #define MAX_PUNCHING_ANIMATION_COUNT 2
 
+//added by Mike, 20210712
+#define MAX_INPUT_TEXT_PER_LINE 240
+
 //added by Mike, 20210614; edited by Mike, 20210616
 //#define MAX_TEXT_CHAR_ROW 2idrawPressNextSymbolCount
 //edited by Mike, 20210618
@@ -438,7 +441,7 @@ public:
     
     //added by Mike, 20210614MAX_TEXT_CHAR_ROW
     void readInputText(char *inputFilename);    	
-		void read(char *inputFilename); ////added by Mike, 20210706
+    void read(char *inputFilename); ////added by Mike, 20210706
     
     virtual void draw() {
         //edited by Mike, 20210712

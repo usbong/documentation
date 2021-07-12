@@ -525,10 +525,12 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
     //added by Mike, 20210516
     myUsbongUtils = new UsbongUtils();
     myUsbongUtils->setWindowWidthHeight(myWindowWidthAsPixel, myWindowHeightAsPixel);
-    
+
+/*  //removed by Mike, 20210712
     //added by Mike, 20210211
     myLevel = new Level();
     myLevel->setupLevel(LEVEL_TEXTURE); //FONT_TEXTURE);
+*/
     
     //added by Mike, 20210517; edited by Mike, 20210606
     /*    myWindowWidthAsPixel = myWindowWidth;

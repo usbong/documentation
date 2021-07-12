@@ -560,8 +560,10 @@ Level2D::Level2D(float xPos, float yPos, float zPos, float windowWidth, float wi
     
     //added: function to be reusable
 //    readInputText("inputHalimbawa.txt");
-    readInputText("inputLevel1.csv");
-        
+    //edited by Mike, 20210712
+//    readInputText("inputLevel1.csv");
+    read("inputLevel1.csv");
+    
     //edited by Mike, 20210707
     setupLevel(LEVEL_2D_TEXTURE); //LEVEL_TEXTURE
 }
@@ -1372,9 +1374,20 @@ void Level2D::drawLevelWithTextureUsingInputFile()
         for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
         	//iCurrentMaxColumnCountPerRowContainer[iRowCount];
         	for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {
-						//if (cCurrentTextContainer[iRowCount][iColumnCount])
-
-					}
+//                if (cCurrentTextContainer[iRowCount][iColumnCount]) {
+                if (sCurrentLevelMapContainer[iRowCount][iColumnCount].compare("\"G\"") == 0) { //TRUE
+                    glPushMatrix();
+                    //add +1.0f in x-axis due to 3rd quadrant in the draw function
+                    //center 0,0,0 origin; vertex positions
+                    //column 1; start at 0; note +1.0f to be 2.0f due to 3rd quadrant in drawTileAsQuadWithoutTexture(...)
+                    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(0.0f+fGridSquareWidth*(iColumnCount+1.0f)), myUsbongUtils->autoConvertFromPixelToVertexPointY(0.0f+fGridSquareHeight*iRowCount), 0.0f);
+                    
+                    //edited by Mike, 20210710
+                    //drawPressNextSymbol();
+                    drawTileAsQuadWithoutTexture();
+                    glPopMatrix();
+                }
+            }
         }
     
 }
@@ -2863,6 +2876,155 @@ void Level2D::drawWeapon(float xPos, float yPos, float zPos)
     glPopMatrix();
 }
 
+//added by Mike, 20210712
+void Level2D::read(char *inputFilename) {
+    int c;
+    FILE *file;
+    
+    
+    //added by Mike, 20210712
+    printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Level2D read(...)\n");
+
+    
+    //TO-DO: update: this
+    //	char** iCurrentLevelMapContainer = new char[100][100];
+    int iRowCount=0;
+    int iColumnCount=0;
+    
+    
+    /*	//edited by Mike, 20210305
+     for (iRowCount=0; iRowCount<MAX_Z_AXIS_VIEWPORT; iRowCount++) {
+     for (iColumnCount=0; iColumnCount<MAX_X_AXIS_VIEWPORT; iColumnCount++) {
+     sCurrentLevelMapContainer[iRowCount][iColumnCount]=(char*)"-1";//'G';
+     }
+     }
+     */
+    //edited by Mike, 20210310
+    /*
+     for (iRowCount=0; iRowCount<100; iRowCount++) {
+     for (iColumnCount=0; iColumnCount<100; iColumnCount++) {
+     sCurrentLevelMapContainer[iRowCount][iColumnCount]=(char*)"-1";//'G';
+     }
+     }
+     */
+    /*	//edited by Mike, 20210321
+     //add +60 to be 160; where 60 : viewport max
+     for (iRowCount=0; iRowCount<160; iRowCount++) {
+     for (iColumnCount=0; iColumnCount<160; iColumnCount++) {
+     sCurrentLevelMapContainer[iRowCount][iColumnCount]=(char*)"-1";//'G';
+     }
+     }
+     */
+    
+    for (iRowCount=0; iRowCount<MAX_Z_AXIS_MAP; iRowCount++) {
+        for (iColumnCount=0; iColumnCount<MAX_X_AXIS_MAP; iColumnCount++) {
+            sCurrentLevelMapContainer[iRowCount][iColumnCount]=(char*)"-1";//'G';
+        }
+    }
+    
+    iRowCount=0;
+    iColumnCount=0;
+				
+    //noted by Mike, 20201210
+    //note: if concatenated string exceeds size, "stack smashing detected"; terminated; Aborted (core dumped)
+    //I prefer to set a size, instead of dynamically allocate due to increasing likelihood of memory leaks
+    //where memory leaks = not deallocated storage in memory, albeit not used by software application
+    //identifying not deallocated storage in memory becomes more difficult with increasing use
+    char input[MAX_INPUT_TEXT_PER_LINE]; //max size
+    char inputTextLine[MAX_INPUT_TEXT_PER_LINE]; //max size
+    char tempInputTextLine[MAX_INPUT_TEXT_PER_LINE]; //max size
+    
+    strcpy(input, "input/");
+    strcat(input, inputFilename); //already includes .txt
+    //	strcat(input,".txt");
+    
+    //	printf("dito: %s",input);
+    
+    //	file = fopen("input/"+inputFilename, "r"); //.txt file
+    //	file = fopen("input/inputHalimbawa.txt", "r"); //.txt file
+    file = fopen(input, "r"); //.txt file
+    
+    //TO-DO: -reverify: tile positions
+    int iCount=0;
+    
+    if (file) {
+        //edited by Mike, 20210210
+        //		while ((c = getc(file)) != EOF) {
+        while (fgets (input, MAX_INPUT_TEXT_PER_LINE, file)) { /* read each line of input */
+            //	putchar(c);
+            
+            /*	//removed by Mike, 20210210
+             char sRow[2] = {(char)c};
+             */
+            //delimited using new line
+            /*			char *chRow = strtok(sRow, "\n");
+             */
+            sscanf (input, "%s", inputTextLine);
+            
+            
+            //			iCount=0;
+            //input text per line
+            //			printf("%i;\n",iCount);
+            //			printf("%i;",iCount);
+            
+            iCount=iCount+1;
+            
+            //added by Mike, 20210208
+            iColumnCount=0;
+            
+            //removed by Mike, 20210210
+            /*
+             //			char s[2] = {0};
+             //			*s = c;
+             //edited by Mike, 20210209
+             //				char s[2] = {c};
+             //				char s[2] = {itoa(c)};
+             char s[2] = {(char)c};
+             
+             //delimited using comma
+             char *ch = strtok(s, ",");
+             */
+            strcpy(tempInputTextLine,inputTextLine);
+            
+            //note: add "-1" for empty
+            //otherwise, comma as column is skipped
+            char *ch = strtok(tempInputTextLine, ",");
+            
+            while (ch != NULL) {
+                //				printf("%i,",iColumnCount);
+                
+                //TO-DO: use String, instead of char
+                //TO-DO: -reverify: output due to "G" not put in container
+                //				sCurrentLevelMapContainer[iRowCount][iColumnCount]=&ch;
+                sCurrentLevelMapContainer[iRowCount][iColumnCount]=ch;
+                
+                /*	//edited by Mike, 20210211		
+                 printf("%s:",ch);
+                 printf("%i,",iColumnCount);
+                 */
+                printf("HALLO %i:",iColumnCount);
+                printf("%s,",ch);
+                
+                iColumnCount=iColumnCount+1;
+                ch = strtok(NULL, ",");
+            }			
+            
+            //edited by Mike, 20210311
+            //			if (iRowCount<100) {
+            //edited by Mike, 20210321
+            //			if (iRowCount<160) {	
+            if (iRowCount<MAX_X_AXIS_MAP) {				
+                iRowCount=iRowCount+1;
+            }
+            else {
+                iRowCount=0;
+            }
+            
+            printf("\n");			
+        }
+        fclose(file);
+    }	
+}
 
 //added by Mike, 20210614
 //note: error occurs if excess rows > 1
