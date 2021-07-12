@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20200926
- * @date updated: 20210708
+ * @date updated: 20210712
  * @website address: http://www.usbong.ph
  *
  * References:
@@ -1962,8 +1962,13 @@ glPopMatrix();
     //glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
     //reset to 1.0f
 //    glScalef(1.0f,1.0f,1.0f);
-    
-    myLevel2D->draw();
+
+    glPushMatrix();
+//    	glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
+    	glTranslatef(-2.0f/iColumnCountMax*iLeftMarginColumnCount, 0.0f, 0.0f);
+       	
+    	myLevel2D->draw();
+    glPopMatrix();
 //-----         
      
     //added by Mike, 20210613; removed by Mike, 20210703

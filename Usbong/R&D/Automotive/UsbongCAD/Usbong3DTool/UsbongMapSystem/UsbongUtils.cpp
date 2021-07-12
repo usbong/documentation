@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20201210
- * @date updated: 20210710
+ * @date updated: 20210712
  * @website address: http://www.usbong.ph
  *
  * References:
@@ -330,4 +330,16 @@ float UsbongUtils::autoConvertFromPixelToVertexPointY(int iPointY)
         //		return iPointY/fHalfWindowHeight*(-1);			
         return (iPointY-fHalfWindowHeight)/fHalfWindowHeight*(-1);				
     }
+}
+
+//added by Mike, 20210712
+float UsbongUtils::autoConvertFromPixelToVertexGridTileWidth(int iGridTileWidth)
+{
+	return 0.0f+autoConvertFromPixelToVertexPointX(iGridTileWidth);
+}
+
+//added by Mike, 20210712
+float UsbongUtils::autoConvertFromPixelToVertexGridTileHeight(int iGridTileHeight)
+{
+	return 0.0f+autoConvertFromPixelToVertexPointY(iGridTileHeight);
 }
