@@ -1263,17 +1263,9 @@ void Level2D::drawTileAsQuadWithoutTexture()
 		float fGridTileWidthVertexPosition = myUsbongUtils->autoConvertFromPixelToVertexGridTileWidth(fGridSquareWidth);
 		float fGridTileHeightVertexPosition = myUsbongUtils->autoConvertFromPixelToVertexGridTileHeight(fGridSquareHeight);		
 
-/*
-		float fGridTileWidthVertexPosition = 0.8f/2.0f/3.0f;
-		float fGridTileHeightVertexPosition = 0.8f/2.0f/2.0f;		
-*/
-
-/*
-		fGridTileWidthVertexPosition = fGridTileWidthVertexPosition/2.0f/3.0f;
-		fGridTileHeightVertexPosition = fGridTileHeightVertexPosition/2.0f/2.0f;		
-*/
-		//TO-DO: -reverify: cause of /2.0f/3.0f; and 2.0f/2.0f;
-		fGridTileWidthVertexPosition = fGridTileWidthVertexPosition/2.0f/3.0f;
+		//TO-DO: -reverify: cause of /2.0f/4.0f; and 2.0f/2.0f;
+//		fGridTileWidthVertexPosition = fGridTileWidthVertexPosition/2.0f/3.0f;
+		fGridTileWidthVertexPosition = fGridTileWidthVertexPosition/2.0f/4.0f;
 		fGridTileHeightVertexPosition = fGridTileHeightVertexPosition/2.0f/2.0f;		
 
 		//added by Mike, 20210713
@@ -1295,13 +1287,6 @@ void Level2D::drawTileAsQuadWithoutTexture()
 //		glTranslatef(-0.1f-0.05f, 0.0f, 0.0f);		
 		//re-verify: cause of 0.01f; due to Linux machine?
 //		glTranslatef(-0.1f-0.05f-0.01f, 0.0f, 0.0f);		
-			//removed by Mike, 20210712
-//		glTranslatef(-fGridTileWidthVertexPosition-fGridTileWidthVertexPosition/2.0f-0.01f, 0.0f, 0.0f);
-
-		//glTranslatef(-fGridTileWidthVertexPosition-fGridTileWidthVertexPosition/2.0f-0.01f, 0.0f, 0.0f);
-
-//    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(0+fGridSquareWidth*1.0f), 0.0f, 0.0f);
-
 		
 		//TO-DO: -update: this
 		//note: 3rd quadrant
@@ -1323,54 +1308,29 @@ void Level2D::drawTileAsQuadWithoutTexture()
 }
 
 
-//added by Mike, 20210708
+//added by Mike, 20210708; edited by Mike, 20210712
+//TO-DO: -add: function with tile patterns
+//TO-DO: -update: this
 void Level2D::drawLevelWithTexture()
 {	
-/*
-    glPushMatrix();
-    
-    int iColumnCountMax=10;
-    int iLeftMarginColumnCount=0;
-
-    //note: no +0.02 in macOS
-    //TO-DO: -reverify: in Linux OS
-    glTranslatef(-2.0f/iColumnCountMax*iLeftMarginColumnCount, 0.0f, 0.0f);
-		
+/*	//removed by Mike, 20210712		
 		//added by Mike, 20210705
 		#if defined(__APPLE__)
 		#else
     	glTranslatef(+0.02f, 0.0f, 0.0f);
 		#endif
-		    
-    
-    
-    	glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(100), -myUsbongUtils->autoConvertFromPixelToVertexPointY(100), 0.0f);
-				drawPressNextSymbol();
-    	glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(100), -myUsbongUtils->autoConvertFromPixelToVertexPointY(100), 0.0f);				
-    glPopMatrix();			
-
-    //-myUsbongUtils->autoConvertFromPixelToVertexPointY(100)
-    	glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(myWindowWidth/2), 0.0f, 0.0f);
-
-*/    
-
-/*//edited by Mike, 20210709
-    glPushMatrix();    
-//    printf(">>>myUsbongUtils->autoConvertFromPixelToVertexPointX(0): %f\n",myUsbongUtils->autoConvertFromPixelToVertexPointX(0));
-    
-    	glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(0), myUsbongUtils->autoConvertFromPixelToVertexPointY(0), 0.0f);
-    
-    	drawPressNextSymbol();
-    glPopMatrix();
-*/    
+*/		    
 		
     glPushMatrix();    
 //    printf(">>>myUsbongUtils->autoConvertFromPixelToVertexPointX(0): %f\n",myUsbongUtils->autoConvertFromPixelToVertexPointX(0));
       
-      //TO-DO: -reverify: this
-//    	glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(0+fGridSquareWidth*3.0f), myUsbongUtils->autoConvertFromPixelToVertexPointY(0+fGridSquareHeight*2.0f), 0.0f);
-
-    	glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(0+fGridSquareWidth*1.0f), myUsbongUtils->autoConvertFromPixelToVertexPointY(0+fGridSquareHeight*1.0f), 0.0f);
+			//added by Mike, 20210712
+			//add +1.0f due to 3rd quadrant in the draw function
+			//incorrect output if multiple glTranslate(...) Commands
+//    	glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(0+fGridSquareWidth*1.0f), 0.0f, 0.0f);
+			
+			//column 1; start at 0; note +1.0f to be 2.0f due to 3rd quadrant in drawTileAsQuadWithoutTexture(...)
+    	glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(0.0f+fGridSquareWidth*(1.0f+1.0f)), myUsbongUtils->autoConvertFromPixelToVertexPointY(0.0f+fGridSquareHeight*0.0f), 0.0f);
     
     	//edited by Mike, 20210710
     	//drawPressNextSymbol();
