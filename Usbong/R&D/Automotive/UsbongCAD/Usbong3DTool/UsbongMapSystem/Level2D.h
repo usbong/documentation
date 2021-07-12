@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20210613
- * @date updated: 20210706
+ * @date updated: 20210712
  * @website address: http://www.usbong.ph
  *
  * Acknowledgments:
@@ -441,13 +441,9 @@ public:
 		void read(char *inputFilename); ////added by Mike, 20210706
     
     virtual void draw() {
-        //edited by Mike, 20210424
-        //    	drawPilot();
-        //		drawPilotAsQuadWithTexture();
-        //edited by Mike, 20210615
-        //drawTextBackgroundAsQuadWithTexture();
-        
-        drawLevelWithTexture();
+        //edited by Mike, 20210712
+//        drawLevelWithTexture();
+				drawLevelWithTextureUsingInputFile();
     }
     
     //edited by Mike, 20210615
@@ -460,7 +456,8 @@ public:
     void drawTileAsQuadWithTexture(GLfloat x, GLfloat y, GLfloat z, char c);
     void drawLevelWithTexture();
     void drawLevelWithTexturePrev(); //added by Mike, 20210708
-    
+		void drawLevelWithTextureUsingInputFile(); //added by Mike, 20210712    
+		
     //added by Mike, 20210705
     void drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat fXSize, GLfloat fYSize, GLfloat fZSize);
 

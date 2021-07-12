@@ -1339,6 +1339,46 @@ void Level2D::drawLevelWithTexture()
     
 }
 
+//added by Mike, 20210708; edited by Mike, 20210712
+//TO-DO: -add: function with tile patterns
+//TO-DO: -update: this
+void Level2D::drawLevelWithTextureUsingInputFile()
+{	
+/*	//removed by Mike, 20210712		
+    glPushMatrix();    		
+			//column 1; start at 0; note +1.0f to be 2.0f due to 3rd quadrant in drawTileAsQuadWithoutTexture(...)
+    	glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(0.0f+fGridSquareWidth*(1.0f+1.0f)), myUsbongUtils->autoConvertFromPixelToVertexPointY(0.0f+fGridSquareHeight*0.0f), 0.0f);
+    
+    	//edited by Mike, 20210710
+    	//drawPressNextSymbol();
+    	drawTileAsQuadWithoutTexture();
+    glPopMatrix();
+*/
+
+/*
+        for (int iRowCountToSetDefault=0; iRowCountToSetDefault<MAX_TEXT_CHAR_ROW_RAM; iRowCountToSetDefault++) {
+            for (int iColumnCount=0; iColumnCount<MAX_TEXT_CHAR_COLUMN; iColumnCount++) {
+								//verified: in macOS, with Japanese keyboard ro-maji input, "¥0", backspace is "¥"
+                tempText[iRowCountToSetDefault][iColumnCount]='\0';
+            }
+        }
+*/
+			//TO-DO: -update: this
+		
+    	int iRowCountMax=10;
+    	int iColumnCountMax=18;
+    	int iHeightCountMax=10;   
+	
+        for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
+        	//iCurrentMaxColumnCountPerRowContainer[iRowCount];
+        	for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {
+						//if (cCurrentTextContainer[iRowCount][iColumnCount])
+
+					}
+        }
+    
+}
+
 //added by Mike, 20210703
 //TO-DO: -update: this
 void Level2D::drawLevelWithTexturePrev()
