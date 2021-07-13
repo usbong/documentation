@@ -1,5 +1,5 @@
 /*
- * Copyright 2020~2021 Usbong Social Systems, Inc.
+ * Copyright 2020~2021 SYSON, MICHAEL B.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,9 +12,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * @author: Michael Syson
+ * @company: USBONG
+ * @author: SYSON, MICHAEL B.
  * @date created: 20200926
- * @date updated: 20210323
+ * @date updated: 20210714
+ * @website address: http://www.usbong.ph
  *
  * References:
  * 1) Dev-C++ 5.11 auto-generated OpenGL example project
@@ -95,8 +97,12 @@
 
 //added by Mike, 20200928
 //note: "static" in C/C++ = "final" in java
+/*	//edited by Mike, 20210714
 static int myWindowWidth=640; //320
 static int myWindowHeight=640; //320
+*/
+int myWindowWidth=640; //320
+int myWindowHeight=640; //320
 
 //added by Mike, 20201001
 OpenGLCanvas *myOpenGLCanvas = NULL;
@@ -272,18 +278,54 @@ int WINAPI WinMain (HINSTANCE hInstance,
       0, 0, 256, 256,
       NULL, NULL, hInstance, NULL);
 */
+
+/*	//edited by Mike, 20210714
     hWnd = CreateWindow (
-      "GLSample", "Usbong OpenGL Automotive", 
+      "GLSample", "Usbong Map System", 
+      WS_CAPTION | WS_POPUPWINDOW | WS_VISIBLE,
+      0, 0, myWindowWidth, myWindowHeight,
+      NULL, NULL, hInstance, NULL);
+*/
+
+    hWnd = CreateWindow (
+      "GLSample", "Usbong Map System", 
       WS_CAPTION | WS_POPUPWINDOW | WS_VISIBLE,
       0, 0, myWindowWidth, myWindowHeight,
       NULL, NULL, hInstance, NULL);
 
     /* enable OpenGL for the window */
     EnableOpenGL (hWnd, &hDC, &hRC);
+    
+    //added by Mike, 20210714
+    ShowWindow (hWnd, SW_MAXIMIZE);
 
+	//added by Mike, 20210714
+	//Reference: https://stackoverflow.com/questions/615551/how-to-get-width-and-height-from-createwindowex-window-c;
+	//answer by: Brian R. Bondy, 20090505T1632
+	RECT rect;	
+	//if ShowWindow SW_MAXIMIZE AND WindowRect(...), 
+	//has alignment problem
+	//TO-DO: -reverify: with macOS machine
+//	if(GetWindowRect(hWnd, &rect))
+	if(GetClientRect(hWnd, &rect))
+	{
+	  myWindowWidth = rect.right - rect.left;
+	  myWindowHeight = rect.bottom - rect.top;
+	}
+	
     //added by Mike, 20201001; edited by Mike, 20210323
     myOpenGLCanvas = new OpenGLCanvas();
-    myOpenGLCanvas->init();
+	
+	//edited by Mike, 20210714
+    //myOpenGLCanvas->init();
+    //TO-DO: -add: myOpenGLCanvas->init(glutGet(GLUT_SCREEN_WIDTH), glutGet(GLUT_SCREEN_HEIGHT));
+    myOpenGLCanvas->init(myWindowWidth, myWindowHeight);
+
+	//TO-DO: -add: mouse actions
+	//glutMouseFunc(myMouseAction);
+	//glutMotionFunc(myMouseMotionAction);
+	//glutIgnoreKeyRepeat(1);
+
 
 	//added by Mike, 20201001
     //init stuff for delay
