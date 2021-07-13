@@ -114,7 +114,8 @@ TO-DO: -update: this<br/>
 --> set difficult level to 6 stars; where 8 is highest<br/>
 --> set speed to "SPEEDY", "T2"; fastest<br/>
 --> In match, WINNING state can quickly become you LOSE<br/>
---> you "LOO", instead of you "LOSE"; Samurai Spirits' SHOU（勝）, instead of SHOUBU（勝負）?<br/>
+--> you "LOO", instead of you "LOSE"; Samurai Spirits' SHOU（勝）, <br/>
+--> instead of SHOUBU（勝負）?<br/>
 --> Select Fighters difficult to finish All matches<br/>
 --> Adon, Ryuu, Sagat... ends up with Chun-Li<br/>
 --> パズルのように解ける仕組みがあり、人を引っ張る？<br/>
@@ -198,7 +199,7 @@ TO-DO: -update: this<br/>
 --> <b>Example Bugs:</b><br/>
 --> Controller disconnected;<br/>
 --> No input received by computer after attempting to execute Chun-Li's SUPER 千裂脚 (senretsukyaku; isang libo + bali + paa)<br/>
---> No input to move forward or backward when crouching; Ghost 'N Goblins sa Gameboy Color?<br/>
+--> No input to move forward or backward when crouching; Ghosts 'N Goblins sa Gameboy Color?<br/>
 --> Gayunpaman, maaaring magapi si Bega.<br/>
 --> Gamitin ang paraang ito:<br/>
 --> Talong may Sipa gamit ang Katamtamang lakas.<br/>
