@@ -167,7 +167,14 @@ TO-DO: -update: this<br/>
 --> "Ang panalo・talo (shoubu; win・lose), isang saglit na pagitan lang!<br/>
 -->　.. ..　さあ、立ってくれ！」<br/>
 --> .. .. Sige/Ituloy, tumayo ka para sa'kin!"<br/>
-
+<br/>
+--> Maaalala ang pagsugod ni Ryuu nang parehong isang tamaan na lang sila ni Chun-li.<br/>
+--> Ito'y sa halip na ang inaasahan niyang paggawa ng hadouken.<br/>
+--> Susugod si Ryuu at paglapit niya kay Chun-li, gagawin niya ang shouryuuken.<br/>
+--> Itataas niya ang kanyang kanang kamay, at nakangiti sa pagkapanalo.<br/>
+<br/>
+--> Maaalala na may naglilinis sa ibaba ng nakasulat na ほっとメニュー(hotto menyuu) sa tindahan.<br/>
+<br/>
 --> <b>Paraan upang magapi si Ryuu:</b><br/>
 --> <b>Paalala:</b> May kani-kaniyang paraan upang mabilis na magapi ang mga katunggali.<br/>
 --> Sukatin ang pinakamalapit na layo ni Ryuu kay Chun-li upang gumawa siya ng hadouken.<br/>
@@ -181,6 +188,28 @@ TO-DO: -update: this<br/>
 --> bagama't katatanggap pa lamang niya ng tama mula sa talong sipa.<br/>
 --> Gamitin ang SUPER 千裂脚 (senretsukyaku; isang libo + bali + paa) ni Chun-li,<br/> 
 --> gawa ng pansamantalang hindi siya tinatamaan ng hadouken nito.<br/>
+<br/>
+--> Maaalala ang laban sa dulo, kay Vega (べが; "Bega").<br/>
+--> <b>Paalala:</b> Tinutugis ni Chun-li si Bega upang malutas ang pagkasawi ng kanyang ama.<br/>
+--> Bega: "Beggar"?; Subukang matapos ang lahat ng labanan gamit lamang ang isang coin?<br/>
+--> where: coin = 100yen coin?<br/>
+--> Bug in Command Control noticeable due to system problem?<br/>
+--> where: problem = excess; doku = lason/poison?<br/>
+--> <b>Example Bugs:</b><br/>
+--> Controller disconnected;<br/>
+--> No input received by computer after attempting to execute Chun-Li's SUPER 千裂脚 (senretsukyaku; isang libo + bali + paa)<br/>
+--> No input to move forward or backward when crouching; Ghost 'N Goblins sa Gameboy Color?<br/>
+--> Gayunpaman, maaaring magapi si Bega.<br/>
+--> Gamitin ang paraang ito:<br/>
+--> Talong may Sipa gamit ang Katamtamang lakas.<br/>
+--> <b>Paalala:</b> Mag-ingat sa Psycho Crusher ni Bega na tumatama kahit na gamitan ng GUARD Command habang tumatalon.<br/>
+--> Malakas na Suntok sa ibaba.<br/>
+--> Katamtamang Sipa sa ibaba.<br/>
+--> Malakas na Suntok (na hango sa sampal) nang nakatayo.<br/>
+--> Bega: やっと気づいたか？ (napansin mo na sa wakas?)<br/>
+--> Hindi na kailangang subukang gamitin ang SUPER.<br/>
+--> Chun-li: 格闘では、パワーよりスピード．．．(kakutou deha, pawa- yori supi-do．．．)<br/>
+--> Chun-li: Sa maramihang labanan, mas maigi ang bilis, kaysa sa lakas．．．<br/>
 <br/>
 <img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Notes/res/sutori-toFaita-/streetFighterZeroDiscAkogare.jpg" width="60%">
 <br/>
