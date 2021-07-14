@@ -101,8 +101,8 @@
 static int myWindowWidth=640; //320
 static int myWindowHeight=640; //320
 */
-int myWindowWidth=640; //320
-int myWindowHeight=640; //320
+int myWindowWidth=640; //900; //640; //320
+int myWindowHeight=640; //900; //640; //320
 
 //added by Mike, 20201001
 OpenGLCanvas *myOpenGLCanvas = NULL;
@@ -287,18 +287,45 @@ int WINAPI WinMain (HINSTANCE hInstance,
       NULL, NULL, hInstance, NULL);
 */
 
+//added by Mike, 20210714
+//reference: https://stackoverflow.com/questions/60119473/how-to-get-physical-screen-size-on-windows-i-get-strange-values;
+//answer by: Horst Walter, 20200207T1854; edited 20200208T0032
+
+myWindowWidth  = static_cast<int>(GetSystemMetrics(SM_CXSCREEN));
+myWindowHeight = static_cast<int>(GetSystemMetrics(SM_CYSCREEN));
+
+/* //edited by Mike, 20210714
     hWnd = CreateWindow (
       "GLSample", "Usbong Map System", 
       WS_CAPTION | WS_POPUPWINDOW | WS_VISIBLE,
       0, 0, myWindowWidth, myWindowHeight,
       NULL, NULL, hInstance, NULL);
+*/
 
-    /* enable OpenGL for the window */
+/*	//edited by Mike, 20210714
+    hWnd = CreateWindow (
+      "GLSample", "Usbong Map System", 
+      WS_CAPTION | WS_POPUPWINDOW | WS_VISIBLE,
+      0, 0, myWindowWidth, myWindowHeight,
+      NULL, NULL, hInstance, NULL);
+*/
+	hWnd = CreateWindow(
+		"GLSample", "Usbong Map System", 
+      WS_POPUPWINDOW | WS_VISIBLE,
+		0, 0, myWindowWidth, myWindowHeight, 
+		NULL, NULL, hInstance, NULL); 
+
+    // enable OpenGL for the window
     EnableOpenGL (hWnd, &hDC, &hRC);
     
-    //added by Mike, 20210714
-    ShowWindow (hWnd, SW_MAXIMIZE);
+    //added by Mike, 20210714; removed by Mike, 20210714
+    //note: we need to identify the screen's max width and height
+    //we use myWindowWidth=static_cast<int>(GetSystemMetrics(SM_CXSCREEN));
+	//et cetera
+//    ShowWindow (hWnd, SW_MAXIMIZE);
 
+
+/*
 	//added by Mike, 20210714
 	//Reference: https://stackoverflow.com/questions/615551/how-to-get-width-and-height-from-createwindowex-window-c;
 	//answer by: Brian R. Bondy, 20090505T1632
@@ -312,7 +339,64 @@ int WINAPI WinMain (HINSTANCE hInstance,
 	  myWindowWidth = rect.right - rect.left;
 	  myWindowHeight = rect.bottom - rect.top;
 	}
+*/
+
+//CRect rectWorkArea;
+/*	
+	RECT rectWorkArea;		
+	SystemParametersInfo(SPI_GETWORKAREA,0,&rectWorkArea,0);
+
+	myWindowWidth = rectWorkArea.right - rectWorkArea.left;
+	myWindowHeight = rectWorkArea.bottom - rectWorkArea.top;
+*/
+
+/*
+MONITORINFO mi;
+mi.cbSize = sizeof(mi);
+::GetMonitorInfo(::MonitorFromWindow(hWnd, MONITOR_DEFAULTTONEAREST), &mi);
+rectWorkArea = mi.rcWork;
+*/
+
+/*
+	RECT WorkArea, WindowSizeNormal, WindowSizeCurent;
+	SystemParametersInfo(SPI_GETWORKAREA,0,&WorkArea,0);
 	
+// Store the current position for use when normalizing the window   
+ 	WindowSizeNormal.left = WindowSizeCurent.left;   
+ 	WindowSizeNormal.top = WindowSizeCurent.top;   
+ 	WindowSizeNormal.right = WindowSizeCurent.right;   
+ 	WindowSizeNormal.bottom = WindowSizeCurent.bottom;   
+ 	 
+ 	// Set new window size and position as maximized   
+ 	SetWindowPos( hWnd, NULL, WorkArea.left, WorkArea.top, WorkArea.right, WorkArea.bottom, NULL );  
+
+	myWindowWidth = WorkArea.right - WorkArea.left;
+	myWindowHeight = WorkArea.bottom - WorkArea.top;
+*/
+
+   RECT desktop;
+   // Get a handle to the desktop window
+   //edited by Mike, 20210714
+   const HWND hDesktop = GetDesktopWindow();
+//   hWnd = GetDesktopWindow();
+
+   // Get the size of screen to the variable desktop
+   //edited by Mike, 20210714
+   GetWindowRect(hDesktop, &desktop);
+//   GetWindowRect(hWnd, &desktop);
+
+   // The top left corner will have coordinates (0,0)
+   // and the bottom right corner will have coordinates
+   // (horizontal, vertical)
+   myWindowWidth = desktop.right;
+   myWindowHeight = desktop.bottom;
+	
+/*	//added by Mike, 20210714
+    // enable OpenGL for the window
+    EnableOpenGL (hWnd, &hDC, &hRC);
+
+    ShowWindow (hWnd, SW_MAXIMIZE);
+*/	
     //added by Mike, 20201001; edited by Mike, 20210323
     myOpenGLCanvas = new OpenGLCanvas();
 	
@@ -434,6 +518,21 @@ LRESULT CALLBACK WndProc (HWND hWnd, UINT message,
 
     case WM_DESTROY:
         return 0;
+        
+    //added by Mike, 20210714
+    //Reference: https://social.msdn.microsoft.com/Forums/vstudio/en-US/fb4de52d-66d4-44da-907c-0357d6ba894c/swmaximize-is-same-as-fullscreen?forum=vcgeneral;
+    //last accessed: 20210714
+    //answer by: Espen Ruud Schultz Tuesday, 20090303T0743
+ 	case WM_GETMINMAXINFO:  
+         RECT WorkArea; SystemParametersInfo( SPI_GETWORKAREA, 0, &WorkArea, 0 );  
+ 
+         ( ( MINMAXINFO * )lParam )->ptMaxSize.x = ( WorkArea.right - WorkArea.left );  
+         ( ( MINMAXINFO * )lParam )->ptMaxSize.y = ( WorkArea.bottom - WorkArea.top );  
+         ( ( MINMAXINFO * )lParam )->ptMaxPosition.x = WorkArea.left;  
+         ( ( MINMAXINFO * )lParam )->ptMaxPosition.y = WorkArea.top;  
+ 
+         return 0;  
+ 
 /*
 	//added by Mike, 20201014
     case WM_CHAR:
