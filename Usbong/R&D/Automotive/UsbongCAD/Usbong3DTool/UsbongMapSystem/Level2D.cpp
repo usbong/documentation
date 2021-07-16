@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20200926
- * @date updated: 20210712
+ * @date updated: 20210715
  * @website address: http://www.usbong.ph
  *
  * Reference:
@@ -1280,7 +1280,16 @@ void Level2D::drawTileAsQuadWithoutTexture()
 		}
 
 //  	printf (">>> fGridTileWidthVertexPosition: %f; fGridTileHeightVertexPosition: %f",fGridTileWidthVertexPosition,fGridTileHeightVertexPosition);
-		
+
+        //added by Mike, 20210715
+        //note: add this set of instructions due to excess border visible
+        //verified: screen/monitor width and height to be OK
+        //10/3 = 3.3333... cause of problem?
+             #if defined(__APPLE__)
+            //note: right border of tile only partly visible
+            fGridTileWidthVertexPosition=fGridTileWidthVertexPosition+0.0006f;
+             #endif
+    
 		//note: vertex position sequence to be auto-drawn
 		//counter-clockwise sequence to auto-draw front face
 
