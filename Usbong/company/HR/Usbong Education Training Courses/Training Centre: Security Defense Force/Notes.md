@@ -587,4 +587,15 @@ Naunawaan mo ha!<br/>
 
 
 ### Part 19: Religion
-Sagot: N/A
+Sagot: N/A, i.e. "Not Applicable"
+
+### Part 20: Wika
+We encourage Unit members to learn languages, e.g. nihongo. This is due to after verification, problems in the Philippines are caused by incorrect beliefs.<br/>
+
+#### Examples:
+20.1) Religion not set to be "N/A", i.e. "Not Applicable"<br/>
+20.2) Maparaang Pagbibilang is NOT valued.<br/>
+
+#### Reminder: 
+Beliefs are classified to be with Culture. Culture CAN be changed.
+
