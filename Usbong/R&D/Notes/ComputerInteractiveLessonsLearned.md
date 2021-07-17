@@ -140,6 +140,34 @@ TO-DO: -update: this<br/>
 --> Mamamasdan na umuurong palikod si Rose, kapag sinugod;<br/>
 --> bagama't hindi mo siya maibabato kung huminto ka agad.<br/>
 <br/>
+--> Matutuklasan mula kay Birdie na kapag ginamit ang paraang ito, alam ito ng nagsulat ng paliwanag.<br/>
+--> <b>paraan:</b> gamitin ang pagtalong pagsalakay na may Katamtamang Sipa kay Birdie.<br/>
+--> Pagkatapos siya tamaan, tumalon palikod, at ulitin muli ang pagtalong pagsalakay.<br/>
+--> Kapag nasa pinakadulo ng mauusugan palikod, maaaring tumalon gamit ang ding-ding.<br/>
+<br/>
+--> Mamamasdan na susubukan ni Birdie na labanan ang pagtalong pagsalakay ni Chun-li sa pamamagitan ng paggamit ng samu't saring pamamaraan.<br/>
+--> <b>Halimbawa:</b> Gagamitin niya ang kanyang may CHARGE na salakay, e.g. ブルヘッド(buruheddo; Bull Head), ブルホーン(buruho-n; Bull Horn), upang tamaan si Chun-li ng kanyang ulo.<br/>
+--> "Go away"?<br/>
+<br/>
+--> <b>Paalala:</b> Hindi rin basta-bastang magagapi si Birdie kung walang know-how ng pinakamaigi at mabilis na paraan.<br/>
+--> Gayunpaman, pagkatapos matuklusan ang wastong paraan, mamamasdan ang hangganan ng kakayanan ng naisulat na paliwanag sa kompyuter bilang Birdie.<br/>
+--> Orangutan?<br/>
+<br/>
+--> <b>Mungkahing unawain:</b> Vehicle Racing to be Man as Master of Machine<br/>
+--> <b>Paalala:</b> Kapag mabunggo at masawi ang Man. Wakas. <br/>
+--> Machine as Master of the Dead Man.<br/>
+<br/>
+--> Matututunan mula kay Nash na maaaring gamitin ang paraang ito upang gapiin siya.<br/>
+--> <b>paraan:</b> gamitin ang Katamtamang Sipa sa ibaba ni Chun-li.<br/>
+--> Hintaying gumawa ng talong pagsalakay si Nash.<br/>
+--> Gamitin ang 天昇脚 (tenjoukyaku; langit umaangat sipa) upang sipain ang talong pagsalakay ni Nash.<br/>
+--> Kapag hindi gumawa ng talong pagsalakay si Nash, gamitin muli ang Katamtamang Sipa sa ibaba ni Chun-li.<br/>
+--> <b>Paalala:</b> May pattern. Nakabatay din ang pattern na ito sa ginagamit na input ng Tao.<br/>
+--> <b>Halimbawa:</b> Katamtamang Sipa sa ibaba.<br/>
+--> <b>Dagdag na paalala:</b> Hindi rin basta-bastang magagapi si Nash kung walang know-how ng pinakamaigi at mabilis na paraan.<br/>
+--> Nash: Nash equilibrium?<br/>
+--> <b>weakness:</b> pattern?<br/>
+<br/>
 --> Maaalala ang laban kasama si Ryuu (Hapon).<br/>
 --> Tumama ang kanyang SUPER (Level3) 波動拳 (hadouken; alon galaw kamao) na nagdulot ng mga kalahating bawas sa gauge, i.e. sukat ng lakas ng pangangatawan, ni Chun-Li.<br/>
 --> Mababawi naman niya ito gamit ang SUPER (Level1) 千裂脚 (senretsukyaku; isang libo + bali + paa) ni Chun-Li nang magbato ulit ng hadouken si Ryuu.<br/>
