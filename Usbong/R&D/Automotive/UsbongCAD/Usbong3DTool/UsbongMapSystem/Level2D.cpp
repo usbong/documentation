@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20200926
- * @date updated: 20210715
+ * @date updated: 20210717
  * @website address: http://www.usbong.ph
  *
  * Reference:
@@ -585,7 +585,7 @@ void Level2D::setupLevel(int myLevelTextureObject)
 
     /* create OpenGL texture out of targa file */
 	//edited by Mike, 20210420
-    load_tga("textures/level.tga");
+    load_tga("textures/level2D.tga");
 //    load_tga("textures/concrete.tga");
     
 	/* set texture parameters */
@@ -677,12 +677,9 @@ void Level2D::drawPressNextSymbol()
 //    glTranslatef((0.033f+0.006f)*2, 0.0f-0.01f, 0.0f);
 //    glTranslatef(0.0f+0.006f, 0.0f-0.01f, 0.0f);
 //    glTranslatef((-0.01f), 0.0f-0.01f, 0.0f);
-
 		#else
     	glTranslatef(+0.02f, 0.0f, 0.0f);
 		#endif
-
-
 //    glTranslatef(-1.0f/2, -1.0f/2, 0.0f);
 //    glTranslatef(1.0f, 0.0f, 0.0f);
     glTranslatef(0.06f, 0.0f, 0.0f);
@@ -1217,7 +1214,6 @@ void Level2D::drawTileAsQuadWithoutTexture()
 		
 		//note: vertex position sequence to be auto-drawn
 		//counter-clockwise sequence to auto-draw front face
-
 		//add this due to 3rd quadrant
 		//size of tile width: 0.1f
 //		glTranslatef(-0.1f-0.05f, 0.0f, 0.0f);		
@@ -1318,6 +1314,152 @@ void Level2D::drawTileAsQuadWithoutTexture()
   glPopMatrix();
 }
 
+//edited by Mike, 20210716
+void Level2D::drawTileAsQuadWithTexture()
+{
+
+		glBindTexture(GL_TEXTURE_2D, iLevelTextureObject);
+    glEnable(GL_TEXTURE_2D);						
+    
+    //notes: TO-DO: -reverify: indexed 64 colors max segmentation fault problem
+    //16x16pixels; 256x256pixels width x height .tga image file
+    //texture coordinates; 
+    //width: 1.0/16.0 = 0.0625
+    //height: 1.0/16.0 = 0.0625    
+        
+/*
+    glDisable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, 0);
+*/
+    
+    glPushMatrix();
+	
+	//  glColor3f(0.0f, 0.0f, 0.0f); //set to default, i.e. black
+		//edited by Mike, 20210717
+//  	glColor3f(1.0f, 0.0f, 0.0f); //red
+		glColor3f(1.0f, 1.0f, 1.0f); //set to default, i.e. white
+  	
+  	//TO-DO: -add: tile with auto-drawn pattern; without using image texture object
+//  	printf (">>>>>>>>>>>>>>>>>>>>>>>>>>>> HALLO");
+
+//  	printf (">>> fGridSquareWidth: %f; fGridSquareHeight: %f",fGridSquareWidth,fGridSquareHeight);
+
+
+		float fGridTileWidthVertexPosition = myUsbongUtils->autoConvertFromPixelToVertexGridTileWidth(fGridSquareWidth);
+		float fGridTileHeightVertexPosition = myUsbongUtils->autoConvertFromPixelToVertexGridTileHeight(fGridSquareHeight);		
+
+/* //removed by Mike, 20210717
+		//TO-DO: -reverify: cause of /2.0f/4.0f; and 2.0f/2.0f;
+//		fGridTileWidthVertexPosition = fGridTileWidthVertexPosition/2.0f/3.0f;
+		fGridTileWidthVertexPosition = fGridTileWidthVertexPosition/2.0f/4.0f;
+		fGridTileHeightVertexPosition = fGridTileHeightVertexPosition/2.0f/2.0f;		
+*/
+/*
+		fGridTileWidthVertexPosition = fGridTileWidthVertexPosition*2.0f*4.0f;
+		fGridTileHeightVertexPosition = fGridTileHeightVertexPosition*2.0f*2.0f;		
+*/
+		//TO-DO: -update: this
+		fGridTileWidthVertexPosition = 1.0f; //0.1f
+		fGridTileHeightVertexPosition = 0.1f; //0.1f		
+
+		//added by Mike, 20210713
+		//get positive value
+		if (fGridTileWidthVertexPosition<0) {
+			fGridTileWidthVertexPosition=fGridTileWidthVertexPosition*(-1);
+		}
+		if (fGridTileHeightVertexPosition<0) {
+			fGridTileHeightVertexPosition=fGridTileHeightVertexPosition*(-1);
+		}
+
+//  	printf (">>> fGridTileWidthVertexPosition: %f; fGridTileHeightVertexPosition: %f",fGridTileWidthVertexPosition,fGridTileHeightVertexPosition);
+
+        //added by Mike, 20210715
+        //note: add this set of instructions due to excess border visible
+        //verified: screen/monitor width and height to be OK
+        //10/3 = 3.3333... cause of problem?
+        //added by Mike, 20210717
+        //note: partly border visible occurs in Linux machine;
+        //due to instructions that I wrote
+        
+             #if defined(__APPLE__)
+            //note: right border of tile only partly visible
+            fGridTileWidthVertexPosition=fGridTileWidthVertexPosition+0.0006f;
+             #endif
+    
+		//note: vertex position sequence to be auto-drawn
+		//counter-clockwise sequence to auto-draw front face
+
+		//add this due to 3rd quadrant
+		//size of tile width: 0.1f
+//		glTranslatef(-0.1f-0.05f, 0.0f, 0.0f);		
+		//re-verify: cause of 0.01f; due to Linux machine?
+//		glTranslatef(-0.1f-0.05f-0.01f, 0.0f, 0.0f);		
+		
+		//TO-DO: -update: this
+		//note: 3rd quadrant
+/* //edited by Mike, 20210717		
+		glBegin(GL_QUADS); // Each set of 4 vertices form a quad
+	        glTexCoord2f(fTx, fTy);
+        	glVertex3f(0.0f, 0.0f, 0.0f);
+        	
+	        glTexCoord2f(fTx + 0.0625f, fTy);
+      		glVertex3f(0.0f-fGridTileWidthVertexPosition, 0.0f, 0.0f);      
+	
+	        glTexCoord2f(fTx + 0.0625f, fTy + 0.0625f);
+      		glVertex3f(0.0f-fGridTileWidthVertexPosition, 0.0f-fGridTileHeightVertexPosition, 0.0f);              
+	
+					glTexCoord2f(fTx, fTy + 0.0625f);
+      		glVertex3f(0.0f, 0.0f-fGridTileHeightVertexPosition, 0.0f);      
+   	glEnd();   
+*/   	 
+
+		//added by Mike, 20210717
+//		glRotatef(180, 1.0f, 0.0f, 0.0f);
+
+    //TO-DO: -update: this
+    float fTx = 0.0f;
+    float fTy = 0.0f;
+
+		glBegin(GL_QUADS); // Each set of 4 vertices form a quad
+	        glTexCoord2f(fTx, fTy);
+        	glVertex3f(0.0f, 0.0f, 0.0f);
+        	
+	        glTexCoord2f(fTx + 1.0f, fTy);
+      		glVertex3f(0.0f-fGridTileWidthVertexPosition, 0.0f, 0.0f);      
+	
+	        glTexCoord2f(fTx + 1.0f, fTy + 1.0f);
+      		glVertex3f(0.0f-fGridTileWidthVertexPosition, 0.0f-fGridTileHeightVertexPosition, 0.0f);              
+	
+					glTexCoord2f(fTx, fTy + 1.0f);
+      		glVertex3f(0.0f, 0.0f-fGridTileHeightVertexPosition, 0.0f);      
+   	glEnd();   
+   	
+/*   	
+//edited by Mike, 20210610
+        float fX=-1.0f;
+        float fY=1.0f;
+        	      
+				// Each set of 4 vertices form a quad        	      
+        glBegin(GL_QUADS);              
+            	glTexCoord2f(0.25f+fTaoAnimationFrameOffset, fTaoAnimationFrameOffsetYAxis);               	
+        			glVertex3f(fX, fY, 0.0f);
+
+            	glTexCoord2f(0.0f+fTaoAnimationFrameOffset, fTaoAnimationFrameOffsetYAxis);               	
+      				glVertex3f(fX+2.0f, fY, 0.0f);      
+
+           		glTexCoord2f(0.0f+fTaoAnimationFrameOffset, fTaoAnimationFrameOffsetYAxis+0.25f);           	
+      				glVertex3f(fX+2.0f, fY-2.0f, 0.0f);              
+
+            	glTexCoord2f(0.25+fTaoAnimationFrameOffset, fTaoAnimationFrameOffsetYAxis+0.25f); //0.5f);
+      				glVertex3f(fX, fY-2.0f, 0.0f);      
+   			glEnd();            	
+*/   	
+  
+		glDisable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, 0);  
+  
+  glPopMatrix();
+}
 
 //added by Mike, 20210708; edited by Mike, 20210712
 //TO-DO: -add: function with tile patterns
@@ -1345,7 +1487,9 @@ void Level2D::drawLevelWithTexture()
     
     	//edited by Mike, 20210710
     	//drawPressNextSymbol();
-    	drawTileAsQuadWithoutTexture();
+    	//edited by Mike, 20210717
+//    	drawTileAsQuadWithoutTexture();
+			drawTileAsQuadWithTexture();
     glPopMatrix();
     
 }
@@ -1393,7 +1537,9 @@ void Level2D::drawLevelWithTextureUsingInputFile()
                     
                     //edited by Mike, 20210710
                     //drawPressNextSymbol();
-                    drawTileAsQuadWithoutTexture();
+                    //edited by Mike, 20210717
+//                    drawTileAsQuadWithoutTexture();
+                    drawTileAsQuadWithTexture();                    
                     glPopMatrix();
                 }
             }

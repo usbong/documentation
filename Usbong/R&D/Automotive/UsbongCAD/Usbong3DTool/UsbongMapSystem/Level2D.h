@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20210613
- * @date updated: 20210712
+ * @date updated: 20210717
  * @website address: http://www.usbong.ph
  *
  * Acknowledgments:
@@ -339,6 +339,7 @@ private:
 
     //added by Mike, 20210710
     void drawTileAsQuadWithoutTexture();
+    void drawTileAsQuadWithTexture(); //added by Mike, 20210717
     
 public:
     //edited by Mike, 20201115
@@ -460,6 +461,7 @@ public:
     void drawLevelWithTexture();
     void drawLevelWithTexturePrev(); //added by Mike, 20210708
 		void drawLevelWithTextureUsingInputFile(); //added by Mike, 20210712    
+		
 		
     //added by Mike, 20210705
     void drawLevelMapInViewPort(GLfloat fX, GLfloat fY, GLfloat fZ, GLfloat fXSize, GLfloat fYSize, GLfloat fZSize);
