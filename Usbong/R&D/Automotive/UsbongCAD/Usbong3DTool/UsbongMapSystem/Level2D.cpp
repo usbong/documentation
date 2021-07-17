@@ -231,7 +231,7 @@ void Level2D::setup()
     
     // select texture 1
     //edited by Mike, 20210707
-//    glBindTexture(GL_TEXTURE_2D, TEXT_TEXTURE_A);
+    //    glBindTexture(GL_TEXTURE_2D, TEXT_TEXTURE_A);
     glBindTexture(GL_TEXTURE_2D, LEVEL_2D_TEXTURE);
     
     /* create OpenGL texture out of targa file */
@@ -239,7 +239,7 @@ void Level2D::setup()
     //    load_tga("textures/armor.tga");
     //    load_tga("textures/imageSpriteExampleMikeWithoutBG.tga");
     //edited by Mike, 20210703
-//    load_tga("textures/textExample.tga");
+    //    load_tga("textures/textExample.tga");
     load_tga("textures/level.tga");
     
     // set texture parameters
@@ -422,56 +422,56 @@ Level2D::Level2D(float xPos, float yPos, float zPos, float windowWidth, float wi
     
     //TO-DO: -add: eliminate multiple sets of same instructions;
     //e.g. exist in both Level2D.cpp and OpenGLCanvas.cpp
-/* //removed by Mike, 20210712    
-    if (myWindowWidth!=myWindowHeight) {
-        //added by Mike, 20210626
-        //note: causes zero value with myWindowHeight/myWindowWidth;
-        //add *1.0f, to be myWindowHeight/(myWindowWidth*1.0f);
-        //NOT myWindowHeight/myWindowWidth*1.0f;
-        //edited by Mike, 20210628
-        //        fMyWindowWidthAsPixelRatioToHeightPixel= 0.56222;
-        fMyWindowWidthAsPixelRatioToHeightPixel= myWindowHeight/(myWindowWidth*1.0f);
-        
-        //note: width value > height value
-        //TO-DO: -add: auto-update
-        //height: 768; width: 1366
-        iMyWindowWidthAsPixelOffset=(myWindowWidth-myWindowHeight)/2;
-        //			iMyWindowWidthAsPixelOffset=(myWindowWidth-myWindowHeight);
-        
-        printf(">>>DITO: %f",fMyWindowWidthAsPixelRatioToHeightPixel);
-        printf(">>>DITO: myWindowHeight: %i",myWindowHeight);
-        printf(">>>DITO: myWindowWidth: %i",myWindowWidth);
-        printf(">>>DITO: iMyWindowWidthAsPixelOffset: %i",iMyWindowWidthAsPixelOffset);
-        
-        myWindowWidth = myWindowHeight; //myWindowWidthAsPixelInput;
-        //    	myWindowHeightAsPixel = myWindowHeightAsPixelInput;
-    }
-*/        
+    /* //removed by Mike, 20210712
+     if (myWindowWidth!=myWindowHeight) {
+     //added by Mike, 20210626
+     //note: causes zero value with myWindowHeight/myWindowWidth;
+     //add *1.0f, to be myWindowHeight/(myWindowWidth*1.0f);
+     //NOT myWindowHeight/myWindowWidth*1.0f;
+     //edited by Mike, 20210628
+     //        fMyWindowWidthAsPixelRatioToHeightPixel= 0.56222;
+     fMyWindowWidthAsPixelRatioToHeightPixel= myWindowHeight/(myWindowWidth*1.0f);
+     
+     //note: width value > height value
+     //TO-DO: -add: auto-update
+     //height: 768; width: 1366
+     iMyWindowWidthAsPixelOffset=(myWindowWidth-myWindowHeight)/2;
+     //			iMyWindowWidthAsPixelOffset=(myWindowWidth-myWindowHeight);
+     
+     printf(">>>DITO: %f",fMyWindowWidthAsPixelRatioToHeightPixel);
+     printf(">>>DITO: myWindowHeight: %i",myWindowHeight);
+     printf(">>>DITO: myWindowWidth: %i",myWindowWidth);
+     printf(">>>DITO: iMyWindowWidthAsPixelOffset: %i",iMyWindowWidthAsPixelOffset);
+     
+     myWindowWidth = myWindowHeight; //myWindowWidthAsPixelInput;
+     //    	myWindowHeightAsPixel = myWindowHeightAsPixelInput;
+     }
+     */
     int iRowCountMax=10;
     int iColumnCountMax=18;
-    int iHeightCountMax=10;   
+    int iHeightCountMax=10;
     
     
-/*    
-    fGridSquareWidth = myWindowWidthAsPixel/iColumnCountMax; //example: 136.60
-    fGridSquareHeight = myWindowHeightAsPixel/iRowCountMax; //example: 76.80
-*/
+    /*
+     fGridSquareWidth = myWindowWidthAsPixel/iColumnCountMax; //example: 136.60
+     fGridSquareHeight = myWindowHeightAsPixel/iRowCountMax; //example: 76.80
+     */
     fGridSquareWidth = myWindowWidth/iColumnCountMax; //example: 136.60
     fGridSquareHeight = myWindowHeight/iRowCountMax; //example: 76.80
     
-/*    
-    printf("fGridSquareWidth: %f\n",fGridSquareWidth);
-    printf("fGridSquareHeight: %f\n",fGridSquareHeight);
-*/    
+    /*
+     printf("fGridSquareWidth: %f\n",fGridSquareWidth);
+     printf("fGridSquareHeight: %f\n",fGridSquareHeight);
+     */
     //added by Mike, 20210626
     fMyWindowWidthAsPixelRatioToHeightPixel=1.0f;
     iMyWindowWidthAsPixelOffset=0; //added by Mike, 20210701
-            
+    
     //added by Mike, 20210516
     myUsbongUtils = new UsbongUtils();
     myUsbongUtils->setWindowWidthHeight(myWindowWidth, myWindowHeight); //added by Mike, 20210626
     
-   
+    
     //    myWidthX=0.5;
     
     rotationAngle=0.0f;//360.0f;//90.0;
@@ -559,9 +559,9 @@ Level2D::Level2D(float xPos, float yPos, float zPos, float windowWidth, float wi
     setCollidable(true);
     
     //added: function to be reusable
-//    readInputText("inputHalimbawa.txt");
+    //    readInputText("inputHalimbawa.txt");
     //edited by Mike, 20210712
-//    readInputText("inputLevel1.csv");
+    //    readInputText("inputLevel1.csv");
     read("inputLevel1.csv");
     
     //edited by Mike, 20210707
@@ -574,52 +574,52 @@ Level2D::~Level2D()
 
 void Level2D::setupLevel(int myLevelTextureObject)
 {
-	//removed by Mike, 20201010
-	//due to blank output
+    //removed by Mike, 20201010
+    //due to blank output
     //glEnable(GL_DEPTH_TEST);
-
-		iLevelTextureObject = myLevelTextureObject;
+    
+    iLevelTextureObject = myLevelTextureObject;
     
     /* select texture 1 */
-    glBindTexture(GL_TEXTURE_2D, iLevelTextureObject);    
-
-    /* create OpenGL texture out of targa file */
-	//edited by Mike, 20210420
-    load_tga("textures/level2D.tga");
-//    load_tga("textures/concrete.tga");
+    glBindTexture(GL_TEXTURE_2D, iLevelTextureObject);
     
-	/* set texture parameters */
+    /* create OpenGL texture out of targa file */
+    //edited by Mike, 20210420
+    load_tga("textures/level2D.tga");
+    //    load_tga("textures/concrete.tga");
+    
+    /* set texture parameters */
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
                     GL_LINEAR_MIPMAP_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
+    
     /* unselect texture myFontTextureObject */
     glBindTexture(GL_TEXTURE_2D, 0);
-
+    
     /* setup alpha blending */
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glEnable(GL_BLEND);
-
+    
     /* set background color to bluish /* set texture parameters */
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
                     GL_LINEAR_MIPMAP_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
+    
     /* unselect texture myFontTextureObject */
     glBindTexture(GL_TEXTURE_2D, 0);
-
+    
     /* setup alpha blending */
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glEnable(GL_BLEND);
-
-	//removed by Mike, 20201012
+    
+    //removed by Mike, 20201012
     /* set background color to bluish to demonstrate font transparency */
-//    glClearColor(0.0f, 0.0f, 0.25f, 1.0f); /* to demonstrate font transparency */
-
+    //    glClearColor(0.0f, 0.0f, 0.25f, 1.0f); /* to demonstrate font transparency */
+    
 }
 
 //added by Mike, 20210130
@@ -658,90 +658,90 @@ void Level2D::drawPressNextSymbol()
     
     //note: 640x640; window width x height
     //edited by Mike, 20210702
-//    glTranslatef(myUsbongUtils->autoConvertFromPixelTodrawTileAsQuadWithTextureVertexPointX(320), myUsbongUtils->autoConvertFromPixelToVertexPointY(555), 0.0f); //-myZPosAsPixel);
-
-/* //removed by Mike, 20210708
-		//y-axis origin from bottom
-		//add 0.06f as bottom padding
-//    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myWindowWidth/2), myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.80f)+0.1f, 0.0f);
-    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myWindowWidth/2), myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.80f)+0.06f, 0.0f);
-*/    
-
-/*
-		//added by Mike, 20210708
-		//TO-DO: -reverify: with another Machine Window
-		//set object anchor to top-left
-		//added by Mike, 20210708
-		#if defined(__APPLE__)		//note: *2; where 2 = rowCount
-		//note: +0.01 in y-axis due to thickness of grid line; TO-DO: -reverify: this using another machine
-//    glTranslatef((0.033f+0.006f)*2, 0.0f-0.01f, 0.0f);
-//    glTranslatef(0.0f+0.006f, 0.0f-0.01f, 0.0f);
-//    glTranslatef((-0.01f), 0.0f-0.01f, 0.0f);
-		#else
+    //    glTranslatef(myUsbongUtils->autoConvertFromPixelTodrawTileAsQuadWithTextureVertexPointX(320), myUsbongUtils->autoConvertFromPixelToVertexPointY(555), 0.0f); //-myZPosAsPixel);
+    
+    /* //removed by Mike, 20210708
+     //y-axis origin from bottom
+     //add 0.06f as bottom padding
+     //    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myWindowWidth/2), myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.80f)+0.1f, 0.0f);
+     glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myWindowWidth/2), myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.80f)+0.06f, 0.0f);
+     */
+    
+    /*
+     //added by Mike, 20210708
+     //TO-DO: -reverify: with another Machine Window
+     //set object anchor to top-left
+     //added by Mike, 20210708
+     #if defined(__APPLE__)		//note: *2; where 2 = rowCount
+     //note: +0.01 in y-axis due to thickness of grid line; TO-DO: -reverify: this using another machine
+     //    glTranslatef((0.033f+0.006f)*2, 0.0f-0.01f, 0.0f);
+     //    glTranslatef(0.0f+0.006f, 0.0f-0.01f, 0.0f);
+     //    glTranslatef((-0.01f), 0.0f-0.01f, 0.0f);
+     #else
     	glTranslatef(+0.02f, 0.0f, 0.0f);
-		#endif
-//    glTranslatef(-1.0f/2, -1.0f/2, 0.0f);
-//    glTranslatef(1.0f, 0.0f, 0.0f);
-    glTranslatef(0.06f, 0.0f, 0.0f);
-    glTranslatef(0.55f, 0.0f, 0.0f);
-*/
-		//TO-DO: -add: auto-compute translate value, e.g. 0.04f
-//    glTranslatef(0.04f, 0.0f, 0.0f);
-		//note: 0.033f = 0.06f*0.55f; //due to scale Commands
-		//note: +0.006 in x-axis due to thickness of grid line; TO-DO: -reverify: this using another machine
-		//note: *2; where 2 = rowCount
-		//note: there exists thickness of grid line
-//    glTranslatef(-0.06f*0.55f*3, 0.0f, 0.0f);
-
-
-  	//edited by Mike, 20210708     
+     #endif
+     //    glTranslatef(-1.0f/2, -1.0f/2, 0.0f);
+     //    glTranslatef(1.0f, 0.0f, 0.0f);
+     glTranslatef(0.06f, 0.0f, 0.0f);
+     glTranslatef(0.55f, 0.0f, 0.0f);
+     */
+    //TO-DO: -add: auto-compute translate value, e.g. 0.04f
+    //    glTranslatef(0.04f, 0.0f, 0.0f);
+    //note: 0.033f = 0.06f*0.55f; //due to scale Commands
+    //note: +0.006 in x-axis due to thickness of grid line; TO-DO: -reverify: this using another machine
+    //note: *2; where 2 = rowCount
+    //note: there exists thickness of grid line
+    //    glTranslatef(-0.06f*0.55f*3, 0.0f, 0.0f);
+    
+    
+    //edited by Mike, 20210708
     glRotatef(45.0f, 0.0f, 0.0f, 1.0f);
-//    glRotatef(90.0f, 0.0f, 0.0f, 1.0f);
-
-		//edited by Mike, 20210702; edited by Mike, 20210708
-	  glScalef(0.06f, 0.06f, 1.0f);
-//	  glScalef(0.06f, 0.06f*0.55f, 1.0f);
-//	  glScalef(0.06f*0.55f, 0.06f*0.55f, 1.0f);
-
-		//iRowCountMax: 18; iColumnCountMax: 10;
-		//10/18=0.55...; 
-		
-		//note: we can identify patterns in the instructions to execute
-		//3D techniques, e.g. scale; via the Open Graphics Library (OpenGL)
-		//note: multiple scale Commands = multiplication Commands
-	  //example variation#1:
-	  //glScalef(0.06f, 0.06f, 1.0f);
-	  //glScalef(0.55f, 0.55f, 1.0f);		
-		//example variation#2; 0.06f*0.55f
-	  //glScalef(0.06f*0.55f, 0.06f*0.55f, 1.0f);
-
-	  glScalef(0.55f, 0.55f, 1.0f);
-//	  glScalef(0.055f, 0.055f, 1.0f);
-		             
+    //    glRotatef(90.0f, 0.0f, 0.0f, 1.0f);
+    
+    //edited by Mike, 20210702; edited by Mike, 20210708
+    glScalef(0.06f, 0.06f, 1.0f);
+    //	  glScalef(0.06f, 0.06f*0.55f, 1.0f);
+    //	  glScalef(0.06f*0.55f, 0.06f*0.55f, 1.0f);
+    
+    //iRowCountMax: 18; iColumnCountMax: 10;
+    //10/18=0.55...;
+    
+    //note: we can identify patterns in the instructions to execute
+    //3D techniques, e.g. scale; via the Open Graphics Library (OpenGL)
+    //note: multiple scale Commands = multiplication Commands
+    //example variation#1:
+    //glScalef(0.06f, 0.06f, 1.0f);
+    //glScalef(0.55f, 0.55f, 1.0f);
+    //example variation#2; 0.06f*0.55f
+    //glScalef(0.06f*0.55f, 0.06f*0.55f, 1.0f);
+    
+    glScalef(0.55f, 0.55f, 1.0f);
+    //	  glScalef(0.055f, 0.055f, 1.0f);
+    
     glColor3f(1.0f,0.0f,0.0f); //red
-
+    
     glBegin(GL_TRIANGLES);
-    	//counter-clockwise sequence to auto-draw front face
-    	//front face left part; triangle at 3rd quadrant; angle: right
-    	glVertex3f(-1.000000,1.000000,0.000000); //A1
-    	glVertex3f(-1.000000,-1.000000,0.000000); //C1
-    	glVertex3f(1.000000,-1.000000,0.000000); //B1
+    //counter-clockwise sequence to auto-draw front face
+    //front face left part; triangle at 3rd quadrant; angle: right
+    glVertex3f(-1.000000,1.000000,0.000000); //A1
+    glVertex3f(-1.000000,-1.000000,0.000000); //C1
+    glVertex3f(1.000000,-1.000000,0.000000); //B1
     glEnd();
-
-/*
-		//note: use of 3D techniques, e.g. translate, rotate, scale,
-		//adds to development time, due to display output verification;
-		//fast computers speed-up development time
-		
-		//added by Mike, 20210708        
-    glBegin(GL_TRIANGLES);
+    
+    /*
+     //note: use of 3D techniques, e.g. translate, rotate, scale,
+     //adds to development time, due to display output verification;
+     //fast computers speed-up development time
+     
+     //added by Mike, 20210708
+     glBegin(GL_TRIANGLES);
     	//counter-clockwise sequence to auto-draw front face
     	//front face left part; triangle at 3rd quadrant; angle: right
     	glVertex3f(0.000000,1.000000,0.000000); //A1
     	glVertex3f(-2.000000,-1.000000,0.000000); //C1
     	glVertex3f(1.000000,-1.000000,0.000000); //B1
-    glEnd();
-*/    
+     glEnd();
+     */
     
     glPopMatrix();
 }
@@ -797,38 +797,38 @@ void Level2D::drawTextBackgroundAsQuadWithTexture()
     
     //added by Mike, 20210626; removed by Mike, 20210628
     //TO-DO: -reverify: this action
-//    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset), 0.0f, 0.0f);
-  	
-  	//removed by Mike, 20210702  
+    //    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset), 0.0f, 0.0f);
+    
+    //removed by Mike, 20210702
     //auto-scale to Window Width to Height
-//    glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
- 
+    //    glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
+    
     //added by Mike, 20210628
     //TO-DO: -reverify: instructions in macOS due to OK in Linux machine
-
-		//note: adds to development time;
-		//1) identifying correct positions due to there exist pixel and vertex positions
-		//2) identifying axis origin from where to add
-		//3) identifying object anchor to which steps are added
-		//identified delays shall add computation time during movement in galaxy
-		//speed-up via machine tool, e.g. RobotShip, assists Human Pilot
+    
+    //note: adds to development time;
+    //1) identifying correct positions due to there exist pixel and vertex positions
+    //2) identifying axis origin from where to add
+    //3) identifying object anchor to which steps are added
+    //identified delays shall add computation time during movement in galaxy
+    //speed-up via machine tool, e.g. RobotShip, assists Human Pilot
 				
-  	//edited by Mike, 20210702 	
-		//added +0.02f in x-axis as margin so text not too near left border of text background image
-		//y-axis add from window's top
+    //edited by Mike, 20210702
+    //added +0.02f in x-axis as margin so text not too near left border of text background image
+    //y-axis add from window's top
     glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset)+0.02f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
-
-
+    
+    
     //auto-scale to Window Width to Height
     glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
     
     
     //edited by Mike, 20210626
     glScalef(0.26f,0.26f,1.0f);
-
+    
     //removed by Mike, 20210702
-//    glTranslatef(0.26f, 1.1f, 0.0f); //note: y-axis; inverted; +value goes down
-
+    //    glTranslatef(0.26f, 1.1f, 0.0f); //note: y-axis; inverted; +value goes down
+    
     
     //font
     // select and enable texture FONT_TEXTURE
@@ -843,7 +843,7 @@ void Level2D::drawTextBackgroundAsQuadWithTexture()
     //row, column
     //edited by Mike, 20210618
     //    char tempText[MAX_TEXT_CHAR_ROW][MAX_TEXT_CHAR_COLUMN];
-    char tempText[MAX_TEXT_CHAR_ROW_RAM][MAX_TEXT_CHAR_COLUMN];   
+    char tempText[MAX_TEXT_CHAR_ROW_RAM][MAX_TEXT_CHAR_COLUMN];
     
     //		 sprintf(tempText,"USBONG");
     //		 sprintf(tempText,sCurrentTextContainer[0]);
@@ -1038,35 +1038,35 @@ void Level2D::drawTextBackgroundAsQuadWithTexture()
 //added by Mike, 20210703
 void Level2D::drawString(GLfloat x, GLfloat y, GLfloat z, char *string)
 {
-
+    
     GLfloat origX=x;
     while (string[0] != 0)
     {
-
-		//TO-DO: -update: this
-        //added by Mike, Feb14,2007
-		if (string[0]=='\n') {
-			y -= 0.1f;//15.0f;
-			x=origX-0.1f;//-10.0f;			
-    	}
         
-
+        //TO-DO: -update: this
+        //added by Mike, Feb14,2007
+        if (string[0]=='\n') {
+            y -= 0.1f;//15.0f;
+            x=origX-0.1f;//-10.0f;
+        }
+        
+        
         glPushMatrix();
-        	//removed by Mike, 20201010
-            //make font larger, added by Mike, Feb28,2007
-//            glScalef(2.0f, 2.0f, 2.0f);//1.5f, 1.5f, 1.5f);
-//            glScalef(0.5f, 0.5f, 0.5f);
-				//edited by Mike, 2020117
-//            draw_char(x, y, string[0]);
-            drawChar(x, y, z, string[0]);
-    	glPopMatrix();
-
+        //removed by Mike, 20201010
+        //make font larger, added by Mike, Feb28,2007
+        //            glScalef(2.0f, 2.0f, 2.0f);//1.5f, 1.5f, 1.5f);
+        //            glScalef(0.5f, 0.5f, 0.5f);
+        //edited by Mike, 2020117
+        //            draw_char(x, y, string[0]);
+        drawChar(x, y, z, string[0]);
+        glPopMatrix();
+        
         
         /* advance 10 pixels after each character */
-//TO-DO: -update: this
-//        x += 10.0f;
+        //TO-DO: -update: this
+        //        x += 10.0f;
         x += 0.1f;
-
+        
         /* go to the next character in the string */
         string++;
     }
@@ -1076,169 +1076,169 @@ void Level2D::drawString(GLfloat x, GLfloat y, GLfloat z, char *string)
 //TO-DO: -update: tile width and height
 void Level2D::drawChar(GLfloat x, GLfloat y, GLfloat z, char c)
 {
-	//edited by Mike, 20201117
-//    GLfloat tx, ty;
+    //edited by Mike, 20201117
+    //    GLfloat tx, ty;
     GLfloat tx, ty, tz;
-	
-	//added by Mike, 20210521
-/*	//removed by Mike, 20210521	drawCubeWithBlockTextureQuadFloor
-	if (c == 'H') {
-		//note: 4.0f = grid square fSideLength
-//		drawCubeWithBlockTextureQuadFloorSpecial(4.0f, tx, ty, tz, x,y,z, c);
-		drawCubeWithBlockTextureQuadFloor(4.0f, tx, ty, tz, x,y,z);
-		
-	}
-	else {		
-*/	
-		// check if the character is valid
-		if (c < ' ' || c > '~')
-			return;
-	
-//removed by Mike, 20210527		
-//	printf("c: %c\n",c);
-		
-		//TO-DO: -update: this
- //edited by Mike, 20210524	
-		if (c=='S') { //S : Sand		
-			drawCubeWithAutoDrawnPixelBlockColorQuadFloor(4.0f, x,y,z);		
-		}
-		else {						
-			// subtract 32, since the first character in the font texture
-			// is the space (ascii value 32)
-			c = c - 32;
-	
-			// determine texture coordinates; this assumes that each character
-			// in the font texture has a width-height ratio of 10:16 (see the
-			// font.tga file to understand what I mean)
-			tx = c % 12 * 0.078125f;
-			ty = 0.875f - (c / 12 * 0.125f);
-			//added by Mike, 20201117
-		//    tz = 0.875f - (c / 12 * 0.125f);
-	
-			//TO-DO: -update: set of instructions for Quad to Face Camera
-			//edited by Mike, 20210521
-		//	drawCubeWithBlockTextureQuadFacingCameraOnly(4.0f, tx, ty, tz, x,y,z);
-		//	drawCubeWithBlockTextureQuadFacingCameraOnly(4.0f, tx, ty, tz, x,0,z);
-		
-		//edited by Mike, 20210524
-	//	drawCubeWithBlockTextureQuadFloor(4.0f, tx, ty, tz, x,y,z);
-	
-//		printf(">> c: %c\n",c);
-		
-	/* //removed by Mike, 20210524
-		if (c=='-') { //c value for empty
-			drawCubeWithSolidBlockColorQuadFloor(4.0f, tx, ty, tz, x,y,z);
-		}
-		else {
-			drawCubeWithBlockTextureQuadFloor(4.0f, tx, ty, tz, x,y,z);
-		}	
-	*/
-			//added by Mike, 20210524
-			glBindTexture(GL_TEXTURE_2D, iLevelTextureObject);
-    		glEnable(GL_TEXTURE_2D);						
-    		//edited by Mike, 20210703
-//				drawCubeWithBlockTextureQuadFloor(4.0f, tx, ty, tz, x,y,z);			
-				//edited by Mike, 20210703
-//				drawCubeWithBlockTextureQuadFloor(0.0f, tx, ty, tz, x,y,z);					
-				drawTileAsQuadWithTexture(x,y,z, c);		
-				
-    		//unselect texture myLevelTextureObject
-			glDisable(GL_TEXTURE_2D);
-    		glBindTexture(GL_TEXTURE_2D, 0);
-		}	
-	
-/*	//removed by Mike, 20210521	
-	}	
-*/	
+    
+    //added by Mike, 20210521
+    /*	//removed by Mike, 20210521	drawCubeWithBlockTextureQuadFloor
+     if (c == 'H') {
+     //note: 4.0f = grid square fSideLength
+     //		drawCubeWithBlockTextureQuadFloorSpecial(4.0f, tx, ty, tz, x,y,z, c);
+     drawCubeWithBlockTextureQuadFloor(4.0f, tx, ty, tz, x,y,z);
+     
+     }
+     else {
+     */
+    // check if the character is valid
+    if (c < ' ' || c > '~')
+        return;
+    
+    //removed by Mike, 20210527
+    //	printf("c: %c\n",c);
+    
+    //TO-DO: -update: this
+    //edited by Mike, 20210524
+    if (c=='S') { //S : Sand
+        drawCubeWithAutoDrawnPixelBlockColorQuadFloor(4.0f, x,y,z);
+    }
+    else {
+        // subtract 32, since the first character in the font texture
+        // is the space (ascii value 32)
+        c = c - 32;
+        
+        // determine texture coordinates; this assumes that each character
+        // in the font texture has a width-height ratio of 10:16 (see the
+        // font.tga file to understand what I mean)
+        tx = c % 12 * 0.078125f;
+        ty = 0.875f - (c / 12 * 0.125f);
+        //added by Mike, 20201117
+        //    tz = 0.875f - (c / 12 * 0.125f);
+        
+        //TO-DO: -update: set of instructions for Quad to Face Camera
+        //edited by Mike, 20210521
+        //	drawCubeWithBlockTextureQuadFacingCameraOnly(4.0f, tx, ty, tz, x,y,z);
+        //	drawCubeWithBlockTextureQuadFacingCameraOnly(4.0f, tx, ty, tz, x,0,z);
+        
+        //edited by Mike, 20210524
+        //	drawCubeWithBlockTextureQuadFloor(4.0f, tx, ty, tz, x,y,z);
+        
+        //		printf(">> c: %c\n",c);
+        
+        /* //removed by Mike, 20210524
+         if (c=='-') { //c value for empty
+         drawCubeWithSolidBlockColorQuadFloor(4.0f, tx, ty, tz, x,y,z);
+         }
+         else {
+         drawCubeWithBlockTextureQuadFloor(4.0f, tx, ty, tz, x,y,z);
+         }
+         */
+        //added by Mike, 20210524
+        glBindTexture(GL_TEXTURE_2D, iLevelTextureObject);
+        glEnable(GL_TEXTURE_2D);
+        //edited by Mike, 20210703
+        //				drawCubeWithBlockTextureQuadFloor(4.0f, tx, ty, tz, x,y,z);
+        //edited by Mike, 20210703
+        //				drawCubeWithBlockTextureQuadFloor(0.0f, tx, ty, tz, x,y,z);
+        drawTileAsQuadWithTexture(x,y,z, c);
+        
+        //unselect texture myLevelTextureObject
+        glDisable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, 0);
+    }
+    
+    /*	//removed by Mike, 20210521
+     }
+     */
 }
 
 //added by Mike, 20210703
 void Level2D::drawTileAsQuadWithTexture(GLfloat x, GLfloat y, GLfloat z, char c)
 {
-	//edited by Mike, 20201117
-//    GLfloat tx, ty;
+    //edited by Mike, 20201117
+    //    GLfloat tx, ty;
     GLfloat tx, ty, tz;
-
+    
     /* check if the character is valid */
     if (c < ' ' || c > '~')
         return;
-
+    
     /* subtract 32, since the first character in the font texture
      * is the space (ascii value 32) */
     c = c - 32;
-
+    
     /* determine texture coordinates; this assumes that each character
      * in the font texture has a width-height ratio of 10:16 (see the
      * font.tga file to understand what I mean) */
     tx = c % 12 * 0.078125f;
     ty = 0.875f - (c / 12 * 0.125f);
     //added by Mike, 20201117
-//    tz = 0.875f - (c / 12 * 0.125f);
-
-	//glColor3f(1.0f, 1.0f, 1.0f); //set to default, i.e. white
-  glColor3f(0.0f, 0.0f, 0.0f); //set to default, i.e. black
-	
-	printf("c: %c\n",c);
-	
-	glBegin(GL_QUADS);              // Each set of 4 vertices form a quad
-        glTexCoord2f(tx, ty);
-        glVertex3f(x, y, 0.0f);
-        
-        glTexCoord2f(tx + 0.078125f, ty);
-      	glVertex3f(x+0.1f, y, 0.0f);      
-
-        glTexCoord2f(tx + 0.078125f, ty + 0.125f);
-      	glVertex3f(x+0.1f, y-0.1f, 0.0f);              
-
+    //    tz = 0.875f - (c / 12 * 0.125f);
+    
+    //glColor3f(1.0f, 1.0f, 1.0f); //set to default, i.e. white
+    glColor3f(0.0f, 0.0f, 0.0f); //set to default, i.e. black
+    
+    printf("c: %c\n",c);
+    
+    glBegin(GL_QUADS);              // Each set of 4 vertices form a quad
+    glTexCoord2f(tx, ty);
+    glVertex3f(x, y, 0.0f);
+    
+    glTexCoord2f(tx + 0.078125f, ty);
+    glVertex3f(x+0.1f, y, 0.0f);
+    
+    glTexCoord2f(tx + 0.078125f, ty + 0.125f);
+    glVertex3f(x+0.1f, y-0.1f, 0.0f);
+    
 				glTexCoord2f(tx, ty + 0.125f);
-      	glVertex3f(x, y-0.1f, 0.0f);      
-   glEnd();    
+    glVertex3f(x, y-0.1f, 0.0f);
+    glEnd();
 }
 
 /* //removed by Mike, 20210712
-//added by Mike, 20210710
-//void Level2D::drawTileAsQuadWithoutTexture(GLfloat x, GLfloat y, GLfloat z, char c)
-void Level2D::drawTileAsQuadWithoutTexture()
-{
-    glDisable(GL_TEXTURE_2D);
-    glBindTexture(GL_TEXTURE_2D, 0);
-    
-    glPushMatrix();
+ //added by Mike, 20210710
+ //void Level2D::drawTileAsQuadWithoutTexture(GLfloat x, GLfloat y, GLfloat z, char c)
+ void Level2D::drawTileAsQuadWithoutTexture()
+ {
+ glDisable(GL_TEXTURE_2D);
+ glBindTexture(GL_TEXTURE_2D, 0);
+ 
+ glPushMatrix();
 	
-		//glColor3f(1.0f, 1.0f, 1.0f); //set to default, i.e. white
+ //glColor3f(1.0f, 1.0f, 1.0f); //set to default, i.e. white
 	//  glColor3f(0.0f, 0.0f, 0.0f); //set to default, i.e. black
-  	glColor3f(1.0f, 0.0f, 0.0f); //red
-  	
-  	//TO-DO: -add: tile with auto-drawn pattern; without using image texture object
-//  	printf (">>>>>>>>>>>>>>>>>>>>>>>>>>>> HALLO");
-		
-		//note: vertex position sequence to be auto-drawn
-		//counter-clockwise sequence to auto-draw front face
-		//add this due to 3rd quadrant
-		//size of tile width: 0.1f
-//		glTranslatef(-0.1f-0.05f, 0.0f, 0.0f);		
-		//re-verify: cause of 0.01f; due to Linux machine?
-		glTranslatef(-0.1f-0.05f-0.01f, 0.0f, 0.0f);		
-		
-		//TO-DO: -update: this
-		//note: 3rd quadrant
-		glBegin(GL_QUADS); // Each set of 4 vertices form a quad
+ glColor3f(1.0f, 0.0f, 0.0f); //red
+ 
+ //TO-DO: -add: tile with auto-drawn pattern; without using image texture object
+ //  	printf (">>>>>>>>>>>>>>>>>>>>>>>>>>>> HALLO");
+ 
+ //note: vertex position sequence to be auto-drawn
+ //counter-clockwise sequence to auto-draw front face
+ //add this due to 3rd quadrant
+ //size of tile width: 0.1f
+ //		glTranslatef(-0.1f-0.05f, 0.0f, 0.0f);
+ //re-verify: cause of 0.01f; due to Linux machine?
+ glTranslatef(-0.1f-0.05f-0.01f, 0.0f, 0.0f);
+ 
+ //TO-DO: -update: this
+ //note: 3rd quadrant
+ glBegin(GL_QUADS); // Each set of 4 vertices form a quad
 	//        glTexCoord2f(tx, ty);
-        	glVertex3f(0.0f, 0.0f, 0.0f);
-        	
+ glVertex3f(0.0f, 0.0f, 0.0f);
+ 
 	//        glTexCoord2f(tx + 0.078125f, ty);
-      		glVertex3f(0.0f-0.1f, 0.0f, 0.0f);      
+ glVertex3f(0.0f-0.1f, 0.0f, 0.0f);
 	
 	//        glTexCoord2f(tx + 0.078125f, ty + 0.125f);
-      		glVertex3f(0.0f-0.1f, 0.0f-0.1f, 0.0f);              
+ glVertex3f(0.0f-0.1f, 0.0f-0.1f, 0.0f);
 	
 	//				glTexCoord2f(tx, ty + 0.125f);
-      		glVertex3f(0.0f, 0.0f-0.1f, 0.0f);      
-   	glEnd();    
-  
-  glPopMatrix();
-}
-*/
+ glVertex3f(0.0f, 0.0f-0.1f, 0.0f);
+ glEnd();
+ 
+ glPopMatrix();
+ }
+ */
 
 //edited by Mike, 20210712
 void Level2D::drawTileAsQuadWithoutTexture()
@@ -1247,249 +1247,254 @@ void Level2D::drawTileAsQuadWithoutTexture()
     glBindTexture(GL_TEXTURE_2D, 0);
     
     glPushMatrix();
-	
-		//glColor3f(1.0f, 1.0f, 1.0f); //set to default, i.e. white
-	//  glColor3f(0.0f, 0.0f, 0.0f); //set to default, i.e. black
-  	glColor3f(1.0f, 0.0f, 0.0f); //red
-  	
-  	//TO-DO: -add: tile with auto-drawn pattern; without using image texture object
-//  	printf (">>>>>>>>>>>>>>>>>>>>>>>>>>>> HALLO");
-
-//  	printf (">>> fGridSquareWidth: %f; fGridSquareHeight: %f",fGridSquareWidth,fGridSquareHeight);
-
-
-		float fGridTileWidthVertexPosition = myUsbongUtils->autoConvertFromPixelToVertexGridTileWidth(fGridSquareWidth);
-		float fGridTileHeightVertexPosition = myUsbongUtils->autoConvertFromPixelToVertexGridTileHeight(fGridSquareHeight);		
-
-		//TO-DO: -reverify: cause of /2.0f/4.0f; and 2.0f/2.0f;
-//		fGridTileWidthVertexPosition = fGridTileWidthVertexPosition/2.0f/3.0f;
-		fGridTileWidthVertexPosition = fGridTileWidthVertexPosition/2.0f/4.0f;
-		fGridTileHeightVertexPosition = fGridTileHeightVertexPosition/2.0f/2.0f;		
-
-		//added by Mike, 20210713
-		//get positive value
-		if (fGridTileWidthVertexPosition<0) {
-			fGridTileWidthVertexPosition=fGridTileWidthVertexPosition*(-1);
-		}
-		if (fGridTileHeightVertexPosition<0) {
-			fGridTileHeightVertexPosition=fGridTileHeightVertexPosition*(-1);
-		}
-
-//  	printf (">>> fGridTileWidthVertexPosition: %f; fGridTileHeightVertexPosition: %f",fGridTileWidthVertexPosition,fGridTileHeightVertexPosition);
-
-        //added by Mike, 20210715
-        //note: add this set of instructions due to excess border visible
-        //verified: screen/monitor width and height to be OK
-        //10/3 = 3.3333... cause of problem?
-             #if defined(__APPLE__)
-            //note: right border of tile only partly visible
-            fGridTileWidthVertexPosition=fGridTileWidthVertexPosition+0.0006f;
-             #endif
     
-		//note: vertex position sequence to be auto-drawn
-		//counter-clockwise sequence to auto-draw front face
-
-		//add this due to 3rd quadrant
-		//size of tile width: 0.1f
-//		glTranslatef(-0.1f-0.05f, 0.0f, 0.0f);		
-		//re-verify: cause of 0.01f; due to Linux machine?
-//		glTranslatef(-0.1f-0.05f-0.01f, 0.0f, 0.0f);		
-		
-		//TO-DO: -update: this
-		//note: 3rd quadrant
-		glBegin(GL_QUADS); // Each set of 4 vertices form a quad
-	//        glTexCoord2f(tx, ty);
-        	glVertex3f(0.0f, 0.0f, 0.0f);
-        	
-	//        glTexCoord2f(tx + 0.078125f, ty);
-      		glVertex3f(0.0f-fGridTileWidthVertexPosition, 0.0f, 0.0f);      
-	
-	//        glTexCoord2f(tx + 0.078125f, ty + 0.125f);
-      		glVertex3f(0.0f-fGridTileWidthVertexPosition, 0.0f-fGridTileHeightVertexPosition, 0.0f);              
-	
-	//				glTexCoord2f(tx, ty + 0.125f);
-      		glVertex3f(0.0f, 0.0f-fGridTileHeightVertexPosition, 0.0f);      
-   	glEnd();    
-  
-  glPopMatrix();
+    //glColor3f(1.0f, 1.0f, 1.0f); //set to default, i.e. white
+    //  glColor3f(0.0f, 0.0f, 0.0f); //set to default, i.e. black
+    glColor3f(1.0f, 0.0f, 0.0f); //red
+    
+    //TO-DO: -add: tile with auto-drawn pattern; without using image texture object
+    //  	printf (">>>>>>>>>>>>>>>>>>>>>>>>>>>> HALLO");
+    
+    //  	printf (">>> fGridSquareWidth: %f; fGridSquareHeight: %f",fGridSquareWidth,fGridSquareHeight);
+    
+    
+    float fGridTileWidthVertexPosition = myUsbongUtils->autoConvertFromPixelToVertexGridTileWidth(fGridSquareWidth);
+    float fGridTileHeightVertexPosition = myUsbongUtils->autoConvertFromPixelToVertexGridTileHeight(fGridSquareHeight);
+    
+    //TO-DO: -reverify: cause of /2.0f/4.0f; and 2.0f/2.0f;
+    //		fGridTileWidthVertexPosition = fGridTileWidthVertexPosition/2.0f/3.0f;
+    fGridTileWidthVertexPosition = fGridTileWidthVertexPosition/2.0f/4.0f;
+    fGridTileHeightVertexPosition = fGridTileHeightVertexPosition/2.0f/2.0f;
+    
+    //added by Mike, 20210713
+    //get positive value
+    if (fGridTileWidthVertexPosition<0) {
+        fGridTileWidthVertexPosition=fGridTileWidthVertexPosition*(-1);
+    }
+    if (fGridTileHeightVertexPosition<0) {
+        fGridTileHeightVertexPosition=fGridTileHeightVertexPosition*(-1);
+    }
+    
+    //  	printf (">>> fGridTileWidthVertexPosition: %f; fGridTileHeightVertexPosition: %f",fGridTileWidthVertexPosition,fGridTileHeightVertexPosition);
+    
+    //added by Mike, 20210715
+    //note: add this set of instructions due to excess border visible
+    //verified: screen/monitor width and height to be OK
+    //10/3 = 3.3333... cause of problem?
+#if defined(__APPLE__)
+    //note: right border of tile only partly visible
+    fGridTileWidthVertexPosition=fGridTileWidthVertexPosition+0.0006f;
+#endif
+    
+    //note: vertex position sequence to be auto-drawn
+    //counter-clockwise sequence to auto-draw front face
+    
+    //add this due to 3rd quadrant
+    //size of tile width: 0.1f
+    //		glTranslatef(-0.1f-0.05f, 0.0f, 0.0f);
+    //re-verify: cause of 0.01f; due to Linux machine?
+    //		glTranslatef(-0.1f-0.05f-0.01f, 0.0f, 0.0f);
+    
+    //TO-DO: -update: this
+    //note: 3rd quadrant
+    glBegin(GL_QUADS); // Each set of 4 vertices form a quad
+    //        glTexCoord2f(tx, ty);
+    glVertex3f(0.0f, 0.0f, 0.0f);
+    
+    //        glTexCoord2f(tx + 0.078125f, ty);
+    glVertex3f(0.0f-fGridTileWidthVertexPosition, 0.0f, 0.0f);
+    
+    //        glTexCoord2f(tx + 0.078125f, ty + 0.125f);
+    glVertex3f(0.0f-fGridTileWidthVertexPosition, 0.0f-fGridTileHeightVertexPosition, 0.0f);
+    
+    //				glTexCoord2f(tx, ty + 0.125f);
+    glVertex3f(0.0f, 0.0f-fGridTileHeightVertexPosition, 0.0f);
+   	glEnd();
+    
+    glPopMatrix();
 }
 
 //edited by Mike, 20210716
 void Level2D::drawTileAsQuadWithTexture()
 {
-
-		glBindTexture(GL_TEXTURE_2D, iLevelTextureObject);
-    glEnable(GL_TEXTURE_2D);						
+    
+    glBindTexture(GL_TEXTURE_2D, iLevelTextureObject);
+    glEnable(GL_TEXTURE_2D);
     
     //notes: TO-DO: -reverify: indexed 64 colors max segmentation fault problem
     //16x16pixels; 256x256pixels width x height .tga image file
-    //texture coordinates; 
+    //texture coordinates;
     //width: 1.0/16.0 = 0.0625
-    //height: 1.0/16.0 = 0.0625    
-        
-/*
-    glDisable(GL_TEXTURE_2D);
-    glBindTexture(GL_TEXTURE_2D, 0);
-*/
+    //height: 1.0/16.0 = 0.0625
+    
+    /*
+     glDisable(GL_TEXTURE_2D);
+     glBindTexture(GL_TEXTURE_2D, 0);
+     */
     
     glPushMatrix();
-	
-	//  glColor3f(0.0f, 0.0f, 0.0f); //set to default, i.e. black
-		//edited by Mike, 20210717
-//  	glColor3f(1.0f, 0.0f, 0.0f); //red
-		glColor3f(1.0f, 1.0f, 1.0f); //set to default, i.e. white
-  	
-  	//TO-DO: -add: tile with auto-drawn pattern; without using image texture object
-//  	printf (">>>>>>>>>>>>>>>>>>>>>>>>>>>> HALLO");
-
-//  	printf (">>> fGridSquareWidth: %f; fGridSquareHeight: %f",fGridSquareWidth,fGridSquareHeight);
-
-
-		float fGridTileWidthVertexPosition = myUsbongUtils->autoConvertFromPixelToVertexGridTileWidth(fGridSquareWidth);
-		float fGridTileHeightVertexPosition = myUsbongUtils->autoConvertFromPixelToVertexGridTileHeight(fGridSquareHeight);		
-
-/* //removed by Mike, 20210717
-		//TO-DO: -reverify: cause of /2.0f/4.0f; and 2.0f/2.0f;
-//		fGridTileWidthVertexPosition = fGridTileWidthVertexPosition/2.0f/3.0f;
-		fGridTileWidthVertexPosition = fGridTileWidthVertexPosition/2.0f/4.0f;
-		fGridTileHeightVertexPosition = fGridTileHeightVertexPosition/2.0f/2.0f;		
-*/
-/*
-		fGridTileWidthVertexPosition = fGridTileWidthVertexPosition*2.0f*4.0f;
-		fGridTileHeightVertexPosition = fGridTileHeightVertexPosition*2.0f*2.0f;		
-*/
-		//TO-DO: -update: this
-		fGridTileWidthVertexPosition = 1.0f; //0.1f
-		fGridTileHeightVertexPosition = 0.1f; //0.1f		
-
-		//added by Mike, 20210713
-		//get positive value
-		if (fGridTileWidthVertexPosition<0) {
-			fGridTileWidthVertexPosition=fGridTileWidthVertexPosition*(-1);
-		}
-		if (fGridTileHeightVertexPosition<0) {
-			fGridTileHeightVertexPosition=fGridTileHeightVertexPosition*(-1);
-		}
-
-//  	printf (">>> fGridTileWidthVertexPosition: %f; fGridTileHeightVertexPosition: %f",fGridTileWidthVertexPosition,fGridTileHeightVertexPosition);
-
-        //added by Mike, 20210715
-        //note: add this set of instructions due to excess border visible
-        //verified: screen/monitor width and height to be OK
-        //10/3 = 3.3333... cause of problem?
-        //added by Mike, 20210717
-        //note: partly border visible occurs in Linux machine;
-        //due to instructions that I wrote
-        
-             #if defined(__APPLE__)
-            //note: right border of tile only partly visible
-            fGridTileWidthVertexPosition=fGridTileWidthVertexPosition+0.0006f;
-             #endif
     
-		//note: vertex position sequence to be auto-drawn
-		//counter-clockwise sequence to auto-draw front face
+    //  glColor3f(0.0f, 0.0f, 0.0f); //set to default, i.e. black
+    //edited by Mike, 20210717
+    //  	glColor3f(1.0f, 0.0f, 0.0f); //red
+    glColor3f(1.0f, 1.0f, 1.0f); //set to default, i.e. white
+    
+    //TO-DO: -add: tile with auto-drawn pattern; without using image texture object
+    //  	printf (">>>>>>>>>>>>>>>>>>>>>>>>>>>> HALLO");
+    
+      	printf (">>> fGridSquareWidth: %f; fGridSquareHeight: %f",fGridSquareWidth,fGridSquareHeight);
+    
+    
+    float fGridTileWidthVertexPosition = myUsbongUtils->autoConvertFromPixelToVertexGridTileWidth(fGridSquareWidth);
+    float fGridTileHeightVertexPosition = myUsbongUtils->autoConvertFromPixelToVertexGridTileHeight(fGridSquareHeight);
+    
+    /* //removed by Mike, 20210717
+     //TO-DO: -reverify: cause of /2.0f/4.0f; and 2.0f/2.0f;
+     //		fGridTileWidthVertexPosition = fGridTileWidthVertexPosition/2.0f/3.0f;
+     fGridTileWidthVertexPosition = fGridTileWidthVertexPosition/2.0f/4.0f;
+     fGridTileHeightVertexPosition = fGridTileHeightVertexPosition/2.0f/2.0f;
+     */
+/*
+     fGridTileWidthVertexPosition = fGridTileWidthVertexPosition*2.0f*4.0f;
+     fGridTileHeightVertexPosition = fGridTileHeightVertexPosition*2.0f*2.0f;
+*/
+    fGridTileWidthVertexPosition = fGridTileWidthVertexPosition*2.0f;
+    fGridTileHeightVertexPosition = fGridTileHeightVertexPosition*4.0f;
 
-		//add this due to 3rd quadrant
-		//size of tile width: 0.1f
-//		glTranslatef(-0.1f-0.05f, 0.0f, 0.0f);		
-		//re-verify: cause of 0.01f; due to Linux machine?
-//		glTranslatef(-0.1f-0.05f-0.01f, 0.0f, 0.0f);		
-		
-		//TO-DO: -update: this
-		//note: 3rd quadrant
-/* //edited by Mike, 20210717		
-		glBegin(GL_QUADS); // Each set of 4 vertices form a quad
-	        glTexCoord2f(fTx, fTy);
-        	glVertex3f(0.0f, 0.0f, 0.0f);
-        	
-	        glTexCoord2f(fTx + 0.0625f, fTy);
-      		glVertex3f(0.0f-fGridTileWidthVertexPosition, 0.0f, 0.0f);      
-	
-	        glTexCoord2f(fTx + 0.0625f, fTy + 0.0625f);
-      		glVertex3f(0.0f-fGridTileWidthVertexPosition, 0.0f-fGridTileHeightVertexPosition, 0.0f);              
-	
+    //TO-DO: -update: this
+/*
+    fGridTileWidthVertexPosition = 1.0f; //0.1f
+    fGridTileHeightVertexPosition = 0.1f; //0.1f
+*/
+    printf(">>>fGridTileWidthVertexPosition: %f; fGridTileHeightVertexPosition: %f",fGridTileWidthVertexPosition,fGridTileHeightVertexPosition);
+ 
+    //added by Mike, 20210713
+    //get positive value
+    if (fGridTileWidthVertexPosition<0) {
+        fGridTileWidthVertexPosition=fGridTileWidthVertexPosition*(-1);
+    }
+    if (fGridTileHeightVertexPosition<0) {
+        fGridTileHeightVertexPosition=fGridTileHeightVertexPosition*(-1);
+    }
+    
+    //  	printf (">>> fGridTileWidthVertexPosition: %f; fGridTileHeightVertexPosition: %f",fGridTileWidthVertexPosition,fGridTileHeightVertexPosition);
+    
+    //added by Mike, 20210715
+    //note: add this set of instructions due to excess border visible
+    //verified: screen/monitor width and height to be OK
+    //10/3 = 3.3333... cause of problem?
+    //added by Mike, 20210717
+    //note: partly border visible occurs in Linux machine;
+    //due to instructions that I wrote
+    
+#if defined(__APPLE__)
+    //note: right border of tile only partly visible
+    fGridTileWidthVertexPosition=fGridTileWidthVertexPosition+0.0006f;
+#endif
+    
+    //note: vertex position sequence to be auto-drawn
+    //counter-clockwise sequence to auto-draw front face
+    
+    //add this due to 3rd quadrant
+    //size of tile width: 0.1f
+    //		glTranslatef(-0.1f-0.05f, 0.0f, 0.0f);
+    //re-verify: cause of 0.01f; due to Linux machine?
+    //		glTranslatef(-0.1f-0.05f-0.01f, 0.0f, 0.0f);
+
+    glTranslatef(0.0f, fGridTileHeightVertexPosition, 0.0f);
+
+    //TO-DO: -update: this
+    //note: 3rd quadrant
+    /* //edited by Mike, 20210717
+     glBegin(GL_QUADS); // Each set of 4 vertices form a quad
+     glTexCoord2f(fTx, fTy);
+     glVertex3f(0.0f, 0.0f, 0.0f);
+     
+     glTexCoord2f(fTx + 0.0625f, fTy);
+     glVertex3f(0.0f-fGridTileWidthVertexPosition, 0.0f, 0.0f);
+     
+     glTexCoord2f(fTx + 0.0625f, fTy + 0.0625f);
+     glVertex3f(0.0f-fGridTileWidthVertexPosition, 0.0f-fGridTileHeightVertexPosition, 0.0f);
+     
 					glTexCoord2f(fTx, fTy + 0.0625f);
-      		glVertex3f(0.0f, 0.0f-fGridTileHeightVertexPosition, 0.0f);      
-   	glEnd();   
-*/   	 
-
-		//added by Mike, 20210717
-//		glRotatef(180, 1.0f, 0.0f, 0.0f);
-
+     glVertex3f(0.0f, 0.0f-fGridTileHeightVertexPosition, 0.0f);
+     glEnd();
+     */
+    
+    //added by Mike, 20210717
+    //		glRotatef(180, 1.0f, 0.0f, 0.0f);
+    
     //TO-DO: -update: this
     float fTx = 0.0f;
     float fTy = 0.0f;
-
-		glBegin(GL_QUADS); // Each set of 4 vertices form a quad
-	        glTexCoord2f(fTx, fTy);
-        	glVertex3f(0.0f, 0.0f, 0.0f);
-        	
-	        glTexCoord2f(fTx + 1.0f, fTy);
-      		glVertex3f(0.0f-fGridTileWidthVertexPosition, 0.0f, 0.0f);      
-	
-	        glTexCoord2f(fTx + 1.0f, fTy + 1.0f);
-      		glVertex3f(0.0f-fGridTileWidthVertexPosition, 0.0f-fGridTileHeightVertexPosition, 0.0f);              
-	
-					glTexCoord2f(fTx, fTy + 1.0f);
-      		glVertex3f(0.0f, 0.0f-fGridTileHeightVertexPosition, 0.0f);      
-   	glEnd();   
+    
+    glBegin(GL_QUADS); // Each set of 4 vertices form a quad
+    glTexCoord2f(fTx, fTy);
+    glVertex3f(0.0f, 0.0f, 0.0f);
+    
+    glTexCoord2f(fTx + 1.0f, fTy);
+    glVertex3f(0.0f-fGridTileWidthVertexPosition, 0.0f, 0.0f);
+    
+    glTexCoord2f(fTx + 1.0f, fTy + 1.0f);
+    glVertex3f(0.0f-fGridTileWidthVertexPosition, 0.0f-fGridTileHeightVertexPosition, 0.0f);
+    
+    glTexCoord2f(fTx, fTy + 1.0f);
+    glVertex3f(0.0f, 0.0f-fGridTileHeightVertexPosition, 0.0f);
+   	glEnd();
    	
-/*   	
-//edited by Mike, 20210610
-        float fX=-1.0f;
-        float fY=1.0f;
-        	      
-				// Each set of 4 vertices form a quad        	      
-        glBegin(GL_QUADS);              
-            	glTexCoord2f(0.25f+fTaoAnimationFrameOffset, fTaoAnimationFrameOffsetYAxis);               	
-        			glVertex3f(fX, fY, 0.0f);
-
-            	glTexCoord2f(0.0f+fTaoAnimationFrameOffset, fTaoAnimationFrameOffsetYAxis);               	
-      				glVertex3f(fX+2.0f, fY, 0.0f);      
-
-           		glTexCoord2f(0.0f+fTaoAnimationFrameOffset, fTaoAnimationFrameOffsetYAxis+0.25f);           	
-      				glVertex3f(fX+2.0f, fY-2.0f, 0.0f);              
-
-            	glTexCoord2f(0.25+fTaoAnimationFrameOffset, fTaoAnimationFrameOffsetYAxis+0.25f); //0.5f);
-      				glVertex3f(fX, fY-2.0f, 0.0f);      
-   			glEnd();            	
-*/   	
-  
-		glDisable(GL_TEXTURE_2D);
-		glBindTexture(GL_TEXTURE_2D, 0);  
-  
-  glPopMatrix();
+    /*
+     //edited by Mike, 20210610
+     float fX=-1.0f;
+     float fY=1.0f;
+     
+     // Each set of 4 vertices form a quad
+     glBegin(GL_QUADS);
+     glTexCoord2f(0.25f+fTaoAnimationFrameOffset, fTaoAnimationFrameOffsetYAxis);
+     glVertex3f(fX, fY, 0.0f);
+     glTexCoord2f(0.0f+fTaoAnimationFrameOffset, fTaoAnimationFrameOffsetYAxis);
+     glVertex3f(fX+2.0f, fY, 0.0f);
+     glTexCoord2f(0.0f+fTaoAnimationFrameOffset, fTaoAnimationFrameOffsetYAxis+0.25f);
+     glVertex3f(fX+2.0f, fY-2.0f, 0.0f);
+     glTexCoord2f(0.25+fTaoAnimationFrameOffset, fTaoAnimationFrameOffsetYAxis+0.25f); //0.5f);
+     glVertex3f(fX, fY-2.0f, 0.0f);
+     glEnd();
+     */
+    
+    glDisable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, 0);
+    
+    glPopMatrix();
 }
 
 //added by Mike, 20210708; edited by Mike, 20210712
 //TO-DO: -add: function with tile patterns
 //TO-DO: -update: this
 void Level2D::drawLevelWithTexture()
-{	
-/*	//removed by Mike, 20210712		
-		//added by Mike, 20210705
-		#if defined(__APPLE__)
-		#else
+{
+    /*	//removed by Mike, 20210712
+     //added by Mike, 20210705
+     #if defined(__APPLE__)
+     #else
     	glTranslatef(+0.02f, 0.0f, 0.0f);
-		#endif
-*/		    
-		
-    glPushMatrix();    
-//    printf(">>>myUsbongUtils->autoConvertFromPixelToVertexPointX(0): %f\n",myUsbongUtils->autoConvertFromPixelToVertexPointX(0));
-      
-			//added by Mike, 20210712
-			//add +1.0f due to 3rd quadrant in the draw function
-			//incorrect output if multiple glTranslate(...) Commands
-//    	glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(0+fGridSquareWidth*1.0f), 0.0f, 0.0f);
-			
-			//column 1; start at 0; note +1.0f to be 2.0f due to 3rd quadrant in drawTileAsQuadWithoutTexture(...)
-    	glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(0.0f+fGridSquareWidth*(1.0f+1.0f)), myUsbongUtils->autoConvertFromPixelToVertexPointY(0.0f+fGridSquareHeight*0.0f), 0.0f);
+     #endif
+     */
     
-    	//edited by Mike, 20210710
-    	//drawPressNextSymbol();
-    	//edited by Mike, 20210717
-//    	drawTileAsQuadWithoutTexture();
-			drawTileAsQuadWithTexture();
+    glPushMatrix();
+    //    printf(">>>myUsbongUtils->autoConvertFromPixelToVertexPointX(0): %f\n",myUsbongUtils->autoConvertFromPixelToVertexPointX(0));
+    
+    //added by Mike, 20210712
+    //add +1.0f due to 3rd quadrant in the draw function
+    //incorrect output if multiple glTranslate(...) Commands
+    //    	glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(0+fGridSquareWidth*1.0f), 0.0f, 0.0f);
+    
+    //column 1; start at 0; note +1.0f to be 2.0f due to 3rd quadrant in drawTileAsQuadWithoutTexture(...)
+    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(0.0f+fGridSquareWidth*(1.0f+1.0f)), myUsbongUtils->autoConvertFromPixelToVertexPointY(0.0f+fGridSquareHeight*0.0f), 0.0f);
+    
+    //edited by Mike, 20210710
+    //drawPressNextSymbol();
+    //edited by Mike, 20210717
+    //    	drawTileAsQuadWithoutTexture();
+    drawTileAsQuadWithTexture();
     glPopMatrix();
     
 }
@@ -1498,52 +1503,59 @@ void Level2D::drawLevelWithTexture()
 //TO-DO: -add: function with tile patterns
 //TO-DO: -update: this
 void Level2D::drawLevelWithTextureUsingInputFile()
-{	
-/*	//removed by Mike, 20210712		
-    glPushMatrix();    		
-			//column 1; start at 0; note +1.0f to be 2.0f due to 3rd quadrant in drawTileAsQuadWithoutTexture(...)
+{
+    /*	//removed by Mike, 20210712
+     glPushMatrix();
+     //column 1; start at 0; note +1.0f to be 2.0f due to 3rd quadrant in drawTileAsQuadWithoutTexture(...)
     	glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(0.0f+fGridSquareWidth*(1.0f+1.0f)), myUsbongUtils->autoConvertFromPixelToVertexPointY(0.0f+fGridSquareHeight*0.0f), 0.0f);
-    
+     
     	//edited by Mike, 20210710
     	//drawPressNextSymbol();
     	drawTileAsQuadWithoutTexture();
-    glPopMatrix();
+     glPopMatrix();
+     */
+    
+    /*
+     for (int iRowCountToSetDefault=0; iRowCountToSetDefault<MAX_TEXT_CHAR_ROW_RAM; iRowCountToSetDefault++) {
+     for (int iColumnCount=0; iColumnCount<MAX_TEXT_CHAR_COLUMN; iColumnCount++) {
+     //verified: in macOS, with Japanese keyboard ro-maji input, "¥0", backspace is "¥"
+     tempText[iRowCountToSetDefault][iColumnCount]='\0';
+     }
+     }
+     */
+    //TO-DO: -update: this
+    
+    int iRowCountMax=10;
+    int iColumnCountMax=18;
+    int iHeightCountMax=10;
+    
+    for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
+        //iCurrentMaxColumnCountPerRowContainer[iRowCount];
+        for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {
+            //                if (cCurrentTextContainer[iRowCount][iColumnCount]) {
+            if (sCurrentLevelMapContainer[iRowCount][iColumnCount].compare("\"G\"") == 0) { //TRUE
+                glPushMatrix();
+/*  //edited by Mike, 20210717
+                //add +1.0f in x-axis due to 3rd quadrant in the draw function
+                //center 0,0,0 origin; vertex positions
+                //column 1; start at 0; note +1.0f to be 2.0f due to 3rd quadrant in drawTileAsQuadWithoutTexture(...)
+                glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(0.0f+fGridSquareWidth*(iColumnCount+1.0f)), myUsbongUtils->autoConvertFromPixelToVertexPointY(0.0f+fGridSquareHeight*iRowCount), 0.0f);
+                
+                //edited by Mike, 20210710
+                //drawPressNextSymbol();
+                //edited by Mike, 20210717
+                //                    drawTileAsQuadWithoutTexture();
 */
 
-/*
-        for (int iRowCountToSetDefault=0; iRowCountToSetDefault<MAX_TEXT_CHAR_ROW_RAM; iRowCountToSetDefault++) {
-            for (int iColumnCount=0; iColumnCount<MAX_TEXT_CHAR_COLUMN; iColumnCount++) {
-								//verified: in macOS, with Japanese keyboard ro-maji input, "¥0", backspace is "¥"
-                tempText[iRowCountToSetDefault][iColumnCount]='\0';
+                //add +1.0f in x-axis and y-axis due to 3rd quadrant in the draw function
+                //center 0,0,0 origin; vertex positions
+                glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(0.0f+fGridSquareWidth*(iColumnCount+1.0f)), myUsbongUtils->autoConvertFromPixelToVertexPointY(0.0f+fGridSquareHeight*(iRowCount+1.0f)), 0.0f);
+ 
+                drawTileAsQuadWithTexture();
+                glPopMatrix();
             }
         }
-*/
-			//TO-DO: -update: this
-		
-    	int iRowCountMax=10;
-    	int iColumnCountMax=18;
-    	int iHeightCountMax=10;   
-	
-        for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
-        	//iCurrentMaxColumnCountPerRowContainer[iRowCount];
-        	for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {
-//                if (cCurrentTextContainer[iRowCount][iColumnCount]) {
-                if (sCurrentLevelMapContainer[iRowCount][iColumnCount].compare("\"G\"") == 0) { //TRUE
-                    glPushMatrix();
-                    //add +1.0f in x-axis due to 3rd quadrant in the draw function
-                    //center 0,0,0 origin; vertex positions
-                    //column 1; start at 0; note +1.0f to be 2.0f due to 3rd quadrant in drawTileAsQuadWithoutTexture(...)
-                    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(0.0f+fGridSquareWidth*(iColumnCount+1.0f)), myUsbongUtils->autoConvertFromPixelToVertexPointY(0.0f+fGridSquareHeight*iRowCount), 0.0f);
-                    
-                    //edited by Mike, 20210710
-                    //drawPressNextSymbol();
-                    //edited by Mike, 20210717
-//                    drawTileAsQuadWithoutTexture();
-                    drawTileAsQuadWithTexture();                    
-                    glPopMatrix();
-                }
-            }
-        }
+    }
     
 }
 
@@ -1551,42 +1563,42 @@ void Level2D::drawLevelWithTextureUsingInputFile()
 //TO-DO: -update: this
 void Level2D::drawLevelWithTexturePrev()
 {
-
-/* //removed by Mike, 20210703    
-    //added by Mike, 20210614
-    //note; add glPushMatrix() and glPopMatrix()
-    glPushMatrix();
     
-    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixel), myZPosAsPixel);
+    /* //removed by Mike, 20210703
+     //added by Mike, 20210614
+     //note; add glPushMatrix() and glPopMatrix()
+     glPushMatrix();
+     
+     glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixel), myZPosAsPixel);
+     
+     //        glScalef(2.5f,5.0f,1.0f);
+     //edited by Mike, 20210616
+     //        glScalef(2.0f,2.0f,1.0f);
+     //        glScalef(2.5f,4.0f,1.0f);
+     //edited by Mike, 20210627
+     //    glScalef(5.0f,4.0f,1.0f);
+     glScalef(5.0f,2.5f,1.0f);
+     glTranslatef(0.0f, -0.1f, 0.0f);
+     
+     
+     //TO-DO: -update: draw instructions
+     drawTextBackgroundObject();
+     
+     glScalef(1.0f,1.0f,1.0f);
+     
+     //added by Mike, 20210613
+     glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel), -myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixel), -myZPosAsPixel);
+     glPopMatrix();
+     */
     
-    //        glScalef(2.5f,5.0f,1.0f);
-    //edited by Mike, 20210616
-    //        glScalef(2.0f,2.0f,1.0f);
-    //        glScalef(2.5f,4.0f,1.0f);
-    //edited by Mike, 20210627
-    //    glScalef(5.0f,4.0f,1.0f);
-    glScalef(5.0f,2.5f,1.0f);
-    glTranslatef(0.0f, -0.1f, 0.0f);
-    
-    
-    //TO-DO: -update: draw instructions
-    drawTextBackgroundObject();
-    
-    glScalef(1.0f,1.0f,1.0f);
-    
-    //added by Mike, 20210613
-    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel), -myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixel), -myZPosAsPixel);
-    glPopMatrix();
-*/    
-
-/*	//removed by Mike, 20210703    
-    if (isAtMaxTextCharRow) {
-        if ((idrawPressNextSymbolCount)%2==0) {
-            drawPressNextSymbol();
-        }
-        idrawPressNextSymbolCount=idrawPressNextSymbolCount+1;
-    }
-*/
+    /*	//removed by Mike, 20210703
+     if (isAtMaxTextCharRow) {
+     if ((idrawPressNextSymbolCount)%2==0) {
+     drawPressNextSymbol();
+     }
+     idrawPressNextSymbolCount=idrawPressNextSymbolCount+1;
+     }
+     */
     
     //added by Mike, 20210614
     //set TOP-LEFT origin/anchor/reference point; quadrant 4, y-axis inverted; x and y positive
@@ -1604,48 +1616,48 @@ void Level2D::drawLevelWithTexturePrev()
     
     //added by Mike, 20210626; removed by Mike, 20210628
     //TO-DO: -reverify: this action
-//    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset), 0.0f, 0.0f);
-  	
-  	//removed by Mike, 20210702  
+    //    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset), 0.0f, 0.0f);
+    
+    //removed by Mike, 20210702
     //auto-scale to Window Width to Height
-//    glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
- 
+    //    glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
+    
     //added by Mike, 20210628
     //TO-DO: -reverify: instructions in macOS due to OK in Linux machine
-
-		//note: adds to development time;
-		//1) identifying correct positions due to there exist pixel and vertex positions
-		//2) identifying axis origin from where to add
-		//3) identifying object anchor to which steps are added
-		//identified delays shall add computation time during movement in galaxy
-		//speed-up via machine tool, e.g. RobotShip, assists Human Pilot
+    
+    //note: adds to development time;
+    //1) identifying correct positions due to there exist pixel and vertex positions
+    //2) identifying axis origin from where to add
+    //3) identifying object anchor to which steps are added
+    //identified delays shall add computation time during movement in galaxy
+    //speed-up via machine tool, e.g. RobotShip, assists Human Pilot
 				
-  	//edited by Mike, 20210702 	
-		//added +0.02f in x-axis as margin so text not too near left border of text background image
-		//y-axis add from window's top
+    //edited by Mike, 20210702
+    //added +0.02f in x-axis as margin so text not too near left border of text background image
+    //y-axis add from window's top
     glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset)+0.02f, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
-
-
-/* //removed by Mike, 20210703
-    //auto-scale to Window Width to Height
-    glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
     
     
-    //edited by Mike, 20210626
-    glScalef(0.26f,0.26f,1.0f);
-*/
-
+    /* //removed by Mike, 20210703
+     //auto-scale to Window Width to Height
+     glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
+     
+     
+     //edited by Mike, 20210626
+     glScalef(0.26f,0.26f,1.0f);
+     */
+    
     //removed by Mike, 20210702
-//    glTranslatef(0.26f, 1.1f, 0.0f); //note: y-axis; inverted; +value goes down
-
+    //    glTranslatef(0.26f, 1.1f, 0.0f); //note: y-axis; inverted; +value goes down
+    
     
     //font
     // select and enable texture FONT_TEXTURE
     //edited by Mike, 20210703
-//    glBindTexture(GL_TEXTURE_2D, FONT_TEXTURE);
-    glBindTexture(GL_TEXTURE_2D, iLevelTextureObject);    
+    //    glBindTexture(GL_TEXTURE_2D, FONT_TEXTURE);
+    glBindTexture(GL_TEXTURE_2D, iLevelTextureObject);
     glEnable(GL_TEXTURE_2D);
-        
+    
     //edited by Mike, 20210615
     //draw text using Font texture
     
@@ -1654,7 +1666,7 @@ void Level2D::drawLevelWithTexturePrev()
     //row, column
     //edited by Mike, 20210618
     //    char tempText[MAX_TEXT_CHAR_ROW][MAX_TEXT_CHAR_COLUMN];
-    char tempText[MAX_TEXT_CHAR_ROW_RAM][MAX_TEXT_CHAR_COLUMN];   
+    char tempText[MAX_TEXT_CHAR_ROW_RAM][MAX_TEXT_CHAR_COLUMN];
     
     //		 sprintf(tempText,"USBONG");
     //		 sprintf(tempText,sCurrentTextContainer[0]);
@@ -3039,7 +3051,7 @@ void Level2D::read(char *inputFilename) {
     
     //added by Mike, 20210712
     printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Level2D read(...)\n");
-
+    
     
     //TO-DO: update: this
     //	char** iCurrentLevelMapContainer = new char[100][100];
@@ -3153,7 +3165,7 @@ void Level2D::read(char *inputFilename) {
                 //				sCurrentLevelMapContainer[iRowCount][iColumnCount]=&ch;
                 sCurrentLevelMapContainer[iRowCount][iColumnCount]=ch;
                 
-                /*	//edited by Mike, 20210211		
+                /*	//edited by Mike, 20210211
                  printf("%s:",ch);
                  printf("%i,",iColumnCount);
                  */
@@ -3162,23 +3174,23 @@ void Level2D::read(char *inputFilename) {
                 
                 iColumnCount=iColumnCount+1;
                 ch = strtok(NULL, ",");
-            }			
+            }
             
             //edited by Mike, 20210311
             //			if (iRowCount<100) {
             //edited by Mike, 20210321
-            //			if (iRowCount<160) {	
-            if (iRowCount<MAX_X_AXIS_MAP) {				
+            //			if (iRowCount<160) {
+            if (iRowCount<MAX_X_AXIS_MAP) {
                 iRowCount=iRowCount+1;
             }
             else {
                 iRowCount=0;
             }
             
-            printf("\n");			
+            printf("\n");
         }
         fclose(file);
-    }	
+    }
 }
 
 //added by Mike, 20210614
