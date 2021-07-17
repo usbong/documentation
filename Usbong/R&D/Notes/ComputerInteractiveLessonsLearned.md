@@ -140,7 +140,7 @@ TO-DO: -update: this<br/>
 --> Mamamasdan na umuurong palikod si Rose, kapag sinugod;<br/>
 --> bagama't hindi mo siya maibabato kung huminto ka agad.<br/>
 <br/>
---> Matutuklasan mula kay Birdie na kapag ginamit ang paraang ito, alam ito ng nagsulat ng paliwanag.<br/>
+--> Matutuklasan mula kay Birdie na kapag ginamit ang paraang ito, alam ito ng nagsulat ng paliwanag sa kompyuter bilang Birdie.<br/>
 --> <b>paraan:</b> gamitin ang pagtalong pagsalakay na may Katamtamang Sipa kay Birdie.<br/>
 --> Pagkatapos siya tamaan, tumalon palikod, at ulitin muli ang pagtalong pagsalakay.<br/>
 --> Kapag nasa pinakadulo ng mauusugan palikod, maaaring tumalon gamit ang ding-ding.<br/>
@@ -222,6 +222,8 @@ TO-DO: -update: this<br/>
 --> <b>Paalala:</b> Tinutugis ni Chun-li si Bega upang malutas ang pagkasawi ng kanyang ama.<br/>
 --> Bega: "Beggar"?; Subukang matapos ang lahat ng labanan gamit lamang ang isang coin?<br/>
 --> where: coin = 100yen coin?<br/>
+--> Bega as "Beggar" with Weapon? <b>Halimbawa:</b> Teroristang Komunista?<br/>
+--> "Bega" due to does not "Beg"; Teroristang Komunista<br/>
 --> Bug in Command Control noticeable due to system problem?<br/>
 --> where: problem = excess; doku = lason/poison?<br/>
 --> <b>Example Bugs:</b><br/>
@@ -239,6 +241,8 @@ TO-DO: -update: this<br/>
 --> Hindi na kailangang subukang gamitin ang SUPER.<br/>
 --> Chun-li: 格闘では、パワーよりスピード．．．(kakutou deha, pawa- yori supi-do．．．)<br/>
 --> Chun-li: Sa maramihang labanan, mas maigi ang bilis, kaysa sa lakas．．．<br/>
+--> Gayunpaman, gawa ng taglay na lakas ni Bega, may matitira pa siyang lakas upang suntukin si Chun-li sa tiyan bago tumakas.<br/>
+--> Bagama't mas kaunti ang lakas kaysa kay Bega, matatagpuan si Chun-li na buhay pa, at naidala na sa Pagamutan.<br/>
 <br/>
 <img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Notes/res/sutori-toFaita-/streetFighterZeroDiscAkogare.jpg" width="60%">
 <br/>
