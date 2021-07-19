@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20210613
- * @date updated: 20210717
+ * @date updated: 20210719
  * @website address: http://www.usbong.ph
  *
  * Acknowledgments:
@@ -339,7 +339,9 @@ private:
 
     //added by Mike, 20210710
     void drawTileAsQuadWithoutTexture();
-    void drawTileAsQuadWithTexture(); //added by Mike, 20210717
+		//edited by Mike, 20210719
+//    void drawTileAsQuadWithTexture(); //added by Mike, 20210717
+    void drawTileAsQuadWithTexture(std::string sTileId);    
     
 public:
     //edited by Mike, 20201115

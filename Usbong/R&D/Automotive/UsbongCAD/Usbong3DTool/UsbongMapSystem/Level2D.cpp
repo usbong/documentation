@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20200926
- * @date updated: 20210717
+ * @date updated: 20210719
  * @website address: http://www.usbong.ph
  *
  * Reference:
@@ -44,9 +44,11 @@
 //added by Mike, 20210202
 //TO-DO: -update: instructions when diagonal movement is combined with attack and defend keys
 
-
 #include <stdio.h>
 #include <math.h>
+
+//added by Mike, 20210719
+#include <iostream>
 
 /*	//removed by Mike, 20201121
  #include <gl/gl.h>
@@ -1314,8 +1316,9 @@ void Level2D::drawTileAsQuadWithoutTexture()
     glPopMatrix();
 }
 
-//edited by Mike, 20210716
-void Level2D::drawTileAsQuadWithTexture()
+//edited by Mike, 20210716; edited by Mike, 20210719
+//void Level2D::drawTileAsQuadWithTexture()
+void Level2D::drawTileAsQuadWithTexture(std::string sTileId)
 {
     
     glBindTexture(GL_TEXTURE_2D, iLevelTextureObject);
@@ -1342,7 +1345,7 @@ void Level2D::drawTileAsQuadWithTexture()
     //TO-DO: -add: tile with auto-drawn pattern; without using image texture object
     //  	printf (">>>>>>>>>>>>>>>>>>>>>>>>>>>> HALLO");
     
-      	printf (">>> fGridSquareWidth: %f; fGridSquareHeight: %f",fGridSquareWidth,fGridSquareHeight);
+//      	printf (">>> fGridSquareWidth: %f; fGridSquareHeight: %f",fGridSquareWidth,fGridSquareHeight);
     
     
     float fGridTileWidthVertexPosition = myUsbongUtils->autoConvertFromPixelToVertexGridTileWidth(fGridSquareWidth);
@@ -1366,7 +1369,8 @@ void Level2D::drawTileAsQuadWithTexture()
     fGridTileWidthVertexPosition = 1.0f; //0.1f
     fGridTileHeightVertexPosition = 0.1f; //0.1f
 */
-    printf(">>>fGridTileWidthVertexPosition: %f; fGridTileHeightVertexPosition: %f",fGridTileWidthVertexPosition,fGridTileHeightVertexPosition);
+
+//    printf(">>>fGridTileWidthVertexPosition: %f; fGridTileHeightVertexPosition: %f",fGridTileWidthVertexPosition,fGridTileHeightVertexPosition);
  
     //added by Mike, 20210713
     //get positive value
@@ -1424,9 +1428,43 @@ void Level2D::drawTileAsQuadWithTexture()
     //added by Mike, 20210717
     //		glRotatef(180, 1.0f, 0.0f, 0.0f);
     
-    //TO-DO: -update: this
-    float fTx = 0.0f;
+    float fTx = 0.0f; 
     float fTy = 0.0f;
+    
+    //added by Mike, 20210719
+    //dash delimiter
+    //example: 1-1 = A1, i.e. Column A Row 1
+//    char *ch = strtok(sTileId, "-"); //note: error due to sTileId NOT classified to be char*
+//    std::vector<std::string> vString = std::strtok(sTileId, "-");
+		//note: sTileId includes quotation marks
+		//example: "0-0"		
+
+		//TO-DO: -update: this		
+/*		
+		char *ch = strdup(sTileId.c_str());
+		char *cStarToken = strtok(ch, "-");
+		free(ch);
+*/		
+		
+		char *cStarToken="10";
+
+//		printf(">>ch: %s\n",ch);
+
+//note: outputs
+//sCurrentLevelMapContainer[iRowCount][iColumnCount]): "1-0"
+//>>ch: � FQ�U
+
+//TO-DO: -add: auto-replace quotation marks, et cetera
+		
+//		printf(">>cStarToken[0]: %i; cStarToken[1]: %i\n",(cStarToken[0]-'0'),(cStarToken[1]-'0'));
+//		printf(">>cStarToken[0]: %i; cStarToken[1]: %i\n",(cStarToken[0]),(cStarToken[1]));
+		
+/*		
+    fTx = 0.0f+0.0625f*((int)cStarToken[0][1]); //column
+    fTy = 0.0f+0.0625f*((int)cStarToken[1][0]); //row    
+*/
+    fTx = 0.0f+0.0625f*(cStarToken[0]-'0'); //column
+    fTy = 0.0f+0.0625f*(cStarToken[1]-'0'); //row    
     
     glBegin(GL_QUADS); // Each set of 4 vertices form a quad
     glTexCoord2f(fTx, fTy);
@@ -1468,7 +1506,7 @@ void Level2D::drawTileAsQuadWithTexture()
 
 //added by Mike, 20210708; edited by Mike, 20210712
 //TO-DO: -add: function with tile patterns
-//TO-DO: -update: this
+//note: we use drawLevelWithTextureUsingInputFile(...)
 void Level2D::drawLevelWithTexture()
 {
     /*	//removed by Mike, 20210712
@@ -1480,7 +1518,7 @@ void Level2D::drawLevelWithTexture()
      */
     
     glPushMatrix();
-    //    printf(">>>myUsbongUtils->autoConvertFromPixelToVertexPointX(0): %f\n",myUsbongUtils->autoConvertFromPixelToVertexPointX(0));
+    //    printf(">>>myUsbongUtils->autoConvertFromPixelToVertexPointX(0): %f\n",myUsbongUtils->autoConvertFromPixelToVertexPointdrawTileAsQuadWithTextureX(0));
     
     //added by Mike, 20210712
     //add +1.0f due to 3rd quadrant in the draw function
@@ -1494,7 +1532,11 @@ void Level2D::drawLevelWithTexture()
     //drawPressNextSymbol();
     //edited by Mike, 20210717
     //    	drawTileAsQuadWithoutTexture();
-    drawTileAsQuadWithTexture();
+
+		//edited by Mike, 20210719
+//    drawTileAsQuadWithTexture();
+//      drawTileAsQuadWithTexture(sCurrentLevelMapContainer[iRowCount][iColumnCount]);
+
     glPopMatrix();
     
 }
@@ -1533,25 +1575,23 @@ void Level2D::drawLevelWithTextureUsingInputFile()
         //iCurrentMaxColumnCountPerRowContainer[iRowCount];
         for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {
             //                if (cCurrentTextContainer[iRowCount][iColumnCount]) {
-            if (sCurrentLevelMapContainer[iRowCount][iColumnCount].compare("\"G\"") == 0) { //TRUE
+  					//edited by Mike, 20210719
+//            if (sCurrentLevelMapContainer[iRowCount][iColumnCount].compare("\"A1\"") == 0) { //TRUE
+    				//note: "0" for empty, instead of "-1"
+            if (sCurrentLevelMapContainer[iRowCount][iColumnCount].compare("\"0\"") == 0) { //TRUE
+            }
+            else {
                 glPushMatrix();
-/*  //edited by Mike, 20210717
-                //add +1.0f in x-axis due to 3rd quadrant in the draw function
-                //center 0,0,0 origin; vertex positions
-                //column 1; start at 0; note +1.0f to be 2.0f due to 3rd quadrant in drawTileAsQuadWithoutTexture(...)
-                glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(0.0f+fGridSquareWidth*(iColumnCount+1.0f)), myUsbongUtils->autoConvertFromPixelToVertexPointY(0.0f+fGridSquareHeight*iRowCount), 0.0f);
-                
-                //edited by Mike, 20210710
-                //drawPressNextSymbol();
-                //edited by Mike, 20210717
-                //                    drawTileAsQuadWithoutTexture();
-*/
+                	//add +1.0f in x-axis and y-axis due to 3rd quadrant in the draw function
+                	//center 0,0,0 origin; vertex positions
+                	glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(0.0f+fGridSquareWidth*(iColumnCount+1.0f)), myUsbongUtils->autoConvertFromPixelToVertexPointY(0.0f+fGridSquareHeight*(iRowCount+1.0f)), 0.0f);
+ 										
+ 										//edited by Mike, 20210719
+//                		drawTileAsQuadWithTexture();
+//note: incorrect output if we use printf(...) with std::string as input to %s
+std::cout << "sCurrentLevelMapContainer[iRowCount][iColumnCount]): " << sCurrentLevelMapContainer[iRowCount][iColumnCount] << "\n";
 
-                //add +1.0f in x-axis and y-axis due to 3rd quadrant in the draw function
-                //center 0,0,0 origin; vertex positions
-                glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(0.0f+fGridSquareWidth*(iColumnCount+1.0f)), myUsbongUtils->autoConvertFromPixelToVertexPointY(0.0f+fGridSquareHeight*(iRowCount+1.0f)), 0.0f);
- 
-                drawTileAsQuadWithTexture();
+                		drawTileAsQuadWithTexture(sCurrentLevelMapContainer[iRowCount][iColumnCount]);
                 glPopMatrix();
             }
         }
