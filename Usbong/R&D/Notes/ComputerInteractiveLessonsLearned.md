@@ -281,8 +281,8 @@ TO-DO: -update: this<br/>
 --> Executed on Gameboy Color (over 10 years ago)<br/>
 --> May Password na maaaring isulat upang agad na makabalik sa isang pook ng paglalakbay.<br/>
 --> <b>Paalala:</b> Nauubos ang kuryente sa baterya ng Bala, i.e. Cartridge, na nagdudulot ng pagkawala ng naisulat sa Memory storage.<br/>
---> Sa Super Family Computer, maigi rin kung may Stage Select Input Command bilang lunas dito.<br/>
---> Halimbawa nito ang sa Donkey Kong Country series.<br/>
+--> Maigi rin kung may Stage Select Input Command bilang lunas dito.<br/>
+--> Halimbawa ng magagamitan din nito ang sa Donkey Kong Country series sa Super Family Computer.<br/>
 
 ## 1.2) SEGA: SERVICE GAMES
 ### 1.2.1) Sonic 1
