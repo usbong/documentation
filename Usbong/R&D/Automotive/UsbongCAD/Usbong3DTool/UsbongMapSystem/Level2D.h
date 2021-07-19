@@ -174,8 +174,7 @@ private:
 		//row, column
 		//y-axis, instead of z-axis
 		std::string sCurrentLevelMapContainer[MAX_Y_AXIS_MAP][MAX_X_AXIS_MAP]; //TO-DO: -add: auto-update max size 
-    
-    
+       
     //added by Mike, 20210516; removed to public classification by Mike, 20210523
     //	UsbongUtils *myUsbongUtils;
     
@@ -220,20 +219,6 @@ private:
     iTextAnimationCountDelay,
     iTextCurrentMaxColumnCount;
     
-    //added by Mike, 20201130
-    CTargaImage *myBodyTexture;
-   	unsigned int myBodyTextureObject;
-    
-    CTargaImage *myHeadTexture;
-   	unsigned int myHeadTextureObject;
-    
-    //added by Mike, 20201201
-    char legStates[2];
-    char armStates[2];
-    
-    float legAngles[2];
-    float armAngles[2];
-    
     //added by Mike, 20201225
     bool bIsFiringBeam;
     bool bHasPressedADirectionalKey; //added by Mike, 20201226
@@ -257,10 +242,7 @@ private:
     
     //int iInputWaitCount; //we use with dash
     int iInputWaitCountArray[PILOT_MAX_DIRECTIONAL_KEY_DASH_COUNT]; //6
-    
-    //added by Mike, 20210502
-    bool bIsPlayer2;
-    
+        
     //added by Mike, 20210614; edited by Mike 20210616
     //std::string sCurrentTextContainer[MAX_TEXT_CHAR_COLUMN][MAX_TEXT_CHAR_ROW]; //TO-DO: -add: auto-update max size
     //edited by Mike, 20210618
@@ -294,10 +276,7 @@ private:
     //edited by Mike, 20210423
     void setupPrev();
     void setup();
-		//added by Mike, 20210703
-		void drawString(GLfloat x, GLfloat y, GLfloat z, char *string);
-		void drawChar(GLfloat x, GLfloat y, GLfloat z, char c);       
-        
+            
     // draws a unit cube
     //void drawCube(float xPos, float yPos, float zPos);
     
@@ -305,22 +284,7 @@ private:
     // draw a unit triangle, Mike Dec. 19, 2006
     void drawTriangle(float xPos, float yPos, float zPos);
     void drawTriangledCube(float xPos, float yPos, float zPos);
-    
-    //added by Mike, 20201130
-    // methods to draw the parts of the robot
-    void drawUpperArm(float xPos, float yPos, float zPos);
-    void drawLowerArm(float xPos, float yPos, float zPos);
-    //removed by Mike, 20201130
-    //	void drawAntenna(float xPos, float yPos, float zPos);
-    void drawHead(float xPos, float yPos, float zPos);
-    void drawBody(float xPos, float yPos, float zPos);
-    void drawUpperLeg(float xPos, float yPos, float zPos);
-    void drawLowerLeg(float xPos, float yPos, float zPos);
-    void drawFoot(float xPos, float yPos, float zPos);
-    
-    //added by Mike, 20210107
-    void drawWeapon(float xPos, float yPos, float zPos);
-    
+        
     //added by Mike, 20210127
     //	void autoVerifyDashStateWithKeyDown(int keyCode); //edited by Mike, 20210128
     void autoVerifyDashStateWithKeyDown();
@@ -411,37 +375,7 @@ public:
     void setCurrentFacingState(int iNewFacingState) {
         currentFacingState = iNewFacingState;
     }
-    
-    //added by Mike, 20210502
-    void setAsPlayer2() {
-        currentFacingState=FACING_LEFT;
-        bIsPlayer2=true;
-        
-        //note: position: 3,3; width, height; count starts at 0
-        //edited by Mike, 20210503
-        //		myXPos=0.0f+myWidth*6;
-        //		myXPos=0.0f-myWidth*3;
-        //		myXPos=0.0f-myWidth*2;
-        myXPos=0.0f-myWidth*2.5;
-        
-        //note: auto-set to be equal with player 1; player 1 Z-position based on Camera Eye
-        //myZPos=0.0f+myHeight*3;
-    }
-    
-    
-    //added by Mike, 20210111
-    //    bool getIsExcutingPunchDefense() {
-    bool getIsExecuteWithWeaponReady() {
-        if (bIsExecutingPunch) {
-            return false;
-        }
-        //edited by Mike, 20210121
-        else if (bIsExecutingDefend) {
-            return false;
-        }
-        return true;
-    }
-    
+       
     //added by Mike, 20210614MAX_TEXT_CHAR_ROW
     void readInputText(char *inputFilename);    	
     void read(char *inputFilename); ////added by Mike, 20210706
@@ -451,17 +385,10 @@ public:
 //        drawLevelWithTexture();
 				drawLevelWithTextureUsingInputFile();
     }
-    
-    //edited by Mike, 20210615
-    void drawTextBackgroundAsQuadWithTexturePrev();
-    void drawTextBackgroundAsQuadWithTextureBuggy(); //added by Mike, 20210617
-    void drawTextBackgroundAsQuadWithTexture();
-    void drawTextBackgroundObject();
-    
+        
     //added by Mike, 20210703
     void drawTileAsQuadWithTexture(GLfloat x, GLfloat y, GLfloat z, char c);
     void drawLevelWithTexture();
-    void drawLevelWithTexturePrev(); //added by Mike, 20210708
 		void drawLevelWithTextureUsingInputFile(); //added by Mike, 20210712    
 		
 		
@@ -471,36 +398,8 @@ public:
 		//added by Mike, 20210706
 		void drawLevel(GLfloat x, GLfloat y, GLfloat z, char *string);	
 
-        
-    /*	//removed by Mike, 20210514
-     //added by Mike, 20210423
-     void drawPilotAsQuadWithTexture();
-     void drawPilotObject();
-     // draws the entire robot
-     //void drawRobot(float xPos, float yPos, float zPos);
-     void drawPilot();
-     //    void drawValkyrie();
-     //added by Mike, 20201001
-     //TO-DO: -add: in ModelPool.cpp
-     void drawModelPilot();
-     */
-    
-    // updates the Pilot data
-    void updatePrev(float dt);
     //added by Mike, 20210423
     void update(float dt);
-    
-    //added by Mike, 20210505
-    void updateToFaceOpponent(float opponentPosX) {
-        myOpponentXPos=opponentPosX; //added by Mike, 20210505
-        
-        if (getX() < opponentPosX) {
-            currentFacingState=FACING_RIGHT;
-        }		
-        else {
-            currentFacingState=FACING_LEFT;		
-        }
-    }
     
     // changes the robot's state
     void changeState(int s);
