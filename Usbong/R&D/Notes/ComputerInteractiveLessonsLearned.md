@@ -259,6 +259,31 @@ TO-DO: -update: this<br/>
 --> <b>Paalala:</b> May ugnayan ang mga ito: Ear, Nose, Throat (ENT)<br/>
 --> <b>Sanhi:</b> Quick Money.<br/>
 
+### 1.1.8) GHOSTS'N GOBLINS
+--> Arcade; Family Computer (Year 1985);<br/>
+--> Executed on Playstation Portable (PSP).<br/>
+--> Maaalala ang pakikipaglaban ni Arthur sa mga Dambuhalang Goblin sa pook kung saan may mga gusali.<br/>
+--> <b>Paalala:</b> Hindi agad na mapupuksa ang Dambuhalang Goblin. Kailangan nito ng maraming tama mula halimbawa sa sandata, e.g. sibat (lance), たいまつ (松明; taimatsu), i.e. kahoy na may apoy upang magbigay liwanag, kutsilyo, i.e. patalim.<br/>
+--> Pag-akyat mo bilang si Arthur sa itaas na palapag pagkatapos magapi ang unang Dambuhalang Goblin, mayroon ulit na isa pa nito.<br/>
+--> Gayunpaman, gawa ng malapit na sukat ng layo mo sa Dambuhalang Goblin, hindi sasapat ang pagbabato mo sa kanya ng mga taimatsu.<br/>
+--> Ibig sabihin, kakailanganin mong tumalon mula sa itaas na palapag!<br/>
+--> <b>Paalala:</b> Bumibilis ang hakbang ng Goblin kapag hinahabol ka nito.<br/>
+--> <b>Tanong:</b>Tulad ba si Arthur ni Luigi sa Super Mario Galaxy 2?<br/>
+--> Pag-akyat mo muli sa itaas na palapag, sapat na ang iyong ibabato upang magapi ang Dambuhalang Goblin.<br/>
+--> Pagsulong mo, may makikita kang hagdaan at dingding.<br/>
+--> Sa kabila ng dingding, mayroon ulit na naglalakad-lakad na Dambuhalang Goblin.<br/>
+--> Nasa kabila naman, kaya maaari ka nang umakyat ng hagdan.<br/>
+--> Subalit, nakagugulat na makalulusot ang Goblin sa dingding!<br/>
+--> Agad kang bababa sa inaakyat mong hagdan at mabilis na tatakbo palayo.<br/>
+--> Kapag sapat na ang sukat ng layo, maaari mo nang batuhin gamit ang kasalukuyan mong sandata ang Dambuhalang Goblin at magapi ito.<br/>
+--> Mula sa pagsisiyasat ang patalim ang pinakamaiging gamiting sandata gawa ng bilis nito.<br/>
+<br/>
+--> Executed on Gameboy Color (over 10 years ago)<br/>
+--> May Password na maaaring isulat upang agad na makabalik sa isang pook ng paglalakbay.<br/>
+--> <b>Paalala:</b> Nauubos ang kuryente sa baterya ng Bala, i.e. Cartridge, na nagdudulot ng pagkawala ng naisulat sa Memory storage.<br/>
+--> Sa Super Family Computer, maigi rin kung may Stage Select Input Command bilang lunas dito.<br/>
+--> Halimbawa nito ang sa Donkey Kong Country series.<br/>
+
 ## 1.2) SEGA: SERVICE GAMES
 ### 1.2.1) Sonic 1
 --> Sega Genesis/Megadrive Mini version<br/>
