@@ -270,7 +270,7 @@ TO-DO: -update: this<br/>
 --> <b>Paalala:</b> Bumibilis ang hakbang ng Goblin kapag hinahabol ka nito.<br/>
 --> <b>Tanong:</b>Tulad ba si Arthur ni Luigi sa Super Mario Galaxy 2?<br/>
 --> Pag-akyat mo muli sa itaas na palapag, sapat na ang iyong ibabato upang magapi ang Dambuhalang Goblin.<br/>
---> Pagsulong mo, may makikita kang hagdaan at dingding.<br/>
+--> Pagsulong mo, may makikita kang hagdan at dingding.<br/>
 --> Sa kabila ng dingding, mayroon ulit na naglalakad-lakad na Dambuhalang Goblin.<br/>
 --> Nasa kabila naman, kaya maaari ka nang umakyat ng hagdan.<br/>
 --> Subalit, nakagugulat na makalulusot ang Goblin sa dingding!<br/>
