@@ -1446,15 +1446,22 @@ void Level2D::drawTileAsQuadWithTexture(std::string sTileId)
 		free(ch);
 */		
 		
-		char *cStarToken="10";
+//		char *cStarToken="10";
 
 //		printf(">>ch: %s\n",ch);
 
 //note: outputs
-//sCurrentLevelMapContainer[iRowCount][iColumnCount]): "1-0"
+//sCurrentLevelMapContainer[iRowCount][iColumnCount]: "1-0"
 //>>ch: � FQ�U
 
 //TO-DO: -add: auto-replace quotation marks, et cetera
+/*		
+	char *cStarToken="";
+	
+	cStarToken[0]=sTileId[1];
+	cStarToken[1]=sTileId[3];
+*/	
+
 		
 //		printf(">>cStarToken[0]: %i; cStarToken[1]: %i\n",(cStarToken[0]-'0'),(cStarToken[1]-'0'));
 //		printf(">>cStarToken[0]: %i; cStarToken[1]: %i\n",(cStarToken[0]),(cStarToken[1]));
@@ -1463,8 +1470,12 @@ void Level2D::drawTileAsQuadWithTexture(std::string sTileId)
     fTx = 0.0f+0.0625f*((int)cStarToken[0][1]); //column
     fTy = 0.0f+0.0625f*((int)cStarToken[1][0]); //row    
 */
+/*
     fTx = 0.0f+0.0625f*(cStarToken[0]-'0'); //column
     fTy = 0.0f+0.0625f*(cStarToken[1]-'0'); //row    
+*/
+    fTx = 0.0f+0.0625f*(sTileId[1]-'0'); //column
+    fTy = 0.0f+0.0625f*(sTileId[3]-'0'); //row    
     
     glBegin(GL_QUADS); // Each set of 4 vertices form a quad
     glTexCoord2f(fTx, fTy);
@@ -1578,7 +1589,8 @@ void Level2D::drawLevelWithTextureUsingInputFile()
   					//edited by Mike, 20210719
 //            if (sCurrentLevelMapContainer[iRowCount][iColumnCount].compare("\"A1\"") == 0) { //TRUE
     				//note: "0" for empty, instead of "-1"
-            if (sCurrentLevelMapContainer[iRowCount][iColumnCount].compare("\"0\"") == 0) { //TRUE
+    				//with "0", no need to add quotation marks
+            if (sCurrentLevelMapContainer[iRowCount][iColumnCount].compare("0") == 0) { //TRUE            
             }
             else {
                 glPushMatrix();
