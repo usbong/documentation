@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B. 
  * @date created: 20201210
- * @date updated: 20210712
+ * @date updated: 20210720
  * @website address: http://www.usbong.ph
  *
  * Acknowledgments:
@@ -38,6 +38,10 @@
 //added by Mike, 20210524
 #include <time.h>
 #include <stdlib.h>
+
+//added by Mike, 20210720
+#include <string>
+
 	
 class UsbongUtils
 {
@@ -97,6 +101,11 @@ public:
 	float autoConvertFromPixelToVertexGridTileWidth(int iGridTileWidth);
 	float autoConvertFromPixelToVertexGridTileHeight(int iGridTileHeight);
 	
+	//added by Mike, 20210720
+	int autoIdentifyColumnInputInLevelMapContainer(std::string sInput);
+	
+	//reminder: "rand" NOT random due to there exists pattern
+	//example: based on clock time, based on excess value in container
 	int getRandWithMax(int iMaxRandNumber){
 		return rand()%iMaxRandNumber;
 	};

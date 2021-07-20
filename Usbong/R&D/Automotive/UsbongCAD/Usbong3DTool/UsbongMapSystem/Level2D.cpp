@@ -940,8 +940,16 @@ void Level2D::drawTileAsQuadWithTexture(std::string sTileId)
     fTx = 0.0f+0.0625f*(cStarToken[0]-'0'); //column
     fTy = 0.0f+0.0625f*(cStarToken[1]-'0'); //row    
 */
+
+/*	//edited by Mike, 20210720
     fTx = 0.0f+0.0625f*((sTileId[1]-'0')); //column
     fTy = 0.0f+0.0625f*(sTileId[3]-'0'); //row
+*/
+		
+	  fTx = 0.0f+0.0625f*(myUsbongUtils->autoIdentifyColumnInputInLevelMapContainer(sTileId)); //column
+    fTy = 0.0f+0.0625f*(sTileId[3]-'0'); //row
+	
+		printf(">>>%i\n",(myUsbongUtils->autoIdentifyColumnInputInLevelMapContainer(sTileId)));
 
 		fTy=fTy*(-1);
 		

@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20201210
- * @date updated: 20210712
+ * @date updated: 20210720
  * @website address: http://www.usbong.ph
  *
  * References:
@@ -342,4 +342,34 @@ float UsbongUtils::autoConvertFromPixelToVertexGridTileWidth(int iGridTileWidth)
 float UsbongUtils::autoConvertFromPixelToVertexGridTileHeight(int iGridTileHeight)
 {
 	return 0.0f+autoConvertFromPixelToVertexPointY(iGridTileHeight);
+}
+
+//added by Mike, 20210720
+//example input#1: "2-0"
+//output: 2
+//example input#2: "99-0"
+//output: 99
+int UsbongUtils::autoIdentifyColumnInputInLevelMapContainer(std::string sInput)
+{
+  int iLength=sInput.length();
+	int iOutput=0;
+	int iDigitCountFromRightToLeft=1;
+	int iCountLeftToRight=0;
+	int iCountRightToLeft=0;
+	
+	//character from left to right
+	for (iCountLeftToRight=0; iCountLeftToRight<iLength; iCountLeftToRight++) {
+		if (sInput[iCountLeftToRight]=='-') {
+			break;
+		}
+	}
+	
+	//character from right to left	
+	//note: left-most character, i.e. quotation mark not included
+	for (iCountRightToLeft=iCountLeftToRight-1; iCountRightToLeft>0; iCountRightToLeft--) {
+			iOutput = iOutput+ (sInput[iCountRightToLeft]-'0')*iDigitCountFromRightToLeft;		
+			iDigitCountFromRightToLeft = iDigitCountFromRightToLeft*10;
+	}
+
+	return iOutput;
 }
