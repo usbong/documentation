@@ -592,10 +592,16 @@ Sagot: N/A, i.e. "Not Applicable"
 ### Part 20: Wika
 We encourage Unit members to learn languages, e.g. nihongo. This is due to after verification, problems in the Philippines are caused by incorrect beliefs.<br/>
 
-#### Examples:
-20.1) Religion not set to be "N/A", i.e. "Not Applicable"<br/>
-20.2) Maparaang Pagbibilang is NOT valued.<br/>
+#### 20.1) Examples:
+20.1.1) Religion not set to be "N/A", i.e. "Not Applicable"<br/>
+20.1.2) Maparaang Pagbibilang is NOT valued.<br/>
 
 #### Reminder: 
 Beliefs are classified to be with Culture. Culture CAN be changed.
 
+#### 20.2) Recommended Actions:
+20.2.1) re-verify: Kasaysayan ng Pilipinas<br/>
+20.2.2) learn: nihongo<br/>
+<br/>
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/company/HR/Usbong%20Education%20Training%20Courses/Training%20Centre:%20Security%20Defense%20Force/res/hiraganaPracticeExample.jpg" width="60%"><br/>
+Example Japanese Alphabet: hiragana Practice Sheet<br/>
