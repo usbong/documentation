@@ -604,4 +604,4 @@ Beliefs are classified to be with Culture. Culture CAN be changed.
 20.2.2) learn: nihongo<br/>
 <br/>
 <img src="https://github.com/usbong/documentation/blob/master/Usbong/company/HR/Usbong%20Education%20Training%20Courses/Training%20Centre:%20Security%20Defense%20Force/res/hiraganaPracticeExample.jpg" width="60%"><br/>
-Example Japanese Alphabet: hiragana Practice Sheet<br/>
+Example Japanese Alphabet: <a href="https://docs.google.com/viewer?a=v&pid=sites&srcid=dXNib25nLnBofHVzYm9uZ3xneDoyMzNhOTdmNDRlODdhMzRm" target="_blank">hiragana Practice Sheet</a><br/>
