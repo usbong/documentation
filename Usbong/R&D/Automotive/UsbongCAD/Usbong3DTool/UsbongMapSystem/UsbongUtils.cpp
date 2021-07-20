@@ -373,3 +373,39 @@ int UsbongUtils::autoIdentifyColumnInputInLevelMapContainer(std::string sInput)
 
 	return iOutput;
 }
+
+//TO-DO: -use: A1, B1... AA1, AB1?
+
+//added by Mike, 20210720
+//example input#1: "0-3"
+//output: 3
+//example input#2: "0-28"
+//output: 28
+int UsbongUtils::autoIdentifyRowInputInLevelMapContainer(std::string sInput)
+{
+  int iLength=sInput.length();
+	int iOutput=0;
+	int iDigitCountFromRightToLeft=1;
+	int iCountLeftToRight=0;
+	int iCountRightToLeft=0;
+	int iDelimeterPosition=0;
+	
+	//character from left to right
+	for (iCountLeftToRight=0; iCountLeftToRight<iLength; iCountLeftToRight++) {
+		if (sInput[iCountLeftToRight]=='-') {
+			break;
+		}
+	}
+	
+	iDelimeterPosition=iCountLeftToRight;
+	
+	//character from right to left	
+	//note: left-most character, i.e. quotation mark not included
+	//therefore, -2, instead of -1
+	for (iCountRightToLeft=iLength-2; iCountRightToLeft>iDelimeterPosition; iCountRightToLeft--) {
+			iOutput = iOutput+ (sInput[iCountRightToLeft]-'0')*iDigitCountFromRightToLeft;		
+			iDigitCountFromRightToLeft = iDigitCountFromRightToLeft*10;
+	}
+
+	return iOutput;
+}

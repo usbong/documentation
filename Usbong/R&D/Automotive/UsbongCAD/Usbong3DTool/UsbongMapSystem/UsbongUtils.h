@@ -103,6 +103,7 @@ public:
 	
 	//added by Mike, 20210720
 	int autoIdentifyColumnInputInLevelMapContainer(std::string sInput);
+	int autoIdentifyRowInputInLevelMapContainer(std::string sInput);
 	
 	//reminder: "rand" NOT random due to there exists pattern
 	//example: based on clock time, based on excess value in container
