@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20200926
- * @date updated: 20210719
+ * @date updated: 20210720
  * @website address: http://www.usbong.ph
  *
  * Reference:
@@ -810,6 +810,8 @@ void Level2D::drawTileAsQuadWithoutTexture()
 
 //edited by Mike, 20210716; edited by Mike, 20210719
 //void Level2D::drawTileAsQuadWithTexture()
+//edited by Mike, 20210720
+//void Level2D::drawTileAsQuadWithTexture(std::string sTileId)
 void Level2D::drawTileAsQuadWithTexture(std::string sTileId)
 {
     
@@ -843,25 +845,11 @@ void Level2D::drawTileAsQuadWithTexture(std::string sTileId)
     float fGridTileWidthVertexPosition = myUsbongUtils->autoConvertFromPixelToVertexGridTileWidth(fGridSquareWidth);
     float fGridTileHeightVertexPosition = myUsbongUtils->autoConvertFromPixelToVertexGridTileHeight(fGridSquareHeight);
     
-    /* //removed by Mike, 20210717
-     //TO-DO: -reverify: cause of /2.0f/4.0f; and 2.0f/2.0f;
-     //		fGridTileWidthVertexPosition = fGridTileWidthVertexPosition/2.0f/3.0f;
-     fGridTileWidthVertexPosition = fGridTileWidthVertexPosition/2.0f/4.0f;
-     fGridTileHeightVertexPosition = fGridTileHeightVertexPosition/2.0f/2.0f;
-     */
-/*
-     fGridTileWidthVertexPosition = fGridTileWidthVertexPosition*2.0f*4.0f;
-     fGridTileHeightVertexPosition = fGridTileHeightVertexPosition*2.0f*2.0f;
-*/
-    fGridTileWidthVertexPosition = fGridTileWidthVertexPosition*2.0f;
+		//TO-DO: -reverify: this
+		//edited by Mike, 20210720
+//    fGridTileWidthVertexPosition = fGridTileWidthVertexPosition*2.0f; //removed by Mike, 20210720
     fGridTileHeightVertexPosition = fGridTileHeightVertexPosition*4.0f;
-
-    //TO-DO: -update: this
-/*
-    fGridTileWidthVertexPosition = 1.0f; //0.1f
-    fGridTileHeightVertexPosition = 0.1f; //0.1f
-*/
-
+ 
 //    printf(">>>fGridTileWidthVertexPosition: %f; fGridTileHeightVertexPosition: %f",fGridTileWidthVertexPosition,fGridTileHeightVertexPosition);
  
     //added by Mike, 20210713
@@ -888,6 +876,10 @@ void Level2D::drawTileAsQuadWithTexture(std::string sTileId)
     fGridTileWidthVertexPosition=fGridTileWidthVertexPosition+0.0006f;
 #endif
     
+    //added by Mike, 20210720
+    fGridTileWidthVertexPosition=1.0f-fGridTileWidthVertexPosition;
+//    fGridTileHeightVertexPosition=1.0f-fGridTileHeightVertexPosition;
+    
     //note: vertex position sequence to be auto-drawn
     //counter-clockwise sequence to auto-draw front face
     
@@ -899,24 +891,6 @@ void Level2D::drawTileAsQuadWithTexture(std::string sTileId)
 
     glTranslatef(0.0f, fGridTileHeightVertexPosition, 0.0f);
 
-    //TO-DO: -update: this
-    //note: 3rd quadrant
-    /* //edited by Mike, 20210717
-     glBegin(GL_QUADS); // Each set of 4 vertices form a quad
-     glTexCoord2f(fTx, fTy);
-     glVertex3f(0.0f, 0.0f, 0.0f);
-     
-     glTexCoord2f(fTx + 0.0625f, fTy);
-     glVertex3f(0.0f-fGridTileWidthVertexPosition, 0.0f, 0.0f);
-     
-     glTexCoord2f(fTx + 0.0625f, fTy + 0.0625f);
-     glVertex3f(0.0f-fGridTileWidthVertexPosition, 0.0f-fGridTileHeightVertexPosition, 0.0f);
-     
-					glTexCoord2f(fTx, fTy + 0.0625f);
-     glVertex3f(0.0f, 0.0f-fGridTileHeightVertexPosition, 0.0f);
-     glEnd();
-     */
-    
     //added by Mike, 20210717
     //		glRotatef(180, 1.0f, 0.0f, 0.0f);
     
@@ -966,40 +940,33 @@ void Level2D::drawTileAsQuadWithTexture(std::string sTileId)
     fTx = 0.0f+0.0625f*(cStarToken[0]-'0'); //column
     fTy = 0.0f+0.0625f*(cStarToken[1]-'0'); //row    
 */
-    fTx = 0.0f+0.0625f*(sTileId[1]-'0'); //column
-    fTy = 0.0f+0.0625f*(sTileId[3]-'0'); //row    
+    fTx = 0.0f+0.0625f*((sTileId[1]-'0')); //column
+    fTy = 0.0f+0.0625f*(sTileId[3]-'0'); //row
+
+		fTy=fTy*(-1);
+		
+
+//		printf(">>sTileId[3]: %c\n",sTileId[3]);
+//		printf(">>fTy: %f\n",fTy);
     
+    float fTileSideXAxis = 0.0625f; //1.0f
+    float fTileSideYAxis = 1.0f; //TO-DO: -reverify: cause of 1.0f
+ 
+		//printf("fGridTileWidthVertexPosition: %f\n",fGridTileWidthVertexPosition);
+
     glBegin(GL_QUADS); // Each set of 4 vertices form a quad
-    glTexCoord2f(fTx, fTy);
-    glVertex3f(0.0f, 0.0f, 0.0f);
-    
-    glTexCoord2f(fTx + 1.0f, fTy);
-    glVertex3f(0.0f-fGridTileWidthVertexPosition, 0.0f, 0.0f);
-    
-    glTexCoord2f(fTx + 1.0f, fTy + 1.0f);
-    glVertex3f(0.0f-fGridTileWidthVertexPosition, 0.0f-fGridTileHeightVertexPosition, 0.0f);
-    
-    glTexCoord2f(fTx, fTy + 1.0f);
-    glVertex3f(0.0f, 0.0f-fGridTileHeightVertexPosition, 0.0f);
+    	glTexCoord2f(fTx, fTy);
+    	glVertex3f(0.0f, 0.0f, 0.0f);
+    	
+    	glTexCoord2f(fTx + fTileSideXAxis, fTy);
+    	glVertex3f(0.0f-fGridTileWidthVertexPosition, 0.0f, 0.0f);
+    	
+    	glTexCoord2f(fTx + fTileSideXAxis, fTy + fTileSideYAxis);
+    	glVertex3f(0.0f-fGridTileWidthVertexPosition, 0.0f-fGridTileHeightVertexPosition, 0.0f);
+    	
+    	glTexCoord2f(fTx, fTy + fTileSideYAxis);
+    	glVertex3f(0.0f, 0.0f-fGridTileHeightVertexPosition, 0.0f);
    	glEnd();
-   	
-    /*
-     //edited by Mike, 20210610
-     float fX=-1.0f;
-     float fY=1.0f;
-     
-     // Each set of 4 vertices form a quad
-     glBegin(GL_QUADS);
-     glTexCoord2f(0.25f+fTaoAnimationFrameOffset, fTaoAnimationFrameOffsetYAxis);
-     glVertex3f(fX, fY, 0.0f);
-     glTexCoord2f(0.0f+fTaoAnimationFrameOffset, fTaoAnimationFrameOffsetYAxis);
-     glVertex3f(fX+2.0f, fY, 0.0f);
-     glTexCoord2f(0.0f+fTaoAnimationFrameOffset, fTaoAnimationFrameOffsetYAxis+0.25f);
-     glVertex3f(fX+2.0f, fY-2.0f, 0.0f);
-     glTexCoord2f(0.25+fTaoAnimationFrameOffset, fTaoAnimationFrameOffsetYAxis+0.25f); //0.5f);
-     glVertex3f(fX, fY-2.0f, 0.0f);
-     glEnd();
-     */
     
     glDisable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, 0);
@@ -1088,6 +1055,7 @@ void Level2D::drawLevelWithTextureUsingInputFile()
                 glPushMatrix();
                 	//add +1.0f in x-axis and y-axis due to 3rd quadrant in the draw function
                 	//center 0,0,0 origin; vertex positions
+                	
                 	glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(0.0f+fGridSquareWidth*(iColumnCount+1.0f)), myUsbongUtils->autoConvertFromPixelToVertexPointY(0.0f+fGridSquareHeight*(iRowCount+1.0f)), 0.0f);
  										
  										//edited by Mike, 20210719
