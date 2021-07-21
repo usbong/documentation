@@ -947,7 +947,8 @@ void Level2D::drawTileAsQuadWithTexture(std::string sTileId)
 */
 		
 	  fTx = 0.0f+0.0625f*(myUsbongUtils->autoIdentifyColumnInputInLevelMapContainer(sTileId)); //column
-    
+		
+		//edited by Mike, 20210721    
     //texture y-axis; start from bottom; anchor
     //GHOSTS'N GOBLINS? (Arcade, Family Computer; Year 1985) 
     //May tattoo ng puso ang braso ng mga Dambuhalang Goblin.
