@@ -605,3 +605,12 @@ Beliefs are classified to be with Culture. Culture CAN be changed.
 <br/>
 <img src="https://github.com/usbong/documentation/blob/master/Usbong/company/HR/Usbong%20Education%20Training%20Courses/Training%20Centre:%20Security%20Defense%20Force/res/hiraganaPracticeExample.jpg" width="60%"><br/>
 Example Japanese Alphabet: <a href="https://docs.google.com/viewer?a=v&pid=sites&srcid=dXNib25nLnBofHVzYm9uZ3xneDoyMzNhOTdmNDRlODdhMzRm" target="_blank">hiragana Practice Sheet</a><br/>
+
+20.2.3) learn: Maparaang Pagbibilang<br/>
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/company/HR/Usbong%20Education%20Training%20Courses/Training%20Centre:%20Security%20Defense%20Force/res/maparaangPagbibilang.png" width="100%"><br/>
+--> <b>Mungakahing Babasahin:</b><br/>
+--> 20.2.3.1) Miyazaki, Hayao's Manga/Comic Book, 「雑想ノート(zassou no-to; various thoughts, i.e. "Daydream", note) : No. 9」<br/>
+--> 20.2.3.2) 司馬遼太郎's「燃えよ剣」<br/>
+--> Shiba, Ryoutarou's "moeyo ken"<br/>
+
+
