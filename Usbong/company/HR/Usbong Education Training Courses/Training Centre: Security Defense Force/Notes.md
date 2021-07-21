@@ -613,4 +613,57 @@ Example Japanese Alphabet: <a href="https://docs.google.com/viewer?a=v&pid=sites
 --> 20.2.3.2) 司馬遼太郎's「燃えよ剣」<br/>
 --> Shiba, Ryoutarou's "moeyo ken"<br/>
 
-
+### Part 21: Sulating Aral (bungaku)
+#### 21.1) Miyazaki, Hayao's Manga/Comic Book, 「雑想ノート(zassou no-to; various thoughts, i.e. "Daydream", note) : No. 9」<br/>
+--> Matutuklasan natin ang nangyari sa labanan ng Hapon at Inglatera ayon sa mga Hapon.<br/>
+--> Maaalala na nagsulat si Winston Churchill ng Inglatera ng salaysay sa kanyang aklat na "The Hinge of Fate".<br/>
+--> Ukol ito sa mga nangyayari noong digmaan, kabilang ang kanilang pakikipaglaban sa mga Hapon.<br/>
+--> namasdan: sa labanan sa dagat sa Timog-Silangang Asiya, patungong Hilagang Africa, maaaring magapi ang barko ng hukbong pandagat ng mga taga-Inglatera, gamit ang isang Unit na may tatlong (3) miyembrong sakay ang Zero Jet Fighter Machine, i.e. "Meat Ball (肉ダンゴnikudango = 日の丸hi no maru)" , ng Hapon.<br/>
+--> <b>Paalala:</b> Sakop ng Inglatera ang India, Egypt, at Timog Africa.<br/>
+--> Mababasa sa salaysay ni Winston Churchill na hindi maaaring maliitin ang lakas ng hukbong panlipad ng bansang Hapon. Ibig sabihin, kahit isang malakas na Unit, maaari nang sumagisag sa buong bansang Hapon.<br/>
+--> <b>Paalala:</b> Sa Japanese Animation, "Porco Rosso", ni Miyazaki, Hayao, binuo ng buong lipunan sa isang barangay ng Italia ang sasakyang panlipad ni Porco.<br/>
+--> Maaari ring lumapag ito sa dagat.<br/>
+<br/>
+### 21.2) 司馬遼太郎 (Shiba, Ryoutarou) 's「燃えよ剣 (moeyo ken; nasusunog patalim」
+--> Ukol ang aklat sa mga nangyari patungo sa alam nating wakas.<br/>
+<br/>
+--> Dekada 50 ng taong 1800, may nagaganap na malaking pagbabago dulot ng pagdating ng armada, i.e. barkong pandigma, ng Amerka.<br/>
+--> Sa pamumuno ni Commodore Matthew Perry, ginamit nila ang kanilang mga kanyon upang mapilitang buksan ng mga Hapon ang kanilang bansa sa mga banyaga pagkatapos ng mahigit 300 daang taon.<br/>
+<br/>
+--> Maaalala na pinananatili ang kapayapaan sa bansa sa tulong ng mga shinsengumi.<br/>
+--> Pangkat sila na nagpapatupad ng mga patakaran, i.e. regulasyon, batay sa mga nakalap na balita.<br/>
+--> Sa kalusugan, ito ang tungkulin ng endocrine system ng ating katawan; keyword: "regulate".<br/>
+--> Halimbawa nito ang sa labis na pagtibok ng puso.<br/>
+--> <b>Paalala:</b> daigdig ang ating katawan; daigdig ang bansa.<br/>
+<br/>
+--> Ngunit gawa ng lakas ng mga banyaga gamit ang kanilang mga sandatang kanyon, napagpasiyahan ng mga namumunong Hapon sa pamahalaan, i.e. administration, na kailangan nang ayusin ang kasalukuyang sistema upang mas maiging magagawa ang pagpapatupad ng mga patakaran.<br/>
+--> Maaalala na gamit ng mga shinsengumi bilang sandata ang katana, i.e. patalim.<br/>
+--> Sa panibagong sistema, papalitan ang mga shinsengumi sapagkat kailangan nang isantabi ang mga katana.<br/>
+--> Ito'y upang pag-aralan ang mga banyagang sandata, e.g. kanyon, upang gawing bahagi ng lakas ng Hapon.<br/>
+<br/>
+--> Gayunpaman, ilan sa mga shinsengumi ang tutol sa pansasantabi ng kanilang katana.<br/>
+--> Magkakaroon tuloy ng labanan sa pagitan ng pangkat ng mga shinsengumi at ng pamahalaan.<br/>
+<br/>
+--> Nang papalapit na sa katapusan, maaalalang kakausapin niya ang kanyang mga kasamahan sa pangkat.<br/>
+<br/>
+<b>Toshizou:</b> Kung sino ang may mas mahalaga pang bagay upang ikabuhay, umuwi na!<br/>
+Ang mga wala na, sumama kayo sa'kin!<br/>
+<br/>
+--> Susugod si Toshizou ng shinsengumi sa kanang pakpak ng sandatahang lakas ng pamahalaan.<br/>
+--> <b>Pamahalaan:</b> Ano ang pangalan mo?<br/>
+--> <b>Toshizou:</b> Pangalawa sa pangkat ng shinsengumi!<br/>
+--> <b>Pamahalaan:</b> Isasantabi mo na ba ang iyong sandata?<br/>
+--> <b>Toshizou:</b> Hindi!<br/>
+<br/>
+--> Pakikilusin ni Toshizou ang kanyang kabayo upang sugurin ang kanang pakpak.<br/>
+--> Madirinig ang pagputok ng baril. <br/>
+--> Patay.<br/>
+--> Tutumba si Toshizou.<br/>
+--> Maaalala ang pag-ulan sa silangan.<br/>
+--> Masarap.<br/>
+<br/>
+--> <b>Paalala:</b> Hindi nais ng karaniwang tao ang maging Bayani.<br/> 
+--> Namamatay ang Bayani... sa bagay na mas mahalaga pa kaysa kanyang buhay.<br/>
+<br/>
+--> <b>Paalala:</b> Ang patay, talagang patay.<br/>
+--> Gayunpaman, maaari nating tingalain ang Bayani bilang paalala sa kakayanan ng tao.<br/>
