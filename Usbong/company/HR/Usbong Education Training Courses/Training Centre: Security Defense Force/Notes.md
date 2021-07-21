@@ -615,12 +615,11 @@ Example Japanese Alphabet: <a href="https://docs.google.com/viewer?a=v&pid=sites
 
 ### Part 21: Sulating Aral (bungaku)
 #### 21.1) Miyazaki, Hayao's Manga/Comic Book, 「雑想ノート(zassou no-to; various thoughts, i.e. "Daydream", note) : No. 9」<br/>
---> Matutuklasan natin ang nangyari sa labanan ng Hapon at Inglatera ayon sa mga Hapon.<br/>
---> Maaalala na nagsulat si Winston Churchill ng Inglatera ng salaysay sa kanyang aklat na "The Hinge of Fate".<br/>
---> Ukol ito sa mga nangyayari noong digmaan, kabilang ang kanilang pakikipaglaban sa mga Hapon.<br/>
+--> Matutuklasan natin ang nangyari sa labanan ng Hapon at Inglatera noong Digmaan ayon sa mga Hapon.<br/>
+--> Maaalalang nagsulat din si Winston Churchill ng Inglatera ng salaysay sa kanyang aklat na "The Hinge of Fate".<br/>
 --> namasdan: sa labanan sa dagat sa Timog-Silangang Asiya, patungong Hilagang Africa, maaaring magapi ang barko ng hukbong pandagat ng mga taga-Inglatera, gamit ang isang Unit na may tatlong (3) miyembrong sakay ang Zero Jet Fighter Machine, i.e. "Meat Ball (肉ダンゴnikudango = 日の丸hi no maru)" , ng Hapon.<br/>
 --> <b>Paalala:</b> Sakop ng Inglatera ang India, Egypt, at Timog Africa.<br/>
---> Mababasa sa salaysay ni Winston Churchill na hindi maaaring maliitin ang lakas ng hukbong panlipad ng bansang Hapon. Ibig sabihin, kahit isang malakas na Unit, maaari nang sumagisag sa buong bansang Hapon.<br/>
+--> Mababasa naman sa salaysay ni Winston Churchill na hindi maaaring maliitin ang lakas ng hukbong panlipad ng bansang Hapon. Ibig sabihin, kahit isang malakas na Unit, maaari nang sumagisag sa buong bansang Hapon.<br/>
 --> <b>Paalala:</b> Sa Japanese Animation, "Porco Rosso", ni Miyazaki, Hayao, binuo ng buong lipunan sa isang barangay ng Italia ang sasakyang panlipad ni Porco.<br/>
 --> Maaari ring lumapag ito sa dagat.<br/>
 <br/>
