@@ -643,7 +643,7 @@ Example Japanese Alphabet: <a href="https://docs.google.com/viewer?a=v&pid=sites
 --> Gayunpaman, ilan sa mga shinsengumi ang tutol sa pansasantabi ng kanilang katana.<br/>
 --> Magkakaroon tuloy ng labanan sa pagitan ng pangkat ng mga shinsengumi at ng pamahalaan.<br/>
 <br/>
---> Nang papalapit na sa katapusan, maaalalang kakausapin niya ang kanyang mga kasamahan sa pangkat.<br/>
+--> Nang papalapit na sa katapusan, maaalalang kakausapin ni Toshizou ang kanyang mga kasamahan sa pangkat.<br/>
 <br/>
 --> <b>Toshizou:</b> Kung sino ang may mas mahalaga pang bagay upang ikabuhay, umuwi na!<br/>
 --> Ang mga wala na, sumama kayo sa'kin!<br/>
