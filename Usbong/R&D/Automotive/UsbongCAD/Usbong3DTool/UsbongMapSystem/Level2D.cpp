@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20200926
- * @date updated: 20210720
+ * @date updated: 20210721
  * @website address: http://www.usbong.ph
  *
  * Reference:
@@ -848,15 +848,15 @@ void Level2D::drawTileAsQuadWithTexture(std::string sTileId)
 		//TO-DO: -reverify: this
 		//edited by Mike, 20210720
 //    fGridTileWidthVertexPosition = fGridTileWidthVertexPosition*2.0f; //removed by Mike, 20210720
-    fGridTileHeightVertexPosition = fGridTileHeightVertexPosition*4.0f;
+//	  fGridTileHeightVertexPosition = fGridTileHeightVertexPosition*4.0f;//4.0f;
  
-//    printf(">>>fGridTileWidthVertexPosition: %f; fGridTileHeightVertexPosition: %f",fGridTileWidthVertexPosition,fGridTileHeightVertexPosition);
+    printf(">>>fGridTileWidthVertexPosition: %f; fGridTileHeightVertexPosition: %f",fGridTileWidthVertexPosition,fGridTileHeightVertexPosition);
  
     //added by Mike, 20210713
     //get positive value
     if (fGridTileWidthVertexPosition<0) {
         fGridTileWidthVertexPosition=fGridTileWidthVertexPosition*(-1);
-    }
+    }    
     if (fGridTileHeightVertexPosition<0) {
         fGridTileHeightVertexPosition=fGridTileHeightVertexPosition*(-1);
     }
@@ -878,7 +878,7 @@ void Level2D::drawTileAsQuadWithTexture(std::string sTileId)
     
     //added by Mike, 20210720
     fGridTileWidthVertexPosition=1.0f-fGridTileWidthVertexPosition;
-//    fGridTileHeightVertexPosition=1.0f-fGridTileHeightVertexPosition;
+    fGridTileHeightVertexPosition=1.0f-fGridTileHeightVertexPosition; //note: +, instead of -
     
     //note: vertex position sequence to be auto-drawn
     //counter-clockwise sequence to auto-draw front face
@@ -888,7 +888,7 @@ void Level2D::drawTileAsQuadWithTexture(std::string sTileId)
     //		glTranslatef(-0.1f-0.05f, 0.0f, 0.0f);
     //re-verify: cause of 0.01f; due to Linux machine?
     //		glTranslatef(-0.1f-0.05f-0.01f, 0.0f, 0.0f);
-
+    
     glTranslatef(0.0f, fGridTileHeightVertexPosition, 0.0f);
 
     //added by Mike, 20210717
@@ -947,21 +947,32 @@ void Level2D::drawTileAsQuadWithTexture(std::string sTileId)
 */
 		
 	  fTx = 0.0f+0.0625f*(myUsbongUtils->autoIdentifyColumnInputInLevelMapContainer(sTileId)); //column
-    fTy = 0.0f+0.0625f*(myUsbongUtils->autoIdentifyRowInputInLevelMapContainer(sTileId)); //row    
+    
+    //texture y-axis; start from bottom; anchor
+    //GHOSTS'N GOBLINS? (Arcade, Family Computer; Year 1985) 
+    //May tattoo ng puso ang braso ng mga Dambuhalang Goblin.
+    //Umaaligid-aligid sila sa loob ng Gusali;
+    //paalala: Goblin = uri ng halimaw; bakemono, i.e. naibang bagay
+    //Maaaring dalawang set ng pagsalakay upang mapuksa ang Dambuhalang Goblin.
+    //May tapang din ang pagtalon mula sa itaas na palapag upang magbalik at sumalakay muli; 
+    //Ito'y sa halip na harapin ang halimaw, at tanggapin nang nakikipaglaban ang tiyak na kamatayan.
+    //paalala: ang patay, patay na.
+		//16.0f due to 16 tile height max
+		//0.0625f*16.0f=1.0f
+    fTy = 1.0f-0.0625f*(myUsbongUtils->autoIdentifyRowInputInLevelMapContainer(sTileId)); //row    
+
     	
 //		printf(">>>%i\n",(myUsbongUtils->autoIdentifyColumnInputInLevelMapContainer(sTileId)));
-		printf(">>>%i\n",(myUsbongUtils->autoIdentifyRowInputInLevelMapContainer(sTileId)));
-
-		fTy=fTy*(-1);
-		
-
-//		printf(">>sTileId[3]: %c\n",sTileId[3]);
-//		printf(">>fTy: %f\n",fTy);
+//		printf(">>>%i\n",(myUsbongUtils->autoIdentifyRowInputInLevelMapContainer(sTileId)));
+			
     
-    float fTileSideXAxis = 0.0625f; //1.0f
-    float fTileSideYAxis = 1.0f; //TO-DO: -reverify: cause of 1.0f
+    float fTileSideXAxis = 0.0625f;
+    //from bottom; anchor; start fTy at 1.0f
+    float fTileSideYAxis = -0.0625f;
  
 		//printf("fGridTileWidthVertexPosition: %f\n",fGridTileWidthVertexPosition);
+//    	glColor3f(1.0f, 0.0f, 0.0f); //red
+
 
     glBegin(GL_QUADS); // Each set of 4 vertices form a quad
     	glTexCoord2f(fTx, fTy);
@@ -975,7 +986,7 @@ void Level2D::drawTileAsQuadWithTexture(std::string sTileId)
     	
     	glTexCoord2f(fTx, fTy + fTileSideYAxis);
     	glVertex3f(0.0f, 0.0f-fGridTileHeightVertexPosition, 0.0f);
-   	glEnd();
+   	glEnd();    	
     
     glDisable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, 0);
