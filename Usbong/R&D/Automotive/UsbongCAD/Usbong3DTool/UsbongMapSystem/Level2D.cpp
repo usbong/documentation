@@ -950,7 +950,7 @@ void Level2D::drawTileAsQuadWithTexture(std::string sTileId)
 		
 		//edited by Mike, 20210721    
     //texture y-axis; start from bottom; anchor
-    //GHOSTS'N GOBLINS? (Arcade, Family Computer; Year 1985) 
+    //CAPCOM's GHOSTS'N GOBLINS? (Arcade, Family Computer; Year 1985) 
     //May tattoo ng puso ang braso ng mga Dambuhalang Goblin.
     //Umaaligid-aligid sila sa loob ng Gusali;
     //paalala: Goblin = uri ng halimaw; bakemono, i.e. naibang bagay
@@ -958,7 +958,7 @@ void Level2D::drawTileAsQuadWithTexture(std::string sTileId)
     //May tapang din ang pagtalon mula sa itaas na palapag upang magbalik at sumalakay muli; 
     //Ito'y sa halip na harapin ang halimaw, at tanggapin nang nakikipaglaban ang tiyak na kamatayan.
     //paalala: ang patay, patay na.
-		//16.0f due to 16 tile height max
+		//16.0f due to tile x16 to be height max
 		//0.0625f*16.0f=1.0f
     fTy = 1.0f-0.0625f*(myUsbongUtils->autoIdentifyRowInputInLevelMapContainer(sTileId)); //row    
 
