@@ -643,14 +643,14 @@ Example Japanese Alphabet: <a href="https://docs.google.com/viewer?a=v&pid=sites
 --> Gayunpaman, ilan sa mga shinsengumi ang tutol sa pansasantabi ng kanilang katana.<br/>
 --> Magkakaroon tuloy ng labanan sa pagitan ng pangkat ng mga shinsengumi at ng pamahalaan.<br/>
 <br/>
---> Nang papalapit na sa katapusan, maaalalang kakausapin ni Toshizou ang kanyang mga kasamahan sa pangkat.<br/>
+--> Nang papalapit na sa katapusan, maaalalang kakausapin ni Toshizou ng shinsengumi ang kanyang mga kasamahan sa pangkat.<br/>
 <br/>
 --> <b>Toshizou:</b> Kung sino ang may mas mahalaga pang bagay upang ikabuhay, umuwi na!<br/>
 --> Ang mga wala na, sumama kayo sa'kin!<br/>
 <br/>
 --> Susugod si Toshizou ng shinsengumi sa kanang pakpak ng sandatahang lakas ng pamahalaan.<br/>
 --> <b>Pamahalaan:</b> Ano ang pangalan mo?<br/>
---> <b>Toshizou:</b> Pangalawa sa pangkat ng shinsengumi!<br/>
+--> <b>Toshizou:</b> Pangalawa sa pangkat ng shinsengumi, 土方歳三 (Hijikata, Toshizou)!<br/>
 --> <b>Pamahalaan:</b> Isasantabi mo na ba ang iyong sandata?<br/>
 --> <b>Toshizou:</b> Hindi!<br/>
 <br/>
