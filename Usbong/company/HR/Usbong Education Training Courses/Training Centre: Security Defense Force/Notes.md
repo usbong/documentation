@@ -646,8 +646,8 @@ Example Japanese Alphabet: <a href="https://docs.google.com/viewer?a=v&pid=sites
 <br/>
 --> Nang papalapit na sa katapusan, maaalalang kakausapin niya ang kanyang mga kasamahan sa pangkat.<br/>
 <br/>
-<b>Toshizou:</b> Kung sino ang may mas mahalaga pang bagay upang ikabuhay, umuwi na!<br/>
-Ang mga wala na, sumama kayo sa'kin!<br/>
+--> <b>Toshizou:</b> Kung sino ang may mas mahalaga pang bagay upang ikabuhay, umuwi na!<br/>
+--> Ang mga wala na, sumama kayo sa'kin!<br/>
 <br/>
 --> Susugod si Toshizou ng shinsengumi sa kanang pakpak ng sandatahang lakas ng pamahalaan.<br/>
 --> <b>Pamahalaan:</b> Ano ang pangalan mo?<br/>
