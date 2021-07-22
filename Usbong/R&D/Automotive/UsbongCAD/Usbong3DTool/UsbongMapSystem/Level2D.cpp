@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20200926
- * @date updated: 20210721
+ * @date updated: 20210722
  * @website address: http://www.usbong.ph
  *
  * Reference:
@@ -222,69 +222,6 @@ void Level2D::load_tga(char *filename)
     gluBuild2DMipmaps(GL_TEXTURE_2D, GL_RGBA, targa.width, targa.height,
                       GL_RGBA, GL_UNSIGNED_BYTE, data);
     free(data);
-}
-
-//added by Mike, 20210423
-void Level2D::setup()
-{
-    //removed by Mike, 20201010
-    //due to blank output
-    //glEnable(GL_DEPTH_TEST);
-    
-    // select texture 1
-    //edited by Mike, 20210707
-    //    glBindTexture(GL_TEXTURE_2D, TEXT_TEXTURE_A);
-    glBindTexture(GL_TEXTURE_2D, LEVEL_2D_TEXTURE);
-    
-    /* create OpenGL texture out of targa file */
-    //edited by Mike, 20210420
-    //    load_tga("textures/armor.tga");
-    //    load_tga("textures/imageSpriteExampleMikeWithoutBG.tga");
-    //edited by Mike, 20210703
-    //    load_tga("textures/textExample.tga");
-    load_tga("textures/level.tga");
-    
-    // set texture parameters
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
-                    GL_LINEAR_MIPMAP_NEAREST);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    
-    /*
-     // select texture 1
-     glBindTexture(GL_TEXTURE_2D, MIKE_TEXTURE_B);
-     
-     // create OpenGL texture out of targa file
-     load_tga("textures/armor.tga");
-     
-     // set texture parameters
-     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
-     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
-     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
-     GL_LINEAR_MIPMAP_NEAREST);
-     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-     
-     // select texture 1
-     glBindTexture(GL_TEXTURE_2D, MIKE_TEXTURE_C);
-     
-     // create OpenGL texture out of targa file
-     load_tga("textures/armor.tga");
-     
-     // set texture parameters
-     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
-     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
-     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
-     GL_LINEAR_MIPMAP_NEAREST);
-     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-     */
-    
-    /* unselect texture myFontTextureObject */
-    glBindTexture(GL_TEXTURE_2D, 0);
-    
-    /* setup alpha blending */
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    glEnable(GL_BLEND);
 }
 
 //edited by Mike, 20201001
@@ -540,8 +477,9 @@ Level2D::Level2D(float xPos, float yPos, float zPos, float windowWidth, float wi
     isAtMaxTextCharRow=false;
     idrawPressNextSymbolCount=0;
     
-    //removed by Mike, 20201001; added by Mike, 20210423
-    setup();
+    //removed by Mike, 20201001; added by Mike, 20210423;
+    //removed by Mike, 20210722
+//    setup();
     
     setCollidable(true);
     
@@ -578,9 +516,16 @@ void Level2D::setupLevel(int myLevelTextureObject)
     /* set texture parameters */
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
+       
+/*	//edited by Mike, 20210722; this is due to displayed image is blurred
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
-                    GL_LINEAR_MIPMAP_NEAREST);
+                    GL_LINEAR_MIPMAP_NEAREST);                    
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+*/
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
+                    GL_NEAREST);                    
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+        
     
     /* unselect texture myFontTextureObject */
     glBindTexture(GL_TEXTURE_2D, 0);
@@ -589,20 +534,21 @@ void Level2D::setupLevel(int myLevelTextureObject)
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glEnable(GL_BLEND);
     
-    /* set background color to bluish /* set texture parameters */
+/* //removed by Mike, 20210722    
+    // set background color to bluish //set texture parameters
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
                     GL_LINEAR_MIPMAP_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     
-    /* unselect texture myFontTextureObject */
+    // unselect texture myFontTextureObject
     glBindTexture(GL_TEXTURE_2D, 0);
     
-    /* setup alpha blending */
+    // setup alpha blending
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glEnable(GL_BLEND);
-    
+*/    
     //removed by Mike, 20201012
     /* set background color to bluish to demonstrate font transparency */
     //    glClearColor(0.0f, 0.0f, 0.25f, 1.0f); /* to demonstrate font transparency */
@@ -945,8 +891,11 @@ void Level2D::drawTileAsQuadWithTexture(std::string sTileId)
     fTx = 0.0f+0.0625f*((sTileId[1]-'0')); //column
     fTy = 0.0f+0.0625f*(sTileId[3]-'0'); //row
 */
+
 		
 	  fTx = 0.0f+0.0625f*(myUsbongUtils->autoIdentifyColumnInputInLevelMapContainer(sTileId)); //column
+//	  fTx = 0.0f+2*2*0.0625f*(myUsbongUtils->autoIdentifyColumnInputInLevelMapContainer(sTileId)); //column
+//	  fTx = 0.0f+2*0.0625f*(myUsbongUtils->autoIdentifyColumnInputInLevelMapContainer(sTileId)); //column
 		
 		//edited by Mike, 20210721    
     //texture y-axis; start from bottom; anchor
@@ -961,6 +910,8 @@ void Level2D::drawTileAsQuadWithTexture(std::string sTileId)
 		//16.0f due to tile x16 to be height max
 		//0.0625f*16.0f=1.0f
     fTy = 1.0f-0.0625f*(myUsbongUtils->autoIdentifyRowInputInLevelMapContainer(sTileId)); //row    
+//    fTy = 1.0f-2*2*0.0625f*(myUsbongUtils->autoIdentifyRowInputInLevelMapContainer(sTileId)); //row    
+//    fTy = 1.0f-2*0.0625f*(myUsbongUtils->autoIdentifyRowInputInLevelMapContainer(sTileId)); //row    
 
     	
 //		printf(">>>%i\n",(myUsbongUtils->autoIdentifyColumnInputInLevelMapContainer(sTileId)));
@@ -968,11 +919,20 @@ void Level2D::drawTileAsQuadWithTexture(std::string sTileId)
 			
     
     float fTileSideXAxis = 0.0625f;
+//    float fTileSideXAxis = 0.0625f*2*2;
+//    float fTileSideXAxis = 0.0625f*2;
+
     //from bottom; anchor; start fTy at 1.0f
     float fTileSideYAxis = -0.0625f;
+//    float fTileSideYAxis = -0.0625f*2*2;
+//    float fTileSideYAxis = -0.0625f*2;
  
 		//printf("fGridTileWidthVertexPosition: %f\n",fGridTileWidthVertexPosition);
 //    	glColor3f(1.0f, 0.0f, 0.0f); //red
+
+		//added by Mike, 20210722
+		//TO-DO: -reverify: cause of blurred texture
+	//glScalef(0.5f,0.5f,1.0f);
 
 
     glBegin(GL_QUADS); // Each set of 4 vertices form a quad
@@ -1076,7 +1036,8 @@ void Level2D::drawLevelWithTextureUsingInputFile()
                 glPushMatrix();
                 	//add +1.0f in x-axis and y-axis due to 3rd quadrant in the draw function
                 	//center 0,0,0 origin; vertex positions
-                	
+  								
+  								//edited by Mike, 20210722              	
                 	glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(0.0f+fGridSquareWidth*(iColumnCount+1.0f)), myUsbongUtils->autoConvertFromPixelToVertexPointY(0.0f+fGridSquareHeight*(iRowCount+1.0f)), 0.0f);
  										
  										//edited by Mike, 20210719

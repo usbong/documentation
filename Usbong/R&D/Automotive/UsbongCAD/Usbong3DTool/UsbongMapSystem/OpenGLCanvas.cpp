@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20200926
- * @date updated: 20210712
+ * @date updated: 20210722
  * @website address: http://www.usbong.ph
  *
  * References:
@@ -1627,11 +1627,12 @@ void OpenGLCanvas::render()
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     
+        
     /*  //
      glMatrixMode(GL_MODELVIEW);
      glLoadIdentity();
      */
-    
+     
     //added by Mike, 20210627
     //paint the outer margins if window not square, i.e. width and height not equal
 //-----
