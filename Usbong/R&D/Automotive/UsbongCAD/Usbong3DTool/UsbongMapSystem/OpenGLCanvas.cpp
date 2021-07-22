@@ -1980,6 +1980,15 @@ glPopMatrix();
 //    myText->draw();
     
     
+    
+		//added by Mike, 20210722         
+		//TO-DO: -update: screen width and height max position;
+		//used in wrap world, et cetera
+    glPushMatrix();
+    	myPilot->draw();
+    glPopMatrix();          
+    
+             
     //added by Mike, 20210511
     /*
      if (myMouseActionDown[MOUSE_LEFT_BUTTON]==FALSE) {
@@ -2199,6 +2208,13 @@ glPopMatrix();
          glPopMatrix();
          }
          */
+
+/* //removed by Mike, 20210722         
+				 //added by Mike, 20210722         
+         glPushMatrix();
+         	myPilot->draw();
+         glPopMatrix();   
+*/               
     }
 }
 
