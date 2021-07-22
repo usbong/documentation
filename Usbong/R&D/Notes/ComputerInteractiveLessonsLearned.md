@@ -319,7 +319,7 @@ TO-DO: -update: this<br/>
 #### 1.1.8.3) Ikatlong Bahagi
 --> May lumilipad na Dragon ulit na nagbabantay sa ikatlong pinto.<br/>
 --> Nasa kanya rin ang susi sa pinto.<br/>
---> Subalit, kailangan mo munang mong ang tulay na may ilog ng apoy.<br/> 
+--> Subalit, kailangan mo munang lampasan ang tulay sa ibabaw ng ilog ng apoy.<br/> 
 --> Paalala: May bahagi ng ilog na kung saan umaangat ang apoy nito.<br/> 
 --> "Open door from key !" ...<br/>
 <br/>
