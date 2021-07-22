@@ -316,7 +316,41 @@ TO-DO: -update: this<br/>
 --> Nasa kanya ang susi upang mabuksan ang ikalawang pinto patungo sa itaas ng bundok.<br/>
 --> Gawin ang magagawa mo sa abot ng iyong kaya upang magapi ang lumilipad na Dragon.<br/>
 <br/>
-#### 1.1.8.3) Dagdag na mga Bagay-bagay
+#### 1.1.8.3) Ikatlong Bahagi
+--> May lumilipad na Dragon ulit na nagbabantay sa ikatlong pinto.<br/>
+--> Nasa kanya rin ang susi sa pinto.<br/>
+--> Subalit, kailangan mo munang mong ang tulay na may ilog ng apoy.<br/> 
+--> Paalala: May bahagi ng ilog na kung saan umaangat ang apoy nito.<br/> 
+--> "Open door from key !" ...<br/>
+<br/>
+#### 1.1.8.4) Ika-apat na Bahagi
+毎回、同じ道を使って、進めない状態となったら、<br/>
+ほかの道を使ってみようと、<br/>
+作り上げられた魔界から習える。<br/>
+解決方法もそうだと。<br/>
+<br/>
+でかいゴブリンに追いかけながら、<br/>
+必死に走っても、<br/>
+野球のピッチャーからのボールのようなモノを投げられるから、<br/>
+また、作られたステージにある仕組みも、<br/>
+例ジャンプから安全に落ちれる所が動くなど、<br/>
+気をつけないといけないし、<br/>
+結果は負け。<br/>
+<br/>
+走るのが速かったけどね。<br/>
+<br/>
+野球？<br/>
+<br/>
+コウモリも倒したかったため、使ってた武器とした盾を<br/>
+タルにある斧に変えちまって、ステージを完成するには<br/>
+要る時間が増えちまった。<br/>
+<br/>
+ただ、今まで気づいてなかったことに気づいた。<br/>
+走ってる時に、作られた魔界と魔物の動きには差がある。<br/>
+左右して、動きの差が見える。<br/>
+<br/>
+
+#### 1.1.8.5) Dagdag na mga Bagay-bagay
 --> Executed on Gameboy Color (over 10 years ago)<br/>
 --> May Password na maaaring isulat upang agad na makabalik sa isang pook ng paglalakbay.<br/>
 --> <b>Paalala:</b> Nauubos ang kuryente sa baterya ng Bala, i.e. Cartridge, na nagdudulot ng pagkawala ng naisulat sa Memory storage.<br/>
