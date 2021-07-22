@@ -262,6 +262,8 @@ TO-DO: -update: this<br/>
 ### 1.1.8) GHOSTS'N GOBLINS
 --> Arcade; Family Computer (Year 1985);<br/>
 --> Executed on Playstation Portable (PSP).<br/>
+
+#### 1.1.8.1) Unang Bahagi
 --> Maaalala ang pakikipaglaban ni Arthur sa mga Dambuhalang Goblin sa pook kung saan may mga gusali.<br/>
 --> <b>Paalala:</b> Hindi agad na mapupuksa ang Dambuhalang Goblin. Kailangan nito ng maraming tama mula halimbawa sa sandata, e.g. sibat (lance), たいまつ (松明; taimatsu), i.e. kahoy na may apoy upang magbigay liwanag, kutsilyo, i.e. patalim.<br/>
 --> Pag-akyat mo bilang si Arthur sa itaas na palapag pagkatapos magapi ang unang Dambuhalang Goblin, mayroon ulit na isa pa nito.<br/>
@@ -278,6 +280,43 @@ TO-DO: -update: this<br/>
 --> Kapag sapat na ang sukat ng layo, maaari mo nang batuhin gamit ang kasalukuyan mong sandata ang Dambuhalang Goblin at magapi ito.<br/>
 --> Mula sa pagsisiyasat ang patalim ang pinakamaiging gamiting sandata gawa ng bilis nito.<br/>
 <br/>
+#### 1.1.8.2) Ikalawang Bahagi
+--> Maaalala ang paglalakbay sa ilalim ng lupa gamit ang daan patungo sa itaas ng bundok.<br/>
+--> Doon dinala ang iyong asawa ng lumilipad na Demonyong may pakpak ayon sa utos ng Haring Halimaw.<br/>
+--> Matutuklasan mong higit isa ang lumilipad na Demonyong may pakpak na nag-aabang sa iyong daraanan.<br/>
+--> Hindi mo madaling magagapi ang mga ito sa mahabaang labanan gawa ng kanilang mabilis na lumilipad na pagsalakay.<br/>
+--> Upang mapuksa sila, kailangan mong unahan sila sa pagsalakay.<br/>
+--> Karaniwan din, bagama't magagapi mo sila at makasusulong, mawawasak ang iyong suot na kalasag.<br/>
+<br/>
+--> <b>Paalala:</b> Dagdag pa sa mga lumilipad na Demonyong may pakpak, mayroon ding mga lumilipad na Multong may kapote na nagbabato ng mga mahahabang pangsungkit; Ghost : Ghoul?<br/>
+--> Hango ito sa ginagamit upang iusog ang mga batong nagkaroon ng baga upang makagawa ng apoy.<br/>
+<br/>
+--> Saka mo rin maiisip na maiging may masusuot na kalasag.<br/>
+--> Sapagkat alam ng gumawa ng daigdig ito, may matatagpuan kang masusuot na kalasag sa loob ng baul na bit-bit ng mga Multo.<br/>
+<br/>
+--> Mapangiti ka man o hindi, tuloy pa rin ang paglitaw at pagsalakay ng mga Multo, Demonyong may Pakpak, at ang maliit na uri ng Demonyong may Pakpak na kulay ube, sa halip na pula.<br/>
+<br/>
+--> Maaari ka ring pagulat na mapasipa sa nais mong makaiwas na tamaan ng mga lumilitaw-litaw at lumilipad-lipad na Multong may kapote.<br/>
+<br/>
+--> May dalawang mapagpipiliang daan: Isa patungong paitaas, at isa naman patungong paibaba.<br/>
+--> Kapag maalala mo ang iyong nais na makarating sa itaas ng bundok, maiging piliin ang patungong paitaas.<br/>
+<br/>
+--> Gayunpaman, nang marating mo ang pinaka-itaas ng daan sa ilalim ng lupa, matutuklasan mo ito:<br/>
+--> Wala na itong itataas.<br/>
+--> Dagdag pa, sa harapan mo, may balon, kung saan may bahagya kang makikitang Demonyong may pakpak na nag-aabang.<br/>
+--> Maiging iwasan na lamang ito sa halip na makipaglaban.<br/>
+--> Mukha ring may malalapagan naman doon sa malayu-layong bahagi, at hindi sa tabi ng Demonyong may pakpak.<br/>
+--> Talunin mo ang balon!<br/>
+--> Matutuklasan mong palalim pala ito, bagama't hindi naman isa lamang na bagsak upang marating ang pinaka-ibaba.<br/>
+--> Paglapag sa ibaba, mahahabol ka ng lumilipad na Demonyong may pakpak.<br/>
+--> Maiging puksain na ito.<br/>
+<br/>
+--> Sa iyong pagpapatuloy ng paglalakbay sa ilalam pa rin ng lupa, mapapansin mong may mahaba-habang daan ito.<br/>
+--> Kapag marating mo na ang dulo nito, may nag-aabang na lumilipad na Dragon.<br/>
+--> Nasa kanya ang susi upang mabuksan ang ikalawang pinto patungo sa itaas ng bundok.<br/>
+--> Gawin ang magagawa mo sa abot ng iyong kaya upang magapi ang lumilipad na Dragon.<br/>
+<br/>
+#### 1.1.8.3) Dagdag na mga Bagay-bagay
 --> Executed on Gameboy Color (over 10 years ago)<br/>
 --> May Password na maaaring isulat upang agad na makabalik sa isang pook ng paglalakbay.<br/>
 --> <b>Paalala:</b> Nauubos ang kuryente sa baterya ng Bala, i.e. Cartridge, na nagdudulot ng pagkawala ng naisulat sa Memory storage.<br/>
