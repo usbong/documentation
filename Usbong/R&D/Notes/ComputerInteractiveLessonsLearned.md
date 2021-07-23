@@ -331,7 +331,7 @@ kung humantong sa sitwasyon na hindi na makasulong,<br/>
 ほかの道を使ってみようと、<br/>
 subukan daw gamitin ang isa pang daan.<br/>
 作り上げられた魔界から習える。<br/>
-Matututunan ito mula sa nabuo't inihandog na daigig na himala.<br/>
+Matututunan ito mula sa nabuo't inihandog na daigdig na himala.<br/>
 解決方法もそうだと。<br/>
 Gano'n din daw sa paraan ng paglulutas.<br/>
 <br/>
