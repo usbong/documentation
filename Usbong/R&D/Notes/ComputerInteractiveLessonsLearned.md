@@ -317,38 +317,71 @@ TO-DO: -update: this<br/>
 --> Gawin ang magagawa mo sa abot ng iyong kaya upang magapi ang lumilipad na Dragon.<br/>
 <br/>
 #### 1.1.8.3) Ikatlong Bahagi
---> May lumilipad na Dragon ulit na nagbabantay sa pinto.<br/>
+--> May lumilipad ulit na Dragon na nagbabantay sa pinto.<br/>
 --> Nasa kanya rin ang susi sa ikatlong pinto.<br/>
 --> Subalit, kailangan mo munang lampasan ang tulay sa ibabaw ng ilog ng apoy.<br/> 
 --> Paalala: May bahagi ng ilog na kung saan umaangat ang apoy nito.<br/> 
 --> "Open door from key !" ...<br/>
 <br/>
 #### 1.1.8.4) Ika-apat na Bahagi
-毎回、同じ道を使って、進めない状態となったら、<br/>
+毎回、同じ道を使って、<br/>
+Sa bawat pag-ikot, gamit ang magkatumbas na daan,<br/>
+進めない状態となったら、<br/>
+kung humantong sa sitwasyon na hindi na makasulong,<br/>
 ほかの道を使ってみようと、<br/>
+subukan daw gamitin ang isa pang daan.<br/>
 作り上げられた魔界から習える。<br/>
+Matututunan ito mula sa nabuo't inihandog na daigig na himala.<br/>
 解決方法もそうだと。<br/>
+Gano'n din daw sa paraan ng paglulutas.<br/>
 <br/>
 でかいゴブリンに追いかけながら、<br/>
+Habang hinahabol ng Dambuhalang Goblin,<br/>
 必死に走っても、<br/>
+kahit tumakbo nang tiyak na mamamatay,<br/>
 野球のピッチャーからのボールのようなモノを投げられるから、<br/>
+sapagkat babatuhan ng bolang tulad sa nagmumula sa Pitcher ng Baseball,<br/>
 また、作られたステージにある仕組みも、<br/>
+dagdag pa, maski ang sistema sa binuong stage,<br/>
 例ジャンプから安全に落ちれる所が動くなど、<br/>
+hal. gumagalaw ang pook na mababagsakan nang mapayapa mula sa JUMP, atbp<br/>
 気をつけないといけないし、<br/>
+hindi rin makasusulong kung hindi mag-ingat, i.e. dikitan ng kaluluwa,<br/>
 結果は負け。<br/>
+pinagsamang bunga, talo.<br/>
 <br/>
 走るのが速かったけどね。<br/>
+Mabilis man ang pagtakbo...<br/>
 <br/>
 野球？<br/>
+Baseball?<br/>
 <br/>
-コウモリも倒したかったため、使ってた武器とした盾を<br/>
-タルにある斧に変えちまって、ステージを完成するには<br/>
+コウモリも倒したかったため、<br/>
+Gawa ng nais na mapataob ang paniki, <br/>
+使ってた武器とした盾を<br/>
+ang ginagamit kong kalasag bilang sandata,<br/>
+タルにある斧に変えちまって、<br/>
+napalitan ko ng palakol sa baul,<br/>
+ステージを完成するには<br/>
+upang matapos ang stage,<br/>
 要る時間が増えちまった。<br/>
+nadagdagan tuloy ang kailangang bilang ng panahon.<br/>
 <br/>
 ただ、今まで気づいてなかったことに気づいた。<br/>
+Gayunpaman, napansin ko itong bagay na bago ngayon hindi ko napansin.<br/>
 走ってる時に、作られた魔界と魔物の動きには差がある。<br/>
+Sa panahong tumatakbo, may pagitan ang nabuong daigdig na himala at ang bagay-bagay na himala.<br/>
 左右して、動きの差が見える。<br/>
+Kumaliwa at kumanan, makikita mo ang pagitan sa paggalaw.<br/>
 <br/>
+--> Maaari nating matuklasan ang pagkasunud-sunod ng mga salita.<br/>
+--> Ito'y kapag nagsulat muna tayo sa wikang Hapon, bago sa wikang Filipino.<br/>
+--> Matutuklasan din ito kapag isinulat muna natin ito sa wikang Ingles, atbp.<br/>
+--> Gayunpaman, maaaring mabawasan ito kung isusulat natin ang nakasulat sa isa pang wika<br/>
+--> ayon sa ating nauunawaan, hindi man natin gamitin ang katumbas nitong mga salita.<br/>
+<br/>
+--> <b>Mungkahing aksyon:</b> Magsulat sa wikang Filipino kung wikang Filipino ang pakay na wika.<br/> 
+--> Sa halip ito na unahin ang pagsusulat sa wikang Ingles, atbp.<br/> 
 
 #### 1.1.8.5) Dagdag na mga Bagay-bagay
 --> Executed on Gameboy Color (over 10 years ago)<br/>
