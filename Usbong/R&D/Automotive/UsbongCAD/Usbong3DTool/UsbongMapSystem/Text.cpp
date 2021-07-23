@@ -675,75 +675,6 @@ float* Text::getXYZPos()
  }
  */
 
-//added by Mike, 20210423
-void Text::drawTextBackgroundAsQuadWithTexturePrev()
-{
-    //edited by Mike, 20210516
-    //    glTranslatef(myXPos, myYPos, myZPos);
-    //TO-DO: -add: myZPos
-    //printf("autoConvert; myXPos: \n",myUsbongUtils->autoConvertFromPixelToVertexPointX(0));
-    //printf("myXPosAsPixel: %i\n",myXPosAsPixel);
-    
-    //note: myXPos is float; autoConvertFromPixelToVertexPointX(...) input is int
-    //auto-converted from float to int due to autoConvertFromPixelToVertexPointX(...) accepts int as parameter
-    //edited by Mike, 20210517
-    //    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPos), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPos), myZPos);
-    //    glTranslatef(myXPosAsPixel, myYPosAsPixel, myZPosAsPixel);
-    
-    //added by Mike, 20210614
-    //note; add glPushMatrix() and glPopMatrix()
-    glPushMatrix();
-    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixel), myZPosAsPixel);
-    
-    glScalef(2.0f,2.0f,1.0f);
-    
-    
-    //        glScalef(2.5f,5.0f,1.0f);
-    //TO-DO: -update: draw instructions
-    drawTextBackgroundObject();
-    glScalef(1.0f,1.0f,1.0f);
-    
-    //added by Mike, 20210613
-    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel), -myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixel), -myZPosAsPixel);
-    glPopMatrix();
-    
-    //added by Mike, 20210614
-    //set TOP-LEFT origin/anchor/reference point; quadrant 4, y-axis inverted; x and y positive
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    
-    //TOP-LEFT origin
-    glOrtho(0.0f, //left
-            1.0f, //right
-            1.0f, //bottom
-            0.0f, //top
-            0.0f, //zNear; minimum
-            1.0f //zFar; maximum
-            );
-    
-    //font
-    // select and enable texture FONT_TEXTURE
-    glBindTexture(GL_TEXTURE_2D, FONT_TEXTURE);
-    glEnable(GL_TEXTURE_2D);
-    
-    //draw text using Font texture
-    char tempText[50];
-    sprintf(tempText,"USBONG");
-    
-    glScalef(0.5f,0.5f,1.0f);
-    //note: origin/anchor @bottom-left
-				//draw_string(0.0f, 0.5f, 0.0f, tempText);
-				//note: positions due to scaled by half, i.e. 0.5f
-    draw_string(0.1f, 1.2f, 0.0f, tempText);
-    
-    //	   		draw_string(0.1f, 1.2f, -1.0f, tempText);
-    glScalef(1.0f,1.0f,1.0f);
-    
-    
-	   glDisable(GL_TEXTURE_2D);
-	   glBindTexture(GL_TEXTURE_2D, 0);
-}
-
 //added by Mike, 20210617
 void Text::drawPressNextSymbol()
 {
@@ -817,7 +748,18 @@ void Text::drawTextBackgroundAsQuadWithTexture()
 
 		//edited by Mike, 20210723
 //    glScalef(5.0f,2.5f,1.0f);
-    glTranslatef(0.4f,0.0f,0.0f);
+    
+    //edited by Mike, 20210723
+    //note: displayed out to be equal
+    //glTranslatef(0.4f,0.0f,0.0f);
+    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset), 0.0f, 0.0f);
+    
+    //added by Mike, 20201121
+      #if defined(__APPLE__)
+        glTranslatef(-0.02f,0.0f,0.0f);
+      #endif
+    
+    
     glScalef(3.0f,2.5f,1.0f);
     
     
