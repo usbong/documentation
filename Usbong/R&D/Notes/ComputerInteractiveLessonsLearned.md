@@ -400,8 +400,8 @@ Kumaliwa at kumanan, makikita mo ang pagitan sa paggalaw.<br/>
 --> Lumilpad na Dragon<br/>
 --> <b>Paalala:</b> May paraan upang mabilis na magapi ang mga ito,<br/>
 --> nang hindi nawawasak ang iyong suot na kalasag.<br/>
---> Nakabatay ang galaw ng mga halimaw sa iyong gagawin.<br/>
---> <b>Halimbawa:</b> Kung hindi ka sumalakay, at sumugud lang upang dumaan sa ilalam ng Dambuhalang Isa ang mata at sungay sapagkat akala mo tatalon ito, hindi iyong ang kanyang gagawin.<br/>
+--> Nakabatay kasi ang galaw ng mga halimaw sa iyong gagawin.<br/>
+--> <b>Halimbawa:</b> Kung hindi ka sumalakay, at sumugod lang upang dumaan sa ilalam ng Dambuhalang Isa ang mata at sungay sapagkat akala mo tatalon ito, hindi iyong ang kanyang gagawin.<br/>
 --> Sa halip, susugod siya sa iyo.<br/>
 --> Gayunpaman, kapag ginawa mo ang talong pagsalakay, hindi ka niya susugurin agad.<br/>
 --> Kung kaya't, magagawa ang sunud-sunod na pagsalakay gamit ang iyong kalasag bilang sandata.<br/>
