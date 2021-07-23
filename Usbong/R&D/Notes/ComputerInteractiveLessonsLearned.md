@@ -294,7 +294,7 @@ TO-DO: -update: this<br/>
 --> Saka mo rin maiisip na maiging may masusuot na kalasag.<br/>
 --> Sapagkat alam ng gumawa ng daigdig ito, may matatagpuan kang masusuot na kalasag sa loob ng baul na bit-bit ng mga Multo.<br/>
 <br/>
---> Mapangiti ka man o hindi, tuloy pa rin ang paglitaw at pagsalakay ng mga Multo, Demonyong may Pakpak, at ang maliit na uri ng Demonyong may Pakpak na kulay ube, sa halip na pula.<br/>
+--> Mapangiti ka man o hindi, tuloy pa rin ang paglitaw at pagsalakay ng mga Multo, Demonyong may Pakpak, at ang maliit na uri ng Demonyong may Pakpak na kulay bughaw, sa halip na pula.<br/>
 <br/>
 --> Maaari ka ring pagulat na mapasipa sa nais mong makaiwas na tamaan ng mga lumilitaw-litaw at lumilipad-lipad na Multong may kapote.<br/>
 <br/>
@@ -317,8 +317,8 @@ TO-DO: -update: this<br/>
 --> Gawin ang magagawa mo sa abot ng iyong kaya upang magapi ang lumilipad na Dragon.<br/>
 <br/>
 #### 1.1.8.3) Ikatlong Bahagi
---> May lumilipad na Dragon ulit na nagbabantay sa ikatlong pinto.<br/>
---> Nasa kanya rin ang susi sa pinto.<br/>
+--> May lumilipad na Dragon ulit na nagbabantay sa pinto.<br/>
+--> Nasa kanya rin ang susi sa ikatlong pinto.<br/>
 --> Subalit, kailangan mo munang lampasan ang tulay sa ibabaw ng ilog ng apoy.<br/> 
 --> Paalala: May bahagi ng ilog na kung saan umaangat ang apoy nito.<br/> 
 --> "Open door from key !" ...<br/>
