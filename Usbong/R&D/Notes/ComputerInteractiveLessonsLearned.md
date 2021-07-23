@@ -321,8 +321,11 @@ TO-DO: -update: this<br/>
 --> Nasa kanya rin ang susi sa ikatlong pinto.<br/>
 --> Subalit, kailangan mo munang lampasan ang tulay sa ibabaw ng ilog ng apoy.<br/> 
 --> <b>Paalala:</b> May bahagi ng ilog na kung saan umaangat ang apoy nito.<br/> 
---> "Open door from key !" ...<br/>
+--> "Open door from key !"か"Take key to open door !" ?<br/>
+-->というような短文が書かれてある。<br/>
+--> May nakasulat na maikling sulatin na hango sa gano'n ang sinasabi.<br/> 
 <br/>
+
 #### 1.1.8.4) Ika-apat na Bahagi
 毎回、同じ道を使って、<br/>
 Sa bawat pag-ikot, gamit ang magkatumbas na daan,<br/>
@@ -382,7 +385,32 @@ Kumaliwa at kumanan, makikita mo ang pagitan sa paggalaw.<br/>
 <br/>
 --> <b>Mungkahing aksyon:</b> Magsulat sa wikang Filipino kung wikang Filipino ang pakay na wika.<br/> 
 --> Sa halip ito na unahin ang pagsusulat sa wikang Ingles, atbp saka isasalin sa wikang Filipino.<br/> 
+<br/>
+--> May makukuha ulit akong kalasag upang ipalit sa palakol.<br/>
+--> Sa pinaka-itaas na palapag ng bahaging ito, may nag-aabang na Dambuhalang Demonyong may pakpak.
+--> Natuklsan ko na ito ang pinakamaiging gawin upang mapuksa siya.<br/>
+--> Sugurin mo at gamit ang iyong kalasag bilang sandata sunud-sunod mo siyang tamaan.<br/>
+<br/>
 
+#### 1.1.8.4) Ikalimang Bahagi
+--> Siyasatin ang tinatapakan. May mga halimaw, e.g. kalansay, atbp.<br/>
+--> Sapagkat malapit na sa pook kung saan naroon ang Haring Halimaw, samu't saring mga halimaw ang narito.<br/>
+--> <b>Halimbawa:</b> Ang mga may susi na nagbabantay ng pinto, tulad ng mga ito:<br>
+--> Dambuhalang Isa ang mata at sungay, at may suot na pulang kalasag na may tusok.<br/>
+--> Lumilpad na Dragon<br/>
+--> <b>Paalala:</b> May paraan upang mabilis na magapi ang mga ito,<br/>
+--> nang hindi nawawasak ang iyong suot na kalasag.<br/>
+--> Nakabatay ang galaw ng mga halimaw sa iyong gagawin.<br/>
+--> <b>Halimbawa:</b> Kung hindi ka sumalakay, at sumugud lang upang dumaan sa ilalam ng Dambuhalang Isa ang mata at sungay sapagkat akala mo tatalon ito, hindi iyong ang kanyang gagawin.<br/>
+--> Sa halip, susugod siya sa iyo.<br/>
+--> Gayunpaman, kapag ginawa mo ang talong pagsalakay, hindi ka niya susugurin agad.<br/>
+--> Kung kaya't, magagawa ang sunud-sunod na pagsalakay gamit ang iyong kalasag bilang sandata.<br/>
+--> Magagamit din ang talong pagsalakay sa Lumilipad na Dragon.<br/>
+--> <b>Paalala:</b> Napapawalang-bisa ng kalasag ang mga ibinabato ng mga Halimaw,<br/>
+--> bagama't hindi ang mula sa Dambuhalang Goblin.<br/>
+--> Pagkatapos ng pagsisiyasat, tulad sa yuki, i.e. ulang tumigas at naging yelo, snowflake, ang hugis nito.<br/>
+--> <b>Dagdag:</b> Anim na Bahagi ang Salaysay
+	
 #### 1.1.8.5) Dagdag na mga Bagay-bagay
 --> Executed on Gameboy Color (over 10 years ago)<br/>
 --> May Password na maaaring isulat upang agad na makabalik sa isang pook ng paglalakbay.<br/>
