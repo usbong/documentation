@@ -531,8 +531,12 @@ Pilot::Pilot(float xPos, float yPos, float zPos, int windowWidth, int windowHeig
 	myWidth=1.4f;
     myHeight=1.4f;
 */
-	myWidth=4.0f;
+		//edited by Mike, 20210723
+	//TO-DO: -add: auto-identify tile width and height
+/*
+		myWidth=4.0f;
     myHeight=4.0f;
+*/  
     
   //added by Mike, 20210523; edited by Mike, 20210527
   //note: these are for size of whole image, i.e. not clipped to be only select parts
@@ -553,9 +557,15 @@ Pilot::Pilot(float xPos, float yPos, float zPos, int windowWidth, int windowHeig
 /*	myWidthAsPixel=128*0.2/2;
     myHeightAsPixel=192*0.4/2;
 */
+
+		//edited by Mike, 20210723
+	//TO-DO: -add: auto-identify tile width and height
+/*
     myWidthAsPixel=64;
     myHeightAsPixel=64;
-    
+*/    
+    myWidthAsPixel=64+32;
+    myHeightAsPixel=64*2+32;
     
 
 /*	//removed by Mike, 20210528

@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20200926
- * @date updated: 20210722
+ * @date updated: 20210723
  * @website address: http://www.usbong.ph
  *
  * References:
@@ -1760,8 +1760,9 @@ void OpenGLCanvas::render()
     //added by Mike, 20210703
     //auto-scale to Window Width to Height
     glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
-   
 
+
+//grid guide
 //added by Mike, 20210701
 glPushMatrix();     
   //added by Mike, 20210524
@@ -1773,6 +1774,8 @@ glPushMatrix();
      
      int iNumberSign=1;
 
+/*
+//removed by Mike, 20210723
      //rows
      for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
    		// Draw a Green Line top-left origin
@@ -1798,7 +1801,7 @@ glPushMatrix();
      		glVertex2f(1.0f*2, 2.0f/iRowCountMax*iRowCount*iNumberSign);		
    		glEnd();
      }
-
+*/
      
      //reset to 12 from 10
     //removed by Mike, 20210701
@@ -1813,6 +1816,8 @@ glPushMatrix();
 //     iColumnCountMax=10;
      iColumnCountMax=18;
 
+/*
+//removed by Mike, 20210723
      //right part
      iNumberSign=1;
      for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {
@@ -1826,10 +1831,12 @@ glPushMatrix();
      		glVertex2f(2.0f/iColumnCountMax*iColumnCount*iNumberSign, 1.0f);
    		glEnd();
      }
+*/
     
     //left part
      iNumberSign=-1;
     for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {
+/*    
    		// Draw a Green Line top-left origin
    		glBegin(GL_LINES);
 //     		glColor3f(0.0f, 0.0f, 1.0f); // Blue
@@ -1839,7 +1846,7 @@ glPushMatrix();
      		//TO-DO: -add: auto-compute myWindowHeight
      		glVertex2f(2.0f/iColumnCountMax*iColumnCount*iNumberSign, 1.0f);
    		glEnd();
-                
+*/                
         //added by Mike, 20210701
         //identify column count of left margin
 ////        printf(">>> myWindowWidthAsPixel/2.0f/iColumnCountMax*iColumnCount: %f\n",myWindowWidthAsPixel/2.0f/iColumnCountMax*iColumnCount);
@@ -1856,9 +1863,9 @@ glPushMatrix();
     //removed by Mike, 20210701
 //     iColumnCountMax=12;
 
-
 //added by Mike, 20210701
 glPopMatrix();     
+
      
 //    glScalef(1.0f,1.0f,1.0f);
     
@@ -3352,9 +3359,13 @@ void OpenGLCanvas::update()
         
         
         //added by Mike, 20210606
+/* //edited by Mike, 20210723        
         //TO-DO: -update: this
         float fMaxWindowWidthForPilot=580.0f;
         float fMaxWindowHeightForPilot=560.0f; //added by Mike, 20210606
+*/
+        float fMaxWindowWidthForPilot=myWindowWidthAsPixel;
+        float fMaxWindowHeightForPilot=myWindowHeightAsPixel;
         
         //added by Mike, 20210608
         //TO-DO: -verify: set to reset if outside Window, instead of bounceFromWindowWall
@@ -3411,14 +3422,20 @@ void OpenGLCanvas::update()
             myPilot->setXPos(fMaxWindowWidthForPilot/2-myPilot->getWidthAsPixel());
         }
         
+        
+        
         //added by Mike, 20210606
         if (myPilot->getZ()+myPilot->getHeightAsPixel() > fMaxWindowHeightForPilot) { //max movement with set
             myPilot->setZPos(fMaxWindowHeightForPilot-myPilot->getHeightAsPixel());
         }
         
-        //added by Mike, 20210606
-        if (myPilot->getZ() < fMaxWindowHeightForPilot/2-myPilot->getHeightAsPixel()) { //max movement with set
+        //added by Mike, 20210606; edited by Mike, 20210723
+/*        if (myPilot->getZ() < fMaxWindowHeightForPilot/2-myPilot->getHeightAsPixel()) { //max movement with set
             myPilot->setZPos(fMaxWindowHeightForPilot/2-myPilot->getHeightAsPixel());
+        }
+*/        
+        if (myPilot->getZ() < 0.0f) { //max movement with set
+            myPilot->setZPos(0.0f);
         }
         
         
