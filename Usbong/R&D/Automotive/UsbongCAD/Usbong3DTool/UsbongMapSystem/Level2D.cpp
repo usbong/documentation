@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20200926
- * @date updated: 20210722
+ * @date updated: 20210723
  * @website address: http://www.usbong.ph
  *
  * Reference:
@@ -787,9 +787,14 @@ void Level2D::drawTileAsQuadWithTexture(std::string sTileId)
     
 //      	printf (">>> fGridSquareWidth: %f; fGridSquareHeight: %f",fGridSquareWidth,fGridSquareHeight);
     
-    
+/* //edited by Mike, 20210723; due to insufficient texture pixel for the tile    
     float fGridTileWidthVertexPosition = myUsbongUtils->autoConvertFromPixelToVertexGridTileWidth(fGridSquareWidth);
     float fGridTileHeightVertexPosition = myUsbongUtils->autoConvertFromPixelToVertexGridTileHeight(fGridSquareHeight);
+*/
+
+    float fGridTileWidthVertexPosition = myUsbongUtils->autoConvertFromPixelToVertexGridTileWidth(fGridSquareWidth+1);
+    float fGridTileHeightVertexPosition = myUsbongUtils->autoConvertFromPixelToVertexGridTileHeight(fGridSquareHeight+1);
+
     
 		//TO-DO: -reverify: this
 		//edited by Mike, 20210720
