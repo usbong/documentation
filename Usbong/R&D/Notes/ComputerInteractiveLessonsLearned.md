@@ -320,7 +320,7 @@ TO-DO: -update: this<br/>
 --> May lumilipad ulit na Dragon na nagbabantay sa pinto.<br/>
 --> Nasa kanya rin ang susi sa ikatlong pinto.<br/>
 --> Subalit, kailangan mo munang lampasan ang tulay sa ibabaw ng ilog ng apoy.<br/> 
---> Paalala: May bahagi ng ilog na kung saan umaangat ang apoy nito.<br/> 
+--> <b>Paalala:</b> May bahagi ng ilog na kung saan umaangat ang apoy nito.<br/> 
 --> "Open door from key !" ...<br/>
 <br/>
 #### 1.1.8.4) Ika-apat na Bahagi
@@ -360,8 +360,8 @@ Baseball?<br/>
 Gawa ng nais na mapataob ang paniki, <br/>
 使ってた武器とした盾を<br/>
 ang ginagamit kong kalasag bilang sandata,<br/>
-タルにある斧に変えちまって、<br/>
-napalitan ko ng palakol sa baul,<br/>
+つぼにある斧に変えちまって、<br/>
+napalitan ko ng palakol sa banga,<br/>
 ステージを完成するには<br/>
 upang matapos ang stage,<br/>
 要る時間が増えちまった。<br/>
@@ -381,7 +381,7 @@ Kumaliwa at kumanan, makikita mo ang pagitan sa paggalaw.<br/>
 --> ayon sa ating nauunawaan, hindi man natin gamitin ang katumbas nitong mga salita.<br/>
 <br/>
 --> <b>Mungkahing aksyon:</b> Magsulat sa wikang Filipino kung wikang Filipino ang pakay na wika.<br/> 
---> Sa halip ito na unahin ang pagsusulat sa wikang Ingles, atbp.<br/> 
+--> Sa halip ito na unahin ang pagsusulat sa wikang Ingles, atbp saka isasalin sa wikang Filipino.<br/> 
 
 #### 1.1.8.5) Dagdag na mga Bagay-bagay
 --> Executed on Gameboy Color (over 10 years ago)<br/>
