@@ -625,7 +625,7 @@ PA-N (pangalan ng iyong kaibigan)<br/>
 --> ストリートファイターのリュウを思い出す。<br/>
 --> sutori-to faita- no RYUU wo omoidasu.<br/>
 --> Maaalala si RYUU ng Street Fighter.<br/>
---> コンピュータ・ブランかとの戦い、<br/>
+--> コンピュータ・ブランカとの戦い、<br/>
 --> kompyu-ta・buranka to no tatakai,<br/>
 --> Pakikipaglaban kay kompyuter BLANKA,<br/>
 --> 残りの時間と体力ゲージを見て、<br/>
