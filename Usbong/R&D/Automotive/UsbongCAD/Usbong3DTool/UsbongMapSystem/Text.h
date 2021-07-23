@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20210613
- * @date updated: 20210701
+ * @date updated: 20210723
  * @website address: http://www.usbong.ph
  *
  * Acknowledgments:
@@ -253,6 +253,10 @@ private:
     int iRowCountPageNumber; //start at zero
     bool isAtMaxTextCharRow;
     int idrawPressNextSymbolCount;
+    
+    //added by Mike, 20210723
+    bool bHasReachedEndOfTextMessage,
+    		 bHasPressedKeyToCloseEndOfTextMessage;
     
     GLint tricount;
     GLint isMovingForward;

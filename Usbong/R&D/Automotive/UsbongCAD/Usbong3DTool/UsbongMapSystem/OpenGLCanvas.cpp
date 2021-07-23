@@ -1974,18 +1974,23 @@ glPopMatrix();
 //    glScalef(1.0f,1.0f,1.0f);
 
     glPushMatrix();
-//    	glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
+ //    	glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
+ 
     	glTranslatef(-2.0f/iColumnCountMax*iLeftMarginColumnCount, 0.0f, 0.0f);
        	
     	myLevel2D->draw();
     glPopMatrix();
 //-----         
+  
+    //added by Mike, 20210723  
+    glPushMatrix();
+    	glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
      
-    //added by Mike, 20210613; removed by Mike, 20210703
-    //added by Mike, 20210704
-    //note: OK output
-//    myText->draw();
-    
+    	//added by Mike, 20210704
+    	//note: OK output
+    	myText->draw();
+    glPopMatrix();
+    	
     
     
 		//added by Mike, 20210722         

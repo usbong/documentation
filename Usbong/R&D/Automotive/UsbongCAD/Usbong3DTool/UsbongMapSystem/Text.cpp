@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20200926
- * @date updated: 20210706
+ * @date updated: 20210723
  * @website address: http://www.usbong.ph
  *
  * Reference:
@@ -241,9 +241,15 @@ void Text::setup()
     // set texture parameters
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
+    
+/*	//edited by Mike, 20210723; this is due to displayed image is blurred
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
-                    GL_LINEAR_MIPMAP_NEAREST);
+                    GL_LINEAR_MIPMAP_NEAREST);                    
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+*/
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
+                    GL_NEAREST);                    
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);    
     
     /*
      // select texture 1
@@ -619,6 +625,11 @@ Text::Text(float xPos, float yPos, float zPos, float windowWidth, float windowHe
     //note: set this in OpenGLCanvas.cpp
     bIsPlayer2=false;
     
+    
+    //added by Mike, 20210723
+    bHasReachedEndOfTextMessage=false;
+    bHasPressedKeyToCloseEndOfTextMessage=false;
+    
     //added by Mike, 20210618
     isAtMaxTextCharRow=false;
     idrawPressNextSymbolCount=0;
@@ -783,6 +794,13 @@ void Text::drawPressNextSymbol()
 //added by Mike, 20210617
 void Text::drawTextBackgroundAsQuadWithTexture()
 {
+	  //added by Mike, 20210723
+	  if (bHasReachedEndOfTextMessage) {
+	  	if(bHasPressedKeyToCloseEndOfTextMessage) {
+	  		  	return;
+	  	}
+	  }
+
     
     //added by Mike, 20210614
     //note; add glPushMatrix() and glPopMatrix()
@@ -796,7 +814,13 @@ void Text::drawTextBackgroundAsQuadWithTexture()
     //        glScalef(2.5f,4.0f,1.0f);
     //edited by Mike, 20210627
     //    glScalef(5.0f,4.0f,1.0f);
-    glScalef(5.0f,2.5f,1.0f);
+
+		//edited by Mike, 20210723
+//    glScalef(5.0f,2.5f,1.0f);
+    glTranslatef(0.4f,0.0f,0.0f);
+    glScalef(3.0f,2.5f,1.0f);
+    
+    
     glTranslatef(0.0f, -0.1f, 0.0f);
     
     
@@ -1067,7 +1091,11 @@ void Text::drawTextBackgroundAsQuadWithTexture()
                 //added by Mike, 20210618
                 //if has reached end of rows, no need to execute this
                 //TO-DO: -add: auto-identify if at MAX row
-                if (cCurrentTextContainer[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW+1][0]=='\0') {
+                if (cCurrentTextContainer[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW+1][0]=='\0') {                
+                		printf(">>>>>>>>>>>>>>> WAKAS!\n");
+										
+										bHasReachedEndOfTextMessage=true;
+										                
                     break;
                 }
                 else {
@@ -1095,7 +1123,7 @@ void Text::drawTextBackgroundAsQuadWithTexture()
             
             
         }
-        else {
+        else {                
             break;
         }
         
@@ -1340,16 +1368,22 @@ void Text::keyDown(int keyCode) {
     //added by Mike, 20210619
     //TO-DO: -reverify: output of over 6 rows in input file
     if (myKeysDown[KEY_K]==TRUE) {
-        if (isAtMaxTextCharRow) {
-            isAtMaxTextCharRow=false;
-            
-            iRowCountPageNumber++;
-            iTextCurrentMaxRowCount=1;
-            
-            //next row; reminder: MAX_TEXT_CHAR_ROW=4
-            for(int iCount=0; iCount<MAX_TEXT_CHAR_ROW; iCount++) {
-                iCurrentMaxColumnCountPerRowContainer[iCount]=1;
-            }
+    		//edited by Mike, 20210723
+    		if (bHasReachedEndOfTextMessage) {
+    			bHasPressedKeyToCloseEndOfTextMessage=true;
+    		}
+    		else {    
+        	if (isAtMaxTextCharRow) {
+            	isAtMaxTextCharRow=false;
+            	
+            	iRowCountPageNumber++;
+            	iTextCurrentMaxRowCount=1;
+            	
+            	//next row; reminder: MAX_TEXT_CHAR_ROW=4
+            	for(int iCount=0; iCount<MAX_TEXT_CHAR_ROW; iCount++) {
+                	iCurrentMaxColumnCountPerRowContainer[iCount]=1;
+            	}
+        	}
         }
     }
     
