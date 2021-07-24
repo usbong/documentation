@@ -45,6 +45,11 @@
 //TO-DO: -update: instructions when diagonal movement is combined with attack and defend keys
 
 
+//TO-DO: -reverify: in Win7 machine, cause of noticeable delay in action after input Command
+//System type: 32-bit Operating System
+//Processor: Genuine Intel(R) CPU T2130 @1.86 GHz
+//RAM: 3.00 GB
+
 #include <stdio.h>
 #include <math.h>
 
@@ -754,19 +759,31 @@ void Text::drawTextBackgroundAsQuadWithTexture()
     
     //edited by Mike, 20210723
     //note: displayed output to be equal
+    //edited by Mike, 20210724
+    //TO-DO: -reverify: this due to caused by
+	//incorrect actual window width and height computation
+    //Windows Machine
+#ifdef _WIN32
     glTranslatef(0.4f,0.0f,0.0f);
-    	//in Linux machine, not equal with this instruction
-//    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset), 0.0f, 0.0f);
+#else
+    //in Linux machine, not equal with this instruction
+    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset), 0.0f, 0.0f);
+#endif
     
     //added by Mike, 20201121
       #if defined(__APPLE__)
         glTranslatef(-0.02f,0.0f,0.0f);
       #endif
     
-    
+
+	//edited by Mike, 20210724    
     glScalef(3.0f,2.5f,1.0f);
-    
-    
+
+//    glScalef(3.4f,2.5f,1.0f);
+//    glScalef(3.2f,2.5f,1.0f);
+//auto-scale Window Width to Height
+//    glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
+        
     glTranslatef(0.0f, -0.1f, 0.0f);
     
     
@@ -830,11 +847,11 @@ void Text::drawTextBackgroundAsQuadWithTexture()
     //edited by Mike, 20210705
     //note: output (macOS): -0.4f; window origin left 0.0f; right max 1.0f
     //note: output (LinuxOS): -0.221354f; window origin left 0.0f; right max 1.0f
-    printf(">>>>> myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset): %f\n",myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset));
+//    printf(">>>>> myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset): %f\n",myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset));
     
     //output (macOS); iMyWindowWidthAsPixelOffset: 240
     //output (LinuxOS); iMyWindowWidthAsPixelOffset: 299
-    printf(">>>>> iMyWindowWidthAsPixelOffset: %i\n",iMyWindowWidthAsPixelOffset);
+//    printf(">>>>> iMyWindowWidthAsPixelOffset: %i\n",iMyWindowWidthAsPixelOffset);
     
     //    printf(">>>>> myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel): %f\n",myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel));
     
@@ -877,7 +894,7 @@ void Text::drawTextBackgroundAsQuadWithTexture()
     float fMyWindowWidthAsVertexOffsetInput=(240.0f-iMyWindowWidthAsPixelOffset)*(-1);
     float fMyWindowWidthAsVertexOffset=0.20f+(fMyWindowWidthAsVertexOffsetInput/59.0f*0.04);
 
-    printf(">>>>>>>>>> fMyWindowWidthAsVertexOffset: %f\n",fMyWindowWidthAsVertexOffset);
+//    printf(">>>>>>>>>> fMyWindowWidthAsVertexOffset: %f\n",fMyWindowWidthAsVertexOffset);
 
     //    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*(0.6f)), -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
 //    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*(0.6f+fMyWindowWidthAsVertexOffset)), -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
@@ -888,6 +905,17 @@ void Text::drawTextBackgroundAsQuadWithTexture()
     
     //edited by Mike, 20210626
     glScalef(0.26f,0.26f,1.0f);
+    
+    //added by Mike, 20210724
+    //TO-DO: -reverify: this due to caused by
+	//incorrect actual window width and height computation
+    //Windows Machine
+#ifdef _WIN32
+    //y-axis from bottom
+    //glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(myWindowWidth*0.01f), myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.01f), 0.0f);
+    glTranslatef(0.5f, 0.3f, 0.0f);
+    glScalef(0.8f,0.8f,1.0f);
+#endif
     
     //removed by Mike, 20210702
     //    glTranslatef(0.26f, 1.1f, 0.0f); //note: y-axis; inverted; +value goes down
@@ -925,7 +953,7 @@ void Text::drawTextBackgroundAsQuadWithTexture()
         //removed by Mike, 20210617
         //        strcpy(tempText, "");
         
-        printf("iRowCount: %i\n",iRowCount);
+//        printf("iRowCount: %i\n",iRowCount);
         
         
         //added by Mike, 20210617
