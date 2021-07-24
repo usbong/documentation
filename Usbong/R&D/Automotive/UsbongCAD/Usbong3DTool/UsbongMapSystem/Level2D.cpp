@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20200926
- * @date updated: 20210724
+ * @date updated: 20210725
  * @website address: http://www.usbong.ph
  *
  * Reference:
@@ -901,6 +901,9 @@ void Level2D::drawTileAsQuadWithTexture(std::string sTileId)
     fTy = 0.0f+0.0625f*(sTileId[3]-'0'); //row
 */
 
+    //added by Mike, 20210725; removed by Mike, 20210725
+    //sTileId="0-0";
+//    std::cout << "sTileId: " << sTileId << "\n";
 		
 	  fTx = 0.0f+0.0625f*(myUsbongUtils->autoIdentifyColumnInputInLevelMapContainer(sTileId)); //column
 //	  fTx = 0.0f+2*2*0.0625f*(myUsbongUtils->autoIdentifyColumnInputInLevelMapContainer(sTileId)); //column
@@ -925,7 +928,9 @@ void Level2D::drawTileAsQuadWithTexture(std::string sTileId)
     	
 //		printf(">>>%i\n",(myUsbongUtils->autoIdentifyColumnInputInLevelMapContainer(sTileId)));
 //		printf(">>>%i\n",(myUsbongUtils->autoIdentifyRowInputInLevelMapContainer(sTileId)));
-			
+
+//    printf(">>>fTx: %f;fTy: %f\n",fTx,fTy);
+
     
     float fTileSideXAxis = 0.0625f;
 //    float fTileSideXAxis = 0.0625f*2*2;
@@ -943,6 +948,10 @@ void Level2D::drawTileAsQuadWithTexture(std::string sTileId)
 		//TO-DO: -add: animation sequence based on sTileId
 		//background color of tile
 //-----
+/*
+    glDisable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, 0);
+*/
     glColor3f(1.0f, 1.0f, 1.0f); //set to default, i.e. white
     //note: 3rd quadrant
     glBegin(GL_QUADS); // Each set of 4 vertices form a quad
@@ -965,8 +974,8 @@ void Level2D::drawTileAsQuadWithTexture(std::string sTileId)
     	
     	glTexCoord2f(fTx, fTy + fTileSideYAxis);
     	glVertex3f(0.0f, 0.0f-fGridTileHeightVertexPosition, 0.0f);
-   	glEnd();    	
-    
+    glEnd();
+
     glDisable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, 0);
     
@@ -1062,8 +1071,14 @@ void Level2D::drawLevelWithTextureUsingInputFile()
  										//edited by Mike, 20210719
 //                		drawTileAsQuadWithTexture();
 //note: incorrect output if we use printf(...) with std::string as input to %s
+                
+                //added by Mike, 20210725
+                //note: use this Command to verify if inputLevel1.csv uses correct quotation mark encoding
+                //reminder: we use the same quotation mark for opening and closing
+                //in macOS, use XCode to edit input file, e.g. inputLevel1.csv;
+                //this is instead of TextEdit
 //std::cout << "sCurrentLevelMapContainer[iRowCount][iColumnCount]): " << sCurrentLevelMapContainer[iRowCount][iColumnCount] << "\n";
-
+                
                 		drawTileAsQuadWithTexture(sCurrentLevelMapContainer[iRowCount][iColumnCount]);
                 glPopMatrix();
             }

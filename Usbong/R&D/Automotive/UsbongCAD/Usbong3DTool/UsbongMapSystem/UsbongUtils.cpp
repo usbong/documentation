@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20201210
- * @date updated: 20210722
+ * @date updated: 20210725
  * @website address: http://www.usbong.ph
  *
  * References:
@@ -349,9 +349,11 @@ float UsbongUtils::autoConvertFromPixelToVertexGridTileHeight(int iGridTileHeigh
 //output: 2
 //example input#2: "99-0"
 //output: 99
+//reminder: in macOS, use XCode to edit input file, e.g. inputLevel1.csv
+//this is instead of TextEdit; due to open and close quotation mark encodings, et cetera
 int UsbongUtils::autoIdentifyColumnInputInLevelMapContainer(std::string sInput)
 {
-  int iLength=sInput.length();
+    int iLength=sInput.length();
 	int iOutput=0;
 	int iDigitCountFromRightToLeft=1;
 	int iCountLeftToRight=0;
@@ -359,15 +361,18 @@ int UsbongUtils::autoIdentifyColumnInputInLevelMapContainer(std::string sInput)
 	
 	//character from left to right
 	for (iCountLeftToRight=0; iCountLeftToRight<iLength; iCountLeftToRight++) {
+        
+//        std::cout << "sInput[iCountLeftToRight]: " << sInput[iCountLeftToRight] << "\n";
+        
 		if (sInput[iCountLeftToRight]=='-') {
 			break;
 		}
 	}
-	
-	//character from right to left	
+    
+    //character from right to left
 	//note: left-most character, i.e. quotation mark not included
 	for (iCountRightToLeft=iCountLeftToRight-1; iCountRightToLeft>0; iCountRightToLeft--) {
-			iOutput = iOutput+ (sInput[iCountRightToLeft]-'0')*iDigitCountFromRightToLeft;		
+			iOutput = iOutput+ (sInput[iCountRightToLeft]-'0')*iDigitCountFromRightToLeft;
 			iDigitCountFromRightToLeft = iDigitCountFromRightToLeft*10;
 	}
 
