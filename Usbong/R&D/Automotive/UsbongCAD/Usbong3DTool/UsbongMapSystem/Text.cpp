@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20200926
- * @date updated: 20210723
+ * @date updated: 20210724
  * @website address: http://www.usbong.ph
  *
  * Reference:
@@ -704,6 +704,9 @@ void Text::drawPressNextSymbol()
     //edited by Mike, 20210702
     //	  glScalef(0.08f, 0.08f, 1.0f);
     glScalef(0.06f, 0.06f, 1.0f);
+		
+		//added by Mike, 20201724
+    glScalef(0.5f, 0.5f, 1.0f);
 		  
     //auto-scale to Window Width to Height
     //    glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,fMyWindowWidthAsPixelRatioToHeightPixel,1.0f);
@@ -750,9 +753,10 @@ void Text::drawTextBackgroundAsQuadWithTexture()
 //    glScalef(5.0f,2.5f,1.0f);
     
     //edited by Mike, 20210723
-    //note: displayed out to be equal
-    //glTranslatef(0.4f,0.0f,0.0f);
-    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset), 0.0f, 0.0f);
+    //note: displayed output to be equal
+    glTranslatef(0.4f,0.0f,0.0f);
+    	//in Linux machine, not equal with this instruction
+//    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset), 0.0f, 0.0f);
     
     //added by Mike, 20201121
       #if defined(__APPLE__)

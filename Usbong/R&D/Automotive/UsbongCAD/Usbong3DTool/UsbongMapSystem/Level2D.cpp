@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20200926
- * @date updated: 20210723
+ * @date updated: 20210724
  * @website address: http://www.usbong.ph
  *
  * Reference:
@@ -935,10 +935,20 @@ void Level2D::drawTileAsQuadWithTexture(std::string sTileId)
 		//printf("fGridTileWidthVertexPosition: %f\n",fGridTileWidthVertexPosition);
 //    	glColor3f(1.0f, 0.0f, 0.0f); //red
 
-		//added by Mike, 20210722
-		//TO-DO: -reverify: cause of blurred texture
-	//glScalef(0.5f,0.5f,1.0f);
+		//added by Mike, 20210724
+		//TO-DO: -add: animation sequence based on sTileId
 
+    //TO-DO: -update: this
+    //note: 3rd quadrant
+    glBegin(GL_QUADS); // Each set of 4 vertices form a quad
+    	glVertex3f(0.0f, 0.0f, 0.0f);
+    	
+    	glVertex3f(0.0f-fGridTileWidthVertexPosition, 0.0f, 0.0f);
+    	
+    	glVertex3f(0.0f-fGridTileWidthVertexPosition, 0.0f-fGridTileHeightVertexPosition, 0.0f);
+    	
+    	glVertex3f(0.0f, 0.0f-fGridTileHeightVertexPosition, 0.0f);
+   	glEnd();
 
     glBegin(GL_QUADS); // Each set of 4 vertices form a quad
     	glTexCoord2f(fTx, fTy);
