@@ -776,11 +776,13 @@ void Level2D::drawTileAsQuadWithTexture(std::string sTileId)
      */
     
     glPushMatrix();
-    
+
+/*	//removed by Mike, 20210724    
     //  glColor3f(0.0f, 0.0f, 0.0f); //set to default, i.e. black
     //edited by Mike, 20210717
     //  	glColor3f(1.0f, 0.0f, 0.0f); //red
     glColor3f(1.0f, 1.0f, 1.0f); //set to default, i.e. white
+*/
     
     //TO-DO: -add: tile with auto-drawn pattern; without using image texture object
     //  	printf (">>>>>>>>>>>>>>>>>>>>>>>>>>>> HALLO");
@@ -937,16 +939,13 @@ void Level2D::drawTileAsQuadWithTexture(std::string sTileId)
 
 		//added by Mike, 20210724
 		//TO-DO: -add: animation sequence based on sTileId
-
-    //TO-DO: -update: this
+		//background color of tile
+    glColor3f(1.0f, 1.0f, 1.0f); //set to default, i.e. white
     //note: 3rd quadrant
     glBegin(GL_QUADS); // Each set of 4 vertices form a quad
-    	glVertex3f(0.0f, 0.0f, 0.0f);
-    	
-    	glVertex3f(0.0f-fGridTileWidthVertexPosition, 0.0f, 0.0f);
-    	
-    	glVertex3f(0.0f-fGridTileWidthVertexPosition, 0.0f-fGridTileHeightVertexPosition, 0.0f);
-    	
+    	glVertex3f(0.0f, 0.0f, 0.0f);   	
+    	glVertex3f(0.0f-fGridTileWidthVertexPosition, 0.0f, 0.0f);    	
+    	glVertex3f(0.0f-fGridTileWidthVertexPosition, 0.0f-fGridTileHeightVertexPosition, 0.0f);    	
     	glVertex3f(0.0f, 0.0f-fGridTileHeightVertexPosition, 0.0f);
    	glEnd();
 
