@@ -4,8 +4,8 @@
 CPP      = g++.exe -D__DEBUG__
 CC       = gcc.exe -D__DEBUG__
 WINDRES  = windres.exe
-OBJ      = OpenGLCanvas.o MyDynamicObject.o RobotShip.o Font.o Beam.o Asteroid.o PolygonUtils.o Level.o CTargaImage.o UsbongUtils.o Pilot.o main.o Ball.o Level2D.o Text.o Button.o
-LINKOBJ  = OpenGLCanvas.o MyDynamicObject.o RobotShip.o Font.o Beam.o Asteroid.o PolygonUtils.o Level.o CTargaImage.o UsbongUtils.o Pilot.o main.o Ball.o Level2D.o Text.o Button.o
+OBJ      = OpenGLCanvas.o MyDynamicObject.o RobotShip.o Font.o Beam.o Asteroid.o PolygonUtils.o Level.o CTargaImage.o UsbongUtils.o Pilot.o main.o Ball.o Button.o Level2D.o Text.o
+LINKOBJ  = OpenGLCanvas.o MyDynamicObject.o RobotShip.o Font.o Beam.o Asteroid.o PolygonUtils.o Level.o CTargaImage.o UsbongUtils.o Pilot.o main.o Ball.o Button.o Level2D.o Text.o
 LIBS     = -L"C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -L"C:/Usbong/SDL2-2.0.12/lib/x86" -static-libgcc -mwindows "C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32/libopengl32.a" "C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32/libglu32.a" "C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32/libglut32.a" -m32 -g3
 INCS     = -I"C:/Program Files/Dev-Cpp/MinGW64/include" -I"C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Usbong/SDL2-2.0.12/include"
 CXXINCS  = -I"C:/Program Files/Dev-Cpp/MinGW64/include" -I"C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++" -I"C:/Usbong/SDL2-2.0.12/include"
@@ -63,11 +63,11 @@ main.o: main.cpp
 Ball.o: Ball.cpp
 	$(CPP) -c Ball.cpp -o Ball.o $(CXXFLAGS)
 
+Button.o: Button.cpp
+	$(CPP) -c Button.cpp -o Button.o $(CXXFLAGS)
+
 Level2D.o: Level2D.cpp
 	$(CPP) -c Level2D.cpp -o Level2D.o $(CXXFLAGS)
 
 Text.o: Text.cpp
 	$(CPP) -c Text.cpp -o Text.o $(CXXFLAGS)
-
-Button.o: Button.cpp
-	$(CPP) -c Button.cpp -o Button.o $(CXXFLAGS)
