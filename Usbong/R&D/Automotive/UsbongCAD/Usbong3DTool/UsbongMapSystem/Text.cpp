@@ -789,6 +789,7 @@ void Text::drawTextBackgroundAsQuadWithTexture()
     
     //TO-DO: -update: draw instructions
     drawTextBackgroundObject();
+
     glScalef(1.0f,1.0f,1.0f);
     
     //added by Mike, 20210613
@@ -1176,8 +1177,14 @@ void Text::drawTextBackgroundObject()
     //added by Mike, 20210516
     //due to instructions to auto-draw quad using triangles
     glTranslatef(1.0f, 0.5f, 0.0f);
+
+	//added by Mike, 20210724   
+    //note: adding background texture causes delay in execution
+    //verified: using GL_TRIANGLES and GL_QUAD
+    //note: we can stop Pilot movement due to input Command
+	//when display text is executing
     
-    
+ 	//edited by Mike, 20210724    
     glBegin(GL_TRIANGLES);
     //counter-clockwise sequence to auto-draw front face
     //triangle#6 //front face left part
@@ -1206,7 +1213,36 @@ void Text::drawTextBackgroundObject()
     glTexCoord2f(0.25+fButtonAnimationFrameOffset,0.0); //B2; face left
     glVertex3f(1.000000,1.000000,0.000000); //B2
     glEnd();
+
     
+/*  //added by Mike, 20210724
+    glDisable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, 0);
+
+    glColor3f(1.0f, 1.0f, 1.0f); //set to default, i.e. white
+  
+    float fGridTileWidthVertexPosition=1.0f;
+    float fGridTileHeightVertexPosition=1.0f;
+
+    //counter-clockwise sequence to auto-draw front face  
+    glBegin(GL_QUADS); // Each set of 4 vertices form a quad
+//    	glTexCoord2f(fTx, fTy);
+//	    glTexCoord2f(0.0+fButtonAnimationFrameOffset,0.0);	//A1; face left
+//    	glVertex3f(0.0f, 0.0f, 0.0f);
+//    	glVertex3f(-1.0f, 1.0f, 0.0f);
+    	glVertex3f(-1.0f, 0.0f, 0.0f);
+    	
+//    	glTexCoord2f(fTx + fTileSideXAxis, fTy);
+    	glVertex3f(-1.0f, -1.0f, 0.0f);
+    	
+//    	glTexCoord2f(fTx + fTileSideXAxis, fTy + fTileSideYAxis);
+    	glVertex3f(1.0f, -1.0f, 0.0f);
+    	
+//    	glTexCoord2f(fTx, fTy + fTileSideYAxis);
+//    	glVertex3f(1.0f, 1.0f, 0.0f);
+    	glVertex3f(1.0f, 0.0f, 0.0f);
+   	glEnd();    	
+*/    
     glDisable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, 0);
     glPopMatrix(); //added by Mike, 20210422
