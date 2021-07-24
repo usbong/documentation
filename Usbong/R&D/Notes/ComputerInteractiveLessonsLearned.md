@@ -364,7 +364,7 @@ Gawa ng nais na mapataob ang paniki, <br/>
 使ってた武器とした盾を<br/>
 ang ginagamit kong kalasag bilang sandata,<br/>
 つぼにある斧に変えちまって、<br/>
-napalitan ko ng palakol sa banga,<br/>
+napalitan ko ng palakol sa baul,<br/>
 ステージを完成するには<br/>
 upang matapos ang stage,<br/>
 要る時間が増えちまった。<br/>
@@ -409,8 +409,26 @@ Kumaliwa at kumanan, makikita mo ang pagitan sa paggalaw.<br/>
 --> <b>Paalala:</b> Napapawalang-bisa ng kalasag ang mga ibinabato ng mga Halimaw,<br/>
 --> bagama't hindi ang mula sa Dambuhalang Goblin.<br/>
 --> Pagkatapos ng pagsisiyasat, tulad sa yuki, i.e. ulang tumigas at naging yelo, snowflake, ang hugis nito.<br/>
---> <b>Dagdag:</b> Anim na Bahagi ang Salaysay
-	
+--> <b>Dagdag:</b> Anim na Bahagi ang Salaysay<br/>
+<br/>
+徐々に進める・・・<br/>
+魔物を倒す方法が解決できるが、<br/>
+すぐわかるというわけじゃない。<br/>
+魔物が逃せてくれないし。<br/>
+<br/>
+PS1のクラッシュバンディクーの開発チームに<br/>
+G'NGからの影響を与えたのかな・・・<br/>
+15年前ぐらいに100％までも完成できたけど、<br/>
+今、23/32のはいきょのところ、<br/>
+G'NGのことを思い出す。<br/>
+時間を入れて、何回もやり直せて、<br/>
+徐々に進めると。<br/>
+<br/>
+ちなみに、D'NDはゲームセンターでよく見れたけど、<br/>
+絵とかは引っ張るからね。<br/>
+といっても、遊ばない、すぐ負けるから。<br/>
+金は十分に使えないって感じ･･･<br/>
+
 #### 1.1.8.5) Dagdag na mga Bagay-bagay
 --> Executed on Gameboy Color (over 10 years ago)<br/>
 --> May Password na maaaring isulat upang agad na makabalik sa isang pook ng paglalakbay.<br/>
