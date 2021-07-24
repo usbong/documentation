@@ -3745,8 +3745,9 @@ void OpenGLCanvas::update()
          }
          */
         
-        //added by Mike, 20210724
-        myLevel2D->level2DCollideWith(myPilot);
+        //added by Mike, 20210724; edited by Mike, 20210725
+        //TO-DO: -add: setMyLevel2D in Pilot to auto-verify collision before actual movement after input Command
+        myLevel2D->isLevel2DCollideWith(myPilot);
         
         //added by Mike, 20201013
         /*    	int a;

@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20210613
- * @date updated: 20210724
+ * @date updated: 20210725
  * @website address: http://www.usbong.ph
  *
  * Acknowledgments:
@@ -406,8 +406,8 @@ public:
     //added by Mike, 20210423
     void update(float dt);
     
-    //added by Mike, 20210724
-    void level2DCollideWith(MyDynamicObject* mdo);
+    //added by Mike, 20210724; edited by Mike, 20210725
+    void isLevel2DCollideWith(MyDynamicObject* mdo);
         
     // changes the robot's state
     void changeState(int s);
@@ -422,6 +422,9 @@ public:
      void setOpenGLCanvas(OpenGLCanvas* c);
      */	
     virtual void hitBy(MyDynamicObject* mdo);
+    
+    //added by Mike, 20210725
+    void hitByAtTile(MyDynamicObject* mdo, std::string sTileId);
     
     //added by Mike, 20201016
     virtual void destroy();

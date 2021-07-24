@@ -1327,7 +1327,7 @@ void Level2D::move(int key)
 }
 
 //added by Mike, 20210724
-void Level2D::level2DCollideWith(MyDynamicObject* mdo)
+void Level2D::isLevel2DCollideWith(MyDynamicObject* mdo)
 {
     if ((!checkIsCollidable())||(!mdo->checkIsCollidable()))    
     {
@@ -1344,18 +1344,45 @@ void Level2D::level2DCollideWith(MyDynamicObject* mdo)
             else {
 							  	//add +1.0f in x-axis and y-axis due to 3rd quadrant in the draw function
                 	//center 0,0,0 origin; vertex positions  				
-       						if (mdo->collideWithLevel2DTileRectAsPixel(0.0f+fGridSquareWidth*(iColumnCount+1.0f), 			
-       																										0.0f+fGridSquareHeight*(iRowCount+1.0f), 
-       																										fGridSquareWidth, 
-       																										fGridSquareHeight)) {
+       						if (mdo->collideWithLevel2DTileRectAsPixel(0.0f+fGridSquareWidth*(iColumnCount+1.0f),0.0f+fGridSquareHeight*(iRowCount+1.0f), fGridSquareWidth, fGridSquareHeight)) {
 //    	printf(">>dito>>>>>>>>>>>>>>>>>>>>>>>.");
     	
         						this->hitBy(mdo);
+                                //added by Mike, 20210725
+                                this->hitByAtTile(mdo, sCurrentLevelMapContainer[iRowCount][iColumnCount]);
+                                
         						mdo->hitBy(this);       						
        						}       																										
 		        }
 		   }
 		}
+}
+
+//added by Mike, 20210725
+void Level2D::hitByAtTile(MyDynamicObject* mdo, std::string sTileId)
+{
+    //changeState(DEATH_STATE);
+    //setCollidable(false);
+    //    myOpenGLCanvas->loseLife();
+    
+    //added by Mike, 20210725
+//    int iTileColumn = myUsbongUtils->autoIdentifyColumnInputInLevelMapContainer(sTileId); //column
+//    int iTileRow = myUsbongUtils->autoIdentifyRowInputInLevelMapContainer(sTileId); //row
+
+//    std::cout << "sTileId: " << sTileId << "\n";
+
+    //note: there exist quotation marks in sTileId
+    if (sTileId.compare("\"0-0\"") == 0) {//True
+        //printf(">>HALLO");
+        //mdo...
+    }
+        
+        //removed by Mike, 20201001
+    /*
+     zing = sound->load_sound_clip(RESETSOUND);
+     sound->play_sound_clip(zing);
+     */
+        reset();
 }
 
 void Level2D::hitBy(MyDynamicObject* mdo)
