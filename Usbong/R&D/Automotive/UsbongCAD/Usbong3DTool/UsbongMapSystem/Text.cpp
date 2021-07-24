@@ -1042,8 +1042,8 @@ void Text::drawTextBackgroundAsQuadWithTexture()
         //            if (cCurrentTextContainer[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW][iCurrentMaxColumnCountPerRowContainer[iRowCount]]=='\n') {//'\n'){ //new line; "\0" empty character
         if (cCurrentTextContainer[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW][iCurrentMaxColumnCountPerRowContainer[iRowCount]-1]=='\n') {//'\n'){ //new line; "\0" empty character
             
-            printf("iTextCurrentMaxRowCount-1: %i\n",iTextCurrentMaxRowCount-1);
-            printf("iRowCount: %i\n",iRowCount);
+//            printf("iTextCurrentMaxRowCount-1: %i\n",iTextCurrentMaxRowCount-1);
+//            printf("iRowCount: %i\n",iRowCount);
             
             /*                if (iTextCurrentMaxRowCount>=3) {
              iTextCurrentMaxRowCount=3;

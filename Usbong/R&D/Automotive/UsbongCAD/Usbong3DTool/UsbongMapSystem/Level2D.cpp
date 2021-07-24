@@ -593,7 +593,7 @@ void Level2D::drawPressNextSymbol()
     
     //note: 640x640; window width x height
     //edited by Mike, 20210702
-    //    glTranslatef(myUsbongUtils->autoConvertFromPixelTodrawTileAsQuadWithTextureVertexPointX(320), myUsbongUtils->autoConvertFromPixelToVertexPointY(555), 0.0f); //-myZPosAsPixel);
+    //    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(320), myUsbongUtils->autoConvertFromPixelToVertexPointY(555), 0.0f); //-myZPosAsPixel);
     
     /* //removed by Mike, 20210708
      //y-axis origin from bottom
@@ -1049,7 +1049,7 @@ void Level2D::drawLevelWithTextureUsingInputFile()
 //            if (sCurrentLevelMapContainer[iRowCount][iColumnCount].compare("\"A1\"") == 0) { //TRUE
     				//note: "0" for empty, instead of "-1"
     				//with "0", no need to add quotation marks
-            if (sCurrentLevelMapContainer[iRowCount][iColumnCount].compare("0") == 0) { //TRUE            
+            if (sCurrentLevelMapContainer[iRowCount][iColumnCount].compare("0") == 0) { //TRUE
             }
             else {
                 glPushMatrix();
@@ -1544,7 +1544,9 @@ void Level2D::read(char *inputFilename) {
     
     for (iRowCount=0; iRowCount<MAX_Z_AXIS_MAP; iRowCount++) {
         for (iColumnCount=0; iColumnCount<MAX_X_AXIS_MAP; iColumnCount++) {
-            sCurrentLevelMapContainer[iRowCount][iColumnCount]=(char*)"-1";//'G';
+            //edited by Mike, 20210724
+//            sCurrentLevelMapContainer[iRowCount][iColumnCount]=(char*)"-1";//'G';
+            sCurrentLevelMapContainer[iRowCount][iColumnCount]=(char*)"0";//-1";//'G';
         }
     }
     
