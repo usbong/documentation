@@ -3745,6 +3745,9 @@ void OpenGLCanvas::update()
          }
          */
         
+        //added by Mike, 20210724
+        myLevel2D->level2DCollideWith(myPilot);
+        
         //added by Mike, 20201013
         /*    	int a;
          */

@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20210613
- * @date updated: 20210719
+ * @date updated: 20210724
  * @website address: http://www.usbong.ph
  *
  * Acknowledgments:
@@ -260,6 +260,11 @@ private:
     bool isAtMaxTextCharRow;
     int idrawPressNextSymbolCount;
     
+    //added by Mike, 20210724
+    int iRowCountMax;
+    int iColumnCountMax;
+    int iHeightCountMax;
+    
     GLint tricount;
     GLint isMovingForward;
         
@@ -401,6 +406,9 @@ public:
     //added by Mike, 20210423
     void update(float dt);
     
+    //added by Mike, 20210724
+    void level2DCollideWith(MyDynamicObject* mdo);
+        
     // changes the robot's state
     void changeState(int s);
     

@@ -303,6 +303,38 @@ bool MyDynamicObject::collideWithPressedCoordPos(int pressedCoordPosX, int press
 	return true;
 }
 
+//added by Mike, 20210724
+//use with Level2D
+bool MyDynamicObject::collideWithLevel2DTileRectAsPixel(int iTilePosXAsPixel, int iTilePosYAsPixel, int iTileWidthAsPixel, int iTileHeightAsPixel)	
+{
+		//TO-DO: update: this
+		printf(">>>>>>>\n");
+//		printf("iTilePosXAsPixel: %i\n",iTilePosXAsPixel);
+//		printf("iTileWidthAsPixel: %i\n",iTileWidthAsPixel);
+		printf("getXAsPixel()+getWidthAsPixel(): %i\n",getXAsPixel()+getWidthAsPixel());
+		
+		//intersecting rectangles
+    if (iTilePosXAsPixel+iTileWidthAsPixel > getXAsPixel()+getWidthAsPixel() || //tile position at right of object
+        iTilePosXAsPixel < getXAsPixel() || //tile position at left of object
+        iTilePosYAsPixel < getYAsPixel() || //tile position at top of object
+				iTilePosXAsPixel+iTileHeightAsPixel > getYAsPixel()+getHeightAsPixel()) { //tile position at right of object
+
+			printf("outside tile\n");		
+			return false;
+		}	
+
+/*		//added by Mike, 20210724		
+		printf(">>>>>>>\n");
+		printf("iTilePosXAsPixel: %i\n",iTilePosXAsPixel);
+		printf("iTileWidthAsPixel: %i\n",iTileWidthAsPixel);
+		printf("getXAsPixel()+getWidthAsPixel(): %i\n",getXAsPixel()+getWidthAsPixel());
+*/		
+	
+		printf("inside tile\n");
+	
+		return true;
+}
+
 //added by Mike, 20201016
 void MyDynamicObject::destroy()
 {

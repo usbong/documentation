@@ -386,9 +386,11 @@ Level2D::Level2D(float xPos, float yPos, float zPos, float windowWidth, float wi
      //    	myWindowHeightAsPixel = myWindowHeightAsPixelInput;
      }
      */
-    int iRowCountMax=10;
-    int iColumnCountMax=18;
-    int iHeightCountMax=10;
+     
+    //edited by Mike, 20210724
+    iRowCountMax=10;
+    iColumnCountMax=18;
+    iHeightCountMax=10;
     
     
     /*
@@ -803,7 +805,7 @@ void Level2D::drawTileAsQuadWithTexture(std::string sTileId)
 //    fGridTileWidthVertexPosition = fGridTileWidthVertexPosition*2.0f; //removed by Mike, 20210720
 //	  fGridTileHeightVertexPosition = fGridTileHeightVertexPosition*4.0f;//4.0f;
  
-    printf(">>>fGridTileWidthVertexPosition: %f; fGridTileHeightVertexPosition: %f",fGridTileWidthVertexPosition,fGridTileHeightVertexPosition);
+//    printf(">>>fGridTileWidthVertexPosition: %f; fGridTileHeightVertexPosition: %f",fGridTileWidthVertexPosition,fGridTileHeightVertexPosition);
  
     //added by Mike, 20210713
     //get positive value
@@ -940,6 +942,7 @@ void Level2D::drawTileAsQuadWithTexture(std::string sTileId)
 		//added by Mike, 20210724
 		//TO-DO: -add: animation sequence based on sTileId
 		//background color of tile
+//-----
     glColor3f(1.0f, 1.0f, 1.0f); //set to default, i.e. white
     //note: 3rd quadrant
     glBegin(GL_QUADS); // Each set of 4 vertices form a quad
@@ -948,6 +951,7 @@ void Level2D::drawTileAsQuadWithTexture(std::string sTileId)
     	glVertex3f(0.0f-fGridTileWidthVertexPosition, 0.0f-fGridTileHeightVertexPosition, 0.0f);    	
     	glVertex3f(0.0f, 0.0f-fGridTileHeightVertexPosition, 0.0f);
    	glEnd();
+//-----		
 
     glBegin(GL_QUADS); // Each set of 4 vertices form a quad
     	glTexCoord2f(fTx, fTy);
@@ -1032,9 +1036,10 @@ void Level2D::drawLevelWithTextureUsingInputFile()
      */
     //TO-DO: -update: this
     
-    int iRowCountMax=10;
-    int iColumnCountMax=18;
-    int iHeightCountMax=10;
+    //edited by Mike, 20210724
+    iRowCountMax=10;
+    iColumnCountMax=18;
+    iHeightCountMax=10;
     
     for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
         //iCurrentMaxColumnCountPerRowContainer[iRowCount];
@@ -1057,7 +1062,7 @@ void Level2D::drawLevelWithTextureUsingInputFile()
  										//edited by Mike, 20210719
 //                		drawTileAsQuadWithTexture();
 //note: incorrect output if we use printf(...) with std::string as input to %s
-std::cout << "sCurrentLevelMapContainer[iRowCount][iColumnCount]): " << sCurrentLevelMapContainer[iRowCount][iColumnCount] << "\n";
+//std::cout << "sCurrentLevelMapContainer[iRowCount][iColumnCount]): " << sCurrentLevelMapContainer[iRowCount][iColumnCount] << "\n";
 
                 		drawTileAsQuadWithTexture(sCurrentLevelMapContainer[iRowCount][iColumnCount]);
                 glPopMatrix();
@@ -1304,6 +1309,38 @@ void Level2D::autoVerifyDashStateWithKeyUp(int keyCode) {
 
 void Level2D::move(int key)
 {
+}
+
+//added by Mike, 20210724
+void Level2D::level2DCollideWith(MyDynamicObject* mdo)
+{
+    if ((!checkIsCollidable())||(!mdo->checkIsCollidable()))    
+    {
+//    	printf(">>>>>NOT COLLIDABLE");
+        return;
+    }
+       
+		for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
+        for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {
+    				//note: "0" for empty, instead of "-1"
+    				//with "0", no need to add quotation marks
+            if (sCurrentLevelMapContainer[iRowCount][iColumnCount].compare("0") == 0) { //TRUE            
+            }
+            else {
+							  	//add +1.0f in x-axis and y-axis due to 3rd quadrant in the draw function
+                	//center 0,0,0 origin; vertex positions  				
+       						if (mdo->collideWithLevel2DTileRectAsPixel(0.0f+fGridSquareWidth*(iColumnCount+1.0f), 			
+       																										0.0f+fGridSquareHeight*(iRowCount+1.0f), 
+       																										fGridSquareWidth, 
+       																										fGridSquareHeight)) {
+//    	printf(">>dito>>>>>>>>>>>>>>>>>>>>>>>.");
+    	
+        						this->hitBy(mdo);
+        						mdo->hitBy(this);       						
+       						}       																										
+		        }
+		   }
+		}
 }
 
 void Level2D::hitBy(MyDynamicObject* mdo)

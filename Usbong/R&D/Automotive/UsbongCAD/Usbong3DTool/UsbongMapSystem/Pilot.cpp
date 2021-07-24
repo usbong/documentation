@@ -6336,6 +6336,14 @@ void Pilot::move(int key)
 		bIsFiringBeam=false;
 	}   
 
+	//added by Mike, 20210724
+	//note: in previous computer instructions, we used z-pos for the y-pos now
+	//TO-DO: -update: this
+	myXPosAsPixel=(int)myXPos;
+	myYPosAsPixel=(int)myZPos;
+	
+
+
 	//added by Mike, 20210502
 	//TO-DO: -add: FACING_LEFT based on opponent position, e.g. left of pilot
 
