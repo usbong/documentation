@@ -28,6 +28,9 @@
 #include "MyDynamicObject.h"
 #include <stdlib.h>
 
+//added by Mike, 20210725
+#include "Level2D.h"
+
 //added by Mike, 20210517
 #include "UsbongUtils.h"
 
@@ -315,17 +318,42 @@ bool MyDynamicObject::collideWithLevel2DTileRectAsPixel(int iTilePosXAsPixel, in
 //		printf("iTileWidthAsPixel: %i\n",iTileWidthAsPixel);
 		printf("getXAsPixel()+getWidthAsPixel(): %i\n",getXAsPixel()+getWidthAsPixel());
 */
-//    printf("iTilePosXAsPixel: %i\n",iTilePosXAsPixel);
-    printf("iTilePosXAsPixel+iTileWidthAsPixel: %i\n",iTilePosXAsPixel+iTileWidthAsPixel);
-    printf("getXAsPixel()+getWidthAsPixel(): %i\n",getXAsPixel()+getWidthAsPixel());
+//    printf("iTilePosXAsPixel: %i\n",iTilePosXAsPixel); //example: 0
+//    printf("iTilePosYAsPixel: %i\n",iTilePosYAsPixel); //example: 0
+//    printf("iTilePosXAsPixel+iTileWidthAsPixel: %i\n",iTilePosXAsPixel+iTileWidthAsPixel); //example 0+71
+//    printf("iTilePosYAsPixel+iTileHeightAsPixel: %i\n",iTilePosYAsPixel+iTileHeightAsPixel); //example 0+80
+//    printf("iTileHeightAsPixel: %i\n",iTileHeightAsPixel); //example 80
 
-    
-    //intersecting rectangles
+  //TO-DO: -update: width and height values
+
+  //example: at grid B1
+  printf("getXAsPixel(): %i\n",getXAsPixel()); //example: 56
+  printf("getWidthAsPixel(): %i\n",getWidthAsPixel()); //example: 71
+//  printf("getXAsPixel()+getWidthAsPixel(): %i\n",getXAsPixel()+getWidthAsPixel()); //example: 127
+
+//    printf("getYAsPixel(): %i\n",getYAsPixel()); //example: 2
+//    printf("getHeightAsPixel(): %i\n",getHeightAsPixel()); //example: 80
+
+    //edited by Mike, 20210725
+/*    //intersecting rectangles
     if (iTilePosXAsPixel > getXAsPixel()+getWidthAsPixel() || //tile position at right of object
         iTilePosXAsPixel+iTileWidthAsPixel < getXAsPixel() || //tile position at left of object
         iTilePosYAsPixel+iTileHeightAsPixel < getYAsPixel() || //tile position at top of object
 				iTilePosYAsPixel > getYAsPixel()+getHeightAsPixel()) { //tile position at bottom of object
+*/
 
+/*    //intersecting rectangles
+    if (iTilePosXAsPixel > getXAsPixel()+getWidthAsPixel() -stepX || //tile position at right of object
+        iTilePosXAsPixel+iTileWidthAsPixel < getXAsPixel() +stepX || //tile position at left of object
+        iTilePosYAsPixel+iTileHeightAsPixel < getYAsPixel() +stepZ || //tile position at top of object
+        iTilePosYAsPixel > getYAsPixel()+getHeightAsPixel() -stepZ) { //tile position at bottom of object
+*/
+        if (iTilePosXAsPixel > getXAsPixel()+getWidthAsPixel() -stepX*2 || //tile position at right of object
+            iTilePosXAsPixel+iTileWidthAsPixel < getXAsPixel() +stepX*2 || //tile position at left of object
+            iTilePosYAsPixel+iTileHeightAsPixel < getYAsPixel() +stepZ || //tile position at top of object
+            iTilePosYAsPixel > getYAsPixel()+getHeightAsPixel() -stepZ) { //tile position at bottom of object
+            
+        
 //			printf("outside tile\n");
 			return false;
 		}	

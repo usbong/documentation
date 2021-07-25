@@ -566,11 +566,21 @@ Pilot::Pilot(float xPos, float yPos, float zPos, int windowWidth, int windowHeig
 /*
     myWidthAsPixel=64;
     myHeightAsPixel=64;
-*/    
+*/
+/* //edited by Mike, 20210725
     myWidthAsPixel=64+32;
     //edited by Mike, 20210725
 //    myHeightAsPixel=64*2+32;
     myHeightAsPixel=64+32;
+*/
+/*
+    myWidthAsPixel=16;
+    myHeightAsPixel=16;
+*/
+    //TO-DO: -add: auto-set width and height based on grid tile
+    //note: we use image texture scale COMMANDS, et cetera
+    myWidthAsPixel=71;
+    myHeightAsPixel=80;
     
 
 /*	//removed by Mike, 20210528
@@ -5985,6 +5995,7 @@ void Pilot::move(int key)
         //added by Mike, 20210725
         if (myLevel2D->isLevel2DCollideWith(this)) {
             printf(">>>>COLLISION!");
+            myZPos+=stepZ; //TO-DO: -update: this to not cause Pilot to be stuck in tile as block
             return;
         }
         
@@ -6061,7 +6072,15 @@ void Pilot::move(int key)
 	else {
 				
 //added by Mike, 20210521		
-//----------		
+//----------
+        /*  //removed by Mike, 20210725; TO-DO: -update: this due to causes segmentation fault
+        //added by Mike, 20210725
+        if (myLevel2D->isLevel2DCollideWith(this)) {
+            printf(">>>>COLLISION!");
+            myZPos+=-stepZ; //TO-DO: -update: this to not cause Pilot to be stuck in tile as block
+            return;
+        }
+*/        
           //added by Mike, 20201001; edited by Mike, 20201116
 //	      myYPos+=stepY;
         
@@ -6160,7 +6179,16 @@ void Pilot::move(int key)
 					myXPos+=-stepX;
 				}
 		}
-*/			
+*/
+        /*  //removed by Mike, 20210725; TO-DO: -update: this due to causes segmentation fault
+        //added by Mike, 20210725
+        if (myLevel2D->isLevel2DCollideWith(this)) {
+            printf(">>>>COLLISION!");
+            myXPos+=stepX*2; //TO-DO: -update: this to not cause Pilot to be stuck in tile as block
+            return;
+        }
+*/
+        
 				//edited by Mike, 20210604
 //		myXPos+=-stepX;
         myXPos+=-stepX*2;
@@ -6246,7 +6274,17 @@ void Pilot::move(int key)
 				myXPos+=stepX;
 			}
 		}	
-*/		
+*/
+        
+/*  //removed by Mike, 20210725; TO-DO: -update: this due to causes segmentation fault
+        //added by Mike, 20210725
+        if (myLevel2D->isLevel2DCollideWith(this)) {
+            printf(">>>>COLLISION!");
+            myXPos+=-stepX*2; //TO-DO: -update: this to not cause Pilot to be stuck in tile as block
+            return;
+        }
+*/
+        
         //edited by Mike, 20210604
 //		myXPos+=stepX;
         myXPos+=stepX*2;

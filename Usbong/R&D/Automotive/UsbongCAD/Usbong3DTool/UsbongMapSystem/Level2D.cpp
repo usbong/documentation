@@ -397,6 +397,9 @@ Level2D::Level2D(float xPos, float yPos, float zPos, float windowWidth, float wi
      fGridSquareWidth = myWindowWidthAsPixel/iColumnCountMax; //example: 136.60
      fGridSquareHeight = myWindowHeightAsPixel/iRowCountMax; //example: 76.80
      */
+    
+//    printf("myWindowWidth: %i",myWindowWidth);
+    
     fGridSquareWidth = myWindowWidth/iColumnCountMax; //example: 136.60
     fGridSquareHeight = myWindowHeight/iRowCountMax; //example: 76.80
     
@@ -796,9 +799,17 @@ void Level2D::drawTileAsQuadWithTexture(std::string sTileId)
     float fGridTileHeightVertexPosition = myUsbongUtils->autoConvertFromPixelToVertexGridTileHeight(fGridSquareHeight);
 */
 
+//edited by Mike, 20210725
+/*
     float fGridTileWidthVertexPosition = myUsbongUtils->autoConvertFromPixelToVertexGridTileWidth(fGridSquareWidth+1);
     float fGridTileHeightVertexPosition = myUsbongUtils->autoConvertFromPixelToVertexGridTileHeight(fGridSquareHeight+1);
-
+*/
+    
+//    printf(">>Level2D; fGridSquareWidth: %f",fGridSquareWidth); //example: 71.111115
+//    printf(">>Level2D; fGridSquareHeight: %f",fGridSquareHeight); //example: 80.000000
+    
+    float fGridTileWidthVertexPosition = myUsbongUtils->autoConvertFromPixelToVertexGridTileWidth(fGridSquareWidth);
+    float fGridTileHeightVertexPosition = myUsbongUtils->autoConvertFromPixelToVertexGridTileHeight(fGridSquareHeight);
     
 		//TO-DO: -reverify: this
 		//edited by Mike, 20210720
@@ -1326,13 +1337,13 @@ void Level2D::move(int key)
 {
 }
 
-//added by Mike, 20210724
-void Level2D::isLevel2DCollideWith(MyDynamicObject* mdo)
+//added by Mike, 20210724; edited by Mike, 20210725
+bool Level2D::isLevel2DCollideWith(MyDynamicObject* mdo)
 {
     if ((!checkIsCollidable())||(!mdo->checkIsCollidable()))    
     {
 //    	printf(">>>>>NOT COLLIDABLE");
-        return;
+        return false;
     }
        
 		for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
@@ -1343,19 +1354,32 @@ void Level2D::isLevel2DCollideWith(MyDynamicObject* mdo)
             }
             else {
 							  	//add +1.0f in x-axis and y-axis due to 3rd quadrant in the draw function
-                	//center 0,0,0 origin; vertex positions  				
-       						if (mdo->collideWithLevel2DTileRectAsPixel(0.0f+fGridSquareWidth*(iColumnCount+1.0f),0.0f+fGridSquareHeight*(iRowCount+1.0f), fGridSquareWidth, fGridSquareHeight)) {
-//    	printf(">>dito>>>>>>>>>>>>>>>>>>>>>>>.");
+                	//center 0,0,0 origin; vertex positions
+                            //edited by Mike, 20210725
+                            //note: no need to add 1.0f
+                            //mdo as Pilot
+                            //edited by Mike, 20210725
+//       						if (mdo->collideWithLevel2DTileRectAsPixel(0.0f+fGridSquareWidth*(iColumnCount),0.0f+fGridSquareHeight*(iRowCount), fGridSquareWidth, fGridSquareHeight)) {
+                
+                            if (mdo->collideWithLevel2DTileRectAsPixel(0.0f+fGridSquareWidth*(iColumnCount-1),0.0f+fGridSquareHeight*(iRowCount), fGridSquareWidth, fGridSquareHeight)) {
+
+                printf(">>dito>>>>>>>>>>>>>>>>>>>>>>>.");
     	
-        						this->hitBy(mdo);
+        						//this->hitBy(mdo);
+
                                 //added by Mike, 20210725
                                 this->hitByAtTile(mdo, sCurrentLevelMapContainer[iRowCount][iColumnCount]);
                                 
-        						mdo->hitBy(this);       						
+                                //removed by Mike, 20210725
+ //       						mdo->hitBy(this);
+                                
+                                return true;
        						}       																										
 		        }
 		   }
 		}
+    
+    return false;
 }
 
 //added by Mike, 20210725
@@ -1373,6 +1397,7 @@ void Level2D::hitByAtTile(MyDynamicObject* mdo, std::string sTileId)
 
     //note: there exist quotation marks in sTileId
     if (sTileId.compare("\"0-0\"") == 0) {//True
+        //OK
         //printf(">>HALLO");
         //mdo...
     }
@@ -1382,7 +1407,9 @@ void Level2D::hitByAtTile(MyDynamicObject* mdo, std::string sTileId)
      zing = sound->load_sound_clip(RESETSOUND);
      sound->play_sound_clip(zing);
      */
-        reset();
+
+    //removed by Mike, 20210725
+    //reset();
 }
 
 void Level2D::hitBy(MyDynamicObject* mdo)
@@ -1396,7 +1423,8 @@ void Level2D::hitBy(MyDynamicObject* mdo)
      zing = sound->load_sound_clip(RESETSOUND);
      sound->play_sound_clip(zing);
      */
-    reset();
+    //removed by Mike, 20210725
+    //reset();
 }
 
 /*	//removed by Mike, 20210522
