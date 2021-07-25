@@ -247,14 +247,14 @@ void Text::setup()
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
     
-/*	//edited by Mike, 20210723; this is due to displayed image is blurred
+    /*	//edited by Mike, 20210723; this is due to displayed image is blurred
+     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
+     GL_LINEAR_MIPMAP_NEAREST);
+     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+     */
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
-                    GL_LINEAR_MIPMAP_NEAREST);                    
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-*/
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
-                    GL_NEAREST);                    
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);    
+                    GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
     
     /*
      // select texture 1
@@ -701,7 +701,9 @@ void Text::drawPressNextSymbol()
     //    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myWindowWidth/2), myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.80f)+0.1f, 0.0f);
     //    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myWindowWidth/2), myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.80f)+0.06f, 0.0f);
     //TO-DO: -reverify: in LinuxOS machine
-    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myWindowWidth/2), myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.75f), 0.0f);
+    //edited by Mike, 20210725
+//    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myWindowWidth/2), myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.75f), 0.0f);
+    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myWindowWidth/2), myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.95f), 0.0f);
     
     
     glRotatef(45.0f, 0.0f, 0.0f, 1.0f);
@@ -709,8 +711,8 @@ void Text::drawPressNextSymbol()
     //edited by Mike, 20210702
     //	  glScalef(0.08f, 0.08f, 1.0f);
     glScalef(0.06f, 0.06f, 1.0f);
-		
-		//added by Mike, 20201724
+    
+    //added by Mike, 20201724
     glScalef(0.5f, 0.5f, 1.0f);
 		  
     //auto-scale to Window Width to Height
@@ -733,19 +735,26 @@ void Text::drawPressNextSymbol()
 //added by Mike, 20210617
 void Text::drawTextBackgroundAsQuadWithTexture()
 {
-	  //added by Mike, 20210723
-	  if (bHasReachedEndOfTextMessage) {
-	  	if(bHasPressedKeyToCloseEndOfTextMessage) {
-	  		  	return;
-	  	}
-	  }
-
+    //added by Mike, 20210723
+    if (bHasReachedEndOfTextMessage) {
+        if(bHasPressedKeyToCloseEndOfTextMessage) {
+            return;
+        }
+    }
+    
     
     //added by Mike, 20210614
     //note; add glPushMatrix() and glPopMatrix()
     glPushMatrix();
     
-    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixel), myZPosAsPixel);
+    //edited by Mike, 20210725
+    //note: we remove excess glTranslatef(...) and glScalef(...);
+    //observation: increase in delay to finish caused by among others:
+    //No clear history list of executed glTranslatef(...) and glScalef(...)
+    //to a certain computer instruction via file and line number
+    //reminder: each glScalef(...) is combined with glTranslatef(...) due to anchor position, e.g. top-left, is also changed
+//    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixel), myZPosAsPixel);
+
     
     //        glScalef(2.5f,5.0f,1.0f);
     //edited by Mike, 20210616
@@ -753,15 +762,16 @@ void Text::drawTextBackgroundAsQuadWithTexture()
     //        glScalef(2.5f,4.0f,1.0f);
     //edited by Mike, 20210627
     //    glScalef(5.0f,4.0f,1.0f);
-
-		//edited by Mike, 20210723
-//    glScalef(5.0f,2.5f,1.0f);
     
+    //edited by Mike, 20210723
+    //    glScalef(5.0f,2.5f,1.0f);
+    
+/*  //removed by Mike, 20210725
     //edited by Mike, 20210723
     //note: displayed output to be equal
     //edited by Mike, 20210724
     //TO-DO: -reverify: this due to caused by
-	//incorrect actual window width and height computation
+    //incorrect actual window width and height computation
     //Windows Machine
 #ifdef _WIN32
     glTranslatef(0.4f,0.0f,0.0f);
@@ -771,29 +781,32 @@ void Text::drawTextBackgroundAsQuadWithTexture()
 #endif
     
     //added by Mike, 20201121
-      #if defined(__APPLE__)
-        glTranslatef(-0.02f,0.0f,0.0f);
-      #endif
+#if defined(__APPLE__)
+    glTranslatef(-0.02f,0.0f,0.0f);
+#endif
+*/
     
-
-	//edited by Mike, 20210724    
-    glScalef(3.0f,2.5f,1.0f);
-
-//    glScalef(3.4f,2.5f,1.0f);
-//    glScalef(3.2f,2.5f,1.0f);
-//auto-scale Window Width to Height
-//    glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
-        
+    //edited by Mike, 20210724; removed by Mike, 20210725
+/*    glScalef(3.0f,2.5f,1.0f);
+    
+    //    glScalef(3.4f,2.5f,1.0f);
+    //    glScalef(3.2f,2.5f,1.0f);
+    //auto-scale Window Width to Height
+    //    glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
+    
     glTranslatef(0.0f, -0.1f, 0.0f);
+*/
+    
+//    glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
     
     
     //TO-DO: -update: draw instructions
     drawTextBackgroundObject();
-
+    
     glScalef(1.0f,1.0f,1.0f);
     
     //added by Mike, 20210613; removed by Mike, 20210725
-//    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel), -myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixel), -myZPosAsPixel);
+    //    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel), -myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixel), -myZPosAsPixel);
     
     glPopMatrix();
     
@@ -849,11 +862,11 @@ void Text::drawTextBackgroundAsQuadWithTexture()
     //edited by Mike, 20210705
     //note: output (macOS): -0.4f; window origin left 0.0f; right max 1.0f
     //note: output (LinuxOS): -0.221354f; window origin left 0.0f; right max 1.0f
-//    printf(">>>>> myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset): %f\n",myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset));
+    //    printf(">>>>> myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset): %f\n",myUsbongUtils->autoConvertFromPixelToVertexPointX(iMyWindowWidthAsPixelOffset));
     
     //output (macOS); iMyWindowWidthAsPixelOffset: 240
     //output (LinuxOS); iMyWindowWidthAsPixelOffset: 299
-//    printf(">>>>> iMyWindowWidthAsPixelOffset: %i\n",iMyWindowWidthAsPixelOffset);
+    //    printf(">>>>> iMyWindowWidthAsPixelOffset: %i\n",iMyWindowWidthAsPixelOffset);
     
     //    printf(">>>>> myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel): %f\n",myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel));
     
@@ -888,20 +901,23 @@ void Text::drawTextBackgroundAsQuadWithTexture()
     //edited by Mike, 20210706
     //    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.6f), -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
     //    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.62f), -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
-
+    
     //note: 0.2f : macOS
     //iMyWindowWidthAsPixelOffset=299;
     //TO-DO: -reverify: computation with another available machine's Window width and height
     //note: (240.0f-299.0f)*(-1)=59.0f
     float fMyWindowWidthAsVertexOffsetInput=(240.0f-iMyWindowWidthAsPixelOffset)*(-1);
     float fMyWindowWidthAsVertexOffset=0.20f+(fMyWindowWidthAsVertexOffsetInput/59.0f*0.04);
-
-//    printf(">>>>>>>>>> fMyWindowWidthAsVertexOffset: %f\n",fMyWindowWidthAsVertexOffset);
-
+    
+    //    printf(">>>>>>>>>> fMyWindowWidthAsVertexOffset: %f\n",fMyWindowWidthAsVertexOffset);
+    
     //    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*(0.6f)), -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
-//    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*(0.6f+fMyWindowWidthAsVertexOffset)), -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
-    glTranslatef(fMyWindowWidthAsVertexOffset, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
-
+    //    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*(0.6f+fMyWindowWidthAsVertexOffset)), -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
+    //edited by Mike, 20210725
+    //note: from TOP; y-axis
+//    glTranslatef(fMyWindowWidthAsVertexOffset, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.65f), 0.0f);
+    glTranslatef(fMyWindowWidthAsVertexOffset, -myUsbongUtils->autoConvertFromPixelToVertexPointY(myWindowHeight*0.75f), 0.0f);
+    
     //auto-scale Window Width to Height
     glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
     
@@ -910,7 +926,7 @@ void Text::drawTextBackgroundAsQuadWithTexture()
     
     //added by Mike, 20210724
     //TO-DO: -reverify: this due to caused by
-	//incorrect actual window width and height computation
+    //incorrect actual window width and height computation
     //Windows Machine
 #ifdef _WIN32
     //y-axis from bottom
@@ -955,7 +971,7 @@ void Text::drawTextBackgroundAsQuadWithTexture()
         //removed by Mike, 20210617
         //        strcpy(tempText, "");
         
-//        printf("iRowCount: %i\n",iRowCount);
+        //        printf("iRowCount: %i\n",iRowCount);
         
         
         //added by Mike, 20210617
@@ -1044,8 +1060,8 @@ void Text::drawTextBackgroundAsQuadWithTexture()
         //            if (cCurrentTextContainer[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW][iCurrentMaxColumnCountPerRowContainer[iRowCount]]=='\n') {//'\n'){ //new line; "\0" empty character
         if (cCurrentTextContainer[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW][iCurrentMaxColumnCountPerRowContainer[iRowCount]-1]=='\n') {//'\n'){ //new line; "\0" empty character
             
-//            printf("iTextCurrentMaxRowCount-1: %i\n",iTextCurrentMaxRowCount-1);
-//            printf("iRowCount: %i\n",iRowCount);
+            //            printf("iTextCurrentMaxRowCount-1: %i\n",iTextCurrentMaxRowCount-1);
+            //            printf("iRowCount: %i\n",iRowCount);
             
             /*                if (iTextCurrentMaxRowCount>=3) {
              iTextCurrentMaxRowCount=3;
@@ -1067,11 +1083,11 @@ void Text::drawTextBackgroundAsQuadWithTexture()
                 //added by Mike, 20210618
                 //if has reached end of rows, no need to execute this
                 //TO-DO: -add: auto-identify if at MAX row
-                if (cCurrentTextContainer[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW+1][0]=='\0') {                
-                		printf(">>>>>>>>>>>>>>> WAKAS!\n");
-										
-										bHasReachedEndOfTextMessage=true;
-										                
+                if (cCurrentTextContainer[iRowCount+iRowCountPageNumber*MAX_TEXT_CHAR_ROW+1][0]=='\0') {
+                    printf(">>>>>>>>>>>>>>> WAKAS!\n");
+                    
+                    bHasReachedEndOfTextMessage=true;
+                    
                     break;
                 }
                 else {
@@ -1099,7 +1115,7 @@ void Text::drawTextBackgroundAsQuadWithTexture()
             
             
         }
-        else {                
+        else {
             break;
         }
         
@@ -1169,33 +1185,35 @@ void Text::drawTextBackgroundObject()
     //TO-DO: -verify: scaled texture object if equal with pixel width and height size
     //use autoConvertFromPixelToVertexPointX, et cetera if exact
     
-	    
+    
     //added by Mike, 20210725
-	//TO-DO: -reverify: set of instructions with another machine's screen/monitor
-    glTranslatef(0.12f, 0.2f, 0.0f);
+    //TO-DO: -reverify: set of instructions with another machine's screen/monitor
+    //glTranslatef(0.12f, 0.2f, 0.0f);
+//    glTranslatef(0.2f, 0.2f, 0.0f);
+//    glTranslatef(0.2f, 0.4f, 0.0f);
     
     //window width and height; 640x640pixels
     //whole texture image sheet 512x256pixels
     //button size: 64x16pixels
     //		glScalef(0.25f, 0.4f, 1.0f);
-//    glScalef(0.20f, 0.4f, 1.0f);
-//    glScalef(0.25f, 0.4f, 1.0f);
-    glScalef(0.28f, 0.4f, 1.0f);
-  
-/* //edited by Mike, 20210725    
-    //added by Mike, 20210516
-    //due to instructions to auto-draw quad using triangles
-//    glTranslatef(1.0f, 0.5f, 0.0f);
-    glTranslatef(0.4f, 0.5f, 0.0f);
-*/
-
-	//added by Mike, 20210724   
+    //    glScalef(0.20f, 0.4f, 1.0f);
+    //    glScalef(0.25f, 0.4f, 1.0f);
+//    glScalef(0.28f, 0.4f, 1.0f);
+    
+    /* //edited by Mike, 20210725
+     //added by Mike, 20210516
+     //due to instructions to auto-draw quad using triangles
+     //    glTranslatef(1.0f, 0.5f, 0.0f);
+     glTranslatef(0.4f, 0.5f, 0.0f);
+     */
+    
+    //added by Mike, 20210724
     //note: adding background texture causes delay in execution
     //verified: using GL_TRIANGLES and GL_QUAD
     //note: we can stop Pilot movement due to input Command
-	//when display text is executing
+    //when display text is executing
     
- 	//edited by Mike, 20210724    
+    //edited by Mike, 20210724
     glBegin(GL_TRIANGLES);
     //counter-clockwise sequence to auto-draw front face
     //triangle#6 //front face left part
@@ -1224,36 +1242,34 @@ void Text::drawTextBackgroundObject()
     glTexCoord2f(0.25+fButtonAnimationFrameOffset,0.0); //B2; face left
     glVertex3f(1.000000,1.000000,0.000000); //B2
     glEnd();
-
     
-/*  //added by Mike, 20210724
-    glDisable(GL_TEXTURE_2D);
-    glBindTexture(GL_TEXTURE_2D, 0);
-
-    glColor3f(1.0f, 1.0f, 1.0f); //set to default, i.e. white
-  
-    float fGridTileWidthVertexPosition=1.0f;
-    float fGridTileHeightVertexPosition=1.0f;
-
-    //counter-clockwise sequence to auto-draw front face  
-    glBegin(GL_QUADS); // Each set of 4 vertices form a quad
-//    	glTexCoord2f(fTx, fTy);
-//	    glTexCoord2f(0.0+fButtonAnimationFrameOffset,0.0);	//A1; face left
-//    	glVertex3f(0.0f, 0.0f, 0.0f);
-//    	glVertex3f(-1.0f, 1.0f, 0.0f);
+    
+    /*  //added by Mike, 20210724
+     glDisable(GL_TEXTURE_2D);
+     glBindTexture(GL_TEXTURE_2D, 0);
+     glColor3f(1.0f, 1.0f, 1.0f); //set to default, i.e. white
+     
+     float fGridTileWidthVertexPosition=1.0f;
+     float fGridTileHeightVertexPosition=1.0f;
+     //counter-clockwise sequence to auto-draw front face
+     glBegin(GL_QUADS); // Each set of 4 vertices form a quad
+     //    	glTexCoord2f(fTx, fTy);
+     //	    glTexCoord2f(0.0+fButtonAnimationFrameOffset,0.0);	//A1; face left
+     //    	glVertex3f(0.0f, 0.0f, 0.0f);
+     //    	glVertex3f(-1.0f, 1.0f, 0.0f);
     	glVertex3f(-1.0f, 0.0f, 0.0f);
     	
-//    	glTexCoord2f(fTx + fTileSideXAxis, fTy);
+     //    	glTexCoord2f(fTx + fTileSideXAxis, fTy);
     	glVertex3f(-1.0f, -1.0f, 0.0f);
     	
-//    	glTexCoord2f(fTx + fTileSideXAxis, fTy + fTileSideYAxis);
+     //    	glTexCoord2f(fTx + fTileSideXAxis, fTy + fTileSideYAxis);
     	glVertex3f(1.0f, -1.0f, 0.0f);
     	
-//    	glTexCoord2f(fTx, fTy + fTileSideYAxis);
-//    	glVertex3f(1.0f, 1.0f, 0.0f);
+     //    	glTexCoord2f(fTx, fTy + fTileSideYAxis);
+     //    	glVertex3f(1.0f, 1.0f, 0.0f);
     	glVertex3f(1.0f, 0.0f, 0.0f);
-   	glEnd();    	
-*/    
+     glEnd();
+     */
     glDisable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, 0);
     glPopMatrix(); //added by Mike, 20210422
@@ -1389,22 +1405,22 @@ void Text::keyDown(int keyCode) {
     //added by Mike, 20210619
     //TO-DO: -reverify: output of over 6 rows in input file
     if (myKeysDown[KEY_K]==TRUE) {
-    		//edited by Mike, 20210723
-    		if (bHasReachedEndOfTextMessage) {
-    			bHasPressedKeyToCloseEndOfTextMessage=true;
-    		}
-    		else {    
-        	if (isAtMaxTextCharRow) {
-            	isAtMaxTextCharRow=false;
-            	
-            	iRowCountPageNumber++;
-            	iTextCurrentMaxRowCount=1;
-            	
-            	//next row; reminder: MAX_TEXT_CHAR_ROW=4
-            	for(int iCount=0; iCount<MAX_TEXT_CHAR_ROW; iCount++) {
-                	iCurrentMaxColumnCountPerRowContainer[iCount]=1;
-            	}
-        	}
+        //edited by Mike, 20210723
+        if (bHasReachedEndOfTextMessage) {
+            bHasPressedKeyToCloseEndOfTextMessage=true;
+        }
+        else {
+            if (isAtMaxTextCharRow) {
+                isAtMaxTextCharRow=false;
+                
+                iRowCountPageNumber++;
+                iTextCurrentMaxRowCount=1;
+                
+                //next row; reminder: MAX_TEXT_CHAR_ROW=4
+                for(int iCount=0; iCount<MAX_TEXT_CHAR_ROW; iCount++) {
+                    iCurrentMaxColumnCountPerRowContainer[iCount]=1;
+                }
+            }
         }
     }
     

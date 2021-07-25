@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210723
+ * @date updated: 20210725
  * @website address: http://www.usbong.ph
  *
  * Reference: 
@@ -72,6 +72,9 @@
 
 //added by Mike, 20210523
 #include "UsbongUtils.h"
+
+//added by Mike, 20210725
+#include "Level2D.h"
 
 #include <string.h>
 
@@ -565,7 +568,9 @@ Pilot::Pilot(float xPos, float yPos, float zPos, int windowWidth, int windowHeig
     myHeightAsPixel=64;
 */    
     myWidthAsPixel=64+32;
-    myHeightAsPixel=64*2+32;
+    //edited by Mike, 20210725
+//    myHeightAsPixel=64*2+32;
+    myHeightAsPixel=64+32;
     
 
 /*	//removed by Mike, 20210528
@@ -5976,7 +5981,13 @@ void Pilot::move(int key)
     }
 	else {
 //added by Mike, 20210521
-//----------		
+//----------
+        //added by Mike, 20210725
+        if (myLevel2D->isLevel2DCollideWith(this)) {
+            printf(">>>>COLLISION!");
+            return;
+        }
+        
           //added by Mike, 20201001; edited by Mike, 20201116
 //	      myYPos+=-stepY;
 					//edited by Mike, 20210527; edited by Mike, 20210605
@@ -6386,13 +6397,14 @@ void Pilot::hitBy(MyDynamicObject* mdo)
         currentMovingState=ATTACKING_MOVING_STATE;
         iKickAnimationCount=0;
 */
-        
+  
+/* //removed by Mike, 20210725
     //edited by Mike, 20210613
 //    move(KEY_K);
     if (!mdo->getIsMovingDown()) {
         move(KEY_K);
     }
-    
+*/
         //added by Mike, 20210613
         if (myKeysDown[KEY_D]==TRUE) {
             currentFacingState=FACING_RIGHT;
@@ -6432,8 +6444,11 @@ void Pilot::reset()
      myYPos=0;
      rotationAngle=0.0f;
      thrust=0.0f;
-     setCollidable(false);
-     invincibleCounter=0;
+    
+    //removed by Mike, 20210725
+    //setCollidable(false);
+ 
+    invincibleCounter=0;
     
     //added by Mike, 20210613
     bIsExecutingKick=false;
