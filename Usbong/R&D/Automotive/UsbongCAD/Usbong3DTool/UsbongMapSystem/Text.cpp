@@ -1185,7 +1185,16 @@ void Text::drawTextBackgroundObject()
     //TO-DO: -verify: scaled texture object if equal with pixel width and height size
     //use autoConvertFromPixelToVertexPointX, et cetera if exact
     
+
+    printf(">>iMyWindowWidthAsPixelOffset: %i",iMyWindowWidthAsPixelOffset); //example: 240
+    printf(">>myWindowWidth: %i",myWindowWidth); //example 800; //offset already subtracted
     
+    //TO-DO: -reverify: in another machine
+//     glTranslatef(0.23f, 0.0f, 0.0f); //note: no need to execute glTranslatef(...)
+//     glScalef(1.0f-0.23f, 1.0f, 1.0f); //OK in macOS machine
+//    glScalef(1.0f-(iMyWindowWidthAsPixelOffset*1.0f)/(myWindowWidth+iMyWindowWidthAsPixelOffset), 1.0f, 1.0f); //OK also in macOS machine
+    glScalef(1.0f-(iMyWindowWidthAsPixelOffset*1.0f)/(myWindowWidth), 1.0f, 1.0f); //OK
+
     //added by Mike, 20210725
     //TO-DO: -reverify: set of instructions with another machine's screen/monitor
     //glTranslatef(0.12f, 0.2f, 0.0f);
