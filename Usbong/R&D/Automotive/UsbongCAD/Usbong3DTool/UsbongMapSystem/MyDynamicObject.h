@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20200930
- * @date updated: 20210724
+ * @date updated: 20210725
  * @website address: http://www.usbong.ph
  *
  * Acknowledgments:
@@ -108,6 +108,8 @@ class UsbongUtils;
 //no need to use the "include" Command for the header file
 class OpenGLCanvas;
 
+//added by Mike, 20210725
+class Level2D;
 
 class MyDynamicObject
 {
@@ -183,6 +185,9 @@ public:
     float fGridSquareWidth;
     float fGridSquareHeight;
     OpenGLCanvas *myOpenGLCanvas;
+    
+    //added by Mike, 20210725
+    Level2D *myLevel2D;
     
     //added by Mike, 202105023
     UsbongUtils *myUsbongUtils;
@@ -403,6 +408,11 @@ public:
         //TO-DO: -update: this
         fGridSquareWidth = fSideLengthWidthInput;
         fGridSquareHeight = fSideLengthHeightInput;
+    };
+    
+    //added by Mike, 20210725
+    virtual void setLevel2D(Level2D* myLevel2DInput) {
+        myLevel2D = myLevel2DInput;
     };
     
     //added by Mike, 20210524

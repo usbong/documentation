@@ -228,6 +228,8 @@ typedef struct
     GLubyte image_descriptor;
 } TARGA_HEADER;
 
+/*  //removed by Mike, 20210725
+ //TO-DO: -add: in UsbongUtils
 //added by Mike, 20210403
 GLboolean OpenGLCanvas::test_pow2(GLushort i)
 {
@@ -238,6 +240,7 @@ GLboolean OpenGLCanvas::test_pow2(GLushort i)
     else
         return GL_FALSE;
 }
+*/
 
 //added by Mike, 20201213
 //Reference: https://stackoverflow.com/questions/10287924/fastest-way-to-sort-a-list-of-number-and-their-index;
@@ -658,6 +661,9 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
     //myLevel2D->setOpenGLCanvas(this, fGridSquareWidth);
     myLevel2D->setOpenGLCanvas(this, fGridSquareWidth, fGridSquareHeight); 
     myLevel2D->setupLevel(LEVEL_2D_TEXTURE);
+
+    //added by Mike, 20210725
+    myPilot->setLevel2D(myLevel2D);
     
     //added by Mike, 20210524; edited by Mike, 20210528
     //	myBall = new Ball(320.0f,320.0f,0.0f,myWindowWidthAsPixel,myWindowHeightAsPixel);
@@ -816,7 +822,9 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
     //-------------------------------------------
     //added by Mike, 20201011
     setupFont(FONT_TEXTURE);
+  
     
+    /*  //removed by Mike, 20210725
     //added by Mike, 20210703
     myLevel = new Level();
     myLevel->setupLevel(LEVEL_TEXTURE); //FONT_TEXTURE);
@@ -824,6 +832,7 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
     //added by Mike, 20210403; edited by Mike, 20210418
     //	setupKahonTexture(KAHON_TEXTURE);
     setupKahonTexture(BAHAY_TEXTURE);
+*/
     
     //added by Mike, 20210420
     //TO-DO: -update: this
@@ -1437,6 +1446,7 @@ void OpenGLCanvas::mouseActionUp(int iMouseActionId, int iXPos, int iYPos)
  }
  */
 
+/*  //removed by Mike, 20210725
 //added by Mike, 20210403
 //TO-DO: -update: this
 void OpenGLCanvas::load_tga(char *filename)
@@ -1451,7 +1461,7 @@ void OpenGLCanvas::load_tga(char *filename)
     if (file == NULL)
         return;
     
-    /* test validity of targa file */
+    // test validity of targa file
     if (fread(&targa, 1, sizeof(targa), file) != sizeof(targa) ||
         targa.id_field_length != 0 || targa.color_map_type != 0 ||
         targa.image_type_code != 2 || ! test_pow2(targa.width) ||
@@ -1462,7 +1472,7 @@ void OpenGLCanvas::load_tga(char *filename)
         return;
     }
     
-    /* read targa file into memory */
+    // read targa file into memory
     data = (GLubyte *) malloc(targa.width * targa.height * 4);
     if (fread(data, targa.width * targa.height * 4, 1, file) != 1)
     {
@@ -1471,7 +1481,7 @@ void OpenGLCanvas::load_tga(char *filename)
         return;
     }
     
-    /* swap texture bytes so that BGRA becomes RGBA */
+    // swap texture bytes so that BGRA becomes RGBA
     for (i = 0; i < targa.width * targa.height * 4; i += 4)
     {
         GLbyte swap = data[i];
@@ -1479,20 +1489,21 @@ void OpenGLCanvas::load_tga(char *filename)
         data[i + 2] = swap;
     }
     
-    /* build OpenGL texture */
+    // build OpenGL texture
     fclose(file);
     gluBuild2DMipmaps(GL_TEXTURE_2D, GL_RGBA, targa.width, targa.height,
                       GL_RGBA, GL_UNSIGNED_BYTE, data);
     free(data);
     
-    /*   char str[700];
-     sprintf(str,"dito: %f",0.0f);
-     */
+    //   char str[700];
+     //sprintf(str,"dito: %f",0.0f);
+     //
     //   std::cout << "keydown " << "\n";
     //printf("dito");
 }
+*/
 
-
+/*  //removed by Mike, 20210725
 //added by Mike, 20210402
 //TO-DO: -update: this
 void OpenGLCanvas::setupKahonTexture(int myKahonTextureObject)
@@ -1501,10 +1512,10 @@ void OpenGLCanvas::setupKahonTexture(int myKahonTextureObject)
     //due to blank output
     //glEnable(GL_DEPTH_TEST);
     
-    /* select texture 1 */
+    // select texture 1
     glBindTexture(GL_TEXTURE_2D, myKahonTextureObject);
     
-    /* create OpenGL texture out of targa file */
+    // create OpenGL texture out of targa file
     //    load_tga("textures/font.tga");
     //    load_tga("textures/concrete.tga");
     
@@ -1529,38 +1540,21 @@ void OpenGLCanvas::setupKahonTexture(int myKahonTextureObject)
     //    load_tga("textures/uvtemplate.tga");
     //    load_tga("textures/uvHalimbawa.tga");
     
-    /* set texture parameters */
+    // set texture parameters
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
                     GL_LINEAR_MIPMAP_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     
-    /* unselect texture myFontTextureObject */
+    // unselect texture myFontTextureObject
     glBindTexture(GL_TEXTURE_2D, 0);
     
-    /* setup alpha blending */
+    // setup alpha blending
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glEnable(GL_BLEND);
-    
-    /* //removed by Mike, 20210403
-     // set background color to bluish
-     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
-     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
-     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
-     GL_LINEAR_MIPMAP_NEAREST);
-     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-     // unselect texture myFontTextureObject
-     glBindTexture(GL_TEXTURE_2D, 0);
-     // setup alpha blending
-     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-     glEnable(GL_BLEND);
-     */
-    //removed by Mike, 20201012
-    /* set background color to bluish to demonstrate font transparency */
-    //    glClearColor(0.0f, 0.0f, 0.25f, 1.0f); /* to demonstrate font transparency */
-    
 }
+*/
 
 /*  //removed by Mike, 20210507
  //added by Mike, 20210420
@@ -3747,7 +3741,8 @@ void OpenGLCanvas::update()
         
         //added by Mike, 20210724; edited by Mike, 20210725
         //TO-DO: -add: setMyLevel2D in Pilot to auto-verify collision before actual movement after input Command
-        myLevel2D->isLevel2DCollideWith(myPilot);
+        //removed by Mike, 20210725
+//        myLevel2D->isLevel2DCollideWith(myPilot);
         
         //added by Mike, 20201013
         /*    	int a;

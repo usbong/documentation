@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20200929
- * @date updated: 20210706
+ * @date updated: 20210725
  * @website address: http://www.usbong.ph
  *
  * Acknowledgments:
@@ -361,9 +361,12 @@ private:
     void gameReset();
     void resetDynamicObjects();
     
+/*  //removed by Mike, 20210725
+     //TO-DO: -add: in UsbongUtils
     GLboolean test_pow2(GLushort i);
     void load_tga(char *filename);
-    
+ */
+
     //added by Mike, 20210402
     void setupKahonTexture(int myKahonTextureObject);
     

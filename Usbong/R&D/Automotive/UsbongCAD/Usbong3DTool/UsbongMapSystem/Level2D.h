@@ -407,7 +407,7 @@ public:
     void update(float dt);
     
     //added by Mike, 20210724; edited by Mike, 20210725
-    void isLevel2DCollideWith(MyDynamicObject* mdo);
+    bool isLevel2DCollideWith(MyDynamicObject* mdo);
         
     // changes the robot's state
     void changeState(int s);
