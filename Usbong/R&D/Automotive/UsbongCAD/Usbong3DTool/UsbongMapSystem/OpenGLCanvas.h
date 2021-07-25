@@ -431,8 +431,9 @@ public:
     
     //edited by Mike, 20210517
     //    	bool init();
-    //    	bool init(int myWindowWidthAsPixelInput, int myWindowHeightAsPixelInput);
-    bool init(float myWindowWidthAsPixelInput, float myWindowHeightAsPixelInput);
+    //edited by Mike, 20210725
+    bool init(int myWindowWidthAsPixelInput, int myWindowHeightAsPixelInput);
+    //bool init(float myWindowWidthAsPixelInput, float myWindowHeightAsPixelInput);
     
     bool shutdown();
     

@@ -507,11 +507,21 @@ Pilot::Pilot(float xPos, float yPos, float zPos, int windowWidth, int windowHeig
     stepY=0.4*4;
     stepZ=0.4*4;
 */
+/* //edited by Mike, 20210725
     //note: we use integer with myXPos, et cetera
     stepX=0.5*4;
     stepY=0.5*4;
     stepZ=0.5*4;
-	
+*/
+    //note: we use integer with myXPos, et cetera
+    //added by Mike, 20210725
+    //execute *2; Sonic the Hedgehog? due to speed and image blurs?
+    //sticks to wall to cause acceleration effect?
+    stepX=0.5*4*2;
+    stepY=0.5*4*2;
+    stepZ=0.5*4*2;
+    
+    
     invincibleCounter=0;
     currentDeathFrame=0;
 
@@ -4278,16 +4288,19 @@ void Pilot::drawPilotAsQuadWithTexture()
     //glTranslatef(myXPos, myYPos, myZPos);
 //	printf(">> myXPos:%f, myYPos:%f, myZPos:%f;\n",myXPos,myYPos,myZPos);
 		
+/* //removed by Mike, 20210725
 	//TO-DO: -update: this
 	myXPosAsPixel=(int)myXPos;
-	myYPosAsPixel=(int)myZPos;
-	
-/*	//removed by Mike, 20210524
+	//edited by Mike, 20210725
+//    myYPosAsPixel=(int)myZPos;
+    myYPosAsPixel=(int)myYPos;
+*/
+    
+    
 	//added by Mike, 20210523
 	//printf("myYPos: %f",myYPos);
-	printf("myXPosAsPixel: %i\n",myXPosAsPixel);
-	printf("myYPosAsPixel: %i\n",myYPosAsPixel);
-*/
+	printf(">>Pilot.cpp; myXPosAsPixel: %i\n",myXPosAsPixel);
+	printf(">>Pilot.cpp; myYPosAsPixel: %i\n",myYPosAsPixel);
 
 	//edited by Mike, 20210523
 //    glTranslatef(myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel), myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixel), myZPosAsPixel);
@@ -5974,62 +5987,39 @@ void Pilot::move(int key)
 
 //	 case KEY_UP: //removed by Mike, 20210130
      case KEY_W:
-          //isMovingForward=1;
-          //myZPos-=1.0f;
-/*          if (thrust<thrustMax)
-            thrust+=0.1f;
-*/  
-
-	//added by Mike, 20210111
-	if (bIsExecutingPunch) {
-	}
-	//added by Mike, 20210121
-	else if (bIsExecutingDefend) {
-	}
-    //added by Mike, 20210613
-    else if (bIsExecutingKick) {
-    }
-	else {
+       //added by Mike, 20210111
+       if (bIsExecutingPunch) {
+	   }
+       //added by Mike, 20210121
+	   else if (bIsExecutingDefend) {
+	   }
+       //added by Mike, 20210613
+       else if (bIsExecutingKick) {
+       }
+       else {
 //added by Mike, 20210521
 //----------
-        //added by Mike, 20210725
-        if (myLevel2D->isLevel2DCollideWith(this)) {
+/*
+         //added by Mike, 20210725
+         if (myLevel2D->isLevel2DCollideWith(this)) {
             printf(">>>>COLLISION!");
-            myZPos+=stepZ; //TO-DO: -update: this to not cause Pilot to be stuck in tile as block
+            myYPos+=stepY; //TO-DO: -update: this to not cause Pilot to be stuck in tile as block
             return;
-        }
-        
-          //added by Mike, 20201001; edited by Mike, 20201116
-//	      myYPos+=-stepY;
-					//edited by Mike, 20210527; edited by Mike, 20210605
-//	      myZPos+=-stepZ;
-        if (getIsPlayer1()) { //Player1: Unit Chief
-            myZPos+=-stepZ;
-        }
-        else {
-            myZPos+=-stepZ/2;
-        }
-        
-//	      myZPosAsPixel+=-iStepZAsPixel;
-
-			//added by Mike, 20210127; edited by Mike, 20210128
-//			if (bIsExecutingDash) {
-				//edited by Mike, 20210130
-				if (bIsExecutingDashArray[KEY_W]) {			
-	
-	
-	//			if ((bIsExecutingDashArray[KEY_UP]) || (bIsExecutingDashArray[KEY_W])) {			
-	//			if ((bIsExecutingDashArray[KEY_W])) {
-					//edited by Mike, 20210604
-//	      myZPos+=-stepZ;
-                    myZPos+=-stepZ*2;
-                    
-//	      	myZPosAsPixel+=-iStepZAsPixel;
-					
-				}
+         }
+*/
+         if (getIsPlayer1()) { //Player1: Unit Chief
+            myYPosAsPixel+=-stepY;
+         }
+         else {
+            myYPosAsPixel+=-stepY/2;
+         }
+		
+         if (bIsExecutingDashArray[KEY_W]) {
+            myYPosAsPixel+=-stepY*2;
+		 }
 //added by Mike, 20210521		
 //----------		
-	}
+       }
 	
 	      //added by Mike, 20201201; edited by Mike, 20201225
           //currentFacingState=FACING_UP;
@@ -6041,25 +6031,11 @@ void Pilot::move(int key)
 //      		currentFacingState=FACING_UP;		  	
 		  }
 		  
-		  //added by Mike, 20201226; edited by Mike, 20210502
-		  //edited by Mike, 20210613
           currentMovingState=WALKING_MOVING_STATE;
-/*  //removed by Mike, 20210613
-          if (bIsExecutingKick) {
-            currentMovingState=ATTACKING_MOVING_STATE;
-          }
-*/
-           
-//		  currentMovingState=IDLE_MOVING_STATE;		    
           break;
           
 //     case KEY_DOWN:  //removed by Mike, 20210130
      case KEY_S: //added by Mike, 20210128		   
-/*     	  //added by Mike, 20201001
-          if (thrust<thrustMax)
-            thrust+=-0.1f;
-*/
-
 	//added by Mike, 20210111
 	if (bIsExecutingPunch) {
 	}
@@ -6071,42 +6047,16 @@ void Pilot::move(int key)
     }
 	else {
 				
-//added by Mike, 20210521		
-//----------
-        /*  //removed by Mike, 20210725; TO-DO: -update: this due to causes segmentation fault
-        //added by Mike, 20210725
-        if (myLevel2D->isLevel2DCollideWith(this)) {
-            printf(">>>>COLLISION!");
-            myZPos+=-stepZ; //TO-DO: -update: this to not cause Pilot to be stuck in tile as block
-            return;
-        }
-*/        
-          //added by Mike, 20201001; edited by Mike, 20201116
-//	      myYPos+=stepY;
-        
-        //edited by Mike, 20210527; edited by Mike, 20210605
-        //	      myZPos+=-stepZ;
-        //	      myZPosAsPixel+=iStepZAsPixel;
         if (getIsPlayer1()) { //Player1: Unit Chief
-            myZPos+=stepZ;
+            myYPosAsPixel+=stepY;
         }
         else {
-            myZPos+=stepZ/2;
+            myYPosAsPixel+=stepY/2;
         }
         
-        
-        
-		//added by Mike, 20210127; edited by Mike, 20210128
-//			if (bIsExecutingDash) {
-		if ((bIsExecutingDashArray[KEY_S])) {				
-				//edited by Mike, 20210527; edited by Mike, 20210604
-//	      myZPos+=stepZ;
-            myZPos+=stepZ*2;
-            
-//	      myZPosAsPixel+=iStepZAsPixel;
+		if ((bIsExecutingDashArray[KEY_S])) {
+            myYPosAsPixel+=stepY*2;
 		}
-//added by Mike, 20210521		
-//----------		
 	}
 	      //added by Mike, 20201201; edited by Mike, 20201225
           //currentFacingState=FACING_DOWN;
@@ -6118,16 +6068,8 @@ void Pilot::move(int key)
           	//currentFacingState=FACING_DOWN;
 		  }
 
-		  //added by Mike, 20201226; edited by Mike, 20210502
-           //edited by Mike, 20210613
            currentMovingState=WALKING_MOVING_STATE;
-/* //removed by Mike, 20210613
-           if (bIsExecutingKick) {
-               currentMovingState=ATTACKING_MOVING_STATE;
-           }
-*/
-//	currentMovingState=IDLE_MOVING_STATE;
-          break;      
+          break;
 //     case KEY_LEFT: //removed by Mike, 20210130
      case KEY_A: //added by Mike, 20210128		   
      		//removed by Mike, 20201001
@@ -6191,13 +6133,13 @@ void Pilot::move(int key)
         
 				//edited by Mike, 20210604
 //		myXPos+=-stepX;
-        myXPos+=-stepX*2;
+        myXPosAsPixel+=-stepX*2;
 //	      myXPosAsPixel+=-iStepXAsPixel;
 		
 			
 		if ((bIsExecutingDashArray[KEY_A])) {		
 				//edited by Mike, 20210527
-		myXPos+=-stepX;
+		myXPosAsPixel+=-stepX;
 //	      myXPosAsPixel+=-iStepXAsPixel;
 		}
 		
@@ -6287,13 +6229,13 @@ void Pilot::move(int key)
         
         //edited by Mike, 20210604
 //		myXPos+=stepX;
-        myXPos+=stepX*2;
+        myXPosAsPixel+=stepX*2;
         //      myXPosAsPixel+=iStepXAsPixel;
 		
 
 		if ((bIsExecutingDashArray[KEY_D])) {
 				//edited by Mike, 20210527
-		myXPos+=stepX;
+		myXPosAsPixel+=stepX;
 //	      myXPosAsPixel+=iStepXAsPixel;
 		}		
 	}
@@ -6385,12 +6327,15 @@ void Pilot::move(int key)
 		bIsFiringBeam=false;
 	}   
 
+/*  //edited by Mike, 20210725
 	//added by Mike, 20210724
 	//note: in previous computer instructions, we used z-pos for the y-pos now
 	//TO-DO: -update: this
 	myXPosAsPixel=(int)myXPos;
-	myYPosAsPixel=(int)myZPos;
-	
+    //edited by Mike, 20210725
+//	myYPosAsPixel=(int)myZPos;
+    myYPosAsPixel=(int)myYPos;
+*/
 
 
 	//added by Mike, 20210502

@@ -285,6 +285,7 @@ public:
         return myHeightAsPixel;
     }
     
+    //TO-DO: -update: this to classify ...AsPixel
     //added by Mike, 20210605
     virtual int getStepX()
     {

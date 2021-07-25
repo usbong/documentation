@@ -230,17 +230,17 @@ typedef struct
 
 /*  //removed by Mike, 20210725
  //TO-DO: -add: in UsbongUtils
-//added by Mike, 20210403
-GLboolean OpenGLCanvas::test_pow2(GLushort i)
-{
-    while (i % 2 == 0)
-        i /= 2;
-    if (i == 1)
-        return GL_TRUE;
-    else
-        return GL_FALSE;
-}
-*/
+ //added by Mike, 20210403
+ GLboolean OpenGLCanvas::test_pow2(GLushort i)
+ {
+ while (i % 2 == 0)
+ i /= 2;
+ if (i == 1)
+ return GL_TRUE;
+ else
+ return GL_FALSE;
+ }
+ */
 
 //added by Mike, 20201213
 //Reference: https://stackoverflow.com/questions/10287924/fastest-way-to-sort-a-list-of-number-and-their-index;
@@ -289,9 +289,9 @@ OpenGLCanvas::~OpenGLCanvas()
 //bool OpenGLCanvas::init()
 //edited by Mike, 202106062
 //bool OpenGLCanvas::init(int myWindowWidthAsPixel, int myWindowHeightAsPixel)
-//edited by Mike, 20210623
-//bool OpenGLCanvas::init(int myWindowWidthAsPixelInput, int myWindowHeightAsPixelInput)
-bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsPixelInput)
+//edited by Mike, 20210725
+bool OpenGLCanvas::init(int myWindowWidthAsPixelInput, int myWindowHeightAsPixelInput)
+//bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsPixelInput)
 {
     //TO-DO: -receive: values from main.cpp
     //edited by Mike, 20201115
@@ -446,22 +446,22 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
      iColumnCountMax=30;
      iHeightCountMax=30; //added by Mike, 20210208
      */
-     
-/*	//removed by Mike, 20210703
-    iRowCountMax=12;
-    iColumnCountMax=12;
-    iHeightCountMax=12; //added by Mike, 20210208
-*/
+    
+    /*	//removed by Mike, 20210703
+     iRowCountMax=12;
+     iColumnCountMax=12;
+     iHeightCountMax=12; //added by Mike, 20210208
+     */
     
     /*	//edited by Mike, 20210320
      fGridSquareWidth = myWindowWidth/iColumnCountMax/100.0;
      fGridSquareHeight = myWindowHeight/iRowCountMax/100.0;
      */
-     
-/*    //removed by Mike, 20210703
-    fGridSquareWidth = 4.0f;
-    fGridSquareHeight = 4.0f;
-*/
+    
+    /*    //removed by Mike, 20210703
+     fGridSquareWidth = 4.0f;
+     fGridSquareHeight = 4.0f;
+     */
     
     //added by Mike, 20210416
     fKahonRotation=0;
@@ -478,18 +478,21 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
     //TO-DO: -reverify: this; draw instructions, e.g. in Text.cpp,
     //auto-scales due to using vertex positions; not pixel positions;
     //even without Window Width and Height values
-    myWindowWidthAsPixel = myWindowWidthAsPixelInput;
-    myWindowHeightAsPixel = myWindowHeightAsPixelInput;
+    //TO-DO: -reverify: this
+    myWindowWidthAsPixel = (int)myWindowWidthAsPixelInput;
+    myWindowHeightAsPixel = (int)myWindowHeightAsPixelInput;
     
-/*	//edited by Mike, 20210710 
-    //added by Mike, 20210702
-    iRowCountMax=10;
-    iColumnCountMax=10;
-    iHeightCountMax=10; //added by Mike, 20210208
-*/
+    printf("HALLO: myWindowWidthAsPixel: %i\n",myWindowWidthAsPixel);
+    
+    /*	//edited by Mike, 20210710
+     //added by Mike, 20210702
+     iRowCountMax=10;
+     iColumnCountMax=10;
+     iHeightCountMax=10; //added by Mike, 20210208
+     */
     iRowCountMax=10;
     iColumnCountMax=18;
-    iHeightCountMax=10;   
+    iHeightCountMax=10;
     
     fGridSquareWidth = myWindowWidthAsPixel/iColumnCountMax; //example: 136.60
     fGridSquareHeight = myWindowHeightAsPixel/iRowCountMax; //example: 76.80
@@ -500,40 +503,40 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
     //added by Mike, 20210626
     fMyWindowWidthAsPixelRatioToHeightPixel=1.0f;
     iMyWindowWidthAsPixelOffset=0; //added by Mike, 20210701
-  
-  
-/* //removed by Mike, 20210708    
- //added by Mike, 20210708    
-//note: add no auto-scale Window, but use increased max column count
- 
-    //note: auto-scale Width to Height to make Square Window    
-    if (myWindowWidthAsPixel!=myWindowHeightAsPixel) {
-        //added by Mike, 20210626
-        fMyWindowWidthAsPixelRatioToHeightPixel=myWindowHeightAsPixelInput/myWindowWidthAsPixel;
-        
-        //added by Mike, 20210701
-        //note: width value > height value
-        //TO-DO: -add: auto-update
-        //height: 768; width: 1366
-        iMyWindowWidthAsPixelOffset=(myWindowWidthAsPixel-myWindowHeightAsPixel)/2;       
-        myWindowWidthAsPixel = myWindowHeightAsPixelInput; //myWindowWidthAsPixelInput;
-        //    	myWindowHeightAsPixel = myWindowHeightAsPixelInput;
-        drawPressNextSymbol
-////         printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> USBONG");
-////         printf("myWindowWidthAsPixelInput: %f; myWindowHeightAsPixelInput: %f\n",myWindowWidthAsPixelInput,myWindowHeightAsPixelInput);
-////         printf("myWindowWidthAsPixel: %f; myWindowHeightAsPixel: %f\n",myWindowWidthAsPixel,myWindowHeightAsPixel);
-    }
-*/
+    
+    
+    /* //removed by Mike, 20210708
+     //added by Mike, 20210708
+     //note: add no auto-scale Window, but use increased max column count
+     
+     //note: auto-scale Width to Height to make Square Window
+     if (myWindowWidthAsPixel!=myWindowHeightAsPixel) {
+     //added by Mike, 20210626
+     fMyWindowWidthAsPixelRatioToHeightPixel=myWindowHeightAsPixelInput/myWindowWidthAsPixel;
+     
+     //added by Mike, 20210701
+     //note: width value > height value
+     //TO-DO: -add: auto-update
+     //height: 768; width: 1366
+     iMyWindowWidthAsPixelOffset=(myWindowWidthAsPixel-myWindowHeightAsPixel)/2;
+     myWindowWidthAsPixel = myWindowHeightAsPixelInput; //myWindowWidthAsPixelInput;
+     //    	myWindowHeightAsPixel = myWindowHeightAsPixelInput;
+     drawPressNextSymbol
+     ////         printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> USBONG");
+     ////         printf("myWindowWidthAsPixelInput: %f; myWindowHeightAsPixelInput: %f\n",myWindowWidthAsPixelInput,myWindowHeightAsPixelInput);
+     ////         printf("myWindowWidthAsPixel: %f; myWindowHeightAsPixel: %f\n",myWindowWidthAsPixel,myWindowHeightAsPixel);
+     }
+     */
     
     //added by Mike, 20210516
     myUsbongUtils = new UsbongUtils();
     myUsbongUtils->setWindowWidthHeight(myWindowWidthAsPixel, myWindowHeightAsPixel);
-
-/*  //removed by Mike, 20210712
-    //added by Mike, 20210211
-    myLevel = new Level();
-    myLevel->setupLevel(LEVEL_TEXTURE); //FONT_TEXTURE);
-*/
+    
+    /*  //removed by Mike, 20210712
+     //added by Mike, 20210211
+     myLevel = new Level();
+     myLevel->setupLevel(LEVEL_TEXTURE); //FONT_TEXTURE);
+     */
     
     //added by Mike, 20210517; edited by Mike, 20210606
     /*    myWindowWidthAsPixel = myWindowWidth;
@@ -571,8 +574,8 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
     //edited by Mike, 20210522
     //	myRobotShip->setOpenGLCanvas(this);
     //edited by Mike, 20210710
-//    myRobotShip->setOpenGLCanvas(this, fGridSquareWidth);
-    myRobotShip->setOpenGLCanvas(this, fGridSquareWidth, fGridSquareHeight); 
+    //    myRobotShip->setOpenGLCanvas(this, fGridSquareWidth);
+    myRobotShip->setOpenGLCanvas(this, fGridSquareWidth, fGridSquareHeight);
     
     //TO-DO: -update: myPilot instructions, e.g. movement
     //added by Mike, 20201207; edited by Mike, 20210219
@@ -584,8 +587,8 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
     //    myPilot = new Pilot(0.0f,0.0f,220.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
     myPilot = new Pilot(0.0f,0.0f,270.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
     //edited by Mike, 20210710
-//    myPilot->setOpenGLCanvas(this, fGridSquareWidth);.
-    myPilot->setOpenGLCanvas(this, fGridSquareWidth, fGridSquareHeight); 
+    //    myPilot->setOpenGLCanvas(this, fGridSquareWidth);.
+    myPilot->setOpenGLCanvas(this, fGridSquareWidth, fGridSquareHeight);
     
     myPilot->setAsPlayer1(); //added by Mike, 20210601
     
@@ -594,8 +597,8 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
     //    myPilotPartner = new Pilot(100.0f,0.0f,220.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
     myPilotPartner = new Pilot(100.0f,0.0f,170.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
     //edited by Mike, 20210710
-//    myPilotPartner->setOpenGLCanvas(this, fGridSquareWidth);
-    myPilotPartner->setOpenGLCanvas(this, fGridSquareWidth, fGridSquareHeight); 
+    //    myPilotPartner->setOpenGLCanvas(this, fGridSquareWidth);
+    myPilotPartner->setOpenGLCanvas(this, fGridSquareWidth, fGridSquareHeight);
     
     myPilotPartner->setAsPlayer1Partner(); //added by Mike, 20210601
     
@@ -614,9 +617,9 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
     //edited by Mike, 20210522
     //	myPilotPlayer2->setOpenGLCanvas(this);
     //edited by Mike, 20210710
-//    myPilotPlayer2->setOpenGLCanvas(this, fGridSquareWidth);
-    myPilotPlayer2->setOpenGLCanvas(this, fGridSquareWidth, fGridSquareHeight); 
-
+    //    myPilotPlayer2->setOpenGLCanvas(this, fGridSquareWidth);
+    myPilotPlayer2->setOpenGLCanvas(this, fGridSquareWidth, fGridSquareHeight);
+    
     myPilotPlayer2->setAsPlayer2();
     
     //added by Mike, 20210530; edited by Mike, 20210605
@@ -627,7 +630,7 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
     //edited by Mike, 20210710
     //note: width and height not equal due to Window
     //to cause square tile to NOT be square
-    myPilotPlayer2Partner->setOpenGLCanvas(this, fGridSquareWidth, fGridSquareHeight); 
+    myPilotPlayer2Partner->setOpenGLCanvas(this, fGridSquareWidth, fGridSquareHeight);
     myPilotPlayer2Partner->setAsPlayer2Partner(); //edited by Mike, 20210601
     
     
@@ -642,26 +645,26 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
     //	myButton->setOpenGLCanvas(this);
     //edited by Mike, 20210710
     //myButton->setOpenGLCanvas(this, fGridSquareWidth);
-    myButton->setOpenGLCanvas(this, fGridSquareWidth, fGridSquareHeight); 
+    myButton->setOpenGLCanvas(this, fGridSquareWidth, fGridSquareHeight);
     
     //edited by Mike, 20210626
     //    myText = new Text(0.0f,320.0f,0.0f,myWindowWidthAsPixel,myWindowHeightAsPixel);
     myText = new Text(0.0f,320.0f,0.0f,myWindowWidthAsPixelInput,myWindowHeightAsPixelInput);
     //edited by Mike, 20210710
-//    myText->setOpenGLCanvas(this, fGridSquareWidth);
-    myText->setOpenGLCanvas(this, fGridSquareWidth, fGridSquareHeight); 
-  
-  
+    //    myText->setOpenGLCanvas(this, fGridSquareWidth);
+    myText->setOpenGLCanvas(this, fGridSquareWidth, fGridSquareHeight);
+    
+    
     //added by Mike, 20210703; edited by Mike, 20210708
-//    myLevel2D = new Level2D(0.0f,320.0f,0.0f,myWindowWidthAsPixelInput,myWindowHeightAsPixelInput);
+    //    myLevel2D = new Level2D(0.0f,320.0f,0.0f,myWindowWidthAsPixelInput,myWindowHeightAsPixelInput);
     myLevel2D = new Level2D(0.0f,0.0f,0.0f,myWindowWidthAsPixelInput,myWindowHeightAsPixelInput);
     
     //note: width and height not equal due to Window
     //to cause square tile to NOT be square
     //myLevel2D->setOpenGLCanvas(this, fGridSquareWidth);
-    myLevel2D->setOpenGLCanvas(this, fGridSquareWidth, fGridSquareHeight); 
+    myLevel2D->setOpenGLCanvas(this, fGridSquareWidth, fGridSquareHeight);
     myLevel2D->setupLevel(LEVEL_2D_TEXTURE);
-
+    
     //added by Mike, 20210725
     myPilot->setLevel2D(myLevel2D);
     
@@ -670,7 +673,7 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
     myBall = new Ball(0.0f,320.0f,0.0f,myWindowWidthAsPixel,myWindowHeightAsPixel);
     //edited by Mike, 20210710
     //myBall->setOpenGLCanvas(this, fGridSquareWidth);
-    myBall->setOpenGLCanvas(this, fGridSquareWidth, fGridSquareHeight); 
+    myBall->setOpenGLCanvas(this, fGridSquareWidth, fGridSquareHeight);
     
     
     //added by Mike, 20201013; edited by Mike, 20201014
@@ -684,7 +687,7 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
         
         //added by Mike, 20210522; edited by Mike, 20210710
         //myBeam[i]->setOpenGLCanvas(this, fGridSquareWidth);
-    		myBeam[i]->setOpenGLCanvas(this, fGridSquareWidth, fGridSquareHeight); 
+        myBeam[i]->setOpenGLCanvas(this, fGridSquareWidth, fGridSquareHeight);
     }
     
     //added by Mike, 20201016
@@ -822,17 +825,17 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
     //-------------------------------------------
     //added by Mike, 20201011
     setupFont(FONT_TEXTURE);
-  
+    
     
     /*  //removed by Mike, 20210725
-    //added by Mike, 20210703
-    myLevel = new Level();
-    myLevel->setupLevel(LEVEL_TEXTURE); //FONT_TEXTURE);
-  
-    //added by Mike, 20210403; edited by Mike, 20210418
-    //	setupKahonTexture(KAHON_TEXTURE);
-    setupKahonTexture(BAHAY_TEXTURE);
-*/
+     //added by Mike, 20210703
+     myLevel = new Level();
+     myLevel->setupLevel(LEVEL_TEXTURE); //FONT_TEXTURE);
+     
+     //added by Mike, 20210403; edited by Mike, 20210418
+     //	setupKahonTexture(KAHON_TEXTURE);
+     setupKahonTexture(BAHAY_TEXTURE);
+     */
     
     //added by Mike, 20210420
     //TO-DO: -update: this
@@ -846,7 +849,7 @@ bool OpenGLCanvas::init(float myWindowWidthAsPixelInput, float myWindowHeightAsP
     }
     
     //edited by Mike, 20210701
-//    stepHistoryListCount=0;
+    //    stepHistoryListCount=0;
     stepHistoryListCount=1;
     
     return true;
@@ -1212,7 +1215,7 @@ void OpenGLCanvas::keyDown(int keyCode)
     if (keyCode==KEY_Z) {
         //added by Mike, 20210513
         //edited by Mike, 20210702
-//        if (stepHistoryListCount>0) {
+        //        if (stepHistoryListCount>0) {
         if (stepHistoryListCount>1) {
             stepHistoryListCount=stepHistoryListCount-1;
             
@@ -1227,9 +1230,9 @@ void OpenGLCanvas::keyDown(int keyCode)
             iEndPointX=0;
             iEndPointY=0;
         }
-    		//added by Mike, 20210702        
+        //added by Mike, 20210702
         else {
-    			stepHistoryListCount=1;
+            stepHistoryListCount=1;
         }
     }
 }
@@ -1447,114 +1450,114 @@ void OpenGLCanvas::mouseActionUp(int iMouseActionId, int iXPos, int iYPos)
  */
 
 /*  //removed by Mike, 20210725
-//added by Mike, 20210403
-//TO-DO: -update: this
-void OpenGLCanvas::load_tga(char *filename)
-//void load_tga(std::string filename)
-{
-    TARGA_HEADER targa;
-    FILE *file;
-    GLubyte *data;
-    GLuint i;
-    
-    file = fopen(filename, "rb");
-    if (file == NULL)
-        return;
-    
-    // test validity of targa file
-    if (fread(&targa, 1, sizeof(targa), file) != sizeof(targa) ||
-        targa.id_field_length != 0 || targa.color_map_type != 0 ||
-        targa.image_type_code != 2 || ! test_pow2(targa.width) ||
-        ! test_pow2(targa.height) || targa.image_pixel_size != 32 ||
-        targa.image_descriptor != 8)
-    {
-        fclose(file);
-        return;
-    }
-    
-    // read targa file into memory
-    data = (GLubyte *) malloc(targa.width * targa.height * 4);
-    if (fread(data, targa.width * targa.height * 4, 1, file) != 1)
-    {
-        fclose(file);
-        free(data);
-        return;
-    }
-    
-    // swap texture bytes so that BGRA becomes RGBA
-    for (i = 0; i < targa.width * targa.height * 4; i += 4)
-    {
-        GLbyte swap = data[i];
-        data[i] = data[i + 2];
-        data[i + 2] = swap;
-    }
-    
-    // build OpenGL texture
-    fclose(file);
-    gluBuild2DMipmaps(GL_TEXTURE_2D, GL_RGBA, targa.width, targa.height,
-                      GL_RGBA, GL_UNSIGNED_BYTE, data);
-    free(data);
-    
-    //   char str[700];
-     //sprintf(str,"dito: %f",0.0f);
-     //
-    //   std::cout << "keydown " << "\n";
-    //printf("dito");
-}
-*/
+ //added by Mike, 20210403
+ //TO-DO: -update: this
+ void OpenGLCanvas::load_tga(char *filename)
+ //void load_tga(std::string filename)
+ {
+ TARGA_HEADER targa;
+ FILE *file;
+ GLubyte *data;
+ GLuint i;
+ 
+ file = fopen(filename, "rb");
+ if (file == NULL)
+ return;
+ 
+ // test validity of targa file
+ if (fread(&targa, 1, sizeof(targa), file) != sizeof(targa) ||
+ targa.id_field_length != 0 || targa.color_map_type != 0 ||
+ targa.image_type_code != 2 || ! test_pow2(targa.width) ||
+ ! test_pow2(targa.height) || targa.image_pixel_size != 32 ||
+ targa.image_descriptor != 8)
+ {
+ fclose(file);
+ return;
+ }
+ 
+ // read targa file into memory
+ data = (GLubyte *) malloc(targa.width * targa.height * 4);
+ if (fread(data, targa.width * targa.height * 4, 1, file) != 1)
+ {
+ fclose(file);
+ free(data);
+ return;
+ }
+ 
+ // swap texture bytes so that BGRA becomes RGBA
+ for (i = 0; i < targa.width * targa.height * 4; i += 4)
+ {
+ GLbyte swap = data[i];
+ data[i] = data[i + 2];
+ data[i + 2] = swap;
+ }
+ 
+ // build OpenGL texture
+ fclose(file);
+ gluBuild2DMipmaps(GL_TEXTURE_2D, GL_RGBA, targa.width, targa.height,
+ GL_RGBA, GL_UNSIGNED_BYTE, data);
+ free(data);
+ 
+ //   char str[700];
+ //sprintf(str,"dito: %f",0.0f);
+ //
+ //   std::cout << "keydown " << "\n";
+ //printf("dito");
+ }
+ */
 
 /*  //removed by Mike, 20210725
-//added by Mike, 20210402
-//TO-DO: -update: this
-void OpenGLCanvas::setupKahonTexture(int myKahonTextureObject)
-{
-    //removed by Mike, 20201010
-    //due to blank output
-    //glEnable(GL_DEPTH_TEST);
-    
-    // select texture 1
-    glBindTexture(GL_TEXTURE_2D, myKahonTextureObject);
-    
-    // create OpenGL texture out of targa file
-    //    load_tga("textures/font.tga");
-    //    load_tga("textures/concrete.tga");
-    
-    //edited by Mike, 20210409
-    //    load_tga("textures/armor.tga");
-    //    load_tga("textures/imageSpriteExampleMike.tga");
-    //edited by Mike, 20210416
-    //    load_tga("textures/imageSpriteExampleMikeWithoutBG.tga");
-    //edited by Mike, 20210418
-    //    load_tga("textures/armor.tga");
-    
-    if (myKahonTextureObject==KAHON_TEXTURE) {
-        load_tga("textures/imageSpriteExampleMikeWithoutBG.tga");
-    }
-    else if (myKahonTextureObject==ARMOR_TEXTURE) {
-        load_tga("textures/armor.tga");
-    }
-    else {  //BAHAY_TEXTURE
-        load_tga("textures/bahay.tga");
-    }
-    
-    //    load_tga("textures/uvtemplate.tga");
-    //    load_tga("textures/uvHalimbawa.tga");
-    
-    // set texture parameters
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
-                    GL_LINEAR_MIPMAP_NEAREST);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    
-    // unselect texture myFontTextureObject
-    glBindTexture(GL_TEXTURE_2D, 0);
-    
-    // setup alpha blending
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    glEnable(GL_BLEND);
-}
-*/
+ //added by Mike, 20210402
+ //TO-DO: -update: this
+ void OpenGLCanvas::setupKahonTexture(int myKahonTextureObject)
+ {
+ //removed by Mike, 20201010
+ //due to blank output
+ //glEnable(GL_DEPTH_TEST);
+ 
+ // select texture 1
+ glBindTexture(GL_TEXTURE_2D, myKahonTextureObject);
+ 
+ // create OpenGL texture out of targa file
+ //    load_tga("textures/font.tga");
+ //    load_tga("textures/concrete.tga");
+ 
+ //edited by Mike, 20210409
+ //    load_tga("textures/armor.tga");
+ //    load_tga("textures/imageSpriteExampleMike.tga");
+ //edited by Mike, 20210416
+ //    load_tga("textures/imageSpriteExampleMikeWithoutBG.tga");
+ //edited by Mike, 20210418
+ //    load_tga("textures/armor.tga");
+ 
+ if (myKahonTextureObject==KAHON_TEXTURE) {
+ load_tga("textures/imageSpriteExampleMikeWithoutBG.tga");
+ }
+ else if (myKahonTextureObject==ARMOR_TEXTURE) {
+ load_tga("textures/armor.tga");
+ }
+ else {  //BAHAY_TEXTURE
+ load_tga("textures/bahay.tga");
+ }
+ 
+ //    load_tga("textures/uvtemplate.tga");
+ //    load_tga("textures/uvHalimbawa.tga");
+ 
+ // set texture parameters
+ glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
+ glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
+ glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
+ GL_LINEAR_MIPMAP_NEAREST);
+ glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+ 
+ // unselect texture myFontTextureObject
+ glBindTexture(GL_TEXTURE_2D, 0);
+ 
+ // setup alpha blending
+ glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+ glEnable(GL_BLEND);
+ }
+ */
 
 /*  //removed by Mike, 20210507
  //added by Mike, 20210420
@@ -1621,42 +1624,42 @@ void OpenGLCanvas::render()
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     
-        
+    
     /*  //
      glMatrixMode(GL_MODELVIEW);
      glLoadIdentity();
      */
-     
+    
     //added by Mike, 20210627
     //paint the outer margins if window not square, i.e. width and height not equal
-//-----
+    //-----
     glBegin(GL_QUADS);
-    	glColor3f(0.0f,0.0f,0.0f); //black
-//    	glColor3f(1.0f,1.0f,1.0f); //white
-
+    glColor3f(0.0f,0.0f,0.0f); //black
+    //    	glColor3f(1.0f,1.0f,1.0f); //white
+    
     //TOP
-/*    //sky blue color; darker
-    //	glColor3f(0.51f, 0.73f, 0.98f);
-    //	glColor3f(0.08f, 0.51f, 1.00f);
-    //	glColor3f(0.0f, 0.32f, 0.67f);
-    glColor3f(0.0f, 0.44f, 0.67f);
-*/
+    /*    //sky blue color; darker
+     //	glColor3f(0.51f, 0.73f, 0.98f);
+     //	glColor3f(0.08f, 0.51f, 1.00f);
+     //	glColor3f(0.0f, 0.32f, 0.67f);
+     glColor3f(0.0f, 0.44f, 0.67f);
+     */
     glVertex2f(1.0, 1.0);
     glVertex2f(-1.0, 1.0);
     
     //BOTTOM
-/*
-    //sky blue color; brighter
-    glColor3f(0.69f, 0.84f, 1.0f);
-*/
+    /*
+     //sky blue color; brighter
+     glColor3f(0.69f, 0.84f, 1.0f);
+     */
     glVertex2f(-1.0,-1.0);
     glVertex2f(1.0,-1.0);
     glEnd();
-//-----
+    //-----
     
     //added by Mike, 20210626; removed by Mike, 20210703
     //auto-scale to Window Width to Height
-//    glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
+    //    glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
     
     
     /*
@@ -1680,28 +1683,26 @@ void OpenGLCanvas::render()
      glEnd();
      */
     
-/*   //removed by Mike, 20210703; sky square window
-    glBegin(GL_QUADS);
+    /*   //removed by Mike, 20210703; sky square window
+     glBegin(GL_QUADS);
     	//	glColor3f(0.0f,0.0f,0.0f); //black
     	glColor3f(1.0f,1.0f,1.0f); //white
     	
     	//TOP
     	//sky blue color; darker
-//removed by Mike, 20210703    	 
-//    	glColor3f(0.0f, 0.44f, 0.67f);
-
+     //removed by Mike, 20210703
+     //    	glColor3f(0.0f, 0.44f, 0.67f);
     	glVertex2f(1.0, 1.0);
     	glVertex2f(-1.0, 1.0);
     	
     	//BOTTOM
     	//sky blue color; brighter
-//removed by Mike, 20210703    	 
-//    	glColor3f(0.69f, 0.84f, 1.0f);
-
+     //removed by Mike, 20210703
+     //    	glColor3f(0.69f, 0.84f, 1.0f);
     	glVertex2f(-1.0,-1.0);
     	glVertex2f(1.0,-1.0);
-    glEnd();
-*/
+     glEnd();
+     */
     
     
     /*  //removed by Mike, 20210530
@@ -1725,7 +1726,7 @@ void OpenGLCanvas::render()
     
     //added by Mike, 20210510; edited by Mike, 20210702
     //TO-DO: -reverify: this due to exact in macOS, but not exact in Linux machine
-//    glLineWidth((GLfloat)3);
+    //    glLineWidth((GLfloat)3);
     glLineWidth((GLfloat)4);
     
     //note: coordinate system guide/map
@@ -1754,181 +1755,179 @@ void OpenGLCanvas::render()
     //added by Mike, 20210703
     //auto-scale to Window Width to Height
     glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
-
-
-//grid guide
-//added by Mike, 20210701
-glPushMatrix();     
-  //added by Mike, 20210524
-     //notes: vertical and horizontal lines in addition to those at center
-     //coordinate system guide/map; pixel positions
-     //edited by Mike, 20210708
-     //TO-DO: -add: auto-update value
-     iRowCountMax=10;
-     
-     int iNumberSign=1;
-
-/*
-//removed by Mike, 20210723
+    
+    
+    //grid guide
+    //added by Mike, 20210701
+    glPushMatrix();
+    //added by Mike, 20210524
+    //notes: vertical and horizontal lines in addition to those at center
+    //coordinate system guide/map; pixel positions
+    //edited by Mike, 20210708
+    //TO-DO: -add: auto-update value
+    iRowCountMax=10;
+    
+    int iNumberSign=1;
+    
+    /*
+     //removed by Mike, 20210723
      //rows
      for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
    		// Draw a Green Line top-left origin
    		glBegin(GL_LINES);
-	//     glColor3f(0.0f, 0.0f, 1.0f); // Blue
-//     		glColor3f(0.0f, 1.0f, 0.0f); // Green
-     		glColor3f(0.0f, 0.8f, 0.8f); // Blue Green
-	
-     		glVertex2f(-1.0f*2, 2.0f/iRowCountMax*iRowCount*iNumberSign);    // x, y
-     		glVertex2f(1.0f*2, 2.0f/iRowCountMax*iRowCount*iNumberSign);     		
+     //     glColor3f(0.0f, 0.0f, 1.0f); // Blue
+     //     		glColor3f(0.0f, 1.0f, 0.0f); // Green
+     glColor3f(0.0f, 0.8f, 0.8f); // Blue Green
+     
+     glVertex2f(-1.0f*2, 2.0f/iRowCountMax*iRowCount*iNumberSign);    // x, y
+     glVertex2f(1.0f*2, 2.0f/iRowCountMax*iRowCount*iNumberSign);
    		glEnd();
      }
      iNumberSign=-1;
      for (int iRowCount=0; iRowCount<iRowCountMax; iRowCount++) {
    		// Draw a Green Line top-left origin
    		glBegin(GL_LINES);
-		//     glColor3f(0.0f, 0.0f, 1.0f); // Blue
-//     		glColor3f(0.0f, 1.0f, 0.0f); // Green
-     		glColor3f(0.0f, 0.8f, 0.8f); // Blue Green   		
-     		
-     		glVertex2f(-1.0f*2, 2.0f/iRowCountMax*iRowCount*iNumberSign);    // x, y
-     		//TO-DO: -add: auto-compute myWindowWidth
-     		glVertex2f(1.0f*2, 2.0f/iRowCountMax*iRowCount*iNumberSign);		
+     //     glColor3f(0.0f, 0.0f, 1.0f); // Blue
+     //     		glColor3f(0.0f, 1.0f, 0.0f); // Green
+     glColor3f(0.0f, 0.8f, 0.8f); // Blue Green
+     
+     glVertex2f(-1.0f*2, 2.0f/iRowCountMax*iRowCount*iNumberSign);    // x, y
+     //TO-DO: -add: auto-compute myWindowWidth
+     glVertex2f(1.0f*2, 2.0f/iRowCountMax*iRowCount*iNumberSign);
    		glEnd();
      }
-*/
-     
-     //reset to 12 from 10
+     */
+    
+    //reset to 12 from 10
     //removed by Mike, 20210701
-//     iRowCountMax=12;
-
-     //added by Mike, 20210701
-     int iLeftMarginColumnCount=-1;
-     
-     //edited by Mike, 20210708
-     //TO-DO: -add: auto-update value due to Window Width not equal with Window Height 
-     //columns
-//     iColumnCountMax=10;
-     iColumnCountMax=18;
-
-/*
-//removed by Mike, 20210723
+    //     iRowCountMax=12;
+    
+    //added by Mike, 20210701
+    int iLeftMarginColumnCount=-1;
+    
+    //edited by Mike, 20210708
+    //TO-DO: -add: auto-update value due to Window Width not equal with Window Height
+    //columns
+    //     iColumnCountMax=10;
+    iColumnCountMax=18;
+    
+    /*
+     //removed by Mike, 20210723
      //right part
      iNumberSign=1;
      for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {
    		// Draw a Green Line top-left origin
    		glBegin(GL_LINES);
-//     		glColor3f(0.0f, 0.0f, 1.0f); // Blue
-     		glColor3f(0.0f, 0.8f, 0.8f); // Blue Green
-
-     		glVertex2f(2.0f/iColumnCountMax*iColumnCount*iNumberSign, -1.0f);    // x, y
-     		//TO-DO: -add: auto-compute myWindowHeight
-     		glVertex2f(2.0f/iColumnCountMax*iColumnCount*iNumberSign, 1.0f);
+     //     		glColor3f(0.0f, 0.0f, 1.0f); // Blue
+     glColor3f(0.0f, 0.8f, 0.8f); // Blue Green
+     glVertex2f(2.0f/iColumnCountMax*iColumnCount*iNumberSign, -1.0f);    // x, y
+     //TO-DO: -add: auto-compute myWindowHeight
+     glVertex2f(2.0f/iColumnCountMax*iColumnCount*iNumberSign, 1.0f);
    		glEnd();
      }
-*/
+     */
     
     //left part
-     iNumberSign=-1;
+    iNumberSign=-1;
     for (int iColumnCount=0; iColumnCount<iColumnCountMax; iColumnCount++) {
-/*    
-   		// Draw a Green Line top-left origin
-   		glBegin(GL_LINES);
-//     		glColor3f(0.0f, 0.0f, 1.0f); // Blue
-     		glColor3f(0.0f, 0.8f, 0.8f); // Blue Green
-
-     		glVertex2f(2.0f/iColumnCountMax*iColumnCount*iNumberSign, -1.0f);    // x, y
-     		//TO-DO: -add: auto-compute myWindowHeight
-     		glVertex2f(2.0f/iColumnCountMax*iColumnCount*iNumberSign, 1.0f);
-   		glEnd();
-*/                
+        /*
+         // Draw a Green Line top-left origin
+         glBegin(GL_LINES);
+         //     		glColor3f(0.0f, 0.0f, 1.0f); // Blue
+         glColor3f(0.0f, 0.8f, 0.8f); // Blue Green
+         glVertex2f(2.0f/iColumnCountMax*iColumnCount*iNumberSign, -1.0f);    // x, y
+         //TO-DO: -add: auto-compute myWindowHeight
+         glVertex2f(2.0f/iColumnCountMax*iColumnCount*iNumberSign, 1.0f);
+         glEnd();
+         */
         //added by Mike, 20210701
         //identify column count of left margin
-////        printf(">>> myWindowWidthAsPixel/2.0f/iColumnCountMax*iColumnCount: %f\n",myWindowWidthAsPixel/2.0f/iColumnCountMax*iColumnCount);
-////        printf(">>> iMyWindowWidthAsPixelOffset: %i\n",iMyWindowWidthAsPixelOffset);
-
+        ////        printf(">>> myWindowWidthAsPixel/2.0f/iColumnCountMax*iColumnCount: %f\n",myWindowWidthAsPixel/2.0f/iColumnCountMax*iColumnCount);
+        ////        printf(">>> iMyWindowWidthAsPixelOffset: %i\n",iMyWindowWidthAsPixelOffset);
+        
         //note: column as clock's set of 5mins
         if (iLeftMarginColumnCount==-1) {
             if (myWindowWidthAsPixel/2.0f/iColumnCountMax*iColumnCount >= iMyWindowWidthAsPixelOffset) {
                 iLeftMarginColumnCount=(iColumnCount)/2; //reverify cause of /2
             }
         }
-     }
-     //reset to 12 from 10
+    }
+    //reset to 12 from 10
     //removed by Mike, 20210701
-//     iColumnCountMax=12;
-
-//added by Mike, 20210701
-glPopMatrix();     
-
-     
-//    glScalef(1.0f,1.0f,1.0f);
+    //     iColumnCountMax=12;
+    
+    //added by Mike, 20210701
+    glPopMatrix();
+    
+    
+    //    glScalef(1.0f,1.0f,1.0f);
     
     //added by Mike, 20210701
     glPushMatrix();
-/*
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-*/
+    /*
+     glMatrixMode(GL_PROJECTION);
+     glLoadIdentity();
+     */
     //added by Mike, 20210701
     //glScalef(1.0f,1.0f,1.0f); //    glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
-
     
-	//    glTranslatef(-1.0f-2.0f/iRowCountMax*iRowCount, 0.0f, 0.0f);
-//    	glTranslatef(-1.0f+2.0f/iRowCountMax*1, 0.0f, 0.0f);
-
+    
+    //    glTranslatef(-1.0f-2.0f/iRowCountMax*iRowCount, 0.0f, 0.0f);
+    //    	glTranslatef(-1.0f+2.0f/iRowCountMax*1, 0.0f, 0.0f);
+    
     //edited by Mike, 20210701
-////    printf(">>>>>iLeftMarginColumnCount: %i>>>>>",iLeftMarginColumnCount);
-
-
+    ////    printf(">>>>>iLeftMarginColumnCount: %i>>>>>",iLeftMarginColumnCount);
+    
+    
     //edited by Mike, 20210704
-//    glTranslatef(-2.0f/iColumnCountMax*iLeftMarginColumnCount+0.02, 0.0f, 0.0f);
+    //    glTranslatef(-2.0f/iColumnCountMax*iLeftMarginColumnCount+0.02, 0.0f, 0.0f);
     //note: no +0.02 in macOS
     //TO-DO: -reverify: in Linux OS
-/*    glTranslatef(-2.0f/iColumnCountMax*iLeftMarginColumnCount, 0.0f, 0.0f);
-*/
-		
-/*	//removed by Mike, 20210708; add this when using auto-scale Window Width to Height		
-		//added by Mike, 20210705
-		#if defined(__APPLE__)
-		#else
+    /*    glTranslatef(-2.0f/iColumnCountMax*iLeftMarginColumnCount, 0.0f, 0.0f);
+     */
+    
+    /*	//removed by Mike, 20210708; add this when using auto-scale Window Width to Height
+     //added by Mike, 20210705
+     #if defined(__APPLE__)
+     #else
     	glTranslatef(+0.02f, 0.0f, 0.0f);
-		#endif
-*/
-
+     #endif
+     */
+    
     glTranslatef(-2.0f/iColumnCountMax*iLeftMarginColumnCount, 0.0f, 0.0f);
-
-    	//	printf("myMouseActionDown[MOUSE_LEFT_BUTTON]: %i\n",myMouseActionDown[MOUSE_LEFT_BUTTON]);
-    	
-    	if (myMouseActionDown[MOUSE_LEFT_BUTTON]==FALSE) {
-    	}
-    	else {
-        	//added by Mike, 20210514
-        	//note: greater than 0, due to blank start is @zero
-        	if ((stepHistoryListCount>0) && (stepHistoryListCount<MAX)) {
-            	glBegin(GL_LINES);
-            	//glColor3f(0.0f,0.0f,0.0f); //black
-            	glColor3f(0.6f,0.6f,0.6f); //bright black
-            	
-            	glVertex2f(myUsbongUtils->autoConvertFromPixelToVertexPointX(iStartPointX), myUsbongUtils->autoConvertFromPixelToVertexPointY(iStartPointY));
-            	glVertex2f(myUsbongUtils->autoConvertFromPixelToVertexPointX(iEndPointX), myUsbongUtils->autoConvertFromPixelToVertexPointY(iEndPointY));
-            	glEnd();
-        	}
-    	}
-    	
-    	//added by Mike, 20210513
-    	glBegin(GL_LINES);
-    	//edited by Mike, 20210514
-    	//		glColor3f(1.0f,0.0f,0.0f); //red
-    	//sky blue color; brighter
-    	//		glColor3f(0.69f, 0.84f, 1.0f);
-    	glColor3f(0.0f,0.0f,0.0f); //black
-    	
-    	for (int iCount=0; iCount<stepHistoryListCount; iCount++)
-    	{
-        	glVertex2f(myUsbongUtils->autoConvertFromPixelToVertexPointX(stepHistoryList[iCount][0]), myUsbongUtils->autoConvertFromPixelToVertexPointY(stepHistoryList[iCount][1]));
-        	glVertex2f(myUsbongUtils->autoConvertFromPixelToVertexPointX(stepHistoryList[iCount][2]), myUsbongUtils->autoConvertFromPixelToVertexPointY(stepHistoryList[iCount][3]));
-    	}
-    	glEnd();    	
+    
+    //	printf("myMouseActionDown[MOUSE_LEFT_BUTTON]: %i\n",myMouseActionDown[MOUSE_LEFT_BUTTON]);
+    
+    if (myMouseActionDown[MOUSE_LEFT_BUTTON]==FALSE) {
+    }
+    else {
+        //added by Mike, 20210514
+        //note: greater than 0, due to blank start is @zero
+        if ((stepHistoryListCount>0) && (stepHistoryListCount<MAX)) {
+            glBegin(GL_LINES);
+            //glColor3f(0.0f,0.0f,0.0f); //black
+            glColor3f(0.6f,0.6f,0.6f); //bright black
+            
+            glVertex2f(myUsbongUtils->autoConvertFromPixelToVertexPointX(iStartPointX), myUsbongUtils->autoConvertFromPixelToVertexPointY(iStartPointY));
+            glVertex2f(myUsbongUtils->autoConvertFromPixelToVertexPointX(iEndPointX), myUsbongUtils->autoConvertFromPixelToVertexPointY(iEndPointY));
+            glEnd();
+        }
+    }
+    
+    //added by Mike, 20210513
+    glBegin(GL_LINES);
+    //edited by Mike, 20210514
+    //		glColor3f(1.0f,0.0f,0.0f); //red
+    //sky blue color; brighter
+    //		glColor3f(0.69f, 0.84f, 1.0f);
+    glColor3f(0.0f,0.0f,0.0f); //black
+    
+    for (int iCount=0; iCount<stepHistoryListCount; iCount++)
+    {
+        glVertex2f(myUsbongUtils->autoConvertFromPixelToVertexPointX(stepHistoryList[iCount][0]), myUsbongUtils->autoConvertFromPixelToVertexPointY(stepHistoryList[iCount][1]));
+        glVertex2f(myUsbongUtils->autoConvertFromPixelToVertexPointX(stepHistoryList[iCount][2]), myUsbongUtils->autoConvertFromPixelToVertexPointY(stepHistoryList[iCount][3]));
+    }
+    glEnd();
     glPopMatrix();
     
     //added by Mike, 20210514; edited by Mike, 20210613
@@ -1953,48 +1952,48 @@ glPopMatrix();
      );
      //--
      */
-
-//-----              
-/* 	glBindTexture( GL_TEXTURE_2D, LEVEL_TEXTURE );
-    sprintf(tempText,"G");        
-    myLevel->draw_level(fGridSquareWidth*4.0f, fGridSquareWidth*4.0f, 0.0f, tempText);
-*/
+    
+    //-----
+    /* 	glBindTexture( GL_TEXTURE_2D, LEVEL_TEXTURE );
+     sprintf(tempText,"G");
+     myLevel->draw_level(fGridSquareWidth*4.0f, fGridSquareWidth*4.0f, 0.0f, tempText);
+     */
     //TO-DO: -update: this
     
     //added by Mike, 20210703
     //auto-scale to Window Width to Height
     //glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
     //reset to 1.0f
-//    glScalef(1.0f,1.0f,1.0f);
-
+    //    glScalef(1.0f,1.0f,1.0f);
+    
     glPushMatrix();
- //    	glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
- 
-    	glTranslatef(-2.0f/iColumnCountMax*iLeftMarginColumnCount, 0.0f, 0.0f);
-       	
-    	myLevel2D->draw();
+    //    	glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
+    
+    glTranslatef(-2.0f/iColumnCountMax*iLeftMarginColumnCount, 0.0f, 0.0f);
+    
+    myLevel2D->draw();
     glPopMatrix();
-//-----         
-  
-    //added by Mike, 20210723  
+    //-----
+    
+    //added by Mike, 20210723
     glPushMatrix();
-    	glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
-     
-    	//added by Mike, 20210704
-    	//note: OK output
-    	myText->draw();
+    glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
+    
+    //added by Mike, 20210704
+    //note: OK output
+    myText->draw();
     glPopMatrix();
-    	
     
     
-		//added by Mike, 20210722         
-		//TO-DO: -update: screen width and height max position;
-		//used in wrap world, et cetera
+    
+    //added by Mike, 20210722
+    //TO-DO: -update: screen width and height max position;
+    //used in wrap world, et cetera
     glPushMatrix();
-    	myPilot->draw();
-    glPopMatrix();          
+    myPilot->draw();
+    glPopMatrix();
     
-             
+    
     //added by Mike, 20210511
     /*
      if (myMouseActionDown[MOUSE_LEFT_BUTTON]==FALSE) {
@@ -2214,13 +2213,13 @@ glPopMatrix();
          glPopMatrix();
          }
          */
-
-/* //removed by Mike, 20210722         
-				 //added by Mike, 20210722         
+        
+        /* //removed by Mike, 20210722
+         //added by Mike, 20210722
          glPushMatrix();
-         	myPilot->draw();
-         glPopMatrix();   
-*/               
+         myPilot->draw();
+         glPopMatrix();
+         */
     }
 }
 
@@ -3358,16 +3357,20 @@ void OpenGLCanvas::update()
         
         
         //added by Mike, 20210606
-/* //edited by Mike, 20210723        
-        //TO-DO: -update: this
-        float fMaxWindowWidthForPilot=580.0f;
-        float fMaxWindowHeightForPilot=560.0f; //added by Mike, 20210606
-*/
+        /* //edited by Mike, 20210723
+         //TO-DO: -update: this
+         float fMaxWindowWidthForPilot=580.0f;
+         float fMaxWindowHeightForPilot=560.0f; //added by Mike, 20210606
+         */
+        
+      //edited by Mike, 20210725
+/*
+      //removed: this due to we use myWindowWidthAsPixel, i.e. container for integer values, instead of floating point values
         float fMaxWindowWidthForPilot=myWindowWidthAsPixel;
         float fMaxWindowHeightForPilot=myWindowHeightAsPixel;
-        
+*/
         ////         printf("myWindowWidthAsPixelInput: %f; myWindowHeightAsPixelInput: %f\n",myWindowWidthAsPixelInput,myWindowHeightAsPixelInput);
-////         printf("myWindowWidthAsPixel: %f; myWindowHeightAsPixel: %f\n",myWindowWidthAsPixel,myWindowHeightAsPixel);
+        ////         printf("myWindowWidthAsPixel: %f; myWindowHeightAsPixel: %f\n",myWindowWidthAsPixel,myWindowHeightAsPixel);
         
         //added by Mike, 20210608
         //TO-DO: -verify: set to reset if outside Window, instead of bounceFromWindowWall
@@ -3383,6 +3386,8 @@ void OpenGLCanvas::update()
         	myBall->setThrust(12.0f);
          }
          */
+        
+/*
         if ((myBall->getX() < 0.0f) ||
             (myBall->getX()+myBall->getWidthAsPixel()  > fMaxWindowWidthForPilot)) {
             myBall->reset();
@@ -3403,7 +3408,7 @@ void OpenGLCanvas::update()
             myBall->bounceFromWindowWall();
             myBall->setThrust(16.0f);
         }
-        
+*/
         
         //added by Mike, 20210605
         //note: horizontal scroll
@@ -3411,44 +3416,48 @@ void OpenGLCanvas::update()
         //----------
         //        printf("myPilot->getX: %f>>",myPilot->getX());
         
-/* 		//TO-DO: -update: instructions to use Z-axis, ...AsPixel, et cetera       
-        if (myPilot->getXAsPixel() < 0.0f) {
-            myPilot->setXPosAsPixel(0.0f);
+        /* 		//TO-DO: -update: instructions to use Z-axis, ...AsPixel, et cetera
+         if (myPilot->getXAsPixel() < 0.0f) {
+         myPilot->setXPosAsPixel(0.0f);
+         }
+         //edited by Mike, 20210725
+         //max movement with set
+         else if (myPilot->getXAsPixel()+myPilot->getWidthAsPixel() > fMaxWindowWidthForPilot) {
+         myPilot->setXPosAsPixel(fMaxWindowWidthForPilot-myPilot->getWidthAsPixel());
+         }
+         
+         //note: we use y-axis in Level2D; instead of z-axis (Level3D)
+         if (myPilot->getYAsPixel() < 0.0f) { //max movement with set
+         myPilot->setYPosAsPixel(0.0f);
+         }
+         //max movement with set
+         else if (myPilot->getYAsPixel()+myPilot->getHeightAsPixel() > fMaxWindowHeightForPilot) {
+         myPilot->setYPosAsPixel(fMaxWindowHeightForPilot-myPilot->getHeightAsPixel());
+         }
+         */
+
+/* //removed by Mike, 20210725
+        printf("myPilot->getXAsPixel(): %i\n>>",myPilot->getXAsPixel());
+        
+        if (myPilot->getXAsPixel() < 0) {
+            myPilot->setXPosAsPixel(0);
         }
         //edited by Mike, 20210725
-		//max movement with set        
-        else if (myPilot->getXAsPixel()+myPilot->getWidthAsPixel() > fMaxWindowWidthForPilot) { 
+        //max movement with set
+        else if (myPilot->getXAsPixel()+myPilot->getWidthAsPixel() > fMaxWindowWidthForPilot) {
             myPilot->setXPosAsPixel(fMaxWindowWidthForPilot-myPilot->getWidthAsPixel());
         }
         
         //note: we use y-axis in Level2D; instead of z-axis (Level3D)
-        if (myPilot->getYAsPixel() < 0.0f) { //max movement with set
-            myPilot->setYPosAsPixel(0.0f);
+        //TO-DO: -reverify: to use z-axis in Level2D
+        if (myPilot->getYAsPixel() < 0) { //max movement with set
+            myPilot->setYPosAsPixel(0);
         }
-		//max movement with set        
-        else if (myPilot->getYAsPixel()+myPilot->getHeightAsPixel() > fMaxWindowHeightForPilot) { 
+        //max movement with set
+        else if (myPilot->getYAsPixel()+myPilot->getHeightAsPixel() > fMaxWindowHeightForPilot) {
             myPilot->setYPosAsPixel(fMaxWindowHeightForPilot-myPilot->getHeightAsPixel());
         }
- */       
-        if (myPilot->getX() < 0.0f) {
-            myPilot->setXPos(0.0f);
-        }
-        //edited by Mike, 20210725
-		//max movement with set        
-        else if (myPilot->getX()+myPilot->getWidthAsPixel() > fMaxWindowWidthForPilot) { 
-            myPilot->setXPos(fMaxWindowWidthForPilot-myPilot->getWidthAsPixel());
-        }
-        
-        //note: we use y-axis in Level2D; instead of z-axis (Level3D)
-        //TO-DO: -reverify: to use z-axis in Level2D
-        if (myPilot->getZ() < 0.0f) { //max movement with set
-            myPilot->setZPos(0.0f);
-        }
-		//max movement with set        
-        else if (myPilot->getZ()+myPilot->getHeightAsPixel() > fMaxWindowHeightForPilot) { 
-            myPilot->setZPos(fMaxWindowHeightForPilot-myPilot->getHeightAsPixel());
-        }
-        
+*/
         
         //edited by Mike, 20210605
         //        printf("myPilotPartner->getX: %f>>",myPilotPartner->getX());
@@ -3463,155 +3472,7 @@ void OpenGLCanvas::update()
         	myPilotPartner->setXPos(myPilot->getX()+100.0f);
          }
          */
-        if (myPilotPartner->getX() < 0.0f) {
-            myPilotPartner->setXPos(0.0f);
-        }
-        /* //removed by Mike, 20210606
-         else if (myPilotPartner->getX()+myPilotPartner->getWidthAsPixel() > fMaxWindowWidthForPilot) { //max movement with set window width
-         myPilotPartner->setXPos(fMaxWindowWidthForPilot-myPilotPartner->getWidthAsPixel());
-         }
-         */
-        //added by Mike, 20210606
-        else {
-            myPilotPartner->setXPos(myPilot->getX()+100.0f);
-        }
         
-        
-        //        printf("myPilotPlayer2->getX: %f>>",myPilotPlayer2->getX());
-        //myPilotPlayer2->setXPos(myPilot->getX()+320.0f+100.0f);
-        
-        if (myPilotPlayer2->getX() < 0.0f) {
-            //        if (myPilot->getX() <= 0.0f) {
-            myPilotPlayer2->setXPos(0.0f);
-        }
-        else if (myPilotPlayer2->getX()+myPilotPlayer2->getWidthAsPixel() > fMaxWindowWidthForPilot) { //max movement with set window width
-            //        else if (myPilot->getX()+myPilot->getWidthAsPixel() >= 580.0f) {
-            //TO-DO: -reverify: cause of delay when moving to the left by pressing KEY_A
-            myPilotPlayer2->setXPos(fMaxWindowWidthForPilot-myPilotPlayer2->getWidthAsPixel());
-        }
-        else {
-            //edited by Mike, 20210606
-            //            myPilotPlayer2->setXPos(myPilot->getX()+320.0f+100.0f);
-            if (myPilot->getX() <= 0.0f) {
-                //edited by Mike, 20210606
-                if (myPilotPlayer2->getX() < myPilot->getX()+320.0f) {//+100.0f) {
-                }
-                else {
-                    if (myKeysDown[KEY_A]) {
-                        myPilotPlayer2->move(KEY_A);
-                    }
-                }
-            }
-            //added by Mike, 20210606
-            //note: 320.0f+100.0f distance between myPilot and myPilotPlayer2
-            ////            else if (myPilot->getX() < myPilotPlayer2->getX()){//-320.0f-100.0f) {
-            ////                if (myKeysDown[KEY_A]) {
-            ////                    myPilotPlayer2->move(KEY_A);
-            ////                }
-            ////            }
-            else {
-                //edited by Mike, 20210606
-                //                myPilotPlayer2->setXPos(myPilot->getX()+320.0f+100.0f);
-                /*
-                 if (myPilotPlayer2->getX() > myPilot->getX()) {//+320.0f+100.0f) {//+100.0f) {
-                 if (myKeysDown[KEY_D]) {
-                 myPilotPlayer2->move(KEY_D);
-                 }
-                 }
-                 //edited by Mike, 20210606
-                 //TO-DO: -reverify: this
-                 else*/
-                /*
-                 if (myPilotPlayer2->getX() < myPilot->getX()+320.0f) {//+100.0f) {//+100.0f) {
-                 //                if (myPilotPlayer2->getX() < 320.0f+100.0f) {
-                 if (myKeysDown[KEY_D]) {
-                 myPilotPlayer2->move(KEY_D);
-                 }
-                 }
-                 else {
-                 myPilotPlayer2->setXPos(myPilot->getX()+320.0f);//+100.0f);
-                 }
-                 */
-                if (myPilotPlayer2->getX() < myPilot->getX()+320.0f+100.0f) {//+100.0f) {
-                    //                if (myPilotPlayer2->getX() < 320.0f+100.0f) {
-                    if (myKeysDown[KEY_D]) {
-                        myPilotPlayer2->move(KEY_D);
-                    }
-                    else if (myKeysDown[KEY_A]) {
-                        myPilotPlayer2->move(KEY_A);
-                    }
-                    
-                }
-                else {
-                    //edited by Mike, 20210606
-                    myPilotPlayer2->setXPos(myPilot->getX()+320.0f+100.0f);
-                }
-            }
-            //myPilotPlayer2->setXPos(myPilot->getX()+320.0f+100.0f);
-        }
-        
-        //--
-        
-        if (myPilotPlayer2Partner->getX() < 0.0f) {
-            myPilotPlayer2Partner->setXPos(0.0f);
-        }
-        else if (myPilotPlayer2Partner->getX() > 580.0f) { //max movement with set window width
-            myPilotPlayer2Partner->setXPos(580.0f);
-        }
-        else {
-            myPilotPlayer2Partner->setXPos(myPilotPlayer2->getX()-100.0f); //+100.0f
-        }
-        //----------
-        
-        //        myPilotPartner->setZPos(myPilot->getZ()-100.0f);
-        if (myPilotPartner->getZ() < myPilot->getZ()-100.0f) {
-            myPilotPartner->setZPos(myPilotPartner->getZ()+1.0f);
-        }
-        //edited by Mike, 20210605
-        //        else {
-        else if (myPilotPartner->getZ() > myPilot->getZ()-100.0f) {
-            myPilotPartner->setZPos(myPilotPartner->getZ()-1.0f);
-        }
-        else {
-            myPilotPartner->move(-1); //setCurrentMovingState=IDLE_MOVING_STATE;
-        }
-        
-        
-        //added by Mike, 20210528
-        //note: we use z-axis for vertex position; this shall be auto-converted to as pixel in y-axis
-        //edited by Mike, 20210604
-        //myPilotPlayer2->setZPos(myPilot->getZ());
-        if (myPilotPlayer2->getZ() < myPilot->getZ()) {
-            //edited by Mike, 20210605
-            myPilotPlayer2->setZPos(myPilotPlayer2->getZ()+1.0f);
-            //            myPilotPlayer2->move(KEY_S);
-        }
-        //        else {
-        else if (myPilotPlayer2->getZ() > myPilot->getZ()) {
-            //edited by Mike, 20210605
-            myPilotPlayer2->setZPos(myPilotPlayer2->getZ()-1.0f);
-            //            myPilotPlayer2->move(KEY_W);
-        }
-        else {
-            myPilotPlayer2->move(-1); //setCurrentMovingState=IDLE_MOVING_STATE;
-        }
-        //edited by Mike, 20210603
-        //        myPilotPlayer2->setXPos(myPilot->getX()+320.0f);
-        //removed by Mike, 20210605
-        //        myPilotPlayer2->setXPos(myPilot->getX()+320.0f+100.0f);
-        
-        //added by Mike, 20210530; edited by Mike, 20210604
-        //        myPilotPlayer2Partner->setZPos(myPilotPlayer2->getZ()-100.0f);
-        if (myPilotPlayer2Partner->getZ() < myPilotPlayer2->getZ()-100.0f) {
-            myPilotPlayer2Partner->setZPos(myPilotPlayer2Partner->getZ()+1.0f);
-        }
-        //        else {
-        else if (myPilotPlayer2Partner->getZ() > myPilotPlayer2->getZ()-100.0f) {
-            myPilotPlayer2Partner->setZPos(myPilotPlayer2Partner->getZ()-1.0f);
-        }
-        else {
-            myPilotPlayer2Partner->move(-1); //setCurrentMovingState=IDLE_MOVING_STATE;
-        }
         
         //        myPilotPlayer2Partner->setXPos(myPilotPlayer2->getX());
         //removed by Mike, 20210605
@@ -3754,7 +3615,7 @@ void OpenGLCanvas::update()
         //added by Mike, 20210724; edited by Mike, 20210725
         //TO-DO: -add: setMyLevel2D in Pilot to auto-verify collision before actual movement after input Command
         //removed by Mike, 20210725
-//        myLevel2D->isLevel2DCollideWith(myPilot);
+        //        myLevel2D->isLevel2DCollideWith(myPilot);
         
         //added by Mike, 20201013
         /*    	int a;
@@ -4412,7 +4273,39 @@ void OpenGLCanvas::update()
             }
         }
         
+        //added by Mike, 20210725
+        //TO-DO: -update: this
+/*      myWindowWidthAsPixel=myWindowWidth;
+        myWindowHeightAsPixel=myWindowHeight;
+*/
+//        printf("myPilot->getXAsPixel(): %i\n>>",myPilot->getXAsPixel());
+        printf("myWindowWidthAsPixel: %i\n>>",myWindowWidthAsPixel);
         
+        
+        //note: Pilot sticks to wall when we use myPosX, et cetera in movement(...), instead of immediately  myPosXAsPixel
+        //TO-DO: -add: acceleration?
+        //TO-DO: -add: dust due to movement, e.g. running?
+        
+        if (myPilot->getXAsPixel() < 0) {
+            myPilot->setXPosAsPixel(0+myPilot->getStepX());
+        }
+        //max movement with set
+        else if (myPilot->getXAsPixel()+myPilot->getWidthAsPixel() > myWindowWidthAsPixel) {
+            myPilot->setXPosAsPixel(myWindowWidthAsPixel-myPilot->getWidthAsPixel()-myPilot->getStepX());
+        }
+        
+//removed by Mike, 20210725
+/* //TO-DO: -add: this
+        //note: we use y-axis in Level2D; instead of z-axis (Level3D)
+        //TO-DO: -reverify: to use z-axis in Level2D
+        if (myPilot->getYAsPixel() < 0) { //max movement with set
+            myPilot->setYPosAsPixel(0+myPilot->getStepY());
+        }
+        //max movement with set
+        else if (myPilot->getYAsPixel()+myPilot->getHeightAsPixel() > myWindowHeightAsPixel) {
+            myPilot->setYPosAsPixel(myWindowHeightAsPixel-myPilot->getHeightAsPixel()-myPilot->getStepY());
+        }
+*/
         
     }
     else if (currentState==TITLE_SCREEN)
@@ -4685,16 +4578,16 @@ void OpenGLCanvas::drawKahonWithTextureForVerification() {
      glNormal3f(0.0000,0.0000,-1.0000);
      //edited by Mike, 20210409
      //	glTexCoord2f(0.625000,0.250000);
-     glTexCoord2f(0.0,0.0);	
+     glTexCoord2f(0.0,0.0);
      glVertex3f(-1.000000,1.000000,-1.000000); //A2
      glNormal3f(0.0000,0.0000,-1.0000);
-     //edited by Mike, 20210409		
+     //edited by Mike, 20210409
      //	glTexCoord2f(0.625000,0.500000);
      glTexCoord2f(1.0,0.0);
      //	glTexCoord2f(1.0,1.0);
      glVertex3f(1.000000,1.000000,-1.000000); //B2
      glNormal3f(0.0000,0.0000,-1.0000);
-     //edited by Mike, 20210409		
+     //edited by Mike, 20210409
      //	glTexCoord2f(0.375000,0.500000);
      glTexCoord2f(1.0,1.0);
      //	glTexCoord2f(1.0,0.0);	
