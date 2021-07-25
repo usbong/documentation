@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20200926
- * @date updated: 20210724
+ * @date updated: 20210725
  * @website address: http://www.usbong.ph
  *
  * Reference:
@@ -792,8 +792,9 @@ void Text::drawTextBackgroundAsQuadWithTexture()
 
     glScalef(1.0f,1.0f,1.0f);
     
-    //added by Mike, 20210613
-    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel), -myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixel), -myZPosAsPixel);
+    //added by Mike, 20210613; removed by Mike, 20210725
+//    glTranslatef(-myUsbongUtils->autoConvertFromPixelToVertexPointX(myXPosAsPixel), -myUsbongUtils->autoConvertFromPixelToVertexPointY(myYPosAsPixel), -myZPosAsPixel);
+    
     glPopMatrix();
     
     if (isAtMaxTextCharRow) {
@@ -1168,15 +1169,25 @@ void Text::drawTextBackgroundObject()
     //TO-DO: -verify: scaled texture object if equal with pixel width and height size
     //use autoConvertFromPixelToVertexPointX, et cetera if exact
     
+	    
+    //added by Mike, 20210725
+	//TO-DO: -reverify: set of instructions with another machine's screen/monitor
+    glTranslatef(0.12f, 0.2f, 0.0f);
+    
     //window width and height; 640x640pixels
     //whole texture image sheet 512x256pixels
     //button size: 64x16pixels
     //		glScalef(0.25f, 0.4f, 1.0f);
-    glScalef(0.20f, 0.4f, 1.0f);
-    
+//    glScalef(0.20f, 0.4f, 1.0f);
+//    glScalef(0.25f, 0.4f, 1.0f);
+    glScalef(0.28f, 0.4f, 1.0f);
+  
+/* //edited by Mike, 20210725    
     //added by Mike, 20210516
     //due to instructions to auto-draw quad using triangles
-    glTranslatef(1.0f, 0.5f, 0.0f);
+//    glTranslatef(1.0f, 0.5f, 0.0f);
+    glTranslatef(0.4f, 0.5f, 0.0f);
+*/
 
 	//added by Mike, 20210724   
     //note: adding background texture causes delay in execution
