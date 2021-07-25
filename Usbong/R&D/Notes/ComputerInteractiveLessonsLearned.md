@@ -416,10 +416,10 @@ Kumaliwa at kumanan, makikita mo ang pagitan sa paggalaw.<br/>
 すぐわかるというわけじゃない。<br/>
 魔物が逃せてくれないし。<br/>
 <br/>
-PS1のクラッシュバンディクーの開発チームに<br/>
+PS1のクラッシュ バンディクーの開発チームに<br/>
 G'NGからの影響を与えたのかな・・・<br/>
 15年前ぐらいに100％までも完成できたけど、<br/>
-今、23/32のはいきょのところ、<br/>
+今、23/32のゆうやけはいきょのところ、<br/>
 G'NGのことを思い出す。<br/>
 時間を入れて、何回もやり直せて、<br/>
 徐々に進めると。<br/>
@@ -428,6 +428,8 @@ G'NGのことを思い出す。<br/>
 絵とかは引っ張るからね。<br/>
 といっても、遊ばない、すぐ負けるから。<br/>
 金は十分に使えないって感じ･･･<br/>
+<br/>
+where: D'ND = Dungeons and Dragons (CAPCOM version)
 
 #### 1.1.8.5) Dagdag na mga Bagay-bagay
 --> Executed on Gameboy Color (over 10 years ago)<br/>
@@ -435,6 +437,25 @@ G'NGのことを思い出す。<br/>
 --> <b>Paalala:</b> Nauubos ang kuryente sa baterya ng Bala, i.e. Cartridge, na nagdudulot ng pagkawala ng naisulat sa Memory storage.<br/>
 --> Maigi rin kung may Stage Select Input Command bilang lunas dito.<br/>
 --> Halimbawa ng magagamitan din nito ang sa Donkey Kong Country series sa Super Family Computer.<br/>
+--> 1.1.8.5.1) 横縦(+Z)スクロールの引っ張る理由？<br/>
+Super Mario Odysseyの<br/>
+El reino de champiñonにある<br/>
+クラッシクステージも思い出せる。<br/>
+<br/>
+--> 1.1.8.5.1.1) 仕組みが解けること<br/>
+すぐわかるというわけじゃないけど<br/>
+時間を入れて解ける。<br/>
+<br/>
+--> 1.1.8.5.1.2) 終わりがもうちょっと着けそうと<br/>
+失敗しても、またやり直す。<br/>
+着いたら、まだ終わりじゃないけど、進む。<br/>
+<br/>
+--> 1.1.8.5.1.3) 前より速やく進めること<br/>
+また最初からやり直しても、<br/>
+仕組みがもう解けたので、<br/>
+より速やく進める。<br/>
+<br/>
+--> 達成感？<br/>
 
 ## 1.2) SEGA: SERVICE GAMES
 ### 1.2.1) Sonic 1
