@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20200926
- * @date updated: 20210724
+ * @date updated: 20210725
  * @website address: http://www.usbong.ph
  *
  * References:
@@ -3366,6 +3366,9 @@ void OpenGLCanvas::update()
         float fMaxWindowWidthForPilot=myWindowWidthAsPixel;
         float fMaxWindowHeightForPilot=myWindowHeightAsPixel;
         
+        ////         printf("myWindowWidthAsPixelInput: %f; myWindowHeightAsPixelInput: %f\n",myWindowWidthAsPixelInput,myWindowHeightAsPixelInput);
+////         printf("myWindowWidthAsPixel: %f; myWindowHeightAsPixel: %f\n",myWindowWidthAsPixel,myWindowHeightAsPixel);
+        
         //added by Mike, 20210608
         //TO-DO: -verify: set to reset if outside Window, instead of bounceFromWindowWall
         
@@ -3407,34 +3410,43 @@ void OpenGLCanvas::update()
         //computer artificial intelligence to be assistive
         //----------
         //        printf("myPilot->getX: %f>>",myPilot->getX());
+        
+/* 		//TO-DO: -update: instructions to use Z-axis, ...AsPixel, et cetera       
+        if (myPilot->getXAsPixel() < 0.0f) {
+            myPilot->setXPosAsPixel(0.0f);
+        }
+        //edited by Mike, 20210725
+		//max movement with set        
+        else if (myPilot->getXAsPixel()+myPilot->getWidthAsPixel() > fMaxWindowWidthForPilot) { 
+            myPilot->setXPosAsPixel(fMaxWindowWidthForPilot-myPilot->getWidthAsPixel());
+        }
+        
+        //note: we use y-axis in Level2D; instead of z-axis (Level3D)
+        if (myPilot->getYAsPixel() < 0.0f) { //max movement with set
+            myPilot->setYPosAsPixel(0.0f);
+        }
+		//max movement with set        
+        else if (myPilot->getYAsPixel()+myPilot->getHeightAsPixel() > fMaxWindowHeightForPilot) { 
+            myPilot->setYPosAsPixel(fMaxWindowHeightForPilot-myPilot->getHeightAsPixel());
+        }
+ */       
         if (myPilot->getX() < 0.0f) {
             myPilot->setXPos(0.0f);
         }
-        //        else if (myPilot->getX()+myPilot->getStepX() > 600.0f) { //max movement with set window width
-        //        else if (myPilot->getX()+myPilot->getWidthAsPixel()+myPilot->getStepX() > 600.0f) { //max movement with set window width
-        //edited by Mike, 20210606
-        //        else if (myPilot->getX()+myPilot->getWidthAsPixel() > fMaxWindowWidthForPilot) { //max movement with set
-        else if (myPilot->getX()+myPilot->getWidthAsPixel() > fMaxWindowWidthForPilot/2) { //max movement with set
-            //        	myPilot->setXPos(600.0f-myPilot->getStepX());
-            //edited by Mike, 20210606
-            //myPilot->setXPos(fMaxWindowWidthForPilot-myPilot->getWidthAsPixel());
-            myPilot->setXPos(fMaxWindowWidthForPilot/2-myPilot->getWidthAsPixel());
+        //edited by Mike, 20210725
+		//max movement with set        
+        else if (myPilot->getX()+myPilot->getWidthAsPixel() > fMaxWindowWidthForPilot) { 
+            myPilot->setXPos(fMaxWindowWidthForPilot-myPilot->getWidthAsPixel());
         }
         
-        
-        
-        //added by Mike, 20210606
-        if (myPilot->getZ()+myPilot->getHeightAsPixel() > fMaxWindowHeightForPilot) { //max movement with set
-            myPilot->setZPos(fMaxWindowHeightForPilot-myPilot->getHeightAsPixel());
-        }
-        
-        //added by Mike, 20210606; edited by Mike, 20210723
-/*        if (myPilot->getZ() < fMaxWindowHeightForPilot/2-myPilot->getHeightAsPixel()) { //max movement with set
-            myPilot->setZPos(fMaxWindowHeightForPilot/2-myPilot->getHeightAsPixel());
-        }
-*/        
+        //note: we use y-axis in Level2D; instead of z-axis (Level3D)
+        //TO-DO: -reverify: to use z-axis in Level2D
         if (myPilot->getZ() < 0.0f) { //max movement with set
             myPilot->setZPos(0.0f);
+        }
+		//max movement with set        
+        else if (myPilot->getZ()+myPilot->getHeightAsPixel() > fMaxWindowHeightForPilot) { 
+            myPilot->setZPos(fMaxWindowHeightForPilot-myPilot->getHeightAsPixel());
         }
         
         
