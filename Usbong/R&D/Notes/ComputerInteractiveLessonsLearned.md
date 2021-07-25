@@ -439,7 +439,8 @@ where: D'ND = Dungeons and Dragons (CAPCOM version)
 --> Halimbawa ng magagamitan din nito ang sa Donkey Kong Country series sa Super Family Computer.<br/>
 --> 1.1.8.5.1) 横縦(+Z)スクロールの引っ張る理由？<br/>
 Super Mario Odysseyの<br/>
-El reino de champiñonにある<br/>
+El reino de champiñónにある<br/>
+secreto bidimensionalという<br/>
 クラシックステージも思い出せる。<br/>
 <br/>
 --> 1.1.8.5.1.1) 仕組みが解けること<br/>
