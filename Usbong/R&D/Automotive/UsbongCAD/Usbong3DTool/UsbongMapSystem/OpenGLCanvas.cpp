@@ -852,6 +852,9 @@ bool OpenGLCanvas::init(int myWindowWidthAsPixelInput, int myWindowHeightAsPixel
     //    stepHistoryListCount=0;
     stepHistoryListCount=1;
     
+    
+    //printf(">>> myWindowWidthAsPixel: %i\n",myWindowWidthAsPixel);
+
     return true;
 }
 
@@ -1844,7 +1847,7 @@ void OpenGLCanvas::render()
         //identify column count of left margin
         ////        printf(">>> myWindowWidthAsPixel/2.0f/iColumnCountMax*iColumnCount: %f\n",myWindowWidthAsPixel/2.0f/iColumnCountMax*iColumnCount);
         ////        printf(">>> iMyWindowWidthAsPixelOffset: %i\n",iMyWindowWidthAsPixelOffset);
-        
+              
         //note: column as clock's set of 5mins
         if (iLeftMarginColumnCount==-1) {
             if (myWindowWidthAsPixel/2.0f/iColumnCountMax*iColumnCount >= iMyWindowWidthAsPixelOffset) {
@@ -3293,6 +3296,7 @@ void OpenGLCanvas::drawGrid() {
 //TO-DO: -update: this
 void OpenGLCanvas::update()
 {
+
     if (currentState==GAME_SCREEN) {
         /*		//removed by Mike, 20201016
          //added by Mike, 20201016
@@ -3609,7 +3613,7 @@ void OpenGLCanvas::update()
         //TO-DO: -add: myRobotShip's shield collide with Asteroid
         /*        for(int a=0; a<MAX_ASTEROID; a++) {
          myBeam[i]->collideWith(myAsteroid[a]);
-         }
+         }myWindowWidthAsPixel
          */
         
         //added by Mike, 20210724; edited by Mike, 20210725
@@ -3741,7 +3745,7 @@ void OpenGLCanvas::update()
             //			sound->play_sound_clip(thrust);
         }
        	//edited by Mike, 20201013
-        //else if(myKeysDown[KEY_DOWN] == TRUE)
+        //else if(myKeysDown[KEY_DOWN] == TRUE)myWindowWidthAsPixel
         //edited by Mike, 20201014
         if(myKeysDown[KEY_S] == TRUE)
             //    	else if(myKeysDown[KEY_S] == TRUE)
@@ -3857,7 +3861,7 @@ void OpenGLCanvas::update()
              //move left
              //Reference: https://community.khronos.org/t/moving-an-object-with-respect-to-the-camera/40968;
              //last accessed: 20201026
-             //answer by: Bob, 200002
+             //answer by: Bob, 200002myWindowWidthAsPixel
              myCanvasPosZ+=cos(myCanvasLookAtAngle)*myCanvasStepZ;
              myCanvasPosX-=sin(myCanvasLookAtAngle)*myCanvasStepX;
              */
@@ -4278,16 +4282,23 @@ void OpenGLCanvas::update()
 /*      myWindowWidthAsPixel=myWindowWidth;
         myWindowHeightAsPixel=myWindowHeight;
 */
-
+			
+			//edited by Mike, 20210726
       //TO-DO: -reverify: this
 //        myWindowWidthAsPixel=600;
 //        myWindowWidthAsPixel=(int)myWindowWidthAsPixel/2.0f;
-    myWindowWidthAsPixel=1280/2;
 //        myWindowWidthAsPixel=((int)myWindowWidthAsPixel)/2;
+//    myWindowWidthAsPixel=1280/2;
+//        myWindowWidthAsPixel=myWindowWidthAsPixel/2;//output zero
+				
+				//TO-DO: -add: auto-convert vertex point to pixel
+//		myWindowWidthAsPixel=myUsbongUtils->autoConvertFromPixelToVertexPointX(0);
 
-        //        printf("myPilot->getXAsPixel(): %i\n>>",myPilot->getXAsPixel());
-        printf(">>myWindowWidthAsPixel: %i\n>>",myWindowWidthAsPixel);
-        
+        printf("myPilot->getXAsPixel(): %i\n>>",myPilot->getXAsPixel());
+        printf("myPilot->getWidthAsPixel(): %i\n>>",myPilot->getWidthAsPixel());
+
+        printf(">>myWindowWidthAsPixel: %i\n>>",myWindowWidthAsPixel);        
+//        printf(">>myWindowWidth: %f\n>>",myWindowWidth);
         
         //note: Pilot sticks to wall when we use myPosX, et cetera in movement(...), instead of immediately  myPosXAsPixel
         //TO-DO: -add: acceleration?
@@ -4298,7 +4309,7 @@ void OpenGLCanvas::update()
         }
         //max movement with set
         else if (myPilot->getXAsPixel()+myPilot->getWidthAsPixel() > myWindowWidthAsPixel) {
-            myPilot->setXPosAsPixel(myWindowWidthAsPixel-myPilot->getWidthAsPixel()-myPilot->getStepX());
+//            myPilot->setXPosAsPixel(myWindowWidthAsPixel-myPilot->getWidthAsPixel()-myPilot->getStepX());
         }
         
 //removed by Mike, 20210725

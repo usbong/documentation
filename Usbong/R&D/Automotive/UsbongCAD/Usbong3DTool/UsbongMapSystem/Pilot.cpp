@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210725
+ * @date updated: 20210726
  * @website address: http://www.usbong.ph
  *
  * Reference: 
@@ -517,10 +517,20 @@ Pilot::Pilot(float xPos, float yPos, float zPos, int windowWidth, int windowHeig
     //added by Mike, 20210725
     //execute *2; Sonic the Hedgehog? due to speed and image blurs?
     //sticks to wall to cause acceleration effect?
+    
+   //edited by Mike, 20210726
+/*   //due to we add to pixel position, instead of vertex position
     stepX=0.5*4*2;
     stepY=0.5*4*2;
     stepZ=0.5*4*2;
+*/
     
+/*	  //removed by Mike, 20210726
+		//TO-DO: -add: auto-compute grid tile
+    stepX=32;
+    stepY=32;
+    stepZ=32;
+*/
     
     invincibleCounter=0;
     currentDeathFrame=0;
@@ -592,6 +602,11 @@ Pilot::Pilot(float xPos, float yPos, float zPos, int windowWidth, int windowHeig
     myWidthAsPixel=71;
     myHeightAsPixel=80;
     
+	  //added by Mike, 20210726
+		//TO-DO: -add: auto-compute grid tile
+    stepX=myWidthAsPixel;// 32;
+    stepY=myHeightAsPixel; //32;
+    stepZ=myWidthAsPixel; //32
 
 /*	//removed by Mike, 20210528
 //added by Mike, 20210528
@@ -618,10 +633,17 @@ Pilot::Pilot(float xPos, float yPos, float zPos, int windowWidth, int windowHeig
 	myYPosAsPixel=320;//yPos; //(int)yPos;
 	myZPosAsPixel=0.0f; //(int)zPos;    
 */
+
+/* //edited by Mike, 20210726
 	//note: we use zPos for the yPosAsPixel
 	myXPosAsPixel=xPos; //320;//(int)xPos;
 	myYPosAsPixel=zPos;//yPos; //(int)yPos;
 	myZPosAsPixel=0.0f;//(int)zPos;    
+*/
+	myXPosAsPixel=xPos;
+	myYPosAsPixel=yPos;
+	myZPosAsPixel=zPos;
+
 
 /* //removed by Mike, 20210523
 //	myXPos=0.0f;
@@ -643,7 +665,9 @@ Pilot::Pilot(float xPos, float yPos, float zPos, int windowWidth, int windowHeig
 	
 	//added by Mike, 20210523
 	myUsbongUtils = new UsbongUtils();
-
+	//added by Mike, 20210726
+  myUsbongUtils->setWindowWidthHeight(windowWidth, windowHeight);
+    
 //    myWidthX=0.5;
 
     rotationAngle=0.0f;//360.0f;//90.0;
@@ -4442,7 +4466,9 @@ printf(">>>>>>>>>>>>>>> ATTACK DITO");
 //    glPopMatrix();	// pop back to original coordinate system
 }
 
-//added by Mike, 20210523
+//added by Mike, 20210523; edited by Mike, 20210726
+//TO-DO: -update: this to use computer instructions in Level2D's Tile
+//TO-DO: -reverify: if solves excessively increased myXPosAsPixel value
 void Pilot::drawPilotObject() 
 {
 /*	

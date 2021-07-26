@@ -1,5 +1,5 @@
 /*
- * Copyright 2020~2021 Usbong Social Systems, Inc.
+ * Copyright 2020~2021 SYSON, MICHAEL B.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,9 +12,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * @author: Michael Syson
+ * @company: USBONG
+ * @author: SYSON, MICHAEL B.
  * @date created: 20200926
- * @date updated: 20210625
+ * @date updated: 20210726
+ * @website address: http://www.usbong.ph
  *
  * References:
  * 1) Dev-C++ 5.11 auto-generated OpenGL example project
@@ -290,7 +292,8 @@ void displayOpenGLCanvas() {
          */
         
         /* OpenGL animation code goes here */
-        myOpenGLCanvas->update();
+        //removed by Mike, 20210726
+//        myOpenGLCanvas->update();
         
         /*		  //edited by Mike, 20201210
          if (skip > 0)
@@ -299,6 +302,7 @@ void displayOpenGLCanvas() {
          */
         //do rendering here
         myOpenGLCanvas->render();
+        
         //removed by Mike, 20201002
         //SwapBuffers (hDC); //Windows Machine
         //edited by Mike, 20201205
@@ -772,7 +776,8 @@ int main(int argc, char** argv) {
     //edited by Mike, 20210614
     //   glutCreateWindow("Usbong Foot"); // Create a window with the given title
     //TO-DO: -remove: window title
-	   glutCreateWindow("Usbong Text System"); // Create a window with the given title
+    //edited by Mike, 20210726
+	   glutCreateWindow("Usbong Map System"); // Create a window with the given title
     
     //added by Mike, 20210614
     //note: execute after glutCreateWindow(...)
@@ -786,7 +791,8 @@ int main(int argc, char** argv) {
     //added by Mike, 20201002
     //Linux Machine
     //note: to receive key presses
-    myOpenGLCanvas = new OpenGLCanvas;
+    //edited by Mike, 20210726
+    myOpenGLCanvas = new OpenGLCanvas();
     
     //edited by Mike, 20210517
     //    myOpenGLCanvas->init();

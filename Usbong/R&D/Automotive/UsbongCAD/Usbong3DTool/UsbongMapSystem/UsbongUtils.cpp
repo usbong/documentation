@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20201210
- * @date updated: 20210725
+ * @date updated: 20210726
  * @website address: http://www.usbong.ph
  *
  * References:
@@ -124,6 +124,8 @@ UsbongUtils::~UsbongUtils()
 
 //added by Mike, 20210623; edited by Mike, 20210628
 //void UsbongUtils::setWindowWidthHeight(float myWindowWidthAsPixelInput, float myWindowHeightAsPixelInput, float myWindowWidthAsPixelRatioToHeightPixelInput)
+//edited by Mike, 20210726
+//note: auto-converted from int to float
 void UsbongUtils::setWindowWidthHeight(float myWindowWidthAsPixelInput, float myWindowHeightAsPixelInput)
 {
     fMaxWindowWidth=myWindowWidthAsPixelInput;

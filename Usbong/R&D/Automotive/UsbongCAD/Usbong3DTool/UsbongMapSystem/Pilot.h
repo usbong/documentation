@@ -148,9 +148,12 @@ private:
     float myOpponentYPos;
     float myOpponentZPos;
 	
+/* //removed by Mike, 20210726	
     float stepX;
     float stepY;
     float stepZ;
+*/    
+    
 /*    
     float myWidthX;
     float myWidthZ;
