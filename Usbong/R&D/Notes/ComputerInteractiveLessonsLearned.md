@@ -373,7 +373,7 @@ nadagdagan tuloy ang kailangang bilang ng panahon.<br/>
 ただ、今まで気づいてなかったことに気づいた。<br/>
 Gayunpaman, napansin ko itong bagay na bago ngayon hindi ko napansin.<br/>
 走ってる時に、作られた魔界と魔物の動きには差がある。<br/>
-Sa panahong tumatakbo, may pagitan ang nabuong daigdig na himala at ang bagay-bagay na himala.<br/>
+Sa panahong tumatakbo, may pagitan ang nabuong daigdig na himala at ang mga bagay na himala.<br/>
 左右して、動きの差が見える。<br/>
 Kumaliwa at kumanan, makikita mo ang pagitan sa paggalaw.<br/>
 <br/>
@@ -387,9 +387,9 @@ Kumaliwa at kumanan, makikita mo ang pagitan sa paggalaw.<br/>
 --> Sa halip ito na unahin ang pagsusulat sa wikang Ingles, atbp saka isasalin sa wikang Filipino.<br/> 
 <br/>
 --> May makukuha ulit akong kalasag upang ipalit sa palakol.<br/>
---> Sa pinaka-itaas na palapag ng bahaging ito, may nag-aabang na Dambuhalang Demonyong may pakpak.
---> Natuklsan ko na ito ang pinakamaiging gawin upang mapuksa siya.<br/>
---> Sugurin mo at gamit ang iyong kalasag bilang sandata sunud-sunod mo siyang tamaan.<br/>
+--> Sa pinaka-itaas na palapag ng bahaging ito, may nag-aabang na Dambuhalang Demonyong may pakpak.<br/>
+--> Natuklsan kong ito ang pinakamaiging gawin upang mapuksa siya:<br/>
+--> Sugurin mo at gamit ang iyong kalasag bilang sandata, sunud-sunod mo siyang tamaan nito.<br/>
 <br/>
 
 #### 1.1.8.4) Ikalimang Bahagi
@@ -412,17 +412,28 @@ Kumaliwa at kumanan, makikita mo ang pagitan sa paggalaw.<br/>
 --> <b>Dagdag:</b> Anim na Bahagi ang Salaysay<br/>
 <br/>
 徐々に進める・・・<br/>
+unti-unting nakasusulong...<br/>
 魔物を倒す方法が解決できるが、<br/>
+bagama't malulutas ang paraan ng pagpataob ng mga bagay na himala,<br/>
 すぐわかるというわけじゃない。<br/>
+hindi kahulugan nito na agad ito mauunawaan.<br/>
 魔物が逃せてくれないし。<br/>
+hindi rin kasi ako pinatatakas ng mga bagay na himala.<br/>
 <br/>
 PS1のクラッシュ バンディクーの開発チームに<br/>
+ang pangkat na developer, i.e. binuksan at inilabas, ng PS1 na Crash Bandicoot<br/>
 G'NGからの影響を与えたのかな・・・<br/>
+Binigyan kaya ng makapagbabagong-loob, i.e. aninong umaalingaw-ngaw, mula sa G'NG...?<br/>
 15年前ぐらいに100％までも完成できたけど、<br/>
+Mga 15taon noon, natapos ko hanggang 100%,<br/>
 今、23/32のゆうやけはいきょのところ、<br/>
+Sa kasalukuyan, 23/32 ng sa pook ng napabayaang gusali ng takip-silim, i.e. gabing nasusunog,<br/> 
 G'NGのことを思い出す。<br/>
+Maaalala, i.e. maisip ilabas, ang ginagawa sa G'NG.<br/> 
 時間を入れて、何回もやり直せて、<br/>
+Lagyan ng oras, i.e. sa loob ng panahon, ilang ulit, magagawang ayusin,<br/>
 徐々に進めると。<br/>
+ang unti-unting pagsulong.<br/>
 <br/>
 ちなみに、D'NDはゲームセンターでよく見れたけど、<br/>
 絵とかは引っ張るからね。<br/>
