@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20200929
- * @date updated: 20210725
+ * @date updated: 20210726
  * @website address: http://www.usbong.ph
  *
  * Acknowledgments:
@@ -406,13 +406,13 @@ public:
     
     //declared as static, i.e. final, container with value in mainLinux.cpp
     //added by Mike, 20210606
-    /* //edited by Mike, 20210625
+    //edited by Mike, 20210625; edited by Mike, 20210726
      int myWindowWidthAsPixel;
      int myWindowHeightAsPixel;
-     */
+/*
     float myWindowWidthAsPixel;
     float myWindowHeightAsPixel;
-    
+*/
     //added by Mike, 20210626
     float fMyWindowWidthAsPixelRatioToHeightPixel;
     int iMyWindowWidthAsPixelOffset; //added by Mike, 20210702

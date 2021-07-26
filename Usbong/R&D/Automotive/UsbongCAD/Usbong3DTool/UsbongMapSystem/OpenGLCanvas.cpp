@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20200926
- * @date updated: 20210725
+ * @date updated: 20210726
  * @website address: http://www.usbong.ph
  *
  * References:
@@ -4278,8 +4278,15 @@ void OpenGLCanvas::update()
 /*      myWindowWidthAsPixel=myWindowWidth;
         myWindowHeightAsPixel=myWindowHeight;
 */
-//        printf("myPilot->getXAsPixel(): %i\n>>",myPilot->getXAsPixel());
-        printf("myWindowWidthAsPixel: %i\n>>",myWindowWidthAsPixel);
+
+      //TO-DO: -reverify: this
+//        myWindowWidthAsPixel=600;
+//        myWindowWidthAsPixel=(int)myWindowWidthAsPixel/2.0f;
+    myWindowWidthAsPixel=1280/2;
+//        myWindowWidthAsPixel=((int)myWindowWidthAsPixel)/2;
+
+        //        printf("myPilot->getXAsPixel(): %i\n>>",myPilot->getXAsPixel());
+        printf(">>myWindowWidthAsPixel: %i\n>>",myWindowWidthAsPixel);
         
         
         //note: Pilot sticks to wall when we use myPosX, et cetera in movement(...), instead of immediately  myPosXAsPixel
