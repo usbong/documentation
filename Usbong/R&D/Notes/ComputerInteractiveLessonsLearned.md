@@ -426,7 +426,7 @@ G'NGからの影響を与えたのかな・・・<br/>
 Binigyan kaya ng makapagbabagong-loob, i.e. aninong umaalingaw-ngaw, mula sa G'NG...?<br/>
 15年前ぐらいに100％までも完成できたけど、<br/>
 Mga 15taon noon, natapos ko hanggang 100%,<br/>
-今、23/32のゆうやけはいきょのところ、<br/>
+今、23/32のゆうやけのはいきょのところ、<br/>
 Sa kasalukuyan, 23/32 ng sa pook ng napabayaang gusali ng takip-silim, i.e. gabing nasusunog,<br/> 
 G'NGのことを思い出す。<br/>
 Maaalala, i.e. maisip ilabas, ang ginagawa sa G'NG.<br/> 
