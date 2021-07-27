@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210725
+ * @date updated: 20210727
  * @website address: http://www.usbong.ph
  *
  * Acknowledgments:
@@ -163,6 +163,11 @@ private:
 	int iCountTaoAnimationFrame;
 	float fTaoAnimationFrameOffset;
     float fTaoAnimationFrameOffsetYAxis; //added by Mike, 20210613
+
+    //added by Mike, 20210727
+    int iRowCountMax;
+    int iColumnCountMax;
+    int iHeightCountMax;
 
 /*	//removed by Mike, 20210522		
     OpenGLCanvas *myOpenGLCanvas;
@@ -476,6 +481,8 @@ public:
 	//added by Mike, 20210423
 	void drawPilotAsQuadWithTexture();
 	void drawPilotObject(); //we use pixel auto-converted to vertex positions
+	void drawPilotObjectPrev(); //added by Mike, 20210727
+
 	void drawPilotObjectWith3DVertexPositions();//added by Mike, 20210523
 
 	// draws the entire robot

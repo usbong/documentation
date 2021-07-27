@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20200926
- * @date updated: 20210726
+ * @date updated: 20210727
  * @website address: http://www.usbong.ph
  *
  * References:
@@ -576,21 +576,18 @@ bool OpenGLCanvas::init(int myWindowWidthAsPixelInput, int myWindowHeightAsPixel
     //edited by Mike, 20210710
     //    myRobotShip->setOpenGLCanvas(this, fGridSquareWidth);
     myRobotShip->setOpenGLCanvas(this, fGridSquareWidth, fGridSquareHeight);
+       
+    //edited by Mike, 20210727
+//    myPilot = new Pilot(0.0f,0.0f,270.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
+    myPilot = new Pilot(0.0f,0.0f,0.0f,myWindowWidthAsPixel,myWindowHeightAsPixel);
     
-    //TO-DO: -update: myPilot instructions, e.g. movement
-    //added by Mike, 20201207; edited by Mike, 20210219
-    //	myPilot = new Pilot(0.0f,0.0f,0.0f,myWindowWidth,myWindowHeight);
-    //edited by Mike, 20210528
-    //	myPilot = new Pilot(0.0f,0.0f,0.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
-    //edited by Mike, 20210606
-    //    myPilot = new Pilot(0.0f,0.0f,320.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
-    //    myPilot = new Pilot(0.0f,0.0f,220.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
-    myPilot = new Pilot(0.0f,0.0f,270.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
     //edited by Mike, 20210710
     //    myPilot->setOpenGLCanvas(this, fGridSquareWidth);.
     myPilot->setOpenGLCanvas(this, fGridSquareWidth, fGridSquareHeight);
     
     myPilot->setAsPlayer1(); //added by Mike, 20210601
+    
+    
     
     //added by Mike, 20210530; edited by Mike, 20210605
     //edited by Mike, 20210606
@@ -1972,19 +1969,19 @@ void OpenGLCanvas::render()
     glPushMatrix();
     //    	glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
     
-    glTranslatef(-2.0f/iColumnCountMax*iLeftMarginColumnCount, 0.0f, 0.0f);
+    	glTranslatef(-2.0f/iColumnCountMax*iLeftMarginColumnCount, 0.0f, 0.0f);
     
-    myLevel2D->draw();
+    	myLevel2D->draw();
     glPopMatrix();
     //-----
     
     //added by Mike, 20210723
     glPushMatrix();
-    glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
-    
-    //added by Mike, 20210704
-    //note: OK output
-    myText->draw();
+    	glScalef(fMyWindowWidthAsPixelRatioToHeightPixel,1.0f,1.0f);
+    	
+    	//added by Mike, 20210704
+    	//note: OK output
+    	myText->draw();
     glPopMatrix();
     
     
@@ -1993,7 +1990,7 @@ void OpenGLCanvas::render()
     //TO-DO: -update: screen width and height max position;
     //used in wrap world, et cetera
     glPushMatrix();
-    myPilot->draw();
+    	myPilot->draw();
     glPopMatrix();
     
     
@@ -3317,202 +3314,7 @@ void OpenGLCanvas::update()
         myPilotPlayer2Partner->update(1);
         
         
-        /* //edited by Mike, 20210604
-         //added by Mike, 20210530
-         myPilotPartner->setXPos(myPilot->getX()+100.0f);
-         myPilotPartner->setZPos(myPilot->getZ()-100.0f);
-         
-         //added by Mike, 20210528
-         //note: we use z-axis for vertex position; this shall be auto-converted to as pixel in y-axis
-         myPilotPlayer2->setZPos(myPilot->getZ());
-         //edited by Mike, 20210603
-         //        myPilotPlayer2->setXPos(myPilot->getX()+320.0f);
-         myPilotPlayer2->setXPos(myPilot->getX()+320.0f+100.0f);
-         
-         //added by Mike, 20210530; edited by Mike, 20210603
-         myPilotPlayer2Partner->setZPos(myPilotPlayer2->getZ()-100.0f);
-         //        myPilotPlayer2Partner->setXPos(myPilotPlayer2->getX());
-         myPilotPlayer2Partner->setXPos(myPilotPlayer2->getX()-100.0f);
-         
-         //added by Mike, 20210502
-         myPilotPlayer2->update(1); //dt
-         myPilotPlayer2Partner->update(1); //added by Mike, 20210530
-         */
-        
-        //added by Mike, 20210604
-        /*
-         if (myPilotPartner->getX() < myPilot->getX()+100.0f) {
-         myPilotPartner->setXPos(myPilotPartner->getX()+1.0f);
-         }
-         else {
-         myPilotPartner->setXPos(myPilotPartner->getX()-1.0f);
-         }
-         */
-        //added by Mike, 20210605; edited by Mike, 20210606
-        //TO-DO: -add: identify if executing Dash Command
-        //TO-DO: -add: charge, i.e. tame
-        //TO-DO: -add: identify if executing Kick Attack Command, i.e. using "K" key
-        //TO-DO: -reverify: add flipping sequence when auto-facing to ball position
-        //TO-DO: -update: start ball position during reset
-        
-        //TO-DO: -add: bounce ball up vertically if hit bottom part that is not goal tile
-        
-        //TO-DO: -put: set of instructions in a function method
-        
-        
-        //added by Mike, 20210606
-        /* //edited by Mike, 20210723
-         //TO-DO: -update: this
-         float fMaxWindowWidthForPilot=580.0f;
-         float fMaxWindowHeightForPilot=560.0f; //added by Mike, 20210606
-         */
-        
-      //edited by Mike, 20210725
-/*
-      //removed: this due to we use myWindowWidthAsPixel, i.e. container for integer values, instead of floating point values
-        float fMaxWindowWidthForPilot=myWindowWidthAsPixel;
-        float fMaxWindowHeightForPilot=myWindowHeightAsPixel;
-*/
-        ////         printf("myWindowWidthAsPixelInput: %f; myWindowHeightAsPixelInput: %f\n",myWindowWidthAsPixelInput,myWindowHeightAsPixelInput);
-        ////         printf("myWindowWidthAsPixel: %f; myWindowHeightAsPixel: %f\n",myWindowWidthAsPixel,myWindowHeightAsPixel);
-        
-        //added by Mike, 20210608
-        //TO-DO: -verify: set to reset if outside Window, instead of bounceFromWindowWall
-        
-        //added by Mike, 20210607
-        //TO-DO: -add: arrow up to identify x-axis position when ball is already outside window
-        /* //edited by Mike, 20210613
-         if ((myBall->getX() < 0.0f) ||
-         (myBall->getX()+myBall->getWidthAsPixel()  > fMaxWindowWidthForPilot)) {
-         //        	myBall->updateDirection();
-        	myBall->bounceFromWindowWall();
-        	
-        	myBall->setThrust(12.0f);
-         }
-         */
-        
-/*
-        if ((myBall->getX() < 0.0f) ||
-            (myBall->getX()+myBall->getWidthAsPixel()  > fMaxWindowWidthForPilot)) {
-            myBall->reset();
-            
-            //added by Mike, 20210613
-            //TO-DO: -add: transition pause
-        }
-        
-        //TO-DO: -add: reset, if myBall->getZ() < 0.0f
-        //        if ((myBall->getY() < 0.0f) ||
-        //NOT fMaxWindowWidthForPilot
-        //				printf("myWindowHeightAsPixel: %i",myWindowHeightAsPixel);
-        //note: myWindowHeightAsPixel=640
-        //        if (myBall->getYAsPixel()+myBall->getHeightAsPixel() > myWindowHeightAsPixel) {
-        //TO-DO: -add: animal as defender
-        if (myBall->getYAsPixel()+myBall->getHeightAsPixel() > 600) {
-            //        	myBall->updateDirection();
-            myBall->bounceFromWindowWall();
-            myBall->setThrust(16.0f);
-        }
-*/
-        
-        //added by Mike, 20210605
-        //note: horizontal scroll
-        //computer artificial intelligence to be assistive
-        //----------
-        //        printf("myPilot->getX: %f>>",myPilot->getX());
-        
-        /* 		//TO-DO: -update: instructions to use Z-axis, ...AsPixel, et cetera
-         if (myPilot->getXAsPixel() < 0.0f) {
-         myPilot->setXPosAsPixel(0.0f);
-         }
-         //edited by Mike, 20210725
-         //max movement with set
-         else if (myPilot->getXAsPixel()+myPilot->getWidthAsPixel() > fMaxWindowWidthForPilot) {
-         myPilot->setXPosAsPixel(fMaxWindowWidthForPilot-myPilot->getWidthAsPixel());
-         }
-         
-         //note: we use y-axis in Level2D; instead of z-axis (Level3D)
-         if (myPilot->getYAsPixel() < 0.0f) { //max movement with set
-         myPilot->setYPosAsPixel(0.0f);
-         }
-         //max movement with set
-         else if (myPilot->getYAsPixel()+myPilot->getHeightAsPixel() > fMaxWindowHeightForPilot) {
-         myPilot->setYPosAsPixel(fMaxWindowHeightForPilot-myPilot->getHeightAsPixel());
-         }
-         */
-
-/* //removed by Mike, 20210725
-        printf("myPilot->getXAsPixel(): %i\n>>",myPilot->getXAsPixel());
-        
-        if (myPilot->getXAsPixel() < 0) {
-            myPilot->setXPosAsPixel(0);
-        }
-        //edited by Mike, 20210725
-        //max movement with set
-        else if (myPilot->getXAsPixel()+myPilot->getWidthAsPixel() > fMaxWindowWidthForPilot) {
-            myPilot->setXPosAsPixel(fMaxWindowWidthForPilot-myPilot->getWidthAsPixel());
-        }
-        
-        //note: we use y-axis in Level2D; instead of z-axis (Level3D)
-        //TO-DO: -reverify: to use z-axis in Level2D
-        if (myPilot->getYAsPixel() < 0) { //max movement with set
-            myPilot->setYPosAsPixel(0);
-        }
-        //max movement with set
-        else if (myPilot->getYAsPixel()+myPilot->getHeightAsPixel() > fMaxWindowHeightForPilot) {
-            myPilot->setYPosAsPixel(fMaxWindowHeightForPilot-myPilot->getHeightAsPixel());
-        }
-*/
-        
-        //edited by Mike, 20210605
-        //        printf("myPilotPartner->getX: %f>>",myPilotPartner->getX());
-        //edited by Mike, 20210606
-        //myPilotPartner->setXPos(myPilot->getX()+100.0f);
-        
-        /*	//TO-DO: -update: this
-         if (myPilot->getX() < 0.0f) {
-        	myPilotPartner->setXPos(myPilotPartner->getX()-1.0f);
-         }
-         else {
-        	myPilotPartner->setXPos(myPilot->getX()+100.0f);
-         }
-         */
-        
-        
-        //        myPilotPlayer2Partner->setXPos(myPilotPlayer2->getX());
-        //removed by Mike, 20210605
-        //        myPilotPlayer2Partner->setXPos(myPilotPlayer2->getX()-100.0f);
-        
-        //added by Mike, 20210606; edited by Mike, 20210606
-        //        myPilotPlayer2->setCurrentFacingState(FACING_LEFT);
-        //auto-face to ball position
-        //edited by Mike, 20210606
-        /*
-         if (myPilot->getX() < myBall->getX()) {
-         myPilot->setCurrentFacingState(FACING_RIGHT);
-         }
-         else {
-         myPilot->setCurrentFacingState(FACING_LEFT);
-         }
-         if (myPilotPartner->getX() < myBall->getX()) {
-         myPilotPartner->setCurrentFacingState(FACING_RIGHT);
-         }
-         else {
-         myPilotPartner->setCurrentFacingState(FACING_LEFT);
-         }
-         if (myPilotPlayer2->getX() < myBall->getX()) {
-         myPilotPlayer2->setCurrentFacingState(FACING_RIGHT);
-         }
-         else {
-         myPilotPlayer2->setCurrentFacingState(FACING_LEFT);
-         }
-         
-         if (myPilotPlayer2Partner->getX() < myBall->getX()) {
-         myPilotPlayer2Partner->setCurrentFacingState(FACING_RIGHT);
-         }
-         else {
-         myPilotPlayer2Partner->setCurrentFacingState(FACING_LEFT);
-         }
-         */
+/* //removed by Mike, 20210727         
         if (myPilot->getX()+myPilot->getWidthAsPixel() >= myBall->getX()) {
             myPilot->setCurrentFacingState(FACING_LEFT);
         }
@@ -3540,6 +3342,7 @@ void OpenGLCanvas::update()
         else {
             myPilotPlayer2Partner->setCurrentFacingState(FACING_RIGHT);
         }
+*/        
         
         //added by Mike, 20210502
         myPilotPlayer2->update(1); //dt
@@ -3791,7 +3594,7 @@ void OpenGLCanvas::update()
             //edited by Mike, 20201115; edited again by Mike, 20210128
             //            myRobotShip->move(KEY_RIGHT);
             myRobotShip->move(KEY_D);
-            
+                        
             //added by Mike, 20210423
             myPilot->move(KEY_D);
             
@@ -4303,27 +4106,34 @@ void OpenGLCanvas::update()
         //note: Pilot sticks to wall when we use myPosX, et cetera in movement(...), instead of immediately  myPosXAsPixel
         //TO-DO: -add: acceleration?
         //TO-DO: -add: dust due to movement, e.g. running?
-        
-        if (myPilot->getXAsPixel() < 0) {
+
+        //edited by Mike, 20210727
+        //note: we verify if we continue with step, hit collision
+        //if so, we do not add step to position
+//        if (myPilot->getXAsPixel() < 0) {
+        if (myPilot->getXAsPixel() -myPilot->getStepX() < 0) {        
             myPilot->setXPosAsPixel(0+myPilot->getStepX());
         }
         //max movement with set
-        else if (myPilot->getXAsPixel()+myPilot->getWidthAsPixel() > myWindowWidthAsPixel) {
-//            myPilot->setXPosAsPixel(myWindowWidthAsPixel-myPilot->getWidthAsPixel()-myPilot->getStepX());
+//        else if (myPilot->getXAsPixel()+myPilot->getWidthAsPixel() > myWindowWidthAsPixel) {
+        else if (myPilot->getXAsPixel()+myPilot->getWidthAsPixel() +myPilot->getStepX() > myWindowWidthAsPixel) {
+            myPilot->setXPosAsPixel(myWindowWidthAsPixel-myPilot->getWidthAsPixel()-myPilot->getStepX());
         }
         
-//removed by Mike, 20210725
-/* //TO-DO: -add: this
+//added by Mike, 20210727
         //note: we use y-axis in Level2D; instead of z-axis (Level3D)
         //TO-DO: -reverify: to use z-axis in Level2D
-        if (myPilot->getYAsPixel() < 0) { //max movement with set
+        //edited by Mike, 20210727
+//        if (myPilot->getYAsPixel()  < 0) { //max movement with set
+        if (myPilot->getYAsPixel() -myPilot->getStepY() < 0) { //max movement with set
             myPilot->setYPosAsPixel(0+myPilot->getStepY());
         }
         //max movement with set
-        else if (myPilot->getYAsPixel()+myPilot->getHeightAsPixel() > myWindowHeightAsPixel) {
+//        else if (myPilot->getYAsPixel()+myPilot->getHeightAsPixel() > myWindowHeightAsPixel) {
+        else if (myPilot->getYAsPixel()+myPilot->getHeightAsPixel() +myPilot->getStepY() > myWindowHeightAsPixel) {
             myPilot->setYPosAsPixel(myWindowHeightAsPixel-myPilot->getHeightAsPixel()-myPilot->getStepY());
         }
-*/
+
         
     }
     else if (currentState==TITLE_SCREEN)

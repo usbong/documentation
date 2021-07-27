@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210726
+ * @date updated: 20210727
  * @website address: http://www.usbong.ph
  *
  * Reference: 
@@ -604,9 +604,11 @@ Pilot::Pilot(float xPos, float yPos, float zPos, int windowWidth, int windowHeig
     
 	  //added by Mike, 20210726
 		//TO-DO: -add: auto-compute grid tile
+/*	//removed by Mike, 20210727		
     stepX=myWidthAsPixel;// 32;
     stepY=myHeightAsPixel; //32;
     stepZ=myWidthAsPixel; //32
+*/
 
 /*	//removed by Mike, 20210528
 //added by Mike, 20210528
@@ -662,11 +664,33 @@ Pilot::Pilot(float xPos, float yPos, float zPos, int windowWidth, int windowHeig
 	//added by Mike, 20201115
 	myWindowWidth=windowWidth;
 	myWindowHeight=windowHeight;
+/*	
+	printf(">>Pilot.cpp: myWindowWidth: %i\n",myWindowWidth);
+	printf(">>Pilot.cpp: myWindowHeight: %i\n",myWindowHeight);
+*/	
+	//added by Mike, 20210727
+  //TO-DO: -add: receive as input the values for the following to execute cascading values
+  iRowCountMax=10;
+  iColumnCountMax=18;
+  iHeightCountMax=10;
+    	
+	fGridSquareWidth = myWindowWidth/iColumnCountMax; //example: 136.60
+  fGridSquareHeight = myWindowHeight/iRowCountMax; //example: 76.80
+	
+	
+	  //added by Mike, 20210726
+		//note: auto-compute based on grid tile
+		//TO-DO: -add: acceleration
+  	stepX=fGridSquareWidth/8;
+    stepY=fGridSquareHeight/8;
+    stepZ=fGridSquareWidth/8;
+	
 	
 	//added by Mike, 20210523
 	myUsbongUtils = new UsbongUtils();
-	//added by Mike, 20210726
-  myUsbongUtils->setWindowWidthHeight(windowWidth, windowHeight);
+	//added by Mike, 20210726; edited by Mike, 20210727
+//  myUsbongUtils->setWindowWidthHeight(windowWidth, windowHeight);
+  myUsbongUtils->setWindowWidthHeight(myWindowWidth, myWindowHeight);
     
 //    myWidthX=0.5;
 
@@ -4316,6 +4340,145 @@ void Pilot::drawPilotAsQuadWithTexture()
 	//TO-DO: -update: this
 	myXPosAsPixel=(int)myXPos;
 	//edited by Mike, 20210725
+
+/* //removed by Mike, 20210608
+void Pilot::drawPilotObjectPrevLargeTexture() 
+{	
+	//added by Mike, 20210422	
+	glPushMatrix();
+		//added by Mike, 20210420
+		glColor3f(1.0f, 1.0f, 1.0f); // white
+//		glColor3f(1.0f, 0.0f, 0.0f); // red
+	
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, MIKE_TEXTURE_A);		
+		
+		//added by Mike, 20210523
+		glRotatef(180, 1.0f, 0.0f, 0.0f);
+		
+		//edited by Mike, 20210515
+//		fButtonAnimationFrameOffset=0;
+	
+		//added by Mike, 20210516; removed to after glScale(...) by Mike, 20210516		
+		//due to instructions to auto-draw quad using triangles
+//		glTranslatef(0.2f, 0.2f, 0.0f);
+	
+		//TO-DO: -verify: scaled texture object if equal with pixel width and height size
+		//use autoConvertFromPixelToVertexPointX, et cetera if exact
+		
+		//window width and height; 640x640pixels
+		//whole texture image sheet 512x256pixels
+		//button size: 64x16pixels
+//		glScalef(0.25f, 0.4f, 1.0f);		
+		//edited by Mike, 20210523
+//		glScalef(0.20f, 0.4f, 1.0f);		
+//glScalef(3.2f, 3.2f, 3.2f);		
+		glScalef(0.2f/2, 0.4f/2, 1.0f);		
+		
+		//added by Mike, 20210516
+		//due to instructions to auto-draw quad using triangles
+		glTranslatef(1.0f, 0.5f, 0.0f);		
+	
+if ((currentFacingState==FACING_RIGHT) || (currentFacingState==FACING_RIGHT_AND_UP) || (currentFacingState==FACING_RIGHT_AND_DOWN)) {
+        //added by Mike, 20210424
+        //notes: use folding paper to assist in quickly identifying location, e.g. texture coordinates
+        //set vertex positions clock-wise
+        //      glRotatef(45, 0.0f, 1.0f, 0.0f); //slanted to wall facing left
+        glBegin(GL_TRIANGLES);
+        //triangle#6 //back face left part
+        glNormal3f(0.0000,0.0000,-1.0000);
+        //edited by Mike, 20210424
+        //			glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	//A1; face left
+        glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0); //B2
+//        glVertex3f(-1.000000,4.000000,-1.000000); //A1
+        glVertex3f(-1.000000,1.000000,-1.000000); //A1
+        
+        glNormal3f(0.0000,0.0000,-1.0000);
+        //edited by Mike, 20210424
+        //			glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0); //B1; face left
+        glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);	//C2
+        glVertex3f(1.000000,-1.000000,-1.000000); //B1
+        
+        glNormal3f(0.0000,0.0000,-1.0000);
+        //edited by Mike, 20210424
+        //			glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);	//C1; face left
+        glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0); //B1
+        glVertex3f(-1.000000,-1.000000,-1.000000); //C1
+        
+        //triangle#12 //back face right part
+        glNormal3f(0.0000,0.0000,-1.0000);
+        //edited by Mike, 20210424
+        //			glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	//A2; face lefT
+
+        glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0); //B2
+//        glVertex3f(-1.000000,4.000000,-1.000000); //A2
+        glVertex3f(-1.000000,1.000000,-1.000000); //A2
+        
+        glNormal3f(0.0000,0.0000,-1.0000);
+        //edited by Mike, 20210424
+        //			glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0); //B2; face left
+        glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	//A1
+//        glVertex3f(1.000000,4.000000,-1.000000); //B2
+        glVertex3f(1.000000,1.000000,-1.000000); //B2
+        
+        glNormal3f(0.0000,0.0000,-1.0000);
+        //edited by Mike, 20210424
+        //			glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0); //C2; face left
+        glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);	//C1
+        glVertex3f(1.000000,-1.000000,-1.000000); //C2
+        glEnd();
+    }
+    else {
+        glBegin(GL_TRIANGLES);
+        //triangle#6 //back face left part
+        glNormal3f(0.0000,0.0000,-1.0000);
+        glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);
+//        glVertex3f(-1.000000,4.000000,-1.000000); //A1
+        glVertex3f(-1.000000,1.000000,-1.000000); //A1
+        
+        glNormal3f(0.0000,0.0000,-1.0000);
+        //edited by Mike, 20210420
+        //	glTexCoord2f(1.0+iTaoAnimationFrameOffset,1.0);
+        //	glTexCoord2f(0.5+fTaoAnimationFrameOffset,1.0);
+        glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0);
+        glVertex3f(1.000000,-1.000000,-1.000000); //B1
+        
+        glNormal3f(0.0000,0.0000,-1.0000);
+        glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);
+        glVertex3f(-1.000000,-1.000000,-1.000000); //C1
+        
+        
+        //triangle#12 //back face right part
+        glNormal3f(0.0000,0.0000,-1.0000);
+        glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);
+//        glVertex3f(-1.000000,4.000000,-1.000000); //A2
+        glVertex3f(-1.000000,1.000000,-1.000000); //A2
+        
+        glNormal3f(0.0000,0.0000,-1.0000);
+        //edited by Mike, 20210420
+        //	glTexCoord2f(1.0+iTaoAnimationFrameOffset,0.0);
+        //	glTexCoord2f(0.5+fTaoAnimationFrameOffset,0.0);
+        glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0);
+//        glVertex3f(1.000000,4.000000,-1.000000); //B2
+        glVertex3f(1.000000,1.000000,-1.000000); //B2
+        
+        glNormal3f(0.0000,0.0000,-1.0000);
+        //edited by Mike, 20210420	
+        //	glTexCoord2f(1.0+iTaoAnimationFrameOffset,1.0);
+        //	glTexCoord2f(0.5+fTaoAnimationFrameOffset,1.0);
+        glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0);	
+        glVertex3f(1.000000,-1.000000,-1.000000); //C2	
+        glEnd();
+    }
+    	
+	
+		glDisable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, 0);
+	glPopMatrix(); //added by Mike, 20210422
+}
+*/
+
+/* //removed by Mike, 20210727
 //    myYPosAsPixel=(int)myZPos;
     myYPosAsPixel=(int)myYPos;
 */
@@ -4466,10 +4629,150 @@ printf(">>>>>>>>>>>>>>> ATTACK DITO");
 //    glPopMatrix();	// pop back to original coordinate system
 }
 
+//added by Mike, 20210727
+void Pilot::drawPilotObject()
+{
+    
+    glBindTexture(GL_TEXTURE_2D, MIKE_TEXTURE_A);
+    glEnable(GL_TEXTURE_2D);
+    
+    //notes: TO-DO: -reverify: indexed 64 colors max segmentation fault problem
+    //16x16pixels; 256x256pixels width x height .tga image file
+    //texture coordinates;
+    //width: 1.0/16.0 = 0.0625
+    //height: 1.0/16.0 = 0.0625
+
+    glPushMatrix();
+    printf(">>Pilot.cpp; fGridSquareWidth: %f",fGridSquareWidth); //example: 71.111115
+    printf(">>Pilot.cpp; fGridSquareHeight: %f",fGridSquareHeight); //example: 80.000000
+    
+    float fGridTileWidthVertexPosition = myUsbongUtils->autoConvertFromPixelToVertexGridTileWidth(fGridSquareWidth);
+    float fGridTileHeightVertexPosition = myUsbongUtils->autoConvertFromPixelToVertexGridTileHeight(fGridSquareHeight);
+    
+//    printf(">>>fGridTileWidthVertexPosition: %f; fGridTileHeightVertexPosition: %f",fGridTileWidthVertexPosition,fGridTileHeightVertexPosition);
+ 
+    //get positive value
+    if (fGridTileWidthVertexPosition<0) {
+        fGridTileWidthVertexPosition=fGridTileWidthVertexPosition*(-1);
+    }    
+    if (fGridTileHeightVertexPosition<0) {
+        fGridTileHeightVertexPosition=fGridTileHeightVertexPosition*(-1);
+    }
+    
+    //  	printf (">>> fGridTileWidthVertexPosition: %f; fGridTileHeightVertexPosition: %f",fGridTileWidthVertexPosition,fGridTileHeightVertexPosition);
+    
+    //added by Mike, 20210715
+    //note: add this set of instructions due to excess border visible
+    //verified: screen/monitor width and height to be OK
+    //10/3 = 3.3333... cause of problem?
+    //added by Mike, 20210717
+    //note: partly border visible occurs in Linux machine;
+    //due to instructions that I wrote
+    
+#if defined(__APPLE__)
+    //note: right border of tile only partly visible
+    fGridTileWidthVertexPosition=fGridTileWidthVertexPosition+0.0006f;
+#endif
+    
+    //added by Mike, 20210720
+    fGridTileWidthVertexPosition=1.0f-fGridTileWidthVertexPosition;
+    fGridTileHeightVertexPosition=1.0f-fGridTileHeightVertexPosition; //note: +, instead of -
+		
+		//added by Mike, 20210727        
+    glTranslatef(0.0f, -fGridTileHeightVertexPosition, 0.0f);
+    
+    float fTx = 0.0f; 
+    float fTy = 0.0f;
+    
+    float fTileSideXAxis = 0.0625f;
+    //from bottom; anchor; start fTy at 1.0f
+    float fTileSideYAxis = -0.0625f;
+
+		//added by Mike, 20210724
+		//background color of tile
+//-----
+/*
+    glDisable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, 0);
+*/
+
+/*	//removed by Mike, 20210727
+    glColor3f(1.0f, 1.0f, 1.0f); //set to default, i.e. white
+    //note: 3rd quadrant
+    glBegin(GL_QUADS); // Each set of 4 vertices form a quad
+    	glVertex3f(0.0f, 0.0f, 0.0f);   	
+    	glVertex3f(0.0f-fGridTileWidthVertexPosition, 0.0f, 0.0f);    	
+    	glVertex3f(0.0f-fGridTileWidthVertexPosition, 0.0f-fGridTileHeightVertexPosition, 0.0f);    	
+    	glVertex3f(0.0f, 0.0f-fGridTileHeightVertexPosition, 0.0f);
+   	glEnd();
+*/   	
+//-----		
+
+		//added by Mike, 20210727
+		//due flipped vertically
+		glRotatef(180, 0.0f, 0.0f, 1.0f);		
+		
+    //note: vertex position sequence to be auto-drawn
+    //vertex positions sequence: counter-clockwise sequence to auto-draw front face		
+		
+    if ((currentFacingState==FACING_RIGHT) || (currentFacingState==FACING_RIGHT_AND_UP) || (currentFacingState==FACING_RIGHT_AND_DOWN)) {				
+			//note: vertex positions sequence: counter-clock-wise
+			//note:texture positions sequence: clock-wise
+    	glBegin(GL_QUADS); // Each set of 4 vertices form a quad
+    		//glTexCoord2f(fTx, fTy);
+				glTexCoord2f(0.25f+fTaoAnimationFrameOffset, fTaoAnimationFrameOffsetYAxis);
+    		glVertex3f(0.0f, 0.0f, 0.0f);
+    		
+    		//glTexCoord2f(fTx + fTileSideXAxis, fTy);
+      	glTexCoord2f(0.0f+fTaoAnimationFrameOffset, fTaoAnimationFrameOffsetYAxis);               	
+    		glVertex3f(0.0f-fGridTileWidthVertexPosition, 0.0f, 0.0f);
+    		
+    		//glTexCoord2f(fTx + fTileSideXAxis, fTy + fTileSideYAxis);
+      	glTexCoord2f(0.0f+fTaoAnimationFrameOffset, fTaoAnimationFrameOffsetYAxis+0.25f);
+    		glVertex3f(0.0f-fGridTileWidthVertexPosition, 0.0f-fGridTileHeightVertexPosition, 0.0f);
+    		
+    		//glTexCoord2f(fTx, fTy + fTileSideYAxis);
+      	glTexCoord2f(0.25+fTaoAnimationFrameOffset, fTaoAnimationFrameOffsetYAxis+0.25f); //0.5f);
+    		glVertex3f(0.0f, 0.0f-fGridTileHeightVertexPosition, 0.0f);
+    	glEnd();
+    }
+		else {
+			//note: vertex positions sequence: counter-clock-wise
+			//note:texture positions sequence: counter-clock-wise
+    	glBegin(GL_QUADS); // Each set of 4 vertices form a quad
+    		//glTexCoord2f(fTx, fTy);
+//				glTexCoord2f(0.25f+fTaoAnimationFrameOffset, fTaoAnimationFrameOffsetYAxis);
+				glTexCoord2f(0.0f+fTaoAnimationFrameOffset, fTaoAnimationFrameOffsetYAxis);               	            
+    		glVertex3f(0.0f, 0.0f, 0.0f);
+    		
+    		//glTexCoord2f(fTx + fTileSideXAxis, fTy);
+      	//glTexCoord2f(0.0f+fTaoAnimationFrameOffset, fTaoAnimationFrameOffsetYAxis);   
+        glTexCoord2f(0.25f+fTaoAnimationFrameOffset, fTaoAnimationFrameOffsetYAxis);	
+    		glVertex3f(0.0f-fGridTileWidthVertexPosition, 0.0f, 0.0f);
+    		
+    		//glTexCoord2f(fTx + fTileSideXAxis, fTy + fTileSideYAxis);
+      	//glTexCoord2f(0.0f+fTaoAnimationFrameOffset, fTaoAnimationFrameOffsetYAxis+0.25f);
+				glTexCoord2f(0.25f+fTaoAnimationFrameOffset, fTaoAnimationFrameOffsetYAxis+0.25f);
+    		glVertex3f(0.0f-fGridTileWidthVertexPosition, 0.0f-fGridTileHeightVertexPosition, 0.0f);
+    		
+    		//glTexCoord2f(fTx, fTy + fTileSideYAxis);
+      	//glTexCoord2f(0.25+fTaoAnimationFrameOffset, fTaoAnimationFrameOffsetYAxis+0.25f);
+				glTexCoord2f(0.0f+fTaoAnimationFrameOffset, fTaoAnimationFrameOffsetYAxis+0.25f);     	
+    		glVertex3f(0.0f, 0.0f-fGridTileHeightVertexPosition, 0.0f);
+    	glEnd();    	
+		}
+
+    glDisable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, 0);
+    
+    glPopMatrix();
+}
+
+
 //added by Mike, 20210523; edited by Mike, 20210726
 //TO-DO: -update: this to use computer instructions in Level2D's Tile
 //TO-DO: -reverify: if solves excessively increased myXPosAsPixel value
-void Pilot::drawPilotObject() 
+void Pilot::drawPilotObjectPrev() 
 {
 /*	
 	glBegin(GL_LINES);
@@ -4858,144 +5161,6 @@ if ((currentFacingState==FACING_RIGHT) || (currentFacingState==FACING_RIGHT_AND_
 		glBindTexture(GL_TEXTURE_2D, 0);
 	glPopMatrix(); //added by Mike, 20210422
 }
-
-
-/* //removed by Mike, 20210608
-void Pilot::drawPilotObjectPrevLargeTexture() 
-{	
-	//added by Mike, 20210422	
-	glPushMatrix();
-		//added by Mike, 20210420
-		glColor3f(1.0f, 1.0f, 1.0f); // white
-//		glColor3f(1.0f, 0.0f, 0.0f); // red
-	
-		glEnable(GL_TEXTURE_2D);
-		glBindTexture(GL_TEXTURE_2D, MIKE_TEXTURE_A);		
-		
-		//added by Mike, 20210523
-		glRotatef(180, 1.0f, 0.0f, 0.0f);
-		
-		//edited by Mike, 20210515
-//		fButtonAnimationFrameOffset=0;
-	
-		//added by Mike, 20210516; removed to after glScale(...) by Mike, 20210516		
-		//due to instructions to auto-draw quad using triangles
-//		glTranslatef(0.2f, 0.2f, 0.0f);
-	
-		//TO-DO: -verify: scaled texture object if equal with pixel width and height size
-		//use autoConvertFromPixelToVertexPointX, et cetera if exact
-		
-		//window width and height; 640x640pixels
-		//whole texture image sheet 512x256pixels
-		//button size: 64x16pixels
-//		glScalef(0.25f, 0.4f, 1.0f);		
-		//edited by Mike, 20210523
-//		glScalef(0.20f, 0.4f, 1.0f);		
-//glScalef(3.2f, 3.2f, 3.2f);		
-		glScalef(0.2f/2, 0.4f/2, 1.0f);		
-		
-		//added by Mike, 20210516
-		//due to instructions to auto-draw quad using triangles
-		glTranslatef(1.0f, 0.5f, 0.0f);		
-	
-if ((currentFacingState==FACING_RIGHT) || (currentFacingState==FACING_RIGHT_AND_UP) || (currentFacingState==FACING_RIGHT_AND_DOWN)) {
-        //added by Mike, 20210424
-        //notes: use folding paper to assist in quickly identifying location, e.g. texture coordinates
-        //set vertex positions clock-wise
-        //      glRotatef(45, 0.0f, 1.0f, 0.0f); //slanted to wall facing left
-        glBegin(GL_TRIANGLES);
-        //triangle#6 //back face left part
-        glNormal3f(0.0000,0.0000,-1.0000);
-        //edited by Mike, 20210424
-        //			glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	//A1; face left
-        glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0); //B2
-//        glVertex3f(-1.000000,4.000000,-1.000000); //A1
-        glVertex3f(-1.000000,1.000000,-1.000000); //A1
-        
-        glNormal3f(0.0000,0.0000,-1.0000);
-        //edited by Mike, 20210424
-        //			glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0); //B1; face left
-        glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);	//C2
-        glVertex3f(1.000000,-1.000000,-1.000000); //B1
-        
-        glNormal3f(0.0000,0.0000,-1.0000);
-        //edited by Mike, 20210424
-        //			glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);	//C1; face left
-        glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0); //B1
-        glVertex3f(-1.000000,-1.000000,-1.000000); //C1
-        
-        //triangle#12 //back face right part
-        glNormal3f(0.0000,0.0000,-1.0000);
-        //edited by Mike, 20210424
-        //			glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	//A2; face lefT
-
-        glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0); //B2
-//        glVertex3f(-1.000000,4.000000,-1.000000); //A2
-        glVertex3f(-1.000000,1.000000,-1.000000); //A2
-        
-        glNormal3f(0.0000,0.0000,-1.0000);
-        //edited by Mike, 20210424
-        //			glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0); //B2; face left
-        glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);	//A1
-//        glVertex3f(1.000000,4.000000,-1.000000); //B2
-        glVertex3f(1.000000,1.000000,-1.000000); //B2
-        
-        glNormal3f(0.0000,0.0000,-1.0000);
-        //edited by Mike, 20210424
-        //			glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0); //C2; face left
-        glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);	//C1
-        glVertex3f(1.000000,-1.000000,-1.000000); //C2
-        glEnd();
-    }
-    else {
-        glBegin(GL_TRIANGLES);
-        //triangle#6 //back face left part
-        glNormal3f(0.0000,0.0000,-1.0000);
-        glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);
-//        glVertex3f(-1.000000,4.000000,-1.000000); //A1
-        glVertex3f(-1.000000,1.000000,-1.000000); //A1
-        
-        glNormal3f(0.0000,0.0000,-1.0000);
-        //edited by Mike, 20210420
-        //	glTexCoord2f(1.0+iTaoAnimationFrameOffset,1.0);
-        //	glTexCoord2f(0.5+fTaoAnimationFrameOffset,1.0);
-        glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0);
-        glVertex3f(1.000000,-1.000000,-1.000000); //B1
-        
-        glNormal3f(0.0000,0.0000,-1.0000);
-        glTexCoord2f(0.0+fTaoAnimationFrameOffset,1.0);
-        glVertex3f(-1.000000,-1.000000,-1.000000); //C1
-        
-        
-        //triangle#12 //back face right part
-        glNormal3f(0.0000,0.0000,-1.0000);
-        glTexCoord2f(0.0+fTaoAnimationFrameOffset,0.0);
-//        glVertex3f(-1.000000,4.000000,-1.000000); //A2
-        glVertex3f(-1.000000,1.000000,-1.000000); //A2
-        
-        glNormal3f(0.0000,0.0000,-1.0000);
-        //edited by Mike, 20210420
-        //	glTexCoord2f(1.0+iTaoAnimationFrameOffset,0.0);
-        //	glTexCoord2f(0.5+fTaoAnimationFrameOffset,0.0);
-        glTexCoord2f(0.25+fTaoAnimationFrameOffset,0.0);
-//        glVertex3f(1.000000,4.000000,-1.000000); //B2
-        glVertex3f(1.000000,1.000000,-1.000000); //B2
-        
-        glNormal3f(0.0000,0.0000,-1.0000);
-        //edited by Mike, 20210420	
-        //	glTexCoord2f(1.0+iTaoAnimationFrameOffset,1.0);
-        //	glTexCoord2f(0.5+fTaoAnimationFrameOffset,1.0);
-        glTexCoord2f(0.25+fTaoAnimationFrameOffset,1.0);	
-        glVertex3f(1.000000,-1.000000,-1.000000); //C2	
-        glEnd();
-    }
-    	
-	
-		glDisable(GL_TEXTURE_2D);
-		glBindTexture(GL_TEXTURE_2D, 0);
-	glPopMatrix(); //added by Mike, 20210422
-}
-*/
 
 //added: by Mike, 20210423
 //TO-DO: -add: in PolygonPool
@@ -5621,7 +5786,7 @@ void Pilot::update(float dt)
 				//max world 
 /*			
            		if (myXPos <= 15.0f) myXPos = 0-15.0f; //if left side
-           		else if (myXPos >= myWindowWidth/100) myXPos = 0.0f+myWidth/8; //if right side
+           		else if (myXPos >= myWindowWidth/1fGridTileWidthVertexPosition00) myXPos = 0.0f+myWidth/8; //if right side
 */			
 /*	//removed by Mike, 20210504
 			printf(">> myXPos: %f\n",myXPos);
@@ -6159,7 +6324,12 @@ void Pilot::move(int key)
         
 				//edited by Mike, 20210604
 //		myXPos+=-stepX;
-        myXPosAsPixel+=-stepX*2;
+
+				//edited by Mike, 20210727
+				//TO-DO: -add: acceleration
+//        myXPosAsPixel+=-stepX*2;
+        myXPosAsPixel+=-stepX;
+
 //	      myXPosAsPixel+=-iStepXAsPixel;
 		
 			
@@ -6185,9 +6355,8 @@ void Pilot::move(int key)
 	      if (bIsFiringBeam) {	      	
 		  }
 		  else {
-//removed by Mike, 20210502			  
-/*          	currentFacingState=FACING_LEFT;
-*/
+//added by Mike, 20210502			  
+          currentFacingState=FACING_LEFT;
 		  }
 
            //edited by Mike, 20210613
@@ -6255,8 +6424,12 @@ void Pilot::move(int key)
         
         //edited by Mike, 20210604
 //		myXPos+=stepX;
-        myXPosAsPixel+=stepX*2;
-        //      myXPosAsPixel+=iStepXAsPixel;
+//      myXPosAsPixel+=iStepXAsPixel;
+
+				//edited by Mike, 20210727
+				//TO-DO: -add: acceleration
+        //myXPosAsPixel+=stepX*2;
+        myXPosAsPixel+=stepX;
 		
 
 		if ((bIsExecutingDashArray[KEY_D])) {
