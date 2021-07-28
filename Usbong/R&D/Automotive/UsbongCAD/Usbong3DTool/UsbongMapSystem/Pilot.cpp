@@ -26,6 +26,11 @@
  * Syson, M., Camacho, R., Gonzales, D., Del Rosario, R., Vidal, E., et al.
  * 
  */
+ 
+//added by Mike, 20210728
+//TO-DO: -update: Pilot does not enter gap of tile grid x1
+//add: offset in tile grid to make inner rectangle for collision detection
+ 
 //added by Mike, 20210130
 //reverify: Robotship does not execute correctly
 //when down and left buttons are pressed while firing beam down
@@ -681,14 +686,23 @@ Pilot::Pilot(float xPos, float yPos, float zPos, int windowWidth, int windowHeig
 	  //added by Mike, 20210726
 		//note: auto-compute based on grid tile
 		//TO-DO: -add: acceleration
-/*	//edited by Mike, 20210728		
+	//edited by Mike, 20210728		
+/*	
   	stepX=fGridSquareWidth/8;
     stepY=fGridSquareHeight/8;
     stepZ=fGridSquareWidth/8;
-*/	
+*/
+  	stepX=fGridSquareWidth/10;
+    stepY=fGridSquareHeight/10;
+    stepZ=fGridSquareWidth/10;
+	
+/*
   	stepX=fGridSquareWidth/9;
     stepY=fGridSquareHeight/9;
     stepZ=fGridSquareWidth/9;
+*/
+	//added by Mike, 20210728
+	bHasHitWall=false;
 	
 	//added by Mike, 20210523
 	myUsbongUtils = new UsbongUtils();
@@ -6197,10 +6211,16 @@ void Pilot::move(int key)
          //added by Mike, 20210725
          if (myLevel2D->isLevel2DCollideWith(this)) {
 //            printf(">>>>COLLISION!");
-//            myYPosAsPixel+=stepY*2;
-            return;
+//							currentMovingState=IDLE_MOVING_STATE;							
+							bHasHitWall=true;
+        			return;
          }
          else {         
+         			//added by Mike, 20210728
+         		  if ((bHasHitWall) and (getCurrentFacingState()==FACING_UP)) {
+         		  	return;
+         		  }
+         		           		  
          			if (getIsPlayer1()) { //Player1: Unit Chief
             			myYPosAsPixel+=-stepY;
          			}
@@ -6211,6 +6231,8 @@ void Pilot::move(int key)
          			if (bIsExecutingDashArray[KEY_W]) {
             			myYPosAsPixel+=-stepY*2;
 		 					}
+		 					
+		 					bHasHitWall=false;
 		 		}
 			//added by Mike, 20210521		
 //----------		
@@ -6230,34 +6252,42 @@ void Pilot::move(int key)
           
 //     case KEY_DOWN:  //removed by Mike, 20210130
      case KEY_S: //added by Mike, 20210128		   
-	//added by Mike, 20210111
-	if (bIsExecutingPunch) {
-	}
-	//added by Mike, 20210121
-	else if (bIsExecutingDefend) {
-	}
-    //added by Mike, 20210613
-    else if (bIsExecutingKick) {
-    }
-	else {
-         //added by Mike, 20210725
-         if (myLevel2D->isLevel2DCollideWith(this)) {
-//            printf(">>>>COLLISION!");
-//            myYPosAsPixel-=stepY*2;  
-            return;
-         }
-         else {				
-        		if (getIsPlayer1()) { //Player1: Unit Chief
-            		myYPosAsPixel+=stepY;
-        		}
-        		else {
-            		myYPosAsPixel+=stepY/2;
-        		}
-				 }        		
-		if ((bIsExecutingDashArray[KEY_S])) {
-            myYPosAsPixel+=stepY*2;
-		}
-	}
+				//added by Mike, 20210111
+				if (bIsExecutingPunch) {
+				}
+				//added by Mike, 20210121
+				else if (bIsExecutingDefend) {
+				}
+    			//added by Mike, 20210613
+    			else if (bIsExecutingKick) {
+    			}
+				else {
+         			//added by Mike, 20210725
+         			if (myLevel2D->isLevel2DCollideWith(this)) {
+			//            printf(">>>>COLLISION!");
+//										currentMovingState=IDLE_MOVING_STATE;
+										bHasHitWall=true;
+        						return;
+         			}
+         			else {				
+					  			//added by Mike, 20210728
+         					if ((bHasHitWall) and (getCurrentFacingState()==FACING_DOWN)) {
+         		  			return;
+         					}         		           
+         			
+        					if (getIsPlayer1()) { //Player1: Unit Chief
+            					myYPosAsPixel+=stepY;
+        					}
+        					else {
+            					myYPosAsPixel+=stepY/2;
+        					}
+				 			}        		
+					if ((bIsExecutingDashArray[KEY_S])) {
+            			myYPosAsPixel+=stepY*2;
+					}
+					
+							bHasHitWall=false;
+				}
 	      //added by Mike, 20201201; edited by Mike, 20201225
           //currentFacingState=FACING_DOWN;
 	      if (bIsFiringBeam) {	      	
@@ -6278,34 +6308,53 @@ void Pilot::move(int key)
           if (thrust<thrustMax)
             thrust+=-0.1f;
 */
-	//added by Mike, 20210111
-	if (bIsExecutingPunch) {
-	}
-	//added by Mike, 20210121
-	else if (bIsExecutingDefend) {
-	}
-    //added by Mike, 20210613
-    else if (bIsExecutingKick) {
-    }
-	else {
-         //added by Mike, 20210728
-         if (myLevel2D->isLevel2DCollideWith(this)) {
-//            printf(">>>>COLLISION!");
-//        		myXPosAsPixel+=stepX*2;  
-            return;
-         }
-         else {
-				//edited by Mike, 20210727
-				//TO-DO: -add: acceleration
-//        myXPosAsPixel+=-stepX*2;
-        	myXPosAsPixel+=-stepX;
-			
-					if ((bIsExecutingDashArray[KEY_A])) {		
-							//edited by Mike, 20210527
-						myXPosAsPixel+=-stepX;
+					//added by Mike, 20210111
+					if (bIsExecutingPunch) {
 					}
-				}					
-	}
+					//added by Mike, 20210121
+					else if (bIsExecutingDefend) {
+					}
+    				//added by Mike, 20210613
+    				else if (bIsExecutingKick) {
+    				}
+					else {
+         				//added by Mike, 20210728
+         				if (myLevel2D->isLevel2DCollideWith(this)) {
+				//            printf(">>>>COLLISION!");
+//											currentMovingState=IDLE_MOVING_STATE;
+											bHasHitWall=true;
+        							return;
+         				}
+         				else {
+										//added by Mike, 20210728
+         						if ((bHasHitWall) and (getCurrentFacingState()==FACING_LEFT)) {
+         							return;
+         						}
+        					
+								//edited by Mike, 20210728
+								//TO-DO: -add: acceleration
+/*								
+        					myXPosAsPixel+=-stepX;
+							
+									if ((bIsExecutingDashArray[KEY_A])) {		
+											//edited by Mike, 20210527
+										myXPosAsPixel+=-stepX;
+									}
+*/									
+         					if (getIsPlayer1()) { //Player1: Unit Chief
+            					myXPosAsPixel+=-stepX;
+         					}
+         					else {
+            					myXPosAsPixel+=-stepX;
+         					}
+							
+         					if (bIsExecutingDashArray[KEY_A]) {
+            					myXPosAsPixel+=-stepX*2;
+		 							}									
+											
+									bHasHitWall=false;
+								}					
+					}
 	
 /*          
           char str[700];                                       
@@ -6331,6 +6380,8 @@ void Pilot::move(int key)
            }
 */
           break;
+          
+      //note: combination of FACING RIGHT and DOWN actions cause spin movement          
 //     case KEY_RIGHT: //removed by Mike, 20210130
      case KEY_D: //added by Mike, 20210128
 		   //removed by Mike, 20201001getXAsPixel
@@ -6355,12 +6406,18 @@ void Pilot::move(int key)
       			//added by Mike, 20210728
       			if (myLevel2D->isLevel2DCollideWith(this)) {
 			//            printf(">>>>COLLISION!");
-//        			myXPosAsPixel+=-stepX*2;			
+//							currentMovingState=IDLE_MOVING_STATE;
+							bHasHitWall=true;
         			return;
       			}
       			else {
-							//edited by Mike, 20210727
-							//TO-DO: -add: acceleration
+							//added by Mike, 20210728
+         			if ((bHasHitWall) and (getCurrentFacingState()==FACING_RIGHT)) {
+         				return;
+         			}      			
+      			
+							//edited by Mike, 20210728
+/*							//TO-DO: -add: acceleration
         			//myXPosAsPixel+=stepX*2;
         			myXPosAsPixel+=stepX;
 					
@@ -6368,6 +6425,19 @@ void Pilot::move(int key)
 								//edited by Mike, 20210527
 								myXPosAsPixel+=stepX;
 							}		
+*/							
+         			if (getIsPlayer1()) { //Player1: Unit Chief
+            			myXPosAsPixel+=stepX;
+         			}
+         			else {
+            			myXPosAsPixel+=stepX;
+         			}
+					
+         			if (bIsExecutingDashArray[KEY_D]) {
+            			myXPosAsPixel+=stepX*2;
+		 					}									
+							
+							bHasHitWall=false;
 						}
 				}
 		   		
@@ -6498,7 +6568,7 @@ void Pilot::move(int key)
 }
 void Pilot::hitBy(MyDynamicObject* mdo)
 {		
-/*	//removed by Mike, 20210611
+/*	//removed by Mike, 20210611stepX=fGridSquareWidth/8;
 		//auto-identify if Ball object
     if (dynamic_cast<Ball*>(mdo)->getIsBall()) {    	
 		}

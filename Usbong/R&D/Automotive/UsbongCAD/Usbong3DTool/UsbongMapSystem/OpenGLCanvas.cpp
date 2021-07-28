@@ -581,8 +581,14 @@ bool OpenGLCanvas::init(int myWindowWidthAsPixelInput, int myWindowHeightAsPixel
 //    myPilot = new Pilot(0.0f,0.0f,270.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
 		//edited by Mike, 20210728
 //    myPilot = new Pilot(0.0f,0.0f,0.0f,myWindowWidthAsPixel,myWindowHeightAsPixel);
-    myPilot = new Pilot(myWindowWidthAsPixel/2,myWindowHeightAsPixel/2,0.0f,
+		//edited by Mike, 20210728
+/*    myPilot = new Pilot(myWindowWidthAsPixel/2,myWindowHeightAsPixel/2,0.0f,
     										myWindowWidthAsPixel,myWindowHeightAsPixel);
+*/    										
+    myPilot = new Pilot(myWindowWidthAsPixel/3,myWindowHeightAsPixel/3,0.0f,
+    										myWindowWidthAsPixel,myWindowHeightAsPixel);
+
+
         
     //edited by Mike, 20210710
     //    myPilot->setOpenGLCanvas(this, fGridSquareWidth);.

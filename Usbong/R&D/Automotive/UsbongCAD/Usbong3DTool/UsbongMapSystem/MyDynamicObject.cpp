@@ -345,12 +345,75 @@ bool MyDynamicObject::collideWithLevel2DTileRectAsPixel(int iTilePosXAsPixel, in
     //intersecting rectangles
   //edited by Mike, 20210728    
 		//output: stuck in tile
+/*		
 		if (iTilePosXAsPixel > getXAsPixel()+getWidthAsPixel() +getStepX() || //tile position at right of object
             iTilePosXAsPixel+iTileWidthAsPixel < getXAsPixel() -getStepX() || //tile position at left of object
             iTilePosYAsPixel+iTileHeightAsPixel < getYAsPixel() -getStepY() || //tile position at top of object
             iTilePosYAsPixel > getYAsPixel()+getHeightAsPixel() +getStepY()) { //tile position at bottom of object
+*/
 
-/*	//note: output: noticeable collision with tile 
+/* //edited by Mike, 20210728
+		if ((iTilePosXAsPixel > getXAsPixel()+getWidthAsPixel() -getStepX()) || //tile position at right of object
+            (iTilePosXAsPixel+iTileWidthAsPixel < getXAsPixel() +getStepX()) || //tile position at left of object
+            (iTilePosYAsPixel+iTileHeightAsPixel < getYAsPixel() +getStepY()) || //tile position at top of object
+            (iTilePosYAsPixel > getYAsPixel()+getHeightAsPixel() -getStepY())) { //tile position at bottom of object
+*/
+/*
+		if ((iTilePosXAsPixel > getXAsPixel()+getWidthAsPixel()) || //tile position at right of object
+            (iTilePosXAsPixel+iTileWidthAsPixel < getXAsPixel()) || //tile position at left of object
+            (iTilePosYAsPixel+iTileHeightAsPixel < getYAsPixel()) || //tile position at top of object
+            (iTilePosYAsPixel > getYAsPixel()+getHeightAsPixel())) { //tile position at bottom of object
+*/
+			//verify: if continues with step, collision
+			if ((iTilePosXAsPixel > getXAsPixel()+getWidthAsPixel() +getStepX()) || //tile position at right of object
+            (iTilePosXAsPixel+iTileWidthAsPixel < getXAsPixel() -getStepX()) || //tile position at left of object
+            (iTilePosYAsPixel+iTileHeightAsPixel < getYAsPixel() -getStepY()) || //tile position at top of object
+            (iTilePosYAsPixel > getYAsPixel()+getHeightAsPixel() +getStepY())) { //tile position at bottom of object
+
+
+/*
+		if ((iTilePosXAsPixel > getXAsPixel()+getWidthAsPixel() -getStepX()*2) || //tile position at right of object
+            (iTilePosXAsPixel+iTileWidthAsPixel < getXAsPixel() +getStepX()*2) || //tile position at left of object
+            (iTilePosYAsPixel+iTileHeightAsPixel < getYAsPixel() +getStepY()*2) || //tile position at top of object
+            (iTilePosYAsPixel > getYAsPixel()+getHeightAsPixel() -getStepY()*2)) { //tile position at bottom of object
+*/
+/*
+		if ((iTilePosXAsPixel > getXAsPixel()+getWidthAsPixel() +getStepX()/10) || //tile position at right of object
+            (iTilePosXAsPixel+iTileWidthAsPixel < getXAsPixel() -getStepX()/10) || //tile position at left of object
+            (iTilePosYAsPixel+iTileHeightAsPixel < getYAsPixel() -getStepY()/10) || //tile position at top of object
+            (iTilePosYAsPixel > getYAsPixel()+getHeightAsPixel() +getStepY()/10)) { //tile position at bottom of object
+*/
+
+/*
+        if (this->getXAsPixel() -this->getStepX() < iTilePosXAsPixel) {    
+//        	this->setXPosAsPixel(iTilePosXAsPixel+this->getStepX());    
+        	return true;
+        }
+        else if (this->getXAsPixel()+this->getWidthAsPixel() +this->getStepX() > iTilePosXAsPixel+iTileWidthAsPixel) {
+//            this->setXPosAsPixel(iTilePosXAsPixel+iTileWidthAsPixel-this->getWidthAsPixel()-this->getStepX());
+            return true;
+        }        
+        //note: we use y-axis in Level2D; instead of z-axis (Level3D)
+        if (this->getYAsPixel() -this->getStepY() < iTilePosYAsPixel) { //max movement with set
+//            this->setYPosAsPixel(iTilePosYAsPixel+this->getStepY());
+            return true;
+        }
+        else if (this->getYAsPixel()+this->getHeightAsPixel() +this->getStepY() > iTilePosYAsPixel+iTileHeightAsPixel) {
+//            this->setYPosAsPixel(iTilePosYAsPixel+iTileHeightAsPixel-this->getHeightAsPixel()-this->getStepY());
+            return true;
+        }
+*/     
+/*   
+        if ((this->getXAsPixel() -this->getStepX() < iTilePosXAsPixel)
+    and (this->getXAsPixel()+this->getWidthAsPixel() +this->getStepX() > iTilePosXAsPixel+iTileWidthAsPixel) 
+    and (this->getYAsPixel() -this->getStepY() < iTilePosYAsPixel)
+		and (this->getYAsPixel()+this->getHeightAsPixel() +this->getStepY() > iTilePosYAsPixel+iTileHeightAsPixel)) {
+            return true;
+        }
+*/        
+
+/*
+				//note: output: noticeable collision with tile 
         if (iTilePosXAsPixel > getXAsPixel()+getWidthAsPixel() || //tile position at right of object
             iTilePosXAsPixel+iTileWidthAsPixel < getXAsPixel() || //tile position at left of object
             iTilePosYAsPixel+iTileHeightAsPixel < getYAsPixel() || //tile position at top of object
@@ -372,7 +435,6 @@ bool MyDynamicObject::collideWithLevel2DTileRectAsPixel(int iTilePosXAsPixel, in
 		printf("iTileWidthAsPixel: %i\n",iTileWidthAsPixel);
 		printf("getXAsPixel()+getWidthAsPixel(): %i\n",getXAsPixel()+getWidthAsPixel());
 */		
-	
 		printf("inside tile\n");
 	
 		return true;

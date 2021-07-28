@@ -201,6 +201,9 @@ public:
     //added by Mike, 20210527
     int currentFacingState;
     
+    //added by Mike, 20210728
+    bool bHasHitWall;
+    
     
     /*	//removed by Mike, 20201226
      //added by Mike, 20201226
