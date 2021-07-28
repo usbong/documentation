@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20200926
- * @date updated: 20210727
+ * @date updated: 20210728
  * @website address: http://www.usbong.ph
  *
  * Reference:
@@ -301,8 +301,17 @@ Level2D::Level2D(float xPos, float yPos, float zPos, float windowWidth, float wi
     
     //added by Mike, 20210517
     //TO-DO: -add: auto-identify object width and height
+/*	//edited by Mike, 20210728    
     myWidthAsPixel=128;
     myHeightAsPixel=64;
+*/
+
+/*		//removed by Mike, 20210720
+    //TO-DO: -add: auto-set width and height based on grid tile
+    myWidthAsPixel=71;
+    myHeightAsPixel=80;    
+*/
+    
     //TO-DO: -update: this
     //note: float xPos as parameter to int myXPosAsPixel not correct output
     //edited by Mike, 20210613
@@ -402,6 +411,11 @@ Level2D::Level2D(float xPos, float yPos, float zPos, float windowWidth, float wi
     
     fGridSquareWidth = myWindowWidth/iColumnCountMax; //example: 136.60
     fGridSquareHeight = myWindowHeight/iRowCountMax; //example: 76.80
+    
+    //auto-set width and height based on grid tile
+    myWidthAsPixel=fGridSquareWidth;
+    myHeightAsPixel=fGridSquareHeight;    
+    
     
     /*
      printf("fGridSquareWidth: %f\n",fGridSquareWidth);
@@ -1342,7 +1356,7 @@ bool Level2D::isLevel2DCollideWith(MyDynamicObject* mdo)
 {
     if ((!checkIsCollidable())||(!mdo->checkIsCollidable()))    
     {
-//    	printf(">>>>>NOT COLLIDABLE");
+    		//printf(">>>>>NOT COLLIDABLE");
         return false;
     }
        
@@ -1360,15 +1374,19 @@ bool Level2D::isLevel2DCollideWith(MyDynamicObject* mdo)
                             //mdo as Pilot
                             //edited by Mike, 20210725
 //       						if (mdo->collideWithLevel2DTileRectAsPixel(0.0f+fGridSquareWidth*(iColumnCount),0.0f+fGridSquareHeight*(iRowCount), fGridSquareWidth, fGridSquareHeight)) {
-                
-                            if (mdo->collideWithLevel2DTileRectAsPixel(0.0f+fGridSquareWidth*(iColumnCount-1),0.0f+fGridSquareHeight*(iRowCount), fGridSquareWidth, fGridSquareHeight)) {
+                		//edited by Mike, 20210728
+//                    if (mdo->collideWithLevel2DTileRectAsPixel(0.0f+fGridSquareWidth*(iColumnCount-1),0.0f+fGridSquareHeight*(iRowCount), fGridSquareWidth, fGridSquareHeight)) {
+										//note: no -1 in iColumnCount due to not draw function
+                    if (mdo->collideWithLevel2DTileRectAsPixel(0.0f+fGridSquareWidth*(iColumnCount),0.0f+fGridSquareHeight*(iRowCount), fGridSquareWidth, fGridSquareHeight)) {
 
                 printf(">>dito>>>>>>>>>>>>>>>>>>>>>>>.");
     	
         						//this->hitBy(mdo);
 
                                 //added by Mike, 20210725
-                                this->hitByAtTile(mdo, sCurrentLevelMapContainer[iRowCount][iColumnCount]);
+                                this->hitByAtTile(mdo, sCurrentLevelMapContainer[iRowCount][iColumnCount], 			
+                                					0.0f+fGridSquareWidth*(iColumnCount), //note: no -1 in iColumnCount
+                                					0.0f+fGridSquareHeight*(iRowCount));
                                 
                                 //removed by Mike, 20210725
  //       						mdo->hitBy(this);
@@ -1382,8 +1400,9 @@ bool Level2D::isLevel2DCollideWith(MyDynamicObject* mdo)
     return false;
 }
 
-//added by Mike, 20210725
-void Level2D::hitByAtTile(MyDynamicObject* mdo, std::string sTileId)
+//added by Mike, 20210725; edited by Mike, 20210728
+//void Level2D::hitByAtTile(MyDynamicObject* mdo, std::string sTileId)
+void Level2D::hitByAtTile(MyDynamicObject* mdo, std::string sTileId, int iTileXPos, int iTileYPos)
 {
     //changeState(DEATH_STATE);
     //setCollidable(false);
@@ -1394,12 +1413,49 @@ void Level2D::hitByAtTile(MyDynamicObject* mdo, std::string sTileId)
 //    int iTileRow = myUsbongUtils->autoIdentifyRowInputInLevelMapContainer(sTileId); //row
 
 //    std::cout << "sTileId: " << sTileId << "\n";
+/*
+    std::cout << "iTileXPos: " << iTileXPos << "\n";
+    std::cout << "iTileYPos: " << iTileYPos << "\n";
+*/
 
     //note: there exist quotation marks in sTileId
+    //"0-0": wall
     if (sTileId.compare("\"0-0\"") == 0) {//True
         //OK
         //printf(">>HALLO");
         //mdo...
+				//TO-DO: -reverify: cause of noticeable tile collision        
+        if (mdo->getCurrentFacing()==FACING_UP) {
+        	mdo->setYPosAsPixel(iTileYPos +this->getHeightAsPixel() +mdo->getStepY()+1);
+        }
+        else if (mdo->getCurrentFacing()==FACING_DOWN) {
+        	mdo->setYPosAsPixel(iTileYPos -mdo->getHeightAsPixel() -mdo->getStepY()-1);
+        }        
+        else if (mdo->getCurrentFacing()==FACING_LEFT) {
+//        	mdo->setXPosAsPixel(this->getXAsPixel() +this->getWidthAsPixel() +mdo->getStepX());
+        	mdo->setXPosAsPixel(iTileXPos +this->getWidthAsPixel() +mdo->getStepX()+1);    	
+        }
+        else if (mdo->getCurrentFacing()==FACING_RIGHT) {
+//        	mdo->setXPosAsPixel(this->getXAsPixel() -mdo->getStepX());
+        	mdo->setXPosAsPixel(iTileXPos -mdo->getStepX()-1);      	
+        }        
+
+/*        
+        if (mdo->getCurrentFacing()==FACING_UP) {
+        	mdo->setYPosAsPixel(iTileYPos +this->getHeightAsPixel() +mdo->getStepY());
+        }
+        else if (mdo->getCurrentFacing()==FACING_DOWN) {
+        	mdo->setYPosAsPixel(iTileYPos -mdo->getHeightAsPixel() -mdo->getStepY());
+        }        
+        else if (mdo->getCurrentFacing()==FACING_LEFT) {
+//        	mdo->setXPosAsPixel(this->getXAsPixel() +this->getWidthAsPixel() +mdo->getStepX());
+        	mdo->setXPosAsPixel(iTileXPos +this->getWidthAsPixel() +mdo->getStepX());    	
+        }
+        else if (mdo->getCurrentFacing()==FACING_RIGHT) {
+//        	mdo->setXPosAsPixel(this->getXAsPixel() -mdo->getStepX());
+        	mdo->setXPosAsPixel(iTileXPos -mdo->getStepX());      	
+        }     
+*/           
     }
         
         //removed by Mike, 20201001

@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210724
+ * @date updated: 20210728
  * @website address: http://www.usbong.ph
  *
  * Acknowledgments:
@@ -342,18 +342,26 @@ bool MyDynamicObject::collideWithLevel2DTileRectAsPixel(int iTilePosXAsPixel, in
 				iTilePosYAsPixel > getYAsPixel()+getHeightAsPixel()) { //tile position at bottom of object
 */
 
-/*    //intersecting rectangles
-    if (iTilePosXAsPixel > getXAsPixel()+getWidthAsPixel() -stepX || //tile position at right of object
-        iTilePosXAsPixel+iTileWidthAsPixel < getXAsPixel() +stepX || //tile position at left of object
-        iTilePosYAsPixel+iTileHeightAsPixel < getYAsPixel() +stepZ || //tile position at top of object
-        iTilePosYAsPixel > getYAsPixel()+getHeightAsPixel() -stepZ) { //tile position at bottom of object
+    //intersecting rectangles
+  //edited by Mike, 20210728    
+		//output: stuck in tile
+		if (iTilePosXAsPixel > getXAsPixel()+getWidthAsPixel() +getStepX() || //tile position at right of object
+            iTilePosXAsPixel+iTileWidthAsPixel < getXAsPixel() -getStepX() || //tile position at left of object
+            iTilePosYAsPixel+iTileHeightAsPixel < getYAsPixel() -getStepY() || //tile position at top of object
+            iTilePosYAsPixel > getYAsPixel()+getHeightAsPixel() +getStepY()) { //tile position at bottom of object
+
+/*	//note: output: noticeable collision with tile 
+        if (iTilePosXAsPixel > getXAsPixel()+getWidthAsPixel() || //tile position at right of object
+            iTilePosXAsPixel+iTileWidthAsPixel < getXAsPixel() || //tile position at left of object
+            iTilePosYAsPixel+iTileHeightAsPixel < getYAsPixel() || //tile position at top of object
+            iTilePosYAsPixel > getYAsPixel()+getHeightAsPixel()) { //tile position at bottom of object
+*/            
+/*		//note: output: noticeable collision with tile 
+		if (iTilePosXAsPixel >= getXAsPixel()+getWidthAsPixel() +getStepX() || //tile position at right of object
+            iTilePosXAsPixel+iTileWidthAsPixel <= getXAsPixel() -getStepX() || //tile position at left of object
+            iTilePosYAsPixel+iTileHeightAsPixel <= getYAsPixel() -getStepY() || //tile position at top of object
+            iTilePosYAsPixel >= getYAsPixel()+getHeightAsPixel() +getStepY()) { //tile position at bottom of 
 */
-        if (iTilePosXAsPixel > getXAsPixel()+getWidthAsPixel() -stepX*2 || //tile position at right of object
-            iTilePosXAsPixel+iTileWidthAsPixel < getXAsPixel() +stepX*2 || //tile position at left of object
-            iTilePosYAsPixel+iTileHeightAsPixel < getYAsPixel() +stepZ || //tile position at top of object
-            iTilePosYAsPixel > getYAsPixel()+getHeightAsPixel() -stepZ) { //tile position at bottom of object
-            
-        
 //			printf("outside tile\n");
 			return false;
 		}	

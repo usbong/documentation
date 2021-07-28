@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20210613
- * @date updated: 20210725
+ * @date updated: 20210728
  * @website address: http://www.usbong.ph
  *
  * Acknowledgments:
@@ -363,6 +363,8 @@ public:
     {
         return myHeight;
     }
+    
+    
     //int STANDING_STATE;
     //int WALKING_STATE;
     float getRotationAngle(){
@@ -423,8 +425,9 @@ public:
      */	
     virtual void hitBy(MyDynamicObject* mdo);
     
-    //added by Mike, 20210725
-    void hitByAtTile(MyDynamicObject* mdo, std::string sTileId);
+    //added by Mike, 20210725; edited by Mike, 20210728
+//    void hitByAtTile(MyDynamicObject* mdo, std::string sTileId);
+    void hitByAtTile(MyDynamicObject* mdo, std::string sTileId, int iTileXPos, int iTileYPos);
     
     //added by Mike, 20201016
     virtual void destroy();

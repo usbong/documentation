@@ -120,7 +120,7 @@ private:
     int maxSize;
     int i;
     bool isCollidable;
-    
+        
     //removed by Mike, 20210523
     //	UsbongUtils *myUsbongUtils; //added by Mike, 202105017
     
@@ -276,6 +276,7 @@ public:
     {
         return myZPosAsPixel;
     }
+    
     virtual int getWidthAsPixel()
     {
         return myWidthAsPixel;
@@ -298,6 +299,11 @@ public:
     virtual int getStepZ()
     {
         return stepZ;
+    }
+    
+    //added by Mike, 20210728
+    int getCurrentFacing() {
+    	return currentFacingState;
     }
     
     //added by Mike, 20210613

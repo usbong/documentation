@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B.
  * @date created: 20200926
- * @date updated: 20210727
+ * @date updated: 20210728
  * @website address: http://www.usbong.ph
  *
  * References:
@@ -579,8 +579,11 @@ bool OpenGLCanvas::init(int myWindowWidthAsPixelInput, int myWindowHeightAsPixel
        
     //edited by Mike, 20210727
 //    myPilot = new Pilot(0.0f,0.0f,270.0f,myLevel->getMaxXAxisViewport()*fGridSquareWidth,myLevel->getMaxZAxisViewport()*fGridSquareHeight);
-    myPilot = new Pilot(0.0f,0.0f,0.0f,myWindowWidthAsPixel,myWindowHeightAsPixel);
-    
+		//edited by Mike, 20210728
+//    myPilot = new Pilot(0.0f,0.0f,0.0f,myWindowWidthAsPixel,myWindowHeightAsPixel);
+    myPilot = new Pilot(myWindowWidthAsPixel/2,myWindowHeightAsPixel/2,0.0f,
+    										myWindowWidthAsPixel,myWindowHeightAsPixel);
+        
     //edited by Mike, 20210710
     //    myPilot->setOpenGLCanvas(this, fGridSquareWidth);.
     myPilot->setOpenGLCanvas(this, fGridSquareWidth, fGridSquareHeight);

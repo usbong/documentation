@@ -15,7 +15,7 @@
  * @company: USBONG
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200930
- * @date updated: 20210727
+ * @date updated: 20210728
  * @website address: http://www.usbong.ph
  *
  * Reference: 
@@ -681,10 +681,14 @@ Pilot::Pilot(float xPos, float yPos, float zPos, int windowWidth, int windowHeig
 	  //added by Mike, 20210726
 		//note: auto-compute based on grid tile
 		//TO-DO: -add: acceleration
+/*	//edited by Mike, 20210728		
   	stepX=fGridSquareWidth/8;
     stepY=fGridSquareHeight/8;
     stepZ=fGridSquareWidth/8;
-	
+*/	
+  	stepX=fGridSquareWidth/9;
+    stepY=fGridSquareHeight/9;
+    stepZ=fGridSquareWidth/9;
 	
 	//added by Mike, 20210523
 	myUsbongUtils = new UsbongUtils();
@@ -6190,25 +6194,25 @@ void Pilot::move(int key)
        else {
 //added by Mike, 20210521
 //----------
-/*
          //added by Mike, 20210725
          if (myLevel2D->isLevel2DCollideWith(this)) {
-            printf(">>>>COLLISION!");
-            myYPos+=stepY; //TO-DO: -update: this to not cause Pilot to be stuck in tile as block
+//            printf(">>>>COLLISION!");
+//            myYPosAsPixel+=stepY*2;
             return;
          }
-*/
-         if (getIsPlayer1()) { //Player1: Unit Chief
-            myYPosAsPixel+=-stepY;
-         }
-         else {
-            myYPosAsPixel+=-stepY/2;
-         }
-		
-         if (bIsExecutingDashArray[KEY_W]) {
-            myYPosAsPixel+=-stepY*2;
-		 }
-//added by Mike, 20210521		
+         else {         
+         			if (getIsPlayer1()) { //Player1: Unit Chief
+            			myYPosAsPixel+=-stepY;
+         			}
+         			else {
+            			myYPosAsPixel+=-stepY/2;
+         			}
+					
+         			if (bIsExecutingDashArray[KEY_W]) {
+            			myYPosAsPixel+=-stepY*2;
+		 					}
+		 		}
+			//added by Mike, 20210521		
 //----------		
        }
 	
@@ -6217,9 +6221,8 @@ void Pilot::move(int key)
 	      if (bIsFiringBeam) {	      	
 		  }
 		  else {
-			  	//removed by Mike, 20210425
-			   //TO-DO: -add: this
-//      		currentFacingState=FACING_UP;		  	
+					//added by Mike, 20210728
+          currentFacingState=FACING_UP;
 		  }
 		  
           currentMovingState=WALKING_MOVING_STATE;
@@ -6237,14 +6240,20 @@ void Pilot::move(int key)
     else if (bIsExecutingKick) {
     }
 	else {
-				
-        if (getIsPlayer1()) { //Player1: Unit Chief
-            myYPosAsPixel+=stepY;
-        }
-        else {
-            myYPosAsPixel+=stepY/2;
-        }
-        
+         //added by Mike, 20210725
+         if (myLevel2D->isLevel2DCollideWith(this)) {
+//            printf(">>>>COLLISION!");
+//            myYPosAsPixel-=stepY*2;  
+            return;
+         }
+         else {				
+        		if (getIsPlayer1()) { //Player1: Unit Chief
+            		myYPosAsPixel+=stepY;
+        		}
+        		else {
+            		myYPosAsPixel+=stepY/2;
+        		}
+				 }        		
 		if ((bIsExecutingDashArray[KEY_S])) {
             myYPosAsPixel+=stepY*2;
 		}
@@ -6254,9 +6263,8 @@ void Pilot::move(int key)
 	      if (bIsFiringBeam) {	      	
 		  }
 		  else {
-			//removed by Mike, 20210425
-		    //TO-DO: -add: this			  
-          	//currentFacingState=FACING_DOWN;
+					//added by Mike, 20210728
+          currentFacingState=FACING_DOWN;
 		  }
 
            currentMovingState=WALKING_MOVING_STATE;
@@ -6280,68 +6288,24 @@ void Pilot::move(int key)
     else if (bIsExecutingKick) {
     }
 	else {
-//added by Mike, 20210504		   
-/*			printf(">> myXPos: %f\n",myXPos);
-			printf(">> stepX: %f\n",stepX);
-*/			
-		
-		//max world left border
-/*		//edited  by Mike, 20210504
-		  //added by Mike, 20201001            
-		  myXPos+=-stepX;
-
-			//added by Mike, 20210127; edited by Mike, 20210128
-	//			if (bIsExecutingDash) {
-			if ((bIsExecutingDashArray[KEY_A])) {		
-				myXPos+=-stepX;
-			}
-*/		
-		
-//edited by Mike, 20210521
-/*		
-		//do not execute step if already at border
-		if ((myXPos) <= -21.0f) {
-		}
-		else {
-				//added by Mike, 20201001            
-				myXPos+=-stepX;
-
-				//added by Mike, 20210127; edited by Mike, 20210128
-		//			if (bIsExecutingDash) {
-				if ((bIsExecutingDashArray[KEY_A])) {		
-					myXPos+=-stepX;
-				}
-		}
-*/
-        /*  //removed by Mike, 20210725; TO-DO: -update: this due to causes segmentation fault
-        //added by Mike, 20210725
-        if (myLevel2D->isLevel2DCollideWith(this)) {
-            printf(">>>>COLLISION!");
-            myXPos+=stepX*2; //TO-DO: -update: this to not cause Pilot to be stuck in tile as block
+         //added by Mike, 20210728
+         if (myLevel2D->isLevel2DCollideWith(this)) {
+//            printf(">>>>COLLISION!");
+//        		myXPosAsPixel+=stepX*2;  
             return;
-        }
-*/
-        
-				//edited by Mike, 20210604
-//		myXPos+=-stepX;
-
+         }
+         else {
 				//edited by Mike, 20210727
 				//TO-DO: -add: acceleration
 //        myXPosAsPixel+=-stepX*2;
-        myXPosAsPixel+=-stepX;
-
-//	      myXPosAsPixel+=-iStepXAsPixel;
-		
+        	myXPosAsPixel+=-stepX;
 			
-		if ((bIsExecutingDashArray[KEY_A])) {		
-				//edited by Mike, 20210527
-		myXPosAsPixel+=-stepX;
-//	      myXPosAsPixel+=-iStepXAsPixel;
-		}
-		
+					if ((bIsExecutingDashArray[KEY_A])) {		
+							//edited by Mike, 20210527
+						myXPosAsPixel+=-stepX;
+					}
+				}					
 	}
-
-
 	
 /*          
           char str[700];                                       
@@ -6378,76 +6342,42 @@ void Pilot::move(int key)
             thrust+=0.1f;
 */
 
-	//added by Mike, 20210111
-	if (bIsExecutingPunch) {
-	}
-	//added by Mike, 20210121
-	else if (bIsExecutingDefend) {
-	}
-    //added by Mike, 20210613
-    else if (bIsExecutingKick) {
-    }
-	else {
-/* //edited by Mike, 20210504		
-          //added by Mike, 20201001            
-	      myXPos+=stepX;
-
-		//added by Mike, 20210126; edited by Mike, 20210128
-//			if (bIsExecutingDash) {
-			if ((bIsExecutingDashArray[KEY_D])) {
-				myXPos+=stepX;
-			}
-*/
-//edited by Mike, 20210521
-/*				
-//		printf("myXPos: %f",myXPos);
-		//do not execute step if already at border
-		if ((myXPos) >= 4.0f) {
-		}
-		else {
-	      	myXPos+=stepX;
-
-			if ((bIsExecutingDashArray[KEY_D])) {
-				myXPos+=stepX;
-			}
-		}	
-*/
-        
-/*  //removed by Mike, 20210725; TO-DO: -update: this due to causes segmentation fault
-        //added by Mike, 20210725
-        if (myLevel2D->isLevel2DCollideWith(this)) {
-            printf(">>>>COLLISION!");
-            myXPos+=-stepX*2; //TO-DO: -update: this to not cause Pilot to be stuck in tile as block
-            return;
-        }
-*/
-        
-        //edited by Mike, 20210604
-//		myXPos+=stepX;
-//      myXPosAsPixel+=iStepXAsPixel;
-
-				//edited by Mike, 20210727
-				//TO-DO: -add: acceleration
-        //myXPosAsPixel+=stepX*2;
-        myXPosAsPixel+=stepX;
-		
-
-		if ((bIsExecutingDashArray[KEY_D])) {
-				//edited by Mike, 20210527
-		myXPosAsPixel+=stepX;
-//	      myXPosAsPixel+=iStepXAsPixel;
-		}		
-	}
-		   
-		   
-
-	      //added by Mike, 20201201; edited by Mike, 20201225
-          //currentFacingState=FACING_RIGHT;
-	      if (bIsFiringBeam) {	      	
-		  }
-		  else {
-          	currentFacingState=FACING_RIGHT;
-		  }
+				//added by Mike, 20210111
+				if (bIsExecutingPunch) {
+				}
+				//added by Mike, 20210121
+				else if (bIsExecutingDefend) {
+				}
+    		//added by Mike, 20210613
+    		else if (bIsExecutingKick) {
+    		}
+				else {
+      			//added by Mike, 20210728
+      			if (myLevel2D->isLevel2DCollideWith(this)) {
+			//            printf(">>>>COLLISION!");
+//        			myXPosAsPixel+=-stepX*2;			
+        			return;
+      			}
+      			else {
+							//edited by Mike, 20210727
+							//TO-DO: -add: acceleration
+        			//myXPosAsPixel+=stepX*2;
+        			myXPosAsPixel+=stepX;
+					
+							if ((bIsExecutingDashArray[KEY_D])) {
+								//edited by Mike, 20210527
+								myXPosAsPixel+=stepX;
+							}		
+						}
+				}
+		   		
+	  		//added by Mike, 20201201; edited by Mike, 20201225
+        		//currentFacingState=FACING_RIGHT;
+	  		if (bIsFiringBeam) {	      	
+				}
+				else {
+          		currentFacingState=FACING_RIGHT;
+				}
 		  
            //edited by Mike, 20210613
            currentMovingState=WALKING_MOVING_STATE;
