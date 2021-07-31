@@ -1083,6 +1083,11 @@ TO-DO: -update: this<br/>
 --> Elementary School level; Command & Conquer: Red Alert OK<br/>
 --> Tune: Escaflowne?<br/>
 --> remembers: Mecha Robot Battle with flowing capes in Opening/Introduction of Animation<br/>
+--> Additional Note:<br/>
+--> Heroes of Might and Magic IV: Equilibris<br/>
+--> Illustration with Dragon, Unit, Snow; reminds: me of Fantasy fiction novel<br/>
+--> book main content in text format, i.e. string of characters<br/>
+--> Dragon Quest 1 (family computer) Illustration?<br/>
 
 ## 1.9) NINTENDO
 ## 1.9.1) INTELLIGENT SYSTEMS + NINTENDO
