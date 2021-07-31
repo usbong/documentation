@@ -1064,6 +1064,26 @@ TO-DO: -update: this<br/>
 ### Recommended Action: 
 --> learn: gambling machine as randomly generating machine to be against human instinct, i.e. create order from chaos.
 
+## 1.8.2) <a href="https://github.com/usbong/KMS">Knowledge Management System (KMS)</a>
+--> repair; speed-up system<br/>
+--> verify; feedback<br/>
+--> search patient, last visit, medical doctor; index cards<br/>
+--> @Information Desk Unit<br/>
+<img src="https://github.com/usbong/KMS/blob/master/Screenshots/viewReportPatientQueue1.png" width="60%"><br/>
+--> duplicate/excess add; bakemono? to be cleared<br/>
+--> step; queue; networked; Information Desk Unit + Cashier Unit<br/>
+--> multiple unit members<br/>
+--> @Cashier Unit<br/>
+<img src="https://github.com/usbong/KMS/blob/master/Screenshots/cashierSearchPatient.png" width="60%"><br/>
+
+### Recommended Action:
+--> verify: <a href="https://www.youtube.com/watch?v=khz0hzseqjQ">Heroes of Might and Magic (GBC) - Let's Play1</a><br/>
+--> Gameboy Color (GBC) version: simplified version<br/>
+--> Personal Computer (PC) version I did not play due to I did not yet understand.<br/>
+--> Elementary School level; Command & Conquer: Red Alert OK<br/>
+--> Tune: Escaflowne?<br/>
+--> remembers: Mecha Robot Battle with flowing capes in Opening/Introduction of Animation<br/>
+
 ## 1.9) NINTENDO
 ## 1.9.1) INTELLIGENT SYSTEMS + NINTENDO
 ## 1.9.1.1) マリオ ストーリー (Mario Story; Japanese version; Year 2000)
