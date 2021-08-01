@@ -1076,18 +1076,42 @@ TO-DO: -update: this<br/>
 --> @Cashier Unit<br/>
 <img src="https://github.com/usbong/KMS/blob/master/Screenshots/cashierSearchPatient.png" width="60%"><br/>
 
-### Recommended Action:
+### Recommended Actions:
 --> verify: <a href="https://www.youtube.com/watch?v=khz0hzseqjQ">Heroes of Might and Magic (GBC) - Let's Play1</a><br/>
 --> Gameboy Color (GBC) version: simplified version<br/>
---> Personal Computer (PC) version I did not play due to I did not yet understand.<br/>
---> Elementary School level; Command & Conquer: Red Alert OK<br/>
---> Tune: Escaflowne?<br/>
+--> Personal Computer (PC) version; I did not play due to I did not yet understand.<br/>
+--> Elementary School level; Command & Conquer: Red Alert (multiplayer) OK<br/>
+--> Heroes of Might and Magic (GBC) Tune: Escaflowne?<br/>
 --> remembers: Mecha Robot Battle with flowing capes in Opening/Introduction of Animation<br/>
---> Additional Note:<br/>
+--> Additional Notes:<br/>
 --> Heroes of Might and Magic IV: Equilibris<br/>
 --> Illustration with Dragon, Unit, Snow; reminds: me of Fantasy fiction novel<br/>
 --> book main content in text format, i.e. string of characters<br/>
+--> book text written in English language; began to read to understand such books only in Middle School;<br/>
+--> learned: not to overly use dictionary for each word that I did not know<br/>
 --> Dragon Quest 1 (family computer) Illustration?<br/>
+--> began to read to understand text Dragon Quest VI in High School;<br/>
+--> text written in nihongo alphabets, e.g. hiragana<br/>
+--> reached: ra- no kagami Tower with friends, Hassan and Mireyu.<br/>
+--> thought: needed to execute level up to finish; stopped<br/>
+--> learned: after returning several years later, can use "rukanan" tokugi,<br/> 
+--> i.e. bukod-tanging kakayanan, to decrease defense of enemy monsters<br/>
+--> learned: tokugi, et cetera explanation in computer explanation book, i.e. computer manual<br/>
+--> verified: FINAL FANTASY TACTICS (PS1; nihongo version) after studying in Japan; College level<br/>
+--> did not yet sufficiently understand nihongo text after attempting to read;<br/>
+--> due to combination of unreadable, albeit understandable kanji<br/>
+--> AND readable, but NOT understandable kudaketa words, e.g. slang?<br/>
+--> where: unreadable = paraan ng pagbigkas<br/>
+--> television screen small also caused the problems?<br/>
+--> needed: dictionary in excess to NOT advance with story<br/>
+--> nihongo level: passes Japanese Language Proficiency Test (JLPT) level 2 of year that I returned from Japan<br/>
+--> Previously played English version to reach Velius Final Boss Battle;<br/>
+--> notified in advance of NO return after save point problem by older sibling<br/>
+--> story in English version also difficult now to remember; gameplay system, learnable as bicycle?<br/>
+--> verify: <a href="https://gamasutra.com/view/news/378886/Video_Great_design_lessons_and_bugs_from_the_making_of_Loop_Hero.php">Loop Hero</a><br/>
+--> with USBONG KMS, if incorrect solution, increases time to finish workload;<br/>
+--> if correct solution, speed-up to decrease time to finish workload?<br/>
+--> time continues until shutdown? No more available resources, e.g. electricity; nature?<br/>
 
 ## 1.9) NINTENDO
 ## 1.9.1) INTELLIGENT SYSTEMS + NINTENDO
