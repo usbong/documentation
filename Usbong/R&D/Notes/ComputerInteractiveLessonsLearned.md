@@ -1093,7 +1093,7 @@ TO-DO: -update: this<br/>
 --> began to read to understand text from Dragon Quest VI in High School;<br/>
 --> DQVI Super Family Computer cartridge; Nobody was buying from store due to in nihongo?<br/>
 --> I buy items even in another language, e.g. nihongo;<br/>
---> usually items nobody was buying; example: second hand books; albeit, within my set price value<br/>
+--> usually, items nobody is buying; example: second hand books; albeit, within my set price value<br/>
 --> text written in nihongo alphabets, e.g. hiragana<br/>
 --> reached: ラーのかがみ (ra- no kagami) Tower with friends, Hassan and Mireyu.<br/>
 --> did not yet understand the story at the time;<br/>
