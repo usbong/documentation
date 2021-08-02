@@ -1054,6 +1054,39 @@ TO-DO: -update: this<br/>
 
 <img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Notes/res/ChineseTraditionalTaiwanLanguageSetting.png" width="90%">
 
+## 1.7.3) FINAL FANTASY TACTICS (PS1; Japanese version; Year 1997)
+--> executed on PlayStation 3 machine<br/>
+昔に帰れて、戦いが終わった時に・・・<br/>
+--> mukashi ni kaerete, tatakai ga owatta toki ni...<br/>
+見習い戦士の自分が「真面目に働いていい・・・」というようなことを言い出す。<br/>
+--> minarai senshi no jibun ga "majimeni hataraite ii..." to iu you na koto wo iidasu.<br/>
+『ムサシ』という仲間が倒れて、時間が切れて、クリスタルになる。<br/>
+--> 『musashi』 to iu nakama ga taorete, jikan ga kirete, kurisutaru ni naru.<br/>
+拾ったら、選択肢があり、「体あたり」か「防御」；　「防御」を選んだが、まだ使えない？<br/>
+--> hirottara, sentakushi ga ari, "karada atari" ka "bougyo"; "bougyo" erandaga, mada tsukaenai?<br/>
+倒した敵は宝箱になる・・・<br/>
+--> taoshita teki ha takarabako ni naru...<br/>
+「おまじない」を使って、攻撃をするかと思った；<br/>
+--> omajinai wo tsukatte, kougeki wo suru ka to omotta;<br/>
+結果:敵を癒して、自分がダメージを受ける。<br/>
+--> kekka: teki wo iyashite, jibun ga dame-ji wo ukeru.<br/>
+もう少し全ての敵を倒すところに、残りの敵がアイテム士として、<br/>
+--> mou sukoshi subete no teki wo taosu tokoroni, nokori no teki ga aitem shi toshite, <br/>
+自分を癒すにはポーションを使って、なかなか終わらないと思ったら･･･<br/>
+jibun wo iyasuniha po-shon wo tsukatte, nakanaka owaranai to omottara...<br/>
+『デリッタ』が「おまじない」を使って、仲間を癒す；　攻撃するかと思った・・・<br/>
+--> 『Deritta』 ga "omajinai" wo tsukatte, nakama wo iyasu; kougekisuru ka to omotta...<br/>
+急速のレベルアップの遣り方？<br/>
+--> kyuusoku no reberu appu no yarikata?<br/>
+戦いは３２分もかかった・・・<br/>
+--> tatakai ha 32fun mo kakatta...<br/>
+あれだけで・・・<br/>
+--> are dake de...<br/>
+スクウェア・？<br/>
+--> sukuuea・?<br/>
+「救えア・」に聞こえる・・・<br/>
+--> "sukuea・"ni kikoeru...<br/>
+
 ## 1.8) USBONG
 ## 1.8.1) Press Print Screen button to capture photograph
 --> Alternating Red and Yellow Boxes;<br/>
