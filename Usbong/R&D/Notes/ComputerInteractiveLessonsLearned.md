@@ -1078,8 +1078,8 @@ jibun wo iyasuniha po-shon wo tsukatte, nakanaka owaranai to omottara...<br/>
 --> 『Deritta』 ga "omajinai" wo tsukatte, nakama wo iyasu; kougekisuru ka to omotta...<br/>
 急速のレベルアップの遣り方？<br/>
 --> kyuusoku no reberu appu no yarikata?<br/>
-戦いは３２分もかかった・・・<br/>
---> tatakai ha 32fun mo kakatta...<br/>
+戦いは33分もかかった・・・<br/>
+--> tatakai ha 33fun mo kakatta...<br/>
 あれだけで・・・<br/>
 --> are dake de...<br/>
 スクウェア・？<br/>
