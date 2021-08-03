@@ -1079,13 +1079,13 @@ Nagiging kahon ng yaman ang tumaob na kalaban...<br/>
 Gagamitin ang "omajinai", akala kong pagsalakay ito.<br/>
 結果:敵を癒して、自分がダメージを受ける。<br/>
 --> kekka: teki wo iyashite, jibun ga dame-ji wo ukeru.<br/>
-Tinaling bunga: Hinilom ang kalaban, tinanggap ng sarili ang damage.<br/>
+Tinaling bunga: Hihilumin ang kalaban, tatanggapin ng sarili ang damage.<br/>
 もう少し全ての敵を倒すところに、残りの敵がアイテム士として、<br/>
 --> mou sukoshi subete no teki wo taosu tokoroni, nokori no teki ga aitem shi toshite, <br/>
 Sa pook na kaunti na lang matataob na ang lahat ng kalaban, ang natirang kalaban, bilang Mag-aaral ng mga Item,<br/>
 自分を癒すにはポーションを使って、なかなか終わらないと思ったら･･･<br/>
 jibun wo iyasuniha po-shon wo tsukatte, nakanaka owaranai to omottara...<br/>
-Upang hilumin ang kanyang sarili, gagamitin ang potion, nang maisip kong hindi na ito matapos...<br/>
+Upang hilumin ang kanyang sarili, gagamitin ang potion, nang maisip kong hindi na ito matatapos...<br/>
 『ディリータ』が「おまじない」を使って、仲間を癒す；　攻撃するかと思った・・・<br/>
 -->『Dexiri-ta』 ga "omajinai" wo tsukatte, nakama wo iyasu; kougekisuru ka to omotta...<br/>
 Si 『Dexiri-ta』, gagamitin ang "omajinai", hihilumin ang kasamahan; Akala ko sasalakayin niya...<br/>
