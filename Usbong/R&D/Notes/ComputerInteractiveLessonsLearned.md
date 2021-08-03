@@ -1058,34 +1058,52 @@ TO-DO: -update: this<br/>
 --> executed on PlayStation 3 machine<br/>
 昔に帰れて、戦いが終わった時に・・・<br/>
 --> mukashi ni kaerete, tatakai ga owatta toki ni...<br/>
+Uuwi sa nakaraan, sa panahong wakas na ang pakikipaglaban...<br/>
 見習い戦士の自分が「真面目に働いていい・・・」というようなことを言い出す。<br/>
 --> minarai senshi no jibun ga "majimeni hataraite ii..." to iu you na koto wo iidasu.<br/>
+Palabas na sasabihin ng kanyang sarili na Makita Matutong Mag-aaral ng Pakikipaglaban, "Ayos ang maghanap-buhay nang tunay, i.e. majime; tunay harap mata."<br/> 
+<br/>
+&ast; &ast; &ast; &ast; &ast;<br/>
+<br/>
 『ムサシ』という仲間が倒れて、時間が切れて、クリスタルになる。<br/>
 --> 『musashi』 to iu nakama ga taorete, jikan ga kirete, kurisutaru ni naru.<br/>
-拾ったら、選択肢があり、「体あたり」か「防御」；　「防御」を選んだが、まだ使えない？<br/>
+Tataob ang kasamahang may ngalan na 『MUSASHI』, naputol ang loob ng panahon, nagiging crystal.<br/>
+拾ったら、選択肢があり、「体あたり」か「防御」；「防御」を選んだが、まだ使えない？<br/>
 --> hirottara, sentakushi ga ari, "karada atari" ka "bougyo"; "bougyo" erandaga, mada tsukaenai?<br/>
+Pagkadampot, may pagpipilian, "Tamaan ng katawan" o "Pagsangga"; Bagama't pinili ang "Pagsangga", hindi pa magagamit?<br/> 
 倒した敵は宝箱になる・・・<br/>
 --> taoshita teki ha takarabako ni naru...<br/>
-「おまじない」を使って、攻撃をするかと思った；<br/>
---> omajinai wo tsukatte, kougeki wo suru ka to omotta;<br/>
+Nagiging kahon ng yaman ang tumaob na kalaban...<br/>
+「おまじない」を使って、攻撃をするかと思った。<br/>
+--> "omajinai" wo tsukatte, kougeki wo suru ka to omotta.<br/>
+Gagamitin ang "omajinai", akala kong pagsalakay ito.<br/>
 結果:敵を癒して、自分がダメージを受ける。<br/>
 --> kekka: teki wo iyashite, jibun ga dame-ji wo ukeru.<br/>
+Tinaling bunga: Hinilom ang kalaban, tinanggap ng sarili ang damage.<br/>
 もう少し全ての敵を倒すところに、残りの敵がアイテム士として、<br/>
 --> mou sukoshi subete no teki wo taosu tokoroni, nokori no teki ga aitem shi toshite, <br/>
+Sa pook na kaunti na lang matataob na ang lahat ng kalaban, ang natirang kalaban, bilang Mag-aaral ng mga Item,<br/>
 自分を癒すにはポーションを使って、なかなか終わらないと思ったら･･･<br/>
 jibun wo iyasuniha po-shon wo tsukatte, nakanaka owaranai to omottara...<br/>
-『デリッタ』が「おまじない」を使って、仲間を癒す；　攻撃するかと思った・・・<br/>
---> 『Deritta』 ga "omajinai" wo tsukatte, nakama wo iyasu; kougekisuru ka to omotta...<br/>
+Upang hilumin ang kanyang sarili, gagamitin ang potion, nang maisip kong hindi na ito matapos...<br/>
+『ディリータ』が「おまじない」を使って、仲間を癒す；　攻撃するかと思った・・・<br/>
+-->『Dexiri-ta』 ga "omajinai" wo tsukatte, nakama wo iyasu; kougekisuru ka to omotta...<br/>
+Si 『Dexiri-ta』, gagamitin ang "omajinai", hihilumin ang kasamahan; Akala ko sasalakayin niya...<br/>
 急速のレベルアップの遣り方？<br/>
 --> kyuusoku no reberu appu no yarikata?<br/>
+Paraan ng mabilis na level up?<br/>
 戦いは33分もかかった・・・<br/>
---> tatakai ha 33fun mo kakatta...<br/>
+--> tatakai ha 33pun mo kakatta...<br/>
+Gagamit ang pakikipaglaban ng 33 hati, i.e. minutos...<br/>
 あれだけで・・・<br/>
 --> are dake de...<br/>
+Sa gano'n lamang...<br/>
 スクウェア・？<br/>
 --> sukuuea・?<br/>
+square・?<br/>
 「救えア・」に聞こえる・・・<br/>
 --> "sukuea・"ni kikoeru...<br/>
+"Iligtas a・", i.e. balik sa simula ang madirinig...<br/>
 
 ## 1.8) USBONG
 ## 1.8.1) Press Print Screen button to capture photograph
