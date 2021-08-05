@@ -1088,7 +1088,7 @@ jibun wo iyasuniha po-shon wo tsukatte, nakanaka owaranai to omottara...<br/>
 Upang hilumin ang kanyang sarili, gagamitin ang potion, nang maisip kong hindi na ito matatapos...<br/>
 『ディリータ』が「おまじない」を使って、仲間を癒す；　攻撃するかと思った・・・<br/>
 -->『Dexiri-ta』 ga "omajinai" wo tsukatte, nakama wo iyasu; kougekisuru ka to omotta...<br/>
-Si 『Dexiri-ta』, i.e. "Deli-ta", gagamitin ang "omajinai", hihilumin ang kasamahan; Akala ko sasalakayin niya...<br/>
+Si 『Dexiri-ta』, i.e. "Dili-ta", gagamitin ang "omajinai", hihilumin ang kasamahan; Akala ko sasalakayin niya...<br/>
 急速のレベルアップの遣り方？<br/>
 --> kyuusoku no reberu appu no yarikata?<br/>
 Paraan ng mabilis na level up?<br/>
