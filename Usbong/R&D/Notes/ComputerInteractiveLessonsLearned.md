@@ -1069,7 +1069,7 @@ Palabas na sasabihin ng kanyang sarili na Makita Matutong Mag-aaral ng Pakikipag
 --> 『musashi』 to iu nakama ga taorete, jikan ga kirete, kurisutaru ni naru.<br/>
 Tataob ang kasamahang may ngalan na 『MUSASHI』, naputol ang loob ng panahon, nagiging crystal.<br/>
 拾ったら、選択肢があり、「体あたり」か「防御」；「防御」を選んだが、まだ使えない？<br/>
---> hirottara, sentakushi ga ari, "karada atari" ka "bougyo"; "bougyo" erandaga, mada tsukaenai?<br/>
+--> hirottara, sentakushi ga ari, "karada atari" ka "bougyo"; "bougyo" wo erandaga, mada tsukaenai?<br/>
 Pagkadampot, may pagpipilian, "Tamaan ng katawan" o "Pagsangga"; Bagama't pinili ang "Pagsangga", hindi pa magagamit?<br/> 
 倒した敵は宝箱になる・・・<br/>
 --> taoshita teki ha takarabako ni naru...<br/>
@@ -1088,13 +1088,13 @@ jibun wo iyasuniha po-shon wo tsukatte, nakanaka owaranai to omottara...<br/>
 Upang hilumin ang kanyang sarili, gagamitin ang potion, nang maisip kong hindi na ito matatapos...<br/>
 『ディリータ』が「おまじない」を使って、仲間を癒す；　攻撃するかと思った・・・<br/>
 -->『Dexiri-ta』 ga "omajinai" wo tsukatte, nakama wo iyasu; kougekisuru ka to omotta...<br/>
-Si 『Dexiri-ta』, gagamitin ang "omajinai", hihilumin ang kasamahan; Akala ko sasalakayin niya...<br/>
+Si 『Dexiri-ta』, i.e. "Deli-ta", gagamitin ang "omajinai", hihilumin ang kasamahan; Akala ko sasalakayin niya...<br/>
 急速のレベルアップの遣り方？<br/>
 --> kyuusoku no reberu appu no yarikata?<br/>
 Paraan ng mabilis na level up?<br/>
 戦いは33分もかかった・・・<br/>
 --> tatakai ha 33pun mo kakatta...<br/>
-Gagamit ang pakikipaglaban ng 33 hati, i.e. minutos...<br/>
+Gagamit ang pakikipaglaban ng 33hati, i.e. minutos...<br/>
 あれだけで・・・<br/>
 --> are dake de...<br/>
 Sa gano'n lamang...<br/>
