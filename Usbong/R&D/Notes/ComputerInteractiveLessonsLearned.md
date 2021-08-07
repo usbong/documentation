@@ -47,6 +47,9 @@ TO-DO: -update: this<br/>
 --> verified: result to be equal with Nintendo Dual Screen (DS) Lite<br/>
 --> <b>Recommended Actions:</b><br/> 
 --> verify: this result during Boss battle, e.g. boxer M.BISON; Computer as M.BISON immediately attacks<br/>
+--> 始まったとん、先に攻撃すると、びっくり・・・相手が追いかける状態となる。<br/>
+--> hajimattatotan, saki ni kougekusuruto, bikkuri… aite ga oikakeru joutai to naru.<br/>
+--> Kasisimula pa lamang, agad na unang sasalakay, i.e. sugod tama, nakagugulat… magiging pook kung saan maghahabol ang katunggali.<br/>
 --> verify: speed-up to be hyper after opening and closing PSP lid<br/>
 
 ### 1.1.5) Capcom vs SNK 2: Millionaire Fighting 2001
