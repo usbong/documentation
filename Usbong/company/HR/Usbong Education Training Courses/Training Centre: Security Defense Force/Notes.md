@@ -667,3 +667,24 @@ Example Japanese Alphabet: <a href="https://docs.google.com/viewer?a=v&pid=sites
 <br/>
 --> <b>Paalala:</b> Ang patay, talagang patay.<br/>
 --> Gayunpaman, maaari nating tingalain ang Bayani bilang paalala sa kakayanan ng tao.<br/>
+
+### Part 22: electric consent AND 電波 (dempa, i.e. electric wave)
+--> verified: electric consent to receive without permit excess wireless electric wave<br/>
+--> wireless electric wave from the budol-budol/manloloko/carnapper/cybercriminal terrorist group<br/>
+--> who use as weapon wireless broadcasting technology<br/>
+--> electric consent details: input 15A 250V~<br/>
+--> where: tilde symbol, i.e. "~", is 250V or more<br/>
+--> reminder: 15A is max that electricity can flow as current; over it destroys consent<br/>
+--> A as Amperes also used with Computer Monitor wired cable to receive W, i.e. Power;<br/>
+--> V as Voltage; V * A = W<br/>
+--> example#1: 240 * 15 = 3,300 max output<br/>
+--> example#2: 80W = 12A * 6.66V; 80W max output<br/>
+--> output: electricity fluctuation leading to machine malfunction, noise pollution, and physical injury<br/>
+--> reminder: excess electricity received by devices with radio technology causes increase in volume<br/>
+--> example device with radio technology#1: music radio with antenna<br/>
+--> example device with radio technology#2: moving vehicle radio with antenna/antennae <br/>
+--> example device with radio technology#3: cellular telephone transceiver, i.e. receiver and transmitter<br/>
+--> reminder: excess electricity received by television causes increase in brightness output<br/>
+--> reminder: excess electricity received by Automatic Voltage (AV) regulator causes its gauge to swing and make sound<br/>
+--> filed: incident report with MERALCO, Marikina City<br/>
+--> electric wave; 電波 dempa<br/>
