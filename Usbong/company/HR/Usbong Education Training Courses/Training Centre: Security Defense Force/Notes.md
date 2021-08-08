@@ -672,6 +672,9 @@ Example Japanese Alphabet: <a href="https://docs.google.com/viewer?a=v&pid=sites
 --> verified: electric consent to receive without permit excess wireless electric wave<br/>
 --> wireless electric wave from the budol-budol/manloloko/carnapper/cybercriminal terrorist group<br/>
 --> who use as weapon wireless broadcasting technology<br/>
+<br/>
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/company/HR/Usbong%20Education%20Training%20Courses/Training%20Centre:%20Security%20Defense%20Force/res/electricConsentReceivesWirelessElectricWave.jpg" width="40%">
+<br/>
 --> electric consent details: input 15A 250V~<br/>
 --> where: tilde symbol, i.e. "~", is 250V or more<br/>
 --> reminder: 15A is max that electricity can flow as current; over it destroys consent<br/>
