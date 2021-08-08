@@ -691,3 +691,17 @@ Example Japanese Alphabet: <a href="https://docs.google.com/viewer?a=v&pid=sites
 --> reminder: excess electricity received by Automatic Voltage (AV) regulator causes its gauge to swing and make sound<br/>
 --> filed: incident report with MERALCO, Marikina City<br/>
 --> electric wave; 電波 dempa<br/>
+--> <b>Example Physical Injuries:</b> both knees after falling to the ground; Executed as defense to prevent hitting head<br/>
+<br/>
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/company/HR/Usbong%20Education%20Training%20Courses/Training%20Centre:%20Security%20Defense%20Force/res/examplePhysicalInjuriesSyson%2CMichaelBKnee1_20201021.jpg" width="20%">
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/company/HR/Usbong%20Education%20Training%20Courses/Training%20Centre:%20Security%20Defense%20Force/res/examplePhysicalInjuriesSyson%2CMichaelBKnee2_20201021.jpg" width="20%">
+<br/>
+--> <b>Date:</b> 2020-10-21;<br/>
+--> <b>Reference Point:</b> after requesting assistance from 'Amang' Rodriguez Memorial Medical Center<br/>
+--> This action is as recommended by Public Attorney's Office (PAO), Marikina City.<br/>
+--> identified: in particular, Ryan Syson and Ramon Syson,<br/>
+who again misused wireless broadcasting technology as weapon of attack to cause physical injuries<br/>
+--> <b>Mungkahing Aksyon:</b> Puksain ang mga Teroristang Komunista<br/>
+--> <b>Reminder:</b> SYSON, RYAN is son of SYSON, RAMON;<br/>
+--> SYSON, RAMON is younger brother of Dr. SYSON, PEDRO<br/>
+--> I, SYSON, MICHAEL B., am the second son of Dr. SYSON, PEDRO.<br/>
