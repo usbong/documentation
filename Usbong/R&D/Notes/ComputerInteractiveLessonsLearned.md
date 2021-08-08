@@ -114,7 +114,7 @@ TO-DO: -update: this<br/>
 
 ### 1.1.7) Street Fighter Zero
 --> PlayStation version (Year 1995); executed on PlayStation3 machine<br/>
---> set difficult level to 6 stars; where 8 is highest<br/>
+--> set difficulty level to 6 stars; where 8 is highest<br/>
 --> set speed to "SPEEDY", "T2"; fastest<br/>
 --> In match, WINNING state can quickly become you LOSE<br/>
 --> you "LOO", instead of you "LOSE"; Samurai Spirits' SHOU（勝）, <br/>
@@ -261,6 +261,69 @@ TO-DO: -update: this<br/>
 --> Kahit sa loob ng paligsahan, gumagawa ng nakasasagabal na suliranin sa paghinga, atbp ang mga budol-budol/manloloko/carnapper/cybercriminal/communist terrorist group.<br/>
 --> <b>Paalala:</b> May ugnayan ang mga ito: Ear, Nose, Throat (ENT)<br/>
 --> <b>Sanhi:</b> Quick Money.<br/>
+
+### 1.1.8) Street Fighter Zero 2
+--> Executed on Nintendo Switch Lite, et cetera<br/>
+--> set difficulty level to 6 stars; where 8 is highest<br/>
+--> Select Fighters difficult to finish All matches<br/>
+--> Adon, Ryuu, Sagat, Chun-Li… ends up with Rolento (USA)<br/>
+--> Chun-Li’s 気功拳（kikouken; kaluluwa bilis+lakas kamao）attack COMMAND now executed via DOWN, FORWARD + PUNCH<br/>
+--> Previously, BACK (tame, i.e. Charge), FORWARD + PUNCH<br/>
+--> Maaalala ang pakikipaglaban kasama si Chun-Li… <br/>
+--> DOWN, BACK + PUNCH/KICK easier to execute?<br/>
+--> paraan upang magapi si Chun-Li: Counter-attack<br/>
+--> Kapag sumalakay siya, gamitin ang GUARD Command, pagkatapos nito…<br/>
+--> 1.1.7.1) Malakas na Suntok sa Ibaba o Katamtamang Suntok sa Ibaba<br/>
+--> paalala: Sandata ang ginagamit ni Rolento sa halip na Suntok.<br/>
+--> where: Sandata = ぼう (bou) /stick/pamalo, hango sa Arnis, bagama’t isa lamang;<br/>
+--> Gumagamit din ang Pilipinong Pulis nito.<br/>
+--> 1.1.7.2) COUNTER-ATTACK Command gamit ang Katamtamang Suntok<br/>
+--> where: command = BACK, DOWN + Punch<br/>
+<br/>
+--> Maaalala ang pakikipaglaban kasama si Zangief… <br/>
+--> paraan upang magapi si Zangief: <br/>
+--> Malakas na Suntok sa ibaba<br/>
+--> paalala: Kailangan ang wastong panahon ng pagsalakay,<br/>
+--> i.e. hintaying lumapit si Zangief upang sumalakay,<br/>
+--> saka gamitan ng Malakas na Suntok sa ibaba;<br/>
+--> May sukat din ng layo ang pamalo ni Rolento<br/>
+<br/>
+--> Maaalala ang pakikipaglaban kasama si Bega… <br/>
+--> paraan upang magapi si Bega (sa Brazil): <br/>
+--> Talong pagsalakay gamit ang Malakas na Sipa, pagkatapos…<br/>
+--> Malakas na Suntok sa Ibaba<br/>
+--> paalala: Kailangan ang wastong panahon ng pagsalakay,<br/>
+--> i.e. hintayin kung saan nakatayo si Bega at matatamaan ng iyong talong pagsalakay<br/>
+--> batay sa sukat ng layo;<br/>
+--> paalala: sumasalakay din si Bega, kahit tinamaan<br/>
+--> Hindi kasing hirap gapiin si Bega sa Street Fighter Zero 2, kaysa sa Zero 1.<br/>
+<br/>
+--> Maaalala ang pakikipaglaban kasama si Guy (ang huling katunggali ni Rolento)…<br/>
+--> paraan upang magapi si Guy (sa USA), katulad ng kay Zangief: <br/>
+--> Malakas na Suntok sa ibaba<br/>
+--> paalala: Kailangan ang wastong panahon ng pagsalakay,<br/>
+--> i.e. hintaying lumapit si Guy upang sumalakay,<br/>
+--> saka gamitan ng Malakas na Suntok sa ibaba;<br/>
+--> May sukat din ng layo ang pamalo ni Rolento<br/>
+<br/>
+<b>Dagdag na Sulatin:</b><br/>
+--> Did NOT play X-men: Children of the Atom at the Arcade Game Center<br/>
+--> Played Marvel Super Heroes at the Arcade Game Center, albeit quickly lost to Computer; stopped<br/>
+--> Did NOT play Marvel Super Heroes vs Street Fighter at the Arcade Game Center<br/>
+--> Did NOT play X-men vs Street Fighter at the Arcade Game Center<br/>
+--> Played Marvel Super Heroes vs Capcom at the Arcade Game Center, albeit quickly lost to Human; stopped<br/>
+--> Did NOT play Marvel Super Heroes vs Capcom 2 at the Arcade Game Center, <br/>
+--> albeit invited to verify game at friend’s house; friend had Sega Dreamcast<br/>
+-->　調べてる：ストリートファイターシリーズとこのゲームの違い<br/>
+なぜストリートファイターシリーズほど遊ばなかったか・・・<br/>
+ゲームプレイに関する理由：<br/>
+ジャンプがやりすぎて、飛んだら、相手がP１かP２しか見れない状態<br/>
+あると、ジャンプ＋コンボができるようになるが、<br/>
+これで、ゲームプレイが変わる・・・<br/>
+このゲームプレイでよくできる人たちもいるが、<br/>
+見かけた同学校の二人がハイスクールから<br/>
+卒業できなかった記憶ある。<br/>
+卒業できたら、ギリギリ。<br/>
 
 ### 1.1.8) GHOSTS'N GOBLINS
 --> Arcade; Family Computer (Year 1985);<br/>
