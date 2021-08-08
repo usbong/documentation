@@ -489,14 +489,53 @@ secreto bidimensionalという<br/>
 --> Gumagamit din ang Pilipinong Pulis nito.<br/>
 --> 1.1.9.2) COUNTER-ATTACK Command gamit ang Katamtamang Suntok<br/>
 --> where: command = BACK, DOWN + Punch<br/>
+--> <b>Dagdag:</b> Maaari nating gawan ng classification ang paliwanag sa kompyuter bilang “Artificial Intelligence” gamit ang mga ito:<br/>
+--> 賢い（かしこい；kashikoi, i.e. Matalino): Umaakma ang kompyuter sa ginagawa ng Tao upang hindi ito agad na magapi;<br/>
+--> <b>Halimbawa:</b> Kapag natuklasan ng Tao ang paggamit ng COUNTER-ATTACK, ihihinto nito ang ginagawa nitong talong pagsalakay.<br/>
+--> "kashikoi"; tunog: CASH “koi” to signify “Come!”, i.e. “Pumunta ka rito!”<br/>
+--> ずるい (zurui OR dzurui, i.e. Tuso): Mapapansin ng Tao na ang karaniwang tatama, hindi dahil sa pagkagawa ng daigdig;<br/>
+--> <b>Halimbawa:</b> Kapag ginamit ng Tao ang COUNTER-ATTACK, hindi tatamaan si Chun-Li;<br/>
+--> Sa halip, lilipat siya sa likod niya at gagawa ng pagsalakay.<br/>
+<br/>
+--> Maaalala ang pakikipaglaban kasama si Dan…<br/>
+--> <b>background illustration:</b> sa isang palengke, sa Hong Kong;<br/>
+--> <b>background music:</b> tunog na kung saan hango sa Suikoden ang simula;<br/>
+--> <b>halimbawa:</b> Ang paglalaro gamit ang サイコロ（saikoro, i.e. dice）; gamble?<br/>
+--> <b>paalala:</b> Kahit ang Tourist Guide sa Hong Kong bago sumapit ang Taong 2008,<br/>
+--> inaaming mahilig ang mga taga-Hong Kong sa mga laro ng “chance”,<br/>
+--> i.e. random; bagama’t sa pag-aaral ng kompyuter,<br/>
+--> matututunan nating hindi ito random, sapagkat may ginagamit itong pattern,<br/>
+--> e.g. nakabatay sa panahon tulad ng sa “Random Access Memory (RAM)”;<br/>
+--> <b>paalala:</b> gambling machine = “randomly” generating machine that is against human instinct, i.e. create order from chaos.<br/>
+--> <b>paalala:</b> Daungan, i.e. Port, ng mga barko ang Hong Kong; gayundin ang Singapore.<br/>
+--> Isang paraan ang mga pook na ito upang makapasok ang mga bagay-bagay sa Mainland China.<br/>
+--> Isa rin itong paraan upang maibenta ng Mainland China ang kanilang mga bagay-bagay<br/>
+--> sa mga bansa tulad ng sa Europa at Amerika, partikular ang USA.<br/>
 <br/>
 --> Maaalala ang pakikipaglaban kasama si Zangief… <br/>
---> paraan upang magapi si Zangief: <br/>
+--> paraan upang magapi si Zangief (sa Russia): <br/>
 --> Malakas na Suntok sa ibaba<br/>
 --> paalala: Kailangan ang wastong panahon ng pagsalakay,<br/>
 --> i.e. hintaying lumapit si Zangief upang sumalakay,<br/>
 --> saka gamitan ng Malakas na Suntok sa ibaba;<br/>
 --> May sukat din ng layo ang pamalo ni Rolento<br/>
+--> <b>Dagdag:</b> Kapag nakalaban mo naman si Sagat, pagkatapos ni Zangief, maaari mong mapansing mukhang pumayat si Sagat;<br/>
+--> <b>paalala:</b> Sa Street Fighter Zero 1, maaari naman nating mapansing mukhang tumaba si Sagat.<br/>
+<br/>
+--> Maaalala ang pakikipaglaban kasama si Birdie…<br/>
+--> paraan upang magapi si Birdie (sa England):<br/>
+--> Gamitin ang paraan upang magapi si Zangief:<br/> 
+--> Malakas na Suntok sa ibaba<br/>
+--> paalala: Kailangan ang wastong panahon ng pagsalakay,<br/>
+--> i.e. hintaying lumapit si Birdie upang sumalakay,<br/>
+--> saka gamitan ng Malakas na Suntok sa ibaba;<br/>
+--> May sukat din ng layo ang pamalo ni Rolento<br/>
+--> Halimbawa ng pagsalakay ni Birdie:<br/>
+--> ブルヘッド(buruheddo; Bull Head), i.e. pagsalakay gamit ang kanyang Ulo;<br/>
+--> May tatlong nibel ito; Sunud-sunod na gagawin ito ni Birdie papalakas, i.e. "1", "2", "3".<br/>
+--> Kapag tapos na siya, saka gamitan ng Malakas na Suntok sa ibaba.<br/>
+--> <b>paalala:</b> Tulad ng sa Street Fighter Zero 1, kapag iniba mo ang pamamaraan,<br/>
+--> e.g. subukang gamitin ang SUPER, madali ka niyang magagapi.<br/>
 <br/>
 --> Maaalala ang pakikipaglaban kasama si Bega… <br/>
 --> paraan upang magapi si Bega (sa Brazil): <br/>
