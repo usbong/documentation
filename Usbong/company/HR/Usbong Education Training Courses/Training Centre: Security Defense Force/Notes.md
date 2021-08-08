@@ -680,7 +680,7 @@ Example Japanese Alphabet: <a href="https://docs.google.com/viewer?a=v&pid=sites
 --> reminder: 15A is max that electricity can flow as current; over it destroys consent<br/>
 --> A as Amperes also used with Computer Monitor wired cable to receive W, i.e. Power;<br/>
 --> V as Voltage; V * A = W<br/>
---> example#1: 240 * 15 = 3,300 max output<br/>
+--> example#1: 220 * 15 = 3,300 max output<br/>
 --> example#2: 80W = 12A * 6.66V; 80W max output<br/>
 --> output: electricity fluctuation leading to machine malfunction, noise pollution, and physical injury<br/>
 --> reminder: excess electricity received by devices with radio technology causes increase in volume<br/>
@@ -697,8 +697,8 @@ Example Japanese Alphabet: <a href="https://docs.google.com/viewer?a=v&pid=sites
 <img src="https://github.com/usbong/documentation/blob/master/Usbong/company/HR/Usbong%20Education%20Training%20Courses/Training%20Centre:%20Security%20Defense%20Force/res/examplePhysicalInjuriesSyson%2CMichaelBKnee2_20201021.jpg" width="20%">
 <br/>
 --> <b>Date:</b> 2020-10-21;<br/>
---> <b>Reference Point:</b> after requesting assistance from 'Amang' Rodriguez Memorial Medical Center<br/>
---> This action is as recommended by Public Attorney's Office (PAO), Marikina City.<br/>
+--> <b>Reference Point:</b> after requesting assistance from 'Amang' Rodriguez Memorial Medical Center,<br/>
+--> as recommended by Public Attorney's Office (PAO), Marikina City.<br/>
 --> identified: in particular, Ryan Syson and Ramon Syson,<br/>
 who again misused wireless broadcasting technology as weapon of attack to cause physical injuries<br/>
 --> <b>Mungkahing Aksyon:</b> Puksain ang mga Teroristang Komunista<br/>
