@@ -845,6 +845,19 @@ PA-N (pangalan ng iyong kaibigan)<br/>
 --> Nagawa rin ng isa pang kasamahan sa pangkat ang paliwanag sa kompyuter na isulat ang Ranking sa Internet.<br/>
 --> Nakabatay ang Ranking sa bilang ng mga halimaw na mapupuksa.<br/>
 --> Ihihinto ang C:LOS, at gagawa muli ng daigdig.<br/>
+<br/>
+--> <b>Mungkahing Siyasatin:<b>
+1) Arcade Game: Robotron 2084 (1982 Williams)<br/>
+--> https://www.youtube.com/watch?v=l800GL6NQPY; last accessed: 20210809<br/>
+--> verify: story AND gameplay<br/>
+--> story; Konami Simpson's Arcade?<br/>
+2) Ratchet Deadlocked Gameplay Walkthrough Part 1 Dreadzone Station<br/> 
+--> & Catacrom Four - PS2 Lets Play<br/>
+https://www.youtube.com/watch?v=mWya9BLs91o; last accessed: 20210809<br/>
+--> @42:00 (HH:MM) Robot Vehicle; Four legs
+3) TitanFall<br/>
+4) Usbong Automotive: Pilot Mecha Robotship<br/>
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Automotive/UsbongAutomotive/screenshots/UsbongAutomotiveV20210205T1703.gif" width="30%">	
 
 ## 1.4) SONY Computer Entertainment Europe and Guerrilla
 ### 1.4.1) KillZone 2
