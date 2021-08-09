@@ -705,3 +705,39 @@ who again misused wireless broadcasting technology as weapon of attack to cause 
 --> <b>Reminder:</b> SYSON, RYAN is son of SYSON, RAMON;<br/>
 --> SYSON, RAMON is younger brother of Dr. SYSON, PEDRO<br/>
 --> I, SYSON, MICHAEL B., am the second son of Dr. SYSON, PEDRO.<br/>
+
+### Part 23: BMI: Body Mass Index = 体格指数 (katawan maramihang turong bilang)
+BMI＝体重［kg］/ 身長［m]^2 ≧ 25のもの<br/>
+where: BMI = Body Mass Index<br/>
+体重 (taijuu) =  katawan bigat<br/>
+身長 (shinchou) = katawan haba<br/>
+<br/>
+<b>Example:</b> 80kg / (1.80mm)^2 = 24.69<br/>
+<b>Reminder:</b> 180cm = 1.80mm<br/>
+<b>Reminder:</b> 18.5 ≦～＜25 普通体重 (futsuu taijuu; ordinary body weight); Normal Range<br/>
+<br/>
+<b>Dagdag na Sanggunian:</b><br/>
+1) http://www.jasso.or.jp/data/magazine/pdf/chart_A.pdf; last accessed: 20210809<br/>
+日本肥満学会　(nihon himan gakkai)<br/>
+Japan Society for the Study of Obesity<br/>
+<br/>
+<b>Mungkahing Aksyon:</b><br/>
+1) verify: body weight each day; increasing, decreasing, no change?<br/>
+--> verify: actions to achieve correct body weight for your height<br/>
+--> example#1: continuous walking of at least 20mins daily. This action reduces body weight by at least 1kg.<br/>
+--> example#2: choosing NOT to eat meat in the evening. This is after already eating meat during lunch.<br/>
+--> In its stead, eat fruits, vegetables, even rice.<br/>
+--> This action also reduces body weight by at least 1kg.<br/>
+--> example#3: drink milk <1/2 cup every other day (approx).<br/>
+--> Otherwise, due to not as physically active as growing children, we shall grow excessively big.<br/>
+<br/>
+<b>Mungkahing Babasahin:</b><br/>
+Johnson, S. (1998). Who moved my cheese? UK: Vermilion<br/>
+--> Johnson writes a story of mice and the value of change to achieve cheese, i.e. wealth.<br/>
+--> There exist variations of mice:<br/>
+1) Those who do NOT change due to already have cheese; Did not want to accept the pattern of decreasing cheese.<br/>
+2) Those who do NOT change due to FEAR of NOT finding more cheese;<br/>
+--> Prefers to stay as is, despite the pattern of decreasing cheese.<br/>
+4) Those who do change to find new cheese; accepts the pattern of decreasing cheese;<br/>
+--> Executes action despite need for movement.<br/>
+--> <b>Paalala:</b> Ukol sa timbang, maaari nating gamitin ang "increasing weight" at ipalit ito sa "decreasing cheese".<br/>
