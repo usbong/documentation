@@ -555,7 +555,7 @@ secreto bidimensionalという<br/>
 --> saka gamitan ng Malakas na Suntok sa ibaba;<br/>
 --> May sukat din ng layo ang pamalo ni Rolento<br/>
 <br/>
-<b>Dagdag na Sulatin:</b><br/>
+--> 1.1.9.3) <b>Dagdag na Sulatin (part 1):</b><br/>
 --> Did NOT play X-men: Children of the Atom at the Arcade Game Center<br/>
 --> Played Marvel Super Heroes at the Arcade Game Center, albeit quickly lost to Computer; stopped<br/>
 --> Did NOT play Marvel Super Heroes vs Street Fighter at the Arcade Game Center<br/>
@@ -573,6 +573,43 @@ secreto bidimensionalという<br/>
 見かけた同学校の二人がハイスクールから<br/>
 卒業できなかった記憶ある。<br/>
 卒業できたら、ギリギリ。<br/>
+<br/>
+--> 1.1.9.4) <b>Dagdag na Sulatin (part 2):</b><br/>
+--> verifying: why I didn't play Guilty Gear as much as Street Figher series<br/>
+--> ARC SYSTEM WORKS<br/>
+--> Guilty Gear Xrd- Revelator<br/>
+--> PS3 version; 2016<br/>
+--> bought: new disc; sold at discounted price;<br/>
+--> nobody was buying; store moving to sell PS4~ discs, units, et cetera<br/>
+--> download time before start; noticeably long;<br/>
+--> due to file size larger than the usual PS3 game?<br/>
+--> verified: can finish NORMAL difficulty level with MAY<br/>
+--> iruka, i.e. dolphin, hits opponent using head; eye with namida drawing after<br/>
+--> verified: can finish HARD difficulty level with SLAYER<br/>
+--> battle: Pocket Fighter? due to changing animation sequences;<br/>
+--> example: when pressing DOWN, SLAYER sits to drink coffee or tea?<br/>
+--> battle: such as with Zato=1; Darkstalkers?<br/>
+--> played: previously Darkstalkers series,<br/>
+--> e.g.  Darkstalkers 3: Jedah's Damnation at Arcade Game Center<br/>
+--> played: as Sasquash; quickly loses; <br/>
+--> played: as B.B.Hood; can win 1 battle, but loses after to computer; stopped<br/>
+--> B.B.Hood from Osaka? 金 (kane; ginto)?<br/>
+<br/>
+--> ブレイブルーコンティニュアムシフト (bureibru- contexinyuamu shifuto)<br/>
+--> PS3 version; 2010<br/>
+--> sold at used shop<br/>
+--> set difficulty level to highest<br/>
+--> played: as HAKU=MEN to reach IRON=TAGER;<br/>
+--> fought: using single button presses to execute long sword attacks; <br/>
+--> loses: to IRON=TAGER<br/>
+--> played: as IRON=TAGER to reach HAZAMA;<br/>
+--> Computer can escape ギガンティックテイガードライバー (gigantexikku teiga- doraiba-);<br/>
+--> i.e. nage waza; throw skill<br/>
+--> HAZAMA says 死ね！ (shine!, i.e. die! "mamatay ka na!"); stopped; <br/>
+--> observed: the budol-budol/manloloko/carnapper/cybercriminal/communist terrorist group<br/>
+--> continues to misuse wireless broadcasting technology to cause noise pollution;<br/>
+--> example: says out-loud: "mamatay ka na"<br/>
+--> Dinig hanggang sa bahay at pook ng hanap-buhay, Barangay Sto. Niño, 1820, Marikina City
 
 ## 1.2) SEGA: SERVICE GAMES
 ### 1.2.1) Sonic 1
