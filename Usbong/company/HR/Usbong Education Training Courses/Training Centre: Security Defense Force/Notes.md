@@ -735,9 +735,9 @@ Japan Society for the Study of Obesity<br/>
 Johnson, S. (1998). Who moved my cheese? UK: Vermilion<br/>
 --> Johnson writes a story of mice and the value of change to achieve cheese, i.e. wealth.<br/>
 --> There exist variations of mice:<br/>
-1) Those who do NOT change due to already have cheese; Did not want to accept the pattern of decreasing cheese.<br/>
+1) Those who do NOT change due to already have cheese; Did not want to accept the pattern of <b>decreasing cheese<b/>.<br/>
 2) Those who do NOT change due to FEAR of NOT finding more cheese;<br/>
---> Prefers to stay as is, despite the pattern of decreasing cheese.<br/>
-4) Those who do change to find new cheese; accepts the pattern of decreasing cheese;<br/>
+--> Prefers to stay as is, despite the pattern of <b>decreasing cheese</b>.<br/>
+3) Those who do change to find new cheese; accepts the pattern of <b>decreasing cheese</b>;<br/>
 --> Executes action despite need for movement.<br/>
 --> <b>Paalala:</b> Ukol sa timbang, maaari nating gamitin ang "increasing weight" at ipalit ito sa "decreasing cheese".<br/>
