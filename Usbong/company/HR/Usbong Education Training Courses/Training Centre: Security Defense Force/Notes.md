@@ -741,3 +741,26 @@ Johnson, S. (1998). Who moved my cheese? UK: Vermilion<br/>
 3) Those who do change to find new cheese; accepts the pattern of <b>decreasing cheese</b>;<br/>
 --> Executes action despite need for movement.<br/>
 --> <b>Paalala:</b> Ukol sa timbang, maaari nating gamitin ang "increasing weight" at ipalit ito sa "decreasing cheese".<br/>
+<br/>
+
+#### Usbong Story Example Output: Diagonal Movement Right Triangle Tile
+<img src="https://github.com/usbong/story/blob/main/screenshots/diagonalMovementRightTriangleTileWorkV20210807T0907.gif" width="50%"><br/>
+--> https://github.com/usbong/story: Robot Mouse?
+<br/>
+
+<b>Additional Notes as Reminder:</b><br/>
+1) observation: Expenses > Income Pattern;<br/>
+--> Budol-budol/manloloko/carnapper/cybercriminal/communist terrorist group continues to misuse wireless broadcasting technology to cause noise pollution and physical injury.<br/>
+--> Objective: Quick money;<br/>
+--> Recommended Action: Puksain ang Teroristang Komunista; No need for negotiation<br/>
+
+2) Increase in Tamad causes Increase in Masama, e.g. Manloloko.<br/>
+--> This is due to as wealth increases, people classified as communist increase.<br/>
+--> "Communist"/Komunista: Tao na naniniwala na dahil sagana na tayo, hindi na natin kailangang maghanap-buhay.<br/>
+--> We clarify that a Communist is NOT necessarily evil.<br/>
+--> Indeed, a Communist may still go to work, albeit believes that it's NOT necessary.<br/>
+--> The problem occurs when they become Terrorists.<br/>
+--> "Terrorist"/Terorista: Tao na gumagawa ng panloloko at pisikal na pananakit sa isa at higit pang mga tao.<br/>
+--> "Communist Terrorist": Tao na naniwala na sagana na siya, kaya lang naubusan gawa ng pagwawaldas; naging Terorista upang mabilis na makakuha ng pera.<br/>
+--> As the next generation continues, e.g. the family business, the increasing number of members in the household causes the previously sufficient income to become insufficient.<br/>
+--> Solution: It is vital that each community・family・company member learn the value of honest work.<br/>
