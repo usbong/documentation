@@ -740,12 +740,14 @@ Johnson, S. (1998). Who moved my cheese? UK: Vermilion<br/>
 --> Prefers to stay as is, despite the pattern of <b>decreasing cheese</b>.<br/>
 3) Those who do change to find new cheese; accepts the pattern of <b>decreasing cheese</b>;<br/>
 --> Executes action despite need for movement.<br/>
---> <b>Paalala:</b> Ukol sa timbang, maaari nating gamitin ang "increasing weight" at ipalit ito sa "decreasing cheese".<br/>
+--> <b>Paalala:</b> Ukol sa timbang, maaari nating gamitin ang "<b>increasing weight</b>" at ipalit ito sa "<b>decreasing cheese</b>".<br/>
 <br/>
 
 #### Usbong Story Example Output: Diagonal Movement Right Triangle Tile
 <img src="https://github.com/usbong/story/blob/main/screenshots/diagonalMovementRightTriangleTileWorkV20210807T0907.gif" width="50%"><br/>
---> https://github.com/usbong/story: Robot Mouse?
+--> https://github.com/usbong/story: Robot Mouse?<br/>
+--> <b>Recommended Action:</b> learn: Maparaang Pagbibilang;<br/>
+--> <b>Reference:</b> https://www.mathsisfun.com/sine-cosine-tangent.html; last accessed: 20210810<br/>
 <br/>
 
 <b>Additional Notes as Reminder:</b><br/>
