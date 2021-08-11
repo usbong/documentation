@@ -51,6 +51,20 @@ last accessed: 20210226<br/>
 answered by: A-Sharabiani, 20170719T0335<br/>
 edited by: Amir, 20180425T1940
 
+### 1.5) Problem: fatal error: GL/gl.h: No such file or directory
+
+<b>Answer:</b> Execute Commands (in Terminal Window):<br/>
+<b>sudo apt-get install aptitude</b><br/>
+<b>sudo aptitude install freeglut3-dev</b><br/>
+
+#### Additional Notes: 
+If computer asks you if you accept its solution that <b>freeglut3-dev</b> shall NOT be installed due to dependencies, enter "<b>n</b>" to signify "<b>NO</b>". The computer shall then notify you regarding the "downgrade" packages action to resolve the dependencies problem. Enter "<b>Y</b>" to signify "<b>YES</b>".<br/>
+
+#### References (1.5):
+https://askubuntu.com/questions/96087/how-to-install-opengl-glut-libraries/1357334#1357334;<br/>
+last accessed: 20210811<br/>
+answered by: SYSON, MICHAEL B. as masarapmabuhay, 20210811
+
 ## 2) Windows Machine
 ### 2.1) Problem: When executing UsbongAutomotive.exe, computer notifies you that glut32.dll does not exist
 <b>Answer:</b> Execute the following steps:<br/>
