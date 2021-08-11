@@ -766,3 +766,39 @@ Johnson, S. (1998). Who moved my cheese? UK: Vermilion<br/>
 --> "Communist Terrorist": Tao na naniwala na sagana na siya, kaya lang naubusan gawa ng pagwawaldas; naging Terorista upang mabilis na makakuha ng pera.<br/>
 --> As the next generation continues, e.g. the family business, the increasing number of members in the household causes the previously sufficient income to become insufficient.<br/>
 --> Solution: It is vital that each community・family・company member learn the value of honest work.<br/>
+
+### Part 24: Pera, Batas
+#### 24.1) Pera: Money History
+--> exchange of items: guitar to exchange with fish<br/>
+--> fish to exchange with vegetables<br/>
+--> currency, e.g. Philippine Peso (PHP), speeds-up system<br/>
+--> no need to find a person who is willing to exchange his fish for your guitar<br/>
+--> we can quickly exchange the guitar for a set amount of PHP<br/>
+--> A set of this set amount we can use in exchange for vegatables, et cetera<br/>
+
+#### 24.2) Batas: Law Interpretation
+--> observation: from American literature, e.g. New York Times, we learn that the law was created to have<br/> variations in its interpretation.<br/>
+--> Ginawa ang batas na nakabatay sa kung paano mo nauunawaan ito.<br/>
+--> However, due to majority wins, a majority group of people has to interpret it in the same way.<br/>
+<br/>
+--> <b>problem:</b> in select systems, only a minority has learned Maparaang Pagbibilang<br/>
+--> Therefore, the majority can be manipulated to agree in the minority's interpretation<br/>
+<br/>
+--> <b>Example:</b> A person in-need of money shall accept whatever interpretation to receive money.<br/>
+--> A person in such need may be a Father of an ill Mother.<br/>
+--> <b>reminder:</b> maitenance medicine of a Senior Citizen can cost >= PHP5,000 per month<br/>
+<br/>
+--> However, after verification, the Teroristang Komunista had been using as weapon wireless broadcasting technology to cause the person to become ill.<br/>
+--> <b>Cause:</b> Quick Money;<br/>
+--> Kung kailangan-na-kailangan mo ng pera, maipagagawa niya sa iyo ang nais niya.<br/>
+--> Therefore, as long as the majority is in-need of money, the minority can manipulate them to accept the interpretation.<br/>
+<br/>
+--> <b>observation:</b> in nations, e.g. Japan, France, Germany, Switzerland, people learn to be<br/>
+--> NOT in-need of money;<br/>
+--> <b>Example:</b> eating food readily available to the common people;<br/>
+--> contributing to the increase in value of the hometown itself<br/>
+--> where: hometown is where is you live<br/>
+<br/>
+--> The Teroristang Komunista executes the opposite of these actions,<br/>
+--> promulgating: Quick Money<br/>
+--> <b>Mungkahing Aksyon:</b> Puksain ang mga Teroristang Komunista; No need for negotiation
