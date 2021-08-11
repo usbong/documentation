@@ -60,7 +60,7 @@ edited by: Amir, 20180425T1940
 #### Additional Notes: 
 If computer asks you if you accept its solution that <b>freeglut3-dev</b> shall NOT be installed due to dependencies, enter "<b>n</b>" to signify "<b>NO</b>". The computer shall then notify you regarding the "downgrade" packages action to resolve the dependencies problem. Enter "<b>Y</b>" to signify "<b>YES</b>".<br/>
 
-#### References (1.5):
+#### Reference:
 https://askubuntu.com/questions/96087/how-to-install-opengl-glut-libraries/1357334#1357334;<br/>
 last accessed: 20210811<br/>
 answered by: SYSON, MICHAEL B. as masarapmabuhay, 20210811
