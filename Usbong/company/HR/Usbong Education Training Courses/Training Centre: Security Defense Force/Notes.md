@@ -777,7 +777,7 @@ Johnson, S. (1998). Who moved my cheese? UK: Vermilion<br/>
 --> A set of this set amount we can use in exchange for vegatables, et cetera<br/>
 
 #### 24.2) Batas: Law Interpretation
---> observation: from American literature, e.g. New York Times, we learn that the law was created to have<br/> variations in its interpretation.<br/>
+--> observation: from American literature, e.g. New York Times, we learn that the law was created to have variations in its interpretation.<br/>
 --> Ginawa ang batas na nakabatay sa kung paano mo nauunawaan ito.<br/>
 --> However, due to majority wins, a majority group of people has to interpret it in the same way.<br/>
 <br/>
