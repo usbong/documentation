@@ -797,7 +797,7 @@ Johnson, S. (1998). Who moved my cheese? UK: Vermilion<br/>
 --> NOT in-need of money;<br/>
 --> <b>Example:</b> eating food readily available to the common people;<br/>
 --> contributing to the increase in value of the hometown itself<br/>
---> where: hometown is where is you live<br/>
+--> where: hometown is where you live<br/>
 <br/>
 --> The Teroristang Komunista executes the opposite of these actions,<br/>
 --> promulgating: Quick Money<br/>
