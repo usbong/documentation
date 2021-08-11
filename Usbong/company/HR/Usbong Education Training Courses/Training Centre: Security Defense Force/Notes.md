@@ -796,7 +796,7 @@ Johnson, S. (1998). Who moved my cheese? UK: Vermilion<br/>
 --> <b>observation:</b> in nations, e.g. Japan, France, Germany, Switzerland, people learn to be<br/>
 --> NOT in-need of money;<br/>
 --> <b>Example:</b> eating food readily available to the common people;<br/>
---> contributing to the increase in value of the hometown itself<br/>
+--> contributing via work to the increase in value of the hometown itself<br/>
 --> where: hometown is where you live<br/>
 <br/>
 --> The Teroristang Komunista executes the opposite of these actions,<br/>
