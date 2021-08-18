@@ -617,15 +617,24 @@ secreto bidimensionalという<br/>
 --> CAPCOM (U.S.A.) + NAMCO BANDAI<br/>
 <br/>
 --> SFIVにいるキャラクターとして、バトルに行くと、SFIVのほうがいいと思って、<br/>
+Kung bilang Tauhan sa SFIV, pupunta sa labanan, naisip kong mas maiging ang SFIV,<br/>
 --> しばらくSTREET FIGHTER　X　TEKKENゲームをやってなかった。<br/>
+Matagal ang lumipas, hindi ako naglaro ng STREET FIGHTER　X　TEKKEN.<br/>
 --> もう一回やってみて、おもろさを見つけようと・・・<br/>
+Isa pang ulit, subukang laruin, tuklasin ang nakabibighani...<br/>
 <br/>
 --> SFゼロ２で戦ったロレント[ATK+DEF+SPL]と<br/>
+Nakipaglaban sa SF Zero2 na si Rolento [ATK+DEF+SPL] at<br/>
 --> SFIIIのHUGO[ATK+DEF+SPD]のチームで、<br/>
+sa SFIII na si HUGO[ATK+DEF+SPD] na pangkat,<br/>
 --> 難易度のHARDESTで最後のステージにいるOGREを倒すまで、<br/>
+na HARDEST ang nibel ng hirap-dali, hanggang magapi sa dulong stage kung saan naroon si Ogre,<br/>
 --> バトルへ行き、思ったよりSFIVやSFゼロ１ほどの<br/>
+Pupunta sa labanan, higit sa aking naisip, tulad ng SFIV,SF zero１, atbp<br/>
 --> 要る時間が長くなくて、<br/>
+ang kailangang panahon, hindi ganoong kahaba,<br/>
 --> 楽しく過ごせた思い出ができるため？<br/>
+Upang makagawa ng maisip lumabas, i.e. alaala, ng maligayang paglipas?<br/>
 <br/>
 --> M.BISONとBALROGのチームとバトルすることが思い出せる・・・<br/>
 --> こっちのチームより速くて、負けてる結果、そのままだと思った。<br/>
@@ -634,7 +643,7 @@ secreto bidimensionalという<br/>
 <br/>
 --> HUGOとして、下＋中キックとN+中パンチで勝てる。<br/>
 --> ロレントのほうは、下＋強パンチと下＋中パンチで、<br/>
---> パンチX3＋パンチX3で床ロールアタックでも勝てる。<br/>
+--> パンチX3、パンチX3で床ロールアタックでも勝てる。<br/>
 <br/>
 --> KAZUYAとNINAのチームとバトルすることが思い出せる・・・<br/>
 --> KAZUYAが次々に攻撃するとして、体力ゲージが<br/>
