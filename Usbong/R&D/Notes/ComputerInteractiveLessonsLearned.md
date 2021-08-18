@@ -613,7 +613,7 @@ secreto bidimensionalという<br/>
 --> Dinig hanggang sa bahay at pook ng hanap-buhay, Barangay Sto. Niño, 1820, Marikina City
 
 #### 1.1.9.PLUS) STREET FIGHTER X TEKKEN
---> YEAR 2012;PS3 マシーン<br/>
+--> YEAR 2012; PS3 マシーン<br/>
 --> CAPCOM (U.S.A.) + NAMCO BANDAI<br/>
 <br/>
 --> SFIVにいるキャラクターとして、バトルに行くと、SFIVのほうがいいと思って、<br/>
@@ -628,7 +628,7 @@ secreto bidimensionalという<br/>
 --> 楽しく過ごせた思い出ができるため？<br/>
 <br/>
 --> M.BISONとBALROGのチームとバトルすることが思い出せる・・・<br/>
---> こっちのチームより速くて、負けてる結果っぱなしだ思った。<br/>
+--> こっちのチームより速くて、負けてる結果、そのままだと思った。<br/>
 --> しかも、スーファミコンのドンキーコングの音の流れも聞こえるし・・・<br/>
 --> とにかく、その後、解け方が閃いた。<br/>
 <br/>
