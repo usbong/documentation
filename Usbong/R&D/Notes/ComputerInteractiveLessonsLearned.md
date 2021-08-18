@@ -473,6 +473,7 @@ secreto bidimensionalという<br/>
 --> 達成感？<br/>
 
 ### 1.1.9) Street Fighter Zero 2
+--> Year 1996<br/>
 --> Executed on Nintendo Switch Lite, et cetera<br/>
 --> set difficulty level to 6 stars; where 8 is highest<br/>
 --> Select Fighters difficult to finish All matches<br/>
@@ -610,6 +611,42 @@ secreto bidimensionalという<br/>
 --> continues to misuse wireless broadcasting technology to cause noise pollution;<br/>
 --> example: says out-loud: "mamatay ka na"<br/>
 --> Dinig hanggang sa bahay at pook ng hanap-buhay, Barangay Sto. Niño, 1820, Marikina City
+
+#### 1.1.9.PLUS) STREET FIGHTER X TEKKEN
+--> YEAR 2012;PS3 マシーン<br/>
+--> CAPCOM (U.S.A.) + NAMCO BANDAI<br/>
+<br/>
+--> SFIVにいるキャラクターとして、バトルに行くと、SFIVのほうがいいと思って、<br/>
+--> しばらくSTREET FIGHTER　X　TEKKENゲームをやってなかった。<br/>
+--> もう一回やってみて、おもろさを見つけようと・・・<br/>
+<br/>
+--> SFゼロ２で戦ったロレント[ATK+DEF+SPL]と<br/>
+--> SFIIIのHUGO[ATK+DEF+SPD]のチームで、<br/>
+--> 難易度のHARDESTで最後のステージにいるOGREを倒すまで、<br/>
+--> バトルへ行き、思ったよりSFIVやSFゼロ１ほどの<br/>
+--> 要る時間が長くなくて、<br/>
+--> 楽しく過ごせた思い出ができるため？<br/>
+<br/>
+--> M.BISONとBALROGのチームとバトルすることが思い出せる・・・<br/>
+--> こっちのチームより速くて、負けてる結果っぱなしだ思った。<br/>
+--> しかも、スーファミコンのドンキーコングの音の流れも聞こえるし・・・<br/>
+--> とにかく、その後、解け方が閃いた。<br/>
+<br/>
+--> HUGOとして、下＋中キックとN+中パンチで勝てる。<br/>
+--> ロレントのほうは、下＋強パンチと下＋中パンチで、<br/>
+--> パンチX3＋パンチX3で床ロールアタックでも勝てる。<br/>
+<br/>
+--> KAZUYAとNINAのチームとバトルすることが思い出せる・・・<br/>
+--> KAZUYAが次々に攻撃するとして、体力ゲージが<br/>
+--> クリティカル状態となっても、攻撃しようとするので、<br/>
+--> M.BISONとBALROGに勝つやり方を使い、倒せる。<br/>
+--> CPU NINAの体力ゲージが一度も減らしてなかった・・・<br/>
+<br/>
+--> CPUと言って、こっちがチームにコマンドせずに、<br/>
+--> 攻撃するに気づくほど、手伝ってくれてる？<br/>
+<br/>
+--> 試合が終わって、ロレントのストーリーに<br/>
+--> 「忍」という言葉が出て、IBUKIなどもいるね。<br/>
 
 ## 1.2) SEGA: SERVICE GAMES
 ### 1.2.1) Sonic 1
