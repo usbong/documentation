@@ -649,7 +649,7 @@ Upang makagawa ng maisip lumabas, i.e. alaala, ng maligayang paglipas?<br/>
 --> KAZUYAが次々に攻撃するとして、体力ゲージが<br/>
 --> クリティカル状態となっても、攻撃しようとするので、<br/>
 --> M.BISONとBALROGに勝つやり方を使い、倒せる。<br/>
---> CPU NINAの体力ゲージが一度も減らしてなかった・・・<br/>
+--> CPU NINAの体力ゲージが一度も減ってなかった・・・<br/>
 <br/>
 --> CPUと言って、こっちがチームにコマンドせずに、<br/>
 --> 攻撃するに気づくほど、手伝ってくれてる？<br/>
