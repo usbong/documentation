@@ -613,11 +613,11 @@ secreto bidimensionalという<br/>
 --> Dinig hanggang sa bahay at pook ng hanap-buhay, Barangay Sto. Niño, 1820, Marikina City
 
 #### 1.1.9.PLUS) STREET FIGHTER X TEKKEN
---> YEAR 2012; PS3 マシーン<br/>
+--> YEAR 2012; PS3 マシーン (mashi-n; machine)<br/>
 --> CAPCOM (U.S.A.) + NAMCO BANDAI<br/>
 <br/>
 --> SFIVにいるキャラクターとして、バトルに行くと、SFIVのほうがいいと思って、<br/>
-Kung bilang Tauhan sa SFIV, pupunta sa labanan, naisip kong mas maiging ang SFIV,<br/>
+Kung bilang Tauhan sa SFIV, pupunta sa labanan, mas maigi ang SFIV, aking naisip<br/>
 --> しばらくSTREET FIGHTER　X　TEKKENゲームをやってなかった。<br/>
 Matagal ang lumipas, hindi ako naglaro ng STREET FIGHTER　X　TEKKEN.<br/>
 --> もう一回やってみて、おもろさを見つけようと・・・<br/>
