@@ -637,25 +637,41 @@ ang kailangang panahon, hindi ganoong kahaba,<br/>
 Upang makagawa ng maisip lumabas, i.e. alaala, ng maligayang paglipas?<br/>
 <br/>
 --> M.BISONとBALROGのチームとバトルすることが思い出せる・・・<br/>
+Maaalala ang pakikipaglaban sa pangkat nina M.BISON at BALROG...<br/>
 --> こっちのチームより速くて、負けてる結果、そのままだと思った。<br/>
+Mas mabilis kaysa sa aking pangkat, natatalo ang pinagtaling bunga, ganoon na lamang, aking naisip<br/>
 --> しかも、スーファミコンのドンキーコングの音の流れも聞こえるし・・・<br/>
+Dagdag pa, madirinig ang pagdaloy ng tunog ng Donkey Kong sa Super Family Computer...<br/>
 --> とにかく、その後、解け方が閃いた。<br/>
+Anuman, pagkatapos no'n, natuklasan ko ang paraan ng paglutas.<br/>
 <br/>
 --> HUGOとして、下＋中キックとN+中パンチで勝てる。<br/>
+Bilang HUGO, maaaring manalo gamit ang Ibaba + Katamtamang Sipa at Neutral + Katamtamang Suntok.<br/>
 --> ロレントのほうは、下＋強パンチと下＋中パンチで、<br/>
+Sa panig ni ROLENTO, gamit ang Ibaba + Malakas na Suntok at Ibaba + Katamtaman Suntok,<br/>
 --> パンチX3、パンチX3で床ロールアタックでも勝てる。<br/>
+maaaring manalo rin gamit ang Suntok X3, Suntok X3 na sahig+gulong na pagsalakay.<br/>
 <br/>
 --> KAZUYAとNINAのチームとバトルすることが思い出せる・・・<br/>
+Maaalala ang pakikipaglaban sa pangkat nina KAZUYA at NINA...<br/>
 --> KAZUYAが次々に攻撃するとして、体力ゲージが<br/>
+Sunud-sunod ang paggawa ni KAZUYA ng pagsugod na pagtama, sukat ng katawan+lakas,<br/>
 --> クリティカル状態となっても、攻撃しようとするので、<br/>
+kahit na critical state na, sapagkat gumagawa pa rin ng pagsugod na pagtama,<br/>
 --> M.BISONとBALROGに勝つやり方を使い、倒せる。<br/>
+Gamit ang paraan upang manalo kina M.BISON at BALROG, magagapi.<br/>
 --> CPU NINAの体力ゲージが一度も減ってなかった・・・<br/>
+Ang sukat ng katawan+lakas ni CPU NINA, ni isang pagkakataon hindi nabawasan.<br/>
 <br/>
 --> CPUと言って、こっちがチームにコマンドせずに、<br/>
+Sa pagbanggit ng CPU, hindi man ako gumawa ng COMMAND sa aking pangkat,<br/>
 --> 攻撃するに気づくほど、手伝ってくれてる？<br/>
+mapapansin sa dami ang kanilang pagsugod na pagtama, tinutulungan ba ako?
 <br/>
 --> 試合が終わって、ロレントのストーリーに<br/>
+Pagkatapos ng pagsubok+pinagsama, sa salaysay ni Rolento,
 --> 「忍」という言葉が出て、IBUKIなどもいるね。<br/>
+Lalabas ang salitang "SHINOBI", i.e. pagtitiis, narito rin sina IBUKI, atbp, 'di ba.<br/>
 
 ## 1.2) SEGA: SERVICE GAMES
 ### 1.2.1) Sonic 1
@@ -929,7 +945,7 @@ PA-N (pangalan ng iyong kaibigan)<br/>
 --> Nakabatay ang Ranking sa bilang ng mga halimaw na mapupuksa.<br/>
 --> Ihihinto ang C:LOS, at gagawa muli ng daigdig.<br/>
 <br/>
---> <b>Mungkahing Siyasatin:<b>
+--> <b>Mungkahing Siyasatin:</b>
 1) Arcade Game: Robotron 2084 (1982 Williams)<br/>
 --> https://www.youtube.com/watch?v=l800GL6NQPY; last accessed: 20210809<br/>
 --> verify: story AND gameplay<br/>
