@@ -672,6 +672,24 @@ mapapansin sa dami ang kanilang pagsugod na pagtama, tinutulungan ba ako?<br/>
 Pagkatapos ng pagsubok+pinagsama, sa salaysay ni Rolento,<br/>
 --> 「忍」という言葉が出て、IBUKIなどもいるね。<br/>
 Lalabas ang salitang "SHINOBI", i.e. pagtitiis, narito rin sina IBUKI, atbp, 'di ba.<br/>
+--> と思ったら、SFIVにもいる・・・<br/>
+Nang maisip ko ito, naroon din sila sa SFIV...<br/>
+--> アーケードバトルをまたやろうとして、<br/>
+Muling subukang gawin ang ARCADE BATTLE,<br/>
+--> 待ちうけの設定で格上という相手レベルがあり、<br/>
+Sa setting ng naghihintay tanggapin, may nibel ang katunggali na angat sa karamihan<br/>
+--> 選んだら、KAZUYAとNINAのチームを<br/>
+Pagkapili nito, ang pangkat nila KAZUYA at NINA<br/>
+--> またバトルすることとなって、
+muling magiging katunggali sa pakikipaglaban,<br/>
+--> まったく、まるで意外なCPUで戦って、<br/>
+Talaga naman, tulad ng nais sa labas na CPU ang gamit, nakipaglaban,<br/>
+--> めっちゃ強かった・・・<br/>
+Talagang malakas...<br/>
+まだまだ終わりじゃないってこと・・・<br/>
+Hindi pa wakas, ang ibig sabihin...<br/>
+<br/>
+<b>Paalala:</b> CPU = Central Processing Unit; kabilang sa ginagawa nito ang pagbibilang bilang isipan ng kompyuter ayon sa isinulat na paliwanag ng gumawa ng daigdig<br/>
 
 ## 1.2) SEGA: SERVICE GAMES
 ### 1.2.1) Sonic 1
