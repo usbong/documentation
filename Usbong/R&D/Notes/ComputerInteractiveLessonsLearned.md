@@ -682,7 +682,7 @@ Sa setting ng naghihintay tanggapin, may nibel ang katunggali na angat sa karami
 Pagkapili nito, ang pangkat nila KAZUYA at NINA<br/>
 --> またバトルすることとなって、<br/>
 muling magiging katunggali sa pakikipaglaban,<br/>
---> まったく、まるで意外なCPUで戦って、<br/>
+--> まったく、まるで意外なCPUの様で戦って、<br/>
 Talaga naman, tulad ng nais sa labas na CPU ang gamit, nakipaglaban,<br/>
 --> めっちゃ強かった・・・<br/>
 Talagang malakas...<br/>
