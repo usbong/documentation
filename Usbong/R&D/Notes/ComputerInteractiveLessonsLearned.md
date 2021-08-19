@@ -648,7 +648,7 @@ Anuman, pagkatapos no'n, natuklasan ko ang paraan ng paglutas.<br/>
 --> HUGOとして、下＋中キックとN+中パンチで勝てる。<br/>
 Bilang HUGO, maaaring manalo gamit ang Ibaba + Katamtamang Sipa at Neutral + Katamtamang Suntok.<br/>
 --> ロレントのほうは、下＋強パンチと下＋中パンチで、<br/>
-Sa panig ni ROLENTO, gamit ang Ibaba + Malakas na Suntok at Ibaba + Katamtaman Suntok,<br/>
+Sa panig ni ROLENTO, gamit ang Ibaba + Malakas na Suntok at Ibaba + Katamtamang Suntok,<br/>
 --> パンチX3、パンチX3で床ロールアタックでも勝てる。<br/>
 maaaring manalo rin gamit ang Suntok X3, Suntok X3 na sahig+gulong na pagsalakay.<br/>
 <br/>
@@ -666,10 +666,10 @@ Ang sukat ng katawan+lakas ni CPU NINA, ni isang pagkakataon hindi nabawasan.<br
 --> CPUと言って、こっちがチームにコマンドせずに、<br/>
 Sa pagbanggit ng CPU, hindi man ako gumawa ng COMMAND sa aking pangkat,<br/>
 --> 攻撃するに気づくほど、手伝ってくれてる？<br/>
-mapapansin sa dami ang kanilang pagsugod na pagtama, tinutulungan ba ako?
+mapapansin sa dami ang kanilang pagsugod na pagtama, tinutulungan ba ako?<br/>
 <br/>
 --> 試合が終わって、ロレントのストーリーに<br/>
-Pagkatapos ng pagsubok+pinagsama, sa salaysay ni Rolento,
+Pagkatapos ng pagsubok+pinagsama, sa salaysay ni Rolento,<br/>
 --> 「忍」という言葉が出て、IBUKIなどもいるね。<br/>
 Lalabas ang salitang "SHINOBI", i.e. pagtitiis, narito rin sina IBUKI, atbp, 'di ba.<br/>
 
