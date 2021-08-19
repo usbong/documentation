@@ -680,13 +680,15 @@ Muling subukang gawin ang ARCADE BATTLE,<br/>
 Sa setting ng naghihintay tanggapin, may nibel ang katunggali na angat sa karamihan<br/>
 --> 選んだら、KAZUYAとNINAのチームを<br/>
 Pagkapili nito, ang pangkat nila KAZUYA at NINA<br/>
---> またバトルすることとなって、
+--> またバトルすることとなって、<br/>
 muling magiging katunggali sa pakikipaglaban,<br/>
 --> まったく、まるで意外なCPUで戦って、<br/>
 Talaga naman, tulad ng nais sa labas na CPU ang gamit, nakipaglaban,<br/>
 --> めっちゃ強かった・・・<br/>
 Talagang malakas...<br/>
-まだまだ終わりじゃないってこと・・・<br/>
+--> というと、こっちのチーム作戦改良も必要？<br/>
+Sa pagsabi nito, kailangan din ang pag-ayos ng paggawa ng laban sa aking pangkat?<br/>
+--> まだまだ終わりじゃないってこと・・・<br/>
 Hindi pa wakas, ang ibig sabihin...<br/>
 <br/>
 <b>Paalala:</b> CPU = Central Processing Unit; kabilang sa ginagawa nito ang pagbibilang bilang isipan ng kompyuter ayon sa isinulat na paliwanag ng gumawa ng daigdig<br/>
