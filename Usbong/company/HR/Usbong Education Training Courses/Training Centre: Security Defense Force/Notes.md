@@ -786,12 +786,14 @@ Johnson, S. (1998). Who moved my cheese? UK: Vermilion<br/>
 <br/>
 --> <b>Example:</b> A person in-need of money shall accept whatever interpretation to receive money.<br/>
 --> A person in such need may be a Father of an ill Mother.<br/>
---> <b>reminder:</b> maitenance medicine of a Senior Citizen can cost >= PHP5,000 per month<br/>
+--> <b>reminder:</b> maintenance medicine of a Senior Citizen can cost >= PHP5,000 per month<br/>
 <br/>
 --> However, after verification, the Teroristang Komunista had been using as weapon wireless broadcasting technology to cause the person to become ill.<br/>
 --> <b>Cause:</b> Quick Money;<br/>
 --> Kung kailangan-na-kailangan mo ng pera, maipagagawa niya sa iyo ang nais niya.<br/>
 --> Therefore, as long as the majority is in-need of money, the minority can manipulate them to accept the interpretation.<br/>
+--> <b>reminder:</b> a pie chart can have one (1) majority and several minorities;<br/>
+--> The Teroristang Komunista is an example minority that has NOT learned Maparaang Pagbibilang<br/>
 <br/>
 --> <b>observation:</b> in nations, e.g. Japan, France, Germany, Switzerland, people learn to be<br/>
 --> NOT in-need of money;<br/>
