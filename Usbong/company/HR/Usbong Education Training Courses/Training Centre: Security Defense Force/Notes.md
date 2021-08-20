@@ -775,6 +775,10 @@ Johnson, S. (1998). Who moved my cheese? UK: Vermilion<br/>
 --> no need to find a person who is willing to exchange his fish for your guitar<br/>
 --> we can quickly exchange the guitar for a set amount of PHP<br/>
 --> A set of this set amount we can use in exchange for vegatables, et cetera<br/>
+--> <b>reminder:</b> There also exists exchange of service<br/>
+--> <b>Example:</b> Computer repair service<br/>
+--> <b>additional reminder:</b> What we only need is 金 (money) from those who receive quality products and services from us.<br/>
+--> From observation, a person in-need of money does not create quality products・services.<br/>
 
 #### 24.2) Batas: Law Interpretation
 --> observation: from American literature, e.g. New York Times, we learn that the law was created to have variations in its interpretation.<br/>
