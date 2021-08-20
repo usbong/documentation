@@ -778,7 +778,7 @@ Johnson, S. (1998). Who moved my cheese? UK: Vermilion<br/>
 --> <b>reminder:</b> There also exists exchange of service<br/>
 --> <b>Example:</b> Computer repair service<br/>
 --> <b>additional reminder:</b> What we only need is 金 (money) from those who receive quality products and services from us.<br/>
---> From observation, a person in-need of money does not create quality products・services.<br/>
+--> observation: a person in-need of money does not create quality products・services.<br/>
 
 #### 24.2) Batas: Law Interpretation
 --> observation: from American literature, e.g. New York Times, we learn that the law was created to have variations in its interpretation.<br/>
@@ -786,21 +786,22 @@ Johnson, S. (1998). Who moved my cheese? UK: Vermilion<br/>
 --> However, due to majority wins, a majority group of people has to interpret it in the same way.<br/>
 <br/>
 --> <b>problem:</b> in select systems, only a minority has learned Maparaang Pagbibilang<br/>
---> Therefore, the majority can be manipulated to agree in the minority's interpretation<br/>
+--> Therefore, the majority can be manipulated to agree in a minority's interpretation<br/>
 <br/>
 --> <b>Example:</b> A person in-need of money shall accept whatever interpretation to receive money.<br/>
 --> A person in such need may be a Father of an ill Mother.<br/>
 --> <b>reminder:</b> maintenance medicine of a Senior Citizen can cost >= PHP5,000 per month<br/>
 <br/>
---> However, after verification, the Teroristang Komunista had been using as weapon wireless broadcasting technology to cause the person to become ill.<br/>
+--> However, after verification, the Teroristang Komunista had been using as weapon wireless broadcasting technology<br/>
+--> to cause the person to become ill.<br/>
 --> <b>Cause:</b> Quick Money;<br/>
 --> Kung kailangan-na-kailangan mo ng pera, maipagagawa niya sa iyo ang nais niya.<br/>
---> Therefore, as long as the majority is in-need of money, the minority can manipulate them to accept the interpretation.<br/>
+--> Therefore, as long as the majority is in-need of money, a minority can manipulate them to accept the interpretation.<br/>
 --> <b>reminder:</b> a pie chart can have one (1) majority and several minorities;<br/>
 --> The Teroristang Komunista is an example minority that has NOT learned Maparaang Pagbibilang<br/>
 <br/>
---> <b>observation:</b> in nations, e.g. Japan, France, Germany, Switzerland, people learn to be<br/>
---> NOT in-need of money;<br/>
+--> <b>observation:</b> in nations, e.g. Japan, France, Germany, Switzerland,<br/>
+--> people learn to be NOT in-need of money;<br/>
 --> <b>Example:</b> eating food readily available to the common people;<br/>
 --> contributing via work to the increase in value of the hometown itself<br/>
 --> where: hometown is where you live<br/>
