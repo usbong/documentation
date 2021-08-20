@@ -773,7 +773,7 @@ Johnson, S. (1998). Who moved my cheese? UK: Vermilion<br/>
 --> fish to exchange with vegetables<br/>
 --> currency, e.g. Philippine Peso (PHP), speeds-up system<br/>
 --> no need to find a person who is willing to exchange his fish for your guitar<br/>
---> we can quickly exchange the guitar for a set amount of PHP<br/>
+--> we can quickly exchange the guitar for a set amount of money in PHP currency<br/>
 --> A set of this set amount we can use in exchange for vegatables, et cetera<br/>
 --> <b>reminder:</b> There also exists exchange of service<br/>
 --> <b>Example:</b> Computer repair service<br/>
