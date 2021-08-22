@@ -14,7 +14,7 @@
 --> sigma stage: spider boss battle<br/>
 --> "no money", but have time<br/>
 --> make money using time<br/>
---> Example: カプセル(capusel, i.e. Capsule) 　コンピュータ(Computer); CAPCOM<br/>
+--> Example: カプセル(capusel, i.e. Capsule) コンピュータ(Computer); CAPCOM<br/>
 <br/>
 TO-DO: -update: this<br/>
 
@@ -1430,6 +1430,25 @@ square・?<br/>
 --> with USBONG KMS, if incorrect solution, increases time to finish workload;<br/>
 --> if correct solution, speed-up to decrease time to finish workload?<br/>
 --> time continues until shutdown? No more available resources, e.g. electricity; nature?<br/>
+
+## 1.8.3) Fighter
+格闘　（　kakutou; maramihan (puno lahat) + labanan (pinto sukat ng binhi) ）；　<br/>
+試合　（　shiai;  pagsubok (salita pamamaraan) + ipagsama ）<br/>
+--> No JUMP; Has Dodge?<br/>
+--> Has Counter-Attack; <br/>
+--> SFZero2: BACK + DOWN + ATK? <br/>
+--> SF X Tekken: BACK + FORWARD + ATK?<br/>
+--> Has Parry?<br/>
+--> SFIII: FORWARD<br/>
+--> Direction Key + (4) Buttons Only: Punch, Kick?<br/>
+--> Has tame, i.e charge, via Direction Key Command? via Button Command?<br/>
+--> Has Zoom-in, Zoom-out?<br/>
+--> Mecha Robot & Pilot (can enter/leave Robot)?<br/>
+--> No air-combo, air-juggle; <br/>
+--> Neutral ATK; Neutral GUARD<br/>
+--> DOWN ATK; DOWN GUARD<br/>
+<br/>
+TO-DO: -update: this<br/>
 
 ## 1.9) NINTENDO
 ## 1.9.1) INTELLIGENT SYSTEMS + NINTENDO
