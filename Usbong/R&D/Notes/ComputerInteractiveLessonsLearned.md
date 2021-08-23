@@ -1483,6 +1483,8 @@ square・?<br/>
 --> No air-combo, air-juggle; <br/>
 --> Neutral ATK; Neutral GUARD<br/>
 --> DOWN ATK; DOWN GUARD<br/>
+--> Has DASH<br/>
+--> 理由（りゆう？リユウ（riyuu, i.e. sa pook ng hari; dahilan）?　Kilalanin ang sarili at ang daigdig<br/> 
 <br/>
 TO-DO: -update: this<br/>
 
