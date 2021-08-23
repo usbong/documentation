@@ -127,8 +127,9 @@ TO-DO: -update: this<br/>
 --> <b>paalala:</b> Gamit ang mga ganitong paraan ng pakikipaglaban, i.e. 5~6 anim na waza, i.e. technique, matutuklasan din ito:<br/>
 --> 1.1.6.1.1) 楽器から流れてる音 (gakki kara nagareteru oto; mula sa maligayang baul, dumadaloy na tunog);<br/>
 --> SFZero2のほうがより良かろう？Lou Rawlsの「[See you when I get there](https://www.youtube.com/watch?v=CasKUX-RAAM)」というような曲？<br/>
-SFZero2 no hou ga yori yokarou? Lou Rawls no 「[See you when I get there](https://www.youtube.com/watch?v=CasKUX-RAAM)」to iu you na kyoku?<br/>
+--> SFZero2 no hou ga yori yokarou? Lou Rawls no 「[See you when I get there](https://www.youtube.com/watch?v=CasKUX-RAAM)」to iu you na kyoku?<br/>
 --> Mas maigi nga ba ang sa SFZero2? Tulad ng sa tugtugin ni Lou Rawls'「[See you when I get there](https://www.youtube.com/watch?v=CasKUX-RAAM)」?<br/>
+<br/>
 --> 1.1.6.1.2) 卓球をやってると同じく、ミスチル？<br/>
 --> takkyuu wo yatteru to onajiku, misu chiru?<br/>
 --> Tulad ng paggawa sa ping-pong, i.e. mesa bola, miss chill?<br/>
