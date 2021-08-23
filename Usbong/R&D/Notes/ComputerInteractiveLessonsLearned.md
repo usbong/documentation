@@ -120,8 +120,7 @@ TO-DO: -update: this<br/>
 --> Maaaring gamitin lamang ang ganitong pamamaraan upang manalo:<br/>
 --> Neutral + Katamtamang Suntok;<br/>
 --> Ibaba + Katamtamang Sipa<br/>
---> Ibaba, Harap + Katamtamang Sipa:<br/>
---> Tatakbo siya upang gamitin ang kanyang braso upang ibagsak ang kalaban<br/>
+--> Ibaba, Harap + Katamtamang Sipa: Tatakbo siya upang gamitin ang kanyang braso upang ibagsak ang kalaban<br/>
 --> Katamtamang Suntok, i.e. X Command: nage, i.e. pagbato sa katunggali<br/>
 <br/>
 --> <b>paalala:</b> Gamit ang mga ganitong paraan ng pakikipaglaban, i.e. 5~6 anim na waza, i.e. technique, matutuklasan din ang mga ito:<br/>
