@@ -124,7 +124,7 @@ TO-DO: -update: this<br/>
 --> Tatakbo siya upang gamitin ang kanyang braso upang ibagsak ang kalaban<br/>
 --> Katamtamang Suntok, i.e. X Command: nage, i.e. pagbato sa katunggali<br/>
 <br/>
---> <b>paalala:</b> Gamit ang mga ganitong paraan ng pakikipaglaban, i.e. 5~6 anim na waza, i.e. technique, matutuklasan din ito:<br/>
+--> <b>paalala:</b> Gamit ang mga ganitong paraan ng pakikipaglaban, i.e. 5~6 anim na waza, i.e. technique, matutuklasan din ang mga ito:<br/>
 --> 1.1.6.1.1) 楽器から流れてる音 (gakki kara nagareteru oto; mula sa maligayang baul, dumadaloy na tunog);<br/>
 --> SFZero2のほうがより良かろう？Lou Rawlsの「[See you when I get there](https://www.youtube.com/watch?v=CasKUX-RAAM)」というような曲？<br/>
 --> SFZero2 no hou ga yori yokarou? Lou Rawls no 「[See you when I get there](https://www.youtube.com/watch?v=CasKUX-RAAM)」to iu you na kyoku?<br/>
