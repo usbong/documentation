@@ -112,6 +112,29 @@ TO-DO: -update: this<br/>
 --> did not finish by beating Final Boss, Gill;<br/>
 --> due to lost to Human Opponents who challenge with stronger Fighters
 
+#### 1.1.6.1) SFIII: 2nd Impact: Giant Attack
+--> Nintendo Switch version<br/>
+--> set difficulty level: highest, i.e. 8.<br/>
+HUGO (Germany)<br/>
+--> Maaaring gamitin lamang ang ganitong pamamaraan upang manalo:<br/>
+--> Neutral + Katamtamang Suntok;<br/>
+--> Ibaba + Katamtamang Sipa<br/>
+--> Ibaba, Harap + Katamtamang Sipa:<br/>
+--> Tatakbo siya upang gamitin ang kanyang braso upang ibagsak ang kalaban<br/>
+<br/>
+--> Alex (U.S.A.): Idagdag ang paggamit ng mga ito:<br/>
+--> Harap, Ibaba, Likod + Katamtamang Sipa: Ibabato niya ang kalaban sa dingding;<br/>
+--> Magagamit pagkatapos nito ito:<br/>
+--> Paharap o Palikod + Malakas na Sipa<br/>
+<br/>
+--> Gil (U.S.A. + Italy?): Kapag ginamit niya ang Resurrection, maaari siyang hampasin upang hindi maibalik sa puno ang sukat ng kanyang katawan-lakas<br/>
+--> Resurrection: kapag naubos ang laman ng kanyang sukat ng katawan+lakas, maibabalik niya ito gamit ang isang bilang ng SUPER.<br/>
+<br/>
+--> Necro (Russia; Katunggali pagkatapos ni Gil): Maaaring maglakad upang lapitan at gamitin ang Katamtamang Suntok, i.e. X Command, upang gumawa ng karaniwang nage, i.e. pagbato sa katunggali.<br/>
+<br/>
+--> Pagkagapi kay NECRO, ipaaalam ni HUGO sa kaibigan niya na si POISON, na natagpuan na niya ang kanyang hinahanap na tag-team partner.<br/>
+--> Magkasamang makikipaglaban bilang mga wrestler sina HUGO at NECRO, kabilang si POISON; habang galit na pinagmamasdan ng kaibigang batang babae ni NECRO.<br/>
+
 ### 1.1.7) Street Fighter Zero
 --> PlayStation version (Year 1995); executed on PlayStation3 machine<br/>
 --> set difficulty level to 6 stars; where 8 is highest<br/>
