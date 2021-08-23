@@ -115,12 +115,24 @@ TO-DO: -update: this<br/>
 #### 1.1.6.1) SFIII: 2nd Impact: Giant Attack
 --> Nintendo Switch version<br/>
 --> set difficulty level: highest, i.e. 8.<br/>
-HUGO (Germany)<br/>
+<br/>
+<b>HUGO (Germany)</b><br/>
 --> Maaaring gamitin lamang ang ganitong pamamaraan upang manalo:<br/>
 --> Neutral + Katamtamang Suntok;<br/>
 --> Ibaba + Katamtamang Sipa<br/>
 --> Ibaba, Harap + Katamtamang Sipa:<br/>
 --> Tatakbo siya upang gamitin ang kanyang braso upang ibagsak ang kalaban<br/>
+--> Katamtamang Suntok, i.e. X Command: nage, i.e. pagbato sa katunggali<br/>
+<br/>
+--> <b>paalala:</b> Gamit ang mga ganitong paraan ng pakikipaglaban, i.e. 5~6 anim na waza, i.e. technique, matutuklasan din ito:<br/>
+--> 1.1.6.1.1) 楽器から流れてる音 (gakki kara nagareteru oto; mula sa maligayang baul, dumadaloy na tunog);<br/>
+--> SFZero2のほうがより良かろう？Lou Rawlsの「[See you when I get there](https://www.youtube.com/watch?v=CasKUX-RAAM)」というような曲？<br/>
+SFZero2 no hou ga yori yokarou? Lou Rawls no 「[See you when I get there](https://www.youtube.com/watch?v=CasKUX-RAAM)」to iu you na kyoku?<br/>
+--> Mas maigi nga ba ang sa SFZero2? Tulad ng sa tugtugin ni Lou Rawls'「[See you when I get there](https://www.youtube.com/watch?v=CasKUX-RAAM)」?<br/>
+--> 1.1.6.1.2) 卓球をやってると同じく、ミスチル？<br/>
+--> takkyuu wo yatteru to onajiku, misu chiru?<br/>
+--> Tulad ng paggawa sa ping-pong, i.e. mesa bola, miss chill?<br/>
+--> <b>paalala:</b> May pangkat ng tumutugtog na Hapon na may pangalang "misu chiru", i.e. Mr.Children<br/>
 <br/>
 --> Alex (U.S.A.): Idagdag ang paggamit ng mga ito:<br/>
 --> Harap, Ibaba, Likod + Katamtamang Sipa: Ibabato niya ang kalaban sa dingding;<br/>
@@ -134,6 +146,7 @@ HUGO (Germany)<br/>
 <br/>
 --> Pagkagapi kay NECRO, ipaaalam ni HUGO sa kaibigan niya na si POISON, na natagpuan na niya ang kanyang hinahanap na tag-team partner.<br/>
 --> Magkasamang makikipaglaban bilang mga wrestler sina HUGO at NECRO, kabilang si POISON; habang galit na pinagmamasdan ng kaibigang batang babae ni NECRO.<br/>
+<br/>
 
 ### 1.1.7) Street Fighter Zero
 --> PlayStation version (Year 1995); executed on PlayStation3 machine<br/>
