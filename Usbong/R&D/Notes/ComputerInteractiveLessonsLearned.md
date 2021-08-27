@@ -592,7 +592,7 @@ secreto bidimensionalという<br/>
 --> saka gamitan ng Malakas na Suntok sa ibaba;<br/>
 --> May sukat din ng layo ang pamalo ni Rolento<br/>
 <br/>
---> 1.1.9.3) <b>Dagdag na Sulatin (part 1):</b><br/>
+--> 1.1.9.4) <b>Dagdag na Sulatin (part 1):</b><br/>
 --> Did NOT play X-men: Children of the Atom at the Arcade Game Center<br/>
 --> Played Marvel Super Heroes at the Arcade Game Center, albeit quickly lost to Computer; stopped<br/>
 --> Did NOT play Marvel Super Heroes vs Street Fighter at the Arcade Game Center<br/>
@@ -611,7 +611,36 @@ secreto bidimensionalという<br/>
 卒業できなかった記憶ある。<br/>
 卒業できたら、ギリギリ。<br/>
 <br/>
---> 1.1.9.4) <b>Dagdag na Sulatin (part 2):</b><br/>
+--> 1.1.9.4) <b>Sakura</b><br/>
+--> Pakikipaglaban kasama si Ryuu;<br/> 
+--> hadouken na apoy, mapapansing malakas gawa ng 15% ang damage nito?<br/> 
+--> Paraan upang magapi: Sukatin ang layo upang gumawa si Ryuu ng hadouken,<br/> 
+--> at magagawa mo bilang Sakura ang mga ito:<br/>
+--> Talong pagsalakay gamit ang Malakas na Sipa, at Malakas na Suntok sa ibaba.<br/>
+--> <b>Paalala:</b> Pasuntok sa itaas ang Malakas na Suntok sa ibaba ni Sakura; <br/>
+--> Gayundin ang kay Ryuu, bagama't mas malayo ang tama nito mula sa iyong tabi, gawa ng hindi ito direktang paitaas lamang.<br/> 
+--> Mula sa pakikipaglaban kay Ryuu, matututunan na magagamit ang COUNTER-ATTACK na SUNTOK;<br/>
+--> Gagawa si Sakura tulad ni Ryuu ng shouryuuken;<br/>
+--> <b>Paalala:</b> Tumatama patabi ang shouryuuken ni Sakura, sa halip na paitaas lamang. Gayunpaman, mas mahirap ito patamain, bukod pa sa mahirp gawin ang input COMMAND.<br/>
+<br/>
+--> Maaalala ang pook ng pakikipaglaban kay Ryuu sa bansang Hapon:<br/>
+--> May templo (清水寺(kiyomizudera)?), lawa, puno, sa ilalim ng bilog na buwan; bagama't makulimlim<br/>
+<br/>
+--> <b>Sanggunian:</b> With Okamoto, Yoshiki (former CAPCOM producer)<br/>
+【特別企画】WMT時計プレゼント企画当選者発表＆皆様のご質問にお答えします！<br/>
+--> https://www.youtube.com/watch?v=z8E3kelXm3E; last accessed: 20210827<br/>
+--> 25:43<br/>
+<br/>
+--> 八百万（やおよろず; walong daang sampung-libo; i.e. 80,000,000): May panginoon sa mga bagay-bagay;<br/>
+--> こころ (kokoro; puso): やまのうえに　大きな岩があり、 そこにご神木が入ってる<br/>
+--> Sa itaaas ng bundok, may malaking bato ng bundok, sa loob nito may puno ng panginoon.<br/>
+-->　なにか大事にして、手合わせる　（May kung anong ginawang malaking, i.e. mahalagang, bagay, kamay ipagsama）<br/>
+--> <b>Paalala:</b> Kapag wastong nagamit ang GUARD kapag sinalaky, tunog ng tinamaang kahoy? bolang tumatama sa ping-pong racket na may dagdag na goma?<br/>
+--> Pagkagapi kay Ryuu, maaalalang narinig ko na kung saan ang dumadaloy na maligayang tunog?<br/>
+--> Habang nakikipaglaban, narinig ko na rin ang daloy ng tunog na hango roon sa SFII?<br/>
+<br/>
+
+--> 1.1.9.5) <b>Dagdag na Sulatin (part 2):</b><br/>
 --> verifying: why I didn't play Guilty Gear as much as Street Figher series<br/>
 --> ARC SYSTEM WORKS<br/>
 --> Guilty Gear Xrd- Revelator<br/>
