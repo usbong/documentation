@@ -639,8 +639,20 @@ secreto bidimensionalという<br/>
 --> Pagkagapi kay Ryuu, maaalalang narinig ko na kung saan ang dumadaloy na maligayang tunog?<br/>
 --> Habang nakikipaglaban, narinig ko na rin ang daloy ng tunog na hango roon sa SFII?<br/>
 <br/>
-
---> 1.1.9.5) <b>Dagdag na Sulatin (part 2):</b><br/>
+--> 1.1.9.5) <b>Ryuu</b><br/>
+--> Pakikipaglaban kasama si Akuma/Gouki;<br/> 
+--> Paraan upang magapi: Sukatin ang layo upang gumawa si Akuma ng hadouken,<br/> 
+--> at magagawa mo bilang Ryuu ang mga ito:<br/>
+--> Talong pagsalakay gamit ang Malakas na Sipa, at Malakas na Sipa ulit sa ibaba naman.<br/>
+--> Kapag nakatayo at sasalakay, gamitin ang Malakas na Sipa sa ibaba.<br/>
+--> Kapag nahilo ang kalaban, gamitin ang nakatayong Malakas na Sipa, pagkatapos Malakas na Sipa sa ibaba.<br/>
+--> Nakatayong Malakas na Sipa ni Ryuu: Sipa ito na tumatama sa ulo ng kalaban.<br/>
+--> Pook ng pakikipaglaban kay Akuma sa ilalim ng lupa ng isang Isla:<br/>
+--> Maaalala ang sa Capcom + Disney Mickey Mouse Circus (at Aladdin) sa Super Family Computer<br/>
+--> Paalala: Kapag pinagninilayan ito habang nakikipaglaban kay Akuma, mabilis na mababawasan ang sukat ng iyong katawan+lakas;<br/>
+--> Magdudulot naman ito ng iyong agad na pagkatalo.<br/>
+<br/>
+--> 1.1.9.6) <b>Dagdag na Sulatin (part 2):</b><br/>
 --> verifying: why I didn't play Guilty Gear as much as Street Figher series<br/>
 --> ARC SYSTEM WORKS<br/>
 --> Guilty Gear Xrd- Revelator<br/>
