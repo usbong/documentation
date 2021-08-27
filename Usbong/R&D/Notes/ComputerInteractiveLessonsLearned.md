@@ -619,12 +619,12 @@ secreto bidimensionalという<br/>
 --> Talong pagsalakay gamit ang Malakas na Sipa, at Malakas na Suntok sa ibaba.<br/>
 --> <b>Paalala:</b> Pasuntok sa itaas ang Malakas na Suntok sa ibaba ni Sakura; <br/>
 --> Gayundin ang kay Ryuu, bagama't mas malayo ang tama nito mula sa iyong tabi, gawa ng hindi ito direktang paitaas lamang.<br/> 
---> Mula sa pakikipaglaban kay Ryuu, matututunan na magagamit ang COUNTER-ATTACK na SUNTOK;<br/>
---> Gagawa si Sakura tulad ni Ryuu ng shouryuuken;<br/>
+--> Mula sa pakikipaglaban kay Ryuu, matututunan na magagamit ang COUNTER-ATTACK na SUNTOK,<br/>
+--> i.e. gagawa si Sakura tulad ni Ryuu ng shouryuuken;<br/>
 --> <b>Paalala:</b> Tumatama patabi ang shouryuuken ni Sakura, sa halip na paitaas lamang. Gayunpaman, mas mahirap ito patamain, bukod pa sa mahirp gawin ang input COMMAND.<br/>
 <br/>
 --> Maaalala ang pook ng pakikipaglaban kay Ryuu sa bansang Hapon:<br/>
---> May templo (清水寺(kiyomizudera)?), lawa, puno, sa ilalim ng bilog na buwan; bagama't makulimlim<br/>
+--> May templo (清水寺(kiyomizudera; malinis tubig simbahan)?), lawa, puno, sa ilalim ng bilog na buwan; bagama't makulimlim<br/>
 <br/>
 --> <b>Sanggunian:</b> With Okamoto, Yoshiki (former CAPCOM producer)<br/>
 【特別企画】WMT時計プレゼント企画当選者発表＆皆様のご質問にお答えします！<br/>
@@ -636,7 +636,7 @@ secreto bidimensionalという<br/>
 --> Sa itaaas ng bundok, may malaking bato ng bundok, sa loob nito may puno ng panginoon.<br/>
 -->　なにか大事にして、手合わせる　（May kung anong ginawang malaking, i.e. mahalagang, bagay, kamay ipagsama）<br/>
 --> <b>Paalala:</b> Kapag wastong nagamit ang GUARD kapag sinalaky, tunog ng tinamaang kahoy? bolang tumatama sa ping-pong racket na may dagdag na goma?<br/>
---> Pagkagapi kay Ryuu, maaalalang narinig ko na kung saan ang dumadaloy na maligayang tunog?<br/>
+--> Pagkagapi kay Ryuu, maaalalang narinig ko na kung saan ang dumadaloy na maligayang tunog? Mario Story sa Nintendo 64?<br/>
 --> Habang nakikipaglaban, narinig ko na rin ang daloy ng tunog na hango roon sa SFII?<br/>
 <br/>
 --> 1.1.9.5) <b>Ryuu</b><br/>
@@ -649,7 +649,7 @@ secreto bidimensionalという<br/>
 --> Nakatayong Malakas na Sipa ni Ryuu: Sipa ito na tumatama sa ulo ng kalaban.<br/>
 --> Pook ng pakikipaglaban kay Akuma sa ilalim ng lupa ng isang Isla:<br/>
 --> Maaalala ang sa Capcom + Disney Mickey Mouse Circus (at Aladdin) sa Super Family Computer<br/>
---> Paalala: Kapag pinagninilayan ito habang nakikipaglaban kay Akuma, mabilis na mababawasan ang sukat ng iyong katawan+lakas;<br/>
+--> <b>Paalala:</b> Kapag pinagninilayan ito habang nakikipaglaban kay Akuma, mabilis na mababawasan ang sukat ng iyong katawan+lakas;<br/>
 --> Magdudulot naman ito ng iyong agad na pagkatalo.<br/>
 <br/>
 --> 1.1.9.6) <b>Dagdag na Sulatin (part 2):</b><br/>
