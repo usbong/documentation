@@ -833,8 +833,7 @@ Johnson, S. (1998). Who moved my cheese? UK: Vermilion<br/>
 <br/>
 --> <b>Sanggunian:</b> With Okamoto, Yoshiki (former producer @CAPCOM)<br/>
 -->【特別企画】WMT時計プレゼント企画当選者発表＆皆様のご質問にお答えします！<br/>
---> Bukod Tanging Plano: WMT Panahon Sukat PRESENT/regalo plano Ngayong Napiling Tao Ipalalabas<br/>
---> & Sasagutin po ang inyo pong mga Tanong!<br/>
+--> Bukod Tanging Plano: WMT Panahon Sukat PRESENT/REGALO/BIGAY plano Ngayong Napiling Tao Ipalalabas & Sasagutin po ang inyo pong mga Tanong!<br/>
 --> https://www.youtube.com/watch?v=z8E3kelXm3E; last accessed: 20210827<br/>
 --> 25:43<br/>
 <br/>
