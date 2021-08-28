@@ -814,16 +814,15 @@ Johnson, S. (1998). Who moved my cheese? UK: Vermilion<br/>
 --> <b>Tanong:</b> 理由 りゆう？, i.e. riyuu na sulat patag?<br/>
 --> <b>Sagot:</b> リユウ, i.e. riyuu na sulat tungong banyaga<br/>
 <br/>
---> <b>Kahulugan ng mga bahagi:</b> Sa pook ng Hari<br/>
---> <b>Kahulugan kapag ipinagsama:</b> Dahilan
+--> <b>Kahulugan ng mga bahagi, i.e. 王 里 由:</b> Sa pook ng Hari<br/>
+--> <b>Kahulugan kapag ipinagsama, i.e. 理由:</b> Dahilan
 <br/>
 --> <b>Fighter Dahilan:</b> Kilalanin ang Sarili at ang Daigdig<br/>
 <br/>
 --> <b>Matutuklasan:</b> Selfish, i.e. Makasarili<br/>
 <br/>
 --> <b>Dagdag:</b> Hindi mo 100% matitiyak ang pakay ng Tao sa kanyang mga ginagawa;<br/>
---> Ginagawa ba niya ang pagtulong sapagkat nais niyang makakuha ng kapalit, e.g. paghanga mula sa mga tao,<br/>
---> o nais niyang tumulong kahit wala itong kapalit?<br/>
+--> Ginagawa ba niya ang pagtulong sapagkat nais niyang makakuha ng kapalit, e.g. paghanga mula sa mga tao, o nais niyang tumulong kahit wala itong kapalit?<br/>
 <br/>
 --> Kapag tinanong ang Manloloko sa kanyang pakay, ano ang kanyang isasagot?<br/>
 --> where: Manloloko = budol-budol/carnapper/manloloko/cybercriminal/communist terrorist<br/>
@@ -834,17 +833,23 @@ Johnson, S. (1998). Who moved my cheese? UK: Vermilion<br/>
 <br/>
 --> <b>Sanggunian:</b> With Okamoto, Yoshiki (former producer @CAPCOM)<br/>
 -->【特別企画】WMT時計プレゼント企画当選者発表＆皆様のご質問にお答えします！<br/>
+--> Bukod Tanging Plano: WMT Panahon Sukat PRESENT/regalo plano Ngayong Napiling Tao Ipalalabas<br/>
+--> & Sasagutin po ang inyo pong mga Tanong!<br/>
 --> https://www.youtube.com/watch?v=z8E3kelXm3E; last accessed: 20210827<br/>
 --> 25:43<br/>
 <br/>
---> 八百万（やおよろず; walong daang sampung-libo; i.e. 800,00000 = 80,000,000): May panginoon sa mga bagay-bagay;<br/>
+--> 八百万（やおよろず; walong daang sampung-libo; i.e. 800,00000 = 80,000,000):<br/> 
+--> <b>Paliwanag:</b> May panginoon sa mga bagay-bagay;<br/>
+<br/>
 --> こころ (kokoro; puso): やまのうえに　大きな岩があり、 そこにご神木が入ってる<br/>
-—> yama no ue ni ookina iwa ga ari, soko ni goshinboku ga haitteru<br/>
---> Sa itaaas ng bundok, may malaking bato ng bundok, sa loob nito may puno ng panginoon.<br/>
+--> yama no ue ni ookina iwa ga ari, soko ni goshinboku ga haitteru<br/>
+--> Sa itaas ng bundok, may malaking bato ng bundok, sa loob nito may puno ng panginoon.<br/>
+<br/>
+--> <b>Paliwanag:</b><br/>
 --> なにか大事にして、<br/>
-—> nanika daijini shite,<br/>
-—> May kung anong ginawang malaking bagay, <br/>
-—> where: malaki : mahalaga<br/>
-—> 手合わせる<br/>
-—> te + awaseru<br/>
-—> kamay ipagsama<br/>
+--> nanika daijini shite,<br/>
+--> May kung anong ginawang malaking bagay, <br/>
+--> where: malaki : mahalaga<br/>
+--> 手合わせる<br/>
+--> te + awaseru<br/>
+--> kamay + ipagsama<br/>
