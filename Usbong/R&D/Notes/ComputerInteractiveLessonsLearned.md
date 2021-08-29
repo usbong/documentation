@@ -26,6 +26,17 @@ TO-DO: -update: this<br/>
 --> Street Fighter Zero series' background illustrations' color combination with Fighting Characters progress to be vibrant by Street Fighter Zero 3.<br/>
 --> This is despite additional animating portions with background may not have increased.<br/>
 
+#### Recommended Action:
+--> Set volume to mute;<br/>
+--> Listen to music, e.g. from David Gates' MAKE IT WITH YOU, BABY I'M-A WANT YOU, NEVER LET HER GO, while learning to be Fighter in the 試合（しあい；shiai）, i.e. matches.<br/>
+--> Ping-pong drill? reminder: ミスチル（miss chiru）<br/>
+--> observation skill level of background, et cetera increased...<br/>
+--> サクラの靴がいい・・・?<br/>
+--> Sakura shoes OK...?<br/>
+--> where: OK = gut, i.e. good<br/>
+--> technique also OK with writing computer instructions.<br/>
+--> However, non-background music sound effects also mute.<br/>
+
 ### 1.1.3) Street Fighter IV
 --> Ryuu and Ken Rival Battle<br/>
 --> Computer identifies if you as Ryuu execute actions intended by the developer<br/>
