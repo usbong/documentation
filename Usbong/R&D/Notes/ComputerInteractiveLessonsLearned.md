@@ -519,6 +519,44 @@ secreto bidimensionalという<br/>
 <br/>
 --> 達成感？<br/>
 
+#### 1.1.8.6) 【デモンズブレイゾン 魔界村 紋章編】; "Demon's Crest"
+積もった中古ＧＡＭＥＦＡＮの雑誌をチラッと見ながら、<br/>
+「デモンズブレイゾン 魔界村 紋章編」のオペネィングストーリーを<br/>
+読んでしまい、エンディングはどうなるか、調べてみた。<br/>
+<br/>
+https://www.youtube.com/watch?v=tzyEMMbPTwI;<br/>
+last accessed: 20210901<br/>
+<br/>
+スーパーファミリコンピュータの中古カセットを<br/>
+うちが持っていたが、あんまり使わなかった。<br/>
+<br/>
+弟が欲しかったため、2004~2005年に日本で買ってきたかな・・・<br/>
+<br/>
+"2,000 years ago, six magical Crests fell from the sky into the Demon Realm. These crests would bestow great power to the one that collected all six. Only one demon Firebrand, had the strength to collect five of these. The last, the Crest of Heaven, was held by the fearsome Demon Dragon. Firebrand defeated the Dragon, but was seriously wounded in the process. Seeing his chance, a lesser demon named Phalanx struck down the wounded Firebrand and stole the six Crests. Firebrand fell into the very colisseum of the Demon Dragon! Firebrand escapes the Dragon only after 2,000 years of torture. He emerges to find Phalanx the emperor of the demon realm, and master of the six Crests. Firebrand vows to defeat the evil Phalanx and regain the six mystical stones!"<br/>
+<br/>
+Halverson, D. (Ed.), et al. (1993). "GAMEFAN: next generation video game magazine (vol.2, issue 11)". CA: DIE HARD Publishing<br/>
+<br/>
+Firebrand: 赤き魔物；　レッドアリーマー；　<br/>
+--> Himalang Bagay na naroon din sa GHOSTS'N GOBLINS<br/>
+<br/>
+「赤き魔物は　再び　全ての紋章を　集めたが、<br/>
+その力を　使って　無敵と　なることを<br/>
+赤き魔物は　のぞまなかった・・・」<br/>
+<br/>
+「無の紋章<br/>
+全ての紋章　集めし者<br/>
+至高の力を　有する時<br/>
+<br/>
+天は　無となり<br/>
+万能を　与えん」<br/>
+<br/>
+"2,000 years ago, six magical Crests fell from the sky..."<br/>
+<br/>
+<b>Paalala:</b><br/>
+司る（つかさどる）： COMMAND<br/>
+寿司（すし）: sushi, i.e. may COMMAND ng buhay<br/>
+寿命（じゅみょう）: buhay<br/>
+
 ### 1.1.9) Street Fighter Zero 2
 --> Year 1996<br/>
 --> Executed on Nintendo Switch Lite, et cetera<br/>
