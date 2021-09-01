@@ -527,7 +527,7 @@ secreto bidimensionalという<br/>
 https://www.youtube.com/watch?v=tzyEMMbPTwI;<br/>
 last accessed: 20210901<br/>
 <br/>
-スーパーファミリコンピュータの中古カセットを<br/>
+スーパーファミリーコンピュータの中古カセットを<br/>
 うちが持っていたが、あんまり使わなかった。<br/>
 <br/>
 弟が欲しかったため、2004~2005年に日本で買ってきたかな・・・<br/>
@@ -539,23 +539,31 @@ Halverson, D. (Ed.), et al. (1993). "GAMEFAN: next generation video game magazin
 Firebrand: 赤き魔物；　レッドアリーマー；　<br/>
 --> Pulang Himalang Bagay na naroon din sa GHOSTS'N GOBLINS<br/>
 <br/>
-「赤き魔物は　再び　全ての紋章を　集めたが、<br/>
-その力を　使って　無敵と　なることを<br/>
-赤き魔物は　のぞまなかった・・・」<br/>
+<b>「赤き魔物は　再び　全ての紋章を　集めたが、</b><br/>
+"Bagama't naipon muli ng Pulang Mahiwagang Bagay ang lahat ng mga may Sulat na Sagisag,<br/>
+<b>その力を　使って　無敵と　なることを</b><br/>
+Ang paggamit ng Lakas na iyon, maging WALANG Kalaban<br/>
+<b>赤き魔物は　のぞまなかった・・・」</b><br/>
+Hindi hinangad ni Pulang Mahiwagang Bagay, <br/>
 <br/>
-「無の紋章<br/>
-全ての紋章　集めし者<br/>
-至高の力を　有する時<br/>
+<b>「無の紋章</b><br/>
+"May Sulat na Sagisag ng WALA<br/>
+<b>全ての紋章　集めし者</b><br/>
+Lahat ng may Sulat na Sagisag, Naipon ng Nilalang<br/> 
+<b>至高の力を　有する時</b><br/>
+Marating ang Itaas na Lakas, Sa panahon na Magkaroon<br/>
 <br/>
-天は　無となり<br/>
-万能を　与えん」<br/>
+<b>天は　無となり</b><br/>
+Ang LANGIT, magiging WALA<br/>
+<b>万能を　与えん」</b><br/>
+Sampung-libong Kakayanan, Ibibigay"<br/>
 <br/>
 "2,000 years ago, six magical Crests fell from the sky..."<br/>
 <br/>
 <b>Paalala:</b><br/>
 司る（つかさどる）： COMMAND<br/>
-寿司（すし）: sushi, i.e. may COMMAND ng buhay<br/>
-寿命（じゅみょう）: buhay<br/>
+寿司（すし）: sushi (pagkain), i.e. may COMMAND ng mahabang buhay, i.e. habambuhay<br/>
+寿命（じゅみょう）: habambuhay<br/>
 
 ### 1.1.9) Street Fighter Zero 2
 --> Year 1996<br/>
