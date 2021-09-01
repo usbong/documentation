@@ -541,7 +541,7 @@ Firebrand: 赤き魔物；　レッドアリーマー；　<br/>
 <br/>
 Nang mabasa ako ang sulatin, ang pagkaunawa ko, mas maliit ang pangangatawan ni Phalanx kaysa kay Firebrand, gawa ng paggamit ng salitang "lesser demon". Ngunit makikita natin sa daigdig na mas matangkad pa si Phalanx kaysa kay Firebrand! Gayunpaman, magagapi ni Firebrand si Phalanx na nagkaroon ng tatlong (3) anyo. Ayon sa daloy ng salaysay, makatatakas ang talunang Phalanx bago tuluyan nang mapuksa ni Firebrand.<br/>
 <br/>
-Ang nakasulat na pambungad na salaysay ang humila sa'kin upang matuklasan ang kinahinatnan ng daigdig nito; Sa GHOSTS'N GOBLINS naman, naging udyok ang pag-iral at pagkilos sa daigdig, sa halip na ang pambungad o katapusan ng salaysay.<br/>
+Ang nakasulat na pambungad na salaysay ang humila sa'kin upang matuklasan ang kinahinatnan ng daigdig nito; Sa GHOSTS'N GOBLINS naman, naging udyok ang pag-iral at pagkilos sa daigdig, sa halip na ang pambungad at katapusan ng salaysay.<br/>
 <br/>
 <b>「赤き魔物は　再び　全ての紋章を　集めたが、</b><br/>
 "Bagama't naipon muli ng Pulang Bagay na Himala  ang lahat ng mga may Sulat na Sagisag,<br/>
