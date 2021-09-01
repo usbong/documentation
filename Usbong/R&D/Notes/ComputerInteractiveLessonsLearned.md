@@ -537,14 +537,14 @@ last accessed: 20210901<br/>
 Halverson, D. (Ed.), et al. (1993). "GAMEFAN: next generation video game magazine (vol.2, issue 11)". CA: DIE HARD Publishing<br/>
 <br/>
 Firebrand: 赤き魔物；　レッドアリーマー；　<br/>
---> Pulang Himalang Bagay na naroon din sa GHOSTS'N GOBLINS<br/>
+--> Pulang Bagay na Himala na naroon din sa GHOSTS'N GOBLINS<br/>
 <br/>
 <b>「赤き魔物は　再び　全ての紋章を　集めたが、</b><br/>
-"Bagama't naipon muli ng Pulang Mahiwagang Bagay ang lahat ng mga may Sulat na Sagisag,<br/>
+"Bagama't naipon muli ng Pulang Bagay na Himala  ang lahat ng mga may Sulat na Sagisag,<br/>
 <b>その力を　使って　無敵と　なることを</b><br/>
-Ang paggamit ng Lakas na iyon, maging WALANG Kalaban<br/>
+Ang paggamit ng Lakas na iyon, maging WALANG KALABAN<br/>
 <b>赤き魔物は　のぞまなかった・・・」</b><br/>
-Hindi hinangad ni Pulang Mahiwagang Bagay, <br/>
+Hindi hinangad ng Pulang Bagay na Himala, <br/>
 <br/>
 <b>「無の紋章</b><br/>
 "May Sulat na Sagisag ng WALA<br/>
