@@ -544,7 +544,7 @@ Firebrand: 赤き魔物；　レッドアリーマー；　<br/>
 <b>その力を　使って　無敵と　なることを</b><br/>
 Ang paggamit ng Lakas na iyon, maging WALANG KALABAN<br/>
 <b>赤き魔物は　のぞまなかった・・・」</b><br/>
-Hindi hinangad ng Pulang Bagay na Himala, <br/>
+Hindi hinangad ng Pulang Bagay na Himala..."<br/>
 <br/>
 <b>「無の紋章</b><br/>
 "May Sulat na Sagisag ng WALA<br/>
