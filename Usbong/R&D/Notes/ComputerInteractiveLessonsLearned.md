@@ -539,7 +539,7 @@ Halverson, D. (Ed.), et al. (1993). "GAMEFAN: next generation video game magazin
 Firebrand: 赤き魔物；　レッドアリーマー；　<br/>
 --> Pulang Bagay na Himala na naroon din sa GHOSTS'N GOBLINS<br/>
 <br/>
-Nang mabasa ako ang sulatin, ang pagkaunawa ko, mas maliit ang pangangatawan ni Phalanx kaysa kay Firebrand, gawa ng paggamit ng salitang "lesser demon". Ngunit makikita natin sa daigdig na mas matangkad pa si Phalanx kaysa kay Firebrand! Gayunpaman, magagapi ni Firebrand si Phalanx na nagkaroon ng tatlong (3) anyo. Ayon sa daloy ng salaysay, makatatakas ang talunang Phalanx bago tuluyan nang mapuksa ni Firebrand.<br/>
+Nang mabasa ko ang sulatin, ang pagkaunawa ko, mas maliit ang pangangatawan ni Phalanx kaysa kay Firebrand, gawa ng paggamit ng salitang "lesser demon". Ngunit makikita natin sa daigdig na mas matangkad pa si Phalanx kaysa kay Firebrand! Gayunpaman, magagapi ni Firebrand si Phalanx na nagkaroon ng tatlong (3) anyo. Ayon sa daloy ng salaysay, makatatakas ang talunang Phalanx bago tuluyan nang mapuksa ni Firebrand.<br/>
 <br/>
 Ang nakasulat na pambungad na salaysay ang humila sa'kin upang matuklasan ang kinahinatnan ng daigdig nito; Sa GHOSTS'N GOBLINS naman, naging udyok ang pag-iral at pagkilos sa daigdig, sa halip na ang pambungad at katapusan ng salaysay.<br/>
 <br/>
