@@ -569,6 +569,32 @@ Sampung-libong Kakayanan, Ibibigay"<br/>
 寿司（すし）: sushi (pagkain), i.e. may COMMAND ng mahabang buhay, i.e. habambuhay<br/>
 寿命（じゅみょう）: habambuhay<br/>
 
+#### 1.1.8.7) Udyok ng Pagtuklas: Kilalanin ang Sarili at ang Daigdig; Fighter
+Naging udyok ng pagtuklas sa akin ang pag-iral at pagkilos sa daigdig nito.<br/>
+Ito'y sa halip na ang pambungad at katapusan ng salaysay.<br/>
+<br/>
+<b>Pambungad na salaysay:</b> Dinakip ng halimaw ang Irog ni Arthur; Ang Demonyong may Pakapak pa nga ba iyon?<br/>
+<br/>
+<b>Aksyon:</b> Iligtas ang Irog.<br/>
+<br/>
+<b>Katapusan ng salaysay:</b> Magagapi ni Arthur ang Haring Halimaw; Iuuwi niya ang kanyang Irog sa kanilang tahanang Castillo.<br/>
+<br/>
+<b>Tanong:</b> Ayon sa daloy ng mga salaysay ukol sa mga inililigtas na Irog, e.g. Prinsesa, ano ang nagiging udyok upang gawin iyon ng pangunahing Tauhan?<br/>
+<br/>
+<b>Sagot:</b><br/> 
+a) Yaman?<br/>
+--> Mayaman na karaniwan ang mga nanliligtas...<br/>
+--> Mas uunahin ng Gahaman ang Yaman kaysa ang kanyang *misyong* magligtas...<br/>
+<br/>
+b) Yabang?<br/>
+--> Hindi karaniwang naililigtas ng Mayabang ang Irog...<br/>
+--> Minamaliit ng Mayabang ang mga bagay-bagay na, ang sa katunayan, Malaki.<br/>
+<br/>
+...<br/>
+<br/>
+<b>Paalala:</b> Karaniwang natatapos ang salaysay sa pagtatalik ng pangunahing Tauhan at ang kanyang Iniligtas na Irog.<br/>
+--> Ito'y bagama't hindi na ito binabanggit kapag may mga batang kabilang sa mga panauhin ng salaysay.<br/>
+
 ### 1.1.9) Street Fighter Zero 2
 --> Year 1996<br/>
 --> Executed on Nintendo Switch Lite, et cetera<br/>
