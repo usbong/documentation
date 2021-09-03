@@ -46,6 +46,61 @@ TO-DO: -update: this<br/>
 --> Computer plays Classic Street Figher II battle tune as background music<br/>
 --> During battle, what Ken says encourages you; not "thrash talk"<br/>
 --> Additional Note: After battles, you as Ken tells opponent encouragement, i.e. optimistic view<br/>
+<br/>
+ＳＦＩＶでサクラとして戦おうとしたが、<br/>
+ＳＦＺＥＲＯ２と３で使ってた下＋パンチが<br/>
+距離が短くて、相手に当たらない・・・<br/>
+カウンター攻撃もなかった・・・？<br/>
+キャミーに負ける。<br/>
+<br/>
+確かにプロデューサーＯＨＮＯ氏が<br/>
+キャミーのキャラが好きだと言ってた<br/>
+動画を見たな・・・<br/>
+<br/>
+それで、サクラの代わりにダンにした。<br/>
+オレンジ色の格好でおもろくなった。<br/>
+Ｎ＋パンチとＮ＋キックのリーチが短いが、<br/>
+ＤＥＥＪＡＹによく当たる。<br/>
+<br/>
+そうしたら、ソニックブームのような弾を使い始めた。<br/>
+こっちがダンとして、ガードしかできなかった。<br/>
+ジャンプもいやだし、相手がそれを待ってるから。<br/>
+ＳＮＫのような避けロールがあればいいね。<br/>
+<br/>
+とにかく、ＤＥＥＪＡＹが近づくから、スーパー<br/>
+疾走無頼拳（ちっそうむらいけん？）で倒す。<br/>
+<br/>
+ちなみに、ブランかとして、難易度ＨＡＲＤＥＳＴで、<br/>
+２コインで試合が全部完成できたことある。<br/>
+<br/>
+SFEXが入れてある３Ｄコレクションがまだかな？<br/>
+ゲームセンターでSFEXをよく見れたが、<br/>
+やっぱりＰＳ１でまず練習したほうがいいね。<br/>
+といって、当時ゲームセンターへ行けなくなった。<br/>
+<br/>
+１９９７年～という時期に大変だったし。<br/>
+今振り返ると、budol-budol/carnapper/manloloko/<br/>
+cybercriminal/communist terroristがまた<br/>
+金が欲しくて、アタックされた。<br/>
+<br/>
+緊急時に、おじいちゃんが一緒に車にいたし。<br/>
+翌日、もうなくなったと言われた。<br/>
+<br/>
+また、２００８年に大変なことが起こった。<br/>
+ＴＧＳへ行けて、ＳＦＩＶをおいてあったＸＢＯＸ３６０で<br/>
+日本の人と初めてやってみたが、<br/>
+このbudol-budol/carnapper/manloloko/<br/>
+cybercriminal/communist terroristが金が欲しくて、<br/>
+ケータイなどの電波や音波で勝手にアタックされ、<br/>
+仕事があったのに、働けなくなった状態となり、<br/>
+一時的に休み、また仕事の就職をやった。<br/>
+<br/>
+２００９年に１９９７年～２００８年に<br/>
+うちが使ってた車が問題が発生され、<br/>
+安く売れないといけない状態、<br/>
+また、勝手に奪われるのもあり、<br/>
+駐車からなくなるという事件等々。<br/>
+<br/>
 
 ### 1.1.4) Street Fighter II': Hyper Fighting
 --> attacks do not hit 100%; (due to speed of created world)<br/>
