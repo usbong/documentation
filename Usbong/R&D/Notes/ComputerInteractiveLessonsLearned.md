@@ -68,7 +68,7 @@ Nakita ko sa palabas, i.e. gumagalaw na larawan....<br/>
 それで、サクラの代わりにダンにした。<br/>
 Kung kaya't, bilang pamalit kay Sakura, ginawa kong si Dan. <br/>
 オレンジ色の格好でおもろくなった。<br/>
-Naging nakaaaliw gawa ng kulay orange niyang anyo.<br/>
+Naging nakaaaliw sa kulay orange niyang anyo.<br/>
 Ｎ＋強パンチとＮ＋強キックのリーチが短いが、roong <br/>
 Bagama't maikli ang abot ng N + Malakas na Suntok at N + Malakas na Sipa,<br/>
 ＤＥＥＪＡＹによく当たる。<br/>
