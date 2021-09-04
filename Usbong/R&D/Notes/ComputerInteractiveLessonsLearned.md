@@ -82,11 +82,11 @@ Ito ako bilang si Dan, GUARD, i.e. Sangga, lamang ang nagagawa.<br/>
 Ayaw ko rin ng JUMP, hinihintay kasi iyon ng katunggali<br/>
 ＳＮＫ:KOFのような避けロールがあればいいね。<br/>
 Ayos kung may umiiwas na paggulong tulad ng sa SNK:KOF, 'di ba?<br/>
-<br/>
 とにかく、ＤＥＥＪＡＹが近づくから、スーパー<br/>
 Gayunpaman, lumalapit si DEEJAY, Super<br/>
 疾走無頼拳（ちっそうむらいけん？）で倒す。<br/>
 Sakit Alis Walang Asa Kamao, gamit ito, mapatataob. <br/>
+<br/>
 ちなみに、ブランカとして、難易度ＨＡＲＤＥＳＴで、<br/>
 Dagdag pa rito, bilang si Blanka, sa nibel ng hirap-dali na HARDEST,<br/>
 ２コインで試合が全部完成できたことある。<br/>
@@ -97,7 +97,7 @@ SFEXが入れてある３Ｄコレクションがまだかな？<br/>
 ゲームセンターでSFEXをよく見れたが、<br/>
 Bagama't madalas kong nakikita sa Game Center ang SFEX,<br/>
 やっぱりＰＳ１でまず練習したほうがいいね。<br/>
-Pagkatapos suriin, sa PS1, maiging magsanay muna, 'di ba?<br/>
+pagkatapos suriin, sa PS1, maiging magsanay muna, 'di ba?<br/>
 といって、当時ゲームセンターへ行けなくなった。<br/>
 Sabihin man ito, noong panahong iyon, naging hindi na ako makapunta sa Game Center.<br/>
 <br/>
