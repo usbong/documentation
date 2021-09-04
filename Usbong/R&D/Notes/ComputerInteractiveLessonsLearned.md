@@ -48,59 +48,108 @@ TO-DO: -update: this<br/>
 --> Additional Note: After battles, you as Ken tells opponent encouragement, i.e. optimistic view<br/>
 <br/>
 ＳＦＩＶでサクラとして戦おうとしたが、<br/>
-ＳＦＺＥＲＯ２と３で使ってた下＋パンチが<br/>
+Sa SFIV, bilang si Sakura sinubukan kong lumaban,<br/>
+ＳＦＺＥＲＯ２と３で使ってた下＋強パンチが<br/>
+bagama't ang Ibaba + Malakas na Suntok na ginamit ko sa SFZERO2 at 3,<br/>
 距離が短くて、相手に当たらない・・・<br/>
+maikli ang layo ng abot, hindi tumatama sa katunggali...<br/>
 カウンター攻撃もなかった・・・？<br/>
+COUNTER na pagsalakay rin wala...?<br/>
 キャミーに負ける。<br/>
+Natatalo kay Cammy.<br/>
 <br/>
 確かにプロデューサーＯＨＮＯ氏が<br/>
+Tiyak, ang Producer na si G. OHNO<br/>
 キャミーのキャラが好きだと言ってた<br/>
+sinabing nais niya ang Tauhan na si Cammy<br/>
 動画を見たな・・・<br/>
+Nakita ko sa palabas, i.e. gumagalaw na larawan....<br/>
 <br/>
 それで、サクラの代わりにダンにした。<br/>
+Kung kaya't, bilang pamalit kay Sakura, n ng aking katunggali.ginawa kong si Dan. <br/>
 オレンジ色の格好でおもろくなった。<br/>
-Ｎ＋パンチとＮ＋キックのリーチが短いが、<br/>
+Naging nakaaaliw gawa ng kulay orange niyang anyo.<br/>
+Ｎ＋強パンチとＮ＋強キックのリーチが短いが、roong <br/>
+Bagama't maikli ang abot ng N + Malakas na Suntok at N + Malakas na Sipa,<br/>
 ＤＥＥＪＡＹによく当たる。<br/>
+Madalas na tumatama kay DEEJAY.<br/>
 <br/>
 そうしたら、ソニックブームのような弾を使い始めた。<br/>
+Sa paggawa nito, sinimulan niyang gamitin ang bala na tulad sa SONIC BOOM.<br/>
 こっちがダンとして、ガードしかできなかった。<br/>
+Ito ako bilang si Dan, GUARD, i.e. Sangga, lamang ang nagagawa.<br/>
 ジャンプもいやだし、相手がそれを待ってるから。<br/>
-ＳＮＫのような避けロールがあればいいね。<br/>
+Ayaw ko rin ng JUMP, hinhintay kasi iyon ng katunggali<br/>
+ＳＮＫ:KOFのような避けロールがあればいいね。<br/>
+Ayos kung may umiiwas na paggulong tulad ng sa SNK:KOF, 'di ba?<br/>
 <br/>
 とにかく、ＤＥＥＪＡＹが近づくから、スーパー<br/>
+Gayunpaman, lumalapit si DEEJAY, Super<br/>
 疾走無頼拳（ちっそうむらいけん？）で倒す。<br/>
-<br/>
+Sakit Alis Walang Asa Kamao, gamit ito, mapatataob. <br/>
 ちなみに、ブランカとして、難易度ＨＡＲＤＥＳＴで、<br/>
+Dagdag pa rito, bilang si Blanka, sa nibel ng hirap-dali na HARDEST,<br/>
 ２コインで試合が全部完成できたことある。<br/>
+Gamit ang 2 COIN/Token nagawa ko nang matapos ang lahat ng pakikipagtunggali.<br/>
 <br/>
 SFEXが入れてある３Ｄコレクションがまだかな？<br/>
+3D Collection na may inilagay na SFEX, wala pa kaya?<br/>
 ゲームセンターでSFEXをよく見れたが、<br/>
+Bagama't madalas kong nakikita sa Game Center ang SFEX,<br/>
 やっぱりＰＳ１でまず練習したほうがいいね。<br/>
+Pagkatapos suriin, sa PS1, maiging magsanay muna, 'di ba?<br/>
 といって、当時ゲームセンターへ行けなくなった。<br/>
+Sabihin man ito, noong panahong iyon, naging hindi na ako makapunta sa Game Center.<br/>
 <br/>
 １９９７年～という時期に大変だったし。<br/>
+Ang pook ng panahon na Taong 1997~, malaking pagbabago rin kasi.<br/>
 今振り返ると、budol-budol/carnapper/manloloko/<br/>
+Ngayon kung balikan, budol-budol/carnapper/manloloko/<br/>
 cybercriminal/communist terroristがまた<br/>
+cybercriminal/communist terrorist muling<br/>
 金が欲しくて、アタックされた。<br/>
+nais ng salapi, umatake.<br/>
 <br/>
 緊急時に、おじいちゃんが一緒に車にいたし。<br/>
+Sa mabilisang pangangailangang panahon, kasama ko rin ang Lolo sa sasakyan.<br/>
 翌日、もうなくなったと言われた。<br/>
+Sumunod na araw, sinabihan ako na yumao na siya; where: yumao: "iniwan na tayo..."<br/>
 <br/>
 また、２００８年に大変なことが起こった。<br/>
+Muli, taong 2008, naganap ang bagay na malaking pagbabago.<br/>
 ＴＧＳへ行けて、ＳＦＩＶをおいてあったＸＢＯＸ３６０で<br/>
+Nakapunta ako sa TGS, sa naroong XBOX360, ang SFIV<br/>
 日本の人と初めてやってみたが、<br/>
+kasama ang isang Hapon, unang sinubukan, kaya lang<br/>
+<br/>
 このbudol-budol/carnapper/manloloko/<br/>
+Itong budol-budol/carnapper/manloloko/<br/>
 cybercriminal/communist terroristが金が欲しくて、<br/>
+cybercriminal/communist terrorist nais ang salapi,<br/>
 ケータイなどの電波や音波で勝手にアタックされ、<br/>
+gamit halimbawa ang kuryenteng alon at tunog na alon, sa dala-dalang telepono, atbp, <br/> inatake ako sa paraan ng panalong kamay<br/>
 仕事があったのに、働けなくなった状態となり、<br/>
+May hanap-buhay na nga, naging pook na hindi makapaghanap-buhay,<br/>
 一時的に休み、また仕事の就職をやった。<br/>
+sa isang panahon, i.e. pansamantala, nagpahinga, muling gumawa ng pagpasa bilang manggagawa sa hanap-buhay.<br/>
 <br/>
 ２００９年に１９９７年～２００８年に<br/>
+Taong 2008, noong mga taong 1997~2008<br/>
 うちが使ってた車が問題が発生され、<br/>
+ang ginagamit na sasakyan ng pamilya, nagkaroon ng suliranin,<br/>
 安く売れないといけない状態、<br/>
+pook na mura lang na maibebenta <br/>
 また、勝手に奪われるのもあり、<br/>
+at, mayroon ding ninakaw sa paraan ng panalong kamay<br/>
 駐車からなくなるという事件等々。<br/>
+mula sa pagkaparada ng sasakyan nawala na insidente, atbp.<br/>
 <br/>
+ブランカ：　ジャングル、もっときびち～・・・<br/>
+buranka: janguru, motto kibichi~...;<br/>
+where: kibichi~ : kibishii<br/>
+Blanka: Sa gubat, higit na mahigpit....<br/>
+<br/>
+
 
 ### 1.1.4) Street Fighter II': Hyper Fighting
 --> attacks do not hit 100%; (due to speed of created world)<br/>
