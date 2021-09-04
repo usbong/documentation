@@ -66,7 +66,7 @@ sinabing nais niya ang Tauhan na si Cammy<br/>
 Nakita ko sa palabas, i.e. gumagalaw na larawan....<br/>
 <br/>
 それで、サクラの代わりにダンにした。<br/>
-Kung kaya't, bilang pamalit kay Sakura, n ng aking katunggali.ginawa kong si Dan. <br/>
+Kung kaya't, bilang pamalit kay Sakura, ginawa kong si Dan. <br/>
 オレンジ色の格好でおもろくなった。<br/>
 Naging nakaaaliw gawa ng kulay orange niyang anyo.<br/>
 Ｎ＋強パンチとＮ＋強キックのリーチが短いが、roong <br/>
