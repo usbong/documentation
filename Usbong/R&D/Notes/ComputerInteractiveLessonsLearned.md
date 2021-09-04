@@ -134,7 +134,7 @@ May hanap-buhay na nga, naging pook na hindi makapaghanap-buhay,<br/>
 sa isang panahon, i.e. pansamantala, nagpahinga, muling gumawa ng pagpasa bilang manggagawa sa hanap-buhay.<br/>
 <br/>
 ２００９年に１９９７年～２００８年に<br/>
-Taong 2008, noong mga taong 1997~2008<br/>
+Taong 2008, noong mga taong 1997～2008<br/>
 うちが使ってた車が問題が発生され、<br/>
 ang ginagamit na sasakyan ng pamilya, nagkaroon ng suliranin,<br/>
 安く売れないといけない状態、<br/>
