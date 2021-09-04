@@ -79,7 +79,7 @@ Sa paggawa nito, sinimulan niyang gamitin ang bala na tulad sa SONIC BOOM.<br/>
 こっちがダンとして、ガードしかできなかった。<br/>
 Ito ako bilang si Dan, GUARD, i.e. Sangga, lamang ang nagagawa.<br/>
 ジャンプもいやだし、相手がそれを待ってるから。<br/>
-Ayaw ko rin ng JUMP, hinhintay kasi iyon ng katunggali<br/>
+Ayaw ko rin ng JUMP, hinihintay kasi iyon ng katunggali<br/>
 ＳＮＫ:KOFのような避けロールがあればいいね。<br/>
 Ayos kung may umiiwas na paggulong tulad ng sa SNK:KOF, 'di ba?<br/>
 <br/>
