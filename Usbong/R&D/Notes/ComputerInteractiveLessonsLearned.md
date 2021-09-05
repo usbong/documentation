@@ -1262,6 +1262,36 @@ https://www.youtube.com/watch?v=mWya9BLs91o; last accessed: 20210809<br/>
 --> Opponent moves farther after air combos<br/>
 --> Simply use combinations 1 and 2;<br/>
 --> You as Bryan may not be the strongest, but using less time to memorize combos, etc can still be a strong fighter.
+--> <b>Additional Note:</b>
+--> Previously, played Tekken Tag Tournament at Arcade Game Center;<br/> 
+--> Bryan technique NOT effective against Human Fighters who challenge<br/>
+
+### 1.5.2) PAC-MAN (NAMCOT)
+--> 1984;<br/>
+スタートから、化け物が<br/>
+同じ方向へ行くと思ったら、<br/>
+ミッションが完成できる毎に、<br/>
+動きのスピードも速くなるので、<br/>
+作戦も調整しないといけないね。<br/>
+<br/>
+パワーアップの時間も短くなるが、<br/>
+パックマンは、警察さんとして、<br/>
+車の音を鳴らし、効果的なのかな？<br/>
+<br/>
+最初から少しでも、進歩できたら、<br/>
+化け物を方向を変えるほど、捕まえなくて、<br/>
+四角（資格？）の形にしてあるお金を<br/>
+働きのいつも通りに、取ったほうが良いと、<br/>
+パックマンの世界から学べる。<br/>
+<br/>
+また、極右から極左のところへ行くたびに、<br/>
+あるいは、その逆の方向だとしたら、<br/>
+追ってくる、攻める化け物の動きが遅くなる。<br/>
+<br/>
+ＨＩＤＥ＆ＳＥＥＫという時もあるが、<br/>
+パックマンが一人の四人か五人<br/>
+のユニットとして、行動したら・・・？<br/>
+<br/>
 
 ## 1.6) Shin-Nihon Kikaku (SNK): New Japan Project
 ## 1.6.1) The King of Fighters '98: Dream Match Never Ends
