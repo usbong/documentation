@@ -1261,8 +1261,8 @@ https://www.youtube.com/watch?v=mWya9BLs91o; last accessed: 20210809<br/>
 --> Execution of air combos do not hit 100%, likely due to creation of world; <br/>
 --> Opponent moves farther after air combos<br/>
 --> Simply use combinations 1 and 2;<br/>
---> You as Bryan may not be the strongest, but using less time to memorize combos, etc can still be a strong fighter.
---> <b>Additional Note:</b>
+--> You as Bryan may not be the strongest, but using less time to memorize combos, etc can still be a strong fighter.<br/>
+--> <b>Additional Note:</b><br/>
 --> Previously, played Tekken Tag Tournament at Arcade Game Center;<br/> 
 --> Bryan technique NOT effective against Human Fighters who challenge<br/>
 
