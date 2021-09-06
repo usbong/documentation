@@ -69,7 +69,7 @@ Nakita ko sa palabas, i.e. gumagalaw na larawan....<br/>
 Kung kaya't, bilang pamalit kay Sakura, ginawa kong si Dan. <br/>
 オレンジ色の格好でおもろくなった。<br/>
 Naging nakaaaliw sa kulay orange niyang anyo.<br/>
-Ｎ＋強パンチとＮ＋強キックのリーチが短いが、roong <br/>
+Ｎ＋強パンチとＮ＋強キックのリーチが短いが、<br/>
 Bagama't maikli ang abot ng N + Malakas na Suntok at N + Malakas na Sipa,<br/>
 ＤＥＥＪＡＹによく当たる。<br/>
 Madalas na tumatama kay DEEJAY.<br/>
