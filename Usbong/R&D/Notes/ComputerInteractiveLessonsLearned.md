@@ -1269,10 +1269,15 @@ https://www.youtube.com/watch?v=mWya9BLs91o; last accessed: 20210809<br/>
 ### 1.5.2) PAC-MAN (NAMCOT)
 --> 1984;<br/>
 スタートから、化け物が<br/>
+Mula sa simula, ang mga Naibang Bagay, i.e. Manloloko<br/>
 同じ方向へ行くと思ったら、<br/>
+Sa parehong gawi tutungo, nang maisip ko ito,<br/>
 ミッションが完成できる毎に、<br/>
+Tuwing natatapos ang MISSION,<br/>
 動きのスピードも速くなるので、<br/>
+dahil bumibilis ang paggalaw,<br/>
 作戦も調整しないといけないね。<br/>
+Hindi makasusulong kung hindi aayusin ang pagbuo ng pakikipaglaban.<br/>
 <br/>
 パワーアップの時間も短くなるが、<br/>
 パックマンは、警察さんとして、<br/>
