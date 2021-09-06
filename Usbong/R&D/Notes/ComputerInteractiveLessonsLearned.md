@@ -1280,23 +1280,37 @@ dahil bumibilis ang paggalaw,<br/>
 Hindi makasusulong kung hindi aayusin ang pagbuo ng pakikipaglaban.<br/>
 <br/>
 パワーアップの時間も短くなるが、<br/>
+Umikli man ang panahon ng POWER-UP,<br/> 
 パックマンは、警察さんとして、<br/>
+Si PACMAN, bilang Pulis,<br/>
 車の音を鳴らし、効果的なのかな？<br/>
+Pinasasalitang bibig ng ibon ang tunog ng sasakyan, may nakababagong bunga kaya?<br/>
 <br/>
 最初から少しでも、進歩できたら、<br/>
-化け物を方向を変えるほど、捕まえなくて、<br/>
+Mula sa simula, kahit kaunti, maka-usad,<br/>
+化け物を方向を変えるほど、捕まえなくて、
+Ang Manloloko, labis na baguhin ang gawi, (sa ganitong paraan) huwag hulihin,<br/>
 四角（資格？）の形にしてあるお金を<br/>
+May apat na sulok ((katunog ng) maramihang kakayanan?) na hugis na salapi<br/>
 働きのいつも通りに、取ったほうが良いと、<br/>
-パックマンの世界から学べる。<br/>
+Sa parating daan ng paghahanap-buhay , maiging kunin daw,<br/>
+パックマンの世界から学べる。
+Matututunan mula sa daigdig ng PACMAN.<br/>
 <br/>
-また、極右から極左のところへ行くたびに、<br/>
+また、極右から極左のところへ行くたびに、
+Muli, mula sa pinaka-kanan papunta sa pinaka-kaliwa, tuwing tumutungo,<br/>
 あるいは、その逆の方向だとしたら、<br/>
-追ってくる、攻める化け物の動きが遅くなる。<br/>
+O kaya naman, kapag ginawa ito sa baliktad na gawi,<br/>
+追ってくる、攻める化け物の動きが遅くなる。
+Dumarating sa paghahabol, ang galaw ng sumasalakay na Manloloko, nagiging mabagal.<br/>
 <br/>
 ＨＩＤＥ＆ＳＥＥＫという時もあるが、<br/>
+May sinasabing HIDE&SEEK na panahon,<br/>
 パックマンが一人の四人か五人<br/>
+Si PACMAN, bilang isa sa apat na tao o limang tao<br/>
 のユニットとして、行動したら・・・？<br/>
-<br/>
+na UNIT, kung magtungo't kumilos kaya...?<br/>
+
 
 ## 1.6) Shin-Nihon Kikaku (SNK): New Japan Project
 ## 1.6.1) The King of Fighters '98: Dream Match Never Ends
