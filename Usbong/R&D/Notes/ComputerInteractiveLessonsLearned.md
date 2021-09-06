@@ -1294,7 +1294,7 @@ Ang Manloloko, labis na baguhin ang gawi, (sa ganitong paraan) huwag hulihin,<br
 May apat na sulok ((katunog ng) maramihang kakayanan?) na hugis na salapi<br/>
 働きのいつも通りに、取ったほうが良いと、<br/>
 Sa parating daan ng paghahanap-buhay , maiging kunin daw,<br/>
-パックマンの世界から学べる。
+パックマンの世界から学べる。<br/>
 Matututunan mula sa daigdig ng PACMAN.<br/>
 <br/>
 また、極右から極左のところへ行くたびに、
