@@ -562,8 +562,33 @@ Kumaliwa at kumanan, makikita mo ang pagitan sa paggalaw.<br/>
 --> Magagamit din ang talong pagsalakay sa Lumilipad na Dragon.<br/>
 --> <b>Paalala:</b> Napapawalang-bisa ng kalasag ang mga ibinabato ng mga Halimaw,<br/>
 --> bagama't hindi ang mula sa Dambuhalang Goblin.<br/>
+--> Maliban lamang ito kung nakaluhod ang iyong isang paa, saka maaaring mapawalang-bisa ang ibinabato nito.<br/>
 --> Pagkatapos ng pagsisiyasat, tulad sa yuki, i.e. ulang tumigas at naging yelo, snowflake, ang hugis nito.<br/>
+--> <b>Paalala:</b> Gawan ng dalawa o higit pang pagsalakay ang Dambuhalang Goblin, lalo na kapag dalawa ang mga ito, sapagkat mas mabilis ang hakbang ng isa sa kanila sa pagsugod sa iyo.<br/>
+--> Tungkol sa Pulang Demonyong May Pakpak, maaaring gumawa ng talong pagsalakay, at saka salakayin ito pagbaba; mas pinadadali ng sibat ang gawaing ito, kaysa sa kalasag.<br/>
+--> <b>Dagdag:</b> May naibigay na paliwanag sa isipan ng Pulang Demonyong May Pakapak, na kapag ito'y nagsimula sa kanan at sumalakay upang mapunta sa iyong kaliwa, ito'y mas matagal na nakababa sa halip na lumilipad-lipad.<br/>
+--> Mahinahong salakayin ito gamit ang iyong sandata nang hindi tumatalun-talon.<br/>
+--> Kapag malapit na sa pinaka-itaas na palapag kung saan naroon ang pintong kailangan ng susi, lumalayo na rin ang mga ito; kung kaya't maaari ring sumugod papanhik.<br/>
+--> Alalahanin pa rin na may mga kalanasay sa sahig, salakayin ang nakalabas na ulo nito sa ibaba bago sila magsitalunan.<br/>
+--> <b>Paalala:</b> May naghihintay na masusuot na kalasag sa loob ng baul sa unang palapag na may mga Dambuhalang Goblin, pagkatapos magapi ang Lumilipad na Dragon.<br/>
+--> Kapag may suot ka pang kalasag, wala nang dagdag na masusuot na kalasag sa loob ng baul.<br/>
+--> Ang baul na dala-dala ng Pulang Demonyong May Pakpak sa pinaka-kanan ng palapag na ito, naglalaman ng sandata, e.g. sibat, kalasag na sandata.<br/>
+--> Mas mapadadali ng sibat ang paggapi sa mga Halimawa gawa ng nakasasalakay gamit nito nang malayuan.<br/>
+--> Gayunpaman, hindi papayagan ng daigdig nito na makausad ka sa ikahuling Anim na bahagi gamit ang sibat; kailangan, kalasag.<br/>
+<br/>
+<b>"THIS WEAPON HAS NOT EFFECT<br/>
+TRY AGAIN"</b><br/>
+<br/>
+--> <b>Paalala:</b> May dalawang Dambuhalang Pulang Demonyong May Pakpak na nagbabantay sa pinto.<br/>
+--> Mas mabagal ang mga ito kaysa sa hindi Dambuhalang uri nito.<br/>
+--> Masasalakay sila gamit ang sandata kapag bumukas na ang pakpak nito.<br/>
+--> Mag-iingat din sa ibinabato nitong hugis shuriken.<br/>
+--> Hindi madaling makita ito, kapag sunud-sunod ang iyong pagsalakay, lalo pa't nanginginig din ang gumagalaw na larawan ng makikita sa daigdig.<br/>
+--> Ayon sa aklat ng paliwanag, sampung tama ang kailangan upang magapi ang bawat isang Dambuhalang Pulang Demonyong May Pakpak.<br/>
+<br/>
+
 --> <b>Dagdag:</b> Anim na Bahagi ang Salaysay<br/>
+
 <br/>
 徐々に進める・・・<br/>
 unti-unting nakasusulong...<br/>
