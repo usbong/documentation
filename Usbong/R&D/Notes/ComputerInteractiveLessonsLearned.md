@@ -1297,11 +1297,11 @@ Sa parating daan ng paghahanap-buhay , maiging kunin daw,<br/>
 パックマンの世界から学べる。<br/>
 Matututunan mula sa daigdig ng PACMAN.<br/>
 <br/>
-また、極右から極左のところへ行くたびに、
+また、極右から極左のところへ行くたびに、<br/>
 Muli, mula sa pinaka-kanan papunta sa pinaka-kaliwa, tuwing tumutungo,<br/>
 あるいは、その逆の方向だとしたら、<br/>
 O kaya naman, kapag ginawa ito sa baliktad na gawi,<br/>
-追ってくる、攻める化け物の動きが遅くなる。
+追ってくる、攻める化け物の動きが遅くなる。<br/>
 Dumarating sa paghahabol, ang galaw ng sumasalakay na Manloloko, nagiging mabagal.<br/>
 <br/>
 ＨＩＤＥ＆ＳＥＥＫという時もあるが、<br/>
