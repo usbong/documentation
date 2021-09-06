@@ -1288,7 +1288,7 @@ Pinasasalitang bibig ng ibon ang tunog ng sasakyan, may nakababagong bunga kaya?
 <br/>
 最初から少しでも、進歩できたら、<br/>
 Mula sa simula, kahit kaunti, maka-usad,<br/>
-化け物を方向を変えるほど、捕まえなくて、
+化け物を方向を変えるほど、捕まえなくて、<br/>
 Ang Manloloko, labis na baguhin ang gawi, (sa ganitong paraan) huwag hulihin,<br/>
 四角（資格？）の形にしてあるお金を<br/>
 May apat na sulok ((katunog ng) maramihang kakayanan?) na hugis na salapi<br/>
