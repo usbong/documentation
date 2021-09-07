@@ -58,7 +58,7 @@
 --> Gawin ang magagawa mo sa abot ng iyong kaya upang magapi ang lumilipad na Dragon.<br/>
 <br/>
 
-## 3. Ikatatlong Bahagi
+## 3. Ikatlong Bahagi
 --> May lumilipad ulit na Dragon na nagbabantay sa pinto.<br/>
 --> Nasa kanya rin ang susi sa ikatlong pinto.<br/>
 --> Subalit, kailangan mo munang lampasan ang tulay sa ibabaw ng ilog ng apoy.<br/> 
