@@ -168,12 +168,12 @@ Kumaliwa at kumanan, makikita mo ang pagitan sa paggalaw.<br/>
 TRY AGAIN"</b><br/>
 <br/>
 --> <b>Paalala:</b> May dalawang Dambuhalang Pulang Demonyong May Pakpak na nagbabantay sa pinto.<br/>
---> Mas mabagal ang mga ito kaysa sa hindi Dambuhalang uri nito.<br/>
---> Masasalakay sila gamit ang sandata kapag bumukas na ang pakpak nito.<br/>
+--> Mas mabagal ang mga ito kaysa sa hindi Dambuhalang uri nila.<br/>
+--> Masasalakay sila gamit ang sandata kapag bumukas na ang pakpak nila.<br/>
 --> Mag-iingat din sa ibinabato nitong hugis shuriken.<br/>
 --> Hindi madaling makita ito, kapag sunud-sunod ang iyong pagsalakay, lalo pa't nanginginig din ang gumagalaw na larawan ng makikita sa daigdig.<br/>
 --> Ayon sa aklat ng paliwanag, sampung tama ang kailangan upang magapi ang bawat isang Dambuhalang Pulang Demonyong May Pakpak.<br/>
---> <b>Paalala:</b> May Anim na Bahagi ang Salaysay<br/>
+--> <b>Paalala:</b> May Anim na Bahagi ang Salaysay ng Paglalakbay<br/>
 
 ## 6. Ika-anim na Bahagi
 TO-DO: -idagdag: ito
