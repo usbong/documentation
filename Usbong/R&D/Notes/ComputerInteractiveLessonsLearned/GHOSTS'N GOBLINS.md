@@ -195,7 +195,7 @@ Kumaliwa at kumanan, makikita mo ang pagitan sa paggalaw.<br/>
 --> Kapag may suot ka pang kalasag, wala nang dagdag na masusuot na kalasag sa loob ng baul.<br/>
 --> Ang baul na dala-dala ng Pulang Demonyong May Pakpak sa pinaka-kanan ng palapag na ito, naglalaman ng sandata, e.g. sibat, kalasag na sandata.<br/>
 --> Mas mapadadali ng sibat ang paggapi sa mga Halimaw gawa ng nakasasalakay gamit nito nang malayuan.<br/>
---> Gayunpaman, hindi papayagan ng daigdig nito na makausad ka sa ikahuling Anim na bahagi gamit ang sibat; kailangan, kalasag.<br/>
+--> Gayunpaman, hindi papayagan ng daigdig nito na makausad ka sa huling Ika-anim na bahagi gamit ang sibat; kailangan, kalasag.<br/>
 <br/>
 <b>"THIS WEAPON HAS NOT EFFECT<br/>
 TRY AGAIN"</b><br/>
