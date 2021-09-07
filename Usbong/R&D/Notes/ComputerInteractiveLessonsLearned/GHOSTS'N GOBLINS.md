@@ -58,7 +58,7 @@
 --> Gawin ang magagawa mo sa abot ng iyong kaya upang magapi ang lumilipad na Dragon.<br/>
 <br/>
 
-## 3. Ika-tatlong Bahagi
+## 3. Ikatatlong Bahagi
 --> May lumilipad ulit na Dragon na nagbabantay sa pinto.<br/>
 --> Nasa kanya rin ang susi sa ikatlong pinto.<br/>
 --> Subalit, kailangan mo munang lampasan ang tulay sa ibabaw ng ilog ng apoy.<br/> 
@@ -175,10 +175,10 @@ TRY AGAIN"</b><br/>
 --> Ayon sa aklat ng paliwanag, sampung tama ang kailangan upang magapi ang bawat isang Dambuhalang Pulang Demonyong May Pakpak.<br/>
 --> <b>Paalala:</b> May Anim na Bahagi ang Salaysay<br/>
 
-## 6. Ika-Anim na Bahagi
+## 6. Ika-anim na Bahagi
+TO-DO: -idagdag: ito
 
 ## Dagdag
-
 <br/>
 徐々に進める・・・<br/>
 unti-unting nakasusulong...<br/>
