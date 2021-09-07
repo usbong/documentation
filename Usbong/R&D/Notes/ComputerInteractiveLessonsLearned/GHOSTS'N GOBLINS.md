@@ -1,7 +1,40 @@
 # GHOSTS'N GOBLINS
 --> CAPCOM;<br/>
 --> Arcade; Family Computer (Year 1985);<br/>
---> Executed on Playstation Portable (PSP).<br/>
+--> Executed on Playstation Portable (PSP)<br/>
+--> Executed on Gameboy Color<br/>
+
+## Instructions Booklet　（ＧＢＣ版）
+
+藤原 得郎氏がデザイナーとして、描いた絵かな・・・？<br/>
+Si G. FUJIWARA, TOKUROU bilang DESIGNER kaya ang gumuhit ng mga larawan?<br/>
+<br/>
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Notes/res/ghosts'NGoblins/ghosts'NGoblinsGBCManualTheEvilArmyPage8.jpg" width="60%">
+<br/>
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Notes/res/ghosts'NGoblins/ghosts'NGoblinsGBCManualTheEvilArmyPage9.jpg" width="60%">
+<br/>
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Notes/res/ghosts'NGoblins/ghosts'NGoblinsGBCManualTheEvilArmyPage10.jpg" width="60%">
+
+TOY・KINGDOMかPLANET・TOYSで、新品を買ったかな・・・？<br/>
+Binili ko nga ba ito na bagong produkto sa TOY・KINGDOM o sa PLANET・TOYS...?<br/>
+確かに日本に留学する前だと思う。<br/>
+Tiyak, naisip ko na ito'y bago pa ako mamalagi upang mag-aral sa bansang Hapon.<br/>
+その当時、難しいとわかっていた。<br/>
+Noong panahong iyon, alam ko na na mahirap.<br/>
+何の門も解けなかったし・・・<br/>
+Wala nga ako ni isang pintong nalutas...<br/>
+<br/>
+フィリピンへ帰ってから、一番最初の門まで解けて、<br/>
+Pag-uwi ko sa Pilipinas, hanggang sa pinaka-unang pinto, nalutas ko,<br/>
+パスワードを説明書に書いた。<br/>
+Isinulat ko ang PASSWORD sa Aklat ng Paliwanag<br/>
+<br/>
+現在、ＰＳＰ版、CAPCOM・CLASSICS・<br/>
+Sa kasalukuyan, ang Lathala sa PSP, CAPCOM・CLASSICS・<br/>
+COLLECTION・RELOADEDの中古品だが、<br/>
+COLLECTION・RELOADED na lumang produkto nga lang,<br/>
+より遠いところまで行けてる。<br/>
+higit na malayong pook ang aking nararating.<br/>
 
 ## 1. Unang Bahagi
 --> Maaalala ang pakikipaglaban ni Arthur sa mga Dambuhalang Goblin sa pook kung saan may mga gusali.<br/>
