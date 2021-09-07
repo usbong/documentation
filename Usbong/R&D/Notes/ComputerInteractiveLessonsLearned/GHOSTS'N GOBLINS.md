@@ -57,7 +57,8 @@
 --> Nasa kanya ang susi upang mabuksan ang ikalawang pinto patungo sa itaas ng bundok.<br/>
 --> Gawin ang magagawa mo sa abot ng iyong kaya upang magapi ang lumilipad na Dragon.<br/>
 <br/>
-#### 1.1.8.3) Ikatlong Bahagi
+
+## 3. Ika-tatlong Bahagi
 --> May lumilipad ulit na Dragon na nagbabantay sa pinto.<br/>
 --> Nasa kanya rin ang susi sa ikatlong pinto.<br/>
 --> Subalit, kailangan mo munang lampasan ang tulay sa ibabaw ng ilog ng apoy.<br/> 
@@ -66,9 +67,6 @@
 -->というような短文が書かれてある。<br/>
 --> May nakasulat na maikling sulatin na hango sa gano'n ang sinasabi.<br/> 
 <br/>
-
-## 3. Ika-tatlong Bahagi
-TO-DO: -idagdag: ito
 
 ## 4. Ika-apat na Bahagi
 毎回、同じ道を使って、<br/>
