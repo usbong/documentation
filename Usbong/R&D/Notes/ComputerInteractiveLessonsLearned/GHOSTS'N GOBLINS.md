@@ -238,11 +238,11 @@ at malulutas ang pagbukas ng mga pinto.<br/>
 初めて魔王を倒して、まぼろしいと、<br/>
 Unang pagpataob sa Haring Halimaw, isang ilusyon, i.e. hindi tunay raw<br/>
 GBCの取扱説明書からのTHE EVIL ARMY<br/>
-mula sa Aklat ng Paggamit at Paliwanag sa GBC, THE EVIL ARMY,<br/> 
+mula sa Aklat ng Paggamit at Paliwanag sa GBC, THE EVIL ARMY,<br/>
 イラストをインタネットで調べた時に、<br/>
 sa panahon na hinanap ko ang guhit sa Internet,<br/>
 書いてあった記事から読んでしまって、<br/>
-nabasa ko tuloy ito sa may nakasulat na sulating bagay,<br/>   
+nabasa ko tuloy ito sa may nakasulat na sulating bagay,<br/>
 やがて、やっつけて、驚かなかったが、<br/>
 pagkatapos ng paglalakbay, nagawa ko rin, hindi na ako nagulat,<br/>
 いつも通りに、ミッションを忘れず、<br/>
