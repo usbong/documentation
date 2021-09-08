@@ -230,8 +230,10 @@ TRY AGAIN"</b><br/>
 A TRAP DESIGNED BY SATAN...</b><br/>
 <br/>
 Ibabalik ka ng daigdig sa Ika-unang bahagi.<br/>
-Gayunpaman, maaaring nais mo ring simulan ulit sa simula pagkatapos ng mahabang paglalakbay.<br/>
-Matutuklasan mo rin na mas mabilis mo nang magagapi ang mga halimaw at malulutas ang pagbukas ng mga pinto.<br/>
+Gayunpaman, maaaring nais mo ring simulan ulit sa simula,<br/>
+pagkatapos ng mahabang paglalakbay.<br/>
+Matutuklasan mo rin na mas mabilis mo nang magagapi ang mga halimaw<br/> 
+at malulutas ang pagbukas ng mga pinto.<br/>
 <br/>
 初めて魔王を倒して、まぼろしいと、<br/>
 Unang pagpataob sa Haring Halimaw, isang ilusyon, i.e. hindi tunay raw<br/>
@@ -244,7 +246,7 @@ nabasa ko tuloy ito sa may nakasulat na sulating bagay,<br/>
 やがて、やっつけて、驚かなかったが、<br/>
 pagkatapos ng paglalakbay, nagawa ko rin, hindi na ako nagulat,<br/>
 いつも通りに、ミッションを忘れず、<br/>
-sa parating daan ng pamamaraan, hindi makalimutan ang MISSION,<br/>   
+sa parating daan ng pamamaraan, hindi makalimutan ang MISSION,<br/>
 進んで行き、 確かであるとわかった。<br/>
 sumulong papunta, tunay nga, natuklasan ko.<br/>  
   
