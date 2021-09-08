@@ -269,7 +269,7 @@ sumulong papunta, tunay nga, natuklasan ko.<br/>
 Gamit ang Kalasag bilang sandata, higit na mabilis na madaraanan<br/> 
 ang Bundok, maliit at malaki, ang Patag bago ang Gubat,<br/> 
 at magapi ang Dambuhalang Isa ang mata at sungay,<br/> 
-at may suot na pulang kalasag na may tusok.<br/>
+na may suot na pulang kalasag na may tusok.<br/>
 Kahit ang noong pampahirap na Pulang Demonyong May Pakpak,<br/>
 magagapi sa pamamagitan ng mga natutunan sa Ikalimang bahagi<br/>
 ng paglalakbay na nauwi sa Hindi Tunay na Silid ng Haring Halimaw.
@@ -282,8 +282,29 @@ sapagkat kapag hindi dalian ang pagtawid sa daang umaakyat at bumababa,<br/>
 tulad sa hagdang hindi patag at baku-baku ng Mahabang Castillo (长城; changcheng),<br/>
 masasawi bago makalabas at makatung-tong ang dulo.<br/>
 Ibig sabihin, mahalaga ang lakas ng katawan upang makapunta at makabalik nang ayos.<br/>
+Alalahaning sa dulo nito, may nagbabantay sa pinto na dalawang (2) Dambuhalang Isa ang mata at sungay.<br/>
+Bagama't maaaring isa sa kanila ang susugod gamit ang talong pagsalakay,<br/> 
+bumabato ng pulang apoy mula sa tiyan ang isang natitira sa kanila.<br/>
+Maaaring maiwasan ito sa pagyuko.
 
 ## 2. Ikalawang Bahagi+
+Kakailanganing humakbang paakyat ng mga gumagalaw na daan upang marating ang pook kung saan may malaking bundok sa loob ng lupa.<br/>
+<br/>
+Mag-ingat na hindi mapakamot ang itaas ng ulo kapag nagkamali sa paghakbang, at sa pagmamadali, agad muling magkamali sa paghakbang.<br/>
+<br/>
+May makikitang likas sa tao bilang impulse reaction ang agarang gawin ang bagay pagkatapos magkamali, nang nagmamadali upang matapos ito agad. Bunga nito ang muling paggawa ng mali. Kung hindi mamulat, magiging tuluy-tuloy na ito.<br/>
+<br/>
+<b>Halimbawang kapalit nito:</b><br/>
+2.1) Paglipas ng panahon, na masusukat sa pagkaubos ng isang oras;<br/>
+<br/>
+2.2) Paggasta nang labis, na masusukat sa isang daang piso ng isang bata (sa mababang paaralan) sa loob ng isa patungong dalawang oras.<br/> 
+<b>Halaga ng piso:</b> panahon bago sumapit ang Taong 2000<br/>
+<br/>
+Kapag marating mo bilang si Arthur ang malaking bundok sa loob ng lupa, maaaring talunin ang bangin nito upang makarating sa daan patungo sa pinto. Mabilis muling magagapi ang mga umaaligid na Pulang Demonyong May Pakpak gamit ang paraan na natutunan sa Ikalimang Bahagi ng unang paglalakbay.<br/>
+<br/>
+Mabilis ding magagapi ang Dragon na nagbabantay sa pinto at may dala ng susi nito, gamit ang paraan din na natutunan sa Ikalimang Bahagi. 
+
+## Ikatlong Bahagi
 TO-DO: +idagdag: ito
 
 ## Dagdag
