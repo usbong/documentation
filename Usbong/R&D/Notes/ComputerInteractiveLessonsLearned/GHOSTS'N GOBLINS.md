@@ -236,9 +236,9 @@ Matutuklasan mo rin na mas mabilis mo nang magagapi ang mga halimaw at malulutas
 初めて魔王を倒して、まぼろしいと、<br/>
 Unang pagpataob sa Haring Halimaw, isang ilusyon, i.e. hindi tunay raw<br/>
 GBCの取扱説明書からのTHE EVIL ARMY<br/>
-Mula sa Aklat ng Paggamit at Paliwanag sa GBC, THE EVIL ARMY,br/> 
+mula sa Aklat ng Paggamit at Paliwanag sa GBC, THE EVIL ARMY,<br/> 
 イラストをインタネットで調べた時に、<br/>
-Sa panahon na hinanap ko ang guhit sa Internet,<br/>
+sa panahon na hinanap ko ang guhit sa Internet,<br/>
 書いてあった記事から読んでしまって、<br/>
 nabasa ko tuloy ito sa may nakasulat na sulating bagay,<br/>   
 やがて、やっつけて、驚かなかったが、<br/>
@@ -246,7 +246,7 @@ pagkatapos ng paglalakbay, nagawa ko rin, hindi na ako nagulat,<br/>
 いつも通りに、ミッションを忘れず、<br/>
 sa parating daan ng pamamaraan, hindi makalimutan ang MISSION,<br/>   
 進んで行き、 確かであるとわかった。<br/>
-Sumulong papunta, tunay nga, natuklasan ko.<br/>  
+sumulong papunta, tunay nga, natuklasan ko.<br/>  
   
 ## Dagdag
 <br/>
