@@ -244,7 +244,7 @@ TRY AGAIN"</b><br/>
 <b>THIS ROOM IS AN ILLUSION.<br/>
 A TRAP DESIGNED BY SATAN...</b><br/>
 <br/>
-Ibabalik ka ng daigdig sa Ika-unang bahagi.<br/>
+Ibabalik ka ng daigdig sa Simulang bahagi.<br/>
 Gayunpaman, maaaring nais mo ring simulan ulit sa simula,<br/>
 pagkatapos ng mahabang paglalakbay.<br/>
 Matutuklasan mo rin na mas mabilis mo nang magagapi ang mga halimaw<br/> 
@@ -265,6 +265,27 @@ sa parating daan ng pamamaraan, hindi makalimutan ang MISSION,<br/>
 進んで行き、 確かであるとわかった。<br/>
 sumulong papunta, tunay nga, natuklasan ko.<br/>  
   
+## 0. Simula+
+Gamit ang Kalasag bilang sandata, higit na mabilis na madaraanan<br/> 
+ang Bundok, maliit at malaki, ang Patag bago ang Gubat,<br/> 
+at magapi ang Dambuhalang Isa ang mata at sungay,<br/> 
+at may suot na pulang kalasag na may tusok.<br/>
+Kahit ang noong pampahirap na Pulang Demonyong May Pakpak,<br/>
+magagapi sa pamamagitan ng mga natutunan sa Ikalimang bahagi<br/>
+ng paglalakbay na nauwi sa Hindi Tunay na Silid ng Haring Halimaw.
+
+## 1. Unang Bahagi+
+Pagkalipas sa mga lumang Gusali kung saan naroon ang mga Dambuhalang Goblin<br/> 
+maaalala ang may nais na sumalakay sa Castillo ng Asia.<br/>
+Kailangang alalahanin ang nagbibilang na panahon sa likod,<br/>
+sapagkat kapag hindi dalian ang pagtawid sa daang umaakyat at bumababa,<br/>
+tulad sa hagdang hindi patag at baku-baku ng Mahabang Castillo (长城; changcheng),<br/>
+masasawi bago makalabas at makatung-tong ang dulo.<br/>
+Ibig sabihin, mahalaga ang lakas ng katawan upang makapunta at makabalik nang ayos.<br/>
+
+## 2. Ikalawang Bahagi+
+TO-DO: +idagdag: ito
+
 ## Dagdag
 <br/>
 徐々に進める・・・<br/>
