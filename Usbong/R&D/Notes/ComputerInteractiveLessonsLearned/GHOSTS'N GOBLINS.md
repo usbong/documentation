@@ -195,7 +195,7 @@ Kumaliwa at kumanan, makikita mo ang pagitan sa paggalaw.<br/>
 --> Kapag may suot ka pang kalasag, wala nang dagdag na masusuot na kalasag sa loob ng baul.<br/>
 --> Ang baul na dala-dala ng Pulang Demonyong May Pakpak sa pinaka-kanan ng palapag na ito, naglalaman ng sandata, e.g. sibat, kalasag na sandata.<br/>
 --> Mas mapadadali ng sibat ang paggapi sa mga Halimaw gawa ng nakasasalakay gamit nito nang malayuan.<br/>
---> Gayunpaman, hindi papayagan ng daigdig nito na makausad ka sa huling Ika-anim na bahagi gamit ang sibat; kailangan, kalasag.<br/>
+--> Gayunpaman, hindi papayagan ng daigdig nito na makausad ka sa huling Ika-anim na bahagi gamit ang sibat; kailangan, kalasag. Dagdag pa rito, ibabalik ka ng daigdig sa Ika-apat na bahagi.<br/>
 <br/>
 <b>"THIS WEAPON HAS NOT EFFECT<br/>
 TRY AGAIN"</b><br/>
@@ -206,11 +206,48 @@ TRY AGAIN"</b><br/>
 --> Mag-iingat din sa ibinabato nitong hugis shuriken.<br/>
 --> Hindi madaling makita ito, kapag sunud-sunod ang iyong pagsalakay, lalo pa't nanginginig din ang gumagalaw na larawan ng makikita sa daigdig.<br/>
 --> Ayon sa aklat ng paliwanag, sampung tama ang kailangan upang magapi ang bawat isang Dambuhalang Pulang Demonyong May Pakpak.<br/>
+--> Kapag kalasag na ang ginagamit bilang sandata, kailangang makalapit sa kanila upang tumama.<br/>
+--> Nasasangga ng kalasag ang mga ibinabato nilang bagay na hugis shuriken.<br/>
+--> Sunud-sunod na hampasin sila ng kalasag.<br/>
+--> Kapag gagawin na nila ang pagsugod na paglipad, ihinto ang pagsalakay at umiwas gamit ang pagyuko kung kaya o kaya naman bumaba ng hagdan.<br/>  
+--> Maaalala si kuppa, i.e. Bowser, ng Mario Story mula sa ngiti ng mga Dambulahang Pulang Demonyong May Pakpak.<br/>
 --> <b>Paalala:</b> May Anim na Bahagi ang Salaysay ng Paglalakbay<br/>
 
 ## 6. Ika-anim na Bahagi
-TO-DO: -idagdag: ito
-
+--> Sa pook ng Haring Halimaw; Naroon din ang iyong Irog.<br/>
+--> May paraan upang magapi ang Haring Halimaw.<br/>
+--> Sa simula, matutuklasan na walang bunga sa kanya ang paghampas ng iyong kalasag bilang sandata.<br/>
+--> Ito'y bagama't sunud-sunod ang pagtama nito sa kanya.<br/>
+--> Gayunpaman, subukang mahinahong iwasan muna ang ibinubugang apoy ng dalawa niyang mukha, na nasa ulo at sa tiyan.<br/>
+--> <b>Paalala:</b> Hindi magagamit ang kalasag upang masangga ang mga ito.<br/>
+--> Kahit palakad paharap o pabalik, at hindi patalun-talon, maiiwasan ang mga apoy.<br/>
+--> Hindi ka naman din niya susugurin hanggang dulo ng pinakakaliwang bahagi.<br/>
+--> Upang tumama ang kalasag, tumalon upang ihampas ito sa kanyang ulo.<br/>
+--> Habang pababa mula sa talong pagsalakay, mahinahong ihampas ulit ang kalasag upang tumama sa pook kung nasaan gitna ng kanyang mukha sa ulo at mukha sa tiyan.<br/>
+--> Sa ganitong unti-unti at mahinahong pamamaraan, magagapi ang Haring Halimaw.<br/>
+<br/>
+<b>THIS ROOM IS AN ILLUSION.<br/>
+A TRAP DESIGNED BY SATAN...<b><br/>
+<br/>
+Ibabalik ka ng daigdig sa Ika-unang bahagi.<br/>
+Gayunpaman, maaaring nais mo ring simulan ulit sa simula pagkatapos ng mahabang paglalakbay.<br/>
+Matutuklasan mo rin na mas mabilis mo nang magagapi ang mga halimaw at malulutas ang pagbukas ng mga pinto.<br/>
+<br/>
+初めて魔王を倒して、まぼろしいと、<br/>
+Unang pagpataob sa Haring Halimaw, isang ilusyon, i.e. hindi tunay raw<br/>
+GBCの取扱説明書からのTHE EVIL ARMY<br/>
+Mula sa Aklat ng Paggamit at Paliwanag sa GBC, THE EVIL ARMY,br/> 
+イラストをインタネットで調べた時に、<br/>
+Sa panahon na hinanap ko ang guhit sa Internet,<br/>
+書いてあった記事から読んでしまって、<br/>
+nabasa ko tuloy ito sa may nakasulat na sulating bagay,<br/>   
+やがて、やっつけて、驚かなかったが、<br/>
+pagkatapos ng paglalakbay, nagawa ko rin, hindi na ako nagulat,<br/>
+いつも通りに、ミッションを忘れず、<br/>
+sa parating daan ng pamamaraan, hindi makalimutan ang MISSION,<br/>   
+進んで行き、 確かであるとわかった。<br/>
+Sumulong papunta, tunay nga, natuklasan ko.<br/>  
+  
 ## Dagdag
 <br/>
 徐々に進める・・・<br/>
