@@ -227,7 +227,7 @@ TRY AGAIN"</b><br/>
 --> Sa ganitong unti-unti at mahinahong pamamaraan, magagapi ang Haring Halimaw.<br/>
 <br/>
 <b>THIS ROOM IS AN ILLUSION.<br/>
-A TRAP DESIGNED BY SATAN...<b><br/>
+A TRAP DESIGNED BY SATAN...</b><br/>
 <br/>
 Ibabalik ka ng daigdig sa Ika-unang bahagi.<br/>
 Gayunpaman, maaaring nais mo ring simulan ulit sa simula pagkatapos ng mahabang paglalakbay.<br/>
