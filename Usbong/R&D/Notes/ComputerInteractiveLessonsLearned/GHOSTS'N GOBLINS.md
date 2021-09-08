@@ -36,6 +36,18 @@ COLLECTION・RELOADED na lumang produkto nga lang,<br/>
 より遠いところまで行けてる。<br/>
 higit na malayong pook ang aking nararating.<br/>
 
+## 0. Simula
+--> Sa bundok, maliit at malaki, sa patag bago ang gubat,<br/>
+--> may samu't saring mga halimaw tulad ng mga ito:<br/>
+--> Zombie na lumalabas mula sa lupa<br/>
+--> Dalawang Magpatong na Batong May Tig-Isang Mukha<br/>
+--> Pulang Demonyong May Pakpak<br/>
+--> Sa dulo nito, nagbabantay sa pinto ang halimaw na ito:<br/>
+--> Dambuhalang Isa ang mata at sungay, at may suot na pulang kalasag na may tusok.<br/>
+--> Pagkagapi nito gamit ang talong pagsalakay, ipaaalam ng daigdig sa iyo bilang si Arthur ito:<br/>
+<br/>
+<b>Take a key to come in !</b><br/>
+
 ## 1. Unang Bahagi
 --> Maaalala ang pakikipaglaban ni Arthur sa mga Dambuhalang Goblin sa pook kung saan may mga gusali.<br/>
 --> <b>Paalala:</b> Hindi agad na mapupuksa ang Dambuhalang Goblin. Kailangan nito ng maraming tama mula halimbawa sa sandata, e.g. sibat (lance), たいまつ (松明; taimatsu), i.e. kahoy na may apoy upang magbigay liwanag, kutsilyo, i.e. patalim.<br/>
@@ -52,6 +64,9 @@ higit na malayong pook ang aking nararating.<br/>
 --> Agad kang bababa sa inaakyat mong hagdan at mabilis na tatakbo palayo.<br/>
 --> Kapag sapat na ang sukat ng layo, maaari mo nang batuhin gamit ang kasalukuyan mong sandata ang Dambuhalang Goblin at magapi ito.<br/>
 --> Mula sa pagsisiyasat ang patalim ang pinakamaiging gamiting sandata gawa ng bilis nito.<br/>
+--> Sa dulo nito, may nagbabantay ng pinto na Isa ang mata at sungay,<br/> 
+--> at may suot na pulang kalasag na may tusok;<br/>
+--> bagama't sa halip na isa lamang, dalawa na ang mga ito.<br/> 
 <br/>
 
 ## 2. Ikalawang Bahagi
