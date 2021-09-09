@@ -538,7 +538,7 @@ Blanka: Sa gubat, higit na mahigpit....<br/>
 --> https://www.youtube.com/watch?v=z8E3kelXm3E; last accessed: 20210827<br/>
 --> 25:43<br/>
 <br/>
---> 八百万（やおよろず; walong daang sampung-libo; i.e. 80,000,000): May panginoon sa mga bagay-bagay;<br/>
+--> 八百万（やおよろず; walong daang sampung-libo; i.e. 8,000,000): May panginoon sa mga bagay-bagay;<br/>
 --> こころ (kokoro; puso): やまのうえに　大きな岩があり、 そこにご神木が入ってる<br/>
 --> Sa itaaas ng bundok, may malaking bato ng bundok, sa loob nito may puno ng panginoon.<br/>
 -->　なにか大事にして、手合わせる　（May kung anong ginawang malaking, i.e. mahalagang, bagay, kamay ipagsama）<br/>
