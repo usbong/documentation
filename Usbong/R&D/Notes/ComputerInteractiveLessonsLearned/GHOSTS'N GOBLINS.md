@@ -339,14 +339,17 @@ Gamitin ang paraan noong nakaraan upang magapi ang Haring Halimaw.<br/>
 <br/>
 <b>"CONGRATULATION. THIS STORY IS HAPPY END."</b></br>
 <br/>
-May tatlong (3) puso mula sa halik at yakap ng iyong asawang irog.<br/>
+May tatlong (3) puso mula sa halik at yakap ng iyong Asawang Irog.<br/>
 Ibabalik ka ng daigdig sa simula.<br/>
 Hindi na ipakikita ang lista ng mga pangalan at tungkulin ng gumawa ng daigdig.<br/>
 <br/>
 <b>CHALLENGE</b><br/>
 <br/>
-Dadakipin ng Pulang Demonyong May Pakpak ang iyong asawang irog.<br/>
+Dadakipin ng Pulang Demonyong May Pakpak ang iyong Asawang Irog.<br/>
 Ang Dambuhalang Pulang Demonyong May Pakpak pala iyon!<br/>
+<br/>
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Notes/ComputerInteractiveLessonsLearned/res/GHOSTS'N%20GOBLINS/20210909_G'NGHappyEndLoopChallenge.jpg" width="60%">
+<br/>
 
 ## Dagdag
 <br/>
