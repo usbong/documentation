@@ -308,7 +308,7 @@ May makikitang likas sa tao bilang impulse reaction ang agarang gawin ang bagay 
 <b>Halaga ng piso:</b> panahon bago sumapit ang Taong 2000<br/>
 <br/>
 Kapag marating mo na bilang si Arthur ang tulay, alalahaning may mga apoy na umaangat.<br/>
-Maiging sumulong nang hindi sinusubukang puksain ang mga nanggugulong na lumilipad na Maliit na Bughaw na Demonyong May Pakpak.<br/>
+Maiging sumulong nang hindi sinusubukang puksain ang mga nanggugulong lumilipad na Maliit na Bughaw na Demonyong May Pakpak.<br/>
 May paliwang sa isipan ng mga ito mula sa gumawa ng daigdig na kapag sinubukan mong tumalon at salakayin sila, hindi sila matatamaan, at ikaw ang kanilang masasalakay.<br/> 
 
 ## 4. Ika-apat na Bahagi+
