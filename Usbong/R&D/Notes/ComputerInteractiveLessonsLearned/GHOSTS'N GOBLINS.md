@@ -312,7 +312,7 @@ Maiging sumulong nang hindi sinusubukang puksain ang mga nanggugulong lumilipad 
 May paliwang sa isipan ng mga ito mula sa gumawa ng daigdig na kapag sinubukan mong tumalon at salakayin sila, hindi sila matatamaan, at ikaw ang kanilang masasalakay.<br/> 
 
 ## 4. Ika-apat na Bahagi+
-Narito pa rin ang mga lumilipad na Maliit na Bughaw na Demonyong May Pakpak.<br/>
+Narito pa rin ang mga nanggugulong lumilipad na Maliit na Bughaw na Demonyong May Pakpak.<br/>
 
 ## Dagdag
 <br/>
