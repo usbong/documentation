@@ -445,7 +445,17 @@ b) Yabang?<br/>
 --> Hindi karaniwang naililigtas ng Mayabang ang Irog...<br/>
 --> Minamaliit ng Mayabang ang mga bagay-bagay na, ang sa katunayan, Malaki.<br/>
 <br/>
-...<br/>
+c) MISYON?<br/>
+--> 八百万（やおよろず; walong daang sampung-libo; i.e. 8,000,000): May panginoon sa mga bagay-bagay;<br/>
+--> こころ (kokoro; puso): やまのうえに　大きな岩があり、 そこにご神木が入ってる<br/>
+--> Sa itaaas ng bundok, may malaking bato ng bundok, sa loob nito may puno ng panginoon.<br/>
+--> なにか大事にして、手合わせる　（May kung anong ginawang malaking, i.e. mahalagang, bagay, kamay ipagsama）<br/>
 <br/>
 <b>Paalala:</b> Karaniwang natatapos ang salaysay sa pagtatalik ng pangunahing Tauhan at ang kanyang Iniligtas na Irog.<br/>
 --> Ito'y bagama't hindi na ito binabanggit kapag may mga batang kabilang sa mga panauhin ng salaysay.<br/>
+<br/>
+--> <b>Sanggunian:</b> With Okamoto, Yoshiki (former CAPCOM producer)<br/>
+【特別企画】WMT時計プレゼント企画当選者発表＆皆様のご質問にお答えします！<br/>
+--> https://www.youtube.com/watch?v=z8E3kelXm3E; last accessed: 20210827<br/>
+--> 25:43<br/>
+
