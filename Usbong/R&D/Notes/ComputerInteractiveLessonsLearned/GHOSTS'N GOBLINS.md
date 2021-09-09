@@ -40,7 +40,7 @@ higit na malayong pook ang aking nararating.<br/>
 --> Sa bundok, maliit at malaki, sa patag bago ang gubat,<br/>
 --> may samu't saring mga halimaw tulad ng mga ito:<br/>
 --> Zombie na lumalabas mula sa lupa<br/>
---> Dalawang Magpatong na Batong May Tig-Isang Mukha<br/>
+--> Dalawang Magkapatong na Batong May Tig-Isang Mukha<br/>
 --> Pulang Demonyong May Pakpak<br/>
 --> Sa dulo nito, nagbabantay sa pinto ang halimaw na ito:<br/>
 --> Dambuhalang Isa ang mata at sungay, at may suot na pulang kalasag na may tusok.<br/>
@@ -71,7 +71,7 @@ higit na malayong pook ang aking nararating.<br/>
 
 ## 2. Ikalawang Bahagi
 --> Maaalala ang paglalakbay sa ilalim ng lupa gamit ang daan patungo sa itaas ng bundok.<br/>
---> Doon dinala ang iyong asawa ng lumilipad na Demonyong may pakpak ayon sa utos ng Haring Halimaw.<br/>
+--> Doon dinala ang iyong asawang irog ng lumilipad na Demonyong may pakpak ayon sa utos ng Haring Halimaw.<br/>
 --> Matutuklasan mong higit isa ang lumilipad na Demonyong may pakpak na nag-aabang sa iyong daraanan.<br/>
 --> Hindi mo madaling magagapi ang mga ito sa mahabaang labanan gawa ng kanilang mabilis na lumilipad na pagsalakay.<br/>
 --> Upang mapuksa sila, kailangan mong unahan sila sa pagsalakay.<br/>
