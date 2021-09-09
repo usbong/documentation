@@ -313,6 +313,40 @@ May paliwang sa isipan ng mga ito mula sa gumawa ng daigdig na kapag sinubukan m
 
 ## 4. Ika-apat na Bahagi+
 Narito pa rin ang mga nanggugulong lumilipad na Maliit na Bughaw na Demonyong May Pakpak.<br/>
+Dagdag pa ang mga lumilipad na Multong may kapote na nagbabato ng mga mahahabang pangsungkit,<br/>
+mukhang mas marami ang mga panggulong ito kaysa noong nakaraan.<br/>
+Gayunpaman, malalampasan ang naghihintay na Pulang Demonyong May Pakpak,<br/>
+at ang mga Dambuhalang Goblin na humaharang sa daraanan, tulad ng mga gumagalaw na pook.<br/>
+Magagapi ang Dambuhalang Pulang Demonyong May Pakpak, bagama't kailangang lapitan,<br/>
+kung ang kalasag ang gamit na sandata.<br/>
+Kapag naghahanda na itong gumawa ng lipad na pagsugod, ihinto ang pagsalakay at iwasan,<br/>
+sa pamamagitan ng pagyuko, o kung kailangan bumaba ng hagdan.
+
+## 5. Ikalimang na Bahagi+
+Kung maiiwasan ang mga Dambuhalang Goblin, iwasan.<br/>
+Kung manghahabol, salakayin, kahit dalawang set ng pagsalakay.<br/>
+Gamitin ang wastong daan at paraan noong nakaraan upang magapi ang mga Pulang Demonyong May Pakpak.<br/> 
+Upang magapi ang dalawang Dambuhalang Pulang Demonyong May Pakpak,<br/>
+na nagbabantay sa pinto at susi, gamitin ang mga hagdan<br/> 
+upang makaiwas sa kanilang lipad na pagsugod.<br/>
+Maaalala ang paglipad ni Mario at Luigi sa Super Mario World ng Super Family Computer.<br/>
+Anuman, alalahaning gamitin ang kalasag bilang sandata upang makapasok sa huling Ika-anim na Bahagi+.
+
+## 6. Ika-anim na Bahagi+
+<b>"RESOLVE YOUR BATTLE"</b><br/>
+<br/>
+Gamitin ang paraan noong nakaraan upang magapi ang Haring Halimaw.<br/>
+<br/>
+<b>"CONGRATULATION. THIS STORY IS HAPPY END."</b></br>
+<br/>
+May tatlong (3) puso mula sa halik at yakap ng iyong asawang irog.<br/>
+Ibabalik ka ng daigdig sa simula.<br/>
+Hindi na ipakikita ang lista ng mga pangalan at tungkulin ng gumawa ng daigdig.<br/>
+<br/>
+<b>CHALLENGE</b><br/>
+<br/>
+Dadakipin ng Pulang Demonyong May Pakpak ang iyong asawang irog.<br/>
+Ang Dambuhalang Pulang Demonyong May Pakpak pala iyon!<br/>
 
 ## Dagdag
 <br/>
