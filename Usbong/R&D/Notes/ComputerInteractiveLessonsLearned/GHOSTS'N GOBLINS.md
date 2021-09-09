@@ -289,6 +289,13 @@ Maaaring maiwasan ito sa pagyuko.
 
 ## 2. Ikalawang Bahagi+
 Kakailanganing humakbang paakyat ng mga gumagalaw na daan upang marating ang pook kung saan may malaking bundok sa loob ng lupa.<br/>
+Kapag marating mo bilang si Arthur ang malaking bundok sa loob ng lupa, maaaring talunin ang bangin nito upang makarating sa daan patungo sa pinto. Mabilis muling magagapi ang mga umaaligid na Pulang Demonyong May Pakpak gamit ang paraan na natutunan sa Ikalimang Bahagi ng unang paglalakbay.<br/>
+<br/>
+Mabilis ding magagapi ang Dragon na nagbabantay sa pinto at may dala ng susi nito, gamit ang paraan din na natutunan sa Ikalimang Bahagi. 
+
+## 3. Ikatlong Bahagi+
+Kailangang malampasan ang mga gumagalaw na pakaliwa at pakanan na daan upang marating ang tulay na kung saan sa ilalim nito, may ilog na apoy.<br/>
+May taas din ang bawat isang gumagalaw na daang ito. Maiging mula sa mataas-taas na gumagalaw na daan ang marating upang makababa nang ayos sa patag na bundok.<br/>
 <br/>
 Mag-ingat na hindi mapakamot ang itaas ng ulo kapag nagkamali sa paghakbang, at sa pagmamadali, agad muling magkamali sa paghakbang.<br/>
 <br/>
@@ -300,12 +307,12 @@ May makikitang likas sa tao bilang impulse reaction ang agarang gawin ang bagay 
 2.2) Paggasta nang labis, na masusukat sa isang daang piso ng isang bata (sa mababang paaralan) sa loob ng isa patungong dalawang oras.<br/> 
 <b>Halaga ng piso:</b> panahon bago sumapit ang Taong 2000<br/>
 <br/>
-Kapag marating mo bilang si Arthur ang malaking bundok sa loob ng lupa, maaaring talunin ang bangin nito upang makarating sa daan patungo sa pinto. Mabilis muling magagapi ang mga umaaligid na Pulang Demonyong May Pakpak gamit ang paraan na natutunan sa Ikalimang Bahagi ng unang paglalakbay.<br/>
-<br/>
-Mabilis ding magagapi ang Dragon na nagbabantay sa pinto at may dala ng susi nito, gamit ang paraan din na natutunan sa Ikalimang Bahagi. 
+Kapag marating mo na bilang si Arthur ang tulay, alalahaning may mga apoy na umaangat.<br/>
+Maiging sumulong nang hindi sinusubukang puksain ang mga nanggugulong na lumilipad na Maliit na Bughaw na Demonyong May Pakpak.<br/>
+May paliwang sa isipan ng mga ito mula sa gumawa ng daigdig na kapag sinubukan mong tumalon at salakayin sila, hindi sila matatamaan, at ikaw ang kanilang masasalakay.<br/> 
 
-## Ikatlong Bahagi
-TO-DO: +idagdag: ito
+## 4. Ika-apat na Bahagi+
+Narito pa rin ang mga lumilipad na Maliit na Bughaw na Demonyong May Pakpak.<br/>
 
 ## Dagdag
 <br/>
