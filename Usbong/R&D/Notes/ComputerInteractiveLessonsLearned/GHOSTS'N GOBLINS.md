@@ -367,7 +367,7 @@ last accessed: 20210910<br/>
 --> <b>Halimbawa#1:</b> Kapag tinamaan ng pagsalakay si Arthur,<br/> 
 --> pansamantalang nawawala ang kanyang guhit sa gumagalaw na larawan.<br/>
 --> Hindi ba siya tinatamaan ng anumang pagsalakay kapag ganoong state?<br/>
---> <b>Halimbawa#2:</b> Sa Ikalimang Bahagi, dalawa ang Dambuhalang Isa ang Mata at Sungay, sa halip na isa lamang.br/>
+--> <b>Halimbawa#2:</b> Sa Ikalimang Bahagi, dalawa ang Dambuhalang Isa ang Mata at Sungay, sa halip na isa lamang.<br/>
 --> Nabawasan din ang mga Dambuhalang Goblin at Pulang Demonyong May Pakpak sa mga itaas na palapag patungo sa Pinto.<br/>
 
 ## Dagdag
