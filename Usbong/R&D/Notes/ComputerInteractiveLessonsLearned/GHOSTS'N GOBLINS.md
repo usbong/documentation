@@ -340,6 +340,15 @@ Gamitin ang paraan noong nakaraan upang magapi ang Haring Halimaw.<br/>
 <b>"CONGRATULATION. THIS STORY IS HAPPY END."</b></br>
 <br/>
 May tatlong (3) puso mula sa halik at yakap ng iyong Asawang Irog.<br/>
+Ang ika-apat na puso, papatungan ng ikalawang titik "P" sa "HAPPY".<br/>
+<br/>
+<b>
+"BEING THE WISE AND COURAGEOUS
+KNIGHT THAT YOU ARE, YOU
+FEEL STRENGTH WELLING
+IN YOUR BODY"
+</b><br/>
+<br/>
 Ibabalik ka ng daigdig sa simula.<br/>
 Hindi na ipakikita ang lista ng mga pangalan at tungkulin ng gumawa ng daigdig.<br/>
 <br/>
@@ -350,6 +359,16 @@ Ang Dambuhalang Pulang Demonyong May Pakpak pala iyon!<br/>
 <br/>
 <img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Notes/ComputerInteractiveLessonsLearned/res/GHOSTS'N%20GOBLINS/20210909_G'NGHappyEndLoopChallenge.jpg" width="60%">
 <br/>
+<br/>
+<b>Sanggunian</b><br/>
+[PH Arcade Longplay [115] Ghosts´n´Goblins](https://www.youtube.com/watch?v=uIhyjrXVhzg);<br/>
+last accessed: 20210910<br/>
+--> May ilang bagay na naiba ang Lathala sa Arcade at ang sa PSP.<br/>
+--> <b>Halimbawa#1:</b> Kapag tinamaan ng pagsalakay si Arthur,<br/> 
+--> pansamantalang nawawala ang kanyang guhit sa gumagalaw na larawan.<br/>
+--> Hindi ba siya tinatamaan ng anumang pagsalakay kapag ganoong state?<br/>
+--> <b>Halimbawa#2:</b> Sa Ikalimang Bahagi, dalawa ang Dambuhalang Isa ang Mata at Sungay, sa halip na isa lamang.br/>
+--> Nabawasan din ang mga Dambuhalang Goblin at Pulang Demonyong May Pakpak sa mga itaas na palapag patungo sa Pinto.<br/>
 
 ## Dagdag
 <br/>
