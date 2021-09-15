@@ -23,7 +23,7 @@ tsuyoi to iu inshou ga aru ne.<br/>
 shikamo, katsutameni, teki wo soto he<br/>
 --> Dagdag pa, upang manalo, ang kalaban papuntahin sa labas<br/>
 tobasenaito ikenai sekai no ru-ru to iu kotode,<br/>
---> dahil mamasabing kung hindi paliparin, hindi makasusulong na batas ng daigdig<br/>
+--> dahil masasabing kung hindi paliparin, hindi makasusulong na batas ng daigdig<br/>
 toberu kyara ga makenikui.<br/>
 --> mahirap matalo ang tauhang nakalilipad.<br/>
 <br/>
