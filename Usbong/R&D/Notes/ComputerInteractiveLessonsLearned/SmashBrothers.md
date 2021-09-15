@@ -15,14 +15,14 @@ nintendou no ge-mu wo omoidaseru.<br/>
 <b>tatoeba:</b> poketto monsuta-kara deru mamono ya oto<br/>
 --> <b>halimbawa:</b> mula sa pocket monster lumalabas na himalang bagay, tunog, atbp<br/>
 <br/>
-カービとして、速く30分以内、<br/>
-ka-bi toshite, hayaku 30pun inai,<br/>
+カービィとして、速く30分以内、<br/>
+ka-bixi, i.e. ka-bi-, toshite, hayaku 30pun inai,<br/>
 --> Bilang si Kirby, mabilis na sa loob ng 30hati, i.e. minutos,<br/>
 最後のボスを倒せるほど、<br/>
 saigo no bosu wo taoseruhodo,<br/>
 --> magagapi na ang huling boss,<br/>
-カービって相変わらず世界の何の問題でも、<br/>
-ka-bi tte aikawarazu sekai no nanno mondaidemo,<br/>
+カービィって相変わらず世界の何の問題でも、<br/>
+ka-bixi, i.e. ka-bi-, tte aikawarazu sekai no nanno mondaidemo,<br/>
 --> Si Kirby, hindi nababago kahit aling suliranin ng daigdig,<br/>
 強いという印象があるね。<br/>
 tsuyoi to iu inshou ga aru ne.<br/>
@@ -93,3 +93,9 @@ arawasu zu<br/>
 以上。<br/>
 ijou.<br/>
 --> Ang lahat ng nasa itaas, i.e. wakas.<br/>
+
+## Sanggunian
+1. 星のカービィ スーパー デラックス<br/>
+hoshi no ka-bixi su-pa- derakkusu<br/>
+Si Kirby ng Bituin SUPER DELUXE<br/>
+--> Super Family Computer version
