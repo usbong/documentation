@@ -30,7 +30,7 @@ toberu kyara ga makenikui.<br/>
 to ittaga, sukushiguraidemo naze<br/>
 --> Sinabi ko man ito, kahit kaunti lamang, bakit<br/>
 jikan wo ireta ka to iu<br/>
---> naglagay ako ng panaho, ang pagsabi nito<br/>
+--> naglagay ako ng panahon, ang pagsabi nito<br/>
 kikkake ha nandarou?<br/>
 --> ano kaya ang udyok?<br/>
 <br/>
@@ -55,7 +55,7 @@ iroirona shigoto wo keikenshite iru."<br/>
 --> samu't saring hanap-buhay ang kanyang nararanasan."<br/>
 <br/>
 <b>tatoeba#2:</b> taisenshyou<br/>
---> <b>halimbawa#2:</b> pakita ng pakikipagutnggali't labanan<br/> 
+--> <b>halimbawa#2:</b> pakita ng pakikipagtunggali't labanan<br/> 
 ROW to COLUMN ga ari,<br/>
 --> may ROW at COLUMN,<br/>
 otoshita kaisuu ya goukei<br/>
