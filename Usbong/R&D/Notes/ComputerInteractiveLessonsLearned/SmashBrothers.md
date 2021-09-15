@@ -63,5 +63,5 @@ otoshita kaisuu ya goukei<br/>
 wo arawasu zu<br/>
 --> ipinapakitang guhit<br/>
 <br/>
-ijou.
+ijou.<br/>
 --> Ang lahat ng nasa itaas, i.e. wakas.<br/>
