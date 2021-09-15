@@ -1,4 +1,5 @@
 # Smash Brothers
+任天堂オールスター 大乱闘スマッシュ ブラザーズ<br/>
 nintendou o-rusuta- dairantou smasshu buraza-zu<br/>
 Nintendo All Star Malaking Gulo Labanan<br/>
 --> Nintendo 64 version<br/>
@@ -49,7 +50,7 @@ kikkake ha nandarou?<br/>
 <br/>
 取扱説明書から<br/>
 toriatsukai setsumeishokara<br/>
---> Mula sa Aklat ng pagkuha at paggamit na paliwanag<br/>
+--> Mula sa Aklat ng Paliwanag ng Pagkuha at Paggamit<br/>
 キャラクター紹介と対戦表を<br/>
 kyarakuta- shoukai to taisenhyou wo<br/>
 --> pagpapakilala ng mga tauhan at pakita ng pakikipagtunggali't labanan<br/>
@@ -61,14 +62,14 @@ ate hamaru bubun wo tsukatteru kara<br/>
 --> ginagamit ko kasi ang bahagi na sumasakto<br/> 
 ということなんのかな。<br/>
 to iu koto nanno kana.<br/>
---> ang nasasabing bagay na ito nga kaya iyon?<br/>
+--> ang sinasabing bagay na ito nga kaya iyon?<br/>
 <br/>
 <b>例えば＃１：</b> MARIO<br/>
 <b>tatoeba#1:</b> MARIO<br/>
 --> <b>halimbawa#1:</b> MARIO<br/>
 「本は配管工で、その後ビルの解体、</b><br/>
 "moto ha haikankoude, sono ato biru no kaitai,<br/>
---> "sa simula, tubero, pagkatapos no'n paglutas ng katawan ng gusali,<br/>
+--> "Nanggaling sa pagbahagi ng tubo upang pampabilis, i.e. tubero, pagkatapos no'n paglutas ng katawan ng gusali,<br/>
 テニスの審判、ドライバー、医者など、<br/>
 tenisu no shinpan, doraiba-, ishanado,<br/>
 --> hukom sa tennis, driver, manggagamot, atbp<br/>
