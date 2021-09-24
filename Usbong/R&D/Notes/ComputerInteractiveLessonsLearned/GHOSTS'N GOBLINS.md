@@ -201,6 +201,8 @@ Kumaliwa at kumanan, makikita mo ang pagitan sa paggalaw.<br/>
 --> Maliban lamang ito kung nakaluhod ang iyong isang paa, saka maaaring mapawalang-bisa ang ibinabato nito.<br/>
 --> Pagkatapos ng pagsisiyasat, tulad sa yuki, i.e. ulang tumigas at naging yelo, snowflake, ang hugis nito.<br/>
 --> <b>Paalala:</b> Gawan ng dalawa o higit pang pagsalakay ang Dambuhalang Goblin, lalo na kapag dalawa ang mga ito, sapagkat mas mabilis ang hakbang ng isa sa kanila sa pagsugod sa iyo.<br/>
+--> Kapag narating mo na sa wakas ang mga palapag kung saan nagbabantay ang mga Dambuhalang Goblin, maaari mong maranasan ang pakiramdam ng unang pagwagi sa Arcade Machine bilang mag-aaral sa mababang paaralan, bagama't matatalo na sa sumunod na laban.<br/>
+--> <b>Halimbawa:</b> Pagwagi sa labanan bilang si B.B.Hood sa Darkstalkers 3.<br/>
 --> Tungkol sa Pulang Demonyong May Pakpak, maaaring gumawa ng talong pagsalakay, at saka salakayin ito pagbaba; mas pinadadali ng sibat ang gawaing ito, kaysa sa kalasag.<br/>
 --> <b>Dagdag:</b> May naibigay na paliwanag sa isipan ng Pulang Demonyong May Pakapak, na kapag ito'y nagsimula sa kanan at sumalakay upang mapunta sa iyong kaliwa, ito'y mas matagal na nakababa sa halip na lumilipad-lipad.<br/>
 --> Mahinahong salakayin ito gamit ang iyong sandata nang hindi tumatalun-talon.<br/>
