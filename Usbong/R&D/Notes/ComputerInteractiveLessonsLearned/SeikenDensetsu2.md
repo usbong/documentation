@@ -7,7 +7,7 @@
 --> Example: left most AND right most<br/>
 
 ### ACTION:
---> learn: non-turn-based action system with Multiple Unit Members as a Team<br/>
+--> TO-DO: learn: non-turn-based action system with Multiple Unit Members as a Team<br/>
 --> where: Unit Members CAN be Computer and/or Human<br/>
 --> with 2-D side-scrolling platformer, select Unit Members become stuck in position<br/>
 --> Example: Front Mission: Gun Hazard<br/>
@@ -17,6 +17,12 @@
 --> execute circular movement around Robot Chief as defense/shield<br/>
 --> execute stationary position while attacking in circular motion; <br/>
 --> as with Kill Zone 2's Robot added by Ingeniero<br/>
+<br/>
+#### 改良するところ（かいりょうするところ； Gawing ayos na pook)
+--> add: back movement, without facing back<br/>
+--> fix: Unit Members attack target Monster at the same time, without hitting each other<br/>
+<br/>
+TO-DO: -update: this<br/>
 
 ## Weapon
 --> increased use of weapon causes it to level-up<br/>
@@ -58,7 +64,7 @@
 <br/>
 という覚えしかなかったが、<br/>
 少し調べたら、プリンセスの<br/>
-マナの木だったお母様が失って、<br/>
+マナの木だったお母様が無くなり、<br/>
 代わりとして、プリンセスが<br/>
 木とならないと、いけない<br/>
 という流れで、悲しい・・・？<br/>
