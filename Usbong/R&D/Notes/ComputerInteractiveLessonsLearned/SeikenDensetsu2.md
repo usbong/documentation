@@ -15,12 +15,39 @@
 <br/>
 --> With Geometry Wars (Nintendo DS), assisting Robot has set of focused actions:<br/>
 --> execute circular movement around Robot Chief as defense/shield<br/>
---> execute stationary position while attacking in circular motion; <br/>
+--> execute stationary position while attacking in circular rotating motion; <br/>
 --> as with Kill Zone 2's Robot added by Ingeniero<br/>
 <br/>
+
+#### Battle:
+--> Each Unit Member has role;<br/>
+--> Example Scenario (defeat: ノーム (no-mu)'s Bully):<br/>
+--> Unit Member: ランディ(Randy): has NO magic;<br/> 
+--> Use 聖剣 (seiken; Holy Sword)<br/>
+--> Let Computer assist in the Action Commands.<br/>
+<br/>
+--> Unit Member: プリム (Purimu): has magic;<br/> 
+--> Use アイスセイバー (aisu seiba-; ICE SABER) to add ICE to weapon of all Unit Members.<br/>
+--> <b>Note:</b> Bully is FIRE type<br/>
+--> Use ヒールウオーター (hi-ru uo-ta-; Heal Water) to restore health to all Unit Members.<br/>
+--> When health of Unit Members has decreased due to FIRE attack by Bully to All, send Action Command to heal All.<br/> 
+--> Afterwards, go to Unit Member Popoi, let Computer assist with Purimu.<br/>
+<br/>
+--> Unit Member: ポポイ (Popoi): has magic:<br/> 
+--> Use フリーズ (furi-zu; FREEZE) to attack Bully; damage reaches at least 100.<br/>
+--> Send Action Command to execute FREEZE attack.<br/>
+--> Cost: 2 Magic Power;<br/> 
+--> <b>Reminder:</b> with unused 10 Magic Power, CAN defeat Bully in 5 FREEZE Attacks.<br/>
+--> After each attack, return to Unit Member Purimu, let Computer assist with Popoi.<br/>
+<br/>
+--> <b>Mungkahing Aksyon:</b> Tuklasin paano tayo matutulungan ng kompyuter.<br/>
+
 #### 改良するところ（かいりょうするところ； Gawing ayos na pook)
 --> add: back movement, without facing back<br/>
---> fix: Unit Members attack target Monster at the same time, without hitting each other<br/>
+--> Computer as Unit Member CAN execute this action; Human as Unit Member NOT yet clear how to execute<br/>
+<br/>
+--> fix: Unit Members attack target Monster at the same time, without hitting each other?<br/>
+--> add: GUARD Command; COUNTER-ATTACK Command via Timed GUARD<br/>
 <br/>
 TO-DO: -update: this<br/>
 
