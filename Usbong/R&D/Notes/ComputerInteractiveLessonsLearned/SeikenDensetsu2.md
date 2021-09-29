@@ -27,9 +27,9 @@
 --> Let Computer assist in the Action Commands.<br/>
 <br/>
 --> Unit Member: プリム (Purimu): has magic;<br/> 
---> Use アイスセイバー (aisu seiba-; ICE SABER) to add ICE to weapon of all Unit Members.<br/>
+--> Use アイスセイバー (aisu seiba-; ICE SABER) to add ICE to weapon of All Unit Members.<br/>
 --> <b>Note:</b> Bully is FIRE type<br/>
---> Use ヒールウオーター (hi-ru uo-ta-; Heal Water) to restore health to all Unit Members.<br/>
+--> Use ヒールウオーター (hi-ru uo-ta-; Heal Water) to restore health to All Unit Members.<br/>
 --> When health of Unit Members has decreased due to FIRE attack by Bully to All, send Action Command to heal All.<br/> 
 --> Afterwards, go to Unit Member Popoi, let Computer assist with Purimu.<br/>
 <br/>
@@ -77,9 +77,14 @@ TO-DO: -update: this<br/>
 
 ## Additional Notes
 聖剣伝説１（ファイナルファンタジーアドベンチャー）<br/>
+seiken densetsu 1 (fainaru fantaji- adobencha-)<br/>
+Banal na Patalim Ibinahaging Salita 1 (Final Fantasy Adventure)<br/>
+<br/>
 ゲームボーイカラーで高校生レベルとして、完成できました。<br/>
+Natapos ko sa Gameboy Color bilang nibel ng Mag-aaral sa High School.<br/>
 <br/>
 が、ストーリーは、よく覚えていない・・・<br/>
+Ngunit, hindi ko maalala nang maigi ang salaysay...<br/>
 <br/>
 木と印した自然のマナに<br/>
 何とかの問題があり、<br/>
