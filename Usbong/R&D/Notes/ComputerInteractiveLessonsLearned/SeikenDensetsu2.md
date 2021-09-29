@@ -20,8 +20,9 @@
 <br/>
 
 #### Battle:
+--> <b>Example Scenario (defeat: ノーム (no-mu)'s Bully):</b><br/>
+--> where No-mu: 地の精霊（chi no seirei; Earth Spirit Ghost）<br/>
 --> Each Unit Member has role;<br/>
---> Example Scenario (defeat: ノーム (no-mu)'s Bully):<br/>
 --> Unit Member: ランディ(Randy): has NO magic;<br/> 
 --> Use 聖剣 (seiken; Holy Sword)<br/>
 --> Let Computer assist in the Action Commands.<br/>
@@ -41,6 +42,26 @@
 --> After each attack, return to Unit Member Purimu, let Computer assist with Popoi.<br/>
 <br/>
 --> <b>Mungkahing Aksyon:</b> Tuklasin paano tayo matutulungan ng kompyuter.<br/>
+<br/>
+--> <b>Example Scenario (defeat: タナトス (tanatosu)'s Monster Wall):</b><br/>
+--> where: Monster Wall has three parts: center EYE, left EYE, right EYE<br/>
+--> NOT EFFECTIVE: Attack using Magic All parts;<br/>
+--> <b>Recommended Action:</b> verify: weapon and magic damage to parts<br/>
+--> Select part does NOT receive magic damage;<br/>
+--> Select part receives weapon damage of at least 30<br/>
+--> Damage Result shown as written status report;<br/>
+--> As with Front Mission: Gun Hazard, reading text report difficult when in action state<br/>
+--> Status Report as Voice-over more effective?<br/>
+--> When remaining part is center EYE, Monster Wall shall begin to move to push Unit to bottom of room with spikes.<br/>
+--> When Unit hits spikes, All members are taken by the 死神 (shinigami; i.e. Death God);<br/>
+--> where: they are NEVER to be seen again; End.<br/>
+--> Use Popoi's ダイヤミサイル (daiya misairu) Magic Attack to hit center EYE with over 130damage.<br/>
+--> Magic Attack received as assistance from Earth Spirit Ghost, No-mu<br/>
+--> With 3 hits, CAN defeat Monster Wall;<br/>
+--> reminder: Magic Power quickly becomes empty, i.e. zero, if often used in journey before BOSS Battle<br/>
+--> bring: 魔法のくるみ (mahou no kurumi; binhi ng patakaran ng himala) to restore empty Magic Power as explained by [Computer Manual](https://www.nintendo.co.jp/clvs/manuals/ja/pdf/CLV-P-VABRJ.pdf)<br/>
+--> cost: 1000ルク (ruku, i.e. currency) each<br/>
+
 
 #### 改良するところ（かいりょうするところ； Gawing ayos na pook)
 --> add: back movement, without facing back<br/>
