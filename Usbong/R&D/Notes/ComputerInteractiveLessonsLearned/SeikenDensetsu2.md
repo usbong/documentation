@@ -21,7 +21,7 @@
 
 #### Battle:
 --> <b>Example Scenario (defeat: ノーム (no-mu)'s Bully):</b><br/>
---> where No-mu: 地の精霊（chi no seirei; Earth Spirit Ghost）<br/>
+--> where No-mu: 地の精霊（chi no seirei; Earth's Spirit Ghost）<br/>
 --> Each Unit Member has role;<br/>
 --> Unit Member: ランディ(Randy): has NO magic;<br/> 
 --> Use 聖剣 (seiken; Holy Sword)<br/>
@@ -56,7 +56,7 @@
 --> When Unit hits spikes, All members are taken by the 死神 (shinigami; i.e. Death God);<br/>
 --> where: they are NEVER to be seen again; End.<br/>
 --> Use Popoi's ダイヤミサイル (daiya misairu) Magic Attack to hit center EYE with over 130damage.<br/>
---> Magic Attack received as assistance from Earth Spirit Ghost, No-mu<br/>
+--> Magic Attack received as assistance from Earth's Spirit Ghost, No-mu<br/>
 --> With 3 hits, CAN defeat Monster Wall;<br/>
 --> reminder: Magic Power quickly becomes empty, i.e. zero, if often used in journey before BOSS Battle<br/>
 --> bring: 魔法のくるみ (mahou no kurumi; binhi ng patakaran ng himala) to restore empty Magic Power as explained by [Computer Manual](https://www.nintendo.co.jp/clvs/manuals/ja/pdf/CLV-P-VABRJ.pdf)<br/>
