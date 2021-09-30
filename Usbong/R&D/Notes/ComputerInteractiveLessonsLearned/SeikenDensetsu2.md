@@ -6,6 +6,10 @@
 --> due to Multiple Unit Members can be at farther positions from each other?<br/>
 --> Example: left most AND right most<br/>
 
+<br/>
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Notes/ComputerInteractiveLessonsLearned/res/SEIKENDENSETSU2/seikenDensetsu2NanameSuikoden1ToOnajikuShashinIi20210930T1947.jpg" width="60%">
+--> Diagonal Movement
+
 ### ACTION:
 --> TO-DO: learn: non-turn-based action system with Multiple Unit Members as a Team<br/>
 --> where: Unit Members CAN be Computer and/or Human<br/>
