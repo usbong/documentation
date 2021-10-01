@@ -143,7 +143,7 @@ Sa punong ginawang sagisag ng likas na MANA<br/>
 何とかの問題があり、<br/>
 may kung anong suliranin,<br/>
 プリンセスのような女の子を<br/>
-ang batang babaeng tulad ng princesa,<br/>
+ang batang babaeng tulad ng Princesa,<br/>
 救えないと、いけないし、<br/>
 kung hindi iligtas, hindi makasusulong,<br/>
 結局、時間だけを入れて、<br/>
