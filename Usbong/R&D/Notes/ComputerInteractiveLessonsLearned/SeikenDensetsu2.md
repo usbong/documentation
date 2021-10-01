@@ -15,8 +15,15 @@
 <img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Notes/ComputerInteractiveLessonsLearned/res/SEIKENDENSETSU2/seikenDensetsu2DiagonalTreeLeafTileOverUnitSprite20211001T0748.jpg" width="100%">
      </td>     
   </tr>
+   <tr>
+     <td>
+        Diagonal Movement
+     </td>
+     <td>
+      Diagonal Movement: Tree Leaf Tile Over Unit
+     </td>     
+  </tr>
 </table>
---> Diagonal Movement
 
 #### Additional Note: 
 --> GitHub "Edit File" & "Preview" Tool<br/>
