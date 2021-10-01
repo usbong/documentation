@@ -5,10 +5,23 @@
 --> vertical and horizontal scroll movement NOT caused by Unit member at center position<br/>
 --> due to Multiple Unit Members can be at farther positions from each other?<br/>
 --> Example: left most AND right most<br/>
-
 <br/>
-<img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Notes/ComputerInteractiveLessonsLearned/res/SEIKENDENSETSU2/seikenDensetsu2NanameSuikoden1ToOnajikuShashinIi20210930T1947.jpg" width="60%">
+<table>
+   <tr>
+     <td>
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Notes/ComputerInteractiveLessonsLearned/res/SEIKENDENSETSU2/seikenDensetsu2NanameSuikoden1ToOnajikuShashinIi20210930T1947.jpg" width="100%">
+     </td>
+     <td>
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Notes/ComputerInteractiveLessonsLearned/res/SEIKENDENSETSU2/seikenDensetsu2DiagonalTreeLeafTileOverUnitSprite20211001T0748.jpg" width="100%">
+     </td>     
+  </tr>
+</table>
 --> Diagonal Movement
+
+#### Additional Note: 
+--> GitHub "Edit File" & "Preview" Tool<br/>
+--> HTML+...<br/>
+--> HTML Table Commands OK
 
 ### ACTION:
 --> TO-DO: learn: non-turn-based action system with Multiple Unit Members as a Team<br/>
