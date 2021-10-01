@@ -161,7 +161,7 @@ kaunting siyasatin, ang Princesa,<br/>
 ang kanyang ginagalang na Ina na dating Puno ng MANA, naging WALA,<br/>
 代わりとして、プリンセスが<br/>
 bilang kapalit, ang Princesa<br/>
-樹とならないと、いけない
+樹とならないと、いけない<br/>
 ang hindi maging Puno, hindi makasusulong<br/>
 という流れで、悲しい・・・？<br/>
 sa sinsabing daloy na ito, malungkot...?<br/>
