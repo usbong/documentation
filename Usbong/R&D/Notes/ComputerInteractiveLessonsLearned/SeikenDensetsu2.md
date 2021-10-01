@@ -23,6 +23,13 @@
 --> HTML+...<br/>
 --> HTML Table Commands OK
 
+#### Additional Reference: 
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Notes/ComputerInteractiveLessonsLearned/res/ZELDABREATHOFTHEWILD/gamasutraZeldaBreathOfTheWild.png" width="80%">
+<br/>
+https://www.gamasutra.com/view/news/293513/Video_Designing_Zelda_Breath_of_the_Wilds_unconventional_mechanics.php;<br/>
+last accessed: 20211001
+
+
 ### ACTION:
 --> TO-DO: learn: non-turn-based action system with Multiple Unit Members as a Team<br/>
 --> where: Unit Members CAN be Computer and/or Human<br/>
