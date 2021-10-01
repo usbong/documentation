@@ -139,25 +139,44 @@ Natapos ko sa Gameboy Color bilang nibel ng Mag-aaral sa High School.<br/>
 Ngunit, hindi ko maalala nang maigi ang salaysay...<br/>
 <br/>
 木と印した自然のマナに<br/>
+Sa punong ginawang likas na MANA<br/>
 何とかの問題があり、<br/>
+may kung anong suliranin,<br/>
 プリンセスのような女の子を<br/>
+ang batang babaeng tulad ng princesa,<br/>
 救えないと、いけないし、<br/>
+kung hindi iligtas, hindi makasusulong,<br/>
 結局、時間だけを入れて、<br/>
+kinalaunan, maglagay lamang ng panahon,<br/>
 覚えられる苦労がなく、<br/>
+walang maaalalang hirap sa paggawa,<br/>
 両方が救えるようになる。<br/>
+maililigtas ang dalawa.<br/>
 <br/>
 という覚えしかなかったが、<br/>
+ang sinasabing alaala nga lamang ang mayroon ako,<br/>
 少し調べたら、プリンセスの<br/>
+kaunting siyasatin, ang Princesa,<br/>
 マナの木だったお母様が無くなり、<br/>
+ang kanyang ginagalang na Ina na dating Puno ng MANA, naging WALA,<br/>
 代わりとして、プリンセスが<br/>
-木とならないと、いけない<br/>
+bilang kapalit, ang Princesa<br/>
+木とならないと、いけない
+ang hindi maging Puno, hindi makasusulong<br/>
 という流れで、悲しい・・・？<br/>
+sa sinsabing daloy na ito, malungkot...?<br/>
 <br/>
 GHOSTS'NGOBLINSのほうが良かろう？<br/>
+Higit na maayos nga ang gawi sa GHOSTS'NGOBLINS?<br/>
 <br/>
 また、音楽が植松氏のファイナルファンタジーVIの<br/>
+Dagdag, ang tugtugin, i.e. tunog + ligaya, sa FINAL FANTASY VI ni G. Uematsu<br/>
 はじめとなる曲を思い出せるが、<br/>
+maaalala man ang simulang bahagi ng tunog,<br/>
 このシーンもね。<br/>
+ang scene na ito rin.<br/>
 <br/>
 雪がある背景で、三台のロボットが前向きに歩いてる。<br/>
+Sa likurang may niyebe, naglalakad pasulong ang tatlong makinang ROBOT.<br/>
 過去が覚えられないティナがその一台に入ってる。<br/>
+Ang hindi maalala ang nakaraan, na si Tina, nasa loob ng isang makinang iyon.<br/>
