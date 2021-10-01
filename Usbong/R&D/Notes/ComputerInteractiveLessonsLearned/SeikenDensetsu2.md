@@ -138,8 +138,8 @@ Natapos ko sa Gameboy Color bilang nibel ng Mag-aaral sa High School.<br/>
 が、ストーリーは、よく覚えていない・・・<br/>
 Ngunit, hindi ko maalala nang maigi ang salaysay...<br/>
 <br/>
-木と印した自然のマナに<br/>
-Sa punong ginawang likas na MANA<br/>
+樹と印した自然のマナに<br/>
+Sa punong ginawang sagisag ng likas na MANA<br/>
 何とかの問題があり、<br/>
 may kung anong suliranin,<br/>
 プリンセスのような女の子を<br/>
@@ -157,11 +157,11 @@ maililigtas ang dalawa.<br/>
 ang sinasabing alaala nga lamang ang mayroon ako,<br/>
 少し調べたら、プリンセスの<br/>
 kaunting siyasatin, ang Princesa,<br/>
-マナの木だったお母様が無くなり、<br/>
+マナの樹だったお母様が無くなり、<br/>
 ang kanyang ginagalang na Ina na dating Puno ng MANA, naging WALA,<br/>
 代わりとして、プリンセスが<br/>
 bilang kapalit, ang Princesa<br/>
-木とならないと、いけない
+樹とならないと、いけない
 ang hindi maging Puno, hindi makasusulong<br/>
 という流れで、悲しい・・・？<br/>
 sa sinsabing daloy na ito, malungkot...?<br/>
