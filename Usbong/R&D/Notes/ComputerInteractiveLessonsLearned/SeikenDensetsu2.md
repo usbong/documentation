@@ -101,6 +101,17 @@ last accessed: 20211001
 --> fix: Unit Members attack target Monster at the same time, without hitting each other?<br/>
 --> add: GUARD Command; COUNTER-ATTACK Command via Timed GUARD<br/>
 <br/>
+--> fix: when Unit Members include another Human, Item, Magic, et cetera Select Command causes action to STOP.<br/>
+--> add: Multiple Windows, where each Unit Member has own Window;<br/> 
+--> one (1) big Window CAN BE for audience, e.g. tournament, concert, movie?<br/>
+--> Even in Minecraft Dungeons, with Multiple Human Unit Members, problem exists:<br/>
+--> Pressing Item Menu causes Action Window to be replaced, albeit Monster movement continues.<br/>
+<br/>
+
+##### Note: MUSICIAN + MANGA/ANIME ARTIST + COMPUTER/ROBOT ENGINEER...
+--> Humans + Computers System Integration causes increased value;<br/>
+--> observed: Computer/Robot Engineering know-how in Philippines to create daigdig as Product/Service NOT yet sufficient.<br/>
+
 TO-DO: -update: this<br/>
 
 ## Weapon
