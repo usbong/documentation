@@ -51,14 +51,16 @@ last accessed: 20211001
 <br/>
 
 #### Magic
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Notes/ComputerInteractiveLessonsLearned/res/SEIKENDENSETSU2/seikenDensetsu2Faiabo-ruSentaku.jpg" width="50%">
+<br/>
 --> ファイアボール（faiabo-ru; Fireball) from Salamander as assistance<br/>
 --> where: Salamander: 火の精霊（hi no seirei; Fire's Spirit Ghost)<br/>
---> El Diablo 1の魔法使いの技が思い出せる・・・<br/>
+--> El diablo 1の魔法使いの技が思い出せる・・・<br/>
 --> 敵ぜんたい、ターゲットできないが、<br/>
 --> 創り上げられた世界の観点で、まっすぐ行ってくれる・・・<br/>
 --> Magic the Gatheringでは、ファイアボールよりも、<br/>
 --> ライトニング・ボルトのほうが速くて、いいだろう。<br/>
---> そして、El Diablo 1よりも、RED ALERTとSTARCRAFTのほうかな・・・<br/>
+--> そして、El diablo 1よりも、RED ALERTとSTARCRAFTのほうかな・・・<br/>
 --> BATTLE.NETもあったが、小学生～中学生レベルとして、<br/>
 --> クラスメートたちと、ローカルLANか電話＋モデムでやりました。<br/>
 --> 電話の繋がりが切れることのせいかもしれないが、<br/>
