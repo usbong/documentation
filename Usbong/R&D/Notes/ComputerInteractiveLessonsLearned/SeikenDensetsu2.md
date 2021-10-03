@@ -50,6 +50,35 @@ last accessed: 20211001
 --> as with Kill Zone 2's Robot added by Ingeniero<br/>
 <br/>
 
+#### Magic
+--> ファイアボール（faiabo-ru; Fireball) from Salamander as assistance<br/>
+--> where: Salamander: 火の精霊（hi no seirei; Fire's Spirit Ghost)<br/>
+--> El Diablo 1の魔法使いの技が思い出せる・・・<br/>
+--> 敵ぜんたい、ターゲットできないが、<br/>
+--> 創り上げられた世界の観点で、まっすぐ行ってくれる・・・<br/>
+--> Magic the Gatheringでは、ファイアボールよりも、<br/>
+--> ライトニング・ボルトのほうが速くて、いいだろう。<br/>
+--> そして、El Diablo 1よりも、RED ALERTとSTARCRAFTのほうかな・・・<br/>
+--> BATTLE.NETもあったが、小学生～中学生レベルとして、<br/>
+--> クラスメートたちと、ローカルLANか電話＋モデムでやりました。<br/>
+--> 電話の繋がりが切れることのせいかもしれないが、<br/>
+--> 戦いって、速いほうがいい。<br/>
+--> 5分で、勝つとか・・・<br/>
+--> 結局、歴史では、戦争が伸びてると、<br/>
+--> 兵士が疲れるし、供給なども切れる・・・<br/>
+--> 敵がわかれば、ターゲットして、<br/>
+--> 優柔不断をせずに、速めに終わりにすること。<br/>
+--> わくわくすることなく、仕事としての決断でね。<br/>
+<br/>
+--> また、ファイアボールと言えば、<br/>
+--> FFVIIのロゴにありましたが、<br/>
+--> 兄さんの友達がデモCDをやらせてくれて、<br/>
+--> デモの終わり、そのままで、止まったら、<br/>
+--> 松本氏のギャラクシーエクスプレス９９９の<br/>
+--> アニメ版のように、出てるキャラなどの<br/>
+--> ストーリーを想像として、創り始めさせて・・・　・・・<br/>
+<br/>
+
 #### Battle:
 --> <b>Example Scenario (defeat: ノーム (no-mu)'s Bully):</b><br/>
 --> where No-mu: 地の精霊（chi no seirei; Earth's Spirit Ghost）<br/>
@@ -92,7 +121,7 @@ last accessed: 20211001
 --> reminder: Magic Power quickly becomes empty, i.e. zero, if often used in journey before BOSS Battle<br/>
 --> bring: 魔法のくるみ (mahou no kurumi; binhi ng patakaran ng himala) to restore empty Magic Power as explained by [Computer Manual](https://www.nintendo.co.jp/clvs/manuals/ja/pdf/CLV-P-VABRJ.pdf)<br/>
 --> cost: 1000ルク (ruku, i.e. currency) each<br/>
-
+--> まんまるドロップ (manmaru doroppu; heals 100 health point) ：20ルク<br/>
 
 #### 改良するところ（かいりょうするところ； Gawing ayos na pook)
 --> add: back movement, without facing back<br/>
@@ -120,6 +149,7 @@ TO-DO: -update: this<br/>
 --> NOT yet talking weapon? <br/>
 --> e.g. as with Victor's in Suikoden 1, <br/>
 --> as with Stan's in Tales of Destiny?<br/>
+--> as with Robots in Animation, Magic Knight Rayearth?<br/>
 
 ## Chrono Trigger
 --> sound and music reminds me of Chrono Trigger<br/>
