@@ -55,19 +55,46 @@ last accessed: 20211001
 <br/>
 --> ファイアボール（faiabo-ru; Fireball) from Salamander as assistance<br/>
 --> where: Salamander: 火の精霊（hi no seirei; Fire's Spirit Ghost)<br/>
+
 --> El diablo 1の魔法使いの技が思い出せる・・・<br/>
+Maalala ang teknik ng manggagamit ng patakaran ng himala sa El diablo 1...<br/>
+
 --> 敵ぜんたい、ターゲットできないが、<br/>
+Bagama't hindi maaaring gawing target ang lahat ng kalaban,
+
 --> 創り上げられた世界の観点で、まっすぐ行ってくれる・・・<br/>
+Sa pook ng pagtingin ng ginawa't inihandog na daigdig, direktang sumusulong nang ayos sa'kin...<br/>
+
 --> Magic the Gatheringでは、ファイアボールよりも、<br/>
+Sa Magic the Gathering, higit sa Fireball,
+
 --> ライトニング・ボルトのほうが速くて、いいだろう。<br/>
+ang gawi ng Lightning Bolt, mabilis nga't maigi.<br/>
+
 --> そして、El diablo 1よりも、RED ALERTとSTARCRAFTのほうかな・・・<br/>
+Pagkatapos, higit sa el diablo1, sa gawi ako ng RED ALERT at STARCRAFT...<br/>
+
 --> BATTLE.NETもあったが、小学生～中学生レベルとして、<br/>
+May BATTLE.NET man, bilang mag-aaral sa mababa~gitnang paaralan,<br/>
+
 --> クラスメートたちと、ローカルLANか電話＋モデムでやりました。<br/>
+kasama ang mga classmate, ginawa namin gamit ang Local LAN o telepono (kuryente salita) + modem.<br/> 
+
 --> 電話の繋がりが切れることのせいかもしれないが、<br/>
+Maaaring dahil napuputol ang ugnayan ng telepono,<br/>
+
 --> 戦いって、速いほうがいい。<br/>
+Ang pakikipaglaban, maigi ang mabilis.<br/>
+
 --> 5分で、勝つとか・・・<br/>
+Manalo sa 5 hati, atbp...<br/>
+
 --> 結局、歴史では、戦争が伸びてると、<br/>
+Kinalauanan, sa kasaysayan, sa paghaba ng digmaan,<br/>
+
 --> 兵士が疲れるし、供給なども切れる・・・<br/>
+napapagod ang sundalong mag-aaral, napuputol ang bigay na pagsasaluhan (supply)...<br/>
+
 --> 敵がわかれば、ターゲットして、<br/>
 --> 優柔不断をせずに、速めに終わりにすること。<br/>
 --> わくわくすることなく、仕事としての決断でね。<br/>
