@@ -55,7 +55,7 @@ last accessed: 20211001
 <br/>
 --> ファイアボール（faiabo-ru; Fireball) from Salamander as assistance<br/>
 --> where: Salamander: 火の精霊（hi no seirei; Fire's Spirit Ghost)<br/>
-
+<br/>
 --> El diablo 1の魔法使いの技が思い出せる・・・<br/>
 Maalala ang teknik ng manggagamit ng patakaran ng himala sa El diablo 1...<br/>
 
@@ -104,17 +104,26 @@ hindi gawin ang walang hintong bait at pag-aakma (flexible), tapusin na habang m
 --> わくわくすることなく、仕事としての決断でね。<br/>
 hindi gawin na may excitement; bilang hanap-buhay pagpasiyahan, hinto.<br/>
 
-<br/>
 --> また、ファイアボールと言えば、<br/>
 Dagdag, sa pagsabi ko ng Fireball,<br/>
 
 --> FFVIIのロゴにありましたが、<br/>
+sa logo ng FFVII, mayroon ito,<br/>
 
 --> 兄さんの友達がデモCDをやらせてくれて、<br/>
+Pinagamit sa'kin ang DEMO CD ng kaibigan ng kuya,<br/>
+
 --> デモの終わり、そのままで、止まったら、<br/>
+Sa katapusan ng DEMO, sa pook na 'yon, kung tumigil,<br/>
+
 --> 松本氏のギャラクシーエクスプレス９９９の<br/>
+Ang Galaxy Express 999 ni G. Matsumoto<br/>
 --> アニメ版のように、出てるキャラなどの<br/>
+tulad sa lathalang Anime, ang mga lumalabas na Tauhan<br/>
+
 --> ストーリーを想像として、創り始めさせて・・・　・・・<br/>
+ang kanilang salaysay bilang isip gawa-gawa (kathang-isip; imagination), hayaan akong simulang gawin... ...<br/>
+
 <br/>
 
 #### Battle:
