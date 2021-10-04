@@ -119,6 +119,7 @@ Sa katapusan ng DEMO, sa pook na 'yon, kung tumigil,<br/>
 
 --> 松本氏のギャラクシーエクスプレス９９９の<br/>
 Ang Galaxy Express 999 ni G. Matsumoto<br/>
+
 --> アニメ版のように、出てるキャラなどの<br/>
 tulad sa lathalang Anime, ang mga lumalabas na Tauhan<br/>
 
