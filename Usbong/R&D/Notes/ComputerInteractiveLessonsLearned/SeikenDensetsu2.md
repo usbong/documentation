@@ -212,6 +212,17 @@ TO-DO: -update: this<br/>
 --> as with seiken densetsu 3, albeit larger font and less text per textbox<br/>
 --> color combination customizable, albeit NOT yet easy to read<br/>
 
+## Network
+--> observed: Unit member, e.g. Purimu (Princess?), disappears after Battle with Minotaurus<br/>
+--> reached: Secret Hideout of Spies to the Empire;<br/>
+--> observed: disappeared Unit member speaks via displayed Text<br/>
+--> verified: via [detail.chiebukuro.yahoo.co.jp](https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q14196282779?__ysp=44OX44Oq44OgLOiBluWJo%2BS8neiqrDI%3D) that problem exists<br/>
+--> <b>recommended solution:</b> reload to last save point before Minotaurus;<br/>
+--> Otherwise, restart from beginning.<br/>
+<br/>
+--> observed: Unit member blinks after thrown by Minotaurus;<br/>
+--> If not hit again via earthquake attack, shall continue to blink to disappear after victory?<br/>
+
 ## 現在（げんざい; genzai; NOW）
 --> プログラマー：NARISどうなったのかな？1993年の聖剣伝説2以来？<br/>
 --> programmer: Naris dou natta no ka na? 1993nen no seiken densetsu2 irai?<br/>
