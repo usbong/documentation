@@ -56,11 +56,12 @@ last accessed: 20211001
 --> ファイアボール（faiabo-ru; Fireball) from Salamander as assistance<br/>
 --> where: Salamander: 火の精霊（hi no seirei; Fire's Spirit Ghost)<br/>
 <br/>
+
 --> El diablo 1の魔法使いの技が思い出せる・・・<br/>
 Maalala ang teknik ng manggagamit ng patakaran ng himala sa El diablo 1...<br/>
 
 --> 敵ぜんたい、ターゲットできないが、<br/>
-Bagama't hindi maaaring gawing target ang lahat ng kalaban,
+Bagama't hindi maaaring gawing target ang lahat ng kalaban,<br/>
 
 --> 創り上げられた世界の観点で、まっすぐ行ってくれる・・・<br/>
 Sa pook ng pagtingin ng ginawa't inihandog na daigdig, direktang sumusulong nang ayos sa'kin...<br/>
