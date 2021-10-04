@@ -96,8 +96,14 @@ Kinalauanan, sa kasaysayan, sa paghaba ng digmaan,<br/>
 napapagod ang sundalong mag-aaral, napuputol ang bigay na pagsasaluhan (supply)...<br/>
 
 --> 敵がわかれば、ターゲットして、<br/>
+Kapag alam na ang kalaban, gawing target,<br/>
+
 --> 優柔不断をせずに、速めに終わりにすること。<br/>
+hindi gawin ang walang hintong bait at pag-aakma (flexible), tapusin na habang mabilis pa.<br/> 
+
 --> わくわくすることなく、仕事としての決断でね。<br/>
+hindi gawin na may excitement; bilang hanap-buhay pagpasiyahan, hinto.<br/>
+
 <br/>
 --> また、ファイアボールと言えば、<br/>
 --> FFVIIのロゴにありましたが、<br/>
