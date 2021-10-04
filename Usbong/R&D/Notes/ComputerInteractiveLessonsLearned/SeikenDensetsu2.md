@@ -90,7 +90,7 @@ Ang pakikipaglaban, maigi ang mabilis.<br/>
 Manalo sa 5 hati, atbp...<br/>
 
 --> 結局、歴史では、戦争が伸びてると、<br/>
-Kinalauanan, sa kasaysayan, sa paghaba ng digmaan,<br/>
+Kinalaunan, sa kasaysayan, sa paghaba ng digmaan,<br/>
 
 --> 兵士が疲れるし、供給なども切れる・・・<br/>
 napapagod ang sundalong mag-aaral, napuputol ang bigay na pagsasaluhan (supply)...<br/>
@@ -106,7 +106,10 @@ hindi gawin na may excitement; bilang hanap-buhay pagpasiyahan, hinto.<br/>
 
 <br/>
 --> また、ファイアボールと言えば、<br/>
+Dagdag, sa pagsabi ko ng Fireball,<br/>
+
 --> FFVIIのロゴにありましたが、<br/>
+
 --> 兄さんの友達がデモCDをやらせてくれて、<br/>
 --> デモの終わり、そのままで、止まったら、<br/>
 --> 松本氏のギャラクシーエクスプレス９９９の<br/>
