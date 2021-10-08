@@ -223,6 +223,44 @@ TO-DO: -update: this<br/>
 --> observed: Unit member blinks after thrown by Minotaurus;<br/>
 --> If not hit again via earthquake attack, shall continue to blink to disappear after victory?<br/>
 
+## Daigdig
+魔法のヨロイを魔物が<br/>
+落とした宝箱から手に入れて、<br/>
+当時まで、まんまるドロップか<br/>
+爆発でダメージを受ける物しか貰ってなくて、<br/>
+しかも、装備すると、防御＋26が<br/>
+できて、うれしい・・・<br/>
+<br/>
+と思ったら、1993以来、<br/>
+出てくるRPGが、たとえばEl　diablo 1、<br/>
+次々に使うシステムね。<br/>
+<br/>
+町に着いて、店で買える魔法のヨロイが、<br/>
+金が65万以上貯めれて、<br/>
+簡単に手に入れる物となった。<br/>
+<br/>
+また、行動してる世界を作り上げられた<br/>
+人たちがわかるよっていうような伝えとして、<br/>
+魔法のくるみが半分にして、500ルクとなった。<br/>
+<br/>
+フロントミッション：GUN HAZARDも、<br/>
+最後になる時に、金が余ってて、<br/>
+何でも簡単に買えるとなったが、<br/>
+結局、当時までやってた行動と<br/>
+使ってたパッツを使って済んだ。<br/>
+<br/>
+が、SD2では、次の町に着いたら、<br/>
+物価が高くて、ユニットに<br/>
+最高の防御がある製品を<br/>
+買ってあげれなくて、<br/>
+金をどういう風に分け合うか、<br/>
+ということをちゃんと考えないと<br/>
+いけない状態となった・・・<br/>
+<br/>
+SDと言えば、クロノ・トリガーが<br/>
+US版のゲーム箱だとしたら、<br/>
+キャラがチビじゃないと思う・・・<br/>
+
 ## 現在（げんざい; genzai; NOW）
 --> プログラマー：NARISどうなったのかな？1993年の聖剣伝説2以来？<br/>
 --> programmer: Naris dou natta no ka na? 1993nen no seiken densetsu2 irai?<br/>
