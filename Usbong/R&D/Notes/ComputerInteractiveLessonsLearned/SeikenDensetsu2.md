@@ -225,16 +225,26 @@ TO-DO: -update: this<br/>
 
 ## Daigdig
 魔法のヨロイを魔物が<br/>
+Naisusuot na kalasag ng Patakaran ng Himala, ang Halimaw<br/>
 落とした宝箱から手に入れて、<br/>
+nahulog ang kahon ng yaman, mula rito nailagay sa kamay,<br/>
 当時まで、まんまるドロップか<br/>
+hanggang sa panahong ito, manmaru doroppu (bagay na makakain upang manghilom ng 100sukat) o<br/>
 爆発でダメージを受ける物ぐらいしか<br/>
+bagay na makakukuha ng damage gamit ang pasabog, mga gano'n lamang<br/> 
 貰ってなくて、<br/>
+ang aking natanggap,<br/>
 しかも、装備すると、防御＋26が<br/>
+Dagdag pa, kapag isinuot, ang Pangsangga (depensa) + 26<br/>
 できて、うれしい・・・<br/>
+magagawa, maligaya...<br/>
 <br/>
 と思ったら、1993以来、<br/>
+Kapag isipin ito, pagkatapos ng 1993,<br/>
 出てくるRPGが、たとえばEl diablo 1、<br/>
+ang lumabas at dumating na RPG, halimbawa El diablo 1,<br/>
 次々に使うシステムね。<br/>
+sunud-sunod gumagamit nga nitong sistema.<br/>
 <br/>
 町に着いて、店で買える<br/>
 魔法のヨロイがあり、<br/>
