@@ -225,7 +225,7 @@ TO-DO: -update: this<br/>
 
 ## Daigdig
 魔法のヨロイを魔物が<br/>
-Naisusuot na kalasag ng Patakaran ng Himala, ang Halimaw<br/>
+Naisusuot na Kalasag ng Patakaran ng Himala, ang Halimaw<br/>
 落とした宝箱から手に入れて、<br/>
 nahulog ang kahon ng yaman, mula rito nailagay sa kamay,<br/>
 当時まで、まんまるドロップか<br/>
@@ -235,7 +235,7 @@ bagay na makakukuha ng damage gamit ang pasabog, mga gano'n lamang<br/>
 貰ってなくて、<br/>
 ang aking natanggap,<br/>
 しかも、装備すると、防御＋26が<br/>
-Dagdag pa, kapag isinuot, ang Pangsangga (depensa) + 26<br/>
+Dagdag pa, kapag isinuot, ang Pansangga (depensa) + 26<br/>
 できて、うれしい・・・<br/>
 magagawa, maligaya...<br/>
 <br/>
@@ -247,31 +247,53 @@ ang lumabas at dumating na RPG, halimbawa El diablo 1,<br/>
 sunud-sunod gumagamit nga nitong sistema.<br/>
 <br/>
 町に着いて、店で買える<br/>
+Pagdating sa bayan, ang mabibili sa tindahan<br/>
 魔法のヨロイがあり、<br/>
+may Kalasag ng Patakaran ng Himala,<br/>
 金が65,000以上貯めれて、<br/>
+ang salapi, nakaipon ng higit sa 65,000,<br/>
 簡単に手に入れる物となった。<br/>
+naging bagay na madaling mailalagay sa kamay.<br/>
 <br/>
 また、行動してる世界を作り上げられた<br/>
+Dagdag, ang kinikilusang daigdig na ginawa't inihandog<br/>
 人たちがわかるよっていうような伝えとして、<br/>
+ng mga tao, tulad ng pagsabi na alam namin! bilang pasabi nito,<br/>
 魔法のくるみが半分にして、500ルクとなった。<br/>
+ang Binhi ng Patakaran ng Himala, kinalahati, naging 500ruku.<br/> 
 <br/>
 フロントミッション：GUN HAZARDも、<br/>
+Sa Front Mission: GUN HAZARD din,<br/>
 最後になる時に、金が余ってて、<br/>
+Kapag naging panahon na nasa dulo, ang salapi lumalabis,<br/>
 何でも簡単に買えるとなったが、<br/>
+kahit ano, naging madali nang mabibili, kaya lang,<br/>
 結局、当時までやってた行動と<br/>
+'di kalaunan, hanggang sa panahong ito, ang ginawa kong pagkilos at<br/>
 使ってたパッツで済んだ。<br/>
+ang mga ginamit na mga parts, sa pamamagitan ng mga ito, tinapos.<br/>
 <br/>
 が、SD2では、次の町に着いたら、<br/>
+Gayunpaman, sa SD2, pagdating sa sunod na bayan,<br/>
 物価が高くて、ユニットに<br/>
+singil sa mga bagay, mataas, sa Unit<br/>
 最高の防御がある製品を<br/>
+ang may pinakamataas na pansangga na binuong bagay, i.e. produkto<br/>
 買ってあげれなくて、<br/>
+hindi ko maibili upang ibigay,<br/>
 金をどういう風に分け合うか、<br/>
+Paano hahatiin at ipagsasama ang salapi,<br/>
 ということをちゃんと考えないと<br/>
+ang pagsabi sa bagay na'to, kung hindi pagnilayan nang ayos,<br/>
 いけない状態となった・・・<br/>
+hindi makasusulong na pook, naging ganoon...<br/>
 <br/>
 SDと言えば、クロノ・トリガーが<br/>
+Sa pagsabi ng SD, ang Chrono Trigger<br/>
 US版のゲーム箱だとしたら、<br/>
+kapag ang kahon ng game ng Lathalang US,<br/>
 キャラがチビじゃないと思う・・・<br/>
+ang tauhan, hindi pinaliit (unano), sa aking pag-isip...<br/> 
 
 ## 現在（げんざい; genzai; NOW）
 --> プログラマー：NARISどうなったのかな？1993年の聖剣伝説2以来？<br/>
