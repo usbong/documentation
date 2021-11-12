@@ -189,6 +189,7 @@ Sa magagawa ipagawa, ayos.<br/>
 <b>4.3)</b>　budol-budol/manloloko/carnapper/cybercriminal/Teroristang Komunista group<br/>
 --> Patuloy araw-gabi ang kanilang maling paggamit ng wireless broadcasting technology sa paggawa ng panlolokong ingay at pisikal na pananakit.<br/>
 --> Kahit ang Nanay-nayan kong Hapon binabastos.<br/>
+<br/>
 --> <b>Mungkahing mga Aksyon:</b><br/> 
 4.3.1) Matuto ng Maparaang Pagbibilang.<br/>
 4.3.2) Gawan ng incident report ang Pulis.<br/>
