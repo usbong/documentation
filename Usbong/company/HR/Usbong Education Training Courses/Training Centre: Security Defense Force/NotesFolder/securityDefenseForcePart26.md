@@ -1,6 +1,10 @@
 # Training Centre: Security Defense Force Part 26
 
---> <b>Sanggunian:</b> [Usbong Automotive: Notes](https://github.com/usbong/documentation/blob/master/Usbong/R&D/Automotive/UsbongAutomotive/Notes.md)
+--> <b>Mga Sanggunian:</b><br/> 
+--> 1) [Usbong Automotive: Notes](https://github.com/usbong/documentation/blob/master/Usbong/R&D/Automotive/UsbongAutomotive/Notes.md)<br/>
+--> 2) Deutsche Welle (German Language Wave) Documentary:<br/>
+--> ["How a neo-Nazi terror network went undetected in Germany | DW Documentary"](https://www.youtube.com/watch?v=iDZPEiYwOA0)<br/>
+--> "Between 1998 and 2011, a German neo-Nazi terrorist group murdered ten people. They called themselves the National Socialist Underground or NSU, carried out robberies to finance their terrorist cell, and planted bombs to spread terror in Germany."
 
 ## 3) Human Person
 ### 3.1) Parts
