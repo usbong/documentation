@@ -143,5 +143,56 @@ answer by: MattS440, 20100118<br/>
 --> Heian Shodan - Shotokan Karate<br/>
 --> Peace Beginner Level<br/>
 <br/>
-TO-DO: -add:  合気道 (aikidou; pinagsamang kaluluwa daan)<br/>
+3.5.1.1) 合気道 (あいきどう；aikidou）<br/> 
+--> (pinagsamang kaluluwa daan)<br/>
 <br/>
+3.5.1.2) 平安　（へいあん、初段～五段; heian, shodan ~ godan）<br/>
+--> (payapa; patag babae may bubong; simulang nibel ~ ikalimang nibel)<br/>
+<br/>
+3.5.1.3) 鉄騎初段　（てつ＋き＋しょだん; tetsu + ki + shodan）<br/>
+--> bakal na kabayo malaki maaari simulang nibel <br/>
+<br/>
+3.5.1.4) 抜塞大　（ぬく＋ふさぐ＋おおきい; nuku + fusagu + ookii）<br/>
+--> tanggalin baradong malaki<br/>
+<br/>
+3.5.1.5) 観空大　（みる＋くう・そら＋おおきい; miru + kuu・sora + ookii）<br/>
+--> masdan kawalan・kalangitan malaki<br/>
+<br/>
+・・・<br/>
+<br/>
+
+## 4) Paalala:
+<b>4.1)</b> 結局、歴史では、戦争が伸びてると、<br/>
+Kinalauanan, sa kasaysayan, sa paghaba ng digmaan,<br/>
+<br/>
+兵士が疲れるし、供給なども切れる・・・<br/>
+napapagod ang sundalong mag-aaral, napuputol ang bigay na pagsasaluhan (supply)...<br/>
+<br/>
+敵がわかれば、ターゲットして、<br/>
+Kapag alam na ang kalaban, gawing target,<br/>
+<br/> 
+優柔不断をせずに、速めに終わりにすること。<br/>
+hindi gawin ang walang hintong bait at pagaakma (flexible), tapusin na habang mabilis pa.<br/> 
+<br/>
+わくわくすることなく、仕事としての決断でね。<br/>
+hindi gawin na may excitement; bilang hanap-buhay pagpasiyahan, hinto.<br/>
+<br/>
+<b>4.2)</b> うまくできることをして、<br/>
+Gawin ang maiging nagagawa,<br/>
+<br/>
+意味がわからず、うまくできないことを<br/>
+hindi maunawaan ang saysay, hindi maiging magawa,<br/>
+<br/>
+他にして良い。<br/>
+Sa magagawa ipagawa, ayos.<br/>
+<br/>
+<b>4.2)</b>　budol-budol/manloloko/carnapper/cybercriminal/Teroristang Komunista group<br/>
+--> Kahit ang Nanay-nayan kong Hapon binabastos.<br/>
+<br/>
+生き残りながら、がんばって、<br/>
+ikinokorinagara, gambatte,<br/>
+Habang natitirang nabubuhay, gawin nang lubos ang magagawa,<br/>
+<br/>
+この犯罪グループを終わりに致します。<br/>
+kono guru-pu wo owarini itashimasu.<br/>
+ang kriminal na samahang ito, wakasin, gagawin ko po. 
