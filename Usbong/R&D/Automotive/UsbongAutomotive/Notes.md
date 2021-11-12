@@ -171,8 +171,8 @@ napapagod ang sundalong mag-aaral, napuputol ang bigay na pagsasaluhan (supply).
 敵がわかれば、ターゲットして、<br/>
 Kapag alam na ang kalaban, gawing target,<br/>
 <br/> 
-優柔不断をせずに、速めに終わりにすること。<br/>
-hindi gawin ang walang hintong bait at pagaakma (flexible), tapusin na habang mabilis pa.<br/> 
+優柔不断をせずに、早めに終わりにすること。<br/>
+hindi gawin ang walang hintong bait at pag-aakma (flexible), tapusin na habang mabilis pa.<br/> 
 <br/>
 わくわくすることなく、仕事としての決断でね。<br/>
 hindi gawin na may excitement; bilang hanap-buhay pagpasiyahan, hinto.<br/>
