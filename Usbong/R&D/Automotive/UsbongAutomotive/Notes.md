@@ -172,10 +172,10 @@ napapagod ang sundalong mag-aaral, napuputol ang bigay na pagsasaluhan (supply).
 Kapag alam na ang kalaban, gawing target,<br/>
 <br/> 
 優柔不断をせずに、早めに終わりにすること。<br/>
-hindi gawin ang walang hintong bait at pag-aakma (flexible), tapusin na habang mabilis pa.<br/> 
+hindi gawin ang walang hintong bait at pag-aakma (flexible), tapusin na habang maaga pa.<br/> 
 <br/>
 わくわくすることなく、仕事としての決断でね。<br/>
-hindi gawin na may excitement; bilang hanap-buhay pagpasiyahan, hinto.<br/>
+hindi gawin nang may excitement; bilang hanap-buhay pagpasiyahan, hinto.<br/>
 <br/>
 <b>4.2)</b> うまくできることをして、<br/>
 Gawin ang maiging nagagawa,<br/>
@@ -187,12 +187,24 @@ hindi maunawaan ang saysay, hindi maiging magawa,<br/>
 Sa magagawa ipagawa, ayos.<br/>
 <br/>
 <b>4.3)</b>　budol-budol/manloloko/carnapper/cybercriminal/Teroristang Komunista group<br/>
+--> Patuloy araw-gabi ang kanilang maling paggamit ng wireless broadcasting technology sa paggawa ng panlolokong ingay at pisikal na pananakit.<br/>
 --> Kahit ang Nanay-nayan kong Hapon binabastos.<br/>
+--> <b>Mungkahing mga Aksyon:</b><br/> 
+4.3.1) Matuto ng Maparaang Pagbibilang.<br/>
+4.3.2) Gawan ng incident report ang Pulis.<br/>
+4.3.3) Puksain ang mga Teroristang Komunista.<br/>
+--> Hindi na kailangang makipag-usap sa mga Manloloko.<br/>
+--> There is NO COMMUNICATION using Teroristang Komunista's wireless broadcasting technology.<br/>
+--> In its stead, increased Noise Pollution with Physical Injury <br/>
 <br/>
 生き残りながら、がんばって、<br/>
 ikinokorinagara, gambatte,<br/>
 Habang natitirang nabubuhay, gawin nang lubos ang magagawa,<br/>
 <br/>
-この犯罪グループを終わりに致します。<br/>
-kono guru-pu wo owarini itashimasu.<br/>
-ang kriminal na samahang ito, wakasin, gagawin ko po. 
+この犯罪グループを終わりに致しております。<br/>
+kono guru-pu wo owarini itashite ormasu.<br/>
+ang kriminal na samahang ito, wakasin, ginagawa ko po.<br/>
+<br/>
+ご協力をお願い申し上げます。<br/>
+gokyouryoku wo onegai moushiagemasu.<br/>
+Ang inyo pong pinagsamang tulong na lakas, aking may galang na pakiusap.<br/>
