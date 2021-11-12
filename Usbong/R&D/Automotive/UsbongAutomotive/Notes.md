@@ -186,7 +186,7 @@ hindi maunawaan ang saysay, hindi maiging magawa,<br/>
 他にして良い。<br/>
 Sa magagawa ipagawa, ayos.<br/>
 <br/>
-<b>4.2)</b>　budol-budol/manloloko/carnapper/cybercriminal/Teroristang Komunista group<br/>
+<b>4.3)</b>　budol-budol/manloloko/carnapper/cybercriminal/Teroristang Komunista group<br/>
 --> Kahit ang Nanay-nayan kong Hapon binabastos.<br/>
 <br/>
 生き残りながら、がんばって、<br/>
