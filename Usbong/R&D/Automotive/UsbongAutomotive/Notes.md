@@ -108,9 +108,40 @@ answer by: MattS440, 20100118<br/>
 #### Reference: 
 1) https://www.mayoclinic.org/diseases-conditions/broken-arm/multimedia/arm-bones/img-20007018; last accessed: 20201229
 
-### 3.2) Action Technique
-3.2.1) Shotokan Karate<br/>
+### 3.2) Add-on Parts
+3.2.1) bone + joint + bone<br/>
+--> where: tendon = +<br/>
+<br/>
+3.2.2) bone + muscle<br/>
+--> where: ligament = +<br/>
+<br/>
+--> This action is as learned working at Marikina Orthopedic Specialty Clinic (MOSC), et cetera
+
+### 3.3) Additional Notes #1
+3.3.1) Arthritis: joint pain<br/>
+--> Osteoarthritis; where osteo = bone<br/>
+<br/>
+3.3.2) Ear, Nose, Throat<br/>
+--> Sodium Chloride + Benzalkonium Chloride 0.02%<br/>
+--> verified: Sodium Chloride as Table Salt + water used for gargling to solve to a certain extent throat pain<br/>
+--> This action is as learned living with Japanese family<br/>
+<br/>
+--> "Benzalkonium chloride is widely used as a preservative in eye-drops, in higher concentrations it is used as an antiseptic and disinfectant."<br/>
+--> https://www.sciencedirect.com/topics/immunology-and-microbiology/benzalkonium-chloride;<br/>
+--> last accessed: 20211112<br/>
+<br/>
+### 3.4) Additional Notes #2
+3.4.1) Poison causes itch in skin, tongue, et cetera<br/>
+--> <b>Example:</b> poison from jellyfish, fugu fish<br/>
+--> Select know-how learnable by swimming in Philippine sea<br/>
+--> Select know-how learnable by living with Japanese family<br/>
+
+### 3.5) Action Technique
+3.5.1) Shotokan Karate<br/>
 --> https://www.youtube.com/user/shotokankataman/videos;<br/>
 --> last accessed: 20210509<br/>
 --> Heian Shodan - Shotokan Karate<br/>
 --> Peace Beginner Level<br/>
+<br/>
+TO-DO: -add:  合気道 (aikidou; pinagsamang kaluluwa daan)<br/>
+<br/>
