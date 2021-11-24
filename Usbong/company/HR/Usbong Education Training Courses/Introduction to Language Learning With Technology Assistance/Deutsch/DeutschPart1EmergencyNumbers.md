@@ -58,3 +58,7 @@
 100,000: <b>hunderttausend</b> (hunderrt towzernt)<br/>
 1,000,000: <b>eine Million</b> (ighner milloan)<br/>
 1,000,000,000: <b>eine Milliarde</b> (ighner milliahrder)<br/>
+
+## Reference:
+Berlitz. (1993). German phrase book & dictionary. Switzerland: Berlitz Publishing Company, Ltd. 
+
