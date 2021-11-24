@@ -32,7 +32,7 @@
 ### Part 3
 20: <b>zwanzig</b> (tsvahntsikh)<br/>
 21: <b>einundzwanzig</b> (ighnunttsvahntsikh)<br/>
-21: <b>zweiundzwanzig</b> (tsvighunttsvahntsikh)<br/>
+22: <b>zweiundzwanzig</b> (tsvighunttsvahntsikh)<br/>
 
 ### Part 4
 30: <b>dreißig</b> (drighssikh)<br/>
