@@ -31,8 +31,8 @@
 
 ### Part 3
 20: <b>zwanzig</b> (tsvahntsikh)<br/>
-21: <b>einundzwanzig</b> (ighnunttsvahntsikh)<br/>
-22: <b>zweiundzwanzig</b> (tsvighunttsvahntsikh)<br/>
+21: <b>einundzwanzig</b> (ighn unt tsvahntsikh)<br/>
+22: <b>zweiundzwanzig</b> (tsvigh unt tsvahntsikh)<br/>
 
 ### Part 4
 30: <b>dreißig</b> (drighssikh)<br/>
@@ -41,20 +41,21 @@
 
 ### Part 5
 100: <b>(ein)hundert</b> ((ighn)hunderrt)<br/>
-101: <b>hunderteins</b> (hunderrtighnss)<br/>
-110: <b>hundertzehn</b> (hunderrttsayn)<br/>
-120: <b>hundertzwanzig</b> (hunderrttsvahntsikh)<br/>
+101: <b>hunderteins</b> (hunderrt ighnss)<br/>
+110: <b>hundertzehn</b> (hunderrt tsayn)<br/>
+120: <b>hundertzwanzig</b> (hunderrt tsvahntsikh)<br/>
+120: <b>hundert ein und zwanzig</b> (hunderrt ighn unt tsvahntsikh)<br/>
 
 ### Part 6
-200: <b>zweihundert</b> (tsvighhunderrt)<br/>
-900: <b>neunhundert</b> (noynhunderrt)<br/>
+200: <b>zweihundert</b> (tsvigh hunderrt)<br/>
+900: <b>neunhundert</b> (noyn hunderrt)<br/>
 1000: <b>(ein)tausend</b> ((ighn)towzernt)<br/>
-1100: <b>tausendeinhundert</b> (towzerntighnhunderrt)<br/>
+1100: <b>tausendeinhundert</b> (towzernt ighn hunderrt)<br/>
 
 ### Part 7
-10,000: <b>zehntausend</b> (tsayntowzernt)<br/>
-20,000: <b>zwanzigtausend</b> (tsvahntsikhtowzernt)<br/>
-100,000: <b>hunderttausend</b> (hunderrtowzernt)<br/>
+10,000: <b>zehntausend</b> (tsayn towzernt)<br/>
+20,000: <b>zwanzigtausend</b> (tsvahn tsikhtowzernt)<br/>
+100,000: <b>hunderttausend</b> (hunderrt towzernt)<br/>
 1,000,000: <b>eine Million</b> (ighner milloan)<br/>
 1,000,000,000: <b>eine Milliarde</b> (ighner milliahrder)<br/>
 
@@ -96,7 +97,7 @@ Could I please see that?<br/>
 <br/>
 TO-DO: -add: das die der<br/>
 
-### 4. Gibt es...?
+### 3.3. Gibt es...?
 Gibt es...?<br/>
 Is/Are there...?<br/>
 <br/>
@@ -112,7 +113,7 @@ proa Taag<br/>
 per Tag<br/>
 <br/>
 
-### 5. Ich heiße...
+### 3.4. Ich heiße...
 Ich heiße...<br/>
 ikh highsser...<br/>
 My name is...<br/>
@@ -122,7 +123,7 @@ heer ist mighner kahrter.<br/>
 Here is my card.<br/>
 <br/>
 
-### 6. Können Sie mir einen Kostenforanschlag machen?
+### 3.5. Können Sie mir einen Kostenforanschlag machen?
 Können Sie mir einen Kostenforanschlag machen?<br/>
 kurnern zee meer ighnern kosternfoarahnshlaak mahkhern<br/>
 Can you give me an estimate of the cost?<br/>
