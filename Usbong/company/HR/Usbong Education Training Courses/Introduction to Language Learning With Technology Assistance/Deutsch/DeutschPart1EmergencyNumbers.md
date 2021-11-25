@@ -7,8 +7,9 @@
 <b>HALTET DEN DIEB! (hahltert dayn deep):</b> Halt Thief!<br/>
 <br/>
 <b>die Polizeiwache (dee pollitsighvaker):</b> police station<br/>
-<b>Ich möchte einen Diebstahl anzeigen (ikh murkhter ighnern deepshtaal ahntsighgern):</b> 
+<b>Ich möchte einen Diebstahl anzeigen (ikh murkhter ighnern deepshtaal ahntsighgern):</b><br/> 
 I want to report a theft.<br/>
+<b>Alles klar (ahlerss klaar): All clear</b>
 
 ### Notrufnummern (Emergency telephone numbers)
 #### In Germany: 
@@ -97,6 +98,28 @@ yesterday: <b>gestern</b> (gehsterrn)<br/>
 today: <b>heute</b> (hoyter)<br/>
 tomorrow: <b>morgen</b> (morgern)<br/>
 
+### 4.3
+after June: <b>nach Juni</b> (nahkh yooni)<br/>
+before July: <b>vor Juli</b> (foar yooli)<br/>
+
+### 4.4
+January: <b>Januar</b> (yahnuaar)<br/>
+February: <b>Februar</b> (faybruaar)<br/>
+March: <b>März</b> (mehrts)<br/>
+April: <b>April</b> (ahpril)<br/>
+May: <b>Mai</b> (migh)<br/>
+June: <b>Juni</b> (yooni)<br/>
+July: <b>Juli</b> (yooli)<br/>
+August: <b>August</b> (owgust)<br/>
+September: <b>September</b> (sehptehmberr)<br/>
+October: <b>Oktober</b> (oktoaberr)<br/>
+November: <b>November</b> (novvehmberr)<br/>
+December: <b>Dezember</b> (daytsehmberr)<br/>
+
+### 4.5
+year: <b>das Jahr</b> (dahss yaar)<br/>
+1980: <b>neunzehnhundertachtzig</b> (noyntsaynhunderrt achttsikh); nineteen eighty<br/>
+2007: <b>zweitausendsieben</b> (tsvigh towzernt zeebern); two thousand seven<br/>
 
 ## Reference:
 Berlitz. (1993). German phrase book & dictionary. Switzerland: Berlitz Publishing Company, Ltd. 
