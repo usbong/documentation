@@ -2,96 +2,108 @@
 
 # Part 2
 
-## 3. Action with Item
-### 3.1. Ich möchte... 
-Ich möchte ein Brot, bitte.<br/>
+## 1. Action with Item
+### 1.1. Ich möchte... (I'd like/I want...)
+<b>Ich möchte ein Brot, bitte.</b><br/>
 ikh murkhter ighn broat, bitter.<br/>
 I'd like some bread, please.<br/>
 <br/>
-Äpfel<br/>
+<b>Äpfel</b><br/>
 ehpferl<br/>
 Apple fruit<br/>
 <br/>
-Apfelkuchen<br/>
+<b>Apfelkuchen</b><br/>
 ahpferlkookhern<br/>
 Apple cake<br/>
 <br/>
-diesem<br/>
+<b>diesem</b><br/>
 deezerm<br/>
 this one<br/>
 <br/>
-Ich möchte eins von denen, bitte.<br/>
+<b>Ich möchte eins von denen, bitte.</b><br/>
 ikh murkhter ighnss fon daynern, bitter<br/>
 I'll have one of those, please.<br/>
 <br/>
-ein Glas Marmelade<br/>
+<b>ein Glas Marmelade</b><br/>
 ighn glaass mahrmerlaader<br/>
 a jar of jam<br/>
 <br/>
 
-### 3.2. Könnte ich...?
-Könnte ich das bitte sehen?<br/>
+### 1.2. Könnte ich...?
+<b>Könnte ich das bitte sehen?</b><br/>
 kurnter ikh dahss bitter, zayern?<br/>
 Could I please see that?<br/>
 <br/>
 TO-DO: -add: das die der<br/>
 
-### 3.3. Gibt es...?
-Gibt es...?<br/>
+### 1.3. Gibt es...?
+<b>Gibt es...?</b><br/>
 Is/Are there...?<br/>
 <br/>
-Gibt es hier in der Nähe einen Campingplatz?<br/>
-gipt ehss heer in derr naier ighnern kehmpingplahts<br/>
+<b>Gibt es hier in der Nähe einen Campingplatz?</b><br/>
+gipt ehss heer in derr naier ighnern kehmpingplahts?<br/>
+Is there here in the vicinity a Camping site?<br/>
 <br/>
-Trinkwasser<br/>
+<b>Trinkwasser</b><br/>
 trinkvahsserr<br/>
 drinking water<br/>
 <br/>
-pro Tag<br/>
+<b>pro Tag</b><br/>
 proa Taag<br/>
-per Tag<br/>
+per Day<br/>
 <br/>
 
-### 3.4. Ich heiße...
-Ich heiße...<br/>
+### 1.4. Ich heiße...
+<b>Ich heiße...</b><br/>
 ikh highsser...<br/>
-My name is...<br/>
+I'm named...<br/>
 <br/>
-Hier ist meine Karte.<br/>
+<b>Hier ist meine Karte.</b><br/>
 heer ist mighner kahrter.<br/>
 Here is my card.<br/>
 <br/>
+<b>Können Sie mir sagen...?</b><br/>
+Can you to me tell...?<br/>
+<br/>
+<b>Können Sie mir helfen?</b><br/>
+Can you to me help?<br/>
+<br/>
+<b>Kann ich Ihnen helfen?</b><br/>
+Can I to you help?<br/>
+<br/>
+<b>Das Telefon funktioniert nicht:</b><br/> 
+The Telephone functions NOT.<br/> 
 
-### 3.5. Können Sie mir einen Kostenforanschlag machen?
-Können Sie mir einen Kostenforanschlag machen?<br/>
+### 1.5. Können Sie mir einen Kostenforanschlag machen?
+<b>Können Sie mir einen Kostenforanschlag machen?</b><br/>
 kurnern zee meer ighnern kosternfoarahnshlaak mahkhern<br/>
 Can you give me an estimate of the cost?<br/>
 <br/>
-die Unkosten<br/>
+<b>die Unkosten</b><br/>
 dee oonkostern<br/>
 Expenses<br/>
 <br/>
-die Kapitalanlage<br/>
+<b>die Kapitalanlage</b><br/>
 dee kahpittaalahnlaager<br/>
 investment<br/>
 <br/>
-der Verlust<br/>
+<b>der Verlust</b><br/>
 derr fehrlust<br/>
 loss<br/>
 <br/>
-die Zahlung<br/>
+<b>die Zahlung</b><br/>
 dee staalung<br/>
 payment<br/>
 <br/>
-der Prozentsatz<br/>
+<b>der Prozentsatz</b><br/>
 derr protsehntzahts<br/>
 percentage<br/>
 <br/>
-der Kauf<br/>
+<b>der Kauf</b><br/>
 derr kowf<br/>
 profit<br/>
 <br/>
-der Wert<br/>
+<b>der Wert</b><br/>
 derr vayrt<br/>
 value<br/>
 
