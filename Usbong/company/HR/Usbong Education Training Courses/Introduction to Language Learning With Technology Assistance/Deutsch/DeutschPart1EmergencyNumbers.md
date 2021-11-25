@@ -13,11 +13,15 @@ I want to report a theft.<br/>
 <b>Alles klar (ahlerss klaar):</b> All clear<br/> 
 <br/> 
 <b>Das ist kaputt. Können Sie es reparieren?:</b> This is broken. Can you repair it? <br/> 
-<br/> 
-TO-DO: -update: this<br/>
+<b>einen Verstärker (ighnern fehrshtairkerr):</b> amplifier<br/> 
 <br/> 
 <b>Können Sie sie reparieren?:</b> Can you repair them for me? <br/> 
-
+<b>Autoradio (owtorraadio):</b> vehicle radio<br/> 
+<b>Lautsprecher (lowtshprehkherr):</b> speakers<br/> 
+<br/> 
+<b>Können Sie mir zeigen, wie es funktioniert?:</b> Can you show me how it functions?<br/> 
+<b>Haben Sie eine Batterie hierfür?:</b> Do you have a battery for this?<br/> 
+<b>Auto (owto):</b> vehicle<br/> 
 
 ### Notrufnummern (Emergency telephone numbers)
 #### In Germany: 
