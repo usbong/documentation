@@ -49,15 +49,24 @@ I want to report a theft.<br/>
 13: <b>dreizehn</b> (drightsayn)<br/>
 14: <b>vierzehn</b> (feertsayn)<br/>
 
+#### Note:
+17: <b>siebzehn</b> (zeeptsayn)<br/>
+
 ### 2.3
 20: <b>zwanzig</b> (tsvahntsikh)<br/>
 21: <b>einundzwanzig</b> (ighn unt tsvahntsikh)<br/>
 22: <b>zweiundzwanzig</b> (tsvigh unt tsvahntsikh)<br/>
 
+#### Note:
+27: <b>siebenundzwanzig</b> (zeebernunttsvahntsikh)<br/>
+
 ### 2.4
 30: <b>dreißig</b> (drighssikh)<br/>
 40: <b>vierzig</b> (feertsikh)<br/>
 50: <b>fünfzig</b> (fewntsikh)<br/>
+
+#### Note:
+70: <b>siebzig</b> (zeeptsikh)<br/>
 
 ### 2.5
 100: <b>(ein)hundert</b> ((ighn)hunderrt)<br/>
