@@ -7,9 +7,10 @@
 <b>HALTET DEN DIEB! (hahltert dayn deep):</b> Halt Thief!<br/>
 <br/>
 <b>die Polizeiwache (dee pollitsighvaker):</b> police station<br/>
-<b>Ich möchte einen Diebstahl anzeigen (ikh murkhter ighnern deepshtaal ahntsighgern):</b><br/> 
+<b>Ich möchte einen Diebstahl anzeigen<br/> 
+(ikh murkhter ighnern deepshtaal ahntsighgern):</b><br/> 
 I want to report a theft.<br/>
-<b>Alles klar (ahlerss klaar): All clear</b>
+<b>Alles klar (ahlerss klaar):</b> All clear
 
 ### Notrufnummern (Emergency telephone numbers)
 #### In Germany: 
