@@ -29,6 +29,32 @@ I want to report a theft.<br/>
 <b>Fire:</b> 112<br/>
 <b>Ambulance:</b> 112<br/>
 
+### Problem: <b>Das Handy (Telefon) funktioniert nicht:</b> The Handheld (Telephone) functions NOT.
+<b>Ich versetehe nicht.</b><br/>
+I understand NOT.<br/>
+<br/>
+<b>Schreiben Sie es bitte auf.</b><br/>
+Write You it please on (here).<br/>
+<br/>
+<b>Korrekt: ein Anruf</b><br/>
+Correct: a Telephone Call<br/>
+<br/>
+<b>Hallo. Hier spricht Justyn.:</b> Hello. Here speaking, Justyn.<br/>
+<b>Ich möchte mein Mann, Michael, sprechen.:</b> I'd like (with) my husband, Michael, to speak.<br/>
+<br/>
+--<br/>
+<br/>
+<b>Falsch: ein Attacke</b><br/>
+False: an Attack<br/>
+<br/>
+<b>@(#@)#_#@... freaky (free ki?), bobo, mamatay ka na, tangina mo, arigatou, bakla, that's all you get...#)@<b><br/>
+<br/>
+<b>Wieviel kostet das?</b><br/>
+How much cost that?<br/>
+<br/>
+<b>Ich kann nicht klären. Nicht alles klar.</b><br/>
+I can NOT clarify. NOT all clear.<br/>
+
 ## 2. Zahlen (Numbers)
 ### 2.1: 0 <= N <= 10
 0: <b>null</b> (nul)<br/>
