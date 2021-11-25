@@ -10,7 +10,14 @@
 <b>Ich möchte einen Diebstahl anzeigen<br/> 
 (ikh murkhter ighnern deepshtaal ahntsighgern):</b><br/> 
 I want to report a theft.<br/>
-<b>Alles klar (ahlerss klaar):</b> All clear
+<b>Alles klar (ahlerss klaar):</b> All clear<br/> 
+<br/> 
+<b>Das ist kaputt. Können Sie es reparieren?:</b> This is broken. Can you repair it? <br/> 
+<br/> 
+TO-DO: -update: this<br/>
+<br/> 
+<b>Können Sie sie reparieren?:</b> Can you repair them for me? <br/> 
+
 
 ### Notrufnummern (Emergency telephone numbers)
 #### In Germany: 
