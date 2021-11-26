@@ -52,6 +52,10 @@ drinking water<br/>
 proa Taag<br/>
 per Day<br/>
 <br/>
+<b>Wo sind die Toiletten?</b><br/>
+voa zint dee toahlehtern<br/>
+Where are the toilets?<br/>
+<br/>
 
 ### 1.4. Ich heiße...
 <b>Ich heiße...</b><br/>
@@ -70,9 +74,6 @@ Can you to me help?<br/>
 <br/>
 <b>Kann ich Ihnen helfen?</b><br/>
 Can I to you help?<br/>
-<br/>
-<b>Das Telefon funktioniert nicht:</b><br/> 
-The Telephone functions NOT.<br/> 
 
 ### 1.5. Können Sie mir einen Kostenforanschlag machen?
 <b>Können Sie mir einen Kostenforanschlag machen?</b><br/>
