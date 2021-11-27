@@ -67,18 +67,18 @@ heer ist mighner kahrter.<br/>
 Here is my card.<br/>
 <br/>
 <b>Können Sie mir sagen...?</b><br/>
-Can you to me tell...?<br/>
+Can You to me tell...?<br/>
 <br/>
 <b>Können Sie mir helfen?</b><br/>
-Can you to me help?<br/>
+Can You to me help?<br/>
 <br/>
 <b>Kann ich Ihnen helfen?</b><br/>
-Can I to you help?<br/>
+Can I to You help?<br/>
 
 ### 1.5. Können Sie mir einen Kostenforanschlag machen?
 <b>Können Sie mir einen Kostenforanschlag machen?</b><br/>
 kurnern zee meer ighnern kosternfoarahnshlaak mahkhern<br/>
-Can you give me an estimate of the cost?<br/>
+Can You to me an estimate of the cost make?<br/>
 <br/>
 <b>die Unkosten</b><br/>
 dee oonkostern<br/>
