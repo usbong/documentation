@@ -33,8 +33,33 @@ a jar of jam<br/>
 <b>Könnte ich das bitte sehen?</b><br/>
 kurnter ikh dahss bitter, zayern?<br/>
 Could I please see that?<br/>
+
+#### Note:
+<b>das</b> has multiple uses:
+1) that (item)<br/>
+2) the (item)<br/>
+
+#### Additional Note#1
+Definite article (the):<br/>
+<b>neutral: das Glas Marmelade</b><br/>
+the jar of jam<br/>
 <br/>
-TO-DO: -add: das die der<br/>
+<b>feminine: die Karte</b><br/>
+the card<br/>
+<b>masculine: der Wert</b><br/>
+the value<br/>
+<br/>
+#### Additional Note#2
+<b>Singular:</b><br/>
+<b>neutral:</b> das Kind; the child<br/>
+<b>feminine:</b> die Frau; the woman<br/>
+<b>masculine:</b> der Mann; the man<br/>
+<br/>
+<b>Plural:</b><br/>
+die Kinder; the children<br/>
+die Frauen; the women<br/>
+die Männer; the men<br/>
+<br/>
 
 ### 1.3. Gibt es...?
 <b>Gibt es...?</b><br/>
