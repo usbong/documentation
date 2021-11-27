@@ -165,7 +165,7 @@ December: <b>Dezember</b> (daytsehmberr)<br/>
 
 ### Teil (tighl; Part) 4.5
 year: <b>das Jahr</b> (dahss yaar)<br/>
-1980: <b>neunzehnhundertachtzig</b> (noyntsaynhunderrt achttsikh); nineteen eighty<br/>
+1980: <b>neunzehnhundertachtzig</b> (noyntsayn hunderrt achttsikh); nineteen hundred eighty<br/>
 2007: <b>zweitausendsieben</b> (tsvigh towzernt zeebern); two thousand seven<br/>
 
 ## Reference:
