@@ -44,6 +44,12 @@ Definite article (the):<br/>
 <b>neutral: das Glas Marmelade</b><br/>
 the jar of jam<br/>
 <br/>
+
+<b>Reminder:</b> There exists "gender", i.e. variations in the definite article based on the object type<br/>
+--> <b>Technique to quickly remember:</b> use object with definite article;<br/>
+--> No need to add reason for object's gender<br/>
+<br/>
+
 <b>feminine: die Karte</b><br/>
 the card<br/>
 <b>masculine: der Wert</b><br/>
