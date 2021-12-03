@@ -2,7 +2,7 @@
 # Part 0
 ## Common Manners
 <b>Hallo:</b> Hello<br/>
-<b>Wie geht's:</b> How goes (life)<br/>
+<b>Wie geht's:</b> How goes it (life)<br/>
 <b>Gut:</b> Good<br/>
 <b>Danke:</b> Thanks<br/>
 <b>Tschüss:</b> Bye<br/>
@@ -18,6 +18,14 @@
 <b>Guten Morgen:</b> Good Morning<br/>
 <b>Guten Tag:</b> Good Day<br/>
 <b>Guten Abend:</b> Good Evening<br/>
+<br/>
+<b>Ich heiße...</b> I'm named...<br/>
+<b>Sehr erfreut.</b> Very delighted.<br/>
+
+### Note:
+<b>sehr</b> : intensity; very<br/>
+<b>viel</b> : quantity; many
 
 ## Reference:
-Berlitz. (1993). German phrase book & dictionary. Switzerland: Berlitz Publishing Company, Ltd.
+1) Berlitz. (1993). German phrase book & dictionary. Switzerland: Berlitz Publishing Company, Ltd.<br/>
+2) https://learngerman.dw.com/en/overview; last accessed: 20211203
