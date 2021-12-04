@@ -32,13 +32,13 @@ verified: the budol-budol/carnapper/manloloko/cybercriminal/Teroristang Komunist
 verified: the Teroristang Komunista has access to wireless broadcasting equipment, e.g. towers, to send at set frequencies wireless signals that reach multiple cities.<br/>
 The frequencies can both be reserved, e.g. radio 94.7 mellow, or unused.<br/>
 My mini radio that I set to an unused frequency to cause static noise as defense to their noise pollution received such signal.<br/>
-Their attack was to demonstrate their power against those who do NOT obey their gawa-gawang rules that is NOT of the community.<br/>
+Their attack was to demonstrate their power against those who do NOT obey their gawa-gawang patakaran (rules) that is NOT of the community.<br/>
 <br/>
-<b>Example Gawa-gawang Rules:</b><br/> 
+<b>Example Gawa-gawang Patakaran (Rules):</b><br/> 
 Do NOT share know-how with People, including the Police.<br/>
 Do NOT file incident reports with Law Enforcement.<br/>
 <br/>
-observed: this is due to the Teroristang Komunista group aims to be the "Law Enforcement" of their own gawa-gawang rules that is NOT of the community.<br/>
+observed: this is due to the Teroristang Komunista group aims to be the "Law Enforcement" of their own gawa-gawang patakaran (rules) that is NOT of the community.<br/>
 <br/>
 <b>Reminder:</b> automobile vehicle's horn is used only for imminent danger.<br/>
 --> Frequent noise causes incorrect response to actual imminent danger.<br/>
@@ -51,7 +51,33 @@ If it is NOT, then we destroy the manloloko.<br/>
 [from 11 to 28seconds Clock Ticking Sound; Before and After No Clock Ticking Sound](https://github.com/usbong/documentation/blob/master/Usbong/company/HR/Usbong%20Education%20Training%20Courses/Training%20Centre:%20Security%20Defense%20Force/res/setVolumeMaxAt11To28SecsClockTickingBeforeAndAfterNoClockTickingSound20211129T2259.m4a)
 <br/>
 verified: the technique to be reused multiple times and places,<br/> 
-e.g. Amah's room (when Grandmother (father side) was still alive).<br/>
+e.g. 阿嬤 (Amah)'s room (when Grandmother (father side) was still alive).<br/>
+<br/>
 <b>Reminder:</b> such action is dangerous due to being misused to cause bomb threats.
+<br/>
+
+## References
+1) Walsh, Peter, et al. (2003). "Advanced 3D game programming with DirectX 9.0". Texas: Wordware Publishing, Inc.<br/>
+
+2) [Marikina City Ordinance Enacting the Noise Control Regulations (ORDINANCE No. 100 Series of 2010)](http://marikinacitycouncilc.ipage.com/www/mccouncil_ordinances/elibrary/pdf2010/ord10100.pdf)<br/>
+--> Please refer to the City Ordinance document for the complete Noise Control Regulations.
+<b>
+<br/>
+            ARTICLE IV.<br/>
+            PROHIBITED ACTS<br/>
+<br/>
+            Section 4 -- The following shall constitute as prohibited acts punishable under this Ordinance:<br/>
+            (a) Operation or Sound Reproduction Devices -- No person shall operate or use or cause to operate any sound reproduction device for any of the following purposes:<br/>
+<br/>
+            2. To create unnecessary noise, except when the noise is a result of the operation or use of any claxon or air horn installed in a motor vehicle to signal imminent danger.<br/>
+<br/>
+            (p) Unnecessary Noise means any excessive or unusually loud sound, or any sound which either annoys, disturbs, injures endangers the comfort, repose, health, peace, or safety of a person, or which causes injury to plant or animal life, or damage to property or business.<br/>
+<br/>
+            WHEREAS, noise pollution or unabated noise is considered a public nuisance disturbing not only the auditory nerves, but even the emotional and psychological well-being of persons;<br/>
+<br/>
+            WHEREAS, it is a right of every human being to have a peaceful environment and to have a good night's sleep.<br/>
+<br/>
+
+
   
 
