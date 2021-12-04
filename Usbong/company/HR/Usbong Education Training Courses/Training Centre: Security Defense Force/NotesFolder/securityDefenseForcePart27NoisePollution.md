@@ -45,7 +45,7 @@ who again misused wireless broadcasting technology as weapon of attack to cause 
 <b>Reminder:</b> Ang patay, talagang Patay na.<br/>
 <br/>
 <b>Recommended Actions:</b><br/>
-1) Pukasain na ang mga Teroristang Komunista;<br/>
+1) Puksain na ang mga Teroristang Komunista;<br/>
 2) Endure, while continuing to work;<br/>
 3) File incident reports with Law Enforcement<br/>
 <br/>
