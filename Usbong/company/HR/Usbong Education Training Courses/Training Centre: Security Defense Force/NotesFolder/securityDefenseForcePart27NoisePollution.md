@@ -34,6 +34,12 @@ The frequencies can both be reserved, e.g. radio 94.7 mellow, or unused.<br/>
 My mini radio that I set to an unused frequency to cause static noise as defense to their noise pollution received such signal.<br/>
 Their attack was to demonstrate their power against those who do NOT obey their gawa-gawang rules that is NOT of the community.<br/>
 <br/>
+<b>Example Gawa-gawang Rules:</b><br/> 
+Do NOT share know-how with People, including the Police.<br/>
+Do NOT file incident reports with Law Enforcement.<br/>
+<br/>
+observed: this is due to the Teroristang Komunista group aims to be the "Law Enforcement" of their own gawa-gawang rules that is NOT of the community.<br/>
+<br/>
 <b>Reminder:</b> automobile vehicle's horn is used only for imminent danger.<br/>
 --> Frequent noise causes incorrect response to actual imminent danger.<br/>
 <br/>
