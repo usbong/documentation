@@ -41,7 +41,15 @@ who again misused wireless broadcasting technology as weapon of attack to cause 
 --> <b>Reminder:</b> SYSON, RYAN is son of SYSON, RAMON;<br/>
 --> SYSON, RAMON is younger brother of Dr. SYSON, PEDRO<br/>
 --> I, SYSON, MICHAEL B., am the second son of Dr. SYSON, PEDRO.<br/>
-
+<br/>
+<b>Reminder:</b> Ang patay, talagang Patay na.<br/>
+<br/>
+<b>Recommended Actions:</b><br/>
+1) Pukasain na ang mga Teroristang Komunista;<br/>
+2) Endure, while continuing to work;<br/>
+3) File incident reports with Law Enforcement<br/>
+<br/>
+<b>Reminder:</b> Hindi ako madaling mapapatay. Tiyaking kong mapuksa ko ang mga Teroristang Komunistang kahit ang Nanay-nanayan kong Hapon binabastos.<br/>
 <br/>
 <b>Reminder (Network evesdropping technique):</b> Multiple telephones can use the same telephone number.<br/>
 <b>Example:</b> When a telephone outside calls to that telephone number, the two (2) receiving telephones using that same telephone number can be used to listen and talk, i.e. receive and transmit the sound to electricity signals.<br/>
@@ -70,7 +78,7 @@ If it is NOT, then we destroy the manloloko.<br/>
 <b>Clock Ticking Sound:</b><br/>
 [from 11 to 28seconds Clock Ticking Sound; Before and After No Clock Ticking Sound](https://github.com/usbong/documentation/blob/master/Usbong/company/HR/Usbong%20Education%20Training%20Courses/Training%20Centre:%20Security%20Defense%20Force/res/setVolumeMaxAt11To28SecsClockTickingBeforeAndAfterNoClockTickingSound20211129T2259.m4a)
 <br/>
-verified: the technique to be reused multiple times and places,<br/> 
+verified: the technique to be reused multiple times and at multiple places,<br/> 
 e.g. 阿嬤 (Amah)'s room (when Grandmother (father side) was still alive).<br/>
 <br/>
 <b>Reminder:</b> such action is dangerous due to being misused to cause bomb threats.
