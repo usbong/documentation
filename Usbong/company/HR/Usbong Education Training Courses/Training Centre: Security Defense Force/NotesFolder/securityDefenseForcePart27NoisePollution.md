@@ -22,6 +22,26 @@ A sufficient amount of energy can physically hurt our eardrums.<br/>
 We know the amount of energy is sufficient because we already feel pain.<br/>
 This leads to loss of hearing, which further leads to falling to the ground
 due to being off balance.<br/>
+
+<b>Example Physical Injuries:</b><br/> 
+Both SYSON, MICHAEL B.'s knees after falling to the ground;<br/> 
+Executed as defense to prevent hitting head<br/>
+<br/>
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/company/HR/Usbong%20Education%20Training%20Courses/Training%20Centre:%20Security%20Defense%20Force/res/examplePhysicalInjuriesSyson%2CMichaelBKnee1_20201021.jpg" width="20%">
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/company/HR/Usbong%20Education%20Training%20Courses/Training%20Centre:%20Security%20Defense%20Force/res/examplePhysicalInjuriesSyson%2CMichaelBKnee2_20201021.jpg" width="20%">
+<br/>
+Internal Bleeding of Both Knees<br/>
+<br/>
+--> <b>Date:</b> 2020-10-21;<br/>
+--> <b>Reference Point:</b> after requesting assistance from 'Amang' Rodriguez Memorial Medical Center,<br/>
+--> as recommended by Public Attorney's Office (PAO), Marikina City.<br/>
+--> identified: in particular, Ryan Syson and Ramon Syson,<br/>
+who again misused wireless broadcasting technology as weapon of attack to cause physical injuries<br/>
+--> <b>Mungkahing Aksyon:</b> Puksain ang mga Teroristang Komunista<br/>
+--> <b>Reminder:</b> SYSON, RYAN is son of SYSON, RAMON;<br/>
+--> SYSON, RAMON is younger brother of Dr. SYSON, PEDRO<br/>
+--> I, SYSON, MICHAEL B., am the second son of Dr. SYSON, PEDRO.<br/>
+
 <br/>
 <b>Reminder (Network evesdropping technique):</b> Multiple telephones can use the same telephone number.<br/>
 <b>Example:</b> When a telephone outside calls to that telephone number, the two (2) receiving telephones using that same telephone number can be used to listen and talk, i.e. receive and transmit the sound to electricity signals.<br/>
@@ -35,8 +55,8 @@ My mini radio that I set to an unused frequency to cause static noise as defense
 Their attack was to demonstrate their power against those who do NOT obey their gawa-gawang patakaran (rules) that is NOT of the community.<br/>
 <br/>
 <b>Example Gawa-gawang Patakaran (Rules):</b><br/> 
-Do NOT share know-how with People, including the Police.<br/>
-Do NOT file incident reports with Law Enforcement.<br/>
+1) Do NOT share know-how with People, including the Police.<br/>
+2) Do NOT file incident reports with Law Enforcement.<br/>
 <br/>
 observed: this is due to the Teroristang Komunista group aims to be the "Law Enforcement" of their own gawa-gawang patakaran (rules) that is NOT of the community.<br/>
 <br/>
