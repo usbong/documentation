@@ -10,8 +10,23 @@ We classify the sound to be noise when it is NOT tone used with fax messaging an
 It's additional sound specifically used to be noise to annoy, et cetera.<br/>
 <br/>
 <b>Reminder (regarding technique):</b> When a caller is interviewed on a Radio Program, there is a request to put the telephone mic far from the radio's speaker. This is due to it causes an infinite loop of feedback, resulting to noise.<br/>
+Alternatively, the volume of the radio's speaker has to be lowered to NOT reach the telephone mic.<br/>
 <br/>
 Using the network evesdropping technique via telephone mic, the Teroristang Komunista can send a broadcasting signal to a receiving vehicle radio whose speakers are near the target telephone's mic.<br/>
 <br/>
 <b>Result:</b> noise<br/>
 <br/>
+<b>Reminder:</b> In Physics, we learn that sound carries energy.<br/>
+That energy hits our eardrums when the sound as wave enters our ears.<br/>
+A sufficient amount of energy can physically hurt our eardrums.<br/>
+We know the amount of energy is sufficient because we already feel pain.<br/>
+This leads to loss of hearing, which further leads to falling to the ground
+due to being off balance.<br/>
+<br/>
+<b>Reminder (Network evesdropping technique):</b> Multiple telephones can use the same telephone number.<br/>
+<b>Example:</b> When a telephone outside calls to that telephone number, the two (2) receiving telephones using that same telephone number can be used to listen and talk, i.e. receive and transmit the sound to electricity signals.<br/>
+<br/>
+verified: the budol-budol/carnapper/manloloko/cybercriminal/Teroristang Komunista group used and continues to use unauthorized access to the telephone network by using DR. SYSON, PEDRO'S GLOBE postpaid SIM telephone number.
+
+
+
