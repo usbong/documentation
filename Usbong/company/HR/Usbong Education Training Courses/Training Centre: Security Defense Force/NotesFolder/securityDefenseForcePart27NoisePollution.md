@@ -81,7 +81,11 @@ If it is NOT, then we destroy the manloloko.<br/>
 verified: the technique to be reused multiple times and at multiple places,<br/> 
 e.g. 阿嬤 (Amah)'s room (when Grandmother (father side) was still alive).<br/>
 <br/>
-<b>Reminder:</b> such action is dangerous due to being misused to cause bomb threats.
+<b>Reminder:</b> Such action is dangerous due to being misused to cause bomb threats.<br/>
+<br/>
+<b>Additional Note:</b> In Amah's room, there existed a CCTV Camera to supposedly monitor her wellbeing as an elderly patient. The CCTV Camera can be accessed using an Android application.<br/>
+<br/>
+<b>Reminder:</b> The Teroristang Komunista/Manloloko shall NOT persist without Visual feedback, in addition to Sound.<br/>
 <br/>
 
 ## References
