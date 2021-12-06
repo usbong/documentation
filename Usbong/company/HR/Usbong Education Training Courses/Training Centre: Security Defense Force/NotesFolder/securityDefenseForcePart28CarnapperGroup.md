@@ -13,9 +13,14 @@ verified: with Filipino Citizen Mother, gate creaking sound heard at >= 16m dist
 1) The gate is near household automobile vehicles, which are Keyed OFF.<br/>
 2) There exists a CCTV Camera to supposedly provide security monitor surveillance of vehicles;<br/>
 The CCTV Camera can be accessed using an Android application.<br/>
+<b>Example:</b> Bubo Bubo Android Application (with DVR + CCTV Camera System)<br/>
+https://m.apkpure.com/bubo-bubo/icatch.video.h264#icatch.video.h264-3;<br/>
+last accessed: 20211206<br/>
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/company/HR/Usbong%20Education%20Training%20Courses/Training%20Centre:%20Security%20Defense%20Force/res/buboBuboAndroidDVRCCTVHalimbawaFromMApkPureDotCom.png" width="30%">
 <br/>
 <b>Observations:</b><br/>
 --> observed: household Mitsubishi Montero Sport (Sports Utility Vehicle (SUV)) of over 10years old receives at times open/close signal, without our using its remote key.<br/>
+--> observed: this action multiple times inside house garage where CCTV Camera can also view the SUV.<br/>
 <br/>
 --> observed: household Honda Civic City of over 5years old receives at times open/close signal, without our using its remote key.<br/>
 --> filed: incident report with Sta. Lucia East Grand Mall security team who was also witness<br/>
