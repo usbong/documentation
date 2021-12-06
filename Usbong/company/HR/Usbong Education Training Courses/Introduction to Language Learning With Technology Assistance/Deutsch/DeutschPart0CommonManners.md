@@ -24,8 +24,18 @@
 
 ### Note:
 <b>sehr</b> : intensity; very<br/>
-<b>viel</b> : quantity; many
+<b>viel</b> : quantity; many<br/>
 
+### Additional Examples:
+<b>Vielen dank</b>: Many thanks<br/>
+<b>Reminder:</b> Viel + <b>en</b><br/>
+<br/>
+<b>Ich riese viel.</b><br/>
+I travel many, i.e. a lot<br/>
+<br/>
+<b>Ich arbeite viel.</b><br/>
+I work many, i.e. a lot<br/>
+  
 ## Reference:
 1) Berlitz. (1993). German phrase book & dictionary. Switzerland: Berlitz Publishing Company, Ltd.<br/>
 2) https://learngerman.dw.com/en/overview; last accessed: 20211203
