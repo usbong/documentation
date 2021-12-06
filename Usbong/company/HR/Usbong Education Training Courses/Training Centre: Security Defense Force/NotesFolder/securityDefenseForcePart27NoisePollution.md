@@ -84,6 +84,10 @@ e.g. 阿嬤 (Amah)'s room (when Grandmother (father side) was still alive).<br/>
 <b>Reminder:</b> Such action is dangerous due to being misused to cause bomb threats.<br/>
 <br/>
 <b>Additional Note:</b> In Amah's room, there existed a CCTV Camera to supposedly monitor her wellbeing as an elderly patient. The CCTV Camera can be accessed using an Android application.<br/>
+<b>Example:</b> Bubo Bubo Android Application (with DVR + CCTV Camera System)<br/>
+https://m.apkpure.com/bubo-bubo/icatch.video.h264#icatch.video.h264-3;<br/>
+last accessed: 20211206<br/>
+<img src="https://github.com/usbong/documentation/blob/master/Usbong/company/HR/Usbong%20Education%20Training%20Courses/Training%20Centre:%20Security%20Defense%20Force/res/buboBuboAndroidDVRCCTVHalimbawaFromMApkPureDotCom.png" width="30%">
 <br/>
 <b>Reminder:</b> The Teroristang Komunista/Manloloko shall NOT persist without Visual feedback, in addition to Sound.<br/>
 <br/>
