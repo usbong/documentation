@@ -32,4 +32,15 @@
     </td>
   </tr>
 </table>
-  
+
+## Additional Notes:
+<b>können</b> : "infinitive", i.e. dictionary form of the verb<br/>
+
+<b>können</b> is also used with imperative, i.e. COMMANDs;<br/>
+however, we put the personal pronoun after it, instead of before.<br/>
+<br/>
+## Example
+<b>Können wir!</b><br/>
+We can!<br/>
+
+
