@@ -9,10 +9,13 @@ verified: with Filipino Citizen Mother, gate creaking sound heard at >= 16m dist
 --> After multiple open-close gate action, creaking sound stops.<br/>
 --> Gate creaking sound returns when Filipino Citizen Mother comes toward the gate.<br/>
 <br/>
-<b>Note:</b> The gate is near household automobile vehicles, which are Keyed OFF.<br/>
+<b>Notes:</b><br/> 
+1) The gate is near household automobile vehicles, which are Keyed OFF.<br/>
+2) There exists a CCTV Camera to supposedly provide security monitor surveillance of vehicles;<br/>
+The CCTV Camera can be accessed using an Android application<br/>
 <br/>
 <b>Observations:</b><br/>
---> observed: household Mitsubishi Montero Sport Sports Utility Vehicle (SUV) of over 10years old receives at times open/close signal, without our using its remote key.<br/>
+--> observed: household Mitsubishi Montero Sport (Sports Utility Vehicle (SUV)) of over 10years old receives at times open/close signal, without our using its remote key.<br/>
 <br/>
 --> observed: household Honda Civic City of over 5years old receives at times open/close signal, without our using its remote key.<br/>
 --> filed: incident report with Sta. Lucia East Grand Mall security team who were witness<br/>
