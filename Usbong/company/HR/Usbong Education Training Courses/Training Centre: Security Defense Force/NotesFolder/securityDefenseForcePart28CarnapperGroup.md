@@ -18,7 +18,7 @@ The CCTV Camera can be accessed using an Android application.<br/>
 --> observed: household Mitsubishi Montero Sport (Sports Utility Vehicle (SUV)) of over 10years old receives at times open/close signal, without our using its remote key.<br/>
 <br/>
 --> observed: household Honda Civic City of over 5years old receives at times open/close signal, without our using its remote key.<br/>
---> filed: incident report with Sta. Lucia East Grand Mall security team who with me were witness<br/>
+--> filed: incident report with Sta. Lucia East Grand Mall security team who was also witness<br/>
 <br/>
 <b>Reminders: </b><br/>
 1) No TAX paid from income due to vehicular theft<br/>
