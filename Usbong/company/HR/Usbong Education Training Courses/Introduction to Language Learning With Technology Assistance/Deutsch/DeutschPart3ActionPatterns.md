@@ -138,7 +138,7 @@ last accessed: 20211206
   <tr>
     <td>      
       <b>sie/Sie</b><br/>
-      they/You (formal)
+      they/You (formal; singular)
     </td>
     <td> 
       <b>machen</b><br/>
