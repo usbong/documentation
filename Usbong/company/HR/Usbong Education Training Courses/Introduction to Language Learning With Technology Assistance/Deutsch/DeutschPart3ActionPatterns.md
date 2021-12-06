@@ -78,3 +78,74 @@ We make!; Let's make!<br/>
 https://www.linguee.de/deutsch-englisch/uebersetzung/k%C3%B6nnen+wir.html;<br/>
 last accessed: 20211206
 
+## Action Patterns (with variations due to Subject/Doer)
+
+### Regular Verbs
+<table>
+  <tr>
+    <td>      
+    </td>
+    <td> 
+      <b>machen</b><br/>
+      to make
+    </td>    
+  </tr>
+  <tr>
+    <td>      
+      <b>ich</b><br/>
+      I
+    </td>
+    <td> 
+      <b>mache</b><br/>
+    </td>    
+  </tr>
+  <tr>
+    <td> 
+      <b>du</b><br/>
+      you (informal; singular)
+    </td>
+    <td> 
+      <b>machst</b><br/>
+    </td>
+  </tr>
+  <tr>
+    <td>      
+      <b>er/sie/es</b><br/>
+      he/she/it
+    </td>
+    <td> 
+      <b>macht</b><br/>
+    </td>    
+  </tr>
+  <tr>
+    <td>      
+      <b>wir</b><br/>
+      we
+    </td>
+    <td> 
+      <b>machen</b><br/>
+    </td>    
+  </tr>
+  <tr>
+    <td>      
+      <b>ihr</b><br/>
+      you (informal; plural)
+    </td>
+    <td> 
+      <b>macht</b><br/>
+    </td>    
+  </tr>
+  <tr>
+    <td>      
+      <b>sie/Sie</b><br/>
+      they/You (formal)
+    </td>
+    <td> 
+      <b>machen</b><br/>
+    </td>    
+  </tr>
+</table>
+  
+## Reference:
+https://languageposters.com/pages/german-verbs-machen-conjugation;
+last accessed: 20211206
