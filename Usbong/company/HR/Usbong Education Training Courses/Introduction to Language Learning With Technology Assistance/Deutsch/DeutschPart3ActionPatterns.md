@@ -54,9 +54,12 @@ however, we put the personal pronoun after it, instead of before.<br/>
 
 ## Examples (COMMANDs)
 <b>Können wir!</b><br/>
-We can!<br/>
+We can!; We are entitled (to execute this action...)! <br/>
 <br/>
 <b>Gehen wir!</b><br/>
-We go!<br/>
+We go!; Let's go!<br/>
 
+## Recommended Reference
+https://www.linguee.de/deutsch-englisch/uebersetzung/k%C3%B6nnen+wir.html;<br/>
+last accessed: 20211206
 
