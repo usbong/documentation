@@ -10,6 +10,10 @@
       <b>können</b><br/>
       to be able; can
     </td>
+    <td> 
+      <b>gehen</b><br/>
+      to go
+    </td>
   </tr>
   <tr>
     <td>      
@@ -20,27 +24,39 @@
       <b>können</b><br/>
       to be able; can
     </td>
+    <td> 
+      <b>gehen</b><br/>
+      to go
+    </td>
   </tr>
   <tr>
     <td> 
       <b>sie/Sie</b><br/>
-      they/you
+      they/You (formal)
     </td>
     <td> 
       <b>können</b><br/>
       to be able; can
     </td>
+    <td> 
+      <b>gehen</b><br/>
+      to go
+    </td>
   </tr>
 </table>
 
 ## Additional Notes:
-<b>können</b> : "infinitive", i.e. dictionary form of the verb<br/>
+<b>können and gehen</b> : "infinitive", i.e. dictionary form of the verb<br/>
 
-<b>können</b> is also used with imperative, i.e. COMMANDs;<br/>
+<b>können and gehen</b> are also used with imperative, i.e. COMMANDs;<br/>
 however, we put the personal pronoun after it, instead of before.<br/>
 <br/>
-## Example
+
+## Examples (COMMANDs)
 <b>Können wir!</b><br/>
 We can!<br/>
+<br/>
+<b>Gehen wir!</b><br/>
+We go!<br/>
 
 
