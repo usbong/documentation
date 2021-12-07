@@ -159,6 +159,14 @@ last accessed: 20211206
       <b>gehen</b><br/>
       to go
     </td>    
+    <td> 
+      <b>sein</b><br/>
+      to be
+    </td>    
+    <td> 
+      <b>haben</b><br/>
+      to have
+    </td>    
   </tr>
   <tr>
     <td>      
@@ -170,6 +178,12 @@ last accessed: 20211206
     </td>    
     <td> 
       <b>gehe</b><br/>
+    </td>    
+    <td> 
+      <b>bin</b><br/>
+    </td>    
+    <td> 
+      <b>habe</b><br/>
     </td>    
   </tr>
   <tr>
@@ -183,6 +197,12 @@ last accessed: 20211206
     <td> 
       <b>gehst</b><br/>
     </td>    
+    <td> 
+      <b>bist</b><br/>
+    </td>    
+    <td> 
+      <b>hast</b><br/>
+    </td>    
   </tr>
   <tr>
     <td>      
@@ -194,6 +214,12 @@ last accessed: 20211206
     </td>    
     <td> 
       <b>geht</b><br/>
+    </td>    
+    <td> 
+      <b>ist</b><br/>
+    </td>    
+    <td> 
+      <b>hat</b><br/>
     </td>    
   </tr>
   <tr>
@@ -207,6 +233,12 @@ last accessed: 20211206
     <td> 
       <b>gehen</b><br/>
     </td>    
+    <td> 
+      <b>sind</b><br/>
+    </td>    
+    <td> 
+      <b>haben</b><br/>
+    </td>    
   </tr>
   <tr>
     <td>      
@@ -219,6 +251,12 @@ last accessed: 20211206
     <td> 
       <b>geht</b><br/>
     </td>    
+    <td> 
+      <b>seid</b><br/>
+    </td>    
+    <td> 
+      <b>habt</b><br/>
+    </td>    
   </tr>
   <tr>
     <td>      
@@ -230,6 +268,12 @@ last accessed: 20211206
     </td>    
     <td> 
       <b>gehen</b><br/>
+    </td>    
+    <td> 
+      <b>sind</b><br/>
+    </td>    
+    <td> 
+      <b>haben</b><br/>
     </td>    
   </tr>
 </table>
