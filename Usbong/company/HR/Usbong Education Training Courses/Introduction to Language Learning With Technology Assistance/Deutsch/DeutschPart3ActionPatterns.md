@@ -89,6 +89,10 @@ last accessed: 20211206
       <b>machen</b><br/>
       to make
     </td>    
+    <td> 
+      <b>lieben</b><br/>
+      to love
+    </td>    
   </tr>
   <tr>
     <td>      
@@ -97,6 +101,9 @@ last accessed: 20211206
     </td>
     <td> 
       <b>mache</b><br/>
+    </td>    
+    <td> 
+      <b>liebe</b><br/>
     </td>    
   </tr>
   <tr>
@@ -107,6 +114,9 @@ last accessed: 20211206
     <td> 
       <b>machst</b><br/>
     </td>
+    <td> 
+      <b>liebst</b><br/>
+    </td>    
   </tr>
   <tr>
     <td>      
@@ -115,6 +125,9 @@ last accessed: 20211206
     </td>
     <td> 
       <b>macht</b><br/>
+    </td>    
+    <td> 
+      <b>liebt</b><br/>
     </td>    
   </tr>
   <tr>
@@ -125,6 +138,9 @@ last accessed: 20211206
     <td> 
       <b>machen</b><br/>
     </td>    
+    <td> 
+      <b>lieben</b><br/>
+    </td>    
   </tr>
   <tr>
     <td>      
@@ -134,6 +150,9 @@ last accessed: 20211206
     <td> 
       <b>macht</b><br/>
     </td>    
+    <td> 
+      <b>liebt</b><br/>
+    </td>    
   </tr>
   <tr>
     <td>      
@@ -142,6 +161,9 @@ last accessed: 20211206
     </td>
     <td> 
       <b>machen</b><br/>
+    </td>    
+    <td> 
+      <b>lieben</b><br/>
     </td>    
   </tr>
 </table>
