@@ -145,7 +145,96 @@ last accessed: 20211206
     </td>    
   </tr>
 </table>
-  
+
+### Irregular Verbs
+<table>
+  <tr>
+    <td>      
+    </td>
+    <td> 
+      <b>können</b><br/>
+      to be able/can
+    </td>    
+    <td> 
+      <b>gehen</b><br/>
+      to go
+    </td>    
+  </tr>
+  <tr>
+    <td>      
+      <b>ich</b><br/>
+      I
+    </td>
+    <td> 
+      <b>kann</b><br/>
+    </td>    
+    <td> 
+      <b>gehe</b><br/>
+    </td>    
+  </tr>
+  <tr>
+    <td> 
+      <b>du</b><br/>
+      you (informal; singular)
+    </td>
+    <td> 
+      <b>kannst</b><br/>
+    </td>
+    <td> 
+      <b>gehst</b><br/>
+    </td>    
+  </tr>
+  <tr>
+    <td>      
+      <b>er/sie/es</b><br/>
+      he/she/it
+    </td>
+    <td> 
+      <b>kann</b><br/>
+    </td>    
+    <td> 
+      <b>geht</b><br/>
+    </td>    
+  </tr>
+  <tr>
+    <td>      
+      <b>wir</b><br/>
+      we
+    </td>
+    <td> 
+      <b>können</b><br/>
+    </td>    
+    <td> 
+      <b>gehen</b><br/>
+    </td>    
+  </tr>
+  <tr>
+    <td>      
+      <b>ihr</b><br/>
+      you (informal; plural)
+    </td>
+    <td> 
+      <b>könnt</b><br/>
+    </td>    
+    <td> 
+      <b>geht</b><br/>
+    </td>    
+  </tr>
+  <tr>
+    <td>      
+      <b>sie/Sie</b><br/>
+      they/You (formal; singular)
+    </td>
+    <td> 
+      <b>können</b><br/>
+    </td>    
+    <td> 
+      <b>gehen</b><br/>
+    </td>    
+  </tr>
+</table>
+
+
 ## Reference:
 https://languageposters.com/pages/german-verbs-machen-conjugation;
 last accessed: 20211206
