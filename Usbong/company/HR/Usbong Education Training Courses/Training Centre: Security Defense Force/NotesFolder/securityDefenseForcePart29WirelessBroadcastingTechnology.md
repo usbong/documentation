@@ -38,4 +38,9 @@ observed: magnetic pulse from nearby mobile telephone used to cause the Visual S
 <br/>
 --> observed: even visually impaired/blind people CAN receive visual stimulation<br/>
 <br/>
+<b>Recommended Reading:</b><br/>
+https://www.sciencedirect.com/science/article/pii/S0042698909000467;<br/>
+last accessed: 20211207<br/>
+--> visual prosthesis<br/>
+<br/>
 TO-DO: -update: this<br/>
