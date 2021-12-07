@@ -43,4 +43,38 @@ https://www.sciencedirect.com/science/article/pii/S0042698909000467;<br/>
 last accessed: 20211207<br/>
 --> visual prosthesis<br/>
 <br/>
+
+### Magnetophosphene
+
+https://ieeexplore.ieee.org/document/8503242/keywords#keywords;<br/>
+last accessed: 20211207<br/>
+<br/>
+"The aim of the article is to present the magnetophosphenes phenomenon occurring on the human retina of a person under the influence of a low frequency magnetic field..."<br/>
+<br/>
+--<br/>
+https://www.researchgate.net/publication/250233319_Comparison_of_Current_Densities_in_Retina_Estimated_by_Experimental_Data_on_Magnetophosphene_and_Electrophosphene;<br/>
+last accessed: 20211207<br/>
+<br/>
+"Magnetophosphene, a light sensation perceived when a human head or visual system is exposed to an ELF magnetic field with enough intensity, is considered to be a sensation caused by activity of the stimulated retina..."<br/>
+<br/>
+--<br/>
+https://www.researchgate.net/publication/51238967_An_electric_field_induced_in_the_retina_and_brain_at_threshold_magnetic_flux_density_causing_magnetophosphenes;<br/>
+last accessed: 20211207<br/>
+<br/>
+For magnetic field exposures at extremely low frequencies, the electrostimulatory response with the lowest threshold is the magnetophosphene, a response that corresponds to an adult exposed to a 20 Hz magnetic field of nominally 8.14 mT..." <br/>
+<br/>
+
+### electrostimulation
+
+https://ir.lib.uwo.ca/cgi/viewcontent.cgi?article=7970&context=etd;<br/>
+last accessed: 20211207<br/>
+<br/>
+"The  current  IEEE-ICES  recommendations  were  developed  with  respect  to  short  term 
+effects associated with electrostimulation. Exposure limits are designed to protect against 
+short term reactions, including: painful stimulation of sensory or motor neurons, muscle 
+excitation, alteration of synaptic activity in the brain, cardiac excitation, or adverse effects 
+associated with induced potentials (Institute of Electrical and Electronics Engineers Inc. & 
+IEEE, 2002)."<br/>
+<br/>
+<br/>
 TO-DO: -update: this<br/>
