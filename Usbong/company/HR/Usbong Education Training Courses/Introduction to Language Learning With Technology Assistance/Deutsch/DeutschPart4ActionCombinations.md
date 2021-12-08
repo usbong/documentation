@@ -1,17 +1,17 @@
 # Deutsch: German Language
 # Part 4
 ## Action Combinations
-<b>Wir gehen essen.</b><br/>
-We go eat.<br/>
+<b>Wir [gehen essen].</b><br/>
+We [go eat].<br/>
 <br/>
-<b>Wir können gehen.</b><br/>
-We can go.<br/>
+<b>Wir [können gehen].</b><br/>
+We [can go].<br/>
 <br/>
-<b>Wir müssen sprechen miteinander.</b><br/>
-We must speak with each other.<br/>
+<b>Wir [müssen sprechen] miteinander.</b><br/>
+We [must speak] with each other.<br/>
 <br/>
-<b>Wir möchten arbeiten zusammen.</b><br/>
-We want to work together.<br/>
+<b>Wir [möchten arbeiten] zusammen.</b><br/>
+We [want to work] together.<br/>
 <br/>
 
 <table>
@@ -24,8 +24,8 @@ We want to work together.<br/>
   </tr>
 </table>
   <br/>
-<b>Ich gehe essen.</b><br/>
-I go eat.<br/>
+<b>Ich [gehe essen].</b><br/>
+I [go eat].<br/>
 <br/>
-<b>Ich kann gehen.</b><br/>
-I can go.<br/>
+<b>Ich [kann gehen].</b><br/>
+I [can go].<br/>
