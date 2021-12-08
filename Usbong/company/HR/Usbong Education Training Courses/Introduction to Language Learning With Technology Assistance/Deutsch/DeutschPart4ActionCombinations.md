@@ -9,13 +9,11 @@ We [can go].<br/>
 <br/>
 <b>Wir [müssen sprechen].</b><br/>
 We [must speak].<br/>
-<br/>
 --> <b>Wir [müssen] miteinander [sprechen].</b><br/>
 --> We [must] with each other [speak].<br/>
 <br/>
 <b>Wir [möchten arbeiten].</b><br/>
 We [want to work].<br/>
-<br/>
 --> <b>Wir [möchten] zusammen [arbeiten].</b><br/>
 --> We [want] together [to work].<br/>
 <br/>
@@ -38,6 +36,10 @@ I [can go].<br/>
 <br/>
 <b>Ich [muss sprechen].</b><br/>
 I [must speak].<br/>
-<br/>
 --> <b>Ich [muss] mit dir [sprechen].</b><br/>
 --> I [must] with you (informal) [speak].<br/>
+<br/>
+<b>Ich [möchte arbeiten].</b><br/>
+I [want to work].<br/>
+--> <b>Ich [möchte] mit dir [arbeiten].</b><br/>
+--> I [want] with you (informal) [to work].<br/>
