@@ -28,6 +28,12 @@ What does this word mean?<br/>
 [this] word<br/>
 <b>masculine: [dieser] Fall</b><br/>
 [this] scenario<br/>
+<br/>
+<b>Ich weiß es noch [nicht].</b><br/>
+I know it yet [NOT].<br/>
+<br/>
+<b>Ich verstehe es noch [nicht].</b><br/>
+I understand it yet [NOT].<br/>
 
 ## Reference:
 1) Berlitz. (1993). German phrase book & dictionary. Switzerland: Berlitz Publishing Company, Ltd.<br/>
