@@ -37,6 +37,10 @@
 </table>
 
 ### Additional Examples:
+<b>Sehr gern:</b> Very glad/willing (to come).<br/>
+<b>Ich komme sehr gern[e]:</b> I come very glad[ly]/willing[ly].<br/>
+<b>Reminder:</b> gern + <b>[e]</b><br/>
+<br/>
 <b>Vielen dank</b>: Many thanks<br/>
 <b>Reminder:</b> Viel + <b>en</b><br/>
 <br/>
