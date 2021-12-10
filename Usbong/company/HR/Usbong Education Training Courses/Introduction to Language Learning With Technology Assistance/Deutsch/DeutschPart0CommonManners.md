@@ -22,9 +22,19 @@
 <b>Ich heiße...</b> I'm named...<br/>
 <b>Sehr erfreut.</b> Very delighted.<br/>
 
-### Note:
-<b>sehr</b> : intensity; very<br/>
-<b>viel</b> : quantity; many<br/>
+<table>
+  <tr>
+     <td>
+      <b>Note:</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b>sehr</b> : intensity; very<br/>
+      <b>viel</b> : quantity; many<br/>
+    </td>
+  </tr>
+</table>
 
 ### Additional Examples:
 <b>Vielen dank</b>: Many thanks<br/>
