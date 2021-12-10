@@ -28,3 +28,6 @@ What does this word mean?<br/>
 [this] word<br/>
 <b>masculine: [dieser] Fall</b><br/>
 [this] scenario<br/>
+
+## Reference:
+1) Berlitz. (1993). German phrase book & dictionary. Switzerland: Berlitz Publishing Company, Ltd.<br/>
