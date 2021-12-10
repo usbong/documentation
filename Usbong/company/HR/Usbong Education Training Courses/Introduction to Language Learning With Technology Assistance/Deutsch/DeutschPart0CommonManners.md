@@ -70,6 +70,11 @@ What does this word mean?<br/>
   </tr>
 </table>
 
+<b>feminine: [dieses] Wort</b><br/>
+[this] word<br/>
+<b>masculine: [dieser] Fall</b><br/>
+[this] scenario<br/>
+
 ## Reference:
 1) Berlitz. (1993). German phrase book & dictionary. Switzerland: Berlitz Publishing Company, Ltd.<br/>
 2) https://learngerman.dw.com/en/overview; last accessed: 20211203
