@@ -42,7 +42,7 @@ Verify alternatives and make decisions based on <b>schedule</b>, <b>risk</b>, <b
 "Trust, but verify."<br/>
 
 ## 5. Project Management
-tracks weekly progress <b>supercomputer-on-a-chip</b><br/>
+tracks weekly progress of <b>supercomputer-on-a-chip</b><br/>
 based on: <b>area</b>, <b>frequency</b>, and <b>power</b><br/>
 <br/>
 If ineffective, daily updates<br/>
