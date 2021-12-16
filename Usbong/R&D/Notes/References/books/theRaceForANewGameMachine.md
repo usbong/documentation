@@ -4,9 +4,9 @@
 Shippy, D. and Phipps, M. (2009). "The race for a new game machine". NY: Citadel Press Books<br/>
 <br/>
 ## 1. End of 2007, Worldwide Sales
-PlayStation 3 units >10M<br/>
-Microsoft Xbox 360 units >19M<br/>
-Nintendo Wii units >21M<br/>
+<b>PlayStation 3 units:</b> >10M<br/>
+<b>Microsoft Xbox 360 units:</b> >19M<br/>
+<b>Nintendo Wii units:</b> >21M<br/>
 <br/>
 ## 2. Sony, Toshiba, IBM (STI) Partnership: Design Center
 ### 2.1 Input:
@@ -27,7 +27,7 @@ where: <b>supercomputer-on-a-chip</b> = "...both multigigahertz frequency and ve
 <br/>
 
 ## 3. Jim Kahle @IBM Research Group
-<b>design tools:</b> "money-saving, software-based programs that improved the quality of a design by automatically checking for errors, cross talk in the wires, and other design points that exceeeded acceptable limits."<br/>
+<b>design tools:</b> "money-saving, software-based programs that improved the quality of a design by automatically checking for errors, cross talk in the wires, and other design points that exceeded acceptable limits."<br/>
 --> used: with high-performance Unix servers
 
 ## 4. Engineering Solution: schedule, risk, quality
