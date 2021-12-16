@@ -324,7 +324,7 @@ kung ang kalasag ang gamit na sandata.<br/>
 Kapag naghahanda na itong gumawa ng lipad na pagsugod, ihinto ang pagsalakay at iwasan,<br/>
 sa pamamagitan ng pagyuko, o kung kailangan bumaba ng hagdan.
 
-## 5. Ikalimang na Bahagi+
+## 5. Ikalimang Bahagi+
 Kung maiiwasan ang mga Dambuhalang Goblin, iwasan.<br/>
 Kung manghahabol, salakayin, kahit dalawang set ng pagsalakay.<br/>
 Gamitin ang wastong daan at paraan noong nakaraan upang magapi ang mga Pulang Demonyong May Pakpak.<br/> 
