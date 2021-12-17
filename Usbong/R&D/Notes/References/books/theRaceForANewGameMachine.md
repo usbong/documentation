@@ -31,10 +31,10 @@ If with floating-point numbers: 10.0/3.0=3.3333...<br/>
 If with whole numbers, 10/3=3<br/>
 
 ##### Example Application#1: 
-Computing the size of each Image TILE of a 2-Dimensional GRID based on the Computer/Television Monitor's Screen Width and Height
+Computing the size of each Image TILE of a 2-Dimensional (2D) GRID based on the Computer/Television Monitor's Screen Width and Height
 
 ##### Example Application#2: 
-Computing the size of a 2-Dimensional (2D) Square Shape based on the Computer/Television Monitor's Screen Width and Height<br/>
+Computing the size of a 2D Square Shape based on the Computer/Television Monitor's Screen Width and Height<br/>
 --> We CAN use ratios, instead of setting the exact size.<br/>
 --> <b>Example:</b> 0.5 x 0.5, where 1.0 is the max size of Screen width and height
 
