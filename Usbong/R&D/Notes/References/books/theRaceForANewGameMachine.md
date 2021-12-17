@@ -36,7 +36,7 @@ Computing the size of each Image TILE of a 2-Dimensional GRID based on the Compu
 ##### Example Application#2: 
 Computing the size of a 2-Dimensional (2D) Square Shape based on the Computer/Television Monitor's Screen Width and Height<br/>
 --> We CAN use ratios, instead of setting the exact size.<br/>
---> <b>Example:</b> 0.5 x 0.5, where 1.0 is the max Screen size of each width and height
+--> <b>Example:</b> 0.5 x 0.5, where 1.0 is the max size of Screen width and height
 
 ##### Example Application#3: 
 Computing the new direction and position of a RobotShip 2D Image<br/>
