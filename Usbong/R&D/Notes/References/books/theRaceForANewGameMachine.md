@@ -40,11 +40,12 @@ Computing the size of a 2D Square Shape based on the Computer/Television Monitor
 
 ##### Example Application#3: 
 Computing the new direction and position of a RobotShip 2D Image<br/>
---> This is after rotating it at its center 45degrees clock-wise and moving it 0.2 steps in the horizontal and vertical axes.<br/> 
+--> This is after rotating it at its center 45degrees clock-wise,<br/>
+--> AND moving it 0.2 steps in the horizontal and vertical axes.<br/> 
 --> With higher frequencies, increasing the number of rotating and horizontal+vertical moving images does NOT become noticeably slow.
 
 ##### Example Application#4: 
-Computing the output shape of a 3-Dimensional object with increased total number of points as vertex<br/>
+Computing the output shape of a 3-Dimensional (3D) object with increased total number of points as vertex<br/>
 --> <b>Reminder:</b> Square 2D shape has 4 vertices; Cube 3D shape has 24 vertices, some of which are reused.
 
 ## 3. Jim Kahle @IBM Research Group
