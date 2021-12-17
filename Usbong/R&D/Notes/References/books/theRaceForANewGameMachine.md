@@ -22,9 +22,21 @@ Shippy, D. and Phipps, M. (2009). "The race for a new game machine". NY: Citadel
 <b>SONY:</b> create anew; Leapfrog Intel's technology via supercomputer-on-a-chip<br/>
 where: <b>supercomputer-on-a-chip</b> = "...both multigigahertz frequency and very high-floating-point mathematical computation capability"
 
-#### Additional Note:
-"Floating-point units are included in many microprocessors, but they involve some very complex circuitry with a high transistor count, which translates into costly silicon real estate. Due to this complexity and size, they create much greater challenges for achieving high frequencies."<br/>
-<br/>
+#### Additional Notes:
+1) "Floating-point units are included in many microprocessors, but they involve some very complex circuitry with a high transistor count, which translates into costly silicon real estate. Due to this complexity and size, they create much greater challenges for achieving high frequencies."<br/>
+
+2) Floating-point numbers, i.e. numbers with decimal points, causes more accurate computation outputs than using only whole numbers, i.e. Integers.<br/>
+<b>Example:</b><br/>
+If with floating-point numbers: 10.0/3.0=3.3333...<br/>
+If with whole numbers, 10/3=3<br/>
+
+##### Example Application#1: 
+Computing the size of each Image TILE of a 2-Dimensional GRID based on the Computer/Television Monitor's Screen Width and Height
+
+##### Example Application#2: 
+Computing the size of a 2-Dimensional Square Shape based on the Computer/Television Monitor's Screen Width and Height.<br/>
+--> We CAN use ratios, instead of setting the exact size.<br/>
+--> <b>Example:</b> 0.5 x 0.5, where 1.0 is the max Screen size of each width and height
 
 ## 3. Jim Kahle @IBM Research Group
 <b>design tools:</b> "money-saving, software-based programs that improved the quality of a design by automatically checking for errors, cross talk in the wires, and other design points that exceeded acceptable limits."<br/>
