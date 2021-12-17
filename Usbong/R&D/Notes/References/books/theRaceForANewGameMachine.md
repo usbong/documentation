@@ -19,7 +19,7 @@ Shippy, D. and Phipps, M. (2009). "The race for a new game machine". NY: Citadel
 <b>IBM:</b> New Chips in High-performance Servers<br/>
 
 ### 2.3 Objective:
-<b>SONY:</b> create anew; Leapfrog Intel's technology via supercomputer-on-a-chip<br/>
+<b>SONY:</b> create anew; Leapfrog Intel's technology via <b>supercomputer-on-a-chip</b><br/>
 where: <b>supercomputer-on-a-chip</b> = "...both multigigahertz frequency and very high-floating-point mathematical computation capability"
 
 #### Additional Notes:
