@@ -34,9 +34,16 @@ If with whole numbers, 10/3=3<br/>
 Computing the size of each Image TILE of a 2-Dimensional GRID based on the Computer/Television Monitor's Screen Width and Height
 
 ##### Example Application#2: 
-Computing the size of a 2-Dimensional Square Shape based on the Computer/Television Monitor's Screen Width and Height.<br/>
+Computing the size of a 2-Dimensional (2D) Square Shape based on the Computer/Television Monitor's Screen Width and Height.<br/>
 --> We CAN use ratios, instead of setting the exact size.<br/>
 --> <b>Example:</b> 0.5 x 0.5, where 1.0 is the max Screen size of each width and height
+
+##### Example Application#3: 
+Computing the new direction of a RobotShip 2D Image after rotating it at its center 45degrees clock-wise. With higher frequencies, increasing the number of rotating images does NOT become noticeably slow.
+
+##### Example Application#4: 
+Computing the output shape of a 3-Dimensional object with increased total number of points as vertex.<br/>
+--> <b>Reminder:</b> Square 2D shape has 4 vertices; Cube 3D shape has 24 vertices, some of which are reused.  
 
 ## 3. Jim Kahle @IBM Research Group
 <b>design tools:</b> "money-saving, software-based programs that improved the quality of a design by automatically checking for errors, cross talk in the wires, and other design points that exceeded acceptable limits."<br/>
