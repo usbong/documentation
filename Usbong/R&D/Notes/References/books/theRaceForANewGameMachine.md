@@ -25,7 +25,7 @@ where: <b>supercomputer-on-a-chip</b> = "...both multigigahertz frequency and ve
 #### Additional Notes:
 1) "Floating-point units are included in many microprocessors, but they involve some very complex circuitry with a high transistor count, which translates into costly silicon real estate. Due to this complexity and size, they create much greater challenges for achieving high frequencies."<br/>
 
-2) Floating-point numbers, i.e. numbers with decimal points, cause more accurate computation outputs than using only whole numbers, i.e. Integers.<br/>
+2) Floating-point numbers, i.e. numbers with decimal points, cause more accurate computation outputs than only whole numbers, i.e. Integers.<br/>
 <b>Example:</b><br/>
 If with floating-point numbers: 10.0/3.0=3.3333...<br/>
 If with whole numbers, 10/3=3<br/>
