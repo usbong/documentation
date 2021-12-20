@@ -62,17 +62,33 @@ Verify alternatives and make decisions based on <b>schedule</b>, <b>risk</b>, <b
 <b>quality</b> : QUALITY<br/>
 <br/>
 "Trust, but verify."<br/>
+--> Trust Unit, but verify Actions via Performance Evaluations<br/>
+--> <b>reminder</b>: Problems in Work Environment causes Delays in Unit Execution<br/>
+--> where: <b>Example Problems:</b><br/>
+--> 1) Excess Unit members to cause identification of contribution NOT clear<br/>
+--> 2) Communication NOT clear due to INDIRECT and NOT based on EVIDENCE<br/>
+--> <b>reminder</b>: [History of East and West Germany](http://store.usbong.ph/server/2021/viewNewsletter202112.php)
 
 ## 5. Project Management
 tracks weekly progress of <b>supercomputer-on-a-chip</b><br/>
 based on: <b>area</b>, <b>frequency</b>, and <b>power</b><br/>
 <br/>
-If ineffective, daily updates<br/>
+If weekly ineffective, execute daily update reports<br/>
+<br/>
+Unit with four (4) members CAN include:<br/>
+<b>Unit Chief</b>: financially accountable<br/>
+<b>Project Manager (with Tech Know-How)</b>: scheduling<br/>
+<b>Tech Lead</b>: Tech Assistance Lead<br/>
+<b>Tech Support</b>: Tech Assistance<br/>
 
 #### Additional Note:
 <b>area</b> : WISDOM<br/>
 <b>frequency</b> : COURAGE<br/>
 <b>power</b> : POWER<br/>
 <br/>
-
+<b>Objective:</b><br/>
+--> Decreasing chip <b>area</b><br/>
+--> Increasing <b>frequency</b><br/>
+--> Decreasing <b>power</b><br/>
+<br/>
 TO-DO: -update: this
