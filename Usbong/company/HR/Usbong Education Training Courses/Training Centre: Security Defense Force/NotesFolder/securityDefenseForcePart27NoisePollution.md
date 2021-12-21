@@ -35,8 +35,8 @@ Internal Bleeding of Both Knees<br/>
 --> <b>Date:</b> 2020-10-21;<br/>
 --> <b>Reference Point:</b> after requesting assistance from 'Amang' Rodriguez Memorial Medical Center,<br/>
 --> as recommended by Public Attorney's Office (PAO), Marikina City.<br/>
---> identified: in particular, Ryan Syson and Ramon Syson,<br/>
-who again misused wireless broadcasting technology as weapon of attack to cause physical injuries<br/>
+--> identified: in particular, Ryan Syson and Ramon Syson, who let themselves be identified,<br/> 
+--> after again misusing wireless broadcasting technology as weapon of attack to cause physical injuries<br/>
 --> <b>Mungkahing Aksyon:</b> Puksain ang mga Teroristang Komunista<br/>
 --> <b>Reminder:</b> SYSON, RYAN is son of SYSON, RAMON;<br/>
 --> SYSON, RAMON is younger brother of Dr. SYSON, PEDRO<br/>
@@ -49,7 +49,7 @@ who again misused wireless broadcasting technology as weapon of attack to cause 
 2) Endure, while continuing to work;<br/>
 3) File incident reports with Law Enforcement<br/>
 <br/>
-<b>Reminder:</b> Hindi ako madaling mapapatay. Tiyaking kong mapuksa ko ang mga Teroristang Komunistang kahit ang Nanay-nanayan kong Hapon binabastos.<br/>
+<b>Reminder:</b> Hindi ako madaling mapapatay. Titiyaking kong mapuksa ko ang mga Teroristang Komunistang kahit ang Nanay-nanayan kong Hapon binabastos.<br/>
 <br/>
 <b>Reminder (Network evesdropping technique):</b> Multiple telephones can use the same telephone number.<br/>
 <b>Example:</b> When a telephone outside calls to that telephone number, the two (2) receiving telephones using that same telephone number can be used to listen and talk, i.e. receive and transmit the sound to electricity signals.<br/>
