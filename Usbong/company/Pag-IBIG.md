@@ -1,10 +1,26 @@
 # Pag-IBIG
-<b>1) Minimum Accepted Monthly Payment Contribution:</b> 200pesos<br /><br />
+<b>1) Minimum Accepted Monthly Payment Contribution:</b> 200pesos<br />
+<br />
 <b>Note:</b><br />
 Shared between Employer and Employee at 50%, i.e. 100pesos and 100pesos respectively<br />
 
-<b>2) Minimum Total Months to Receive Total Payment Contribution with Dividends:</b> 120months<br /><br />
-<b>Note:</b><br />
+<b>2) Minimum Total Months to Receive Total Payment Contribution with Dividends:</b> 120months
+
+## Note#1: Pag-Ibig Modified 2 (M2) Investment 
+Earns at least 6% (net) per Year since 2016<br/>
+https://www.pagibigfund.gov.ph/Membership_ModifiedPagIBIG2.html; last accessed: 2022-01-18<br/>
+
+### Reminder (regarding Investments)
+Verify if you, yourself, CAN increase your own money by 6% per Year with your current work;<br/>
+If NOT, put the money where it CAN!<br/>
+
+### Recommended Actions: 
+Use Earnings for children's <b>EDUCATION</b>.<br/>
+If have earnings, but NO children yet, after computation, already marry and make children.<br/>
+<br/>
+where: <b>EDUCATION</b> includes among others: Study abroad at least 10mos in Japan
+
+## Note#2 (last updated: 2019-04-15): Pag-Ibig Regular Contribution
 The computation of the dividends, however, is not clear.<br />
 From my understanding, it depends on the performance of the people, i.e. the government, and the administration.<br />
 Nonetheless, the principal, i.e. the total payment contribution, is preserved.<br />
@@ -28,9 +44,11 @@ When the decision-making power regarding issues/rules further becomes the task a
 <br />
 With this, each registered voter need not simply depend/rely on a voted representative by delegating the voting task to that person or group of persons (select few).<br />
 <br />
-<b>Reference:</b><br />
+
+### Reference:
 [1] 1987 Philippine Constitution from the Official Gazette of the Republic of the Philippines<br />
 <br />
-<b>Further reading:</b><br />
-[1] Gore, Al. 2008. "The Assault on Reason". USA: Penguin Books<br />
+
+### Further reading:
+[1] Gore, A. 2008. "The Assault on Reason". USA: Penguin Books<br />
 --> Note that I agree in prohibiting political dynasties (Article II, Sec. 26 of the 1987 Philippine Constitution).
