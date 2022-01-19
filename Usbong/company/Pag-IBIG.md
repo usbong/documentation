@@ -6,9 +6,11 @@ Shared between Employer and Employee at 50%, i.e. 100pesos and 100pesos respecti
 
 <b>2) Minimum Total Months to Receive Total Payment Contribution with Dividends:</b> 120months
 
-## Note#1: Pag-Ibig Modified 2 (M2) Investment 
+## Note#1:  Modified Pag-Ibig 2 (MP2) Investment 
 Earns at least 6% (net) per Year since 2016<br/>
 https://www.pagibigfund.gov.ph/Membership_ModifiedPagIBIG2.html; last accessed: 2022-01-18<br/>
+<br/>
+[DOWNLOAD Modified PagIBIG II Enrollment Form](https://www.pagibigfund.gov.ph/document/pdf/dlforms/providentrelated/PFF226_ModifiedPagIBIGIIEnrollmentForm_V04.pdf)
 
 ### Reminder (regarding Investments)
 Verify if you, yourself, CAN increase your own money by 6% per Year with your current work;<br/>
