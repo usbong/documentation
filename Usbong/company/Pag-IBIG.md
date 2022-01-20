@@ -10,7 +10,13 @@ Shared between Employer and Employee at 50%, i.e. 100pesos and 100pesos respecti
 Earns at least 6% (net) per Year since 2016<br/>
 https://www.pagibigfund.gov.ph/Membership_ModifiedPagIBIG2.html; last accessed: 2022-01-18<br/>
 <br/>
+<b>If already PagIBIG Member:</b><br/>
+[Auto-generated Modified PagIBIG II Enrollment Form](https://www.pagibigfundservices.com/MP2Enrollment/)<br/>
+<b>Else If NOT yet:</b> //<b>note:</b> receive: MP2 Account Number after Membership Registration<br/>
 [DOWNLOAD Modified PagIBIG II Enrollment Form](https://www.pagibigfund.gov.ph/document/pdf/dlforms/providentrelated/PFF226_ModifiedPagIBIGIIEnrollmentForm_V04.pdf)
+
+### Official Website
+https://www.pagibigfund.gov.ph/
 
 ### Reminder (regarding Investments)
 Verify if you, yourself, CAN increase your own money by 6% per Year with your current work;<br/>
