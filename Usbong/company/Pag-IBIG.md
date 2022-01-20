@@ -18,6 +18,10 @@ https://www.pagibigfund.gov.ph/Membership_ModifiedPagIBIG2.html; last accessed: 
 ### Official Website
 https://www.pagibigfund.gov.ph/
 
+### PAG-IBIG FUND (HDMF)
+<b>Branch:</b> Robinsons Metro East, Pasig, Metro Manila;<br/>
+(02) 8724 4244
+
 ### Reminder (regarding Investments)
 Verify if you, yourself, CAN increase your own money by 6% per Year with your current work;<br/>
 If NOT, put the money where it CAN!<br/>
