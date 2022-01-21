@@ -15,12 +15,19 @@ https://www.pagibigfund.gov.ph/Membership_ModifiedPagIBIG2.html; last accessed: 
 <b>Else If NOT yet:</b> //<b>note:</b> receive: MP2 Account Number after Membership Registration<br/>
 [DOWNLOAD Modified PagIBIG II Enrollment Form](https://www.pagibigfund.gov.ph/document/pdf/dlforms/providentrelated/PFF226_ModifiedPagIBIGIIEnrollmentForm_V04.pdf)
 
+### Payment Amount (Minimum): PHP500
+
+### Payment Method
+<b>Manager's Cheque (Front):</b> PAY TO: HOME DEVELOPMENT MUTUAL FUND<br/>
+<b>Manager's Cheque (Back):</b> Your MP2 Account Number, Name, Date<br/>
+
 ### Official Website
 https://www.pagibigfund.gov.ph/
 
 ### PAG-IBIG FUND (HDMF)
-<b>Branch:</b> Robinsons Metro East, Pasig, Metro Manila;<br/>
-(02) 8724 4244
+<b>Branch:</b> Graceland, Barangay Lamuan, Marikina City<br/>
+--> Bayad Center, Robinsons Metro East, Pasig, Metro Manila, et cetera does NOT yet accept Manager's Cheque as payment<br/>
+--> Telephone#: (02) 8724 4244
 
 ### Reminder (regarding Investments)
 Verify if you, yourself, CAN increase your own money by 6% per Year with your current work;<br/>
@@ -32,7 +39,10 @@ If have earnings, but NO children yet, after computation, already marry and make
 <br/>
 where: <b>EDUCATION</b> includes among others: Study abroad at least 10mos in Japan
 
-## Note#2 (last updated: 2019-04-15): Pag-Ibig Regular Contribution
+## Note#2 (last updated: 2022-01-21; from 2019-04-15): Pag-Ibig Regular Contribution
+At present, earns at least 5% (net) per Year;<br/>
+lower than Modifiied Pag-Ibig 2 (MP2)<br/>
+<br/>
 The computation of the dividends, however, is not clear.<br />
 From my understanding, it depends on the performance of the people, i.e. the government, and the administration.<br />
 Nonetheless, the principal, i.e. the total payment contribution, is preserved.<br />
