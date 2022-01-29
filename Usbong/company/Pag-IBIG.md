@@ -10,6 +10,9 @@ Shared between Employer and Employee at 50%, i.e. 100pesos and 100pesos respecti
 Earns at least 6% (net) per Year since 2016<br/>
 https://www.pagibigfund.gov.ph/Membership_ModifiedPagIBIG2.html; last accessed: 2022-01-18<br/>
 <br/>
+Government-guaranteed AND Tax-free dividends<br/>
+Dividends derived from >= 70% of Pag-IBIG Fund's Annual Net Income<br/>
+<br/>
 <b>If already PagIBIG Member:</b><br/>
 [Auto-generated Modified PagIBIG II Enrollment Form](https://www.pagibigfundservices.com/MP2Enrollment/)<br/>
 <b>Else If NOT yet:</b> //<b>note:</b> receive: MP2 Account Number after Membership Registration<br/>
@@ -19,7 +22,8 @@ https://www.pagibigfund.gov.ph/Membership_ModifiedPagIBIG2.html; last accessed: 
 
 ### Payment Method
 <b>Manager's Cheque (Front):</b> PAY TO: HOME DEVELOPMENT MUTUAL FUND<br/>
-<b>Manager's Cheque (Back):</b> Your MP2 Account Number, Name, Date<br/>
+<b>Manager's Cheque (Back):</b> Your MP2 Account Number, Name, Date, Telephone#<br/>
+<br/>
 
 ### Official Website
 https://www.pagibigfund.gov.ph/
@@ -39,12 +43,15 @@ If have earnings, but NO children yet, after computation, already marry and make
 <br/>
 where: <b>EDUCATION</b> includes among others: Study abroad at least 10mos in Japan
 
-## Note#2 (last updated: 2022-01-21; from 2019-04-15): Pag-Ibig Regular Contribution
+## Note#2 (last updated: 2022-01-29; from 2019-04-15): Pag-Ibig Regular Contribution
 At present, earns at least 5% (net) per Year;<br/>
 lower than Modifiied Pag-Ibig 2 (MP2)<br/>
 <br/>
-The computation of the dividends, however, is not clear.<br />
-From my understanding, it depends on the performance of the people, i.e. the government, and the administration.<br />
+Computation of the dividends based on < 70% of Pag-IBIG Fund's <b>Annual Net Income</b>;<br/>
+<b>Annual Net Income</b> received via among others: <b>LOANS</b>, e.g. Housing<br/>
+<br/>
+## Note#3
+In addition, Fund's Income depends on the performance of the people, i.e. the government, and the administration.<br />
 Nonetheless, the principal, i.e. the total payment contribution, is preserved.<br />
 This means that the total payment contribution with dividends only increases, albeit how big the dividends add to it may vary.<br />
 <br />
@@ -66,11 +73,15 @@ When the decision-making power regarding issues/rules further becomes the task a
 <br />
 With this, each registered voter need not simply depend/rely on a voted representative by delegating the voting task to that person or group of persons (select few).<br />
 <br />
-
+To speed-up the counting of votes, a Family Unit, with Husband and Wife and two (2) children classified to be minors, votes together using only one (1) BALLOT; Therefore, from 100 individual voters, we can reduce this by half to be 50.<br/>
+<br/>
+<b>Reminder:</b> Communication is faster with a Family Unit of 4 members than an Administration Unit with 10 members<br/>
+<br/>
 ### Reference:
 [1] 1987 Philippine Constitution from the Official Gazette of the Republic of the Philippines<br />
 <br />
 
 ### Further reading:
-[1] Gore, A. 2008. "The Assault on Reason". USA: Penguin Books<br />
---> Note that I agree in prohibiting political dynasties (Article II, Sec. 26 of the 1987 Philippine Constitution).
+[1] Gore, A. (2008). "The Assault on Reason". USA: Penguin Books<br />
+--> Note that I agree in prohibiting political dynasties (Article II, Sec. 26 of the 1987 Philippine Constitution).<br/>
+[2] Brooks, F. (1995). "The Mythical Man-Month: Essays on Software Engineering". U.S.A.: Addison-Wesley Professional; Anniversary edition<br/>
