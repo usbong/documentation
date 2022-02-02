@@ -12,11 +12,18 @@ Item Purchase : contribution to advancement in universal know-how<br/>
 <br/>
 <b>reminder#2</b>: from history, we learn that discovery of energy resource via territorial advancement adds to increased POWER to nation<br/>
 <br/>
-<b>reminder#3</b>: Cheating as executed by the Teroristang Komunista group to get quick money causes the opposite of advancement to nation<br/>
+<b>reminder#3</b>: Cheating as executed by the Teroristang Komunista group to get quick money causes the opposite of advancement to nation
+
+### Education Fails due to Cheating that remains Undetected
+--> Undetected due to advanced equipment items, e.g. high-speed computer sets, wireless broadcasting tools, mainly available only to Communist Terroist group who execute cheating actions in school, et cetera;<br/>
 <br/>
---> observed: due to quick money stolen, Teroristang Komunista group CAN buy advanced equipment items, e.g. high-speed computer sets, wireless broadcasting tools, to learn using own TIME without need for additional guidance, e.g. from school;<br/>
---> rest do NOT have money to buy such items<br/>
+--> observed: due to quick money stolen, Teroristang Komunista group CAN buy such advanced equipment items to learn using own TIME without need for additional guidance, e.g. from school;<br/>
+--> Rest do NOT yet have money to buy such items<br/>
 <br/>
+--> Quick Money stolen via among others:<br/>
+--> carnapping (vehicular theft), smuggling (rice food, electronics, vehicles)
+
+### Additional Cheating Examples
 --> <b>Cheating example#1:</b> technique via which parts to focus to pass school examinations shared only to select Teroristang Komunista group members' children who do NOT share such know-how with classmates<br/>
 <br/>
 --> <b>Cheating example#2:</b> breathing difficulty caused by Teroristang Komunista group's wireless broadcasting technology during sports competition for target child to LOSE<br/>
@@ -26,10 +33,5 @@ Item Purchase : contribution to advancement in universal know-how<br/>
 <br/>
 --> <b>Output</b>: Teroristang Komunista group members' chldren, as based on school performance,<br/>
 --> begin to become dependent on cheating via wireless broadcasting technology to get quick money;<br/>
---> Select people who were previously classified to be "SLOW" advance faster due to learned correct techniques,<br/>
---> albeit due to such action causes ENVY to Teroristang Komunista group<br/>
---> who make them become targets of attacks.<br/>
-<br/>
-TO-DO: -update: this<br/>
-<br/>
-
+--> Select people who were previously classified to be "SLOW" advance faster due to learned correct techniques.
+--> However, such action causes ENVY to Teroristang Komunista group who make them their targets of attacks.<br/>
