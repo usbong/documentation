@@ -31,7 +31,7 @@ Item Purchase : contribution to advancement in universal know-how<br/>
 <b>reminder#4</b>: NOT effective to teach VALUES via lectures to college students and older<br/>
 --> <b>Recommended Reading</b>: "Harvard Med"<br/>
 <br/>
---> <b>Output</b>: Teroristang Komunista group members' chldren, as based on school performance,<br/>
+--> <b>Output</b>: Teroristang Komunista group members' children, as based on school performance,<br/>
 --> begin to become dependent on cheating via wireless broadcasting technology to get quick money;<br/>
 --> Select people who were previously classified to be "SLOW" advance faster due to learned correct techniques.
 --> However, such action causes ENVY to Teroristang Komunista group who make them their targets of attacks.<br/>
