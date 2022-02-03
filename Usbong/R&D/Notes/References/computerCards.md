@@ -29,9 +29,19 @@ Item Purchase : contribution to advancement in universal know-how<br/>
 --> <b>Cheating example#2:</b> breathing difficulty caused by Teroristang Komunista group's wireless broadcasting technology during sports competition for target child to LOSE<br/>
 <br/>
 <b>reminder#4</b>: NOT effective to teach VALUES via lectures to college students and older<br/>
---> <b>Recommended Reading</b>: "Harvard Med"<br/>
+--> <b>Recommended Reading</b>: John Langone's ["Harvard Med"](https://www.amazon.com/Harvard-Med-Americas-Premier-Medical/dp/1558506101)<br/>
 <br/>
---> <b>Output</b>: Teroristang Komunista group members' children, as based on school performance,<br/>
+--> <b>Output#1</b>: Teroristang Komunista group members' children, as based on school performance,<br/>
 --> begin to become dependent on cheating via wireless broadcasting technology to get quick money;<br/>
---> Select people who were previously classified to be "SLOW" advance faster due to learned correct techniques.
+--> Select people who were previously classified to be "SLOW" advance faster due to learned correct techniques.<br/>
 --> However, such action causes ENVY to Teroristang Komunista group who make them their targets of attacks.<br/>
+<br/>
+--> <b>Output#2</b>: Overall know-how of Nation attacked by Teroristang Komunista group does NOT advance.<br/>
+<br/>
+--> <b>Recommended Action#1</b>: verify: National School Performance of children classified to be Filipino citizens<br/>
+--> <b>Recommended Action#2</b>: Puksain ang mga Teroristang Komunista. No need for negotiation.<br/>
+--> Puntahan sa kanilang tirahan, puksain.<br/>
+<br/>
+--> observed: Law Enforcement's routine movement via roads and verification via checkpoints NOT yet effective to destroy Teroristang Komunista group who continues to misuse wireless broadcasting technology to cause Noise Pollution with Physical Injury even if inside their Condominiums and does NOT go outside;<br/>
+<br/>
+--> <b>Recommended Reading</b>: [ももたろう（momotarou）](https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Notes/References/books/momotarou.md)
