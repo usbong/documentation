@@ -22,3 +22,8 @@ Morita, A., et al. (1987). "MADE IN JAPAN: わが体験的国際戦略". TOKYO: 
 １） <b>芸術家</b>：文学、絵画、陶器作り、能、歌舞伎、茶の湯、書道など<br/>
 ２） <b>学者</b>：国学、漢字<br/>
 
+## Recommended Reading
+Francisco V. Coching's "<b>Lapu-Lapu</b>" (1953~1954)<br/>
+--> where: Coching, F.: Manunulat at dibuhista ng Pilipino Komiks<br/>
+--> where: "<b>Lapu-Lapu</b>": Pinuno; unang Pilipinong nagtanggol laban sa pagsakop ng banyaga<br/>
+--> where: Pinuno: Unang tuntunin = "MAGSANAY SA PANANANDATA UPANG LAGING HANDA SA PAGTATANGGOL NG KANILANG KARAPATAN... BIHASA SA PAGLANGOY, AT HIGIT SA LAHAT, MASIKAP SA PAGTUKLAS SA IKATATAGUYOD NG ANUMANG NAUUKOL SA IKARARANGAL NG KANILANG LIPI." 
