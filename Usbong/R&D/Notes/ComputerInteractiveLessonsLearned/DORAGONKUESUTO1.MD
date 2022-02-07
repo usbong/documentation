@@ -9,7 +9,11 @@ DRAGON QUEST; YEAR 1986; <br/>
 <br/>
 --> observed: 『ドラゴンクエスト』 captured local (Japanese) MARKET due to among others: <br/>
 --> combination in generations<br/>
---> <b>Additional Note:</b> By the 1990's, reached 2Million Japanese Followers
+--> <b>Additional Note:</b> By the 1990's, reached 2Million Japanese Followers based on Actual Sales
 
 ## Quick Reference: WIKIPEDIA
 <b>Recommended Action:</b> reverify Age, albeit observation still CORRECT
+
+## Reference:
+1) Slate, C. (Ed), et al. (1996). <b>Ultra Game Players (December 1996)<b>. USA: Image Publishing, Inc.
+
