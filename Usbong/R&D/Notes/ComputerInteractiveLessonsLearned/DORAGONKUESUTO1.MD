@@ -9,6 +9,7 @@ DRAGON QUEST; YEAR 1986; <br/>
 <br/>
 --> observed: 『ドラゴンクエスト』 captured local (Japanese) MARKET due to among others: <br/>
 --> combination in generations<br/>
+--> <b>Additional Note:</b> By the 1990's, reached 2Million Japanese Followers
 
 ## Quick Reference: WIKIPEDIA
 <b>Recommended Action:</b> reverify Age, albeit observation still CORRECT
