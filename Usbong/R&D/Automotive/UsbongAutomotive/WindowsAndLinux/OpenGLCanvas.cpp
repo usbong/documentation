@@ -1,5 +1,5 @@
 /*
- * Copyright 2020~2021 Usbong Social Systems, Inc.
+ * Copyright 2020~2022 SYSON, MICHAEL B.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,10 +12,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * @company: USBONG SOCIAL SYSTEMS, INC. (USBONG)
+ * @company: USBONG
  * @author: SYSON, MICHAEL B. 
  * @date created: 20200926
- * @date updated: 20210304
+ * @date updated: 20220217; from 20210304
+ * @website: http://www.usbong.ph 
  *
  * References:
  * 1) https://www.mathsisfun.com/sine-cosine-tangent.html;
@@ -1084,13 +1085,16 @@ void OpenGLCanvas::render()
 	//added by Mike, 20210220
 	//ISOMETRIC VIEW					  	
 	//-----
-	//added by Mike, 20201115
-/*		
+	//added by Mike, 20201115; edited by Mike, 20220217
 	glRotatef(45, 1.0f, 0.0f, 0.0f);
 	glRotatef(30, 0.0f, 1.0f, 0.0f);
-////    glScalef(0.2f, 0.2f, 0.2f);
+  
+  //set camera to be farther
+  glScalef(0.2f, 0.2f, 0.2f);
 	//-----
-*/
+	
+	//added by Mike, 20220217
+	//TO-DO: -update: punching animation sequence
 
 	//added by Mike, 20210220
 	//3rd-person view
@@ -1101,10 +1105,16 @@ void OpenGLCanvas::render()
 	//2D horizontal-scrolling, vertical-scrolling view
 	//note: Zelda Link's Awakening DX; Gameboy Color
 	//-----
-	glRotatef(30, 0.0f, 1.0f, 0.0f);
-/*    glScalef(0.2f, 0.2f, 0.2f);
+/*	
+		glRotatef(30, 0.0f, 1.0f, 0.0f);
+    glScalef(0.2f, 0.2f, 0.2f);
 */
 	//-----
+	
+	//edited by Mike, 20220217;
+	//note: noticeable incorrect output of shape positions
+//	glRotatef(30, 0.0f, 1.0f, 0.0f);
+
 
 		
 //    glTranslatef(-1.0f, -1.0f, 0.0f);
