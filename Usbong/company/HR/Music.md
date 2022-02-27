@@ -19,7 +19,7 @@
 --> Lupang Hinirang<br/>
 <br/>
 --> 1.2) Matutong bumasa ng mga nota<br/>
---> 1.2.1) Mas malaki ang sulat ng nota mas maigi<br/>
+--> 1.2.1) Higit na malaki ang sulat ng nota higit na maigi<br/>
 --> <b>halimbawa:</b> はじめてのひさしぶりの大人のピアノ（スタジオジブリ)<br/>
 --> hajimete no hisashiburi no otona no piano (Studio Ghibli)<br/>
 --> Mahalaga ang kakayahang magbasa, gawa ng hindi mo rin maaalala ang pagtugtog sa wastong nota, lalo na kung hindi mo rin regular na tinutugtog.<br/>
@@ -44,4 +44,10 @@
 ## 2) Violin
 --> <b>Mungkahing Aksyon:</b> Tugtugin ang HAPPY BIRTHDAY upang magawa ang mga ito:<br/>
 --> 2.1) Masanay sa wastong tunog.<br/>
---> 2.2) Matutong bumasa ng mga nota (sa Violin)<br/>
+--> 2.2) Matutong bumasa ng mga Nota (sa Violin)<br/>
+--> <b>Sanggunian:</b><br/>
+--> S.1) Guanzon, J. (2010). "Violn Pieces (Filipinos Love to Play)". Makati: SOUND Publishing Corporation<br/>
+--> Happy Birthday (M. Hill) Violin Notes;<br/>
+--> <b>Paalala:</b> May Nota sa Violin; Mayroon din Nota sa Piano;<br/>
+--> S.2) Violin Fingering Chart; Upang malaman ang wastong Daliri at String na ayon sa Nota<br/>
+--> <b>Halimbawa:</b> [HAPPY BIRTHDAY](https://github.com/usbong/documentation/blob/master/Usbong/R%26D/Automotive/UsbongSound/tabi/Boses%20178.m4a)
