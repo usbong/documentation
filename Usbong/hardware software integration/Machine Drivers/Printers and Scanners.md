@@ -98,3 +98,13 @@ https://support.brother.com/g/b/downloadlist.aspx?c=ph&lang=en&prod=dcpl2540dw_u
 <b>scanimage --format=jpeg > outputImage.jpeg</b><br/>
 <br/>
 where: ".jpeg" is the image file format
+
+## Problem & Answer
+<b>Problem:</b> iPAD Tablet Computer connected to network does NOT cause Printer to print<br/>
+Printer connected to LUBUNTU (ver: 20.04) machine via Universal Serial Bus (USB) Port<br/>
+<br/>
+<b>Answer:</b><br/>
+1) LUBUNTU Main Menu -> Preferences -> Printers -> Server -> Settings...<br/>
+--> Put CHECKMARK in CHECKBOX, "Publish shared printers connected to this system"<br/>
+2) iPAD Tablet Computer -> Settings -> WiFi: Turn OFF, Turn ON<br/>
+3) brother DCP-L2540DW Power: Turn OFF, Turn ON<br/>
