@@ -113,6 +113,7 @@ Printer connected to LUBUNTU (ver: 20.04) machine via Universal Serial Bus (USB)
 Printer connected to LUBUNTU (ver: 20.04) machine via Universal Serial Bus (USB) Port<br/>
 <br/>
 <b>Answer:</b><br/>
+<img src="https://github.com/usbong/KMS/blob/master/Notes/res/noteSambaPrintServerWindows7PCToLUBUNTU20Dot04LTSPCSharedNetworkV20220309T1102.jpg" width="30%"><br/>
 1) Enter the following COMMAND in LUBUNTU's Terminal Window:<br/>
 <b>sudo apt install samba</b><br/>
 <br/>
