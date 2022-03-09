@@ -99,8 +99,8 @@ https://support.brother.com/g/b/downloadlist.aspx?c=ph&lang=en&prod=dcpl2540dw_u
 <br/>
 where: ".jpeg" is the image file format
 
-## Problem & Answer
-<b>Problem:</b> iPAD Tablet Computer connected to network does NOT cause Printer to print<br/>
+## 3.3) Problem & Answer
+<b>3.3.1) Problem:</b> iPAD Tablet Computer connected to network does NOT cause Printer to print<br/>
 Printer connected to LUBUNTU (ver: 20.04) machine via Universal Serial Bus (USB) Port<br/>
 <br/>
 <b>Answer:</b><br/>
@@ -108,3 +108,28 @@ Printer connected to LUBUNTU (ver: 20.04) machine via Universal Serial Bus (USB)
 --> Put CHECKMARK in CHECKBOX, "Publish shared printers connected to this system"<br/>
 2) iPAD Tablet Computer -> Settings -> WiFi: Turn OFF, Turn ON<br/>
 3) brother DCP-L2540DW Power: Turn OFF, Turn ON<br/>
+<br/>
+<b>3.3.2) Problem:</b> Windows7 Computer connected to network does NOT cause Printer to print<br/>
+Printer connected to LUBUNTU (ver: 20.04) machine via Universal Serial Bus (USB) Port<br/>
+<br/>
+<b>Answer:</b><br/>
+1) Enter the following COMMAND in LUBUNTU's Terminal Window:<br/>
+<b>sudo apt install samba</b><br/>
+<br/>
+--> If installation FAILS due to dependencies, enter:<br/> 
+<b>sudo apt-get install aptitude</b><br/>
+<b>sudo aptitude install samba</b><br/>
+<br/>
+2) edit <b>/etc/samba/smb.conf</b><br/>
+<br/>
+--> In the [printers] section, CHANGE the following to "yes":<br/>
+<b>browsable = yes</b><br/>
+<b>guest ok = yes</b><br/>
+<br/>
+3) Enter the following COMMANDs in LUBUNTU's Terminal Window:<br/>
+<b>sudo systemctl restart smbd.service</b><br/>
+<b>sudo systemctl restart nmbd.service</b><br/>
+
+### References
+3.3.R.1) https://ubuntu.com/server/docs/samba-print-server; last accessed: 20220309<br/>
+3.3.R.2) https://support.brother.com/g/b/downloadtop.aspx?c=ph&lang=en&prod=dcpl2540dw_us_as; last accessed: 20220309<br/>
