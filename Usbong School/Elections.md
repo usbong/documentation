@@ -21,6 +21,35 @@ https://comelec.gov.ph/php-tpls-attachments/2022NLE/BallotTemplates/NCR/MARIKINA
 ### Reference: https://marikina.gov.ph/webmarikina/Our-City.html;
 last accessed: 20220505
 
+### Objective of PARTIES/GROUPS
+For the previously Elected Officer to share know-how with Unit members;
+
+#### Example: PDPLBN and LP
+where: <br/>
+<b>PDPLBN=PARTIDO DEMOKRATIKO PILIPINO LAKAS NG BAYAN</b><br/>
+--> Example: Pres. Roa Rodrigo Duterte<br/>
+<br/>
+<b>LP=LIBERAL PARTY</b><br/>
+--> Example: Former Pres. Benigno Simeon Aquino (RIP)<br/>
+
+### Current Recommended Action: 
+CHOOSE two (2) GROUPS;<br/>
+--> From EACH GROUP, CHOOSE UNKNOWN GROUP MEMBERS as PRIORITY;<br/>
+<br/>
+where: "UNKNOWN" is NOT AS KNOWN via MEDIA,<br/> 
+e.g. Television, Radio, Social Networking Service (SNS), albeit still PART of GROUP<br/>
+
+### Additional Notes:
+1) select UNIT MEMBERS create and/or join new GROUPS;<br/>
+
+2) select CHOSEN GROUP does NOT have UNIT MEMBER for an ADMIN POSITION;<br/>
+
+3) BIG BUSINESSES shall NOT CAUSE ADMIN POLICIES to destroy SOURCE of INCOME;<br/>
+--> reminder: ADMIN INCOME is via TAX from such SOURCE of INCOME<br/> 
+
+#### Recommended Reading: [store.usbong.ph/server/2022/viewNewsletter202203.php](store.usbong.ph/server/2022/viewNewsletter202203.php)
+<b>keyphrase:</b> SMUGGLING to CAUSE NOTICEABLE LIFESTYLE from BIG INCOME
+
 ## National and Local Elections 
 --> <b>Pook:</b> Brgy. Sto. Niño, Marikina City<br>
 --> <b>Taon:</b> 2019<br>
