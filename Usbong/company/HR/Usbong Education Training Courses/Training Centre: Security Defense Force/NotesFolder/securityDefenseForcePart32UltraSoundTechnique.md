@@ -13,9 +13,11 @@ where: harass: "cause trouble or any mental, economical or any other damage [1]"
 MANLOLOKO : MANLOLOKO/budol-budol/carnapper/smuggler/cybercriminal/Teroristang Komunista group<br/>
 
 ### keyphrase: 
-unsolicited physical stimulation, wireless physical attacks
+unsolicited physical stimulation, wireless physical attacks, mobile telephone (tech since Year 2008 and earlier)
 
-> Physical therapies
+> ...sound waves at very high frequencies (0.5-5 MHz) to produce mechanical vibration within the tissues
+
+### "Physical therapies"
 >
 > Lindsay M. Bearne PhD MSc MCSP, Michael V. Hurley PhD MCSP, in Rheumatology, 2010
 > ULTRASOUND THERAPY
