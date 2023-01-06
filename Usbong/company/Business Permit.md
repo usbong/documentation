@@ -1,13 +1,14 @@
 # Business Permit (Renewal)
 ## Requirements:
 1) Business Permit (Nakaraang taon)<br/>
+--> bring: [BIR Form 0605 Payment Form for RENEWAL of Certificate of Registration](https://github.com/usbong/documentation/blob/master/Usbong/company/Bureau%20of%20Internal%20Revenue%20(BIR)/Certificate%20of%20Registration.md)
 
 2) Business Permit Renewal Application Form<br/>
 --> Maaaring makakuha nito sa Marikina City Hall.<br/>
 --> Awtomatikong ginagawa na rin ito gamit ang kompyuter.<br/>
 
 3) Quarterly Financial Report (BIR)<br/>
---> Halimbawa: BIR Form 2551Q (Quarterly Percentage Tax)<br/>
+--> Halimbawa: BIR Form 1701Q (Quarterly Income Tax Return), BIR Form 2551Q (Quarterly Percentage Tax)<br/>
 --> If no earnings, do the following:<br/>
 --> a) Secure an Affidavit of Nothing-to-Declare or Non-operation.<br/>
 --> May gumagawa na nito sa Marikina City Hall.<br/>
