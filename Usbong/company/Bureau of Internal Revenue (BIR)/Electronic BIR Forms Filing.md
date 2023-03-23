@@ -49,7 +49,7 @@ https://www.bir.gov.ph/index.php/eservices/ebirforms.html; last accessed: 201809
 Annual (Oct\~Dec): 15-APR<br/>
 --> if with payment, add Financial Statement (FS) with Treasurer's Certificate (Notarized)<br/>
 3.2) <b>SINGLE PROPRIETOR: BIR FORM 1701</b><br/>
-1st Quarter 15-APR<br/>
+1st Quarter 15-MAY<br/>
 2nd Quarter 15-AUG<br/>
 3rd Quarter 15-NOV<br/>
 Annual 15-APR (Following Year)<br/>
