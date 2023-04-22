@@ -151,12 +151,19 @@ Part1.2) In Windows 7 machine, add shared printer by LUBUNTU machine on the <b>l
 
 
 <b>Answer Part2:</b><br/>
+
+<img src="https://github.com/usbong/ITAMS/blob/main/Notes/MachineDrivers/res/linuxCupsWebAddressWindowsAddPrinterSharedByLinuxUbuntuV20230422T1211.png" width="80%">
+
 Part2.1) In Windows 7 machine's web browser, enter "<b>http://192.168.1.110:631/printers</b>" as web address
+
+<img src="https://github.com/usbong/ITAMS/blob/main/Notes/MachineDrivers/res/linuxCupsWebAddressPart2WindowsAddPrinterSharedByLinuxUbuntuV20230422T1211.png" width="80%">
+
 Part2.2) Identify the shared networked printer's address;<br/> 
 Example: "<b>http://192.168.1.110:631/printers/DCP-L2540DW-series</b>"
-Part2.3) Add printer device; Enter the printer's address
 
-TO-DO: -update: this
+<img src="https://github.com/usbong/ITAMS/blob/main/Notes/MachineDrivers/res/linuxCupsWebAddressPart3WindowsAddPrinterSharedByLinuxUbuntuV20230422T1211.png" width="80%">
+
+Part2.3) In Windows 7 machine, add printer device; Enter the printer's address
 
 ### References
 
