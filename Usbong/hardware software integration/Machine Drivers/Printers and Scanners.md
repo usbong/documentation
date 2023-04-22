@@ -132,5 +132,19 @@ Printer connected to LUBUNTU (ver: 20.04) machine via Universal Serial Bus (USB)
 <b>sudo systemctl restart nmbd.service</b><br/>
 
 ### References
-3.3.R.1) https://ubuntu.com/server/docs/samba-print-server; last accessed: 20220309<br/>
-3.3.R.2) https://support.brother.com/g/b/downloadtop.aspx?c=ph&lang=en&prod=dcpl2540dw_us_as; last accessed: 20220309<br/>
+3.3.1.R.1) https://ubuntu.com/server/docs/samba-print-server; last accessed: 20220309<br/>
+3.3.1.R.2) https://support.brother.com/g/b/downloadtop.aspx?c=ph&lang=en&prod=dcpl2540dw_us_as; last accessed: 20220309<br/>
+
+<b>3.3.2) Problem:</b> Windows 7 machine cannot add shared network Printer by Linux Ubuntu machine (LUBUNTU 20.04)<br/>
+<br/>
+<b>Answer:</b><br/>
+1) In Windows 7 machine's web browser, enter "<b>http://192.168.1.110:631/printers</b>" as web address
+2) Identify the shared networked printer's address;<br/> 
+Example: "<b>http://192.168.1.110:631/printers/DCP-L2540DW-series</b>"
+3) Add printer device; Enter the printer's address
+
+TO-DO: -update: this
+
+### References
+
+3.3.2.R.1) https://askubuntu.com/questions/641/how-do-i-set-up-printer-sharing-with-a-windows-7-machine-in-ubuntu; last accessed: 20230422
