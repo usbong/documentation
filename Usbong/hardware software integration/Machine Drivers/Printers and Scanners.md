@@ -137,11 +137,24 @@ Printer connected to LUBUNTU (ver: 20.04) machine via Universal Serial Bus (USB)
 
 <b>3.3.2) Problem:</b> Windows 7 machine cannot add shared network Printer by Linux Ubuntu machine (LUBUNTU 20.04)<br/>
 <br/>
-<b>Answer:</b><br/>
-1) In Windows 7 machine's web browser, enter "<b>http://192.168.1.110:631/printers</b>" as web address
-2) Identify the shared networked printer's address;<br/> 
+https://github.com/usbong/ITAMS/blob/main/Notes/MachineDrivers/res/usbongKMS-SharedPrintersByLinuxToWindowsCroppedV20230422T1142.jpg
+
+<b>Answer Part1:</b><br/>
+Part1.1) In LUBUNTU machine, add printer connected via <b>USB</b>;
+
+<img src="https://github.com/usbong/ITAMS/blob/main/Notes/MachineDrivers/res/usbongKMS-SharedPrintersByLinuxToWindowsCroppedV20230422T1142.jpg" width="80%">
+
+
+Part1.2) In Windows 7 machine, add shared printer by LUBUNTU machine on the <b>local network</b> ;
+
+<img src="https://github.com/usbong/ITAMS/blob/main/Notes/MachineDrivers/res/windowsAddPrinterSharedByLinuxUbuntuV20230422T1146.png" width="80%">
+
+
+<b>Answer Part2:</b><br/>
+Part2.1) In Windows 7 machine's web browser, enter "<b>http://192.168.1.110:631/printers</b>" as web address
+Part2.2) Identify the shared networked printer's address;<br/> 
 Example: "<b>http://192.168.1.110:631/printers/DCP-L2540DW-series</b>"
-3) Add printer device; Enter the printer's address
+Part2.3) Add printer device; Enter the printer's address
 
 TO-DO: -update: this
 
