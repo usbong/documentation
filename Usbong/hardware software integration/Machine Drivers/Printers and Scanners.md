@@ -136,8 +136,6 @@ Printer connected to LUBUNTU (ver: 20.04) machine via Universal Serial Bus (USB)
 3.3.1.R.2) https://support.brother.com/g/b/downloadtop.aspx?c=ph&lang=en&prod=dcpl2540dw_us_as; last accessed: 20220309<br/>
 
 <b>3.3.2) Problem:</b> Windows 7 machine cannot add shared network Printer by Linux Ubuntu machine (LUBUNTU 20.04)<br/>
-<br/>
-https://github.com/usbong/ITAMS/blob/main/Notes/MachineDrivers/res/usbongKMS-SharedPrintersByLinuxToWindowsCroppedV20230422T1142.jpg
 
 <b>Answer Part1:</b><br/>
 Part1.1) In LUBUNTU machine, add printer connected via <b>USB</b>;
