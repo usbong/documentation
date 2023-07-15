@@ -91,8 +91,9 @@ https://support.brother.com/g/b/downloadhowto.aspx?c=ph&lang=en&prod=dcp165c_all
 3.1.2) DCP-L2540DW<br/>
 https://support.brother.com/g/b/downloadlist.aspx?c=ph&lang=en&prod=dcpl2540dw_us_as&os=128; last accessed: 20201110<br/>
 <br/>
-<b>Note:</b><br/>
+<b>Notes:</b><br/>
 1) You will need to install the Linux Driver for each Brother DCP Machine that is connected even to the same computer.
+2) Install first Machine Driver via "DCP-L2540DW-inst-C1-ASA.EXE" on Windows Machine
 
 ### 3.2) Scan Command<br/>
 <b>scanimage --format=jpeg > outputImage.jpeg</b><br/>
